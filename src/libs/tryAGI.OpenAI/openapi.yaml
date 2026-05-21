@@ -15700,6 +15700,212 @@ paths:
                 "has_more": false,
                 "next_page": null
             }
+  /organization/data_retention:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Retrieves organization data retention controls.
+      operationId: retrieve-organization-data-retention
+      tags:
+        - Data retention
+      responses:
+        '200':
+          description: Organization data retention controls retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationDataRetention'
+      x-oaiMeta:
+        name: Retrieve organization data retention
+        group: administration
+        examples:
+          request:
+            curl: |
+              curl https://api.openai.com/v1/organization/data_retention \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const organizationDataRetention = await
+              client.admin.organization.dataRetention.retrieve();
+
+
+              console.log(organizationDataRetention.object);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              organization_data_retention =
+              client.admin.organization.data_retention.retrieve()
+
+              print(organization_data_retention.object)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\torganizationDataRetention, err := client.Admin.Organization.DataRetention.Get(context.TODO())\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", organizationDataRetention.Object)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.dataretention.DataRetentionRetrieveParams;
+
+              import
+              com.openai.models.admin.organization.dataretention.OrganizationDataRetention;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      OrganizationDataRetention organizationDataRetention = client.admin().organization().dataRetention().retrieve();
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              organization_data_retention =
+              openai.admin.organization.data_retention.retrieve
+
+
+              puts(organization_data_retention)
+          response: |
+            {
+                "object": "organization.data_retention",
+                "type": "modified_abuse_monitoring"
+            }
+    post:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Updates organization data retention controls.
+      operationId: update-organization-data-retention
+      tags:
+        - Data retention
+      requestBody:
+        description: The desired organization data retention setting.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateOrganizationDataRetentionBody'
+      responses:
+        '200':
+          description: Organization data retention controls updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationDataRetention'
+      x-oaiMeta:
+        name: Update organization data retention
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl -X POST https://api.openai.com/v1/organization/data_retention
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json" \
+                -d '{
+                    "retention_type": "modified_abuse_monitoring"
+                }'
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const organizationDataRetention = await
+              client.admin.organization.dataRetention.update({
+                retention_type: 'zero_data_retention',
+              });
+
+
+              console.log(organizationDataRetention.object);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              organization_data_retention =
+              client.admin.organization.data_retention.update(
+                  retention_type="zero_data_retention",
+              )
+
+              print(organization_data_retention.object)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\torganizationDataRetention, err := client.Admin.Organization.DataRetention.Update(context.TODO(), openai.AdminOrganizationDataRetentionUpdateParams{\n\t\tRetentionType: openai.AdminOrganizationDataRetentionUpdateParamsRetentionTypeZeroDataRetention,\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", organizationDataRetention.Object)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.dataretention.DataRetentionUpdateParams;
+
+              import
+              com.openai.models.admin.organization.dataretention.OrganizationDataRetention;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      DataRetentionUpdateParams params = DataRetentionUpdateParams.builder()
+                          .retentionType(DataRetentionUpdateParams.RetentionType.ZERO_DATA_RETENTION)
+                          .build();
+                      OrganizationDataRetention organizationDataRetention = client.admin().organization().dataRetention().update(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              organization_data_retention =
+              openai.admin.organization.data_retention.update(retention_type:
+              :zero_data_retention)
+
+
+              puts(organization_data_retention)
+          response: |
+            {
+                "object": "organization.data_retention",
+                "type": "modified_abuse_monitoring"
+            }
   /organization/groups:
     get:
       security:
@@ -15932,6 +16138,103 @@ paths:
                 "is_scim_managed": false
             }
   /organization/groups/{group_id}:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Retrieves a group.
+      operationId: retrieve-group
+      tags:
+        - Groups
+      parameters:
+        - name: group_id
+          in: path
+          description: The ID of the group to retrieve.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Group retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupResponse'
+      x-oaiMeta:
+        name: Retrieve group
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/organization/groups/group_01J1F8ABCDXYZ
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const group = await
+              client.admin.organization.groups.retrieve('group_id');
+
+
+              console.log(group.id);
+            python: |-
+              import os
+              from openai import OpenAI
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+              group = client.admin.organization.groups.retrieve(
+                  "group_id",
+              )
+              print(group.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tgroup, err := client.Admin.Organization.Groups.Get(context.TODO(), \"group_id\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", group.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import com.openai.models.admin.organization.groups.Group;
+
+              import
+              com.openai.models.admin.organization.groups.GroupRetrieveParams;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      Group group = client.admin().organization().groups().retrieve("group_id");
+                  }
+              }
+            ruby: |-
+              require "openai"
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+              group = openai.admin.organization.groups.retrieve("group_id")
+
+              puts(group)
+          response: |
+            {
+                "id": "group_01J1F8ABCDXYZ",
+                "name": "Support Team",
+                "created_at": 1711471533,
+                "is_scim_managed": false,
+                "group_type": "group"
+            }
     post:
       security:
         - AdminApiKeyAuth: []
@@ -16430,6 +16733,131 @@ paths:
                 }
             }
   /organization/groups/{group_id}/roles/{role_id}:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Retrieves an organization role assigned to a group.
+      operationId: retrieve-group-role
+      tags:
+        - Group organization role assignments
+      parameters:
+        - name: group_id
+          in: path
+          description: The ID of the group to inspect.
+          required: true
+          schema:
+            type: string
+        - name: role_id
+          in: path
+          description: The ID of the organization role to retrieve for the group.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Organization role retrieved for the group successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssignedRoleDetails'
+      x-oaiMeta:
+        name: Retrieve group organization role
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/organization/groups/group_01J1F8ABCDXYZ/roles/role_01J1F8ROLE01
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const role = await
+              client.admin.organization.groups.roles.retrieve('role_id', {
+                group_id: 'group_id',
+              });
+
+
+              console.log(role.id);
+            python: |-
+              import os
+              from openai import OpenAI
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+              role = client.admin.organization.groups.roles.retrieve(
+                  role_id="role_id",
+                  group_id="group_id",
+              )
+              print(role.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\trole, err := client.Admin.Organization.Groups.Roles.Get(\n\t\tcontext.TODO(),\n\t\t\"group_id\",\n\t\t\"role_id\",\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", role.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.groups.roles.RoleRetrieveParams;
+
+              import
+              com.openai.models.admin.organization.groups.roles.RoleRetrieveResponse;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      RoleRetrieveParams params = RoleRetrieveParams.builder()
+                          .groupId("group_id")
+                          .roleId("role_id")
+                          .build();
+                      RoleRetrieveResponse role = client.admin().organization().groups().roles().retrieve(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              role = openai.admin.organization.groups.roles.retrieve("role_id",
+              group_id: "group_id")
+
+
+              puts(role)
+          response: |
+            {
+                "id": "role_01J1F8ROLE01",
+                "name": "API Group Manager",
+                "permissions": [
+                    "api.groups.read",
+                    "api.groups.write"
+                ],
+                "resource_type": "api.organization",
+                "predefined_role": false,
+                "description": "Allows managing organization groups",
+                "created_at": 1711471533,
+                "updated_at": 1711472599,
+                "created_by": "user_abc123",
+                "created_by_user_obj": null,
+                "metadata": {},
+                "assignment_sources": null
+            }
     delete:
       security:
         - AdminApiKeyAuth: []
@@ -16795,6 +17223,122 @@ paths:
                 "group_id": "group_01J1F8ABCDXYZ"
             }
   /organization/groups/{group_id}/users/{user_id}:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Retrieves a user in a group.
+      operationId: retrieve-group-user
+      tags:
+        - Group users
+      parameters:
+        - name: group_id
+          in: path
+          description: The ID of the group to inspect.
+          required: true
+          schema:
+            type: string
+        - name: user_id
+          in: path
+          description: The ID of the user to retrieve from the group.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User retrieved from the group successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupMemberUser'
+      x-oaiMeta:
+        name: Retrieve group user
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/organization/groups/group_01J1F8ABCDXYZ/users/user_abc123
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const user = await
+              client.admin.organization.groups.users.retrieve('user_id', {
+                group_id: 'group_id',
+              });
+
+
+              console.log(user.id);
+            python: |-
+              import os
+              from openai import OpenAI
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+              user = client.admin.organization.groups.users.retrieve(
+                  user_id="user_id",
+                  group_id="group_id",
+              )
+              print(user.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tuser, err := client.Admin.Organization.Groups.Users.Get(\n\t\tcontext.TODO(),\n\t\t\"group_id\",\n\t\t\"user_id\",\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", user.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.groups.users.UserRetrieveParams;
+
+              import
+              com.openai.models.admin.organization.groups.users.UserRetrieveResponse;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      UserRetrieveParams params = UserRetrieveParams.builder()
+                          .groupId("group_id")
+                          .userId("user_id")
+                          .build();
+                      UserRetrieveResponse user = client.admin().organization().groups().users().retrieve(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              user = openai.admin.organization.groups.users.retrieve("user_id",
+              group_id: "group_id")
+
+
+              puts(user)
+          response: |
+            {
+                "id": "user_abc123",
+                "name": "Ada Lovelace",
+                "email": "ada@example.com",
+                "picture": null,
+                "is_service_account": false,
+                "user_type": "user"
+            }
     delete:
       security:
         - AdminApiKeyAuth: []
@@ -18755,6 +19299,238 @@ paths:
                 },
               ],
             }
+  /organization/projects/{project_id}/data_retention:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Retrieves project data retention controls.
+      operationId: retrieve-project-data-retention
+      tags:
+        - Data retention
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project to inspect.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Project data retention controls retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectDataRetention'
+      x-oaiMeta:
+        name: Retrieve project data retention
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/organization/projects/proj_abc/data_retention
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const projectDataRetention = await
+              client.admin.organization.projects.dataRetention.retrieve(
+                'project_id',
+              );
+
+
+              console.log(projectDataRetention.object);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              project_data_retention =
+              client.admin.organization.projects.data_retention.retrieve(
+                  "project_id",
+              )
+
+              print(project_data_retention.object)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectDataRetention, err := client.Admin.Organization.Projects.DataRetention.Get(context.TODO(), \"project_id\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectDataRetention.Object)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.projects.dataretention.DataRetentionRetrieveParams;
+
+              import
+              com.openai.models.admin.organization.projects.dataretention.ProjectDataRetention;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      ProjectDataRetention projectDataRetention = client.admin().organization().projects().dataRetention().retrieve("project_id");
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              project_data_retention =
+              openai.admin.organization.projects.data_retention.retrieve("project_id")
+
+
+              puts(project_data_retention)
+          response: |
+            {
+                "object": "project.data_retention",
+                "type": "organization_default"
+            }
+    post:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Updates project data retention controls.
+      operationId: update-project-data-retention
+      tags:
+        - Data retention
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project to update.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: The desired project data retention setting.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProjectDataRetentionBody'
+      responses:
+        '200':
+          description: Project data retention controls updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectDataRetention'
+      x-oaiMeta:
+        name: Update project data retention
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl -X POST
+              https://api.openai.com/v1/organization/projects/proj_abc/data_retention
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json" \
+                -d '{
+                    "retention_type": "modified_abuse_monitoring"
+                }'
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const projectDataRetention = await
+              client.admin.organization.projects.dataRetention.update(
+                'project_id',
+                { retention_type: 'organization_default' },
+              );
+
+
+              console.log(projectDataRetention.object);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              project_data_retention =
+              client.admin.organization.projects.data_retention.update(
+                  project_id="project_id",
+                  retention_type="organization_default",
+              )
+
+              print(project_data_retention.object)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectDataRetention, err := client.Admin.Organization.Projects.DataRetention.Update(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\topenai.AdminOrganizationProjectDataRetentionUpdateParams{\n\t\t\tRetentionType: openai.AdminOrganizationProjectDataRetentionUpdateParamsRetentionTypeOrganizationDefault,\n\t\t},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectDataRetention.Object)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.projects.dataretention.DataRetentionUpdateParams;
+
+              import
+              com.openai.models.admin.organization.projects.dataretention.ProjectDataRetention;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      DataRetentionUpdateParams params = DataRetentionUpdateParams.builder()
+                          .projectId("project_id")
+                          .retentionType(DataRetentionUpdateParams.RetentionType.ORGANIZATION_DEFAULT)
+                          .build();
+                      ProjectDataRetention projectDataRetention = client.admin().organization().projects().dataRetention().update(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              project_data_retention =
+              openai.admin.organization.projects.data_retention.update(
+                "project_id",
+                retention_type: :organization_default
+              )
+
+
+              puts(project_data_retention)
+          response: |
+            {
+                "object": "project.data_retention",
+                "type": "modified_abuse_monitoring"
+            }
   /organization/projects/{project_id}/groups:
     get:
       security:
@@ -19019,6 +19795,138 @@ paths:
                 "created_at": 1711471533
             }
   /organization/projects/{project_id}/groups/{group_id}:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Retrieves a project's group.
+      operationId: retrieve-project-group
+      tags:
+        - Project groups
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project to inspect.
+          required: true
+          schema:
+            type: string
+        - name: group_id
+          in: path
+          description: The ID of the group to retrieve.
+          required: true
+          schema:
+            type: string
+        - name: group_type
+          in: query
+          description: The type of group to retrieve.
+          required: false
+          schema:
+            type: string
+            enum:
+              - group
+              - tenant_group
+            default: group
+      responses:
+        '200':
+          description: Project group retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectGroup'
+      x-oaiMeta:
+        name: Retrieve project group
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/organization/projects/proj_abc123/groups/group_01J1F8ABCDXYZ
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const projectGroup = await
+              client.admin.organization.projects.groups.retrieve('group_id', {
+                project_id: 'project_id',
+              });
+
+
+              console.log(projectGroup.group_id);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              project_group =
+              client.admin.organization.projects.groups.retrieve(
+                  group_id="group_id",
+                  project_id="project_id",
+              )
+
+              print(project_group.group_id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectGroup, err := client.Admin.Organization.Projects.Groups.Get(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"group_id\",\n\t\topenai.AdminOrganizationProjectGroupGetParams{},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectGroup.GroupID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.projects.groups.GroupRetrieveParams;
+
+              import
+              com.openai.models.admin.organization.projects.groups.ProjectGroup;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      GroupRetrieveParams params = GroupRetrieveParams.builder()
+                          .projectId("project_id")
+                          .groupId("group_id")
+                          .build();
+                      ProjectGroup projectGroup = client.admin().organization().projects().groups().retrieve(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              project_group =
+              openai.admin.organization.projects.groups.retrieve("group_id",
+              project_id: "project_id")
+
+
+              puts(project_group)
+          response: |
+            {
+                "object": "project.group",
+                "project_id": "proj_abc123",
+                "group_id": "group_01J1F8ABCDXYZ",
+                "group_name": "Support Team",
+                "group_type": "group",
+                "created_at": 1711471533
+            }
     delete:
       security:
         - AdminApiKeyAuth: []
@@ -20431,6 +21339,139 @@ paths:
                 "role": "owner",
                 "created_at": 1711471533
             }
+    post:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Updates a service account in the project.
+      operationId: update-project-service-account
+      tags:
+        - Projects
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project.
+          required: true
+          schema:
+            type: string
+        - name: service_account_id
+          in: path
+          description: The ID of the service account.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Fields to update on the service account.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProjectServiceAccountBody'
+      responses:
+        '200':
+          description: Project service account updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectServiceAccount'
+      x-oaiMeta:
+        name: Update project service account
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl -X POST
+              https://api.openai.com/v1/organization/projects/proj_abc/service_accounts/svc_acct_abc
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json" \
+                -d '{
+                    "name": "Updated service account",
+                    "role": "member"
+                }'
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const projectServiceAccount = await
+              client.admin.organization.projects.serviceAccounts.update(
+                'service_account_id',
+                { project_id: 'project_id' },
+              );
+
+
+              console.log(projectServiceAccount.id);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              project_service_account =
+              client.admin.organization.projects.service_accounts.update(
+                  service_account_id="service_account_id",
+                  project_id="project_id",
+              )
+
+              print(project_service_account.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectServiceAccount, err := client.Admin.Organization.Projects.ServiceAccounts.Update(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"service_account_id\",\n\t\topenai.AdminOrganizationProjectServiceAccountUpdateParams{},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectServiceAccount.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.projects.serviceaccounts.ProjectServiceAccount;
+
+              import
+              com.openai.models.admin.organization.projects.serviceaccounts.ServiceAccountUpdateParams;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      ServiceAccountUpdateParams params = ServiceAccountUpdateParams.builder()
+                          .projectId("project_id")
+                          .serviceAccountId("service_account_id")
+                          .build();
+                      ProjectServiceAccount projectServiceAccount = client.admin().organization().projects().serviceAccounts().update(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              project_service_account =
+              openai.admin.organization.projects.service_accounts.update("service_account_id",
+              project_id: "project_id")
+
+
+              puts(project_service_account)
+          response: |
+            {
+                "object": "organization.project.service_account",
+                "id": "svc_acct_abc",
+                "name": "Updated service account",
+                "role": "member",
+                "created_at": 1711471533
+            }
     delete:
       security:
         - AdminApiKeyAuth: []
@@ -20556,6 +21597,607 @@ paths:
             {
                 "object": "organization.project.service_account.deleted",
                 "id": "svc_acct_abc",
+                "deleted": true
+            }
+  /organization/projects/{project_id}/spend_alerts:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Lists project spend alerts.
+      operationId: list-project-spend-alerts
+      tags:
+        - Spend alerts
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project to inspect.
+          required: true
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: A limit on the number of spend alerts to return. Defaults to 20.
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+            maximum: 100
+        - name: order
+          in: query
+          description: Sort order for the returned spend alerts.
+          required: false
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: asc
+        - name: after
+          in: query
+          description: >-
+            Cursor for pagination. Provide the ID of the last spend alert from
+            the previous response to fetch the next page.
+          required: false
+          schema:
+            type: string
+        - name: before
+          in: query
+          description: >-
+            Cursor for pagination. Provide the ID of the first spend alert from
+            the previous response to fetch the previous page.
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Project spend alerts listed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectSpendAlertListResource'
+      x-oaiMeta:
+        name: List project spend alerts
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/organization/projects/proj_abc/spend_alerts?limit=20&order=asc
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              // Automatically fetches more pages as needed.
+
+              for await (const projectSpendAlert of
+              client.admin.organization.projects.spendAlerts.list(
+                'project_id',
+              )) {
+                console.log(projectSpendAlert.id);
+              }
+            python: |-
+              import os
+              from openai import OpenAI
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+              page = client.admin.organization.projects.spend_alerts.list(
+                  project_id="project_id",
+              )
+              page = page.data[0]
+              print(page.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tpage, err := client.Admin.Organization.Projects.SpendAlerts.List(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\topenai.AdminOrganizationProjectSpendAlertListParams{},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", page)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.projects.spendalerts.SpendAlertListPage;
+
+              import
+              com.openai.models.admin.organization.projects.spendalerts.SpendAlertListParams;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      SpendAlertListPage page = client.admin().organization().projects().spendAlerts().list("project_id");
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              page =
+              openai.admin.organization.projects.spend_alerts.list("project_id")
+
+
+              puts(page)
+          response: |
+            {
+                "object": "list",
+                "data": [
+                    {
+                        "id": "alert_abc123",
+                        "object": "project.spend_alert",
+                        "threshold_amount": 100000,
+                        "currency": "USD",
+                        "interval": "month",
+                        "notification_channel": {
+                            "type": "email",
+                            "recipients": ["finance@example.com"],
+                            "subject_prefix": "OpenAI spend alert"
+                        }
+                    }
+                ],
+                "first_id": "alert_abc123",
+                "last_id": "alert_abc123",
+                "has_more": false
+            }
+    post:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Creates a project spend alert.
+      operationId: create-project-spend-alert
+      tags:
+        - Spend alerts
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project to update.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Parameters for the project spend alert you want to create.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSpendAlertBody'
+      responses:
+        '200':
+          description: Project spend alert created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectSpendAlert'
+      x-oaiMeta:
+        name: Create project spend alert
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl -X POST
+              https://api.openai.com/v1/organization/projects/proj_abc/spend_alerts
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json" \
+                -d '{
+                    "threshold_amount": 100000,
+                    "currency": "USD",
+                    "interval": "month",
+                    "notification_channel": {
+                        "type": "email",
+                        "recipients": ["finance@example.com"],
+                        "subject_prefix": "OpenAI spend alert"
+                    }
+                }'
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const projectSpendAlert = await
+              client.admin.organization.projects.spendAlerts.create(
+                'project_id',
+                {
+                  currency: 'USD',
+                  interval: 'month',
+                  notification_channel: { recipients: ['string'], type: 'email' },
+                  threshold_amount: 0,
+                },
+              );
+
+
+              console.log(projectSpendAlert.id);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              project_spend_alert =
+              client.admin.organization.projects.spend_alerts.create(
+                  project_id="project_id",
+                  currency="USD",
+                  interval="month",
+                  notification_channel={
+                      "recipients": ["string"],
+                      "type": "email",
+                  },
+                  threshold_amount=0,
+              )
+
+              print(project_spend_alert.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectSpendAlert, err := client.Admin.Organization.Projects.SpendAlerts.New(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\topenai.AdminOrganizationProjectSpendAlertNewParams{\n\t\t\tCurrency: openai.AdminOrganizationProjectSpendAlertNewParamsCurrencyUsd,\n\t\t\tInterval: openai.AdminOrganizationProjectSpendAlertNewParamsIntervalMonth,\n\t\t\tNotificationChannel: openai.AdminOrganizationProjectSpendAlertNewParamsNotificationChannel{\n\t\t\t\tRecipients: []string{\"string\"},\n\t\t\t},\n\t\t\tThresholdAmount: 0,\n\t\t},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectSpendAlert.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.projects.spendalerts.ProjectSpendAlert;
+
+              import
+              com.openai.models.admin.organization.projects.spendalerts.SpendAlertCreateParams;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      SpendAlertCreateParams params = SpendAlertCreateParams.builder()
+                          .projectId("project_id")
+                          .currency(SpendAlertCreateParams.Currency.USD)
+                          .interval(SpendAlertCreateParams.Interval.MONTH)
+                          .notificationChannel(SpendAlertCreateParams.NotificationChannel.builder()
+                              .addRecipient("string")
+                              .build())
+                          .thresholdAmount(0L)
+                          .build();
+                      ProjectSpendAlert projectSpendAlert = client.admin().organization().projects().spendAlerts().create(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              project_spend_alert =
+              openai.admin.organization.projects.spend_alerts.create(
+                "project_id",
+                currency: :USD,
+                interval: :month,
+                notification_channel: {recipients: ["string"], type: :email},
+                threshold_amount: 0
+              )
+
+
+              puts(project_spend_alert)
+          response: |
+            {
+                "id": "alert_abc123",
+                "object": "project.spend_alert",
+                "threshold_amount": 100000,
+                "currency": "USD",
+                "interval": "month",
+                "notification_channel": {
+                    "type": "email",
+                    "recipients": ["finance@example.com"],
+                    "subject_prefix": "OpenAI spend alert"
+                }
+            }
+  /organization/projects/{project_id}/spend_alerts/{alert_id}:
+    post:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Updates a project spend alert.
+      operationId: update-project-spend-alert
+      tags:
+        - Spend alerts
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project to update.
+          required: true
+          schema:
+            type: string
+        - name: alert_id
+          in: path
+          description: The ID of the spend alert to update.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Fields to update on the project spend alert.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSpendAlertBody'
+      responses:
+        '200':
+          description: Project spend alert updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectSpendAlert'
+      x-oaiMeta:
+        name: Update project spend alert
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl -X POST
+              https://api.openai.com/v1/organization/projects/proj_abc/spend_alerts/alert_abc123
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json" \
+                -d '{
+                    "threshold_amount": 150000,
+                    "currency": "USD",
+                    "interval": "month",
+                    "notification_channel": {
+                        "type": "email",
+                        "recipients": ["finance@example.com"],
+                        "subject_prefix": "OpenAI spend alert"
+                    }
+                }'
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const projectSpendAlert = await
+              client.admin.organization.projects.spendAlerts.update('alert_id',
+              {
+                project_id: 'project_id',
+                currency: 'USD',
+                interval: 'month',
+                notification_channel: { recipients: ['string'], type: 'email' },
+                threshold_amount: 0,
+              });
+
+
+              console.log(projectSpendAlert.id);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              project_spend_alert =
+              client.admin.organization.projects.spend_alerts.update(
+                  alert_id="alert_id",
+                  project_id="project_id",
+                  currency="USD",
+                  interval="month",
+                  notification_channel={
+                      "recipients": ["string"],
+                      "type": "email",
+                  },
+                  threshold_amount=0,
+              )
+
+              print(project_spend_alert.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectSpendAlert, err := client.Admin.Organization.Projects.SpendAlerts.Update(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"alert_id\",\n\t\topenai.AdminOrganizationProjectSpendAlertUpdateParams{\n\t\t\tCurrency: openai.AdminOrganizationProjectSpendAlertUpdateParamsCurrencyUsd,\n\t\t\tInterval: openai.AdminOrganizationProjectSpendAlertUpdateParamsIntervalMonth,\n\t\t\tNotificationChannel: openai.AdminOrganizationProjectSpendAlertUpdateParamsNotificationChannel{\n\t\t\t\tRecipients: []string{\"string\"},\n\t\t\t},\n\t\t\tThresholdAmount: 0,\n\t\t},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectSpendAlert.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.projects.spendalerts.ProjectSpendAlert;
+
+              import
+              com.openai.models.admin.organization.projects.spendalerts.SpendAlertUpdateParams;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      SpendAlertUpdateParams params = SpendAlertUpdateParams.builder()
+                          .projectId("project_id")
+                          .alertId("alert_id")
+                          .currency(SpendAlertUpdateParams.Currency.USD)
+                          .interval(SpendAlertUpdateParams.Interval.MONTH)
+                          .notificationChannel(SpendAlertUpdateParams.NotificationChannel.builder()
+                              .addRecipient("string")
+                              .build())
+                          .thresholdAmount(0L)
+                          .build();
+                      ProjectSpendAlert projectSpendAlert = client.admin().organization().projects().spendAlerts().update(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              project_spend_alert =
+              openai.admin.organization.projects.spend_alerts.update(
+                "alert_id",
+                project_id: "project_id",
+                currency: :USD,
+                interval: :month,
+                notification_channel: {recipients: ["string"], type: :email},
+                threshold_amount: 0
+              )
+
+
+              puts(project_spend_alert)
+          response: |
+            {
+                "id": "alert_abc123",
+                "object": "project.spend_alert",
+                "threshold_amount": 150000,
+                "currency": "USD",
+                "interval": "month",
+                "notification_channel": {
+                    "type": "email",
+                    "recipients": ["finance@example.com"],
+                    "subject_prefix": "OpenAI spend alert"
+                }
+            }
+    delete:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Deletes a project spend alert.
+      operationId: delete-project-spend-alert
+      tags:
+        - Spend alerts
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project to update.
+          required: true
+          schema:
+            type: string
+        - name: alert_id
+          in: path
+          description: The ID of the spend alert to delete.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Project spend alert deleted successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectSpendAlertDeletedResource'
+      x-oaiMeta:
+        name: Delete project spend alert
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl -X DELETE
+              https://api.openai.com/v1/organization/projects/proj_abc/spend_alerts/alert_abc123
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const projectSpendAlertDeleted = await
+              client.admin.organization.projects.spendAlerts.delete(
+                'alert_id',
+                { project_id: 'project_id' },
+              );
+
+
+              console.log(projectSpendAlertDeleted.id);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              project_spend_alert_deleted =
+              client.admin.organization.projects.spend_alerts.delete(
+                  alert_id="alert_id",
+                  project_id="project_id",
+              )
+
+              print(project_spend_alert_deleted.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectSpendAlertDeleted, err := client.Admin.Organization.Projects.SpendAlerts.Delete(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"alert_id\",\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectSpendAlertDeleted.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.projects.spendalerts.ProjectSpendAlertDeleted;
+
+              import
+              com.openai.models.admin.organization.projects.spendalerts.SpendAlertDeleteParams;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      SpendAlertDeleteParams params = SpendAlertDeleteParams.builder()
+                          .projectId("project_id")
+                          .alertId("alert_id")
+                          .build();
+                      ProjectSpendAlertDeleted projectSpendAlertDeleted = client.admin().organization().projects().spendAlerts().delete(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              project_spend_alert_deleted =
+              openai.admin.organization.projects.spend_alerts.delete("alert_id",
+              project_id: "project_id")
+
+
+              puts(project_spend_alert_deleted)
+          response: |
+            {
+                "id": "alert_abc123",
+                "object": "project.spend_alert.deleted",
                 "deleted": true
             }
   /organization/projects/{project_id}/users:
@@ -21434,6 +23076,107 @@ paths:
                 "predefined_role": false
             }
   /organization/roles/{role_id}:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Retrieves an organization role.
+      operationId: retrieve-role
+      tags:
+        - Roles
+      parameters:
+        - name: role_id
+          in: path
+          description: The ID of the role to retrieve.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Role retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role'
+      x-oaiMeta:
+        name: Retrieve organization role
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/organization/roles/role_01J1F8ROLE01 \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const role = await
+              client.admin.organization.roles.retrieve('role_id');
+
+
+              console.log(role.id);
+            python: |-
+              import os
+              from openai import OpenAI
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+              role = client.admin.organization.roles.retrieve(
+                  "role_id",
+              )
+              print(role.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\trole, err := client.Admin.Organization.Roles.Get(context.TODO(), \"role_id\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", role.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import com.openai.models.admin.organization.roles.Role;
+
+              import
+              com.openai.models.admin.organization.roles.RoleRetrieveParams;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      Role role = client.admin().organization().roles().retrieve("role_id");
+                  }
+              }
+            ruby: |-
+              require "openai"
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+              role = openai.admin.organization.roles.retrieve("role_id")
+
+              puts(role)
+          response: |
+            {
+                "object": "role",
+                "id": "role_01J1F8ROLE01",
+                "name": "API Group Manager",
+                "description": "Allows managing organization groups",
+                "permissions": [
+                    "api.groups.read",
+                    "api.groups.write"
+                ],
+                "resource_type": "api.organization",
+                "predefined_role": false
+            }
     post:
       security:
         - AdminApiKeyAuth: []
@@ -21643,6 +23386,552 @@ paths:
             {
                 "object": "role.deleted",
                 "id": "role_01J1F8ROLE01",
+                "deleted": true
+            }
+  /organization/spend_alerts:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Lists organization spend alerts.
+      operationId: list-organization-spend-alerts
+      tags:
+        - Spend alerts
+      parameters:
+        - name: limit
+          in: query
+          description: A limit on the number of spend alerts to return. Defaults to 20.
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+            maximum: 100
+        - name: order
+          in: query
+          description: Sort order for the returned spend alerts.
+          required: false
+          schema:
+            type: string
+            enum:
+              - asc
+              - desc
+            default: asc
+        - name: after
+          in: query
+          description: >-
+            Cursor for pagination. Provide the ID of the last spend alert from
+            the previous response to fetch the next page.
+          required: false
+          schema:
+            type: string
+        - name: before
+          in: query
+          description: >-
+            Cursor for pagination. Provide the ID of the first spend alert from
+            the previous response to fetch the previous page.
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Organization spend alerts listed successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationSpendAlertListResource'
+      x-oaiMeta:
+        name: List organization spend alerts
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/organization/spend_alerts?limit=20&order=asc
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              // Automatically fetches more pages as needed.
+
+              for await (const organizationSpendAlert of
+              client.admin.organization.spendAlerts.list()) {
+                console.log(organizationSpendAlert.id);
+              }
+            python: |-
+              import os
+              from openai import OpenAI
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+              page = client.admin.organization.spend_alerts.list()
+              page = page.data[0]
+              print(page.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tpage, err := client.Admin.Organization.SpendAlerts.List(context.TODO(), openai.AdminOrganizationSpendAlertListParams{})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", page)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.spendalerts.SpendAlertListPage;
+
+              import
+              com.openai.models.admin.organization.spendalerts.SpendAlertListParams;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      SpendAlertListPage page = client.admin().organization().spendAlerts().list();
+                  }
+              }
+            ruby: |-
+              require "openai"
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+              page = openai.admin.organization.spend_alerts.list
+
+              puts(page)
+          response: |
+            {
+                "object": "list",
+                "data": [
+                    {
+                        "id": "alert_abc123",
+                        "object": "organization.spend_alert",
+                        "threshold_amount": 100000,
+                        "currency": "USD",
+                        "interval": "month",
+                        "notification_channel": {
+                            "type": "email",
+                            "recipients": ["finance@example.com"],
+                            "subject_prefix": "OpenAI spend alert"
+                        }
+                    }
+                ],
+                "first_id": "alert_abc123",
+                "last_id": "alert_abc123",
+                "has_more": false
+            }
+    post:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Creates an organization spend alert.
+      operationId: create-organization-spend-alert
+      tags:
+        - Spend alerts
+      requestBody:
+        description: Parameters for the organization spend alert you want to create.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSpendAlertBody'
+      responses:
+        '200':
+          description: Organization spend alert created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationSpendAlert'
+      x-oaiMeta:
+        name: Create organization spend alert
+        group: administration
+        examples:
+          request:
+            curl: |
+              curl -X POST https://api.openai.com/v1/organization/spend_alerts \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json" \
+                -d '{
+                    "threshold_amount": 100000,
+                    "currency": "USD",
+                    "interval": "month",
+                    "notification_channel": {
+                        "type": "email",
+                        "recipients": ["finance@example.com"],
+                        "subject_prefix": "OpenAI spend alert"
+                    }
+                }'
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const organizationSpendAlert = await
+              client.admin.organization.spendAlerts.create({
+                currency: 'USD',
+                interval: 'month',
+                notification_channel: { recipients: ['string'], type: 'email' },
+                threshold_amount: 0,
+              });
+
+
+              console.log(organizationSpendAlert.id);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              organization_spend_alert =
+              client.admin.organization.spend_alerts.create(
+                  currency="USD",
+                  interval="month",
+                  notification_channel={
+                      "recipients": ["string"],
+                      "type": "email",
+                  },
+                  threshold_amount=0,
+              )
+
+              print(organization_spend_alert.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\torganizationSpendAlert, err := client.Admin.Organization.SpendAlerts.New(context.TODO(), openai.AdminOrganizationSpendAlertNewParams{\n\t\tCurrency: openai.AdminOrganizationSpendAlertNewParamsCurrencyUsd,\n\t\tInterval: openai.AdminOrganizationSpendAlertNewParamsIntervalMonth,\n\t\tNotificationChannel: openai.AdminOrganizationSpendAlertNewParamsNotificationChannel{\n\t\t\tRecipients: []string{\"string\"},\n\t\t},\n\t\tThresholdAmount: 0,\n\t})\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", organizationSpendAlert.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.spendalerts.OrganizationSpendAlert;
+
+              import
+              com.openai.models.admin.organization.spendalerts.SpendAlertCreateParams;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      SpendAlertCreateParams params = SpendAlertCreateParams.builder()
+                          .currency(SpendAlertCreateParams.Currency.USD)
+                          .interval(SpendAlertCreateParams.Interval.MONTH)
+                          .notificationChannel(SpendAlertCreateParams.NotificationChannel.builder()
+                              .addRecipient("string")
+                              .build())
+                          .thresholdAmount(0L)
+                          .build();
+                      OrganizationSpendAlert organizationSpendAlert = client.admin().organization().spendAlerts().create(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              organization_spend_alert =
+              openai.admin.organization.spend_alerts.create(
+                currency: :USD,
+                interval: :month,
+                notification_channel: {recipients: ["string"], type: :email},
+                threshold_amount: 0
+              )
+
+
+              puts(organization_spend_alert)
+          response: |
+            {
+                "id": "alert_abc123",
+                "object": "organization.spend_alert",
+                "threshold_amount": 100000,
+                "currency": "USD",
+                "interval": "month",
+                "notification_channel": {
+                    "type": "email",
+                    "recipients": ["finance@example.com"],
+                    "subject_prefix": "OpenAI spend alert"
+                }
+            }
+  /organization/spend_alerts/{alert_id}:
+    post:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Updates an organization spend alert.
+      operationId: update-organization-spend-alert
+      tags:
+        - Spend alerts
+      parameters:
+        - name: alert_id
+          in: path
+          description: The ID of the spend alert to update.
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Fields to update on the organization spend alert.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSpendAlertBody'
+      responses:
+        '200':
+          description: Organization spend alert updated successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationSpendAlert'
+      x-oaiMeta:
+        name: Update organization spend alert
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl -X POST
+              https://api.openai.com/v1/organization/spend_alerts/alert_abc123 \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json" \
+                -d '{
+                    "threshold_amount": 150000,
+                    "currency": "USD",
+                    "interval": "month",
+                    "notification_channel": {
+                        "type": "email",
+                        "recipients": ["finance@example.com"],
+                        "subject_prefix": "OpenAI spend alert"
+                    }
+                }'
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const organizationSpendAlert = await
+              client.admin.organization.spendAlerts.update('alert_id', {
+                currency: 'USD',
+                interval: 'month',
+                notification_channel: { recipients: ['string'], type: 'email' },
+                threshold_amount: 0,
+              });
+
+
+              console.log(organizationSpendAlert.id);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              organization_spend_alert =
+              client.admin.organization.spend_alerts.update(
+                  alert_id="alert_id",
+                  currency="USD",
+                  interval="month",
+                  notification_channel={
+                      "recipients": ["string"],
+                      "type": "email",
+                  },
+                  threshold_amount=0,
+              )
+
+              print(organization_spend_alert.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\torganizationSpendAlert, err := client.Admin.Organization.SpendAlerts.Update(\n\t\tcontext.TODO(),\n\t\t\"alert_id\",\n\t\topenai.AdminOrganizationSpendAlertUpdateParams{\n\t\t\tCurrency: openai.AdminOrganizationSpendAlertUpdateParamsCurrencyUsd,\n\t\t\tInterval: openai.AdminOrganizationSpendAlertUpdateParamsIntervalMonth,\n\t\t\tNotificationChannel: openai.AdminOrganizationSpendAlertUpdateParamsNotificationChannel{\n\t\t\t\tRecipients: []string{\"string\"},\n\t\t\t},\n\t\t\tThresholdAmount: 0,\n\t\t},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", organizationSpendAlert.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.spendalerts.OrganizationSpendAlert;
+
+              import
+              com.openai.models.admin.organization.spendalerts.SpendAlertUpdateParams;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      SpendAlertUpdateParams params = SpendAlertUpdateParams.builder()
+                          .alertId("alert_id")
+                          .currency(SpendAlertUpdateParams.Currency.USD)
+                          .interval(SpendAlertUpdateParams.Interval.MONTH)
+                          .notificationChannel(SpendAlertUpdateParams.NotificationChannel.builder()
+                              .addRecipient("string")
+                              .build())
+                          .thresholdAmount(0L)
+                          .build();
+                      OrganizationSpendAlert organizationSpendAlert = client.admin().organization().spendAlerts().update(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              organization_spend_alert =
+              openai.admin.organization.spend_alerts.update(
+                "alert_id",
+                currency: :USD,
+                interval: :month,
+                notification_channel: {recipients: ["string"], type: :email},
+                threshold_amount: 0
+              )
+
+
+              puts(organization_spend_alert)
+          response: |
+            {
+                "id": "alert_abc123",
+                "object": "organization.spend_alert",
+                "threshold_amount": 150000,
+                "currency": "USD",
+                "interval": "month",
+                "notification_channel": {
+                    "type": "email",
+                    "recipients": ["finance@example.com"],
+                    "subject_prefix": "OpenAI spend alert"
+                }
+            }
+    delete:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Deletes an organization spend alert.
+      operationId: delete-organization-spend-alert
+      tags:
+        - Spend alerts
+      parameters:
+        - name: alert_id
+          in: path
+          description: The ID of the spend alert to delete.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Organization spend alert deleted successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationSpendAlertDeletedResource'
+      x-oaiMeta:
+        name: Delete organization spend alert
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl -X DELETE
+              https://api.openai.com/v1/organization/spend_alerts/alert_abc123 \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const organizationSpendAlertDeleted = await
+              client.admin.organization.spendAlerts.delete(
+                'alert_id',
+              );
+
+
+              console.log(organizationSpendAlertDeleted.id);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              organization_spend_alert_deleted =
+              client.admin.organization.spend_alerts.delete(
+                  "alert_id",
+              )
+
+              print(organization_spend_alert_deleted.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\torganizationSpendAlertDeleted, err := client.Admin.Organization.SpendAlerts.Delete(context.TODO(), \"alert_id\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", organizationSpendAlertDeleted.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.spendalerts.OrganizationSpendAlertDeleted;
+
+              import
+              com.openai.models.admin.organization.spendalerts.SpendAlertDeleteParams;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      OrganizationSpendAlertDeleted organizationSpendAlertDeleted = client.admin().organization().spendAlerts().delete("alert_id");
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              organization_spend_alert_deleted =
+              openai.admin.organization.spend_alerts.delete("alert_id")
+
+
+              puts(organization_spend_alert_deleted)
+          response: |
+            {
+                "id": "alert_abc123",
+                "object": "organization.spend_alert.deleted",
                 "deleted": true
             }
   /organization/usage/audio_speeches:
@@ -24442,6 +26731,131 @@ paths:
                 }
             }
   /organization/users/{user_id}/roles/{role_id}:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Retrieves an organization role assigned to a user.
+      operationId: retrieve-user-role
+      tags:
+        - User organization role assignments
+      parameters:
+        - name: user_id
+          in: path
+          description: The ID of the user to inspect.
+          required: true
+          schema:
+            type: string
+        - name: role_id
+          in: path
+          description: The ID of the organization role to retrieve for the user.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Organization role retrieved for the user successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssignedRoleDetails'
+      x-oaiMeta:
+        name: Retrieve user organization role
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/organization/users/user_abc123/roles/role_01J1F8ROLE01
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const role = await
+              client.admin.organization.users.roles.retrieve('role_id', {
+                user_id: 'user_id',
+              });
+
+
+              console.log(role.id);
+            python: |-
+              import os
+              from openai import OpenAI
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+              role = client.admin.organization.users.roles.retrieve(
+                  role_id="role_id",
+                  user_id="user_id",
+              )
+              print(role.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\trole, err := client.Admin.Organization.Users.Roles.Get(\n\t\tcontext.TODO(),\n\t\t\"user_id\",\n\t\t\"role_id\",\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", role.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.users.roles.RoleRetrieveParams;
+
+              import
+              com.openai.models.admin.organization.users.roles.RoleRetrieveResponse;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      RoleRetrieveParams params = RoleRetrieveParams.builder()
+                          .userId("user_id")
+                          .roleId("role_id")
+                          .build();
+                      RoleRetrieveResponse role = client.admin().organization().users().roles().retrieve(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              role = openai.admin.organization.users.roles.retrieve("role_id",
+              user_id: "user_id")
+
+
+              puts(role)
+          response: |
+            {
+                "id": "role_01J1F8ROLE01",
+                "name": "API Group Manager",
+                "permissions": [
+                    "api.groups.read",
+                    "api.groups.write"
+                ],
+                "resource_type": "api.organization",
+                "predefined_role": false,
+                "description": "Allows managing organization groups",
+                "created_at": 1711471533,
+                "updated_at": 1711472599,
+                "created_by": "user_abc123",
+                "created_by_user_obj": null,
+                "metadata": {},
+                "assignment_sources": null
+            }
     delete:
       security:
         - AdminApiKeyAuth: []
@@ -24863,6 +27277,141 @@ paths:
                 }
             }
   /projects/{project_id}/groups/{group_id}/roles/{role_id}:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Retrieves a project role assigned to a group.
+      operationId: retrieve-project-group-role
+      tags:
+        - Project group role assignments
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project to inspect.
+          required: true
+          schema:
+            type: string
+        - name: group_id
+          in: path
+          description: The ID of the group to inspect.
+          required: true
+          schema:
+            type: string
+        - name: role_id
+          in: path
+          description: The ID of the project role to retrieve for the group.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Project role retrieved for the group successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssignedRoleDetails'
+      x-oaiMeta:
+        name: Retrieve project group role
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/projects/proj_abc123/groups/group_01J1F8ABCDXYZ/roles/role_01J1F8PROJ
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const role = await
+              client.admin.organization.projects.groups.roles.retrieve('role_id',
+              {
+                project_id: 'project_id',
+                group_id: 'group_id',
+              });
+
+
+              console.log(role.id);
+            python: |-
+              import os
+              from openai import OpenAI
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+              role = client.admin.organization.projects.groups.roles.retrieve(
+                  role_id="role_id",
+                  project_id="project_id",
+                  group_id="group_id",
+              )
+              print(role.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\trole, err := client.Admin.Organization.Projects.Groups.Roles.Get(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"group_id\",\n\t\t\"role_id\",\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", role.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.projects.groups.roles.RoleRetrieveParams;
+
+              import
+              com.openai.models.admin.organization.projects.groups.roles.RoleRetrieveResponse;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      RoleRetrieveParams params = RoleRetrieveParams.builder()
+                          .projectId("project_id")
+                          .groupId("group_id")
+                          .roleId("role_id")
+                          .build();
+                      RoleRetrieveResponse role = client.admin().organization().projects().groups().roles().retrieve(params);
+                  }
+              }
+            ruby: |-
+              require "openai"
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+              role = openai.admin.organization.projects.groups.roles.retrieve(
+                "role_id",
+                project_id: "project_id",
+                group_id: "group_id"
+              )
+
+              puts(role)
+          response: |
+            {
+                "id": "role_01J1F8PROJ",
+                "name": "API Project Key Manager",
+                "permissions": [
+                    "api.organization.projects.api_keys.read",
+                    "api.organization.projects.api_keys.write"
+                ],
+                "resource_type": "api.project",
+                "predefined_role": false,
+                "description": "Allows managing API keys for the project",
+                "created_at": 1711471533,
+                "updated_at": 1711472599,
+                "created_by": "user_abc123",
+                "created_by_user_obj": null,
+                "metadata": {},
+                "assignment_sources": null
+            }
     delete:
       security:
         - AdminApiKeyAuth: []
@@ -25255,6 +27804,126 @@ paths:
                 "predefined_role": false
             }
   /projects/{project_id}/roles/{role_id}:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Retrieves a project role.
+      operationId: retrieve-project-role
+      tags:
+        - Roles
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project.
+          required: true
+          schema:
+            type: string
+        - name: role_id
+          in: path
+          description: The ID of the role to retrieve.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Project role retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role'
+      x-oaiMeta:
+        name: Retrieve project role
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/projects/proj_abc123/roles/role_01J1F8PROJ
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const role = await
+              client.admin.organization.projects.roles.retrieve('role_id', {
+                project_id: 'project_id',
+              });
+
+
+              console.log(role.id);
+            python: |-
+              import os
+              from openai import OpenAI
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+              role = client.admin.organization.projects.roles.retrieve(
+                  role_id="role_id",
+                  project_id="project_id",
+              )
+              print(role.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\trole, err := client.Admin.Organization.Projects.Roles.Get(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"role_id\",\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", role.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.projects.roles.RoleRetrieveParams;
+
+              import com.openai.models.admin.organization.roles.Role;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      RoleRetrieveParams params = RoleRetrieveParams.builder()
+                          .projectId("project_id")
+                          .roleId("role_id")
+                          .build();
+                      Role role = client.admin().organization().projects().roles().retrieve(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              role =
+              openai.admin.organization.projects.roles.retrieve("role_id",
+              project_id: "project_id")
+
+
+              puts(role)
+          response: |
+            {
+                "object": "role",
+                "id": "role_01J1F8PROJ",
+                "name": "API Project Key Manager",
+                "description": "Allows managing API keys for the project",
+                "permissions": [
+                    "api.organization.projects.api_keys.read",
+                    "api.organization.projects.api_keys.write"
+                ],
+                "resource_type": "api.project",
+                "predefined_role": false
+            }
     post:
       security:
         - AdminApiKeyAuth: []
@@ -25812,6 +28481,141 @@ paths:
                 }
             }
   /projects/{project_id}/users/{user_id}/roles/{role_id}:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Retrieves a project role assigned to a user.
+      operationId: retrieve-project-user-role
+      tags:
+        - Project user role assignments
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project to inspect.
+          required: true
+          schema:
+            type: string
+        - name: user_id
+          in: path
+          description: The ID of the user to inspect.
+          required: true
+          schema:
+            type: string
+        - name: role_id
+          in: path
+          description: The ID of the project role to retrieve for the user.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Project role retrieved for the user successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssignedRoleDetails'
+      x-oaiMeta:
+        name: Retrieve project user role
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/projects/proj_abc123/users/user_abc123/roles/role_01J1F8PROJ
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const role = await
+              client.admin.organization.projects.users.roles.retrieve('role_id',
+              {
+                project_id: 'project_id',
+                user_id: 'user_id',
+              });
+
+
+              console.log(role.id);
+            python: |-
+              import os
+              from openai import OpenAI
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+              role = client.admin.organization.projects.users.roles.retrieve(
+                  role_id="role_id",
+                  project_id="project_id",
+                  user_id="user_id",
+              )
+              print(role.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\trole, err := client.Admin.Organization.Projects.Users.Roles.Get(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"user_id\",\n\t\t\"role_id\",\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", role.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.projects.users.roles.RoleRetrieveParams;
+
+              import
+              com.openai.models.admin.organization.projects.users.roles.RoleRetrieveResponse;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      RoleRetrieveParams params = RoleRetrieveParams.builder()
+                          .projectId("project_id")
+                          .userId("user_id")
+                          .roleId("role_id")
+                          .build();
+                      RoleRetrieveResponse role = client.admin().organization().projects().users().roles().retrieve(params);
+                  }
+              }
+            ruby: |-
+              require "openai"
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+              role = openai.admin.organization.projects.users.roles.retrieve(
+                "role_id",
+                project_id: "project_id",
+                user_id: "user_id"
+              )
+
+              puts(role)
+          response: |
+            {
+                "id": "role_01J1F8PROJ",
+                "name": "API Project Key Manager",
+                "permissions": [
+                    "api.organization.projects.api_keys.read",
+                    "api.organization.projects.api_keys.write"
+                ],
+                "resource_type": "api.project",
+                "predefined_role": false,
+                "description": "Allows managing API keys for the project",
+                "created_at": 1711471533,
+                "updated_at": 1711472599,
+                "created_by": "user_abc123",
+                "created_by_user_obj": null,
+                "metadata": {},
+                "assignment_sources": null
+            }
     delete:
       security:
         - AdminApiKeyAuth: []
@@ -39541,7 +42345,7 @@ components:
           description: When the role was last updated.
           anyOf:
             - type: integer
-              format: int64
+              format: unixtime
             - type: 'null'
         created_by:
           description: Identifier of the actor who created the role.
@@ -39560,6 +42364,23 @@ components:
             - type: object
               additionalProperties: true
             - type: 'null'
+        assignment_sources:
+          description: >-
+            Principals from which the role assignment is inherited, when
+            available.
+          anyOf:
+            - type: array
+              items:
+                type: object
+                properties:
+                  principal_id:
+                    type: string
+                  principal_type:
+                    type: string
+                required:
+                  - principal_id
+                  - principal_type
+            - type: 'null'
       required:
         - id
         - name
@@ -39572,6 +42393,7 @@ components:
         - created_by
         - created_by_user_obj
         - metadata
+        - assignment_sources
     AssistantObject:
       type: object
       title: Assistant
@@ -47143,6 +49965,31 @@ components:
         - $ref: '#/components/schemas/SpeechAudioDoneEvent'
       discriminator:
         propertyName: type
+    CreateSpendAlertBody:
+      type: object
+      description: Parameters for creating or updating a spend alert.
+      properties:
+        threshold_amount:
+          type: integer
+          minimum: 0
+          description: The alert threshold amount, in cents.
+        currency:
+          type: string
+          enum:
+            - USD
+          description: The currency for the threshold amount.
+        interval:
+          type: string
+          enum:
+            - month
+          description: The time interval for evaluating spend against the threshold.
+        notification_channel:
+          $ref: '#/components/schemas/SpendAlertNotificationChannel'
+      required:
+        - threshold_amount
+        - currency
+        - interval
+        - notification_channel
     CreateThreadAndRunRequest:
       type: object
       additionalProperties: false
@@ -51878,6 +54725,57 @@ components:
               "has_more": false,
               "next": null
           }
+    GroupMemberUser:
+      type: object
+      description: >-
+        Details about a user returned from an organization group membership
+        lookup.
+      properties:
+        id:
+          type: string
+          description: Identifier for the user.
+        name:
+          type: string
+          description: Display name of the user.
+        email:
+          description: Email address of the user, or `null` for users without an email.
+          anyOf:
+            - type: string
+            - type: 'null'
+        picture:
+          description: URL of the user's profile picture, if available.
+          anyOf:
+            - type: string
+            - type: 'null'
+        is_service_account:
+          description: Whether the user is a service account.
+          anyOf:
+            - type: boolean
+            - type: 'null'
+        user_type:
+          type: string
+          enum:
+            - user
+            - tenant_user
+          description: The type of user.
+      required:
+        - id
+        - name
+        - email
+        - picture
+        - is_service_account
+        - user_type
+      x-oaiMeta:
+        name: The group member user object
+        example: |
+          {
+              "id": "user_abc123",
+              "name": "Ada Lovelace",
+              "email": "ada@example.com",
+              "picture": null,
+              "is_service_account": false,
+              "user_type": "user"
+          }
     GroupResourceWithSuccess:
       type: object
       description: Response returned after updating a group.
@@ -51931,6 +54829,9 @@ components:
             identity provider.
         group_type:
           type: string
+          enum:
+            - group
+            - tenant_group
           description: The type of the group.
       required:
         - id
@@ -55487,6 +58388,34 @@ components:
       required:
         - object
         - data
+    OrganizationDataRetention:
+      type: object
+      description: Represents the organization's data retention control setting.
+      properties:
+        object:
+          type: string
+          enum:
+            - organization.data_retention
+          description: The object type, which is always `organization.data_retention`.
+          x-stainless-const: true
+        type:
+          type: string
+          enum:
+            - zero_data_retention
+            - modified_abuse_monitoring
+            - enhanced_zero_data_retention
+            - enhanced_modified_abuse_monitoring
+          description: The configured organization data retention type.
+      required:
+        - object
+        - type
+      x-oaiMeta:
+        name: The organization data retention object
+        example: |
+          {
+              "object": "organization.data_retention",
+              "type": "modified_abuse_monitoring"
+          }
     OrganizationProjectCertificate:
       type: object
       description: Represents an individual certificate configured at the project level.
@@ -55566,6 +58495,112 @@ components:
       required:
         - object
         - data
+    OrganizationSpendAlert:
+      type: object
+      description: Represents a spend alert configured at the organization level.
+      properties:
+        id:
+          type: string
+          description: The identifier, which can be referenced in API endpoints.
+        object:
+          type: string
+          enum:
+            - organization.spend_alert
+          description: The object type, which is always `organization.spend_alert`.
+          x-stainless-const: true
+        threshold_amount:
+          type: integer
+          description: The alert threshold amount, in cents.
+        currency:
+          type: string
+          enum:
+            - USD
+          description: The currency for the threshold amount.
+        interval:
+          type: string
+          enum:
+            - month
+          description: The time interval for evaluating spend against the threshold.
+        notification_channel:
+          $ref: '#/components/schemas/SpendAlertNotificationChannel'
+      required:
+        - id
+        - object
+        - threshold_amount
+        - currency
+        - interval
+        - notification_channel
+      x-oaiMeta:
+        name: The organization spend alert object
+        example: |
+          {
+              "id": "alert_abc123",
+              "object": "organization.spend_alert",
+              "threshold_amount": 100000,
+              "currency": "USD",
+              "interval": "month",
+              "notification_channel": {
+                  "type": "email",
+                  "recipients": ["finance@example.com"],
+                  "subject_prefix": "OpenAI spend alert"
+              }
+          }
+    OrganizationSpendAlertDeletedResource:
+      type: object
+      description: >-
+        Confirmation payload returned after deleting an organization spend
+        alert.
+      properties:
+        id:
+          type: string
+          description: The deleted spend alert ID.
+        object:
+          type: string
+          enum:
+            - organization.spend_alert.deleted
+          description: Always `organization.spend_alert.deleted`.
+          x-stainless-const: true
+        deleted:
+          type: boolean
+          description: Whether the spend alert was deleted.
+      required:
+        - id
+        - object
+        - deleted
+    OrganizationSpendAlertListResource:
+      type: object
+      description: Paginated list of organization spend alerts.
+      properties:
+        object:
+          type: string
+          enum:
+            - list
+          description: Always `list`.
+          x-stainless-const: true
+        data:
+          type: array
+          description: Spend alerts returned in the current page.
+          items:
+            $ref: '#/components/schemas/OrganizationSpendAlert'
+        first_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: The ID of the first spend alert in this page.
+        last_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: The ID of the last spend alert in this page.
+        has_more:
+          type: boolean
+          description: Whether more spend alerts are available when paginating.
+      required:
+        - object
+        - data
+        - first_id
+        - last_id
+        - has_more
     OtherChunkingStrategyResponseParam:
       type: object
       title: Other Chunking Strategy
@@ -56016,6 +59051,36 @@ components:
           description: External key ID to associate with the project.
       required:
         - name
+    ProjectDataRetention:
+      type: object
+      description: Represents a project's data retention control setting.
+      properties:
+        object:
+          type: string
+          enum:
+            - project.data_retention
+          description: The object type, which is always `project.data_retention`.
+          x-stainless-const: true
+        type:
+          type: string
+          enum:
+            - organization_default
+            - none
+            - zero_data_retention
+            - modified_abuse_monitoring
+            - enhanced_zero_data_retention
+            - enhanced_modified_abuse_monitoring
+          description: The configured project data retention type.
+      required:
+        - object
+        - type
+      x-oaiMeta:
+        name: The project data retention object
+        example: |
+          {
+              "object": "project.data_retention",
+              "type": "organization_default"
+          }
     ProjectGroup:
       type: object
       description: Details about a group's membership in a project.
@@ -56037,6 +59102,9 @@ components:
           description: Display name of the group.
         group_type:
           type: string
+          enum:
+            - group
+            - tenant_group
           description: The type of the group.
         created_at:
           type: integer
@@ -56563,6 +59631,110 @@ components:
       required:
         - object
         - data
+        - has_more
+    ProjectSpendAlert:
+      type: object
+      description: Represents a spend alert configured at the project level.
+      properties:
+        id:
+          type: string
+          description: The identifier, which can be referenced in API endpoints.
+        object:
+          type: string
+          enum:
+            - project.spend_alert
+          description: The object type, which is always `project.spend_alert`.
+          x-stainless-const: true
+        threshold_amount:
+          type: integer
+          description: The alert threshold amount, in cents.
+        currency:
+          type: string
+          enum:
+            - USD
+          description: The currency for the threshold amount.
+        interval:
+          type: string
+          enum:
+            - month
+          description: The time interval for evaluating spend against the threshold.
+        notification_channel:
+          $ref: '#/components/schemas/SpendAlertNotificationChannel'
+      required:
+        - id
+        - object
+        - threshold_amount
+        - currency
+        - interval
+        - notification_channel
+      x-oaiMeta:
+        name: The project spend alert object
+        example: |
+          {
+              "id": "alert_abc123",
+              "object": "project.spend_alert",
+              "threshold_amount": 100000,
+              "currency": "USD",
+              "interval": "month",
+              "notification_channel": {
+                  "type": "email",
+                  "recipients": ["finance@example.com"],
+                  "subject_prefix": "OpenAI spend alert"
+              }
+          }
+    ProjectSpendAlertDeletedResource:
+      type: object
+      description: Confirmation payload returned after deleting a project spend alert.
+      properties:
+        id:
+          type: string
+          description: The deleted spend alert ID.
+        object:
+          type: string
+          enum:
+            - project.spend_alert.deleted
+          description: Always `project.spend_alert.deleted`.
+          x-stainless-const: true
+        deleted:
+          type: boolean
+          description: Whether the spend alert was deleted.
+      required:
+        - id
+        - object
+        - deleted
+    ProjectSpendAlertListResource:
+      type: object
+      description: Paginated list of project spend alerts.
+      properties:
+        object:
+          type: string
+          enum:
+            - list
+          description: Always `list`.
+          x-stainless-const: true
+        data:
+          type: array
+          description: Spend alerts returned in the current page.
+          items:
+            $ref: '#/components/schemas/ProjectSpendAlert'
+        first_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: The ID of the first spend alert in this page.
+        last_id:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: The ID of the last spend alert in this page.
+        has_more:
+          type: boolean
+          description: Whether more spend alerts are available when paginating.
+      required:
+        - object
+        - data
+        - first_id
+        - last_id
         - has_more
     ProjectUpdateRequest:
       type: object
@@ -70887,7 +74059,8 @@ components:
                           "name": "Ada Lovelace",
                           "email": "ada@example.com"
                       },
-                      "metadata": {}
+                      "metadata": {},
+                      "assignment_sources": null
                   }
               ],
               "has_more": false,
@@ -72416,6 +75589,29 @@ components:
               "total_tokens": 115
             }
           }
+    SpendAlertNotificationChannel:
+      type: object
+      description: Email notification settings for a spend alert.
+      properties:
+        type:
+          type: string
+          enum:
+            - email
+          description: The notification channel type. Currently only `email` is supported.
+          x-stainless-const: true
+        recipients:
+          type: array
+          description: Email addresses that receive the spend alert notification.
+          items:
+            type: string
+        subject_prefix:
+          anyOf:
+            - type: string
+            - type: 'null'
+          description: Optional subject prefix for alert emails.
+      required:
+        - type
+        - recipients
     StaticChunkingStrategy:
       type: object
       additionalProperties: false
@@ -73356,6 +76552,49 @@ components:
           {
               "name": "Escalations"
           }
+    UpdateOrganizationDataRetentionBody:
+      type: object
+      description: Parameters for updating organization data retention controls.
+      properties:
+        retention_type:
+          type: string
+          enum:
+            - zero_data_retention
+            - modified_abuse_monitoring
+            - enhanced_zero_data_retention
+            - enhanced_modified_abuse_monitoring
+          description: The desired organization data retention type.
+      required:
+        - retention_type
+    UpdateProjectDataRetentionBody:
+      type: object
+      description: Parameters for updating project data retention controls.
+      properties:
+        retention_type:
+          type: string
+          enum:
+            - organization_default
+            - none
+            - zero_data_retention
+            - modified_abuse_monitoring
+            - enhanced_zero_data_retention
+            - enhanced_modified_abuse_monitoring
+          description: The desired project data retention type.
+      required:
+        - retention_type
+    UpdateProjectServiceAccountBody:
+      type: object
+      description: Parameters for updating a project service account.
+      properties:
+        name:
+          type: string
+          description: The updated service account name.
+        role:
+          type: string
+          enum:
+            - member
+            - owner
+          description: The updated service account role.
     UpdateVectorStoreFileAttributesRequest:
       type: object
       additionalProperties: false
@@ -75313,7 +78552,7 @@ components:
           enum:
             - open_page
           description: |
-            The action type. Always `open_page`.
+            The action type.
           x-stainless-const: true
         url:
           description: |

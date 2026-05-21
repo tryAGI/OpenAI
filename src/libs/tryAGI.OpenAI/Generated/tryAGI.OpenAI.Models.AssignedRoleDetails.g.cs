@@ -59,7 +59,7 @@ namespace tryAGI.OpenAI
         /// When the role was last updated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        public long? UpdatedAt { get; set; }
+        public int? UpdatedAt { get; set; }
 
         /// <summary>
         /// Identifier of the actor who created the role.
@@ -78,6 +78,12 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public object? Metadata { get; set; }
+
+        /// <summary>
+        /// Principals from which the role assignment is inherited, when available.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("assignment_sources")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AssignedRoleDetailsAssignmentSourcesVariant1Item>? AssignmentSources { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -121,6 +127,9 @@ namespace tryAGI.OpenAI
         /// <param name="metadata">
         /// Arbitrary metadata stored on the role.
         /// </param>
+        /// <param name="assignmentSources">
+        /// Principals from which the role assignment is inherited, when available.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -132,10 +141,11 @@ namespace tryAGI.OpenAI
             bool predefinedRole,
             string? description,
             int? createdAt,
-            long? updatedAt,
+            int? updatedAt,
             string? createdBy,
             object? createdByUserObj,
-            object? metadata)
+            object? metadata,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AssignedRoleDetailsAssignmentSourcesVariant1Item>? assignmentSources)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -148,6 +158,7 @@ namespace tryAGI.OpenAI
             this.CreatedBy = createdBy;
             this.CreatedByUserObj = createdByUserObj;
             this.Metadata = metadata;
+            this.AssignmentSources = assignmentSources;
         }
 
         /// <summary>

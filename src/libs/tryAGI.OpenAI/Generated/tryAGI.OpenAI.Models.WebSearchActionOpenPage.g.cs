@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class WebSearchActionOpenPage
     {
         /// <summary>
-        /// The action type. Always `open_page`.
+        /// The action type.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchActionOpenPageTypeJsonConverter))]
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="WebSearchActionOpenPage" /> class.
         /// </summary>
         /// <param name="type">
-        /// The action type. Always `open_page`.
+        /// The action type.
         /// </param>
         /// <param name="url">
         /// The URL opened by the model.

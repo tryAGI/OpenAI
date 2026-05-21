@@ -40,8 +40,9 @@ namespace tryAGI.OpenAI
         /// The type of the group.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GroupResponseGroupTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string GroupType { get; set; }
+        public required global::tryAGI.OpenAI.GroupResponseGroupType GroupType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -75,13 +76,13 @@ namespace tryAGI.OpenAI
             string name,
             int createdAt,
             bool isScimManaged,
-            string groupType)
+            global::tryAGI.OpenAI.GroupResponseGroupType groupType)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
             this.IsScimManaged = isScimManaged;
-            this.GroupType = groupType ?? throw new global::System.ArgumentNullException(nameof(groupType));
+            this.GroupType = groupType;
         }
 
         /// <summary>

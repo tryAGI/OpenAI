@@ -113,6 +113,15 @@ Manage conversations and conversation items.
 | `retrieve-an-item` | `GET /conversations/{conversation_id}/items/{item_id}` | Get a single item from a conversation with the given IDs. |
 | `update-aconversation` | `POST /conversations/{conversation_id}` | Update a conversation |
 
+## `data-retention`
+
+| Command | Route | Description |
+|---------|-------|-------------|
+| `retrieve-organization-data-retention` | `GET /organization/data_retention` | Retrieves organization data retention controls. |
+| `retrieve-project-data-retention` | `GET /organization/projects/{project_id}/data_retention` | Retrieves project data retention controls. |
+| `update-organization-data-retention` | `POST /organization/data_retention` | Updates organization data retention controls. |
+| `update-project-data-retention` | `POST /organization/projects/{project_id}/data_retention` | Updates project data retention controls. |
+
 ## `embedding`
 
 Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.
@@ -179,6 +188,7 @@ Manage fine-tuning jobs to tailor a model to your specific training data.
 | `create-group` | `POST /organization/groups` | Creates a new group in the organization. |
 | `delete-group` | `DELETE /organization/groups/{group_id}` | Deletes a group from the organization. |
 | `list-groups` | `GET /organization/groups` | Lists all groups in the organization. |
+| `retrieve-group` | `GET /organization/groups/{group_id}` | Retrieves a group. |
 | `update-group` | `POST /organization/groups/{group_id}` | Updates a group's information. |
 
 ## `group-organization-role-assignment`
@@ -187,6 +197,7 @@ Manage fine-tuning jobs to tailor a model to your specific training data.
 |---------|-------|-------------|
 | `assign-organization-role-to-group` | `POST /organization/groups/{group_id}/roles` | Assigns an organization role to a group within the organization. |
 | `list-group-organization-role-assignments` | `GET /organization/groups/{group_id}/roles` | Lists the organization roles assigned to a group within the organization. |
+| `retrieve-group-organization-role` | `GET /organization/groups/{group_id}/roles/{role_id}` | Retrieves an organization role assigned to a group. |
 | `unassign-organization-role-from-group` | `DELETE /organization/groups/{group_id}/roles/{role_id}` | Unassigns an organization role from a group within the organization. |
 
 ## `group-user`
@@ -196,6 +207,7 @@ Manage fine-tuning jobs to tailor a model to your specific training data.
 | `add-group-user` | `POST /organization/groups/{group_id}/users` | Adds a user to a group. |
 | `list-group-users` | `GET /organization/groups/{group_id}/users` | Lists the users assigned to a group. |
 | `remove-group-user` | `DELETE /organization/groups/{group_id}/users/{user_id}` | Removes a user from a group. |
+| `retrieve-group-user` | `GET /organization/groups/{group_id}/users/{user_id}` | Retrieves a user in a group. |
 
 ## `hosted-tool`
 
@@ -267,6 +279,7 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 | `retrieve-project-model-permissions` | `GET /organization/projects/{project_id}/model_permissions` | Returns model permissions for a project. |
 | `retrieve-project-service-account` | `GET /organization/projects/{project_id}/service_accounts/{service_account_id}` | Retrieves a service account in the project. |
 | `retrieve-project-user` | `GET /organization/projects/{project_id}/users/{user_id}` | Retrieves a user in the project. |
+| `update-project-service-account` | `POST /organization/projects/{project_id}/service_accounts/{service_account_id}` | Updates a service account in the project. |
 
 ## `project-group`
 
@@ -275,6 +288,7 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 | `add-project-group` | `POST /organization/projects/{project_id}/groups` | Grants a group access to a project. |
 | `list-project-groups` | `GET /organization/projects/{project_id}/groups` | Lists the groups that have access to a project. |
 | `remove-project-group` | `DELETE /organization/projects/{project_id}/groups/{group_id}` | Revokes a group's access to a project. |
+| `retrieve-project-group` | `GET /organization/projects/{project_id}/groups/{group_id}` | Retrieves a project's group. |
 
 ## `project-group-role-assignment`
 
@@ -282,6 +296,7 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 |---------|-------|-------------|
 | `assign-project-role-to-group` | `POST /projects/{project_id}/groups/{group_id}/roles` | Assigns a project role to a group within a project. |
 | `list-project-group-role-assignments` | `GET /projects/{project_id}/groups/{group_id}/roles` | Lists the project roles assigned to a group within a project. |
+| `retrieve-project-group-role` | `GET /projects/{project_id}/groups/{group_id}/roles/{role_id}` | Retrieves a project role assigned to a group. |
 | `unassign-project-role-from-group` | `DELETE /projects/{project_id}/groups/{group_id}/roles/{role_id}` | Unassigns a project role from a group within a project. |
 
 ## `project-user-role-assignment`
@@ -290,6 +305,7 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 |---------|-------|-------------|
 | `assign-project-role-to-user` | `POST /projects/{project_id}/users/{user_id}/roles` | Assigns a project role to a user within a project. |
 | `list-project-user-role-assignments` | `GET /projects/{project_id}/users/{user_id}/roles` | Lists the project roles assigned to a user within a project. |
+| `retrieve-project-user-role` | `GET /projects/{project_id}/users/{user_id}/roles/{role_id}` | Retrieves a project role assigned to a user. |
 | `unassign-project-role-from-user` | `DELETE /projects/{project_id}/users/{user_id}/roles/{role_id}` | Unassigns a project role from a user within a project. |
 
 ## `realtime`
@@ -326,6 +342,8 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 | `delete-project-role` | `DELETE /projects/{project_id}/roles/{role_id}` | Deletes a custom role from a project. |
 | `list-organization-roles` | `GET /organization/roles` | Lists the roles configured for the organization. |
 | `list-project-roles` | `GET /projects/{project_id}/roles` | Lists the roles configured for a project. |
+| `retrieve-organization-role` | `GET /organization/roles/{role_id}` | Retrieves an organization role. |
+| `retrieve-project-role` | `GET /projects/{project_id}/roles/{role_id}` | Retrieves a project role. |
 | `update-organization-role` | `POST /organization/roles/{role_id}` | Updates an existing organization role. |
 | `update-project-role` | `POST /projects/{project_id}/roles/{role_id}` | Updates an existing project role. |
 
@@ -344,6 +362,19 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 | `list-skill-versions` | `GET /skills/{skill_id}/versions` | List skill versions for a skill. |
 | `list-skills` | `GET /skills` | List all skills for the current project. |
 | `update-skill-default-version` | `POST /skills/{skill_id}` | Update the default version pointer for a skill. |
+
+## `spend-alert`
+
+| Command | Route | Description |
+|---------|-------|-------------|
+| `create-organization-spend-alert` | `POST /organization/spend_alerts` | Creates an organization spend alert. |
+| `create-project-spend-alert` | `POST /organization/projects/{project_id}/spend_alerts` | Creates a project spend alert. |
+| `delete-organization-spend-alert` | `DELETE /organization/spend_alerts/{alert_id}` | Deletes an organization spend alert. |
+| `delete-project-spend-alert` | `DELETE /organization/projects/{project_id}/spend_alerts/{alert_id}` | Deletes a project spend alert. |
+| `list-organization-spend-alerts` | `GET /organization/spend_alerts` | Lists organization spend alerts. |
+| `list-project-spend-alerts` | `GET /organization/projects/{project_id}/spend_alerts` | Lists project spend alerts. |
+| `update-organization-spend-alert` | `POST /organization/spend_alerts/{alert_id}` | Updates an organization spend alert. |
+| `update-project-spend-alert` | `POST /organization/projects/{project_id}/spend_alerts/{alert_id}` | Updates a project spend alert. |
 
 ## `upload`
 
@@ -387,6 +418,7 @@ Use Uploads to upload large files in multiple parts.
 |---------|-------|-------------|
 | `assign-organization-role-to-user` | `POST /organization/users/{user_id}/roles` | Assigns an organization role to a user within the organization. |
 | `list-user-organization-role-assignments` | `GET /organization/users/{user_id}/roles` | Lists the organization roles assigned to a user within the organization. |
+| `retrieve-user-organization-role` | `GET /organization/users/{user_id}/roles/{role_id}` | Retrieves an organization role assigned to a user. |
 | `unassign-organization-role-from-user` | `DELETE /organization/users/{user_id}/roles/{role_id}` | Unassigns an organization role from a user within the organization. |
 
 ## `vector-store`
