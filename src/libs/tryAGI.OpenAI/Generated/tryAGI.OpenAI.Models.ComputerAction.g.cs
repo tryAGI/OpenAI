@@ -277,38 +277,38 @@ namespace tryAGI.OpenAI
         /// An action to type in text.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.TypeParam? Type { get; init; }
+        public global::tryAGI.OpenAI.TypeParam? TypeValue { get; init; }
 #else
-        public global::tryAGI.OpenAI.TypeParam? Type { get; }
+        public global::tryAGI.OpenAI.TypeParam? TypeValue { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Type))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TypeValue))]
 #endif
-        public bool IsType => Type != null;
+        public bool IsTypeValue => TypeValue != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public bool TryPickType(
+        public bool TryPickTypeValue(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::tryAGI.OpenAI.TypeParam? value)
         {
-            value = Type;
-            return IsType;
+            value = TypeValue;
+            return IsTypeValue;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.TypeParam PickType() => IsType
-            ? Type!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Type' but the value was {ToString()}.");
+        public global::tryAGI.OpenAI.TypeParam PickTypeValue() => IsTypeValue
+            ? TypeValue!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TypeValue' but the value was {ToString()}.");
 
         /// <summary>
         /// A wait action.
@@ -515,20 +515,20 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.TypeParam?(ComputerAction @this) => @this.Type;
+        public static implicit operator global::tryAGI.OpenAI.TypeParam?(ComputerAction @this) => @this.TypeValue;
 
         /// <summary>
         /// 
         /// </summary>
         public ComputerAction(global::tryAGI.OpenAI.TypeParam? value)
         {
-            Type = value;
+            TypeValue = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static ComputerAction FromType(global::tryAGI.OpenAI.TypeParam? value) => new ComputerAction(value);
+        public static ComputerAction FromTypeValue(global::tryAGI.OpenAI.TypeParam? value) => new ComputerAction(value);
 
         /// <summary>
         /// 
@@ -565,7 +565,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.MoveParam? move,
             global::tryAGI.OpenAI.ScreenshotParam? screenshot,
             global::tryAGI.OpenAI.ScrollParam? scroll,
-            global::tryAGI.OpenAI.TypeParam? type,
+            global::tryAGI.OpenAI.TypeParam? typeValue,
             global::tryAGI.OpenAI.WaitParam? wait
             )
         {
@@ -578,7 +578,7 @@ namespace tryAGI.OpenAI
             Move = move;
             Screenshot = screenshot;
             Scroll = scroll;
-            Type = type;
+            TypeValue = typeValue;
             Wait = wait;
         }
 
@@ -587,7 +587,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             Wait as object ??
-            Type as object ??
+            TypeValue as object ??
             Scroll as object ??
             Screenshot as object ??
             Move as object ??
@@ -608,7 +608,7 @@ namespace tryAGI.OpenAI
             Move?.ToString() ??
             Screenshot?.ToString() ??
             Scroll?.ToString() ??
-            Type?.ToString() ??
+            TypeValue?.ToString() ??
             Wait?.ToString() 
             ;
 
@@ -617,7 +617,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsType && !IsWait || !IsClick && IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsType && !IsWait || !IsClick && !IsDoubleClick && IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsType && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsType && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && IsMove && !IsScreenshot && !IsScroll && !IsType && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && IsScreenshot && !IsScroll && !IsType && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && IsScroll && !IsType && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && IsType && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsType && IsWait;
+            return IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsTypeValue && !IsWait || !IsClick && IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsTypeValue && !IsWait || !IsClick && !IsDoubleClick && IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsTypeValue && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsTypeValue && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && IsMove && !IsScreenshot && !IsScroll && !IsTypeValue && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && IsScreenshot && !IsScroll && !IsTypeValue && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && IsScroll && !IsTypeValue && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && IsTypeValue && !IsWait || !IsClick && !IsDoubleClick && !IsDrag && !IsKeypress && !IsMove && !IsScreenshot && !IsScroll && !IsTypeValue && IsWait;
         }
 
         /// <summary>
@@ -631,7 +631,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.MoveParam, TResult>? move = null,
             global::System.Func<global::tryAGI.OpenAI.ScreenshotParam, TResult>? screenshot = null,
             global::System.Func<global::tryAGI.OpenAI.ScrollParam, TResult>? scroll = null,
-            global::System.Func<global::tryAGI.OpenAI.TypeParam, TResult>? type = null,
+            global::System.Func<global::tryAGI.OpenAI.TypeParam, TResult>? typeValue = null,
             global::System.Func<global::tryAGI.OpenAI.WaitParam, TResult>? wait = null,
             bool validate = true)
         {
@@ -668,9 +668,9 @@ namespace tryAGI.OpenAI
             {
                 return scroll(Scroll!);
             }
-            else if (IsType && type != null)
+            else if (IsTypeValue && typeValue != null)
             {
-                return type(Type!);
+                return typeValue(TypeValue!);
             }
             else if (IsWait && wait != null)
             {
@@ -698,7 +698,7 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.ScrollParam>? scroll = null,
 
-            global::System.Action<global::tryAGI.OpenAI.TypeParam>? type = null,
+            global::System.Action<global::tryAGI.OpenAI.TypeParam>? typeValue = null,
 
             global::System.Action<global::tryAGI.OpenAI.WaitParam>? wait = null,
             bool validate = true)
@@ -736,9 +736,9 @@ namespace tryAGI.OpenAI
             {
                 scroll?.Invoke(Scroll!);
             }
-            else if (IsType)
+            else if (IsTypeValue)
             {
-                type?.Invoke(Type!);
+                typeValue?.Invoke(TypeValue!);
             }
             else if (IsWait)
             {
@@ -757,7 +757,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.MoveParam>? move = null,
             global::System.Action<global::tryAGI.OpenAI.ScreenshotParam>? screenshot = null,
             global::System.Action<global::tryAGI.OpenAI.ScrollParam>? scroll = null,
-            global::System.Action<global::tryAGI.OpenAI.TypeParam>? type = null,
+            global::System.Action<global::tryAGI.OpenAI.TypeParam>? typeValue = null,
             global::System.Action<global::tryAGI.OpenAI.WaitParam>? wait = null,
             bool validate = true)
         {
@@ -794,9 +794,9 @@ namespace tryAGI.OpenAI
             {
                 scroll?.Invoke(Scroll!);
             }
-            else if (IsType)
+            else if (IsTypeValue)
             {
-                type?.Invoke(Type!);
+                typeValue?.Invoke(TypeValue!);
             }
             else if (IsWait)
             {
@@ -825,7 +825,7 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.ScreenshotParam),
                 Scroll,
                 typeof(global::tryAGI.OpenAI.ScrollParam),
-                Type,
+                TypeValue,
                 typeof(global::tryAGI.OpenAI.TypeParam),
                 Wait,
                 typeof(global::tryAGI.OpenAI.WaitParam),
@@ -852,7 +852,7 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MoveParam?>.Default.Equals(Move, other.Move) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ScreenshotParam?>.Default.Equals(Screenshot, other.Screenshot) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ScrollParam?>.Default.Equals(Scroll, other.Scroll) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TypeParam?>.Default.Equals(Type, other.Type) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TypeParam?>.Default.Equals(TypeValue, other.TypeValue) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WaitParam?>.Default.Equals(Wait, other.Wait) 
                 ;
         }
