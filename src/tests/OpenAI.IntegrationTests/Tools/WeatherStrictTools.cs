@@ -24,12 +24,12 @@ public class Weather2
 public interface IWeatherStrictTools
 {
     [Description("Get the current weather in a given location")]
-    public Weather2 GetCurrentWeather(
+    public Weather2 GetCurrentWeatherStrict(
         [Description("The city and state, e.g. San Francisco, CA")] string location,
         Unit2 unit);
     
     [Description("Get the current weather in a given location")]
-    public Task<Weather2> GetCurrentWeatherAsync(
+    public Task<Weather2> GetCurrentWeatherStrictAsync(
         [Description("The city and state, e.g. San Francisco, CA")] string location,
         Unit2 unit,
         CancellationToken cancellationToken = default);
@@ -37,7 +37,7 @@ public interface IWeatherStrictTools
 
 public class WeatherStrictService : IWeatherStrictTools
 {
-    public Weather2 GetCurrentWeather(string location, Unit2 unit)
+    public Weather2 GetCurrentWeatherStrict(string location, Unit2 unit)
     {
         return new Weather2
         {
@@ -48,7 +48,7 @@ public class WeatherStrictService : IWeatherStrictTools
         };
     }
     
-    public Task<Weather2> GetCurrentWeatherAsync(string location, Unit2 unit, CancellationToken cancellationToken = default)
+    public Task<Weather2> GetCurrentWeatherStrictAsync(string location, Unit2 unit, CancellationToken cancellationToken = default)
     {
         return Task.FromResult(new Weather2
         {

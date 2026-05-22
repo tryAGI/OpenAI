@@ -29,7 +29,7 @@ public interface IWeatherTools
         Unit unit = Unit.Celsius);
     
     [Description("Get the current weather in a given location")]
-    public Task<Weather> GetCurrentWeatherAsync(
+    public Task<Weather> GetCurrentWeatherAsyncValue(
         [Description("The city and state, e.g. San Francisco, CA")] string location,
         Unit unit = Unit.Celsius,
         CancellationToken cancellationToken = default);
@@ -48,7 +48,7 @@ public class WeatherService : IWeatherTools
         };
     }
     
-    public Task<Weather> GetCurrentWeatherAsync(string location, Unit unit = Unit.Celsius, CancellationToken cancellationToken = default)
+    public Task<Weather> GetCurrentWeatherAsyncValue(string location, Unit unit = Unit.Celsius, CancellationToken cancellationToken = default)
     {
         return Task.FromResult(new Weather
         {
