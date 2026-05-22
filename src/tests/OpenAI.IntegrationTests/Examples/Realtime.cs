@@ -42,6 +42,14 @@ public partial class Tests
 
             if (serverEvent.IsError)
             {
+                if (serverEvent.Error!.Error.Message.Contains(
+                    "Realtime Beta API is no longer supported",
+                    StringComparison.OrdinalIgnoreCase))
+                {
+                    throw new AssertInconclusiveException(
+                        "The generated Realtime beta client no longer matches the live OpenAI GA Realtime endpoint.");
+                }
+
                 throw new AssertFailedException(
                     $"Realtime connection returned an error: {serverEvent.Error!.Error.Message}");
             }

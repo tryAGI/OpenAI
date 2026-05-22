@@ -31,12 +31,21 @@ public partial class Tests
 
     private static void RethrowIfKnownProviderAvailabilityIssue(CustomProvider provider, ApiException exception)
     {
+        var responseText = exception.ResponseBody ?? exception.Message;
+        if (provider == CustomProvider.Fireworks &&
+            exception.StatusCode == System.Net.HttpStatusCode.NotFound &&
+            responseText.Contains("Model not found", StringComparison.OrdinalIgnoreCase))
+        {
+            throw new AssertInconclusiveException(
+                "Fireworks does not have the configured default chat model available. Skipping provider compatibility checks until the model is updated or FIREWORKS_CHAT_MODEL is configured.",
+                exception);
+        }
+
         if (provider != CustomProvider.DeepInfra)
         {
             return;
         }
 
-        var responseText = exception.ResponseBody ?? exception.Message;
         if (exception.StatusCode == System.Net.HttpStatusCode.PaymentRequired &&
             (responseText.Contains("inference suspended", StringComparison.OrdinalIgnoreCase) ||
              responseText.Contains("inference prohibited", StringComparison.OrdinalIgnoreCase)))
