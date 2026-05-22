@@ -70,12 +70,12 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ScrollParam)}");
                 scroll = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::tryAGI.OpenAI.TypeParam? type = default;
+            global::tryAGI.OpenAI.TypeParam? typeValue = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.ComputerActionDiscriminatorType.Type)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TypeParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TypeParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.TypeParam)}");
-                type = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                typeValue = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.WaitParam? wait = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.ComputerActionDiscriminatorType.Wait)
@@ -101,7 +101,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 scroll,
 
-                type,
+                typeValue,
 
                 wait
                 );
@@ -160,11 +160,11 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ScrollParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Scroll!, typeInfo);
             }
-            else if (value.IsType)
+            else if (value.IsTypeValue)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TypeParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TypeParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TypeParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Type!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TypeValue!, typeInfo);
             }
             else if (value.IsWait)
             {
