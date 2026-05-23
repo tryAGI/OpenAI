@@ -379,6 +379,13 @@ public static class CustomProviders
     /// <summary>
     /// Create an API to use for Mistral.
     /// </summary>
+    /// <remarks>
+    /// For audio-capable Voxtral chat models (e.g. <c>voxtral-small-latest</c>,
+    /// <c>voxtral-mini-latest</c>), pass the model id from
+    /// <see cref="MistralVoxtralModels"/> as <c>ChatOptions.ModelId</c>. The base
+    /// URL and Bearer auth are identical to text-only Mistral chat — only the
+    /// model id changes.
+    /// </remarks>
     /// <returns></returns>
     public static OpenAiClient Mistral(string apiKey)
     {
@@ -759,4 +766,34 @@ public static class CustomProviders
     {
         return new OpenAiClient(apiKey, baseUri: new Uri(OpenCodeGoBaseUrl));
     }
+}
+
+/// <summary>
+/// Voxtral chat-model identifiers for use with
+/// <see cref="CustomProviders.Mistral(string)"/>. Voxtral is Mistral's
+/// audio-understanding model line; the chat variants accept audio user-message
+/// parts through the OpenAI-compatible <c>/v1/chat/completions</c> endpoint
+/// (auth and base URL match the text-only Mistral chat providers).
+/// </summary>
+/// <remarks>
+/// See https://docs.mistral.ai/capabilities/audio/ for the live catalog. The
+/// dedicated <c>tryAGI.Mistral</c> SDK ships an
+/// <c>Microsoft.Extensions.AI.ISpeechToTextClient</c> implementation backed by
+/// the matching transcription models — prefer that SDK if you need batch or
+/// realtime transcription rather than chat with audio inputs.
+/// </remarks>
+public static class MistralVoxtralModels
+{
+    /// <summary>
+    /// Voxtral Mini — audio-capable chat model exposed via
+    /// <c>POST /v1/chat/completions</c>.
+    /// </summary>
+    public const string MiniChat = "voxtral-mini-latest";
+
+    /// <summary>
+    /// Voxtral Small — larger audio-capable chat model exposed via
+    /// <c>POST /v1/chat/completions</c>. Card:
+    /// https://docs.mistral.ai/models/voxtral-small-25-07.
+    /// </summary>
+    public const string SmallChat = "voxtral-small-latest";
 }
