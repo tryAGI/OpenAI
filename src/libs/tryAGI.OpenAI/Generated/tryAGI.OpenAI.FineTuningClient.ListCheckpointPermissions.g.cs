@@ -476,5 +476,44 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListCheckpointPermissionsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.FineTuningCheckpointPermission&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="fineTunedModelCheckpoint">
+        /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="limit">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="order">
+        /// Default Value: descending
+        /// </param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.FineTuningCheckpointPermission> ListCheckpointPermissionsAutoPagingAsync(
+            string fineTunedModelCheckpoint,             string? projectId = default,
+            int? limit = default,
+            global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionsOrder? order = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponse, global::tryAGI.OpenAI.FineTuningCheckpointPermission>(
+                fetchPage: (__cursor, __ct) => ListCheckpointPermissionsAsync(
+                    fineTunedModelCheckpoint: fineTunedModelCheckpoint,
+                    projectId: projectId,
+                    after: __cursor,
+                    limit: limit,
+                    order: order,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.FineTuningCheckpointPermission>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

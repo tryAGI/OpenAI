@@ -42,5 +42,22 @@ namespace tryAGI.OpenAI
             int? limit = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps ListFineTuningCheckpointsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.FineTuningJobCheckpoint&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="fineTuningJobId">
+        /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 10
+        /// </param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.FineTuningJobCheckpoint> ListFineTuningCheckpointsAutoPagingAsync(
+            string fineTuningJobId,             int? limit = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

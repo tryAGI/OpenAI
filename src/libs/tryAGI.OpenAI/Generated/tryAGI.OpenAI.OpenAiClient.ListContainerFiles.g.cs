@@ -462,5 +462,39 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListContainerFilesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ContainerFileResource&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="containerId"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="order">
+        /// Default Value: desc
+        /// </param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ContainerFileResource> ListContainerFilesAutoPagingAsync(
+            string containerId,             int? limit = default,
+            global::tryAGI.OpenAI.ListContainerFilesOrder? order = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.ContainerFileListResource, global::tryAGI.OpenAI.ContainerFileResource>(
+                fetchPage: (__cursor, __ct) => ListContainerFilesAsync(
+                    containerId: containerId,
+                    limit: limit,
+                    order: order,
+                    after: __cursor,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.ContainerFileResource>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

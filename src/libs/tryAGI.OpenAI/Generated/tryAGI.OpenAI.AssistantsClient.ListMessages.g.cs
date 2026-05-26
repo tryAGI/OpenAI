@@ -480,5 +480,45 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListMessagesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.MessageObject&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="threadId"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="order">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="before"></param>
+        /// <param name="runId"></param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.MessageObject> ListMessagesAutoPagingAsync(
+            string threadId,             int? limit = default,
+            global::tryAGI.OpenAI.ListMessagesOrder? order = default,
+            string? before = default,
+            string? runId = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.ListMessagesResponse, global::tryAGI.OpenAI.MessageObject>(
+                fetchPage: (__cursor, __ct) => ListMessagesAsync(
+                    threadId: threadId,
+                    limit: limit,
+                    order: order,
+                    after: __cursor,
+                    before: before,
+                    runId: runId,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.MessageObject>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

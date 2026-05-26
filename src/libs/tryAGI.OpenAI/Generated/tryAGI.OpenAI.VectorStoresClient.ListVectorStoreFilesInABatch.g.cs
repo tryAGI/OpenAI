@@ -489,5 +489,48 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListVectorStoreFilesInABatchAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.VectorStoreFileObject&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="vectorStoreId"></param>
+        /// <param name="batchId"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="order">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="before"></param>
+        /// <param name="filter"></param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.VectorStoreFileObject> ListVectorStoreFilesInABatchAutoPagingAsync(
+            string vectorStoreId,
+            string batchId,             int? limit = default,
+            global::tryAGI.OpenAI.ListFilesInVectorStoreBatchOrder? order = default,
+            string? before = default,
+            global::tryAGI.OpenAI.ListFilesInVectorStoreBatchFilter? filter = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.ListVectorStoreFilesResponse, global::tryAGI.OpenAI.VectorStoreFileObject>(
+                fetchPage: (__cursor, __ct) => ListVectorStoreFilesInABatchAsync(
+                    vectorStoreId: vectorStoreId,
+                    batchId: batchId,
+                    limit: limit,
+                    order: order,
+                    after: __cursor,
+                    before: before,
+                    filter: filter,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.VectorStoreFileObject>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

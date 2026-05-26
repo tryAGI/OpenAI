@@ -42,5 +42,23 @@ namespace tryAGI.OpenAI
             bool? includeArchived = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps ListProjectsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.Project&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="includeArchived">
+        /// Default Value: false
+        /// </param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.Project> ListProjectsAutoPagingAsync(
+              int? limit = default,
+            bool? includeArchived = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

@@ -470,5 +470,42 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListItemsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ConversationItem&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="conversationId">
+        /// Example: conv_123
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="order"></param>
+        /// <param name="include"></param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ConversationItem> ListItemsAutoPagingAsync(
+            string conversationId,             int? limit = default,
+            global::tryAGI.OpenAI.ListConversationItemsOrder? order = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.ConversationItemList, global::tryAGI.OpenAI.ConversationItem>(
+                fetchPage: (__cursor, __ct) => ListItemsAsync(
+                    conversationId: conversationId,
+                    limit: limit,
+                    order: order,
+                    after: __cursor,
+                    include: include,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.ConversationItem>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

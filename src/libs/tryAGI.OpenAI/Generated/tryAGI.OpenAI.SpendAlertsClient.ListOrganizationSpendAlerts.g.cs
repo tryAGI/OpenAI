@@ -459,5 +459,38 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListOrganizationSpendAlertsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.OrganizationSpendAlert&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <param name="order">
+        /// Default Value: asc
+        /// </param>
+        /// <param name="before"></param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.OrganizationSpendAlert> ListOrganizationSpendAlertsAutoPagingAsync(
+              int? limit = default,
+            global::tryAGI.OpenAI.ListOrganizationSpendAlertsOrder? order = default,
+            string? before = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.OrganizationSpendAlertListResource, global::tryAGI.OpenAI.OrganizationSpendAlert>(
+                fetchPage: (__cursor, __ct) => ListOrganizationSpendAlertsAsync(
+                    limit: limit,
+                    order: order,
+                    after: __cursor,
+                    before: before,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.OrganizationSpendAlert>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

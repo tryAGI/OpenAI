@@ -38,5 +38,20 @@ namespace tryAGI.OpenAI
             string? after = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps ListProjectApiKeysAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ProjectApiKey&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ProjectApiKey> ListProjectApiKeysAutoPagingAsync(
+            string projectId,             int? limit = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

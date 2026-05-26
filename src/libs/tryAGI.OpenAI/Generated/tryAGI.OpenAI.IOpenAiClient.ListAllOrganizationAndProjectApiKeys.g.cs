@@ -52,5 +52,25 @@ namespace tryAGI.OpenAI
             int? limit = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps ListAllOrganizationAndProjectApiKeysAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.AdminApiKey&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="order">
+        /// Order results by creation time, ascending or descending.<br/>
+        /// Default Value: asc
+        /// </param>
+        /// <param name="limit">
+        /// Maximum number of keys to return.<br/>
+        /// Default Value: 20
+        /// </param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.AdminApiKey> ListAllOrganizationAndProjectApiKeysAutoPagingAsync(
+              global::tryAGI.OpenAI.AdminApiKeysListOrder? order = default,
+            int? limit = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

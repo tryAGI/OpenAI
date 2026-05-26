@@ -447,5 +447,33 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListVideosAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.VideoResource&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <param name="order"></param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.VideoResource> ListVideosAutoPagingAsync(
+              int? limit = default,
+            global::tryAGI.OpenAI.OrderEnum? order = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.VideoListResource, global::tryAGI.OpenAI.VideoResource>(
+                fetchPage: (__cursor, __ct) => ListVideosAsync(
+                    limit: limit,
+                    order: order,
+                    after: __cursor,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.VideoResource>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

@@ -519,5 +519,55 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps FileSearchCallsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.UsageTimeBucket&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="bucketWidth">
+        /// Default Value: 1d
+        /// </param>
+        /// <param name="projectIds"></param>
+        /// <param name="userIds"></param>
+        /// <param name="apiKeyIds"></param>
+        /// <param name="vectorStoreIds"></param>
+        /// <param name="groupBy"></param>
+        /// <param name="limit"></param> 
+        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.UsageTimeBucket> FileSearchCallsAutoPagingAsync(
+            int startTime,             int? endTime = default,
+            global::tryAGI.OpenAI.UsageFileSearchCallsBucketWidth? bucketWidth = default,
+            global::System.Collections.Generic.IList<string>? projectIds = default,
+            global::System.Collections.Generic.IList<string>? userIds = default,
+            global::System.Collections.Generic.IList<string>? apiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? vectorStoreIds = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageFileSearchCallsGroupByItem>? groupBy = default,
+            int? limit = default,
+            string? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.UsageResponse, global::tryAGI.OpenAI.UsageTimeBucket>(
+                fetchPage: (__cursor, __ct) => FileSearchCallsAsync(
+                    startTime: startTime,
+                    endTime: endTime,
+                    bucketWidth: bucketWidth,
+                    projectIds: projectIds,
+                    userIds: userIds,
+                    apiKeyIds: apiKeyIds,
+                    vectorStoreIds: vectorStoreIds,
+                    groupBy: groupBy,
+                    limit: limit,
+                    page: __cursor,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.UsageTimeBucket>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.NextPage,
+                initialCursor: page,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

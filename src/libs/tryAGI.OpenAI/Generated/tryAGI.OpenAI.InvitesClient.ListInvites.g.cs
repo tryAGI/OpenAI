@@ -439,5 +439,32 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListInvitesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.Invite&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.Invite> ListInvitesAutoPagingAsync(
+              int? limit = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.InviteListResponse, global::tryAGI.OpenAI.Invite>(
+                fetchPage: (__cursor, __ct) => ListInvitesAsync(
+                    limit: limit,
+                    after: __cursor,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.Invite>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

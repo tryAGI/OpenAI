@@ -50,5 +50,26 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps ListItemsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ConversationItem&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="conversationId">
+        /// Example: conv_123
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="order"></param>
+        /// <param name="include"></param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ConversationItem> ListItemsAutoPagingAsync(
+            string conversationId,             int? limit = default,
+            global::tryAGI.OpenAI.ListConversationItemsOrder? order = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

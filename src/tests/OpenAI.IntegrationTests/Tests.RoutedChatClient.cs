@@ -143,11 +143,21 @@ public partial class Tests
         {
             BaseAddress = new Uri("https://example.test/v1/"),
         };
+        var options = new AutoSDKClientOptions
+        {
+            Retry = new AutoSDKRetryOptions
+            {
+                MaxAttempts = 1,
+            },
+        };
 
-        return new OpenAiClient(
-            apiKey: "test-key",
+        var client = new OpenAiClient(
             httpClient: httpClient,
+            authorizations: null,
+            options: options,
             disposeHttpClient: true);
+        client.AuthorizeUsingBearer("test-key");
+        return client;
     }
 
     private sealed class FakeChatHandler : HttpMessageHandler

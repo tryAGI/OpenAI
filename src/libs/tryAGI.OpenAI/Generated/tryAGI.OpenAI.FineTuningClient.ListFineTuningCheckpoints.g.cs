@@ -450,5 +450,36 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListFineTuningCheckpointsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.FineTuningJobCheckpoint&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="fineTuningJobId">
+        /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 10
+        /// </param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.FineTuningJobCheckpoint> ListFineTuningCheckpointsAutoPagingAsync(
+            string fineTuningJobId,             int? limit = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.ListFineTuningJobCheckpointsResponse, global::tryAGI.OpenAI.FineTuningJobCheckpoint>(
+                fetchPage: (__cursor, __ct) => ListFineTuningCheckpointsAsync(
+                    fineTuningJobId: fineTuningJobId,
+                    after: __cursor,
+                    limit: limit,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.FineTuningJobCheckpoint>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

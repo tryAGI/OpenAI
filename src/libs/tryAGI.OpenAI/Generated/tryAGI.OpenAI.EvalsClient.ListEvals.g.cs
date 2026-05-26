@@ -465,5 +465,42 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListEvalsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.Eval&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="order">
+        /// Default Value: asc
+        /// </param>
+        /// <param name="orderBy">
+        /// Default Value: created_at
+        /// </param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.Eval> ListEvalsAutoPagingAsync(
+              int? limit = default,
+            global::tryAGI.OpenAI.ListEvalsOrder? order = default,
+            global::tryAGI.OpenAI.ListEvalsOrderBy? orderBy = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.EvalList, global::tryAGI.OpenAI.Eval>(
+                fetchPage: (__cursor, __ct) => ListEvalsAsync(
+                    after: __cursor,
+                    limit: limit,
+                    order: order,
+                    orderBy: orderBy,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.Eval>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

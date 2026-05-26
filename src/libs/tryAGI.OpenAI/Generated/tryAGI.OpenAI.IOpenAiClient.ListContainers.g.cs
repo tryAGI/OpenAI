@@ -48,5 +48,25 @@ namespace tryAGI.OpenAI
             string? name = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps ListContainersAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ContainerResource&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="order">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="name"></param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ContainerResource> ListContainersAutoPagingAsync(
+              int? limit = default,
+            global::tryAGI.OpenAI.ListContainersOrder? order = default,
+            string? name = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

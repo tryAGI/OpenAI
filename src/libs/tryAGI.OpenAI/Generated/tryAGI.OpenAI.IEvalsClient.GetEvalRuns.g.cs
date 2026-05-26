@@ -50,5 +50,26 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.GetEvalRunsStatus? status = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps GetEvalRunsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.EvalRun&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="evalId"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="order">
+        /// Default Value: asc
+        /// </param>
+        /// <param name="status"></param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.EvalRun> GetEvalRunsAutoPagingAsync(
+            string evalId,             int? limit = default,
+            global::tryAGI.OpenAI.GetEvalRunsOrder? order = default,
+            global::tryAGI.OpenAI.GetEvalRunsStatus? status = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

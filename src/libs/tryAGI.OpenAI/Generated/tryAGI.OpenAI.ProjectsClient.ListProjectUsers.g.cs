@@ -485,5 +485,34 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListProjectUsersAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ProjectUser&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ProjectUser> ListProjectUsersAutoPagingAsync(
+            string projectId,             int? limit = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.ProjectUserListResponse, global::tryAGI.OpenAI.ProjectUser>(
+                fetchPage: (__cursor, __ct) => ListProjectUsersAsync(
+                    projectId: projectId,
+                    limit: limit,
+                    after: __cursor,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.ProjectUser>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

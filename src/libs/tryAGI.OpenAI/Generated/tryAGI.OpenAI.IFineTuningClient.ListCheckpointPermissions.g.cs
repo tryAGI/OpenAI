@@ -56,5 +56,28 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionsOrder? order = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps ListCheckpointPermissionsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.FineTuningCheckpointPermission&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="fineTunedModelCheckpoint">
+        /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="limit">
+        /// Default Value: 10
+        /// </param>
+        /// <param name="order">
+        /// Default Value: descending
+        /// </param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.FineTuningCheckpointPermission> ListCheckpointPermissionsAutoPagingAsync(
+            string fineTunedModelCheckpoint,             string? projectId = default,
+            int? limit = default,
+            global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionsOrder? order = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

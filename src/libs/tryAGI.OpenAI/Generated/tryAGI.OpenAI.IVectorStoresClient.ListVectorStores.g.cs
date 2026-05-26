@@ -46,5 +46,25 @@ namespace tryAGI.OpenAI
             string? before = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps ListVectorStoresAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.VectorStoreObject&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="order">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="before"></param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.VectorStoreObject> ListVectorStoresAutoPagingAsync(
+              int? limit = default,
+            global::tryAGI.OpenAI.ListVectorStoresOrder? order = default,
+            string? before = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

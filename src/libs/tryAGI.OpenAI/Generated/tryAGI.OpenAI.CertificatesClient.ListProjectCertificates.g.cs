@@ -462,5 +462,39 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListProjectCertificatesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.OrganizationProjectCertificate&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="order">
+        /// Default Value: desc
+        /// </param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.OrganizationProjectCertificate> ListProjectCertificatesAutoPagingAsync(
+            string projectId,             int? limit = default,
+            global::tryAGI.OpenAI.ListProjectCertificatesOrder? order = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.ListProjectCertificatesResponse, global::tryAGI.OpenAI.OrganizationProjectCertificate>(
+                fetchPage: (__cursor, __ct) => ListProjectCertificatesAsync(
+                    projectId: projectId,
+                    limit: limit,
+                    after: __cursor,
+                    order: order,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.OrganizationProjectCertificate>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

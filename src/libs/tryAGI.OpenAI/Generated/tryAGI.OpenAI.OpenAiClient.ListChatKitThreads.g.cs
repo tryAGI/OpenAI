@@ -475,5 +475,43 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListChatKitThreadsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ThreadResource&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <param name="order"></param>
+        /// <param name="before">
+        /// List items created before this thread item ID. Defaults to null for the newest results.
+        /// </param>
+        /// <param name="user">
+        /// Filter threads that belong to this user identifier. Defaults to null to return all users.
+        /// </param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ThreadResource> ListChatKitThreadsAutoPagingAsync(
+              int? limit = default,
+            global::tryAGI.OpenAI.OrderEnum? order = default,
+            string? before = default,
+            string? user = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.ThreadListResource, global::tryAGI.OpenAI.ThreadResource>(
+                fetchPage: (__cursor, __ct) => ListChatKitThreadsAsync(
+                    limit: limit,
+                    order: order,
+                    after: __cursor,
+                    before: before,
+                    user: user,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.ThreadResource>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }

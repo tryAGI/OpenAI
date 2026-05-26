@@ -62,5 +62,33 @@ namespace tryAGI.OpenAI
             string? before = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wraps ListAuditLogsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.AuditLog&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="effectiveAt"></param>
+        /// <param name="projectIds"></param>
+        /// <param name="eventTypes"></param>
+        /// <param name="actorIds"></param>
+        /// <param name="actorEmails"></param>
+        /// <param name="resourceIds"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        /// <param name="before"></param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.AuditLog> ListAuditLogsAutoPagingAsync(
+              global::tryAGI.OpenAI.ListAuditLogsEffectiveAt? effectiveAt = default,
+            global::System.Collections.Generic.IList<string>? projectIds = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLogEventType>? eventTypes = default,
+            global::System.Collections.Generic.IList<string>? actorIds = default,
+            global::System.Collections.Generic.IList<string>? actorEmails = default,
+            global::System.Collections.Generic.IList<string>? resourceIds = default,
+            int? limit = default,
+            string? before = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
     }
 }

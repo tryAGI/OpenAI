@@ -468,5 +468,40 @@ namespace tryAGI.OpenAI
                 __httpRequest?.Dispose();
             }
         }
+
+        /// <summary>
+        /// Wraps ListProjectSpendAlertsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ProjectSpendAlert&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="limit"></param>
+        /// <param name="order">
+        /// Default Value: asc
+        /// </param>
+        /// <param name="before"></param> 
+        /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ProjectSpendAlert> ListProjectSpendAlertsAutoPagingAsync(
+            string projectId,             int? limit = default,
+            global::tryAGI.OpenAI.ListProjectSpendAlertsOrder? order = default,
+            string? before = default,
+            string? after = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.ProjectSpendAlertListResource, global::tryAGI.OpenAI.ProjectSpendAlert>(
+                fetchPage: (__cursor, __ct) => ListProjectSpendAlertsAsync(
+                    projectId: projectId,
+                    limit: limit,
+                    order: order,
+                    after: __cursor,
+                    before: before,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.ProjectSpendAlert>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.LastId,
+                initialCursor: after,
+                cancellationToken: cancellationToken);
+        }
+
     }
 }
