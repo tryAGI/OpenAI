@@ -88,8 +88,7 @@ def main() -> int:
         target = client_events if kind == "Client" else server_events
         target[rest] = (name, type_str)
 
-    seed = {"RealtimeServerEvent", "RealtimeClientEvent"}
-    seed |= {s for s, _ in client_events.values()}
+    seed = {s for s, _ in client_events.values()}
     seed |= {s for s, _ in server_events.values()}
     seed = {s for s in seed if s in all_schemas}
 
@@ -124,19 +123,11 @@ def main() -> int:
             "payload": {"$ref": f"#/components/schemas/{schema_name}"},
         }
         channel_messages[msg_name] = {"$ref": f"#/components/messages/{msg_name}"}
-
-    component_messages["ServerEvent"] = {
-        "name": "ServerEvent",
-        "title": "Realtime Server Event",
-        "summary": "Discriminated union of all server-sent realtime events.",
-        "payload": {"$ref": "#/components/schemas/RealtimeServerEvent"},
-    }
-    channel_messages["ServerEvent"] = {"$ref": "#/components/messages/ServerEvent"}
-    operations["receiveServerEvent"] = {
-        "action": "receive",
-        "channel": {"$ref": "#/channels/realtime"},
-        "messages": [{"$ref": "#/channels/realtime/messages/ServerEvent"}],
-    }
+        operations[f"receive{rest}"] = {
+            "action": "receive",
+            "channel": {"$ref": "#/channels/realtime"},
+            "messages": [{"$ref": f"#/channels/realtime/messages/{msg_name}"}],
+        }
 
     doc = {
         "asyncapi": "3.0.0",

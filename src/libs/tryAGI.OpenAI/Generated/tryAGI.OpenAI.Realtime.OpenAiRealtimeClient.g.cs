@@ -265,11 +265,195 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// Raised after a text message is deserialized into the receive event type.
         /// </summary>
-        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEvent>>? MessageReceived;
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.ServerEvent>>? MessageReceived;
         /// <summary>
-        /// Raised after a ServerEvent message is deserialized.
+        /// Raised after a ConversationCreated message is deserialized.
         /// </summary>
-        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEvent>>? ServerEventReceived;
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated>>? ConversationCreatedReceived;
+        /// <summary>
+        /// Raised after a ConversationItemAdded message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded>>? ConversationItemAddedReceived;
+        /// <summary>
+        /// Raised after a ConversationItemCreated message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated>>? ConversationItemCreatedReceived;
+        /// <summary>
+        /// Raised after a ConversationItemDeleted message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted>>? ConversationItemDeletedReceived;
+        /// <summary>
+        /// Raised after a ConversationItemDone message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone>>? ConversationItemDoneReceived;
+        /// <summary>
+        /// Raised after a ConversationItemInputAudioTranscriptionCompleted message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted>>? ConversationItemInputAudioTranscriptionCompletedReceived;
+        /// <summary>
+        /// Raised after a ConversationItemInputAudioTranscriptionDelta message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta>>? ConversationItemInputAudioTranscriptionDeltaReceived;
+        /// <summary>
+        /// Raised after a ConversationItemInputAudioTranscriptionFailed message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed>>? ConversationItemInputAudioTranscriptionFailedReceived;
+        /// <summary>
+        /// Raised after a ConversationItemInputAudioTranscriptionSegment message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment>>? ConversationItemInputAudioTranscriptionSegmentReceived;
+        /// <summary>
+        /// Raised after a ConversationItemRetrieved message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved>>? ConversationItemRetrievedReceived;
+        /// <summary>
+        /// Raised after a ConversationItemTruncated message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated>>? ConversationItemTruncatedReceived;
+        /// <summary>
+        /// Raised after a Error message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventError>>? ErrorReceived;
+        /// <summary>
+        /// Raised after a InputAudioBufferCleared message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared>>? InputAudioBufferClearedReceived;
+        /// <summary>
+        /// Raised after a InputAudioBufferCommitted message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted>>? InputAudioBufferCommittedReceived;
+        /// <summary>
+        /// Raised after a InputAudioBufferDtmfEventReceived message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived>>? InputAudioBufferDtmfEventReceivedReceived;
+        /// <summary>
+        /// Raised after a InputAudioBufferSpeechStarted message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted>>? InputAudioBufferSpeechStartedReceived;
+        /// <summary>
+        /// Raised after a InputAudioBufferSpeechStopped message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped>>? InputAudioBufferSpeechStoppedReceived;
+        /// <summary>
+        /// Raised after a InputAudioBufferTimeoutTriggered message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered>>? InputAudioBufferTimeoutTriggeredReceived;
+        /// <summary>
+        /// Raised after a MCPListToolsCompleted message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted>>? MCPListToolsCompletedReceived;
+        /// <summary>
+        /// Raised after a MCPListToolsFailed message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed>>? MCPListToolsFailedReceived;
+        /// <summary>
+        /// Raised after a MCPListToolsInProgress message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress>>? MCPListToolsInProgressReceived;
+        /// <summary>
+        /// Raised after a OutputAudioBufferCleared message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared>>? OutputAudioBufferClearedReceived;
+        /// <summary>
+        /// Raised after a OutputAudioBufferStarted message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted>>? OutputAudioBufferStartedReceived;
+        /// <summary>
+        /// Raised after a OutputAudioBufferStopped message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped>>? OutputAudioBufferStoppedReceived;
+        /// <summary>
+        /// Raised after a RateLimitsUpdated message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated>>? RateLimitsUpdatedReceived;
+        /// <summary>
+        /// Raised after a ResponseContentPartAdded message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded>>? ResponseContentPartAddedReceived;
+        /// <summary>
+        /// Raised after a ResponseContentPartDone message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone>>? ResponseContentPartDoneReceived;
+        /// <summary>
+        /// Raised after a ResponseCreated message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated>>? ResponseCreatedReceived;
+        /// <summary>
+        /// Raised after a ResponseDone message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone>>? ResponseDoneReceived;
+        /// <summary>
+        /// Raised after a ResponseFunctionCallArgumentsDelta message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta>>? ResponseFunctionCallArgumentsDeltaReceived;
+        /// <summary>
+        /// Raised after a ResponseFunctionCallArgumentsDone message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone>>? ResponseFunctionCallArgumentsDoneReceived;
+        /// <summary>
+        /// Raised after a ResponseMCPCallCompleted message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted>>? ResponseMCPCallCompletedReceived;
+        /// <summary>
+        /// Raised after a ResponseMCPCallFailed message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed>>? ResponseMCPCallFailedReceived;
+        /// <summary>
+        /// Raised after a ResponseMCPCallInProgress message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress>>? ResponseMCPCallInProgressReceived;
+        /// <summary>
+        /// Raised after a ResponseMCPCallArgumentsDelta message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta>>? ResponseMCPCallArgumentsDeltaReceived;
+        /// <summary>
+        /// Raised after a ResponseMCPCallArgumentsDone message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone>>? ResponseMCPCallArgumentsDoneReceived;
+        /// <summary>
+        /// Raised after a ResponseAudioDelta message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta>>? ResponseAudioDeltaReceived;
+        /// <summary>
+        /// Raised after a ResponseAudioDone message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone>>? ResponseAudioDoneReceived;
+        /// <summary>
+        /// Raised after a ResponseAudioTranscriptDelta message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta>>? ResponseAudioTranscriptDeltaReceived;
+        /// <summary>
+        /// Raised after a ResponseAudioTranscriptDone message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone>>? ResponseAudioTranscriptDoneReceived;
+        /// <summary>
+        /// Raised after a ResponseOutputItemAdded message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded>>? ResponseOutputItemAddedReceived;
+        /// <summary>
+        /// Raised after a ResponseOutputItemDone message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone>>? ResponseOutputItemDoneReceived;
+        /// <summary>
+        /// Raised after a ResponseTextDelta message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta>>? ResponseTextDeltaReceived;
+        /// <summary>
+        /// Raised after a ResponseTextDone message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone>>? ResponseTextDoneReceived;
+        /// <summary>
+        /// Raised after a SessionCreated message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated>>? SessionCreatedReceived;
+        /// <summary>
+        /// Raised after a SessionUpdated message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated>>? SessionUpdatedReceived;
+        /// <summary>
+        /// Raised after a TranscriptionSessionUpdated message is deserialized.
+        /// </summary>
+        public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventTranscriptionSessionUpdated>>? TranscriptionSessionUpdatedReceived;
 
         /// <summary>
         /// 

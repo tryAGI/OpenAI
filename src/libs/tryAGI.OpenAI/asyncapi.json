@@ -209,9 +209,6 @@
         },
         "TranscriptionSessionUpdated": {
           "$ref": "#/components/messages/TranscriptionSessionUpdated"
-        },
-        "ServerEvent": {
-          "$ref": "#/components/messages/ServerEvent"
         }
       }
     }
@@ -349,14 +346,520 @@
         }
       ]
     },
-    "receiveServerEvent": {
+    "receiveConversationCreated": {
       "action": "receive",
       "channel": {
         "$ref": "#/channels/realtime"
       },
       "messages": [
         {
-          "$ref": "#/channels/realtime/messages/ServerEvent"
+          "$ref": "#/channels/realtime/messages/ConversationCreated"
+        }
+      ]
+    },
+    "receiveConversationItemAdded": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ConversationItemAdded"
+        }
+      ]
+    },
+    "receiveConversationItemCreated": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ConversationItemCreated"
+        }
+      ]
+    },
+    "receiveConversationItemDeleted": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ConversationItemDeleted"
+        }
+      ]
+    },
+    "receiveConversationItemDone": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ConversationItemDone"
+        }
+      ]
+    },
+    "receiveConversationItemInputAudioTranscriptionCompleted": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ConversationItemInputAudioTranscriptionCompleted"
+        }
+      ]
+    },
+    "receiveConversationItemInputAudioTranscriptionDelta": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ConversationItemInputAudioTranscriptionDelta"
+        }
+      ]
+    },
+    "receiveConversationItemInputAudioTranscriptionFailed": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ConversationItemInputAudioTranscriptionFailed"
+        }
+      ]
+    },
+    "receiveConversationItemInputAudioTranscriptionSegment": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ConversationItemInputAudioTranscriptionSegment"
+        }
+      ]
+    },
+    "receiveConversationItemRetrieved": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ConversationItemRetrieved"
+        }
+      ]
+    },
+    "receiveConversationItemTruncated": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ConversationItemTruncated"
+        }
+      ]
+    },
+    "receiveError": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/Error"
+        }
+      ]
+    },
+    "receiveInputAudioBufferCleared": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/InputAudioBufferCleared"
+        }
+      ]
+    },
+    "receiveInputAudioBufferCommitted": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/InputAudioBufferCommitted"
+        }
+      ]
+    },
+    "receiveInputAudioBufferDtmfEventReceived": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/InputAudioBufferDtmfEventReceived"
+        }
+      ]
+    },
+    "receiveInputAudioBufferSpeechStarted": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/InputAudioBufferSpeechStarted"
+        }
+      ]
+    },
+    "receiveInputAudioBufferSpeechStopped": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/InputAudioBufferSpeechStopped"
+        }
+      ]
+    },
+    "receiveInputAudioBufferTimeoutTriggered": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/InputAudioBufferTimeoutTriggered"
+        }
+      ]
+    },
+    "receiveMCPListToolsCompleted": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/MCPListToolsCompleted"
+        }
+      ]
+    },
+    "receiveMCPListToolsFailed": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/MCPListToolsFailed"
+        }
+      ]
+    },
+    "receiveMCPListToolsInProgress": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/MCPListToolsInProgress"
+        }
+      ]
+    },
+    "receiveOutputAudioBufferCleared": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/OutputAudioBufferCleared"
+        }
+      ]
+    },
+    "receiveOutputAudioBufferStarted": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/OutputAudioBufferStarted"
+        }
+      ]
+    },
+    "receiveOutputAudioBufferStopped": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/OutputAudioBufferStopped"
+        }
+      ]
+    },
+    "receiveRateLimitsUpdated": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/RateLimitsUpdated"
+        }
+      ]
+    },
+    "receiveResponseContentPartAdded": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseContentPartAdded"
+        }
+      ]
+    },
+    "receiveResponseContentPartDone": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseContentPartDone"
+        }
+      ]
+    },
+    "receiveResponseCreated": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseCreated"
+        }
+      ]
+    },
+    "receiveResponseDone": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseDone"
+        }
+      ]
+    },
+    "receiveResponseFunctionCallArgumentsDelta": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseFunctionCallArgumentsDelta"
+        }
+      ]
+    },
+    "receiveResponseFunctionCallArgumentsDone": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseFunctionCallArgumentsDone"
+        }
+      ]
+    },
+    "receiveResponseMCPCallCompleted": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseMCPCallCompleted"
+        }
+      ]
+    },
+    "receiveResponseMCPCallFailed": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseMCPCallFailed"
+        }
+      ]
+    },
+    "receiveResponseMCPCallInProgress": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseMCPCallInProgress"
+        }
+      ]
+    },
+    "receiveResponseMCPCallArgumentsDelta": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseMCPCallArgumentsDelta"
+        }
+      ]
+    },
+    "receiveResponseMCPCallArgumentsDone": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseMCPCallArgumentsDone"
+        }
+      ]
+    },
+    "receiveResponseAudioDelta": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseAudioDelta"
+        }
+      ]
+    },
+    "receiveResponseAudioDone": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseAudioDone"
+        }
+      ]
+    },
+    "receiveResponseAudioTranscriptDelta": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseAudioTranscriptDelta"
+        }
+      ]
+    },
+    "receiveResponseAudioTranscriptDone": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseAudioTranscriptDone"
+        }
+      ]
+    },
+    "receiveResponseOutputItemAdded": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseOutputItemAdded"
+        }
+      ]
+    },
+    "receiveResponseOutputItemDone": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseOutputItemDone"
+        }
+      ]
+    },
+    "receiveResponseTextDelta": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseTextDelta"
+        }
+      ]
+    },
+    "receiveResponseTextDone": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/ResponseTextDone"
+        }
+      ]
+    },
+    "receiveSessionCreated": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/SessionCreated"
+        }
+      ]
+    },
+    "receiveSessionUpdated": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/SessionUpdated"
+        }
+      ]
+    },
+    "receiveTranscriptionSessionUpdated": {
+      "action": "receive",
+      "channel": {
+        "$ref": "#/channels/realtime"
+      },
+      "messages": [
+        {
+          "$ref": "#/channels/realtime/messages/TranscriptionSessionUpdated"
         }
       ]
     }
@@ -789,14 +1292,6 @@
         "title": "transcription_session.updated",
         "payload": {
           "$ref": "#/components/schemas/RealtimeServerEventTranscriptionSessionUpdated"
-        }
-      },
-      "ServerEvent": {
-        "name": "ServerEvent",
-        "title": "Realtime Server Event",
-        "summary": "Discriminated union of all server-sent realtime events.",
-        "payload": {
-          "$ref": "#/components/schemas/RealtimeServerEvent"
         }
       }
     },
@@ -1332,47 +1827,6 @@
                 ]
               }
             }
-          }
-        ]
-      },
-      "RealtimeClientEvent": {
-        "discriminator": {
-          "propertyName": "type"
-        },
-        "description": "A realtime client event.\n",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/RealtimeClientEventConversationItemCreate"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeClientEventConversationItemDelete"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeClientEventConversationItemRetrieve"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeClientEventConversationItemTruncate"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeClientEventInputAudioBufferAppend"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeClientEventInputAudioBufferClear"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeClientEventOutputAudioBufferClear"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeClientEventInputAudioBufferCommit"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeClientEventResponseCancel"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeClientEventResponseCreate"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeClientEventSessionUpdate"
           }
         ]
       },
@@ -2774,152 +3228,6 @@
             }
           }
         }
-      },
-      "RealtimeServerEvent": {
-        "discriminator": {
-          "propertyName": "type"
-        },
-        "description": "A realtime server event.\n",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventConversationCreated"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventConversationItemCreated"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventConversationItemDeleted"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventConversationItemInputAudioTranscriptionCompleted"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventConversationItemInputAudioTranscriptionDelta"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventConversationItemInputAudioTranscriptionFailed"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventConversationItemRetrieved"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventConversationItemTruncated"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventError"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventInputAudioBufferCleared"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventInputAudioBufferCommitted"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventInputAudioBufferDtmfEventReceived"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventInputAudioBufferSpeechStarted"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventInputAudioBufferSpeechStopped"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventRateLimitsUpdated"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseAudioDelta"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseAudioDone"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseAudioTranscriptDelta"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseAudioTranscriptDone"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseContentPartAdded"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseContentPartDone"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseCreated"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseDone"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseFunctionCallArgumentsDelta"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseFunctionCallArgumentsDone"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseOutputItemAdded"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseOutputItemDone"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseTextDelta"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseTextDone"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventSessionCreated"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventSessionUpdated"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventOutputAudioBufferStarted"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventOutputAudioBufferStopped"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventOutputAudioBufferCleared"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventConversationItemAdded"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventConversationItemDone"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventInputAudioBufferTimeoutTriggered"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventConversationItemInputAudioTranscriptionSegment"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventMCPListToolsInProgress"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventMCPListToolsCompleted"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventMCPListToolsFailed"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseMCPCallArgumentsDelta"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseMCPCallArgumentsDone"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseMCPCallInProgress"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseMCPCallCompleted"
-          },
-          {
-            "$ref": "#/components/schemas/RealtimeServerEventResponseMCPCallFailed"
-          }
-        ]
       },
       "RealtimeServerEventConversationCreated": {
         "type": "object",
