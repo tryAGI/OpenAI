@@ -48,7 +48,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListSkillVersionsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.SkillVersionResource> that auto-pages over the response.
+        /// Wraps ListSkillVersionsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.SkillVersionResource&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="skillId">
         /// Example: skill_123

@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListAuditLogsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.AuditLog> that auto-pages over the response.
+        /// Wraps ListAuditLogsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.AuditLog&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="effectiveAt"></param>
         /// <param name="projectIds"></param>

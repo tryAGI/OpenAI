@@ -455,7 +455,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListProjectsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.Project> that auto-pages over the response.
+        /// Wraps ListProjectsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.Project&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 20

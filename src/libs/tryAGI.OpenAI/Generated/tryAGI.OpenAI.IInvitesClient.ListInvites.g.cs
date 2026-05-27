@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListInvitesAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.Invite> that auto-pages over the response.
+        /// Wraps ListInvitesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.Invite&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 20

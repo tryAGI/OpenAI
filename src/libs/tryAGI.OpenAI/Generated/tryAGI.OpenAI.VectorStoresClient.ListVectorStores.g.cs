@@ -463,7 +463,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListVectorStoresAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.VectorStoreObject> that auto-pages over the response.
+        /// Wraps ListVectorStoresAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.VectorStoreObject&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 20

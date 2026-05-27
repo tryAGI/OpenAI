@@ -505,7 +505,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps CostsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.UsageTimeBucket> that auto-pages over the response.
+        /// Wraps CostsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.UsageTimeBucket&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
@@ -518,7 +518,7 @@ namespace tryAGI.OpenAI
         /// <param name="limit">
         /// Default Value: 7
         /// </param> 
-        /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
+        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.UsageTimeBucket> CostsAutoPagingAsync(
             int startTime,             int? endTime = default,
@@ -527,11 +527,11 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? apiKeyIds = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCostsGroupByItem>? groupBy = default,
             int? limit = default,
-            int? page = null,
+            string? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            return global::tryAGI.OpenAI.AutoSDKPager.OffsetAsync<global::tryAGI.OpenAI.UsageResponse, global::tryAGI.OpenAI.UsageTimeBucket>(
-                fetchPage: (__page, __ct) => CostsAsync(
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.UsageResponse, global::tryAGI.OpenAI.UsageTimeBucket>(
+                fetchPage: (__cursor, __ct) => CostsAsync(
                     startTime: startTime,
                     endTime: endTime,
                     bucketWidth: bucketWidth,
@@ -539,13 +539,13 @@ namespace tryAGI.OpenAI
                     apiKeyIds: apiKeyIds,
                     groupBy: groupBy,
                     limit: limit,
-                    page: __page,
+                    page: __cursor,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null
                     : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.UsageTimeBucket>?)__response.Data,
-                hasMore: static __response => __response is not null && (__response.HasMore ?? false),
-                initialPage: page ?? 1,
+                extractNextCursor: static __response => __response is null ? null : __response.NextPage,
+                initialCursor: page,
                 cancellationToken: cancellationToken);
         }
 

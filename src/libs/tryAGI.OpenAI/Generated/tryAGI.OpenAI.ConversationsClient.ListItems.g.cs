@@ -472,7 +472,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListItemsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.ConversationItem> that auto-pages over the response.
+        /// Wraps ListItemsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ConversationItem&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="conversationId">
         /// Example: conv_123

@@ -439,7 +439,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListBatchesAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.Batch> that auto-pages over the response.
+        /// Wraps ListBatchesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.Batch&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 20

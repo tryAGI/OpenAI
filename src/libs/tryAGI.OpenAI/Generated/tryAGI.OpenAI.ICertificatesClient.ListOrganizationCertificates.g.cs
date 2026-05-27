@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListOrganizationCertificatesAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.OrganizationCertificate> that auto-pages over the response.
+        /// Wraps ListOrganizationCertificatesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.OrganizationCertificate&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 20

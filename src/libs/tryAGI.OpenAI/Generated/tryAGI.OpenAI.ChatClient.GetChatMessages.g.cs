@@ -466,7 +466,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps GetChatMessagesAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ChatCompletionResponseMessage, global::tryAGI.OpenAI.ChatCompletionMessageListDataItem>> that auto-pages over the response.
+        /// Wraps GetChatMessagesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.AllOf&lt;global::tryAGI.OpenAI.ChatCompletionResponseMessage, global::tryAGI.OpenAI.ChatCompletionMessageListDataItem&gt;&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="completionId"></param>
         /// <param name="limit">

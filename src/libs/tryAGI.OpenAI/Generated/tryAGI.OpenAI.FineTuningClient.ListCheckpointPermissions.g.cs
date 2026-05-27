@@ -478,7 +478,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListCheckpointPermissionsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.FineTuningCheckpointPermission> that auto-pages over the response.
+        /// Wraps ListCheckpointPermissionsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.FineTuningCheckpointPermission&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="fineTunedModelCheckpoint">
         /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F

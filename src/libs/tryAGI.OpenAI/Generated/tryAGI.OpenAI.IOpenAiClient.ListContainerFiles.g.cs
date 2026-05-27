@@ -50,7 +50,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListContainerFilesAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.ContainerFileResource> that auto-pages over the response.
+        /// Wraps ListContainerFilesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ContainerFileResource&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="limit">

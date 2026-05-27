@@ -482,7 +482,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListMessagesAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.MessageObject> that auto-pages over the response.
+        /// Wraps ListMessagesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.MessageObject&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="limit">

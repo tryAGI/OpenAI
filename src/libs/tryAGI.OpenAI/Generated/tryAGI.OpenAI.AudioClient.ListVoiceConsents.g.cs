@@ -443,7 +443,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListVoiceConsentsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.VoiceConsentResource> that auto-pages over the response.
+        /// Wraps ListVoiceConsentsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.VoiceConsentResource&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 20

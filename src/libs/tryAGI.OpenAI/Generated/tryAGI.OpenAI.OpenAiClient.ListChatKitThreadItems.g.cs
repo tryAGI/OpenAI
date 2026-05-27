@@ -476,7 +476,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListChatKitThreadItemsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.ThreadItem> that auto-pages over the response.
+        /// Wraps ListChatKitThreadItemsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ThreadItem&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="threadId">
         /// Example: cthr_123

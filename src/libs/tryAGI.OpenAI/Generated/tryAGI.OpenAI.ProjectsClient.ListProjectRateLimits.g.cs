@@ -460,7 +460,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListProjectRateLimitsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.ProjectRateLimit> that auto-pages over the response.
+        /// Wraps ListProjectRateLimitsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ProjectRateLimit&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="limit">

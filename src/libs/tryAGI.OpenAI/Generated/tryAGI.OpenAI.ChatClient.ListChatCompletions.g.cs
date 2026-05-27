@@ -475,7 +475,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListChatCompletionsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.CreateChatCompletionResponse> that auto-pages over the response.
+        /// Wraps ListChatCompletionsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.CreateChatCompletionResponse&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="model"></param>
         /// <param name="metadata"></param>

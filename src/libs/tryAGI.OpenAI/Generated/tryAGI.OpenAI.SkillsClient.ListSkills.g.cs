@@ -449,7 +449,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListSkillsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.SkillResource> that auto-pages over the response.
+        /// Wraps ListSkillsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.SkillResource&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="limit"></param>
         /// <param name="order"></param> 

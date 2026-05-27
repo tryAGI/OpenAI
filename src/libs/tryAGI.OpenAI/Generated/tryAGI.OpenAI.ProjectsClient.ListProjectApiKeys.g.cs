@@ -450,7 +450,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListProjectApiKeysAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.ProjectApiKey> that auto-pages over the response.
+        /// Wraps ListProjectApiKeysAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ProjectApiKey&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="limit">
