@@ -3,8 +3,29 @@ set -euo pipefail
 
 # OpenAPI spec: https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml (+ AsyncAPI)
 
+use_pinned_spec=false
+for arg in "$@"; do
+  case "$arg" in
+    --pinned-spec)
+      use_pinned_spec=true
+      ;;
+    *)
+      echo "Unknown argument: $arg" >&2
+      exit 1
+      ;;
+  esac
+done
+if [[ "${TRYAGI_PINNED_SPEC:-0}" == "1" ]]; then
+  use_pinned_spec=true
+fi
+
 dotnet tool update --global autosdk.cli --prerelease 2>/dev/null || dotnet tool install --global autosdk.cli --prerelease
-curl --fail --silent --show-error -L -o openapi.yaml https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml
+if [[ "$use_pinned_spec" == false ]]; then
+  curl --fail --silent --show-error -L -o openapi.yaml https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml
+elif [[ ! -f openapi.yaml ]]; then
+  echo "error: --pinned-spec requested but openapi.yaml does not exist." >&2
+  exit 1
+fi
 
 # build-asyncapi.py requires PyYAML; install it on first run (CI or fresh clones).
 python3 -c "import yaml" 2>/dev/null || python3 -m pip install --quiet --user --break-system-packages pyyaml
