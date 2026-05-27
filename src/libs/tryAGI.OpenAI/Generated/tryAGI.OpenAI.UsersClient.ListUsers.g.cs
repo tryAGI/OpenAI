@@ -451,7 +451,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListUsersAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.User&gt; that auto-pages over the response.
+        /// Wraps ListUsersAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.User> that auto-pages over the response.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 20

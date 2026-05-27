@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListRunStepsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.RunStepObject&gt; that auto-pages over the response.
+        /// Wraps ListRunStepsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.RunStepObject> that auto-pages over the response.
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="runId"></param>

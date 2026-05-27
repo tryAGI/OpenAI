@@ -472,7 +472,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListRunsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.RunObject&gt; that auto-pages over the response.
+        /// Wraps ListRunsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.RunObject> that auto-pages over the response.
         /// </summary>
         /// <param name="threadId"></param>
         /// <param name="limit">

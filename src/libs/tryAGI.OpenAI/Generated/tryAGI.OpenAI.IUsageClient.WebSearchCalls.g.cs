@@ -72,7 +72,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps WebSearchCallsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.UsageTimeBucket&gt; that auto-pages over the response.
+        /// Wraps WebSearchCallsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.UsageTimeBucket> that auto-pages over the response.
         /// </summary>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
         /// <param name="contextLevels"></param>
         /// <param name="groupBy"></param>
         /// <param name="limit"></param> 
-        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.UsageTimeBucket> WebSearchCallsAutoPagingAsync(
             int startTime,             int? endTime = default,
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageWebSearchCallsContextLevel>? contextLevels = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageWebSearchCallsGroupByItem>? groupBy = default,
             int? limit = default,
-            string? page = null,
+            int? page = null,
             global::System.Threading.CancellationToken cancellationToken = default);
 
     }

@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListOrganizationSpendAlertsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.OrganizationSpendAlert&gt; that auto-pages over the response.
+        /// Wraps ListOrganizationSpendAlertsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.OrganizationSpendAlert> that auto-pages over the response.
         /// </summary>
         /// <param name="limit"></param>
         /// <param name="order">

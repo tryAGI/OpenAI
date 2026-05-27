@@ -470,7 +470,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListProjectSpendAlertsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ProjectSpendAlert&gt; that auto-pages over the response.
+        /// Wraps ListProjectSpendAlertsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.ProjectSpendAlert> that auto-pages over the response.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="limit"></param>

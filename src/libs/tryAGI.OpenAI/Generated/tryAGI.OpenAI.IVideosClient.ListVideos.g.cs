@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListVideosAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.VideoResource&gt; that auto-pages over the response.
+        /// Wraps ListVideosAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.VideoResource> that auto-pages over the response.
         /// </summary>
         /// <param name="limit"></param>
         /// <param name="order"></param> 

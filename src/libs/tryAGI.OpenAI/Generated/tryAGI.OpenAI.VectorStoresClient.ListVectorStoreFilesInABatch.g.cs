@@ -491,7 +491,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListVectorStoreFilesInABatchAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.VectorStoreFileObject&gt; that auto-pages over the response.
+        /// Wraps ListVectorStoreFilesInABatchAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.VectorStoreFileObject> that auto-pages over the response.
         /// </summary>
         /// <param name="vectorStoreId"></param>
         /// <param name="batchId"></param>

@@ -48,7 +48,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListInputItemsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ItemResource&gt; that auto-pages over the response.
+        /// Wraps ListInputItemsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.ItemResource> that auto-pages over the response.
         /// </summary>
         /// <param name="responseId"></param>
         /// <param name="limit">

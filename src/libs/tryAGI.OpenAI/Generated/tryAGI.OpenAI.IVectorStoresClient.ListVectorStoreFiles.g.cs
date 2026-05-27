@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListVectorStoreFilesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.VectorStoreFileObject&gt; that auto-pages over the response.
+        /// Wraps ListVectorStoreFilesAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.VectorStoreFileObject> that auto-pages over the response.
         /// </summary>
         /// <param name="vectorStoreId"></param>
         /// <param name="limit">
