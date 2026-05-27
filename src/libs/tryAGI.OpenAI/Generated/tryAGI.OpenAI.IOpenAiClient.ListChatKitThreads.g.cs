@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListChatKitThreadsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ThreadResource&gt; that auto-pages over the response.
+        /// Wraps ListChatKitThreadsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.ThreadResource> that auto-pages over the response.
         /// </summary>
         /// <param name="limit"></param>
         /// <param name="order"></param>

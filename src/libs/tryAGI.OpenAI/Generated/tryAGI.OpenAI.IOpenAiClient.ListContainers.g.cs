@@ -50,7 +50,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListContainersAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ContainerResource&gt; that auto-pages over the response.
+        /// Wraps ListContainersAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.ContainerResource> that auto-pages over the response.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 20

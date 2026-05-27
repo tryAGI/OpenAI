@@ -472,7 +472,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps GetEvalRunsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.EvalRun&gt; that auto-pages over the response.
+        /// Wraps GetEvalRunsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.EvalRun> that auto-pages over the response.
         /// </summary>
         /// <param name="evalId"></param>
         /// <param name="limit">

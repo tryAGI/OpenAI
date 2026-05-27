@@ -531,7 +531,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps CompletionsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.UsageTimeBucket&gt; that auto-pages over the response.
+        /// Wraps CompletionsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.UsageTimeBucket> that auto-pages over the response.
         /// </summary>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
@@ -545,7 +545,7 @@ namespace tryAGI.OpenAI
         /// <param name="batch"></param>
         /// <param name="groupBy"></param>
         /// <param name="limit"></param> 
-        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.UsageTimeBucket> CompletionsAutoPagingAsync(
             int startTime,             int? endTime = default,
@@ -557,11 +557,11 @@ namespace tryAGI.OpenAI
             bool? batch = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCompletionsGroupByItem>? groupBy = default,
             int? limit = default,
-            string? page = null,
+            int? page = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.UsageResponse, global::tryAGI.OpenAI.UsageTimeBucket>(
-                fetchPage: (__cursor, __ct) => CompletionsAsync(
+            return global::tryAGI.OpenAI.AutoSDKPager.OffsetAsync<global::tryAGI.OpenAI.UsageResponse, global::tryAGI.OpenAI.UsageTimeBucket>(
+                fetchPage: (__page, __ct) => CompletionsAsync(
                     startTime: startTime,
                     endTime: endTime,
                     bucketWidth: bucketWidth,
@@ -572,13 +572,13 @@ namespace tryAGI.OpenAI
                     batch: batch,
                     groupBy: groupBy,
                     limit: limit,
-                    page: __cursor,
+                    page: __page,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null
                     : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.UsageTimeBucket>?)__response.Data,
-                extractNextCursor: static __response => __response is null ? null : __response.NextPage,
-                initialCursor: page,
+                hasMore: static __response => __response is not null && (__response.HasMore ?? false),
+                initialPage: page ?? 1,
                 cancellationToken: cancellationToken);
         }
 

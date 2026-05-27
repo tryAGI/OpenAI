@@ -452,7 +452,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListFineTuningCheckpointsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.FineTuningJobCheckpoint&gt; that auto-pages over the response.
+        /// Wraps ListFineTuningCheckpointsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.FineTuningJobCheckpoint> that auto-pages over the response.
         /// </summary>
         /// <param name="fineTuningJobId">
         /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F

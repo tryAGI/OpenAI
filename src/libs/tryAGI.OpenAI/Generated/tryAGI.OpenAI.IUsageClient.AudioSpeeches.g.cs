@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps AudioSpeechesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.UsageTimeBucket&gt; that auto-pages over the response.
+        /// Wraps AudioSpeechesAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.UsageTimeBucket> that auto-pages over the response.
         /// </summary>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
@@ -81,7 +81,7 @@ namespace tryAGI.OpenAI
         /// <param name="models"></param>
         /// <param name="groupBy"></param>
         /// <param name="limit"></param> 
-        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="page">Initial page number to start enumerating from. Defaults to 1.</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.UsageTimeBucket> AudioSpeechesAutoPagingAsync(
             int startTime,             int? endTime = default,
@@ -92,7 +92,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? models = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageAudioSpeechesGroupByItem>? groupBy = default,
             int? limit = default,
-            string? page = null,
+            int? page = null,
             global::System.Threading.CancellationToken cancellationToken = default);
 
     }

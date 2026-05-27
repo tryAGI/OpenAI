@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListProjectUsersAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ProjectUser&gt; that auto-pages over the response.
+        /// Wraps ListProjectUsersAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.ProjectUser> that auto-pages over the response.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="limit">

@@ -467,7 +467,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Wraps ListEvalsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.Eval&gt; that auto-pages over the response.
+        /// Wraps ListEvalsAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.Eval> that auto-pages over the response.
         /// </summary>
         /// <param name="limit">
         /// Default Value: 20

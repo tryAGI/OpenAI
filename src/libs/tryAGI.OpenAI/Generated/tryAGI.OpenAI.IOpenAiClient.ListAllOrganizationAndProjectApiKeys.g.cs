@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps ListAllOrganizationAndProjectApiKeysAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.AdminApiKey&gt; that auto-pages over the response.
+        /// Wraps ListAllOrganizationAndProjectApiKeysAsync as an IAsyncEnumerable<global::tryAGI.OpenAI.AdminApiKey> that auto-pages over the response.
         /// </summary>
         /// <param name="order">
         /// Order results by creation time, ascending or descending.<br/>
