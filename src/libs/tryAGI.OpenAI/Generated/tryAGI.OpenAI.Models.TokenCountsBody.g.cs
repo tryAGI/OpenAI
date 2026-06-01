@@ -58,6 +58,13 @@ namespace tryAGI.OpenAI
         public string? Instructions { get; set; }
 
         /// <summary>
+        /// A model-owned style preset to apply to this request. Omit this parameter to use the model's default style. Supported values may expand over time. Values must be at most 64 characters.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("personality")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.PersonalityEnumJsonConverter))]
+        public global::tryAGI.OpenAI.PersonalityEnum? Personality { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
@@ -94,6 +101,9 @@ namespace tryAGI.OpenAI
         /// The truncation strategy to use for the model response. - `auto`: If the input to this Response exceeds the model's context window size, the model will truncate the response to fit the context window by dropping items from the beginning of the conversation. - `disabled` (default): If the input size will exceed the context window size for a model, the request will fail with a 400 error.
         /// </param>
         /// <param name="instructions"></param>
+        /// <param name="personality">
+        /// A model-owned style preset to apply to this request. Omit this parameter to use the model's default style. Supported values may expand over time. Values must be at most 64 characters.
+        /// </param>
         /// <param name="conversation"></param>
         /// <param name="toolChoice"></param>
         /// <param name="parallelToolCalls"></param>
@@ -109,6 +119,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.Reasoning? reasoning,
             global::tryAGI.OpenAI.TruncationEnum? truncation,
             string? instructions,
+            global::tryAGI.OpenAI.PersonalityEnum? personality,
             global::tryAGI.OpenAI.ConversationParam? conversation,
             global::tryAGI.OpenAI.ToolChoiceParam? toolChoice,
             bool? parallelToolCalls)
@@ -121,6 +132,7 @@ namespace tryAGI.OpenAI
             this.Reasoning = reasoning;
             this.Truncation = truncation;
             this.Instructions = instructions;
+            this.Personality = personality;
             this.Conversation = conversation;
             this.ToolChoice = toolChoice;
             this.ParallelToolCalls = parallelToolCalls;
