@@ -43502,6 +43502,82 @@ components:
             id:
               type: string
               description: The service account ID.
+        workload_identity_provider.created:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: The workload identity provider ID.
+            data:
+              type: object
+              description: The payload used to create the workload identity provider.
+        workload_identity_provider.updated:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: The workload identity provider ID.
+            changes_requested:
+              type: object
+              description: The payload used to update the workload identity provider.
+        workload_identity_provider.deleted:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: The workload identity provider ID.
+            name:
+              type: string
+              description: The workload identity provider name.
+        workload_identity_provider_mapping.created:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: The workload identity provider mapping ID.
+            identity_provider_id:
+              type: string
+              description: The workload identity provider ID.
+            data:
+              type: object
+              description: >-
+                The payload used to create the workload identity provider
+                mapping.
+        workload_identity_provider_mapping.updated:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: The workload identity provider mapping ID.
+            identity_provider_id:
+              type: string
+              description: The workload identity provider ID.
+            changes_requested:
+              type: object
+              description: >-
+                The payload used to update the workload identity provider
+                mapping.
+        workload_identity_provider_mapping.deleted:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: The workload identity provider mapping ID.
+            identity_provider_id:
+              type: string
+              description: The workload identity provider ID.
+            project_id:
+              type: string
+              description: The project ID.
+            service_account_id:
+              type: string
+              description: The mapped service account ID.
         user.added:
           type: object
           description: The details for events with this `type`.
@@ -43728,6 +43804,12 @@ components:
         - tunnel.created
         - tunnel.updated
         - tunnel.deleted
+        - workload_identity_provider.created
+        - workload_identity_provider.updated
+        - workload_identity_provider.deleted
+        - workload_identity_provider_mapping.created
+        - workload_identity_provider_mapping.updated
+        - workload_identity_provider_mapping.deleted
         - role.created
         - role.updated
         - role.deleted
@@ -46058,6 +46140,7 @@ components:
         - $ref: '#/components/schemas/ComputerToolCallOutputResource'
         - $ref: '#/components/schemas/ToolSearchCall'
         - $ref: '#/components/schemas/ToolSearchOutput'
+        - $ref: '#/components/schemas/AdditionalTools'
         - $ref: '#/components/schemas/ReasoningItem'
         - $ref: '#/components/schemas/CompactionBody'
         - $ref: '#/components/schemas/CodeInterpreterToolCall'
@@ -56023,6 +56106,7 @@ components:
         - $ref: '#/components/schemas/FunctionCallOutputItemParam'
         - $ref: '#/components/schemas/ToolSearchCallItemParam'
         - $ref: '#/components/schemas/ToolSearchOutputItemParam'
+        - $ref: '#/components/schemas/AdditionalToolsItemParam'
         - $ref: '#/components/schemas/ReasoningItem'
         - $ref: '#/components/schemas/CompactionSummaryItemParam'
         - $ref: '#/components/schemas/ImageGenToolCall'
@@ -56055,6 +56139,7 @@ components:
         - $ref: '#/components/schemas/FunctionToolCallOutputResource'
         - $ref: '#/components/schemas/ToolSearchCall'
         - $ref: '#/components/schemas/ToolSearchOutput'
+        - $ref: '#/components/schemas/AdditionalTools'
         - $ref: '#/components/schemas/ReasoningItem'
         - $ref: '#/components/schemas/CompactionBody'
         - $ref: '#/components/schemas/ImageGenToolCall'
@@ -58032,6 +58117,15 @@ components:
                 enable extended prompt caching, which keeps cached prefixes
                 active for longer, up to a maximum of 24 hours. [Learn
                 more](/docs/guides/prompt-caching#prompt-cache-retention).
+
+                For `gpt-5.5`, `gpt-5.5-pro`, and future models, only `24h` is
+                supported.
+
+
+                For older models that support both `in_memory` and `24h`, the
+                default depends on your organization's data retention policy:
+                  - Organizations without ZDR enabled default to `24h`.
+                  - Organizations with ZDR enabled default to `in_memory` when `prompt_cache_retention` is not specified.
             - type: 'null'
     ModifyAssistantRequest:
       type: object
@@ -58662,6 +58756,7 @@ components:
         - $ref: '#/components/schemas/ReasoningItem'
         - $ref: '#/components/schemas/ToolSearchCall'
         - $ref: '#/components/schemas/ToolSearchOutput'
+        - $ref: '#/components/schemas/AdditionalTools'
         - $ref: '#/components/schemas/CompactionBody'
         - $ref: '#/components/schemas/ImageGenToolCall'
         - $ref: '#/components/schemas/CodeInterpreterToolCall'
@@ -78578,8 +78673,9 @@ components:
           x-stainless-const: true
         query:
           type: string
+          deprecated: true
           description: |
-            [DEPRECATED] The search query.
+            The search query.
         queries:
           type: array
           title: Search queries
@@ -78617,7 +78713,6 @@ components:
               - url
       required:
         - type
-        - query
     WebSearchApproximateLocation:
       anyOf:
         - type: object
@@ -81369,6 +81464,32 @@ components:
         - execution
         - tools
         - status
+    AdditionalTools:
+      properties:
+        type:
+          type: string
+          enum:
+            - additional_tools
+          description: The type of the item. Always `additional_tools`.
+          default: additional_tools
+          x-stainless-const: true
+        id:
+          type: string
+          description: The unique ID of the additional tools item.
+        role:
+          $ref: '#/components/schemas/MessageRole'
+          description: The role that provided the additional tools.
+        tools:
+          items:
+            $ref: '#/components/schemas/Tool'
+          type: array
+          description: The additional tool definitions made available at this item.
+      type: object
+      required:
+        - type
+        - id
+        - role
+        - tools
     CompactionBody:
       properties:
         type:
@@ -82164,6 +82285,40 @@ components:
       type: object
       required:
         - type
+        - tools
+    AdditionalToolsItemParam:
+      properties:
+        id:
+          anyOf:
+            - type: string
+              description: The unique ID of this additional tools item.
+              example: at_123
+            - type: 'null'
+        type:
+          type: string
+          enum:
+            - additional_tools
+          description: The item type. Always `additional_tools`.
+          default: additional_tools
+          x-stainless-const: true
+        role:
+          type: string
+          enum:
+            - developer
+          description: >-
+            The role that provided the additional tools. Only `developer` is
+            supported.
+          default: developer
+          x-stainless-const: true
+        tools:
+          items:
+            $ref: '#/components/schemas/Tool'
+          type: array
+          description: A list of additional tools made available at this item.
+      type: object
+      required:
+        - type
+        - role
         - tools
     CompactionSummaryItemParam:
       properties:
@@ -83226,6 +83381,13 @@ components:
       enum:
         - auto
         - disabled
+    PersonalityEnum:
+      anyOf:
+        - type: string
+        - type: string
+          enum:
+            - friendly
+            - pragmatic
     TokenCountsBody:
       properties:
         model:
@@ -83309,6 +83471,12 @@ components:
                 response. This makes it simple to swap out system (or developer)
                 messages in new responses.
             - type: 'null'
+        personality:
+          $ref: '#/components/schemas/PersonalityEnum'
+          description: >-
+            A model-owned style preset to apply to this request. Omit this
+            parameter to use the model's default style. Supported values may
+            expand over time. Values must be at most 64 characters.
         conversation:
           anyOf:
             - $ref: '#/components/schemas/ConversationParam'
@@ -83424,6 +83592,7 @@ components:
         - $ref: '#/components/schemas/FunctionToolCall'
         - $ref: '#/components/schemas/ToolSearchCall'
         - $ref: '#/components/schemas/ToolSearchOutput'
+        - $ref: '#/components/schemas/AdditionalTools'
         - $ref: '#/components/schemas/FunctionToolCallOutput'
         - $ref: '#/components/schemas/FileSearchToolCall'
         - $ref: '#/components/schemas/WebSearchToolCall'

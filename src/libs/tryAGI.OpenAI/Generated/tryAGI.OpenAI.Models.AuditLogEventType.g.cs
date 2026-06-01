@@ -212,6 +212,30 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         UserUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
+        WorkloadIdentityProviderCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        WorkloadIdentityProviderDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        WorkloadIdentityProviderUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
+        WorkloadIdentityProviderMappingCreated,
+        /// <summary>
+        /// 
+        /// </summary>
+        WorkloadIdentityProviderMappingDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        WorkloadIdentityProviderMappingUpdated,
     }
 
     /// <summary>
@@ -277,6 +301,12 @@ namespace tryAGI.OpenAI
                 AuditLogEventType.UserAdded => "user.added",
                 AuditLogEventType.UserDeleted => "user.deleted",
                 AuditLogEventType.UserUpdated => "user.updated",
+                AuditLogEventType.WorkloadIdentityProviderCreated => "workload_identity_provider.created",
+                AuditLogEventType.WorkloadIdentityProviderDeleted => "workload_identity_provider.deleted",
+                AuditLogEventType.WorkloadIdentityProviderUpdated => "workload_identity_provider.updated",
+                AuditLogEventType.WorkloadIdentityProviderMappingCreated => "workload_identity_provider_mapping.created",
+                AuditLogEventType.WorkloadIdentityProviderMappingDeleted => "workload_identity_provider_mapping.deleted",
+                AuditLogEventType.WorkloadIdentityProviderMappingUpdated => "workload_identity_provider_mapping.updated",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -338,6 +368,12 @@ namespace tryAGI.OpenAI
                 "user.added" => AuditLogEventType.UserAdded,
                 "user.deleted" => AuditLogEventType.UserDeleted,
                 "user.updated" => AuditLogEventType.UserUpdated,
+                "workload_identity_provider.created" => AuditLogEventType.WorkloadIdentityProviderCreated,
+                "workload_identity_provider.deleted" => AuditLogEventType.WorkloadIdentityProviderDeleted,
+                "workload_identity_provider.updated" => AuditLogEventType.WorkloadIdentityProviderUpdated,
+                "workload_identity_provider_mapping.created" => AuditLogEventType.WorkloadIdentityProviderMappingCreated,
+                "workload_identity_provider_mapping.deleted" => AuditLogEventType.WorkloadIdentityProviderMappingDeleted,
+                "workload_identity_provider_mapping.updated" => AuditLogEventType.WorkloadIdentityProviderMappingUpdated,
                 _ => null,
             };
         }

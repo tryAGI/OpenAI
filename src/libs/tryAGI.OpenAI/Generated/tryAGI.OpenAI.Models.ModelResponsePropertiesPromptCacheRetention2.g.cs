@@ -4,7 +4,11 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).
+    /// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).<br/>
+    /// For `gpt-5.5`, `gpt-5.5-pro`, and future models, only `24h` is supported.<br/>
+    /// For older models that support both `in_memory` and `24h`, the default depends on your organization's data retention policy:<br/>
+    ///   - Organizations without ZDR enabled default to `24h`.<br/>
+    ///   - Organizations with ZDR enabled default to `in_memory` when `prompt_cache_retention` is not specified.
     /// </summary>
     public enum ModelResponsePropertiesPromptCacheRetention2
     {

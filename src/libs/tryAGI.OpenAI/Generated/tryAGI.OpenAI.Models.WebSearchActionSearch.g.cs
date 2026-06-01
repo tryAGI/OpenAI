@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -16,11 +18,11 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.WebSearchActionSearchType Type { get; set; }
 
         /// <summary>
-        /// [DEPRECATED] The search query.
+        /// The search query.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Query { get; set; }
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public string? Query { get; set; }
 
         /// <summary>
         /// The search queries.
@@ -43,9 +45,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchActionSearch" /> class.
         /// </summary>
-        /// <param name="query">
-        /// [DEPRECATED] The search query.
-        /// </param>
         /// <param name="type">
         /// The action type.
         /// </param>
@@ -59,13 +58,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchActionSearch(
-            string query,
             global::tryAGI.OpenAI.WebSearchActionSearchType type,
             global::System.Collections.Generic.IList<string>? queries,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebSearchActionSearchSource>? sources)
         {
             this.Type = type;
-            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
             this.Queries = queries;
             this.Sources = sources;
         }
