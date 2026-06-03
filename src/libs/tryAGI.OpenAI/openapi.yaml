@@ -44601,6 +44601,69 @@ components:
               - text
               - audio
         - type: 'null'
+    ChatCompletionModeration:
+      type: object
+      description: Moderation results or errors for the request input and generated output.
+      properties:
+        input:
+          oneOf:
+            - $ref: '#/components/schemas/ChatCompletionModerationResults'
+            - $ref: '#/components/schemas/ChatCompletionModerationError'
+          discriminator:
+            propertyName: type
+          description: Moderation for the request input.
+        output:
+          oneOf:
+            - $ref: '#/components/schemas/ChatCompletionModerationResults'
+            - $ref: '#/components/schemas/ChatCompletionModerationError'
+          discriminator:
+            propertyName: type
+          description: Moderation for the generated output.
+      required:
+        - input
+        - output
+    ChatCompletionModerationError:
+      type: object
+      description: An error produced while attempting moderation.
+      properties:
+        type:
+          type: string
+          enum:
+            - error
+          description: The object type, which is always `error`.
+          x-stainless-const: true
+        code:
+          type: string
+          description: The error code.
+        message:
+          type: string
+          description: The error message.
+      required:
+        - type
+        - code
+        - message
+    ChatCompletionModerationResults:
+      type: object
+      description: Successful moderation results for the request input or generated output.
+      properties:
+        type:
+          type: string
+          enum:
+            - moderation_results
+          description: The object type, which is always `moderation_results`.
+          x-stainless-const: true
+        model:
+          type: string
+          description: The moderation model used to generate the results.
+        results:
+          type: array
+          description: A list of moderation results.
+          items:
+            $ref: '#/components/schemas/ModerationResultBody'
+      required:
+        - type
+        - model
+        - results
     ChatCompletionNamedToolChoice:
       type: object
       title: Function tool choice
@@ -46692,6 +46755,13 @@ components:
 
                 Supports text and image inputs. Note: image inputs over 8MB will
                 be dropped.
+            moderation:
+              anyOf:
+                - $ref: '#/components/schemas/ModerationParam'
+                  description: >
+                    Configuration for running moderation on the request input
+                    and generated output.
+                - type: 'null'
             stream:
               description: >
                 If set to true, the model response data will be streamed to the
@@ -46926,6 +46996,9 @@ components:
 
                   `tool_calls` if the model called a tool, or `function_call`
                   (deprecated) if the model called a function.
+
+                  Read the [Model
+                  Spec](https://model-spec.openai.com/2025-12-18.html) for more.
                 enum:
                   - stop
                   - length
@@ -46994,6 +47067,15 @@ components:
           x-stainless-const: true
         usage:
           $ref: '#/components/schemas/CompletionUsage'
+        moderation:
+          anyOf:
+            - $ref: '#/components/schemas/ChatCompletionModeration'
+              description: >
+                Moderation results for the request input and generated output,
+                if moderated
+
+                completions were requested.
+            - type: 'null'
       required:
         - choices
         - created
@@ -47165,6 +47247,16 @@ components:
             for
 
             the request.
+        moderation:
+          anyOf:
+            - $ref: '#/components/schemas/ChatCompletionModeration'
+              description: >
+                Moderation results for the request input and generated output.
+                Present
+
+                on the moderation chunk when moderated completions are
+                requested.
+            - type: 'null'
       required:
         - choices
         - created
@@ -49801,6 +49893,13 @@ components:
                     makes it simple
 
                     to swap out system (or developer) messages in new responses.
+                - type: 'null'
+            moderation:
+              anyOf:
+                - $ref: '#/components/schemas/ModerationParam'
+                  description: >
+                    Configuration for running moderation on the input and output
+                    of this response.
                 - type: 'null'
             stream:
               anyOf:
@@ -70948,6 +71047,13 @@ components:
                 - type: 'null'
             usage:
               $ref: '#/components/schemas/ResponseUsage'
+            moderation:
+              anyOf:
+                - $ref: '#/components/schemas/Moderation'
+                  description: >
+                    Moderation results for the response input and output, if
+                    moderated completions were requested.
+                - type: 'null'
             parallel_tool_calls:
               type: boolean
               description: |
@@ -79793,6 +79899,77 @@ components:
               "id": "resp_abc123"
             }
           }
+    ModerationInputType:
+      type: string
+      enum:
+        - text
+        - image
+    ModerationResultBody:
+      properties:
+        type:
+          type: string
+          enum:
+            - moderation_result
+          description: >-
+            The object type, which was always `moderation_result` for successful
+            moderation results.
+          default: moderation_result
+          x-stainless-const: true
+        model:
+          type: string
+          description: The moderation model that produced this result.
+        flagged:
+          type: boolean
+          description: >-
+            A boolean indicating whether the content was flagged by any
+            category.
+        categories:
+          additionalProperties:
+            type: boolean
+          type: object
+          description: >-
+            A dictionary of moderation categories to booleans, True if the input
+            is flagged under this category.
+          x-oaiTypeLabel: map
+        category_scores:
+          additionalProperties:
+            type: number
+          type: object
+          description: A dictionary of moderation categories to scores.
+          x-oaiTypeLabel: map
+        category_applied_input_types:
+          additionalProperties:
+            items:
+              $ref: '#/components/schemas/ModerationInputType'
+            type: array
+          type: object
+          description: >-
+            Which modalities of input are reflected by the score for each
+            category.
+          x-oaiTypeLabel: map
+      type: object
+      required:
+        - type
+        - model
+        - flagged
+        - categories
+        - category_scores
+        - category_applied_input_types
+      title: Moderation result
+      description: A moderation result produced for the response input or output.
+    ModerationParam:
+      properties:
+        model:
+          type: string
+          description: >-
+            The moderation model to use for moderated completions, e.g.
+            'omni-moderation-latest'.
+      type: object
+      required:
+        - model
+      description: >-
+        Configuration for running moderation on the input and output of this
+        response.
     SkillReferenceParam:
       properties:
         type:
@@ -82893,6 +83070,52 @@ components:
       type: object
       required:
         - type
+    ModerationErrorBody:
+      properties:
+        type:
+          type: string
+          enum:
+            - error
+          description: The object type, which was always `error` for moderation failures.
+          default: error
+          x-stainless-const: true
+        code:
+          type: string
+          description: The error code.
+        message:
+          type: string
+          description: The error message.
+      type: object
+      required:
+        - type
+        - code
+        - message
+      title: Moderation error
+      description: >-
+        An error produced while attempting moderation for the response input or
+        output.
+    Moderation:
+      properties:
+        input:
+          oneOf:
+            - $ref: '#/components/schemas/ModerationResultBody'
+            - $ref: '#/components/schemas/ModerationErrorBody'
+          description: Moderation for the response input.
+          discriminator:
+            propertyName: type
+        output:
+          oneOf:
+            - $ref: '#/components/schemas/ModerationResultBody'
+            - $ref: '#/components/schemas/ModerationErrorBody'
+          description: Moderation for the response output.
+          discriminator:
+            propertyName: type
+      type: object
+      required:
+        - input
+        - output
+      title: Moderation
+      description: Moderation results or errors for the response input and output.
     Conversation-2:
       properties:
         id:

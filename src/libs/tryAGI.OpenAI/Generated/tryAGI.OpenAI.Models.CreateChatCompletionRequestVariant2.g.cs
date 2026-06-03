@@ -124,6 +124,12 @@ namespace tryAGI.OpenAI
         public bool? Store { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("moderation")]
+        public global::tryAGI.OpenAI.ModerationParam? Moderation { get; set; }
+
+        /// <summary>
         /// If set to true, the model response data will be streamed to the client<br/>
         /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
         /// See the [Streaming section below](/docs/api-reference/chat/streaming)<br/>
@@ -333,6 +339,7 @@ namespace tryAGI.OpenAI
         /// Supports text and image inputs. Note: image inputs over 8MB will be dropped.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="moderation"></param>
         /// <param name="stream">
         /// If set to true, the model response data will be streamed to the client<br/>
         /// as it is generated using [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format).<br/>
@@ -409,6 +416,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ResponseFormat? responseFormat,
             global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2Audio? audio,
             bool? store,
+            global::tryAGI.OpenAI.ModerationParam? moderation,
             bool? stream,
             global::tryAGI.OpenAI.StopConfiguration? stop,
             global::System.Collections.Generic.Dictionary<string, int>? logitBias,
@@ -433,6 +441,7 @@ namespace tryAGI.OpenAI
             this.ResponseFormat = responseFormat;
             this.Audio = audio;
             this.Store = store;
+            this.Moderation = moderation;
             this.Stream = stream;
             this.Stop = stop;
             this.LogitBias = logitBias;

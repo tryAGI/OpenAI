@@ -75,6 +75,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CompletionUsage? Usage { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("moderation")]
+        public global::tryAGI.OpenAI.ChatCompletionModeration? Moderation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -109,6 +115,7 @@ namespace tryAGI.OpenAI
         /// receive the final usage chunk which contains the total token usage for<br/>
         /// the request.
         /// </param>
+        /// <param name="moderation"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -119,7 +126,8 @@ namespace tryAGI.OpenAI
             string model,
             global::tryAGI.OpenAI.ServiceTierEnum? serviceTier,
             global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject @object,
-            global::tryAGI.OpenAI.CompletionUsage? usage)
+            global::tryAGI.OpenAI.CompletionUsage? usage,
+            global::tryAGI.OpenAI.ChatCompletionModeration? moderation)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
@@ -128,6 +136,7 @@ namespace tryAGI.OpenAI
             this.ServiceTier = serviceTier;
             this.Object = @object;
             this.Usage = usage;
+            this.Moderation = moderation;
         }
 
         /// <summary>
