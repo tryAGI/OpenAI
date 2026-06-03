@@ -55,6 +55,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("input")) __score2++;
             if (__jsonProps.Contains("instructions")) __score2++;
             if (__jsonProps.Contains("max_output_tokens")) __score2++;
+            if (__jsonProps.Contains("moderation")) __score2++;
             if (__jsonProps.Contains("parallel_tool_calls")) __score2++;
             if (__jsonProps.Contains("store")) __score2++;
             if (__jsonProps.Contains("stream")) __score2++;

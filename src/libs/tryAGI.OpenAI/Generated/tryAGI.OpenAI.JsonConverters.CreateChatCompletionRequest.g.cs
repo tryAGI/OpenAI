@@ -49,6 +49,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("messages")) __score1++;
             if (__jsonProps.Contains("modalities")) __score1++;
             if (__jsonProps.Contains("model")) __score1++;
+            if (__jsonProps.Contains("moderation")) __score1++;
             if (__jsonProps.Contains("n")) __score1++;
             if (__jsonProps.Contains("parallel_tool_calls")) __score1++;
             if (__jsonProps.Contains("prediction")) __score1++;

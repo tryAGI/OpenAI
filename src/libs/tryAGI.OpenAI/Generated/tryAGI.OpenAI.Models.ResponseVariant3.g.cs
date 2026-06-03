@@ -88,6 +88,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ResponseUsage? Usage { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("moderation")]
+        public global::tryAGI.OpenAI.Moderation? Moderation { get; set; }
+
+        /// <summary>
         /// Whether to allow the model to run tool calls in parallel.<br/>
         /// Default Value: true
         /// </summary>
@@ -151,6 +157,7 @@ namespace tryAGI.OpenAI
         /// Represents token usage details including input tokens, output tokens,<br/>
         /// a breakdown of output tokens, and the total tokens used.
         /// </param>
+        /// <param name="moderation"></param>
         /// <param name="conversation"></param>
         /// <param name="maxOutputTokens"></param>
 #if NET7_0_OR_GREATER
@@ -169,6 +176,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? instructions,
             string? outputText,
             global::tryAGI.OpenAI.ResponseUsage? usage,
+            global::tryAGI.OpenAI.Moderation? moderation,
             global::tryAGI.OpenAI.Conversation22? conversation,
             int? maxOutputTokens)
         {
@@ -183,6 +191,7 @@ namespace tryAGI.OpenAI
             this.Instructions = instructions;
             this.OutputText = outputText;
             this.Usage = usage;
+            this.Moderation = moderation;
             this.ParallelToolCalls = parallelToolCalls;
             this.Conversation = conversation;
             this.MaxOutputTokens = maxOutputTokens;

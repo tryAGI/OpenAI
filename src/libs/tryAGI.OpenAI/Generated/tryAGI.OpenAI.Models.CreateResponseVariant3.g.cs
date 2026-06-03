@@ -48,6 +48,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("moderation")]
+        public global::tryAGI.OpenAI.ModerationParam? Moderation { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
         public bool? Stream { get; set; }
 
@@ -97,6 +103,7 @@ namespace tryAGI.OpenAI
         /// <param name="parallelToolCalls"></param>
         /// <param name="store"></param>
         /// <param name="instructions"></param>
+        /// <param name="moderation"></param>
         /// <param name="stream"></param>
         /// <param name="streamOptions"></param>
         /// <param name="conversation"></param>
@@ -111,6 +118,7 @@ namespace tryAGI.OpenAI
             bool? parallelToolCalls,
             bool? store,
             string? instructions,
+            global::tryAGI.OpenAI.ModerationParam? moderation,
             bool? stream,
             global::tryAGI.OpenAI.ResponseStreamOptionsVariant1? streamOptions,
             global::tryAGI.OpenAI.ConversationParam? conversation,
@@ -122,6 +130,7 @@ namespace tryAGI.OpenAI
             this.ParallelToolCalls = parallelToolCalls;
             this.Store = store;
             this.Instructions = instructions;
+            this.Moderation = moderation;
             this.Stream = stream;
             this.StreamOptions = streamOptions;
             this.Conversation = conversation;
