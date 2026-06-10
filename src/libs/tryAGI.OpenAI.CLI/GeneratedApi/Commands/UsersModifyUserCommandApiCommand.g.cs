@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -36,18 +35,18 @@ internal static partial class UsersModifyUserCommandApiCommand
     {
         Description = @"Developer persona metadata.",
     };
-      private static Option<string?> Input { get; } = new(@"--input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -92,7 +91,7 @@ internal static partial class UsersModifyUserCommandApiCommand
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -107,10 +106,10 @@ internal static partial class UsersModifyUserCommandApiCommand
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var userId = parseResult.GetRequiredValue(UserId);
-                        var role = CliRuntime.WasSpecified(parseResult, Role) ? parseResult.GetValue(Role) : __requestBase is not null ? __requestBase.Role : default;
-                        var roleId = CliRuntime.WasSpecified(parseResult, RoleId) ? parseResult.GetValue(RoleId) : __requestBase is not null ? __requestBase.RoleId : default;
-                        var technicalLevel = CliRuntime.WasSpecified(parseResult, TechnicalLevel) ? parseResult.GetValue(TechnicalLevel) : __requestBase is not null ? __requestBase.TechnicalLevel : default;
-                        var developerPersona = CliRuntime.WasSpecified(parseResult, DeveloperPersona) ? parseResult.GetValue(DeveloperPersona) : __requestBase is not null ? __requestBase.DeveloperPersona : default;
+                        var role = parseResult.GetValue(Role) ?? __requestBase?.Role;
+                        var roleId = parseResult.GetValue(RoleId) ?? __requestBase?.RoleId;
+                        var technicalLevel = parseResult.GetValue(TechnicalLevel) ?? __requestBase?.TechnicalLevel;
+                        var developerPersona = parseResult.GetValue(DeveloperPersona) ?? __requestBase?.DeveloperPersona;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

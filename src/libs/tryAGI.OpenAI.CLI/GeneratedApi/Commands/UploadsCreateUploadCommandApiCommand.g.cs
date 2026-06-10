@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -46,18 +45,18 @@ the supported MIME types for assistants and vision.
         Required = true,
     };
     private static readonly FileExpirationAfterOptionSet ExpiresAfterOptions = FileExpirationAfterOptionSet.Create(@"expires-after");
-      private static Option<string?> Input { get; } = new(@"--input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -121,7 +120,7 @@ Returns the Upload object with status `pending`.
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -139,18 +138,17 @@ Returns the Upload object with status `pending`.
                         var purpose = parseResult.GetRequiredValue(Purpose);
                         var bytes = parseResult.GetRequiredValue(Bytes);
                         var mimeType = parseResult.GetRequiredValue(MimeType);
-
-                        var __expiresAfterBase = __requestBase?.ExpiresAfter;                        var expiresAfterAnchor = CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Anchor) ? parseResult.GetValue(ExpiresAfterOptions.Anchor) : __expiresAfterBase is not null ? __expiresAfterBase.Anchor : default;
+                        var expiresAfterAnchor = parseResult.GetValue(ExpiresAfterOptions.Anchor) ?? __requestBase?.ExpiresAfter?.Anchor;
                         var expiresAfterSeconds = parseResult.GetValue(ExpiresAfterOptions.Seconds);
                         var __expiresAfterSpecified = CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Anchor) || CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Seconds);
                         var expiresAfter =
-                            __expiresAfterSpecified || __expiresAfterBase is not null
+                            __expiresAfterSpecified || __requestBase?.ExpiresAfter is not null
                                 ? new global::tryAGI.OpenAI.FileExpirationAfter
                                 {
                                 Anchor = expiresAfterAnchor,
-                                Seconds = expiresAfterSeconds!,
+                                Seconds = expiresAfterSeconds,
                                 }
-                                : __expiresAfterBase;
+                                : __requestBase?.ExpiresAfter;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

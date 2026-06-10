@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -26,18 +25,18 @@ internal static partial class InvitesCreateInviteCommandApiCommand
     {
         Description = @"An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior. If empty list is passed, the user will not be invited to any projects, including the default one.",
     };
-      private static Option<string?> Input { get; } = new(@"--input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -80,7 +79,7 @@ internal static partial class InvitesCreateInviteCommandApiCommand
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -96,7 +95,7 @@ internal static partial class InvitesCreateInviteCommandApiCommand
                             cancellationToken).ConfigureAwait(false);
                         var email = parseResult.GetRequiredValue(Email);
                         var role = parseResult.GetRequiredValue(Role);
-                        var projects = CliRuntime.WasSpecified(parseResult, Projects) ? parseResult.GetValue(Projects) : __requestBase is not null ? __requestBase.Projects : default;
+                        var projects = parseResult.GetValue(Projects) ?? __requestBase?.Projects;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

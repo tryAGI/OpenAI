@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -7,7 +6,7 @@ namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
 internal static partial class EmbeddingsCreateEmbeddingsCommandApiCommand
 {
-    private static Option<global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>> InputOption { get; } = new(
+    private static Option<global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>> Input { get; } = new(
         name: @"--input")
     {
         Description = @"Input text to embed, encoded as a string or array of tokens. To embed multiple inputs in a single request, pass an array of strings or array of token arrays. The input must not exceed the max input tokens for the model (8192 tokens for all embedding models), cannot be an empty string, and any array must be 2048 dimensions or less. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens. In addition to the per-input token limit, all embedding  models enforce a maximum of 300,000 tokens summed across all inputs in a  single request.
@@ -42,18 +41,18 @@ internal static partial class EmbeddingsCreateEmbeddingsCommandApiCommand
         Description = @"A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).
 ",
     };
-      private static Option<string?> RequestInput { get; } = new(@"--request-input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -82,23 +81,23 @@ internal static partial class EmbeddingsCreateEmbeddingsCommandApiCommand
     public static Command Create()
     {
         var command = new Command(@"create-embeddings", @"Creates an embedding vector representing the input text.");
-                        command.Options.Add(InputOption);
+                        command.Options.Add(Input);
                         command.Options.Add(Model);
                         command.Options.Add(EncodingFormat);
                         command.Options.Add(Dimensions);
                         command.Options.Add(User);
-          command.Options.Add(RequestInput);
+          command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
           command.Validators.Add(result =>
           {
-              var hasInput = result.GetResult(RequestInput) is not null;
+              var hasInput = result.GetResult(Input) is not null;
               var hasRequestJson = result.GetResult(RequestJson) is not null;
               var hasRequestFile = result.GetResult(RequestFile) is not null;
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --request-input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -107,16 +106,16 @@ internal static partial class EmbeddingsCreateEmbeddingsCommandApiCommand
             {
                         var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::tryAGI.OpenAI.CreateEmbeddingRequest>(
                             parseResult,
-                            RequestInput,
+                            Input,
                             RequestJson,
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var input = parseResult.GetRequiredValue(InputOption);
+                        var input = parseResult.GetRequiredValue(Input);
                         var model = parseResult.GetRequiredValue(Model);
-                        var encodingFormat = CliRuntime.WasSpecified(parseResult, EncodingFormat) ? parseResult.GetValue(EncodingFormat) : __requestBase is not null ? __requestBase.EncodingFormat : default;
-                        var dimensions = CliRuntime.WasSpecified(parseResult, Dimensions) ? parseResult.GetValue(Dimensions) : __requestBase is not null ? __requestBase.Dimensions : default;
-                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : __requestBase is not null ? __requestBase.User : default;
+                        var encodingFormat = parseResult.GetValue(EncodingFormat) ?? __requestBase?.EncodingFormat;
+                        var dimensions = parseResult.GetValue(Dimensions) ?? __requestBase?.Dimensions;
+                        var user = parseResult.GetValue(User) ?? __requestBase?.User;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

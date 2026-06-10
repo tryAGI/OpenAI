@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -29,18 +28,18 @@ internal static partial class AudioCreateTranscriptionCommandApiCommand
         Description = @"",
     };
     private static readonly CreateTranscriptionRequestOptionSet CreateTranscriptionRequestOptionSetOptions = CreateTranscriptionRequestOptionSet.Create();
-      private static Option<string?> Input { get; } = new(@"--input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -82,6 +81,7 @@ format, or a stream of transcript events.
                         command.Options.Add(CreateTranscriptionRequestOptionSetOptions.Temperature);
                         command.Options.Add(CreateTranscriptionRequestOptionSetOptions.Include);
                         command.Options.Add(CreateTranscriptionRequestOptionSetOptions.TimestampGranularities);
+                        command.Options.Add(CreateTranscriptionRequestOptionSetOptions.Stream);
                         command.Options.Add(CreateTranscriptionRequestOptionSetOptions.KnownSpeakerNames);
                         command.Options.Add(CreateTranscriptionRequestOptionSetOptions.KnownSpeakerReferences);
           command.Options.Add(Input);
@@ -95,7 +95,7 @@ format, or a stream of transcript events.
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -111,15 +111,16 @@ format, or a stream of transcript events.
                             cancellationToken).ConfigureAwait(false);
                         var file = parseResult.GetRequiredValue(File);
                         var model = parseResult.GetRequiredValue(Model);
-                        var chunkingStrategy = CliRuntime.WasSpecified(parseResult, ChunkingStrategy) ? parseResult.GetValue(ChunkingStrategy) : __requestBase is not null ? __requestBase.ChunkingStrategy : default;                        var filename = parseResult.GetRequiredValue(CreateTranscriptionRequestOptionSetOptions.Filename);
-                        var language = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.Language) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Language) : __requestBase is not null ? __requestBase.Language : default;
-                        var prompt = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.Prompt) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Prompt) : __requestBase is not null ? __requestBase.Prompt : default;
-                        var responseFormat = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.ResponseFormat) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.ResponseFormat) : __requestBase is not null ? __requestBase.ResponseFormat : default;
-                        var temperature = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.Temperature) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Temperature) : __requestBase is not null ? __requestBase.Temperature : default;
-                        var include = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.Include) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Include) : __requestBase is not null ? __requestBase.Include : default;
-                        var timestampGranularities = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.TimestampGranularities) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.TimestampGranularities) : __requestBase is not null ? __requestBase.TimestampGranularities : default;
-                        var knownSpeakerNames = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.KnownSpeakerNames) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.KnownSpeakerNames) : __requestBase is not null ? __requestBase.KnownSpeakerNames : default;
-                        var knownSpeakerReferences = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.KnownSpeakerReferences) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.KnownSpeakerReferences) : __requestBase is not null ? __requestBase.KnownSpeakerReferences : default;
+                        var chunkingStrategy = parseResult.GetValue(ChunkingStrategy) ?? __requestBase?.ChunkingStrategy;                        var filename = parseResult.GetRequiredValue(CreateTranscriptionRequestOptionSetOptions.Filename);
+                        var language = parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Language) ?? __requestBase?.Language;
+                        var prompt = parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Prompt) ?? __requestBase?.Prompt;
+                        var responseFormat = parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.ResponseFormat) ?? __requestBase?.ResponseFormat;
+                        var temperature = parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Temperature) ?? __requestBase?.Temperature;
+                        var include = parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Include) ?? __requestBase?.Include;
+                        var timestampGranularities = parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.TimestampGranularities) ?? __requestBase?.TimestampGranularities;
+                        var stream = parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Stream) ?? __requestBase?.Stream;
+                        var knownSpeakerNames = parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.KnownSpeakerNames) ?? __requestBase?.KnownSpeakerNames;
+                        var knownSpeakerReferences = parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.KnownSpeakerReferences) ?? __requestBase?.KnownSpeakerReferences;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -134,6 +135,7 @@ format, or a stream of transcript events.
                                     temperature: temperature,
                                     include: include,
                                     timestampGranularities: timestampGranularities,
+                                    stream: stream,
                                     knownSpeakerNames: knownSpeakerNames,
                                     knownSpeakerReferences: knownSpeakerReferences,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);

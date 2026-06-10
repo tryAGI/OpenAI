@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -86,18 +85,18 @@ Truncation can be disabled entirely, which means the server will never truncate 
     private static readonly RealtimeSessionCreateRequestGAOptionSet RealtimeSessionCreateRequestGAOptionSetOptions = RealtimeSessionCreateRequestGAOptionSet.Create();
 
     private static readonly PromptVariant1OptionSet PromptOptions = PromptVariant1OptionSet.Create(@"prompt");
-      private static Option<string?> Input { get; } = new(@"--input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -132,7 +131,7 @@ handle it.");
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -147,30 +146,29 @@ handle it.");
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var callId = parseResult.GetRequiredValue(CallId);
-                        var model = CliRuntime.WasSpecified(parseResult, Model) ? parseResult.GetValue(Model) : __requestBase is not null ? __requestBase.Model : default;
-                        var audio = CliRuntime.WasSpecified(parseResult, Audio) ? parseResult.GetValue(Audio) : __requestBase is not null ? __requestBase.Audio : default;
-                        var tracing = CliRuntime.WasSpecified(parseResult, Tracing) ? parseResult.GetValue(Tracing) : __requestBase is not null ? __requestBase.Tracing : default;
-                        var tools = CliRuntime.WasSpecified(parseResult, Tools) ? parseResult.GetValue(Tools) : __requestBase is not null ? __requestBase.Tools : default;
-                        var toolChoice = CliRuntime.WasSpecified(parseResult, ToolChoice) ? parseResult.GetValue(ToolChoice) : __requestBase is not null ? __requestBase.ToolChoice : default;
-                        var reasoning = CliRuntime.WasSpecified(parseResult, Reasoning) ? parseResult.GetValue(Reasoning) : __requestBase is not null ? __requestBase.Reasoning : default;
-                        var maxOutputTokens = CliRuntime.WasSpecified(parseResult, MaxOutputTokens) ? parseResult.GetValue(MaxOutputTokens) : __requestBase is not null ? __requestBase.MaxOutputTokens : default;
-                        var truncation = CliRuntime.WasSpecified(parseResult, Truncation) ? parseResult.GetValue(Truncation) : __requestBase is not null ? __requestBase.Truncation : default;                        var type = CliRuntime.WasSpecified(parseResult, RealtimeSessionCreateRequestGAOptionSetOptions.Type) ? parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.Type) : __requestBase is not null ? __requestBase.Type : default;
-                        var outputModalities = CliRuntime.WasSpecified(parseResult, RealtimeSessionCreateRequestGAOptionSetOptions.OutputModalities) ? parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.OutputModalities) : __requestBase is not null ? __requestBase.OutputModalities : default;
-                        var instructions = CliRuntime.WasSpecified(parseResult, RealtimeSessionCreateRequestGAOptionSetOptions.Instructions) ? parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.Instructions) : __requestBase is not null ? __requestBase.Instructions : default;
-                        var include = CliRuntime.WasSpecified(parseResult, RealtimeSessionCreateRequestGAOptionSetOptions.Include) ? parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.Include) : __requestBase is not null ? __requestBase.Include : default;
-                        var parallelToolCalls = CliRuntime.WasSpecified(parseResult, RealtimeSessionCreateRequestGAOptionSetOptions.ParallelToolCalls) ? parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.ParallelToolCalls) : __requestBase is not null ? __requestBase.ParallelToolCalls : default;
-
-                        var __promptBase = __requestBase?.Prompt;                        var promptId = parseResult.GetValue(PromptOptions.Id);
-                        var promptVersion = CliRuntime.WasSpecified(parseResult, PromptOptions.Version) ? parseResult.GetValue(PromptOptions.Version) : __promptBase is not null ? __promptBase.Version : default;
+                        var model = parseResult.GetValue(Model) ?? __requestBase?.Model;
+                        var audio = parseResult.GetValue(Audio) ?? __requestBase?.Audio;
+                        var tracing = parseResult.GetValue(Tracing) ?? __requestBase?.Tracing;
+                        var tools = parseResult.GetValue(Tools) ?? __requestBase?.Tools;
+                        var toolChoice = parseResult.GetValue(ToolChoice) ?? __requestBase?.ToolChoice;
+                        var reasoning = parseResult.GetValue(Reasoning) ?? __requestBase?.Reasoning;
+                        var maxOutputTokens = parseResult.GetValue(MaxOutputTokens) ?? __requestBase?.MaxOutputTokens;
+                        var truncation = parseResult.GetValue(Truncation) ?? __requestBase?.Truncation;                        var type = parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.Type) ?? __requestBase?.Type;
+                        var outputModalities = parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.OutputModalities) ?? __requestBase?.OutputModalities;
+                        var instructions = parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.Instructions) ?? __requestBase?.Instructions;
+                        var include = parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.Include) ?? __requestBase?.Include;
+                        var parallelToolCalls = parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.ParallelToolCalls) ?? __requestBase?.ParallelToolCalls;
+                        var promptId = parseResult.GetValue(PromptOptions.Id);
+                        var promptVersion = parseResult.GetValue(PromptOptions.Version) ?? __requestBase?.Prompt?.Version;
                         var __promptSpecified = CliRuntime.WasSpecified(parseResult, PromptOptions.Id) || CliRuntime.WasSpecified(parseResult, PromptOptions.Version);
                         var prompt =
-                            __promptSpecified || __promptBase is not null
+                            __promptSpecified || __requestBase?.Prompt is not null
                                 ? new global::tryAGI.OpenAI.PromptVariant1
                                 {
-                                Id = promptId!,
+                                Id = promptId,
                                 Version = promptVersion,
                                 }
-                                : __promptBase;
+                                : __requestBase?.Prompt;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

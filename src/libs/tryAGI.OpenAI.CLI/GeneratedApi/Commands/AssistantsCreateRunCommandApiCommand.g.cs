@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -134,18 +133,18 @@ Setting to `{ ""type"": ""json_object"" }` enables JSON mode, which ensures the 
 **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly ""stuck"" request. Also note that the message content may be partially cut off if `finish_reason=""length""`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
 ",
     };
-      private static Option<string?> Input { get; } = new(@"--input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -204,7 +203,7 @@ Setting to `{ ""type"": ""json_object"" }` enables JSON mode, which ensures the 
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -221,22 +220,22 @@ Setting to `{ ""type"": ""json_object"" }` enables JSON mode, which ensures the 
                         var threadId = parseResult.GetRequiredValue(ThreadId);
                         var include = parseResult.GetValue(Include);
                         var assistantId = parseResult.GetRequiredValue(AssistantId);
-                        var model = CliRuntime.WasSpecified(parseResult, Model) ? parseResult.GetValue(Model) : __requestBase is not null ? __requestBase.Model : default;
-                        var reasoningEffort = CliRuntime.WasSpecified(parseResult, ReasoningEffort) ? parseResult.GetValue(ReasoningEffort) : __requestBase is not null ? __requestBase.ReasoningEffort : default;
-                        var instructions = CliRuntime.WasSpecified(parseResult, Instructions) ? parseResult.GetValue(Instructions) : __requestBase is not null ? __requestBase.Instructions : default;
-                        var additionalInstructions = CliRuntime.WasSpecified(parseResult, AdditionalInstructions) ? parseResult.GetValue(AdditionalInstructions) : __requestBase is not null ? __requestBase.AdditionalInstructions : default;
-                        var additionalMessages = CliRuntime.WasSpecified(parseResult, AdditionalMessages) ? parseResult.GetValue(AdditionalMessages) : __requestBase is not null ? __requestBase.AdditionalMessages : default;
-                        var tools = CliRuntime.WasSpecified(parseResult, Tools) ? parseResult.GetValue(Tools) : __requestBase is not null ? __requestBase.Tools : default;
-                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : __requestBase is not null ? __requestBase.Metadata : default;
-                        var temperature = CliRuntime.WasSpecified(parseResult, Temperature) ? parseResult.GetValue(Temperature) : __requestBase is not null ? __requestBase.Temperature : default;
-                        var topP = CliRuntime.WasSpecified(parseResult, TopP) ? parseResult.GetValue(TopP) : __requestBase is not null ? __requestBase.TopP : default;
-                        var stream = CliRuntime.WasSpecified(parseResult, Stream) ? parseResult.GetValue(Stream) : __requestBase is not null ? __requestBase.Stream : default;
-                        var maxPromptTokens = CliRuntime.WasSpecified(parseResult, MaxPromptTokens) ? parseResult.GetValue(MaxPromptTokens) : __requestBase is not null ? __requestBase.MaxPromptTokens : default;
-                        var maxCompletionTokens = CliRuntime.WasSpecified(parseResult, MaxCompletionTokens) ? parseResult.GetValue(MaxCompletionTokens) : __requestBase is not null ? __requestBase.MaxCompletionTokens : default;
-                        var truncationStrategy = CliRuntime.WasSpecified(parseResult, TruncationStrategy) ? parseResult.GetValue(TruncationStrategy) : __requestBase is not null ? __requestBase.TruncationStrategy : default;
-                        var toolChoice = CliRuntime.WasSpecified(parseResult, ToolChoice) ? parseResult.GetValue(ToolChoice) : __requestBase is not null ? __requestBase.ToolChoice : default;
-                        var parallelToolCalls = CliRuntime.WasSpecified(parseResult, ParallelToolCalls) ? parseResult.GetValue(ParallelToolCalls) : __requestBase is not null ? __requestBase.ParallelToolCalls : default;
-                        var responseFormat = CliRuntime.WasSpecified(parseResult, ResponseFormat) ? parseResult.GetValue(ResponseFormat) : __requestBase is not null ? __requestBase.ResponseFormat : default;
+                        var model = parseResult.GetValue(Model) ?? __requestBase?.Model;
+                        var reasoningEffort = parseResult.GetValue(ReasoningEffort) ?? __requestBase?.ReasoningEffort;
+                        var instructions = parseResult.GetValue(Instructions) ?? __requestBase?.Instructions;
+                        var additionalInstructions = parseResult.GetValue(AdditionalInstructions) ?? __requestBase?.AdditionalInstructions;
+                        var additionalMessages = parseResult.GetValue(AdditionalMessages) ?? __requestBase?.AdditionalMessages;
+                        var tools = parseResult.GetValue(Tools) ?? __requestBase?.Tools;
+                        var metadata = parseResult.GetValue(Metadata) ?? __requestBase?.Metadata;
+                        var temperature = parseResult.GetValue(Temperature) ?? __requestBase?.Temperature;
+                        var topP = parseResult.GetValue(TopP) ?? __requestBase?.TopP;
+                        var stream = parseResult.GetValue(Stream) ?? __requestBase?.Stream;
+                        var maxPromptTokens = parseResult.GetValue(MaxPromptTokens) ?? __requestBase?.MaxPromptTokens;
+                        var maxCompletionTokens = parseResult.GetValue(MaxCompletionTokens) ?? __requestBase?.MaxCompletionTokens;
+                        var truncationStrategy = parseResult.GetValue(TruncationStrategy) ?? __requestBase?.TruncationStrategy;
+                        var toolChoice = parseResult.GetValue(ToolChoice) ?? __requestBase?.ToolChoice;
+                        var parallelToolCalls = parseResult.GetValue(ParallelToolCalls) ?? __requestBase?.ParallelToolCalls;
+                        var responseFormat = parseResult.GetValue(ResponseFormat) ?? __requestBase?.ResponseFormat;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -38,18 +37,18 @@ internal static partial class CreateChatKitSessionCommandApiCommand
     {
         Description = @"Optional overrides for ChatKit runtime configuration features",
     };
-      private static Option<string?> Input { get; } = new(@"--input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -94,7 +93,7 @@ internal static partial class CreateChatKitSessionCommandApiCommand
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -110,9 +109,9 @@ internal static partial class CreateChatKitSessionCommandApiCommand
                             cancellationToken).ConfigureAwait(false);
                         var workflow = parseResult.GetRequiredValue(Workflow);
                         var user = parseResult.GetRequiredValue(User);
-                        var expiresAfter = CliRuntime.WasSpecified(parseResult, ExpiresAfter) ? parseResult.GetValue(ExpiresAfter) : __requestBase is not null ? __requestBase.ExpiresAfter : default;
-                        var rateLimits = CliRuntime.WasSpecified(parseResult, RateLimits) ? parseResult.GetValue(RateLimits) : __requestBase is not null ? __requestBase.RateLimits : default;
-                        var chatkitConfiguration = CliRuntime.WasSpecified(parseResult, ChatkitConfiguration) ? parseResult.GetValue(ChatkitConfiguration) : __requestBase is not null ? __requestBase.ChatkitConfiguration : default;
+                        var expiresAfter = parseResult.GetValue(ExpiresAfter) ?? __requestBase?.ExpiresAfter;
+                        var rateLimits = parseResult.GetValue(RateLimits) ?? __requestBase?.RateLimits;
+                        var chatkitConfiguration = parseResult.GetValue(ChatkitConfiguration) ?? __requestBase?.ChatkitConfiguration;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -28,18 +27,18 @@ internal static partial class UploadsCompleteUploadCommandApiCommand
         Description = @"The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.
 ",
     };
-      private static Option<string?> Input { get; } = new(@"--input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -90,7 +89,7 @@ Returns the Upload object with status `completed`, including an additional `file
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -106,7 +105,7 @@ Returns the Upload object with status `completed`, including an additional `file
                             cancellationToken).ConfigureAwait(false);
                         var uploadId = parseResult.GetRequiredValue(UploadId);
                         var partIds = parseResult.GetRequiredValue(PartIds);
-                        var md5 = CliRuntime.WasSpecified(parseResult, Md5) ? parseResult.GetValue(Md5) : __requestBase is not null ? __requestBase.Md5 : default;
+                        var md5 = parseResult.GetValue(Md5) ?? __requestBase?.Md5;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
