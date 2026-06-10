@@ -1,12 +1,13 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class VectorStoresListVectorStoresCommandApiCommand
+internal static partial class VectorStoresListVectorStoresCommandApiCommand
 {
-     private static Option<int?> Limit { get; } = new(
+    private static Option<int?> Limit { get; } = new(
         name: @"--limit")
     {
         Description = @"A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.
@@ -34,6 +35,26 @@ internal static class VectorStoresListVectorStoresCommandApiCommand
 ",
     };
 
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.ListVectorStoresResponse value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.ListVectorStoresResponse value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
+
     public static Command Create()
     {
         var command = new Command(@"list-vector-stores", @"Returns a list of vector stores.");
@@ -41,6 +62,7 @@ internal static class VectorStoresListVectorStoresCommandApiCommand
                         command.Options.Add(Order);
                         command.Options.Add(After);
                         command.Options.Add(Before);
+
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
@@ -51,6 +73,7 @@ internal static class VectorStoresListVectorStoresCommandApiCommand
                         var before = parseResult.GetValue(Before);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+
                                 var response = await client.VectorStores.ListVectorStoresAsync(
                                     limit: limit,
                                     order: order,
@@ -58,11 +81,21 @@ internal static class VectorStoresListVectorStoresCommandApiCommand
                                     before: before,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                if (!await CliRuntime.TryWriteOutputDirectoryAsync(
+                                        parseResult,
+                                        response,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        @"Data",
+                                        cancellationToken).ConfigureAwait(false))
+                                {
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
+                                }
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }

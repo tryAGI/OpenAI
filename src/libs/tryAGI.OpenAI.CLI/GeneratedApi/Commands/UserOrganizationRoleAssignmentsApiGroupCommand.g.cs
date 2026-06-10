@@ -11,6 +11,7 @@ internal static class UserOrganizationRoleAssignmentsApiGroupCommand
         var command = new Command(@"user-organization-role-assignments", @"User organization role assignments endpoint commands.");
                          command.Subcommands.Add(UserOrganizationRoleAssignmentsAssignOrganizationRoleToUserCommandApiCommand.Create());
                          command.Subcommands.Add(UserOrganizationRoleAssignmentsListUserOrganizationRoleAssignmentsCommandApiCommand.Create());
+                         command.Subcommands.Add(UserOrganizationRoleAssignmentsRetrieveUserOrganizationRoleCommandApiCommand.Create());
                          command.Subcommands.Add(UserOrganizationRoleAssignmentsUnassignOrganizationRoleFromUserCommandApiCommand.Create());
         return command;
     }

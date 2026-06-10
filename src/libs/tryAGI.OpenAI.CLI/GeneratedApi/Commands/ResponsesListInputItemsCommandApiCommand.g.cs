@@ -1,16 +1,19 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class ResponsesListInputItemsCommandApiCommand
+internal static partial class ResponsesListInputItemsCommandApiCommand
 {
     private static Argument<string> ResponseId { get; } = new(
         name: @"response-id")
     {
         Description = @"The ID of the response to retrieve input items for.",
-    };    private static Option<int?> Limit { get; } = new(
+    };
+
+    private static Option<int?> Limit { get; } = new(
         name: @"--limit")
     {
         Description = @"A limit on the number of objects to be returned. Limit can range between
@@ -42,6 +45,26 @@ parameter for Response creation above for more information.
 ",
     };
 
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.ResponseItemList value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.ResponseItemList value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
+
     public static Command Create()
     {
         var command = new Command(@"list-input-items", @"Returns a list of input items for a given response.");
@@ -50,6 +73,7 @@ parameter for Response creation above for more information.
                         command.Options.Add(Order);
                         command.Options.Add(After);
                         command.Options.Add(Include);
+
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
@@ -61,6 +85,7 @@ parameter for Response creation above for more information.
                         var include = parseResult.GetValue(Include);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+
                                 var response = await client.Responses.ListInputItemsAsync(
                                     responseId: responseId,
                                     limit: limit,
@@ -69,11 +94,21 @@ parameter for Response creation above for more information.
                                     include: include,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                if (!await CliRuntime.TryWriteOutputDirectoryAsync(
+                                        parseResult,
+                                        response,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        @"Data",
+                                        cancellationToken).ConfigureAwait(false))
+                                {
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
+                                }
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }

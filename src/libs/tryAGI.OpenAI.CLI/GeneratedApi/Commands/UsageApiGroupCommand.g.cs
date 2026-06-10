@@ -15,9 +15,11 @@ internal static class UsageApiGroupCommand
                          command.Subcommands.Add(UsageCompletionsCommandApiCommand.Create());
                          command.Subcommands.Add(UsageCostsCommandApiCommand.Create());
                          command.Subcommands.Add(UsageEmbeddingsCommandApiCommand.Create());
+                         command.Subcommands.Add(UsageFileSearchCallsCommandApiCommand.Create());
                          command.Subcommands.Add(UsageImagesCommandApiCommand.Create());
                          command.Subcommands.Add(UsageModerationsCommandApiCommand.Create());
                          command.Subcommands.Add(UsageVectorStoresCommandApiCommand.Create());
+                         command.Subcommands.Add(UsageWebSearchCallsCommandApiCommand.Create());
         return command;
     }
 }

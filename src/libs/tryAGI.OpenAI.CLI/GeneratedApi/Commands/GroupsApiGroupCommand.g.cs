@@ -12,6 +12,7 @@ internal static class GroupsApiGroupCommand
                          command.Subcommands.Add(GroupsCreateGroupCommandApiCommand.Create());
                          command.Subcommands.Add(GroupsDeleteGroupCommandApiCommand.Create());
                          command.Subcommands.Add(GroupsListGroupsCommandApiCommand.Create());
+                         command.Subcommands.Add(GroupsRetrieveGroupCommandApiCommand.Create());
                          command.Subcommands.Add(GroupsUpdateGroupCommandApiCommand.Create());
         return command;
     }

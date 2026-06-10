@@ -1,12 +1,13 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class SkillsListSkillsCommandApiCommand
+internal static partial class SkillsListSkillsCommandApiCommand
 {
-     private static Option<int?> Limit { get; } = new(
+    private static Option<int?> Limit { get; } = new(
         name: @"--limit")
     {
         Description = @"Number of items to retrieve",
@@ -24,12 +25,33 @@ internal static class SkillsListSkillsCommandApiCommand
         Description = @"Identifier for the last item from the previous pagination request",
     };
 
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.SkillListResource value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.SkillListResource value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
+
     public static Command Create()
     {
         var command = new Command(@"list-skills", @"List all skills for the current project.");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);
                         command.Options.Add(After);
+
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
@@ -39,17 +61,28 @@ internal static class SkillsListSkillsCommandApiCommand
                         var after = parseResult.GetValue(After);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+
                                 var response = await client.Skills.ListSkillsAsync(
                                     limit: limit,
                                     order: order,
                                     after: after,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                if (!await CliRuntime.TryWriteOutputDirectoryAsync(
+                                        parseResult,
+                                        response,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        @"Data",
+                                        cancellationToken).ConfigureAwait(false))
+                                {
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
+                                }
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }

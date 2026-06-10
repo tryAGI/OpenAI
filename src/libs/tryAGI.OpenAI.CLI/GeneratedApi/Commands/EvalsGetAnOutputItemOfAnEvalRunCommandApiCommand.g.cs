@@ -1,10 +1,11 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class EvalsGetAnOutputItemOfAnEvalRunCommandApiCommand
+internal static partial class EvalsGetAnOutputItemOfAnEvalRunCommandApiCommand
 {
     private static Argument<string> EvalId { get; } = new(
         name: @"eval-id")
@@ -24,6 +25,26 @@ internal static class EvalsGetAnOutputItemOfAnEvalRunCommandApiCommand
         Description = @"The ID of the output item to retrieve.",
     };
 
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.EvalRunOutputItem value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.EvalRunOutputItem value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
+
     public static Command Create()
     {
         var command = new Command(@"get-an-output-item-of-an-eval-run", @"Get an evaluation run output item by ID.
@@ -31,6 +52,7 @@ internal static class EvalsGetAnOutputItemOfAnEvalRunCommandApiCommand
                         command.Arguments.Add(EvalId);
                         command.Arguments.Add(RunId);
                         command.Arguments.Add(OutputItemId);
+
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
@@ -40,17 +62,28 @@ internal static class EvalsGetAnOutputItemOfAnEvalRunCommandApiCommand
                         var outputItemId = parseResult.GetRequiredValue(OutputItemId);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+
                                 var response = await client.Evals.GetAnOutputItemOfAnEvalRunAsync(
                                     evalId: evalId,
                                     runId: runId,
                                     outputItemId: outputItemId,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                if (!await CliRuntime.TryWriteOutputDirectoryAsync(
+                                        parseResult,
+                                        response,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        @"Results",
+                                        cancellationToken).ConfigureAwait(false))
+                                {
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
+                                }
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }

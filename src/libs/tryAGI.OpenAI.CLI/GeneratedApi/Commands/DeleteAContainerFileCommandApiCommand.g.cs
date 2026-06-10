@@ -1,10 +1,11 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class DeleteAContainerFileCommandApiCommand
+internal static partial class DeleteAContainerFileCommandApiCommand
 {
     private static Argument<string> ContainerId { get; } = new(
         name: @"container-id")
@@ -25,12 +26,14 @@ Delete a container file.");
                         command.Arguments.Add(ContainerId);
                         command.Arguments.Add(FileId);
 
+
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
                         var containerId = parseResult.GetRequiredValue(ContainerId);
                         var fileId = parseResult.GetRequiredValue(FileId);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
+
 
                                 await client.DeleteAContainerFileAsync(
                                     containerId: containerId,

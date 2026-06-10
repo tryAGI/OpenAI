@@ -1,58 +1,72 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class VideosCreateVideoEditCommandApiCommand
+internal static partial class VideosCreateVideoEditCommandApiCommand
 {
+    private static Option<global::tryAGI.OpenAI.OneOf<byte[], global::tryAGI.OpenAI.VideoReferenceInputParam>> Video { get; } = new(
+        name: @"--video")
+    {
+        Description = @"",
+        Required = true,
+    };
 
-      private static Option<string?> RequestJson { get; } = new("--request-json")
-      {
-          Description = "Request body as JSON.",
-      };
+    private static Option<string> Prompt { get; } = new(
+        name: @"--prompt")
+    {
+        Description = @"Text prompt that describes how to edit the source video.",
+        Required = true,
+    };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
-      {
-          Description = "Path to a JSON request file, or '-' for stdin.",
-      };
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.VideoResource value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.VideoResource value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
 
     public static Command Create()
     {
         var command = new Command(@"create-video-edit", @"Create a new video generation job by editing a source video or existing generated video.");
+                        command.Options.Add(Video);
+                        command.Options.Add(Prompt);
 
-          command.Options.Add(RequestJson);
-          command.Options.Add(RequestFile);
-          command.Validators.Add(result =>
-          {
-              var hasRequestJson = result.GetResult(RequestJson) is not null;
-              var hasRequestFile = result.GetResult(RequestFile) is not null;
-              if (hasRequestJson == hasRequestFile)
-              {
-                  result.AddError("Specify exactly one of --request-json or --request-file.");
-              }
-          });
+
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
-
-                        var request = await CliRuntime.ReadRequestAsync<global::tryAGI.OpenAI.CreateVideoEditMultipartBody>(
-                            parseResult,
-                            RequestJson,
-                            RequestFile,
-                            global::tryAGI.OpenAI.SourceGenerationContext.Default,
-                            cancellationToken).ConfigureAwait(false);
+                        var video = parseResult.GetRequiredValue(Video);
+                        var prompt = parseResult.GetRequiredValue(Prompt);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
-                                var response = await client.Videos.CreateVideoEditAsync(
 
-                                    request: request,
+                                var response = await client.Videos.CreateVideoEditAsync(
+                                    video: video,
+                                    prompt: prompt,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
         return command;

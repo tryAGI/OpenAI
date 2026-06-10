@@ -1,10 +1,11 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class VectorStoresListVectorStoreFilesInABatchCommandApiCommand
+internal static partial class VectorStoresListVectorStoreFilesInABatchCommandApiCommand
 {
     private static Argument<string> VectorStoreId { get; } = new(
         name: @"vector-store-id")
@@ -16,7 +17,9 @@ internal static class VectorStoresListVectorStoreFilesInABatchCommandApiCommand
         name: @"batch-id")
     {
         Description = @"The ID of the file batch that the files belong to.",
-    };    private static Option<int?> Limit { get; } = new(
+    };
+
+    private static Option<int?> Limit { get; } = new(
         name: @"--limit")
     {
         Description = @"A limit on the number of objects to be returned. Limit can range between 1 and 100, and the default is 20.
@@ -50,6 +53,26 @@ internal static class VectorStoresListVectorStoreFilesInABatchCommandApiCommand
         Description = @"Filter by file status. One of `in_progress`, `completed`, `failed`, `cancelled`.",
     };
 
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.ListVectorStoreFilesResponse value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.ListVectorStoreFilesResponse value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
+
     public static Command Create()
     {
         var command = new Command(@"list-vector-store-files-in-abatch", @"Returns a list of vector store files in a batch.");
@@ -60,6 +83,7 @@ internal static class VectorStoresListVectorStoreFilesInABatchCommandApiCommand
                         command.Options.Add(After);
                         command.Options.Add(Before);
                         command.Options.Add(Filter);
+
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
@@ -73,6 +97,7 @@ internal static class VectorStoresListVectorStoreFilesInABatchCommandApiCommand
                         var filter = parseResult.GetValue(Filter);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+
                                 var response = await client.VectorStores.ListVectorStoreFilesInABatchAsync(
                                     vectorStoreId: vectorStoreId,
                                     batchId: batchId,
@@ -83,11 +108,21 @@ internal static class VectorStoresListVectorStoreFilesInABatchCommandApiCommand
                                     filter: filter,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                if (!await CliRuntime.TryWriteOutputDirectoryAsync(
+                                        parseResult,
+                                        response,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        @"Data",
+                                        cancellationToken).ConfigureAwait(false))
+                                {
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
+                                }
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }

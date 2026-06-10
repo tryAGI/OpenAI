@@ -1,25 +1,44 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class AudioUpdateVoiceConsentCommandApiCommand
+internal static partial class AudioUpdateVoiceConsentCommandApiCommand
 {
     private static Argument<string> ConsentId { get; } = new(
         name: @"consent-id")
     {
         Description = @"The ID of the consent recording to update.",
     };
-      private static Option<string?> RequestJson { get; } = new("--request-json")
-      {
-          Description = "Request body as JSON.",
-      };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
-      {
-          Description = "Path to a JSON request file, or '-' for stdin.",
-      };
+    private static Option<string> NameOption { get; } = new(
+        name: @"--name")
+    {
+        Description = @"The updated label for this consent recording.",
+        Required = true,
+    };
+
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.VoiceConsentResource value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.VoiceConsentResource value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
 
     public static Command Create()
     {
@@ -29,38 +48,28 @@ Update consent recording metadata used for creating custom voices. This endpoint
 See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
 ");
                         command.Arguments.Add(ConsentId);
-          command.Options.Add(RequestJson);
-          command.Options.Add(RequestFile);
-          command.Validators.Add(result =>
-          {
-              var hasRequestJson = result.GetResult(RequestJson) is not null;
-              var hasRequestFile = result.GetResult(RequestFile) is not null;
-              if (hasRequestJson == hasRequestFile)
-              {
-                  result.AddError("Specify exactly one of --request-json or --request-file.");
-              }
-          });
+                        command.Options.Add(NameOption);
+
+
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
                         var consentId = parseResult.GetRequiredValue(ConsentId);
-                        var request = await CliRuntime.ReadRequestAsync<global::tryAGI.OpenAI.UpdateVoiceConsentRequest>(
-                            parseResult,
-                            RequestJson,
-                            RequestFile,
-                            global::tryAGI.OpenAI.SourceGenerationContext.Default,
-                            cancellationToken).ConfigureAwait(false);
+                        var name = parseResult.GetRequiredValue(NameOption);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
+
 
                                 var response = await client.Audio.UpdateVoiceConsentAsync(
                                     consentId: consentId,
-                                    request: request,
+                                    name: name,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
         return command;

@@ -44,6 +44,25 @@ autosdk generate openapi.yaml \
   --generate-multipart-upload-helpers \
   --ignore-openapi-errors
 
+rm -rf ../tryAGI.OpenAI.CLI/GeneratedApi
+autosdk cli-project openapi.yaml \
+  --output ../tryAGI.OpenAI.CLI/GeneratedApi \
+  --api-only \
+  --sdk-project ../tryAGI.OpenAI/tryAGI.OpenAI.csproj \
+  --targetFramework net10.0 \
+  --namespace tryAGI.OpenAI \
+  --clientClassName OpenAiClient \
+  --package-id tryAGI.OpenAI.CLI \
+  --root-namespace tryAGI.OpenAI.Cli.GeneratedApi \
+  --tool-command-name tryagi-openai \
+  --user-secrets-id tryAGI.OpenAI.CLI \
+  --api-key-env-var OPENAI_API_KEY \
+  --base-url-env-var OPENAI_BASE_URL \
+  --cli-credential-file \
+  --cli-keep-api-group \
+  --exclude-deprecated-operations \
+  --ignore-openapi-errors
+
 autosdk generate asyncapi.json \
   --namespace tryAGI.OpenAI.Realtime \
   --websocket-class-name OpenAiRealtimeClient \

@@ -1,62 +1,71 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class SkillsUpdateSkillDefaultVersionCommandApiCommand
+internal static partial class SkillsUpdateSkillDefaultVersionCommandApiCommand
 {
     private static Argument<string> SkillId { get; } = new(
         name: @"skill-id")
     {
         Description = @"The identifier of the skill.",
     };
-      private static Option<string?> RequestJson { get; } = new("--request-json")
-      {
-          Description = "Request body as JSON.",
-      };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
-      {
-          Description = "Path to a JSON request file, or '-' for stdin.",
-      };
+    private static Option<string> DefaultVersion { get; } = new(
+        name: @"--default-version")
+    {
+        Description = @"The skill version number to set as default.",
+        Required = true,
+    };
+
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.SkillResource value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.SkillResource value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
 
     public static Command Create()
     {
         var command = new Command(@"update-skill-default-version", @"Update the default version pointer for a skill.");
                         command.Arguments.Add(SkillId);
-          command.Options.Add(RequestJson);
-          command.Options.Add(RequestFile);
-          command.Validators.Add(result =>
-          {
-              var hasRequestJson = result.GetResult(RequestJson) is not null;
-              var hasRequestFile = result.GetResult(RequestFile) is not null;
-              if (hasRequestJson == hasRequestFile)
-              {
-                  result.AddError("Specify exactly one of --request-json or --request-file.");
-              }
-          });
+                        command.Options.Add(DefaultVersion);
+
+
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
                         var skillId = parseResult.GetRequiredValue(SkillId);
-                        var request = await CliRuntime.ReadRequestAsync<global::tryAGI.OpenAI.SetDefaultSkillVersionBody>(
-                            parseResult,
-                            RequestJson,
-                            RequestFile,
-                            global::tryAGI.OpenAI.SourceGenerationContext.Default,
-                            cancellationToken).ConfigureAwait(false);
+                        var defaultVersion = parseResult.GetRequiredValue(DefaultVersion);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
+
 
                                 var response = await client.Skills.UpdateSkillDefaultVersionAsync(
                                     skillId: skillId,
-                                    request: request,
+                                    defaultVersion: defaultVersion,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
         return command;

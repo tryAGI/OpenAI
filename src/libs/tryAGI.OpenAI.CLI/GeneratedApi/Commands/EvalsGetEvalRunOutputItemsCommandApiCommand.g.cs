@@ -1,10 +1,11 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class EvalsGetEvalRunOutputItemsCommandApiCommand
+internal static partial class EvalsGetEvalRunOutputItemsCommandApiCommand
 {
     private static Argument<string> EvalId { get; } = new(
         name: @"eval-id")
@@ -16,7 +17,9 @@ internal static class EvalsGetEvalRunOutputItemsCommandApiCommand
         name: @"run-id")
     {
         Description = @"The ID of the run to retrieve output items for.",
-    };    private static Option<string?> After { get; } = new(
+    };
+
+    private static Option<string?> After { get; } = new(
         name: @"--after")
     {
         Description = @"Identifier for the last output item from the previous pagination request.",
@@ -42,6 +45,26 @@ items or `pass` to filter by passed output items.
         Description = @"Sort order for output items by timestamp. Use `asc` for ascending order or `desc` for descending order. Defaults to `asc`.",
     };
 
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.EvalRunOutputItemList value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.EvalRunOutputItemList value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
+
     public static Command Create()
     {
         var command = new Command(@"get-eval-run-output-items", @"Get a list of output items for an evaluation run.
@@ -52,6 +75,7 @@ items or `pass` to filter by passed output items.
                         command.Options.Add(Limit);
                         command.Options.Add(Status);
                         command.Options.Add(Order);
+
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
@@ -64,6 +88,7 @@ items or `pass` to filter by passed output items.
                         var order = parseResult.GetValue(Order);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+
                                 var response = await client.Evals.GetEvalRunOutputItemsAsync(
                                     evalId: evalId,
                                     runId: runId,
@@ -73,11 +98,21 @@ items or `pass` to filter by passed output items.
                                     order: order,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                if (!await CliRuntime.TryWriteOutputDirectoryAsync(
+                                        parseResult,
+                                        response,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        @"Data",
+                                        cancellationToken).ConfigureAwait(false))
+                                {
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
+                                }
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }

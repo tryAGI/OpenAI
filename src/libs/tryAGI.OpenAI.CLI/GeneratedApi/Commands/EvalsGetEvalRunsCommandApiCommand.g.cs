@@ -1,16 +1,19 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class EvalsGetEvalRunsCommandApiCommand
+internal static partial class EvalsGetEvalRunsCommandApiCommand
 {
     private static Argument<string> EvalId { get; } = new(
         name: @"eval-id")
     {
         Description = @"The ID of the evaluation to retrieve runs for.",
-    };    private static Option<string?> After { get; } = new(
+    };
+
+    private static Option<string?> After { get; } = new(
         name: @"--after")
     {
         Description = @"Identifier for the last run from the previous pagination request.",
@@ -34,6 +37,26 @@ internal static class EvalsGetEvalRunsCommandApiCommand
         Description = @"Filter runs by status. One of `queued` | `in_progress` | `failed` | `completed` | `canceled`.",
     };
 
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.EvalRunList value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.EvalRunList value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
+
     public static Command Create()
     {
         var command = new Command(@"get-eval-runs", @"Get a list of runs for an evaluation.
@@ -43,6 +66,7 @@ internal static class EvalsGetEvalRunsCommandApiCommand
                         command.Options.Add(Limit);
                         command.Options.Add(Order);
                         command.Options.Add(Status);
+
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
@@ -54,6 +78,7 @@ internal static class EvalsGetEvalRunsCommandApiCommand
                         var status = parseResult.GetValue(Status);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+
                                 var response = await client.Evals.GetEvalRunsAsync(
                                     evalId: evalId,
                                     after: after,
@@ -62,11 +87,21 @@ internal static class EvalsGetEvalRunsCommandApiCommand
                                     status: status,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                if (!await CliRuntime.TryWriteOutputDirectoryAsync(
+                                        parseResult,
+                                        response,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        @"Data",
+                                        cancellationToken).ConfigureAwait(false))
+                                {
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
+                                }
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }

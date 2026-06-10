@@ -14,6 +14,7 @@ internal static class RealtimeApiGroupCommand
                          command.Subcommands.Add(RealtimeCreateClientSecretCommandApiCommand.Create());
                          command.Subcommands.Add(RealtimeCreateSessionCommandApiCommand.Create());
                          command.Subcommands.Add(RealtimeCreateTranscriptionSessionCommandApiCommand.Create());
+                         command.Subcommands.Add(RealtimeCreateTranslationClientSecretCommandApiCommand.Create());
                          command.Subcommands.Add(RealtimeHangUpCallCommandApiCommand.Create());
                          command.Subcommands.Add(RealtimeReferCallCommandApiCommand.Create());
                          command.Subcommands.Add(RealtimeRejectCallCommandApiCommand.Create());

@@ -1,10 +1,11 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class VectorStoresRetrieveVectorStoreFileBatchCommandApiCommand
+internal static partial class VectorStoresRetrieveVectorStoreFileBatchCommandApiCommand
 {
     private static Argument<string> VectorStoreId { get; } = new(
         name: @"vector-store-id")
@@ -18,11 +19,32 @@ internal static class VectorStoresRetrieveVectorStoreFileBatchCommandApiCommand
         Description = @"The ID of the file batch being retrieved.",
     };
 
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.VectorStoreFileBatchObject value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.VectorStoreFileBatchObject value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
+
     public static Command Create()
     {
         var command = new Command(@"retrieve-vector-store-file-batch", @"Retrieves a vector store file batch.");
                         command.Arguments.Add(VectorStoreId);
                         command.Arguments.Add(BatchId);
+
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
@@ -31,15 +53,18 @@ internal static class VectorStoresRetrieveVectorStoreFileBatchCommandApiCommand
                         var batchId = parseResult.GetRequiredValue(BatchId);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+
                                 var response = await client.VectorStores.RetrieveVectorStoreFileBatchAsync(
                                     vectorStoreId: vectorStoreId,
                                     batchId: batchId,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
         return command;

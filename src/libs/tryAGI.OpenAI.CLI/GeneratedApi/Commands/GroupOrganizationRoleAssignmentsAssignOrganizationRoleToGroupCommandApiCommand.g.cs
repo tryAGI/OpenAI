@@ -1,62 +1,63 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class GroupOrganizationRoleAssignmentsAssignOrganizationRoleToGroupCommandApiCommand
+internal static partial class GroupOrganizationRoleAssignmentsAssignOrganizationRoleToGroupCommandApiCommand
 {
     private static Argument<string> GroupId { get; } = new(
         name: @"group-id")
     {
         Description = @"The ID of the group that should receive the organization role.",
     };
-      private static Option<string?> RequestJson { get; } = new("--request-json")
-      {
-          Description = "Request body as JSON.",
-      };
+    private static readonly PublicAssignOrganizationGroupRoleBodyOptionSet PublicAssignOrganizationGroupRoleBodyOptionSetOptions = PublicAssignOrganizationGroupRoleBodyOptionSet.Create();
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
-      {
-          Description = "Path to a JSON request file, or '-' for stdin.",
-      };
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.GroupRoleAssignment value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.GroupRoleAssignment value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
 
     public static Command Create()
     {
         var command = new Command(@"assign-organization-role-to-group", @"Assigns an organization role to a group within the organization.");
-                        command.Arguments.Add(GroupId);
-          command.Options.Add(RequestJson);
-          command.Options.Add(RequestFile);
-          command.Validators.Add(result =>
-          {
-              var hasRequestJson = result.GetResult(RequestJson) is not null;
-              var hasRequestFile = result.GetResult(RequestFile) is not null;
-              if (hasRequestJson == hasRequestFile)
-              {
-                  result.AddError("Specify exactly one of --request-json or --request-file.");
-              }
-          });
+                        command.Arguments.Add(GroupId);                        command.Options.Add(PublicAssignOrganizationGroupRoleBodyOptionSetOptions.RoleId);
+
+
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
-                        var groupId = parseResult.GetRequiredValue(GroupId);
-                        var request = await CliRuntime.ReadRequestAsync<global::tryAGI.OpenAI.PublicAssignOrganizationGroupRoleBody>(
-                            parseResult,
-                            RequestJson,
-                            RequestFile,
-                            global::tryAGI.OpenAI.SourceGenerationContext.Default,
-                            cancellationToken).ConfigureAwait(false);
+                        var groupId = parseResult.GetRequiredValue(GroupId);                        var roleId = parseResult.GetRequiredValue(PublicAssignOrganizationGroupRoleBodyOptionSetOptions.RoleId);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
+
 
                                 var response = await client.GroupOrganizationRoleAssignments.AssignOrganizationRoleToGroupAsync(
                                     groupId: groupId,
-                                    request: request,
+                                    roleId: roleId,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
         return command;

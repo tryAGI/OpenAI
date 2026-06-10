@@ -1,10 +1,11 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class ResponsesDeleteAModelResponseCommandApiCommand
+internal static partial class ResponsesDeleteAModelResponseCommandApiCommand
 {
     private static Argument<string> ResponseId { get; } = new(
         name: @"response-id")
@@ -18,11 +19,13 @@ internal static class ResponsesDeleteAModelResponseCommandApiCommand
 ");
                         command.Arguments.Add(ResponseId);
 
+
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
                         var responseId = parseResult.GetRequiredValue(ResponseId);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
+
 
                                 await client.Responses.DeleteAModelResponseAsync(
                                     responseId: responseId,

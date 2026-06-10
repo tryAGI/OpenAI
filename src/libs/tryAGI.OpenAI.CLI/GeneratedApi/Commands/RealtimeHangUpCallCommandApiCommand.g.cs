@@ -1,10 +1,11 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class RealtimeHangUpCallCommandApiCommand
+internal static partial class RealtimeHangUpCallCommandApiCommand
 {
     private static Argument<string> CallId { get; } = new(
         name: @"call-id")
@@ -22,11 +23,13 @@ header when creating the call with
 WebRTC.");
                         command.Arguments.Add(CallId);
 
+
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
                         var callId = parseResult.GetRequiredValue(CallId);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
+
 
                                 await client.Realtime.HangUpCallAsync(
                                     callId: callId,

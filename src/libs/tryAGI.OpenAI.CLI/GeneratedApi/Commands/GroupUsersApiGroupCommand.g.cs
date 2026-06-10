@@ -12,6 +12,7 @@ internal static class GroupUsersApiGroupCommand
                          command.Subcommands.Add(GroupUsersAddGroupUserCommandApiCommand.Create());
                          command.Subcommands.Add(GroupUsersListGroupUsersCommandApiCommand.Create());
                          command.Subcommands.Add(GroupUsersRemoveGroupUserCommandApiCommand.Create());
+                         command.Subcommands.Add(GroupUsersRetrieveGroupUserCommandApiCommand.Create());
         return command;
     }
 }

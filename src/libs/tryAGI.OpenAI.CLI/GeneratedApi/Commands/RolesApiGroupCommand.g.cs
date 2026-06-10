@@ -15,6 +15,8 @@ internal static class RolesApiGroupCommand
                          command.Subcommands.Add(RolesDeleteProjectRoleCommandApiCommand.Create());
                          command.Subcommands.Add(RolesListOrganizationRolesCommandApiCommand.Create());
                          command.Subcommands.Add(RolesListProjectRolesCommandApiCommand.Create());
+                         command.Subcommands.Add(RolesRetrieveOrganizationRoleCommandApiCommand.Create());
+                         command.Subcommands.Add(RolesRetrieveProjectRoleCommandApiCommand.Create());
                          command.Subcommands.Add(RolesUpdateOrganizationRoleCommandApiCommand.Create());
                          command.Subcommands.Add(RolesUpdateProjectRoleCommandApiCommand.Create());
         return command;

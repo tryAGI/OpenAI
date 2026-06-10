@@ -11,6 +11,7 @@ internal static class ProjectUserRoleAssignmentsApiGroupCommand
         var command = new Command(@"project-user-role-assignments", @"Project user role assignments endpoint commands.");
                          command.Subcommands.Add(ProjectUserRoleAssignmentsAssignProjectRoleToUserCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectUserRoleAssignmentsListProjectUserRoleAssignmentsCommandApiCommand.Create());
+                         command.Subcommands.Add(ProjectUserRoleAssignmentsRetrieveProjectUserRoleCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectUserRoleAssignmentsUnassignProjectRoleFromUserCommandApiCommand.Create());
         return command;
     }

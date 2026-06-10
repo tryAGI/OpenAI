@@ -14,6 +14,7 @@ internal static class ProjectsApiGroupCommand
                          command.Subcommands.Add(ProjectsCreateProjectServiceAccountCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsCreateProjectUserCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsDeleteProjectApiKeyCommandApiCommand.Create());
+                         command.Subcommands.Add(ProjectsDeleteProjectModelPermissionsCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsDeleteProjectServiceAccountCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsDeleteProjectUserCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsListProjectApiKeysCommandApiCommand.Create());
@@ -22,12 +23,15 @@ internal static class ProjectsApiGroupCommand
                          command.Subcommands.Add(ProjectsListProjectUsersCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsListProjectsCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsModifyProjectCommandApiCommand.Create());
+                         command.Subcommands.Add(ProjectsModifyProjectModelPermissionsCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsModifyProjectRateLimitCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsModifyProjectUserCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsRetrieveProjectCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsRetrieveProjectApiKeyCommandApiCommand.Create());
+                         command.Subcommands.Add(ProjectsRetrieveProjectModelPermissionsCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsRetrieveProjectServiceAccountCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsRetrieveProjectUserCommandApiCommand.Create());
+                         command.Subcommands.Add(ProjectsUpdateProjectServiceAccountCommandApiCommand.Create());
         return command;
     }
 }

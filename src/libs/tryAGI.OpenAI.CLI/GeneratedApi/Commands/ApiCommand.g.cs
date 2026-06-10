@@ -11,7 +11,9 @@ internal static class ApiCommand
         var command = new Command("api", "Generated endpoint commands.");
           command.Options.Add(CliOptions.ApiKey);
           command.Options.Add(CliOptions.BaseUrl);
+          command.Options.Add(CliOptions.Json);
           command.Options.Add(CliOptions.Output);
+          command.Options.Add(CliOptions.OutputDirectory);
                          command.Subcommands.Add(AssistantsApiGroupCommand.Create());
                          command.Subcommands.Add(AudioApiGroupCommand.Create());
                          command.Subcommands.Add(AuditLogsApiGroupCommand.Create());
@@ -20,6 +22,7 @@ internal static class ApiCommand
                          command.Subcommands.Add(ChatApiGroupCommand.Create());
                          command.Subcommands.Add(CompletionsApiGroupCommand.Create());
                          command.Subcommands.Add(ConversationsApiGroupCommand.Create());
+                         command.Subcommands.Add(DataRetentionApiGroupCommand.Create());
                          command.Subcommands.Add(DefaultApiGroupCommand.Create());
                          command.Subcommands.Add(EmbeddingsApiGroupCommand.Create());
                          command.Subcommands.Add(EvalsApiGroupCommand.Create());
@@ -28,6 +31,7 @@ internal static class ApiCommand
                          command.Subcommands.Add(GroupOrganizationRoleAssignmentsApiGroupCommand.Create());
                          command.Subcommands.Add(GroupUsersApiGroupCommand.Create());
                          command.Subcommands.Add(GroupsApiGroupCommand.Create());
+                         command.Subcommands.Add(HostedToolsApiGroupCommand.Create());
                          command.Subcommands.Add(ImagesApiGroupCommand.Create());
                          command.Subcommands.Add(InvitesApiGroupCommand.Create());
                          command.Subcommands.Add(ModelsApiGroupCommand.Create());
@@ -40,6 +44,7 @@ internal static class ApiCommand
                          command.Subcommands.Add(ResponsesApiGroupCommand.Create());
                          command.Subcommands.Add(RolesApiGroupCommand.Create());
                          command.Subcommands.Add(SkillsApiGroupCommand.Create());
+                         command.Subcommands.Add(SpendAlertsApiGroupCommand.Create());
                          command.Subcommands.Add(UploadsApiGroupCommand.Create());
                          command.Subcommands.Add(UsageApiGroupCommand.Create());
                          command.Subcommands.Add(UserOrganizationRoleAssignmentsApiGroupCommand.Create());

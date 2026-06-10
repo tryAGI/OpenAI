@@ -1,12 +1,13 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class AuditLogsListAuditLogsCommandApiCommand
+internal static partial class AuditLogsListAuditLogsCommandApiCommand
 {
-     private static Option<global::tryAGI.OpenAI.ListAuditLogsEffectiveAt?> EffectiveAt { get; } = new(
+    private static Option<global::tryAGI.OpenAI.ListAuditLogsEffectiveAt?> EffectiveAt { get; } = new(
         name: @"--effective-at")
     {
         Description = @"Return only events whose `effective_at` (Unix seconds) is in this range.",
@@ -63,6 +64,26 @@ internal static class AuditLogsListAuditLogsCommandApiCommand
 ",
     };
 
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.ListAuditLogsResponse value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.ListAuditLogsResponse value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
+
     public static Command Create()
     {
         var command = new Command(@"list-audit-logs", @"List user actions and configuration changes within this organization.");
@@ -75,6 +96,7 @@ internal static class AuditLogsListAuditLogsCommandApiCommand
                         command.Options.Add(Limit);
                         command.Options.Add(After);
                         command.Options.Add(Before);
+
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
@@ -90,6 +112,7 @@ internal static class AuditLogsListAuditLogsCommandApiCommand
                         var before = parseResult.GetValue(Before);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+
                                 var response = await client.AuditLogs.ListAuditLogsAsync(
                                     effectiveAt: effectiveAt,
                                     projectIds: projectIds,
@@ -102,11 +125,21 @@ internal static class AuditLogsListAuditLogsCommandApiCommand
                                     before: before,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                if (!await CliRuntime.TryWriteOutputDirectoryAsync(
+                                        parseResult,
+                                        response,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        @"Data",
+                                        cancellationToken).ConfigureAwait(false))
+                                {
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
+                                }
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }

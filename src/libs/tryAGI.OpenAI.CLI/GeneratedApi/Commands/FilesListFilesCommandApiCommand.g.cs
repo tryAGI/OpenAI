@@ -1,12 +1,13 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class FilesListFilesCommandApiCommand
+internal static partial class FilesListFilesCommandApiCommand
 {
-     private static Option<string?> Purpose { get; } = new(
+    private static Option<string?> Purpose { get; } = new(
         name: @"--purpose")
     {
         Description = @"Only return files with the given purpose.",
@@ -33,6 +34,26 @@ internal static class FilesListFilesCommandApiCommand
 ",
     };
 
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.ListFilesResponse value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.ListFilesResponse value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
+
     public static Command Create()
     {
         var command = new Command(@"list-files", @"Returns a list of files.");
@@ -40,6 +61,7 @@ internal static class FilesListFilesCommandApiCommand
                         command.Options.Add(Limit);
                         command.Options.Add(Order);
                         command.Options.Add(After);
+
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
@@ -50,6 +72,7 @@ internal static class FilesListFilesCommandApiCommand
                         var after = parseResult.GetValue(After);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+
                                 var response = await client.Files.ListFilesAsync(
                                     purpose: purpose,
                                     limit: limit,
@@ -57,11 +80,21 @@ internal static class FilesListFilesCommandApiCommand
                                     after: after,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                if (!await CliRuntime.TryWriteOutputDirectoryAsync(
+                                        parseResult,
+                                        response,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        @"Data",
+                                        cancellationToken).ConfigureAwait(false))
+                                {
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
+                                }
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }

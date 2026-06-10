@@ -1,16 +1,20 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class UsageCostsCommandApiCommand
+internal static partial class UsageCostsCommandApiCommand
 {
-    private static Argument<int> StartTime { get; } = new(
-        name: @"start-time")
+    private static Option<int> StartTime { get; } = new(
+        name: @"--start-time")
     {
         Description = @"Start time (Unix seconds) of the query time range, inclusive.",
-    };    private static Option<int?> EndTime { get; } = new(
+        Required = true,
+    };
+
+    private static Option<int?> EndTime { get; } = new(
         name: @"--end-time")
     {
         Description = @"End time (Unix seconds) of the query time range, exclusive.",
@@ -53,10 +57,30 @@ internal static class UsageCostsCommandApiCommand
         Description = @"A cursor for use in pagination. Corresponding to the `next_page` field from the previous response.",
     };
 
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.UsageResponse value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.UsageResponse value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
+
     public static Command Create()
     {
         var command = new Command(@"costs", @"Get costs details for the organization.");
-                        command.Arguments.Add(StartTime);
+                        command.Options.Add(StartTime);
                         command.Options.Add(EndTime);
                         command.Options.Add(BucketWidth);
                         command.Options.Add(ProjectIds);
@@ -64,6 +88,7 @@ internal static class UsageCostsCommandApiCommand
                         command.Options.Add(GroupBy);
                         command.Options.Add(Limit);
                         command.Options.Add(Page);
+
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
@@ -78,6 +103,7 @@ internal static class UsageCostsCommandApiCommand
                         var page = parseResult.GetValue(Page);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+
                                 var response = await client.Usage.CostsAsync(
                                     startTime: startTime,
                                     endTime: endTime,
@@ -89,11 +115,21 @@ internal static class UsageCostsCommandApiCommand
                                     page: page,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteJsonAsync(
+
+                                if (!await CliRuntime.TryWriteOutputDirectoryAsync(
+                                        parseResult,
+                                        response,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        @"Data",
+                                        cancellationToken).ConfigureAwait(false))
+                                {
+                                await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
+                                }
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }

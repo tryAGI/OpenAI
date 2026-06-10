@@ -12,6 +12,7 @@ internal static class ProjectGroupsApiGroupCommand
                          command.Subcommands.Add(ProjectGroupsAddProjectGroupCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectGroupsListProjectGroupsCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectGroupsRemoveProjectGroupCommandApiCommand.Create());
+                         command.Subcommands.Add(ProjectGroupsRetrieveProjectGroupCommandApiCommand.Create());
         return command;
     }
 }
