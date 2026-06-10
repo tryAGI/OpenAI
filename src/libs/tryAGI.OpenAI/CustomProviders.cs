@@ -269,6 +269,11 @@ public static class CustomProviders
     public const string OpenCodeGoBaseUrl = "https://opencode.ai/zen/go/v1";
 
     /// <summary>
+    /// https://audratalks.com/migrate
+    /// </summary>
+    public const string AudraBaseUrl = "https://audratalks.com/v1";
+
+    /// <summary>
     /// Creates an API to use for GitHub Models: https://github.com/marketplace/models
     /// </summary>
     /// <returns></returns>
@@ -765,6 +770,15 @@ public static class CustomProviders
     public static OpenAiClient OpenCodeGo(string apiKey)
     {
         return new OpenAiClient(apiKey, baseUri: new Uri(OpenCodeGoBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for Audra's OpenAI-compatible text-to-speech endpoint.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient Audra(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(AudraBaseUrl));
     }
 }
 

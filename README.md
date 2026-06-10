@@ -230,6 +230,7 @@ using var api = CustomProviders.GmiCloud("API_KEY");
 using var api = CustomProviders.KiloGateway("API_KEY");
 using var api = CustomProviders.OpenCodeZen("API_KEY");
 using var api = CustomProviders.OpenCodeGo("API_KEY");
+using var api = CustomProviders.Audra("API_KEY");
 using var api = CustomProviders.Ollama();
 using var api = CustomProviders.LmStudio();
 ```
