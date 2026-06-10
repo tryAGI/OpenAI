@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -41,18 +40,18 @@ internal static partial class AssistantsCreateMessageCommandApiCommand
     {
         Description = @"",
     };
-      private static Option<string?> Input { get; } = new(@"--input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -97,7 +96,7 @@ internal static partial class AssistantsCreateMessageCommandApiCommand
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -114,8 +113,8 @@ internal static partial class AssistantsCreateMessageCommandApiCommand
                         var threadId = parseResult.GetRequiredValue(ThreadId);
                         var role = parseResult.GetRequiredValue(Role);
                         var content = parseResult.GetRequiredValue(Content);
-                        var attachments = CliRuntime.WasSpecified(parseResult, Attachments) ? parseResult.GetValue(Attachments) : __requestBase is not null ? __requestBase.Attachments : default;
-                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : __requestBase is not null ? __requestBase.Metadata : default;
+                        var attachments = parseResult.GetValue(Attachments) ?? __requestBase?.Attachments;
+                        var metadata = parseResult.GetValue(Metadata) ?? __requestBase?.Metadata;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

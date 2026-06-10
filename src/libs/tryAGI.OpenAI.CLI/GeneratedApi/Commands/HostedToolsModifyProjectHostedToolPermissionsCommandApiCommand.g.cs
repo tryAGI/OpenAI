@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -21,18 +20,18 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
     private static readonly HostedToolPermissionUpdateOptionSet McpOptions = HostedToolPermissionUpdateOptionSet.Create(@"mcp");
 
     private static readonly HostedToolPermissionUpdateOptionSet CodeInterpreterOptions = HostedToolPermissionUpdateOptionSet.Create(@"code-interpreter");
-      private static Option<string?> Input { get; } = new(@"--input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -73,7 +72,7 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -88,56 +87,51 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var projectId = parseResult.GetRequiredValue(ProjectId);
-
-                        var __fileSearchBase = __requestBase?.FileSearch;                        var fileSearchEnabled = parseResult.GetValue(FileSearchOptions.Enabled);
+                        var fileSearchEnabled = parseResult.GetValue(FileSearchOptions.Enabled);
                         var __fileSearchSpecified = CliRuntime.WasSpecified(parseResult, FileSearchOptions.Enabled);
                         var fileSearch =
-                            __fileSearchSpecified || __fileSearchBase is not null
+                            __fileSearchSpecified || __requestBase?.FileSearch is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
-                                Enabled = fileSearchEnabled!,
+                                Enabled = fileSearchEnabled,
                                 }
-                                : __fileSearchBase;
-
-                        var __webSearchBase = __requestBase?.WebSearch;                        var webSearchEnabled = parseResult.GetValue(WebSearchOptions.Enabled);
+                                : __requestBase?.FileSearch;
+                        var webSearchEnabled = parseResult.GetValue(WebSearchOptions.Enabled);
                         var __webSearchSpecified = CliRuntime.WasSpecified(parseResult, WebSearchOptions.Enabled);
                         var webSearch =
-                            __webSearchSpecified || __webSearchBase is not null
+                            __webSearchSpecified || __requestBase?.WebSearch is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
-                                Enabled = webSearchEnabled!,
+                                Enabled = webSearchEnabled,
                                 }
-                                : __webSearchBase;
-
-                        var __imageGenerationBase = __requestBase?.ImageGeneration;                        var imageGenerationEnabled = parseResult.GetValue(ImageGenerationOptions.Enabled);
+                                : __requestBase?.WebSearch;
+                        var imageGenerationEnabled = parseResult.GetValue(ImageGenerationOptions.Enabled);
                         var __imageGenerationSpecified = CliRuntime.WasSpecified(parseResult, ImageGenerationOptions.Enabled);
                         var imageGeneration =
-                            __imageGenerationSpecified || __imageGenerationBase is not null
+                            __imageGenerationSpecified || __requestBase?.ImageGeneration is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
-                                Enabled = imageGenerationEnabled!,
+                                Enabled = imageGenerationEnabled,
                                 }
-                                : __imageGenerationBase;
-
-                        var __mcpBase = __requestBase?.Mcp;                        var mcpEnabled = parseResult.GetValue(McpOptions.Enabled);
+                                : __requestBase?.ImageGeneration;
+                        var mcpEnabled = parseResult.GetValue(McpOptions.Enabled);
                         var __mcpSpecified = CliRuntime.WasSpecified(parseResult, McpOptions.Enabled);
                         var mcp =
-                            __mcpSpecified || __mcpBase is not null
+                            __mcpSpecified || __requestBase?.Mcp is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
-                                Enabled = mcpEnabled!,
+                                Enabled = mcpEnabled,
                                 }
-                                : __mcpBase;
-
-                        var __codeInterpreterBase = __requestBase?.CodeInterpreter;                        var codeInterpreterEnabled = parseResult.GetValue(CodeInterpreterOptions.Enabled);
+                                : __requestBase?.Mcp;
+                        var codeInterpreterEnabled = parseResult.GetValue(CodeInterpreterOptions.Enabled);
                         var __codeInterpreterSpecified = CliRuntime.WasSpecified(parseResult, CodeInterpreterOptions.Enabled);
                         var codeInterpreter =
-                            __codeInterpreterSpecified || __codeInterpreterBase is not null
+                            __codeInterpreterSpecified || __requestBase?.CodeInterpreter is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
-                                Enabled = codeInterpreterEnabled!,
+                                Enabled = codeInterpreterEnabled,
                                 }
-                                : __codeInterpreterBase;
+                                : __requestBase?.CodeInterpreter;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

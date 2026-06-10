@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -13,7 +12,7 @@ internal static partial class GetInputTokenCountsCommandApiCommand
         Description = @"",
     };
 
-    private static Option<global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>?> InputOption { get; } = new(
+    private static Option<global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>?> Input { get; } = new(
         name: @"--input")
     {
         Description = @"",
@@ -76,18 +75,18 @@ internal static partial class GetInputTokenCountsCommandApiCommand
     private static Option<bool?> ParallelToolCalls { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--parallel-tool-calls",
         description: @"");
-      private static Option<string?> RequestInput { get; } = new(@"--request-input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -119,7 +118,7 @@ internal static partial class GetInputTokenCountsCommandApiCommand
 
 Returns an object with `object` set to `response.input_tokens` and an `input_tokens` count.");
                         command.Options.Add(Model);
-                        command.Options.Add(InputOption);
+                        command.Options.Add(Input);
                         command.Options.Add(PreviousResponseId);
                         command.Options.Add(Tools);
                         command.Options.Add(Text);
@@ -130,18 +129,18 @@ Returns an object with `object` set to `response.input_tokens` and an `input_tok
                         command.Options.Add(Conversation);
                         command.Options.Add(ToolChoice);
                         command.Options.Add(ParallelToolCalls);
-          command.Options.Add(RequestInput);
+          command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
           command.Validators.Add(result =>
           {
-              var hasInput = result.GetResult(RequestInput) is not null;
+              var hasInput = result.GetResult(Input) is not null;
               var hasRequestJson = result.GetResult(RequestJson) is not null;
               var hasRequestFile = result.GetResult(RequestFile) is not null;
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --request-input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -150,23 +149,23 @@ Returns an object with `object` set to `response.input_tokens` and an `input_tok
             {
                         var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::tryAGI.OpenAI.TokenCountsBody>(
                             parseResult,
-                            RequestInput,
+                            Input,
                             RequestJson,
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var model = CliRuntime.WasSpecified(parseResult, Model) ? parseResult.GetValue(Model) : __requestBase is not null ? __requestBase.Model : default;
-                        var input = CliRuntime.WasSpecified(parseResult, InputOption) ? parseResult.GetValue(InputOption) : __requestBase is not null ? __requestBase.Input : default;
-                        var previousResponseId = CliRuntime.WasSpecified(parseResult, PreviousResponseId) ? parseResult.GetValue(PreviousResponseId) : __requestBase is not null ? __requestBase.PreviousResponseId : default;
-                        var tools = CliRuntime.WasSpecified(parseResult, Tools) ? parseResult.GetValue(Tools) : __requestBase is not null ? __requestBase.Tools : default;
-                        var text = CliRuntime.WasSpecified(parseResult, Text) ? parseResult.GetValue(Text) : __requestBase is not null ? __requestBase.Text : default;
-                        var reasoning = CliRuntime.WasSpecified(parseResult, Reasoning) ? parseResult.GetValue(Reasoning) : __requestBase is not null ? __requestBase.Reasoning : default;
-                        var truncation = CliRuntime.WasSpecified(parseResult, Truncation) ? parseResult.GetValue(Truncation) : __requestBase is not null ? __requestBase.Truncation : default;
-                        var instructions = CliRuntime.WasSpecified(parseResult, Instructions) ? parseResult.GetValue(Instructions) : __requestBase is not null ? __requestBase.Instructions : default;
-                        var personality = CliRuntime.WasSpecified(parseResult, Personality) ? parseResult.GetValue(Personality) : __requestBase is not null ? __requestBase.Personality : default;
-                        var conversation = CliRuntime.WasSpecified(parseResult, Conversation) ? parseResult.GetValue(Conversation) : __requestBase is not null ? __requestBase.Conversation : default;
-                        var toolChoice = CliRuntime.WasSpecified(parseResult, ToolChoice) ? parseResult.GetValue(ToolChoice) : __requestBase is not null ? __requestBase.ToolChoice : default;
-                        var parallelToolCalls = CliRuntime.WasSpecified(parseResult, ParallelToolCalls) ? parseResult.GetValue(ParallelToolCalls) : __requestBase is not null ? __requestBase.ParallelToolCalls : default;
+                        var model = parseResult.GetValue(Model) ?? __requestBase?.Model;
+                        var input = parseResult.GetValue(Input) ?? __requestBase?.Input;
+                        var previousResponseId = parseResult.GetValue(PreviousResponseId) ?? __requestBase?.PreviousResponseId;
+                        var tools = parseResult.GetValue(Tools) ?? __requestBase?.Tools;
+                        var text = parseResult.GetValue(Text) ?? __requestBase?.Text;
+                        var reasoning = parseResult.GetValue(Reasoning) ?? __requestBase?.Reasoning;
+                        var truncation = parseResult.GetValue(Truncation) ?? __requestBase?.Truncation;
+                        var instructions = parseResult.GetValue(Instructions) ?? __requestBase?.Instructions;
+                        var personality = parseResult.GetValue(Personality) ?? __requestBase?.Personality;
+                        var conversation = parseResult.GetValue(Conversation) ?? __requestBase?.Conversation;
+                        var toolChoice = parseResult.GetValue(ToolChoice) ?? __requestBase?.ToolChoice;
+                        var parallelToolCalls = parseResult.GetValue(ParallelToolCalls) ?? __requestBase?.ParallelToolCalls;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

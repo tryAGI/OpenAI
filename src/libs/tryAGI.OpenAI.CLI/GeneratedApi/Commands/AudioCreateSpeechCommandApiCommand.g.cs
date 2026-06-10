@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -15,7 +14,7 @@ internal static partial class AudioCreateSpeechCommandApiCommand
         Required = true,
     };
 
-    private static Option<string> InputOption { get; } = new(
+    private static Option<string> Input { get; } = new(
         name: @"--input")
     {
         Description = @"The text to generate audio for. The maximum length is 4096 characters.",
@@ -52,18 +51,18 @@ internal static partial class AudioCreateSpeechCommandApiCommand
     {
         Description = @"The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.",
     };
-      private static Option<string?> RequestInput { get; } = new(@"--request-input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -76,24 +75,24 @@ internal static partial class AudioCreateSpeechCommandApiCommand
 Returns the audio file content, or a stream of audio events.
 ");
                         command.Options.Add(Model);
-                        command.Options.Add(InputOption);
+                        command.Options.Add(Input);
                         command.Options.Add(Instructions);
                         command.Options.Add(Voice);
                         command.Options.Add(ResponseFormat);
                         command.Options.Add(Speed);
                         command.Options.Add(StreamFormat);
-          command.Options.Add(RequestInput);
+          command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
           command.Validators.Add(result =>
           {
-              var hasInput = result.GetResult(RequestInput) is not null;
+              var hasInput = result.GetResult(Input) is not null;
               var hasRequestJson = result.GetResult(RequestJson) is not null;
               var hasRequestFile = result.GetResult(RequestFile) is not null;
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --request-input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -102,18 +101,18 @@ Returns the audio file content, or a stream of audio events.
             {
                         var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::tryAGI.OpenAI.CreateSpeechRequest>(
                             parseResult,
-                            RequestInput,
+                            Input,
                             RequestJson,
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var model = parseResult.GetRequiredValue(Model);
-                        var input = parseResult.GetRequiredValue(InputOption);
-                        var instructions = CliRuntime.WasSpecified(parseResult, Instructions) ? parseResult.GetValue(Instructions) : __requestBase is not null ? __requestBase.Instructions : default;
+                        var input = parseResult.GetRequiredValue(Input);
+                        var instructions = parseResult.GetValue(Instructions) ?? __requestBase?.Instructions;
                         var voice = parseResult.GetRequiredValue(Voice);
-                        var responseFormat = CliRuntime.WasSpecified(parseResult, ResponseFormat) ? parseResult.GetValue(ResponseFormat) : __requestBase is not null ? __requestBase.ResponseFormat : default;
-                        var speed = CliRuntime.WasSpecified(parseResult, Speed) ? parseResult.GetValue(Speed) : __requestBase is not null ? __requestBase.Speed : default;
-                        var streamFormat = CliRuntime.WasSpecified(parseResult, StreamFormat) ? parseResult.GetValue(StreamFormat) : __requestBase is not null ? __requestBase.StreamFormat : default;
+                        var responseFormat = parseResult.GetValue(ResponseFormat) ?? __requestBase?.ResponseFormat;
+                        var speed = parseResult.GetValue(Speed) ?? __requestBase?.Speed;
+                        var streamFormat = parseResult.GetValue(StreamFormat) ?? __requestBase?.StreamFormat;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -46,18 +45,18 @@ single channel (mono), and little-endian byte order.
 `item.input_audio_transcription.logprobs`
 ",
     };
-      private static Option<string?> Input { get; } = new(@"--input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -111,7 +110,7 @@ Returns the created Realtime transcription session object, plus an ephemeral key
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -125,11 +124,11 @@ Returns the created Realtime transcription session object, plus an ephemeral key
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var turnDetection = CliRuntime.WasSpecified(parseResult, TurnDetection) ? parseResult.GetValue(TurnDetection) : __requestBase is not null ? __requestBase.TurnDetection : default;
-                        var inputAudioNoiseReduction = CliRuntime.WasSpecified(parseResult, InputAudioNoiseReduction) ? parseResult.GetValue(InputAudioNoiseReduction) : __requestBase is not null ? __requestBase.InputAudioNoiseReduction : default;
-                        var inputAudioFormat = CliRuntime.WasSpecified(parseResult, InputAudioFormat) ? parseResult.GetValue(InputAudioFormat) : __requestBase is not null ? __requestBase.InputAudioFormat : default;
-                        var inputAudioTranscription = CliRuntime.WasSpecified(parseResult, InputAudioTranscription) ? parseResult.GetValue(InputAudioTranscription) : __requestBase is not null ? __requestBase.InputAudioTranscription : default;
-                        var include = CliRuntime.WasSpecified(parseResult, Include) ? parseResult.GetValue(Include) : __requestBase is not null ? __requestBase.Include : default;
+                        var turnDetection = parseResult.GetValue(TurnDetection) ?? __requestBase?.TurnDetection;
+                        var inputAudioNoiseReduction = parseResult.GetValue(InputAudioNoiseReduction) ?? __requestBase?.InputAudioNoiseReduction;
+                        var inputAudioFormat = parseResult.GetValue(InputAudioFormat) ?? __requestBase?.InputAudioFormat;
+                        var inputAudioTranscription = parseResult.GetValue(InputAudioTranscription) ?? __requestBase?.InputAudioTranscription;
+                        var include = parseResult.GetValue(Include) ?? __requestBase?.Include;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

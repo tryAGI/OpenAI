@@ -1,5 +1,4 @@
 #nullable enable
-#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -19,18 +18,18 @@ internal static partial class ImagesCreateImageCommandApiCommand
         Description = @"The size of the generated images. For `gpt-image-2` and `gpt-image-2-2026-04-21`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.",
     };
     private static readonly CreateImageRequestOptionSet CreateImageRequestOptionSetOptions = CreateImageRequestOptionSet.Create();
-      private static Option<string?> Input { get; } = new(@"--input")
+      private static Option<string?> Input { get; } = new("--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new(@"--request-json")
+      private static Option<string?> RequestJson { get; } = new("--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new(@"--request-file")
+      private static Option<string?> RequestFile { get; } = new("--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -67,6 +66,7 @@ internal static partial class ImagesCreateImageCommandApiCommand
                         command.Options.Add(CreateImageRequestOptionSetOptions.ResponseFormat);
                         command.Options.Add(CreateImageRequestOptionSetOptions.OutputFormat);
                         command.Options.Add(CreateImageRequestOptionSetOptions.OutputCompression);
+                        command.Options.Add(CreateImageRequestOptionSetOptions.Stream);
                         command.Options.Add(CreateImageRequestOptionSetOptions.PartialImages);
                         command.Options.Add(CreateImageRequestOptionSetOptions.Moderation);
                         command.Options.Add(CreateImageRequestOptionSetOptions.Background);
@@ -83,7 +83,7 @@ internal static partial class ImagesCreateImageCommandApiCommand
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -97,18 +97,19 @@ internal static partial class ImagesCreateImageCommandApiCommand
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var model = CliRuntime.WasSpecified(parseResult, Model) ? parseResult.GetValue(Model) : __requestBase is not null ? __requestBase.Model : default;
-                        var size = CliRuntime.WasSpecified(parseResult, Size) ? parseResult.GetValue(Size) : __requestBase is not null ? __requestBase.Size : default;                        var prompt = parseResult.GetRequiredValue(CreateImageRequestOptionSetOptions.Prompt);
-                        var n = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.N) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.N) : __requestBase is not null ? __requestBase.N : default;
-                        var quality = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.Quality) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.Quality) : __requestBase is not null ? __requestBase.Quality : default;
-                        var responseFormat = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.ResponseFormat) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.ResponseFormat) : __requestBase is not null ? __requestBase.ResponseFormat : default;
-                        var outputFormat = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.OutputFormat) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.OutputFormat) : __requestBase is not null ? __requestBase.OutputFormat : default;
-                        var outputCompression = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.OutputCompression) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.OutputCompression) : __requestBase is not null ? __requestBase.OutputCompression : default;
-                        var partialImages = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.PartialImages) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.PartialImages) : __requestBase is not null ? __requestBase.PartialImages : default;
-                        var moderation = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.Moderation) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.Moderation) : __requestBase is not null ? __requestBase.Moderation : default;
-                        var background = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.Background) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.Background) : __requestBase is not null ? __requestBase.Background : default;
-                        var style = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.Style) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.Style) : __requestBase is not null ? __requestBase.Style : default;
-                        var user = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.User) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.User) : __requestBase is not null ? __requestBase.User : default;
+                        var model = parseResult.GetValue(Model) ?? __requestBase?.Model;
+                        var size = parseResult.GetValue(Size) ?? __requestBase?.Size;                        var prompt = parseResult.GetRequiredValue(CreateImageRequestOptionSetOptions.Prompt);
+                        var n = parseResult.GetValue(CreateImageRequestOptionSetOptions.N) ?? __requestBase?.N;
+                        var quality = parseResult.GetValue(CreateImageRequestOptionSetOptions.Quality) ?? __requestBase?.Quality;
+                        var responseFormat = parseResult.GetValue(CreateImageRequestOptionSetOptions.ResponseFormat) ?? __requestBase?.ResponseFormat;
+                        var outputFormat = parseResult.GetValue(CreateImageRequestOptionSetOptions.OutputFormat) ?? __requestBase?.OutputFormat;
+                        var outputCompression = parseResult.GetValue(CreateImageRequestOptionSetOptions.OutputCompression) ?? __requestBase?.OutputCompression;
+                        var stream = parseResult.GetValue(CreateImageRequestOptionSetOptions.Stream) ?? __requestBase?.Stream;
+                        var partialImages = parseResult.GetValue(CreateImageRequestOptionSetOptions.PartialImages) ?? __requestBase?.PartialImages;
+                        var moderation = parseResult.GetValue(CreateImageRequestOptionSetOptions.Moderation) ?? __requestBase?.Moderation;
+                        var background = parseResult.GetValue(CreateImageRequestOptionSetOptions.Background) ?? __requestBase?.Background;
+                        var style = parseResult.GetValue(CreateImageRequestOptionSetOptions.Style) ?? __requestBase?.Style;
+                        var user = parseResult.GetValue(CreateImageRequestOptionSetOptions.User) ?? __requestBase?.User;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -121,6 +122,7 @@ internal static partial class ImagesCreateImageCommandApiCommand
                                     responseFormat: responseFormat,
                                     outputFormat: outputFormat,
                                     outputCompression: outputCompression,
+                                    stream: stream,
                                     partialImages: partialImages,
                                     moderation: moderation,
                                     background: background,
