@@ -91,6 +91,13 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ToolSearchOutputItemParam)}");
                 toolSearchOutput = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.AdditionalToolsItemParam? additionalTools = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.ItemDiscriminatorType.AdditionalTools)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AdditionalToolsItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AdditionalToolsItemParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.AdditionalToolsItemParam)}");
+                additionalTools = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.ReasoningItem? reasoning = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.ItemDiscriminatorType.Reasoning)
             {
@@ -226,6 +233,8 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 toolSearchOutput,
 
+                additionalTools,
+
                 reasoning,
 
                 compaction,
@@ -330,6 +339,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolSearchOutputItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolSearchOutputItemParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolSearchOutputItemParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolSearchOutput!, typeInfo);
+            }
+            else if (value.IsAdditionalTools)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AdditionalToolsItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AdditionalToolsItemParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AdditionalToolsItemParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AdditionalTools!, typeInfo);
             }
             else if (value.IsReasoning)
             {

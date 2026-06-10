@@ -43502,6 +43502,82 @@ components:
             id:
               type: string
               description: The service account ID.
+        workload_identity_provider.created:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: The workload identity provider ID.
+            data:
+              type: object
+              description: The payload used to create the workload identity provider.
+        workload_identity_provider.updated:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: The workload identity provider ID.
+            changes_requested:
+              type: object
+              description: The payload used to update the workload identity provider.
+        workload_identity_provider.deleted:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: The workload identity provider ID.
+            name:
+              type: string
+              description: The workload identity provider name.
+        workload_identity_provider_mapping.created:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: The workload identity provider mapping ID.
+            identity_provider_id:
+              type: string
+              description: The workload identity provider ID.
+            data:
+              type: object
+              description: >-
+                The payload used to create the workload identity provider
+                mapping.
+        workload_identity_provider_mapping.updated:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: The workload identity provider mapping ID.
+            identity_provider_id:
+              type: string
+              description: The workload identity provider ID.
+            changes_requested:
+              type: object
+              description: >-
+                The payload used to update the workload identity provider
+                mapping.
+        workload_identity_provider_mapping.deleted:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: The workload identity provider mapping ID.
+            identity_provider_id:
+              type: string
+              description: The workload identity provider ID.
+            project_id:
+              type: string
+              description: The project ID.
+            service_account_id:
+              type: string
+              description: The mapped service account ID.
         user.added:
           type: object
           description: The details for events with this `type`.
@@ -43728,6 +43804,12 @@ components:
         - tunnel.created
         - tunnel.updated
         - tunnel.deleted
+        - workload_identity_provider.created
+        - workload_identity_provider.updated
+        - workload_identity_provider.deleted
+        - workload_identity_provider_mapping.created
+        - workload_identity_provider_mapping.updated
+        - workload_identity_provider_mapping.deleted
         - role.created
         - role.updated
         - role.deleted
@@ -44519,6 +44601,69 @@ components:
               - text
               - audio
         - type: 'null'
+    ChatCompletionModeration:
+      type: object
+      description: Moderation results or errors for the request input and generated output.
+      properties:
+        input:
+          oneOf:
+            - $ref: '#/components/schemas/ChatCompletionModerationResults'
+            - $ref: '#/components/schemas/ChatCompletionModerationError'
+          discriminator:
+            propertyName: type
+          description: Moderation for the request input.
+        output:
+          oneOf:
+            - $ref: '#/components/schemas/ChatCompletionModerationResults'
+            - $ref: '#/components/schemas/ChatCompletionModerationError'
+          discriminator:
+            propertyName: type
+          description: Moderation for the generated output.
+      required:
+        - input
+        - output
+    ChatCompletionModerationError:
+      type: object
+      description: An error produced while attempting moderation.
+      properties:
+        type:
+          type: string
+          enum:
+            - error
+          description: The object type, which is always `error`.
+          x-stainless-const: true
+        code:
+          type: string
+          description: The error code.
+        message:
+          type: string
+          description: The error message.
+      required:
+        - type
+        - code
+        - message
+    ChatCompletionModerationResults:
+      type: object
+      description: Successful moderation results for the request input or generated output.
+      properties:
+        type:
+          type: string
+          enum:
+            - moderation_results
+          description: The object type, which is always `moderation_results`.
+          x-stainless-const: true
+        model:
+          type: string
+          description: The moderation model used to generate the results.
+        results:
+          type: array
+          description: A list of moderation results.
+          items:
+            $ref: '#/components/schemas/ModerationResultBody'
+      required:
+        - type
+        - model
+        - results
     ChatCompletionNamedToolChoice:
       type: object
       title: Function tool choice
@@ -46058,6 +46203,7 @@ components:
         - $ref: '#/components/schemas/ComputerToolCallOutputResource'
         - $ref: '#/components/schemas/ToolSearchCall'
         - $ref: '#/components/schemas/ToolSearchOutput'
+        - $ref: '#/components/schemas/AdditionalTools'
         - $ref: '#/components/schemas/ReasoningItem'
         - $ref: '#/components/schemas/CompactionBody'
         - $ref: '#/components/schemas/CodeInterpreterToolCall'
@@ -46609,6 +46755,13 @@ components:
 
                 Supports text and image inputs. Note: image inputs over 8MB will
                 be dropped.
+            moderation:
+              anyOf:
+                - $ref: '#/components/schemas/ModerationParam'
+                  description: >
+                    Configuration for running moderation on the request input
+                    and generated output.
+                - type: 'null'
             stream:
               description: >
                 If set to true, the model response data will be streamed to the
@@ -46843,6 +46996,9 @@ components:
 
                   `tool_calls` if the model called a tool, or `function_call`
                   (deprecated) if the model called a function.
+
+                  Read the [Model
+                  Spec](https://model-spec.openai.com/2025-12-18.html) for more.
                 enum:
                   - stop
                   - length
@@ -46911,6 +47067,15 @@ components:
           x-stainless-const: true
         usage:
           $ref: '#/components/schemas/CompletionUsage'
+        moderation:
+          anyOf:
+            - $ref: '#/components/schemas/ChatCompletionModeration'
+              description: >
+                Moderation results for the request input and generated output,
+                if moderated
+
+                completions were requested.
+            - type: 'null'
       required:
         - choices
         - created
@@ -47082,6 +47247,16 @@ components:
             for
 
             the request.
+        moderation:
+          anyOf:
+            - $ref: '#/components/schemas/ChatCompletionModeration'
+              description: >
+                Moderation results for the request input and generated output.
+                Present
+
+                on the moderation chunk when moderated completions are
+                requested.
+            - type: 'null'
       required:
         - choices
         - created
@@ -49718,6 +49893,13 @@ components:
                     makes it simple
 
                     to swap out system (or developer) messages in new responses.
+                - type: 'null'
+            moderation:
+              anyOf:
+                - $ref: '#/components/schemas/ModerationParam'
+                  description: >
+                    Configuration for running moderation on the input and output
+                    of this response.
                 - type: 'null'
             stream:
               anyOf:
@@ -56023,6 +56205,7 @@ components:
         - $ref: '#/components/schemas/FunctionCallOutputItemParam'
         - $ref: '#/components/schemas/ToolSearchCallItemParam'
         - $ref: '#/components/schemas/ToolSearchOutputItemParam'
+        - $ref: '#/components/schemas/AdditionalToolsItemParam'
         - $ref: '#/components/schemas/ReasoningItem'
         - $ref: '#/components/schemas/CompactionSummaryItemParam'
         - $ref: '#/components/schemas/ImageGenToolCall'
@@ -56055,6 +56238,7 @@ components:
         - $ref: '#/components/schemas/FunctionToolCallOutputResource'
         - $ref: '#/components/schemas/ToolSearchCall'
         - $ref: '#/components/schemas/ToolSearchOutput'
+        - $ref: '#/components/schemas/AdditionalTools'
         - $ref: '#/components/schemas/ReasoningItem'
         - $ref: '#/components/schemas/CompactionBody'
         - $ref: '#/components/schemas/ImageGenToolCall'
@@ -58032,6 +58216,15 @@ components:
                 enable extended prompt caching, which keeps cached prefixes
                 active for longer, up to a maximum of 24 hours. [Learn
                 more](/docs/guides/prompt-caching#prompt-cache-retention).
+
+                For `gpt-5.5`, `gpt-5.5-pro`, and future models, only `24h` is
+                supported.
+
+
+                For older models that support both `in_memory` and `24h`, the
+                default depends on your organization's data retention policy:
+                  - Organizations without ZDR enabled default to `24h`.
+                  - Organizations with ZDR enabled default to `in_memory` when `prompt_cache_retention` is not specified.
             - type: 'null'
     ModifyAssistantRequest:
       type: object
@@ -58662,6 +58855,7 @@ components:
         - $ref: '#/components/schemas/ReasoningItem'
         - $ref: '#/components/schemas/ToolSearchCall'
         - $ref: '#/components/schemas/ToolSearchOutput'
+        - $ref: '#/components/schemas/AdditionalTools'
         - $ref: '#/components/schemas/CompactionBody'
         - $ref: '#/components/schemas/ImageGenToolCall'
         - $ref: '#/components/schemas/CodeInterpreterToolCall'
@@ -70853,6 +71047,13 @@ components:
                 - type: 'null'
             usage:
               $ref: '#/components/schemas/ResponseUsage'
+            moderation:
+              anyOf:
+                - $ref: '#/components/schemas/Moderation'
+                  description: >
+                    Moderation results for the response input and output, if
+                    moderated completions were requested.
+                - type: 'null'
             parallel_tool_calls:
               type: boolean
               description: |
@@ -78578,8 +78779,9 @@ components:
           x-stainless-const: true
         query:
           type: string
+          deprecated: true
           description: |
-            [DEPRECATED] The search query.
+            The search query.
         queries:
           type: array
           title: Search queries
@@ -78617,7 +78819,6 @@ components:
               - url
       required:
         - type
-        - query
     WebSearchApproximateLocation:
       anyOf:
         - type: object
@@ -79698,6 +79899,77 @@ components:
               "id": "resp_abc123"
             }
           }
+    ModerationInputType:
+      type: string
+      enum:
+        - text
+        - image
+    ModerationResultBody:
+      properties:
+        type:
+          type: string
+          enum:
+            - moderation_result
+          description: >-
+            The object type, which was always `moderation_result` for successful
+            moderation results.
+          default: moderation_result
+          x-stainless-const: true
+        model:
+          type: string
+          description: The moderation model that produced this result.
+        flagged:
+          type: boolean
+          description: >-
+            A boolean indicating whether the content was flagged by any
+            category.
+        categories:
+          additionalProperties:
+            type: boolean
+          type: object
+          description: >-
+            A dictionary of moderation categories to booleans, True if the input
+            is flagged under this category.
+          x-oaiTypeLabel: map
+        category_scores:
+          additionalProperties:
+            type: number
+          type: object
+          description: A dictionary of moderation categories to scores.
+          x-oaiTypeLabel: map
+        category_applied_input_types:
+          additionalProperties:
+            items:
+              $ref: '#/components/schemas/ModerationInputType'
+            type: array
+          type: object
+          description: >-
+            Which modalities of input are reflected by the score for each
+            category.
+          x-oaiTypeLabel: map
+      type: object
+      required:
+        - type
+        - model
+        - flagged
+        - categories
+        - category_scores
+        - category_applied_input_types
+      title: Moderation result
+      description: A moderation result produced for the response input or output.
+    ModerationParam:
+      properties:
+        model:
+          type: string
+          description: >-
+            The moderation model to use for moderated completions, e.g.
+            'omni-moderation-latest'.
+      type: object
+      required:
+        - model
+      description: >-
+        Configuration for running moderation on the input and output of this
+        response.
     SkillReferenceParam:
       properties:
         type:
@@ -81369,6 +81641,32 @@ components:
         - execution
         - tools
         - status
+    AdditionalTools:
+      properties:
+        type:
+          type: string
+          enum:
+            - additional_tools
+          description: The type of the item. Always `additional_tools`.
+          default: additional_tools
+          x-stainless-const: true
+        id:
+          type: string
+          description: The unique ID of the additional tools item.
+        role:
+          $ref: '#/components/schemas/MessageRole'
+          description: The role that provided the additional tools.
+        tools:
+          items:
+            $ref: '#/components/schemas/Tool'
+          type: array
+          description: The additional tool definitions made available at this item.
+      type: object
+      required:
+        - type
+        - id
+        - role
+        - tools
     CompactionBody:
       properties:
         type:
@@ -82165,6 +82463,40 @@ components:
       required:
         - type
         - tools
+    AdditionalToolsItemParam:
+      properties:
+        id:
+          anyOf:
+            - type: string
+              description: The unique ID of this additional tools item.
+              example: at_123
+            - type: 'null'
+        type:
+          type: string
+          enum:
+            - additional_tools
+          description: The item type. Always `additional_tools`.
+          default: additional_tools
+          x-stainless-const: true
+        role:
+          type: string
+          enum:
+            - developer
+          description: >-
+            The role that provided the additional tools. Only `developer` is
+            supported.
+          default: developer
+          x-stainless-const: true
+        tools:
+          items:
+            $ref: '#/components/schemas/Tool'
+          type: array
+          description: A list of additional tools made available at this item.
+      type: object
+      required:
+        - type
+        - role
+        - tools
     CompactionSummaryItemParam:
       properties:
         id:
@@ -82738,6 +83070,52 @@ components:
       type: object
       required:
         - type
+    ModerationErrorBody:
+      properties:
+        type:
+          type: string
+          enum:
+            - error
+          description: The object type, which was always `error` for moderation failures.
+          default: error
+          x-stainless-const: true
+        code:
+          type: string
+          description: The error code.
+        message:
+          type: string
+          description: The error message.
+      type: object
+      required:
+        - type
+        - code
+        - message
+      title: Moderation error
+      description: >-
+        An error produced while attempting moderation for the response input or
+        output.
+    Moderation:
+      properties:
+        input:
+          oneOf:
+            - $ref: '#/components/schemas/ModerationResultBody'
+            - $ref: '#/components/schemas/ModerationErrorBody'
+          description: Moderation for the response input.
+          discriminator:
+            propertyName: type
+        output:
+          oneOf:
+            - $ref: '#/components/schemas/ModerationResultBody'
+            - $ref: '#/components/schemas/ModerationErrorBody'
+          description: Moderation for the response output.
+          discriminator:
+            propertyName: type
+      type: object
+      required:
+        - input
+        - output
+      title: Moderation
+      description: Moderation results or errors for the response input and output.
     Conversation-2:
       properties:
         id:
@@ -83226,6 +83604,13 @@ components:
       enum:
         - auto
         - disabled
+    PersonalityEnum:
+      anyOf:
+        - type: string
+        - type: string
+          enum:
+            - friendly
+            - pragmatic
     TokenCountsBody:
       properties:
         model:
@@ -83309,6 +83694,12 @@ components:
                 response. This makes it simple to swap out system (or developer)
                 messages in new responses.
             - type: 'null'
+        personality:
+          $ref: '#/components/schemas/PersonalityEnum'
+          description: >-
+            A model-owned style preset to apply to this request. Omit this
+            parameter to use the model's default style. Supported values may
+            expand over time. Values must be at most 64 characters.
         conversation:
           anyOf:
             - $ref: '#/components/schemas/ConversationParam'
@@ -83424,6 +83815,7 @@ components:
         - $ref: '#/components/schemas/FunctionToolCall'
         - $ref: '#/components/schemas/ToolSearchCall'
         - $ref: '#/components/schemas/ToolSearchOutput'
+        - $ref: '#/components/schemas/AdditionalTools'
         - $ref: '#/components/schemas/FunctionToolCallOutput'
         - $ref: '#/components/schemas/FileSearchToolCall'
         - $ref: '#/components/schemas/WebSearchToolCall'

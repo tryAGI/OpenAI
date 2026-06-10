@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        AdditionalTools,
+        /// <summary>
+        /// 
+        /// </summary>
         ApplyPatchCall,
         /// <summary>
         /// 
@@ -110,6 +114,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                OutputItemDiscriminatorType.AdditionalTools => "additional_tools",
                 OutputItemDiscriminatorType.ApplyPatchCall => "apply_patch_call",
                 OutputItemDiscriminatorType.ApplyPatchCallOutput => "apply_patch_call_output",
                 OutputItemDiscriminatorType.CodeInterpreterCall => "code_interpreter_call",
@@ -142,6 +147,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "additional_tools" => OutputItemDiscriminatorType.AdditionalTools,
                 "apply_patch_call" => OutputItemDiscriminatorType.ApplyPatchCall,
                 "apply_patch_call_output" => OutputItemDiscriminatorType.ApplyPatchCallOutput,
                 "code_interpreter_call" => OutputItemDiscriminatorType.CodeInterpreterCall,

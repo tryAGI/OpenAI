@@ -279,6 +279,42 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workload_identity_provider.created")]
+        public global::tryAGI.OpenAI.AuditLogWorkloadIdentityProviderCreated? WorkloadIdentityProviderCreated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workload_identity_provider.updated")]
+        public global::tryAGI.OpenAI.AuditLogWorkloadIdentityProviderUpdated? WorkloadIdentityProviderUpdated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workload_identity_provider.deleted")]
+        public global::tryAGI.OpenAI.AuditLogWorkloadIdentityProviderDeleted? WorkloadIdentityProviderDeleted { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workload_identity_provider_mapping.created")]
+        public global::tryAGI.OpenAI.AuditLogWorkloadIdentityProviderMappingCreated? WorkloadIdentityProviderMappingCreated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workload_identity_provider_mapping.updated")]
+        public global::tryAGI.OpenAI.AuditLogWorkloadIdentityProviderMappingUpdated? WorkloadIdentityProviderMappingUpdated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workload_identity_provider_mapping.deleted")]
+        public global::tryAGI.OpenAI.AuditLogWorkloadIdentityProviderMappingDeleted? WorkloadIdentityProviderMappingDeleted { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user.added")]
         public global::tryAGI.OpenAI.AuditLogUserAdded? UserAdded { get; set; }
 
@@ -463,6 +499,24 @@ namespace tryAGI.OpenAI
         /// <param name="serviceAccountDeleted">
         /// The details for events with this `type`.
         /// </param>
+        /// <param name="workloadIdentityProviderCreated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="workloadIdentityProviderUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="workloadIdentityProviderDeleted">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="workloadIdentityProviderMappingCreated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="workloadIdentityProviderMappingUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="workloadIdentityProviderMappingDeleted">
+        /// The details for events with this `type`.
+        /// </param>
         /// <param name="userAdded">
         /// The details for events with this `type`.
         /// </param>
@@ -535,6 +589,12 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AuditLogServiceAccountCreated? serviceAccountCreated,
             global::tryAGI.OpenAI.AuditLogServiceAccountUpdated? serviceAccountUpdated,
             global::tryAGI.OpenAI.AuditLogServiceAccountDeleted? serviceAccountDeleted,
+            global::tryAGI.OpenAI.AuditLogWorkloadIdentityProviderCreated? workloadIdentityProviderCreated,
+            global::tryAGI.OpenAI.AuditLogWorkloadIdentityProviderUpdated? workloadIdentityProviderUpdated,
+            global::tryAGI.OpenAI.AuditLogWorkloadIdentityProviderDeleted? workloadIdentityProviderDeleted,
+            global::tryAGI.OpenAI.AuditLogWorkloadIdentityProviderMappingCreated? workloadIdentityProviderMappingCreated,
+            global::tryAGI.OpenAI.AuditLogWorkloadIdentityProviderMappingUpdated? workloadIdentityProviderMappingUpdated,
+            global::tryAGI.OpenAI.AuditLogWorkloadIdentityProviderMappingDeleted? workloadIdentityProviderMappingDeleted,
             global::tryAGI.OpenAI.AuditLogUserAdded? userAdded,
             global::tryAGI.OpenAI.AuditLogUserUpdated? userUpdated,
             global::tryAGI.OpenAI.AuditLogUserDeleted? userDeleted,
@@ -588,6 +648,12 @@ namespace tryAGI.OpenAI
             this.ServiceAccountCreated = serviceAccountCreated;
             this.ServiceAccountUpdated = serviceAccountUpdated;
             this.ServiceAccountDeleted = serviceAccountDeleted;
+            this.WorkloadIdentityProviderCreated = workloadIdentityProviderCreated;
+            this.WorkloadIdentityProviderUpdated = workloadIdentityProviderUpdated;
+            this.WorkloadIdentityProviderDeleted = workloadIdentityProviderDeleted;
+            this.WorkloadIdentityProviderMappingCreated = workloadIdentityProviderMappingCreated;
+            this.WorkloadIdentityProviderMappingUpdated = workloadIdentityProviderMappingUpdated;
+            this.WorkloadIdentityProviderMappingDeleted = workloadIdentityProviderMappingDeleted;
             this.UserAdded = userAdded;
             this.UserUpdated = userUpdated;
             this.UserDeleted = userDeleted;
