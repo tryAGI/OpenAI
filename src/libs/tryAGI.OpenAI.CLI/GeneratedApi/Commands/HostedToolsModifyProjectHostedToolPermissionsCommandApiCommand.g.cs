@@ -95,7 +95,8 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
                             __fileSearchSpecified || __fileSearchBase is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
-                                Enabled = fileSearchEnabled!,
+	                                Enabled = fileSearchEnabled!,
+
                                 }
                                 : __fileSearchBase;
 
@@ -105,7 +106,8 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
                             __webSearchSpecified || __webSearchBase is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
-                                Enabled = webSearchEnabled!,
+	                                Enabled = webSearchEnabled!,
+
                                 }
                                 : __webSearchBase;
 
@@ -115,7 +117,8 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
                             __imageGenerationSpecified || __imageGenerationBase is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
-                                Enabled = imageGenerationEnabled!,
+	                                Enabled = imageGenerationEnabled!,
+
                                 }
                                 : __imageGenerationBase;
 
@@ -125,7 +128,8 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
                             __mcpSpecified || __mcpBase is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
-                                Enabled = mcpEnabled!,
+	                                Enabled = mcpEnabled!,
+
                                 }
                                 : __mcpBase;
 
@@ -135,7 +139,8 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
                             __codeInterpreterSpecified || __codeInterpreterBase is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
-                                Enabled = codeInterpreterEnabled!,
+	                                Enabled = codeInterpreterEnabled!,
+
                                 }
                                 : __codeInterpreterBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);

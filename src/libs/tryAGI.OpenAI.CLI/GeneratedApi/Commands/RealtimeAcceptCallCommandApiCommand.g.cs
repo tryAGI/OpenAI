@@ -167,8 +167,9 @@ handle it.");
                             __promptSpecified || __promptBase is not null
                                 ? new global::tryAGI.OpenAI.PromptVariant1
                                 {
-                                Id = promptId!,
+	                                Id = promptId!,
                                 Version = promptVersion,
+
                                 }
                                 : __promptBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
