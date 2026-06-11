@@ -142,8 +142,9 @@ storage limits.
                             __expiresAfterSpecified || __expiresAfterBase is not null
                                 ? new global::tryAGI.OpenAI.FileExpirationAfter
                                 {
-                                Anchor = expiresAfterAnchor,
+	                                Anchor = expiresAfterAnchor,
                                 Seconds = expiresAfterSeconds!,
+
                                 }
                                 : __expiresAfterBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);

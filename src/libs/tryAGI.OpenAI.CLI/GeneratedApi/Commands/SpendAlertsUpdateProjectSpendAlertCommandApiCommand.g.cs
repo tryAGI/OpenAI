@@ -105,9 +105,10 @@ internal static partial class SpendAlertsUpdateProjectSpendAlertCommandApiComman
                             __notificationChannelSpecified || __notificationChannelBase is not null
                                 ? new global::tryAGI.OpenAI.SpendAlertNotificationChannel
                                 {
-                                Type = notificationChannelType,
+	                                Type = notificationChannelType,
                                 Recipients = notificationChannelRecipients!,
                                 SubjectPrefix = notificationChannelSubjectPrefix,
+
                                 }
                                 : __notificationChannelBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);

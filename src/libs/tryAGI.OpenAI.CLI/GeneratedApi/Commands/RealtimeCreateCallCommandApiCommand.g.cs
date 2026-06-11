@@ -97,11 +97,12 @@ to complete the peer connection.");
                             __sessionSpecified || __sessionBase is not null
                                 ? new global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA
                                 {
-                                Type = sessionType,
+	                                Type = sessionType,
                                 OutputModalities = sessionOutputModalities,
                                 Instructions = sessionInstructions,
                                 Include = sessionInclude,
                                 ParallelToolCalls = sessionParallelToolCalls,
+
                                 }
                                 : __sessionBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
