@@ -1,4 +1,5 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -24,18 +25,18 @@ internal static partial class RolesUpdateProjectRoleCommandApiCommand
         Description = @"Updated set of permissions for the role.",
     };
     private static readonly PublicUpdateOrganizationRoleBodyOptionSet PublicUpdateOrganizationRoleBodyOptionSetOptions = PublicUpdateOrganizationRoleBodyOptionSet.Create();
-      private static Option<string?> Input { get; } = new("--input")
+      private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new("--request-json")
+      private static Option<string?> RequestJson { get; } = new(@"--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
+      private static Option<string?> RequestFile { get; } = new(@"--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -79,7 +80,7 @@ internal static partial class RolesUpdateProjectRoleCommandApiCommand
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -95,8 +96,8 @@ internal static partial class RolesUpdateProjectRoleCommandApiCommand
                             cancellationToken).ConfigureAwait(false);
                         var projectId = parseResult.GetRequiredValue(ProjectId);
                         var roleId = parseResult.GetRequiredValue(RoleId);
-                        var permissions = parseResult.GetValue(Permissions) ?? __requestBase?.Permissions;                        var description = parseResult.GetValue(PublicUpdateOrganizationRoleBodyOptionSetOptions.DescriptionOption) ?? __requestBase?.Description;
-                        var roleName = parseResult.GetValue(PublicUpdateOrganizationRoleBodyOptionSetOptions.RoleName) ?? __requestBase?.RoleName;
+                        var permissions = CliRuntime.WasSpecified(parseResult, Permissions) ? parseResult.GetValue(Permissions) : __requestBase is not null ? __requestBase.Permissions : default;                        var description = CliRuntime.WasSpecified(parseResult, PublicUpdateOrganizationRoleBodyOptionSetOptions.DescriptionOption) ? parseResult.GetValue(PublicUpdateOrganizationRoleBodyOptionSetOptions.DescriptionOption) : __requestBase is not null ? __requestBase.Description : default;
+                        var roleName = CliRuntime.WasSpecified(parseResult, PublicUpdateOrganizationRoleBodyOptionSetOptions.RoleName) ? parseResult.GetValue(PublicUpdateOrganizationRoleBodyOptionSetOptions.RoleName) : __requestBase is not null ? __requestBase.RoleName : default;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

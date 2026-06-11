@@ -1,4 +1,5 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -31,18 +32,18 @@ internal static partial class VectorStoresCreateVectorStoreFileCommandApiCommand
     {
         Description = @"",
     };
-      private static Option<string?> Input { get; } = new("--input")
+      private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new("--request-json")
+      private static Option<string?> RequestJson { get; } = new(@"--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
+      private static Option<string?> RequestFile { get; } = new(@"--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -88,7 +89,7 @@ For uploading multiple files to the same vector store, use the file batches endp
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -104,8 +105,8 @@ For uploading multiple files to the same vector store, use the file batches endp
                             cancellationToken).ConfigureAwait(false);
                         var vectorStoreId = parseResult.GetRequiredValue(VectorStoreId);
                         var fileId = parseResult.GetRequiredValue(FileId);
-                        var chunkingStrategy = parseResult.GetValue(ChunkingStrategy) ?? __requestBase?.ChunkingStrategy;
-                        var attributes = parseResult.GetValue(Attributes) ?? __requestBase?.Attributes;
+                        var chunkingStrategy = CliRuntime.WasSpecified(parseResult, ChunkingStrategy) ? parseResult.GetValue(ChunkingStrategy) : __requestBase is not null ? __requestBase.ChunkingStrategy : default;
+                        var attributes = CliRuntime.WasSpecified(parseResult, Attributes) ? parseResult.GetValue(Attributes) : __requestBase is not null ? __requestBase.Attributes : default;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

@@ -1,4 +1,5 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -36,18 +37,18 @@ internal static partial class FilesUploadFileCommandApiCommand
         Required = true,
     };
     private static readonly FileExpirationAfterOptionSet ExpiresAfterOptions = FileExpirationAfterOptionSet.Create(@"expires-after");
-      private static Option<string?> Input { get; } = new("--input")
+      private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new("--request-json")
+      private static Option<string?> RequestJson { get; } = new(@"--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
+      private static Option<string?> RequestFile { get; } = new(@"--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -116,7 +117,7 @@ storage limits.
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -133,17 +134,18 @@ storage limits.
                         var file = parseResult.GetRequiredValue(File);
                         var filename = parseResult.GetRequiredValue(Filename);
                         var purpose = parseResult.GetRequiredValue(Purpose);
-                        var expiresAfterAnchor = parseResult.GetValue(ExpiresAfterOptions.Anchor) ?? __requestBase?.ExpiresAfter?.Anchor;
+
+                        var __expiresAfterBase = __requestBase?.ExpiresAfter;                        var expiresAfterAnchor = CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Anchor) ? parseResult.GetValue(ExpiresAfterOptions.Anchor) : __expiresAfterBase is not null ? __expiresAfterBase.Anchor : default;
                         var expiresAfterSeconds = parseResult.GetValue(ExpiresAfterOptions.Seconds);
                         var __expiresAfterSpecified = CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Anchor) || CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Seconds);
                         var expiresAfter =
-                            __expiresAfterSpecified || __requestBase?.ExpiresAfter is not null
+                            __expiresAfterSpecified || __expiresAfterBase is not null
                                 ? new global::tryAGI.OpenAI.FileExpirationAfter
                                 {
                                 Anchor = expiresAfterAnchor,
-                                Seconds = expiresAfterSeconds,
+                                Seconds = expiresAfterSeconds!,
                                 }
-                                : __requestBase?.ExpiresAfter;
+                                : __expiresAfterBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

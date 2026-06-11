@@ -1,4 +1,5 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -45,18 +46,18 @@ For `dall-e-2`, you can only provide one image, and it should be a square
         Description = @"",
     };
     private static readonly CreateImageEditRequestOptionSet CreateImageEditRequestOptionSetOptions = CreateImageEditRequestOptionSet.Create();
-      private static Option<string?> Input { get; } = new("--input")
+      private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new("--request-json")
+      private static Option<string?> RequestJson { get; } = new(@"--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
+      private static Option<string?> RequestFile { get; } = new(@"--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -84,7 +85,6 @@ Note that JSON requests use `images` (array) instead of the multipart `image` fi
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.OutputFormat);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.OutputCompression);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.User);
-                        command.Options.Add(CreateImageEditRequestOptionSetOptions.Stream);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.PartialImages);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.Quality);
           command.Options.Add(Input);
@@ -98,7 +98,7 @@ Note that JSON requests use `images` (array) instead of the multipart `image` fi
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -113,20 +113,19 @@ Note that JSON requests use `images` (array) instead of the multipart `image` fi
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var image = parseResult.GetRequiredValue(Image);
-                        var mask = parseResult.GetValue(Mask) ?? __requestBase?.Mask;
-                        var model = parseResult.GetValue(Model) ?? __requestBase?.Model;
-                        var size = parseResult.GetValue(Size) ?? __requestBase?.Size;
-                        var inputFidelity = parseResult.GetValue(InputFidelity) ?? __requestBase?.InputFidelity;                        var prompt = parseResult.GetRequiredValue(CreateImageEditRequestOptionSetOptions.Prompt);
-                        var maskname = parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Maskname) ?? __requestBase?.Maskname;
-                        var background = parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Background) ?? __requestBase?.Background;
-                        var n = parseResult.GetValue(CreateImageEditRequestOptionSetOptions.N) ?? __requestBase?.N;
-                        var responseFormat = parseResult.GetValue(CreateImageEditRequestOptionSetOptions.ResponseFormat) ?? __requestBase?.ResponseFormat;
-                        var outputFormat = parseResult.GetValue(CreateImageEditRequestOptionSetOptions.OutputFormat) ?? __requestBase?.OutputFormat;
-                        var outputCompression = parseResult.GetValue(CreateImageEditRequestOptionSetOptions.OutputCompression) ?? __requestBase?.OutputCompression;
-                        var user = parseResult.GetValue(CreateImageEditRequestOptionSetOptions.User) ?? __requestBase?.User;
-                        var stream = parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Stream) ?? __requestBase?.Stream;
-                        var partialImages = parseResult.GetValue(CreateImageEditRequestOptionSetOptions.PartialImages) ?? __requestBase?.PartialImages;
-                        var quality = parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Quality) ?? __requestBase?.Quality;
+                        var mask = CliRuntime.WasSpecified(parseResult, Mask) ? parseResult.GetValue(Mask) : __requestBase is not null ? __requestBase.Mask : default;
+                        var model = CliRuntime.WasSpecified(parseResult, Model) ? parseResult.GetValue(Model) : __requestBase is not null ? __requestBase.Model : default;
+                        var size = CliRuntime.WasSpecified(parseResult, Size) ? parseResult.GetValue(Size) : __requestBase is not null ? __requestBase.Size : default;
+                        var inputFidelity = CliRuntime.WasSpecified(parseResult, InputFidelity) ? parseResult.GetValue(InputFidelity) : __requestBase is not null ? __requestBase.InputFidelity : default;                        var prompt = parseResult.GetRequiredValue(CreateImageEditRequestOptionSetOptions.Prompt);
+                        var maskname = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.Maskname) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Maskname) : __requestBase is not null ? __requestBase.Maskname : default;
+                        var background = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.Background) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Background) : __requestBase is not null ? __requestBase.Background : default;
+                        var n = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.N) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.N) : __requestBase is not null ? __requestBase.N : default;
+                        var responseFormat = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.ResponseFormat) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.ResponseFormat) : __requestBase is not null ? __requestBase.ResponseFormat : default;
+                        var outputFormat = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.OutputFormat) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.OutputFormat) : __requestBase is not null ? __requestBase.OutputFormat : default;
+                        var outputCompression = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.OutputCompression) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.OutputCompression) : __requestBase is not null ? __requestBase.OutputCompression : default;
+                        var user = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.User) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.User) : __requestBase is not null ? __requestBase.User : default;
+                        var partialImages = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.PartialImages) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.PartialImages) : __requestBase is not null ? __requestBase.PartialImages : default;
+                        var quality = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.Quality) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Quality) : __requestBase is not null ? __requestBase.Quality : default;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -144,7 +143,6 @@ Note that JSON requests use `images` (array) instead of the multipart `image` fi
                                     outputFormat: outputFormat,
                                     outputCompression: outputCompression,
                                     user: user,
-                                    stream: stream,
                                     partialImages: partialImages,
                                     quality: quality,
                                     cancellationToken: cancellationToken);

@@ -1,4 +1,5 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -13,7 +14,7 @@ internal static partial class CompactAResponseCommandApiCommand
         Required = true,
     };
 
-    private static Option<global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>?> Input { get; } = new(
+    private static Option<global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>?> InputOption { get; } = new(
         name: @"--input")
     {
         Description = @"",
@@ -48,18 +49,18 @@ internal static partial class CompactAResponseCommandApiCommand
     {
         Description = @"",
     };
-      private static Option<string?> Input { get; } = new("--input")
+      private static Option<string?> RequestInput { get; } = new(@"--request-input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new("--request-json")
+      private static Option<string?> RequestJson { get; } = new(@"--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
+      private static Option<string?> RequestFile { get; } = new(@"--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -91,24 +92,24 @@ internal static partial class CompactAResponseCommandApiCommand
 
 Learn when and how to compact long-running conversations in the [conversation state guide](/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](/docs/guides/conversation-state#compaction-advanced).");
                         command.Options.Add(Model);
-                        command.Options.Add(Input);
+                        command.Options.Add(InputOption);
                         command.Options.Add(PreviousResponseId);
                         command.Options.Add(Instructions);
                         command.Options.Add(PromptCacheKey);
                         command.Options.Add(PromptCacheRetention);
                         command.Options.Add(ServiceTier);
-          command.Options.Add(Input);
+          command.Options.Add(RequestInput);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
           command.Validators.Add(result =>
           {
-              var hasInput = result.GetResult(Input) is not null;
+              var hasInput = result.GetResult(RequestInput) is not null;
               var hasRequestJson = result.GetResult(RequestJson) is not null;
               var hasRequestFile = result.GetResult(RequestFile) is not null;
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify at most one of --request-input, --request-json, or --request-file.");
               }
           });
 
@@ -117,18 +118,18 @@ Learn when and how to compact long-running conversations in the [conversation st
             {
                         var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::tryAGI.OpenAI.CompactResponseMethodPublicBody>(
                             parseResult,
-                            Input,
+                            RequestInput,
                             RequestJson,
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var model = parseResult.GetRequiredValue(Model);
-                        var input = parseResult.GetValue(Input) ?? __requestBase?.Input;
-                        var previousResponseId = parseResult.GetValue(PreviousResponseId) ?? __requestBase?.PreviousResponseId;
-                        var instructions = parseResult.GetValue(Instructions) ?? __requestBase?.Instructions;
-                        var promptCacheKey = parseResult.GetValue(PromptCacheKey) ?? __requestBase?.PromptCacheKey;
-                        var promptCacheRetention = parseResult.GetValue(PromptCacheRetention) ?? __requestBase?.PromptCacheRetention;
-                        var serviceTier = parseResult.GetValue(ServiceTier) ?? __requestBase?.ServiceTier;
+                        var input = CliRuntime.WasSpecified(parseResult, InputOption) ? parseResult.GetValue(InputOption) : __requestBase is not null ? __requestBase.Input : default;
+                        var previousResponseId = CliRuntime.WasSpecified(parseResult, PreviousResponseId) ? parseResult.GetValue(PreviousResponseId) : __requestBase is not null ? __requestBase.PreviousResponseId : default;
+                        var instructions = CliRuntime.WasSpecified(parseResult, Instructions) ? parseResult.GetValue(Instructions) : __requestBase is not null ? __requestBase.Instructions : default;
+                        var promptCacheKey = CliRuntime.WasSpecified(parseResult, PromptCacheKey) ? parseResult.GetValue(PromptCacheKey) : __requestBase is not null ? __requestBase.PromptCacheKey : default;
+                        var promptCacheRetention = CliRuntime.WasSpecified(parseResult, PromptCacheRetention) ? parseResult.GetValue(PromptCacheRetention) : __requestBase is not null ? __requestBase.PromptCacheRetention : default;
+                        var serviceTier = CliRuntime.WasSpecified(parseResult, ServiceTier) ? parseResult.GetValue(ServiceTier) : __requestBase is not null ? __requestBase.ServiceTier : default;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

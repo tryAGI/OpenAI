@@ -1,4 +1,5 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -41,18 +42,18 @@ internal static partial class CreateContainerCommandApiCommand
     {
         Description = @"Network access policy for the container.",
     };
-      private static Option<string?> Input { get; } = new("--input")
+      private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new("--request-json")
+      private static Option<string?> RequestJson { get; } = new(@"--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
+      private static Option<string?> RequestFile { get; } = new(@"--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -99,7 +100,7 @@ Creates a container.");
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -114,11 +115,11 @@ Creates a container.");
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var name = parseResult.GetRequiredValue(NameOption);
-                        var fileIds = parseResult.GetValue(FileIds) ?? __requestBase?.FileIds;
-                        var expiresAfter = parseResult.GetValue(ExpiresAfter) ?? __requestBase?.ExpiresAfter;
-                        var skills = parseResult.GetValue(Skills) ?? __requestBase?.Skills;
-                        var memoryLimit = parseResult.GetValue(MemoryLimit) ?? __requestBase?.MemoryLimit;
-                        var networkPolicy = parseResult.GetValue(NetworkPolicy) ?? __requestBase?.NetworkPolicy;
+                        var fileIds = CliRuntime.WasSpecified(parseResult, FileIds) ? parseResult.GetValue(FileIds) : __requestBase is not null ? __requestBase.FileIds : default;
+                        var expiresAfter = CliRuntime.WasSpecified(parseResult, ExpiresAfter) ? parseResult.GetValue(ExpiresAfter) : __requestBase is not null ? __requestBase.ExpiresAfter : default;
+                        var skills = CliRuntime.WasSpecified(parseResult, Skills) ? parseResult.GetValue(Skills) : __requestBase is not null ? __requestBase.Skills : default;
+                        var memoryLimit = CliRuntime.WasSpecified(parseResult, MemoryLimit) ? parseResult.GetValue(MemoryLimit) : __requestBase is not null ? __requestBase.MemoryLimit : default;
+                        var networkPolicy = CliRuntime.WasSpecified(parseResult, NetworkPolicy) ? parseResult.GetValue(NetworkPolicy) : __requestBase is not null ? __requestBase.NetworkPolicy : default;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
