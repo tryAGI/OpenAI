@@ -1,4 +1,5 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -28,18 +29,18 @@ internal static partial class AssistantsSubmitToolOutputsToRunCommandApiCommand
     private static Option<bool?> Stream { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--stream",
         description: @"");
-      private static Option<string?> Input { get; } = new("--input")
+      private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new("--request-json")
+      private static Option<string?> RequestJson { get; } = new(@"--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
+      private static Option<string?> RequestFile { get; } = new(@"--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -84,7 +85,7 @@ internal static partial class AssistantsSubmitToolOutputsToRunCommandApiCommand
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -101,7 +102,7 @@ internal static partial class AssistantsSubmitToolOutputsToRunCommandApiCommand
                         var threadId = parseResult.GetRequiredValue(ThreadId);
                         var runId = parseResult.GetRequiredValue(RunId);
                         var toolOutputs = parseResult.GetRequiredValue(ToolOutputs);
-                        var stream = parseResult.GetValue(Stream) ?? __requestBase?.Stream;
+                        var stream = CliRuntime.WasSpecified(parseResult, Stream) ? parseResult.GetValue(Stream) : __requestBase is not null ? __requestBase.Stream : default;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

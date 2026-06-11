@@ -1,4 +1,5 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -13,18 +14,18 @@ internal static partial class RealtimeCreateCallCommandApiCommand
         Required = true,
     };
     private static readonly RealtimeSessionCreateRequestGAOptionSet SessionOptions = RealtimeSessionCreateRequestGAOptionSet.Create(@"session");
-      private static Option<string?> Input { get; } = new("--input")
+      private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new("--request-json")
+      private static Option<string?> RequestJson { get; } = new(@"--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
+      private static Option<string?> RequestFile { get; } = new(@"--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -70,7 +71,7 @@ to complete the peer connection.");
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -85,14 +86,15 @@ to complete the peer connection.");
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var sdp = parseResult.GetRequiredValue(Sdp);
-                        var sessionType = parseResult.GetValue(SessionOptions.Type) ?? __requestBase?.Session?.Type;
-                        var sessionOutputModalities = parseResult.GetValue(SessionOptions.OutputModalities) ?? __requestBase?.Session?.OutputModalities;
-                        var sessionInstructions = parseResult.GetValue(SessionOptions.Instructions) ?? __requestBase?.Session?.Instructions;
-                        var sessionInclude = parseResult.GetValue(SessionOptions.Include) ?? __requestBase?.Session?.Include;
-                        var sessionParallelToolCalls = parseResult.GetValue(SessionOptions.ParallelToolCalls) ?? __requestBase?.Session?.ParallelToolCalls;
+
+                        var __sessionBase = __requestBase?.Session;                        var sessionType = CliRuntime.WasSpecified(parseResult, SessionOptions.Type) ? parseResult.GetValue(SessionOptions.Type) : __sessionBase is not null ? __sessionBase.Type : default;
+                        var sessionOutputModalities = CliRuntime.WasSpecified(parseResult, SessionOptions.OutputModalities) ? parseResult.GetValue(SessionOptions.OutputModalities) : __sessionBase is not null ? __sessionBase.OutputModalities : default;
+                        var sessionInstructions = CliRuntime.WasSpecified(parseResult, SessionOptions.Instructions) ? parseResult.GetValue(SessionOptions.Instructions) : __sessionBase is not null ? __sessionBase.Instructions : default;
+                        var sessionInclude = CliRuntime.WasSpecified(parseResult, SessionOptions.Include) ? parseResult.GetValue(SessionOptions.Include) : __sessionBase is not null ? __sessionBase.Include : default;
+                        var sessionParallelToolCalls = CliRuntime.WasSpecified(parseResult, SessionOptions.ParallelToolCalls) ? parseResult.GetValue(SessionOptions.ParallelToolCalls) : __sessionBase is not null ? __sessionBase.ParallelToolCalls : default;
                         var __sessionSpecified = CliRuntime.WasSpecified(parseResult, SessionOptions.Type) || CliRuntime.WasSpecified(parseResult, SessionOptions.OutputModalities) || CliRuntime.WasSpecified(parseResult, SessionOptions.Instructions) || CliRuntime.WasSpecified(parseResult, SessionOptions.Include) || CliRuntime.WasSpecified(parseResult, SessionOptions.ParallelToolCalls);
                         var session =
-                            __sessionSpecified || __requestBase?.Session is not null
+                            __sessionSpecified || __sessionBase is not null
                                 ? new global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA
                                 {
                                 Type = sessionType,
@@ -101,7 +103,7 @@ to complete the peer connection.");
                                 Include = sessionInclude,
                                 ParallelToolCalls = sessionParallelToolCalls,
                                 }
-                                : __requestBase?.Session;
+                                : __sessionBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

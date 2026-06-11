@@ -1,4 +1,5 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -6,7 +7,7 @@ namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
 internal static partial class ModerationsCreateModerationCommandApiCommand
 {
-    private static Option<global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>> Input { get; } = new(
+    private static Option<global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>> InputOption { get; } = new(
         name: @"--input")
     {
         Description = @"Input (or inputs) to classify. Can be a single string, an array of strings, or
@@ -23,18 +24,18 @@ an array of multi-modal input objects similar to other models.
 available models [here](/docs/models#moderation).
 ",
     };
-      private static Option<string?> Input { get; } = new("--input")
+      private static Option<string?> RequestInput { get; } = new(@"--request-input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new("--request-json")
+      private static Option<string?> RequestJson { get; } = new(@"--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
+      private static Option<string?> RequestFile { get; } = new(@"--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -65,20 +66,20 @@ available models [here](/docs/models#moderation).
         var command = new Command(@"create-moderation", @"Classifies if text and/or image inputs are potentially harmful. Learn
 more in the [moderation guide](/docs/guides/moderation).
 ");
-                        command.Options.Add(Input);
+                        command.Options.Add(InputOption);
                         command.Options.Add(Model);
-          command.Options.Add(Input);
+          command.Options.Add(RequestInput);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
           command.Validators.Add(result =>
           {
-              var hasInput = result.GetResult(Input) is not null;
+              var hasInput = result.GetResult(RequestInput) is not null;
               var hasRequestJson = result.GetResult(RequestJson) is not null;
               var hasRequestFile = result.GetResult(RequestFile) is not null;
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify at most one of --request-input, --request-json, or --request-file.");
               }
           });
 
@@ -87,13 +88,13 @@ more in the [moderation guide](/docs/guides/moderation).
             {
                         var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::tryAGI.OpenAI.CreateModerationRequest>(
                             parseResult,
-                            Input,
+                            RequestInput,
                             RequestJson,
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var input = parseResult.GetRequiredValue(Input);
-                        var model = parseResult.GetValue(Model) ?? __requestBase?.Model;
+                        var input = parseResult.GetRequiredValue(InputOption);
+                        var model = CliRuntime.WasSpecified(parseResult, Model) ? parseResult.GetValue(Model) : __requestBase is not null ? __requestBase.Model : default;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

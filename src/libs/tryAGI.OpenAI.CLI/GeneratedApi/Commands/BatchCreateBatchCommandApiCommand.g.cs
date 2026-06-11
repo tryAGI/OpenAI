@@ -1,4 +1,5 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -42,18 +43,18 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
     {
         Description = @"The expiration policy for the output and/or error file that are generated for a batch.",
     };
-      private static Option<string?> Input { get; } = new("--input")
+      private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new("--request-json")
+      private static Option<string?> RequestJson { get; } = new(@"--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
+      private static Option<string?> RequestFile { get; } = new(@"--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -98,7 +99,7 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -114,9 +115,9 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
                             cancellationToken).ConfigureAwait(false);
                         var inputFileId = parseResult.GetRequiredValue(InputFileId);
                         var endpoint = parseResult.GetRequiredValue(Endpoint);
-                        var completionWindow = parseResult.GetValue(CompletionWindow) ?? __requestBase?.CompletionWindow;
-                        var metadata = parseResult.GetValue(Metadata) ?? __requestBase?.Metadata;
-                        var outputExpiresAfter = parseResult.GetValue(OutputExpiresAfter) ?? __requestBase?.OutputExpiresAfter;
+                        var completionWindow = CliRuntime.WasSpecified(parseResult, CompletionWindow) ? parseResult.GetValue(CompletionWindow) : __requestBase is not null ? __requestBase.CompletionWindow : default;
+                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : __requestBase is not null ? __requestBase.Metadata : default;
+                        var outputExpiresAfter = CliRuntime.WasSpecified(parseResult, OutputExpiresAfter) ? parseResult.GetValue(OutputExpiresAfter) : __requestBase is not null ? __requestBase.OutputExpiresAfter : default;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

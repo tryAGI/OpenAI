@@ -1,4 +1,5 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -81,18 +82,18 @@ If a seed is not specified, one will be generated for you.
     {
         Description = @"",
     };
-      private static Option<string?> Input { get; } = new("--input")
+      private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new("--request-json")
+      private static Option<string?> RequestJson { get; } = new(@"--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
+      private static Option<string?> RequestFile { get; } = new(@"--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -145,7 +146,7 @@ Response includes details of the enqueued job including job status and the name 
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -161,12 +162,12 @@ Response includes details of the enqueued job including job status and the name 
                             cancellationToken).ConfigureAwait(false);
                         var model = parseResult.GetRequiredValue(Model);
                         var trainingFile = parseResult.GetRequiredValue(TrainingFile);
-                        var suffix = parseResult.GetValue(Suffix) ?? __requestBase?.Suffix;
-                        var validationFile = parseResult.GetValue(ValidationFile) ?? __requestBase?.ValidationFile;
-                        var integrations = parseResult.GetValue(Integrations) ?? __requestBase?.Integrations;
-                        var seed = parseResult.GetValue(Seed) ?? __requestBase?.Seed;
-                        var method = parseResult.GetValue(Method) ?? __requestBase?.Method;
-                        var metadata = parseResult.GetValue(Metadata) ?? __requestBase?.Metadata;
+                        var suffix = CliRuntime.WasSpecified(parseResult, Suffix) ? parseResult.GetValue(Suffix) : __requestBase is not null ? __requestBase.Suffix : default;
+                        var validationFile = CliRuntime.WasSpecified(parseResult, ValidationFile) ? parseResult.GetValue(ValidationFile) : __requestBase is not null ? __requestBase.ValidationFile : default;
+                        var integrations = CliRuntime.WasSpecified(parseResult, Integrations) ? parseResult.GetValue(Integrations) : __requestBase is not null ? __requestBase.Integrations : default;
+                        var seed = CliRuntime.WasSpecified(parseResult, Seed) ? parseResult.GetValue(Seed) : __requestBase is not null ? __requestBase.Seed : default;
+                        var method = CliRuntime.WasSpecified(parseResult, Method) ? parseResult.GetValue(Method) : __requestBase is not null ? __requestBase.Method : default;
+                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : __requestBase is not null ? __requestBase.Metadata : default;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

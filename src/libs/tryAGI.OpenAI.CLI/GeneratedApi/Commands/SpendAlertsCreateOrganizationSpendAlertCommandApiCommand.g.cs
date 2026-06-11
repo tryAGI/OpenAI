@@ -1,4 +1,5 @@
 #nullable enable
+#pragma warning disable CS0618
 
 using System.CommandLine;
 
@@ -9,18 +10,18 @@ internal static partial class SpendAlertsCreateOrganizationSpendAlertCommandApiC
     private static readonly CreateSpendAlertBodyOptionSet CreateSpendAlertBodyOptionSetOptions = CreateSpendAlertBodyOptionSet.Create();
 
     private static readonly SpendAlertNotificationChannelOptionSet NotificationChannelOptions = SpendAlertNotificationChannelOptionSet.Create(@"notification-channel");
-      private static Option<string?> Input { get; } = new("--input")
+      private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
       };
 
-      private static Option<string?> RequestJson { get; } = new("--request-json")
+      private static Option<string?> RequestJson { get; } = new(@"--request-json")
       {
           Description = "Request body as JSON.",
           Hidden = true,
       };
 
-      private static Option<string?> RequestFile { get; } = new("--request-file")
+      private static Option<string?> RequestFile { get; } = new(@"--request-file")
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
@@ -65,7 +66,7 @@ internal static partial class SpendAlertsCreateOrganizationSpendAlertCommandApiC
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
               if (specifiedCount > 1)
               {
-                  result.AddError("Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
               }
           });
 
@@ -79,21 +80,22 @@ internal static partial class SpendAlertsCreateOrganizationSpendAlertCommandApiC
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);                        var thresholdAmount = parseResult.GetRequiredValue(CreateSpendAlertBodyOptionSetOptions.ThresholdAmount);
-                        var currency = parseResult.GetValue(CreateSpendAlertBodyOptionSetOptions.Currency) ?? __requestBase?.Currency;
-                        var interval = parseResult.GetValue(CreateSpendAlertBodyOptionSetOptions.Interval) ?? __requestBase?.Interval;
-                        var notificationChannelType = parseResult.GetValue(NotificationChannelOptions.Type) ?? __requestBase?.NotificationChannel?.Type;
+                        var currency = CliRuntime.WasSpecified(parseResult, CreateSpendAlertBodyOptionSetOptions.Currency) ? parseResult.GetValue(CreateSpendAlertBodyOptionSetOptions.Currency) : __requestBase is not null ? __requestBase.Currency : default;
+                        var interval = CliRuntime.WasSpecified(parseResult, CreateSpendAlertBodyOptionSetOptions.Interval) ? parseResult.GetValue(CreateSpendAlertBodyOptionSetOptions.Interval) : __requestBase is not null ? __requestBase.Interval : default;
+
+                        var __notificationChannelBase = __requestBase?.NotificationChannel;                        var notificationChannelType = CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.Type) ? parseResult.GetValue(NotificationChannelOptions.Type) : __notificationChannelBase is not null ? __notificationChannelBase.Type : default;
                         var notificationChannelRecipients = parseResult.GetValue(NotificationChannelOptions.Recipients);
-                        var notificationChannelSubjectPrefix = parseResult.GetValue(NotificationChannelOptions.SubjectPrefix) ?? __requestBase?.NotificationChannel?.SubjectPrefix;
+                        var notificationChannelSubjectPrefix = CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.SubjectPrefix) ? parseResult.GetValue(NotificationChannelOptions.SubjectPrefix) : __notificationChannelBase is not null ? __notificationChannelBase.SubjectPrefix : default;
                         var __notificationChannelSpecified = CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.Type) || CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.Recipients) || CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.SubjectPrefix);
                         var notificationChannel =
-                            __notificationChannelSpecified || __requestBase?.NotificationChannel is not null
+                            __notificationChannelSpecified || __notificationChannelBase is not null
                                 ? new global::tryAGI.OpenAI.SpendAlertNotificationChannel
                                 {
                                 Type = notificationChannelType,
-                                Recipients = notificationChannelRecipients,
+                                Recipients = notificationChannelRecipients!,
                                 SubjectPrefix = notificationChannelSubjectPrefix,
                                 }
-                                : __requestBase?.NotificationChannel;
+                                : __notificationChannelBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -101,7 +103,7 @@ internal static partial class SpendAlertsCreateOrganizationSpendAlertCommandApiC
                                     thresholdAmount: thresholdAmount,
                                     currency: currency,
                                     interval: interval,
-                                    notificationChannel: notificationChannel,
+                                    notificationChannel: notificationChannel!,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 
