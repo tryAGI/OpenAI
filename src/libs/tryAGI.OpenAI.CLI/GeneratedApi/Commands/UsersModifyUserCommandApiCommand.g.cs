@@ -107,10 +107,10 @@ internal static partial class UsersModifyUserCommandApiCommand
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var userId = parseResult.GetRequiredValue(UserId);
-                        var role = CliRuntime.WasSpecified(parseResult, Role) ? parseResult.GetValue(Role) : __requestBase is not null ? __requestBase.Role : default;
-                        var roleId = CliRuntime.WasSpecified(parseResult, RoleId) ? parseResult.GetValue(RoleId) : __requestBase is not null ? __requestBase.RoleId : default;
-                        var technicalLevel = CliRuntime.WasSpecified(parseResult, TechnicalLevel) ? parseResult.GetValue(TechnicalLevel) : __requestBase is not null ? __requestBase.TechnicalLevel : default;
-                        var developerPersona = CliRuntime.WasSpecified(parseResult, DeveloperPersona) ? parseResult.GetValue(DeveloperPersona) : __requestBase is not null ? __requestBase.DeveloperPersona : default;
+                        var role = CliRuntime.WasSpecified(parseResult, Role) ? parseResult.GetValue(Role) : (__requestBase is { } __RoleBaseValue ? __RoleBaseValue.Role : default);
+                        var roleId = CliRuntime.WasSpecified(parseResult, RoleId) ? parseResult.GetValue(RoleId) : (__requestBase is { } __RoleIdBaseValue ? __RoleIdBaseValue.RoleId : default);
+                        var technicalLevel = CliRuntime.WasSpecified(parseResult, TechnicalLevel) ? parseResult.GetValue(TechnicalLevel) : (__requestBase is { } __TechnicalLevelBaseValue ? __TechnicalLevelBaseValue.TechnicalLevel : default);
+                        var developerPersona = CliRuntime.WasSpecified(parseResult, DeveloperPersona) ? parseResult.GetValue(DeveloperPersona) : (__requestBase is { } __DeveloperPersonaBaseValue ? __DeveloperPersonaBaseValue.DeveloperPersona : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

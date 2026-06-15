@@ -69,7 +69,7 @@ when omitted.",
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var callId = parseResult.GetRequiredValue(CallId);
-                        var statusCode = CliRuntime.WasSpecified(parseResult, StatusCode) ? parseResult.GetValue(StatusCode) : __requestBase is not null ? __requestBase.StatusCode : default;
+                        var statusCode = CliRuntime.WasSpecified(parseResult, StatusCode) ? parseResult.GetValue(StatusCode) : (__requestBase is { } __StatusCodeBaseValue ? __StatusCodeBaseValue.StatusCode : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

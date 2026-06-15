@@ -77,7 +77,7 @@ internal static partial class RolesCreateOrganizationRoleCommandApiCommand
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);                        var roleName = parseResult.GetRequiredValue(PublicCreateOrganizationRoleBodyOptionSetOptions.RoleName);
                         var permissions = parseResult.GetRequiredValue(PublicCreateOrganizationRoleBodyOptionSetOptions.Permissions);
-                        var description = CliRuntime.WasSpecified(parseResult, PublicCreateOrganizationRoleBodyOptionSetOptions.DescriptionOption) ? parseResult.GetValue(PublicCreateOrganizationRoleBodyOptionSetOptions.DescriptionOption) : __requestBase is not null ? __requestBase.Description : default;
+                        var description = CliRuntime.WasSpecified(parseResult, PublicCreateOrganizationRoleBodyOptionSetOptions.DescriptionOption) ? parseResult.GetValue(PublicCreateOrganizationRoleBodyOptionSetOptions.DescriptionOption) : (__requestBase is { } __DescriptionBaseValue ? __DescriptionBaseValue.Description : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

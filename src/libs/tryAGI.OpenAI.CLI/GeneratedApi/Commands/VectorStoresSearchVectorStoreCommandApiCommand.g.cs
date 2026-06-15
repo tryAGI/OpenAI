@@ -114,10 +114,10 @@ internal static partial class VectorStoresSearchVectorStoreCommandApiCommand
                             cancellationToken).ConfigureAwait(false);
                         var vectorStoreId = parseResult.GetRequiredValue(VectorStoreId);
                         var query = parseResult.GetRequiredValue(Query);
-                        var rewriteQuery = CliRuntime.WasSpecified(parseResult, RewriteQuery) ? parseResult.GetValue(RewriteQuery) : __requestBase is not null ? __requestBase.RewriteQuery : default;
-                        var maxNumResults = CliRuntime.WasSpecified(parseResult, MaxNumResults) ? parseResult.GetValue(MaxNumResults) : __requestBase is not null ? __requestBase.MaxNumResults : default;
-                        var filters = CliRuntime.WasSpecified(parseResult, Filters) ? parseResult.GetValue(Filters) : __requestBase is not null ? __requestBase.Filters : default;
-                        var rankingOptions = CliRuntime.WasSpecified(parseResult, RankingOptions) ? parseResult.GetValue(RankingOptions) : __requestBase is not null ? __requestBase.RankingOptions : default;
+                        var rewriteQuery = CliRuntime.WasSpecified(parseResult, RewriteQuery) ? parseResult.GetValue(RewriteQuery) : (__requestBase is { } __RewriteQueryBaseValue ? __RewriteQueryBaseValue.RewriteQuery : default);
+                        var maxNumResults = CliRuntime.WasSpecified(parseResult, MaxNumResults) ? parseResult.GetValue(MaxNumResults) : (__requestBase is { } __MaxNumResultsBaseValue ? __MaxNumResultsBaseValue.MaxNumResults : default);
+                        var filters = CliRuntime.WasSpecified(parseResult, Filters) ? parseResult.GetValue(Filters) : (__requestBase is { } __FiltersBaseValue ? __FiltersBaseValue.Filters : default);
+                        var rankingOptions = CliRuntime.WasSpecified(parseResult, RankingOptions) ? parseResult.GetValue(RankingOptions) : (__requestBase is { } __RankingOptionsBaseValue ? __RankingOptionsBaseValue.RankingOptions : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

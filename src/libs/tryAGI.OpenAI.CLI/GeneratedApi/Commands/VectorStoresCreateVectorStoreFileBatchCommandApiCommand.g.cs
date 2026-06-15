@@ -112,10 +112,10 @@ For ingesting multiple files into the same vector store, this batch endpoint is 
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var vectorStoreId = parseResult.GetRequiredValue(VectorStoreId);
-                        var fileIds = CliRuntime.WasSpecified(parseResult, FileIds) ? parseResult.GetValue(FileIds) : __requestBase is not null ? __requestBase.FileIds : default;
-                        var files = CliRuntime.WasSpecified(parseResult, Files) ? parseResult.GetValue(Files) : __requestBase is not null ? __requestBase.Files : default;
-                        var chunkingStrategy = CliRuntime.WasSpecified(parseResult, ChunkingStrategy) ? parseResult.GetValue(ChunkingStrategy) : __requestBase is not null ? __requestBase.ChunkingStrategy : default;
-                        var attributes = CliRuntime.WasSpecified(parseResult, Attributes) ? parseResult.GetValue(Attributes) : __requestBase is not null ? __requestBase.Attributes : default;
+                        var fileIds = CliRuntime.WasSpecified(parseResult, FileIds) ? parseResult.GetValue(FileIds) : (__requestBase is { } __FileIdsBaseValue ? __FileIdsBaseValue.FileIds : default);
+                        var files = CliRuntime.WasSpecified(parseResult, Files) ? parseResult.GetValue(Files) : (__requestBase is { } __FilesBaseValue ? __FilesBaseValue.Files : default);
+                        var chunkingStrategy = CliRuntime.WasSpecified(parseResult, ChunkingStrategy) ? parseResult.GetValue(ChunkingStrategy) : (__requestBase is { } __ChunkingStrategyBaseValue ? __ChunkingStrategyBaseValue.ChunkingStrategy : default);
+                        var attributes = CliRuntime.WasSpecified(parseResult, Attributes) ? parseResult.GetValue(Attributes) : (__requestBase is { } __AttributesBaseValue ? __AttributesBaseValue.Attributes : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

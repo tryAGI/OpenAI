@@ -115,11 +115,11 @@ Creates a container.");
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var name = parseResult.GetRequiredValue(NameOption);
-                        var fileIds = CliRuntime.WasSpecified(parseResult, FileIds) ? parseResult.GetValue(FileIds) : __requestBase is not null ? __requestBase.FileIds : default;
-                        var expiresAfter = CliRuntime.WasSpecified(parseResult, ExpiresAfter) ? parseResult.GetValue(ExpiresAfter) : __requestBase is not null ? __requestBase.ExpiresAfter : default;
-                        var skills = CliRuntime.WasSpecified(parseResult, Skills) ? parseResult.GetValue(Skills) : __requestBase is not null ? __requestBase.Skills : default;
-                        var memoryLimit = CliRuntime.WasSpecified(parseResult, MemoryLimit) ? parseResult.GetValue(MemoryLimit) : __requestBase is not null ? __requestBase.MemoryLimit : default;
-                        var networkPolicy = CliRuntime.WasSpecified(parseResult, NetworkPolicy) ? parseResult.GetValue(NetworkPolicy) : __requestBase is not null ? __requestBase.NetworkPolicy : default;
+                        var fileIds = CliRuntime.WasSpecified(parseResult, FileIds) ? parseResult.GetValue(FileIds) : (__requestBase is { } __FileIdsBaseValue ? __FileIdsBaseValue.FileIds : default);
+                        var expiresAfter = CliRuntime.WasSpecified(parseResult, ExpiresAfter) ? parseResult.GetValue(ExpiresAfter) : (__requestBase is { } __ExpiresAfterBaseValue ? __ExpiresAfterBaseValue.ExpiresAfter : default);
+                        var skills = CliRuntime.WasSpecified(parseResult, Skills) ? parseResult.GetValue(Skills) : (__requestBase is { } __SkillsBaseValue ? __SkillsBaseValue.Skills : default);
+                        var memoryLimit = CliRuntime.WasSpecified(parseResult, MemoryLimit) ? parseResult.GetValue(MemoryLimit) : (__requestBase is { } __MemoryLimitBaseValue ? __MemoryLimitBaseValue.MemoryLimit : default);
+                        var networkPolicy = CliRuntime.WasSpecified(parseResult, NetworkPolicy) ? parseResult.GetValue(NetworkPolicy) : (__requestBase is { } __NetworkPolicyBaseValue ? __NetworkPolicyBaseValue.NetworkPolicy : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

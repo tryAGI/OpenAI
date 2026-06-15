@@ -230,23 +230,23 @@ Returns the created Realtime session object, plus an ephemeral key.
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var clientSecret = parseResult.GetRequiredValue(ClientSecret);
-                        var modalities = CliRuntime.WasSpecified(parseResult, Modalities) ? parseResult.GetValue(Modalities) : __requestBase is not null ? __requestBase.Modalities : default;
-                        var instructions = CliRuntime.WasSpecified(parseResult, Instructions) ? parseResult.GetValue(Instructions) : __requestBase is not null ? __requestBase.Instructions : default;
-                        var voice = CliRuntime.WasSpecified(parseResult, Voice) ? parseResult.GetValue(Voice) : __requestBase is not null ? __requestBase.Voice : default;
-                        var inputAudioFormat = CliRuntime.WasSpecified(parseResult, InputAudioFormat) ? parseResult.GetValue(InputAudioFormat) : __requestBase is not null ? __requestBase.InputAudioFormat : default;
-                        var outputAudioFormat = CliRuntime.WasSpecified(parseResult, OutputAudioFormat) ? parseResult.GetValue(OutputAudioFormat) : __requestBase is not null ? __requestBase.OutputAudioFormat : default;
-                        var inputAudioTranscription = CliRuntime.WasSpecified(parseResult, InputAudioTranscription) ? parseResult.GetValue(InputAudioTranscription) : __requestBase is not null ? __requestBase.InputAudioTranscription : default;
-                        var speed = CliRuntime.WasSpecified(parseResult, Speed) ? parseResult.GetValue(Speed) : __requestBase is not null ? __requestBase.Speed : default;
-                        var tracing = CliRuntime.WasSpecified(parseResult, Tracing) ? parseResult.GetValue(Tracing) : __requestBase is not null ? __requestBase.Tracing : default;
-                        var turnDetection = CliRuntime.WasSpecified(parseResult, TurnDetection) ? parseResult.GetValue(TurnDetection) : __requestBase is not null ? __requestBase.TurnDetection : default;
-                        var tools = CliRuntime.WasSpecified(parseResult, Tools) ? parseResult.GetValue(Tools) : __requestBase is not null ? __requestBase.Tools : default;
-                        var toolChoice = CliRuntime.WasSpecified(parseResult, ToolChoice) ? parseResult.GetValue(ToolChoice) : __requestBase is not null ? __requestBase.ToolChoice : default;
-                        var temperature = CliRuntime.WasSpecified(parseResult, Temperature) ? parseResult.GetValue(Temperature) : __requestBase is not null ? __requestBase.Temperature : default;
-                        var maxResponseOutputTokens = CliRuntime.WasSpecified(parseResult, MaxResponseOutputTokens) ? parseResult.GetValue(MaxResponseOutputTokens) : __requestBase is not null ? __requestBase.MaxResponseOutputTokens : default;
-                        var truncation = CliRuntime.WasSpecified(parseResult, Truncation) ? parseResult.GetValue(Truncation) : __requestBase is not null ? __requestBase.Truncation : default;
+                        var modalities = CliRuntime.WasSpecified(parseResult, Modalities) ? parseResult.GetValue(Modalities) : (__requestBase is { } __ModalitiesBaseValue ? __ModalitiesBaseValue.Modalities : default);
+                        var instructions = CliRuntime.WasSpecified(parseResult, Instructions) ? parseResult.GetValue(Instructions) : (__requestBase is { } __InstructionsBaseValue ? __InstructionsBaseValue.Instructions : default);
+                        var voice = CliRuntime.WasSpecified(parseResult, Voice) ? parseResult.GetValue(Voice) : (__requestBase is { } __VoiceBaseValue ? __VoiceBaseValue.Voice : default);
+                        var inputAudioFormat = CliRuntime.WasSpecified(parseResult, InputAudioFormat) ? parseResult.GetValue(InputAudioFormat) : (__requestBase is { } __InputAudioFormatBaseValue ? __InputAudioFormatBaseValue.InputAudioFormat : default);
+                        var outputAudioFormat = CliRuntime.WasSpecified(parseResult, OutputAudioFormat) ? parseResult.GetValue(OutputAudioFormat) : (__requestBase is { } __OutputAudioFormatBaseValue ? __OutputAudioFormatBaseValue.OutputAudioFormat : default);
+                        var inputAudioTranscription = CliRuntime.WasSpecified(parseResult, InputAudioTranscription) ? parseResult.GetValue(InputAudioTranscription) : (__requestBase is { } __InputAudioTranscriptionBaseValue ? __InputAudioTranscriptionBaseValue.InputAudioTranscription : default);
+                        var speed = CliRuntime.WasSpecified(parseResult, Speed) ? parseResult.GetValue(Speed) : (__requestBase is { } __SpeedBaseValue ? __SpeedBaseValue.Speed : default);
+                        var tracing = CliRuntime.WasSpecified(parseResult, Tracing) ? parseResult.GetValue(Tracing) : (__requestBase is { } __TracingBaseValue ? __TracingBaseValue.Tracing : default);
+                        var turnDetection = CliRuntime.WasSpecified(parseResult, TurnDetection) ? parseResult.GetValue(TurnDetection) : (__requestBase is { } __TurnDetectionBaseValue ? __TurnDetectionBaseValue.TurnDetection : default);
+                        var tools = CliRuntime.WasSpecified(parseResult, Tools) ? parseResult.GetValue(Tools) : (__requestBase is { } __ToolsBaseValue ? __ToolsBaseValue.Tools : default);
+                        var toolChoice = CliRuntime.WasSpecified(parseResult, ToolChoice) ? parseResult.GetValue(ToolChoice) : (__requestBase is { } __ToolChoiceBaseValue ? __ToolChoiceBaseValue.ToolChoice : default);
+                        var temperature = CliRuntime.WasSpecified(parseResult, Temperature) ? parseResult.GetValue(Temperature) : (__requestBase is { } __TemperatureBaseValue ? __TemperatureBaseValue.Temperature : default);
+                        var maxResponseOutputTokens = CliRuntime.WasSpecified(parseResult, MaxResponseOutputTokens) ? parseResult.GetValue(MaxResponseOutputTokens) : (__requestBase is { } __MaxResponseOutputTokensBaseValue ? __MaxResponseOutputTokensBaseValue.MaxResponseOutputTokens : default);
+                        var truncation = CliRuntime.WasSpecified(parseResult, Truncation) ? parseResult.GetValue(Truncation) : (__requestBase is { } __TruncationBaseValue ? __TruncationBaseValue.Truncation : default);
 
-                        var __promptBase = __requestBase?.Prompt;                        var promptId = parseResult.GetValue(PromptOptions.Id);
-                        var promptVersion = CliRuntime.WasSpecified(parseResult, PromptOptions.Version) ? parseResult.GetValue(PromptOptions.Version) : __promptBase is not null ? __promptBase.Version : default;
+                        var __promptBase = __requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default;                        var promptId = parseResult.GetValue(PromptOptions.Id);
+                        var promptVersion = CliRuntime.WasSpecified(parseResult, PromptOptions.Version) ? parseResult.GetValue(PromptOptions.Version) : (__promptBase is { } __PromptversionBaseValue ? __PromptversionBaseValue.Version : default);
                         var __promptSpecified = CliRuntime.WasSpecified(parseResult, PromptOptions.Id) || CliRuntime.WasSpecified(parseResult, PromptOptions.Version);
                         var prompt =
                             __promptSpecified || __promptBase is not null

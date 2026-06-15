@@ -110,9 +110,9 @@ internal static partial class CreateChatKitSessionCommandApiCommand
                             cancellationToken).ConfigureAwait(false);
                         var workflow = parseResult.GetRequiredValue(Workflow);
                         var user = parseResult.GetRequiredValue(User);
-                        var expiresAfter = CliRuntime.WasSpecified(parseResult, ExpiresAfter) ? parseResult.GetValue(ExpiresAfter) : __requestBase is not null ? __requestBase.ExpiresAfter : default;
-                        var rateLimits = CliRuntime.WasSpecified(parseResult, RateLimits) ? parseResult.GetValue(RateLimits) : __requestBase is not null ? __requestBase.RateLimits : default;
-                        var chatkitConfiguration = CliRuntime.WasSpecified(parseResult, ChatkitConfiguration) ? parseResult.GetValue(ChatkitConfiguration) : __requestBase is not null ? __requestBase.ChatkitConfiguration : default;
+                        var expiresAfter = CliRuntime.WasSpecified(parseResult, ExpiresAfter) ? parseResult.GetValue(ExpiresAfter) : (__requestBase is { } __ExpiresAfterBaseValue ? __ExpiresAfterBaseValue.ExpiresAfter : default);
+                        var rateLimits = CliRuntime.WasSpecified(parseResult, RateLimits) ? parseResult.GetValue(RateLimits) : (__requestBase is { } __RateLimitsBaseValue ? __RateLimitsBaseValue.RateLimits : default);
+                        var chatkitConfiguration = CliRuntime.WasSpecified(parseResult, ChatkitConfiguration) ? parseResult.GetValue(ChatkitConfiguration) : (__requestBase is { } __ChatkitConfigurationBaseValue ? __ChatkitConfigurationBaseValue.ChatkitConfiguration : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

@@ -89,7 +89,7 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
                             cancellationToken).ConfigureAwait(false);
                         var projectId = parseResult.GetRequiredValue(ProjectId);
 
-                        var __fileSearchBase = __requestBase?.FileSearch;                        var fileSearchEnabled = parseResult.GetValue(FileSearchOptions.Enabled);
+                        var __fileSearchBase = __requestBase is { } __FileSearchBaseValue ? __FileSearchBaseValue.FileSearch : default;                        var fileSearchEnabled = parseResult.GetValue(FileSearchOptions.Enabled);
                         var __fileSearchSpecified = CliRuntime.WasSpecified(parseResult, FileSearchOptions.Enabled);
                         var fileSearch =
                             __fileSearchSpecified || __fileSearchBase is not null
@@ -100,7 +100,7 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
                                 }
                                 : __fileSearchBase;
 
-                        var __webSearchBase = __requestBase?.WebSearch;                        var webSearchEnabled = parseResult.GetValue(WebSearchOptions.Enabled);
+                        var __webSearchBase = __requestBase is { } __WebSearchBaseValue ? __WebSearchBaseValue.WebSearch : default;                        var webSearchEnabled = parseResult.GetValue(WebSearchOptions.Enabled);
                         var __webSearchSpecified = CliRuntime.WasSpecified(parseResult, WebSearchOptions.Enabled);
                         var webSearch =
                             __webSearchSpecified || __webSearchBase is not null
@@ -111,7 +111,7 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
                                 }
                                 : __webSearchBase;
 
-                        var __imageGenerationBase = __requestBase?.ImageGeneration;                        var imageGenerationEnabled = parseResult.GetValue(ImageGenerationOptions.Enabled);
+                        var __imageGenerationBase = __requestBase is { } __ImageGenerationBaseValue ? __ImageGenerationBaseValue.ImageGeneration : default;                        var imageGenerationEnabled = parseResult.GetValue(ImageGenerationOptions.Enabled);
                         var __imageGenerationSpecified = CliRuntime.WasSpecified(parseResult, ImageGenerationOptions.Enabled);
                         var imageGeneration =
                             __imageGenerationSpecified || __imageGenerationBase is not null
@@ -122,7 +122,7 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
                                 }
                                 : __imageGenerationBase;
 
-                        var __mcpBase = __requestBase?.Mcp;                        var mcpEnabled = parseResult.GetValue(McpOptions.Enabled);
+                        var __mcpBase = __requestBase is { } __McpBaseValue ? __McpBaseValue.Mcp : default;                        var mcpEnabled = parseResult.GetValue(McpOptions.Enabled);
                         var __mcpSpecified = CliRuntime.WasSpecified(parseResult, McpOptions.Enabled);
                         var mcp =
                             __mcpSpecified || __mcpBase is not null
@@ -133,7 +133,7 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
                                 }
                                 : __mcpBase;
 
-                        var __codeInterpreterBase = __requestBase?.CodeInterpreter;                        var codeInterpreterEnabled = parseResult.GetValue(CodeInterpreterOptions.Enabled);
+                        var __codeInterpreterBase = __requestBase is { } __CodeInterpreterBaseValue ? __CodeInterpreterBaseValue.CodeInterpreter : default;                        var codeInterpreterEnabled = parseResult.GetValue(CodeInterpreterOptions.Enabled);
                         var __codeInterpreterSpecified = CliRuntime.WasSpecified(parseResult, CodeInterpreterOptions.Enabled);
                         var codeInterpreter =
                             __codeInterpreterSpecified || __codeInterpreterBase is not null

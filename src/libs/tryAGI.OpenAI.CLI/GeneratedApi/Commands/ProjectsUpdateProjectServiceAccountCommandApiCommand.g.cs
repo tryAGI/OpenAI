@@ -101,8 +101,8 @@ internal static partial class ProjectsUpdateProjectServiceAccountCommandApiComma
                             cancellationToken).ConfigureAwait(false);
                         var projectId = parseResult.GetRequiredValue(ProjectId);
                         var serviceAccountId = parseResult.GetRequiredValue(ServiceAccountId);
-                        var name = CliRuntime.WasSpecified(parseResult, NameOption) ? parseResult.GetValue(NameOption) : __requestBase is not null ? __requestBase.Name : default;
-                        var role = CliRuntime.WasSpecified(parseResult, Role) ? parseResult.GetValue(Role) : __requestBase is not null ? __requestBase.Role : default;
+                        var name = CliRuntime.WasSpecified(parseResult, NameOption) ? parseResult.GetValue(NameOption) : (__requestBase is { } __NameBaseValue ? __NameBaseValue.Name : default);
+                        var role = CliRuntime.WasSpecified(parseResult, Role) ? parseResult.GetValue(Role) : (__requestBase is { } __RoleBaseValue ? __RoleBaseValue.Role : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

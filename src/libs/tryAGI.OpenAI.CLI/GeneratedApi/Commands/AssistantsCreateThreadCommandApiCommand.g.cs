@@ -92,9 +92,9 @@ internal static partial class AssistantsCreateThreadCommandApiCommand
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var messages = CliRuntime.WasSpecified(parseResult, Messages) ? parseResult.GetValue(Messages) : __requestBase is not null ? __requestBase.Messages : default;
-                        var toolResources = CliRuntime.WasSpecified(parseResult, ToolResources) ? parseResult.GetValue(ToolResources) : __requestBase is not null ? __requestBase.ToolResources : default;
-                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : __requestBase is not null ? __requestBase.Metadata : default;
+                        var messages = CliRuntime.WasSpecified(parseResult, Messages) ? parseResult.GetValue(Messages) : (__requestBase is { } __MessagesBaseValue ? __MessagesBaseValue.Messages : default);
+                        var toolResources = CliRuntime.WasSpecified(parseResult, ToolResources) ? parseResult.GetValue(ToolResources) : (__requestBase is { } __ToolResourcesBaseValue ? __ToolResourcesBaseValue.ToolResources : default);
+                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

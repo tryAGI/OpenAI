@@ -101,8 +101,8 @@ internal static partial class ProjectsCreateProjectUserCommandApiCommand
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var projectId = parseResult.GetRequiredValue(ProjectId);
-                        var userId = CliRuntime.WasSpecified(parseResult, UserId) ? parseResult.GetValue(UserId) : __requestBase is not null ? __requestBase.UserId : default;
-                        var email = CliRuntime.WasSpecified(parseResult, Email) ? parseResult.GetValue(Email) : __requestBase is not null ? __requestBase.Email : default;
+                        var userId = CliRuntime.WasSpecified(parseResult, UserId) ? parseResult.GetValue(UserId) : (__requestBase is { } __UserIdBaseValue ? __UserIdBaseValue.UserId : default);
+                        var email = CliRuntime.WasSpecified(parseResult, Email) ? parseResult.GetValue(Email) : (__requestBase is { } __EmailBaseValue ? __EmailBaseValue.Email : default);
                         var role = parseResult.GetRequiredValue(Role);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 

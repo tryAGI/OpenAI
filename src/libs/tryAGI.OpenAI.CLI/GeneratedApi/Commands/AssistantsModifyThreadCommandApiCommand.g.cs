@@ -93,8 +93,8 @@ internal static partial class AssistantsModifyThreadCommandApiCommand
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var threadId = parseResult.GetRequiredValue(ThreadId);
-                        var toolResources = CliRuntime.WasSpecified(parseResult, ToolResources) ? parseResult.GetValue(ToolResources) : __requestBase is not null ? __requestBase.ToolResources : default;
-                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : __requestBase is not null ? __requestBase.Metadata : default;
+                        var toolResources = CliRuntime.WasSpecified(parseResult, ToolResources) ? parseResult.GetValue(ToolResources) : (__requestBase is { } __ToolResourcesBaseValue ? __ToolResourcesBaseValue.ToolResources : default);
+                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

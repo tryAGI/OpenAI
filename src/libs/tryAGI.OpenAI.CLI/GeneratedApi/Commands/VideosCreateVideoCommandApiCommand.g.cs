@@ -107,11 +107,11 @@ internal static partial class VideosCreateVideoCommandApiCommand
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var model = CliRuntime.WasSpecified(parseResult, Model) ? parseResult.GetValue(Model) : __requestBase is not null ? __requestBase.Model : default;
+                        var model = CliRuntime.WasSpecified(parseResult, Model) ? parseResult.GetValue(Model) : (__requestBase is { } __ModelBaseValue ? __ModelBaseValue.Model : default);
                         var prompt = parseResult.GetRequiredValue(Prompt);
-                        var inputReference = CliRuntime.WasSpecified(parseResult, InputReference) ? parseResult.GetValue(InputReference) : __requestBase is not null ? __requestBase.InputReference : default;
-                        var seconds = CliRuntime.WasSpecified(parseResult, Seconds) ? parseResult.GetValue(Seconds) : __requestBase is not null ? __requestBase.Seconds : default;
-                        var size = CliRuntime.WasSpecified(parseResult, Size) ? parseResult.GetValue(Size) : __requestBase is not null ? __requestBase.Size : default;
+                        var inputReference = CliRuntime.WasSpecified(parseResult, InputReference) ? parseResult.GetValue(InputReference) : (__requestBase is { } __InputReferenceBaseValue ? __InputReferenceBaseValue.InputReference : default);
+                        var seconds = CliRuntime.WasSpecified(parseResult, Seconds) ? parseResult.GetValue(Seconds) : (__requestBase is { } __SecondsBaseValue ? __SecondsBaseValue.Seconds : default);
+                        var size = CliRuntime.WasSpecified(parseResult, Size) ? parseResult.GetValue(Size) : (__requestBase is { } __SizeBaseValue ? __SizeBaseValue.Size : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

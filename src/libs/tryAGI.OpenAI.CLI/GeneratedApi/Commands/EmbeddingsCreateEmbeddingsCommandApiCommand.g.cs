@@ -114,9 +114,9 @@ internal static partial class EmbeddingsCreateEmbeddingsCommandApiCommand
                             cancellationToken).ConfigureAwait(false);
                         var input = parseResult.GetRequiredValue(InputOption);
                         var model = parseResult.GetRequiredValue(Model);
-                        var encodingFormat = CliRuntime.WasSpecified(parseResult, EncodingFormat) ? parseResult.GetValue(EncodingFormat) : __requestBase is not null ? __requestBase.EncodingFormat : default;
-                        var dimensions = CliRuntime.WasSpecified(parseResult, Dimensions) ? parseResult.GetValue(Dimensions) : __requestBase is not null ? __requestBase.Dimensions : default;
-                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : __requestBase is not null ? __requestBase.User : default;
+                        var encodingFormat = CliRuntime.WasSpecified(parseResult, EncodingFormat) ? parseResult.GetValue(EncodingFormat) : (__requestBase is { } __EncodingFormatBaseValue ? __EncodingFormatBaseValue.EncodingFormat : default);
+                        var dimensions = CliRuntime.WasSpecified(parseResult, Dimensions) ? parseResult.GetValue(Dimensions) : (__requestBase is { } __DimensionsBaseValue ? __DimensionsBaseValue.Dimensions : default);
+                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

@@ -94,7 +94,7 @@ internal static partial class VectorStoresUpdateVectorStoreFileAttributesCommand
                             cancellationToken).ConfigureAwait(false);
                         var vectorStoreId = parseResult.GetRequiredValue(VectorStoreId);
                         var fileId = parseResult.GetRequiredValue(FileId);
-                        var attributes = CliRuntime.WasSpecified(parseResult, Attributes) ? parseResult.GetValue(Attributes) : __requestBase is not null ? __requestBase.Attributes : default;
+                        var attributes = CliRuntime.WasSpecified(parseResult, Attributes) ? parseResult.GetValue(Attributes) : (__requestBase is { } __AttributesBaseValue ? __AttributesBaseValue.Attributes : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

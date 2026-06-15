@@ -103,7 +103,7 @@ valid JSON string.
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var grader = parseResult.GetRequiredValue(Grader);
-                        var item = CliRuntime.WasSpecified(parseResult, Item) ? parseResult.GetValue(Item) : __requestBase is not null ? __requestBase.Item : default;
+                        var item = CliRuntime.WasSpecified(parseResult, Item) ? parseResult.GetValue(Item) : (__requestBase is { } __ItemBaseValue ? __ItemBaseValue.Item : default);
                         var modelSample = parseResult.GetRequiredValue(ModelSample);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
