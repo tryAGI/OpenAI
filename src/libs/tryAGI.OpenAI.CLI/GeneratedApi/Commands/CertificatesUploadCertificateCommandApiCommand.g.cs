@@ -89,7 +89,7 @@ Organizations can upload up to 50 certificates.
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var name = CliRuntime.WasSpecified(parseResult, NameOption) ? parseResult.GetValue(NameOption) : __requestBase is not null ? __requestBase.Name : default;
+                        var name = CliRuntime.WasSpecified(parseResult, NameOption) ? parseResult.GetValue(NameOption) : (__requestBase is { } __NameBaseValue ? __NameBaseValue.Name : default);
                         var certificate = parseResult.GetRequiredValue(Certificate);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 

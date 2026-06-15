@@ -100,9 +100,9 @@ internal static partial class ProjectsModifyProjectCommandApiCommand
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var projectId = parseResult.GetRequiredValue(ProjectId);
-                        var name = CliRuntime.WasSpecified(parseResult, NameOption) ? parseResult.GetValue(NameOption) : __requestBase is not null ? __requestBase.Name : default;
-                        var externalKeyId = CliRuntime.WasSpecified(parseResult, ExternalKeyId) ? parseResult.GetValue(ExternalKeyId) : __requestBase is not null ? __requestBase.ExternalKeyId : default;
-                        var geography = CliRuntime.WasSpecified(parseResult, Geography) ? parseResult.GetValue(Geography) : __requestBase is not null ? __requestBase.Geography : default;
+                        var name = CliRuntime.WasSpecified(parseResult, NameOption) ? parseResult.GetValue(NameOption) : (__requestBase is { } __NameBaseValue ? __NameBaseValue.Name : default);
+                        var externalKeyId = CliRuntime.WasSpecified(parseResult, ExternalKeyId) ? parseResult.GetValue(ExternalKeyId) : (__requestBase is { } __ExternalKeyIdBaseValue ? __ExternalKeyIdBaseValue.ExternalKeyId : default);
+                        var geography = CliRuntime.WasSpecified(parseResult, Geography) ? parseResult.GetValue(Geography) : (__requestBase is { } __GeographyBaseValue ? __GeographyBaseValue.Geography : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

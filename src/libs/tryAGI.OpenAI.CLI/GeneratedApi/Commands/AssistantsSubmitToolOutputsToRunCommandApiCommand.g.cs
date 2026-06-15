@@ -102,7 +102,7 @@ internal static partial class AssistantsSubmitToolOutputsToRunCommandApiCommand
                         var threadId = parseResult.GetRequiredValue(ThreadId);
                         var runId = parseResult.GetRequiredValue(RunId);
                         var toolOutputs = parseResult.GetRequiredValue(ToolOutputs);
-                        var stream = CliRuntime.WasSpecified(parseResult, Stream) ? parseResult.GetValue(Stream) : __requestBase is not null ? __requestBase.Stream : default;
+                        var stream = CliRuntime.WasSpecified(parseResult, Stream) ? parseResult.GetValue(Stream) : (__requestBase is { } __StreamBaseValue ? __StreamBaseValue.Stream : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

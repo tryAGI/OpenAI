@@ -246,23 +246,23 @@ Returns a completion object, or a sequence of completion objects if the request 
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var model = parseResult.GetRequiredValue(Model);
-                        var prompt = CliRuntime.WasSpecified(parseResult, Prompt) ? parseResult.GetValue(Prompt) : __requestBase is not null ? __requestBase.Prompt : default;
-                        var bestOf = CliRuntime.WasSpecified(parseResult, BestOf) ? parseResult.GetValue(BestOf) : __requestBase is not null ? __requestBase.BestOf : default;
-                        var echo = CliRuntime.WasSpecified(parseResult, Echo) ? parseResult.GetValue(Echo) : __requestBase is not null ? __requestBase.Echo : default;
-                        var frequencyPenalty = CliRuntime.WasSpecified(parseResult, FrequencyPenalty) ? parseResult.GetValue(FrequencyPenalty) : __requestBase is not null ? __requestBase.FrequencyPenalty : default;
-                        var logitBias = CliRuntime.WasSpecified(parseResult, LogitBias) ? parseResult.GetValue(LogitBias) : __requestBase is not null ? __requestBase.LogitBias : default;
-                        var logprobs = CliRuntime.WasSpecified(parseResult, Logprobs) ? parseResult.GetValue(Logprobs) : __requestBase is not null ? __requestBase.Logprobs : default;
-                        var maxTokens = CliRuntime.WasSpecified(parseResult, MaxTokens) ? parseResult.GetValue(MaxTokens) : __requestBase is not null ? __requestBase.MaxTokens : default;
-                        var n = CliRuntime.WasSpecified(parseResult, N) ? parseResult.GetValue(N) : __requestBase is not null ? __requestBase.N : default;
-                        var presencePenalty = CliRuntime.WasSpecified(parseResult, PresencePenalty) ? parseResult.GetValue(PresencePenalty) : __requestBase is not null ? __requestBase.PresencePenalty : default;
-                        var seed = CliRuntime.WasSpecified(parseResult, Seed) ? parseResult.GetValue(Seed) : __requestBase is not null ? __requestBase.Seed : default;
-                        var stop = CliRuntime.WasSpecified(parseResult, Stop) ? parseResult.GetValue(Stop) : __requestBase is not null ? __requestBase.Stop : default;
-                        var stream = CliRuntime.WasSpecified(parseResult, Stream) ? parseResult.GetValue(Stream) : __requestBase is not null ? __requestBase.Stream : default;
-                        var streamOptions = CliRuntime.WasSpecified(parseResult, StreamOptions) ? parseResult.GetValue(StreamOptions) : __requestBase is not null ? __requestBase.StreamOptions : default;
-                        var suffix = CliRuntime.WasSpecified(parseResult, Suffix) ? parseResult.GetValue(Suffix) : __requestBase is not null ? __requestBase.Suffix : default;
-                        var temperature = CliRuntime.WasSpecified(parseResult, Temperature) ? parseResult.GetValue(Temperature) : __requestBase is not null ? __requestBase.Temperature : default;
-                        var topP = CliRuntime.WasSpecified(parseResult, TopP) ? parseResult.GetValue(TopP) : __requestBase is not null ? __requestBase.TopP : default;
-                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : __requestBase is not null ? __requestBase.User : default;
+                        var prompt = CliRuntime.WasSpecified(parseResult, Prompt) ? parseResult.GetValue(Prompt) : (__requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default);
+                        var bestOf = CliRuntime.WasSpecified(parseResult, BestOf) ? parseResult.GetValue(BestOf) : (__requestBase is { } __BestOfBaseValue ? __BestOfBaseValue.BestOf : default);
+                        var echo = CliRuntime.WasSpecified(parseResult, Echo) ? parseResult.GetValue(Echo) : (__requestBase is { } __EchoBaseValue ? __EchoBaseValue.Echo : default);
+                        var frequencyPenalty = CliRuntime.WasSpecified(parseResult, FrequencyPenalty) ? parseResult.GetValue(FrequencyPenalty) : (__requestBase is { } __FrequencyPenaltyBaseValue ? __FrequencyPenaltyBaseValue.FrequencyPenalty : default);
+                        var logitBias = CliRuntime.WasSpecified(parseResult, LogitBias) ? parseResult.GetValue(LogitBias) : (__requestBase is { } __LogitBiasBaseValue ? __LogitBiasBaseValue.LogitBias : default);
+                        var logprobs = CliRuntime.WasSpecified(parseResult, Logprobs) ? parseResult.GetValue(Logprobs) : (__requestBase is { } __LogprobsBaseValue ? __LogprobsBaseValue.Logprobs : default);
+                        var maxTokens = CliRuntime.WasSpecified(parseResult, MaxTokens) ? parseResult.GetValue(MaxTokens) : (__requestBase is { } __MaxTokensBaseValue ? __MaxTokensBaseValue.MaxTokens : default);
+                        var n = CliRuntime.WasSpecified(parseResult, N) ? parseResult.GetValue(N) : (__requestBase is { } __NBaseValue ? __NBaseValue.N : default);
+                        var presencePenalty = CliRuntime.WasSpecified(parseResult, PresencePenalty) ? parseResult.GetValue(PresencePenalty) : (__requestBase is { } __PresencePenaltyBaseValue ? __PresencePenaltyBaseValue.PresencePenalty : default);
+                        var seed = CliRuntime.WasSpecified(parseResult, Seed) ? parseResult.GetValue(Seed) : (__requestBase is { } __SeedBaseValue ? __SeedBaseValue.Seed : default);
+                        var stop = CliRuntime.WasSpecified(parseResult, Stop) ? parseResult.GetValue(Stop) : (__requestBase is { } __StopBaseValue ? __StopBaseValue.Stop : default);
+                        var stream = CliRuntime.WasSpecified(parseResult, Stream) ? parseResult.GetValue(Stream) : (__requestBase is { } __StreamBaseValue ? __StreamBaseValue.Stream : default);
+                        var streamOptions = CliRuntime.WasSpecified(parseResult, StreamOptions) ? parseResult.GetValue(StreamOptions) : (__requestBase is { } __StreamOptionsBaseValue ? __StreamOptionsBaseValue.StreamOptions : default);
+                        var suffix = CliRuntime.WasSpecified(parseResult, Suffix) ? parseResult.GetValue(Suffix) : (__requestBase is { } __SuffixBaseValue ? __SuffixBaseValue.Suffix : default);
+                        var temperature = CliRuntime.WasSpecified(parseResult, Temperature) ? parseResult.GetValue(Temperature) : (__requestBase is { } __TemperatureBaseValue ? __TemperatureBaseValue.Temperature : default);
+                        var topP = CliRuntime.WasSpecified(parseResult, TopP) ? parseResult.GetValue(TopP) : (__requestBase is { } __TopPBaseValue ? __TopPBaseValue.TopP : default);
+                        var user = CliRuntime.WasSpecified(parseResult, User) ? parseResult.GetValue(User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

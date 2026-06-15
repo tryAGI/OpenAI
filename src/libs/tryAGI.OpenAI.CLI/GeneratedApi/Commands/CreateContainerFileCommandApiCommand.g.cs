@@ -107,9 +107,9 @@ Creates a container file.
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var containerId = parseResult.GetRequiredValue(ContainerId);
-                        var fileId = CliRuntime.WasSpecified(parseResult, FileId) ? parseResult.GetValue(FileId) : __requestBase is not null ? __requestBase.FileId : default;
-                        var file = CliRuntime.WasSpecified(parseResult, File) ? parseResult.GetValue(File) : __requestBase is not null ? __requestBase.File : default;
-                        var filename = CliRuntime.WasSpecified(parseResult, Filename) ? parseResult.GetValue(Filename) : __requestBase is not null ? __requestBase.Filename : default;
+                        var fileId = CliRuntime.WasSpecified(parseResult, FileId) ? parseResult.GetValue(FileId) : (__requestBase is { } __FileIdBaseValue ? __FileIdBaseValue.FileId : default);
+                        var file = CliRuntime.WasSpecified(parseResult, File) ? parseResult.GetValue(File) : (__requestBase is { } __FileBaseValue ? __FileBaseValue.File : default);
+                        var filename = CliRuntime.WasSpecified(parseResult, Filename) ? parseResult.GetValue(Filename) : (__requestBase is { } __FilenameBaseValue ? __FilenameBaseValue.Filename : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

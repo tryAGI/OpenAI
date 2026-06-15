@@ -106,7 +106,7 @@ Returns the Upload object with status `completed`, including an additional `file
                             cancellationToken).ConfigureAwait(false);
                         var uploadId = parseResult.GetRequiredValue(UploadId);
                         var partIds = parseResult.GetRequiredValue(PartIds);
-                        var md5 = CliRuntime.WasSpecified(parseResult, Md5) ? parseResult.GetValue(Md5) : __requestBase is not null ? __requestBase.Md5 : default;
+                        var md5 = CliRuntime.WasSpecified(parseResult, Md5) ? parseResult.GetValue(Md5) : (__requestBase is { } __Md5BaseValue ? __Md5BaseValue.Md5 : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

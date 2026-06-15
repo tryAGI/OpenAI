@@ -96,8 +96,8 @@ internal static partial class RolesUpdateProjectRoleCommandApiCommand
                             cancellationToken).ConfigureAwait(false);
                         var projectId = parseResult.GetRequiredValue(ProjectId);
                         var roleId = parseResult.GetRequiredValue(RoleId);
-                        var permissions = CliRuntime.WasSpecified(parseResult, Permissions) ? parseResult.GetValue(Permissions) : __requestBase is not null ? __requestBase.Permissions : default;                        var description = CliRuntime.WasSpecified(parseResult, PublicUpdateOrganizationRoleBodyOptionSetOptions.DescriptionOption) ? parseResult.GetValue(PublicUpdateOrganizationRoleBodyOptionSetOptions.DescriptionOption) : __requestBase is not null ? __requestBase.Description : default;
-                        var roleName = CliRuntime.WasSpecified(parseResult, PublicUpdateOrganizationRoleBodyOptionSetOptions.RoleName) ? parseResult.GetValue(PublicUpdateOrganizationRoleBodyOptionSetOptions.RoleName) : __requestBase is not null ? __requestBase.RoleName : default;
+                        var permissions = CliRuntime.WasSpecified(parseResult, Permissions) ? parseResult.GetValue(Permissions) : (__requestBase is { } __PermissionsBaseValue ? __PermissionsBaseValue.Permissions : default);                        var description = CliRuntime.WasSpecified(parseResult, PublicUpdateOrganizationRoleBodyOptionSetOptions.DescriptionOption) ? parseResult.GetValue(PublicUpdateOrganizationRoleBodyOptionSetOptions.DescriptionOption) : (__requestBase is { } __DescriptionBaseValue ? __DescriptionBaseValue.Description : default);
+                        var roleName = CliRuntime.WasSpecified(parseResult, PublicUpdateOrganizationRoleBodyOptionSetOptions.RoleName) ? parseResult.GetValue(PublicUpdateOrganizationRoleBodyOptionSetOptions.RoleName) : (__requestBase is { } __RoleNameBaseValue ? __RoleNameBaseValue.RoleName : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

@@ -109,11 +109,11 @@ Returns the audio file content, or a stream of audio events.
                             cancellationToken).ConfigureAwait(false);
                         var model = parseResult.GetRequiredValue(Model);
                         var input = parseResult.GetRequiredValue(InputOption);
-                        var instructions = CliRuntime.WasSpecified(parseResult, Instructions) ? parseResult.GetValue(Instructions) : __requestBase is not null ? __requestBase.Instructions : default;
+                        var instructions = CliRuntime.WasSpecified(parseResult, Instructions) ? parseResult.GetValue(Instructions) : (__requestBase is { } __InstructionsBaseValue ? __InstructionsBaseValue.Instructions : default);
                         var voice = parseResult.GetRequiredValue(Voice);
-                        var responseFormat = CliRuntime.WasSpecified(parseResult, ResponseFormat) ? parseResult.GetValue(ResponseFormat) : __requestBase is not null ? __requestBase.ResponseFormat : default;
-                        var speed = CliRuntime.WasSpecified(parseResult, Speed) ? parseResult.GetValue(Speed) : __requestBase is not null ? __requestBase.Speed : default;
-                        var streamFormat = CliRuntime.WasSpecified(parseResult, StreamFormat) ? parseResult.GetValue(StreamFormat) : __requestBase is not null ? __requestBase.StreamFormat : default;
+                        var responseFormat = CliRuntime.WasSpecified(parseResult, ResponseFormat) ? parseResult.GetValue(ResponseFormat) : (__requestBase is { } __ResponseFormatBaseValue ? __ResponseFormatBaseValue.ResponseFormat : default);
+                        var speed = CliRuntime.WasSpecified(parseResult, Speed) ? parseResult.GetValue(Speed) : (__requestBase is { } __SpeedBaseValue ? __SpeedBaseValue.Speed : default);
+                        var streamFormat = CliRuntime.WasSpecified(parseResult, StreamFormat) ? parseResult.GetValue(StreamFormat) : (__requestBase is { } __StreamFormatBaseValue ? __StreamFormatBaseValue.StreamFormat : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

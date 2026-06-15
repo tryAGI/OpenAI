@@ -125,11 +125,11 @@ Returns the created Realtime transcription session object, plus an ephemeral key
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var turnDetection = CliRuntime.WasSpecified(parseResult, TurnDetection) ? parseResult.GetValue(TurnDetection) : __requestBase is not null ? __requestBase.TurnDetection : default;
-                        var inputAudioNoiseReduction = CliRuntime.WasSpecified(parseResult, InputAudioNoiseReduction) ? parseResult.GetValue(InputAudioNoiseReduction) : __requestBase is not null ? __requestBase.InputAudioNoiseReduction : default;
-                        var inputAudioFormat = CliRuntime.WasSpecified(parseResult, InputAudioFormat) ? parseResult.GetValue(InputAudioFormat) : __requestBase is not null ? __requestBase.InputAudioFormat : default;
-                        var inputAudioTranscription = CliRuntime.WasSpecified(parseResult, InputAudioTranscription) ? parseResult.GetValue(InputAudioTranscription) : __requestBase is not null ? __requestBase.InputAudioTranscription : default;
-                        var include = CliRuntime.WasSpecified(parseResult, Include) ? parseResult.GetValue(Include) : __requestBase is not null ? __requestBase.Include : default;
+                        var turnDetection = CliRuntime.WasSpecified(parseResult, TurnDetection) ? parseResult.GetValue(TurnDetection) : (__requestBase is { } __TurnDetectionBaseValue ? __TurnDetectionBaseValue.TurnDetection : default);
+                        var inputAudioNoiseReduction = CliRuntime.WasSpecified(parseResult, InputAudioNoiseReduction) ? parseResult.GetValue(InputAudioNoiseReduction) : (__requestBase is { } __InputAudioNoiseReductionBaseValue ? __InputAudioNoiseReductionBaseValue.InputAudioNoiseReduction : default);
+                        var inputAudioFormat = CliRuntime.WasSpecified(parseResult, InputAudioFormat) ? parseResult.GetValue(InputAudioFormat) : (__requestBase is { } __InputAudioFormatBaseValue ? __InputAudioFormatBaseValue.InputAudioFormat : default);
+                        var inputAudioTranscription = CliRuntime.WasSpecified(parseResult, InputAudioTranscription) ? parseResult.GetValue(InputAudioTranscription) : (__requestBase is { } __InputAudioTranscriptionBaseValue ? __InputAudioTranscriptionBaseValue.InputAudioTranscription : default);
+                        var include = CliRuntime.WasSpecified(parseResult, Include) ? parseResult.GetValue(Include) : (__requestBase is { } __IncludeBaseValue ? __IncludeBaseValue.Include : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

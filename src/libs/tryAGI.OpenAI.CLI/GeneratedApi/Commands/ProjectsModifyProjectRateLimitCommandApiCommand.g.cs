@@ -129,12 +129,12 @@ internal static partial class ProjectsModifyProjectRateLimitCommandApiCommand
                             cancellationToken).ConfigureAwait(false);
                         var projectId = parseResult.GetRequiredValue(ProjectId);
                         var rateLimitId = parseResult.GetRequiredValue(RateLimitId);
-                        var maxRequestsPer1Minute = CliRuntime.WasSpecified(parseResult, MaxRequestsPer1Minute) ? parseResult.GetValue(MaxRequestsPer1Minute) : __requestBase is not null ? __requestBase.MaxRequestsPer1Minute : default;
-                        var maxTokensPer1Minute = CliRuntime.WasSpecified(parseResult, MaxTokensPer1Minute) ? parseResult.GetValue(MaxTokensPer1Minute) : __requestBase is not null ? __requestBase.MaxTokensPer1Minute : default;
-                        var maxImagesPer1Minute = CliRuntime.WasSpecified(parseResult, MaxImagesPer1Minute) ? parseResult.GetValue(MaxImagesPer1Minute) : __requestBase is not null ? __requestBase.MaxImagesPer1Minute : default;
-                        var maxAudioMegabytesPer1Minute = CliRuntime.WasSpecified(parseResult, MaxAudioMegabytesPer1Minute) ? parseResult.GetValue(MaxAudioMegabytesPer1Minute) : __requestBase is not null ? __requestBase.MaxAudioMegabytesPer1Minute : default;
-                        var maxRequestsPer1Day = CliRuntime.WasSpecified(parseResult, MaxRequestsPer1Day) ? parseResult.GetValue(MaxRequestsPer1Day) : __requestBase is not null ? __requestBase.MaxRequestsPer1Day : default;
-                        var batch1DayMaxInputTokens = CliRuntime.WasSpecified(parseResult, Batch1DayMaxInputTokens) ? parseResult.GetValue(Batch1DayMaxInputTokens) : __requestBase is not null ? __requestBase.Batch1DayMaxInputTokens : default;
+                        var maxRequestsPer1Minute = CliRuntime.WasSpecified(parseResult, MaxRequestsPer1Minute) ? parseResult.GetValue(MaxRequestsPer1Minute) : (__requestBase is { } __MaxRequestsPer1MinuteBaseValue ? __MaxRequestsPer1MinuteBaseValue.MaxRequestsPer1Minute : default);
+                        var maxTokensPer1Minute = CliRuntime.WasSpecified(parseResult, MaxTokensPer1Minute) ? parseResult.GetValue(MaxTokensPer1Minute) : (__requestBase is { } __MaxTokensPer1MinuteBaseValue ? __MaxTokensPer1MinuteBaseValue.MaxTokensPer1Minute : default);
+                        var maxImagesPer1Minute = CliRuntime.WasSpecified(parseResult, MaxImagesPer1Minute) ? parseResult.GetValue(MaxImagesPer1Minute) : (__requestBase is { } __MaxImagesPer1MinuteBaseValue ? __MaxImagesPer1MinuteBaseValue.MaxImagesPer1Minute : default);
+                        var maxAudioMegabytesPer1Minute = CliRuntime.WasSpecified(parseResult, MaxAudioMegabytesPer1Minute) ? parseResult.GetValue(MaxAudioMegabytesPer1Minute) : (__requestBase is { } __MaxAudioMegabytesPer1MinuteBaseValue ? __MaxAudioMegabytesPer1MinuteBaseValue.MaxAudioMegabytesPer1Minute : default);
+                        var maxRequestsPer1Day = CliRuntime.WasSpecified(parseResult, MaxRequestsPer1Day) ? parseResult.GetValue(MaxRequestsPer1Day) : (__requestBase is { } __MaxRequestsPer1DayBaseValue ? __MaxRequestsPer1DayBaseValue.MaxRequestsPer1Day : default);
+                        var batch1DayMaxInputTokens = CliRuntime.WasSpecified(parseResult, Batch1DayMaxInputTokens) ? parseResult.GetValue(Batch1DayMaxInputTokens) : (__requestBase is { } __Batch1DayMaxInputTokensBaseValue ? __Batch1DayMaxInputTokensBaseValue.Batch1DayMaxInputTokens : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

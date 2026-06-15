@@ -114,8 +114,8 @@ internal static partial class AssistantsCreateMessageCommandApiCommand
                         var threadId = parseResult.GetRequiredValue(ThreadId);
                         var role = parseResult.GetRequiredValue(Role);
                         var content = parseResult.GetRequiredValue(Content);
-                        var attachments = CliRuntime.WasSpecified(parseResult, Attachments) ? parseResult.GetValue(Attachments) : __requestBase is not null ? __requestBase.Attachments : default;
-                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : __requestBase is not null ? __requestBase.Metadata : default;
+                        var attachments = CliRuntime.WasSpecified(parseResult, Attachments) ? parseResult.GetValue(Attachments) : (__requestBase is { } __AttachmentsBaseValue ? __AttachmentsBaseValue.Attachments : default);
+                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
