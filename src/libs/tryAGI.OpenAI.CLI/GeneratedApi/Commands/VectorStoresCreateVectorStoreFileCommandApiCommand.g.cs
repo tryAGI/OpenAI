@@ -105,8 +105,8 @@ For uploading multiple files to the same vector store, use the file batches endp
                             cancellationToken).ConfigureAwait(false);
                         var vectorStoreId = parseResult.GetRequiredValue(VectorStoreId);
                         var fileId = parseResult.GetRequiredValue(FileId);
-                        var chunkingStrategy = CliRuntime.WasSpecified(parseResult, ChunkingStrategy) ? parseResult.GetValue(ChunkingStrategy) : __requestBase is not null ? __requestBase.ChunkingStrategy : default;
-                        var attributes = CliRuntime.WasSpecified(parseResult, Attributes) ? parseResult.GetValue(Attributes) : __requestBase is not null ? __requestBase.Attributes : default;
+                        var chunkingStrategy = CliRuntime.WasSpecified(parseResult, ChunkingStrategy) ? parseResult.GetValue(ChunkingStrategy) : (__requestBase is { } __ChunkingStrategyBaseValue ? __ChunkingStrategyBaseValue.ChunkingStrategy : default);
+                        var attributes = CliRuntime.WasSpecified(parseResult, Attributes) ? parseResult.GetValue(Attributes) : (__requestBase is { } __AttributesBaseValue ? __AttributesBaseValue.Attributes : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

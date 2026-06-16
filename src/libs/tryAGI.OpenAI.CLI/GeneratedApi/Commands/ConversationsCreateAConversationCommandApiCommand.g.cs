@@ -85,8 +85,8 @@ internal static partial class ConversationsCreateAConversationCommandApiCommand
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : __requestBase is not null ? __requestBase.Metadata : default;
-                        var items = CliRuntime.WasSpecified(parseResult, Items) ? parseResult.GetValue(Items) : __requestBase is not null ? __requestBase.Items : default;
+                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
+                        var items = CliRuntime.WasSpecified(parseResult, Items) ? parseResult.GetValue(Items) : (__requestBase is { } __ItemsBaseValue ? __ItemsBaseValue.Items : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

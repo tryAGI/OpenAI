@@ -94,7 +94,7 @@ internal static partial class ProjectsModifyProjectUserCommandApiCommand
                             cancellationToken).ConfigureAwait(false);
                         var projectId = parseResult.GetRequiredValue(ProjectId);
                         var userId = parseResult.GetRequiredValue(UserId);
-                        var role = CliRuntime.WasSpecified(parseResult, Role) ? parseResult.GetValue(Role) : __requestBase is not null ? __requestBase.Role : default;
+                        var role = CliRuntime.WasSpecified(parseResult, Role) ? parseResult.GetValue(Role) : (__requestBase is { } __RoleBaseValue ? __RoleBaseValue.Role : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

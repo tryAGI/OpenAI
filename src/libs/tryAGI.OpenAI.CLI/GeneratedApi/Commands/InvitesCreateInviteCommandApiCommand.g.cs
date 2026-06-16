@@ -96,7 +96,7 @@ internal static partial class InvitesCreateInviteCommandApiCommand
                             cancellationToken).ConfigureAwait(false);
                         var email = parseResult.GetRequiredValue(Email);
                         var role = parseResult.GetRequiredValue(Role);
-                        var projects = CliRuntime.WasSpecified(parseResult, Projects) ? parseResult.GetValue(Projects) : __requestBase is not null ? __requestBase.Projects : default;
+                        var projects = CliRuntime.WasSpecified(parseResult, Projects) ? parseResult.GetValue(Projects) : (__requestBase is { } __ProjectsBaseValue ? __ProjectsBaseValue.Projects : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

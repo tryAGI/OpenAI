@@ -93,7 +93,7 @@ internal static partial class SkillsCreateSkillVersionCommandApiCommand
                             cancellationToken).ConfigureAwait(false);
                         var skillId = parseResult.GetRequiredValue(SkillId);
                         var files = parseResult.GetRequiredValue(Files);
-                        var @default = CliRuntime.WasSpecified(parseResult, Default) ? parseResult.GetValue(Default) : __requestBase is not null ? __requestBase.Default : default;
+                        var @default = CliRuntime.WasSpecified(parseResult, Default) ? parseResult.GetValue(Default) : (__requestBase is { } __DefaultBaseValue ? __DefaultBaseValue.Default : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

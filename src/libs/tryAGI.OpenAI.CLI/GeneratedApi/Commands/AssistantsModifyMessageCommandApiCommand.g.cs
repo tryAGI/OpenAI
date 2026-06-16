@@ -94,7 +94,7 @@ internal static partial class AssistantsModifyMessageCommandApiCommand
                             cancellationToken).ConfigureAwait(false);
                         var threadId = parseResult.GetRequiredValue(ThreadId);
                         var messageId = parseResult.GetRequiredValue(MessageId);
-                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : __requestBase is not null ? __requestBase.Metadata : default;
+                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

@@ -104,8 +104,8 @@ Returns the created client secret and the effective session object. The client s
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var expiresAfter = CliRuntime.WasSpecified(parseResult, ExpiresAfter) ? parseResult.GetValue(ExpiresAfter) : __requestBase is not null ? __requestBase.ExpiresAfter : default;
-                        var session = CliRuntime.WasSpecified(parseResult, Session) ? parseResult.GetValue(Session) : __requestBase is not null ? __requestBase.Session : default;
+                        var expiresAfter = CliRuntime.WasSpecified(parseResult, ExpiresAfter) ? parseResult.GetValue(ExpiresAfter) : (__requestBase is { } __ExpiresAfterBaseValue ? __ExpiresAfterBaseValue.ExpiresAfter : default);
+                        var session = CliRuntime.WasSpecified(parseResult, Session) ? parseResult.GetValue(Session) : (__requestBase is { } __SessionBaseValue ? __SessionBaseValue.Session : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

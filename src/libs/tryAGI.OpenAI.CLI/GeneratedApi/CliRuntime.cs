@@ -17,7 +17,7 @@ internal static class CliRuntime
     private static readonly string[] ApiKeyEnvironmentVariables = [@"OPENAI_API_KEY"];
     private const string CredentialFileDirectoryName = ".open-ai";
 
-    public static async Task<global::tryAGI.OpenAI.OpenAiClient> CreateClientAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
+    public static async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OpenAiClient> CreateClientAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
     {
         var apiKey = await TryResolveApiKeyAsync(parseResult, cancellationToken).ConfigureAwait(false);
         var authorizations = string.IsNullOrWhiteSpace(apiKey)
@@ -46,7 +46,7 @@ internal static class CliRuntime
         "Design",
         "CA1031:Do not catch general exception types",
         Justification = "Generated CLI commands map unexpected failures to a stable exit code.")]
-    public static async Task<int> RunAsync(Func<Task> action, CancellationToken cancellationToken = default)
+    public static async global::System.Threading.Tasks.Task<int> RunAsync(Func<global::System.Threading.Tasks.Task> action, CancellationToken cancellationToken = default)
     {
         try
         {
@@ -75,13 +75,13 @@ internal static class CliRuntime
         }
     }
 
-    public static async Task<string?> TryResolveApiKeyAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
+    public static async global::System.Threading.Tasks.Task<string?> TryResolveApiKeyAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
     {
         var probe = await ProbeAuthAsync(parseResult, cancellationToken).ConfigureAwait(false);
         return probe.Active?.RawValue;
     }
 
-    public static async Task<AuthStatusInfo> GetAuthStatusAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
+    public static async global::System.Threading.Tasks.Task<AuthStatusInfo> GetAuthStatusAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
     {
         var probe = await ProbeAuthAsync(parseResult, cancellationToken).ConfigureAwait(false);
         return new AuthStatusInfo(
@@ -98,7 +98,7 @@ internal static class CliRuntime
                 .ToArray());
     }
 
-    public static async Task WriteUserSecretAsync(string name, string value, CancellationToken cancellationToken = default)
+    public static async global::System.Threading.Tasks.Task WriteUserSecretAsync(string name, string value, CancellationToken cancellationToken = default)
     {
         var path = GetUserSecretsPath();
         var directory = Path.GetDirectoryName(path);
@@ -113,7 +113,7 @@ internal static class CliRuntime
         await File.WriteAllTextAsync(path, json, cancellationToken).ConfigureAwait(false);
     }
 
-    public static async Task ClearUserSecretAsync(string name, CancellationToken cancellationToken = default)
+    public static async global::System.Threading.Tasks.Task ClearUserSecretAsync(string name, CancellationToken cancellationToken = default)
     {
         var path = GetUserSecretsPath();
         if (!File.Exists(path))
@@ -241,7 +241,7 @@ internal static class CliRuntime
 
 
 
-    public static async Task<string?> ReadInputAsync(
+    public static async global::System.Threading.Tasks.Task<string?> ReadInputAsync(
         ParseResult parseResult,
         Option<string?> inputOption,
         Option<string?> requestJsonOption,
@@ -284,7 +284,7 @@ internal static class CliRuntime
         return await ReadFlexibleInputAsync(parseResult.GetValue(inputOption)!, cancellationToken).ConfigureAwait(false);
     }
 
-    public static async Task<T> ReadRequestAsync<T>(
+    public static async global::System.Threading.Tasks.Task<T> ReadRequestAsync<T>(
         ParseResult parseResult,
         Option<string?> inputOption,
         Option<string?> requestJsonOption,
@@ -306,7 +306,7 @@ internal static class CliRuntime
             : throw new CliException($"Unable to deserialize request JSON as {typeof(T).Name}.");
     }
 
-    public static async Task<T?> ReadRequestOrDefaultAsync<T>(
+    public static async global::System.Threading.Tasks.Task<T?> ReadRequestOrDefaultAsync<T>(
         ParseResult parseResult,
         Option<string?> inputOption,
         Option<string?> requestJsonOption,
@@ -367,19 +367,19 @@ internal static class CliRuntime
         return JsonSerializer.Serialize(values.ToArray());
     }
 
-    public static async Task WriteJsonAsync<T>(ParseResult parseResult, T value, JsonSerializerContext context, CancellationToken cancellationToken = default)
+    public static async global::System.Threading.Tasks.Task WriteJsonAsync<T>(ParseResult parseResult, T value, JsonSerializerContext context, CancellationToken cancellationToken = default)
     {
         var json = JsonSerializer.Serialize(value, typeof(T), context);
         await WriteTextAsync(parseResult, PrettyJson(json), cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
-    public static async Task WriteJsonLineAsync<T>(ParseResult parseResult, T value, JsonSerializerContext context, CancellationToken cancellationToken = default)
+    public static async global::System.Threading.Tasks.Task WriteJsonLineAsync<T>(ParseResult parseResult, T value, JsonSerializerContext context, CancellationToken cancellationToken = default)
     {
         var json = JsonSerializer.Serialize(value, typeof(T), context);
         await WriteTextAsync(parseResult, json + Environment.NewLine, append: true, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
-    public static async Task WriteResponseAsync<T>(
+    public static async global::System.Threading.Tasks.Task WriteResponseAsync<T>(
         ParseResult parseResult,
         T value,
         JsonSerializerContext context,
@@ -399,7 +399,7 @@ internal static class CliRuntime
         await WriteTextAsync(parseResult, text, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
-    public static async Task WriteResponseLineAsync<T>(
+    public static async global::System.Threading.Tasks.Task WriteResponseLineAsync<T>(
         ParseResult parseResult,
         T value,
         JsonSerializerContext context,
@@ -419,7 +419,7 @@ internal static class CliRuntime
         await WriteTextAsync(parseResult, text + Environment.NewLine, append: true, cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
-    public static async Task<bool> TryWriteOutputDirectoryAsync<T>(
+    public static async global::System.Threading.Tasks.Task<bool> TryWriteOutputDirectoryAsync<T>(
         ParseResult parseResult,
         T value,
         JsonSerializerContext context,
@@ -445,7 +445,7 @@ internal static class CliRuntime
         return true;
     }
 
-    public static async Task WriteSuccessAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
+    public static async global::System.Threading.Tasks.Task WriteSuccessAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
     {
         if (parseResult.GetValue(CliOptions.Json))
         {
@@ -456,7 +456,7 @@ internal static class CliRuntime
         await WriteTextAsync(parseResult, "success: true", cancellationToken: cancellationToken).ConfigureAwait(false);
     }
 
-    public static async Task WriteBinaryAsync(ParseResult parseResult, byte[] bytes, CancellationToken cancellationToken = default)
+    public static async global::System.Threading.Tasks.Task WriteBinaryAsync(ParseResult parseResult, byte[] bytes, CancellationToken cancellationToken = default)
     {
         var outputPath = parseResult.GetValue(CliOptions.Output);
         if (string.IsNullOrWhiteSpace(outputPath))
@@ -467,7 +467,7 @@ internal static class CliRuntime
         await WriteBytesAsync(outputPath, bytes, cancellationToken).ConfigureAwait(false);
     }
 
-    public static async Task WriteStreamAsync(ParseResult parseResult, Stream stream, CancellationToken cancellationToken = default)
+    public static async global::System.Threading.Tasks.Task WriteStreamAsync(ParseResult parseResult, Stream stream, CancellationToken cancellationToken = default)
     {
         var outputPath = parseResult.GetValue(CliOptions.Output);
         if (string.IsNullOrWhiteSpace(outputPath))
@@ -504,13 +504,13 @@ internal static class CliRuntime
         return string.IsNullOrWhiteSpace(baseUrl) ? null : new Uri(baseUrl, UriKind.Absolute);
     }
 
-    private static async Task<string?> ReadUserSecretAsync(string name, CancellationToken cancellationToken = default)
+    private static async global::System.Threading.Tasks.Task<string?> ReadUserSecretAsync(string name, CancellationToken cancellationToken = default)
     {
         var values = await ReadUserSecretsAsync(cancellationToken).ConfigureAwait(false);
         return values.TryGetValue(name, out var value) && !string.IsNullOrWhiteSpace(value) ? value : null;
     }
 
-    private static async Task<string?> ReadCredentialFileAsync(CancellationToken cancellationToken = default)
+    private static async global::System.Threading.Tasks.Task<string?> ReadCredentialFileAsync(CancellationToken cancellationToken = default)
     {
         var path = GetCredentialFilePath();
         if (string.IsNullOrWhiteSpace(path) || !File.Exists(path))
@@ -522,7 +522,7 @@ internal static class CliRuntime
         return string.IsNullOrWhiteSpace(value) ? null : value.Trim();
     }
 
-    private static async Task<Dictionary<string, string>> ReadUserSecretsAsync(CancellationToken cancellationToken = default)
+    private static async global::System.Threading.Tasks.Task<Dictionary<string, string>> ReadUserSecretsAsync(CancellationToken cancellationToken = default)
     {
         var path = GetUserSecretsPath();
         if (!File.Exists(path))
@@ -540,7 +540,7 @@ internal static class CliRuntime
             new Dictionary<string, string>(StringComparer.Ordinal);
     }
 
-    private static async Task WriteTextAsync(ParseResult parseResult, string text, bool append = false, CancellationToken cancellationToken = default)
+    private static async global::System.Threading.Tasks.Task WriteTextAsync(ParseResult parseResult, string text, bool append = false, CancellationToken cancellationToken = default)
     {
         var outputPath = parseResult.GetValue(CliOptions.Output);
         if (string.IsNullOrWhiteSpace(outputPath))
@@ -570,7 +570,7 @@ internal static class CliRuntime
         }
     }
 
-    private static async Task WriteBytesAsync(string outputPath, byte[] bytes, CancellationToken cancellationToken = default)
+    private static async global::System.Threading.Tasks.Task WriteBytesAsync(string outputPath, byte[] bytes, CancellationToken cancellationToken = default)
     {
         var directory = Path.GetDirectoryName(outputPath);
         if (!string.IsNullOrWhiteSpace(directory))
@@ -586,12 +586,12 @@ internal static class CliRuntime
         return value.Length > 1 && value[^1] == unit;
     }
 
-    private static async Task WriteDeprecatedOptionWarningAsync(string oldOption, string replacement)
+    private static async global::System.Threading.Tasks.Task WriteDeprecatedOptionWarningAsync(string oldOption, string replacement)
     {
         await Console.Error.WriteLineAsync($"Warning: {oldOption} is deprecated; use {replacement}.").ConfigureAwait(false);
     }
 
-    private static async Task<string> ReadFlexibleInputAsync(string input, CancellationToken cancellationToken = default)
+    private static async global::System.Threading.Tasks.Task<string> ReadFlexibleInputAsync(string input, CancellationToken cancellationToken = default)
     {
         if (string.IsNullOrWhiteSpace(input))
         {
@@ -612,7 +612,7 @@ internal static class CliRuntime
         return await ReadFileOrStdinAsync(input, cancellationToken).ConfigureAwait(false);
     }
 
-    private static async Task<string> ReadFileOrStdinAsync(string pathOrDash, CancellationToken cancellationToken = default)
+    private static async global::System.Threading.Tasks.Task<string> ReadFileOrStdinAsync(string pathOrDash, CancellationToken cancellationToken = default)
     {
         if (pathOrDash == "-")
         {
@@ -830,7 +830,7 @@ internal static class CliRuntime
         builder.AppendLine(value);
     }
 
-    private static async Task WriteItemFilesAsync(string outputDirectory, JsonArray items, CancellationToken cancellationToken = default)
+    private static async global::System.Threading.Tasks.Task WriteItemFilesAsync(string outputDirectory, JsonArray items, CancellationToken cancellationToken = default)
     {
         Directory.CreateDirectory(outputDirectory);
 
@@ -880,7 +880,7 @@ internal static class CliRuntime
         }
     }
 
-    private static async Task<bool> TryWriteTextPropertyAsync(
+    private static async global::System.Threading.Tasks.Task<bool> TryWriteTextPropertyAsync(
         JsonObject item,
         string outputDirectory,
         string baseName,
@@ -946,7 +946,7 @@ internal static class CliRuntime
         return normalized;
     }
 
-    private static async Task WriteApiExceptionAsync(global::tryAGI.OpenAI.ApiException exception)
+    private static async global::System.Threading.Tasks.Task WriteApiExceptionAsync(global::tryAGI.OpenAI.ApiException exception)
     {
         var builder = new StringBuilder();
         builder.Append("API error ");
@@ -974,7 +974,7 @@ internal static class CliRuntime
         return Encoding.UTF8.GetString(stream.ToArray());
     }
 
-    private static async Task<AuthProbeResult> ProbeAuthAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
+    private static async global::System.Threading.Tasks.Task<AuthProbeResult> ProbeAuthAsync(ParseResult parseResult, CancellationToken cancellationToken = default)
     {
         var optionSource = new AuthSourceProbe(
             Source: "option",

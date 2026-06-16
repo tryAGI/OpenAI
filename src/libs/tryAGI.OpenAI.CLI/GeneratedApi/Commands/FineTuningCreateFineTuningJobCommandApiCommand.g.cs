@@ -162,12 +162,12 @@ Response includes details of the enqueued job including job status and the name 
                             cancellationToken).ConfigureAwait(false);
                         var model = parseResult.GetRequiredValue(Model);
                         var trainingFile = parseResult.GetRequiredValue(TrainingFile);
-                        var suffix = CliRuntime.WasSpecified(parseResult, Suffix) ? parseResult.GetValue(Suffix) : __requestBase is not null ? __requestBase.Suffix : default;
-                        var validationFile = CliRuntime.WasSpecified(parseResult, ValidationFile) ? parseResult.GetValue(ValidationFile) : __requestBase is not null ? __requestBase.ValidationFile : default;
-                        var integrations = CliRuntime.WasSpecified(parseResult, Integrations) ? parseResult.GetValue(Integrations) : __requestBase is not null ? __requestBase.Integrations : default;
-                        var seed = CliRuntime.WasSpecified(parseResult, Seed) ? parseResult.GetValue(Seed) : __requestBase is not null ? __requestBase.Seed : default;
-                        var method = CliRuntime.WasSpecified(parseResult, Method) ? parseResult.GetValue(Method) : __requestBase is not null ? __requestBase.Method : default;
-                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : __requestBase is not null ? __requestBase.Metadata : default;
+                        var suffix = CliRuntime.WasSpecified(parseResult, Suffix) ? parseResult.GetValue(Suffix) : (__requestBase is { } __SuffixBaseValue ? __SuffixBaseValue.Suffix : default);
+                        var validationFile = CliRuntime.WasSpecified(parseResult, ValidationFile) ? parseResult.GetValue(ValidationFile) : (__requestBase is { } __ValidationFileBaseValue ? __ValidationFileBaseValue.ValidationFile : default);
+                        var integrations = CliRuntime.WasSpecified(parseResult, Integrations) ? parseResult.GetValue(Integrations) : (__requestBase is { } __IntegrationsBaseValue ? __IntegrationsBaseValue.Integrations : default);
+                        var seed = CliRuntime.WasSpecified(parseResult, Seed) ? parseResult.GetValue(Seed) : (__requestBase is { } __SeedBaseValue ? __SeedBaseValue.Seed : default);
+                        var method = CliRuntime.WasSpecified(parseResult, Method) ? parseResult.GetValue(Method) : (__requestBase is { } __MethodBaseValue ? __MethodBaseValue.Method : default);
+                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

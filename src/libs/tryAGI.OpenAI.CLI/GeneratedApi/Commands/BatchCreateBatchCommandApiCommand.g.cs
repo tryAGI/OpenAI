@@ -115,9 +115,9 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
                             cancellationToken).ConfigureAwait(false);
                         var inputFileId = parseResult.GetRequiredValue(InputFileId);
                         var endpoint = parseResult.GetRequiredValue(Endpoint);
-                        var completionWindow = CliRuntime.WasSpecified(parseResult, CompletionWindow) ? parseResult.GetValue(CompletionWindow) : __requestBase is not null ? __requestBase.CompletionWindow : default;
-                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : __requestBase is not null ? __requestBase.Metadata : default;
-                        var outputExpiresAfter = CliRuntime.WasSpecified(parseResult, OutputExpiresAfter) ? parseResult.GetValue(OutputExpiresAfter) : __requestBase is not null ? __requestBase.OutputExpiresAfter : default;
+                        var completionWindow = CliRuntime.WasSpecified(parseResult, CompletionWindow) ? parseResult.GetValue(CompletionWindow) : (__requestBase is { } __CompletionWindowBaseValue ? __CompletionWindowBaseValue.CompletionWindow : default);
+                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
+                        var outputExpiresAfter = CliRuntime.WasSpecified(parseResult, OutputExpiresAfter) ? parseResult.GetValue(OutputExpiresAfter) : (__requestBase is { } __OutputExpiresAfterBaseValue ? __OutputExpiresAfterBaseValue.OutputExpiresAfter : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
