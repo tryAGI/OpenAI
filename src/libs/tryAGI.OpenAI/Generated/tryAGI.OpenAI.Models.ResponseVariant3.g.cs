@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseVariant3
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("truncation")]
+        public global::tryAGI.OpenAI.ResponseVariant3Truncation2? Truncation { get; set; }
+
+        /// <summary>
         /// Unique identifier for this Response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -67,6 +73,12 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputItem> Output { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
+        public global::tryAGI.OpenAI.Reasoning? Reasoning { get; set; }
 
         /// <summary>
         /// 
@@ -141,6 +153,7 @@ namespace tryAGI.OpenAI
         /// Whether to allow the model to run tool calls in parallel.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="truncation"></param>
         /// <param name="object">
         /// The object type of this resource - always set to `response`.
         /// </param>
@@ -151,6 +164,7 @@ namespace tryAGI.OpenAI
         /// <param name="completedAt"></param>
         /// <param name="error"></param>
         /// <param name="incompleteDetails"></param>
+        /// <param name="reasoning"></param>
         /// <param name="instructions"></param>
         /// <param name="outputText"></param>
         /// <param name="usage">
@@ -168,11 +182,13 @@ namespace tryAGI.OpenAI
             double createdAt,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputItem> output,
             bool parallelToolCalls,
+            global::tryAGI.OpenAI.ResponseVariant3Truncation2? truncation,
             global::tryAGI.OpenAI.ResponseVariant3Object @object,
             global::tryAGI.OpenAI.ResponseVariant3Status? status,
             double? completedAt,
             global::tryAGI.OpenAI.ResponseErrorVariant1? error,
             global::tryAGI.OpenAI.ResponseVariant3IncompleteDetails2? incompleteDetails,
+            global::tryAGI.OpenAI.Reasoning? reasoning,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? instructions,
             string? outputText,
             global::tryAGI.OpenAI.ResponseUsage? usage,
@@ -180,6 +196,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.Conversation22? conversation,
             int? maxOutputTokens)
         {
+            this.Truncation = truncation;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
             this.Status = status;
@@ -188,6 +205,7 @@ namespace tryAGI.OpenAI
             this.Error = error;
             this.IncompleteDetails = incompleteDetails;
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
+            this.Reasoning = reasoning;
             this.Instructions = instructions;
             this.OutputText = outputText;
             this.Usage = usage;

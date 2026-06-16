@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
     ///   size for a model, the request will fail with a 400 error.<br/>
     /// Default Value: disabled
     /// </summary>
-    public enum ResponsePropertiesTruncation2
+    public enum CreateResponseVariant3Truncation2
     {
         /// <summary>
         /// If the input to this Response exceeds
@@ -27,29 +27,29 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class ResponsePropertiesTruncation2Extensions
+    public static class CreateResponseVariant3Truncation2Extensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this ResponsePropertiesTruncation2 value)
+        public static string ToValueString(this CreateResponseVariant3Truncation2 value)
         {
             return value switch
             {
-                ResponsePropertiesTruncation2.Auto => "auto",
-                ResponsePropertiesTruncation2.Disabled => "disabled",
+                CreateResponseVariant3Truncation2.Auto => "auto",
+                CreateResponseVariant3Truncation2.Disabled => "disabled",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ResponsePropertiesTruncation2? ToEnum(string value)
+        public static CreateResponseVariant3Truncation2? ToEnum(string value)
         {
             return value switch
             {
-                "auto" => ResponsePropertiesTruncation2.Auto,
-                "disabled" => ResponsePropertiesTruncation2.Disabled,
+                "auto" => CreateResponseVariant3Truncation2.Auto,
+                "disabled" => CreateResponseVariant3Truncation2.Disabled,
                 _ => null,
             };
         }

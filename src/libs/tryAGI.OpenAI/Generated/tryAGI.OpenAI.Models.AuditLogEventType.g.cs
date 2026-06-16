@@ -159,11 +159,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        RoleBoundToResource,
+        /// <summary>
+        /// 
+        /// </summary>
         RoleCreated,
         /// <summary>
         /// 
         /// </summary>
         RoleDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
+        RoleUnboundFromResource,
         /// <summary>
         /// 
         /// </summary>
@@ -287,8 +295,10 @@ namespace tryAGI.OpenAI
                 AuditLogEventType.ResourceDeleted => "resource.deleted",
                 AuditLogEventType.RoleAssignmentCreated => "role.assignment.created",
                 AuditLogEventType.RoleAssignmentDeleted => "role.assignment.deleted",
+                AuditLogEventType.RoleBoundToResource => "role.bound_to_resource",
                 AuditLogEventType.RoleCreated => "role.created",
                 AuditLogEventType.RoleDeleted => "role.deleted",
+                AuditLogEventType.RoleUnboundFromResource => "role.unbound_from_resource",
                 AuditLogEventType.RoleUpdated => "role.updated",
                 AuditLogEventType.ScimDisabled => "scim.disabled",
                 AuditLogEventType.ScimEnabled => "scim.enabled",
@@ -354,8 +364,10 @@ namespace tryAGI.OpenAI
                 "resource.deleted" => AuditLogEventType.ResourceDeleted,
                 "role.assignment.created" => AuditLogEventType.RoleAssignmentCreated,
                 "role.assignment.deleted" => AuditLogEventType.RoleAssignmentDeleted,
+                "role.bound_to_resource" => AuditLogEventType.RoleBoundToResource,
                 "role.created" => AuditLogEventType.RoleCreated,
                 "role.deleted" => AuditLogEventType.RoleDeleted,
+                "role.unbound_from_resource" => AuditLogEventType.RoleUnboundFromResource,
                 "role.updated" => AuditLogEventType.RoleUpdated,
                 "scim.disabled" => AuditLogEventType.ScimDisabled,
                 "scim.enabled" => AuditLogEventType.ScimEnabled,

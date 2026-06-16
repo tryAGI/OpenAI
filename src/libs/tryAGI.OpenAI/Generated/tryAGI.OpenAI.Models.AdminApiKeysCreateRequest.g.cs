@@ -17,6 +17,14 @@ namespace tryAGI.OpenAI
         public required string Name { get; set; }
 
         /// <summary>
+        /// The number of seconds until the API key expires. Omit this field for a key that does not expire.<br/>
+        /// Example: 2592000
+        /// </summary>
+        /// <example>2592000</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_in_seconds")]
+        public int? ExpiresInSeconds { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -28,13 +36,19 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// Example: New Admin Key
         /// </param>
+        /// <param name="expiresInSeconds">
+        /// The number of seconds until the API key expires. Omit this field for a key that does not expire.<br/>
+        /// Example: 2592000
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AdminApiKeysCreateRequest(
-            string name)
+            string name,
+            int? expiresInSeconds)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.ExpiresInSeconds = expiresInSeconds;
         }
 
         /// <summary>

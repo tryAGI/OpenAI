@@ -13,6 +13,9 @@ namespace tryAGI.OpenAI
         /// <param name="actorIds"></param>
         /// <param name="actorEmails"></param>
         /// <param name="resourceIds"></param>
+        /// <param name="tenantOnly">
+        /// Default Value: false
+        /// </param>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
@@ -28,6 +31,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<string>? actorEmails = default,
             global::System.Collections.Generic.IList<string>? resourceIds = default,
+            bool? tenantOnly = default,
             int? limit = default,
             string? after = default,
             string? before = default,
@@ -42,6 +46,9 @@ namespace tryAGI.OpenAI
         /// <param name="actorIds"></param>
         /// <param name="actorEmails"></param>
         /// <param name="resourceIds"></param>
+        /// <param name="tenantOnly">
+        /// Default Value: false
+        /// </param>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
@@ -57,6 +64,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<string>? actorEmails = default,
             global::System.Collections.Generic.IList<string>? resourceIds = default,
+            bool? tenantOnly = default,
             int? limit = default,
             string? after = default,
             string? before = default,
@@ -72,6 +80,9 @@ namespace tryAGI.OpenAI
         /// <param name="actorIds"></param>
         /// <param name="actorEmails"></param>
         /// <param name="resourceIds"></param>
+        /// <param name="tenantOnly">
+        /// Default Value: false
+        /// </param>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
@@ -85,6 +96,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<string>? actorEmails = default,
             global::System.Collections.Generic.IList<string>? resourceIds = default,
+            bool? tenantOnly = default,
             int? limit = default,
             string? before = default,
             string? after = null,

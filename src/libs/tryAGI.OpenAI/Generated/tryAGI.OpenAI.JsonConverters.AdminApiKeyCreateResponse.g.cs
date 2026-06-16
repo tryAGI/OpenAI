@@ -36,6 +36,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
             var __score0 = 0;
             if (__jsonProps.Contains("created_at")) __score0++;
+            if (__jsonProps.Contains("expires_at")) __score0++;
             if (__jsonProps.Contains("id")) __score0++;
             if (__jsonProps.Contains("last_used_at")) __score0++;
             if (__jsonProps.Contains("name")) __score0++;

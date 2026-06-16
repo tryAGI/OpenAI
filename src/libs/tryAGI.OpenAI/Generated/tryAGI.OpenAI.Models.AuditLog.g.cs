@@ -261,6 +261,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role.bound_to_resource")]
+        public global::tryAGI.OpenAI.AuditLogRoleBoundToResource? RoleBoundToResource { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role.unbound_from_resource")]
+        public global::tryAGI.OpenAI.AuditLogRoleUnboundFromResource? RoleUnboundFromResource { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_account.created")]
         public global::tryAGI.OpenAI.AuditLogServiceAccountCreated? ServiceAccountCreated { get; set; }
 
@@ -490,6 +502,12 @@ namespace tryAGI.OpenAI
         /// <param name="roleAssignmentDeleted">
         /// The details for events with this `type`.
         /// </param>
+        /// <param name="roleBoundToResource">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="roleUnboundFromResource">
+        /// The details for events with this `type`.
+        /// </param>
         /// <param name="serviceAccountCreated">
         /// The details for events with this `type`.
         /// </param>
@@ -586,6 +604,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AuditLogRoleDeleted? roleDeleted,
             global::tryAGI.OpenAI.AuditLogRoleAssignmentCreated? roleAssignmentCreated,
             global::tryAGI.OpenAI.AuditLogRoleAssignmentDeleted? roleAssignmentDeleted,
+            global::tryAGI.OpenAI.AuditLogRoleBoundToResource? roleBoundToResource,
+            global::tryAGI.OpenAI.AuditLogRoleUnboundFromResource? roleUnboundFromResource,
             global::tryAGI.OpenAI.AuditLogServiceAccountCreated? serviceAccountCreated,
             global::tryAGI.OpenAI.AuditLogServiceAccountUpdated? serviceAccountUpdated,
             global::tryAGI.OpenAI.AuditLogServiceAccountDeleted? serviceAccountDeleted,
@@ -645,6 +665,8 @@ namespace tryAGI.OpenAI
             this.RoleDeleted = roleDeleted;
             this.RoleAssignmentCreated = roleAssignmentCreated;
             this.RoleAssignmentDeleted = roleAssignmentDeleted;
+            this.RoleBoundToResource = roleBoundToResource;
+            this.RoleUnboundFromResource = roleUnboundFromResource;
             this.ServiceAccountCreated = serviceAccountCreated;
             this.ServiceAccountUpdated = serviceAccountUpdated;
             this.ServiceAccountDeleted = serviceAccountDeleted;

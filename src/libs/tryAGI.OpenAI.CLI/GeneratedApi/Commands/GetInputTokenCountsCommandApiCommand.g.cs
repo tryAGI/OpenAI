@@ -43,12 +43,6 @@ internal static partial class GetInputTokenCountsCommandApiCommand
         Description = @"",
     };
 
-    private static Option<global::tryAGI.OpenAI.TruncationEnum?> Truncation { get; } = new(
-        name: @"--truncation")
-    {
-        Description = @"The truncation strategy to use for the model response. - `auto`: If the input to this Response exceeds the model's context window size, the model will truncate the response to fit the context window by dropping items from the beginning of the conversation. - `disabled` (default): If the input size will exceed the context window size for a model, the request will fail with a 400 error.",
-    };
-
     private static Option<string?> Instructions { get; } = new(
         name: @"--instructions")
     {
@@ -124,7 +118,6 @@ Returns an object with `object` set to `response.input_tokens` and an `input_tok
                         command.Options.Add(Tools);
                         command.Options.Add(Text);
                         command.Options.Add(Reasoning);
-                        command.Options.Add(Truncation);
                         command.Options.Add(Instructions);
                         command.Options.Add(Personality);
                         command.Options.Add(Conversation);
@@ -161,7 +154,6 @@ Returns an object with `object` set to `response.input_tokens` and an `input_tok
                         var tools = CliRuntime.WasSpecified(parseResult, Tools) ? parseResult.GetValue(Tools) : (__requestBase is { } __ToolsBaseValue ? __ToolsBaseValue.Tools : default);
                         var text = CliRuntime.WasSpecified(parseResult, Text) ? parseResult.GetValue(Text) : (__requestBase is { } __TextBaseValue ? __TextBaseValue.Text : default);
                         var reasoning = CliRuntime.WasSpecified(parseResult, Reasoning) ? parseResult.GetValue(Reasoning) : (__requestBase is { } __ReasoningBaseValue ? __ReasoningBaseValue.Reasoning : default);
-                        var truncation = CliRuntime.WasSpecified(parseResult, Truncation) ? parseResult.GetValue(Truncation) : (__requestBase is { } __TruncationBaseValue ? __TruncationBaseValue.Truncation : default);
                         var instructions = CliRuntime.WasSpecified(parseResult, Instructions) ? parseResult.GetValue(Instructions) : (__requestBase is { } __InstructionsBaseValue ? __InstructionsBaseValue.Instructions : default);
                         var personality = CliRuntime.WasSpecified(parseResult, Personality) ? parseResult.GetValue(Personality) : (__requestBase is { } __PersonalityBaseValue ? __PersonalityBaseValue.Personality : default);
                         var conversation = CliRuntime.WasSpecified(parseResult, Conversation) ? parseResult.GetValue(Conversation) : (__requestBase is { } __ConversationBaseValue ? __ConversationBaseValue.Conversation : default);
@@ -177,7 +169,6 @@ Returns an object with `object` set to `response.input_tokens` and an `input_tok
                                     tools: tools,
                                     text: text,
                                     reasoning: reasoning,
-                                    truncation: truncation,
                                     instructions: instructions,
                                     personality: personality,
                                     conversation: conversation,

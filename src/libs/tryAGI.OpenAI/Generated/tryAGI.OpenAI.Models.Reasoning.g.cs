@@ -25,6 +25,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("context")]
+        public global::tryAGI.OpenAI.ReasoningContext2? Context { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generate_summary")]
         public global::tryAGI.OpenAI.ReasoningGenerateSummary2? GenerateSummary { get; set; }
 
@@ -39,6 +45,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="effort"></param>
         /// <param name="summary"></param>
+        /// <param name="context"></param>
         /// <param name="generateSummary"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -46,10 +53,12 @@ namespace tryAGI.OpenAI
         public Reasoning(
             global::tryAGI.OpenAI.ReasoningEffortEnum? effort,
             global::tryAGI.OpenAI.ReasoningSummary2? summary,
+            global::tryAGI.OpenAI.ReasoningContext2? context,
             global::tryAGI.OpenAI.ReasoningGenerateSummary2? generateSummary)
         {
             this.Effort = effort;
             this.Summary = summary;
+            this.Context = context;
             this.GenerateSummary = generateSummary;
         }
 

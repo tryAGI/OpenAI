@@ -37,11 +37,16 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// Example: New Admin Key
         /// </param>
+        /// <param name="expiresInSeconds">
+        /// The number of seconds until the API key expires. Omit this field for a key that does not expire.<br/>
+        /// Example: 2592000
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AdminApiKeyCreateResponse> CreateAdminApiKeyAsync(
             string name,
+            int? expiresInSeconds = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
