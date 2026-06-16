@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+install_autosdk_cli() {
+  dotnet tool update --global autosdk.cli --prerelease >/dev/null 2>&1 || \
+    dotnet tool install --global autosdk.cli --prerelease
+}
+
+fetch_spec() {
+  curl "$@" \
+    --fail --silent --show-error --location \
+    --retry 5 --retry-delay 10 --retry-all-errors \
+    --connect-timeout 30 --max-time 300
+}
+
 # OpenAPI spec: https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml (+ AsyncAPI)
 
 use_pinned_spec=false
@@ -18,10 +30,9 @@ done
 if [[ "${TRYAGI_PINNED_SPEC:-0}" == "1" ]]; then
   use_pinned_spec=true
 fi
-
-dotnet tool update --global autosdk.cli --prerelease 2>/dev/null || dotnet tool install --global autosdk.cli --prerelease
+install_autosdk_cli
 if [[ "$use_pinned_spec" == false ]]; then
-  curl --fail --silent --show-error -L -o openapi.yaml https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml
+  fetch_spec --fail --silent --show-error -L -o openapi.yaml https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml
 elif [[ ! -f openapi.yaml ]]; then
   echo "error: --pinned-spec requested but openapi.yaml does not exist." >&2
   exit 1
