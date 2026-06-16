@@ -24,7 +24,7 @@
   
   <ItemGroup>
     <PackageReference Include="CSharpToJsonSchema" Version="3.10.4" />
-    <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="10.6.0" />
+    <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="10.7.0" />
     <PackageReference Include="Tiktoken" Version="3.1.5" />
   </ItemGroup>
 
