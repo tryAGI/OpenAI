@@ -29,12 +29,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
-        public global::tryAGI.OpenAI.Reasoning? Reasoning { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("background")]
         public bool? Background { get; set; }
 
@@ -89,12 +83,6 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.PromptVariant1? Prompt { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("truncation")]
-        public global::tryAGI.OpenAI.ResponsePropertiesTruncation2? Truncation { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -111,7 +99,6 @@ namespace tryAGI.OpenAI
         /// to browse and compare available models.<br/>
         /// Example: gpt-5.1
         /// </param>
-        /// <param name="reasoning"></param>
         /// <param name="background"></param>
         /// <param name="maxToolCalls"></param>
         /// <param name="text">
@@ -143,32 +130,27 @@ namespace tryAGI.OpenAI
         /// the model can call.
         /// </param>
         /// <param name="prompt"></param>
-        /// <param name="truncation"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseProperties(
             string? previousResponseId,
             global::tryAGI.OpenAI.ModelIdsResponses? model,
-            global::tryAGI.OpenAI.Reasoning? reasoning,
             bool? background,
             int? maxToolCalls,
             global::tryAGI.OpenAI.ResponseTextParam? text,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool>? tools,
             global::tryAGI.OpenAI.ToolChoiceParam? toolChoice,
-            global::tryAGI.OpenAI.PromptVariant1? prompt,
-            global::tryAGI.OpenAI.ResponsePropertiesTruncation2? truncation)
+            global::tryAGI.OpenAI.PromptVariant1? prompt)
         {
             this.PreviousResponseId = previousResponseId;
             this.Model = model;
-            this.Reasoning = reasoning;
             this.Background = background;
             this.MaxToolCalls = maxToolCalls;
             this.Text = text;
             this.Tools = tools;
             this.ToolChoice = toolChoice;
             this.Prompt = prompt;
-            this.Truncation = truncation;
         }
 
         /// <summary>

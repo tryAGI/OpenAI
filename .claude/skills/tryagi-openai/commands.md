@@ -373,6 +373,8 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 | `delete-project-spend-alert` | `DELETE /organization/projects/{project_id}/spend_alerts/{alert_id}` | Deletes a project spend alert. |
 | `list-organization-spend-alerts` | `GET /organization/spend_alerts` | Lists organization spend alerts. |
 | `list-project-spend-alerts` | `GET /organization/projects/{project_id}/spend_alerts` | Lists project spend alerts. |
+| `retrieve-organization-spend-alert` | `GET /organization/spend_alerts/{alert_id}` | Retrieves an organization spend alert. |
+| `retrieve-project-spend-alert` | `GET /organization/projects/{project_id}/spend_alerts/{alert_id}` | Retrieves a project spend alert. |
 | `update-organization-spend-alert` | `POST /organization/spend_alerts/{alert_id}` | Updates an organization spend alert. |
 | `update-project-spend-alert` | `POST /organization/projects/{project_id}/spend_alerts/{alert_id}` | Updates a project spend alert. |
 

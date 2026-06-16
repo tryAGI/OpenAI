@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -8,6 +10,19 @@ namespace tryAGI.OpenAI
     /// </summary>
     public sealed partial class CreateResponseVariant3
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("truncation")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::tryAGI.OpenAI.CreateResponseVariant3Truncation2? Truncation { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
+        public global::tryAGI.OpenAI.Reasoning? Reasoning { get; set; }
+
         /// <summary>
         /// Text, image, or file inputs to the model, used to generate a response.<br/>
         /// Learn more:<br/>
@@ -90,6 +105,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateResponseVariant3" /> class.
         /// </summary>
+        /// <param name="reasoning"></param>
         /// <param name="input">
         /// Text, image, or file inputs to the model, used to generate a response.<br/>
         /// Learn more:<br/>
@@ -113,6 +129,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateResponseVariant3(
+            global::tryAGI.OpenAI.Reasoning? reasoning,
             global::tryAGI.OpenAI.InputParam? input,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? include,
             bool? parallelToolCalls,
@@ -125,6 +142,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContextManagementParam>? contextManagement,
             int? maxOutputTokens)
         {
+            this.Reasoning = reasoning;
             this.Input = input;
             this.Include = include;
             this.ParallelToolCalls = parallelToolCalls;

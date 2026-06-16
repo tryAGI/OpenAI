@@ -40,8 +40,12 @@ internal static partial class AuditLogsListAuditLogsCommandApiCommand
     private static Option<global::System.Collections.Generic.IList<string>?> ResourceIds { get; } = new(
         name: @"--resource-ids")
     {
-        Description = @"Return only events performed on these targets. For example, a project ID updated.",
+        Description = @"Return only events performed on these targets. For example, a project ID updated. For ChatGPT connector role events, use the workspace connector resource ID shown in `details.id`, such as `<workspace_id>__<connector_id>`.",
     };
+
+    private static Option<bool?> TenantOnly { get; } = CliRuntime.CreateNullableBoolOption(
+        name: @"--tenant-only",
+        description: @"Return only tenant-scoped events associated with this organization. Required for tenant-scoped events such as `role.bound_to_resource` and `role.unbound_from_resource`. When `true`, all supplied event types must be tenant-scoped.");
 
     private static Option<int?> Limit { get; } = new(
         name: @"--limit")
@@ -93,6 +97,7 @@ internal static partial class AuditLogsListAuditLogsCommandApiCommand
                         command.Options.Add(ActorIds);
                         command.Options.Add(ActorEmails);
                         command.Options.Add(ResourceIds);
+                        command.Options.Add(TenantOnly);
                         command.Options.Add(Limit);
                         command.Options.Add(After);
                         command.Options.Add(Before);
@@ -107,6 +112,7 @@ internal static partial class AuditLogsListAuditLogsCommandApiCommand
                         var actorIds = parseResult.GetValue(ActorIds);
                         var actorEmails = parseResult.GetValue(ActorEmails);
                         var resourceIds = parseResult.GetValue(ResourceIds);
+                        var tenantOnly = parseResult.GetValue(TenantOnly);
                         var limit = parseResult.GetValue(Limit);
                         var after = parseResult.GetValue(After);
                         var before = parseResult.GetValue(Before);
@@ -120,6 +126,7 @@ internal static partial class AuditLogsListAuditLogsCommandApiCommand
                                     actorIds: actorIds,
                                     actorEmails: actorEmails,
                                     resourceIds: resourceIds,
+                                    tenantOnly: tenantOnly,
                                     limit: limit,
                                     after: after,
                                     before: before,

@@ -3,10 +3,10 @@
 namespace tryAGI.OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class ResponsePropertiesTruncation2JsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.ResponsePropertiesTruncation2>
+    public sealed class AuditLogRoleBoundToResourceSourceNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.AuditLogRoleBoundToResourceSource?>
     {
         /// <inheritdoc />
-        public override global::tryAGI.OpenAI.ResponsePropertiesTruncation2 Read(
+        public override global::tryAGI.OpenAI.AuditLogRoleBoundToResourceSource? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::tryAGI.OpenAI.ResponsePropertiesTruncation2Extensions.ToEnum(stringValue) ?? default;
+                        return global::tryAGI.OpenAI.AuditLogRoleBoundToResourceSourceExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace tryAGI.OpenAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::tryAGI.OpenAI.ResponsePropertiesTruncation2)numValue;
+                    return (global::tryAGI.OpenAI.AuditLogRoleBoundToResourceSource)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::tryAGI.OpenAI.ResponsePropertiesTruncation2);
+                    return default(global::tryAGI.OpenAI.AuditLogRoleBoundToResourceSource?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace tryAGI.OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::tryAGI.OpenAI.ResponsePropertiesTruncation2 value,
+            global::tryAGI.OpenAI.AuditLogRoleBoundToResourceSource? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::tryAGI.OpenAI.ResponsePropertiesTruncation2Extensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::tryAGI.OpenAI.AuditLogRoleBoundToResourceSourceExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

@@ -41,13 +41,11 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("model")) __score1++;
             if (__jsonProps.Contains("previous_response_id")) __score1++;
             if (__jsonProps.Contains("prompt")) __score1++;
-            if (__jsonProps.Contains("reasoning")) __score1++;
             if (__jsonProps.Contains("text")) __score1++;
             if (__jsonProps.Contains("text.format")) __score1++;
             if (__jsonProps.Contains("text.verbosity")) __score1++;
             if (__jsonProps.Contains("tool_choice")) __score1++;
             if (__jsonProps.Contains("tools")) __score1++;
-            if (__jsonProps.Contains("truncation")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("context_management")) __score2++;
             if (__jsonProps.Contains("conversation")) __score2++;
@@ -57,9 +55,11 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("max_output_tokens")) __score2++;
             if (__jsonProps.Contains("moderation")) __score2++;
             if (__jsonProps.Contains("parallel_tool_calls")) __score2++;
+            if (__jsonProps.Contains("reasoning")) __score2++;
             if (__jsonProps.Contains("store")) __score2++;
             if (__jsonProps.Contains("stream")) __score2++;
             if (__jsonProps.Contains("stream_options")) __score2++;
+            if (__jsonProps.Contains("truncation")) __score2++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }

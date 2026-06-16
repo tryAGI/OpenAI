@@ -14030,6 +14030,7 @@ paths:
                   "name": "Main Admin Key",
                   "redacted_value": "sk-admin...def",
                   "created_at": 1711471533,
+                  "expires_at": 1714063533,
                   "last_used_at": 1711471534,
                   "owner": {
                     "type": "service_account",
@@ -14063,6 +14064,14 @@ paths:
                 name:
                   type: string
                   example: New Admin Key
+                expires_in_seconds:
+                  type: integer
+                  minimum: 1
+                  maximum: 31536000
+                  example: 2592000
+                  description: >-
+                    The number of seconds until the API key expires. Omit this
+                    field for a key that does not expire.
       responses:
         '200':
           description: The newly created admin API key.
@@ -14081,7 +14090,8 @@ paths:
                 -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
                 -H "Content-Type: application/json" \
                 -d '{
-                    "name": "New Admin Key"
+                    "name": "New Admin Key",
+                    "expires_in_seconds": 2592000
                 }'
             node.js: >-
               import OpenAI from 'openai';
@@ -14157,6 +14167,7 @@ paths:
               "name": "New Admin Key",
               "redacted_value": "sk-admin...xyz",
               "created_at": 1711471533,
+              "expires_at": 1714063533,
               "last_used_at": 1711471534,
               "owner": {
                 "type": "user",
@@ -14472,12 +14483,25 @@ paths:
           in: query
           description: >-
             Return only events performed on these targets. For example, a
-            project ID updated.
+            project ID updated. For ChatGPT connector role events, use the
+            workspace connector resource ID shown in `details.id`, such as
+            `<workspace_id>__<connector_id>`.
           required: false
           schema:
             type: array
             items:
               type: string
+        - name: tenant_only
+          in: query
+          description: >-
+            Return only tenant-scoped events associated with this organization.
+            Required for tenant-scoped events such as `role.bound_to_resource`
+            and `role.unbound_from_resource`. When `true`, all supplied event
+            types must be tenant-scoped.
+          required: false
+          schema:
+            type: boolean
+            default: false
         - name: limit
           in: query
           description: >
@@ -21913,6 +21937,133 @@ paths:
                 }
             }
   /organization/projects/{project_id}/spend_alerts/{alert_id}:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Retrieves a project spend alert.
+      operationId: retrieve-project-spend-alert
+      tags:
+        - Spend alerts
+      parameters:
+        - name: project_id
+          in: path
+          description: The ID of the project.
+          required: true
+          schema:
+            type: string
+        - name: alert_id
+          in: path
+          description: The ID of the spend alert to retrieve.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Project spend alert retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectSpendAlert'
+      x-oaiMeta:
+        name: Retrieve project spend alert
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/organization/projects/proj_abc/spend_alerts/alert_abc123
+              \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const projectSpendAlert = await
+              client.admin.organization.projects.spendAlerts.retrieve(
+                'alert_id',
+                { project_id: 'project_id' },
+              );
+
+
+              console.log(projectSpendAlert.id);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              project_spend_alert =
+              client.admin.organization.projects.spend_alerts.retrieve(
+                  alert_id="alert_id",
+                  project_id="project_id",
+              )
+
+              print(project_spend_alert.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tprojectSpendAlert, err := client.Admin.Organization.Projects.SpendAlerts.Get(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"alert_id\",\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", projectSpendAlert.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.projects.spendalerts.ProjectSpendAlert;
+
+              import
+              com.openai.models.admin.organization.projects.spendalerts.SpendAlertRetrieveParams;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      SpendAlertRetrieveParams params = SpendAlertRetrieveParams.builder()
+                          .projectId("project_id")
+                          .alertId("alert_id")
+                          .build();
+                      ProjectSpendAlert projectSpendAlert = client.admin().organization().projects().spendAlerts().retrieve(params);
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              project_spend_alert =
+              openai.admin.organization.projects.spend_alerts.retrieve("alert_id",
+              project_id: "project_id")
+
+
+              puts(project_spend_alert)
+          response: |
+            {
+                "id": "alert_abc123",
+                "object": "project.spend_alert",
+                "threshold_amount": 150000,
+                "currency": "USD",
+                "interval": "month",
+                "notification_channel": {
+                    "type": "email",
+                    "recipients": ["finance@example.com"],
+                    "subject_prefix": "OpenAI spend alert"
+                }
+            }
     post:
       security:
         - AdminApiKeyAuth: []
@@ -23673,6 +23824,117 @@ paths:
                 }
             }
   /organization/spend_alerts/{alert_id}:
+    get:
+      security:
+        - AdminApiKeyAuth: []
+      summary: Retrieves an organization spend alert.
+      operationId: retrieve-organization-spend-alert
+      tags:
+        - Spend alerts
+      parameters:
+        - name: alert_id
+          in: path
+          description: The ID of the spend alert to retrieve.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Organization spend alert retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrganizationSpendAlert'
+      x-oaiMeta:
+        name: Retrieve organization spend alert
+        group: administration
+        examples:
+          request:
+            curl: >
+              curl
+              https://api.openai.com/v1/organization/spend_alerts/alert_abc123 \
+                -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
+                -H "Content-Type: application/json"
+            node.js: >-
+              import OpenAI from 'openai';
+
+
+              const client = new OpenAI({
+                adminAPIKey: process.env['OPENAI_ADMIN_KEY'], // This is the default and can be omitted
+              });
+
+
+              const organizationSpendAlert = await
+              client.admin.organization.spendAlerts.retrieve('alert_id');
+
+
+              console.log(organizationSpendAlert.id);
+            python: >-
+              import os
+
+              from openai import OpenAI
+
+
+              client = OpenAI(
+                  admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
+              )
+
+              organization_spend_alert =
+              client.admin.organization.spend_alerts.retrieve(
+                  "alert_id",
+              )
+
+              print(organization_spend_alert.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\torganizationSpendAlert, err := client.Admin.Organization.SpendAlerts.Get(context.TODO(), \"alert_id\")\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", organizationSpendAlert.ID)\n}\n"
+            java: >-
+              package com.openai.example;
+
+
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import
+              com.openai.models.admin.organization.spendalerts.OrganizationSpendAlert;
+
+              import
+              com.openai.models.admin.organization.spendalerts.SpendAlertRetrieveParams;
+
+
+              public final class Main {
+                  private Main() {}
+
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+
+                      OrganizationSpendAlert organizationSpendAlert = client.admin().organization().spendAlerts().retrieve("alert_id");
+                  }
+              }
+            ruby: >-
+              require "openai"
+
+
+              openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
+
+
+              organization_spend_alert =
+              openai.admin.organization.spend_alerts.retrieve("alert_id")
+
+
+              puts(organization_spend_alert)
+          response: |
+            {
+                "id": "alert_abc123",
+                "object": "organization.spend_alert",
+                "threshold_amount": 150000,
+                "currency": "USD",
+                "interval": "month",
+                "notification_channel": {
+                    "type": "email",
+                    "recipients": ["finance@example.com"],
+                    "subject_prefix": "OpenAI spend alert"
+                }
+            }
     post:
       security:
         - AdminApiKeyAuth: []
@@ -39864,9 +40126,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/TokenCountsBody'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/TokenCountsBody'
       responses:
         '200':
           description: Success
@@ -39971,9 +40230,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/CompactResponseMethodPublicBody'
-          application/x-www-form-urlencoded:
             schema:
               $ref: '#/components/schemas/CompactResponseMethodPublicBody'
       responses:
@@ -40455,9 +40711,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/SetDefaultSkillVersionBody'
-          application/x-www-form-urlencoded:
             schema:
               $ref: '#/components/schemas/SetDefaultSkillVersionBody'
       responses:
@@ -42201,6 +42454,13 @@ components:
           format: unixtime
           example: 1711471533
           description: The Unix timestamp (in seconds) of when the API key was created
+        expires_at:
+          anyOf:
+            - type: integer
+              format: unixtime
+              example: 1714063533
+              description: The Unix timestamp (in seconds) of when the API key expires
+            - type: 'null'
         last_used_at:
           anyOf:
             - type: integer
@@ -42242,6 +42502,7 @@ components:
         - object
         - redacted_value
         - created_at
+        - expires_at
         - id
         - owner
       x-oaiMeta:
@@ -43463,6 +43724,101 @@ components:
             resource_type:
               type: string
               description: The type of resource the role assignment was scoped to.
+        role.bound_to_resource:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: >-
+                The ID of the resource the role was bound to. ChatGPT workspace
+                connector resources use `<workspace_id>__<connector_id>`.
+            role_id:
+              type: string
+              description: The ID of the role that was bound to the resource.
+            resource_id:
+              type: string
+              description: The ID of the resource the role was bound to.
+            resource_type:
+              type: string
+              description: The type of resource the role was bound to.
+            permissions:
+              type: array
+              items:
+                type: string
+              description: The permissions granted to the role for the resource.
+            workspace_id:
+              type: string
+              description: The workspace ID for a ChatGPT workspace connector resource.
+            connector_id:
+              type: string
+              description: The connector ID for a ChatGPT workspace connector resource.
+            connector_name:
+              type: string
+              description: >-
+                The connector display name for a ChatGPT workspace connector
+                resource, or the connector ID when the display name could not be
+                resolved.
+            enabled:
+              type: boolean
+              description: Whether the connector is enabled for the role.
+            source:
+              type: string
+              description: The connector role mutation path that produced the event.
+              enum:
+                - role_toggle
+                - role_connector_update
+                - role_delete
+                - workspace_permissions
+                - connector_publish
+        role.unbound_from_resource:
+          type: object
+          description: The details for events with this `type`.
+          properties:
+            id:
+              type: string
+              description: >-
+                The ID of the resource the role was unbound from. ChatGPT
+                workspace connector resources use
+                `<workspace_id>__<connector_id>`.
+            role_id:
+              type: string
+              description: The ID of the role that was unbound from the resource.
+            resource_id:
+              type: string
+              description: The ID of the resource the role was unbound from.
+            resource_type:
+              type: string
+              description: The type of resource the role was unbound from.
+            permissions:
+              type: array
+              items:
+                type: string
+              description: The permissions remaining for the role after the change.
+            workspace_id:
+              type: string
+              description: The workspace ID for a ChatGPT workspace connector resource.
+            connector_id:
+              type: string
+              description: The connector ID for a ChatGPT workspace connector resource.
+            connector_name:
+              type: string
+              description: >-
+                The connector display name for a ChatGPT workspace connector
+                resource, or the connector ID when the display name could not be
+                resolved.
+            enabled:
+              type: boolean
+              description: Whether the connector is enabled for the role.
+            source:
+              type: string
+              description: The connector role mutation path that produced the event.
+              enum:
+                - role_toggle
+                - role_connector_update
+                - role_delete
+                - workspace_permissions
+                - connector_publish
         service_account.created:
           type: object
           description: The details for events with this `type`.
@@ -43815,6 +44171,8 @@ components:
         - role.deleted
         - role.assignment.created
         - role.assignment.deleted
+        - role.bound_to_resource
+        - role.unbound_from_resource
         - scim.enabled
         - scim.disabled
         - service_account.created
@@ -49824,6 +50182,28 @@ components:
         - $ref: '#/components/schemas/ResponseProperties'
         - type: object
           properties:
+            truncation:
+              deprecated: true
+              anyOf:
+                - type: string
+                  description: >
+                    The truncation strategy to use for the model response.
+
+                    - `auto`: If the input to this Response exceeds
+                      the model's context window size, the model will truncate the
+                      response to fit the context window by dropping items from the beginning of the conversation.
+                    - `disabled` (default): If the input size will exceed the
+                    context window
+                      size for a model, the request will fail with a 400 error.
+                  enum:
+                    - auto
+                    - disabled
+                  default: disabled
+                - type: 'null'
+            reasoning:
+              anyOf:
+                - $ref: '#/components/schemas/Reasoning'
+                - type: 'null'
             input:
               $ref: '#/components/schemas/InputParam'
             include:
@@ -70804,6 +71184,22 @@ components:
                 - concise
                 - detailed
             - type: 'null'
+        context:
+          anyOf:
+            - type: string
+              description: >
+                Controls which reasoning items are rendered back to the model on
+                later turns.
+
+                When returned on a response, this is the effective reasoning
+                context mode
+
+                used for the response.
+              enum:
+                - auto
+                - current_turn
+                - all_turns
+            - type: 'null'
         generate_summary:
           anyOf:
             - type: string
@@ -70929,6 +71325,23 @@ components:
         - $ref: '#/components/schemas/ResponseProperties'
         - type: object
           properties:
+            truncation:
+              anyOf:
+                - type: string
+                  description: >
+                    The truncation strategy to use for the model response.
+
+                    - `auto`: If the input to this Response exceeds
+                      the model's context window size, the model will truncate the
+                      response to fit the context window by dropping items from the beginning of the conversation.
+                    - `disabled` (default): If the input size will exceed the
+                    context window
+                      size for a model, the request will fail with a 400 error.
+                  enum:
+                    - auto
+                    - disabled
+                  default: disabled
+                - type: 'null'
             id:
               type: string
               description: |
@@ -70999,6 +71412,10 @@ components:
                   supported in SDKs.
               items:
                 $ref: '#/components/schemas/OutputItem'
+            reasoning:
+              anyOf:
+                - $ref: '#/components/schemas/Reasoning'
+                - type: 'null'
             instructions:
               anyOf:
                 - description: >
@@ -71117,6 +71534,7 @@ components:
         reasoning:
           effort: null
           summary: null
+          context: null
         store: true
         temperature: 1
         text:
@@ -73192,10 +73610,6 @@ components:
 
             to browse and compare available models.
           $ref: '#/components/schemas/ModelIdsResponses'
-        reasoning:
-          anyOf:
-            - $ref: '#/components/schemas/Reasoning'
-            - type: 'null'
         background:
           anyOf:
             - type: boolean
@@ -73221,23 +73635,6 @@ components:
           $ref: '#/components/schemas/ToolChoiceParam'
         prompt:
           $ref: '#/components/schemas/Prompt'
-        truncation:
-          anyOf:
-            - type: string
-              description: >
-                The truncation strategy to use for the model response.
-
-                - `auto`: If the input to this Response exceeds
-                  the model's context window size, the model will truncate the
-                  response to fit the context window by dropping items from the beginning of the conversation.
-                - `disabled` (default): If the input size will exceed the
-                context window
-                  size for a model, the request will fail with a 400 error.
-              enum:
-                - auto
-                - disabled
-              default: disabled
-            - type: 'null'
     ResponseQueuedEvent:
       type: object
       title: ResponseQueuedEvent
@@ -83682,6 +84079,7 @@ components:
             dropping items from the beginning of the conversation. - `disabled`
             (default): If the input size will exceed the context window size for
             a model, the request will fail with a 400 error.
+          deprecated: true
         instructions:
           anyOf:
             - type: string

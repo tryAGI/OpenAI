@@ -15,6 +15,8 @@ internal static class SpendAlertsApiGroupCommand
                          command.Subcommands.Add(SpendAlertsDeleteProjectSpendAlertCommandApiCommand.Create());
                          command.Subcommands.Add(SpendAlertsListOrganizationSpendAlertsCommandApiCommand.Create());
                          command.Subcommands.Add(SpendAlertsListProjectSpendAlertsCommandApiCommand.Create());
+                         command.Subcommands.Add(SpendAlertsRetrieveOrganizationSpendAlertCommandApiCommand.Create());
+                         command.Subcommands.Add(SpendAlertsRetrieveProjectSpendAlertCommandApiCommand.Create());
                          command.Subcommands.Add(SpendAlertsUpdateOrganizationSpendAlertCommandApiCommand.Create());
                          command.Subcommands.Add(SpendAlertsUpdateProjectSpendAlertCommandApiCommand.Create());
         return command;

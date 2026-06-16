@@ -53,6 +53,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public int? ExpiresAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
         public int? LastUsedAt { get; set; }
 
@@ -92,6 +98,7 @@ namespace tryAGI.OpenAI
         /// The name of the API key<br/>
         /// Example: Administration Key
         /// </param>
+        /// <param name="expiresAt"></param>
         /// <param name="lastUsedAt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -103,6 +110,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AdminApiKeyOwner owner,
             global::tryAGI.OpenAI.AdminApiKeyObject @object,
             string? name,
+            int? expiresAt,
             int? lastUsedAt)
         {
             this.Object = @object;
@@ -110,6 +118,7 @@ namespace tryAGI.OpenAI
             this.Name = name;
             this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));
             this.CreatedAt = createdAt;
+            this.ExpiresAt = expiresAt;
             this.LastUsedAt = lastUsedAt;
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
         }

@@ -54,7 +54,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `response` | 5 |  |
 | `role` | 10 |  |
 | `skill` | 11 |  |
-| `spend-alert` | 8 |  |
+| `spend-alert` | 10 |  |
 | `upload` | 4 | Use Uploads to upload large files in multiple parts. |
 | `usage` | 11 |  |
 | `user` | 4 |  |

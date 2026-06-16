@@ -33,6 +33,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? actorIds,
             global::System.Collections.Generic.IList<string>? actorEmails,
             global::System.Collections.Generic.IList<string>? resourceIds,
+            ref bool? tenantOnly,
             ref int? limit,
             ref string? after,
             ref string? before);
@@ -45,6 +46,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? actorIds,
             global::System.Collections.Generic.IList<string>? actorEmails,
             global::System.Collections.Generic.IList<string>? resourceIds,
+            bool? tenantOnly,
             int? limit,
             string? after,
             string? before);
@@ -66,6 +68,9 @@ namespace tryAGI.OpenAI
         /// <param name="actorIds"></param>
         /// <param name="actorEmails"></param>
         /// <param name="resourceIds"></param>
+        /// <param name="tenantOnly">
+        /// Default Value: false
+        /// </param>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
@@ -81,6 +86,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<string>? actorEmails = default,
             global::System.Collections.Generic.IList<string>? resourceIds = default,
+            bool? tenantOnly = default,
             int? limit = default,
             string? after = default,
             string? before = default,
@@ -94,6 +100,7 @@ namespace tryAGI.OpenAI
                 actorIds: actorIds,
                 actorEmails: actorEmails,
                 resourceIds: resourceIds,
+                tenantOnly: tenantOnly,
                 limit: limit,
                 after: after,
                 before: before,
@@ -112,6 +119,9 @@ namespace tryAGI.OpenAI
         /// <param name="actorIds"></param>
         /// <param name="actorEmails"></param>
         /// <param name="resourceIds"></param>
+        /// <param name="tenantOnly">
+        /// Default Value: false
+        /// </param>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
@@ -127,6 +137,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<string>? actorEmails = default,
             global::System.Collections.Generic.IList<string>? resourceIds = default,
+            bool? tenantOnly = default,
             int? limit = default,
             string? after = default,
             string? before = default,
@@ -143,6 +154,7 @@ namespace tryAGI.OpenAI
                 actorIds: actorIds,
                 actorEmails: actorEmails,
                 resourceIds: resourceIds,
+                tenantOnly: ref tenantOnly,
                 limit: ref limit,
                 after: ref after,
                 before: ref before);
@@ -183,6 +195,7 @@ namespace tryAGI.OpenAI
                                 .AddOptionalParameter("actor_ids[]", actorIds, delimiter: ",", explode: true)
                                 .AddOptionalParameter("actor_emails[]", actorEmails, delimiter: ",", explode: true)
                                 .AddOptionalParameter("resource_ids[]", resourceIds, delimiter: ",", explode: true)
+                                .AddOptionalParameter("tenant_only", tenantOnly?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("after", after)
                                 .AddOptionalParameter("before", before)
@@ -233,6 +246,7 @@ namespace tryAGI.OpenAI
                     actorIds: actorIds,
                     actorEmails: actorEmails,
                     resourceIds: resourceIds,
+                    tenantOnly: tenantOnly,
                     limit: limit,
                     after: after,
                     before: before);
@@ -522,6 +536,9 @@ namespace tryAGI.OpenAI
         /// <param name="actorIds"></param>
         /// <param name="actorEmails"></param>
         /// <param name="resourceIds"></param>
+        /// <param name="tenantOnly">
+        /// Default Value: false
+        /// </param>
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
@@ -535,6 +552,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string>? actorIds = default,
             global::System.Collections.Generic.IList<string>? actorEmails = default,
             global::System.Collections.Generic.IList<string>? resourceIds = default,
+            bool? tenantOnly = default,
             int? limit = default,
             string? before = default,
             string? after = null,
@@ -548,6 +566,7 @@ namespace tryAGI.OpenAI
                     actorIds: actorIds,
                     actorEmails: actorEmails,
                     resourceIds: resourceIds,
+                    tenantOnly: tenantOnly,
                     limit: limit,
                     after: __cursor,
                     before: before,
