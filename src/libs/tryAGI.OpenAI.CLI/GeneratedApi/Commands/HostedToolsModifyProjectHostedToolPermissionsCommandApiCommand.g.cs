@@ -89,60 +89,60 @@ internal static partial class HostedToolsModifyProjectHostedToolPermissionsComma
                             cancellationToken).ConfigureAwait(false);
                         var projectId = parseResult.GetRequiredValue(ProjectId);
 
-                        var __fileSearchBase = __requestBase is { } __FileSearchBaseValue ? __FileSearchBaseValue.FileSearch : default;                        var fileSearchEnabled = parseResult.GetValue(FileSearchOptions.Enabled);
-                        var __fileSearchSpecified = CliRuntime.WasSpecified(parseResult, FileSearchOptions.Enabled);
+                        var __FileSearchBase = __requestBase is { } __FileSearchBaseValue ? __FileSearchBaseValue.FileSearch : default;                        var fileSearchEnabled = parseResult.GetValue(FileSearchOptions.Enabled);
+                        var __FileSearchSpecified = CliRuntime.WasSpecified(parseResult, FileSearchOptions.Enabled);
                         var fileSearch =
-                            __fileSearchSpecified || __fileSearchBase is not null
+                            __FileSearchSpecified || __FileSearchBase is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
 	                                Enabled = fileSearchEnabled!,
 
                                 }
-                                : __fileSearchBase;
+                                : __FileSearchBase;
 
-                        var __webSearchBase = __requestBase is { } __WebSearchBaseValue ? __WebSearchBaseValue.WebSearch : default;                        var webSearchEnabled = parseResult.GetValue(WebSearchOptions.Enabled);
-                        var __webSearchSpecified = CliRuntime.WasSpecified(parseResult, WebSearchOptions.Enabled);
+                        var __WebSearchBase = __requestBase is { } __WebSearchBaseValue ? __WebSearchBaseValue.WebSearch : default;                        var webSearchEnabled = parseResult.GetValue(WebSearchOptions.Enabled);
+                        var __WebSearchSpecified = CliRuntime.WasSpecified(parseResult, WebSearchOptions.Enabled);
                         var webSearch =
-                            __webSearchSpecified || __webSearchBase is not null
+                            __WebSearchSpecified || __WebSearchBase is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
 	                                Enabled = webSearchEnabled!,
 
                                 }
-                                : __webSearchBase;
+                                : __WebSearchBase;
 
-                        var __imageGenerationBase = __requestBase is { } __ImageGenerationBaseValue ? __ImageGenerationBaseValue.ImageGeneration : default;                        var imageGenerationEnabled = parseResult.GetValue(ImageGenerationOptions.Enabled);
-                        var __imageGenerationSpecified = CliRuntime.WasSpecified(parseResult, ImageGenerationOptions.Enabled);
+                        var __ImageGenerationBase = __requestBase is { } __ImageGenerationBaseValue ? __ImageGenerationBaseValue.ImageGeneration : default;                        var imageGenerationEnabled = parseResult.GetValue(ImageGenerationOptions.Enabled);
+                        var __ImageGenerationSpecified = CliRuntime.WasSpecified(parseResult, ImageGenerationOptions.Enabled);
                         var imageGeneration =
-                            __imageGenerationSpecified || __imageGenerationBase is not null
+                            __ImageGenerationSpecified || __ImageGenerationBase is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
 	                                Enabled = imageGenerationEnabled!,
 
                                 }
-                                : __imageGenerationBase;
+                                : __ImageGenerationBase;
 
-                        var __mcpBase = __requestBase is { } __McpBaseValue ? __McpBaseValue.Mcp : default;                        var mcpEnabled = parseResult.GetValue(McpOptions.Enabled);
-                        var __mcpSpecified = CliRuntime.WasSpecified(parseResult, McpOptions.Enabled);
+                        var __McpBase = __requestBase is { } __McpBaseValue ? __McpBaseValue.Mcp : default;                        var mcpEnabled = parseResult.GetValue(McpOptions.Enabled);
+                        var __McpSpecified = CliRuntime.WasSpecified(parseResult, McpOptions.Enabled);
                         var mcp =
-                            __mcpSpecified || __mcpBase is not null
+                            __McpSpecified || __McpBase is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
 	                                Enabled = mcpEnabled!,
 
                                 }
-                                : __mcpBase;
+                                : __McpBase;
 
-                        var __codeInterpreterBase = __requestBase is { } __CodeInterpreterBaseValue ? __CodeInterpreterBaseValue.CodeInterpreter : default;                        var codeInterpreterEnabled = parseResult.GetValue(CodeInterpreterOptions.Enabled);
-                        var __codeInterpreterSpecified = CliRuntime.WasSpecified(parseResult, CodeInterpreterOptions.Enabled);
+                        var __CodeInterpreterBase = __requestBase is { } __CodeInterpreterBaseValue ? __CodeInterpreterBaseValue.CodeInterpreter : default;                        var codeInterpreterEnabled = parseResult.GetValue(CodeInterpreterOptions.Enabled);
+                        var __CodeInterpreterSpecified = CliRuntime.WasSpecified(parseResult, CodeInterpreterOptions.Enabled);
                         var codeInterpreter =
-                            __codeInterpreterSpecified || __codeInterpreterBase is not null
+                            __CodeInterpreterSpecified || __CodeInterpreterBase is not null
                                 ? new global::tryAGI.OpenAI.HostedToolPermissionUpdate
                                 {
 	                                Enabled = codeInterpreterEnabled!,
 
                                 }
-                                : __codeInterpreterBase;
+                                : __CodeInterpreterBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

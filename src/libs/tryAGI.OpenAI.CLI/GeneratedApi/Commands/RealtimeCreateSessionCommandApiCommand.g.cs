@@ -245,18 +245,18 @@ Returns the created Realtime session object, plus an ephemeral key.
                         var maxResponseOutputTokens = CliRuntime.WasSpecified(parseResult, MaxResponseOutputTokens) ? parseResult.GetValue(MaxResponseOutputTokens) : (__requestBase is { } __MaxResponseOutputTokensBaseValue ? __MaxResponseOutputTokensBaseValue.MaxResponseOutputTokens : default);
                         var truncation = CliRuntime.WasSpecified(parseResult, Truncation) ? parseResult.GetValue(Truncation) : (__requestBase is { } __TruncationBaseValue ? __TruncationBaseValue.Truncation : default);
 
-                        var __promptBase = __requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default;                        var promptId = parseResult.GetValue(PromptOptions.Id);
-                        var promptVersion = CliRuntime.WasSpecified(parseResult, PromptOptions.Version) ? parseResult.GetValue(PromptOptions.Version) : (__promptBase is { } __PromptversionBaseValue ? __PromptversionBaseValue.Version : default);
-                        var __promptSpecified = CliRuntime.WasSpecified(parseResult, PromptOptions.Id) || CliRuntime.WasSpecified(parseResult, PromptOptions.Version);
+                        var __PromptBase = __requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default;                        var promptId = parseResult.GetValue(PromptOptions.Id);
+                        var promptVersion = CliRuntime.WasSpecified(parseResult, PromptOptions.Version) ? parseResult.GetValue(PromptOptions.Version) : (__PromptBase is { } __PromptversionBaseValue ? __PromptversionBaseValue.Version : default);
+                        var __PromptSpecified = CliRuntime.WasSpecified(parseResult, PromptOptions.Id) || CliRuntime.WasSpecified(parseResult, PromptOptions.Version);
                         var prompt =
-                            __promptSpecified || __promptBase is not null
+                            __PromptSpecified || __PromptBase is not null
                                 ? new global::tryAGI.OpenAI.PromptVariant1
                                 {
 	                                Id = promptId!,
                                 Version = promptVersion,
 
                                 }
-                                : __promptBase;
+                                : __PromptBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

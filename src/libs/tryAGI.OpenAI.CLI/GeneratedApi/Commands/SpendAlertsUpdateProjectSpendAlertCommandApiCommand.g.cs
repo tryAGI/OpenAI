@@ -97,12 +97,12 @@ internal static partial class SpendAlertsUpdateProjectSpendAlertCommandApiComman
                         var currency = CliRuntime.WasSpecified(parseResult, CreateSpendAlertBodyOptionSetOptions.Currency) ? parseResult.GetValue(CreateSpendAlertBodyOptionSetOptions.Currency) : (__requestBase is { } __CurrencyBaseValue ? __CurrencyBaseValue.Currency : default);
                         var interval = CliRuntime.WasSpecified(parseResult, CreateSpendAlertBodyOptionSetOptions.Interval) ? parseResult.GetValue(CreateSpendAlertBodyOptionSetOptions.Interval) : (__requestBase is { } __IntervalBaseValue ? __IntervalBaseValue.Interval : default);
 
-                        var __notificationChannelBase = __requestBase is { } __NotificationChannelBaseValue ? __NotificationChannelBaseValue.NotificationChannel : default;                        var notificationChannelType = CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.Type) ? parseResult.GetValue(NotificationChannelOptions.Type) : (__notificationChannelBase is { } __NotificationChanneltypeBaseValue ? __NotificationChanneltypeBaseValue.Type : default);
+                        var __NotificationChannelBase = __requestBase is { } __NotificationChannelBaseValue ? __NotificationChannelBaseValue.NotificationChannel : default;                        var notificationChannelType = CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.Type) ? parseResult.GetValue(NotificationChannelOptions.Type) : (__NotificationChannelBase is { } __NotificationChanneltypeBaseValue ? __NotificationChanneltypeBaseValue.Type : default);
                         var notificationChannelRecipients = parseResult.GetValue(NotificationChannelOptions.Recipients);
-                        var notificationChannelSubjectPrefix = CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.SubjectPrefix) ? parseResult.GetValue(NotificationChannelOptions.SubjectPrefix) : (__notificationChannelBase is { } __NotificationChannelsubjectPrefixBaseValue ? __NotificationChannelsubjectPrefixBaseValue.SubjectPrefix : default);
-                        var __notificationChannelSpecified = CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.Type) || CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.Recipients) || CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.SubjectPrefix);
+                        var notificationChannelSubjectPrefix = CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.SubjectPrefix) ? parseResult.GetValue(NotificationChannelOptions.SubjectPrefix) : (__NotificationChannelBase is { } __NotificationChannelsubjectPrefixBaseValue ? __NotificationChannelsubjectPrefixBaseValue.SubjectPrefix : default);
+                        var __NotificationChannelSpecified = CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.Type) || CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.Recipients) || CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.SubjectPrefix);
                         var notificationChannel =
-                            __notificationChannelSpecified || __notificationChannelBase is not null
+                            __NotificationChannelSpecified || __NotificationChannelBase is not null
                                 ? new global::tryAGI.OpenAI.SpendAlertNotificationChannel
                                 {
 	                                Type = notificationChannelType,
@@ -110,7 +110,7 @@ internal static partial class SpendAlertsUpdateProjectSpendAlertCommandApiComman
                                 SubjectPrefix = notificationChannelSubjectPrefix,
 
                                 }
-                                : __notificationChannelBase;
+                                : __NotificationChannelBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

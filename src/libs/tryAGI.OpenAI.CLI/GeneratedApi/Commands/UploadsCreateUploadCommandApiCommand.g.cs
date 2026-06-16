@@ -140,18 +140,18 @@ Returns the Upload object with status `pending`.
                         var bytes = parseResult.GetRequiredValue(Bytes);
                         var mimeType = parseResult.GetRequiredValue(MimeType);
 
-                        var __expiresAfterBase = __requestBase is { } __ExpiresAfterBaseValue ? __ExpiresAfterBaseValue.ExpiresAfter : default;                        var expiresAfterAnchor = CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Anchor) ? parseResult.GetValue(ExpiresAfterOptions.Anchor) : (__expiresAfterBase is { } __ExpiresAfteranchorBaseValue ? __ExpiresAfteranchorBaseValue.Anchor : default);
+                        var __ExpiresAfterBase = __requestBase is { } __ExpiresAfterBaseValue ? __ExpiresAfterBaseValue.ExpiresAfter : default;                        var expiresAfterAnchor = CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Anchor) ? parseResult.GetValue(ExpiresAfterOptions.Anchor) : (__ExpiresAfterBase is { } __ExpiresAfteranchorBaseValue ? __ExpiresAfteranchorBaseValue.Anchor : default);
                         var expiresAfterSeconds = parseResult.GetValue(ExpiresAfterOptions.Seconds);
-                        var __expiresAfterSpecified = CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Anchor) || CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Seconds);
+                        var __ExpiresAfterSpecified = CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Anchor) || CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Seconds);
                         var expiresAfter =
-                            __expiresAfterSpecified || __expiresAfterBase is not null
+                            __ExpiresAfterSpecified || __ExpiresAfterBase is not null
                                 ? new global::tryAGI.OpenAI.FileExpirationAfter
                                 {
 	                                Anchor = expiresAfterAnchor,
                                 Seconds = expiresAfterSeconds!,
 
                                 }
-                                : __expiresAfterBase;
+                                : __ExpiresAfterBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
