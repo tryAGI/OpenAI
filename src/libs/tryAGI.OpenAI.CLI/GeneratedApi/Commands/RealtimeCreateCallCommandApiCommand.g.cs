@@ -87,14 +87,14 @@ to complete the peer connection.");
                             cancellationToken).ConfigureAwait(false);
                         var sdp = parseResult.GetRequiredValue(Sdp);
 
-                        var __sessionBase = __requestBase is { } __SessionBaseValue ? __SessionBaseValue.Session : default;                        var sessionType = CliRuntime.WasSpecified(parseResult, SessionOptions.Type) ? parseResult.GetValue(SessionOptions.Type) : (__sessionBase is { } __SessiontypeBaseValue ? __SessiontypeBaseValue.Type : default);
-                        var sessionOutputModalities = CliRuntime.WasSpecified(parseResult, SessionOptions.OutputModalities) ? parseResult.GetValue(SessionOptions.OutputModalities) : (__sessionBase is { } __SessionoutputModalitiesBaseValue ? __SessionoutputModalitiesBaseValue.OutputModalities : default);
-                        var sessionInstructions = CliRuntime.WasSpecified(parseResult, SessionOptions.Instructions) ? parseResult.GetValue(SessionOptions.Instructions) : (__sessionBase is { } __SessioninstructionsBaseValue ? __SessioninstructionsBaseValue.Instructions : default);
-                        var sessionInclude = CliRuntime.WasSpecified(parseResult, SessionOptions.Include) ? parseResult.GetValue(SessionOptions.Include) : (__sessionBase is { } __SessionincludeBaseValue ? __SessionincludeBaseValue.Include : default);
-                        var sessionParallelToolCalls = CliRuntime.WasSpecified(parseResult, SessionOptions.ParallelToolCalls) ? parseResult.GetValue(SessionOptions.ParallelToolCalls) : (__sessionBase is { } __SessionparallelToolCallsBaseValue ? __SessionparallelToolCallsBaseValue.ParallelToolCalls : default);
-                        var __sessionSpecified = CliRuntime.WasSpecified(parseResult, SessionOptions.Type) || CliRuntime.WasSpecified(parseResult, SessionOptions.OutputModalities) || CliRuntime.WasSpecified(parseResult, SessionOptions.Instructions) || CliRuntime.WasSpecified(parseResult, SessionOptions.Include) || CliRuntime.WasSpecified(parseResult, SessionOptions.ParallelToolCalls);
+                        var __SessionBase = __requestBase is { } __SessionBaseValue ? __SessionBaseValue.Session : default;                        var sessionType = CliRuntime.WasSpecified(parseResult, SessionOptions.Type) ? parseResult.GetValue(SessionOptions.Type) : (__SessionBase is { } __SessiontypeBaseValue ? __SessiontypeBaseValue.Type : default);
+                        var sessionOutputModalities = CliRuntime.WasSpecified(parseResult, SessionOptions.OutputModalities) ? parseResult.GetValue(SessionOptions.OutputModalities) : (__SessionBase is { } __SessionoutputModalitiesBaseValue ? __SessionoutputModalitiesBaseValue.OutputModalities : default);
+                        var sessionInstructions = CliRuntime.WasSpecified(parseResult, SessionOptions.Instructions) ? parseResult.GetValue(SessionOptions.Instructions) : (__SessionBase is { } __SessioninstructionsBaseValue ? __SessioninstructionsBaseValue.Instructions : default);
+                        var sessionInclude = CliRuntime.WasSpecified(parseResult, SessionOptions.Include) ? parseResult.GetValue(SessionOptions.Include) : (__SessionBase is { } __SessionincludeBaseValue ? __SessionincludeBaseValue.Include : default);
+                        var sessionParallelToolCalls = CliRuntime.WasSpecified(parseResult, SessionOptions.ParallelToolCalls) ? parseResult.GetValue(SessionOptions.ParallelToolCalls) : (__SessionBase is { } __SessionparallelToolCallsBaseValue ? __SessionparallelToolCallsBaseValue.ParallelToolCalls : default);
+                        var __SessionSpecified = CliRuntime.WasSpecified(parseResult, SessionOptions.Type) || CliRuntime.WasSpecified(parseResult, SessionOptions.OutputModalities) || CliRuntime.WasSpecified(parseResult, SessionOptions.Instructions) || CliRuntime.WasSpecified(parseResult, SessionOptions.Include) || CliRuntime.WasSpecified(parseResult, SessionOptions.ParallelToolCalls);
                         var session =
-                            __sessionSpecified || __sessionBase is not null
+                            __SessionSpecified || __SessionBase is not null
                                 ? new global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA
                                 {
 	                                Type = sessionType,
@@ -104,7 +104,7 @@ to complete the peer connection.");
                                 ParallelToolCalls = sessionParallelToolCalls,
 
                                 }
-                                : __sessionBase;
+                                : __SessionBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 

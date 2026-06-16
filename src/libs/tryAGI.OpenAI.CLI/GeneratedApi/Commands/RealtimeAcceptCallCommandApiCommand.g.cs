@@ -160,18 +160,18 @@ handle it.");
                         var include = CliRuntime.WasSpecified(parseResult, RealtimeSessionCreateRequestGAOptionSetOptions.Include) ? parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.Include) : (__requestBase is { } __IncludeBaseValue ? __IncludeBaseValue.Include : default);
                         var parallelToolCalls = CliRuntime.WasSpecified(parseResult, RealtimeSessionCreateRequestGAOptionSetOptions.ParallelToolCalls) ? parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.ParallelToolCalls) : (__requestBase is { } __ParallelToolCallsBaseValue ? __ParallelToolCallsBaseValue.ParallelToolCalls : default);
 
-                        var __promptBase = __requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default;                        var promptId = parseResult.GetValue(PromptOptions.Id);
-                        var promptVersion = CliRuntime.WasSpecified(parseResult, PromptOptions.Version) ? parseResult.GetValue(PromptOptions.Version) : (__promptBase is { } __PromptversionBaseValue ? __PromptversionBaseValue.Version : default);
-                        var __promptSpecified = CliRuntime.WasSpecified(parseResult, PromptOptions.Id) || CliRuntime.WasSpecified(parseResult, PromptOptions.Version);
+                        var __PromptBase = __requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default;                        var promptId = parseResult.GetValue(PromptOptions.Id);
+                        var promptVersion = CliRuntime.WasSpecified(parseResult, PromptOptions.Version) ? parseResult.GetValue(PromptOptions.Version) : (__PromptBase is { } __PromptversionBaseValue ? __PromptversionBaseValue.Version : default);
+                        var __PromptSpecified = CliRuntime.WasSpecified(parseResult, PromptOptions.Id) || CliRuntime.WasSpecified(parseResult, PromptOptions.Version);
                         var prompt =
-                            __promptSpecified || __promptBase is not null
+                            __PromptSpecified || __PromptBase is not null
                                 ? new global::tryAGI.OpenAI.PromptVariant1
                                 {
 	                                Id = promptId!,
                                 Version = promptVersion,
 
                                 }
-                                : __promptBase;
+                                : __PromptBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
