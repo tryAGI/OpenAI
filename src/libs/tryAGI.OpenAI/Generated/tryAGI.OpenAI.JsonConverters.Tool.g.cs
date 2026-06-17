@@ -72,6 +72,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("server_description")) __score5++;
             if (__jsonProps.Contains("server_label")) __score5++;
             if (__jsonProps.Contains("server_url")) __score5++;
+            if (__jsonProps.Contains("tunnel_id")) __score5++;
             if (__jsonProps.Contains("type")) __score5++;
             var __score6 = 0;
             if (__jsonProps.Contains("container")) __score6++;

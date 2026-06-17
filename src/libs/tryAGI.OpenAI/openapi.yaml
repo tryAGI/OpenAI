@@ -57377,11 +57377,9 @@ components:
         server_url:
           type: string
           format: uri
-          description: >
-            The URL for the MCP server. One of `server_url` or `connector_id`
-            must be
-
-            provided.
+          description: |
+            The URL for the MCP server. One of `server_url`, `connector_id`, or
+            `tunnel_id` must be provided.
         connector_id:
           type: string
           enum:
@@ -57397,10 +57395,11 @@ components:
             Identifier for service connectors, like those available in ChatGPT.
             One of
 
-            `server_url` or `connector_id` must be provided. Learn more about
-            service
+            `server_url`, `connector_id`, or `tunnel_id` must be provided. Learn
+            more
 
-            connectors [here](/docs/guides/tools-remote-mcp#connectors).
+            about service connectors
+            [here](/docs/guides/tools-remote-mcp#connectors).
 
 
             Currently supported `connector_id` values are:
@@ -57421,6 +57420,14 @@ components:
             - Outlook Email: `connector_outlookemail`
 
             - SharePoint: `connector_sharepoint`
+        tunnel_id:
+          type: string
+          pattern: ^tunnel_[a-z0-9]{32}$
+          description: >
+            The Secure MCP Tunnel ID to use instead of a direct server URL. One
+            of
+
+            `server_url`, `connector_id`, or `tunnel_id` must be provided.
         authorization:
           type: string
           description: >
@@ -83779,6 +83786,10 @@ components:
                 Optional reference asset upload or reference object that guides
                 generation.
             - $ref: '#/components/schemas/ImageRefParam-2'
+              description: >-
+                Optional reference asset upload or reference object that guides
+                generation. Provide exactly one of `image_url` or `file_id` when
+                using an object.
         seconds:
           $ref: '#/components/schemas/VideoSeconds'
           description: >-
@@ -83882,6 +83893,7 @@ components:
               format: binary
               description: Reference to the completed video to edit.
             - $ref: '#/components/schemas/VideoReferenceInputParam'
+              description: Reference to the completed video to edit.
         prompt:
           type: string
           maxLength: 32000
@@ -83914,6 +83926,7 @@ components:
         video:
           oneOf:
             - $ref: '#/components/schemas/VideoReferenceInputParam'
+              description: Reference to the completed video to extend.
             - type: string
               format: binary
               description: Reference to the completed video to extend.

@@ -24,16 +24,16 @@ namespace tryAGI.OpenAI
         public required string ServerLabel { get; set; }
 
         /// <summary>
-        /// The URL for the MCP server. One of `server_url` or `connector_id` must be<br/>
-        /// provided.
+        /// The URL for the MCP server. One of `server_url`, `connector_id`, or<br/>
+        /// `tunnel_id` must be provided.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("server_url")]
         public string? ServerUrl { get; set; }
 
         /// <summary>
         /// Identifier for service connectors, like those available in ChatGPT. One of<br/>
-        /// `server_url` or `connector_id` must be provided. Learn more about service<br/>
-        /// connectors [here](/docs/guides/tools-remote-mcp#connectors).<br/>
+        /// `server_url`, `connector_id`, or `tunnel_id` must be provided. Learn more<br/>
+        /// about service connectors [here](/docs/guides/tools-remote-mcp#connectors).<br/>
         /// Currently supported `connector_id` values are:<br/>
         /// - Dropbox: `connector_dropbox`<br/>
         /// - Gmail: `connector_gmail`<br/>
@@ -47,6 +47,13 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("connector_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MCPToolConnectorIdJsonConverter))]
         public global::tryAGI.OpenAI.MCPToolConnectorId? ConnectorId { get; set; }
+
+        /// <summary>
+        /// The Secure MCP Tunnel ID to use instead of a direct server URL. One of<br/>
+        /// `server_url`, `connector_id`, or `tunnel_id` must be provided.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tunnel_id")]
+        public string? TunnelId { get; set; }
 
         /// <summary>
         /// An OAuth access token that can be used with a remote MCP server, either<br/>
@@ -102,13 +109,13 @@ namespace tryAGI.OpenAI
         /// The type of the MCP tool. Always `mcp`.
         /// </param>
         /// <param name="serverUrl">
-        /// The URL for the MCP server. One of `server_url` or `connector_id` must be<br/>
-        /// provided.
+        /// The URL for the MCP server. One of `server_url`, `connector_id`, or<br/>
+        /// `tunnel_id` must be provided.
         /// </param>
         /// <param name="connectorId">
         /// Identifier for service connectors, like those available in ChatGPT. One of<br/>
-        /// `server_url` or `connector_id` must be provided. Learn more about service<br/>
-        /// connectors [here](/docs/guides/tools-remote-mcp#connectors).<br/>
+        /// `server_url`, `connector_id`, or `tunnel_id` must be provided. Learn more<br/>
+        /// about service connectors [here](/docs/guides/tools-remote-mcp#connectors).<br/>
         /// Currently supported `connector_id` values are:<br/>
         /// - Dropbox: `connector_dropbox`<br/>
         /// - Gmail: `connector_gmail`<br/>
@@ -118,6 +125,10 @@ namespace tryAGI.OpenAI
         /// - Outlook Calendar: `connector_outlookcalendar`<br/>
         /// - Outlook Email: `connector_outlookemail`<br/>
         /// - SharePoint: `connector_sharepoint`
+        /// </param>
+        /// <param name="tunnelId">
+        /// The Secure MCP Tunnel ID to use instead of a direct server URL. One of<br/>
+        /// `server_url`, `connector_id`, or `tunnel_id` must be provided.
         /// </param>
         /// <param name="authorization">
         /// An OAuth access token that can be used with a remote MCP server, either<br/>
@@ -141,6 +152,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.MCPToolType type,
             string? serverUrl,
             global::tryAGI.OpenAI.MCPToolConnectorId? connectorId,
+            string? tunnelId,
             string? authorization,
             string? serverDescription,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
@@ -152,6 +164,7 @@ namespace tryAGI.OpenAI
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.ServerUrl = serverUrl;
             this.ConnectorId = connectorId;
+            this.TunnelId = tunnelId;
             this.Authorization = authorization;
             this.ServerDescription = serverDescription;
             this.Headers = headers;

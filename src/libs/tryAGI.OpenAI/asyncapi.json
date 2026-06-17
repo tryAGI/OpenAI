@@ -1592,7 +1592,7 @@
           "server_url": {
             "type": "string",
             "format": "uri",
-            "description": "The URL for the MCP server. One of `server_url` or `connector_id` must be\nprovided.\n"
+            "description": "The URL for the MCP server. One of `server_url`, `connector_id`, or\n`tunnel_id` must be provided.\n"
           },
           "connector_id": {
             "type": "string",
@@ -1606,7 +1606,12 @@
               "connector_outlookemail",
               "connector_sharepoint"
             ],
-            "description": "Identifier for service connectors, like those available in ChatGPT. One of\n`server_url` or `connector_id` must be provided. Learn more about service\nconnectors [here](/docs/guides/tools-remote-mcp#connectors).\n\nCurrently supported `connector_id` values are:\n\n- Dropbox: `connector_dropbox`\n- Gmail: `connector_gmail`\n- Google Calendar: `connector_googlecalendar`\n- Google Drive: `connector_googledrive`\n- Microsoft Teams: `connector_microsoftteams`\n- Outlook Calendar: `connector_outlookcalendar`\n- Outlook Email: `connector_outlookemail`\n- SharePoint: `connector_sharepoint`\n"
+            "description": "Identifier for service connectors, like those available in ChatGPT. One of\n`server_url`, `connector_id`, or `tunnel_id` must be provided. Learn more\nabout service connectors [here](/docs/guides/tools-remote-mcp#connectors).\n\nCurrently supported `connector_id` values are:\n\n- Dropbox: `connector_dropbox`\n- Gmail: `connector_gmail`\n- Google Calendar: `connector_googlecalendar`\n- Google Drive: `connector_googledrive`\n- Microsoft Teams: `connector_microsoftteams`\n- Outlook Calendar: `connector_outlookcalendar`\n- Outlook Email: `connector_outlookemail`\n- SharePoint: `connector_sharepoint`\n"
+          },
+          "tunnel_id": {
+            "type": "string",
+            "pattern": "^tunnel_[a-z0-9]{32}$",
+            "description": "The Secure MCP Tunnel ID to use instead of a direct server URL. One of\n`server_url`, `connector_id`, or `tunnel_id` must be provided.\n"
           },
           "authorization": {
             "type": "string",
