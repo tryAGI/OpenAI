@@ -26,7 +26,7 @@ public sealed class TestMethodAttribute : Microsoft.VisualStudio.TestTools.UnitT
 
             result.Outcome = UnitTestOutcome.Inconclusive;
             result.TestFailureException = new AssertInconclusiveException(
-                "OpenAI account quota, billing, or rate-limit availability blocked this live integration test.",
+                "OpenAI provider availability blocked this live integration test.",
                 exception);
         }
 
@@ -39,6 +39,12 @@ public sealed class TestMethodAttribute : Microsoft.VisualStudio.TestTools.UnitT
         {
             if (current is not ApiException apiException)
             {
+                if (current is HttpRequestException httpRequestException &&
+                    IsTransientOpenAiTransportIssue(httpRequestException))
+                {
+                    return true;
+                }
+
                 continue;
             }
 
@@ -53,6 +59,12 @@ public sealed class TestMethodAttribute : Microsoft.VisualStudio.TestTools.UnitT
         }
 
         return false;
+    }
+
+    private static bool IsTransientOpenAiTransportIssue(HttpRequestException exception)
+    {
+        return exception.Message.Contains("response ended prematurely", StringComparison.OrdinalIgnoreCase) ||
+               exception.Message.Contains("ResponseEnded", StringComparison.OrdinalIgnoreCase);
     }
 
     private static IEnumerable<Exception> Flatten(Exception exception)
