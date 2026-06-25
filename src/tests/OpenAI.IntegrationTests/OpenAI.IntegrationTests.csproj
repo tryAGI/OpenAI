@@ -35,4 +35,10 @@
     <ProjectReference Include="..\..\libs\tryAGI.OpenAI\tryAGI.OpenAI.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Resources\hello-in-russian-24k-pcm16.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
