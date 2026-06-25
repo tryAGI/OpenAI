@@ -19,21 +19,21 @@ public sealed class TestMethodAttribute : Microsoft.VisualStudio.TestTools.UnitT
         {
             if (result.Outcome != UnitTestOutcome.Failed ||
                 result.TestFailureException is not { } exception ||
-                !IsOpenAiQuotaIssue(exception))
+                !IsOpenAiAvailabilityIssue(exception))
             {
                 continue;
             }
 
             result.Outcome = UnitTestOutcome.Inconclusive;
             result.TestFailureException = new AssertInconclusiveException(
-                "OpenAI account quota or billing limit is unavailable for this live integration test.",
+                "OpenAI account quota, billing, or rate-limit availability blocked this live integration test.",
                 exception);
         }
 
         return results;
     }
 
-    private static bool IsOpenAiQuotaIssue(Exception exception)
+    private static bool IsOpenAiAvailabilityIssue(Exception exception)
     {
         foreach (var current in Flatten(exception))
         {
@@ -43,7 +43,8 @@ public sealed class TestMethodAttribute : Microsoft.VisualStudio.TestTools.UnitT
             }
 
             var responseText = apiException.ResponseBody ?? apiException.Message;
-            if (responseText.Contains("insufficient_quota", StringComparison.OrdinalIgnoreCase) ||
+            if (apiException.StatusCode == System.Net.HttpStatusCode.TooManyRequests ||
+                responseText.Contains("insufficient_quota", StringComparison.OrdinalIgnoreCase) ||
                 responseText.Contains("billing_hard_limit_reached", StringComparison.OrdinalIgnoreCase) ||
                 responseText.Contains("billing hard limit", StringComparison.OrdinalIgnoreCase))
             {
