@@ -521,6 +521,7 @@ public readonly record struct OpenAIRealtimeToolChoice
     public static OpenAIRealtimeToolChoice Required => new("required");
     public static OpenAIRealtimeToolChoice Function(string name) => new("function", name);
     public static OpenAIRealtimeToolChoice Mcp(string serverLabel, string name) => new("mcp", name, serverLabel);
+    public static OpenAIRealtimeToolChoice FromString(string mode) => new(mode);
 
     public static implicit operator OpenAIRealtimeToolChoice(string mode) => new(mode);
 }

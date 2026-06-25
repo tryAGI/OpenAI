@@ -2,14 +2,6 @@ root = false
 
 [*.cs]
 dotnet_diagnostic.CA1000.severity = none
-dotnet_diagnostic.CA1032.severity = none
 dotnet_diagnostic.CA1056.severity = none
-dotnet_diagnostic.CA1062.severity = none
 dotnet_diagnostic.CA1716.severity = none
-dotnet_diagnostic.CA1815.severity = none
-dotnet_diagnostic.CA1848.severity = none
-dotnet_diagnostic.CA1849.severity = none
-dotnet_diagnostic.CA1873.severity = none
-dotnet_diagnostic.CA2007.severity = none
-dotnet_diagnostic.CA2225.severity = none
 dotnet_diagnostic.CS1591.severity = none

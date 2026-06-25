@@ -9,6 +9,18 @@ namespace tryAGI.OpenAI.OpenAISharp.Services;
 /// </summary>
 public sealed class OpenAIRealtimeService
 {
+    private static readonly Action<ILogger, Uri, Exception?> ConnectingRealtimeSession =
+        LoggerMessage.Define<Uri>(
+            LogLevel.Information,
+            new EventId(1, nameof(ConnectingRealtimeSession)),
+            "[OpenAI] Connecting realtime session: {Uri}");
+
+    private static readonly Action<ILogger, Exception?> ConnectedRealtimeSession =
+        LoggerMessage.Define(
+            LogLevel.Information,
+            new EventId(2, nameof(ConnectedRealtimeSession)),
+            "[OpenAI] Connected realtime session.");
+
     private readonly OpenAIConfig _config;
     private readonly ILogger _logger;
 
@@ -25,6 +37,8 @@ public sealed class OpenAIRealtimeService
         OpenAIRealtimeConnectOptions options,
         CancellationToken cancellationToken = default)
     {
+        ArgumentNullException.ThrowIfNull(options);
+
         if (string.IsNullOrWhiteSpace(options.Model))
         {
             throw new OpenAIException("Model must be provided for OpenAI realtime sessions.");
@@ -47,9 +61,9 @@ public sealed class OpenAIRealtimeService
         using var cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
         cts.CancelAfter(_config.ConnectTimeout);
 
-        _logger.LogInformation("[OpenAI] Connecting realtime session: {Uri}", uri);
-        await webSocket.ConnectAsync(uri, cts.Token);
-        _logger.LogInformation("[OpenAI] Connected realtime session.");
+        ConnectingRealtimeSession(_logger, uri, null);
+        await webSocket.ConnectAsync(uri, cts.Token).ConfigureAwait(false);
+        ConnectedRealtimeSession(_logger, null);
 
         return new OpenAIRealtimeSession(webSocket, _logger);
     }

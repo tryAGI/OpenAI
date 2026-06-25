@@ -5,7 +5,7 @@ using System.Text.Json.Serialization.Metadata;
 namespace tryAGI.OpenAI.OpenAISharp;
 
 [JsonConverter(typeof(OptionalJsonConverterFactory))]
-public readonly struct Optional<T>
+public readonly struct Optional<T> : IEquatable<Optional<T>>
 {
     public bool HasValue { get; }
     public T? Value { get; }
@@ -17,8 +17,24 @@ public readonly struct Optional<T>
     }
 
     public static Optional<T> From(T? value) => new(value);
+    public static Optional<T> FromT(T? value) => new(value);
 
     public static implicit operator Optional<T>(T? value) => new(value);
+
+    public bool Equals(Optional<T> other)
+        => HasValue == other.HasValue && EqualityComparer<T?>.Default.Equals(Value, other.Value);
+
+    public override bool Equals(object? obj)
+        => obj is Optional<T> other && Equals(other);
+
+    public override int GetHashCode()
+        => HashCode.Combine(HasValue, Value);
+
+    public static bool operator ==(Optional<T> left, Optional<T> right)
+        => left.Equals(right);
+
+    public static bool operator !=(Optional<T> left, Optional<T> right)
+        => !left.Equals(right);
 }
 
 internal sealed class OptionalJsonConverterFactory : JsonConverterFactory

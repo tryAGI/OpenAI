@@ -12,6 +12,24 @@ namespace tryAGI.OpenAI.OpenAISharp.Realtime;
 /// </summary>
 public sealed class OpenAIRealtimeSession : IAsyncDisposable
 {
+    private static readonly Action<ILogger, WebSocketCloseStatus?, string?, Exception?> WebSocketClosedByServer =
+        LoggerMessage.Define<WebSocketCloseStatus?, string?>(
+            LogLevel.Warning,
+            new EventId(1, nameof(WebSocketClosedByServer)),
+            "[OpenAI] WebSocket closed by server: {Status} {Description}");
+
+    private static readonly Action<ILogger, int, Exception?> IgnoringBinaryMessage =
+        LoggerMessage.Define<int>(
+            LogLevel.Debug,
+            new EventId(2, nameof(IgnoringBinaryMessage)),
+            "[OpenAI] Ignoring binary message with {Length} bytes");
+
+    private static readonly Action<ILogger, Exception?> WebSocketCloseFailed =
+        LoggerMessage.Define(
+            LogLevel.Warning,
+            new EventId(3, nameof(WebSocketCloseFailed)),
+            "[OpenAI] WebSocket close failed.");
+
     private readonly ClientWebSocket _webSocket;
     private readonly ILogger _logger;
     private readonly SemaphoreSlim _receiveLock = new(1, 1);
@@ -168,7 +186,7 @@ public sealed class OpenAIRealtimeSession : IAsyncDisposable
     /// </summary>
     public async Task<OpenAIRealtimeEvent?> ReceiveEventAsync(CancellationToken cancellationToken = default)
     {
-        var json = await ReceiveTextMessageAsync(cancellationToken);
+        var json = await ReceiveTextMessageAsync(cancellationToken).ConfigureAwait(false);
         if (json == null)
         {
             return null;
@@ -185,7 +203,7 @@ public sealed class OpenAIRealtimeSession : IAsyncDisposable
     {
         while (_webSocket.State == WebSocketState.Open && !cancellationToken.IsCancellationRequested)
         {
-            var json = await ReceiveTextMessageAsync(cancellationToken);
+            var json = await ReceiveTextMessageAsync(cancellationToken).ConfigureAwait(false);
             if (json == null)
             {
                 yield break;
@@ -202,12 +220,12 @@ public sealed class OpenAIRealtimeSession : IAsyncDisposable
             new ArraySegment<byte>(payload),
             WebSocketMessageType.Text,
             endOfMessage: true,
-            cancellationToken);
+            cancellationToken).ConfigureAwait(false);
     }
 
     private async Task<string?> ReceiveTextMessageAsync(CancellationToken cancellationToken)
     {
-        await _receiveLock.WaitAsync(cancellationToken);
+        await _receiveLock.WaitAsync(cancellationToken).ConfigureAwait(false);
         try
         {
             var buffer = new byte[8192];
@@ -215,25 +233,22 @@ public sealed class OpenAIRealtimeSession : IAsyncDisposable
 
             while (true)
             {
-                var result = await _webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), cancellationToken);
+                var result = await _webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), cancellationToken).ConfigureAwait(false);
 
                 if (result.MessageType == WebSocketMessageType.Close)
                 {
                     LastCloseStatus = result.CloseStatus;
                     LastCloseStatusDescription = result.CloseStatusDescription;
-                    _logger.LogWarning(
-                        "[OpenAI] WebSocket closed by server: {Status} {Description}",
-                        result.CloseStatus,
-                        result.CloseStatusDescription);
+                    WebSocketClosedByServer(_logger, result.CloseStatus, result.CloseStatusDescription, null);
                     return null;
                 }
 
                 if (result.MessageType == WebSocketMessageType.Binary)
                 {
-                    _logger.LogDebug("[OpenAI] Ignoring binary message with {Length} bytes", result.Count);
+                    IgnoringBinaryMessage(_logger, result.Count, null);
                     while (!result.EndOfMessage)
                     {
-                        result = await _webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), cancellationToken);
+                        result = await _webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), cancellationToken).ConfigureAwait(false);
                         if (result.MessageType == WebSocketMessageType.Close)
                         {
                             LastCloseStatus = result.CloseStatus;
@@ -245,7 +260,7 @@ public sealed class OpenAIRealtimeSession : IAsyncDisposable
                     continue;
                 }
 
-                ms.Write(buffer, 0, result.Count);
+                await ms.WriteAsync(buffer.AsMemory(0, result.Count), cancellationToken).ConfigureAwait(false);
 
                 if (result.EndOfMessage)
                 {
@@ -274,11 +289,11 @@ public sealed class OpenAIRealtimeSession : IAsyncDisposable
         {
             try
             {
-                await _webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None);
+                await _webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", CancellationToken.None).ConfigureAwait(false);
             }
             catch (WebSocketException ex)
             {
-                _logger.LogWarning(ex, "[OpenAI] WebSocket close failed.");
+                WebSocketCloseFailed(_logger, ex);
             }
         }
 
