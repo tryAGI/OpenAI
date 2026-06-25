@@ -36,7 +36,7 @@ public partial class Tests
     [TestMethod]
     public void OpenAISharp_Serialize_SessionUpdate_WrapsSessionPayload()
     {
-        var session = new OpenAIRealtimeSessionUpdate { Instructions = "Hello" };
+        var session = new OpenAIRealtimeSessionUpdate { Instructions = new("Hello") };
         var message = new OpenAIRealtimeSessionUpdateEvent { Session = session };
 
         var json = JsonSerializer.Serialize<OpenAIRealtimeClientEvent>(message, OpenAIJsonSerializer.Default);
@@ -53,20 +53,20 @@ public partial class Tests
         {
             Type = OpenAIRealtimeSessionTypes.Realtime,
             Model = OpenAIRealtimeModelIds.GptRealtime2,
-            Instructions = "Be brief.",
+            Instructions = new("Be brief."),
             OutputModalities = ["audio"],
             Audio = new OpenAIRealtimeAudioConfig
             {
                 Input = new OpenAIRealtimeInputAudioConfig
                 {
                     Format = OpenAIRealtimeAudioFormat.Pcm(),
-                    TurnDetection = new OpenAIRealtimeTurnDetection
+                    TurnDetection = new(new OpenAIRealtimeTurnDetection
                     {
                         Type = "semantic_vad",
                         Eagerness = "auto",
                         CreateResponse = true,
-                    },
-                    NoiseReduction = new OpenAIRealtimeNoiseReduction { Type = "near_field" },
+                    }),
+                    NoiseReduction = new(new OpenAIRealtimeNoiseReduction { Type = "near_field" }),
                 },
                 Output = new OpenAIRealtimeOutputAudioConfig
                 {
@@ -125,8 +125,8 @@ public partial class Tests
     {
         var session = new OpenAIRealtimeSessionUpdate
         {
-            Instructions = "Hello",
-            TurnDetection = null
+            Instructions = new("Hello"),
+            TurnDetection = new(null)
         };
         var message = new OpenAIRealtimeSessionUpdateEvent { Session = session };
 
@@ -143,8 +143,8 @@ public partial class Tests
     {
         var session = new OpenAIRealtimeSessionUpdate
         {
-            Instructions = "Hello",
-            InputAudioTranscription = null
+            Instructions = new("Hello"),
+            InputAudioTranscription = new(null)
         };
         var message = new OpenAIRealtimeSessionUpdateEvent { Session = session };
 
@@ -159,7 +159,7 @@ public partial class Tests
     [TestMethod]
     public void OpenAISharp_Serialize_SessionUpdate_UnsetOptional_IsOmitted()
     {
-        var session = new OpenAIRealtimeSessionUpdate { Instructions = "Hello" };
+        var session = new OpenAIRealtimeSessionUpdate { Instructions = new("Hello") };
         var message = new OpenAIRealtimeSessionUpdateEvent { Session = session };
 
         var json = JsonSerializer.Serialize<OpenAIRealtimeClientEvent>(message, OpenAIJsonSerializer.Default);
@@ -174,7 +174,7 @@ public partial class Tests
     {
         var session = new OpenAIRealtimeTranscriptionSessionUpdate
         {
-            InputAudioTranscription = null
+            InputAudioTranscription = new(null)
         };
         var message = new OpenAIRealtimeTranscriptionSessionUpdateEvent { Session = session };
 
@@ -197,12 +197,12 @@ public partial class Tests
                 Input = new OpenAIRealtimeInputAudioConfig
                 {
                     Format = OpenAIRealtimeAudioFormat.Pcm(),
-                    Transcription = new OpenAIRealtimeInputAudioTranscription
+                    Transcription = new(new OpenAIRealtimeInputAudioTranscription
                     {
                         Model = OpenAIRealtimeModelIds.GptRealtimeWhisper,
                         Language = "en",
-                    },
-                    TurnDetection = new OpenAIRealtimeTurnDetection { Type = "server_vad" },
+                    }),
+                    TurnDetection = new(new OpenAIRealtimeTurnDetection { Type = "server_vad" }),
                 }
             },
             Include = ["item.input_audio_transcription.logprobs"],
@@ -242,7 +242,7 @@ public partial class Tests
             Type = "mcp",
             Name = "linear",
             ServerLabel = "linear",
-            ServerUrl = "https://mcp.example.test",
+            ServerUrl = new Uri("https://mcp.example.test"),
             AllowedTools = ["get_issue"],
             RequireApproval = "always",
             Headers = new Dictionary<string, string> { ["Authorization"] = "Bearer token" },

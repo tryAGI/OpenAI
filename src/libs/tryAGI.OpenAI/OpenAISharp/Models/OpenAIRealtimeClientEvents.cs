@@ -29,80 +29,104 @@ namespace tryAGI.OpenAI.OpenAISharp;
 [JsonDerivedType(typeof(OpenAIRealtimeTranscriptionSessionUpdateEvent), typeDiscriminator: "transcription_session.update")]
 public abstract record OpenAIRealtimeClientEvent
 {
+    /// <inheritdoc />
     [JsonPropertyName("event_id")]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? EventId { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeSessionUpdateEvent : OpenAIRealtimeClientEvent
 {
+    /// <inheritdoc />
     [JsonPropertyName("session")]
     public required OpenAIRealtimeSessionUpdate Session { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeResponseCreateEvent : OpenAIRealtimeClientEvent
 {
+    /// <inheritdoc />
     [JsonPropertyName("response")]
     public required OpenAIRealtimeResponse Response { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeResponseCancelEvent : OpenAIRealtimeClientEvent
 {
+    /// <inheritdoc />
     [JsonPropertyName("response_id")]
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
     public string? ResponseId { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeConversationItemCreateEvent : OpenAIRealtimeClientEvent
 {
+    /// <inheritdoc />
     [JsonPropertyName("item")]
     public required OpenAIRealtimeConversationItem Item { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeConversationItemDeleteEvent : OpenAIRealtimeClientEvent
 {
+    /// <inheritdoc />
     [JsonPropertyName("item_id")]
     public required string ItemId { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeConversationItemTruncateEvent : OpenAIRealtimeClientEvent
 {
+    /// <inheritdoc />
     [JsonPropertyName("item_id")]
     public required string ItemId { get; init; }
 
+    /// <inheritdoc />
     [JsonPropertyName("content_index")]
     public int? ContentIndex { get; init; }
 
+    /// <inheritdoc />
     [JsonPropertyName("audio_end_ms")]
     public int? AudioEndMs { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeInputAudioBufferAppendEvent : OpenAIRealtimeClientEvent
 {
+    /// <inheritdoc />
     [JsonPropertyName("audio")]
     public required string Audio { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeInputAudioBufferCommitEvent : OpenAIRealtimeClientEvent
 {
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeInputAudioBufferClearEvent : OpenAIRealtimeClientEvent
 {
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeOutputAudioBufferClearEvent : OpenAIRealtimeClientEvent
 {
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeSessionInputAudioBufferAppendEvent : OpenAIRealtimeClientEvent
 {
+    /// <inheritdoc />
     [JsonPropertyName("audio")]
     public required string Audio { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeTranscriptionSessionUpdateEvent : OpenAIRealtimeClientEvent
 {
+    /// <inheritdoc />
     [JsonPropertyName("session")]
     public required OpenAIRealtimeTranscriptionSessionUpdate Session { get; init; }
 }

@@ -276,6 +276,7 @@ public sealed class OpenAIRealtimeSession : IAsyncDisposable
         }
     }
 
+    /// <inheritdoc />
     public async ValueTask DisposeAsync()
     {
         if (_disposed)

@@ -70,7 +70,8 @@ public sealed class OpenAIRealtimeService
 
     private Uri BuildUri(OpenAIRealtimeConnectOptions options)
     {
-        if (!Uri.TryCreate(_config.BaseUrl, UriKind.Absolute, out var baseUri))
+        var baseUri = _config.BaseUrl;
+        if (!baseUri.IsAbsoluteUri)
         {
             throw new OpenAIException($"Invalid OpenAI BaseUrl: '{_config.BaseUrl}'.");
         }

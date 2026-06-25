@@ -45,6 +45,7 @@ public sealed class OpenAIClient : IDisposable
     public static OpenAIClient Create(OpenAIConfig config, ILogger logger)
         => new(config, logger);
 
+    /// <inheritdoc />
     public void Dispose()
     {
         if (_disposed)

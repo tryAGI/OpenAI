@@ -27,7 +27,7 @@ public partial class Tests
         {
             Type = OpenAIRealtimeSessionTypes.Realtime,
             Model = model,
-            Instructions = "Respond briefly for E2E test.",
+            Instructions = new("Respond briefly for E2E test."),
             OutputModalities = ["text"],
             Reasoning = CreateOpenAISharpReasoningIfSupported(model),
         }, cancellationToken);
@@ -86,7 +86,7 @@ public partial class Tests
                 Input = new OpenAIRealtimeInputAudioConfig
                 {
                     Format = OpenAIRealtimeAudioFormat.Pcm(),
-                    TurnDetection = null,
+                    TurnDetection = new(null),
                 },
             },
             Reasoning = CreateOpenAISharpReasoningIfSupported(model),
@@ -138,14 +138,14 @@ public partial class Tests
                 Input = new OpenAIRealtimeInputAudioConfig
                 {
                     Format = OpenAIRealtimeAudioFormat.Pcm(),
-                    TurnDetection = new OpenAIRealtimeTurnDetection
+                    TurnDetection = new(new OpenAIRealtimeTurnDetection
                     {
                         Type = "server_vad",
                         Threshold = 0.1,
                         SilenceDurationMs = 200,
                         PrefixPaddingMs = 0,
                         CreateResponse = false
-                    },
+                    }),
                 },
             },
             Reasoning = CreateOpenAISharpReasoningIfSupported(model),
@@ -241,11 +241,11 @@ public partial class Tests
                 Input = new OpenAIRealtimeInputAudioConfig
                 {
                     Format = OpenAIRealtimeAudioFormat.Pcm(),
-                    Transcription = new OpenAIRealtimeInputAudioTranscription
+                    Transcription = new(new OpenAIRealtimeInputAudioTranscription
                     {
                         Model = model,
                         Language = "ru",
-                    },
+                    }),
                 },
             },
         }, cancellationToken);

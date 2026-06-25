@@ -61,9 +61,13 @@ public sealed record OpenAIRealtimeConnectOptions
     public IReadOnlyList<string>? AdditionalSubProtocols { get; init; }
 }
 
+/// <inheritdoc />
 public enum OpenAIRealtimeSessionKind
 {
+    /// <inheritdoc />
     Realtime,
+    /// <inheritdoc />
     Transcription,
+    /// <inheritdoc />
     Translation,
 }

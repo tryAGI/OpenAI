@@ -7,5 +7,6 @@ namespace tryAGI.OpenAI.OpenAISharp;
 /// </summary>
 public static class OpenAIJsonSerializer
 {
+    /// <inheritdoc />
     public static readonly JsonSerializerOptions Default = new(JsonContext.Default.Options);
 }

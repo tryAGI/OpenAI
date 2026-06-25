@@ -15,7 +15,7 @@ public record OpenAIConfig
     /// <summary>
     /// Base WebSocket URL for OpenAI Realtime API.
     /// </summary>
-    public string BaseUrl { get; init; } = "wss://api.openai.com/v1/realtime";
+    public Uri BaseUrl { get; init; } = new("wss://api.openai.com/v1/realtime");
 
     /// <summary>
     /// Optional OpenAI organization ID.

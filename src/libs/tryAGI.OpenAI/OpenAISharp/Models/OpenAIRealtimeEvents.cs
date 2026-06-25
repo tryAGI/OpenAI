@@ -8,49 +8,93 @@ namespace tryAGI.OpenAI.OpenAISharp;
 /// </summary>
 public enum RealtimeServerEventType
 {
+    /// <inheritdoc />
     Unknown,
+    /// <inheritdoc />
     Error,
+    /// <inheritdoc />
     SessionCreated,
+    /// <inheritdoc />
     SessionUpdated,
+    /// <inheritdoc />
     ResponseCreated,
+    /// <inheritdoc />
     ResponseDone,
+    /// <inheritdoc />
     ResponseAudioDelta,
+    /// <inheritdoc />
     ResponseAudioDone,
+    /// <inheritdoc />
     ResponseAudioTranscriptDelta,
+    /// <inheritdoc />
     ResponseAudioTranscriptDone,
+    /// <inheritdoc />
     ResponseOutputAudioDelta,
+    /// <inheritdoc />
     ResponseOutputAudioDone,
+    /// <inheritdoc />
     ResponseOutputAudioTranscriptDelta,
+    /// <inheritdoc />
     ResponseOutputAudioTranscriptDone,
+    /// <inheritdoc />
     ResponseOutputTextDelta,
+    /// <inheritdoc />
     ResponseOutputTextDone,
+    /// <inheritdoc />
     ResponseContentPartAdded,
+    /// <inheritdoc />
     ResponseContentPartDone,
+    /// <inheritdoc />
     ResponseTextDelta,
+    /// <inheritdoc />
     ResponseTextDone,
+    /// <inheritdoc />
     ResponseFunctionCallArgumentsDelta,
+    /// <inheritdoc />
     ResponseFunctionCallArgumentsDone,
+    /// <inheritdoc />
     ResponseOutputItemAdded,
+    /// <inheritdoc />
     ResponseOutputItemDone,
+    /// <inheritdoc />
     ConversationCreated,
+    /// <inheritdoc />
     ConversationItemAdded,
+    /// <inheritdoc />
     ConversationItemDone,
+    /// <inheritdoc />
     ConversationItemCreated,
+    /// <inheritdoc />
     ConversationItemDeleted,
+    /// <inheritdoc />
     ConversationItemTruncated,
+    /// <inheritdoc />
     ConversationItemInputAudioTranscriptionDelta,
+    /// <inheritdoc />
     ConversationItemInputAudioTranscriptionCompleted,
+    /// <inheritdoc />
     ConversationItemInputAudioTranscriptionFailed,
+    /// <inheritdoc />
     InputAudioBufferSpeechStarted,
+    /// <inheritdoc />
     InputAudioBufferSpeechStopped,
+    /// <inheritdoc />
     InputAudioBufferCommitted,
+    /// <inheritdoc />
     InputAudioBufferCleared,
+    /// <inheritdoc />
     InputAudioBufferTimeoutTriggered,
+    /// <inheritdoc />
     OutputAudioBufferCleared,
+    /// <inheritdoc />
     SessionInputAudioBufferCommitted,
+    /// <inheritdoc />
     SessionInputTranscriptDelta,
+    /// <inheritdoc />
     SessionOutputAudioDelta,
+    /// <inheritdoc />
     SessionOutputTranscriptDelta,
+    /// <inheritdoc />
     RateLimitsUpdated,
 }
 
@@ -59,47 +103,66 @@ public enum RealtimeServerEventType
 /// </summary>
 public abstract record OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public string Type { get; init; } = string.Empty;
+    /// <inheritdoc />
     public RealtimeServerEventType EventType { get; init; }
+    /// <inheritdoc />
     public string RawJson { get; init; } = string.Empty;
+    /// <inheritdoc />
     public string? EventId { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeErrorEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public required OpenAIRealtimeError Error { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeSessionEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public required JsonElement Session { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeResponseEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public required JsonElement Response { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeConversationItemEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public required JsonElement Item { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeConversationEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public required JsonElement Conversation { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeContentPartEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public required JsonElement Part { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeRateLimitsEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public required JsonElement RateLimits { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeUnknownEvent : OpenAIRealtimeEvent;
 
 /// <summary>
@@ -107,9 +170,13 @@ public sealed record OpenAIRealtimeUnknownEvent : OpenAIRealtimeEvent;
 /// </summary>
 public sealed record OpenAIRealtimeAudioDeltaEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public required byte[] AudioBytes { get; init; }
+    /// <inheritdoc />
     public string? ItemId { get; init; }
+    /// <inheritdoc />
     public int? OutputIndex { get; init; }
+    /// <inheritdoc />
     public int? ContentIndex { get; init; }
 }
 
@@ -118,8 +185,11 @@ public sealed record OpenAIRealtimeAudioDeltaEvent : OpenAIRealtimeEvent
 /// </summary>
 public sealed record OpenAIRealtimeFunctionCallArgsDeltaEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public required string ItemId { get; init; }
+    /// <inheritdoc />
     public required string CallId { get; init; }
+    /// <inheritdoc />
     public required string Delta { get; init; }
 }
 
@@ -128,8 +198,11 @@ public sealed record OpenAIRealtimeFunctionCallArgsDeltaEvent : OpenAIRealtimeEv
 /// </summary>
 public sealed record OpenAIRealtimeFunctionCallArgsDoneEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public required string ItemId { get; init; }
+    /// <inheritdoc />
     public required string CallId { get; init; }
+    /// <inheritdoc />
     public required string Arguments { get; init; }
 }
 
@@ -138,10 +211,15 @@ public sealed record OpenAIRealtimeFunctionCallArgsDoneEvent : OpenAIRealtimeEve
 /// </summary>
 public sealed record OpenAIRealtimeTextDeltaEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public required string Delta { get; init; }
+    /// <inheritdoc />
     public string? ResponseId { get; init; }
+    /// <inheritdoc />
     public string? ItemId { get; init; }
+    /// <inheritdoc />
     public int? OutputIndex { get; init; }
+    /// <inheritdoc />
     public int? ContentIndex { get; init; }
 }
 
@@ -150,6 +228,7 @@ public sealed record OpenAIRealtimeTextDeltaEvent : OpenAIRealtimeEvent
 /// </summary>
 public sealed record OpenAIRealtimeOutputItemDoneEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public required JsonElement Item { get; init; }
 }
 
@@ -158,6 +237,7 @@ public sealed record OpenAIRealtimeOutputItemDoneEvent : OpenAIRealtimeEvent
 /// </summary>
 public sealed record OpenAIRealtimeSpeechStartedEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public int? AudioStartMs { get; init; }
 }
 
@@ -166,6 +246,7 @@ public sealed record OpenAIRealtimeSpeechStartedEvent : OpenAIRealtimeEvent
 /// </summary>
 public sealed record OpenAIRealtimeSpeechStoppedEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public int? AudioEndMs { get; init; }
 }
 
@@ -174,9 +255,13 @@ public sealed record OpenAIRealtimeSpeechStoppedEvent : OpenAIRealtimeEvent
 /// </summary>
 public sealed record OpenAIRealtimeTranscriptionCompletedEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public string? ItemId { get; init; }
+    /// <inheritdoc />
     public int? ContentIndex { get; init; }
+    /// <inheritdoc />
     public string? Transcript { get; init; }
+    /// <inheritdoc />
     public string? Speaker { get; init; }
 }
 
@@ -185,14 +270,20 @@ public sealed record OpenAIRealtimeTranscriptionCompletedEvent : OpenAIRealtimeE
 /// </summary>
 public sealed record OpenAIRealtimeTranscriptionDeltaEvent : OpenAIRealtimeEvent
 {
+    /// <inheritdoc />
     public string? ItemId { get; init; }
+    /// <inheritdoc />
     public int? ContentIndex { get; init; }
+    /// <inheritdoc />
     public required string Delta { get; init; }
+    /// <inheritdoc />
     public JsonElement? Logprobs { get; init; }
 }
 
+/// <inheritdoc />
 public sealed record OpenAIRealtimeError(string? Type, string? Code, string? Message, string? Param);
 
+/// <inheritdoc />
 public static class OpenAIRealtimeEventParser
 {
     private static readonly Dictionary<string, RealtimeServerEventType> EventTypeMap = new(StringComparer.Ordinal)
@@ -249,6 +340,7 @@ public static class OpenAIRealtimeEventParser
     /// </summary>
     public static IReadOnlyCollection<string> KnownEventTypes => EventTypeMap.Keys;
 
+    /// <inheritdoc />
     public static OpenAIRealtimeEvent Parse(string json)
     {
         using var doc = JsonDocument.Parse(json);

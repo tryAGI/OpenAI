@@ -46,7 +46,7 @@ public partial class Tests
         using var client = OpenAIClient.Create(new OpenAIConfig
         {
             ApiKey = "test-api-key",
-            BaseUrl = "wss://api.openai.com/v1/realtime?existing=1",
+            BaseUrl = new Uri("wss://api.openai.com/v1/realtime?existing=1"),
         });
         var method = client.Realtime.GetType().GetMethod("BuildUri", BindingFlags.Instance | BindingFlags.NonPublic);
         method.Should().NotBeNull();

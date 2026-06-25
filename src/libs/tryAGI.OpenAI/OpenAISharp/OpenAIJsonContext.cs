@@ -3,6 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace tryAGI.OpenAI.OpenAISharp;
 
+/// <inheritdoc />
 [JsonSourceGenerationOptions(
     JsonSerializerDefaults.Web,
     DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull)]
