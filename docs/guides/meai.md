@@ -3,7 +3,7 @@
 !!! tip "Cross-SDK comparison"
     See the [centralized MEAI documentation](https://tryagi.github.io/docs/meai/) for feature matrices and comparisons across all tryAGI SDKs.
 
-The OpenAI SDK implements `IChatClient` and `IEmbeddingGenerator<string, Embedding<float>>` from [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai).
+The OpenAI SDK implements `IChatClient`, `IEmbeddingGenerator<string, Embedding<float>>`, and `ITextToSpeechClient` from [Microsoft.Extensions.AI](https://learn.microsoft.com/en-us/dotnet/ai/microsoft-extensions-ai).
 
 ## Supported Interfaces
 
@@ -11,6 +11,7 @@ The OpenAI SDK implements `IChatClient` and `IEmbeddingGenerator<string, Embeddi
 |-----------|-------------|
 | `IChatClient` | Chat completions with text, streaming, tool calling, images, and structured output |
 | `IEmbeddingGenerator<string, Embedding<float>>` | Text embeddings with custom dimensions |
+| `ITextToSpeechClient` | Text-to-speech with GPT-4o mini TTS, built-in voices, custom voice IDs, and streaming audio |
 
 ## IChatClient
 
@@ -185,6 +186,52 @@ var result = await generator.GenerateAsync(
     });
 
 Console.WriteLine($"Dimensions: {result[0].Vector.Length}"); // 256
+```
+
+## ITextToSpeechClient
+
+```csharp
+using tryAGI.OpenAI;
+using Microsoft.Extensions.AI;
+
+using var client = new OpenAiClient("API_KEY");
+ITextToSpeechClient ttsClient = client;
+
+var response = await ttsClient.GetAudioAsync(
+    "Today is a wonderful day to build something people love.",
+    new TextToSpeechOptions
+    {
+        ModelId = "gpt-4o-mini-tts",
+        VoiceId = "coral",
+        AudioFormat = "mp3",
+        Speed = 1.05f,
+        AdditionalProperties = new()
+        {
+            [OpenAiTextToSpeechPropertyNames.Instructions] = "Speak in a cheerful and positive tone.",
+        },
+    });
+
+var audio = response.Contents.OfType<DataContent>().Single().Data;
+```
+
+For low-latency playback, use streaming:
+
+```csharp
+await foreach (var update in ttsClient.GetStreamingAudioAsync(
+    "Stream this as audio chunks.",
+    new TextToSpeechOptions
+    {
+        ModelId = "gpt-4o-mini-tts",
+        VoiceId = "coral",
+        AudioFormat = "pcm",
+    }))
+{
+    foreach (var chunk in update.Contents.OfType<DataContent>())
+    {
+        var bytes = chunk.Data.ToArray();
+        // Send bytes to your audio output pipeline.
+    }
+}
 ```
 
 ## Custom Providers
