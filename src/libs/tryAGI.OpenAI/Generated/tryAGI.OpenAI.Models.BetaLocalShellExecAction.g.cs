@@ -1,0 +1,101 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// Execute a shell command on the server.
+    /// </summary>
+    public sealed partial class BetaLocalShellExecAction
+    {
+        /// <summary>
+        /// The type of the local shell action. Always `exec`.<br/>
+        /// Default Value: exec
+        /// </summary>
+        /// <default>global::tryAGI.OpenAI.BetaLocalShellExecActionType.Exec</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaLocalShellExecActionTypeJsonConverter))]
+        public global::tryAGI.OpenAI.BetaLocalShellExecActionType Type { get; set; } = global::tryAGI.OpenAI.BetaLocalShellExecActionType.Exec;
+
+        /// <summary>
+        /// The command to run.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("command")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<string> Command { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("timeout_ms")]
+        public int? TimeoutMs { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("working_directory")]
+        public string? WorkingDirectory { get; set; }
+
+        /// <summary>
+        /// Environment variables to set for the command.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("env")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.Dictionary<string, string> Env { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? User { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaLocalShellExecAction" /> class.
+        /// </summary>
+        /// <param name="command">
+        /// The command to run.
+        /// </param>
+        /// <param name="env">
+        /// Environment variables to set for the command.
+        /// </param>
+        /// <param name="timeoutMs"></param>
+        /// <param name="workingDirectory"></param>
+        /// <param name="user"></param>
+        /// <param name="type">
+        /// The type of the local shell action. Always `exec`.<br/>
+        /// Default Value: exec
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public BetaLocalShellExecAction(
+            global::System.Collections.Generic.IList<string> command,
+            global::System.Collections.Generic.Dictionary<string, string> env,
+            int? timeoutMs,
+            string? workingDirectory,
+            string? user,
+            global::tryAGI.OpenAI.BetaLocalShellExecActionType type = global::tryAGI.OpenAI.BetaLocalShellExecActionType.Exec)
+        {
+            this.Type = type;
+            this.Command = command ?? throw new global::System.ArgumentNullException(nameof(command));
+            this.TimeoutMs = timeoutMs;
+            this.WorkingDirectory = workingDirectory;
+            this.Env = env ?? throw new global::System.ArgumentNullException(nameof(env));
+            this.User = user;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaLocalShellExecAction" /> class.
+        /// </summary>
+        public BetaLocalShellExecAction()
+        {
+        }
+
+    }
+}

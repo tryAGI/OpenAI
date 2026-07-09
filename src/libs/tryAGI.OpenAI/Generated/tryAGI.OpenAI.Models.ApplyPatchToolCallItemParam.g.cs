@@ -31,6 +31,12 @@ namespace tryAGI.OpenAI
         public required string CallId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        public global::tryAGI.OpenAI.ToolCallCallerParam? Caller { get; set; }
+
+        /// <summary>
         /// The status of the apply patch tool call. One of `in_progress` or `completed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -65,6 +71,7 @@ namespace tryAGI.OpenAI
         /// The specific create, delete, or update instruction for the apply_patch tool call.
         /// </param>
         /// <param name="id"></param>
+        /// <param name="caller"></param>
         /// <param name="type">
         /// The type of the item. Always `apply_patch_call`.<br/>
         /// Default Value: apply_patch_call
@@ -77,11 +84,13 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ApplyPatchCallStatusParam status,
             global::tryAGI.OpenAI.ApplyPatchOperationParam operation,
             string? id,
+            global::tryAGI.OpenAI.ToolCallCallerParam? caller,
             global::tryAGI.OpenAI.ApplyPatchToolCallItemParamType type = global::tryAGI.OpenAI.ApplyPatchToolCallItemParamType.ApplyPatchCall)
         {
             this.Type = type;
             this.Id = id;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Caller = caller;
             this.Status = status;
             this.Operation = operation;
         }

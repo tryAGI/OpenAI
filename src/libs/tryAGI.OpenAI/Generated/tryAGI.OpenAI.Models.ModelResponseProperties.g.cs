@@ -72,6 +72,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_retention")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::tryAGI.OpenAI.ModelResponsePropertiesPromptCacheRetention2? PromptCacheRetention { get; set; }
 
         /// <summary>
@@ -97,7 +98,6 @@ namespace tryAGI.OpenAI
         /// Example: prompt-cache-key-1234
         /// </param>
         /// <param name="serviceTier"></param>
-        /// <param name="promptCacheRetention"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -108,8 +108,7 @@ namespace tryAGI.OpenAI
             double? topP,
             string? safetyIdentifier,
             string? promptCacheKey,
-            global::tryAGI.OpenAI.ServiceTierEnum? serviceTier,
-            global::tryAGI.OpenAI.ModelResponsePropertiesPromptCacheRetention2? promptCacheRetention)
+            global::tryAGI.OpenAI.ServiceTierEnum? serviceTier)
         {
             this.Metadata = metadata;
             this.TopLogprobs = topLogprobs;
@@ -118,7 +117,6 @@ namespace tryAGI.OpenAI
             this.SafetyIdentifier = safetyIdentifier;
             this.PromptCacheKey = promptCacheKey;
             this.ServiceTier = serviceTier;
-            this.PromptCacheRetention = promptCacheRetention;
         }
 
         /// <summary>

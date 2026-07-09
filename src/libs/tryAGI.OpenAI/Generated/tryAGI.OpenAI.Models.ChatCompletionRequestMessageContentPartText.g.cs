@@ -23,6 +23,12 @@ namespace tryAGI.OpenAI
         public required string Text { get; set; }
 
         /// <summary>
+        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
+        public global::tryAGI.OpenAI.PromptCacheBreakpointParam? PromptCacheBreakpoint { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,15 +43,20 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// The type of the content part.
         /// </param>
+        /// <param name="promptCacheBreakpoint">
+        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionRequestMessageContentPartText(
             string text,
-            global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartTextType type)
+            global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartTextType type,
+            global::tryAGI.OpenAI.PromptCacheBreakpointParam? promptCacheBreakpoint)
         {
             this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.PromptCacheBreakpoint = promptCacheBreakpoint;
         }
 
         /// <summary>

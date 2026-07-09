@@ -69,6 +69,9 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("output")) __score2++;
             if (__jsonProps.Contains("output_text")) __score2++;
             if (__jsonProps.Contains("parallel_tool_calls")) __score2++;
+            if (__jsonProps.Contains("prompt_cache_options")) __score2++;
+            if (__jsonProps.Contains("prompt_cache_options.mode")) __score2++;
+            if (__jsonProps.Contains("prompt_cache_options.ttl")) __score2++;
             if (__jsonProps.Contains("reasoning")) __score2++;
             if (__jsonProps.Contains("status")) __score2++;
             if (__jsonProps.Contains("truncation")) __score2++;

@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        BioPolicy,
+        /// <summary>
+        /// 
+        /// </summary>
         EmptyImageFile,
         /// <summary>
         /// 
@@ -94,6 +98,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ResponseErrorCode.BioPolicy => "bio_policy",
                 ResponseErrorCode.EmptyImageFile => "empty_image_file",
                 ResponseErrorCode.FailedToDownloadImage => "failed_to_download_image",
                 ResponseErrorCode.ImageContentPolicyViolation => "image_content_policy_violation",
@@ -122,6 +127,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "bio_policy" => ResponseErrorCode.BioPolicy,
                 "empty_image_file" => ResponseErrorCode.EmptyImageFile,
                 "failed_to_download_image" => ResponseErrorCode.FailedToDownloadImage,
                 "image_content_policy_violation" => ResponseErrorCode.ImageContentPolicyViolation,

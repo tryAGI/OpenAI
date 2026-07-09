@@ -1,0 +1,87 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
+    /// </summary>
+    public sealed partial class BetaComputerUsePreviewTool
+    {
+        /// <summary>
+        /// The type of the computer use tool. Always `computer_use_preview`.<br/>
+        /// Default Value: computer_use_preview
+        /// </summary>
+        /// <default>global::tryAGI.OpenAI.BetaComputerUsePreviewToolType.ComputerUsePreview</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaComputerUsePreviewToolTypeJsonConverter))]
+        public global::tryAGI.OpenAI.BetaComputerUsePreviewToolType Type { get; set; } = global::tryAGI.OpenAI.BetaComputerUsePreviewToolType.ComputerUsePreview;
+
+        /// <summary>
+        /// The type of computer environment to control.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaComputerEnvironmentJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.BetaComputerEnvironment Environment { get; set; }
+
+        /// <summary>
+        /// The width of the computer display.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("display_width")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int DisplayWidth { get; set; }
+
+        /// <summary>
+        /// The height of the computer display.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("display_height")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int DisplayHeight { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaComputerUsePreviewTool" /> class.
+        /// </summary>
+        /// <param name="environment">
+        /// The type of computer environment to control.
+        /// </param>
+        /// <param name="displayWidth">
+        /// The width of the computer display.
+        /// </param>
+        /// <param name="displayHeight">
+        /// The height of the computer display.
+        /// </param>
+        /// <param name="type">
+        /// The type of the computer use tool. Always `computer_use_preview`.<br/>
+        /// Default Value: computer_use_preview
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public BetaComputerUsePreviewTool(
+            global::tryAGI.OpenAI.BetaComputerEnvironment environment,
+            int displayWidth,
+            int displayHeight,
+            global::tryAGI.OpenAI.BetaComputerUsePreviewToolType type = global::tryAGI.OpenAI.BetaComputerUsePreviewToolType.ComputerUsePreview)
+        {
+            this.Type = type;
+            this.Environment = environment;
+            this.DisplayWidth = displayWidth;
+            this.DisplayHeight = displayHeight;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaComputerUsePreviewTool" /> class.
+        /// </summary>
+        public BetaComputerUsePreviewTool()
+        {
+        }
+
+    }
+}

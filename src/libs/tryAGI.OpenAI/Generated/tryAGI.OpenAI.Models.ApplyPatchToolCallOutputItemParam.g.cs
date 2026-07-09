@@ -31,6 +31,12 @@ namespace tryAGI.OpenAI
         public required string CallId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        public global::tryAGI.OpenAI.ToolCallCallerParam? Caller { get; set; }
+
+        /// <summary>
         /// The status of the apply patch tool call output. One of `completed` or `failed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -60,6 +66,7 @@ namespace tryAGI.OpenAI
         /// The status of the apply patch tool call output. One of `completed` or `failed`.
         /// </param>
         /// <param name="id"></param>
+        /// <param name="caller"></param>
         /// <param name="output"></param>
         /// <param name="type">
         /// The type of the item. Always `apply_patch_call_output`.<br/>
@@ -72,12 +79,14 @@ namespace tryAGI.OpenAI
             string callId,
             global::tryAGI.OpenAI.ApplyPatchCallOutputStatusParam status,
             string? id,
+            global::tryAGI.OpenAI.ToolCallCallerParam? caller,
             string? output,
             global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParamType type = global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParamType.ApplyPatchCallOutput)
         {
             this.Type = type;
             this.Id = id;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Caller = caller;
             this.Status = status;
             this.Output = output;
         }

@@ -35,9 +35,11 @@ namespace tryAGI.OpenAI.JsonConverters
             }
 
             var __score0 = 0;
+            if (__jsonProps.Contains("allowed_callers")) __score0++;
             if (__jsonProps.Contains("defer_loading")) __score0++;
             if (__jsonProps.Contains("description")) __score0++;
             if (__jsonProps.Contains("name")) __score0++;
+            if (__jsonProps.Contains("output_schema")) __score0++;
             if (__jsonProps.Contains("parameters")) __score0++;
             if (__jsonProps.Contains("strict")) __score0++;
             if (__jsonProps.Contains("type")) __score0++;
@@ -63,6 +65,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("type")) __score4++;
             if (__jsonProps.Contains("user_location")) __score4++;
             var __score5 = 0;
+            if (__jsonProps.Contains("allowed_callers")) __score5++;
             if (__jsonProps.Contains("allowed_tools")) __score5++;
             if (__jsonProps.Contains("authorization")) __score5++;
             if (__jsonProps.Contains("connector_id")) __score5++;
@@ -75,51 +78,57 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("tunnel_id")) __score5++;
             if (__jsonProps.Contains("type")) __score5++;
             var __score6 = 0;
+            if (__jsonProps.Contains("allowed_callers")) __score6++;
             if (__jsonProps.Contains("container")) __score6++;
             if (__jsonProps.Contains("type")) __score6++;
             var __score7 = 0;
-            if (__jsonProps.Contains("action")) __score7++;
-            if (__jsonProps.Contains("background")) __score7++;
-            if (__jsonProps.Contains("input_fidelity")) __score7++;
-            if (__jsonProps.Contains("input_image_mask")) __score7++;
-            if (__jsonProps.Contains("input_image_mask.file_id")) __score7++;
-            if (__jsonProps.Contains("input_image_mask.image_url")) __score7++;
-            if (__jsonProps.Contains("model")) __score7++;
-            if (__jsonProps.Contains("moderation")) __score7++;
-            if (__jsonProps.Contains("output_compression")) __score7++;
-            if (__jsonProps.Contains("output_format")) __score7++;
-            if (__jsonProps.Contains("partial_images")) __score7++;
-            if (__jsonProps.Contains("quality")) __score7++;
-            if (__jsonProps.Contains("size")) __score7++;
             if (__jsonProps.Contains("type")) __score7++;
             var __score8 = 0;
+            if (__jsonProps.Contains("action")) __score8++;
+            if (__jsonProps.Contains("background")) __score8++;
+            if (__jsonProps.Contains("input_fidelity")) __score8++;
+            if (__jsonProps.Contains("input_image_mask")) __score8++;
+            if (__jsonProps.Contains("input_image_mask.file_id")) __score8++;
+            if (__jsonProps.Contains("input_image_mask.image_url")) __score8++;
+            if (__jsonProps.Contains("model")) __score8++;
+            if (__jsonProps.Contains("moderation")) __score8++;
+            if (__jsonProps.Contains("output_compression")) __score8++;
+            if (__jsonProps.Contains("output_format")) __score8++;
+            if (__jsonProps.Contains("partial_images")) __score8++;
+            if (__jsonProps.Contains("quality")) __score8++;
+            if (__jsonProps.Contains("size")) __score8++;
             if (__jsonProps.Contains("type")) __score8++;
             var __score9 = 0;
-            if (__jsonProps.Contains("environment")) __score9++;
             if (__jsonProps.Contains("type")) __score9++;
             var __score10 = 0;
-            if (__jsonProps.Contains("defer_loading")) __score10++;
-            if (__jsonProps.Contains("description")) __score10++;
-            if (__jsonProps.Contains("format")) __score10++;
-            if (__jsonProps.Contains("name")) __score10++;
+            if (__jsonProps.Contains("allowed_callers")) __score10++;
+            if (__jsonProps.Contains("environment")) __score10++;
             if (__jsonProps.Contains("type")) __score10++;
             var __score11 = 0;
+            if (__jsonProps.Contains("allowed_callers")) __score11++;
+            if (__jsonProps.Contains("defer_loading")) __score11++;
             if (__jsonProps.Contains("description")) __score11++;
+            if (__jsonProps.Contains("format")) __score11++;
             if (__jsonProps.Contains("name")) __score11++;
-            if (__jsonProps.Contains("tools")) __score11++;
             if (__jsonProps.Contains("type")) __score11++;
             var __score12 = 0;
             if (__jsonProps.Contains("description")) __score12++;
-            if (__jsonProps.Contains("execution")) __score12++;
-            if (__jsonProps.Contains("parameters")) __score12++;
+            if (__jsonProps.Contains("name")) __score12++;
+            if (__jsonProps.Contains("tools")) __score12++;
             if (__jsonProps.Contains("type")) __score12++;
             var __score13 = 0;
-            if (__jsonProps.Contains("search_content_types")) __score13++;
-            if (__jsonProps.Contains("search_context_size")) __score13++;
+            if (__jsonProps.Contains("description")) __score13++;
+            if (__jsonProps.Contains("execution")) __score13++;
+            if (__jsonProps.Contains("parameters")) __score13++;
             if (__jsonProps.Contains("type")) __score13++;
-            if (__jsonProps.Contains("user_location")) __score13++;
             var __score14 = 0;
+            if (__jsonProps.Contains("search_content_types")) __score14++;
+            if (__jsonProps.Contains("search_context_size")) __score14++;
             if (__jsonProps.Contains("type")) __score14++;
+            if (__jsonProps.Contains("user_location")) __score14++;
+            var __score15 = 0;
+            if (__jsonProps.Contains("allowed_callers")) __score15++;
+            if (__jsonProps.Contains("type")) __score15++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -137,6 +146,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__score12 > __bestScore) { __bestScore = __score12; __bestIndex = 12; }
             if (__score13 > __bestScore) { __bestScore = __score13; __bestIndex = 13; }
             if (__score14 > __bestScore) { __bestScore = __score14; __bestIndex = 14; }
+            if (__score15 > __bestScore) { __bestScore = __score15; __bestIndex = 15; }
 
             global::tryAGI.OpenAI.FunctionTool? function = default;
             global::tryAGI.OpenAI.FileSearchTool? fileSearch = default;
@@ -145,6 +155,7 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.WebSearchTool? webSearch = default;
             global::tryAGI.OpenAI.MCPTool? mcp = default;
             global::tryAGI.OpenAI.CodeInterpreterTool? codeInterpreter = default;
+            global::tryAGI.OpenAI.ProgrammaticToolCallingParam? programmaticToolCalling = default;
             global::tryAGI.OpenAI.ImageGenTool? imageGeneration = default;
             global::tryAGI.OpenAI.LocalShellToolParam? localShell = default;
             global::tryAGI.OpenAI.FunctionShellToolParam? shell = default;
@@ -264,6 +275,21 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgrammaticToolCallingParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgrammaticToolCallingParam> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgrammaticToolCallingParam).Name}");
+                        programmaticToolCalling = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 8)
+                {
+                    try
+                    {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ImageGenTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ImageGenTool> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ImageGenTool).Name}");
                         imageGeneration = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -275,7 +301,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 8)
+                else if (__bestIndex == 9)
                 {
                     try
                     {
@@ -290,7 +316,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 9)
+                else if (__bestIndex == 10)
                 {
                     try
                     {
@@ -305,7 +331,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 10)
+                else if (__bestIndex == 11)
                 {
                     try
                     {
@@ -320,7 +346,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 11)
+                else if (__bestIndex == 12)
                 {
                     try
                     {
@@ -335,7 +361,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 12)
+                else if (__bestIndex == 13)
                 {
                     try
                     {
@@ -350,7 +376,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 13)
+                else if (__bestIndex == 14)
                 {
                     try
                     {
@@ -365,7 +391,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 14)
+                else if (__bestIndex == 15)
                 {
                     try
                     {
@@ -382,7 +408,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -399,7 +425,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -416,7 +442,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -433,7 +459,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -450,7 +476,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -467,7 +493,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -484,7 +510,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -501,7 +527,24 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgrammaticToolCallingParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgrammaticToolCallingParam> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgrammaticToolCallingParam).Name}");
+                    programmaticToolCalling = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -518,7 +561,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -535,7 +578,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -552,7 +595,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -569,7 +612,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -586,7 +629,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -603,7 +646,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -620,7 +663,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
+            if (function == null && fileSearch == null && computer == null && computerUsePreview == null && webSearch == null && mcp == null && codeInterpreter == null && programmaticToolCalling == null && imageGeneration == null && localShell == null && shell == null && custom == null && @namespace == null && toolSearch == null && webSearchPreview == null && applyPatch == null)
             {
                 try
                 {
@@ -651,6 +694,8 @@ namespace tryAGI.OpenAI.JsonConverters
                 mcp,
 
                 codeInterpreter,
+
+                programmaticToolCalling,
 
                 imageGeneration,
 
@@ -722,6 +767,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CodeInterpreterTool), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CodeInterpreterTool?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CodeInterpreterTool).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreter!, typeInfo);
+            }
+            else if (value.IsProgrammaticToolCalling)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgrammaticToolCallingParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgrammaticToolCallingParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgrammaticToolCallingParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProgrammaticToolCalling!, typeInfo);
             }
             else if (value.IsImageGeneration)
             {

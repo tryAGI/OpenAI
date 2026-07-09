@@ -36,6 +36,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.DetailEnum? Detail { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
+        public global::tryAGI.OpenAI.PromptCacheBreakpointParam? PromptCacheBreakpoint { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,6 +53,7 @@ namespace tryAGI.OpenAI
         /// <param name="imageUrl"></param>
         /// <param name="fileId"></param>
         /// <param name="detail"></param>
+        /// <param name="promptCacheBreakpoint"></param>
         /// <param name="type">
         /// The type of the input item. Always `input_image`.<br/>
         /// Default Value: input_image
@@ -58,12 +65,14 @@ namespace tryAGI.OpenAI
             string? imageUrl,
             string? fileId,
             global::tryAGI.OpenAI.DetailEnum? detail,
+            global::tryAGI.OpenAI.PromptCacheBreakpointParam? promptCacheBreakpoint,
             global::tryAGI.OpenAI.InputImageContentParamAutoParamType type = global::tryAGI.OpenAI.InputImageContentParamAutoParamType.InputImage)
         {
             this.Type = type;
             this.ImageUrl = imageUrl;
             this.FileId = fileId;
             this.Detail = detail;
+            this.PromptCacheBreakpoint = promptCacheBreakpoint;
         }
 
         /// <summary>

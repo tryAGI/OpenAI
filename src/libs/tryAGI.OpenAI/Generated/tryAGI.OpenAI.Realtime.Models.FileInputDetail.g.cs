@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        Auto,
+        /// <summary>
+        /// 
+        /// </summary>
         High,
         /// <summary>
         /// 
@@ -30,6 +34,7 @@ namespace tryAGI.OpenAI.Realtime
         {
             return value switch
             {
+                FileInputDetail.Auto => "auto",
                 FileInputDetail.High => "high",
                 FileInputDetail.Low => "low",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -42,6 +47,7 @@ namespace tryAGI.OpenAI.Realtime
         {
             return value switch
             {
+                "auto" => FileInputDetail.Auto,
                 "high" => FileInputDetail.High,
                 "low" => FileInputDetail.Low,
                 _ => null,

@@ -26,6 +26,12 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.AutoCodeInterpreterToolParam> Container { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? AllowedCallers { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -42,15 +48,18 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// The type of the code interpreter tool. Always `code_interpreter`.
         /// </param>
+        /// <param name="allowedCallers"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CodeInterpreterTool(
             global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.AutoCodeInterpreterToolParam> container,
-            global::tryAGI.OpenAI.CodeInterpreterToolType type)
+            global::tryAGI.OpenAI.CodeInterpreterToolType type,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? allowedCallers)
         {
             this.Type = type;
             this.Container = container;
+            this.AllowedCallers = allowedCallers;
         }
 
         /// <summary>

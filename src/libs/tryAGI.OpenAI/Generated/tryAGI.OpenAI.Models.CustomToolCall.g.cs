@@ -29,6 +29,12 @@ namespace tryAGI.OpenAI
         public required string CallId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        public global::tryAGI.OpenAI.ToolCallCaller? Caller { get; set; }
+
+        /// <summary>
         /// The namespace of the custom tool being called.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("namespace")]
@@ -72,6 +78,7 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The unique ID of the custom tool call in the OpenAI platform.
         /// </param>
+        /// <param name="caller"></param>
         /// <param name="namespace">
         /// The namespace of the custom tool being called.
         /// </param>
@@ -84,11 +91,13 @@ namespace tryAGI.OpenAI
             string input,
             global::tryAGI.OpenAI.CustomToolCallType type,
             string? id,
+            global::tryAGI.OpenAI.ToolCallCaller? caller,
             string? @namespace)
         {
             this.Type = type;
             this.Id = id;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Caller = caller;
             this.Namespace = @namespace;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));

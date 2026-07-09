@@ -1,0 +1,92 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// A filter used to compare a specified attribute key to a given value using a defined comparison operation.
+    /// </summary>
+    public sealed partial class BetaComparisonFilter
+    {
+        /// <summary>
+        /// Specifies the comparison operator: `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.<br/>
+        /// - `eq`: equals<br/>
+        /// - `ne`: not equal<br/>
+        /// - `gt`: greater than<br/>
+        /// - `gte`: greater than or equal<br/>
+        /// - `lt`: less than<br/>
+        /// - `lte`: less than or equal<br/>
+        /// - `in`: in<br/>
+        /// - `nin`: not in<br/>
+        /// Default Value: eq
+        /// </summary>
+        /// <default>global::tryAGI.OpenAI.BetaComparisonFilterType.Eq</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaComparisonFilterTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.BetaComparisonFilterType Type { get; set; } = global::tryAGI.OpenAI.BetaComparisonFilterType.Eq;
+
+        /// <summary>
+        /// The key to compare against the value.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("key")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Key { get; set; }
+
+        /// <summary>
+        /// The value to compare against the attribute key; supports string, number, or boolean types.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("value")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, double?, bool?, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<string, double?>>>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.OneOf<string, double?, bool?, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<string, double?>>> Value { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaComparisonFilter" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Specifies the comparison operator: `eq`, `ne`, `gt`, `gte`, `lt`, `lte`, `in`, `nin`.<br/>
+        /// - `eq`: equals<br/>
+        /// - `ne`: not equal<br/>
+        /// - `gt`: greater than<br/>
+        /// - `gte`: greater than or equal<br/>
+        /// - `lt`: less than<br/>
+        /// - `lte`: less than or equal<br/>
+        /// - `in`: in<br/>
+        /// - `nin`: not in<br/>
+        /// Default Value: eq
+        /// </param>
+        /// <param name="key">
+        /// The key to compare against the value.
+        /// </param>
+        /// <param name="value">
+        /// The value to compare against the attribute key; supports string, number, or boolean types.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public BetaComparisonFilter(
+            global::tryAGI.OpenAI.BetaComparisonFilterType type,
+            string key,
+            global::tryAGI.OpenAI.OneOf<string, double?, bool?, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<string, double?>>> value)
+        {
+            this.Type = type;
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Value = value;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaComparisonFilter" /> class.
+        /// </summary>
+        public BetaComparisonFilter()
+        {
+        }
+
+    }
+}

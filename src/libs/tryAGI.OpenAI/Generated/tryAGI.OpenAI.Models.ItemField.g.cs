@@ -47,6 +47,80 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.Program? Program { get; init; }
+#else
+        public global::tryAGI.OpenAI.Program? Program { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Program))]
+#endif
+        public bool IsProgram => Program != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProgram(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.Program? value)
+        {
+            value = Program;
+            return IsProgram;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.Program PickProgram() => IsProgram
+            ? Program!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Program' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ProgramOutput? ProgramOutput { get; init; }
+#else
+        public global::tryAGI.OpenAI.ProgramOutput? ProgramOutput { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProgramOutput))]
+#endif
+        public bool IsProgramOutput => ProgramOutput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProgramOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ProgramOutput? value)
+        {
+            value = ProgramOutput;
+            return IsProgramOutput;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ProgramOutput PickProgramOutput() => IsProgramOutput
+            ? ProgramOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProgramOutput' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool call to run a function. See the <br/>
         /// [function calling guide](/docs/guides/function-calling) for more information.
         /// </summary>
@@ -1003,6 +1077,52 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ItemField(global::tryAGI.OpenAI.Program value) => new ItemField((global::tryAGI.OpenAI.Program?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.Program?(ItemField @this) => @this.Program;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ItemField(global::tryAGI.OpenAI.Program? value)
+        {
+            Program = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemField FromProgram(global::tryAGI.OpenAI.Program? value) => new ItemField(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ItemField(global::tryAGI.OpenAI.ProgramOutput value) => new ItemField((global::tryAGI.OpenAI.ProgramOutput?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ProgramOutput?(ItemField @this) => @this.ProgramOutput;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ItemField(global::tryAGI.OpenAI.ProgramOutput? value)
+        {
+            ProgramOutput = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ItemField FromProgramOutput(global::tryAGI.OpenAI.ProgramOutput? value) => new ItemField(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ItemField(global::tryAGI.OpenAI.FunctionToolCall value) => new ItemField((global::tryAGI.OpenAI.FunctionToolCall?)value);
 
         /// <summary>
@@ -1580,6 +1700,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ItemField(
             global::tryAGI.OpenAI.Message? message,
+            global::tryAGI.OpenAI.Program? program,
+            global::tryAGI.OpenAI.ProgramOutput? programOutput,
             global::tryAGI.OpenAI.FunctionToolCall? functionCall,
             global::tryAGI.OpenAI.ToolSearchCall? toolSearchCall,
             global::tryAGI.OpenAI.ToolSearchOutput? toolSearchOutput,
@@ -1608,6 +1730,8 @@ namespace tryAGI.OpenAI
             )
         {
             Message = message;
+            Program = program;
+            ProgramOutput = programOutput;
             FunctionCall = functionCall;
             ToolSearchCall = toolSearchCall;
             ToolSearchOutput = toolSearchOutput;
@@ -1664,6 +1788,8 @@ namespace tryAGI.OpenAI
             ToolSearchOutput as object ??
             ToolSearchCall as object ??
             FunctionCall as object ??
+            ProgramOutput as object ??
+            Program as object ??
             Message as object 
             ;
 
@@ -1672,6 +1798,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             Message?.ToString() ??
+            Program?.ToString() ??
+            ProgramOutput?.ToString() ??
             FunctionCall?.ToString() ??
             ToolSearchCall?.ToString() ??
             ToolSearchOutput?.ToString() ??
@@ -1704,7 +1832,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && IsCustomToolCallOutput;
+            return IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && IsMcpCall && !IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && IsCustomToolCall && !IsCustomToolCallOutput || !IsMessage && !IsProgram && !IsProgramOutput && !IsFunctionCall && !IsToolSearchCall && !IsToolSearchOutput && !IsAdditionalTools && !IsFunctionCallOutput && !IsFileSearchCall && !IsWebSearchCall && !IsImageGenerationCall && !IsComputerCall && !IsComputerToolCallOutputResource && !IsReasoning && !IsCompaction && !IsCodeInterpreterCall && !IsLocalShellCall && !IsLocalShellCallOutput && !IsShellCall && !IsShellCallOutput && !IsApplyPatchCall && !IsApplyPatchCallOutput && !IsMcpListTools && !IsMcpApprovalRequest && !IsMcpApprovalResponse && !IsMcpCall && !IsCustomToolCall && IsCustomToolCallOutput;
         }
 
         /// <summary>
@@ -1712,6 +1840,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.Message, TResult>? message = null,
+            global::System.Func<global::tryAGI.OpenAI.Program, TResult>? program = null,
+            global::System.Func<global::tryAGI.OpenAI.ProgramOutput, TResult>? programOutput = null,
             global::System.Func<global::tryAGI.OpenAI.FunctionToolCall, TResult>? functionCall = null,
             global::System.Func<global::tryAGI.OpenAI.ToolSearchCall, TResult>? toolSearchCall = null,
             global::System.Func<global::tryAGI.OpenAI.ToolSearchOutput, TResult>? toolSearchOutput = null,
@@ -1747,6 +1877,14 @@ namespace tryAGI.OpenAI
             if (IsMessage && message != null)
             {
                 return message(Message!);
+            }
+            else if (IsProgram && program != null)
+            {
+                return program(Program!);
+            }
+            else if (IsProgramOutput && programOutput != null)
+            {
+                return programOutput(ProgramOutput!);
             }
             else if (IsFunctionCall && functionCall != null)
             {
@@ -1858,6 +1996,10 @@ namespace tryAGI.OpenAI
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.Message>? message = null,
 
+            global::System.Action<global::tryAGI.OpenAI.Program>? program = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ProgramOutput>? programOutput = null,
+
             global::System.Action<global::tryAGI.OpenAI.FunctionToolCall>? functionCall = null,
 
             global::System.Action<global::tryAGI.OpenAI.ToolSearchCall>? toolSearchCall = null,
@@ -1917,6 +2059,14 @@ namespace tryAGI.OpenAI
             if (IsMessage)
             {
                 message?.Invoke(Message!);
+            }
+            else if (IsProgram)
+            {
+                program?.Invoke(Program!);
+            }
+            else if (IsProgramOutput)
+            {
+                programOutput?.Invoke(ProgramOutput!);
             }
             else if (IsFunctionCall)
             {
@@ -2025,6 +2175,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.Message>? message = null,
+            global::System.Action<global::tryAGI.OpenAI.Program>? program = null,
+            global::System.Action<global::tryAGI.OpenAI.ProgramOutput>? programOutput = null,
             global::System.Action<global::tryAGI.OpenAI.FunctionToolCall>? functionCall = null,
             global::System.Action<global::tryAGI.OpenAI.ToolSearchCall>? toolSearchCall = null,
             global::System.Action<global::tryAGI.OpenAI.ToolSearchOutput>? toolSearchOutput = null,
@@ -2060,6 +2212,14 @@ namespace tryAGI.OpenAI
             if (IsMessage)
             {
                 message?.Invoke(Message!);
+            }
+            else if (IsProgram)
+            {
+                program?.Invoke(Program!);
+            }
+            else if (IsProgramOutput)
+            {
+                programOutput?.Invoke(ProgramOutput!);
             }
             else if (IsFunctionCall)
             {
@@ -2172,6 +2332,10 @@ namespace tryAGI.OpenAI
             {
                 Message,
                 typeof(global::tryAGI.OpenAI.Message),
+                Program,
+                typeof(global::tryAGI.OpenAI.Program),
+                ProgramOutput,
+                typeof(global::tryAGI.OpenAI.ProgramOutput),
                 FunctionCall,
                 typeof(global::tryAGI.OpenAI.FunctionToolCall),
                 ToolSearchCall,
@@ -2239,6 +2403,8 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Message?>.Default.Equals(Message, other.Message) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Program?>.Default.Equals(Program, other.Program) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ProgramOutput?>.Default.Equals(ProgramOutput, other.ProgramOutput) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCall?>.Default.Equals(FunctionCall, other.FunctionCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ToolSearchCall?>.Default.Equals(ToolSearchCall, other.ToolSearchCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ToolSearchOutput?>.Default.Equals(ToolSearchOutput, other.ToolSearchOutput) &&

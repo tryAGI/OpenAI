@@ -327,10 +327,15 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 | Command | Route | Description |
 |---------|-------|-------------|
 | `cancel-aresponse` | `POST /responses/{response_id}/cancel` | Cancels a model response with the given ID. Only responses created with the `background` parameter set to `true` can be cancelled.  [Learn more](/docs/guides/background). |
+| `cancel-aresponse` | `POST /responses/{response_id}/cancel?beta=true` | Cancels a model response with the given ID. Only responses created with the `background` parameter set to `true` can be cancelled.  [Learn more](/docs/guides/background). |
 | `create-amodel-response` | `POST /responses` | Creates a model response. Provide [text](/docs/guides/text) or [image](/docs/guides/images) inputs to generate [text](/docs/guides/text) or [JSON](/docs/guides/structured-outputs) outputs. Have the model call your own [custom code](/docs/guides/function-calling) or use built-in [tools](/docs/guides/tools) like [web search](/docs/guides/tools-web-search) or [file search](/docs/guides/tools-file-search) to use your own data as input for the model's response. |
+| `create-amodel-response` | `POST /responses?beta=true` | Creates a model response. Provide [text](/docs/guides/text) or [image](/docs/guides/images) inputs to generate [text](/docs/guides/text) or [JSON](/docs/guides/structured-outputs) outputs. Have the model call your own [custom code](/docs/guides/function-calling) or use built-in [tools](/docs/guides/tools) like [web search](/docs/guides/tools-web-search) or [file search](/docs/guides/tools-file-search) to use your own data as input for the model's response. |
 | `delete-amodel-response` | `DELETE /responses/{response_id}` | Deletes a model response with the given ID. |
+| `delete-amodel-response` | `DELETE /responses/{response_id}?beta=true` | Deletes a model response with the given ID. |
 | `get-amodel-response` | `GET /responses/{response_id}` | Retrieves a model response with the given ID. |
+| `get-amodel-response` | `GET /responses/{response_id}?beta=true` | Retrieves a model response with the given ID. |
 | `list-input-items` | `GET /responses/{response_id}/input_items` | Returns a list of input items for a given response. |
+| `list-input-items` | `GET /responses/{response_id}/input_items?beta=true` | Returns a list of input items for a given response. |
 
 ## `role`
 
@@ -465,6 +470,7 @@ Use Uploads to upload large files in multiple parts.
 |---------|-------|-------------|
 | `cancel-chat-session` | `POST /chatkit/sessions/{session_id}/cancel` | Cancel an active ChatKit session and return its most recent metadata.  Cancelling prevents new requests from using the issued client secret. |
 | `compact-aresponse` | `POST /responses/compact` | Compact a conversation. Returns a compacted response object.  Learn when and how to compact long-running conversations in the [conversation state guide](/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](/docs/guides/conversation-state#compaction-advanced). |
+| `compact-aresponse` | `POST /responses/compact?beta=true` | Compact a conversation. Returns a compacted response object.  Learn when and how to compact long-running conversations in the [conversation state guide](/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](/docs/guides/conversation-state#compaction-advanced). |
 | `create-admin-api-key` | `POST /organization/admin_api_keys` | Create an organization admin API key |
 | `create-chat-kit-session` | `POST /chatkit/sessions` | Create a ChatKit session. |
 | `create-container` | `POST /containers` | Create Container |
@@ -474,6 +480,7 @@ Use Uploads to upload large files in multiple parts.
 | `delete-admin-api-key` | `DELETE /organization/admin_api_keys/{key_id}` | Delete an organization admin API key |
 | `delete-chat-kit-thread` | `DELETE /chatkit/threads/{thread_id}` | Delete a ChatKit thread along with its items and stored attachments. |
 | `get-input-token-counts` | `POST /responses/input_tokens` | Returns input token counts of the request.  Returns an object with `object` set to `response.input_tokens` and an `input_tokens` count. |
+| `get-input-token-counts` | `POST /responses/input_tokens?beta=true` | Returns input token counts of the request.  Returns an object with `object` set to `response.input_tokens` and an `input_tokens` count. |
 | `list-all-organization-and-project-api-keys` | `GET /organization/admin_api_keys` | List organization API keys |
 | `list-chat-kit-thread-items` | `GET /chatkit/threads/{thread_id}/items` | List items that belong to a ChatKit thread. |
 | `list-chat-kit-threads` | `GET /chatkit/threads` | List ChatKit threads with optional pagination and user filters. |

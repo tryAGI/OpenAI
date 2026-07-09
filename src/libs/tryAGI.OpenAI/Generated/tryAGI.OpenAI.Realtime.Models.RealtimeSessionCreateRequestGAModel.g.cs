@@ -63,6 +63,14 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        GptRealtime21,
+        /// <summary>
+        /// 
+        /// </summary>
+        GptRealtime21Mini,
+        /// <summary>
+        /// 
+        /// </summary>
         GptRealtime20250828,
         /// <summary>
         /// 
@@ -103,6 +111,8 @@ namespace tryAGI.OpenAI.Realtime
                 RealtimeSessionCreateRequestGAModel.GptRealtime => "gpt-realtime",
                 RealtimeSessionCreateRequestGAModel.GptRealtime15 => "gpt-realtime-1.5",
                 RealtimeSessionCreateRequestGAModel.GptRealtime2 => "gpt-realtime-2",
+                RealtimeSessionCreateRequestGAModel.GptRealtime21 => "gpt-realtime-2.1",
+                RealtimeSessionCreateRequestGAModel.GptRealtime21Mini => "gpt-realtime-2.1-mini",
                 RealtimeSessionCreateRequestGAModel.GptRealtime20250828 => "gpt-realtime-2025-08-28",
                 RealtimeSessionCreateRequestGAModel.GptRealtimeMini => "gpt-realtime-mini",
                 RealtimeSessionCreateRequestGAModel.GptRealtimeMini20251006 => "gpt-realtime-mini-2025-10-06",
@@ -130,6 +140,8 @@ namespace tryAGI.OpenAI.Realtime
                 "gpt-realtime" => RealtimeSessionCreateRequestGAModel.GptRealtime,
                 "gpt-realtime-1.5" => RealtimeSessionCreateRequestGAModel.GptRealtime15,
                 "gpt-realtime-2" => RealtimeSessionCreateRequestGAModel.GptRealtime2,
+                "gpt-realtime-2.1" => RealtimeSessionCreateRequestGAModel.GptRealtime21,
+                "gpt-realtime-2.1-mini" => RealtimeSessionCreateRequestGAModel.GptRealtime21Mini,
                 "gpt-realtime-2025-08-28" => RealtimeSessionCreateRequestGAModel.GptRealtime20250828,
                 "gpt-realtime-mini" => RealtimeSessionCreateRequestGAModel.GptRealtimeMini,
                 "gpt-realtime-mini-2025-10-06" => RealtimeSessionCreateRequestGAModel.GptRealtimeMini20251006,

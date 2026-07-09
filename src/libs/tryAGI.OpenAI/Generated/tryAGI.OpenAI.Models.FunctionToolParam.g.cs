@@ -42,10 +42,22 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.FunctionToolParamType Type { get; set; } = global::tryAGI.OpenAI.FunctionToolParamType.Function;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_schema")]
+        public object? OutputSchema { get; set; }
+
+        /// <summary>
         /// Whether this function should be deferred and discovered via tool search.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("defer_loading")]
         public bool? DeferLoading { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? AllowedCallers { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -60,9 +72,11 @@ namespace tryAGI.OpenAI
         /// <param name="description"></param>
         /// <param name="parameters"></param>
         /// <param name="strict"></param>
+        /// <param name="outputSchema"></param>
         /// <param name="deferLoading">
         /// Whether this function should be deferred and discovered via tool search.
         /// </param>
+        /// <param name="allowedCallers"></param>
         /// <param name="type">
         /// Default Value: function
         /// </param>
@@ -74,7 +88,9 @@ namespace tryAGI.OpenAI
             string? description,
             global::tryAGI.OpenAI.EmptyModelParam? parameters,
             bool? strict,
+            object? outputSchema,
             bool? deferLoading,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? allowedCallers,
             global::tryAGI.OpenAI.FunctionToolParamType type = global::tryAGI.OpenAI.FunctionToolParamType.Function)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -82,7 +98,9 @@ namespace tryAGI.OpenAI
             this.Parameters = parameters;
             this.Strict = strict;
             this.Type = type;
+            this.OutputSchema = outputSchema;
             this.DeferLoading = deferLoading;
+            this.AllowedCallers = allowedCallers;
         }
 
         /// <summary>

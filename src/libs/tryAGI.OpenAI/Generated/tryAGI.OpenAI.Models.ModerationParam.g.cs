@@ -16,6 +16,12 @@ namespace tryAGI.OpenAI
         public required string Model { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("policy")]
+        public global::tryAGI.OpenAI.ModerationPolicyParam? Policy { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -27,13 +33,16 @@ namespace tryAGI.OpenAI
         /// <param name="model">
         /// The moderation model to use for moderated completions, e.g. 'omni-moderation-latest'.
         /// </param>
+        /// <param name="policy"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ModerationParam(
-            string model)
+            string model,
+            global::tryAGI.OpenAI.ModerationPolicyParam? policy)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Policy = policy;
         }
 
         /// <summary>

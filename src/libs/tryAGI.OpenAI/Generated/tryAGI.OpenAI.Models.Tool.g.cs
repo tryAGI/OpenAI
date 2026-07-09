@@ -271,6 +271,43 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreter' but the value was {ToString()}.");
 
         /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ProgrammaticToolCallingParam? ProgrammaticToolCalling { get; init; }
+#else
+        public global::tryAGI.OpenAI.ProgrammaticToolCallingParam? ProgrammaticToolCalling { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProgrammaticToolCalling))]
+#endif
+        public bool IsProgrammaticToolCalling => ProgrammaticToolCalling != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProgrammaticToolCalling(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ProgrammaticToolCallingParam? value)
+        {
+            value = ProgrammaticToolCalling;
+            return IsProgrammaticToolCalling;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ProgrammaticToolCallingParam PickProgrammaticToolCalling() => IsProgrammaticToolCalling
+            ? ProgrammaticToolCalling!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProgrammaticToolCalling' but the value was {ToString()}.");
+
+        /// <summary>
         /// A tool that generates images using the GPT image models.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -729,6 +766,29 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator Tool(global::tryAGI.OpenAI.ProgrammaticToolCallingParam value) => new Tool((global::tryAGI.OpenAI.ProgrammaticToolCallingParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ProgrammaticToolCallingParam?(Tool @this) => @this.ProgrammaticToolCalling;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Tool(global::tryAGI.OpenAI.ProgrammaticToolCallingParam? value)
+        {
+            ProgrammaticToolCalling = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static Tool FromProgrammaticToolCalling(global::tryAGI.OpenAI.ProgrammaticToolCallingParam? value) => new Tool(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator Tool(global::tryAGI.OpenAI.ImageGenTool value) => new Tool((global::tryAGI.OpenAI.ImageGenTool?)value);
 
         /// <summary>
@@ -921,6 +981,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.WebSearchTool? webSearch,
             global::tryAGI.OpenAI.MCPTool? mcp,
             global::tryAGI.OpenAI.CodeInterpreterTool? codeInterpreter,
+            global::tryAGI.OpenAI.ProgrammaticToolCallingParam? programmaticToolCalling,
             global::tryAGI.OpenAI.ImageGenTool? imageGeneration,
             global::tryAGI.OpenAI.LocalShellToolParam? localShell,
             global::tryAGI.OpenAI.FunctionShellToolParam? shell,
@@ -938,6 +999,7 @@ namespace tryAGI.OpenAI
             WebSearch = webSearch;
             Mcp = mcp;
             CodeInterpreter = codeInterpreter;
+            ProgrammaticToolCalling = programmaticToolCalling;
             ImageGeneration = imageGeneration;
             LocalShell = localShell;
             Shell = shell;
@@ -960,6 +1022,7 @@ namespace tryAGI.OpenAI
             Shell as object ??
             LocalShell as object ??
             ImageGeneration as object ??
+            ProgrammaticToolCalling as object ??
             CodeInterpreter as object ??
             Mcp as object ??
             WebSearch as object ??
@@ -980,6 +1043,7 @@ namespace tryAGI.OpenAI
             WebSearch?.ToString() ??
             Mcp?.ToString() ??
             CodeInterpreter?.ToString() ??
+            ProgrammaticToolCalling?.ToString() ??
             ImageGeneration?.ToString() ??
             LocalShell?.ToString() ??
             Shell?.ToString() ??
@@ -995,7 +1059,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && IsCodeInterpreter && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell && IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell && !IsShell && IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && IsApplyPatch;
+            return IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && !IsShell && IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && IsNamespace && !IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && IsToolSearch && !IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && IsWebSearchPreview && !IsApplyPatch || !IsFunction && !IsFileSearch && !IsComputer && !IsComputerUsePreview && !IsWebSearch && !IsMcp && !IsCodeInterpreter && !IsProgrammaticToolCalling && !IsImageGeneration && !IsLocalShell && !IsShell && !IsCustom && !IsNamespace && !IsToolSearch && !IsWebSearchPreview && IsApplyPatch;
         }
 
         /// <summary>
@@ -1009,6 +1073,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.WebSearchTool, TResult>? webSearch = null,
             global::System.Func<global::tryAGI.OpenAI.MCPTool, TResult>? mcp = null,
             global::System.Func<global::tryAGI.OpenAI.CodeInterpreterTool, TResult>? codeInterpreter = null,
+            global::System.Func<global::tryAGI.OpenAI.ProgrammaticToolCallingParam, TResult>? programmaticToolCalling = null,
             global::System.Func<global::tryAGI.OpenAI.ImageGenTool, TResult>? imageGeneration = null,
             global::System.Func<global::tryAGI.OpenAI.LocalShellToolParam, TResult>? localShell = null,
             global::System.Func<global::tryAGI.OpenAI.FunctionShellToolParam, TResult>? shell = null,
@@ -1051,6 +1116,10 @@ namespace tryAGI.OpenAI
             else if (IsCodeInterpreter && codeInterpreter != null)
             {
                 return codeInterpreter(CodeInterpreter!);
+            }
+            else if (IsProgrammaticToolCalling && programmaticToolCalling != null)
+            {
+                return programmaticToolCalling(ProgrammaticToolCalling!);
             }
             else if (IsImageGeneration && imageGeneration != null)
             {
@@ -1106,6 +1175,8 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.CodeInterpreterTool>? codeInterpreter = null,
 
+            global::System.Action<global::tryAGI.OpenAI.ProgrammaticToolCallingParam>? programmaticToolCalling = null,
+
             global::System.Action<global::tryAGI.OpenAI.ImageGenTool>? imageGeneration = null,
 
             global::System.Action<global::tryAGI.OpenAI.LocalShellToolParam>? localShell = null,
@@ -1155,6 +1226,10 @@ namespace tryAGI.OpenAI
             else if (IsCodeInterpreter)
             {
                 codeInterpreter?.Invoke(CodeInterpreter!);
+            }
+            else if (IsProgrammaticToolCalling)
+            {
+                programmaticToolCalling?.Invoke(ProgrammaticToolCalling!);
             }
             else if (IsImageGeneration)
             {
@@ -1201,6 +1276,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.WebSearchTool>? webSearch = null,
             global::System.Action<global::tryAGI.OpenAI.MCPTool>? mcp = null,
             global::System.Action<global::tryAGI.OpenAI.CodeInterpreterTool>? codeInterpreter = null,
+            global::System.Action<global::tryAGI.OpenAI.ProgrammaticToolCallingParam>? programmaticToolCalling = null,
             global::System.Action<global::tryAGI.OpenAI.ImageGenTool>? imageGeneration = null,
             global::System.Action<global::tryAGI.OpenAI.LocalShellToolParam>? localShell = null,
             global::System.Action<global::tryAGI.OpenAI.FunctionShellToolParam>? shell = null,
@@ -1243,6 +1319,10 @@ namespace tryAGI.OpenAI
             else if (IsCodeInterpreter)
             {
                 codeInterpreter?.Invoke(CodeInterpreter!);
+            }
+            else if (IsProgrammaticToolCalling)
+            {
+                programmaticToolCalling?.Invoke(ProgrammaticToolCalling!);
             }
             else if (IsImageGeneration)
             {
@@ -1299,6 +1379,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.MCPTool),
                 CodeInterpreter,
                 typeof(global::tryAGI.OpenAI.CodeInterpreterTool),
+                ProgrammaticToolCalling,
+                typeof(global::tryAGI.OpenAI.ProgrammaticToolCallingParam),
                 ImageGeneration,
                 typeof(global::tryAGI.OpenAI.ImageGenTool),
                 LocalShell,
@@ -1338,6 +1420,7 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchTool?>.Default.Equals(WebSearch, other.WebSearch) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPTool?>.Default.Equals(Mcp, other.Mcp) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CodeInterpreterTool?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ProgrammaticToolCallingParam?>.Default.Equals(ProgrammaticToolCalling, other.ProgrammaticToolCalling) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ImageGenTool?>.Default.Equals(ImageGeneration, other.ImageGeneration) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LocalShellToolParam?>.Default.Equals(LocalShell, other.LocalShell) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionShellToolParam?>.Default.Equals(Shell, other.Shell) &&

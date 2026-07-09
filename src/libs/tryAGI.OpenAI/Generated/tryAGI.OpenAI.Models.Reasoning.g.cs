@@ -11,6 +11,14 @@ namespace tryAGI.OpenAI
     public sealed partial class Reasoning
     {
         /// <summary>
+        /// Controls the reasoning execution mode for the request.<br/>
+        /// When returned on a response, this is the effective execution mode.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningModeEnumJsonConverter))]
+        public global::tryAGI.OpenAI.ReasoningModeEnum? Mode { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
@@ -43,6 +51,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="Reasoning" /> class.
         /// </summary>
+        /// <param name="mode">
+        /// Controls the reasoning execution mode for the request.<br/>
+        /// When returned on a response, this is the effective execution mode.
+        /// </param>
         /// <param name="effort"></param>
         /// <param name="summary"></param>
         /// <param name="context"></param>
@@ -51,11 +63,13 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Reasoning(
+            global::tryAGI.OpenAI.ReasoningModeEnum? mode,
             global::tryAGI.OpenAI.ReasoningEffortEnum? effort,
             global::tryAGI.OpenAI.ReasoningSummary2? summary,
             global::tryAGI.OpenAI.ReasoningContext2? context,
             global::tryAGI.OpenAI.ReasoningGenerateSummary2? generateSummary)
         {
+            this.Mode = mode;
             this.Effort = effort;
             this.Summary = summary;
             this.Context = context;

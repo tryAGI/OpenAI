@@ -1,0 +1,72 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// A logprob is the logarithmic probability that the model assigns to producing <br/>
+    /// a particular token at a given position in the sequence. Less-negative (higher) <br/>
+    /// logprob values indicate greater model confidence in that token choice.
+    /// </summary>
+    public sealed partial class BetaResponseLogProb
+    {
+        /// <summary>
+        /// A possible text token.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("token")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Token { get; set; }
+
+        /// <summary>
+        /// The log probability of this token.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logprob")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Logprob { get; set; }
+
+        /// <summary>
+        /// The log probabilities of up to 20 of the most likely tokens.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaResponseLogProbTopLogprob>? TopLogprobs { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaResponseLogProb" /> class.
+        /// </summary>
+        /// <param name="token">
+        /// A possible text token.
+        /// </param>
+        /// <param name="logprob">
+        /// The log probability of this token.
+        /// </param>
+        /// <param name="topLogprobs">
+        /// The log probabilities of up to 20 of the most likely tokens.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public BetaResponseLogProb(
+            string token,
+            double logprob,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaResponseLogProbTopLogprob>? topLogprobs)
+        {
+            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
+            this.Logprob = logprob;
+            this.TopLogprobs = topLogprobs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaResponseLogProb" /> class.
+        /// </summary>
+        public BetaResponseLogProb()
+        {
+        }
+
+    }
+}

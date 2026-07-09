@@ -38,17 +38,33 @@ namespace tryAGI.OpenAI.JsonConverters
             var __score3 = 0;
             if (__jsonProps.Contains("id")) __score3++;
             if (__jsonProps.Contains("type")) __score3++;
+            var __score4 = 0;
+            if (__jsonProps.Contains("call_id")) __score4++;
+            if (__jsonProps.Contains("code")) __score4++;
+            if (__jsonProps.Contains("fingerprint")) __score4++;
+            if (__jsonProps.Contains("id")) __score4++;
+            if (__jsonProps.Contains("type")) __score4++;
+            var __score5 = 0;
+            if (__jsonProps.Contains("call_id")) __score5++;
+            if (__jsonProps.Contains("id")) __score5++;
+            if (__jsonProps.Contains("result")) __score5++;
+            if (__jsonProps.Contains("status")) __score5++;
+            if (__jsonProps.Contains("type")) __score5++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
             if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
             if (__score3 > __bestScore) { __bestScore = __score3; __bestIndex = 3; }
+            if (__score4 > __bestScore) { __bestScore = __score4; __bestIndex = 4; }
+            if (__score5 > __bestScore) { __bestScore = __score5; __bestIndex = 5; }
 
             global::tryAGI.OpenAI.EasyInputMessage? message = default;
             global::tryAGI.OpenAI.Item? item = default;
             global::tryAGI.OpenAI.CompactionTriggerItemParam? compactionTrigger = default;
             global::tryAGI.OpenAI.ItemReferenceParam? itemReference = default;
+            global::tryAGI.OpenAI.ProgramItemParam? program = default;
+            global::tryAGI.OpenAI.ProgramOutputItemParam? programOutput = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -111,9 +127,39 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
+                else if (__bestIndex == 4)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgramItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgramItemParam> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgramItemParam).Name}");
+                        program = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 5)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgramOutputItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgramOutputItemParam> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgramOutputItemParam).Name}");
+                        programOutput = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
             }
 
-            if (message == null && item == null && compactionTrigger == null && itemReference == null)
+            if (message == null && item == null && compactionTrigger == null && itemReference == null && program == null && programOutput == null)
             {
                 try
                 {
@@ -130,7 +176,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (message == null && item == null && compactionTrigger == null && itemReference == null)
+            if (message == null && item == null && compactionTrigger == null && itemReference == null && program == null && programOutput == null)
             {
                 try
                 {
@@ -147,7 +193,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (message == null && item == null && compactionTrigger == null && itemReference == null)
+            if (message == null && item == null && compactionTrigger == null && itemReference == null && program == null && programOutput == null)
             {
                 try
                 {
@@ -164,7 +210,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (message == null && item == null && compactionTrigger == null && itemReference == null)
+            if (message == null && item == null && compactionTrigger == null && itemReference == null && program == null && programOutput == null)
             {
                 try
                 {
@@ -181,6 +227,40 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
+            if (message == null && item == null && compactionTrigger == null && itemReference == null && program == null && programOutput == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgramItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgramItemParam> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgramItemParam).Name}");
+                    program = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (message == null && item == null && compactionTrigger == null && itemReference == null && program == null && programOutput == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgramOutputItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgramOutputItemParam> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgramOutputItemParam).Name}");
+                    programOutput = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
             var __value = new global::tryAGI.OpenAI.InputItem(
                 message,
 
@@ -188,7 +268,11 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 compactionTrigger,
 
-                itemReference
+                itemReference,
+
+                program,
+
+                programOutput
                 );
 
             return __value;
@@ -226,6 +310,18 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ItemReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ItemReferenceParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ItemReferenceParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ItemReference!, typeInfo);
+            }
+            else if (value.IsProgram)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgramItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgramItemParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgramItemParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Program!, typeInfo);
+            }
+            else if (value.IsProgramOutput)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgramOutputItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgramOutputItemParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgramOutputItemParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProgramOutput!, typeInfo);
             }
         }
     }

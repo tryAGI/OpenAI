@@ -44,6 +44,12 @@ internal static partial class CompactAResponseCommandApiCommand
         Description = @"",
     };
 
+    private static Option<global::tryAGI.OpenAI.PromptCacheOptionsParam?> PromptCacheOptions { get; } = new(
+        name: @"--prompt-cache-options")
+    {
+        Description = @"",
+    };
+
     private static Option<global::tryAGI.OpenAI.ServiceTierEnum2?> ServiceTier { get; } = new(
         name: @"--service-tier")
     {
@@ -97,6 +103,7 @@ Learn when and how to compact long-running conversations in the [conversation st
                         command.Options.Add(Instructions);
                         command.Options.Add(PromptCacheKey);
                         command.Options.Add(PromptCacheRetention);
+                        command.Options.Add(PromptCacheOptions);
                         command.Options.Add(ServiceTier);
           command.Options.Add(RequestInput);
           command.Options.Add(RequestJson);
@@ -129,6 +136,7 @@ Learn when and how to compact long-running conversations in the [conversation st
                         var instructions = CliRuntime.WasSpecified(parseResult, Instructions) ? parseResult.GetValue(Instructions) : (__requestBase is { } __InstructionsBaseValue ? __InstructionsBaseValue.Instructions : default);
                         var promptCacheKey = CliRuntime.WasSpecified(parseResult, PromptCacheKey) ? parseResult.GetValue(PromptCacheKey) : (__requestBase is { } __PromptCacheKeyBaseValue ? __PromptCacheKeyBaseValue.PromptCacheKey : default);
                         var promptCacheRetention = CliRuntime.WasSpecified(parseResult, PromptCacheRetention) ? parseResult.GetValue(PromptCacheRetention) : (__requestBase is { } __PromptCacheRetentionBaseValue ? __PromptCacheRetentionBaseValue.PromptCacheRetention : default);
+                        var promptCacheOptions = CliRuntime.WasSpecified(parseResult, PromptCacheOptions) ? parseResult.GetValue(PromptCacheOptions) : (__requestBase is { } __PromptCacheOptionsBaseValue ? __PromptCacheOptionsBaseValue.PromptCacheOptions : default);
                         var serviceTier = CliRuntime.WasSpecified(parseResult, ServiceTier) ? parseResult.GetValue(ServiceTier) : (__requestBase is { } __ServiceTierBaseValue ? __ServiceTierBaseValue.ServiceTier : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
@@ -140,6 +148,7 @@ Learn when and how to compact long-running conversations in the [conversation st
                                     instructions: instructions,
                                     promptCacheKey: promptCacheKey,
                                     promptCacheRetention: promptCacheRetention,
+                                    promptCacheOptions: promptCacheOptions,
                                     serviceTier: serviceTier,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
