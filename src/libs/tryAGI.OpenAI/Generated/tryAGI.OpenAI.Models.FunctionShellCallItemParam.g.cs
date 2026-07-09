@@ -22,6 +22,12 @@ namespace tryAGI.OpenAI
         public required string CallId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        public global::tryAGI.OpenAI.ToolCallCallerParam? Caller { get; set; }
+
+        /// <summary>
         /// The type of the item. Always `shell_call`.<br/>
         /// Default Value: shell_call
         /// </summary>
@@ -65,6 +71,7 @@ namespace tryAGI.OpenAI
         /// The shell commands and limits that describe how to run the tool call.
         /// </param>
         /// <param name="id"></param>
+        /// <param name="caller"></param>
         /// <param name="status"></param>
         /// <param name="environment"></param>
         /// <param name="type">
@@ -78,12 +85,14 @@ namespace tryAGI.OpenAI
             string callId,
             global::tryAGI.OpenAI.FunctionShellActionParam action,
             string? id,
+            global::tryAGI.OpenAI.ToolCallCallerParam? caller,
             global::tryAGI.OpenAI.FunctionShellCallItemStatus? status,
             global::tryAGI.OpenAI.EnvironmentVariant13? environment,
             global::tryAGI.OpenAI.FunctionShellCallItemParamType type = global::tryAGI.OpenAI.FunctionShellCallItemParamType.ShellCall)
         {
             this.Id = id;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Caller = caller;
             this.Type = type;
             this.Action = action ?? throw new global::System.ArgumentNullException(nameof(action));
             this.Status = status;

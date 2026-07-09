@@ -32,6 +32,12 @@ namespace tryAGI.OpenAI
         public required string CallId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        public global::tryAGI.OpenAI.ToolCallCaller? Caller { get; set; }
+
+        /// <summary>
         /// The status of the apply patch tool call. One of `in_progress` or `completed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -74,6 +80,7 @@ namespace tryAGI.OpenAI
         /// <param name="operation">
         /// One of the create_file, delete_file, or update_file operations applied via apply_patch.
         /// </param>
+        /// <param name="caller"></param>
         /// <param name="createdBy">
         /// The ID of the entity that created this tool call.
         /// </param>
@@ -89,12 +96,14 @@ namespace tryAGI.OpenAI
             string callId,
             global::tryAGI.OpenAI.ApplyPatchCallStatus status,
             global::tryAGI.OpenAI.Operation operation,
+            global::tryAGI.OpenAI.ToolCallCaller? caller,
             string? createdBy,
             global::tryAGI.OpenAI.ApplyPatchToolCallType type = global::tryAGI.OpenAI.ApplyPatchToolCallType.ApplyPatchCall)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Caller = caller;
             this.Status = status;
             this.Operation = operation;
             this.CreatedBy = createdBy;

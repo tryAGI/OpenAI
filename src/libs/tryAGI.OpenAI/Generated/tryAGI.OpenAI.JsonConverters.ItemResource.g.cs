@@ -93,102 +93,118 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("summary")) __score11++;
             if (__jsonProps.Contains("type")) __score11++;
             var __score12 = 0;
-            if (__jsonProps.Contains("created_by")) __score12++;
-            if (__jsonProps.Contains("encrypted_content")) __score12++;
+            if (__jsonProps.Contains("call_id")) __score12++;
+            if (__jsonProps.Contains("code")) __score12++;
+            if (__jsonProps.Contains("fingerprint")) __score12++;
             if (__jsonProps.Contains("id")) __score12++;
             if (__jsonProps.Contains("type")) __score12++;
             var __score13 = 0;
+            if (__jsonProps.Contains("call_id")) __score13++;
             if (__jsonProps.Contains("id")) __score13++;
             if (__jsonProps.Contains("result")) __score13++;
             if (__jsonProps.Contains("status")) __score13++;
             if (__jsonProps.Contains("type")) __score13++;
             var __score14 = 0;
-            if (__jsonProps.Contains("code")) __score14++;
-            if (__jsonProps.Contains("container_id")) __score14++;
+            if (__jsonProps.Contains("created_by")) __score14++;
+            if (__jsonProps.Contains("encrypted_content")) __score14++;
             if (__jsonProps.Contains("id")) __score14++;
-            if (__jsonProps.Contains("outputs")) __score14++;
-            if (__jsonProps.Contains("status")) __score14++;
             if (__jsonProps.Contains("type")) __score14++;
             var __score15 = 0;
-            if (__jsonProps.Contains("action")) __score15++;
-            if (__jsonProps.Contains("action.command")) __score15++;
-            if (__jsonProps.Contains("action.env")) __score15++;
-            if (__jsonProps.Contains("action.timeout_ms")) __score15++;
-            if (__jsonProps.Contains("action.type")) __score15++;
-            if (__jsonProps.Contains("action.user")) __score15++;
-            if (__jsonProps.Contains("action.working_directory")) __score15++;
-            if (__jsonProps.Contains("call_id")) __score15++;
             if (__jsonProps.Contains("id")) __score15++;
+            if (__jsonProps.Contains("result")) __score15++;
             if (__jsonProps.Contains("status")) __score15++;
             if (__jsonProps.Contains("type")) __score15++;
             var __score16 = 0;
+            if (__jsonProps.Contains("code")) __score16++;
+            if (__jsonProps.Contains("container_id")) __score16++;
             if (__jsonProps.Contains("id")) __score16++;
-            if (__jsonProps.Contains("output")) __score16++;
+            if (__jsonProps.Contains("outputs")) __score16++;
             if (__jsonProps.Contains("status")) __score16++;
             if (__jsonProps.Contains("type")) __score16++;
             var __score17 = 0;
             if (__jsonProps.Contains("action")) __score17++;
-            if (__jsonProps.Contains("action.commands")) __score17++;
-            if (__jsonProps.Contains("action.max_output_length")) __score17++;
+            if (__jsonProps.Contains("action.command")) __score17++;
+            if (__jsonProps.Contains("action.env")) __score17++;
             if (__jsonProps.Contains("action.timeout_ms")) __score17++;
+            if (__jsonProps.Contains("action.type")) __score17++;
+            if (__jsonProps.Contains("action.user")) __score17++;
+            if (__jsonProps.Contains("action.working_directory")) __score17++;
             if (__jsonProps.Contains("call_id")) __score17++;
-            if (__jsonProps.Contains("created_by")) __score17++;
-            if (__jsonProps.Contains("environment")) __score17++;
             if (__jsonProps.Contains("id")) __score17++;
             if (__jsonProps.Contains("status")) __score17++;
             if (__jsonProps.Contains("type")) __score17++;
             var __score18 = 0;
-            if (__jsonProps.Contains("call_id")) __score18++;
-            if (__jsonProps.Contains("created_by")) __score18++;
             if (__jsonProps.Contains("id")) __score18++;
-            if (__jsonProps.Contains("max_output_length")) __score18++;
             if (__jsonProps.Contains("output")) __score18++;
             if (__jsonProps.Contains("status")) __score18++;
             if (__jsonProps.Contains("type")) __score18++;
             var __score19 = 0;
+            if (__jsonProps.Contains("action")) __score19++;
+            if (__jsonProps.Contains("action.commands")) __score19++;
+            if (__jsonProps.Contains("action.max_output_length")) __score19++;
+            if (__jsonProps.Contains("action.timeout_ms")) __score19++;
             if (__jsonProps.Contains("call_id")) __score19++;
+            if (__jsonProps.Contains("caller")) __score19++;
             if (__jsonProps.Contains("created_by")) __score19++;
+            if (__jsonProps.Contains("environment")) __score19++;
             if (__jsonProps.Contains("id")) __score19++;
-            if (__jsonProps.Contains("operation")) __score19++;
             if (__jsonProps.Contains("status")) __score19++;
             if (__jsonProps.Contains("type")) __score19++;
             var __score20 = 0;
             if (__jsonProps.Contains("call_id")) __score20++;
+            if (__jsonProps.Contains("caller")) __score20++;
             if (__jsonProps.Contains("created_by")) __score20++;
             if (__jsonProps.Contains("id")) __score20++;
+            if (__jsonProps.Contains("max_output_length")) __score20++;
             if (__jsonProps.Contains("output")) __score20++;
             if (__jsonProps.Contains("status")) __score20++;
             if (__jsonProps.Contains("type")) __score20++;
             var __score21 = 0;
-            if (__jsonProps.Contains("error")) __score21++;
+            if (__jsonProps.Contains("call_id")) __score21++;
+            if (__jsonProps.Contains("caller")) __score21++;
+            if (__jsonProps.Contains("created_by")) __score21++;
             if (__jsonProps.Contains("id")) __score21++;
-            if (__jsonProps.Contains("server_label")) __score21++;
-            if (__jsonProps.Contains("tools")) __score21++;
+            if (__jsonProps.Contains("operation")) __score21++;
+            if (__jsonProps.Contains("status")) __score21++;
             if (__jsonProps.Contains("type")) __score21++;
             var __score22 = 0;
-            if (__jsonProps.Contains("arguments")) __score22++;
+            if (__jsonProps.Contains("call_id")) __score22++;
+            if (__jsonProps.Contains("caller")) __score22++;
+            if (__jsonProps.Contains("created_by")) __score22++;
             if (__jsonProps.Contains("id")) __score22++;
-            if (__jsonProps.Contains("name")) __score22++;
-            if (__jsonProps.Contains("server_label")) __score22++;
+            if (__jsonProps.Contains("output")) __score22++;
+            if (__jsonProps.Contains("status")) __score22++;
             if (__jsonProps.Contains("type")) __score22++;
             var __score23 = 0;
-            if (__jsonProps.Contains("approval_request_id")) __score23++;
-            if (__jsonProps.Contains("approve")) __score23++;
+            if (__jsonProps.Contains("error")) __score23++;
             if (__jsonProps.Contains("id")) __score23++;
-            if (__jsonProps.Contains("reason")) __score23++;
+            if (__jsonProps.Contains("server_label")) __score23++;
+            if (__jsonProps.Contains("tools")) __score23++;
             if (__jsonProps.Contains("type")) __score23++;
             var __score24 = 0;
-            if (__jsonProps.Contains("approval_request_id")) __score24++;
             if (__jsonProps.Contains("arguments")) __score24++;
-            if (__jsonProps.Contains("error")) __score24++;
             if (__jsonProps.Contains("id")) __score24++;
             if (__jsonProps.Contains("name")) __score24++;
-            if (__jsonProps.Contains("output")) __score24++;
             if (__jsonProps.Contains("server_label")) __score24++;
-            if (__jsonProps.Contains("status")) __score24++;
             if (__jsonProps.Contains("type")) __score24++;
             var __score25 = 0;
+            if (__jsonProps.Contains("approval_request_id")) __score25++;
+            if (__jsonProps.Contains("approve")) __score25++;
+            if (__jsonProps.Contains("id")) __score25++;
+            if (__jsonProps.Contains("reason")) __score25++;
+            if (__jsonProps.Contains("type")) __score25++;
             var __score26 = 0;
+            if (__jsonProps.Contains("approval_request_id")) __score26++;
+            if (__jsonProps.Contains("arguments")) __score26++;
+            if (__jsonProps.Contains("error")) __score26++;
+            if (__jsonProps.Contains("id")) __score26++;
+            if (__jsonProps.Contains("name")) __score26++;
+            if (__jsonProps.Contains("output")) __score26++;
+            if (__jsonProps.Contains("server_label")) __score26++;
+            if (__jsonProps.Contains("status")) __score26++;
+            if (__jsonProps.Contains("type")) __score26++;
+            var __score27 = 0;
+            var __score28 = 0;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
@@ -218,6 +234,8 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__score24 > __bestScore) { __bestScore = __score24; __bestIndex = 24; }
             if (__score25 > __bestScore) { __bestScore = __score25; __bestIndex = 25; }
             if (__score26 > __bestScore) { __bestScore = __score26; __bestIndex = 26; }
+            if (__score27 > __bestScore) { __bestScore = __score27; __bestIndex = 27; }
+            if (__score28 > __bestScore) { __bestScore = __score28; __bestIndex = 28; }
 
             global::tryAGI.OpenAI.InputMessageResource? inputMessage = default;
             global::tryAGI.OpenAI.OutputMessage? message = default;
@@ -231,6 +249,8 @@ namespace tryAGI.OpenAI.JsonConverters
             global::tryAGI.OpenAI.ToolSearchOutput? toolSearchOutput = default;
             global::tryAGI.OpenAI.AdditionalTools? additionalTools = default;
             global::tryAGI.OpenAI.ReasoningItem? reasoning = default;
+            global::tryAGI.OpenAI.Program? program = default;
+            global::tryAGI.OpenAI.ProgramOutput? programOutput = default;
             global::tryAGI.OpenAI.CompactionBody? compaction = default;
             global::tryAGI.OpenAI.ImageGenToolCall? imageGenerationCall = default;
             global::tryAGI.OpenAI.CodeInterpreterToolCall? codeInterpreterCall = default;
@@ -432,6 +452,36 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.Program), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.Program> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.Program).Name}");
+                        program = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 13)
+                {
+                    try
+                    {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgramOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgramOutput> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgramOutput).Name}");
+                        programOutput = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 14)
+                {
+                    try
+                    {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CompactionBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CompactionBody> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CompactionBody).Name}");
                         compaction = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -443,7 +493,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 13)
+                else if (__bestIndex == 15)
                 {
                     try
                     {
@@ -458,7 +508,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 14)
+                else if (__bestIndex == 16)
                 {
                     try
                     {
@@ -473,7 +523,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 15)
+                else if (__bestIndex == 17)
                 {
                     try
                     {
@@ -488,7 +538,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 16)
+                else if (__bestIndex == 18)
                 {
                     try
                     {
@@ -503,7 +553,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 17)
+                else if (__bestIndex == 19)
                 {
                     try
                     {
@@ -518,7 +568,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 18)
+                else if (__bestIndex == 20)
                 {
                     try
                     {
@@ -533,7 +583,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 19)
+                else if (__bestIndex == 21)
                 {
                     try
                     {
@@ -548,7 +598,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 20)
+                else if (__bestIndex == 22)
                 {
                     try
                     {
@@ -563,7 +613,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 21)
+                else if (__bestIndex == 23)
                 {
                     try
                     {
@@ -578,7 +628,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 22)
+                else if (__bestIndex == 24)
                 {
                     try
                     {
@@ -593,7 +643,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 23)
+                else if (__bestIndex == 25)
                 {
                     try
                     {
@@ -608,7 +658,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 24)
+                else if (__bestIndex == 26)
                 {
                     try
                     {
@@ -623,7 +673,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 25)
+                else if (__bestIndex == 27)
                 {
                     try
                     {
@@ -638,7 +688,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                     }
                 }
-                else if (__bestIndex == 26)
+                else if (__bestIndex == 28)
                 {
                     try
                     {
@@ -655,7 +705,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -672,7 +722,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -689,7 +739,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -706,7 +756,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -723,7 +773,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -740,7 +790,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -757,7 +807,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -774,7 +824,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -791,7 +841,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -808,7 +858,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -825,7 +875,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -842,7 +892,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -859,7 +909,41 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.Program), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.Program> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.Program).Name}");
+                    program = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgramOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgramOutput> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgramOutput).Name}");
+                    programOutput = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -876,7 +960,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -893,7 +977,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -910,7 +994,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -927,7 +1011,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -944,7 +1028,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -961,7 +1045,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -978,7 +1062,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -995,7 +1079,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -1012,7 +1096,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -1029,7 +1113,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -1046,7 +1130,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -1063,7 +1147,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -1080,7 +1164,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -1097,7 +1181,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
+            if (inputMessage == null && message == null && fileSearchCall == null && computerCall == null && computerToolCallOutput == null && webSearchCall == null && functionToolCall == null && functionToolCallOutput == null && toolSearchCall == null && toolSearchOutput == null && additionalTools == null && reasoning == null && program == null && programOutput == null && compaction == null && imageGenerationCall == null && codeInterpreterCall == null && localShellCall == null && localShellCallOutput == null && shellCall == null && shellCallOutput == null && applyPatchCall == null && applyPatchCallOutput == null && mcpListTools == null && mcpApprovalRequest == null && mcpApprovalResponse == null && mcpCall == null && responseCustomToolCallItem == null && responseCustomToolCallOutputItem == null)
             {
                 try
                 {
@@ -1138,6 +1222,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 additionalTools,
 
                 reasoning,
+
+                program,
+
+                programOutput,
 
                 compaction,
 
@@ -1253,6 +1341,18 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ReasoningItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ReasoningItem?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ReasoningItem).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Reasoning!, typeInfo);
+            }
+            else if (value.IsProgram)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.Program), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.Program?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.Program).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Program!, typeInfo);
+            }
+            else if (value.IsProgramOutput)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgramOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgramOutput?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgramOutput).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProgramOutput!, typeInfo);
             }
             else if (value.IsCompaction)
             {

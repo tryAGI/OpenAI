@@ -239,6 +239,43 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomTool' but the value was {ToString()}.");
 
         /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam? SpecificProgrammaticCalling { get; init; }
+#else
+        public global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam? SpecificProgrammaticCalling { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpecificProgrammaticCalling))]
+#endif
+        public bool IsSpecificProgrammaticCalling => SpecificProgrammaticCalling != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickSpecificProgrammaticCalling(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam? value)
+        {
+            value = SpecificProgrammaticCalling;
+            return IsSpecificProgrammaticCalling;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam PickSpecificProgrammaticCalling() => IsSpecificProgrammaticCalling
+            ? SpecificProgrammaticCalling!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SpecificProgrammaticCalling' but the value was {ToString()}.");
+
+        /// <summary>
         /// Forces the model to call the apply_patch tool when executing a tool call.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -452,6 +489,29 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam value) => new ToolChoiceParam((global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam?(ToolChoiceParam @this) => @this.SpecificProgrammaticCalling;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ToolChoiceParam(global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam? value)
+        {
+            SpecificProgrammaticCalling = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ToolChoiceParam FromSpecificProgrammaticCalling(global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam? value) => new ToolChoiceParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.SpecificApplyPatchParam value) => new ToolChoiceParam((global::tryAGI.OpenAI.SpecificApplyPatchParam?)value);
 
         /// <summary>
@@ -505,6 +565,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ToolChoiceFunction? functionTool,
             global::tryAGI.OpenAI.ToolChoiceMCP? mcpTool,
             global::tryAGI.OpenAI.ToolChoiceCustom? customTool,
+            global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam? specificProgrammaticCalling,
             global::tryAGI.OpenAI.SpecificApplyPatchParam? specificApplyPatchToolChoice,
             global::tryAGI.OpenAI.SpecificFunctionShellParam? specificShellToolChoice
             )
@@ -515,6 +576,7 @@ namespace tryAGI.OpenAI
             FunctionTool = functionTool;
             McpTool = mcpTool;
             CustomTool = customTool;
+            SpecificProgrammaticCalling = specificProgrammaticCalling;
             SpecificApplyPatchToolChoice = specificApplyPatchToolChoice;
             SpecificShellToolChoice = specificShellToolChoice;
         }
@@ -525,6 +587,7 @@ namespace tryAGI.OpenAI
         public object? Object =>
             SpecificShellToolChoice as object ??
             SpecificApplyPatchToolChoice as object ??
+            SpecificProgrammaticCalling as object ??
             CustomTool as object ??
             McpTool as object ??
             FunctionTool as object ??
@@ -543,6 +606,7 @@ namespace tryAGI.OpenAI
             FunctionTool?.ToString() ??
             McpTool?.ToString() ??
             CustomTool?.ToString() ??
+            SpecificProgrammaticCalling?.ToString() ??
             SpecificApplyPatchToolChoice?.ToString() ??
             SpecificShellToolChoice?.ToString() 
             ;
@@ -552,7 +616,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsToolChoiceMode && !IsAllowedTools && !IsHostedTool && !IsFunctionTool && !IsMcpTool && !IsCustomTool && !IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && IsAllowedTools && !IsHostedTool && !IsFunctionTool && !IsMcpTool && !IsCustomTool && !IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && !IsAllowedTools && IsHostedTool && !IsFunctionTool && !IsMcpTool && !IsCustomTool && !IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && !IsAllowedTools && !IsHostedTool && IsFunctionTool && !IsMcpTool && !IsCustomTool && !IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && !IsAllowedTools && !IsHostedTool && !IsFunctionTool && IsMcpTool && !IsCustomTool && !IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && !IsAllowedTools && !IsHostedTool && !IsFunctionTool && !IsMcpTool && IsCustomTool && !IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && !IsAllowedTools && !IsHostedTool && !IsFunctionTool && !IsMcpTool && !IsCustomTool && IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && !IsAllowedTools && !IsHostedTool && !IsFunctionTool && !IsMcpTool && !IsCustomTool && !IsSpecificApplyPatchToolChoice && IsSpecificShellToolChoice;
+            return IsToolChoiceMode && !IsAllowedTools && !IsHostedTool && !IsFunctionTool && !IsMcpTool && !IsCustomTool && !IsSpecificProgrammaticCalling && !IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && IsAllowedTools && !IsHostedTool && !IsFunctionTool && !IsMcpTool && !IsCustomTool && !IsSpecificProgrammaticCalling && !IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && !IsAllowedTools && IsHostedTool && !IsFunctionTool && !IsMcpTool && !IsCustomTool && !IsSpecificProgrammaticCalling && !IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && !IsAllowedTools && !IsHostedTool && IsFunctionTool && !IsMcpTool && !IsCustomTool && !IsSpecificProgrammaticCalling && !IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && !IsAllowedTools && !IsHostedTool && !IsFunctionTool && IsMcpTool && !IsCustomTool && !IsSpecificProgrammaticCalling && !IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && !IsAllowedTools && !IsHostedTool && !IsFunctionTool && !IsMcpTool && IsCustomTool && !IsSpecificProgrammaticCalling && !IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && !IsAllowedTools && !IsHostedTool && !IsFunctionTool && !IsMcpTool && !IsCustomTool && IsSpecificProgrammaticCalling && !IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && !IsAllowedTools && !IsHostedTool && !IsFunctionTool && !IsMcpTool && !IsCustomTool && !IsSpecificProgrammaticCalling && IsSpecificApplyPatchToolChoice && !IsSpecificShellToolChoice || !IsToolChoiceMode && !IsAllowedTools && !IsHostedTool && !IsFunctionTool && !IsMcpTool && !IsCustomTool && !IsSpecificProgrammaticCalling && !IsSpecificApplyPatchToolChoice && IsSpecificShellToolChoice;
         }
 
         /// <summary>
@@ -565,6 +629,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.ToolChoiceFunction, TResult>? functionTool = null,
             global::System.Func<global::tryAGI.OpenAI.ToolChoiceMCP, TResult>? mcpTool = null,
             global::System.Func<global::tryAGI.OpenAI.ToolChoiceCustom, TResult>? customTool = null,
+            global::System.Func<global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam, TResult>? specificProgrammaticCalling = null,
             global::System.Func<global::tryAGI.OpenAI.SpecificApplyPatchParam, TResult>? specificApplyPatchToolChoice = null,
             global::System.Func<global::tryAGI.OpenAI.SpecificFunctionShellParam, TResult>? specificShellToolChoice = null,
             bool validate = true)
@@ -598,6 +663,10 @@ namespace tryAGI.OpenAI
             {
                 return customTool(CustomTool!);
             }
+            else if (IsSpecificProgrammaticCalling && specificProgrammaticCalling != null)
+            {
+                return specificProgrammaticCalling(SpecificProgrammaticCalling!);
+            }
             else if (IsSpecificApplyPatchToolChoice && specificApplyPatchToolChoice != null)
             {
                 return specificApplyPatchToolChoice(SpecificApplyPatchToolChoice!);
@@ -626,6 +695,8 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.ToolChoiceCustom>? customTool = null,
 
+            global::System.Action<global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam>? specificProgrammaticCalling = null,
+
             global::System.Action<global::tryAGI.OpenAI.SpecificApplyPatchParam>? specificApplyPatchToolChoice = null,
 
             global::System.Action<global::tryAGI.OpenAI.SpecificFunctionShellParam>? specificShellToolChoice = null,
@@ -659,6 +730,10 @@ namespace tryAGI.OpenAI
             else if (IsCustomTool)
             {
                 customTool?.Invoke(CustomTool!);
+            }
+            else if (IsSpecificProgrammaticCalling)
+            {
+                specificProgrammaticCalling?.Invoke(SpecificProgrammaticCalling!);
             }
             else if (IsSpecificApplyPatchToolChoice)
             {
@@ -680,6 +755,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.ToolChoiceFunction>? functionTool = null,
             global::System.Action<global::tryAGI.OpenAI.ToolChoiceMCP>? mcpTool = null,
             global::System.Action<global::tryAGI.OpenAI.ToolChoiceCustom>? customTool = null,
+            global::System.Action<global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam>? specificProgrammaticCalling = null,
             global::System.Action<global::tryAGI.OpenAI.SpecificApplyPatchParam>? specificApplyPatchToolChoice = null,
             global::System.Action<global::tryAGI.OpenAI.SpecificFunctionShellParam>? specificShellToolChoice = null,
             bool validate = true)
@@ -712,6 +788,10 @@ namespace tryAGI.OpenAI
             else if (IsCustomTool)
             {
                 customTool?.Invoke(CustomTool!);
+            }
+            else if (IsSpecificProgrammaticCalling)
+            {
+                specificProgrammaticCalling?.Invoke(SpecificProgrammaticCalling!);
             }
             else if (IsSpecificApplyPatchToolChoice)
             {
@@ -742,6 +822,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.ToolChoiceMCP),
                 CustomTool,
                 typeof(global::tryAGI.OpenAI.ToolChoiceCustom),
+                SpecificProgrammaticCalling,
+                typeof(global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam),
                 SpecificApplyPatchToolChoice,
                 typeof(global::tryAGI.OpenAI.SpecificApplyPatchParam),
                 SpecificShellToolChoice,
@@ -768,6 +850,7 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ToolChoiceFunction?>.Default.Equals(FunctionTool, other.FunctionTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ToolChoiceMCP?>.Default.Equals(McpTool, other.McpTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ToolChoiceCustom?>.Default.Equals(CustomTool, other.CustomTool) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam?>.Default.Equals(SpecificProgrammaticCalling, other.SpecificProgrammaticCalling) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpecificApplyPatchParam?>.Default.Equals(SpecificApplyPatchToolChoice, other.SpecificApplyPatchToolChoice) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpecificFunctionShellParam?>.Default.Equals(SpecificShellToolChoice, other.SpecificShellToolChoice) 
                 ;

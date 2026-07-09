@@ -39,6 +39,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_schema")]
+        public object? OutputSchema { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
         public bool? Strict { get; set; }
 
@@ -47,6 +53,12 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("defer_loading")]
         public bool? DeferLoading { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? AllowedCallers { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,10 +74,12 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="description"></param>
         /// <param name="parameters"></param>
+        /// <param name="outputSchema"></param>
         /// <param name="strict"></param>
         /// <param name="deferLoading">
         /// Whether this function is deferred and loaded via tool search.
         /// </param>
+        /// <param name="allowedCallers"></param>
         /// <param name="type">
         /// The type of the function tool. Always `function`.<br/>
         /// Default Value: function
@@ -77,16 +91,20 @@ namespace tryAGI.OpenAI
             string name,
             string? description,
             object? parameters,
+            object? outputSchema,
             bool? strict,
             bool? deferLoading,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? allowedCallers,
             global::tryAGI.OpenAI.FunctionToolType type = global::tryAGI.OpenAI.FunctionToolType.Function)
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Description = description;
             this.Parameters = parameters;
+            this.OutputSchema = outputSchema;
             this.Strict = strict;
             this.DeferLoading = deferLoading;
+            this.AllowedCallers = allowedCallers;
         }
 
         /// <summary>

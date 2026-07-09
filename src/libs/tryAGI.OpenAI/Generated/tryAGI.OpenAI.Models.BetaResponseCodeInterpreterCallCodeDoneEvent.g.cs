@@ -1,0 +1,106 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// Emitted when the code snippet is finalized by the code interpreter.
+    /// </summary>
+    public sealed partial class BetaResponseCodeInterpreterCallCodeDoneEvent
+    {
+        /// <summary>
+        /// The agent that owns this multi-agent streaming event.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
+        public global::tryAGI.OpenAI.BetaAgentTag? Agent { get; set; }
+
+        /// <summary>
+        /// The type of the event. Always `response.code_interpreter_call_code.done`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseCodeInterpreterCallCodeDoneEventTypeJsonConverter))]
+        public global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCodeDoneEventType Type { get; set; }
+
+        /// <summary>
+        /// The index of the output item in the response for which the code is finalized.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int OutputIndex { get; set; }
+
+        /// <summary>
+        /// The unique identifier of the code interpreter tool call item.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ItemId { get; set; }
+
+        /// <summary>
+        /// The final code snippet output by the code interpreter.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("code")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Code { get; set; }
+
+        /// <summary>
+        /// The sequence number of this event, used to order streaming events.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int SequenceNumber { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaResponseCodeInterpreterCallCodeDoneEvent" /> class.
+        /// </summary>
+        /// <param name="outputIndex">
+        /// The index of the output item in the response for which the code is finalized.
+        /// </param>
+        /// <param name="itemId">
+        /// The unique identifier of the code interpreter tool call item.
+        /// </param>
+        /// <param name="code">
+        /// The final code snippet output by the code interpreter.
+        /// </param>
+        /// <param name="sequenceNumber">
+        /// The sequence number of this event, used to order streaming events.
+        /// </param>
+        /// <param name="agent">
+        /// The agent that owns this multi-agent streaming event.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.code_interpreter_call_code.done`.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public BetaResponseCodeInterpreterCallCodeDoneEvent(
+            int outputIndex,
+            string itemId,
+            string code,
+            int sequenceNumber,
+            global::tryAGI.OpenAI.BetaAgentTag? agent,
+            global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCodeDoneEventType type)
+        {
+            this.Agent = agent;
+            this.Type = type;
+            this.OutputIndex = outputIndex;
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+            this.SequenceNumber = sequenceNumber;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaResponseCodeInterpreterCallCodeDoneEvent" /> class.
+        /// </summary>
+        public BetaResponseCodeInterpreterCallCodeDoneEvent()
+        {
+        }
+
+    }
+}

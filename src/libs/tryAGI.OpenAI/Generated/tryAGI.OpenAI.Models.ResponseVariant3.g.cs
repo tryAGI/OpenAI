@@ -100,6 +100,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ResponseUsage? Usage { get; set; }
 
         /// <summary>
+        /// The prompt-caching options that were applied to the response. Supported for `gpt-5.6` and later models.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
+        public global::tryAGI.OpenAI.PromptCacheOptions? PromptCacheOptions { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("moderation")]
@@ -171,6 +177,9 @@ namespace tryAGI.OpenAI
         /// Represents token usage details including input tokens, output tokens,<br/>
         /// a breakdown of output tokens, and the total tokens used.
         /// </param>
+        /// <param name="promptCacheOptions">
+        /// The prompt-caching options that were applied to the response. Supported for `gpt-5.6` and later models.
+        /// </param>
         /// <param name="moderation"></param>
         /// <param name="conversation"></param>
         /// <param name="maxOutputTokens"></param>
@@ -192,6 +201,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? instructions,
             string? outputText,
             global::tryAGI.OpenAI.ResponseUsage? usage,
+            global::tryAGI.OpenAI.PromptCacheOptions? promptCacheOptions,
             global::tryAGI.OpenAI.Moderation? moderation,
             global::tryAGI.OpenAI.Conversation22? conversation,
             int? maxOutputTokens)
@@ -209,6 +219,7 @@ namespace tryAGI.OpenAI
             this.Instructions = instructions;
             this.OutputText = outputText;
             this.Usage = usage;
+            this.PromptCacheOptions = promptCacheOptions;
             this.Moderation = moderation;
             this.ParallelToolCalls = parallelToolCalls;
             this.Conversation = conversation;

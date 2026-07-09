@@ -1,0 +1,297 @@
+#pragma warning disable CS0618 // Type or member is obsolete
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// The conversation that this response belongs to. Items from this conversation are prepended to `input_items` for this response request.<br/>
+    /// Input items and output items from this response are automatically added to this conversation after this response completes.<br/>
+    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+    /// </summary>
+    public readonly partial struct BetaConversationParam : global::System.IEquatable<BetaConversationParam>
+    {
+        /// <summary>
+        /// The unique ID of the conversation.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public string? ConversationId { get; init; }
+#else
+        public string? ConversationId { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationId))]
+#endif
+        public bool IsConversationId => ConversationId != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationId(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out string? value)
+        {
+            value = ConversationId;
+            return IsConversationId;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public string PickConversationId() => IsConversationId
+            ? ConversationId!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationId' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The conversation that this response belongs to.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.BetaConversationParam2? ConversationObject { get; init; }
+#else
+        public global::tryAGI.OpenAI.BetaConversationParam2? ConversationObject { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationObject))]
+#endif
+        public bool IsConversationObject => ConversationObject != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickConversationObject(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.BetaConversationParam2? value)
+        {
+            value = ConversationObject;
+            return IsConversationObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.BetaConversationParam2 PickConversationObject() => IsConversationObject
+            ? ConversationObject!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationObject' but the value was {ToString()}.");
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaConversationParam(string value) => new BetaConversationParam((string?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator string?(BetaConversationParam @this) => @this.ConversationId;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaConversationParam(string? value)
+        {
+            ConversationId = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaConversationParam FromConversationId(string? value) => new BetaConversationParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaConversationParam(global::tryAGI.OpenAI.BetaConversationParam2 value) => new BetaConversationParam((global::tryAGI.OpenAI.BetaConversationParam2?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.BetaConversationParam2?(BetaConversationParam @this) => @this.ConversationObject;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaConversationParam(global::tryAGI.OpenAI.BetaConversationParam2? value)
+        {
+            ConversationObject = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static BetaConversationParam FromConversationObject(global::tryAGI.OpenAI.BetaConversationParam2? value) => new BetaConversationParam(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaConversationParam(
+            string? conversationId,
+            global::tryAGI.OpenAI.BetaConversationParam2? conversationObject
+            )
+        {
+            ConversationId = conversationId;
+            ConversationObject = conversationObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            ConversationObject as object ??
+            ConversationId as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override string? ToString() =>
+            ConversationId?.ToString() ??
+            ConversationObject?.ToString() 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsConversationId && !IsConversationObject || !IsConversationId && IsConversationObject;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<string, TResult>? conversationId = null,
+            global::System.Func<global::tryAGI.OpenAI.BetaConversationParam2, TResult>? conversationObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConversationId && conversationId != null)
+            {
+                return conversationId(ConversationId!);
+            }
+            else if (IsConversationObject && conversationObject != null)
+            {
+                return conversationObject(ConversationObject!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<string>? conversationId = null,
+
+            global::System.Action<global::tryAGI.OpenAI.BetaConversationParam2>? conversationObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConversationId)
+            {
+                conversationId?.Invoke(ConversationId!);
+            }
+            else if (IsConversationObject)
+            {
+                conversationObject?.Invoke(ConversationObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<string>? conversationId = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaConversationParam2>? conversationObject = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsConversationId)
+            {
+                conversationId?.Invoke(ConversationId!);
+            }
+            else if (IsConversationObject)
+            {
+                conversationObject?.Invoke(ConversationObject!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                ConversationId,
+                typeof(string),
+                ConversationObject,
+                typeof(global::tryAGI.OpenAI.BetaConversationParam2),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(BetaConversationParam other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ConversationId, other.ConversationId) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaConversationParam2?>.Default.Equals(ConversationObject, other.ConversationObject) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(BetaConversationParam obj1, BetaConversationParam obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<BetaConversationParam>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(BetaConversationParam obj1, BetaConversationParam obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is BetaConversationParam o && Equals(o);
+        }
+    }
+}

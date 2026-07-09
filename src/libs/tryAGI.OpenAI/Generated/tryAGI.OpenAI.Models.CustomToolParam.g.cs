@@ -44,6 +44,12 @@ namespace tryAGI.OpenAI
         public bool? DeferLoading { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? AllowedCallers { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -64,6 +70,7 @@ namespace tryAGI.OpenAI
         /// <param name="deferLoading">
         /// Whether this tool should be deferred and discovered via tool search.
         /// </param>
+        /// <param name="allowedCallers"></param>
         /// <param name="type">
         /// The type of the custom tool. Always `custom`.<br/>
         /// Default Value: custom
@@ -76,6 +83,7 @@ namespace tryAGI.OpenAI
             string? description,
             global::tryAGI.OpenAI.Format2? format,
             bool? deferLoading,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? allowedCallers,
             global::tryAGI.OpenAI.CustomToolParamType type = global::tryAGI.OpenAI.CustomToolParamType.Custom)
         {
             this.Type = type;
@@ -83,6 +91,7 @@ namespace tryAGI.OpenAI
             this.Description = description;
             this.Format = format;
             this.DeferLoading = deferLoading;
+            this.AllowedCallers = allowedCallers;
         }
 
         /// <summary>

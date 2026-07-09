@@ -23,6 +23,13 @@ namespace tryAGI.OpenAI
         public int? CachedTokens { get; set; }
 
         /// <summary>
+        /// The unadjusted number of prompt tokens written to cache.<br/>
+        /// Default Value: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_write_tokens")]
+        public int? CacheWriteTokens { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,15 +46,21 @@ namespace tryAGI.OpenAI
         /// Cached tokens present in the prompt.<br/>
         /// Default Value: 0
         /// </param>
+        /// <param name="cacheWriteTokens">
+        /// The unadjusted number of prompt tokens written to cache.<br/>
+        /// Default Value: 0
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CompletionUsagePromptTokensDetails(
             int? audioTokens,
-            int? cachedTokens)
+            int? cachedTokens,
+            int? cacheWriteTokens)
         {
             this.AudioTokens = audioTokens;
             this.CachedTokens = cachedTokens;
+            this.CacheWriteTokens = cacheWriteTokens;
         }
 
         /// <summary>

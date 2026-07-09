@@ -36,13 +36,19 @@ namespace tryAGI.OpenAI.Realtime
         public string? FileData { get; set; }
 
         /// <summary>
+        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
+        public global::tryAGI.OpenAI.Realtime.PromptCacheBreakpointConfig? PromptCacheBreakpoint { get; set; }
+
+        /// <summary>
         /// The URL of the file to be sent to the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_url")]
         public string? FileUrl { get; set; }
 
         /// <summary>
-        /// The detail level of the file to be sent to the model. Use `low` for the default rendering behavior, or `high` to render the file at higher quality. Defaults to `low`.
+        /// The detail level of the file to be sent to the model. Use `auto` to let the system select the detail level; for GPT-5.6 and later models, `auto` uses high-quality rendering, which may increase input token usage. Use `low` for lower-cost rendering, or `high` to render the file at higher quality. Defaults to `auto`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.FileInputDetailJsonConverter))]
@@ -64,11 +70,14 @@ namespace tryAGI.OpenAI.Realtime
         /// <param name="fileData">
         /// The content of the file to be sent to the model.
         /// </param>
+        /// <param name="promptCacheBreakpoint">
+        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// </param>
         /// <param name="fileUrl">
         /// The URL of the file to be sent to the model.
         /// </param>
         /// <param name="detail">
-        /// The detail level of the file to be sent to the model. Use `low` for the default rendering behavior, or `high` to render the file at higher quality. Defaults to `low`.
+        /// The detail level of the file to be sent to the model. Use `auto` to let the system select the detail level; for GPT-5.6 and later models, `auto` uses high-quality rendering, which may increase input token usage. Use `low` for lower-cost rendering, or `high` to render the file at higher quality. Defaults to `auto`.
         /// </param>
         /// <param name="type">
         /// The type of the input item. Always `input_file`.<br/>
@@ -81,6 +90,7 @@ namespace tryAGI.OpenAI.Realtime
             string? fileId,
             string? filename,
             string? fileData,
+            global::tryAGI.OpenAI.Realtime.PromptCacheBreakpointConfig? promptCacheBreakpoint,
             string? fileUrl,
             global::tryAGI.OpenAI.Realtime.FileInputDetail? detail,
             global::tryAGI.OpenAI.Realtime.InputFileContentType type = global::tryAGI.OpenAI.Realtime.InputFileContentType.InputFile)
@@ -89,6 +99,7 @@ namespace tryAGI.OpenAI.Realtime
             this.FileId = fileId;
             this.Filename = filename;
             this.FileData = fileData;
+            this.PromptCacheBreakpoint = promptCacheBreakpoint;
             this.FileUrl = fileUrl;
             this.Detail = detail;
         }

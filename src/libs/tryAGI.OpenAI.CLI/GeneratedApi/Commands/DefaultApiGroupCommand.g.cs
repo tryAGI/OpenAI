@@ -11,6 +11,7 @@ internal static class DefaultApiGroupCommand
         var command = new Command(@"default", @"default endpoint commands.");
                          command.Subcommands.Add(CancelChatSessionCommandApiCommand.Create());
                          command.Subcommands.Add(CompactAResponseCommandApiCommand.Create());
+                         command.Subcommands.Add(CompactAResponse2CommandApiCommand.Create());
                          command.Subcommands.Add(CreateAdminApiKeyCommandApiCommand.Create());
                          command.Subcommands.Add(CreateChatKitSessionCommandApiCommand.Create());
                          command.Subcommands.Add(CreateContainerCommandApiCommand.Create());
@@ -20,6 +21,7 @@ internal static class DefaultApiGroupCommand
                          command.Subcommands.Add(DeleteAdminApiKeyCommandApiCommand.Create());
                          command.Subcommands.Add(DeleteChatKitThreadCommandApiCommand.Create());
                          command.Subcommands.Add(GetInputTokenCountsCommandApiCommand.Create());
+                         command.Subcommands.Add(GetInputTokenCounts2CommandApiCommand.Create());
                          command.Subcommands.Add(ListAllOrganizationAndProjectApiKeysCommandApiCommand.Create());
                          command.Subcommands.Add(ListChatKitThreadItemsCommandApiCommand.Create());
                          command.Subcommands.Add(ListChatKitThreadsCommandApiCommand.Create());

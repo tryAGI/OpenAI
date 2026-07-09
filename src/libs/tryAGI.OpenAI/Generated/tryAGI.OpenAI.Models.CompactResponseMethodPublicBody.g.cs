@@ -49,6 +49,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
+        public global::tryAGI.OpenAI.PromptCacheOptionsParam? PromptCacheOptions { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
         public global::tryAGI.OpenAI.ServiceTierEnum2? ServiceTier { get; set; }
 
@@ -69,6 +75,7 @@ namespace tryAGI.OpenAI
         /// <param name="instructions"></param>
         /// <param name="promptCacheKey"></param>
         /// <param name="promptCacheRetention"></param>
+        /// <param name="promptCacheOptions"></param>
         /// <param name="serviceTier"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -80,6 +87,7 @@ namespace tryAGI.OpenAI
             string? instructions,
             string? promptCacheKey,
             global::tryAGI.OpenAI.PromptCacheRetentionEnum? promptCacheRetention,
+            global::tryAGI.OpenAI.PromptCacheOptionsParam? promptCacheOptions,
             global::tryAGI.OpenAI.ServiceTierEnum2? serviceTier)
         {
             this.Model = model;
@@ -88,6 +96,7 @@ namespace tryAGI.OpenAI
             this.Instructions = instructions;
             this.PromptCacheKey = promptCacheKey;
             this.PromptCacheRetention = promptCacheRetention;
+            this.PromptCacheOptions = promptCacheOptions;
             this.ServiceTier = serviceTier;
         }
 

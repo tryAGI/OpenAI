@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Auto,
+        /// <summary>
+        /// 
+        /// </summary>
         High,
         /// <summary>
         /// 
@@ -30,6 +34,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                FileDetailEnum.Auto => "auto",
                 FileDetailEnum.High => "high",
                 FileDetailEnum.Low => "low",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -42,6 +47,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "auto" => FileDetailEnum.Auto,
                 "high" => FileDetailEnum.High,
                 "low" => FileDetailEnum.Low,
                 _ => null,

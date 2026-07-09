@@ -22,6 +22,12 @@ namespace tryAGI.OpenAI
         public required string CallId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        public global::tryAGI.OpenAI.ToolCallCallerParam? Caller { get; set; }
+
+        /// <summary>
         /// The type of the item. Always `shell_call_output`.<br/>
         /// Default Value: shell_call_output
         /// </summary>
@@ -65,6 +71,7 @@ namespace tryAGI.OpenAI
         /// Captured chunks of stdout and stderr output, along with their associated outcomes.
         /// </param>
         /// <param name="id"></param>
+        /// <param name="caller"></param>
         /// <param name="status"></param>
         /// <param name="maxOutputLength"></param>
         /// <param name="type">
@@ -78,12 +85,14 @@ namespace tryAGI.OpenAI
             string callId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FunctionShellCallOutputContentParam> output,
             string? id,
+            global::tryAGI.OpenAI.ToolCallCallerParam? caller,
             global::tryAGI.OpenAI.FunctionShellCallItemStatus? status,
             int? maxOutputLength,
             global::tryAGI.OpenAI.FunctionShellCallOutputItemParamType type = global::tryAGI.OpenAI.FunctionShellCallOutputItemParamType.ShellCallOutput)
         {
             this.Id = id;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Caller = caller;
             this.Type = type;
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.Status = status;

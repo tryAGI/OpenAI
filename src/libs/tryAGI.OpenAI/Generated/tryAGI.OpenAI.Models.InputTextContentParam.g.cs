@@ -25,6 +25,12 @@ namespace tryAGI.OpenAI
         public required string Text { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
+        public global::tryAGI.OpenAI.PromptCacheBreakpointParam? PromptCacheBreakpoint { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,6 +42,7 @@ namespace tryAGI.OpenAI
         /// <param name="text">
         /// The text input to the model.
         /// </param>
+        /// <param name="promptCacheBreakpoint"></param>
         /// <param name="type">
         /// The type of the input item. Always `input_text`.<br/>
         /// Default Value: input_text
@@ -45,10 +52,12 @@ namespace tryAGI.OpenAI
 #endif
         public InputTextContentParam(
             string text,
+            global::tryAGI.OpenAI.PromptCacheBreakpointParam? promptCacheBreakpoint,
             global::tryAGI.OpenAI.InputTextContentParamType type = global::tryAGI.OpenAI.InputTextContentParamType.InputText)
         {
             this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.PromptCacheBreakpoint = promptCacheBreakpoint;
         }
 
         /// <summary>

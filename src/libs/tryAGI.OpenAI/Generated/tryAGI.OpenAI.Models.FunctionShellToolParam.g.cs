@@ -24,6 +24,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.EnvironmentVariant1? Environment { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? AllowedCallers { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -33,6 +39,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="FunctionShellToolParam" /> class.
         /// </summary>
         /// <param name="environment"></param>
+        /// <param name="allowedCallers"></param>
         /// <param name="type">
         /// The type of the shell tool. Always `shell`.<br/>
         /// Default Value: shell
@@ -42,10 +49,12 @@ namespace tryAGI.OpenAI
 #endif
         public FunctionShellToolParam(
             global::tryAGI.OpenAI.EnvironmentVariant1? environment,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? allowedCallers,
             global::tryAGI.OpenAI.FunctionShellToolParamType type = global::tryAGI.OpenAI.FunctionShellToolParamType.Shell)
         {
             this.Type = type;
             this.Environment = environment;
+            this.AllowedCallers = allowedCallers;
         }
 
         /// <summary>

@@ -1371,9 +1371,17 @@
           }
         }
       },
+      "CallableToolAllowedCaller": {
+        "type": "string",
+        "enum": [
+          "direct",
+          "programmatic"
+        ]
+      },
       "FileInputDetail": {
         "type": "string",
         "enum": [
+          "auto",
           "low",
           "high"
         ]
@@ -1417,6 +1425,9 @@
             "type": "string",
             "description": "The content of the file to be sent to the model.\n"
           },
+          "prompt_cache_breakpoint": {
+            "$ref": "#/components/schemas/PromptCacheBreakpointConfig"
+          },
           "file_url": {
             "type": "string",
             "format": "uri",
@@ -1424,7 +1435,7 @@
           },
           "detail": {
             "$ref": "#/components/schemas/FileInputDetail",
-            "description": "The detail level of the file to be sent to the model. Use `low` for the default rendering behavior, or `high` to render the file at higher quality. Defaults to `low`."
+            "description": "The detail level of the file to be sent to the model. Use `auto` to let the system select the detail level; for GPT-5.6 and later models, `auto` uses high-quality rendering, which may increase input token usage. Use `low` for lower-cost rendering, or `high` to render the file at higher quality. Defaults to `auto`."
           }
         },
         "type": "object",
@@ -1471,6 +1482,9 @@
           "detail": {
             "$ref": "#/components/schemas/ImageDetail",
             "description": "The detail level of the image to be sent to the model. One of `high`, `low`, `auto`, or `original`. Defaults to `auto`."
+          },
+          "prompt_cache_breakpoint": {
+            "$ref": "#/components/schemas/PromptCacheBreakpointConfig"
           }
         },
         "type": "object",
@@ -1495,6 +1509,9 @@
           "text": {
             "type": "string",
             "description": "The text input to the model."
+          },
+          "prompt_cache_breakpoint": {
+            "$ref": "#/components/schemas/PromptCacheBreakpointConfig"
           }
         },
         "type": "object",
@@ -1658,6 +1675,21 @@
               }
             ]
           },
+          "allowed_callers": {
+            "anyOf": [
+              {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/components/schemas/CallableToolAllowedCaller"
+                },
+                "description": "The tool invocation context(s)."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "require_approval": {
             "anyOf": [
               {
@@ -1781,6 +1813,25 @@
             "type": "null"
           }
         ]
+      },
+      "PromptCacheBreakpointConfig": {
+        "properties": {
+          "mode": {
+            "type": "string",
+            "enum": [
+              "explicit"
+            ],
+            "description": "The breakpoint mode. Always `explicit`.",
+            "default": "explicit",
+            "x-stainless-const": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "mode"
+        ],
+        "title": "Prompt cache breakpoint",
+        "description": "Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block."
       },
       "RealtimeAudioFormats": {
         "anyOf": [
@@ -5373,6 +5424,8 @@
                   "gpt-realtime",
                   "gpt-realtime-1.5",
                   "gpt-realtime-2",
+                  "gpt-realtime-2.1",
+                  "gpt-realtime-2.1-mini",
                   "gpt-realtime-2025-08-28",
                   "gpt-4o-realtime-preview",
                   "gpt-4o-realtime-preview-2024-10-01",
@@ -5613,6 +5666,8 @@
                   "gpt-realtime",
                   "gpt-realtime-1.5",
                   "gpt-realtime-2",
+                  "gpt-realtime-2.1",
+                  "gpt-realtime-2.1-mini",
                   "gpt-realtime-2025-08-28",
                   "gpt-4o-realtime-preview",
                   "gpt-4o-realtime-preview-2024-10-01",

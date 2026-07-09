@@ -84,6 +84,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? AllowedCallers { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("require_approval")]
         public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum, global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum2?>? RequireApproval { get; set; }
 
@@ -140,6 +146,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="headers"></param>
         /// <param name="allowedTools"></param>
+        /// <param name="allowedCallers"></param>
         /// <param name="requireApproval"></param>
         /// <param name="deferLoading">
         /// Whether this MCP tool is deferred and discovered via tool search.
@@ -157,6 +164,7 @@ namespace tryAGI.OpenAI
             string? serverDescription,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
             global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.MCPToolFilter>? allowedTools,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? allowedCallers,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum, global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum2?>? requireApproval,
             bool? deferLoading)
         {
@@ -169,6 +177,7 @@ namespace tryAGI.OpenAI
             this.ServerDescription = serverDescription;
             this.Headers = headers;
             this.AllowedTools = allowedTools;
+            this.AllowedCallers = allowedCallers;
             this.RequireApproval = requireApproval;
             this.DeferLoading = deferLoading;
         }

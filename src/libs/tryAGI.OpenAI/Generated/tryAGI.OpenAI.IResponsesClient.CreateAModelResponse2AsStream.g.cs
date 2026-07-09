@@ -1,0 +1,45 @@
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    public partial interface IResponsesClient
+    {
+        /// <summary>
+        /// Creates a model response. Provide [text](/docs/guides/text) or<br/>
+        /// [image](/docs/guides/images) inputs to generate [text](/docs/guides/text)<br/>
+        /// or [JSON](/docs/guides/structured-outputs) outputs. Have the model call<br/>
+        /// your own [custom code](/docs/guides/function-calling) or use built-in<br/>
+        /// [tools](/docs/guides/tools) like [web search](/docs/guides/tools-web-search)<br/>
+        /// or [file search](/docs/guides/tools-file-search) to use your own data<br/>
+        /// as input for the model's response.
+        /// </summary>
+        /// <param name="openaiBeta"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.BetaResponseStreamEvent> CreateAModelResponse2AsStreamAsync(
+
+            global::tryAGI.OpenAI.BetaCreateResponse request,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaCreateResponseOpenaiBetaItem>? openaiBeta = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Creates a model response. Provide [text](/docs/guides/text) or<br/>
+        /// [image](/docs/guides/images) inputs to generate [text](/docs/guides/text)<br/>
+        /// or [JSON](/docs/guides/structured-outputs) outputs. Have the model call<br/>
+        /// your own [custom code](/docs/guides/function-calling) or use built-in<br/>
+        /// [tools](/docs/guides/tools) like [web search](/docs/guides/tools-web-search)<br/>
+        /// or [file search](/docs/guides/tools-file-search) to use your own data<br/>
+        /// as input for the model's response.
+        /// </summary>
+        /// <param name="openaiBeta"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.BetaResponseStreamEvent> CreateAModelResponse2AsStreamAsync(
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaCreateResponseOpenaiBetaItem>? openaiBeta = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

@@ -1,0 +1,77 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class BetaContainerReferenceParam
+    {
+        /// <summary>
+        /// References a container created with the /v1/containers endpoint<br/>
+        /// Default Value: container_reference
+        /// </summary>
+        /// <default>global::tryAGI.OpenAI.BetaContainerReferenceParamType.ContainerReference</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaContainerReferenceParamTypeJsonConverter))]
+        public global::tryAGI.OpenAI.BetaContainerReferenceParamType Type { get; set; } = global::tryAGI.OpenAI.BetaContainerReferenceParamType.ContainerReference;
+
+        /// <summary>
+        /// The ID of the referenced container.<br/>
+        /// Example: cntr_123
+        /// </summary>
+        /// <example>cntr_123</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("container_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ContainerId { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaContainerReferenceParam" /> class.
+        /// </summary>
+        /// <param name="containerId">
+        /// The ID of the referenced container.<br/>
+        /// Example: cntr_123
+        /// </param>
+        /// <param name="type">
+        /// References a container created with the /v1/containers endpoint<br/>
+        /// Default Value: container_reference
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public BetaContainerReferenceParam(
+            string containerId,
+            global::tryAGI.OpenAI.BetaContainerReferenceParamType type = global::tryAGI.OpenAI.BetaContainerReferenceParamType.ContainerReference)
+        {
+            this.Type = type;
+            this.ContainerId = containerId ?? throw new global::System.ArgumentNullException(nameof(containerId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaContainerReferenceParam" /> class.
+        /// </summary>
+        public BetaContainerReferenceParam()
+        {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaContainerReferenceParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaContainerReferenceParam FromContainerId(string containerId)
+        {
+            return new BetaContainerReferenceParam
+            {
+                ContainerId = containerId,
+            };
+        }
+
+    }
+}

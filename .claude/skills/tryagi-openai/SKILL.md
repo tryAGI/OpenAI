@@ -51,7 +51,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `project-group-role-assignment` | 4 |  |
 | `project-user-role-assignment` | 4 |  |
 | `realtime` | 9 |  |
-| `response` | 5 |  |
+| `response` | 10 |  |
 | `role` | 10 |  |
 | `skill` | 11 |  |
 | `spend-alert` | 10 |  |
@@ -61,7 +61,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `user-organization-role-assignment` | 4 |  |
 | `vector-store` | 16 |  |
 | `video` | 10 |  |
-| `default` | 21 |  |
+| `default` | 23 |  |
 
 ## References
 

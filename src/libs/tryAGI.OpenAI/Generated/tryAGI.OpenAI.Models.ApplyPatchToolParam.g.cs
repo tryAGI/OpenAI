@@ -18,6 +18,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ApplyPatchToolParamType Type { get; set; } = global::tryAGI.OpenAI.ApplyPatchToolParamType.ApplyPatch;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? AllowedCallers { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -26,6 +32,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplyPatchToolParam" /> class.
         /// </summary>
+        /// <param name="allowedCallers"></param>
         /// <param name="type">
         /// The type of the tool. Always `apply_patch`.<br/>
         /// Default Value: apply_patch
@@ -34,9 +41,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ApplyPatchToolParam(
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? allowedCallers,
             global::tryAGI.OpenAI.ApplyPatchToolParamType type = global::tryAGI.OpenAI.ApplyPatchToolParamType.ApplyPatch)
         {
             this.Type = type;
+            this.AllowedCallers = allowedCallers;
         }
 
         /// <summary>

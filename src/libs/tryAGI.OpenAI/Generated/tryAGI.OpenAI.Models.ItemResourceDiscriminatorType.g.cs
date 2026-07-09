@@ -71,6 +71,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Program,
+        /// <summary>
+        /// 
+        /// </summary>
+        ProgramOutput,
+        /// <summary>
+        /// 
+        /// </summary>
         Reasoning,
         /// <summary>
         /// 
@@ -121,6 +129,8 @@ namespace tryAGI.OpenAI
                 ItemResourceDiscriminatorType.McpCall => "mcp_call",
                 ItemResourceDiscriminatorType.McpListTools => "mcp_list_tools",
                 ItemResourceDiscriminatorType.Message => "message",
+                ItemResourceDiscriminatorType.Program => "program",
+                ItemResourceDiscriminatorType.ProgramOutput => "program_output",
                 ItemResourceDiscriminatorType.Reasoning => "reasoning",
                 ItemResourceDiscriminatorType.ShellCall => "shell_call",
                 ItemResourceDiscriminatorType.ShellCallOutput => "shell_call_output",
@@ -152,6 +162,8 @@ namespace tryAGI.OpenAI
                 "mcp_call" => ItemResourceDiscriminatorType.McpCall,
                 "mcp_list_tools" => ItemResourceDiscriminatorType.McpListTools,
                 "message" => ItemResourceDiscriminatorType.Message,
+                "program" => ItemResourceDiscriminatorType.Program,
+                "program_output" => ItemResourceDiscriminatorType.ProgramOutput,
                 "reasoning" => ItemResourceDiscriminatorType.Reasoning,
                 "shell_call" => ItemResourceDiscriminatorType.ShellCall,
                 "shell_call_output" => ItemResourceDiscriminatorType.ShellCallOutput,

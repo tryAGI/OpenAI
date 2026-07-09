@@ -35,23 +35,31 @@ namespace tryAGI.OpenAI.JsonConverters
             }
 
             var __score0 = 0;
+            if (__jsonProps.Contains("prompt_cache_breakpoint")) __score0++;
+            if (__jsonProps.Contains("prompt_cache_breakpoint.mode")) __score0++;
             if (__jsonProps.Contains("text")) __score0++;
             if (__jsonProps.Contains("type")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("image_url")) __score1++;
             if (__jsonProps.Contains("image_url.detail")) __score1++;
             if (__jsonProps.Contains("image_url.url")) __score1++;
+            if (__jsonProps.Contains("prompt_cache_breakpoint")) __score1++;
+            if (__jsonProps.Contains("prompt_cache_breakpoint.mode")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;
             var __score2 = 0;
             if (__jsonProps.Contains("input_audio")) __score2++;
             if (__jsonProps.Contains("input_audio.data")) __score2++;
             if (__jsonProps.Contains("input_audio.format")) __score2++;
+            if (__jsonProps.Contains("prompt_cache_breakpoint")) __score2++;
+            if (__jsonProps.Contains("prompt_cache_breakpoint.mode")) __score2++;
             if (__jsonProps.Contains("type")) __score2++;
             var __score3 = 0;
             if (__jsonProps.Contains("file")) __score3++;
             if (__jsonProps.Contains("file.file_data")) __score3++;
             if (__jsonProps.Contains("file.file_id")) __score3++;
             if (__jsonProps.Contains("file.filename")) __score3++;
+            if (__jsonProps.Contains("prompt_cache_breakpoint")) __score3++;
+            if (__jsonProps.Contains("prompt_cache_breakpoint.mode")) __score3++;
             if (__jsonProps.Contains("type")) __score3++;
             var __bestScore = 0;
             var __bestIndex = -1;

@@ -4,15 +4,13 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Constrains effort on reasoning for<br/>
-    /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).<br/>
-    /// Currently supported values are `none`, `minimal`, `low`, `medium`, `high`, and `xhigh`. Reducing<br/>
-    /// reasoning effort can result in faster responses and fewer tokens used<br/>
-    /// on reasoning in a response.<br/>
-    /// - `gpt-5.1` defaults to `none`, which does not perform reasoning. The supported reasoning values for `gpt-5.1` are `none`, `low`, `medium`, and `high`. Tool calls are supported for all reasoning values in gpt-5.1.<br/>
-    /// - All models before `gpt-5.1` default to `medium` reasoning effort, and do not support `none`.<br/>
-    /// - The `gpt-5-pro` model defaults to (and only supports) `high` reasoning effort.<br/>
-    /// - `xhigh` is supported for all models after `gpt-5.1-codex-max`.<br/>
+    /// Constrains effort on reasoning for reasoning models. Currently supported<br/>
+    /// values are `none`, `minimal`, `low`, `medium`, `high`, `xhigh`, and `max`.<br/>
+    /// Reducing reasoning effort can result in faster responses and fewer tokens<br/>
+    /// used on reasoning in a response. Not all reasoning models support every<br/>
+    /// value. See the<br/>
+    /// [reasoning guide](https://platform.openai.com/docs/guides/reasoning)<br/>
+    /// for model-specific support.<br/>
     /// Default Value: medium
     /// </summary>
     public enum ReasoningEffortEnum
@@ -25,6 +23,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Low,
+        /// <summary>
+        /// 
+        /// </summary>
+        Max,
         /// <summary>
         /// 
         /// </summary>
@@ -57,6 +59,7 @@ namespace tryAGI.OpenAI
             {
                 ReasoningEffortEnum.High => "high",
                 ReasoningEffortEnum.Low => "low",
+                ReasoningEffortEnum.Max => "max",
                 ReasoningEffortEnum.Medium => "medium",
                 ReasoningEffortEnum.Minimal => "minimal",
                 ReasoningEffortEnum.None => "none",
@@ -73,6 +76,7 @@ namespace tryAGI.OpenAI
             {
                 "high" => ReasoningEffortEnum.High,
                 "low" => ReasoningEffortEnum.Low,
+                "max" => ReasoningEffortEnum.Max,
                 "medium" => ReasoningEffortEnum.Medium,
                 "minimal" => ReasoningEffortEnum.Minimal,
                 "none" => ReasoningEffortEnum.None,

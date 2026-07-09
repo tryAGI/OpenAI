@@ -1,0 +1,98 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// JSON Schema response format. Used to generate structured JSON responses.<br/>
+    /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
+    /// </summary>
+    public sealed partial class BetaTextResponseFormatJsonSchema
+    {
+        /// <summary>
+        /// The type of response format being defined. Always `json_schema`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaTextResponseFormatJsonSchemaTypeJsonConverter))]
+        public global::tryAGI.OpenAI.BetaTextResponseFormatJsonSchemaType Type { get; set; }
+
+        /// <summary>
+        /// A description of what the response format is for, used by the model to<br/>
+        /// determine how to respond in the format.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// The name of the response format. Must be a-z, A-Z, 0-9, or contain<br/>
+        /// underscores and dashes, with a maximum length of 64.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Name { get; set; }
+
+        /// <summary>
+        /// The schema for the response format, described as a JSON Schema object.<br/>
+        /// Learn how to build JSON schemas [here](https://json-schema.org/).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.BetaResponseFormatJsonSchemaSchema Schema { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
+        public bool? Strict { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaTextResponseFormatJsonSchema" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the response format. Must be a-z, A-Z, 0-9, or contain<br/>
+        /// underscores and dashes, with a maximum length of 64.
+        /// </param>
+        /// <param name="schema">
+        /// The schema for the response format, described as a JSON Schema object.<br/>
+        /// Learn how to build JSON schemas [here](https://json-schema.org/).
+        /// </param>
+        /// <param name="type">
+        /// The type of response format being defined. Always `json_schema`.
+        /// </param>
+        /// <param name="description">
+        /// A description of what the response format is for, used by the model to<br/>
+        /// determine how to respond in the format.
+        /// </param>
+        /// <param name="strict"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public BetaTextResponseFormatJsonSchema(
+            string name,
+            global::tryAGI.OpenAI.BetaResponseFormatJsonSchemaSchema schema,
+            global::tryAGI.OpenAI.BetaTextResponseFormatJsonSchemaType type,
+            string? description,
+            bool? strict)
+        {
+            this.Type = type;
+            this.Description = description;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));
+            this.Strict = strict;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaTextResponseFormatJsonSchema" /> class.
+        /// </summary>
+        public BetaTextResponseFormatJsonSchema()
+        {
+        }
+
+    }
+}

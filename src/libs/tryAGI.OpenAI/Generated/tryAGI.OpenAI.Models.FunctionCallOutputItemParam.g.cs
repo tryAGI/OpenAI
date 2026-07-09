@@ -41,6 +41,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
+        public global::tryAGI.OpenAI.ToolCallCallerParam? Caller { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public global::tryAGI.OpenAI.FunctionCallItemStatus? Status { get; set; }
 
@@ -60,6 +66,7 @@ namespace tryAGI.OpenAI
         /// Text, image, or file output of the function tool call.
         /// </param>
         /// <param name="id"></param>
+        /// <param name="caller"></param>
         /// <param name="status"></param>
         /// <param name="type">
         /// The type of the function tool call output. Always `function_call_output`.<br/>
@@ -72,6 +79,7 @@ namespace tryAGI.OpenAI
             string callId,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item>> output,
             string? id,
+            global::tryAGI.OpenAI.ToolCallCallerParam? caller,
             global::tryAGI.OpenAI.FunctionCallItemStatus? status,
             global::tryAGI.OpenAI.FunctionCallOutputItemParamType type = global::tryAGI.OpenAI.FunctionCallOutputItemParamType.FunctionCallOutput)
         {
@@ -79,6 +87,7 @@ namespace tryAGI.OpenAI
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Type = type;
             this.Output = output;
+            this.Caller = caller;
             this.Status = status;
         }
 

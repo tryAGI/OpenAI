@@ -38,6 +38,12 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.ImageDetail Detail { get; set; }
 
         /// <summary>
+        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
+        public global::tryAGI.OpenAI.PromptCacheBreakpointConfig? PromptCacheBreakpoint { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -51,6 +57,9 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="imageUrl"></param>
         /// <param name="fileId"></param>
+        /// <param name="promptCacheBreakpoint">
+        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// </param>
         /// <param name="type">
         /// Specifies the event type. For a computer screenshot, this property is always set to `computer_screenshot`.<br/>
         /// Default Value: computer_screenshot
@@ -62,12 +71,14 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ImageDetail detail,
             string? imageUrl,
             string? fileId,
+            global::tryAGI.OpenAI.PromptCacheBreakpointConfig? promptCacheBreakpoint,
             global::tryAGI.OpenAI.ComputerScreenshotContentType type = global::tryAGI.OpenAI.ComputerScreenshotContentType.ComputerScreenshot)
         {
             this.Type = type;
             this.ImageUrl = imageUrl;
             this.FileId = fileId;
             this.Detail = detail;
+            this.PromptCacheBreakpoint = promptCacheBreakpoint;
         }
 
         /// <summary>

@@ -162,6 +162,80 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ItemReferenceParam PickItemReference() => IsItemReference
             ? ItemReference!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ItemReference' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ProgramItemParam? Program { get; init; }
+#else
+        public global::tryAGI.OpenAI.ProgramItemParam? Program { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Program))]
+#endif
+        public bool IsProgram => Program != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProgram(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ProgramItemParam? value)
+        {
+            value = Program;
+            return IsProgram;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ProgramItemParam PickProgram() => IsProgram
+            ? Program!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Program' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ProgramOutputItemParam? ProgramOutput { get; init; }
+#else
+        public global::tryAGI.OpenAI.ProgramOutputItemParam? ProgramOutput { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProgramOutput))]
+#endif
+        public bool IsProgramOutput => ProgramOutput != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickProgramOutput(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ProgramOutputItemParam? value)
+        {
+            value = ProgramOutput;
+            return IsProgramOutput;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::tryAGI.OpenAI.ProgramOutputItemParam PickProgramOutput() => IsProgramOutput
+            ? ProgramOutput!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProgramOutput' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -257,23 +331,75 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator InputItem(global::tryAGI.OpenAI.ProgramItemParam value) => new InputItem((global::tryAGI.OpenAI.ProgramItemParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ProgramItemParam?(InputItem @this) => @this.Program;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputItem(global::tryAGI.OpenAI.ProgramItemParam? value)
+        {
+            Program = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputItem FromProgram(global::tryAGI.OpenAI.ProgramItemParam? value) => new InputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator InputItem(global::tryAGI.OpenAI.ProgramOutputItemParam value) => new InputItem((global::tryAGI.OpenAI.ProgramOutputItemParam?)value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ProgramOutputItemParam?(InputItem @this) => @this.ProgramOutput;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InputItem(global::tryAGI.OpenAI.ProgramOutputItemParam? value)
+        {
+            ProgramOutput = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static InputItem FromProgramOutput(global::tryAGI.OpenAI.ProgramOutputItemParam? value) => new InputItem(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public InputItem(
             global::tryAGI.OpenAI.EasyInputMessage? message,
             global::tryAGI.OpenAI.Item? item,
             global::tryAGI.OpenAI.CompactionTriggerItemParam? compactionTrigger,
-            global::tryAGI.OpenAI.ItemReferenceParam? itemReference
+            global::tryAGI.OpenAI.ItemReferenceParam? itemReference,
+            global::tryAGI.OpenAI.ProgramItemParam? program,
+            global::tryAGI.OpenAI.ProgramOutputItemParam? programOutput
             )
         {
             Message = message;
             Item = item;
             CompactionTrigger = compactionTrigger;
             ItemReference = itemReference;
+            Program = program;
+            ProgramOutput = programOutput;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            ProgramOutput as object ??
+            Program as object ??
             ItemReference as object ??
             CompactionTrigger as object ??
             Item as object ??
@@ -287,7 +413,9 @@ namespace tryAGI.OpenAI
             Message?.ToString() ??
             Item?.ToString() ??
             CompactionTrigger?.ToString() ??
-            ItemReference?.ToString() 
+            ItemReference?.ToString() ??
+            Program?.ToString() ??
+            ProgramOutput?.ToString() 
             ;
 
         /// <summary>
@@ -295,7 +423,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsMessage && !IsItem && !IsCompactionTrigger && !IsItemReference || !IsMessage && IsItem && !IsCompactionTrigger && !IsItemReference || !IsMessage && !IsItem && IsCompactionTrigger && !IsItemReference || !IsMessage && !IsItem && !IsCompactionTrigger && IsItemReference;
+            return IsMessage && !IsItem && !IsCompactionTrigger && !IsItemReference && !IsProgram && !IsProgramOutput || !IsMessage && IsItem && !IsCompactionTrigger && !IsItemReference && !IsProgram && !IsProgramOutput || !IsMessage && !IsItem && IsCompactionTrigger && !IsItemReference && !IsProgram && !IsProgramOutput || !IsMessage && !IsItem && !IsCompactionTrigger && IsItemReference && !IsProgram && !IsProgramOutput || !IsMessage && !IsItem && !IsCompactionTrigger && !IsItemReference && IsProgram && !IsProgramOutput || !IsMessage && !IsItem && !IsCompactionTrigger && !IsItemReference && !IsProgram && IsProgramOutput;
         }
 
         /// <summary>
@@ -306,6 +434,8 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.Item?, TResult>? item = null,
             global::System.Func<global::tryAGI.OpenAI.CompactionTriggerItemParam, TResult>? compactionTrigger = null,
             global::System.Func<global::tryAGI.OpenAI.ItemReferenceParam, TResult>? itemReference = null,
+            global::System.Func<global::tryAGI.OpenAI.ProgramItemParam, TResult>? program = null,
+            global::System.Func<global::tryAGI.OpenAI.ProgramOutputItemParam, TResult>? programOutput = null,
             bool validate = true)
         {
             if (validate)
@@ -329,6 +459,14 @@ namespace tryAGI.OpenAI
             {
                 return itemReference(ItemReference!);
             }
+            else if (IsProgram && program != null)
+            {
+                return program(Program!);
+            }
+            else if (IsProgramOutput && programOutput != null)
+            {
+                return programOutput(ProgramOutput!);
+            }
 
             return default(TResult);
         }
@@ -344,6 +482,10 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.CompactionTriggerItemParam>? compactionTrigger = null,
 
             global::System.Action<global::tryAGI.OpenAI.ItemReferenceParam>? itemReference = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ProgramItemParam>? program = null,
+
+            global::System.Action<global::tryAGI.OpenAI.ProgramOutputItemParam>? programOutput = null,
             bool validate = true)
         {
             if (validate)
@@ -366,6 +508,14 @@ namespace tryAGI.OpenAI
             else if (IsItemReference)
             {
                 itemReference?.Invoke(ItemReference!);
+            }
+            else if (IsProgram)
+            {
+                program?.Invoke(Program!);
+            }
+            else if (IsProgramOutput)
+            {
+                programOutput?.Invoke(ProgramOutput!);
             }
         }
 
@@ -377,6 +527,8 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.Item?>? item = null,
             global::System.Action<global::tryAGI.OpenAI.CompactionTriggerItemParam>? compactionTrigger = null,
             global::System.Action<global::tryAGI.OpenAI.ItemReferenceParam>? itemReference = null,
+            global::System.Action<global::tryAGI.OpenAI.ProgramItemParam>? program = null,
+            global::System.Action<global::tryAGI.OpenAI.ProgramOutputItemParam>? programOutput = null,
             bool validate = true)
         {
             if (validate)
@@ -399,6 +551,14 @@ namespace tryAGI.OpenAI
             else if (IsItemReference)
             {
                 itemReference?.Invoke(ItemReference!);
+            }
+            else if (IsProgram)
+            {
+                program?.Invoke(Program!);
+            }
+            else if (IsProgramOutput)
+            {
+                programOutput?.Invoke(ProgramOutput!);
             }
         }
 
@@ -417,6 +577,10 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.CompactionTriggerItemParam),
                 ItemReference,
                 typeof(global::tryAGI.OpenAI.ItemReferenceParam),
+                Program,
+                typeof(global::tryAGI.OpenAI.ProgramItemParam),
+                ProgramOutput,
+                typeof(global::tryAGI.OpenAI.ProgramOutputItemParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -436,7 +600,9 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.EasyInputMessage?>.Default.Equals(Message, other.Message) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Item?>.Default.Equals(Item, other.Item) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CompactionTriggerItemParam?>.Default.Equals(CompactionTrigger, other.CompactionTrigger) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ItemReferenceParam?>.Default.Equals(ItemReference, other.ItemReference) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ItemReferenceParam?>.Default.Equals(ItemReference, other.ItemReference) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ProgramItemParam?>.Default.Equals(Program, other.Program) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ProgramOutputItemParam?>.Default.Equals(ProgramOutput, other.ProgramOutput) 
                 ;
         }
 

@@ -1,0 +1,111 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class BetaCompactResponseMethodPublicBody
+    {
+        /// <summary>
+        /// Model ID used to generate the response, like `gpt-5` or `o3`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](/docs/models) to browse and compare available models.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaModelIdsCompactionJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.BetaModelIdsCompaction Model { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputItem>>? Input { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("previous_response_id")]
+        public string? PreviousResponseId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
+        public string? Instructions { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_key")]
+        public string? PromptCacheKey { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_retention")]
+        public global::tryAGI.OpenAI.BetaPromptCacheRetentionEnum? PromptCacheRetention { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
+        public global::tryAGI.OpenAI.BetaPromptCacheOptionsParam? PromptCacheOptions { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        public global::tryAGI.OpenAI.BetaServiceTierEnum? ServiceTier { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaCompactResponseMethodPublicBody" /> class.
+        /// </summary>
+        /// <param name="model">
+        /// Model ID used to generate the response, like `gpt-5` or `o3`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](/docs/models) to browse and compare available models.
+        /// </param>
+        /// <param name="input"></param>
+        /// <param name="previousResponseId"></param>
+        /// <param name="instructions"></param>
+        /// <param name="promptCacheKey"></param>
+        /// <param name="promptCacheRetention"></param>
+        /// <param name="promptCacheOptions"></param>
+        /// <param name="serviceTier"></param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public BetaCompactResponseMethodPublicBody(
+            global::tryAGI.OpenAI.BetaModelIdsCompaction model,
+            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputItem>>? input,
+            string? previousResponseId,
+            string? instructions,
+            string? promptCacheKey,
+            global::tryAGI.OpenAI.BetaPromptCacheRetentionEnum? promptCacheRetention,
+            global::tryAGI.OpenAI.BetaPromptCacheOptionsParam? promptCacheOptions,
+            global::tryAGI.OpenAI.BetaServiceTierEnum? serviceTier)
+        {
+            this.Model = model;
+            this.Input = input;
+            this.PreviousResponseId = previousResponseId;
+            this.Instructions = instructions;
+            this.PromptCacheKey = promptCacheKey;
+            this.PromptCacheRetention = promptCacheRetention;
+            this.PromptCacheOptions = promptCacheOptions;
+            this.ServiceTier = serviceTier;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaCompactResponseMethodPublicBody" /> class.
+        /// </summary>
+        public BetaCompactResponseMethodPublicBody()
+        {
+        }
+
+    }
+}

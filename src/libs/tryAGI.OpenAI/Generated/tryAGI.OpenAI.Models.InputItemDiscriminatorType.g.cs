@@ -16,6 +16,14 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Message,
+        /// <summary>
+        /// 
+        /// </summary>
+        Program,
+        /// <summary>
+        /// 
+        /// </summary>
+        ProgramOutput,
     }
 
     /// <summary>
@@ -32,6 +40,8 @@ namespace tryAGI.OpenAI
             {
                 InputItemDiscriminatorType.CompactionTrigger => "compaction_trigger",
                 InputItemDiscriminatorType.Message => "message",
+                InputItemDiscriminatorType.Program => "program",
+                InputItemDiscriminatorType.ProgramOutput => "program_output",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -44,6 +54,8 @@ namespace tryAGI.OpenAI
             {
                 "compaction_trigger" => InputItemDiscriminatorType.CompactionTrigger,
                 "message" => InputItemDiscriminatorType.Message,
+                "program" => InputItemDiscriminatorType.Program,
+                "program_output" => InputItemDiscriminatorType.ProgramOutput,
                 _ => null,
             };
         }

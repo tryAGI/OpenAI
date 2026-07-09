@@ -37,6 +37,14 @@ namespace tryAGI.OpenAI
         public required int SummaryIndex { get; set; }
 
         /// <summary>
+        /// The completion status of the summary part. Omitted when the part completed<br/>
+        /// normally and set to `incomplete` when generation was interrupted.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseReasoningSummaryPartDoneEventStatusJsonConverter))]
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventStatus? Status { get; set; }
+
+        /// <summary>
         /// The sequence number of this event.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sequence_number")]
@@ -77,6 +85,10 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// The type of the event. Always `response.reasoning_summary_part.done`.
         /// </param>
+        /// <param name="status">
+        /// The completion status of the summary part. Omitted when the part completed<br/>
+        /// normally and set to `incomplete` when generation was interrupted.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,12 +98,14 @@ namespace tryAGI.OpenAI
             int summaryIndex,
             int sequenceNumber,
             global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventPart part,
-            global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventType type)
+            global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventType type,
+            global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventStatus? status)
         {
             this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.SummaryIndex = summaryIndex;
+            this.Status = status;
             this.SequenceNumber = sequenceNumber;
             this.Part = part ?? throw new global::System.ArgumentNullException(nameof(part));
         }

@@ -25,6 +25,10 @@ namespace tryAGI.OpenAI.Realtime
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.AudioTranscriptionResponseModelNullableJsonConverter),
 
+            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.CallableToolAllowedCallerJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.CallableToolAllowedCallerNullableJsonConverter),
+
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.FileInputDetailJsonConverter),
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.FileInputDetailNullableJsonConverter),
@@ -60,6 +64,10 @@ namespace tryAGI.OpenAI.Realtime
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.NoiseReductionTypeJsonConverter),
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.NoiseReductionTypeNullableJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.PromptCacheBreakpointConfigModeJsonConverter),
+
+            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.PromptCacheBreakpointConfigModeNullableJsonConverter),
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeAudioFormatsPcmAudioFormatTypeJsonConverter),
 
@@ -686,11 +694,13 @@ namespace tryAGI.OpenAI.Realtime
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.AudioTranscriptionResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.AnyOf<string, global::tryAGI.OpenAI.Realtime.AudioTranscriptionResponseModel?>), TypeInfoPropertyName = "AnyOfStringAudioTranscriptionResponseModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.AudioTranscriptionResponseModel), TypeInfoPropertyName = "AudioTranscriptionResponseModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.CallableToolAllowedCaller), TypeInfoPropertyName = "CallableToolAllowedCaller2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.FileInputDetail), TypeInfoPropertyName = "FileInputDetail2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.ImageDetail), TypeInfoPropertyName = "ImageDetail2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.InputFileContent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.InputFileContentType), TypeInfoPropertyName = "InputFileContentType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.PromptCacheBreakpointConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.InputImageContent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.InputImageContentType), TypeInfoPropertyName = "InputImageContentType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.InputTextContent))]
@@ -707,12 +717,14 @@ namespace tryAGI.OpenAI.Realtime
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.OneOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.Realtime.MCPToolFilter>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.MCPToolFilter))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Realtime.CallableToolAllowedCaller>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.OneOf<global::tryAGI.OpenAI.Realtime.MCPToolRequireApprovalVariant1Enum, global::tryAGI.OpenAI.Realtime.MCPToolRequireApprovalVariant1Enum2?>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.MCPToolRequireApprovalVariant1Enum))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.MCPToolRequireApprovalVariant1Enum2), TypeInfoPropertyName = "MCPToolRequireApprovalVariant1Enum22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.NoiseReductionType), TypeInfoPropertyName = "NoiseReductionType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.PromptVariant1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.PromptCacheBreakpointConfigMode), TypeInfoPropertyName = "PromptCacheBreakpointConfigMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeAudioFormats), TypeInfoPropertyName = "RealtimeAudioFormats2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmAudioFormat))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmAudioFormatType), TypeInfoPropertyName = "RealtimeAudioFormatsPcmAudioFormatType2")]
@@ -1033,6 +1045,7 @@ namespace tryAGI.OpenAI.Realtime
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.OneOf<global::System.Collections.Generic.List<string>, global::tryAGI.OpenAI.Realtime.MCPToolFilter>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.Realtime.CallableToolAllowedCaller>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageAssistantContentItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageSystemContentItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageUserContentItem>))]

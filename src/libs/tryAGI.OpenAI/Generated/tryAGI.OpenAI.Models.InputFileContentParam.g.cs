@@ -42,11 +42,17 @@ namespace tryAGI.OpenAI
         public string? FileUrl { get; set; }
 
         /// <summary>
-        /// The detail level of the file to be sent to the model. Use `low` for the default rendering behavior, or `high` to render the file at higher quality. Defaults to `low`.
+        /// The detail level of the file to be sent to the model. Use `auto` to let the system select the detail level; for GPT-5.6 and later models, `auto` uses high-quality rendering, which may increase input token usage. Use `low` for lower-cost rendering, or `high` to render the file at higher quality. Defaults to `auto`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FileDetailEnumJsonConverter))]
         public global::tryAGI.OpenAI.FileDetailEnum? Detail { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
+        public global::tryAGI.OpenAI.PromptCacheBreakpointParam? PromptCacheBreakpoint { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,8 +68,9 @@ namespace tryAGI.OpenAI
         /// <param name="fileData"></param>
         /// <param name="fileUrl"></param>
         /// <param name="detail">
-        /// The detail level of the file to be sent to the model. Use `low` for the default rendering behavior, or `high` to render the file at higher quality. Defaults to `low`.
+        /// The detail level of the file to be sent to the model. Use `auto` to let the system select the detail level; for GPT-5.6 and later models, `auto` uses high-quality rendering, which may increase input token usage. Use `low` for lower-cost rendering, or `high` to render the file at higher quality. Defaults to `auto`.
         /// </param>
+        /// <param name="promptCacheBreakpoint"></param>
         /// <param name="type">
         /// The type of the input item. Always `input_file`.<br/>
         /// Default Value: input_file
@@ -77,6 +84,7 @@ namespace tryAGI.OpenAI
             string? fileData,
             string? fileUrl,
             global::tryAGI.OpenAI.FileDetailEnum? detail,
+            global::tryAGI.OpenAI.PromptCacheBreakpointParam? promptCacheBreakpoint,
             global::tryAGI.OpenAI.InputFileContentParamType type = global::tryAGI.OpenAI.InputFileContentParamType.InputFile)
         {
             this.Type = type;
@@ -85,6 +93,7 @@ namespace tryAGI.OpenAI
             this.FileData = fileData;
             this.FileUrl = fileUrl;
             this.Detail = detail;
+            this.PromptCacheBreakpoint = promptCacheBreakpoint;
         }
 
         /// <summary>

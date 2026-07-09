@@ -1,0 +1,58 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// Action type "open_page" - Opens a specific URL from search results.
+    /// </summary>
+    public sealed partial class BetaWebSearchActionOpenPage
+    {
+        /// <summary>
+        /// The action type.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaWebSearchActionOpenPageTypeJsonConverter))]
+        public global::tryAGI.OpenAI.BetaWebSearchActionOpenPageType Type { get; set; }
+
+        /// <summary>
+        /// The URL opened by the model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        public string? Url { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaWebSearchActionOpenPage" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The action type.
+        /// </param>
+        /// <param name="url">
+        /// The URL opened by the model.
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public BetaWebSearchActionOpenPage(
+            global::tryAGI.OpenAI.BetaWebSearchActionOpenPageType type,
+            string? url)
+        {
+            this.Type = type;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaWebSearchActionOpenPage" /> class.
+        /// </summary>
+        public BetaWebSearchActionOpenPage()
+        {
+        }
+
+    }
+}

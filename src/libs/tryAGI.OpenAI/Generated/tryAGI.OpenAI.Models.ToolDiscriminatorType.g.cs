@@ -55,6 +55,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        ProgrammaticToolCalling,
+        /// <summary>
+        /// 
+        /// </summary>
         Shell,
         /// <summary>
         /// 
@@ -85,6 +89,7 @@ namespace tryAGI.OpenAI
                 ToolDiscriminatorType.LocalShell => "local_shell",
                 ToolDiscriminatorType.Mcp => "mcp",
                 ToolDiscriminatorType.Namespace => "namespace",
+                ToolDiscriminatorType.ProgrammaticToolCalling => "programmatic_tool_calling",
                 ToolDiscriminatorType.Shell => "shell",
                 ToolDiscriminatorType.ToolSearch => "tool_search",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -108,6 +113,7 @@ namespace tryAGI.OpenAI
                 "local_shell" => ToolDiscriminatorType.LocalShell,
                 "mcp" => ToolDiscriminatorType.Mcp,
                 "namespace" => ToolDiscriminatorType.Namespace,
+                "programmatic_tool_calling" => ToolDiscriminatorType.ProgrammaticToolCalling,
                 "shell" => ToolDiscriminatorType.Shell,
                 "tool_search" => ToolDiscriminatorType.ToolSearch,
                 _ => null,

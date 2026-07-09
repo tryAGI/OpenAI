@@ -275,6 +275,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Gpt56Luna,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt56Sol,
+        /// <summary>
+        /// 
+        /// </summary>
+        Gpt56Terra,
+        /// <summary>
+        /// 
+        /// </summary>
         O1,
         /// <summary>
         /// 
@@ -400,6 +412,9 @@ namespace tryAGI.OpenAI
                 ModelIdsSharedEnum.Gpt54Mini20260317 => "gpt-5.4-mini-2026-03-17",
                 ModelIdsSharedEnum.Gpt54Nano => "gpt-5.4-nano",
                 ModelIdsSharedEnum.Gpt54Nano20260317 => "gpt-5.4-nano-2026-03-17",
+                ModelIdsSharedEnum.Gpt56Luna => "gpt-5.6-luna",
+                ModelIdsSharedEnum.Gpt56Sol => "gpt-5.6-sol",
+                ModelIdsSharedEnum.Gpt56Terra => "gpt-5.6-terra",
                 ModelIdsSharedEnum.O1 => "o1",
                 ModelIdsSharedEnum.O120241217 => "o1-2024-12-17",
                 ModelIdsSharedEnum.O1Mini => "o1-mini",
@@ -488,6 +503,9 @@ namespace tryAGI.OpenAI
                 "gpt-5.4-mini-2026-03-17" => ModelIdsSharedEnum.Gpt54Mini20260317,
                 "gpt-5.4-nano" => ModelIdsSharedEnum.Gpt54Nano,
                 "gpt-5.4-nano-2026-03-17" => ModelIdsSharedEnum.Gpt54Nano20260317,
+                "gpt-5.6-luna" => ModelIdsSharedEnum.Gpt56Luna,
+                "gpt-5.6-sol" => ModelIdsSharedEnum.Gpt56Sol,
+                "gpt-5.6-terra" => ModelIdsSharedEnum.Gpt56Terra,
                 "o1" => ModelIdsSharedEnum.O1,
                 "o1-2024-12-17" => ModelIdsSharedEnum.O120241217,
                 "o1-mini" => ModelIdsSharedEnum.O1Mini,
