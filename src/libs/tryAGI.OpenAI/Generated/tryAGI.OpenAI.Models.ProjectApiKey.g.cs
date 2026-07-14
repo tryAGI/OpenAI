@@ -50,6 +50,14 @@ namespace tryAGI.OpenAI
         public required string Id { get; set; }
 
         /// <summary>
+        /// Whether the API key's owner currently has effective access to the project.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("owner_project_access")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectApiKeyOwnerProjectAccessJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ProjectApiKeyOwnerProjectAccess OwnerProjectAccess { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
@@ -77,6 +85,9 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
+        /// <param name="ownerProjectAccess">
+        /// Whether the API key's owner currently has effective access to the project.
+        /// </param>
         /// <param name="owner"></param>
         /// <param name="object">
         /// The object type, which is always `organization.project.api_key`
@@ -92,6 +103,7 @@ namespace tryAGI.OpenAI
             string name,
             int createdAt,
             string id,
+            global::tryAGI.OpenAI.ProjectApiKeyOwnerProjectAccess ownerProjectAccess,
             global::tryAGI.OpenAI.ProjectApiKeyOwner owner,
             global::tryAGI.OpenAI.ProjectApiKeyObject @object,
             int? lastUsedAt)
@@ -102,6 +114,7 @@ namespace tryAGI.OpenAI
             this.CreatedAt = createdAt;
             this.LastUsedAt = lastUsedAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.OwnerProjectAccess = ownerProjectAccess;
             this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
         }
 

@@ -29,13 +29,15 @@ namespace tryAGI.OpenAI
             global::System.Net.Http.HttpClient httpClient,
             ref string projectId,
             ref int? limit,
-            ref string? after);
+            ref string? after,
+            ref global::tryAGI.OpenAI.ListProjectApiKeysOwnerProjectAccess? ownerProjectAccess);
         partial void PrepareListProjectApiKeysRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string projectId,
             int? limit,
-            string? after);
+            string? after,
+            global::tryAGI.OpenAI.ListProjectApiKeysOwnerProjectAccess? ownerProjectAccess);
         partial void ProcessListProjectApiKeysResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -53,6 +55,7 @@ namespace tryAGI.OpenAI
         /// Default Value: 20
         /// </param>
         /// <param name="after"></param>
+        /// <param name="ownerProjectAccess"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
@@ -60,6 +63,7 @@ namespace tryAGI.OpenAI
             string projectId,
             int? limit = default,
             string? after = default,
+            global::tryAGI.OpenAI.ListProjectApiKeysOwnerProjectAccess? ownerProjectAccess = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -67,6 +71,7 @@ namespace tryAGI.OpenAI
                 projectId: projectId,
                 limit: limit,
                 after: after,
+                ownerProjectAccess: ownerProjectAccess,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -81,6 +86,7 @@ namespace tryAGI.OpenAI
         /// Default Value: 20
         /// </param>
         /// <param name="after"></param>
+        /// <param name="ownerProjectAccess"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
@@ -88,6 +94,7 @@ namespace tryAGI.OpenAI
             string projectId,
             int? limit = default,
             string? after = default,
+            global::tryAGI.OpenAI.ListProjectApiKeysOwnerProjectAccess? ownerProjectAccess = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -97,7 +104,8 @@ namespace tryAGI.OpenAI
                 httpClient: HttpClient,
                 projectId: ref projectId,
                 limit: ref limit,
-                after: ref after);
+                after: ref after,
+                ownerProjectAccess: ref ownerProjectAccess);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
@@ -128,6 +136,7 @@ namespace tryAGI.OpenAI
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("after", after)
+                                .AddOptionalParameter("owner_project_access", ownerProjectAccess?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -171,7 +180,8 @@ namespace tryAGI.OpenAI
                     httpRequestMessage: __httpRequest,
                     projectId: projectId!,
                     limit: limit,
-                    after: after);
+                    after: after,
+                    ownerProjectAccess: ownerProjectAccess);
 
                 global::tryAGI.OpenAI.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -455,11 +465,13 @@ namespace tryAGI.OpenAI
         /// <param name="projectId"></param>
         /// <param name="limit">
         /// Default Value: 20
-        /// </param> 
+        /// </param>
+        /// <param name="ownerProjectAccess"></param> 
         /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ProjectApiKey> ListProjectApiKeysAutoPagingAsync(
             string projectId,             int? limit = default,
+            global::tryAGI.OpenAI.ListProjectApiKeysOwnerProjectAccess? ownerProjectAccess = default,
             string? after = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -468,6 +480,7 @@ namespace tryAGI.OpenAI
                     projectId: projectId,
                     limit: limit,
                     after: __cursor,
+                    ownerProjectAccess: ownerProjectAccess,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

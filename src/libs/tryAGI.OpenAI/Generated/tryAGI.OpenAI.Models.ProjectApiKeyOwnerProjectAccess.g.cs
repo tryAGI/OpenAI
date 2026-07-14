@@ -4,40 +4,46 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the event. Always `safety_identifier.blocked`.
+    /// Whether the API key's owner currently has effective access to the project.
     /// </summary>
-    public enum WebhookSafetyIdentifierBlockedType
+    public enum ProjectApiKeyOwnerProjectAccess
     {
         /// <summary>
         /// 
         /// </summary>
-        SafetyIdentifierBlocked,
+        Active,
+        /// <summary>
+        /// 
+        /// </summary>
+        Inactive,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class WebhookSafetyIdentifierBlockedTypeExtensions
+    public static class ProjectApiKeyOwnerProjectAccessExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this WebhookSafetyIdentifierBlockedType value)
+        public static string ToValueString(this ProjectApiKeyOwnerProjectAccess value)
         {
             return value switch
             {
-                WebhookSafetyIdentifierBlockedType.SafetyIdentifierBlocked => "safety_identifier.blocked",
+                ProjectApiKeyOwnerProjectAccess.Active => "active",
+                ProjectApiKeyOwnerProjectAccess.Inactive => "inactive",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static WebhookSafetyIdentifierBlockedType? ToEnum(string value)
+        public static ProjectApiKeyOwnerProjectAccess? ToEnum(string value)
         {
             return value switch
             {
-                "safety_identifier.blocked" => WebhookSafetyIdentifierBlockedType.SafetyIdentifierBlocked,
+                "active" => ProjectApiKeyOwnerProjectAccess.Active,
+                "inactive" => ProjectApiKeyOwnerProjectAccess.Inactive,
                 _ => null,
             };
         }
