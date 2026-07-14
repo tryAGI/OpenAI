@@ -3,10 +3,10 @@
 namespace tryAGI.OpenAI.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class WebhookSafetyIdentifierBlockedTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.WebhookSafetyIdentifierBlockedType>
+    public sealed class ListProjectApiKeysOwnerProjectAccessNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.ListProjectApiKeysOwnerProjectAccess?>
     {
         /// <inheritdoc />
-        public override global::tryAGI.OpenAI.WebhookSafetyIdentifierBlockedType Read(
+        public override global::tryAGI.OpenAI.ListProjectApiKeysOwnerProjectAccess? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::tryAGI.OpenAI.WebhookSafetyIdentifierBlockedTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::tryAGI.OpenAI.ListProjectApiKeysOwnerProjectAccessExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -26,11 +26,11 @@ namespace tryAGI.OpenAI.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::tryAGI.OpenAI.WebhookSafetyIdentifierBlockedType)numValue;
+                    return (global::tryAGI.OpenAI.ListProjectApiKeysOwnerProjectAccess)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::tryAGI.OpenAI.WebhookSafetyIdentifierBlockedType);
+                    return default(global::tryAGI.OpenAI.ListProjectApiKeysOwnerProjectAccess?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,12 +42,19 @@ namespace tryAGI.OpenAI.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::tryAGI.OpenAI.WebhookSafetyIdentifierBlockedType value,
+            global::tryAGI.OpenAI.ListProjectApiKeysOwnerProjectAccess? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::tryAGI.OpenAI.WebhookSafetyIdentifierBlockedTypeExtensions.ToValueString(value));
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::tryAGI.OpenAI.ListProjectApiKeysOwnerProjectAccessExtensions.ToValueString(value.Value));
+            }
         }
     }
 }

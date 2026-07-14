@@ -27,6 +27,13 @@ internal static partial class ProjectsListProjectApiKeysCommandApiCommand
 ",
     };
 
+    private static Option<global::tryAGI.OpenAI.ListProjectApiKeysOwnerProjectAccess?> OwnerProjectAccess { get; } = new(
+        name: @"--owner-project-access")
+    {
+        Description = @"Filter API keys by whether the owner currently has effective access to the project. Use `active` for owners with access, `inactive` for owners without access, or `any` for all enabled project API keys. If omitted, the endpoint applies its existing membership-based visibility rules, which may exclude some enabled keys.
+",
+    };
+
                     private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.ProjectApiKeyListResponse value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
                     {
                         string? text = null;
@@ -53,6 +60,7 @@ internal static partial class ProjectsListProjectApiKeysCommandApiCommand
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Limit);
                         command.Options.Add(After);
+                        command.Options.Add(OwnerProjectAccess);
 
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
@@ -61,6 +69,7 @@ internal static partial class ProjectsListProjectApiKeysCommandApiCommand
                         var projectId = parseResult.GetRequiredValue(ProjectId);
                         var limit = parseResult.GetValue(Limit);
                         var after = parseResult.GetValue(After);
+                        var ownerProjectAccess = parseResult.GetValue(OwnerProjectAccess);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -68,6 +77,7 @@ internal static partial class ProjectsListProjectApiKeysCommandApiCommand
                                     projectId: projectId,
                                     limit: limit,
                                     after: after,
+                                    ownerProjectAccess: ownerProjectAccess,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

@@ -18401,6 +18401,21 @@ paths:
           required: false
           schema:
             type: string
+        - name: owner_project_access
+          in: query
+          description: >
+            Filter API keys by whether the owner currently has effective access
+            to the project. Use `active` for owners with access, `inactive` for
+            owners without access, or `any` for all enabled project API keys. If
+            omitted, the endpoint applies its existing membership-based
+            visibility rules, which may exclude some enabled keys.
+          required: false
+          schema:
+            type: string
+            enum:
+              - active
+              - inactive
+              - any
       responses:
         '200':
           description: Project API keys listed successfully.
@@ -18415,7 +18430,7 @@ paths:
           request:
             curl: >
               curl
-              https://api.openai.com/v1/organization/projects/proj_abc/api_keys?after=key_abc&limit=20
+              https://api.openai.com/v1/organization/projects/proj_abc/api_keys?after=key_abc&limit=20&owner_project_access=any
               \
                 -H "Authorization: Bearer $OPENAI_ADMIN_KEY" \
                 -H "Content-Type: application/json"
@@ -18494,6 +18509,7 @@ paths:
                         "created_at": 1711471533,
                         "last_used_at": 1711471534,
                         "id": "key_abc",
+                        "owner_project_access": "active",
                         "owner": {
                             "type": "user",
                             "user": {
@@ -18633,6 +18649,7 @@ paths:
                 "created_at": 1711471533,
                 "last_used_at": 1711471534,
                 "id": "key_abc",
+                "owner_project_access": "active",
                 "owner": {
                     "type": "user",
                     "user": {
@@ -44916,24 +44933,6 @@ webhooks:
             Non-200 
 
             status codes will be retried.
-  safety_identifier_blocked:
-    post:
-      description: >
-        Sent when a request associated with a safety identifier has been
-        blocked.
-      requestBody:
-        description: The event payload sent by the API.
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/WebhookSafetyIdentifierBlocked'
-      responses:
-        '200':
-          description: >
-            Return a 200 status code to acknowledge receipt of the event.
-            Non-200
-
-            status codes will be retried.
 components:
   schemas:
     AddUploadPartRequest:
@@ -62065,6 +62064,14 @@ components:
         id:
           type: string
           description: The identifier, which can be referenced in API endpoints
+        owner_project_access:
+          type: string
+          enum:
+            - active
+            - inactive
+          description: >-
+            Whether the API key's owner currently has effective access to the
+            project.
         owner:
           type: object
           properties:
@@ -62085,6 +62092,7 @@ components:
         - created_at
         - last_used_at
         - id
+        - owner_project_access
         - owner
       x-oaiMeta:
         name: The project API key object
@@ -62096,6 +62104,7 @@ components:
               "created_at": 1711471533,
               "last_used_at": 1711471534,
               "id": "key_abc",
+              "owner_project_access": "active",
               "owner": {
                   "type": "user",
                   "user": {
@@ -73886,11 +73895,13 @@ components:
           anyOf:
             - type: string
               description: >
-                The encrypted content of the reasoning item - populated when a
-                response is
+                The encrypted content of the reasoning item. This is populated
+                by default
 
-                generated with `reasoning.encrypted_content` in the `include`
-                parameter.
+                for reasoning items returned by `POST /v1/responses` and
+                WebSocket
+
+                `response.create` requests.
             - type: 'null'
         summary:
           type: array
@@ -82918,88 +82929,6 @@ components:
             "created_at": 1719168000,
             "data": {
               "id": "resp_abc123"
-            }
-          }
-    WebhookSafetyIdentifierBlocked:
-      type: object
-      title: safety_identifier.blocked
-      description: >
-        Sent when a request associated with a safety identifier has been
-        blocked.
-      required:
-        - created_at
-        - id
-        - data
-        - type
-      properties:
-        created_at:
-          type: integer
-          format: unixtime
-          description: |
-            The Unix timestamp (in seconds) of when the request was blocked.
-        id:
-          type: string
-          description: |
-            The unique ID of the event.
-        data:
-          type: object
-          description: |
-            Event data payload.
-          required:
-            - safety_identifier
-            - safety_category
-          properties:
-            safety_identifier:
-              type: string
-              maxLength: 64
-              description: >
-                The stable safety identifier associated with the blocked
-                request.
-            safety_category:
-              type: string
-              description: >
-                The safety category that triggered the block, such as `bio` or
-                `cyber`.
-            request_id:
-              type: string
-              description: |
-                The OpenAI request ID for the blocked request, if available.
-            project_id:
-              type: string
-              description: |
-                The project associated with the blocked request, if available.
-            model:
-              type: string
-              description: |
-                The model used for the blocked request, if available.
-        object:
-          type: string
-          description: |
-            The object of the event. Always `event`.
-          enum:
-            - event
-          x-stainless-const: true
-        type:
-          type: string
-          description: |
-            The type of the event. Always `safety_identifier.blocked`.
-          enum:
-            - safety_identifier.blocked
-          x-stainless-const: true
-      x-oaiMeta:
-        name: safety_identifier.blocked
-        group: webhook-events
-        example: |
-          {
-            "id": "evt_abc123",
-            "type": "safety_identifier.blocked",
-            "created_at": 1719168000,
-            "data": {
-              "safety_identifier": "safety-identifier-1234",
-              "safety_category": "cyber",
-              "request_id": "req_abc123",
-              "project_id": "proj_abc123",
-              "model": "gpt-4.1"
             }
           }
     ModerationInputType:
@@ -92545,11 +92474,13 @@ components:
           anyOf:
             - type: string
               description: >
-                The encrypted content of the reasoning item - populated when a
-                response is
+                The encrypted content of the reasoning item. This is populated
+                by default
 
-                generated with `reasoning.encrypted_content` in the `include`
-                parameter.
+                for reasoning items returned by `POST /v1/responses` and
+                WebSocket
+
+                `response.create` requests.
             - type: 'null'
         summary:
           type: array
@@ -100647,9 +100578,6 @@ x-oaiMeta:
           path: <auto>
         - type: object
           key: WebhookResponseIncomplete
-          path: <auto>
-        - type: object
-          key: WebhookSafetyIdentifierBlocked
           path: <auto>
         - type: object
           key: WebhookBatchCompleted
