@@ -28,8 +28,7 @@ namespace tryAGI.OpenAI
         /// Citations associated with the text content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaFileCitationParam>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaUrlCitationParam>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaContainerFileCitationParam>>))]
-        public global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaFileCitationParam>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaUrlCitationParam>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaContainerFileCitationParam>>? Annotations { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem4>? Annotations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,7 +54,7 @@ namespace tryAGI.OpenAI
 #endif
         public BetaOutputTextContentParam(
             string text,
-            global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaFileCitationParam>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaUrlCitationParam>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaContainerFileCitationParam>>? annotations,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem4>? annotations,
             global::tryAGI.OpenAI.BetaOutputTextContentParamType type = global::tryAGI.OpenAI.BetaOutputTextContentParamType.OutputText)
         {
             this.Type = type;

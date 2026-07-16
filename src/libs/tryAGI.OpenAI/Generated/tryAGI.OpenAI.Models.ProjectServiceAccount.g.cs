@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         public required string Name { get; set; }
 
         /// <summary>
-        /// `owner` or `member`
+        /// `owner`, `member`, or `none`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectServiceAccountRoleJsonConverter))]
@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
         /// The name of the service account
         /// </param>
         /// <param name="role">
-        /// `owner` or `member`
+        /// `owner`, `member`, or `none`
         /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the service account was created

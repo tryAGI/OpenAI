@@ -30,11 +30,12 @@ namespace tryAGI.OpenAI
         public required string Name { get; set; }
 
         /// <summary>
-        /// Service accounts can only have one role of type `member`
+        /// Service accounts created with default project membership have role `member`. Accounts created with `create_service_account_only` have role `none`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectServiceAccountCreateResponseRoleJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseRole Role { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseRole Role { get; set; }
 
         /// <summary>
         /// 
@@ -60,11 +61,11 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
+        /// <param name="role">
+        /// Service accounts created with default project membership have role `member`. Accounts created with `create_service_account_only` have role `none`.
+        /// </param>
         /// <param name="createdAt"></param>
         /// <param name="object"></param>
-        /// <param name="role">
-        /// Service accounts can only have one role of type `member`
-        /// </param>
         /// <param name="apiKey"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -72,9 +73,9 @@ namespace tryAGI.OpenAI
         public ProjectServiceAccountCreateResponse(
             string id,
             string name,
+            global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseRole role,
             int createdAt,
             global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseObject @object,
-            global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseRole role,
             global::tryAGI.OpenAI.ProjectServiceAccountApiKey? apiKey)
         {
             this.Object = @object;

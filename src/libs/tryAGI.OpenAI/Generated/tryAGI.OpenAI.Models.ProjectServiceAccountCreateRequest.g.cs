@@ -16,6 +16,12 @@ namespace tryAGI.OpenAI
         public required string Name { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("create_service_account_only")]
+        public bool? CreateServiceAccountOnly { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -27,13 +33,16 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// The name of the service account being created.
         /// </param>
+        /// <param name="createServiceAccountOnly"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProjectServiceAccountCreateRequest(
-            string name)
+            string name,
+            bool? createServiceAccountOnly)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CreateServiceAccountOnly = createServiceAccountOnly;
         }
 
         /// <summary>
