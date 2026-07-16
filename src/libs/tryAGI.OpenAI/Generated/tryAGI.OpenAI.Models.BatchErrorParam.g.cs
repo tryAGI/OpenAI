@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BatchErrorsDataItemLine
+    public sealed partial class BatchErrorParam
     {
 
         /// <summary>

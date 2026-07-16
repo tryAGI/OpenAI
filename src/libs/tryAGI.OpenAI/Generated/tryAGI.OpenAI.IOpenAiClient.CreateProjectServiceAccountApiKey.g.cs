@@ -2,45 +2,57 @@
 
 namespace tryAGI.OpenAI
 {
-    public partial interface IProjectsClient
+    public partial interface IOpenAiClient
     {
         /// <summary>
         /// Creates an API key for a service account in the project.
         /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="serviceAccountId"></param>
+        /// <param name="projectId">
+        /// The ID of the project.
+        /// </param>
+        /// <param name="serviceAccountId">
+        /// The ID of the service account.
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectServiceAccountApiKey> CreateProjectServiceAccountApiKeyAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ServiceAccountApiKeyBody> CreateProjectServiceAccountApiKeyAsync(
             string projectId,
             string serviceAccountId,
 
-            global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest request,
+            global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Creates an API key for a service account in the project.
         /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="serviceAccountId"></param>
+        /// <param name="projectId">
+        /// The ID of the project.
+        /// </param>
+        /// <param name="serviceAccountId">
+        /// The ID of the service account.
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ProjectServiceAccountApiKey>> CreateProjectServiceAccountApiKeyAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ServiceAccountApiKeyBody>> CreateProjectServiceAccountApiKeyAsResponseAsync(
             string projectId,
             string serviceAccountId,
 
-            global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest request,
+            global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Creates an API key for a service account in the project.
         /// </summary>
-        /// <param name="projectId"></param>
-        /// <param name="serviceAccountId"></param>
+        /// <param name="projectId">
+        /// The ID of the project.
+        /// </param>
+        /// <param name="serviceAccountId">
+        /// The ID of the service account.
+        /// </param>
         /// <param name="name">
         /// API key name.
         /// </param>
@@ -50,7 +62,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectServiceAccountApiKey> CreateProjectServiceAccountApiKeyAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ServiceAccountApiKeyBody> CreateProjectServiceAccountApiKeyAsync(
             string projectId,
             string serviceAccountId,
             string? name = default,

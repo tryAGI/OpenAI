@@ -46,7 +46,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `invite` | 4 |  |
 | `model` | 3 | List and describe the various models available in the API. |
 | `moderation` | 1 | Given text and/or image inputs, classifies if those inputs are potentially harmful. |
-| `project` | 24 |  |
+| `project` | 23 |  |
 | `project-group` | 4 |  |
 | `project-group-role-assignment` | 4 |  |
 | `project-user-role-assignment` | 4 |  |
@@ -61,7 +61,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `user-organization-role-assignment` | 4 |  |
 | `vector-store` | 16 |  |
 | `video` | 10 |  |
-| `default` | 23 |  |
+| `default` | 24 |  |
 
 ## References
 

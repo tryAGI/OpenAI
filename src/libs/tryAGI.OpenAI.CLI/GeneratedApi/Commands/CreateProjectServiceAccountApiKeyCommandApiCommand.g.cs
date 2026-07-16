@@ -5,7 +5,7 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static partial class ProjectsCreateProjectServiceAccountApiKeyCommandApiCommand
+internal static partial class CreateProjectServiceAccountApiKeyCommandApiCommand
 {
     private static Argument<string> ProjectId { get; } = new(
         name: @"project-id")
@@ -47,7 +47,7 @@ internal static partial class ProjectsCreateProjectServiceAccountApiKeyCommandAp
           Hidden = true,
       };
 
-                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.ProjectServiceAccountApiKey value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.ServiceAccountApiKeyBody value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
                     {
                         string? text = null;
                         CustomizeResponseText(parseResult, value, ref text);
@@ -63,7 +63,7 @@ internal static partial class ProjectsCreateProjectServiceAccountApiKeyCommandAp
                         return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
                     }
 
-                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.ProjectServiceAccountApiKey value, ref string? text);
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.ServiceAccountApiKeyBody value, ref string? text);
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
@@ -92,7 +92,7 @@ internal static partial class ProjectsCreateProjectServiceAccountApiKeyCommandAp
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
-                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest>(
+                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody>(
                             parseResult,
                             Input,
                             RequestJson,
@@ -106,7 +106,7 @@ internal static partial class ProjectsCreateProjectServiceAccountApiKeyCommandAp
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
-                                var response = await client.Projects.CreateProjectServiceAccountApiKeyAsync(
+                                var response = await client.CreateProjectServiceAccountApiKeyAsync(
                                     projectId: projectId,
                                     serviceAccountId: serviceAccountId,
                                     name: name,

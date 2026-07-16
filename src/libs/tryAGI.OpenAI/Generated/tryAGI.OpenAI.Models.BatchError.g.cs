@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BatchErrorsDataItem
+    public sealed partial class BatchError
     {
         /// <summary>
         /// An error code identifying the error type.
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BatchErrorsDataItem" /> class.
+        /// Initializes a new instance of the <see cref="BatchError" /> class.
         /// </summary>
         /// <param name="code">
         /// An error code identifying the error type.
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public BatchErrorsDataItem(
+        public BatchError(
             string? code,
             string? message,
             string? param,
@@ -65,9 +65,9 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BatchErrorsDataItem" /> class.
+        /// Initializes a new instance of the <see cref="BatchError" /> class.
         /// </summary>
-        public BatchErrorsDataItem()
+        public BatchError()
         {
         }
 

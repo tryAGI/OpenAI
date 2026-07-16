@@ -4,9 +4,9 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    /// The service account API key create request payload.
     /// </summary>
-    public sealed partial class ProjectServiceAccountApiKeyCreateRequest
+    public sealed partial class CreateProjectServiceAccountApiKeyBody
     {
         /// <summary>
         /// API key name.
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectServiceAccountApiKeyCreateRequest" /> class.
+        /// Initializes a new instance of the <see cref="CreateProjectServiceAccountApiKeyBody" /> class.
         /// </summary>
         /// <param name="name">
         /// API key name.
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public ProjectServiceAccountApiKeyCreateRequest(
+        public CreateProjectServiceAccountApiKeyBody(
             string? name,
             global::System.Collections.Generic.IList<string>? scopes)
         {
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectServiceAccountApiKeyCreateRequest" /> class.
+        /// Initializes a new instance of the <see cref="CreateProjectServiceAccountApiKeyBody" /> class.
         /// </summary>
-        public ProjectServiceAccountApiKeyCreateRequest()
+        public CreateProjectServiceAccountApiKeyBody()
         {
         }
 

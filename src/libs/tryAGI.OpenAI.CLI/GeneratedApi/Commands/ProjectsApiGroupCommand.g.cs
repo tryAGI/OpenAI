@@ -12,7 +12,6 @@ internal static class ProjectsApiGroupCommand
                          command.Subcommands.Add(ProjectsArchiveProjectCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsCreateProjectCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsCreateProjectServiceAccountCommandApiCommand.Create());
-                         command.Subcommands.Add(ProjectsCreateProjectServiceAccountApiKeyCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsCreateProjectUserCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsDeleteProjectApiKeyCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsDeleteProjectModelPermissionsCommandApiCommand.Create());
