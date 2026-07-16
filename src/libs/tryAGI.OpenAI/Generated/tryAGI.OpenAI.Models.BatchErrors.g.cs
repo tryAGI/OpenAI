@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BatchErrorsDataItem>? Data { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BatchError>? Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #endif
         public BatchErrors(
             string? @object,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BatchErrorsDataItem>? data)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BatchError>? data)
         {
             this.Object = @object;
             this.Data = data;

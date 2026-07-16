@@ -2,7 +2,7 @@
 
 namespace tryAGI.OpenAI
 {
-    public sealed partial class ProjectServiceAccountApiKeyCreateRequest
+    public sealed partial class BatchErrorParam
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest? FromJson(
+        public static global::tryAGI.OpenAI.BatchErrorParam? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest),
-                jsonSerializerContext) as global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest;
+                typeof(global::tryAGI.OpenAI.BatchErrorParam),
+                jsonSerializerContext) as global::tryAGI.OpenAI.BatchErrorParam;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest? FromJson(
+        public static global::tryAGI.OpenAI.BatchErrorParam? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest? FromJson(
+        public static global::tryAGI.OpenAI.BatchErrorParam? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
                     global::tryAGI.OpenAI.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.BatchErrorParam>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.BatchErrorParam?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest;
+                typeof(global::tryAGI.OpenAI.BatchErrorParam),
+                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.BatchErrorParam;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.BatchErrorParam?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.BatchErrorParam?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace tryAGI.OpenAI
                     global::tryAGI.OpenAI.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.BatchErrorParam?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

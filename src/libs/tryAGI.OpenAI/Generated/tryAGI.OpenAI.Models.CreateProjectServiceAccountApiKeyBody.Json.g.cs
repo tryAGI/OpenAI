@@ -2,7 +2,7 @@
 
 namespace tryAGI.OpenAI
 {
-    public sealed partial class BatchErrorsDataItemLine
+    public sealed partial class CreateProjectServiceAccountApiKeyBody
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -47,20 +47,20 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::tryAGI.OpenAI.BatchErrorsDataItemLine? FromJson(
+        public static global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::tryAGI.OpenAI.BatchErrorsDataItemLine),
-                jsonSerializerContext) as global::tryAGI.OpenAI.BatchErrorsDataItemLine;
+                typeof(global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody),
+                jsonSerializerContext) as global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody;
         }
 
         /// <summary>
         /// Deserializes a JSON string using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::tryAGI.OpenAI.BatchErrorsDataItemLine? FromJson(
+        public static global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody? FromJson(
             string json)
         {
             return FromJson(
@@ -75,7 +75,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::tryAGI.OpenAI.BatchErrorsDataItemLine? FromJson(
+        public static global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
                     global::tryAGI.OpenAI.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.BatchErrorsDataItemLine>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody>(
                 json,
                 jsonSerializerOptions);
         }
@@ -94,20 +94,20 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.BatchErrorsDataItemLine?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::tryAGI.OpenAI.BatchErrorsDataItemLine),
-                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.BatchErrorsDataItemLine;
+                typeof(global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody),
+                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody;
         }
 
         /// <summary>
         /// Deserializes a JSON stream using the generated default JsonSerializerContext.
         /// </summary>
-        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.BatchErrorsDataItemLine?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream)
         {
             return FromJsonStreamAsync(
@@ -122,7 +122,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.BatchErrorsDataItemLine?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
@@ -133,7 +133,7 @@ namespace tryAGI.OpenAI
                     global::tryAGI.OpenAI.SourceGenerationContext.Default);
             }
 
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.BatchErrorsDataItemLine?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.CreateProjectServiceAccountApiKeyBody?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

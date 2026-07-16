@@ -260,7 +260,6 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 | `archive-project` | `POST /organization/projects/{project_id}/archive` | Archives a project in the organization. Archived projects cannot be used or updated. |
 | `create-project` | `POST /organization/projects` | Create a new project in the organization. Projects can be created and archived, but cannot be deleted. |
 | `create-project-service-account` | `POST /organization/projects/{project_id}/service_accounts` | Creates a new service account in the project. By default, this also returns an unredacted API key for the service account. |
-| `create-project-service-account-api-key` | `POST /organization/projects/{project_id}/service_accounts/{service_account_id}/api_keys` | Creates an API key for a service account in the project. |
 | `create-project-user` | `POST /organization/projects/{project_id}/users` | Adds a user to the project. Users must already be members of the organization to be added to a project. |
 | `delete-project-api-key` | `DELETE /organization/projects/{project_id}/api_keys/{api_key_id}` | Deletes an API key from the project.  Returns confirmation of the key deletion, or an error if the key belonged to a service account. |
 | `delete-project-model-permissions` | `DELETE /organization/projects/{project_id}/model_permissions` | Deletes model permissions for a project. |
@@ -476,6 +475,7 @@ Use Uploads to upload large files in multiple parts.
 | `create-chat-kit-session` | `POST /chatkit/sessions` | Create a ChatKit session. |
 | `create-container` | `POST /containers` | Create Container |
 | `create-container-file` | `POST /containers/{container_id}/files` | Create a Container File  You can send either a multipart/form-data request with the raw file content, or a JSON request with a file ID. |
+| `create-project-service-account-api-key` | `POST /organization/projects/{project_id}/service_accounts/{service_account_id}/api_keys` | Creates an API key for a service account in the project. |
 | `delete-acontainer` | `DELETE /containers/{container_id}` | Delete Container |
 | `delete-acontainer-file` | `DELETE /containers/{container_id}/files/{file_id}` | Delete Container File |
 | `delete-admin-api-key` | `DELETE /organization/admin_api_keys/{key_id}` | Delete an organization admin API key |
