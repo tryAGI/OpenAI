@@ -7,7 +7,7 @@ namespace tryAGI.OpenAI
     {
 
 
-        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_CreateProjectServiceAccountSecurityRequirement0 =
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_CreateProjectServiceAccountApiKeySecurityRequirement0 =
             new global::tryAGI.OpenAI.EndPointSecurityRequirement
             {
                 Authorizations = new global::tryAGI.OpenAI.EndPointAuthorizationRequirement[]
@@ -21,45 +21,50 @@ namespace tryAGI.OpenAI
                     },
                 },
             };
-        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_CreateProjectServiceAccountSecurityRequirements =
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_CreateProjectServiceAccountApiKeySecurityRequirements =
             new global::tryAGI.OpenAI.EndPointSecurityRequirement[]
-            {                s_CreateProjectServiceAccountSecurityRequirement0,
+            {                s_CreateProjectServiceAccountApiKeySecurityRequirement0,
             };
-        partial void PrepareCreateProjectServiceAccountArguments(
+        partial void PrepareCreateProjectServiceAccountApiKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string projectId,
-            global::tryAGI.OpenAI.ProjectServiceAccountCreateRequest request);
-        partial void PrepareCreateProjectServiceAccountRequest(
+            ref string serviceAccountId,
+            global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest request);
+        partial void PrepareCreateProjectServiceAccountApiKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string projectId,
-            global::tryAGI.OpenAI.ProjectServiceAccountCreateRequest request);
-        partial void ProcessCreateProjectServiceAccountResponse(
+            string serviceAccountId,
+            global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest request);
+        partial void ProcessCreateProjectServiceAccountApiKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateProjectServiceAccountResponseContent(
+        partial void ProcessCreateProjectServiceAccountApiKeyResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Creates a new service account in the project. By default, this also returns an unredacted API key for the service account.
+        /// Creates an API key for a service account in the project.
         /// </summary>
         /// <param name="projectId"></param>
+        /// <param name="serviceAccountId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectServiceAccountCreateResponse> CreateProjectServiceAccountAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectServiceAccountApiKey> CreateProjectServiceAccountApiKeyAsync(
             string projectId,
+            string serviceAccountId,
 
-            global::tryAGI.OpenAI.ProjectServiceAccountCreateRequest request,
+            global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreateProjectServiceAccountAsResponseAsync(
+            var __response = await CreateProjectServiceAccountApiKeyAsResponseAsync(
                 projectId: projectId,
+                serviceAccountId: serviceAccountId,
 
                 request: request,
                 requestOptions: requestOptions,
@@ -69,17 +74,19 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
-        /// Creates a new service account in the project. By default, this also returns an unredacted API key for the service account.
+        /// Creates an API key for a service account in the project.
         /// </summary>
         /// <param name="projectId"></param>
+        /// <param name="serviceAccountId"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ProjectServiceAccountCreateResponse>> CreateProjectServiceAccountAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ProjectServiceAccountApiKey>> CreateProjectServiceAccountApiKeyAsResponseAsync(
             string projectId,
+            string serviceAccountId,
 
-            global::tryAGI.OpenAI.ProjectServiceAccountCreateRequest request,
+            global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -87,16 +94,17 @@ namespace tryAGI.OpenAI
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateProjectServiceAccountArguments(
+            PrepareCreateProjectServiceAccountApiKeyArguments(
                 httpClient: HttpClient,
                 projectId: ref projectId,
+                serviceAccountId: ref serviceAccountId,
                 request: request);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateProjectServiceAccountSecurityRequirements,
-                operationName: "CreateProjectServiceAccountAsync");
+                securityRequirements: s_CreateProjectServiceAccountApiKeySecurityRequirements,
+                operationName: "CreateProjectServiceAccountApiKeyAsync");
 
             using var __timeoutCancellationTokenSource = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -116,7 +124,7 @@ namespace tryAGI.OpenAI
             {
 
                             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
-                                path: $"/organization/projects/{projectId}/service_accounts",
+                                path: $"/organization/projects/{projectId}/service_accounts/{serviceAccountId}/api_keys",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -161,10 +169,11 @@ namespace tryAGI.OpenAI
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateProjectServiceAccountRequest(
+                PrepareCreateProjectServiceAccountApiKeyRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     projectId: projectId!,
+                    serviceAccountId: serviceAccountId!,
                     request: request);
 
                 global::tryAGI.OpenAI.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
@@ -184,9 +193,9 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateProjectServiceAccount",
-                                methodName: "CreateProjectServiceAccountAsync",
-                                pathTemplate: "$\"/organization/projects/{projectId}/service_accounts\"",
+                                operationId: "CreateProjectServiceAccountApiKey",
+                                methodName: "CreateProjectServiceAccountApiKeyAsync",
+                                pathTemplate: "$\"/organization/projects/{projectId}/service_accounts/{serviceAccountId}/api_keys\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -218,9 +227,9 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateProjectServiceAccount",
-                                methodName: "CreateProjectServiceAccountAsync",
-                                pathTemplate: "$\"/organization/projects/{projectId}/service_accounts\"",
+                                operationId: "CreateProjectServiceAccountApiKey",
+                                methodName: "CreateProjectServiceAccountApiKeyAsync",
+                                pathTemplate: "$\"/organization/projects/{projectId}/service_accounts/{serviceAccountId}/api_keys\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -259,9 +268,9 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateProjectServiceAccount",
-                                methodName: "CreateProjectServiceAccountAsync",
-                                pathTemplate: "$\"/organization/projects/{projectId}/service_accounts\"",
+                                operationId: "CreateProjectServiceAccountApiKey",
+                                methodName: "CreateProjectServiceAccountApiKeyAsync",
+                                pathTemplate: "$\"/organization/projects/{projectId}/service_accounts/{serviceAccountId}/api_keys\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -299,7 +308,7 @@ namespace tryAGI.OpenAI
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateProjectServiceAccountResponse(
+                ProcessCreateProjectServiceAccountApiKeyResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -307,9 +316,9 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateProjectServiceAccount",
-                                methodName: "CreateProjectServiceAccountAsync",
-                                pathTemplate: "$\"/organization/projects/{projectId}/service_accounts\"",
+                                operationId: "CreateProjectServiceAccountApiKey",
+                                methodName: "CreateProjectServiceAccountApiKeyAsync",
+                                pathTemplate: "$\"/organization/projects/{projectId}/service_accounts/{serviceAccountId}/api_keys\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -329,9 +338,9 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateProjectServiceAccount",
-                                methodName: "CreateProjectServiceAccountAsync",
-                                pathTemplate: "$\"/organization/projects/{projectId}/service_accounts\"",
+                                operationId: "CreateProjectServiceAccountApiKey",
+                                methodName: "CreateProjectServiceAccountApiKeyAsync",
+                                pathTemplate: "$\"/organization/projects/{projectId}/service_accounts/{serviceAccountId}/api_keys\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -346,43 +355,6 @@ namespace tryAGI.OpenAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Error response when project is archived.
-                            if ((int)__response.StatusCode == 400)
-                            {
-                                string? __content_400 = null;
-                                global::System.Exception? __exception_400 = null;
-                                global::tryAGI.OpenAI.ErrorResponse? __value_400 = null;
-                                try
-                                {
-                                    if (__effectiveReadResponseAsString)
-                                    {
-                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
-                                    }
-                                    else
-                                    {
-                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-
-                                        __value_400 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
-                                    }
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    __exception_400 = __ex;
-                                }
-
-
-                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
-                                    statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
-                                    innerException: __exception_400,
-                                    responseBody: __content_400,
-                                    responseObject: __value_400,
-                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                        __response.Headers,
-                                        h => h.Key,
-                                        h => h.Value));
-                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -396,7 +368,7 @@ namespace tryAGI.OpenAI
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateProjectServiceAccountResponseContent(
+                                ProcessCreateProjectServiceAccountApiKeyResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -405,9 +377,9 @@ namespace tryAGI.OpenAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::tryAGI.OpenAI.ProjectServiceAccountCreateResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::tryAGI.OpenAI.ProjectServiceAccountApiKey.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ProjectServiceAccountCreateResponse>(
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ProjectServiceAccountApiKey>(
                                         statusCode: __response.StatusCode,
                                         headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -437,9 +409,9 @@ namespace tryAGI.OpenAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::tryAGI.OpenAI.ProjectServiceAccountCreateResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::tryAGI.OpenAI.ProjectServiceAccountApiKey.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ProjectServiceAccountCreateResponse>(
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ProjectServiceAccountApiKey>(
                                         statusCode: __response.StatusCode,
                                         headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -480,31 +452,36 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
-        /// Creates a new service account in the project. By default, this also returns an unredacted API key for the service account.
+        /// Creates an API key for a service account in the project.
         /// </summary>
         /// <param name="projectId"></param>
+        /// <param name="serviceAccountId"></param>
         /// <param name="name">
-        /// The name of the service account being created.
+        /// API key name.
         /// </param>
-        /// <param name="createServiceAccountOnly"></param>
+        /// <param name="scopes">
+        /// API key scopes.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectServiceAccountCreateResponse> CreateProjectServiceAccountAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectServiceAccountApiKey> CreateProjectServiceAccountApiKeyAsync(
             string projectId,
-            string name,
-            bool? createServiceAccountOnly = default,
+            string serviceAccountId,
+            string? name = default,
+            global::System.Collections.Generic.IList<string>? scopes = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::tryAGI.OpenAI.ProjectServiceAccountCreateRequest
+            var __request = new global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest
             {
                 Name = name,
-                CreateServiceAccountOnly = createServiceAccountOnly,
+                Scopes = scopes,
             };
 
-            return await CreateProjectServiceAccountAsync(
+            return await CreateProjectServiceAccountApiKeyAsync(
                 projectId: projectId,
+                serviceAccountId: serviceAccountId,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

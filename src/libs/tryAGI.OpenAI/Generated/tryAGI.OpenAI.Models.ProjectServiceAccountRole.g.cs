@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// `owner` or `member`
+    /// `owner`, `member`, or `none`
     /// </summary>
     public enum ProjectServiceAccountRole
     {
@@ -12,6 +12,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Member,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
         /// <summary>
         /// 
         /// </summary>
@@ -31,6 +35,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 ProjectServiceAccountRole.Member => "member",
+                ProjectServiceAccountRole.None => "none",
                 ProjectServiceAccountRole.Owner => "owner",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "member" => ProjectServiceAccountRole.Member,
+                "none" => ProjectServiceAccountRole.None,
                 "owner" => ProjectServiceAccountRole.Owner,
                 _ => null,
             };

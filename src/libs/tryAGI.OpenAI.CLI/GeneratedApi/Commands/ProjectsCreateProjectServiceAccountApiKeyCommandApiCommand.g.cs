@@ -5,7 +5,7 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static partial class ProjectsCreateProjectServiceAccountCommandApiCommand
+internal static partial class ProjectsCreateProjectServiceAccountApiKeyCommandApiCommand
 {
     private static Argument<string> ProjectId { get; } = new(
         name: @"project-id")
@@ -13,16 +13,23 @@ internal static partial class ProjectsCreateProjectServiceAccountCommandApiComma
         Description = @"The ID of the project.",
     };
 
-    private static Option<string> NameOption { get; } = new(
-        name: @"--name")
+    private static Argument<string> ServiceAccountId { get; } = new(
+        name: @"service-account-id")
     {
-        Description = @"The name of the service account being created.",
-        Required = true,
+        Description = @"The ID of the service account.",
     };
 
-    private static Option<bool?> CreateServiceAccountOnly { get; } = CliRuntime.CreateNullableBoolOption(
-        name: @"--create-service-account-only",
-        description: @"");
+    private static Option<string?> NameOption { get; } = new(
+        name: @"--name")
+    {
+        Description = @"API key name.",
+    };
+
+    private static Option<global::System.Collections.Generic.IList<string>?> Scopes { get; } = new(
+        name: @"--scopes")
+    {
+        Description = @"API key scopes.",
+    };
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -40,7 +47,7 @@ internal static partial class ProjectsCreateProjectServiceAccountCommandApiComma
           Hidden = true,
       };
 
-                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.ProjectServiceAccountCreateResponse value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.ProjectServiceAccountApiKey value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
                     {
                         string? text = null;
                         CustomizeResponseText(parseResult, value, ref text);
@@ -56,16 +63,17 @@ internal static partial class ProjectsCreateProjectServiceAccountCommandApiComma
                         return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
                     }
 
-                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.ProjectServiceAccountCreateResponse value, ref string? text);
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.ProjectServiceAccountApiKey value, ref string? text);
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
     public static Command Create()
     {
-        var command = new Command(@"create-project-service-account", @"Creates a new service account in the project. By default, this also returns an unredacted API key for the service account.");
+        var command = new Command(@"create-project-service-account-api-key", @"Creates an API key for a service account in the project.");
                         command.Arguments.Add(ProjectId);
+                        command.Arguments.Add(ServiceAccountId);
                         command.Options.Add(NameOption);
-                        command.Options.Add(CreateServiceAccountOnly);
+                        command.Options.Add(Scopes);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -84,7 +92,7 @@ internal static partial class ProjectsCreateProjectServiceAccountCommandApiComma
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
-                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::tryAGI.OpenAI.ProjectServiceAccountCreateRequest>(
+                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::tryAGI.OpenAI.ProjectServiceAccountApiKeyCreateRequest>(
                             parseResult,
                             Input,
                             RequestJson,
@@ -92,15 +100,17 @@ internal static partial class ProjectsCreateProjectServiceAccountCommandApiComma
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var projectId = parseResult.GetRequiredValue(ProjectId);
-                        var name = parseResult.GetRequiredValue(NameOption);
-                        var createServiceAccountOnly = CliRuntime.WasSpecified(parseResult, CreateServiceAccountOnly) ? parseResult.GetValue(CreateServiceAccountOnly) : (__requestBase is { } __CreateServiceAccountOnlyBaseValue ? __CreateServiceAccountOnlyBaseValue.CreateServiceAccountOnly : default);
+                        var serviceAccountId = parseResult.GetRequiredValue(ServiceAccountId);
+                        var name = CliRuntime.WasSpecified(parseResult, NameOption) ? parseResult.GetValue(NameOption) : (__requestBase is { } __NameBaseValue ? __NameBaseValue.Name : default);
+                        var scopes = CliRuntime.WasSpecified(parseResult, Scopes) ? parseResult.GetValue(Scopes) : (__requestBase is { } __ScopesBaseValue ? __ScopesBaseValue.Scopes : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
-                                var response = await client.Projects.CreateProjectServiceAccountAsync(
+                                var response = await client.Projects.CreateProjectServiceAccountApiKeyAsync(
                                     projectId: projectId,
+                                    serviceAccountId: serviceAccountId,
                                     name: name,
-                                    createServiceAccountOnly: createServiceAccountOnly,
+                                    scopes: scopes,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

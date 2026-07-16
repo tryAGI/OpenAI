@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Service accounts can only have one role of type `member`
+    /// Service accounts created with default project membership have role `member`. Accounts created with `create_service_account_only` have role `none`.
     /// </summary>
     public enum ProjectServiceAccountCreateResponseRole
     {
@@ -12,6 +12,10 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         Member,
+        /// <summary>
+        /// 
+        /// </summary>
+        None,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 ProjectServiceAccountCreateResponseRole.Member => "member",
+                ProjectServiceAccountCreateResponseRole.None => "none",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "member" => ProjectServiceAccountCreateResponseRole.Member,
+                "none" => ProjectServiceAccountCreateResponseRole.None,
                 _ => null,
             };
         }
