@@ -39190,14 +39190,14 @@ paths:
               });
 
 
-              const response = await
-              client.admin.organization.projects.serviceAccounts.createAPIKey(
+              const apiKey = await
+              client.admin.organization.projects.serviceAccounts.apiKeys.create(
                 'service_account_id',
                 { project_id: 'project_id' },
               );
 
 
-              console.log(response.id);
+              console.log(apiKey.id);
             python: >-
               import os
 
@@ -39208,14 +39208,14 @@ paths:
                   admin_api_key=os.environ.get("OPENAI_ADMIN_KEY"),  # This is the default and can be omitted
               )
 
-              response =
-              client.admin.organization.projects.service_accounts.create_api_key(
+              api_key =
+              client.admin.organization.projects.service_accounts.api_keys.create(
                   service_account_id="service_account_id",
                   project_id="project_id",
               )
 
-              print(response.id)
-            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tresponse, err := client.Admin.Organization.Projects.ServiceAccounts.NewAPIKey(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"service_account_id\",\n\t\topenai.AdminOrganizationProjectServiceAccountNewAPIKeyParams{},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", response.ID)\n}\n"
+              print(api_key.id)
+            go: "package main\n\nimport (\n\t\"context\"\n\t\"fmt\"\n\n\t\"github.com/openai/openai-go\"\n\t\"github.com/openai/openai-go/option\"\n)\n\nfunc main() {\n\tclient := openai.NewClient(\n\t\toption.WithAdminAPIKey(\"My Admin API Key\"),\n\t)\n\tapiKey, err := client.Admin.Organization.Projects.ServiceAccounts.APIKeys.New(\n\t\tcontext.TODO(),\n\t\t\"project_id\",\n\t\t\"service_account_id\",\n\t\topenai.AdminOrganizationProjectServiceAccountAPIKeyNewParams{},\n\t)\n\tif err != nil {\n\t\tpanic(err.Error())\n\t}\n\tfmt.Printf(\"%+v\\n\", apiKey.ID)\n}\n"
             java: >-
               package com.openai.example;
 
@@ -39225,10 +39225,10 @@ paths:
               import com.openai.client.okhttp.OpenAIOkHttpClient;
 
               import
-              com.openai.models.admin.organization.projects.serviceaccounts.ServiceAccountCreateApiKeyParams;
+              com.openai.models.admin.organization.projects.serviceaccounts.apikeys.ApiKeyCreateParams;
 
               import
-              com.openai.models.admin.organization.projects.serviceaccounts.ServiceAccountCreateApiKeyResponse;
+              com.openai.models.admin.organization.projects.serviceaccounts.apikeys.ApiKeyCreateResponse;
 
 
               public final class Main {
@@ -39237,11 +39237,11 @@ paths:
                   public static void main(String[] args) {
                       OpenAIClient client = OpenAIOkHttpClient.fromEnv();
 
-                      ServiceAccountCreateApiKeyParams params = ServiceAccountCreateApiKeyParams.builder()
+                      ApiKeyCreateParams params = ApiKeyCreateParams.builder()
                           .projectId("project_id")
                           .serviceAccountId("service_account_id")
                           .build();
-                      ServiceAccountCreateApiKeyResponse response = client.admin().organization().projects().serviceAccounts().createApiKey(params);
+                      ApiKeyCreateResponse apiKey = client.admin().organization().projects().serviceAccounts().apiKeys().create(params);
                   }
               }
             ruby: >-
@@ -39251,14 +39251,14 @@ paths:
               openai = OpenAI::Client.new(admin_api_key: "My Admin API Key")
 
 
-              response =
-              openai.admin.organization.projects.service_accounts.create_api_key(
+              api_key =
+              openai.admin.organization.projects.service_accounts.api_keys.create(
                 "service_account_id",
                 project_id: "project_id"
               )
 
 
-              puts(response)
+              puts(api_key)
           response: |
             {
                 "object": "organization.project.service_account.api_key",
@@ -55015,7 +55015,6 @@ components:
             - $ref: '#/components/schemas/EvalLogsDataSourceConfig'
             - $ref: '#/components/schemas/EvalStoredCompletionsDataSourceConfig'
         testing_criteria:
-          default: eval
           description: A list of testing criteria.
           type: array
           items:
