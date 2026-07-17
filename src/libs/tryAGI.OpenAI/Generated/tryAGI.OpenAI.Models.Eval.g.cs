@@ -49,8 +49,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalCustomDataSourceConfig, global::tryAGI.OpenAI.EvalLogsDataSourceConfig, global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfig> DataSourceConfig { get; set; }
 
         /// <summary>
-        /// A list of testing criteria.<br/>
-        /// Default Value: eval
+        /// A list of testing criteria.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("testing_criteria")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -89,8 +88,7 @@ namespace tryAGI.OpenAI
         /// Configuration of data sources used in runs of the evaluation.
         /// </param>
         /// <param name="testingCriteria">
-        /// A list of testing criteria.<br/>
-        /// Default Value: eval
+        /// A list of testing criteria.
         /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the eval was created.
