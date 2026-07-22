@@ -6,7 +6,8 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Constrains the verbosity of the model's response. Lower values will result in<br/>
     /// more concise responses, while higher values will result in more verbose responses.<br/>
-    /// Currently supported values are `low`, `medium`, and `high`.<br/>
+    /// Currently supported values are `low`, `medium`, and `high`. The default is<br/>
+    /// `medium`.<br/>
     /// Default Value: medium
     /// </summary>
     public enum BetaVerbosityEnum

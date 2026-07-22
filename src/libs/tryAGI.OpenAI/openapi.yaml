@@ -30054,7 +30054,8 @@ paths:
                 "usage": {
                   "input_tokens": 36,
                   "input_tokens_details": {
-                    "cached_tokens": 0
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0
                   },
                   "output_tokens": 87,
                   "output_tokens_details": {
@@ -30225,7 +30226,8 @@ paths:
                 "usage": {
                   "input_tokens": 328,
                   "input_tokens_details": {
-                    "cached_tokens": 0
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0
                   },
                   "output_tokens": 52,
                   "output_tokens_details": {
@@ -30378,7 +30380,8 @@ paths:
                 "usage": {
                   "input_tokens": 8438,
                   "input_tokens_details": {
-                    "cached_tokens": 0
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0
                   },
                   "output_tokens": 398,
                   "output_tokens_details": {
@@ -30576,7 +30579,8 @@ paths:
                 "usage": {
                   "input_tokens": 328,
                   "input_tokens_details": {
-                    "cached_tokens": 0
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0
                   },
                   "output_tokens": 356,
                   "output_tokens_details": {
@@ -30816,7 +30820,8 @@ paths:
                 "usage": {
                   "input_tokens": 18307,
                   "input_tokens_details": {
-                    "cached_tokens": 0
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0
                   },
                   "output_tokens": 348,
                   "output_tokens_details": {
@@ -31390,7 +31395,8 @@ paths:
                 "usage": {
                   "input_tokens": 81,
                   "input_tokens_details": {
-                    "cached_tokens": 0
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0
                   },
                   "output_tokens": 1035,
                   "output_tokens_details": {
@@ -31591,7 +31597,8 @@ paths:
               "usage": {
                 "input_tokens": 32,
                 "input_tokens_details": {
-                  "cached_tokens": 0
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
                 },
                 "output_tokens": 18,
                 "output_tokens_details": {
@@ -40502,7 +40509,8 @@ paths:
               "usage": {
                 "input_tokens": 139,
                 "input_tokens_details": {
-                  "cached_tokens": 0
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
                 },
                 "output_tokens": 438,
                 "output_tokens_details": {
@@ -42445,7 +42453,8 @@ paths:
                 "usage": {
                   "input_tokens": 36,
                   "input_tokens_details": {
-                    "cached_tokens": 0
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0
                   },
                   "output_tokens": 87,
                   "output_tokens_details": {
@@ -42616,7 +42625,8 @@ paths:
                 "usage": {
                   "input_tokens": 328,
                   "input_tokens_details": {
-                    "cached_tokens": 0
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0
                   },
                   "output_tokens": 52,
                   "output_tokens_details": {
@@ -42769,7 +42779,8 @@ paths:
                 "usage": {
                   "input_tokens": 8438,
                   "input_tokens_details": {
-                    "cached_tokens": 0
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0
                   },
                   "output_tokens": 398,
                   "output_tokens_details": {
@@ -42967,7 +42978,8 @@ paths:
                 "usage": {
                   "input_tokens": 328,
                   "input_tokens_details": {
-                    "cached_tokens": 0
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0
                   },
                   "output_tokens": 356,
                   "output_tokens_details": {
@@ -43207,7 +43219,8 @@ paths:
                 "usage": {
                   "input_tokens": 18307,
                   "input_tokens_details": {
-                    "cached_tokens": 0
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0
                   },
                   "output_tokens": 348,
                   "output_tokens_details": {
@@ -43781,7 +43794,8 @@ paths:
                 "usage": {
                   "input_tokens": 81,
                   "input_tokens_details": {
-                    "cached_tokens": 0
+                    "cached_tokens": 0,
+                    "cache_write_tokens": 0
                   },
                   "output_tokens": 1035,
                   "output_tokens_details": {
@@ -44009,7 +44023,8 @@ paths:
               "usage": {
                 "input_tokens": 32,
                 "input_tokens_details": {
-                  "cached_tokens": 0
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
                 },
                 "output_tokens": 18,
                 "output_tokens_details": {
@@ -44477,7 +44492,8 @@ paths:
               "usage": {
                 "input_tokens": 139,
                 "input_tokens_details": {
-                  "cached_tokens": 0
+                  "cached_tokens": 0,
+                  "cache_write_tokens": 0
                 },
                 "output_tokens": 438,
                 "output_tokens_details": {
@@ -61374,25 +61390,29 @@ components:
             and  to help OpenAI detect and prevent abuse. [Learn
             more](/docs/guides/safety-best-practices#safety-identifiers).
         safety_identifier:
-          type: string
-          maxLength: 64
-          example: safety-identifier-1234
-          description: >
-            A stable identifier used to help detect users of your application
-            that may be violating OpenAI's usage policies.
+          anyOf:
+            - type: string
+              maxLength: 64
+              example: safety-identifier-1234
+              description: >
+                A stable identifier used to help detect users of your
+                application that may be violating OpenAI's usage policies.
 
-            The IDs should be a string that uniquely identifies each user, with
-            a maximum length of 64 characters. We recommend hashing their
-            username or email address, in order to avoid sending us any
-            identifying information. [Learn
-            more](/docs/guides/safety-best-practices#safety-identifiers).
+                The IDs should be a string that uniquely identifies each user,
+                with a maximum length of 64 characters. We recommend hashing
+                their username or email address, in order to avoid sending us
+                any identifying information. [Learn
+                more](/docs/guides/safety-best-practices#safety-identifiers).
+            - type: 'null'
         prompt_cache_key:
-          type: string
-          example: prompt-cache-key-1234
-          description: >
-            Used by OpenAI to cache responses for similar requests to optimize
-            your cache hit rates. Replaces the `user` field. [Learn
-            more](/docs/guides/prompt-caching).
+          anyOf:
+            - type: string
+              example: prompt-cache-key-1234
+              description: >
+                Used by OpenAI to cache responses for similar requests to
+                optimize your cache hit rates. Replaces the `user` field. [Learn
+                more](/docs/guides/prompt-caching).
+            - type: 'null'
         service_tier:
           $ref: '#/components/schemas/ServiceTier'
         prompt_cache_retention:
@@ -74043,6 +74063,15 @@ components:
                 Controls which reasoning items are rendered back to the model on
                 later turns.
 
+                If omitted or set to `auto`, the model determines the context
+                mode. The
+
+                `gpt-5.6` model family defaults to `all_turns`; earlier models
+                default to
+
+                `current_turn`.
+
+
                 When returned on a response, this is the effective reasoning
                 context mode
 
@@ -74396,6 +74425,7 @@ components:
           input_tokens: 328
           input_tokens_details:
             cached_tokens: 0
+            cache_write_tokens: 0
           output_tokens: 52
           output_tokens_details:
             reasoning_tokens: 0
@@ -75081,6 +75111,7 @@ components:
         - server_error
         - rate_limit_exceeded
         - invalid_prompt
+        - data_residency_mismatch
         - bio_policy
         - vector_store_timeout
         - invalid_image
@@ -81835,7 +81866,10 @@ components:
             more concise responses, while higher values will result in more
             verbose responses.
 
-            Currently supported values are `low`, `medium`, and `high`.
+            Currently supported values are `low`, `medium`, and `high`. The
+            default is
+
+            `medium`.
         - type: 'null'
     VoiceConsentDeletedResource:
       type: object
@@ -89672,6 +89706,15 @@ components:
                 Controls which reasoning items are rendered back to the model on
                 later turns.
 
+                If omitted or set to `auto`, the model determines the context
+                mode. The
+
+                `gpt-5.6` model family defaults to `all_turns`; earlier models
+                default to
+
+                `current_turn`.
+
+
                 When returned on a response, this is the effective reasoning
                 context mode
 
@@ -89765,7 +89808,10 @@ components:
             more concise responses, while higher values will result in more
             verbose responses.
 
-            Currently supported values are `low`, `medium`, and `high`.
+            Currently supported values are `low`, `medium`, and `high`. The
+            default is
+
+            `medium`.
         - type: 'null'
     BetaTextResponseFormatConfiguration:
       description: >
@@ -96714,6 +96760,7 @@ components:
           input_tokens: 328
           input_tokens_details:
             cached_tokens: 0
+            cache_write_tokens: 0
           output_tokens: 52
           output_tokens_details:
             reasoning_tokens: 0
@@ -96914,6 +96961,7 @@ components:
         - server_error
         - rate_limit_exceeded
         - invalid_prompt
+        - data_residency_mismatch
         - bio_policy
         - vector_store_timeout
         - invalid_image
@@ -97120,25 +97168,29 @@ components:
             and  to help OpenAI detect and prevent abuse. [Learn
             more](/docs/guides/safety-best-practices#safety-identifiers).
         safety_identifier:
-          type: string
-          maxLength: 64
-          example: safety-identifier-1234
-          description: >
-            A stable identifier used to help detect users of your application
-            that may be violating OpenAI's usage policies.
+          anyOf:
+            - type: string
+              maxLength: 64
+              example: safety-identifier-1234
+              description: >
+                A stable identifier used to help detect users of your
+                application that may be violating OpenAI's usage policies.
 
-            The IDs should be a string that uniquely identifies each user, with
-            a maximum length of 64 characters. We recommend hashing their
-            username or email address, in order to avoid sending us any
-            identifying information. [Learn
-            more](/docs/guides/safety-best-practices#safety-identifiers).
+                The IDs should be a string that uniquely identifies each user,
+                with a maximum length of 64 characters. We recommend hashing
+                their username or email address, in order to avoid sending us
+                any identifying information. [Learn
+                more](/docs/guides/safety-best-practices#safety-identifiers).
+            - type: 'null'
         prompt_cache_key:
-          type: string
-          example: prompt-cache-key-1234
-          description: >
-            Used by OpenAI to cache responses for similar requests to optimize
-            your cache hit rates. Replaces the `user` field. [Learn
-            more](/docs/guides/prompt-caching).
+          anyOf:
+            - type: string
+              example: prompt-cache-key-1234
+              description: >
+                Used by OpenAI to cache responses for similar requests to
+                optimize your cache hit rates. Replaces the `user` field. [Learn
+                more](/docs/guides/prompt-caching).
+            - type: 'null'
         service_tier:
           $ref: '#/components/schemas/BetaServiceTier'
         prompt_cache_retention:

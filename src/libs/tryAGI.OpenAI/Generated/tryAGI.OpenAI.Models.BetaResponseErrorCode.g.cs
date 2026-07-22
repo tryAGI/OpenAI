@@ -15,6 +15,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        DataResidencyMismatch,
+        /// <summary>
+        /// 
+        /// </summary>
         EmptyImageFile,
         /// <summary>
         /// 
@@ -99,6 +103,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 BetaResponseErrorCode.BioPolicy => "bio_policy",
+                BetaResponseErrorCode.DataResidencyMismatch => "data_residency_mismatch",
                 BetaResponseErrorCode.EmptyImageFile => "empty_image_file",
                 BetaResponseErrorCode.FailedToDownloadImage => "failed_to_download_image",
                 BetaResponseErrorCode.ImageContentPolicyViolation => "image_content_policy_violation",
@@ -128,6 +133,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "bio_policy" => BetaResponseErrorCode.BioPolicy,
+                "data_residency_mismatch" => BetaResponseErrorCode.DataResidencyMismatch,
                 "empty_image_file" => BetaResponseErrorCode.EmptyImageFile,
                 "failed_to_download_image" => BetaResponseErrorCode.FailedToDownloadImage,
                 "image_content_policy_violation" => BetaResponseErrorCode.ImageContentPolicyViolation,
