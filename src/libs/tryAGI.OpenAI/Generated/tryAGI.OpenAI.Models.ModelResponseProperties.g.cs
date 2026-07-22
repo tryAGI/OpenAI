@@ -46,19 +46,14 @@ namespace tryAGI.OpenAI
         public string? User { get; set; }
 
         /// <summary>
-        /// A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies.<br/>
-        /// The IDs should be a string that uniquely identifies each user, with a maximum length of 64 characters. We recommend hashing their username or email address, in order to avoid sending us any identifying information. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).<br/>
-        /// Example: safety-identifier-1234
+        /// 
         /// </summary>
-        /// <example>safety-identifier-1234</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("safety_identifier")]
         public string? SafetyIdentifier { get; set; }
 
         /// <summary>
-        /// Used by OpenAI to cache responses for similar requests to optimize your cache hit rates. Replaces the `user` field. [Learn more](/docs/guides/prompt-caching).<br/>
-        /// Example: prompt-cache-key-1234
+        /// 
         /// </summary>
-        /// <example>prompt-cache-key-1234</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_key")]
         public string? PromptCacheKey { get; set; }
 
@@ -88,15 +83,8 @@ namespace tryAGI.OpenAI
         /// <param name="topLogprobs"></param>
         /// <param name="temperature"></param>
         /// <param name="topP"></param>
-        /// <param name="safetyIdentifier">
-        /// A stable identifier used to help detect users of your application that may be violating OpenAI's usage policies.<br/>
-        /// The IDs should be a string that uniquely identifies each user, with a maximum length of 64 characters. We recommend hashing their username or email address, in order to avoid sending us any identifying information. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).<br/>
-        /// Example: safety-identifier-1234
-        /// </param>
-        /// <param name="promptCacheKey">
-        /// Used by OpenAI to cache responses for similar requests to optimize your cache hit rates. Replaces the `user` field. [Learn more](/docs/guides/prompt-caching).<br/>
-        /// Example: prompt-cache-key-1234
-        /// </param>
+        /// <param name="safetyIdentifier"></param>
+        /// <param name="promptCacheKey"></param>
         /// <param name="serviceTier"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

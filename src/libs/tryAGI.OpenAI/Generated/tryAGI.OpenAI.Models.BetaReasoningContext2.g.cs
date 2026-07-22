@@ -5,6 +5,9 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Controls which reasoning items are rendered back to the model on later turns.<br/>
+    /// If omitted or set to `auto`, the model determines the context mode. The<br/>
+    /// `gpt-5.6` model family defaults to `all_turns`; earlier models default to<br/>
+    /// `current_turn`.<br/>
     /// When returned on a response, this is the effective reasoning context mode<br/>
     /// used for the response.
     /// </summary>
