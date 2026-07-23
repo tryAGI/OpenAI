@@ -21,6 +21,8 @@ internal static class DefaultApiGroupCommand
                          command.Subcommands.Add(DeleteAContainerFileCommandApiCommand.Create());
                          command.Subcommands.Add(DeleteAdminApiKeyCommandApiCommand.Create());
                          command.Subcommands.Add(DeleteChatKitThreadCommandApiCommand.Create());
+                         command.Subcommands.Add(DeleteOrganizationSpendLimitCommandApiCommand.Create());
+                         command.Subcommands.Add(DeleteProjectSpendLimitCommandApiCommand.Create());
                          command.Subcommands.Add(GetInputTokenCountsCommandApiCommand.Create());
                          command.Subcommands.Add(GetInputTokenCounts2CommandApiCommand.Create());
                          command.Subcommands.Add(ListAllOrganizationAndProjectApiKeysCommandApiCommand.Create());
@@ -33,6 +35,10 @@ internal static class DefaultApiGroupCommand
                          command.Subcommands.Add(RetrieveContainerCommandApiCommand.Create());
                          command.Subcommands.Add(RetrieveContainerFileCommandApiCommand.Create());
                          command.Subcommands.Add(RetrieveContainerFileContentCommandApiCommand.Create());
+                         command.Subcommands.Add(RetrieveOrganizationSpendLimitCommandApiCommand.Create());
+                         command.Subcommands.Add(RetrieveProjectSpendLimitCommandApiCommand.Create());
+                         command.Subcommands.Add(UpdateOrganizationSpendLimitCommandApiCommand.Create());
+                         command.Subcommands.Add(UpdateProjectSpendLimitCommandApiCommand.Create());
         return command;
     }
 }
