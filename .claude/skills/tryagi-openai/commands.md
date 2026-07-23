@@ -480,6 +480,8 @@ Use Uploads to upload large files in multiple parts.
 | `delete-acontainer-file` | `DELETE /containers/{container_id}/files/{file_id}` | Delete Container File |
 | `delete-admin-api-key` | `DELETE /organization/admin_api_keys/{key_id}` | Delete an organization admin API key |
 | `delete-chat-kit-thread` | `DELETE /chatkit/threads/{thread_id}` | Delete a ChatKit thread along with its items and stored attachments. |
+| `delete-organization-spend-limit` | `DELETE /organization/spend_limit` | Delete the organization's hard spend limit. |
+| `delete-project-spend-limit` | `DELETE /organization/projects/{project_id}/spend_limit` | Delete a project's hard spend limit. |
 | `get-input-token-counts` | `POST /responses/input_tokens` | Returns input token counts of the request.  Returns an object with `object` set to `response.input_tokens` and an `input_tokens` count. |
 | `get-input-token-counts` | `POST /responses/input_tokens?beta=true` | Returns input token counts of the request.  Returns an object with `object` set to `response.input_tokens` and an `input_tokens` count. |
 | `list-all-organization-and-project-api-keys` | `GET /organization/admin_api_keys` | List organization API keys |
@@ -492,6 +494,10 @@ Use Uploads to upload large files in multiple parts.
 | `retrieve-container` | `GET /containers/{container_id}` | Retrieve Container |
 | `retrieve-container-file` | `GET /containers/{container_id}/files/{file_id}` | Retrieve Container File |
 | `retrieve-container-file-content` | `GET /containers/{container_id}/files/{file_id}/content` | Retrieve Container File Content |
+| `retrieve-organization-spend-limit` | `GET /organization/spend_limit` | Get the organization's hard spend limit. |
+| `retrieve-project-spend-limit` | `GET /organization/projects/{project_id}/spend_limit` | Get a project's hard spend limit. |
+| `update-organization-spend-limit` | `POST /organization/spend_limit` | Create or replace the organization's hard spend limit. |
+| `update-project-spend-limit` | `POST /organization/projects/{project_id}/spend_limit` | Create or replace a project's hard spend limit. |
 
 ## Usage tips
 
