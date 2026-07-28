@@ -23,6 +23,12 @@ namespace tryAGI.OpenAI
         public required string Text { get; set; }
 
         /// <summary>
+        /// The languages detected in the audio. Returned by `gpt-transcribe`. An empty array indicates that no language could be reliably detected.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("languages")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionLanguage>? Languages { get; set; }
+
+        /// <summary>
         /// The log probabilities of the individual tokens in the transcription. Only included if you [create a transcription](/docs/api-reference/audio/create-transcription) with the `include[]` parameter set to `logprobs`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
@@ -49,6 +55,9 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// The type of the event. Always `transcript.text.done`.
         /// </param>
+        /// <param name="languages">
+        /// The languages detected in the audio. Returned by `gpt-transcribe`. An empty array indicates that no language could be reliably detected.
+        /// </param>
         /// <param name="logprobs">
         /// The log probabilities of the individual tokens in the transcription. Only included if you [create a transcription](/docs/api-reference/audio/create-transcription) with the `include[]` parameter set to `logprobs`.
         /// </param>
@@ -61,11 +70,13 @@ namespace tryAGI.OpenAI
         public TranscriptTextDoneEvent(
             string text,
             global::tryAGI.OpenAI.TranscriptTextDoneEventType type,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionLanguage>? languages,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDoneEventLogprob>? logprobs,
             global::tryAGI.OpenAI.TranscriptTextUsageTokens? usage)
         {
             this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Languages = languages;
             this.Logprobs = logprobs;
             this.Usage = usage;
         }

@@ -18,7 +18,7 @@ internal static partial class AudioCreateTranscriptionCommandApiCommand
     private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?>> Model { get; } = new(
         name: @"--model")
     {
-        Description = @"ID of the model to use. The options are `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.
+        Description = @"ID of the model to use. The options are `gpt-transcribe`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.
 ",
         Required = true,
     };
@@ -77,6 +77,8 @@ format, or a stream of transcript events.
                         command.Options.Add(Model);
                         command.Options.Add(ChunkingStrategy);                        command.Options.Add(CreateTranscriptionRequestOptionSetOptions.Filename);
                         command.Options.Add(CreateTranscriptionRequestOptionSetOptions.Language);
+                        command.Options.Add(CreateTranscriptionRequestOptionSetOptions.Languages);
+                        command.Options.Add(CreateTranscriptionRequestOptionSetOptions.Keywords);
                         command.Options.Add(CreateTranscriptionRequestOptionSetOptions.Prompt);
                         command.Options.Add(CreateTranscriptionRequestOptionSetOptions.ResponseFormat);
                         command.Options.Add(CreateTranscriptionRequestOptionSetOptions.Temperature);
@@ -113,6 +115,8 @@ format, or a stream of transcript events.
                         var model = parseResult.GetRequiredValue(Model);
                         var chunkingStrategy = CliRuntime.WasSpecified(parseResult, ChunkingStrategy) ? parseResult.GetValue(ChunkingStrategy) : (__requestBase is { } __ChunkingStrategyBaseValue ? __ChunkingStrategyBaseValue.ChunkingStrategy : default);                        var filename = parseResult.GetRequiredValue(CreateTranscriptionRequestOptionSetOptions.Filename);
                         var language = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.Language) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Language) : (__requestBase is { } __LanguageBaseValue ? __LanguageBaseValue.Language : default);
+                        var languages = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.Languages) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Languages) : (__requestBase is { } __LanguagesBaseValue ? __LanguagesBaseValue.Languages : default);
+                        var keywords = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.Keywords) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Keywords) : (__requestBase is { } __KeywordsBaseValue ? __KeywordsBaseValue.Keywords : default);
                         var prompt = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.Prompt) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Prompt) : (__requestBase is { } __PromptBaseValue ? __PromptBaseValue.Prompt : default);
                         var responseFormat = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.ResponseFormat) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.ResponseFormat) : (__requestBase is { } __ResponseFormatBaseValue ? __ResponseFormatBaseValue.ResponseFormat : default);
                         var temperature = CliRuntime.WasSpecified(parseResult, CreateTranscriptionRequestOptionSetOptions.Temperature) ? parseResult.GetValue(CreateTranscriptionRequestOptionSetOptions.Temperature) : (__requestBase is { } __TemperatureBaseValue ? __TemperatureBaseValue.Temperature : default);
@@ -129,6 +133,8 @@ format, or a stream of transcript events.
                                     chunkingStrategy: chunkingStrategy,
                                     filename: filename,
                                     language: language,
+                                    languages: languages,
+                                    keywords: keywords,
                                     prompt: prompt,
                                     responseFormat: responseFormat,
                                     temperature: temperature,

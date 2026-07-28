@@ -16,6 +16,12 @@ namespace tryAGI.OpenAI
         public required string Text { get; set; }
 
         /// <summary>
+        /// The languages detected in the audio. Returned by `gpt-transcribe`. An empty array indicates that no language could be reliably detected.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("languages")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionLanguage>? Languages { get; set; }
+
+        /// <summary>
         /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
@@ -40,6 +46,9 @@ namespace tryAGI.OpenAI
         /// <param name="text">
         /// The transcribed text.
         /// </param>
+        /// <param name="languages">
+        /// The languages detected in the audio. Returned by `gpt-transcribe`. An empty array indicates that no language could be reliably detected.
+        /// </param>
         /// <param name="logprobs">
         /// The log probabilities of the tokens in the transcription. Only returned with the models `gpt-4o-transcribe` and `gpt-4o-mini-transcribe` if `logprobs` is added to the `include` array.
         /// </param>
@@ -51,10 +60,12 @@ namespace tryAGI.OpenAI
 #endif
         public CreateTranscriptionResponseJson(
             string text,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionLanguage>? languages,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionResponseJsonLogprob>? logprobs,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration>? usage)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Languages = languages;
             this.Logprobs = logprobs;
             this.Usage = usage;
         }

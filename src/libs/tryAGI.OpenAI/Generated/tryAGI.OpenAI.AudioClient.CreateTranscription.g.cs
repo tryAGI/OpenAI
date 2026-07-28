@@ -88,6 +88,8 @@ namespace tryAGI.OpenAI
                 Filename = request.Filename,
                 Model = request.Model,
                 Language = request.Language,
+                Languages = request.Languages,
+                Keywords = request.Keywords,
                 Prompt = request.Prompt,
                 ResponseFormat = request.ResponseFormat,
                 Temperature = request.Temperature,
@@ -209,6 +211,22 @@ namespace tryAGI.OpenAI
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.Language ?? string.Empty),
                                     name: "\"language\"");
+
+                            }
+                            if (request.Languages != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Languages, x => x))}]"),
+                                    name: "\"languages\"");
+
+                            }
+                            if (request.Keywords != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Keywords, x => x))}]"),
+                                    name: "\"keywords\"");
 
                             }
                             if (request.Prompt != default)
@@ -584,11 +602,17 @@ namespace tryAGI.OpenAI
         /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
         /// </param>
         /// <param name="model">
-        /// ID of the model to use. The options are `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.<br/>
+        /// ID of the model to use. The options are `gpt-transcribe`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.<br/>
         /// Example: gpt-4o-transcribe
         /// </param>
         /// <param name="language">
         /// The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `en`) format will improve accuracy and latency.
+        /// </param>
+        /// <param name="languages">
+        /// Possible languages of the input audio, in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format. Supported by `gpt-transcribe`.
+        /// </param>
+        /// <param name="keywords">
+        /// Words or phrases to guide transcription of the input audio. Supported by `gpt-transcribe`.
         /// </param>
         /// <param name="prompt">
         /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should match the audio language. This field is not supported when using `gpt-4o-transcribe-diarize`.
@@ -628,6 +652,8 @@ namespace tryAGI.OpenAI
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?> model,
             string? language = default,
+            global::System.Collections.Generic.IList<string>? languages = default,
+            global::System.Collections.Generic.IList<string>? keywords = default,
             string? prompt = default,
             global::tryAGI.OpenAI.AudioResponseFormat? responseFormat = default,
             double? temperature = default,
@@ -645,6 +671,8 @@ namespace tryAGI.OpenAI
                 Filename = filename,
                 Model = model,
                 Language = language,
+                Languages = languages,
+                Keywords = keywords,
                 Prompt = prompt,
                 ResponseFormat = responseFormat,
                 Temperature = temperature,
@@ -674,11 +702,17 @@ namespace tryAGI.OpenAI
         /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
         /// </param>
         /// <param name="model">
-        /// ID of the model to use. The options are `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.<br/>
+        /// ID of the model to use. The options are `gpt-transcribe`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.<br/>
         /// Example: gpt-4o-transcribe
         /// </param>
         /// <param name="language">
         /// The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `en`) format will improve accuracy and latency.
+        /// </param>
+        /// <param name="languages">
+        /// Possible languages of the input audio, in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format. Supported by `gpt-transcribe`.
+        /// </param>
+        /// <param name="keywords">
+        /// Words or phrases to guide transcription of the input audio. Supported by `gpt-transcribe`.
         /// </param>
         /// <param name="prompt">
         /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should match the audio language. This field is not supported when using `gpt-4o-transcribe-diarize`.
@@ -718,6 +752,8 @@ namespace tryAGI.OpenAI
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?> model,
             string? language = default,
+            global::System.Collections.Generic.IList<string>? languages = default,
+            global::System.Collections.Generic.IList<string>? keywords = default,
             string? prompt = default,
             global::tryAGI.OpenAI.AudioResponseFormat? responseFormat = default,
             double? temperature = default,
@@ -737,6 +773,8 @@ namespace tryAGI.OpenAI
                 Filename = filename,
                 Model = model,
                 Language = language,
+                Languages = languages,
+                Keywords = keywords,
                 Prompt = prompt,
                 ResponseFormat = responseFormat,
                 Temperature = temperature,
@@ -858,6 +896,22 @@ namespace tryAGI.OpenAI
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.Language ?? string.Empty),
                                     name: "\"language\"");
+
+                            }
+                            if (request.Languages != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Languages, x => x))}]"),
+                                    name: "\"languages\"");
+
+                            }
+                            if (request.Keywords != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Keywords, x => x))}]"),
+                                    name: "\"keywords\"");
 
                             }
                             if (request.Prompt != default)
@@ -1225,11 +1279,17 @@ namespace tryAGI.OpenAI
         /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
         /// </param>
         /// <param name="model">
-        /// ID of the model to use. The options are `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.<br/>
+        /// ID of the model to use. The options are `gpt-transcribe`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.<br/>
         /// Example: gpt-4o-transcribe
         /// </param>
         /// <param name="language">
         /// The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `en`) format will improve accuracy and latency.
+        /// </param>
+        /// <param name="languages">
+        /// Possible languages of the input audio, in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format. Supported by `gpt-transcribe`.
+        /// </param>
+        /// <param name="keywords">
+        /// Words or phrases to guide transcription of the input audio. Supported by `gpt-transcribe`.
         /// </param>
         /// <param name="prompt">
         /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should match the audio language. This field is not supported when using `gpt-4o-transcribe-diarize`.
@@ -1269,6 +1329,8 @@ namespace tryAGI.OpenAI
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?> model,
             string? language = default,
+            global::System.Collections.Generic.IList<string>? languages = default,
+            global::System.Collections.Generic.IList<string>? keywords = default,
             string? prompt = default,
             global::tryAGI.OpenAI.AudioResponseFormat? responseFormat = default,
             double? temperature = default,
@@ -1288,6 +1350,8 @@ namespace tryAGI.OpenAI
                 Filename = filename,
                 Model = model,
                 Language = language,
+                Languages = languages,
+                Keywords = keywords,
                 Prompt = prompt,
                 ResponseFormat = responseFormat,
                 Temperature = temperature,
@@ -1409,6 +1473,22 @@ namespace tryAGI.OpenAI
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.Language ?? string.Empty),
                                     name: "\"language\"");
+
+                            }
+                            if (request.Languages != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Languages, x => x))}]"),
+                                    name: "\"languages\"");
+
+                            }
+                            if (request.Keywords != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Keywords, x => x))}]"),
+                                    name: "\"keywords\"");
 
                             }
                             if (request.Prompt != default)
