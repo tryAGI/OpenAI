@@ -53,6 +53,12 @@ namespace tryAGI.OpenAI
         public required string Transcript { get; set; }
 
         /// <summary>
+        /// The languages detected in the audio. Returned by `gpt-transcribe`. An empty array indicates that no language could be reliably detected.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("languages")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionLanguage>? Languages { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
@@ -94,6 +100,9 @@ namespace tryAGI.OpenAI
         /// The event type, must be<br/>
         /// `conversation.item.input_audio_transcription.completed`.
         /// </param>
+        /// <param name="languages">
+        /// The languages detected in the audio. Returned by `gpt-transcribe`. An empty array indicates that no language could be reliably detected.
+        /// </param>
         /// <param name="logprobs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -105,6 +114,7 @@ namespace tryAGI.OpenAI
             string transcript,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration> usage,
             global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType type,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionLanguage>? languages,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
@@ -112,6 +122,7 @@ namespace tryAGI.OpenAI
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
+            this.Languages = languages;
             this.Logprobs = logprobs;
             this.Usage = usage;
         }

@@ -7,6 +7,8 @@ namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 internal sealed record CreateTranscriptionRequestOptionSet(
     Option<string> Filename,
                      Option<string?> Language,
+                     Option<global::System.Collections.Generic.IList<string>?> Languages,
+                     Option<global::System.Collections.Generic.IList<string>?> Keywords,
                      Option<string?> Prompt,
                      Option<global::tryAGI.OpenAI.AudioResponseFormat?> ResponseFormat,
                      Option<double?> Temperature,
@@ -31,6 +33,16 @@ internal sealed record CreateTranscriptionRequestOptionSet(
                 Language: new Option<string?>($"--{normalizedPrefix}language")
                 {
                     Description = @"The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `en`) format will improve accuracy and latency.
+",
+                },
+                Languages: new Option<global::System.Collections.Generic.IList<string>?>($"--{normalizedPrefix}languages")
+                {
+                    Description = @"Possible languages of the input audio, in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format. Supported by `gpt-transcribe`.
+",
+                },
+                Keywords: new Option<global::System.Collections.Generic.IList<string>?>($"--{normalizedPrefix}keywords")
+                {
+                    Description = @"Words or phrases to guide transcription of the input audio. Supported by `gpt-transcribe`.
 ",
                 },
                 Prompt: new Option<string?>($"--{normalizedPrefix}prompt")

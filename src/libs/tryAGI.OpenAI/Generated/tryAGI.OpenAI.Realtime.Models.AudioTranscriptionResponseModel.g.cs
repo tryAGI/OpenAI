@@ -27,7 +27,15 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// 
         /// </summary>
+        GptLiveTranscribe,
+        /// <summary>
+        /// 
+        /// </summary>
         GptRealtimeWhisper,
+        /// <summary>
+        /// 
+        /// </summary>
+        GptTranscribe,
         /// <summary>
         /// 
         /// </summary>
@@ -50,7 +58,9 @@ namespace tryAGI.OpenAI.Realtime
                 AudioTranscriptionResponseModel.Gpt4oMiniTranscribe20251215 => "gpt-4o-mini-transcribe-2025-12-15",
                 AudioTranscriptionResponseModel.Gpt4oTranscribe => "gpt-4o-transcribe",
                 AudioTranscriptionResponseModel.Gpt4oTranscribeDiarize => "gpt-4o-transcribe-diarize",
+                AudioTranscriptionResponseModel.GptLiveTranscribe => "gpt-live-transcribe",
                 AudioTranscriptionResponseModel.GptRealtimeWhisper => "gpt-realtime-whisper",
+                AudioTranscriptionResponseModel.GptTranscribe => "gpt-transcribe",
                 AudioTranscriptionResponseModel.Whisper1 => "whisper-1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -66,7 +76,9 @@ namespace tryAGI.OpenAI.Realtime
                 "gpt-4o-mini-transcribe-2025-12-15" => AudioTranscriptionResponseModel.Gpt4oMiniTranscribe20251215,
                 "gpt-4o-transcribe" => AudioTranscriptionResponseModel.Gpt4oTranscribe,
                 "gpt-4o-transcribe-diarize" => AudioTranscriptionResponseModel.Gpt4oTranscribeDiarize,
+                "gpt-live-transcribe" => AudioTranscriptionResponseModel.GptLiveTranscribe,
                 "gpt-realtime-whisper" => AudioTranscriptionResponseModel.GptRealtimeWhisper,
+                "gpt-transcribe" => AudioTranscriptionResponseModel.GptTranscribe,
                 "whisper-1" => AudioTranscriptionResponseModel.Whisper1,
                 _ => null,
             };

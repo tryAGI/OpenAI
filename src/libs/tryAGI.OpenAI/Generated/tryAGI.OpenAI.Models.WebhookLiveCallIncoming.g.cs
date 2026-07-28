@@ -4,14 +4,14 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Sent when an incoming API SIP session is available for Realtime acceptance.<br/>
-    /// The same pending session can also emit `live.call.incoming`; the first<br/>
+    /// Sent when an incoming API SIP session is available for Live acceptance. The<br/>
+    /// same pending session can also emit `realtime.call.incoming`; the first<br/>
     /// successful Realtime or Live accept endpoint selects the runtime surface.
     /// </summary>
-    public sealed partial class WebhookRealtimeCallIncoming
+    public sealed partial class WebhookLiveCallIncoming
     {
         /// <summary>
-        /// The Unix timestamp (in seconds) of when the model response was completed.
+        /// The Unix timestamp (in seconds) of when the event was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -29,21 +29,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.WebhookRealtimeCallIncomingData Data { get; set; }
+        public required global::tryAGI.OpenAI.WebhookLiveCallIncomingData Data { get; set; }
 
         /// <summary>
         /// The object of the event. Always `event`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookRealtimeCallIncomingObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookRealtimeCallIncomingObject? Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookLiveCallIncomingObjectJsonConverter))]
+        public global::tryAGI.OpenAI.WebhookLiveCallIncomingObject? Object { get; set; }
 
         /// <summary>
-        /// The type of the event. Always `realtime.call.incoming`.
+        /// The type of the event. Always `live.call.incoming`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookRealtimeCallIncomingTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookRealtimeCallIncomingType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookLiveCallIncomingTypeJsonConverter))]
+        public global::tryAGI.OpenAI.WebhookLiveCallIncomingType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,10 +52,10 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebhookRealtimeCallIncoming" /> class.
+        /// Initializes a new instance of the <see cref="WebhookLiveCallIncoming" /> class.
         /// </summary>
         /// <param name="createdAt">
-        /// The Unix timestamp (in seconds) of when the model response was completed.
+        /// The Unix timestamp (in seconds) of when the event was created.
         /// </param>
         /// <param name="id">
         /// The unique ID of the event.
@@ -67,17 +67,17 @@ namespace tryAGI.OpenAI
         /// The object of the event. Always `event`.
         /// </param>
         /// <param name="type">
-        /// The type of the event. Always `realtime.call.incoming`.
+        /// The type of the event. Always `live.call.incoming`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public WebhookRealtimeCallIncoming(
+        public WebhookLiveCallIncoming(
             int createdAt,
             string id,
-            global::tryAGI.OpenAI.WebhookRealtimeCallIncomingData data,
-            global::tryAGI.OpenAI.WebhookRealtimeCallIncomingObject? @object,
-            global::tryAGI.OpenAI.WebhookRealtimeCallIncomingType type)
+            global::tryAGI.OpenAI.WebhookLiveCallIncomingData data,
+            global::tryAGI.OpenAI.WebhookLiveCallIncomingObject? @object,
+            global::tryAGI.OpenAI.WebhookLiveCallIncomingType type)
         {
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -87,9 +87,9 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="WebhookRealtimeCallIncoming" /> class.
+        /// Initializes a new instance of the <see cref="WebhookLiveCallIncoming" /> class.
         /// </summary>
-        public WebhookRealtimeCallIncoming()
+        public WebhookLiveCallIncoming()
         {
         }
 

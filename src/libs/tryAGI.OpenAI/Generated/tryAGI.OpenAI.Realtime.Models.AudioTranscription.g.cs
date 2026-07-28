@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI.Realtime
     public sealed partial class AudioTranscription
     {
         /// <summary>
-        /// The model to use for transcription. Current options are `whisper-1`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `gpt-4o-transcribe`, `gpt-4o-transcribe-diarize`, and `gpt-realtime-whisper`. Use `gpt-4o-transcribe-diarize` when you need diarization with speaker labels.
+        /// The model to use for transcription. Current options are `whisper-1`, `gpt-transcribe`, `gpt-live-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `gpt-4o-transcribe`, `gpt-4o-transcribe-diarize`, and `gpt-realtime-whisper`. Use `gpt-4o-transcribe-diarize` when you need diarization with speaker labels.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.Realtime.AudioTranscriptionModel?>))]
@@ -22,6 +22,18 @@ namespace tryAGI.OpenAI.Realtime
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
         public string? Language { get; set; }
+
+        /// <summary>
+        /// Possible languages of the input audio, in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format. Supported by `gpt-transcribe` and `gpt-live-transcribe`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("languages")]
+        public global::System.Collections.Generic.IList<string>? Languages { get; set; }
+
+        /// <summary>
+        /// Words or phrases to guide transcription of the input audio. Supported by `gpt-transcribe` and `gpt-live-transcribe`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keywords")]
+        public global::System.Collections.Generic.IList<string>? Keywords { get; set; }
 
         /// <summary>
         /// An optional text to guide the model's style or continue a previous audio<br/>
@@ -52,12 +64,18 @@ namespace tryAGI.OpenAI.Realtime
         /// Initializes a new instance of the <see cref="AudioTranscription" /> class.
         /// </summary>
         /// <param name="model">
-        /// The model to use for transcription. Current options are `whisper-1`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `gpt-4o-transcribe`, `gpt-4o-transcribe-diarize`, and `gpt-realtime-whisper`. Use `gpt-4o-transcribe-diarize` when you need diarization with speaker labels.
+        /// The model to use for transcription. Current options are `whisper-1`, `gpt-transcribe`, `gpt-live-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `gpt-4o-transcribe`, `gpt-4o-transcribe-diarize`, and `gpt-realtime-whisper`. Use `gpt-4o-transcribe-diarize` when you need diarization with speaker labels.
         /// </param>
         /// <param name="language">
         /// The language of the input audio. Supplying the input language in<br/>
         /// [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `en`) format<br/>
         /// will improve accuracy and latency.
+        /// </param>
+        /// <param name="languages">
+        /// Possible languages of the input audio, in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format. Supported by `gpt-transcribe` and `gpt-live-transcribe`.
+        /// </param>
+        /// <param name="keywords">
+        /// Words or phrases to guide transcription of the input audio. Supported by `gpt-transcribe` and `gpt-live-transcribe`.
         /// </param>
         /// <param name="prompt">
         /// An optional text to guide the model's style or continue a previous audio<br/>
@@ -77,11 +95,15 @@ namespace tryAGI.OpenAI.Realtime
         public AudioTranscription(
             global::tryAGI.OpenAI.Realtime.AnyOf<string, global::tryAGI.OpenAI.Realtime.AudioTranscriptionModel?>? model,
             string? language,
+            global::System.Collections.Generic.IList<string>? languages,
+            global::System.Collections.Generic.IList<string>? keywords,
             string? prompt,
             global::tryAGI.OpenAI.Realtime.AudioTranscriptionDelay? delay)
         {
             this.Model = model;
             this.Language = language;
+            this.Languages = languages;
+            this.Keywords = keywords;
             this.Prompt = prompt;
             this.Delay = delay;
         }
