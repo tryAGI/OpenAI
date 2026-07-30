@@ -7,7 +7,8 @@ namespace tryAGI.OpenAI
     /// Specifies the processing type used for serving the request.<br/>
     ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
     ///   - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.<br/>
-    ///   - If set to '[flex](/docs/guides/flex-processing)' or '[priority](https://openai.com/api-priority-processing/)', then the request will be processed with the corresponding service tier.<br/>
+    ///   - If set to '[flex](/docs/guides/flex-processing)', then the request will be processed with the Flex Processing service tier.<br/>
+    ///   - To opt-in to [Fast mode](/api/docs/guides/fast-mode) at the request level, include the `service_tier=fast` or `service_tier=priority` parameter for Responses or Chat Completions. The response will show `service_tier=priority` regardless of if you specify `service_tier=fast` or `priority` in your request.<br/>
     ///   - When not set, the default behavior is 'auto'.<br/>
     ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
     /// Default Value: auto
@@ -23,11 +24,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         Default,
         /// <summary>
-        /// //openai.com/api-priority-processing/)', then the request will be processed with the corresponding service tier.
+        /// 
+        /// </summary>
+        Fast,
+        /// <summary>
+        /// 
         /// </summary>
         Flex,
         /// <summary>
-        /// //openai.com/api-priority-processing/)', then the request will be processed with the corresponding service tier.
+        /// 
         /// </summary>
         Priority,
         /// <summary>
@@ -50,6 +55,7 @@ namespace tryAGI.OpenAI
             {
                 ServiceTierEnum.Auto => "auto",
                 ServiceTierEnum.Default => "default",
+                ServiceTierEnum.Fast => "fast",
                 ServiceTierEnum.Flex => "flex",
                 ServiceTierEnum.Priority => "priority",
                 ServiceTierEnum.Scale => "scale",
@@ -65,6 +71,7 @@ namespace tryAGI.OpenAI
             {
                 "auto" => ServiceTierEnum.Auto,
                 "default" => ServiceTierEnum.Default,
+                "fast" => ServiceTierEnum.Fast,
                 "flex" => ServiceTierEnum.Flex,
                 "priority" => ServiceTierEnum.Priority,
                 "scale" => ServiceTierEnum.Scale,
