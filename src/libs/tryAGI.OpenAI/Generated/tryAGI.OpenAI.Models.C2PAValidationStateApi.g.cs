@@ -6,62 +6,56 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// 
     /// </summary>
-    public enum ServiceTierEnum2
+    public enum C2PAValidationStateApi
     {
         /// <summary>
         /// 
         /// </summary>
-        Auto,
+        Invalid,
         /// <summary>
         /// 
         /// </summary>
-        Default,
+        NotPresent,
         /// <summary>
         /// 
         /// </summary>
-        Fast,
+        Trusted,
         /// <summary>
         /// 
         /// </summary>
-        Flex,
-        /// <summary>
-        /// 
-        /// </summary>
-        Priority,
+        Valid,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class ServiceTierEnum2Extensions
+    public static class C2PAValidationStateApiExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this ServiceTierEnum2 value)
+        public static string ToValueString(this C2PAValidationStateApi value)
         {
             return value switch
             {
-                ServiceTierEnum2.Auto => "auto",
-                ServiceTierEnum2.Default => "default",
-                ServiceTierEnum2.Fast => "fast",
-                ServiceTierEnum2.Flex => "flex",
-                ServiceTierEnum2.Priority => "priority",
+                C2PAValidationStateApi.Invalid => "invalid",
+                C2PAValidationStateApi.NotPresent => "not_present",
+                C2PAValidationStateApi.Trusted => "trusted",
+                C2PAValidationStateApi.Valid => "valid",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ServiceTierEnum2? ToEnum(string value)
+        public static C2PAValidationStateApi? ToEnum(string value)
         {
             return value switch
             {
-                "auto" => ServiceTierEnum2.Auto,
-                "default" => ServiceTierEnum2.Default,
-                "fast" => ServiceTierEnum2.Fast,
-                "flex" => ServiceTierEnum2.Flex,
-                "priority" => ServiceTierEnum2.Priority,
+                "invalid" => C2PAValidationStateApi.Invalid,
+                "not_present" => C2PAValidationStateApi.NotPresent,
+                "trusted" => C2PAValidationStateApi.Trusted,
+                "valid" => C2PAValidationStateApi.Valid,
                 _ => null,
             };
         }

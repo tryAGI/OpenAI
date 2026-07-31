@@ -19,6 +19,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Fast,
+        /// <summary>
+        /// 
+        /// </summary>
         Flex,
         /// <summary>
         /// 
@@ -40,6 +44,7 @@ namespace tryAGI.OpenAI
             {
                 BetaServiceTierEnum.Auto => "auto",
                 BetaServiceTierEnum.Default => "default",
+                BetaServiceTierEnum.Fast => "fast",
                 BetaServiceTierEnum.Flex => "flex",
                 BetaServiceTierEnum.Priority => "priority",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -54,6 +59,7 @@ namespace tryAGI.OpenAI
             {
                 "auto" => BetaServiceTierEnum.Auto,
                 "default" => BetaServiceTierEnum.Default,
+                "fast" => BetaServiceTierEnum.Fast,
                 "flex" => BetaServiceTierEnum.Flex,
                 "priority" => BetaServiceTierEnum.Priority,
                 _ => null,
