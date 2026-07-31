@@ -16,6 +16,7 @@ internal static class DefaultApiGroupCommand
                          command.Subcommands.Add(CreateChatKitSessionCommandApiCommand.Create());
                          command.Subcommands.Add(CreateContainerCommandApiCommand.Create());
                          command.Subcommands.Add(CreateContainerFileCommandApiCommand.Create());
+                         command.Subcommands.Add(CreateContentProvenanceCheckCommandApiCommand.Create());
                          command.Subcommands.Add(CreateProjectServiceAccountApiKeyCommandApiCommand.Create());
                          command.Subcommands.Add(DeleteAContainerCommandApiCommand.Create());
                          command.Subcommands.Add(DeleteAContainerFileCommandApiCommand.Create());

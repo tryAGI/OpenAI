@@ -61,7 +61,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `user-organization-role-assignment` | 4 |  |
 | `vector-store` | 16 |  |
 | `video` | 10 |  |
-| `default` | 30 |  |
+| `default` | 31 |  |
 
 ## References
 
