@@ -36,6 +36,18 @@ namespace tryAGI.OpenAI
         public required string CallId { get; set; }
 
         /// <summary>
+        /// The name of the tool that produced the output.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// The namespace of the tool that produced the output.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
@@ -84,6 +96,12 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// The type of the function tool call output. Always `function_call_output`.
         /// </param>
+        /// <param name="name">
+        /// The name of the tool that produced the output.
+        /// </param>
+        /// <param name="namespace">
+        /// The namespace of the tool that produced the output.
+        /// </param>
         /// <param name="caller"></param>
         /// <param name="status">
         /// The status of the item. One of `in_progress`, `completed`, or<br/>
@@ -98,6 +116,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaAgentTag? agent,
             string? id,
             global::tryAGI.OpenAI.BetaFunctionToolCallOutputType type,
+            string? name,
+            string? @namespace,
             global::tryAGI.OpenAI.BetaToolCallCallerParam? caller,
             global::tryAGI.OpenAI.BetaFunctionToolCallOutputStatus? status)
         {
@@ -105,6 +125,8 @@ namespace tryAGI.OpenAI
             this.Id = id;
             this.Type = type;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
+            this.Name = name;
+            this.Namespace = @namespace;
             this.Caller = caller;
             this.Output = output;
             this.Status = status;

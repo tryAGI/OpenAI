@@ -123,7 +123,7 @@ namespace tryAGI.OpenAI
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
-        public global::tryAGI.OpenAI.Conversation22? Conversation { get; set; }
+        public global::tryAGI.OpenAI.ResponseConversation? Conversation { get; set; }
 
         /// <summary>
         /// 
@@ -203,7 +203,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ResponseUsage? usage,
             global::tryAGI.OpenAI.PromptCacheOptions? promptCacheOptions,
             global::tryAGI.OpenAI.Moderation? moderation,
-            global::tryAGI.OpenAI.Conversation22? conversation,
+            global::tryAGI.OpenAI.ResponseConversation? conversation,
             int? maxOutputTokens)
         {
             this.Truncation = truncation;

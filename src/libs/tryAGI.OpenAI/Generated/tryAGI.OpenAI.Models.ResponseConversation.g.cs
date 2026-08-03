@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// The conversation that this response belonged to. Input items and output items from this response were automatically added to this conversation.
     /// </summary>
-    public sealed partial class BetaConversation2
+    public sealed partial class ResponseConversation
     {
         /// <summary>
         /// The unique ID of the conversation that this response was associated with.
@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BetaConversation2" /> class.
+        /// Initializes a new instance of the <see cref="ResponseConversation" /> class.
         /// </summary>
         /// <param name="id">
         /// The unique ID of the conversation that this response was associated with.
@@ -30,16 +30,16 @@ namespace tryAGI.OpenAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public BetaConversation2(
+        public ResponseConversation(
             string id)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BetaConversation2" /> class.
+        /// Initializes a new instance of the <see cref="ResponseConversation" /> class.
         /// </summary>
-        public BetaConversation2()
+        public ResponseConversation()
         {
         }
 

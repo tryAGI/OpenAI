@@ -275,6 +275,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        Gpt55,
+        /// <summary>
+        /// 
+        /// </summary>
         Gpt56Luna,
         /// <summary>
         /// 
@@ -412,6 +416,7 @@ namespace tryAGI.OpenAI
                 BetaModelIdsSharedEnum.Gpt54Mini20260317 => "gpt-5.4-mini-2026-03-17",
                 BetaModelIdsSharedEnum.Gpt54Nano => "gpt-5.4-nano",
                 BetaModelIdsSharedEnum.Gpt54Nano20260317 => "gpt-5.4-nano-2026-03-17",
+                BetaModelIdsSharedEnum.Gpt55 => "gpt-5.5",
                 BetaModelIdsSharedEnum.Gpt56Luna => "gpt-5.6-luna",
                 BetaModelIdsSharedEnum.Gpt56Sol => "gpt-5.6-sol",
                 BetaModelIdsSharedEnum.Gpt56Terra => "gpt-5.6-terra",
@@ -503,6 +508,7 @@ namespace tryAGI.OpenAI
                 "gpt-5.4-mini-2026-03-17" => BetaModelIdsSharedEnum.Gpt54Mini20260317,
                 "gpt-5.4-nano" => BetaModelIdsSharedEnum.Gpt54Nano,
                 "gpt-5.4-nano-2026-03-17" => BetaModelIdsSharedEnum.Gpt54Nano20260317,
+                "gpt-5.5" => BetaModelIdsSharedEnum.Gpt55,
                 "gpt-5.6-luna" => BetaModelIdsSharedEnum.Gpt56Luna,
                 "gpt-5.6-sol" => BetaModelIdsSharedEnum.Gpt56Sol,
                 "gpt-5.6-terra" => BetaModelIdsSharedEnum.Gpt56Terra,
