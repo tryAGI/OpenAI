@@ -7984,7 +7984,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.Conversation22? Type1989 { get; set; }
+        public global::tryAGI.OpenAI.ResponseConversation? Type1989 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -14296,7 +14296,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
-        public global::tryAGI.OpenAI.BetaConversation2? Type3567 { get; set; }
+        public global::tryAGI.OpenAI.BetaResponseConversation? Type3567 { get; set; }
         /// <summary>
         /// 
         /// </summary>

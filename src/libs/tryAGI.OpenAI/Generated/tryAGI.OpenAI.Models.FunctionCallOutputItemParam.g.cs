@@ -41,6 +41,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         public global::tryAGI.OpenAI.ToolCallCallerParam? Caller { get; set; }
 
@@ -66,6 +78,8 @@ namespace tryAGI.OpenAI
         /// Text, image, or file output of the function tool call.
         /// </param>
         /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="namespace"></param>
         /// <param name="caller"></param>
         /// <param name="status"></param>
         /// <param name="type">
@@ -79,6 +93,8 @@ namespace tryAGI.OpenAI
             string callId,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item>> output,
             string? id,
+            string? name,
+            string? @namespace,
             global::tryAGI.OpenAI.ToolCallCallerParam? caller,
             global::tryAGI.OpenAI.FunctionCallItemStatus? status,
             global::tryAGI.OpenAI.FunctionCallOutputItemParamType type = global::tryAGI.OpenAI.FunctionCallOutputItemParamType.FunctionCallOutput)
@@ -87,6 +103,8 @@ namespace tryAGI.OpenAI
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Type = type;
             this.Output = output;
+            this.Name = name;
+            this.Namespace = @namespace;
             this.Caller = caller;
             this.Status = status;
         }

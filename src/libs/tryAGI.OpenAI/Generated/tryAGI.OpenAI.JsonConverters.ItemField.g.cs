@@ -87,6 +87,8 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("call_id")) __score7++;
             if (__jsonProps.Contains("caller")) __score7++;
             if (__jsonProps.Contains("id")) __score7++;
+            if (__jsonProps.Contains("name")) __score7++;
+            if (__jsonProps.Contains("namespace")) __score7++;
             if (__jsonProps.Contains("output")) __score7++;
             if (__jsonProps.Contains("status")) __score7++;
             if (__jsonProps.Contains("type")) __score7++;

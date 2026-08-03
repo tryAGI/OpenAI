@@ -47,6 +47,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("namespace")]
+        public string? Namespace { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         public global::tryAGI.OpenAI.BetaToolCallCallerParam? Caller { get; set; }
 
@@ -73,6 +85,8 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="agent"></param>
         /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="namespace"></param>
         /// <param name="caller"></param>
         /// <param name="status"></param>
         /// <param name="type">
@@ -87,6 +101,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item2>> output,
             global::tryAGI.OpenAI.BetaAgentTagParam? agent,
             string? id,
+            string? name,
+            string? @namespace,
             global::tryAGI.OpenAI.BetaToolCallCallerParam? caller,
             global::tryAGI.OpenAI.BetaFunctionCallItemStatus? status,
             global::tryAGI.OpenAI.BetaFunctionCallOutputItemParamType type = global::tryAGI.OpenAI.BetaFunctionCallOutputItemParamType.FunctionCallOutput)
@@ -96,6 +112,8 @@ namespace tryAGI.OpenAI
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.Type = type;
             this.Output = output;
+            this.Name = name;
+            this.Namespace = @namespace;
             this.Caller = caller;
             this.Status = status;
         }
