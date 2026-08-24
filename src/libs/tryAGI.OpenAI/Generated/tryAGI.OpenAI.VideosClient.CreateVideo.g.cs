@@ -155,12 +155,59 @@ namespace tryAGI.OpenAI
 
                             if (request.InputReference != default)
                             {
+                                if ((request.InputReference).GetValueOrDefault().TryPickValue1(out var __valueInputReference1))
+                                {
 
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.InputReference.ToString() ?? string.Empty),
-                                    name: "\"input_reference\"");
+                                    var __fileNameInputReference1 = "file.bin";
+                                    var __contentInputReference1 = new global::System.Net.Http.ByteArrayContent(__valueInputReference1 ?? global::System.Array.Empty<byte>());
+                                    __contentInputReference1.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                        __fileNameInputReference1 is null
+                                            ? "application/octet-stream"
+                                            : (global::System.IO.Path.GetExtension(__fileNameInputReference1) ?? string.Empty).ToLowerInvariant() switch
+                                            {
+                                                ".aac" => "audio/aac",
+                                                ".flac" => "audio/flac",
+                                                ".gif" => "image/gif",
+                                                ".jpeg" => "image/jpeg",
+                                                ".jpg" => "image/jpeg",
+                                                ".json" => "application/json",
+                                                ".m4a" => "audio/mp4",
+                                                ".mp3" => "audio/mpeg",
+                                                ".mp4" => "video/mp4",
+                                                ".mpeg" => "audio/mpeg",
+                                                ".mpga" => "audio/mpeg",
+                                                ".oga" => "audio/ogg",
+                                                ".ogg" => "audio/ogg",
+                                                ".opus" => "audio/ogg",
+                                                ".pdf" => "application/pdf",
+                                                ".png" => "image/png",
+                                                ".txt" => "text/plain",
+                                                ".wav" => "audio/wav",
+                                                ".weba" => "audio/webm",
+                                                ".webm" => "video/webm",
+                                                ".webp" => "image/webp",
+                                                _ => "application/octet-stream",
+                                            });
+                                    __httpRequestContent.Add(
+                                        content: __contentInputReference1,
+                                        name: "\"input_reference\"",
+                                        fileName: $"\"{__fileNameInputReference1}\"");
+                                    if (__contentInputReference1.Headers.ContentDisposition != null)
+                                    {
+                                        __contentInputReference1.Headers.ContentDisposition.FileNameStar = null;
+                                    }
+                                }
+                                else if ((request.InputReference).GetValueOrDefault().TryPickValue2(out var __valueInputReference2))
+                                {
 
+                                    var __contentInputReference2 = new global::System.Net.Http.StringContent((__valueInputReference2!).ToJson(JsonSerializerContext));
+                                    __contentInputReference2.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                                    __httpRequestContent.Add(
+                                        content: __contentInputReference2,
+                                        name: "\"input_reference\"");
+                                }
                             }
+
                             if (request.Seconds != default)
                             {
 

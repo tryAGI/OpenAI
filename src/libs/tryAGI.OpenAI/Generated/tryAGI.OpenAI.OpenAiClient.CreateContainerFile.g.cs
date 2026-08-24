@@ -114,7 +114,7 @@ namespace tryAGI.OpenAI
             var __maxAttempts = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: false);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
@@ -151,12 +151,65 @@ namespace tryAGI.OpenAI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
+
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+                            __httpRequestContent.Add(
+                                content: new global::System.Net.Http.StringContent(containerId ?? string.Empty),
+                                name: "\"container_id\"");
+
+                            if (request.FileId != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.FileId ?? string.Empty),
+                                    name: "\"file_id\"");
+
+                            }
+                            if (request.File != default)
+                            {
+
+                                var __contentFile = new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>());
+                                __contentFile.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.Filename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.Filename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentFile,
+                                    name: "\"file\"",
+                                    fileName: request.Filename != null ? $"\"{request.Filename}\"" : string.Empty);
+                                if (__contentFile.Headers.ContentDisposition != null)
+                                {
+                                    __contentFile.Headers.ContentDisposition.FileNameStar = null;
+                                }
+
+                            }
+
                             __httpRequest.Content = __httpRequestContent;
+
                 global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
