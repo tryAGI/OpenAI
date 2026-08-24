@@ -141,9 +141,57 @@ namespace tryAGI.OpenAI
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(request.Video.ToString() ?? string.Empty),
-                                name: "\"video\"");
+                            if (request.Video.TryPickValue1(out var __valueVideo1))
+                            {
+
+                                var __contentVideo1 = new global::System.Net.Http.StringContent((__valueVideo1!).ToJson(JsonSerializerContext));
+                                __contentVideo1.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                                __httpRequestContent.Add(
+                                    content: __contentVideo1,
+                                    name: "\"video\"");
+                            }
+                            else if (request.Video.TryPickValue2(out var __valueVideo2))
+                            {
+
+                                var __fileNameVideo2 = "file.bin";
+                                var __contentVideo2 = new global::System.Net.Http.ByteArrayContent(__valueVideo2 ?? global::System.Array.Empty<byte>());
+                                __contentVideo2.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    __fileNameVideo2 is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(__fileNameVideo2) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentVideo2,
+                                    name: "\"video\"",
+                                    fileName: $"\"{__fileNameVideo2}\"");
+                                if (__contentVideo2.Headers.ContentDisposition != null)
+                                {
+                                    __contentVideo2.Headers.ContentDisposition.FileNameStar = null;
+                                }
+                            }
 
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),

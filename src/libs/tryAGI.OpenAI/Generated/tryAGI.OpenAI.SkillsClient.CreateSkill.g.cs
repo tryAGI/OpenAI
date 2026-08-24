@@ -141,9 +141,94 @@ namespace tryAGI.OpenAI
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(request.Files.ToString() ?? string.Empty),
-                                name: "\"files\"");
+                            if (request.Files.TryPickValue1(out var __valueFiles1))
+                            {
+
+                                for (var __iFiles1 = 0; __iFiles1 < (__valueFiles1!).Count; __iFiles1++)
+                                {
+
+                                    var __fileNameFiles1Item = $"file{__iFiles1}.bin";
+                                    var __contentFiles1Item = new global::System.Net.Http.ByteArrayContent((__valueFiles1!)[__iFiles1] ?? global::System.Array.Empty<byte>());
+                                    __contentFiles1Item.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                        __fileNameFiles1Item is null
+                                            ? "application/octet-stream"
+                                            : (global::System.IO.Path.GetExtension(__fileNameFiles1Item) ?? string.Empty).ToLowerInvariant() switch
+                                            {
+                                                ".aac" => "audio/aac",
+                                                ".flac" => "audio/flac",
+                                                ".gif" => "image/gif",
+                                                ".jpeg" => "image/jpeg",
+                                                ".jpg" => "image/jpeg",
+                                                ".json" => "application/json",
+                                                ".m4a" => "audio/mp4",
+                                                ".mp3" => "audio/mpeg",
+                                                ".mp4" => "video/mp4",
+                                                ".mpeg" => "audio/mpeg",
+                                                ".mpga" => "audio/mpeg",
+                                                ".oga" => "audio/ogg",
+                                                ".ogg" => "audio/ogg",
+                                                ".opus" => "audio/ogg",
+                                                ".pdf" => "application/pdf",
+                                                ".png" => "image/png",
+                                                ".txt" => "text/plain",
+                                                ".wav" => "audio/wav",
+                                                ".weba" => "audio/webm",
+                                                ".webm" => "video/webm",
+                                                ".webp" => "image/webp",
+                                                _ => "application/octet-stream",
+                                            });
+                                    __httpRequestContent.Add(
+                                        content: __contentFiles1Item,
+                                        name: "\"files\"",
+                                        fileName: $"\"{__fileNameFiles1Item}\"");
+                                    if (__contentFiles1Item.Headers.ContentDisposition != null)
+                                    {
+                                        __contentFiles1Item.Headers.ContentDisposition.FileNameStar = null;
+                                    }
+                                }
+                            }
+                            else if (request.Files.TryPickValue2(out var __valueFiles2))
+                            {
+
+                                var __fileNameFiles2 = "file.bin";
+                                var __contentFiles2 = new global::System.Net.Http.ByteArrayContent(__valueFiles2 ?? global::System.Array.Empty<byte>());
+                                __contentFiles2.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    __fileNameFiles2 is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(__fileNameFiles2) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentFiles2,
+                                    name: "\"files\"",
+                                    fileName: $"\"{__fileNameFiles2}\"");
+                                if (__contentFiles2.Headers.ContentDisposition != null)
+                                {
+                                    __contentFiles2.Headers.ContentDisposition.FileNameStar = null;
+                                }
+                            }
 
                             __httpRequest.Content = __httpRequestContent;
 
