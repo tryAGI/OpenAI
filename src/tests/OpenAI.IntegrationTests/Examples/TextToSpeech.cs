@@ -16,7 +16,7 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         using var memoryStream = new MemoryStream();
-        await foreach (var streamEvent in client.Audio.CreateSpeechAsync(
+        await foreach (var streamEvent in client.Audio.CreateSpeechAsEventStreamAsync(
             model: CreateSpeechRequestModel.Gpt4oMiniTts,
             input: "Hello! This is a text-to-speech test.",
             voice: (VoiceIdsShared)VoiceIdsSharedEnum.Alloy,

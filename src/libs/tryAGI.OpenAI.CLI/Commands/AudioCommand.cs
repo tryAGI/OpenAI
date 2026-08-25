@@ -76,7 +76,7 @@ internal static class AudioCommand
             }
 
             using var fileStream = File.Create(output);
-            await foreach (var streamEvent in client.Audio.CreateSpeechAsync(
+            await foreach (var streamEvent in client.Audio.CreateSpeechAsEventStreamAsync(
                 model: model,
                 input: text,
                 voice: (VoiceIdsShared)voice,

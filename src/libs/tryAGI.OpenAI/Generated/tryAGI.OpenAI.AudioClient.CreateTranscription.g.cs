@@ -221,7 +221,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Languages, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Languages!, x => x))}]"),
                                     name: "\"languages\"");
 
                             }
@@ -229,7 +229,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Keywords, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Keywords!, x => x))}]"),
                                     name: "\"keywords\"");
 
                             }
@@ -261,7 +261,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Include, x => x.ToValueString()))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Include!, x => x.ToValueString()))}]"),
                                     name: "\"include\"");
 
                             }
@@ -269,7 +269,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities, x => x.ToValueString()))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities!, x => x.ToValueString()))}]"),
                                     name: "\"timestamp_granularities\"");
 
                             }
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerNames, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerNames!, x => x))}]"),
                                     name: "\"known_speaker_names\"");
 
                             }
@@ -301,7 +301,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerReferences, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerReferences!, x => x))}]"),
                                     name: "\"known_speaker_references\"");
 
                             }
@@ -910,7 +910,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Languages, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Languages!, x => x))}]"),
                                     name: "\"languages\"");
 
                             }
@@ -918,7 +918,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Keywords, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Keywords!, x => x))}]"),
                                     name: "\"keywords\"");
 
                             }
@@ -950,7 +950,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Include, x => x.ToValueString()))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Include!, x => x.ToValueString()))}]"),
                                     name: "\"include\"");
 
                             }
@@ -958,7 +958,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities, x => x.ToValueString()))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities!, x => x.ToValueString()))}]"),
                                     name: "\"timestamp_granularities\"");
 
                             }
@@ -982,7 +982,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerNames, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerNames!, x => x))}]"),
                                     name: "\"known_speaker_names\"");
 
                             }
@@ -990,7 +990,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerReferences, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerReferences!, x => x))}]"),
                                     name: "\"known_speaker_references\"");
 
                             }
@@ -1491,7 +1491,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Languages, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Languages!, x => x))}]"),
                                     name: "\"languages\"");
 
                             }
@@ -1499,7 +1499,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Keywords, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Keywords!, x => x))}]"),
                                     name: "\"keywords\"");
 
                             }
@@ -1531,7 +1531,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Include, x => x.ToValueString()))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Include!, x => x.ToValueString()))}]"),
                                     name: "\"include\"");
 
                             }
@@ -1539,7 +1539,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities, x => x.ToValueString()))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TimestampGranularities!, x => x.ToValueString()))}]"),
                                     name: "\"timestamp_granularities\"");
 
                             }
@@ -1563,7 +1563,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerNames, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerNames!, x => x))}]"),
                                     name: "\"known_speaker_names\"");
 
                             }
@@ -1571,7 +1571,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerReferences, x => x))}]"),
+                                    content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.KnownSpeakerReferences!, x => x))}]"),
                                     name: "\"known_speaker_references\"");
 
                             }
