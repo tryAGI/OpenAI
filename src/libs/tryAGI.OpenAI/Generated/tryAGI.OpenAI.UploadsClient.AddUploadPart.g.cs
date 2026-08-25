@@ -157,10 +157,6 @@ namespace tryAGI.OpenAI
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(uploadId ?? string.Empty),
-                                name: "\"upload_id\"");
-
                             var __contentData = new global::System.Net.Http.ByteArrayContent(request.Data ?? global::System.Array.Empty<byte>());
                             __contentData.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Dataname is null
@@ -620,10 +616,6 @@ namespace tryAGI.OpenAI
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(uploadId ?? string.Empty),
-                                name: "\"upload_id\"");
-
                             var __contentData = new global::System.Net.Http.StreamContent(data);
                             __contentData.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Dataname is null
@@ -1038,10 +1030,6 @@ namespace tryAGI.OpenAI
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(uploadId ?? string.Empty),
-                                name: "\"upload_id\"");
-
                             var __contentData = new global::System.Net.Http.StreamContent(data);
                             __contentData.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Dataname is null

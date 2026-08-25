@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<string> CreateCallAsync(
+        global::System.Threading.Tasks.Task<byte[]> CreateCallAsync(
 
             global::tryAGI.OpenAI.RealtimeCallCreateRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
@@ -25,7 +25,20 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<string>> CreateCallAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateCallAsStreamAsync(
+
+            global::tryAGI.OpenAI.RealtimeCallCreateRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create a new Realtime API call over WebRTC and receive the SDP answer needed<br/>
+        /// to complete the peer connection.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<byte[]>> CreateCallAsResponseAsync(
 
             global::tryAGI.OpenAI.RealtimeCallCreateRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
@@ -45,7 +58,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<string> CreateCallAsync(
+        global::System.Threading.Tasks.Task<byte[]> CreateCallAsync(
             string sdp,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA? session = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,

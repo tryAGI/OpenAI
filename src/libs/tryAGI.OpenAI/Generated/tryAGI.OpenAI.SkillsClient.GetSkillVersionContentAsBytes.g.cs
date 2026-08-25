@@ -3,11 +3,11 @@
 
 namespace tryAGI.OpenAI
 {
-    public partial class RealtimeClient
+    public partial class SkillsClient
     {
 
 
-        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_CreateCallSecurityRequirement0 =
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_GetSkillVersionContentAsBytesSecurityRequirement0 =
             new global::tryAGI.OpenAI.EndPointSecurityRequirement
             {
                 Authorizations = new global::tryAGI.OpenAI.EndPointAuthorizationRequirement[]
@@ -21,43 +21,49 @@ namespace tryAGI.OpenAI
                     },
                 },
             };
-        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_CreateCallSecurityRequirements =
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_GetSkillVersionContentAsBytesSecurityRequirements =
             new global::tryAGI.OpenAI.EndPointSecurityRequirement[]
-            {                s_CreateCallSecurityRequirement0,
+            {                s_GetSkillVersionContentAsBytesSecurityRequirement0,
             };
-        partial void PrepareCreateCallArguments(
+        partial void PrepareGetSkillVersionContentAsBytesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::tryAGI.OpenAI.RealtimeCallCreateRequest request);
-        partial void PrepareCreateCallRequest(
+            ref string skillId,
+            ref string version);
+        partial void PrepareGetSkillVersionContentAsBytesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::tryAGI.OpenAI.RealtimeCallCreateRequest request);
-        partial void ProcessCreateCallResponse(
+            string skillId,
+            string version);
+        partial void ProcessGetSkillVersionContentAsBytesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateCallResponseContent(
+        partial void ProcessGetSkillVersionContentAsBytesResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref byte[] content);
 
         /// <summary>
-        /// Create a new Realtime API call over WebRTC and receive the SDP answer needed<br/>
-        /// to complete the peer connection.
+        /// Download a skill version zip bundle.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="skillId">
+        /// Example: skill_123
+        /// </param>
+        /// <param name="version">
+        /// The skill version number.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<byte[]> CreateCallAsync(
-
-            global::tryAGI.OpenAI.RealtimeCallCreateRequest request,
+        public async global::System.Threading.Tasks.Task<byte[]> GetSkillVersionContentAsBytesAsync(
+            string skillId,
+            string version,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreateCallAsResponseAsync(
-
-                request: request,
+            var __response = await GetSkillVersionContentAsBytesAsResponseAsync(
+                skillId: skillId,
+                version: version,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -65,32 +71,35 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
-        /// Create a new Realtime API call over WebRTC and receive the SDP answer needed<br/>
-        /// to complete the peer connection.
+        /// Download a skill version zip bundle.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="skillId">
+        /// Example: skill_123
+        /// </param>
+        /// <param name="version">
+        /// The skill version number.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateCallAsStreamAsync(
-
-            global::tryAGI.OpenAI.RealtimeCallCreateRequest request,
+        public async global::System.Threading.Tasks.Task<global::System.IO.Stream> GetSkillVersionContentAsBytesAsStreamAsync(
+            string skillId,
+            string version,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateCallArguments(
+            PrepareGetSkillVersionContentAsBytesArguments(
                 httpClient: HttpClient,
-                request: request);
+                skillId: ref skillId,
+                version: ref version);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateCallSecurityRequirements,
-                operationName: "CreateCallAsync");
+                securityRequirements: s_GetSkillVersionContentAsBytesSecurityRequirements,
+                operationName: "GetSkillVersionContentAsBytesAsync");
 
             using var __timeoutCancellationTokenSource = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -104,13 +113,13 @@ namespace tryAGI.OpenAI
             var __maxAttempts = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: false);
+                supportsRetry: true);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
 
                             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
-                                path: "/realtime/calls",
+                                path: $"/skills/{skillId}/versions/{version}/content",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -118,12 +127,16 @@ namespace tryAGI.OpenAI
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "application/zip");
 
             foreach (var __authorization in __authorizations)
             {
@@ -141,23 +154,6 @@ namespace tryAGI.OpenAI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-
-                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(request.Sdp ?? string.Empty),
-                                name: "\"sdp\"");
-
-                            if (request.Session != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.Session.ToJson(JsonSerializerContext)),
-                                    name: "\"session\"");
-
-                            }
-
-                            __httpRequest.Content = __httpRequestContent;
-
                 global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -166,10 +162,11 @@ namespace tryAGI.OpenAI
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateCallRequest(
+                PrepareGetSkillVersionContentAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    request: request);
+                    skillId: skillId!,
+                    version: version!);
 
                 return __httpRequest;
             }
@@ -186,10 +183,10 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateCall",
-                                methodName: "CreateCallAsync",
-                                pathTemplate: "\"/realtime/calls\"",
-                                httpMethod: "POST",
+                                operationId: "GetSkillVersionContentAsBytes",
+                                methodName: "GetSkillVersionContentAsBytesAsync",
+                                pathTemplate: "$\"/skills/{skillId}/versions/{version}/content\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -220,10 +217,10 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateCall",
-                                methodName: "CreateCallAsync",
-                                pathTemplate: "\"/realtime/calls\"",
-                                httpMethod: "POST",
+                                operationId: "GetSkillVersionContentAsBytes",
+                                methodName: "GetSkillVersionContentAsBytesAsync",
+                                pathTemplate: "$\"/skills/{skillId}/versions/{version}/content\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -261,10 +258,10 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateCall",
-                                methodName: "CreateCallAsync",
-                                pathTemplate: "\"/realtime/calls\"",
-                                httpMethod: "POST",
+                                operationId: "GetSkillVersionContentAsBytes",
+                                methodName: "GetSkillVersionContentAsBytesAsync",
+                                pathTemplate: "$\"/skills/{skillId}/versions/{version}/content\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -301,7 +298,7 @@ namespace tryAGI.OpenAI
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateCallResponse(
+                ProcessGetSkillVersionContentAsBytesResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -309,10 +306,10 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateCall",
-                                methodName: "CreateCallAsync",
-                                pathTemplate: "\"/realtime/calls\"",
-                                httpMethod: "POST",
+                                operationId: "GetSkillVersionContentAsBytes",
+                                methodName: "GetSkillVersionContentAsBytesAsync",
+                                pathTemplate: "$\"/skills/{skillId}/versions/{version}/content\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -331,10 +328,10 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateCall",
-                                methodName: "CreateCallAsync",
-                                pathTemplate: "\"/realtime/calls\"",
-                                httpMethod: "POST",
+                                operationId: "GetSkillVersionContentAsBytes",
+                                methodName: "GetSkillVersionContentAsBytesAsync",
+                                pathTemplate: "$\"/skills/{skillId}/versions/{version}/content\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -400,32 +397,35 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
-        /// Create a new Realtime API call over WebRTC and receive the SDP answer needed<br/>
-        /// to complete the peer connection.
+        /// Download a skill version zip bundle.
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="skillId">
+        /// Example: skill_123
+        /// </param>
+        /// <param name="version">
+        /// The skill version number.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<byte[]>> CreateCallAsResponseAsync(
-
-            global::tryAGI.OpenAI.RealtimeCallCreateRequest request,
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<byte[]>> GetSkillVersionContentAsBytesAsResponseAsync(
+            string skillId,
+            string version,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateCallArguments(
+            PrepareGetSkillVersionContentAsBytesArguments(
                 httpClient: HttpClient,
-                request: request);
+                skillId: ref skillId,
+                version: ref version);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateCallSecurityRequirements,
-                operationName: "CreateCallAsync");
+                securityRequirements: s_GetSkillVersionContentAsBytesSecurityRequirements,
+                operationName: "GetSkillVersionContentAsBytesAsync");
 
             using var __timeoutCancellationTokenSource = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -439,13 +439,13 @@ namespace tryAGI.OpenAI
             var __maxAttempts = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: false);
+                supportsRetry: true);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
 
                             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
-                                path: "/realtime/calls",
+                                path: $"/skills/{skillId}/versions/{version}/content",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -453,12 +453,16 @@ namespace tryAGI.OpenAI
                     clientParameters: Options.QueryParameters,
                     requestParameters: requestOptions?.QueryParameters);
                 var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                    method: global::System.Net.Http.HttpMethod.Post,
+                    method: global::System.Net.Http.HttpMethod.Get,
                     requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "application/zip");
 
             foreach (var __authorization in __authorizations)
             {
@@ -476,23 +480,6 @@ namespace tryAGI.OpenAI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 } 
             }
-
-                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(request.Sdp ?? string.Empty),
-                                name: "\"sdp\"");
-
-                            if (request.Session != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.Session.ToJson(JsonSerializerContext)),
-                                    name: "\"session\"");
-
-                            }
-
-                            __httpRequest.Content = __httpRequestContent;
-
                 global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -501,10 +488,11 @@ namespace tryAGI.OpenAI
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateCallRequest(
+                PrepareGetSkillVersionContentAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    request: request);
+                    skillId: skillId!,
+                    version: version!);
 
                 return __httpRequest;
             }
@@ -521,10 +509,10 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateCall",
-                                methodName: "CreateCallAsync",
-                                pathTemplate: "\"/realtime/calls\"",
-                                httpMethod: "POST",
+                                operationId: "GetSkillVersionContentAsBytes",
+                                methodName: "GetSkillVersionContentAsBytesAsync",
+                                pathTemplate: "$\"/skills/{skillId}/versions/{version}/content\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -555,10 +543,10 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateCall",
-                                methodName: "CreateCallAsync",
-                                pathTemplate: "\"/realtime/calls\"",
-                                httpMethod: "POST",
+                                operationId: "GetSkillVersionContentAsBytes",
+                                methodName: "GetSkillVersionContentAsBytesAsync",
+                                pathTemplate: "$\"/skills/{skillId}/versions/{version}/content\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: null,
@@ -596,10 +584,10 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateCall",
-                                methodName: "CreateCallAsync",
-                                pathTemplate: "\"/realtime/calls\"",
-                                httpMethod: "POST",
+                                operationId: "GetSkillVersionContentAsBytes",
+                                methodName: "GetSkillVersionContentAsBytesAsync",
+                                pathTemplate: "$\"/skills/{skillId}/versions/{version}/content\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -636,7 +624,7 @@ namespace tryAGI.OpenAI
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateCallResponse(
+                ProcessGetSkillVersionContentAsBytesResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -644,10 +632,10 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateCall",
-                                methodName: "CreateCallAsync",
-                                pathTemplate: "\"/realtime/calls\"",
-                                httpMethod: "POST",
+                                operationId: "GetSkillVersionContentAsBytes",
+                                methodName: "GetSkillVersionContentAsBytesAsync",
+                                pathTemplate: "$\"/skills/{skillId}/versions/{version}/content\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -666,10 +654,10 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateCall",
-                                methodName: "CreateCallAsync",
-                                pathTemplate: "\"/realtime/calls\"",
-                                httpMethod: "POST",
+                                operationId: "GetSkillVersionContentAsBytes",
+                                methodName: "GetSkillVersionContentAsBytesAsync",
+                                pathTemplate: "$\"/skills/{skillId}/versions/{version}/content\"",
+                                httpMethod: "GET",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
                                 response: __response,
@@ -692,7 +680,7 @@ namespace tryAGI.OpenAI
                 #endif
                                 ).ConfigureAwait(false);
 
-                                ProcessCreateCallResponseContent(
+                                ProcessGetSkillVersionContentAsBytesResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -770,38 +758,6 @@ namespace tryAGI.OpenAI
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Create a new Realtime API call over WebRTC and receive the SDP answer needed<br/>
-        /// to complete the peer connection.
-        /// </summary>
-        /// <param name="sdp">
-        /// WebRTC Session Description Protocol (SDP) offer generated by the caller.
-        /// </param>
-        /// <param name="session">
-        /// Optional session configuration to apply before the realtime session is<br/>
-        /// created. Use the same parameters you would send in a [`create client secret`](/docs/api-reference/realtime-sessions/create-realtime-client-secret)<br/>
-        /// request.
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<byte[]> CreateCallAsync(
-            string sdp,
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA? session = default,
-            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::tryAGI.OpenAI.RealtimeCallCreateRequest
-            {
-                Sdp = sdp,
-                Session = session,
-            };
-
-            return await CreateCallAsync(
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

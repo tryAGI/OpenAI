@@ -15,8 +15,10 @@ internal static class SkillsApiGroupCommand
                          command.Subcommands.Add(SkillsDeleteSkillVersionCommandApiCommand.Create());
                          command.Subcommands.Add(SkillsGetSkillCommandApiCommand.Create());
                          command.Subcommands.Add(SkillsGetSkillContentCommandApiCommand.Create());
+                         command.Subcommands.Add(SkillsGetSkillContentAsBytesCommandApiCommand.Create());
                          command.Subcommands.Add(SkillsGetSkillVersionCommandApiCommand.Create());
                          command.Subcommands.Add(SkillsGetSkillVersionContentCommandApiCommand.Create());
+                         command.Subcommands.Add(SkillsGetSkillVersionContentAsBytesCommandApiCommand.Create());
                          command.Subcommands.Add(SkillsListSkillVersionsCommandApiCommand.Create());
                          command.Subcommands.Add(SkillsListSkillsCommandApiCommand.Create());
                          command.Subcommands.Add(SkillsUpdateSkillDefaultVersionCommandApiCommand.Create());

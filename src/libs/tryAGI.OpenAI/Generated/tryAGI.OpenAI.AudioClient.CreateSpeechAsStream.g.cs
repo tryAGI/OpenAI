@@ -3,11 +3,11 @@
 
 namespace tryAGI.OpenAI
 {
-    public partial class ResponsesClient
+    public partial class AudioClient
     {
 
 
-        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_CreateAModelResponseSecurityRequirement0 =
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_CreateSpeechAsStreamSecurityRequirement0 =
             new global::tryAGI.OpenAI.EndPointSecurityRequirement
             {
                 Authorizations = new global::tryAGI.OpenAI.EndPointAuthorizationRequirement[]
@@ -21,84 +21,48 @@ namespace tryAGI.OpenAI
                     },
                 },
             };
-        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_CreateAModelResponseSecurityRequirements =
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_CreateSpeechAsStreamSecurityRequirements =
             new global::tryAGI.OpenAI.EndPointSecurityRequirement[]
-            {                s_CreateAModelResponseSecurityRequirement0,
+            {                s_CreateSpeechAsStreamSecurityRequirement0,
             };
-        partial void PrepareCreateAModelResponseArguments(
+        partial void PrepareCreateSpeechAsStreamArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::tryAGI.OpenAI.CreateResponse request);
-        partial void PrepareCreateAModelResponseRequest(
+            global::tryAGI.OpenAI.CreateSpeechRequest request);
+        partial void PrepareCreateSpeechAsStreamRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::tryAGI.OpenAI.CreateResponse request);
-        partial void ProcessCreateAModelResponseResponse(
+            global::tryAGI.OpenAI.CreateSpeechRequest request);
+        partial void ProcessCreateSpeechAsStreamResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateAModelResponseResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
-        /// Creates a model response. Provide [text](/docs/guides/text) or<br/>
-        /// [image](/docs/guides/images) inputs to generate [text](/docs/guides/text)<br/>
-        /// or [JSON](/docs/guides/structured-outputs) outputs. Have the model call<br/>
-        /// your own [custom code](/docs/guides/function-calling) or use built-in<br/>
-        /// [tools](/docs/guides/tools) like [web search](/docs/guides/tools-web-search)<br/>
-        /// or [file search](/docs/guides/tools-file-search) to use your own data<br/>
-        /// as input for the model's response.
+        /// Generates audio from the input text.<br/>
+        /// Returns the audio file content, or a stream of audio events.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Response> CreateAModelResponseAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.CreateSpeechResponseStreamEvent> CreateSpeechAsStreamAsync(
 
-            global::tryAGI.OpenAI.CreateResponse request,
+            global::tryAGI.OpenAI.CreateSpeechRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreateAModelResponseAsResponseAsync(
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
-                request: request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken
-            ).ConfigureAwait(false);
-
-            return __response.Body;
-        }
-        /// <summary>
-        /// Creates a model response. Provide [text](/docs/guides/text) or<br/>
-        /// [image](/docs/guides/images) inputs to generate [text](/docs/guides/text)<br/>
-        /// or [JSON](/docs/guides/structured-outputs) outputs. Have the model call<br/>
-        /// your own [custom code](/docs/guides/function-calling) or use built-in<br/>
-        /// [tools](/docs/guides/tools) like [web search](/docs/guides/tools-web-search)<br/>
-        /// or [file search](/docs/guides/tools-file-search) to use your own data<br/>
-        /// as input for the model's response.
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.Response>> CreateAModelResponseAsResponseAsync(
-
-            global::tryAGI.OpenAI.CreateResponse request,
-            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateAModelResponseArguments(
+            PrepareCreateSpeechAsStreamArguments(
                 httpClient: HttpClient,
                 request: request);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateAModelResponseSecurityRequirements,
-                operationName: "CreateAModelResponseAsync");
+                securityRequirements: s_CreateSpeechAsStreamSecurityRequirements,
+                operationName: "CreateSpeechAsStreamAsync");
 
             using var __timeoutCancellationTokenSource = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -118,7 +82,7 @@ namespace tryAGI.OpenAI
             {
 
                             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
-                                path: "/responses",
+                                path: "/audio/speech",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -135,7 +99,7 @@ namespace tryAGI.OpenAI
 
                 __httpRequest.Headers.TryAddWithoutValidation(
                     "Accept",
-                    "application/json");
+                    "text/event-stream");
 
             foreach (var __authorization in __authorizations)
             {
@@ -167,7 +131,7 @@ namespace tryAGI.OpenAI
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateAModelResponseRequest(
+                PrepareCreateSpeechAsStreamRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     request: request);
@@ -187,9 +151,9 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAModelResponse",
-                                methodName: "CreateAModelResponseAsync",
-                                pathTemplate: "\"/responses\"",
+                                operationId: "CreateSpeechAsStream",
+                                methodName: "CreateSpeechAsStreamAsync",
+                                pathTemplate: "\"/audio/speech\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -207,7 +171,7 @@ namespace tryAGI.OpenAI
                     {
                         __response = await HttpClient.SendAsync(
                 request: __httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
                 cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
@@ -221,9 +185,9 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAModelResponse",
-                                methodName: "CreateAModelResponseAsync",
-                                pathTemplate: "\"/responses\"",
+                                operationId: "CreateSpeechAsStream",
+                                methodName: "CreateSpeechAsStreamAsync",
+                                pathTemplate: "\"/audio/speech\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -262,9 +226,9 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAModelResponse",
-                                methodName: "CreateAModelResponseAsync",
-                                pathTemplate: "\"/responses\"",
+                                operationId: "CreateSpeechAsStream",
+                                methodName: "CreateSpeechAsStreamAsync",
+                                pathTemplate: "\"/audio/speech\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -302,7 +266,7 @@ namespace tryAGI.OpenAI
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateAModelResponseResponse(
+                ProcessCreateSpeechAsStreamResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -310,9 +274,9 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAModelResponse",
-                                methodName: "CreateAModelResponseAsync",
-                                pathTemplate: "\"/responses\"",
+                                operationId: "CreateSpeechAsStream",
+                                methodName: "CreateSpeechAsStreamAsync",
+                                pathTemplate: "\"/audio/speech\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -332,9 +296,9 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateAModelResponse",
-                                methodName: "CreateAModelResponseAsync",
-                                pathTemplate: "\"/responses\"",
+                                operationId: "CreateSpeechAsStream",
+                                methodName: "CreateSpeechAsStreamAsync",
+                                pathTemplate: "\"/audio/speech\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -350,92 +314,63 @@ namespace tryAGI.OpenAI
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
 
-                            if (__effectiveReadResponseAsString)
+                            try
                             {
-                                var __content = await __response.Content.ReadAsStringAsync(
-                #if NET5_0_OR_GREATER
-                                    __effectiveCancellationToken
-                #endif
-                                ).ConfigureAwait(false);
-
-                                ProcessResponseContent(
-                                    client: HttpClient,
-                                    response: __response,
-                                    content: ref __content);
-                                ProcessCreateAModelResponseResponseContent(
-                                    httpClient: HttpClient,
-                                    httpResponseMessage: __response,
-                                    content: ref __content);
-
-                                try
-                                {
-                                    __response.EnsureSuccessStatusCode();
-
-                                    var __value = global::tryAGI.OpenAI.Response.FromJson(__content, JsonSerializerContext) ??
-                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.Response>(
-                                        statusCode: __response.StatusCode,
-                                        headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    throw global::tryAGI.OpenAI.ApiException.Create(
-                                        statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                                        innerException: __ex,
-                                        responseBody: __content,
-                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                            __response.Headers,
-                                            h => h.Key,
-                                            h => h.Value));
-                                }
+                                __response.EnsureSuccessStatusCode();
                             }
-                            else
+                            catch (global::System.Net.Http.HttpRequestException __ex)
                             {
+                                string? __content = null;
                                 try
                                 {
-                                    __response.EnsureSuccessStatusCode();
-                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                                    __content = await __response.Content.ReadAsStringAsync(
                 #if NET5_0_OR_GREATER
                                         __effectiveCancellationToken
                 #endif
                                     ).ConfigureAwait(false);
-
-                                    var __value = await global::tryAGI.OpenAI.Response.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.Response>(
-                                        statusCode: __response.StatusCode,
-                                        headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
                                 }
-                                catch (global::System.Exception __ex)
+                                catch (global::System.Exception)
                                 {
-                                    string? __content = null;
-                                    try
-                                    {
-                                        __content = await __response.Content.ReadAsStringAsync(
-                #if NET5_0_OR_GREATER
-                                            __effectiveCancellationToken
-                #endif
-                                        ).ConfigureAwait(false);
-                                    }
-                                    catch (global::System.Exception)
-                                    {
-                                    }
-
-                                    throw global::tryAGI.OpenAI.ApiException.Create(
-                                        statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                                        innerException: __ex,
-                                        responseBody: __content,
-                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                            __response.Headers,
-                                            h => h.Key,
-                                            h => h.Value));
                                 }
+
+                                throw global::tryAGI.OpenAI.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __ex,
+                                    responseBody: __content,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+
+                            using var __stream = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                __effectiveCancellationToken
+                #endif
+                            ).ConfigureAwait(false);
+
+                            await foreach (var __sseEvent in global::System.Net.ServerSentEvents.SseParser
+                                .Create(__stream).EnumerateAsync(__effectiveCancellationToken))
+                            {
+                                var __content = __sseEvent.Data;
+                                if (__content == "[DONE]")
+                                {
+                                    yield break;
+                                }
+
+                                var __streamedResponse = global::tryAGI.OpenAI.CreateSpeechResponseStreamEvent.FromJson(__content, JsonSerializerContext) ??
+                                                       throw global::tryAGI.OpenAI.ApiException.Create(
+                                                           statusCode: __response.StatusCode,
+                                                           message: $"Response deserialization failed for \"{__content}\" ",
+                                                           innerException: null,
+                                                           responseBody: __content,
+                                                           responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                                               __response.Headers,
+                                                               h => h.Key,
+                                                               h => h.Value));
+
+                                yield return __streamedResponse;
                             }
 
                 }
@@ -446,29 +381,67 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
-        /// Creates a model response. Provide [text](/docs/guides/text) or<br/>
-        /// [image](/docs/guides/images) inputs to generate [text](/docs/guides/text)<br/>
-        /// or [JSON](/docs/guides/structured-outputs) outputs. Have the model call<br/>
-        /// your own [custom code](/docs/guides/function-calling) or use built-in<br/>
-        /// [tools](/docs/guides/tools) like [web search](/docs/guides/tools-web-search)<br/>
-        /// or [file search](/docs/guides/tools-file-search) to use your own data<br/>
-        /// as input for the model's response.
+        /// Generates audio from the input text.<br/>
+        /// Returns the audio file content, or a stream of audio events.
         /// </summary>
+        /// <param name="model">
+        /// One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, or `gpt-4o-mini-tts-2025-12-15`.
+        /// </param>
+        /// <param name="input">
+        /// The text to generate audio for. The maximum length is 4096 characters.
+        /// </param>
+        /// <param name="instructions">
+        /// Control the voice of your generated audio with additional instructions. Does not work with `tts-1` or `tts-1-hd`.
+        /// </param>
+        /// <param name="voice">
+        /// The voice to use when generating the audio. Supported built-in voices are `alloy`, `ash`, `ballad`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage`, `shimmer`, `verse`, `marin`, and `cedar`. You may also provide a custom voice object with an `id`, for example `{ "id": "voice_1234" }`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options).
+        /// </param>
+        /// <param name="responseFormat">
+        /// The format to audio in. Supported formats are `mp3`, `opus`, `aac`, `flac`, `wav`, and `pcm`.<br/>
+        /// Default Value: mp3
+        /// </param>
+        /// <param name="speed">
+        /// The speed of the generated audio. Select a value from `0.25` to `4.0`. `1.0` is the default.<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="streamFormat">
+        /// The format to stream the audio in. Supported formats are `sse` and `audio`. `sse` is not supported for `tts-1` or `tts-1-hd`.<br/>
+        /// Default Value: audio
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Response> CreateAModelResponseAsync(
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.CreateSpeechResponseStreamEvent> CreateSpeechAsStreamAsync(
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?> model,
+            string input,
+            global::tryAGI.OpenAI.VoiceIdsOrCustomVoice voice,
+            string? instructions = default,
+            global::tryAGI.OpenAI.CreateSpeechRequestResponseFormat? responseFormat = default,
+            double? speed = default,
+            global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat? streamFormat = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::tryAGI.OpenAI.CreateResponse
+            var __request = new global::tryAGI.OpenAI.CreateSpeechRequest
             {
+                Model = model,
+                Input = input,
+                Instructions = instructions,
+                Voice = voice,
+                ResponseFormat = responseFormat,
+                Speed = speed,
+                StreamFormat = streamFormat,
             };
 
-            return await CreateAModelResponseAsync(
+            var __enumerable = CreateSpeechAsStreamAsync(
                 request: __request,
                 requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
+                cancellationToken: cancellationToken);
+
+            await foreach (var __response in __enumerable)
+            {
+                yield return __response;
+            }
         }
     }
 }

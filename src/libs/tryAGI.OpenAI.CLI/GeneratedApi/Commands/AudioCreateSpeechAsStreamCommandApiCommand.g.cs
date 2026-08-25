@@ -5,7 +5,7 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static partial class AudioCreateSpeechCommandApiCommand
+internal static partial class AudioCreateSpeechAsStreamCommandApiCommand
 {
     private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?>> Model { get; } = new(
         name: @"--model")
@@ -41,7 +41,7 @@ internal static partial class AudioCreateSpeechCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-speech", @"Generates audio from the input text.
+        var command = new Command(@"create-speech-as-stream", @"Generates audio from the input text.
 
 Returns the audio file content, or a stream of audio events.
 ");
@@ -85,7 +85,7 @@ Returns the audio file content, or a stream of audio events.
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
-                                var response = await client.Audio.CreateSpeechAsync(
+                                var response = client.Audio.CreateSpeechAsStreamAsync(
                                     model: model,
                                     voice: voice,
                                     input: input,
@@ -93,9 +93,16 @@ Returns the audio file content, or a stream of audio events.
                                     responseFormat: responseFormat,
                                     speed: speed,
                                     streamFormat: streamFormat,
-                                    cancellationToken: cancellationToken).ConfigureAwait(false);
+                                    cancellationToken: cancellationToken);
 
-                                await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
+                                await foreach (var item in response.WithCancellation(cancellationToken).ConfigureAwait(false))
+                                {
+                                    await CliRuntime.WriteResponseLineAsync(
+                                        parseResult,
+                                        item,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        cancellationToken: cancellationToken).ConfigureAwait(false);
+                                }
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }
