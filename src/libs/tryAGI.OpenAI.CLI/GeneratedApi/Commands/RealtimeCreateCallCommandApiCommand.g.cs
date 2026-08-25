@@ -31,26 +31,6 @@ internal static partial class RealtimeCreateCallCommandApiCommand
           Hidden = true,
       };
 
-                    private static string FormatResponse(ParseResult parseResult, string value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
-                    {
-                        string? text = null;
-                        CustomizeResponseText(parseResult, value, ref text);
-                        if (!string.IsNullOrWhiteSpace(text))
-                        {
-                            return text;
-                        }
-
-                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
-                        {
-                        };
-                        CustomizeResponseFormatHints(hints);
-                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
-                    }
-
-                    static partial void CustomizeResponseText(ParseResult parseResult, string value, ref string? text);
-                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
-
-
     public static Command Create()
     {
         var command = new Command(@"create-call", @"Create a new Realtime API call over WebRTC and receive the SDP answer needed
@@ -113,13 +93,7 @@ to complete the peer connection.");
                                     session: session,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-
-                                await CliRuntime.WriteResponseAsync(
-                                    parseResult,
-                                    response,
-                                    global::tryAGI.OpenAI.SourceGenerationContext.Default,
-                                    FormatResponse,
-                                    cancellationToken).ConfigureAwait(false);
+                                await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }

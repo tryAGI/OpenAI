@@ -153,10 +153,6 @@ namespace tryAGI.OpenAI
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(containerId ?? string.Empty),
-                                name: "\"container_id\"");
-
                             if (request.FileId != default)
                             {
 

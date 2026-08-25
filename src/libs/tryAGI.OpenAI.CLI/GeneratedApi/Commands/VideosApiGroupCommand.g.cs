@@ -19,6 +19,7 @@ internal static class VideosApiGroupCommand
                          command.Subcommands.Add(VideosRemixVideoCommandApiCommand.Create());
                          command.Subcommands.Add(VideosRetrieveVideoCommandApiCommand.Create());
                          command.Subcommands.Add(VideosRetrieveVideoContentCommandApiCommand.Create());
+                         command.Subcommands.Add(VideosRetrieveVideoContentAsBytesCommandApiCommand.Create());
         return command;
     }
 }

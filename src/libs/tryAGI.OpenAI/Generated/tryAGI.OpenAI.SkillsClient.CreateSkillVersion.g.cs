@@ -153,9 +153,6 @@ namespace tryAGI.OpenAI
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(skillId ?? string.Empty),
-                                name: "\"skill_id\"");
                             if (request.Files.TryPickValue1(out var __valueFiles1))
                             {
 

@@ -154,10 +154,6 @@ namespace tryAGI.OpenAI
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(videoId ?? string.Empty),
-                                name: "\"video_id\"");
-
-                            __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),
                                 name: "\"prompt\"");
 

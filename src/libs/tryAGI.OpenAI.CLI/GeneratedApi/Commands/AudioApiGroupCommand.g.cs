@@ -10,6 +10,7 @@ internal static class AudioApiGroupCommand
     {
         var command = new Command(@"audio", @"Audio endpoint commands.");
                          command.Subcommands.Add(AudioCreateSpeechCommandApiCommand.Create());
+                         command.Subcommands.Add(AudioCreateSpeechAsStreamCommandApiCommand.Create());
                          command.Subcommands.Add(AudioCreateTranscriptionCommandApiCommand.Create());
                          command.Subcommands.Add(AudioCreateTranscriptionAsStreamCommandApiCommand.Create());
                          command.Subcommands.Add(AudioCreateTranslationCommandApiCommand.Create());
