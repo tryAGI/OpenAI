@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class C2PAProvenanceResult
     {
@@ -35,19 +35,19 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.C2PAValidationStateApi ValidationState { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issuer")]
         public string? Issuer { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generated_at")]
         public string? GeneratedAt { get; set; }

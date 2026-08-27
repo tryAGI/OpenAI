@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ApplyPatchCallStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
     }

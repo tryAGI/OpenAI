@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct Content5 : global::System.IEquatable<Content5>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.InputContent? InputContentTypes { get; init; }
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputContentTypes))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsInputContentTypes => InputContentTypes != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputContentTypes(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.InputContent PickInputContentTypes() => IsInputContentTypes
             ? InputContentTypes!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputContentTypes' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.OutputContent? OutputContentTypes { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputContentTypes))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsOutputContentTypes => OutputContentTypes != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputContentTypes(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.OutputContent PickOutputContentTypes() => IsOutputContentTypes
             ? OutputContentTypes!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputContentTypes' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Content5(global::tryAGI.OpenAI.InputContent value) => new Content5((global::tryAGI.OpenAI.InputContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.InputContent?(Content5 @this) => @this.InputContentTypes;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Content5(global::tryAGI.OpenAI.InputContent? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Content5 FromInputContentTypes(global::tryAGI.OpenAI.InputContent? value) => new Content5(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Content5(global::tryAGI.OpenAI.OutputContent value) => new Content5((global::tryAGI.OpenAI.OutputContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.OutputContent?(Content5 @this) => @this.OutputContentTypes;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Content5(global::tryAGI.OpenAI.OutputContent? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Content5 FromOutputContentTypes(global::tryAGI.OpenAI.OutputContent? value) => new Content5(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Content5(
             global::tryAGI.OpenAI.InputContent? inputContentTypes,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             OutputContentTypes as object ??
-            InputContentTypes as object 
+            InputContentTypes as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputContentTypes?.ToString() ??
-            OutputContentTypes?.ToString() 
+            OutputContentTypes?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.InputContent?, TResult>? inputContentTypes = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.InputContent?>? inputContentTypes = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.InputContent?>? inputContentTypes = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Content5 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputContent?>.Default.Equals(InputContentTypes, other.InputContentTypes) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.OutputContent?>.Default.Equals(OutputContentTypes, other.OutputContentTypes) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.OutputContent?>.Default.Equals(OutputContentTypes, other.OutputContentTypes)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Content5 obj1, Content5 obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Content5 obj1, Content5 obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

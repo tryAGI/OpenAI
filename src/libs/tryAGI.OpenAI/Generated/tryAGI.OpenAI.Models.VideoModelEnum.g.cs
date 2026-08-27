@@ -4,28 +4,28 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VideoModelEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sora2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sora220251006,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sora220251208,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sora2Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sora2Pro20251006,
     }

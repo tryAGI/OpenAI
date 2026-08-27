@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ApplyPatchOperationParam : global::System.IEquatable<ApplyPatchOperationParam>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ApplyPatchOperationParamDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateFile))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsCreateFile => CreateFile != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCreateFile(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParam PickCreateFile() => IsCreateFile
             ? CreateFile!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DeleteFile))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsDeleteFile => DeleteFile != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDeleteFile(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationParam PickDeleteFile() => IsDeleteFile
             ? DeleteFile!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UpdateFile))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsUpdateFile => UpdateFile != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUpdateFile(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationParam PickUpdateFile() => IsUpdateFile
             ? UpdateFile!
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateFile' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ApplyPatchOperationParam(global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParam value) => new ApplyPatchOperationParam((global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParam?(ApplyPatchOperationParam @this) => @this.CreateFile;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ApplyPatchOperationParam(global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParam? value)
         {
@@ -143,22 +143,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ApplyPatchOperationParam FromCreateFile(global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParam? value) => new ApplyPatchOperationParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ApplyPatchOperationParam(global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationParam value) => new ApplyPatchOperationParam((global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationParam?(ApplyPatchOperationParam @this) => @this.DeleteFile;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ApplyPatchOperationParam(global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationParam? value)
         {
@@ -166,22 +166,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ApplyPatchOperationParam FromDeleteFile(global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationParam? value) => new ApplyPatchOperationParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ApplyPatchOperationParam(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationParam value) => new ApplyPatchOperationParam((global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationParam?(ApplyPatchOperationParam @this) => @this.UpdateFile;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ApplyPatchOperationParam(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationParam? value)
         {
@@ -189,12 +189,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ApplyPatchOperationParam FromUpdateFile(global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationParam? value) => new ApplyPatchOperationParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ApplyPatchOperationParam(
             global::tryAGI.OpenAI.ApplyPatchOperationParamDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             UpdateFile as object ??
             DeleteFile as object ??
-            CreateFile as object 
+            CreateFile as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             CreateFile?.ToString() ??
             DeleteFile?.ToString() ??
-            UpdateFile?.ToString() 
+            UpdateFile?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParam, TResult>? createFile = null,
@@ -267,7 +267,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParam>? createFile = null,
@@ -297,7 +297,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParam>? createFile = null,
@@ -325,7 +325,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ApplyPatchOperationParam other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ApplyPatchCreateFileOperationParam?>.Default.Equals(CreateFile, other.CreateFile) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ApplyPatchDeleteFileOperationParam?>.Default.Equals(DeleteFile, other.DeleteFile) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationParam?>.Default.Equals(UpdateFile, other.UpdateFile) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ApplyPatchUpdateFileOperationParam?>.Default.Equals(UpdateFile, other.UpdateFile)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ApplyPatchOperationParam obj1, ApplyPatchOperationParam obj2)
         {
@@ -368,7 +368,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ApplyPatchOperationParam obj1, ApplyPatchOperationParam obj2)
         {
@@ -376,7 +376,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

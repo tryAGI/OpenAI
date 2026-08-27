@@ -11,15 +11,15 @@ namespace tryAGI.OpenAI
     public enum CreateImageVariationRequestSize
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x256x256,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x512x512,
     }

@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RunStreamEventVariant1Event
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThreadRunCreated,
     }

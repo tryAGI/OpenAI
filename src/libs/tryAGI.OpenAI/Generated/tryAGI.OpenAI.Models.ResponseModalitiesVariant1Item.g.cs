@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ResponseModalitiesVariant1Item
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

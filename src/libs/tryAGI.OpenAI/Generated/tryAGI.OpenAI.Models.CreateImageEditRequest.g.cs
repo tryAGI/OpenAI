@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateImageEditRequest
     {
@@ -127,7 +127,7 @@ namespace tryAGI.OpenAI
         public string? User { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_fidelity")]
         public global::tryAGI.OpenAI.InputFidelity? InputFidelity { get; set; }
@@ -143,7 +143,7 @@ namespace tryAGI.OpenAI
         public bool? Stream { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("partial_images")]
         public int? PartialImages { get; set; }

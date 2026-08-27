@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum RealtimeBetaServerEventResponseDoneType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseDone,
     }

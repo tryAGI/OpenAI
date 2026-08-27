@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<string> Queries { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("results")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaFileSearchToolCallResultsVariant1Item>? Results { get; set; }

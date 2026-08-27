@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ResponseStreamEvent : global::System.IEquatable<ResponseStreamEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseStreamEventDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioDelta))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseAudioDelta => ResponseAudioDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseAudioDelta(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseAudioDeltaEvent PickResponseAudioDelta() => IsResponseAudioDelta
             ? ResponseAudioDelta!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioDone))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseAudioDone => ResponseAudioDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseAudioDone(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseAudioDoneEvent PickResponseAudioDone() => IsResponseAudioDone
             ? ResponseAudioDone!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioTranscriptDelta))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseAudioTranscriptDelta => ResponseAudioTranscriptDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseAudioTranscriptDelta(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent PickResponseAudioTranscriptDelta() => IsResponseAudioTranscriptDelta
             ? ResponseAudioTranscriptDelta!
@@ -135,7 +135,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseAudioTranscriptDone))]
@@ -143,7 +143,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseAudioTranscriptDone => ResponseAudioTranscriptDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseAudioTranscriptDone(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent PickResponseAudioTranscriptDone() => IsResponseAudioTranscriptDone
             ? ResponseAudioTranscriptDone!
@@ -172,7 +172,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCodeInterpreterCallCodeDelta))]
@@ -180,7 +180,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseCodeInterpreterCallCodeDelta => ResponseCodeInterpreterCallCodeDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseCodeInterpreterCallCodeDelta(
 #if NET6_0_OR_GREATER
@@ -193,7 +193,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent PickResponseCodeInterpreterCallCodeDelta() => IsResponseCodeInterpreterCallCodeDelta
             ? ResponseCodeInterpreterCallCodeDelta!
@@ -209,7 +209,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCodeInterpreterCallCodeDone))]
@@ -217,7 +217,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseCodeInterpreterCallCodeDone => ResponseCodeInterpreterCallCodeDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseCodeInterpreterCallCodeDone(
 #if NET6_0_OR_GREATER
@@ -230,7 +230,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent PickResponseCodeInterpreterCallCodeDone() => IsResponseCodeInterpreterCallCodeDone
             ? ResponseCodeInterpreterCallCodeDone!
@@ -246,7 +246,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCodeInterpreterCallCompleted))]
@@ -254,7 +254,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseCodeInterpreterCallCompleted => ResponseCodeInterpreterCallCompleted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseCodeInterpreterCallCompleted(
 #if NET6_0_OR_GREATER
@@ -267,7 +267,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent PickResponseCodeInterpreterCallCompleted() => IsResponseCodeInterpreterCallCompleted
             ? ResponseCodeInterpreterCallCompleted!
@@ -283,7 +283,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCodeInterpreterCallInProgress))]
@@ -291,7 +291,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseCodeInterpreterCallInProgress => ResponseCodeInterpreterCallInProgress != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseCodeInterpreterCallInProgress(
 #if NET6_0_OR_GREATER
@@ -304,7 +304,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent PickResponseCodeInterpreterCallInProgress() => IsResponseCodeInterpreterCallInProgress
             ? ResponseCodeInterpreterCallInProgress!
@@ -320,7 +320,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCodeInterpreterCallInterpreting))]
@@ -328,7 +328,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseCodeInterpreterCallInterpreting => ResponseCodeInterpreterCallInterpreting != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseCodeInterpreterCallInterpreting(
 #if NET6_0_OR_GREATER
@@ -341,7 +341,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent PickResponseCodeInterpreterCallInterpreting() => IsResponseCodeInterpreterCallInterpreting
             ? ResponseCodeInterpreterCallInterpreting!
@@ -357,7 +357,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCompleted))]
@@ -365,7 +365,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseCompleted => ResponseCompleted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseCompleted(
 #if NET6_0_OR_GREATER
@@ -378,7 +378,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseCompletedEvent PickResponseCompleted() => IsResponseCompleted
             ? ResponseCompleted!
@@ -394,7 +394,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseContentPartAdded))]
@@ -402,7 +402,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseContentPartAdded => ResponseContentPartAdded != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseContentPartAdded(
 #if NET6_0_OR_GREATER
@@ -415,7 +415,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseContentPartAddedEvent PickResponseContentPartAdded() => IsResponseContentPartAdded
             ? ResponseContentPartAdded!
@@ -431,7 +431,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseContentPartDone))]
@@ -439,7 +439,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseContentPartDone => ResponseContentPartDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseContentPartDone(
 #if NET6_0_OR_GREATER
@@ -452,7 +452,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseContentPartDoneEvent PickResponseContentPartDone() => IsResponseContentPartDone
             ? ResponseContentPartDone!
@@ -468,7 +468,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCreated))]
@@ -476,7 +476,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseCreated => ResponseCreated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseCreated(
 #if NET6_0_OR_GREATER
@@ -489,7 +489,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseCreatedEvent PickResponseCreated() => IsResponseCreated
             ? ResponseCreated!
@@ -505,7 +505,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
@@ -513,7 +513,7 @@ namespace tryAGI.OpenAI
         public bool IsError => Error != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickError(
 #if NET6_0_OR_GREATER
@@ -526,7 +526,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseErrorEvent PickError() => IsError
             ? Error!
@@ -542,7 +542,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFileSearchCallCompleted))]
@@ -550,7 +550,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseFileSearchCallCompleted => ResponseFileSearchCallCompleted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseFileSearchCallCompleted(
 #if NET6_0_OR_GREATER
@@ -563,7 +563,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent PickResponseFileSearchCallCompleted() => IsResponseFileSearchCallCompleted
             ? ResponseFileSearchCallCompleted!
@@ -579,7 +579,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFileSearchCallInProgress))]
@@ -587,7 +587,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseFileSearchCallInProgress => ResponseFileSearchCallInProgress != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseFileSearchCallInProgress(
 #if NET6_0_OR_GREATER
@@ -600,7 +600,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent PickResponseFileSearchCallInProgress() => IsResponseFileSearchCallInProgress
             ? ResponseFileSearchCallInProgress!
@@ -616,7 +616,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFileSearchCallSearching))]
@@ -624,7 +624,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseFileSearchCallSearching => ResponseFileSearchCallSearching != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseFileSearchCallSearching(
 #if NET6_0_OR_GREATER
@@ -637,7 +637,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent PickResponseFileSearchCallSearching() => IsResponseFileSearchCallSearching
             ? ResponseFileSearchCallSearching!
@@ -653,7 +653,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFunctionCallArgumentsDelta))]
@@ -661,7 +661,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseFunctionCallArgumentsDelta => ResponseFunctionCallArgumentsDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseFunctionCallArgumentsDelta(
 #if NET6_0_OR_GREATER
@@ -674,7 +674,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent PickResponseFunctionCallArgumentsDelta() => IsResponseFunctionCallArgumentsDelta
             ? ResponseFunctionCallArgumentsDelta!
@@ -690,7 +690,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFunctionCallArgumentsDone))]
@@ -698,7 +698,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseFunctionCallArgumentsDone => ResponseFunctionCallArgumentsDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseFunctionCallArgumentsDone(
 #if NET6_0_OR_GREATER
@@ -711,7 +711,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent PickResponseFunctionCallArgumentsDone() => IsResponseFunctionCallArgumentsDone
             ? ResponseFunctionCallArgumentsDone!
@@ -727,7 +727,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseInProgress))]
@@ -735,7 +735,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseInProgress => ResponseInProgress != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseInProgress(
 #if NET6_0_OR_GREATER
@@ -748,7 +748,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseInProgressEvent PickResponseInProgress() => IsResponseInProgress
             ? ResponseInProgress!
@@ -764,7 +764,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFailed))]
@@ -772,7 +772,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseFailed => ResponseFailed != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseFailed(
 #if NET6_0_OR_GREATER
@@ -785,7 +785,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseFailedEvent PickResponseFailed() => IsResponseFailed
             ? ResponseFailed!
@@ -801,7 +801,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseIncomplete))]
@@ -809,7 +809,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseIncomplete => ResponseIncomplete != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseIncomplete(
 #if NET6_0_OR_GREATER
@@ -822,7 +822,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseIncompleteEvent PickResponseIncomplete() => IsResponseIncomplete
             ? ResponseIncomplete!
@@ -838,7 +838,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputItemAdded))]
@@ -846,7 +846,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseOutputItemAdded => ResponseOutputItemAdded != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputItemAdded(
 #if NET6_0_OR_GREATER
@@ -859,7 +859,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseOutputItemAddedEvent PickResponseOutputItemAdded() => IsResponseOutputItemAdded
             ? ResponseOutputItemAdded!
@@ -875,7 +875,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputItemDone))]
@@ -883,7 +883,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseOutputItemDone => ResponseOutputItemDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputItemDone(
 #if NET6_0_OR_GREATER
@@ -896,7 +896,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseOutputItemDoneEvent PickResponseOutputItemDone() => IsResponseOutputItemDone
             ? ResponseOutputItemDone!
@@ -912,7 +912,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseReasoningSummaryPartAdded))]
@@ -920,7 +920,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseReasoningSummaryPartAdded => ResponseReasoningSummaryPartAdded != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseReasoningSummaryPartAdded(
 #if NET6_0_OR_GREATER
@@ -933,7 +933,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent PickResponseReasoningSummaryPartAdded() => IsResponseReasoningSummaryPartAdded
             ? ResponseReasoningSummaryPartAdded!
@@ -949,7 +949,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseReasoningSummaryPartDone))]
@@ -957,7 +957,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseReasoningSummaryPartDone => ResponseReasoningSummaryPartDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseReasoningSummaryPartDone(
 #if NET6_0_OR_GREATER
@@ -970,7 +970,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent PickResponseReasoningSummaryPartDone() => IsResponseReasoningSummaryPartDone
             ? ResponseReasoningSummaryPartDone!
@@ -986,7 +986,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseReasoningSummaryTextDelta))]
@@ -994,7 +994,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseReasoningSummaryTextDelta => ResponseReasoningSummaryTextDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseReasoningSummaryTextDelta(
 #if NET6_0_OR_GREATER
@@ -1007,7 +1007,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent PickResponseReasoningSummaryTextDelta() => IsResponseReasoningSummaryTextDelta
             ? ResponseReasoningSummaryTextDelta!
@@ -1023,7 +1023,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseReasoningSummaryTextDone))]
@@ -1031,7 +1031,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseReasoningSummaryTextDone => ResponseReasoningSummaryTextDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseReasoningSummaryTextDone(
 #if NET6_0_OR_GREATER
@@ -1044,7 +1044,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent PickResponseReasoningSummaryTextDone() => IsResponseReasoningSummaryTextDone
             ? ResponseReasoningSummaryTextDone!
@@ -1060,7 +1060,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseReasoningTextDelta))]
@@ -1068,7 +1068,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseReasoningTextDelta => ResponseReasoningTextDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseReasoningTextDelta(
 #if NET6_0_OR_GREATER
@@ -1081,7 +1081,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent PickResponseReasoningTextDelta() => IsResponseReasoningTextDelta
             ? ResponseReasoningTextDelta!
@@ -1097,7 +1097,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseReasoningTextDone))]
@@ -1105,7 +1105,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseReasoningTextDone => ResponseReasoningTextDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseReasoningTextDone(
 #if NET6_0_OR_GREATER
@@ -1118,7 +1118,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent PickResponseReasoningTextDone() => IsResponseReasoningTextDone
             ? ResponseReasoningTextDone!
@@ -1134,7 +1134,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseRefusalDelta))]
@@ -1142,7 +1142,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseRefusalDelta => ResponseRefusalDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseRefusalDelta(
 #if NET6_0_OR_GREATER
@@ -1155,7 +1155,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseRefusalDeltaEvent PickResponseRefusalDelta() => IsResponseRefusalDelta
             ? ResponseRefusalDelta!
@@ -1171,7 +1171,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseRefusalDone))]
@@ -1179,7 +1179,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseRefusalDone => ResponseRefusalDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseRefusalDone(
 #if NET6_0_OR_GREATER
@@ -1192,7 +1192,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseRefusalDoneEvent PickResponseRefusalDone() => IsResponseRefusalDone
             ? ResponseRefusalDone!
@@ -1208,7 +1208,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputTextDelta))]
@@ -1216,7 +1216,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseOutputTextDelta => ResponseOutputTextDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputTextDelta(
 #if NET6_0_OR_GREATER
@@ -1229,7 +1229,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseTextDeltaEvent PickResponseOutputTextDelta() => IsResponseOutputTextDelta
             ? ResponseOutputTextDelta!
@@ -1245,7 +1245,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputTextDone))]
@@ -1253,7 +1253,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseOutputTextDone => ResponseOutputTextDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputTextDone(
 #if NET6_0_OR_GREATER
@@ -1266,7 +1266,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseTextDoneEvent PickResponseOutputTextDone() => IsResponseOutputTextDone
             ? ResponseOutputTextDone!
@@ -1282,7 +1282,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseWebSearchCallCompleted))]
@@ -1290,7 +1290,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseWebSearchCallCompleted => ResponseWebSearchCallCompleted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseWebSearchCallCompleted(
 #if NET6_0_OR_GREATER
@@ -1303,7 +1303,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent PickResponseWebSearchCallCompleted() => IsResponseWebSearchCallCompleted
             ? ResponseWebSearchCallCompleted!
@@ -1319,7 +1319,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseWebSearchCallInProgress))]
@@ -1327,7 +1327,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseWebSearchCallInProgress => ResponseWebSearchCallInProgress != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseWebSearchCallInProgress(
 #if NET6_0_OR_GREATER
@@ -1340,7 +1340,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent PickResponseWebSearchCallInProgress() => IsResponseWebSearchCallInProgress
             ? ResponseWebSearchCallInProgress!
@@ -1356,7 +1356,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseWebSearchCallSearching))]
@@ -1364,7 +1364,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseWebSearchCallSearching => ResponseWebSearchCallSearching != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseWebSearchCallSearching(
 #if NET6_0_OR_GREATER
@@ -1377,7 +1377,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent PickResponseWebSearchCallSearching() => IsResponseWebSearchCallSearching
             ? ResponseWebSearchCallSearching!
@@ -1393,7 +1393,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseImageGenerationCallCompleted))]
@@ -1401,7 +1401,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseImageGenerationCallCompleted => ResponseImageGenerationCallCompleted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseImageGenerationCallCompleted(
 #if NET6_0_OR_GREATER
@@ -1414,7 +1414,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent PickResponseImageGenerationCallCompleted() => IsResponseImageGenerationCallCompleted
             ? ResponseImageGenerationCallCompleted!
@@ -1430,7 +1430,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseImageGenerationCallGenerating))]
@@ -1438,7 +1438,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseImageGenerationCallGenerating => ResponseImageGenerationCallGenerating != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseImageGenerationCallGenerating(
 #if NET6_0_OR_GREATER
@@ -1451,7 +1451,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent PickResponseImageGenerationCallGenerating() => IsResponseImageGenerationCallGenerating
             ? ResponseImageGenerationCallGenerating!
@@ -1467,7 +1467,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseImageGenerationCallInProgress))]
@@ -1475,7 +1475,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseImageGenerationCallInProgress => ResponseImageGenerationCallInProgress != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseImageGenerationCallInProgress(
 #if NET6_0_OR_GREATER
@@ -1488,7 +1488,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent PickResponseImageGenerationCallInProgress() => IsResponseImageGenerationCallInProgress
             ? ResponseImageGenerationCallInProgress!
@@ -1504,7 +1504,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseImageGenerationCallPartialImage))]
@@ -1512,7 +1512,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseImageGenerationCallPartialImage => ResponseImageGenerationCallPartialImage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseImageGenerationCallPartialImage(
 #if NET6_0_OR_GREATER
@@ -1525,7 +1525,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent PickResponseImageGenerationCallPartialImage() => IsResponseImageGenerationCallPartialImage
             ? ResponseImageGenerationCallPartialImage!
@@ -1541,7 +1541,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallArgumentsDelta))]
@@ -1549,7 +1549,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseMcpCallArgumentsDelta => ResponseMcpCallArgumentsDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseMcpCallArgumentsDelta(
 #if NET6_0_OR_GREATER
@@ -1562,7 +1562,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent PickResponseMcpCallArgumentsDelta() => IsResponseMcpCallArgumentsDelta
             ? ResponseMcpCallArgumentsDelta!
@@ -1578,7 +1578,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallArgumentsDone))]
@@ -1586,7 +1586,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseMcpCallArgumentsDone => ResponseMcpCallArgumentsDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseMcpCallArgumentsDone(
 #if NET6_0_OR_GREATER
@@ -1599,7 +1599,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent PickResponseMcpCallArgumentsDone() => IsResponseMcpCallArgumentsDone
             ? ResponseMcpCallArgumentsDone!
@@ -1615,7 +1615,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallCompleted))]
@@ -1623,7 +1623,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseMcpCallCompleted => ResponseMcpCallCompleted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseMcpCallCompleted(
 #if NET6_0_OR_GREATER
@@ -1636,7 +1636,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent PickResponseMcpCallCompleted() => IsResponseMcpCallCompleted
             ? ResponseMcpCallCompleted!
@@ -1652,7 +1652,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallFailed))]
@@ -1660,7 +1660,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseMcpCallFailed => ResponseMcpCallFailed != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseMcpCallFailed(
 #if NET6_0_OR_GREATER
@@ -1673,7 +1673,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseMCPCallFailedEvent PickResponseMcpCallFailed() => IsResponseMcpCallFailed
             ? ResponseMcpCallFailed!
@@ -1689,7 +1689,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallInProgress))]
@@ -1697,7 +1697,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseMcpCallInProgress => ResponseMcpCallInProgress != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseMcpCallInProgress(
 #if NET6_0_OR_GREATER
@@ -1710,7 +1710,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent PickResponseMcpCallInProgress() => IsResponseMcpCallInProgress
             ? ResponseMcpCallInProgress!
@@ -1726,7 +1726,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpListToolsCompleted))]
@@ -1734,7 +1734,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseMcpListToolsCompleted => ResponseMcpListToolsCompleted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseMcpListToolsCompleted(
 #if NET6_0_OR_GREATER
@@ -1747,7 +1747,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent PickResponseMcpListToolsCompleted() => IsResponseMcpListToolsCompleted
             ? ResponseMcpListToolsCompleted!
@@ -1763,7 +1763,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpListToolsFailed))]
@@ -1771,7 +1771,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseMcpListToolsFailed => ResponseMcpListToolsFailed != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseMcpListToolsFailed(
 #if NET6_0_OR_GREATER
@@ -1784,7 +1784,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent PickResponseMcpListToolsFailed() => IsResponseMcpListToolsFailed
             ? ResponseMcpListToolsFailed!
@@ -1800,7 +1800,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpListToolsInProgress))]
@@ -1808,7 +1808,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseMcpListToolsInProgress => ResponseMcpListToolsInProgress != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseMcpListToolsInProgress(
 #if NET6_0_OR_GREATER
@@ -1821,7 +1821,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent PickResponseMcpListToolsInProgress() => IsResponseMcpListToolsInProgress
             ? ResponseMcpListToolsInProgress!
@@ -1837,7 +1837,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputTextAnnotationAdded))]
@@ -1845,7 +1845,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseOutputTextAnnotationAdded => ResponseOutputTextAnnotationAdded != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputTextAnnotationAdded(
 #if NET6_0_OR_GREATER
@@ -1858,7 +1858,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent PickResponseOutputTextAnnotationAdded() => IsResponseOutputTextAnnotationAdded
             ? ResponseOutputTextAnnotationAdded!
@@ -1874,7 +1874,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseQueued))]
@@ -1882,7 +1882,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseQueued => ResponseQueued != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseQueued(
 #if NET6_0_OR_GREATER
@@ -1895,7 +1895,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseQueuedEvent PickResponseQueued() => IsResponseQueued
             ? ResponseQueued!
@@ -1911,7 +1911,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCustomToolCallInputDelta))]
@@ -1919,7 +1919,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseCustomToolCallInputDelta => ResponseCustomToolCallInputDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseCustomToolCallInputDelta(
 #if NET6_0_OR_GREATER
@@ -1932,7 +1932,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent PickResponseCustomToolCallInputDelta() => IsResponseCustomToolCallInputDelta
             ? ResponseCustomToolCallInputDelta!
@@ -1948,7 +1948,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCustomToolCallInputDone))]
@@ -1956,7 +1956,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseCustomToolCallInputDone => ResponseCustomToolCallInputDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseCustomToolCallInputDone(
 #if NET6_0_OR_GREATER
@@ -1969,23 +1969,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent PickResponseCustomToolCallInputDone() => IsResponseCustomToolCallInputDone
             ? ResponseCustomToolCallInputDone!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCustomToolCallInputDone' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseAudioDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseAudioDeltaEvent?(ResponseStreamEvent @this) => @this.ResponseAudioDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioDeltaEvent? value)
         {
@@ -1993,22 +1993,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseAudioDelta(global::tryAGI.OpenAI.ResponseAudioDeltaEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseAudioDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseAudioDoneEvent?(ResponseStreamEvent @this) => @this.ResponseAudioDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioDoneEvent? value)
         {
@@ -2016,22 +2016,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseAudioDone(global::tryAGI.OpenAI.ResponseAudioDoneEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent?(ResponseStreamEvent @this) => @this.ResponseAudioTranscriptDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent? value)
         {
@@ -2039,22 +2039,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseAudioTranscriptDelta(global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent?(ResponseStreamEvent @this) => @this.ResponseAudioTranscriptDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent? value)
         {
@@ -2062,22 +2062,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseAudioTranscriptDone(global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent?(ResponseStreamEvent @this) => @this.ResponseCodeInterpreterCallCodeDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent? value)
         {
@@ -2085,22 +2085,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseCodeInterpreterCallCodeDelta(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent?(ResponseStreamEvent @this) => @this.ResponseCodeInterpreterCallCodeDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent? value)
         {
@@ -2108,22 +2108,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseCodeInterpreterCallCodeDone(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent?(ResponseStreamEvent @this) => @this.ResponseCodeInterpreterCallCompleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent? value)
         {
@@ -2131,22 +2131,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseCodeInterpreterCallCompleted(global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent?(ResponseStreamEvent @this) => @this.ResponseCodeInterpreterCallInProgress;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent? value)
         {
@@ -2154,22 +2154,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseCodeInterpreterCallInProgress(global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent?(ResponseStreamEvent @this) => @this.ResponseCodeInterpreterCallInterpreting;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent? value)
         {
@@ -2177,22 +2177,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseCodeInterpreterCallInterpreting(global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCompletedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCompletedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseCompletedEvent?(ResponseStreamEvent @this) => @this.ResponseCompleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCompletedEvent? value)
         {
@@ -2200,22 +2200,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseCompleted(global::tryAGI.OpenAI.ResponseCompletedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseContentPartAddedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseContentPartAddedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseContentPartAddedEvent?(ResponseStreamEvent @this) => @this.ResponseContentPartAdded;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseContentPartAddedEvent? value)
         {
@@ -2223,22 +2223,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseContentPartAdded(global::tryAGI.OpenAI.ResponseContentPartAddedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseContentPartDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseContentPartDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseContentPartDoneEvent?(ResponseStreamEvent @this) => @this.ResponseContentPartDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseContentPartDoneEvent? value)
         {
@@ -2246,22 +2246,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseContentPartDone(global::tryAGI.OpenAI.ResponseContentPartDoneEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCreatedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCreatedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseCreatedEvent?(ResponseStreamEvent @this) => @this.ResponseCreated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCreatedEvent? value)
         {
@@ -2269,22 +2269,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseCreated(global::tryAGI.OpenAI.ResponseCreatedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseErrorEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseErrorEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseErrorEvent?(ResponseStreamEvent @this) => @this.Error;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseErrorEvent? value)
         {
@@ -2292,22 +2292,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromError(global::tryAGI.OpenAI.ResponseErrorEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent?(ResponseStreamEvent @this) => @this.ResponseFileSearchCallCompleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent? value)
         {
@@ -2315,22 +2315,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseFileSearchCallCompleted(global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent?(ResponseStreamEvent @this) => @this.ResponseFileSearchCallInProgress;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent? value)
         {
@@ -2338,22 +2338,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseFileSearchCallInProgress(global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent?(ResponseStreamEvent @this) => @this.ResponseFileSearchCallSearching;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent? value)
         {
@@ -2361,22 +2361,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseFileSearchCallSearching(global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent?(ResponseStreamEvent @this) => @this.ResponseFunctionCallArgumentsDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent? value)
         {
@@ -2384,22 +2384,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseFunctionCallArgumentsDelta(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent?(ResponseStreamEvent @this) => @this.ResponseFunctionCallArgumentsDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent? value)
         {
@@ -2407,22 +2407,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseFunctionCallArgumentsDone(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseInProgressEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseInProgressEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseInProgressEvent?(ResponseStreamEvent @this) => @this.ResponseInProgress;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseInProgressEvent? value)
         {
@@ -2430,22 +2430,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseInProgress(global::tryAGI.OpenAI.ResponseInProgressEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFailedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseFailedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseFailedEvent?(ResponseStreamEvent @this) => @this.ResponseFailed;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseFailedEvent? value)
         {
@@ -2453,22 +2453,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseFailed(global::tryAGI.OpenAI.ResponseFailedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseIncompleteEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseIncompleteEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseIncompleteEvent?(ResponseStreamEvent @this) => @this.ResponseIncomplete;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseIncompleteEvent? value)
         {
@@ -2476,22 +2476,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseIncomplete(global::tryAGI.OpenAI.ResponseIncompleteEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseOutputItemAddedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseOutputItemAddedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseOutputItemAddedEvent?(ResponseStreamEvent @this) => @this.ResponseOutputItemAdded;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseOutputItemAddedEvent? value)
         {
@@ -2499,22 +2499,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseOutputItemAdded(global::tryAGI.OpenAI.ResponseOutputItemAddedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseOutputItemDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseOutputItemDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseOutputItemDoneEvent?(ResponseStreamEvent @this) => @this.ResponseOutputItemDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseOutputItemDoneEvent? value)
         {
@@ -2522,22 +2522,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseOutputItemDone(global::tryAGI.OpenAI.ResponseOutputItemDoneEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent?(ResponseStreamEvent @this) => @this.ResponseReasoningSummaryPartAdded;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent? value)
         {
@@ -2545,22 +2545,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseReasoningSummaryPartAdded(global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent?(ResponseStreamEvent @this) => @this.ResponseReasoningSummaryPartDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent? value)
         {
@@ -2568,22 +2568,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseReasoningSummaryPartDone(global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent?(ResponseStreamEvent @this) => @this.ResponseReasoningSummaryTextDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent? value)
         {
@@ -2591,22 +2591,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseReasoningSummaryTextDelta(global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent?(ResponseStreamEvent @this) => @this.ResponseReasoningSummaryTextDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent? value)
         {
@@ -2614,22 +2614,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseReasoningSummaryTextDone(global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent?(ResponseStreamEvent @this) => @this.ResponseReasoningTextDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent? value)
         {
@@ -2637,22 +2637,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseReasoningTextDelta(global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent?(ResponseStreamEvent @this) => @this.ResponseReasoningTextDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent? value)
         {
@@ -2660,22 +2660,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseReasoningTextDone(global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseRefusalDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseRefusalDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseRefusalDeltaEvent?(ResponseStreamEvent @this) => @this.ResponseRefusalDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseRefusalDeltaEvent? value)
         {
@@ -2683,22 +2683,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseRefusalDelta(global::tryAGI.OpenAI.ResponseRefusalDeltaEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseRefusalDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseRefusalDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseRefusalDoneEvent?(ResponseStreamEvent @this) => @this.ResponseRefusalDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseRefusalDoneEvent? value)
         {
@@ -2706,22 +2706,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseRefusalDone(global::tryAGI.OpenAI.ResponseRefusalDoneEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseTextDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseTextDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseTextDeltaEvent?(ResponseStreamEvent @this) => @this.ResponseOutputTextDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseTextDeltaEvent? value)
         {
@@ -2729,22 +2729,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseOutputTextDelta(global::tryAGI.OpenAI.ResponseTextDeltaEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseTextDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseTextDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseTextDoneEvent?(ResponseStreamEvent @this) => @this.ResponseOutputTextDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseTextDoneEvent? value)
         {
@@ -2752,22 +2752,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseOutputTextDone(global::tryAGI.OpenAI.ResponseTextDoneEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent?(ResponseStreamEvent @this) => @this.ResponseWebSearchCallCompleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent? value)
         {
@@ -2775,22 +2775,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseWebSearchCallCompleted(global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent?(ResponseStreamEvent @this) => @this.ResponseWebSearchCallInProgress;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent? value)
         {
@@ -2798,22 +2798,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseWebSearchCallInProgress(global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent?(ResponseStreamEvent @this) => @this.ResponseWebSearchCallSearching;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent? value)
         {
@@ -2821,22 +2821,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseWebSearchCallSearching(global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent?(ResponseStreamEvent @this) => @this.ResponseImageGenerationCallCompleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent? value)
         {
@@ -2844,22 +2844,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseImageGenerationCallCompleted(global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent?(ResponseStreamEvent @this) => @this.ResponseImageGenerationCallGenerating;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent? value)
         {
@@ -2867,22 +2867,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseImageGenerationCallGenerating(global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent?(ResponseStreamEvent @this) => @this.ResponseImageGenerationCallInProgress;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent? value)
         {
@@ -2890,22 +2890,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseImageGenerationCallInProgress(global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent?(ResponseStreamEvent @this) => @this.ResponseImageGenerationCallPartialImage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent? value)
         {
@@ -2913,22 +2913,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseImageGenerationCallPartialImage(global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent?(ResponseStreamEvent @this) => @this.ResponseMcpCallArgumentsDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent? value)
         {
@@ -2936,22 +2936,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseMcpCallArgumentsDelta(global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent?(ResponseStreamEvent @this) => @this.ResponseMcpCallArgumentsDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent? value)
         {
@@ -2959,22 +2959,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseMcpCallArgumentsDone(global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent?(ResponseStreamEvent @this) => @this.ResponseMcpCallCompleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent? value)
         {
@@ -2982,22 +2982,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseMcpCallCompleted(global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPCallFailedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseMCPCallFailedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseMCPCallFailedEvent?(ResponseStreamEvent @this) => @this.ResponseMcpCallFailed;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPCallFailedEvent? value)
         {
@@ -3005,22 +3005,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseMcpCallFailed(global::tryAGI.OpenAI.ResponseMCPCallFailedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent?(ResponseStreamEvent @this) => @this.ResponseMcpCallInProgress;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent? value)
         {
@@ -3028,22 +3028,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseMcpCallInProgress(global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent?(ResponseStreamEvent @this) => @this.ResponseMcpListToolsCompleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent? value)
         {
@@ -3051,22 +3051,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseMcpListToolsCompleted(global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent?(ResponseStreamEvent @this) => @this.ResponseMcpListToolsFailed;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent? value)
         {
@@ -3074,22 +3074,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseMcpListToolsFailed(global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent?(ResponseStreamEvent @this) => @this.ResponseMcpListToolsInProgress;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent? value)
         {
@@ -3097,22 +3097,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseMcpListToolsInProgress(global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent?(ResponseStreamEvent @this) => @this.ResponseOutputTextAnnotationAdded;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent? value)
         {
@@ -3120,22 +3120,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseOutputTextAnnotationAdded(global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseQueuedEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseQueuedEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseQueuedEvent?(ResponseStreamEvent @this) => @this.ResponseQueued;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseQueuedEvent? value)
         {
@@ -3143,22 +3143,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseQueued(global::tryAGI.OpenAI.ResponseQueuedEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent?(ResponseStreamEvent @this) => @this.ResponseCustomToolCallInputDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent? value)
         {
@@ -3166,22 +3166,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseCustomToolCallInputDelta(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent value) => new ResponseStreamEvent((global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent?(ResponseStreamEvent @this) => @this.ResponseCustomToolCallInputDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent? value)
         {
@@ -3189,12 +3189,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponseStreamEvent FromResponseCustomToolCallInputDone(global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent? value) => new ResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponseStreamEvent(
             global::tryAGI.OpenAI.ResponseStreamEventDiscriminatorType? type,
@@ -3311,7 +3311,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ResponseCustomToolCallInputDone as object ??
@@ -3366,11 +3366,11 @@ namespace tryAGI.OpenAI
             ResponseAudioTranscriptDone as object ??
             ResponseAudioTranscriptDelta as object ??
             ResponseAudioDone as object ??
-            ResponseAudioDelta as object 
+            ResponseAudioDelta as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ResponseAudioDelta?.ToString() ??
@@ -3425,11 +3425,11 @@ namespace tryAGI.OpenAI
             ResponseOutputTextAnnotationAdded?.ToString() ??
             ResponseQueued?.ToString() ??
             ResponseCustomToolCallInputDelta?.ToString() ??
-            ResponseCustomToolCallInputDone?.ToString() 
+            ResponseCustomToolCallInputDone?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -3437,7 +3437,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ResponseAudioDeltaEvent, TResult>? responseAudioDelta = null,
@@ -3717,7 +3717,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ResponseAudioDeltaEvent>? responseAudioDelta = null,
@@ -4047,7 +4047,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ResponseAudioDeltaEvent>? responseAudioDelta = null,
@@ -4325,7 +4325,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -4448,7 +4448,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ResponseStreamEvent other)
         {
@@ -4505,12 +4505,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent?>.Default.Equals(ResponseOutputTextAnnotationAdded, other.ResponseOutputTextAnnotationAdded) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseQueuedEvent?>.Default.Equals(ResponseQueued, other.ResponseQueued) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent?>.Default.Equals(ResponseCustomToolCallInputDelta, other.ResponseCustomToolCallInputDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent?>.Default.Equals(ResponseCustomToolCallInputDone, other.ResponseCustomToolCallInputDone) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent?>.Default.Equals(ResponseCustomToolCallInputDone, other.ResponseCustomToolCallInputDone)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ResponseStreamEvent obj1, ResponseStreamEvent obj2)
         {
@@ -4518,7 +4518,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ResponseStreamEvent obj1, ResponseStreamEvent obj2)
         {
@@ -4526,7 +4526,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

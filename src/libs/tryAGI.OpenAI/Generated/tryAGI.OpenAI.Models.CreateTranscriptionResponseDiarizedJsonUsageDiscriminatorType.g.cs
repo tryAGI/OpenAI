@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateTranscriptionResponseDiarizedJsonUsageDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Duration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tokens,
     }

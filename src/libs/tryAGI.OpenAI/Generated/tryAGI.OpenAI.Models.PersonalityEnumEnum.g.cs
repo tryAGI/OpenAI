@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PersonalityEnumEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Friendly,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pragmatic,
     }

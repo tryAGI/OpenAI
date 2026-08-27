@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ListRunStepsIncludeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StepDetailsToolCallsAnyFileSearchResultsAnyContent,
     }

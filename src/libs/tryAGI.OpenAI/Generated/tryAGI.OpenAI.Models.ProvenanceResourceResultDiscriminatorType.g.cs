@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ProvenanceResourceResultDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         C2pa,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Synthid,
     }

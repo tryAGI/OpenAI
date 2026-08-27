@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum GroupMemberUserUserType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantUser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct SpendLimitInterval : global::System.IEquatable<SpendLimitInterval>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? SpendLimitIntervalVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpendLimitIntervalVariant1))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsSpendLimitIntervalVariant1 => SpendLimitIntervalVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpendLimitIntervalVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickSpendLimitIntervalVariant1() => IsSpendLimitIntervalVariant1
             ? SpendLimitIntervalVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpendLimitIntervalVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.SpendLimitIntervalEnum? Enum { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsEnum => Enum != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEnum(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.SpendLimitIntervalEnum PickEnum() => IsEnum
             ? Enum!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SpendLimitInterval(string value) => new SpendLimitInterval((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(SpendLimitInterval @this) => @this.SpendLimitIntervalVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpendLimitInterval(string? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SpendLimitInterval FromSpendLimitIntervalVariant1(string? value) => new SpendLimitInterval(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SpendLimitInterval(global::tryAGI.OpenAI.SpendLimitIntervalEnum value) => new SpendLimitInterval((global::tryAGI.OpenAI.SpendLimitIntervalEnum?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.SpendLimitIntervalEnum?(SpendLimitInterval @this) => @this.Enum;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpendLimitInterval(global::tryAGI.OpenAI.SpendLimitIntervalEnum? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SpendLimitInterval FromEnum(global::tryAGI.OpenAI.SpendLimitIntervalEnum? value) => new SpendLimitInterval(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpendLimitInterval(
             string? spendLimitIntervalVariant1,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Enum as object ??
-            SpendLimitIntervalVariant1 as object 
+            SpendLimitIntervalVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SpendLimitIntervalVariant1?.ToString() ??
-            Enum?.ToValueString() 
+            Enum?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? spendLimitIntervalVariant1 = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? spendLimitIntervalVariant1 = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? spendLimitIntervalVariant1 = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SpendLimitInterval other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(SpendLimitIntervalVariant1, other.SpendLimitIntervalVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpendLimitIntervalEnum?>.Default.Equals(Enum, other.Enum) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpendLimitIntervalEnum?>.Default.Equals(Enum, other.Enum)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SpendLimitInterval obj1, SpendLimitInterval obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SpendLimitInterval obj1, SpendLimitInterval obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

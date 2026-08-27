@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ProjectServiceAccountCreateResponseRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Member,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

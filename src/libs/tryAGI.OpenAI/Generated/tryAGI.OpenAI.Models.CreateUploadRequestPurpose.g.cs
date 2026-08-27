@@ -11,19 +11,19 @@ namespace tryAGI.OpenAI
     public enum CreateUploadRequestPurpose
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Assistants,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Batch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FineTune,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vision,
     }

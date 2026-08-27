@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaMultiAgentCallOutputType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MultiAgentCallOutput,
     }

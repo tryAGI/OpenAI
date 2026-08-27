@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum UsageWebSearchCallsBucketWidth
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1d,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1h,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1m,
     }

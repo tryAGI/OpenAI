@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaProgramType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Program,
     }

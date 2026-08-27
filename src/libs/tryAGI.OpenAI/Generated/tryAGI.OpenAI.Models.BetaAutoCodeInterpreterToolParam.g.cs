@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_limit")]
         public global::tryAGI.OpenAI.BetaContainerMemoryLimit? MemoryLimit { get; set; }

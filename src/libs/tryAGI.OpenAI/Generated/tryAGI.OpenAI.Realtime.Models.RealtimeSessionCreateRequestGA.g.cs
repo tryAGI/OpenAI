@@ -111,7 +111,7 @@ namespace tryAGI.OpenAI.Realtime
         public global::tryAGI.OpenAI.Realtime.RealtimeTruncation? Truncation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public global::tryAGI.OpenAI.Realtime.PromptVariant1? Prompt { get; set; }

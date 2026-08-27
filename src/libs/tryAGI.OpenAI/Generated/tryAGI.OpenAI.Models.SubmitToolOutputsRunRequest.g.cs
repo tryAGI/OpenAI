@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SubmitToolOutputsRunRequest
     {
@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SubmitToolOutputsRunRequestToolOutput> ToolOutputs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
         public bool? Stream { get; set; }

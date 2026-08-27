@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum ProjectGroupDeletedResourceObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProjectGroupDeleted,
     }

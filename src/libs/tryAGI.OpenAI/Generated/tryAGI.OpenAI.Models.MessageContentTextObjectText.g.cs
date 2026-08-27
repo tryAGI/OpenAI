@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class MessageContentTextObjectText
     {
@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public required string Value { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum CreateChatCompletionStreamResponseObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatCompletionChunk,
     }

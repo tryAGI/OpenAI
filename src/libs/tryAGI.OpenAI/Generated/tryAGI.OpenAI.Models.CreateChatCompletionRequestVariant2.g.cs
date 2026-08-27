@@ -6,7 +6,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateChatCompletionRequestVariant2
     {
@@ -34,19 +34,19 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.ModelIdsShared Model { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modalities")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseModalitiesVariant1Item>? Modalities { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verbosity")]
         public global::tryAGI.OpenAI.VerbosityEnum? Verbosity { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_effort")]
         public global::tryAGI.OpenAI.ReasoningEffortEnum? ReasoningEffort { get; set; }
@@ -124,7 +124,7 @@ namespace tryAGI.OpenAI
         public bool? Store { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("moderation")]
         public global::tryAGI.OpenAI.ModerationParam? Moderation { get; set; }
@@ -211,7 +211,7 @@ namespace tryAGI.OpenAI
         public int? Seed { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_options")]
         public global::tryAGI.OpenAI.ChatCompletionStreamOptionsVariant1? StreamOptions { get; set; }

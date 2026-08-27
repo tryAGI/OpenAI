@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextInput))]
@@ -34,7 +34,7 @@ namespace tryAGI.OpenAI
         public bool IsTextInput => TextInput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextInput(
 #if NET6_0_OR_GREATER
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickTextInput() => IsTextInput
             ? TextInput!
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputItemList))]
@@ -72,7 +72,7 @@ namespace tryAGI.OpenAI
         public bool IsInputItemList => InputItemList != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputItemList(
 #if NET6_0_OR_GREATER
@@ -85,23 +85,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem> PickInputItemList() => IsInputItemList
             ? InputItemList!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputItemList' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator InputParam(string value) => new InputParam((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(InputParam @this) => @this.TextInput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputParam(string? value)
         {
@@ -109,12 +109,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static InputParam FromTextInput(string? value) => new InputParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InputParam(
             string? textInput,
@@ -126,23 +126,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             InputItemList as object ??
-            TextInput as object 
+            TextInput as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             TextInput?.ToString() ??
-            InputItemList?.ToString() 
+            InputItemList?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -150,7 +150,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? textInput = null,
@@ -175,7 +175,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? textInput = null,
@@ -199,7 +199,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? textInput = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -243,18 +243,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(InputParam other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(TextInput, other.TextInput) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>?>.Default.Equals(InputItemList, other.InputItemList) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>?>.Default.Equals(InputItemList, other.InputItemList)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(InputParam obj1, InputParam obj2)
         {
@@ -262,7 +262,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(InputParam obj1, InputParam obj2)
         {
@@ -270,7 +270,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

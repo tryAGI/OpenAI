@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaResponseVariant3
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncation")]
         public global::tryAGI.OpenAI.BetaResponseVariant3Truncation2? Truncation { get; set; }
@@ -44,19 +44,19 @@ namespace tryAGI.OpenAI
         public required double CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completed_at")]
         public double? CompletedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public global::tryAGI.OpenAI.BetaResponseErrorVariant1? Error { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_details")]
         public global::tryAGI.OpenAI.BetaResponseVariant3IncompleteDetails2? IncompleteDetails { get; set; }
@@ -75,19 +75,19 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaOutputItem> Output { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
         public global::tryAGI.OpenAI.BetaReasoning? Reasoning { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputItem>>? Instructions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_text")]
         public string? OutputText { get; set; }
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaPromptCacheOptions? PromptCacheOptions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("moderation")]
         public global::tryAGI.OpenAI.BetaModeration? Moderation { get; set; }
@@ -120,13 +120,13 @@ namespace tryAGI.OpenAI
         public required bool ParallelToolCalls { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
         public global::tryAGI.OpenAI.BetaResponseConversation? Conversation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
         public int? MaxOutputTokens { get; set; }

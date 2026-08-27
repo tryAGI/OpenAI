@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum RealtimeBetaServerEventResponseContentPartAddedPartType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

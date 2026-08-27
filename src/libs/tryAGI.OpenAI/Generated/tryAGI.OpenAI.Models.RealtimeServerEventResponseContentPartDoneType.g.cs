@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum RealtimeServerEventResponseContentPartDoneType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseContentPartDone,
     }

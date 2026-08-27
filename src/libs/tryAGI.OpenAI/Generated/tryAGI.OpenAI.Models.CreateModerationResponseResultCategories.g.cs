@@ -37,13 +37,13 @@ namespace tryAGI.OpenAI
         public required bool HarassmentThreatening { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("illicit")]
         public bool? Illicit { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("illicit/violent")]
         public bool? IllicitViolent { get; set; }

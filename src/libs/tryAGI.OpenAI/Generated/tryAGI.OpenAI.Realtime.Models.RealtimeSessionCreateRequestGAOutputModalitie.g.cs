@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI.Realtime
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RealtimeSessionCreateRequestGAOutputModalitie
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

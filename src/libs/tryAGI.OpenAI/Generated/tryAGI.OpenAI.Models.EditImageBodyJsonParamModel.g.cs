@@ -4,24 +4,24 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditImageBodyJsonParamModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatgptImageLatest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage1Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage15,
     }

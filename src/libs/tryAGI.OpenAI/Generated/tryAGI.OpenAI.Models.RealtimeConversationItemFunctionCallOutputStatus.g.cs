@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum RealtimeConversationItemFunctionCallOutputStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Incomplete,
     }

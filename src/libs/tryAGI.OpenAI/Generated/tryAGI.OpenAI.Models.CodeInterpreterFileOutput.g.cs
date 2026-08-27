@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CodeInterpreterFileOutputType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
         [global::System.Text.Json.Serialization.JsonRequired]

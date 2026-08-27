@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaToolCallCallerDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Direct,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Program,
     }

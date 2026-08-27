@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaOutputTextContentParamAnnotationDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainerFileCitation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileCitation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UrlCitation,
     }

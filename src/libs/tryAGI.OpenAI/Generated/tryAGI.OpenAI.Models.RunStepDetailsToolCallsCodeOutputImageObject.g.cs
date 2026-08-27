@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RunStepDetailsToolCallsCodeOutputImageObject
     {
@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]

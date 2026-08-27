@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EvalGraderStringCheck : global::System.IEquatable<EvalGraderStringCheck>
     {
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StringCheckGrader))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsStringCheckGrader => StringCheckGrader != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStringCheckGrader(
 #if NET6_0_OR_GREATER
@@ -40,23 +40,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.GraderStringCheck PickStringCheckGrader() => IsStringCheckGrader
             ? StringCheckGrader!
             : throw new global::System.InvalidOperationException($"Expected union variant 'StringCheckGrader' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EvalGraderStringCheck(global::tryAGI.OpenAI.GraderStringCheck value) => new EvalGraderStringCheck((global::tryAGI.OpenAI.GraderStringCheck?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.GraderStringCheck?(EvalGraderStringCheck @this) => @this.StringCheckGrader;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EvalGraderStringCheck(global::tryAGI.OpenAI.GraderStringCheck? value)
         {
@@ -64,26 +64,26 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EvalGraderStringCheck FromStringCheckGrader(global::tryAGI.OpenAI.GraderStringCheck? value) => new EvalGraderStringCheck(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            StringCheckGrader as object 
+            StringCheckGrader as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            StringCheckGrader?.ToString() 
+            StringCheckGrader?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -91,7 +91,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.GraderStringCheck, TResult>? stringCheckGrader = null,
@@ -111,7 +111,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.GraderStringCheck>? stringCheckGrader = null,
@@ -129,7 +129,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.GraderStringCheck>? stringCheckGrader = null,
@@ -147,7 +147,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -166,17 +166,17 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EvalGraderStringCheck other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.GraderStringCheck?>.Default.Equals(StringCheckGrader, other.StringCheckGrader) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.GraderStringCheck?>.Default.Equals(StringCheckGrader, other.StringCheckGrader)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EvalGraderStringCheck obj1, EvalGraderStringCheck obj2)
         {
@@ -184,7 +184,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EvalGraderStringCheck obj1, EvalGraderStringCheck obj2)
         {
@@ -192,7 +192,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

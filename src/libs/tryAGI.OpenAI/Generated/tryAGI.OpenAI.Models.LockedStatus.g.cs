@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.LockedStatusType Type { get; set; } = global::tryAGI.OpenAI.LockedStatusType.Locked;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
         public string? Reason { get; set; }

@@ -4,28 +4,28 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UsageImagesSize
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1792,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1792x1792,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x256x256,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x512x512,
     }

@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum OrganizationCertificateActivationResponseObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationCertificateActivation,
     }

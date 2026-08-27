@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct RealtimeTranslationClientEvent : global::System.IEquatable<RealtimeTranslationClientEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeTranslationClientEventDiscriminatorType? Type { get; }
 
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionUpdate))]
@@ -34,7 +34,7 @@ namespace tryAGI.OpenAI
         public bool IsSessionUpdate => SessionUpdate != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionUpdate(
 #if NET6_0_OR_GREATER
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate PickSessionUpdate() => IsSessionUpdate
             ? SessionUpdate!
@@ -74,7 +74,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionInputAudioBufferAppend))]
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         public bool IsSessionInputAudioBufferAppend => SessionInputAudioBufferAppend != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionInputAudioBufferAppend(
 #if NET6_0_OR_GREATER
@@ -95,7 +95,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend PickSessionInputAudioBufferAppend() => IsSessionInputAudioBufferAppend
             ? SessionInputAudioBufferAppend!
@@ -113,7 +113,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionClose))]
@@ -121,7 +121,7 @@ namespace tryAGI.OpenAI
         public bool IsSessionClose => SessionClose != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionClose(
 #if NET6_0_OR_GREATER
@@ -134,23 +134,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose PickSessionClose() => IsSessionClose
             ? SessionClose!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionClose' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranslationClientEvent(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate value) => new RealtimeTranslationClientEvent((global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate?(RealtimeTranslationClientEvent @this) => @this.SessionUpdate;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranslationClientEvent(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate? value)
         {
@@ -158,22 +158,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranslationClientEvent FromSessionUpdate(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate? value) => new RealtimeTranslationClientEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranslationClientEvent(global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend value) => new RealtimeTranslationClientEvent((global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend?(RealtimeTranslationClientEvent @this) => @this.SessionInputAudioBufferAppend;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranslationClientEvent(global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend? value)
         {
@@ -181,22 +181,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranslationClientEvent FromSessionInputAudioBufferAppend(global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend? value) => new RealtimeTranslationClientEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranslationClientEvent(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose value) => new RealtimeTranslationClientEvent((global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose?(RealtimeTranslationClientEvent @this) => @this.SessionClose;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranslationClientEvent(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose? value)
         {
@@ -204,12 +204,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranslationClientEvent FromSessionClose(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose? value) => new RealtimeTranslationClientEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranslationClientEvent(
             global::tryAGI.OpenAI.RealtimeTranslationClientEventDiscriminatorType? type,
@@ -226,25 +226,25 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SessionClose as object ??
             SessionInputAudioBufferAppend as object ??
-            SessionUpdate as object 
+            SessionUpdate as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SessionUpdate?.ToString() ??
             SessionInputAudioBufferAppend?.ToString() ??
-            SessionClose?.ToString() 
+            SessionClose?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -252,7 +252,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate, TResult>? sessionUpdate = null,
@@ -282,7 +282,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate>? sessionUpdate = null,
@@ -312,7 +312,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate>? sessionUpdate = null,
@@ -340,7 +340,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -363,19 +363,19 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RealtimeTranslationClientEvent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate?>.Default.Equals(SessionUpdate, other.SessionUpdate) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend?>.Default.Equals(SessionInputAudioBufferAppend, other.SessionInputAudioBufferAppend) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose?>.Default.Equals(SessionClose, other.SessionClose) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose?>.Default.Equals(SessionClose, other.SessionClose)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RealtimeTranslationClientEvent obj1, RealtimeTranslationClientEvent obj2)
         {
@@ -383,7 +383,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RealtimeTranslationClientEvent obj1, RealtimeTranslationClientEvent obj2)
         {
@@ -391,7 +391,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         public required int CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived_at")]
         public int? ArchivedAt { get; set; }

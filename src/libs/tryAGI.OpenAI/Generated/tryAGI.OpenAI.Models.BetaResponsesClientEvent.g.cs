@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCreate))]
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseCreate => ResponseCreate != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseCreate(
 #if NET6_0_OR_GREATER
@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate PickResponseCreate() => IsResponseCreate
             ? ResponseCreate!.Value
@@ -62,7 +62,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseInject))]
@@ -70,7 +70,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseInject => ResponseInject != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseInject(
 #if NET6_0_OR_GREATER
@@ -83,23 +83,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaResponseInjectEvent PickResponseInject() => IsResponseInject
             ? ResponseInject!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseInject' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaResponsesClientEvent(global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate value) => new BetaResponsesClientEvent((global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate?(BetaResponsesClientEvent @this) => @this.ResponseCreate;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaResponsesClientEvent(global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate? value)
         {
@@ -107,22 +107,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaResponsesClientEvent FromResponseCreate(global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate? value) => new BetaResponsesClientEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaResponsesClientEvent(global::tryAGI.OpenAI.BetaResponseInjectEvent value) => new BetaResponsesClientEvent((global::tryAGI.OpenAI.BetaResponseInjectEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaResponseInjectEvent?(BetaResponsesClientEvent @this) => @this.ResponseInject;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaResponsesClientEvent(global::tryAGI.OpenAI.BetaResponseInjectEvent? value)
         {
@@ -130,12 +130,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaResponsesClientEvent FromResponseInject(global::tryAGI.OpenAI.BetaResponseInjectEvent? value) => new BetaResponsesClientEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaResponsesClientEvent(
             global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate? responseCreate,
@@ -147,23 +147,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ResponseInject as object ??
-            ResponseCreate as object 
+            ResponseCreate as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ResponseCreate?.ToString() ??
-            ResponseInject?.ToString() 
+            ResponseInject?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -171,7 +171,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate?, TResult>? responseCreate = null,
@@ -196,7 +196,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate?>? responseCreate = null,
@@ -220,7 +220,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate?>? responseCreate = null,
@@ -243,7 +243,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -264,18 +264,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaResponsesClientEvent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate?>.Default.Equals(ResponseCreate, other.ResponseCreate) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseInjectEvent?>.Default.Equals(ResponseInject, other.ResponseInject) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseInjectEvent?>.Default.Equals(ResponseInject, other.ResponseInject)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaResponsesClientEvent obj1, BetaResponsesClientEvent obj2)
         {
@@ -283,7 +283,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaResponsesClientEvent obj1, BetaResponsesClientEvent obj2)
         {
@@ -291,7 +291,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

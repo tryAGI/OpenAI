@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
     {
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStreamEventVariant1))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsMessageStreamEventVariant1 => MessageStreamEventVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessageStreamEventVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.MessageStreamEventVariant1 PickMessageStreamEventVariant1() => IsMessageStreamEventVariant1
             ? MessageStreamEventVariant1!
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStreamEventVariant2))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsMessageStreamEventVariant2 => MessageStreamEventVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessageStreamEventVariant2(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.MessageStreamEventVariant2 PickMessageStreamEventVariant2() => IsMessageStreamEventVariant2
             ? MessageStreamEventVariant2!
@@ -93,7 +93,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStreamEventVariant3))]
@@ -101,7 +101,7 @@ namespace tryAGI.OpenAI
         public bool IsMessageStreamEventVariant3 => MessageStreamEventVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessageStreamEventVariant3(
 #if NET6_0_OR_GREATER
@@ -114,7 +114,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.MessageStreamEventVariant3 PickMessageStreamEventVariant3() => IsMessageStreamEventVariant3
             ? MessageStreamEventVariant3!
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStreamEventVariant4))]
@@ -138,7 +138,7 @@ namespace tryAGI.OpenAI
         public bool IsMessageStreamEventVariant4 => MessageStreamEventVariant4 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessageStreamEventVariant4(
 #if NET6_0_OR_GREATER
@@ -151,7 +151,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.MessageStreamEventVariant4 PickMessageStreamEventVariant4() => IsMessageStreamEventVariant4
             ? MessageStreamEventVariant4!
@@ -167,7 +167,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStreamEventVariant5))]
@@ -175,7 +175,7 @@ namespace tryAGI.OpenAI
         public bool IsMessageStreamEventVariant5 => MessageStreamEventVariant5 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessageStreamEventVariant5(
 #if NET6_0_OR_GREATER
@@ -188,23 +188,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.MessageStreamEventVariant5 PickMessageStreamEventVariant5() => IsMessageStreamEventVariant5
             ? MessageStreamEventVariant5!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant5' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant1 value) => new MessageStreamEvent((global::tryAGI.OpenAI.MessageStreamEventVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.MessageStreamEventVariant1?(MessageStreamEvent @this) => @this.MessageStreamEventVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant1? value)
         {
@@ -212,22 +212,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessageStreamEvent FromMessageStreamEventVariant1(global::tryAGI.OpenAI.MessageStreamEventVariant1? value) => new MessageStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant2 value) => new MessageStreamEvent((global::tryAGI.OpenAI.MessageStreamEventVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.MessageStreamEventVariant2?(MessageStreamEvent @this) => @this.MessageStreamEventVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant2? value)
         {
@@ -235,22 +235,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessageStreamEvent FromMessageStreamEventVariant2(global::tryAGI.OpenAI.MessageStreamEventVariant2? value) => new MessageStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant3 value) => new MessageStreamEvent((global::tryAGI.OpenAI.MessageStreamEventVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.MessageStreamEventVariant3?(MessageStreamEvent @this) => @this.MessageStreamEventVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant3? value)
         {
@@ -258,22 +258,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessageStreamEvent FromMessageStreamEventVariant3(global::tryAGI.OpenAI.MessageStreamEventVariant3? value) => new MessageStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant4 value) => new MessageStreamEvent((global::tryAGI.OpenAI.MessageStreamEventVariant4?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.MessageStreamEventVariant4?(MessageStreamEvent @this) => @this.MessageStreamEventVariant4;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant4? value)
         {
@@ -281,22 +281,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessageStreamEvent FromMessageStreamEventVariant4(global::tryAGI.OpenAI.MessageStreamEventVariant4? value) => new MessageStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant5 value) => new MessageStreamEvent((global::tryAGI.OpenAI.MessageStreamEventVariant5?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.MessageStreamEventVariant5?(MessageStreamEvent @this) => @this.MessageStreamEventVariant5;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessageStreamEvent(global::tryAGI.OpenAI.MessageStreamEventVariant5? value)
         {
@@ -304,12 +304,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MessageStreamEvent FromMessageStreamEventVariant5(global::tryAGI.OpenAI.MessageStreamEventVariant5? value) => new MessageStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MessageStreamEvent(
             global::tryAGI.OpenAI.MessageStreamEventVariant1? messageStreamEventVariant1,
@@ -327,29 +327,29 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             MessageStreamEventVariant5 as object ??
             MessageStreamEventVariant4 as object ??
             MessageStreamEventVariant3 as object ??
             MessageStreamEventVariant2 as object ??
-            MessageStreamEventVariant1 as object 
+            MessageStreamEventVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             MessageStreamEventVariant1?.ToString() ??
             MessageStreamEventVariant2?.ToString() ??
             MessageStreamEventVariant3?.ToString() ??
             MessageStreamEventVariant4?.ToString() ??
-            MessageStreamEventVariant5?.ToString() 
+            MessageStreamEventVariant5?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -357,7 +357,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.MessageStreamEventVariant1, TResult>? messageStreamEventVariant1 = null,
@@ -397,7 +397,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.MessageStreamEventVariant1>? messageStreamEventVariant1 = null,
@@ -439,7 +439,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.MessageStreamEventVariant1>? messageStreamEventVariant1 = null,
@@ -477,7 +477,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -504,7 +504,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MessageStreamEvent other)
         {
@@ -513,12 +513,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MessageStreamEventVariant2?>.Default.Equals(MessageStreamEventVariant2, other.MessageStreamEventVariant2) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MessageStreamEventVariant3?>.Default.Equals(MessageStreamEventVariant3, other.MessageStreamEventVariant3) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MessageStreamEventVariant4?>.Default.Equals(MessageStreamEventVariant4, other.MessageStreamEventVariant4) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MessageStreamEventVariant5?>.Default.Equals(MessageStreamEventVariant5, other.MessageStreamEventVariant5) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MessageStreamEventVariant5?>.Default.Equals(MessageStreamEventVariant5, other.MessageStreamEventVariant5)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MessageStreamEvent obj1, MessageStreamEvent obj2)
         {
@@ -526,7 +526,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MessageStreamEvent obj1, MessageStreamEvent obj2)
         {
@@ -534,7 +534,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

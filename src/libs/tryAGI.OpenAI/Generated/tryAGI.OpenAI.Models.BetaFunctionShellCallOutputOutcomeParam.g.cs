@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct BetaFunctionShellCallOutputOutcomeParam : global::System.IEquatable<BetaFunctionShellCallOutputOutcomeParam>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaFunctionShellCallOutputOutcomeParamDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Timeout))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsTimeout => Timeout != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTimeout(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaFunctionShellCallOutputTimeoutOutcomeParam PickTimeout() => IsTimeout
             ? Timeout!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Exit))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsExit => Exit != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickExit(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaFunctionShellCallOutputExitOutcomeParam PickExit() => IsExit
             ? Exit!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Exit' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaFunctionShellCallOutputOutcomeParam(global::tryAGI.OpenAI.BetaFunctionShellCallOutputTimeoutOutcomeParam value) => new BetaFunctionShellCallOutputOutcomeParam((global::tryAGI.OpenAI.BetaFunctionShellCallOutputTimeoutOutcomeParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaFunctionShellCallOutputTimeoutOutcomeParam?(BetaFunctionShellCallOutputOutcomeParam @this) => @this.Timeout;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaFunctionShellCallOutputOutcomeParam(global::tryAGI.OpenAI.BetaFunctionShellCallOutputTimeoutOutcomeParam? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaFunctionShellCallOutputOutcomeParam FromTimeout(global::tryAGI.OpenAI.BetaFunctionShellCallOutputTimeoutOutcomeParam? value) => new BetaFunctionShellCallOutputOutcomeParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaFunctionShellCallOutputOutcomeParam(global::tryAGI.OpenAI.BetaFunctionShellCallOutputExitOutcomeParam value) => new BetaFunctionShellCallOutputOutcomeParam((global::tryAGI.OpenAI.BetaFunctionShellCallOutputExitOutcomeParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaFunctionShellCallOutputExitOutcomeParam?(BetaFunctionShellCallOutputOutcomeParam @this) => @this.Exit;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaFunctionShellCallOutputOutcomeParam(global::tryAGI.OpenAI.BetaFunctionShellCallOutputExitOutcomeParam? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaFunctionShellCallOutputOutcomeParam FromExit(global::tryAGI.OpenAI.BetaFunctionShellCallOutputExitOutcomeParam? value) => new BetaFunctionShellCallOutputOutcomeParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaFunctionShellCallOutputOutcomeParam(
             global::tryAGI.OpenAI.BetaFunctionShellCallOutputOutcomeParamDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Exit as object ??
-            Timeout as object 
+            Timeout as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Timeout?.ToString() ??
-            Exit?.ToString() 
+            Exit?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaFunctionShellCallOutputTimeoutOutcomeParam, TResult>? timeout = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaFunctionShellCallOutputTimeoutOutcomeParam>? timeout = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaFunctionShellCallOutputTimeoutOutcomeParam>? timeout = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaFunctionShellCallOutputOutcomeParam other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaFunctionShellCallOutputTimeoutOutcomeParam?>.Default.Equals(Timeout, other.Timeout) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaFunctionShellCallOutputExitOutcomeParam?>.Default.Equals(Exit, other.Exit) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaFunctionShellCallOutputExitOutcomeParam?>.Default.Equals(Exit, other.Exit)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaFunctionShellCallOutputOutcomeParam obj1, BetaFunctionShellCallOutputOutcomeParam obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaFunctionShellCallOutputOutcomeParam obj1, BetaFunctionShellCallOutputOutcomeParam obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

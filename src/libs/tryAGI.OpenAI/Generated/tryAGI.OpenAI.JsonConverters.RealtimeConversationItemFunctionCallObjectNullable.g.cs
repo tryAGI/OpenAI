@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     {
                         return global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallObjectExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

@@ -13,19 +13,19 @@ namespace tryAGI.OpenAI
     public enum RealtimeBetaResponseStatusDetailsReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClientCancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFilter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxOutputTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TurnDetected,
     }

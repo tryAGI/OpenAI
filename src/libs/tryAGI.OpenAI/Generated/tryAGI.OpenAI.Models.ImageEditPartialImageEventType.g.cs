@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum ImageEditPartialImageEventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageEditPartialImage,
     }

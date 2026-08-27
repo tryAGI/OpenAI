@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaFunctionShellCallOutputOutcomeParamDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Exit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Timeout,
     }

@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ResponsesClientEventResponseCreate : global::System.IEquatable<ResponsesClientEventResponseCreate>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? ResponsesClientEventResponseCreateVariant1 { get; init; }
@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesClientEventResponseCreateVariant1))]
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         public bool IsResponsesClientEventResponseCreateVariant1 => ResponsesClientEventResponseCreateVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponsesClientEventResponseCreateVariant1(
 #if NET6_0_OR_GREATER
@@ -44,14 +44,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1 PickResponsesClientEventResponseCreateVariant1() => IsResponsesClientEventResponseCreateVariant1
             ? ResponsesClientEventResponseCreateVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesClientEventResponseCreateVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.CreateResponse? CreateResponse { get; init; }
@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateResponse))]
@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
         public bool IsCreateResponse => CreateResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCreateResponse(
 #if NET6_0_OR_GREATER
@@ -81,23 +81,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CreateResponse PickCreateResponse() => IsCreateResponse
             ? CreateResponse!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateResponse' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesClientEventResponseCreate(global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1 value) => new ResponsesClientEventResponseCreate((global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1?(ResponsesClientEventResponseCreate @this) => @this.ResponsesClientEventResponseCreateVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesClientEventResponseCreate(global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? value)
         {
@@ -105,22 +105,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesClientEventResponseCreate FromResponsesClientEventResponseCreateVariant1(global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? value) => new ResponsesClientEventResponseCreate(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesClientEventResponseCreate(global::tryAGI.OpenAI.CreateResponse value) => new ResponsesClientEventResponseCreate((global::tryAGI.OpenAI.CreateResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.CreateResponse?(ResponsesClientEventResponseCreate @this) => @this.CreateResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesClientEventResponseCreate(global::tryAGI.OpenAI.CreateResponse? value)
         {
@@ -128,12 +128,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesClientEventResponseCreate FromCreateResponse(global::tryAGI.OpenAI.CreateResponse? value) => new ResponsesClientEventResponseCreate(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesClientEventResponseCreate(
             global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1? responsesClientEventResponseCreateVariant1,
@@ -145,23 +145,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CreateResponse as object ??
-            ResponsesClientEventResponseCreateVariant1 as object 
+            ResponsesClientEventResponseCreateVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ResponsesClientEventResponseCreateVariant1?.ToString() ??
-            CreateResponse?.ToString() 
+            CreateResponse?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -169,7 +169,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1, TResult>? responsesClientEventResponseCreateVariant1 = null,
@@ -194,7 +194,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1>? responsesClientEventResponseCreateVariant1 = null,
@@ -218,7 +218,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1>? responsesClientEventResponseCreateVariant1 = null,
@@ -241,7 +241,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -262,18 +262,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ResponsesClientEventResponseCreate other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1?>.Default.Equals(ResponsesClientEventResponseCreateVariant1, other.ResponsesClientEventResponseCreateVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateResponse?>.Default.Equals(CreateResponse, other.CreateResponse) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateResponse?>.Default.Equals(CreateResponse, other.CreateResponse)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ResponsesClientEventResponseCreate obj1, ResponsesClientEventResponseCreate obj2)
         {
@@ -281,7 +281,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ResponsesClientEventResponseCreate obj1, ResponsesClientEventResponseCreate obj2)
         {
@@ -289,7 +289,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

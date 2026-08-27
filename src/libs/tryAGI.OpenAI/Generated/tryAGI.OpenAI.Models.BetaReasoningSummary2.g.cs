@@ -12,15 +12,15 @@ namespace tryAGI.OpenAI
     public enum BetaReasoningSummary2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Concise,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Detailed,
     }

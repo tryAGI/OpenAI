@@ -5,17 +5,17 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ResultsItem2 : global::System.IEquatable<ResultsItem2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ProvenanceResourceResultDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.C2PAProvenanceResult? C2pa { get; init; }
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(C2pa))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsC2pa => C2pa != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickC2pa(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.C2PAProvenanceResult PickC2pa() => IsC2pa
             ? C2pa!
             : throw new global::System.InvalidOperationException($"Expected union variant 'C2pa' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.SynthIDProvenanceResult? Synthid { get; init; }
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Synthid))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsSynthid => Synthid != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSynthid(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.SynthIDProvenanceResult PickSynthid() => IsSynthid
             ? Synthid!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Synthid' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem2(global::tryAGI.OpenAI.C2PAProvenanceResult value) => new ResultsItem2((global::tryAGI.OpenAI.C2PAProvenanceResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.C2PAProvenanceResult?(ResultsItem2 @this) => @this.C2pa;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem2(global::tryAGI.OpenAI.C2PAProvenanceResult? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem2 FromC2pa(global::tryAGI.OpenAI.C2PAProvenanceResult? value) => new ResultsItem2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem2(global::tryAGI.OpenAI.SynthIDProvenanceResult value) => new ResultsItem2((global::tryAGI.OpenAI.SynthIDProvenanceResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.SynthIDProvenanceResult?(ResultsItem2 @this) => @this.Synthid;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem2(global::tryAGI.OpenAI.SynthIDProvenanceResult? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem2 FromSynthid(global::tryAGI.OpenAI.SynthIDProvenanceResult? value) => new ResultsItem2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem2(
             global::tryAGI.OpenAI.ProvenanceResourceResultDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Synthid as object ??
-            C2pa as object 
+            C2pa as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             C2pa?.ToString() ??
-            Synthid?.ToString() 
+            Synthid?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.C2PAProvenanceResult, TResult>? c2pa = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.C2PAProvenanceResult>? c2pa = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.C2PAProvenanceResult>? c2pa = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ResultsItem2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.C2PAProvenanceResult?>.Default.Equals(C2pa, other.C2pa) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SynthIDProvenanceResult?>.Default.Equals(Synthid, other.Synthid) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SynthIDProvenanceResult?>.Default.Equals(Synthid, other.Synthid)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ResultsItem2 obj1, ResultsItem2 obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ResultsItem2 obj1, ResultsItem2 obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

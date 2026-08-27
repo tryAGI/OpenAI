@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum RealtimeBetaServerEventInputAudioBufferSpeechStartedType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudioBufferSpeechStarted,
     }

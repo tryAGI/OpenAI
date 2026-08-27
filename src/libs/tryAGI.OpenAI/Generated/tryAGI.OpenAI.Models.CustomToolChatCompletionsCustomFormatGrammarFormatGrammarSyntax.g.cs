@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum CustomToolChatCompletionsCustomFormatGrammarFormatGrammarSyntax
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lark,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Regex,
     }

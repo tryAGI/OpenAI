@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RealtimeSessionCreateResponseIncludeItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ItemInputAudioTranscriptionLogprobs,
     }

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A JsonlRunDataSource object with that specifies a JSONL file that matches the eval 
+    /// A JsonlRunDataSource object with that specifies a JSONL file that matches the eval
     /// </summary>
     public sealed partial class CreateEvalJsonlRunDataSource
     {

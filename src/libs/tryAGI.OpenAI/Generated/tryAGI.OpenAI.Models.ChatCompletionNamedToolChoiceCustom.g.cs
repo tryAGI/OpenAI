@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustomType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom")]
         [global::System.Text.Json.Serialization.JsonRequired]

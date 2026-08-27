@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FunctionShellToolParamEnvironmentVariant1DiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainerAuto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainerReference,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Local,
     }

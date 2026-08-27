@@ -4,24 +4,24 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateFineTuningJobRequestModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Babbage002,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Davinci002,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMini,
     }

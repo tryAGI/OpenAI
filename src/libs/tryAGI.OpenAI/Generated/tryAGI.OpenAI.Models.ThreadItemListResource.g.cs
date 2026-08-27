@@ -25,13 +25,13 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ThreadItem> Data { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         public string? FirstId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         public string? LastId { get; set; }

@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ReasoningModeEnumEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Standard,
     }

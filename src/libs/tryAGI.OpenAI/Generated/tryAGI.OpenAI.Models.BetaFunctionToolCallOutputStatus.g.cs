@@ -10,15 +10,15 @@ namespace tryAGI.OpenAI
     public enum BetaFunctionToolCallOutputStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Incomplete,
     }

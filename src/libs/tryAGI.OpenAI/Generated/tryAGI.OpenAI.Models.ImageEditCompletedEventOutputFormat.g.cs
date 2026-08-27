@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum ImageEditCompletedEventOutputFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webp,
     }

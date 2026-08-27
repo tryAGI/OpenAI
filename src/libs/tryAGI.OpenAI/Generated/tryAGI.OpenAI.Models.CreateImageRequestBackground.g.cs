@@ -16,15 +16,15 @@ namespace tryAGI.OpenAI
     public enum CreateImageRequestBackground
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Opaque,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Transparent,
     }

@@ -9,13 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class BetaComputerCallOutputItemParam
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
         public global::tryAGI.OpenAI.BetaAgentTagParam? Agent { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -44,13 +44,13 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.BetaComputerScreenshotImage Output { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("acknowledged_safety_checks")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaComputerCallSafetyCheckParam>? AcknowledgedSafetyChecks { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public global::tryAGI.OpenAI.BetaFunctionCallItemStatus? Status { get; set; }

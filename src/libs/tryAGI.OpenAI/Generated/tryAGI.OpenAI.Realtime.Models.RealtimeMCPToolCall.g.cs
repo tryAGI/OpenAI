@@ -44,19 +44,19 @@ namespace tryAGI.OpenAI.Realtime
         public required string Arguments { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("approval_request_id")]
         public string? ApprovalRequestId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         public string? Output { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public global::tryAGI.OpenAI.Realtime.OneOf<global::tryAGI.OpenAI.Realtime.RealtimeMCPProtocolError, global::tryAGI.OpenAI.Realtime.RealtimeMCPToolExecutionError, global::tryAGI.OpenAI.Realtime.RealtimeMCPHTTPError>? Error { get; set; }

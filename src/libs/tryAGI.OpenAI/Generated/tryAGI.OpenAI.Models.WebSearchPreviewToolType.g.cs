@@ -10,11 +10,11 @@ namespace tryAGI.OpenAI
     public enum WebSearchPreviewToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchPreview20250311,
     }

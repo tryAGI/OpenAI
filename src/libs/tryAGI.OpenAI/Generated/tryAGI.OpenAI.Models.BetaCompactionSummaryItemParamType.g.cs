@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaCompactionSummaryItemParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Compaction,
     }

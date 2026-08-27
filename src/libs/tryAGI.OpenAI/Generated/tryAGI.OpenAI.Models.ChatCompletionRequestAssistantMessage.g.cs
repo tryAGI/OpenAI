@@ -9,13 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class ChatCompletionRequestAssistantMessage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         public global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageContentPart>>? Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
         public string? Refusal { get; set; }
@@ -34,7 +34,7 @@ namespace tryAGI.OpenAI
         public string? Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
         public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageAudio2? Audio { get; set; }
@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionMessageToolCallsItem>? ToolCalls { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
         public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageFunctionCall2? FunctionCall { get; set; }

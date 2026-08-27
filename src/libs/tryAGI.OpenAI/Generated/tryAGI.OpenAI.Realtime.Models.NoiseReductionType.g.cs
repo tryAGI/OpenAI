@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI.Realtime
     public enum NoiseReductionType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FarField,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NearField,
     }

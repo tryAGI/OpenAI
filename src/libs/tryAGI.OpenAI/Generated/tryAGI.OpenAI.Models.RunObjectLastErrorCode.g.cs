@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum RunObjectLastErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidPrompt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RateLimitExceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServerError,
     }

@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputContent>> Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
         public global::tryAGI.OpenAI.BetaMessagePhase? Phase { get; set; }

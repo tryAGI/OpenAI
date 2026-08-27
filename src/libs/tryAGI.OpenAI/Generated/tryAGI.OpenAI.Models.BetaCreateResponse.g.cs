@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaCreateResponse : global::System.IEquatable<BetaCreateResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaCreateModelResponseProperties? ModelProperties { get; init; }
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelProperties))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsModelProperties => ModelProperties != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickModelProperties(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaCreateModelResponseProperties PickModelProperties() => IsModelProperties
             ? ModelProperties!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelProperties' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaResponseProperties? Properties { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Properties))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsProperties => Properties != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProperties(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaResponseProperties PickProperties() => IsProperties
             ? Properties!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Properties' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaCreateResponseVariant3? BetaCreateResponseVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaCreateResponseVariant3))]
@@ -101,7 +101,7 @@ namespace tryAGI.OpenAI
         public bool IsBetaCreateResponseVariant3 => BetaCreateResponseVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBetaCreateResponseVariant3(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaCreateResponseVariant3 PickBetaCreateResponseVariant3() => IsBetaCreateResponseVariant3
             ? BetaCreateResponseVariant3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaCreateResponseVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaCreateResponse(global::tryAGI.OpenAI.BetaCreateModelResponseProperties value) => new BetaCreateResponse((global::tryAGI.OpenAI.BetaCreateModelResponseProperties?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaCreateModelResponseProperties?(BetaCreateResponse @this) => @this.ModelProperties;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaCreateResponse(global::tryAGI.OpenAI.BetaCreateModelResponseProperties? value)
         {
@@ -138,22 +138,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaCreateResponse FromModelProperties(global::tryAGI.OpenAI.BetaCreateModelResponseProperties? value) => new BetaCreateResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaCreateResponse(global::tryAGI.OpenAI.BetaResponseProperties value) => new BetaCreateResponse((global::tryAGI.OpenAI.BetaResponseProperties?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaResponseProperties?(BetaCreateResponse @this) => @this.Properties;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaCreateResponse(global::tryAGI.OpenAI.BetaResponseProperties? value)
         {
@@ -161,22 +161,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaCreateResponse FromProperties(global::tryAGI.OpenAI.BetaResponseProperties? value) => new BetaCreateResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaCreateResponse(global::tryAGI.OpenAI.BetaCreateResponseVariant3 value) => new BetaCreateResponse((global::tryAGI.OpenAI.BetaCreateResponseVariant3?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaCreateResponseVariant3?(BetaCreateResponse @this) => @this.BetaCreateResponseVariant3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaCreateResponse(global::tryAGI.OpenAI.BetaCreateResponseVariant3? value)
         {
@@ -184,12 +184,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaCreateResponse FromBetaCreateResponseVariant3(global::tryAGI.OpenAI.BetaCreateResponseVariant3? value) => new BetaCreateResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaCreateResponse(
             global::tryAGI.OpenAI.BetaCreateModelResponseProperties? modelProperties,
@@ -203,25 +203,25 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BetaCreateResponseVariant3 as object ??
             Properties as object ??
-            ModelProperties as object 
+            ModelProperties as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ModelProperties?.ToString() ??
             Properties?.ToString() ??
-            BetaCreateResponseVariant3?.ToString() 
+            BetaCreateResponseVariant3?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -229,7 +229,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaCreateModelResponseProperties?, TResult>? modelProperties = null,
@@ -259,7 +259,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaCreateModelResponseProperties?>? modelProperties = null,
@@ -289,7 +289,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaCreateModelResponseProperties?>? modelProperties = null,
@@ -317,7 +317,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -340,19 +340,19 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaCreateResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCreateModelResponseProperties?>.Default.Equals(ModelProperties, other.ModelProperties) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseProperties?>.Default.Equals(Properties, other.Properties) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCreateResponseVariant3?>.Default.Equals(BetaCreateResponseVariant3, other.BetaCreateResponseVariant3) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCreateResponseVariant3?>.Default.Equals(BetaCreateResponseVariant3, other.BetaCreateResponseVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaCreateResponse obj1, BetaCreateResponse obj2)
         {
@@ -360,7 +360,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaCreateResponse obj1, BetaCreateResponse obj2)
         {
@@ -368,7 +368,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

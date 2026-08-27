@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RealtimeCreateClientSecretResponseSessionDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Realtime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Transcription,
     }

@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObjectType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message_creation")]
         public global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? MessageCreation { get; set; }

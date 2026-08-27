@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum CreateBatchRequestCompletionWindow
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x24h,
     }

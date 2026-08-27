@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ApplyPatchToolParamType Type { get; set; } = global::tryAGI.OpenAI.ApplyPatchToolParamType.ApplyPatch;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_callers")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? AllowedCallers { get; set; }

@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ThreadStreamEvent : global::System.IEquatable<ThreadStreamEvent>
     {
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadStreamEventVariant1))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsThreadStreamEventVariant1 => ThreadStreamEventVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickThreadStreamEventVariant1(
 #if NET6_0_OR_GREATER
@@ -40,23 +40,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ThreadStreamEventVariant1 PickThreadStreamEventVariant1() => IsThreadStreamEventVariant1
             ? ThreadStreamEventVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThreadStreamEventVariant1' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ThreadStreamEvent(global::tryAGI.OpenAI.ThreadStreamEventVariant1 value) => new ThreadStreamEvent((global::tryAGI.OpenAI.ThreadStreamEventVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ThreadStreamEventVariant1?(ThreadStreamEvent @this) => @this.ThreadStreamEventVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ThreadStreamEvent(global::tryAGI.OpenAI.ThreadStreamEventVariant1? value)
         {
@@ -64,26 +64,26 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ThreadStreamEvent FromThreadStreamEventVariant1(global::tryAGI.OpenAI.ThreadStreamEventVariant1? value) => new ThreadStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            ThreadStreamEventVariant1 as object 
+            ThreadStreamEventVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            ThreadStreamEventVariant1?.ToString() 
+            ThreadStreamEventVariant1?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -91,7 +91,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ThreadStreamEventVariant1, TResult>? threadStreamEventVariant1 = null,
@@ -111,7 +111,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ThreadStreamEventVariant1>? threadStreamEventVariant1 = null,
@@ -129,7 +129,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ThreadStreamEventVariant1>? threadStreamEventVariant1 = null,
@@ -147,7 +147,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -166,17 +166,17 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ThreadStreamEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ThreadStreamEventVariant1?>.Default.Equals(ThreadStreamEventVariant1, other.ThreadStreamEventVariant1) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ThreadStreamEventVariant1?>.Default.Equals(ThreadStreamEventVariant1, other.ThreadStreamEventVariant1)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ThreadStreamEvent obj1, ThreadStreamEvent obj2)
         {
@@ -184,7 +184,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ThreadStreamEvent obj1, ThreadStreamEvent obj2)
         {
@@ -192,7 +192,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaDoubleClickActionType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoubleClick,
     }

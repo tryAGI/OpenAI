@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.WebSearchPreviewToolType Type { get; set; } = global::tryAGI.OpenAI.WebSearchPreviewToolType.WebSearchPreview;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
         public global::tryAGI.OpenAI.ApproximateLocation? UserLocation { get; set; }
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.SearchContextSize? SearchContextSize { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search_content_types")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SearchContentType>? SearchContentTypes { get; set; }

@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaComputerAction : global::System.IEquatable<BetaComputerAction>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaComputerActionDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Click))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsClick => Click != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickClick(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaClickParam PickClick() => IsClick
             ? Click!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DoubleClick))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsDoubleClick => DoubleClick != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDoubleClick(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaDoubleClickAction PickDoubleClick() => IsDoubleClick
             ? DoubleClick!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Drag))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsDrag => Drag != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDrag(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaDragParam PickDrag() => IsDrag
             ? Drag!
@@ -135,7 +135,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Keypress))]
@@ -143,7 +143,7 @@ namespace tryAGI.OpenAI
         public bool IsKeypress => Keypress != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickKeypress(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaKeyPressAction PickKeypress() => IsKeypress
             ? Keypress!
@@ -172,7 +172,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Move))]
@@ -180,7 +180,7 @@ namespace tryAGI.OpenAI
         public bool IsMove => Move != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMove(
 #if NET6_0_OR_GREATER
@@ -193,7 +193,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaMoveParam PickMove() => IsMove
             ? Move!
@@ -209,7 +209,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Screenshot))]
@@ -217,7 +217,7 @@ namespace tryAGI.OpenAI
         public bool IsScreenshot => Screenshot != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickScreenshot(
 #if NET6_0_OR_GREATER
@@ -230,7 +230,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaScreenshotParam PickScreenshot() => IsScreenshot
             ? Screenshot!
@@ -246,7 +246,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Scroll))]
@@ -254,7 +254,7 @@ namespace tryAGI.OpenAI
         public bool IsScroll => Scroll != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickScroll(
 #if NET6_0_OR_GREATER
@@ -267,7 +267,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaScrollParam PickScroll() => IsScroll
             ? Scroll!
@@ -283,7 +283,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TypeValue))]
@@ -291,7 +291,7 @@ namespace tryAGI.OpenAI
         public bool IsTypeValue => TypeValue != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTypeValue(
 #if NET6_0_OR_GREATER
@@ -304,7 +304,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaTypeParam PickTypeValue() => IsTypeValue
             ? TypeValue!
@@ -320,7 +320,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Wait))]
@@ -328,7 +328,7 @@ namespace tryAGI.OpenAI
         public bool IsWait => Wait != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWait(
 #if NET6_0_OR_GREATER
@@ -341,23 +341,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaWaitParam PickWait() => IsWait
             ? Wait!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Wait' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaComputerAction(global::tryAGI.OpenAI.BetaClickParam value) => new BetaComputerAction((global::tryAGI.OpenAI.BetaClickParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaClickParam?(BetaComputerAction @this) => @this.Click;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaComputerAction(global::tryAGI.OpenAI.BetaClickParam? value)
         {
@@ -365,22 +365,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaComputerAction FromClick(global::tryAGI.OpenAI.BetaClickParam? value) => new BetaComputerAction(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaComputerAction(global::tryAGI.OpenAI.BetaDoubleClickAction value) => new BetaComputerAction((global::tryAGI.OpenAI.BetaDoubleClickAction?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaDoubleClickAction?(BetaComputerAction @this) => @this.DoubleClick;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaComputerAction(global::tryAGI.OpenAI.BetaDoubleClickAction? value)
         {
@@ -388,22 +388,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaComputerAction FromDoubleClick(global::tryAGI.OpenAI.BetaDoubleClickAction? value) => new BetaComputerAction(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaComputerAction(global::tryAGI.OpenAI.BetaDragParam value) => new BetaComputerAction((global::tryAGI.OpenAI.BetaDragParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaDragParam?(BetaComputerAction @this) => @this.Drag;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaComputerAction(global::tryAGI.OpenAI.BetaDragParam? value)
         {
@@ -411,22 +411,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaComputerAction FromDrag(global::tryAGI.OpenAI.BetaDragParam? value) => new BetaComputerAction(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaComputerAction(global::tryAGI.OpenAI.BetaKeyPressAction value) => new BetaComputerAction((global::tryAGI.OpenAI.BetaKeyPressAction?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaKeyPressAction?(BetaComputerAction @this) => @this.Keypress;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaComputerAction(global::tryAGI.OpenAI.BetaKeyPressAction? value)
         {
@@ -434,22 +434,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaComputerAction FromKeypress(global::tryAGI.OpenAI.BetaKeyPressAction? value) => new BetaComputerAction(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaComputerAction(global::tryAGI.OpenAI.BetaMoveParam value) => new BetaComputerAction((global::tryAGI.OpenAI.BetaMoveParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaMoveParam?(BetaComputerAction @this) => @this.Move;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaComputerAction(global::tryAGI.OpenAI.BetaMoveParam? value)
         {
@@ -457,22 +457,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaComputerAction FromMove(global::tryAGI.OpenAI.BetaMoveParam? value) => new BetaComputerAction(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaComputerAction(global::tryAGI.OpenAI.BetaScreenshotParam value) => new BetaComputerAction((global::tryAGI.OpenAI.BetaScreenshotParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaScreenshotParam?(BetaComputerAction @this) => @this.Screenshot;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaComputerAction(global::tryAGI.OpenAI.BetaScreenshotParam? value)
         {
@@ -480,22 +480,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaComputerAction FromScreenshot(global::tryAGI.OpenAI.BetaScreenshotParam? value) => new BetaComputerAction(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaComputerAction(global::tryAGI.OpenAI.BetaScrollParam value) => new BetaComputerAction((global::tryAGI.OpenAI.BetaScrollParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaScrollParam?(BetaComputerAction @this) => @this.Scroll;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaComputerAction(global::tryAGI.OpenAI.BetaScrollParam? value)
         {
@@ -503,22 +503,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaComputerAction FromScroll(global::tryAGI.OpenAI.BetaScrollParam? value) => new BetaComputerAction(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaComputerAction(global::tryAGI.OpenAI.BetaTypeParam value) => new BetaComputerAction((global::tryAGI.OpenAI.BetaTypeParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaTypeParam?(BetaComputerAction @this) => @this.TypeValue;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaComputerAction(global::tryAGI.OpenAI.BetaTypeParam? value)
         {
@@ -526,22 +526,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaComputerAction FromTypeValue(global::tryAGI.OpenAI.BetaTypeParam? value) => new BetaComputerAction(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaComputerAction(global::tryAGI.OpenAI.BetaWaitParam value) => new BetaComputerAction((global::tryAGI.OpenAI.BetaWaitParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaWaitParam?(BetaComputerAction @this) => @this.Wait;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaComputerAction(global::tryAGI.OpenAI.BetaWaitParam? value)
         {
@@ -549,12 +549,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaComputerAction FromWait(global::tryAGI.OpenAI.BetaWaitParam? value) => new BetaComputerAction(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaComputerAction(
             global::tryAGI.OpenAI.BetaComputerActionDiscriminatorType? type,
@@ -583,7 +583,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Wait as object ??
@@ -594,11 +594,11 @@ namespace tryAGI.OpenAI
             Keypress as object ??
             Drag as object ??
             DoubleClick as object ??
-            Click as object 
+            Click as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Click?.ToString() ??
@@ -609,11 +609,11 @@ namespace tryAGI.OpenAI
             Screenshot?.ToString() ??
             Scroll?.ToString() ??
             TypeValue?.ToString() ??
-            Wait?.ToString() 
+            Wait?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -621,7 +621,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaClickParam, TResult>? click = null,
@@ -681,7 +681,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaClickParam>? click = null,
@@ -747,7 +747,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaClickParam>? click = null,
@@ -805,7 +805,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -840,7 +840,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaComputerAction other)
         {
@@ -853,12 +853,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaScreenshotParam?>.Default.Equals(Screenshot, other.Screenshot) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaScrollParam?>.Default.Equals(Scroll, other.Scroll) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaTypeParam?>.Default.Equals(TypeValue, other.TypeValue) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaWaitParam?>.Default.Equals(Wait, other.Wait) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaWaitParam?>.Default.Equals(Wait, other.Wait)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaComputerAction obj1, BetaComputerAction obj2)
         {
@@ -866,7 +866,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaComputerAction obj1, BetaComputerAction obj2)
         {
@@ -874,7 +874,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

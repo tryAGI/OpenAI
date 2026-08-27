@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UserMessageItemContentItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         QuotedText,
     }

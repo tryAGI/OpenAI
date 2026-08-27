@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum RealtimeBetaResponseCreateParamsToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
     }

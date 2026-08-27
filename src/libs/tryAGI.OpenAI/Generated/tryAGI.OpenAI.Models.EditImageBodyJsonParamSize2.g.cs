@@ -4,24 +4,24 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum EditImageBodyJsonParamSize2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1536,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1536x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
     }

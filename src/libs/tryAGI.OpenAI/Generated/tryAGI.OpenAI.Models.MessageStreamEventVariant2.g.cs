@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class MessageStreamEventVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageStreamEventVariant2EventJsonConverter))]

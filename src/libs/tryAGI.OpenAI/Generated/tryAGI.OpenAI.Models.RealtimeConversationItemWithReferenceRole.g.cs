@@ -10,15 +10,15 @@ namespace tryAGI.OpenAI
     public enum RealtimeConversationItemWithReferenceRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Assistant,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         System,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

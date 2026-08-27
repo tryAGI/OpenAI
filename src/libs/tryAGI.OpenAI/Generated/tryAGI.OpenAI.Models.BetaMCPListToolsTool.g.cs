@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public required string Name { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         public required object InputSchema { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
         public object? Annotations { get; set; }

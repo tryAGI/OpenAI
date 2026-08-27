@@ -10,15 +10,15 @@ namespace tryAGI.OpenAI
     public enum RealtimeConversationItemMessageUserContentItemDetail
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
     }

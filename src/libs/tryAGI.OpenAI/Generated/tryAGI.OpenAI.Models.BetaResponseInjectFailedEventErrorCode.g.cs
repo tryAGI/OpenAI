@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum BetaResponseInjectFailedEventErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseAlreadyCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseNotFound,
     }

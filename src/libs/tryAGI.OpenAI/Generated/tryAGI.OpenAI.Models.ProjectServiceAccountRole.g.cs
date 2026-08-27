@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum ProjectServiceAccountRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Member,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Owner,
     }

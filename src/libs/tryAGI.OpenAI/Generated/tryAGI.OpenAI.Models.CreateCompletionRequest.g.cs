@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateCompletionRequest
     {
@@ -119,7 +119,7 @@ namespace tryAGI.OpenAI
         public bool? Stream { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_options")]
         public global::tryAGI.OpenAI.ChatCompletionStreamOptionsVariant1? StreamOptions { get; set; }

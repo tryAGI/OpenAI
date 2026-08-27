@@ -10,27 +10,27 @@ namespace tryAGI.OpenAI
     public enum BetaResponseVariant3Status
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Incomplete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Queued,
     }

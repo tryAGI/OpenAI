@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaInputMessageResource : global::System.IEquatable<BetaInputMessageResource>
     {
@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputMessage))]
@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         public bool IsInputMessage => InputMessage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputMessage(
 #if NET6_0_OR_GREATER
@@ -42,14 +42,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaInputMessage PickInputMessage() => IsInputMessage
             ? InputMessage!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessage' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaInputMessageResourceVariant2? BetaInputMessageResourceVariant2 { get; init; }
@@ -58,7 +58,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaInputMessageResourceVariant2))]
@@ -66,7 +66,7 @@ namespace tryAGI.OpenAI
         public bool IsBetaInputMessageResourceVariant2 => BetaInputMessageResourceVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBetaInputMessageResourceVariant2(
 #if NET6_0_OR_GREATER
@@ -79,23 +79,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaInputMessageResourceVariant2 PickBetaInputMessageResourceVariant2() => IsBetaInputMessageResourceVariant2
             ? BetaInputMessageResourceVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaInputMessageResourceVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaInputMessageResource(global::tryAGI.OpenAI.BetaInputMessage value) => new BetaInputMessageResource((global::tryAGI.OpenAI.BetaInputMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaInputMessage?(BetaInputMessageResource @this) => @this.InputMessage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputMessageResource(global::tryAGI.OpenAI.BetaInputMessage? value)
         {
@@ -103,22 +103,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaInputMessageResource FromInputMessage(global::tryAGI.OpenAI.BetaInputMessage? value) => new BetaInputMessageResource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaInputMessageResource(global::tryAGI.OpenAI.BetaInputMessageResourceVariant2 value) => new BetaInputMessageResource((global::tryAGI.OpenAI.BetaInputMessageResourceVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaInputMessageResourceVariant2?(BetaInputMessageResource @this) => @this.BetaInputMessageResourceVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputMessageResource(global::tryAGI.OpenAI.BetaInputMessageResourceVariant2? value)
         {
@@ -126,12 +126,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaInputMessageResource FromBetaInputMessageResourceVariant2(global::tryAGI.OpenAI.BetaInputMessageResourceVariant2? value) => new BetaInputMessageResource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputMessageResource(
             global::tryAGI.OpenAI.BetaInputMessage? inputMessage,
@@ -143,23 +143,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BetaInputMessageResourceVariant2 as object ??
-            InputMessage as object 
+            InputMessage as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputMessage?.ToString() ??
-            BetaInputMessageResourceVariant2?.ToString() 
+            BetaInputMessageResourceVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -167,7 +167,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaInputMessage, TResult>? inputMessage = null,
@@ -192,7 +192,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaInputMessage>? inputMessage = null,
@@ -216,7 +216,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaInputMessage>? inputMessage = null,
@@ -239,7 +239,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -260,18 +260,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaInputMessageResource other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputMessage?>.Default.Equals(InputMessage, other.InputMessage) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputMessageResourceVariant2?>.Default.Equals(BetaInputMessageResourceVariant2, other.BetaInputMessageResourceVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputMessageResourceVariant2?>.Default.Equals(BetaInputMessageResourceVariant2, other.BetaInputMessageResourceVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaInputMessageResource obj1, BetaInputMessageResource obj2)
         {
@@ -279,7 +279,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaInputMessageResource obj1, BetaInputMessageResource obj2)
         {
@@ -287,7 +287,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

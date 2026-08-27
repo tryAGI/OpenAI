@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct OutputsVariant1Item : global::System.IEquatable<OutputsVariant1Item>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CodeInterpreterToolCallOutputsVariant1ItemDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Logs))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsLogs => Logs != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLogs(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CodeInterpreterOutputLogs PickLogs() => IsLogs
             ? Logs!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsImage => Image != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImage(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CodeInterpreterOutputImage PickImage() => IsImage
             ? Image!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OutputsVariant1Item(global::tryAGI.OpenAI.CodeInterpreterOutputLogs value) => new OutputsVariant1Item((global::tryAGI.OpenAI.CodeInterpreterOutputLogs?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.CodeInterpreterOutputLogs?(OutputsVariant1Item @this) => @this.Logs;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputsVariant1Item(global::tryAGI.OpenAI.CodeInterpreterOutputLogs? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OutputsVariant1Item FromLogs(global::tryAGI.OpenAI.CodeInterpreterOutputLogs? value) => new OutputsVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator OutputsVariant1Item(global::tryAGI.OpenAI.CodeInterpreterOutputImage value) => new OutputsVariant1Item((global::tryAGI.OpenAI.CodeInterpreterOutputImage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.CodeInterpreterOutputImage?(OutputsVariant1Item @this) => @this.Image;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputsVariant1Item(global::tryAGI.OpenAI.CodeInterpreterOutputImage? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static OutputsVariant1Item FromImage(global::tryAGI.OpenAI.CodeInterpreterOutputImage? value) => new OutputsVariant1Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public OutputsVariant1Item(
             global::tryAGI.OpenAI.CodeInterpreterToolCallOutputsVariant1ItemDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Image as object ??
-            Logs as object 
+            Logs as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Logs?.ToString() ??
-            Image?.ToString() 
+            Image?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.CodeInterpreterOutputLogs, TResult>? logs = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.CodeInterpreterOutputLogs>? logs = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.CodeInterpreterOutputLogs>? logs = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(OutputsVariant1Item other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CodeInterpreterOutputLogs?>.Default.Equals(Logs, other.Logs) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CodeInterpreterOutputImage?>.Default.Equals(Image, other.Image) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CodeInterpreterOutputImage?>.Default.Equals(Image, other.Image)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(OutputsVariant1Item obj1, OutputsVariant1Item obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(OutputsVariant1Item obj1, OutputsVariant1Item obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

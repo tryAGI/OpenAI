@@ -72,7 +72,7 @@ namespace tryAGI.OpenAI.Realtime
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateResponseGAIncludeItem>? Include { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tracing")]
         public global::tryAGI.OpenAI.Realtime.OneOf<global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateResponseGATracingTracingConfigurationEnum?, global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateResponseGATracingTracingConfigurationEnum2>? Tracing { get; set; }
@@ -119,7 +119,7 @@ namespace tryAGI.OpenAI.Realtime
         public global::tryAGI.OpenAI.Realtime.RealtimeTruncation? Truncation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public global::tryAGI.OpenAI.Realtime.PromptVariant1? Prompt { get; set; }

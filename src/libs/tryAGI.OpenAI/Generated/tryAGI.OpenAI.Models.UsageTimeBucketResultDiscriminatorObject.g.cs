@@ -4,52 +4,52 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UsageTimeBucketResultDiscriminatorObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationCostsResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationUsageAudioSpeechesResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationUsageAudioTranscriptionsResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationUsageCodeInterpreterSessionsResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationUsageCompletionsResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationUsageEmbeddingsResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationUsageFileSearchesResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationUsageImagesResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationUsageModerationsResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationUsageVectorStoresResult,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationUsageWebSearchesResult,
     }

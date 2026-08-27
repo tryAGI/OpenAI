@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum EvalCustomDataSourceConfigType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
     }

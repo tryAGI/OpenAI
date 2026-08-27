@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateContainerBodyExpiresAfterAnchor Anchor { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("minutes")]
         [global::System.Text.Json.Serialization.JsonRequired]

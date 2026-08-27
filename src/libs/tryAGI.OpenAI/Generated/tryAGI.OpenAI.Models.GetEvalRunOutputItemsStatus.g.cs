@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum GetEvalRunOutputItemsStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fail,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pass,
     }

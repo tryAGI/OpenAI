@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum MessageContentTextAnnotationsFileCitationObjectType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileCitation,
     }

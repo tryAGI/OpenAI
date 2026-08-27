@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RunStepStreamEventVariant2Event
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThreadRunStepInProgress,
     }

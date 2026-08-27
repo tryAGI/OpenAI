@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI.Realtime
     public enum RealtimeServerEventResponseAudioTranscriptDoneType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputAudioTranscriptDone,
     }

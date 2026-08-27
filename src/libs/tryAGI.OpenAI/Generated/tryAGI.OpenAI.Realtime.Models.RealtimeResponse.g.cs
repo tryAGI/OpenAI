@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI.Realtime
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Realtime.RealtimeConversationItem>? Output { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }

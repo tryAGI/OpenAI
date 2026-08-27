@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_file")]
         public global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectImageFile? ImageFile { get; set; }

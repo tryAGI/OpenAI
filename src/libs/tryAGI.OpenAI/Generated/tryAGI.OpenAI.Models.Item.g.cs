@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct Item : global::System.IEquatable<Item>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ItemDiscriminatorType? Type { get; }
 
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message1))]
@@ -34,7 +34,7 @@ namespace tryAGI.OpenAI
         public bool IsMessage1 => Message1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessage1(
 #if NET6_0_OR_GREATER
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.InputMessage PickMessage1() => IsMessage1
             ? Message1!
@@ -63,7 +63,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message2))]
@@ -71,7 +71,7 @@ namespace tryAGI.OpenAI
         public bool IsMessage2 => Message2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessage2(
 #if NET6_0_OR_GREATER
@@ -84,7 +84,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.OutputMessage PickMessage2() => IsMessage2
             ? Message2!
@@ -101,7 +101,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCall))]
@@ -109,7 +109,7 @@ namespace tryAGI.OpenAI
         public bool IsFileSearchCall => FileSearchCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFileSearchCall(
 #if NET6_0_OR_GREATER
@@ -122,7 +122,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.FileSearchToolCall PickFileSearchCall() => IsFileSearchCall
             ? FileSearchCall!
@@ -139,7 +139,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerCall))]
@@ -147,7 +147,7 @@ namespace tryAGI.OpenAI
         public bool IsComputerCall => ComputerCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickComputerCall(
 #if NET6_0_OR_GREATER
@@ -160,7 +160,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ComputerToolCall PickComputerCall() => IsComputerCall
             ? ComputerCall!
@@ -176,7 +176,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerCallOutput))]
@@ -184,7 +184,7 @@ namespace tryAGI.OpenAI
         public bool IsComputerCallOutput => ComputerCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickComputerCallOutput(
 #if NET6_0_OR_GREATER
@@ -197,7 +197,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ComputerCallOutputItemParam PickComputerCallOutput() => IsComputerCallOutput
             ? ComputerCallOutput!
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCall))]
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         public bool IsWebSearchCall => WebSearchCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebSearchCall(
 #if NET6_0_OR_GREATER
@@ -235,7 +235,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.WebSearchToolCall PickWebSearchCall() => IsWebSearchCall
             ? WebSearchCall!
@@ -252,7 +252,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCall))]
@@ -260,7 +260,7 @@ namespace tryAGI.OpenAI
         public bool IsFunctionCall => FunctionCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionCall(
 #if NET6_0_OR_GREATER
@@ -273,7 +273,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.FunctionToolCall PickFunctionCall() => IsFunctionCall
             ? FunctionCall!
@@ -289,7 +289,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallOutput))]
@@ -297,7 +297,7 @@ namespace tryAGI.OpenAI
         public bool IsFunctionCallOutput => FunctionCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionCallOutput(
 #if NET6_0_OR_GREATER
@@ -310,14 +310,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.FunctionCallOutputItemParam PickFunctionCallOutput() => IsFunctionCallOutput
             ? FunctionCallOutput!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutput' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ToolSearchCallItemParam? ToolSearchCall { get; init; }
@@ -326,7 +326,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchCall))]
@@ -334,7 +334,7 @@ namespace tryAGI.OpenAI
         public bool IsToolSearchCall => ToolSearchCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolSearchCall(
 #if NET6_0_OR_GREATER
@@ -347,14 +347,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ToolSearchCallItemParam PickToolSearchCall() => IsToolSearchCall
             ? ToolSearchCall!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchCall' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ToolSearchOutputItemParam? ToolSearchOutput { get; init; }
@@ -363,7 +363,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchOutput))]
@@ -371,7 +371,7 @@ namespace tryAGI.OpenAI
         public bool IsToolSearchOutput => ToolSearchOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolSearchOutput(
 #if NET6_0_OR_GREATER
@@ -384,14 +384,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ToolSearchOutputItemParam PickToolSearchOutput() => IsToolSearchOutput
             ? ToolSearchOutput!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchOutput' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.AdditionalToolsItemParam? AdditionalTools { get; init; }
@@ -400,7 +400,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdditionalTools))]
@@ -408,7 +408,7 @@ namespace tryAGI.OpenAI
         public bool IsAdditionalTools => AdditionalTools != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAdditionalTools(
 #if NET6_0_OR_GREATER
@@ -421,7 +421,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.AdditionalToolsItemParam PickAdditionalTools() => IsAdditionalTools
             ? AdditionalTools!
@@ -440,7 +440,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reasoning))]
@@ -448,7 +448,7 @@ namespace tryAGI.OpenAI
         public bool IsReasoning => Reasoning != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReasoning(
 #if NET6_0_OR_GREATER
@@ -461,7 +461,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ReasoningItem PickReasoning() => IsReasoning
             ? Reasoning!
@@ -477,7 +477,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compaction))]
@@ -485,7 +485,7 @@ namespace tryAGI.OpenAI
         public bool IsCompaction => Compaction != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCompaction(
 #if NET6_0_OR_GREATER
@@ -498,7 +498,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CompactionSummaryItemParam PickCompaction() => IsCompaction
             ? Compaction!
@@ -514,7 +514,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationCall))]
@@ -522,7 +522,7 @@ namespace tryAGI.OpenAI
         public bool IsImageGenerationCall => ImageGenerationCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageGenerationCall(
 #if NET6_0_OR_GREATER
@@ -535,7 +535,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ImageGenToolCall PickImageGenerationCall() => IsImageGenerationCall
             ? ImageGenerationCall!
@@ -551,7 +551,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCall))]
@@ -559,7 +559,7 @@ namespace tryAGI.OpenAI
         public bool IsCodeInterpreterCall => CodeInterpreterCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCodeInterpreterCall(
 #if NET6_0_OR_GREATER
@@ -572,7 +572,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CodeInterpreterToolCall PickCodeInterpreterCall() => IsCodeInterpreterCall
             ? CodeInterpreterCall!
@@ -588,7 +588,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellCall))]
@@ -596,7 +596,7 @@ namespace tryAGI.OpenAI
         public bool IsLocalShellCall => LocalShellCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLocalShellCall(
 #if NET6_0_OR_GREATER
@@ -609,7 +609,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.LocalShellToolCall PickLocalShellCall() => IsLocalShellCall
             ? LocalShellCall!
@@ -625,7 +625,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellCallOutput))]
@@ -633,7 +633,7 @@ namespace tryAGI.OpenAI
         public bool IsLocalShellCallOutput => LocalShellCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLocalShellCallOutput(
 #if NET6_0_OR_GREATER
@@ -646,7 +646,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.LocalShellToolCallOutput PickLocalShellCallOutput() => IsLocalShellCallOutput
             ? LocalShellCallOutput!
@@ -662,7 +662,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellCall))]
@@ -670,7 +670,7 @@ namespace tryAGI.OpenAI
         public bool IsShellCall => ShellCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShellCall(
 #if NET6_0_OR_GREATER
@@ -683,7 +683,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.FunctionShellCallItemParam PickShellCall() => IsShellCall
             ? ShellCall!
@@ -699,7 +699,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellCallOutput))]
@@ -707,7 +707,7 @@ namespace tryAGI.OpenAI
         public bool IsShellCallOutput => ShellCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShellCallOutput(
 #if NET6_0_OR_GREATER
@@ -720,7 +720,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.FunctionShellCallOutputItemParam PickShellCallOutput() => IsShellCallOutput
             ? ShellCallOutput!
@@ -736,7 +736,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCall))]
@@ -744,7 +744,7 @@ namespace tryAGI.OpenAI
         public bool IsApplyPatchCall => ApplyPatchCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApplyPatchCall(
 #if NET6_0_OR_GREATER
@@ -757,7 +757,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ApplyPatchToolCallItemParam PickApplyPatchCall() => IsApplyPatchCall
             ? ApplyPatchCall!
@@ -773,7 +773,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCallOutput))]
@@ -781,7 +781,7 @@ namespace tryAGI.OpenAI
         public bool IsApplyPatchCallOutput => ApplyPatchCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApplyPatchCallOutput(
 #if NET6_0_OR_GREATER
@@ -794,7 +794,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParam PickApplyPatchCallOutput() => IsApplyPatchCallOutput
             ? ApplyPatchCallOutput!
@@ -810,7 +810,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpListTools))]
@@ -818,7 +818,7 @@ namespace tryAGI.OpenAI
         public bool IsMcpListTools => McpListTools != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpListTools(
 #if NET6_0_OR_GREATER
@@ -831,7 +831,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.MCPListTools PickMcpListTools() => IsMcpListTools
             ? McpListTools!
@@ -847,7 +847,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalRequest))]
@@ -855,7 +855,7 @@ namespace tryAGI.OpenAI
         public bool IsMcpApprovalRequest => McpApprovalRequest != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpApprovalRequest(
 #if NET6_0_OR_GREATER
@@ -868,7 +868,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.MCPApprovalRequest PickMcpApprovalRequest() => IsMcpApprovalRequest
             ? McpApprovalRequest!
@@ -884,7 +884,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalResponse))]
@@ -892,7 +892,7 @@ namespace tryAGI.OpenAI
         public bool IsMcpApprovalResponse => McpApprovalResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpApprovalResponse(
 #if NET6_0_OR_GREATER
@@ -905,7 +905,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.MCPApprovalResponse PickMcpApprovalResponse() => IsMcpApprovalResponse
             ? McpApprovalResponse!
@@ -921,7 +921,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpCall))]
@@ -929,7 +929,7 @@ namespace tryAGI.OpenAI
         public bool IsMcpCall => McpCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpCall(
 #if NET6_0_OR_GREATER
@@ -942,7 +942,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.MCPToolCall PickMcpCall() => IsMcpCall
             ? McpCall!
@@ -958,7 +958,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCallOutput))]
@@ -966,7 +966,7 @@ namespace tryAGI.OpenAI
         public bool IsCustomToolCallOutput => CustomToolCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustomToolCallOutput(
 #if NET6_0_OR_GREATER
@@ -979,7 +979,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CustomToolCallOutput PickCustomToolCallOutput() => IsCustomToolCallOutput
             ? CustomToolCallOutput!
@@ -995,7 +995,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCall))]
@@ -1003,7 +1003,7 @@ namespace tryAGI.OpenAI
         public bool IsCustomToolCall => CustomToolCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustomToolCall(
 #if NET6_0_OR_GREATER
@@ -1016,23 +1016,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CustomToolCall PickCustomToolCall() => IsCustomToolCall
             ? CustomToolCall!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCall' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.InputMessage value) => new Item((global::tryAGI.OpenAI.InputMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.InputMessage?(Item @this) => @this.Message1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.InputMessage? value)
         {
@@ -1040,22 +1040,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromMessage1(global::tryAGI.OpenAI.InputMessage? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.OutputMessage value) => new Item((global::tryAGI.OpenAI.OutputMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.OutputMessage?(Item @this) => @this.Message2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.OutputMessage? value)
         {
@@ -1063,22 +1063,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromMessage2(global::tryAGI.OpenAI.OutputMessage? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.FileSearchToolCall value) => new Item((global::tryAGI.OpenAI.FileSearchToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.FileSearchToolCall?(Item @this) => @this.FileSearchCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.FileSearchToolCall? value)
         {
@@ -1086,22 +1086,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromFileSearchCall(global::tryAGI.OpenAI.FileSearchToolCall? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.ComputerToolCall value) => new Item((global::tryAGI.OpenAI.ComputerToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ComputerToolCall?(Item @this) => @this.ComputerCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.ComputerToolCall? value)
         {
@@ -1109,22 +1109,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromComputerCall(global::tryAGI.OpenAI.ComputerToolCall? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.ComputerCallOutputItemParam value) => new Item((global::tryAGI.OpenAI.ComputerCallOutputItemParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ComputerCallOutputItemParam?(Item @this) => @this.ComputerCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.ComputerCallOutputItemParam? value)
         {
@@ -1132,22 +1132,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromComputerCallOutput(global::tryAGI.OpenAI.ComputerCallOutputItemParam? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.WebSearchToolCall value) => new Item((global::tryAGI.OpenAI.WebSearchToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.WebSearchToolCall?(Item @this) => @this.WebSearchCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.WebSearchToolCall? value)
         {
@@ -1155,22 +1155,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromWebSearchCall(global::tryAGI.OpenAI.WebSearchToolCall? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.FunctionToolCall value) => new Item((global::tryAGI.OpenAI.FunctionToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.FunctionToolCall?(Item @this) => @this.FunctionCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.FunctionToolCall? value)
         {
@@ -1178,22 +1178,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromFunctionCall(global::tryAGI.OpenAI.FunctionToolCall? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.FunctionCallOutputItemParam value) => new Item((global::tryAGI.OpenAI.FunctionCallOutputItemParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.FunctionCallOutputItemParam?(Item @this) => @this.FunctionCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.FunctionCallOutputItemParam? value)
         {
@@ -1201,22 +1201,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromFunctionCallOutput(global::tryAGI.OpenAI.FunctionCallOutputItemParam? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.ToolSearchCallItemParam value) => new Item((global::tryAGI.OpenAI.ToolSearchCallItemParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ToolSearchCallItemParam?(Item @this) => @this.ToolSearchCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.ToolSearchCallItemParam? value)
         {
@@ -1224,22 +1224,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromToolSearchCall(global::tryAGI.OpenAI.ToolSearchCallItemParam? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.ToolSearchOutputItemParam value) => new Item((global::tryAGI.OpenAI.ToolSearchOutputItemParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ToolSearchOutputItemParam?(Item @this) => @this.ToolSearchOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.ToolSearchOutputItemParam? value)
         {
@@ -1247,22 +1247,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromToolSearchOutput(global::tryAGI.OpenAI.ToolSearchOutputItemParam? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.AdditionalToolsItemParam value) => new Item((global::tryAGI.OpenAI.AdditionalToolsItemParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.AdditionalToolsItemParam?(Item @this) => @this.AdditionalTools;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.AdditionalToolsItemParam? value)
         {
@@ -1270,22 +1270,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromAdditionalTools(global::tryAGI.OpenAI.AdditionalToolsItemParam? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.ReasoningItem value) => new Item((global::tryAGI.OpenAI.ReasoningItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ReasoningItem?(Item @this) => @this.Reasoning;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.ReasoningItem? value)
         {
@@ -1293,22 +1293,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromReasoning(global::tryAGI.OpenAI.ReasoningItem? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.CompactionSummaryItemParam value) => new Item((global::tryAGI.OpenAI.CompactionSummaryItemParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.CompactionSummaryItemParam?(Item @this) => @this.Compaction;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.CompactionSummaryItemParam? value)
         {
@@ -1316,22 +1316,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromCompaction(global::tryAGI.OpenAI.CompactionSummaryItemParam? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.ImageGenToolCall value) => new Item((global::tryAGI.OpenAI.ImageGenToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ImageGenToolCall?(Item @this) => @this.ImageGenerationCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.ImageGenToolCall? value)
         {
@@ -1339,22 +1339,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromImageGenerationCall(global::tryAGI.OpenAI.ImageGenToolCall? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.CodeInterpreterToolCall value) => new Item((global::tryAGI.OpenAI.CodeInterpreterToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.CodeInterpreterToolCall?(Item @this) => @this.CodeInterpreterCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.CodeInterpreterToolCall? value)
         {
@@ -1362,22 +1362,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromCodeInterpreterCall(global::tryAGI.OpenAI.CodeInterpreterToolCall? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.LocalShellToolCall value) => new Item((global::tryAGI.OpenAI.LocalShellToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.LocalShellToolCall?(Item @this) => @this.LocalShellCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.LocalShellToolCall? value)
         {
@@ -1385,22 +1385,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromLocalShellCall(global::tryAGI.OpenAI.LocalShellToolCall? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.LocalShellToolCallOutput value) => new Item((global::tryAGI.OpenAI.LocalShellToolCallOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.LocalShellToolCallOutput?(Item @this) => @this.LocalShellCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.LocalShellToolCallOutput? value)
         {
@@ -1408,22 +1408,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromLocalShellCallOutput(global::tryAGI.OpenAI.LocalShellToolCallOutput? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.FunctionShellCallItemParam value) => new Item((global::tryAGI.OpenAI.FunctionShellCallItemParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.FunctionShellCallItemParam?(Item @this) => @this.ShellCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.FunctionShellCallItemParam? value)
         {
@@ -1431,22 +1431,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromShellCall(global::tryAGI.OpenAI.FunctionShellCallItemParam? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.FunctionShellCallOutputItemParam value) => new Item((global::tryAGI.OpenAI.FunctionShellCallOutputItemParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.FunctionShellCallOutputItemParam?(Item @this) => @this.ShellCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.FunctionShellCallOutputItemParam? value)
         {
@@ -1454,22 +1454,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromShellCallOutput(global::tryAGI.OpenAI.FunctionShellCallOutputItemParam? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.ApplyPatchToolCallItemParam value) => new Item((global::tryAGI.OpenAI.ApplyPatchToolCallItemParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ApplyPatchToolCallItemParam?(Item @this) => @this.ApplyPatchCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.ApplyPatchToolCallItemParam? value)
         {
@@ -1477,22 +1477,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromApplyPatchCall(global::tryAGI.OpenAI.ApplyPatchToolCallItemParam? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParam value) => new Item((global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParam?(Item @this) => @this.ApplyPatchCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParam? value)
         {
@@ -1500,22 +1500,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromApplyPatchCallOutput(global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParam? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.MCPListTools value) => new Item((global::tryAGI.OpenAI.MCPListTools?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.MCPListTools?(Item @this) => @this.McpListTools;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.MCPListTools? value)
         {
@@ -1523,22 +1523,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromMcpListTools(global::tryAGI.OpenAI.MCPListTools? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.MCPApprovalRequest value) => new Item((global::tryAGI.OpenAI.MCPApprovalRequest?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.MCPApprovalRequest?(Item @this) => @this.McpApprovalRequest;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.MCPApprovalRequest? value)
         {
@@ -1546,22 +1546,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromMcpApprovalRequest(global::tryAGI.OpenAI.MCPApprovalRequest? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.MCPApprovalResponse value) => new Item((global::tryAGI.OpenAI.MCPApprovalResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.MCPApprovalResponse?(Item @this) => @this.McpApprovalResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.MCPApprovalResponse? value)
         {
@@ -1569,22 +1569,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromMcpApprovalResponse(global::tryAGI.OpenAI.MCPApprovalResponse? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.MCPToolCall value) => new Item((global::tryAGI.OpenAI.MCPToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.MCPToolCall?(Item @this) => @this.McpCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.MCPToolCall? value)
         {
@@ -1592,22 +1592,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromMcpCall(global::tryAGI.OpenAI.MCPToolCall? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.CustomToolCallOutput value) => new Item((global::tryAGI.OpenAI.CustomToolCallOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.CustomToolCallOutput?(Item @this) => @this.CustomToolCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.CustomToolCallOutput? value)
         {
@@ -1615,22 +1615,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromCustomToolCallOutput(global::tryAGI.OpenAI.CustomToolCallOutput? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Item(global::tryAGI.OpenAI.CustomToolCall value) => new Item((global::tryAGI.OpenAI.CustomToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.CustomToolCall?(Item @this) => @this.CustomToolCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(global::tryAGI.OpenAI.CustomToolCall? value)
         {
@@ -1638,12 +1638,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Item FromCustomToolCall(global::tryAGI.OpenAI.CustomToolCall? value) => new Item(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Item(
             global::tryAGI.OpenAI.ItemDiscriminatorType? type,
@@ -1708,7 +1708,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CustomToolCall as object ??
@@ -1737,11 +1737,11 @@ namespace tryAGI.OpenAI
             ComputerCall as object ??
             FileSearchCall as object ??
             Message2 as object ??
-            Message1 as object 
+            Message1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Message1?.ToString() ??
@@ -1770,11 +1770,11 @@ namespace tryAGI.OpenAI
             McpApprovalResponse?.ToString() ??
             McpCall?.ToString() ??
             CustomToolCallOutput?.ToString() ??
-            CustomToolCall?.ToString() 
+            CustomToolCall?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -1782,7 +1782,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.InputMessage, TResult>? message1 = null,
@@ -1932,7 +1932,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.InputMessage>? message1 = null,
@@ -2106,7 +2106,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.InputMessage>? message1 = null,
@@ -2254,7 +2254,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -2325,7 +2325,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Item other)
         {
@@ -2356,12 +2356,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPApprovalResponse?>.Default.Equals(McpApprovalResponse, other.McpApprovalResponse) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.MCPToolCall?>.Default.Equals(McpCall, other.McpCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomToolCallOutput?>.Default.Equals(CustomToolCallOutput, other.CustomToolCallOutput) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomToolCall?>.Default.Equals(CustomToolCall, other.CustomToolCall) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomToolCall?>.Default.Equals(CustomToolCall, other.CustomToolCall)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Item obj1, Item obj2)
         {
@@ -2369,7 +2369,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Item obj1, Item obj2)
         {
@@ -2377,7 +2377,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

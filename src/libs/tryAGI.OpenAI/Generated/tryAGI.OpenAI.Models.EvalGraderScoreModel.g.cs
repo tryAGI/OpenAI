@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EvalGraderScoreModel : global::System.IEquatable<EvalGraderScoreModel>
     {
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ScoreModelGrader))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsScoreModelGrader => ScoreModelGrader != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickScoreModelGrader(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.GraderScoreModel PickScoreModelGrader() => IsScoreModelGrader
             ? ScoreModelGrader!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ScoreModelGrader' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.EvalGraderScoreModelVariant2? EvalGraderScoreModelVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EvalGraderScoreModelVariant2))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsEvalGraderScoreModelVariant2 => EvalGraderScoreModelVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEvalGraderScoreModelVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.EvalGraderScoreModelVariant2 PickEvalGraderScoreModelVariant2() => IsEvalGraderScoreModelVariant2
             ? EvalGraderScoreModelVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EvalGraderScoreModelVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EvalGraderScoreModel(global::tryAGI.OpenAI.GraderScoreModel value) => new EvalGraderScoreModel((global::tryAGI.OpenAI.GraderScoreModel?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.GraderScoreModel?(EvalGraderScoreModel @this) => @this.ScoreModelGrader;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EvalGraderScoreModel(global::tryAGI.OpenAI.GraderScoreModel? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EvalGraderScoreModel FromScoreModelGrader(global::tryAGI.OpenAI.GraderScoreModel? value) => new EvalGraderScoreModel(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EvalGraderScoreModel(global::tryAGI.OpenAI.EvalGraderScoreModelVariant2 value) => new EvalGraderScoreModel((global::tryAGI.OpenAI.EvalGraderScoreModelVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.EvalGraderScoreModelVariant2?(EvalGraderScoreModel @this) => @this.EvalGraderScoreModelVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EvalGraderScoreModel(global::tryAGI.OpenAI.EvalGraderScoreModelVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EvalGraderScoreModel FromEvalGraderScoreModelVariant2(global::tryAGI.OpenAI.EvalGraderScoreModelVariant2? value) => new EvalGraderScoreModel(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EvalGraderScoreModel(
             global::tryAGI.OpenAI.GraderScoreModel? scoreModelGrader,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EvalGraderScoreModelVariant2 as object ??
-            ScoreModelGrader as object 
+            ScoreModelGrader as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ScoreModelGrader?.ToString() ??
-            EvalGraderScoreModelVariant2?.ToString() 
+            EvalGraderScoreModelVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.GraderScoreModel, TResult>? scoreModelGrader = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.GraderScoreModel>? scoreModelGrader = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.GraderScoreModel>? scoreModelGrader = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EvalGraderScoreModel other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.GraderScoreModel?>.Default.Equals(ScoreModelGrader, other.ScoreModelGrader) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.EvalGraderScoreModelVariant2?>.Default.Equals(EvalGraderScoreModelVariant2, other.EvalGraderScoreModelVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.EvalGraderScoreModelVariant2?>.Default.Equals(EvalGraderScoreModelVariant2, other.EvalGraderScoreModelVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EvalGraderScoreModel obj1, EvalGraderScoreModel obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EvalGraderScoreModel obj1, EvalGraderScoreModel obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum RunObjectIncompleteDetailsReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxCompletionTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxPromptTokens,
     }

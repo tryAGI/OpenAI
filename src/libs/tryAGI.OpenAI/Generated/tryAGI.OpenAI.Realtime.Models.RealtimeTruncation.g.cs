@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsEnum => Enum != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEnum(
 #if NET6_0_OR_GREATER
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum PickEnum() => IsEnum
             ? Enum!.Value
@@ -59,7 +59,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RetentionRatioTruncation))]
@@ -67,7 +67,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsRetentionRatioTruncation => RetentionRatioTruncation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRetentionRatioTruncation(
 #if NET6_0_OR_GREATER
@@ -80,23 +80,23 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2 PickRetentionRatioTruncation() => IsRetentionRatioTruncation
             ? RetentionRatioTruncation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'RetentionRatioTruncation' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTruncation(global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum value) => new RealtimeTruncation((global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum?(RealtimeTruncation @this) => @this.Enum;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTruncation(global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum? value)
         {
@@ -104,22 +104,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTruncation FromEnum(global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum? value) => new RealtimeTruncation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTruncation(global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2 value) => new RealtimeTruncation((global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2?(RealtimeTruncation @this) => @this.RetentionRatioTruncation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTruncation(global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2? value)
         {
@@ -127,12 +127,12 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTruncation FromRetentionRatioTruncation(global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2? value) => new RealtimeTruncation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTruncation(
             global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum? @enum,
@@ -144,23 +144,23 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             RetentionRatioTruncation as object ??
-            Enum as object 
+            Enum as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Enum?.ToValueString() ??
-            RetentionRatioTruncation?.ToString() 
+            RetentionRatioTruncation?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -168,7 +168,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum?, TResult>? @enum = null,
@@ -193,7 +193,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum?>? @enum = null,
@@ -217,7 +217,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum?>? @enum = null,
@@ -240,7 +240,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -261,18 +261,18 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RealtimeTruncation other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum?>.Default.Equals(Enum, other.Enum) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2?>.Default.Equals(RetentionRatioTruncation, other.RetentionRatioTruncation) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2?>.Default.Equals(RetentionRatioTruncation, other.RetentionRatioTruncation)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RealtimeTruncation obj1, RealtimeTruncation obj2)
         {
@@ -280,7 +280,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RealtimeTruncation obj1, RealtimeTruncation obj2)
         {
@@ -288,7 +288,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

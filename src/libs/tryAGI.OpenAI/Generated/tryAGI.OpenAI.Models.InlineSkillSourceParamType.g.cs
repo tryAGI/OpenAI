@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum InlineSkillSourceParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Base64,
     }

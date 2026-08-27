@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum ImagesResponseOutputFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webp,
     }

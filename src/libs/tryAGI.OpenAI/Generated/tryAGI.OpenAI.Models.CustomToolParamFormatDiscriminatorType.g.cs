@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CustomToolParamFormatDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Grammar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public required int Y { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("keys")]
         public global::System.Collections.Generic.IList<string>? Keys { get; set; }

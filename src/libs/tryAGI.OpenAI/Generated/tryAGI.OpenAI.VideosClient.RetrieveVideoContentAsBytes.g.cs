@@ -153,7 +153,7 @@ namespace tryAGI.OpenAI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -481,7 +481,7 @@ namespace tryAGI.OpenAI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

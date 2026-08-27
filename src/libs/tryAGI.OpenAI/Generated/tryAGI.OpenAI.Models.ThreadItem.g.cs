@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ThreadItem : global::System.IEquatable<ThreadItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ThreadItemDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatkitUserMessage))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsChatkitUserMessage => ChatkitUserMessage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatkitUserMessage(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UserMessageItem PickChatkitUserMessage() => IsChatkitUserMessage
             ? ChatkitUserMessage!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatkitAssistantMessage))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsChatkitAssistantMessage => ChatkitAssistantMessage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatkitAssistantMessage(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.AssistantMessageItem PickChatkitAssistantMessage() => IsChatkitAssistantMessage
             ? ChatkitAssistantMessage!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatkitWidget))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsChatkitWidget => ChatkitWidget != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatkitWidget(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.WidgetMessageItem PickChatkitWidget() => IsChatkitWidget
             ? ChatkitWidget!
@@ -135,7 +135,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatkitClientToolCall))]
@@ -143,7 +143,7 @@ namespace tryAGI.OpenAI
         public bool IsChatkitClientToolCall => ChatkitClientToolCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatkitClientToolCall(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ClientToolCallItem PickChatkitClientToolCall() => IsChatkitClientToolCall
             ? ChatkitClientToolCall!
@@ -172,7 +172,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatkitTask))]
@@ -180,7 +180,7 @@ namespace tryAGI.OpenAI
         public bool IsChatkitTask => ChatkitTask != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatkitTask(
 #if NET6_0_OR_GREATER
@@ -193,7 +193,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.TaskItem PickChatkitTask() => IsChatkitTask
             ? ChatkitTask!
@@ -209,7 +209,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatkitTaskGroup))]
@@ -217,7 +217,7 @@ namespace tryAGI.OpenAI
         public bool IsChatkitTaskGroup => ChatkitTaskGroup != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickChatkitTaskGroup(
 #if NET6_0_OR_GREATER
@@ -230,23 +230,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.TaskGroupItem PickChatkitTaskGroup() => IsChatkitTaskGroup
             ? ChatkitTaskGroup!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatkitTaskGroup' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ThreadItem(global::tryAGI.OpenAI.UserMessageItem value) => new ThreadItem((global::tryAGI.OpenAI.UserMessageItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UserMessageItem?(ThreadItem @this) => @this.ChatkitUserMessage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ThreadItem(global::tryAGI.OpenAI.UserMessageItem? value)
         {
@@ -254,22 +254,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ThreadItem FromChatkitUserMessage(global::tryAGI.OpenAI.UserMessageItem? value) => new ThreadItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ThreadItem(global::tryAGI.OpenAI.AssistantMessageItem value) => new ThreadItem((global::tryAGI.OpenAI.AssistantMessageItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.AssistantMessageItem?(ThreadItem @this) => @this.ChatkitAssistantMessage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ThreadItem(global::tryAGI.OpenAI.AssistantMessageItem? value)
         {
@@ -277,22 +277,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ThreadItem FromChatkitAssistantMessage(global::tryAGI.OpenAI.AssistantMessageItem? value) => new ThreadItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ThreadItem(global::tryAGI.OpenAI.WidgetMessageItem value) => new ThreadItem((global::tryAGI.OpenAI.WidgetMessageItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.WidgetMessageItem?(ThreadItem @this) => @this.ChatkitWidget;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ThreadItem(global::tryAGI.OpenAI.WidgetMessageItem? value)
         {
@@ -300,22 +300,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ThreadItem FromChatkitWidget(global::tryAGI.OpenAI.WidgetMessageItem? value) => new ThreadItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ThreadItem(global::tryAGI.OpenAI.ClientToolCallItem value) => new ThreadItem((global::tryAGI.OpenAI.ClientToolCallItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ClientToolCallItem?(ThreadItem @this) => @this.ChatkitClientToolCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ThreadItem(global::tryAGI.OpenAI.ClientToolCallItem? value)
         {
@@ -323,22 +323,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ThreadItem FromChatkitClientToolCall(global::tryAGI.OpenAI.ClientToolCallItem? value) => new ThreadItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ThreadItem(global::tryAGI.OpenAI.TaskItem value) => new ThreadItem((global::tryAGI.OpenAI.TaskItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.TaskItem?(ThreadItem @this) => @this.ChatkitTask;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ThreadItem(global::tryAGI.OpenAI.TaskItem? value)
         {
@@ -346,22 +346,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ThreadItem FromChatkitTask(global::tryAGI.OpenAI.TaskItem? value) => new ThreadItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ThreadItem(global::tryAGI.OpenAI.TaskGroupItem value) => new ThreadItem((global::tryAGI.OpenAI.TaskGroupItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.TaskGroupItem?(ThreadItem @this) => @this.ChatkitTaskGroup;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ThreadItem(global::tryAGI.OpenAI.TaskGroupItem? value)
         {
@@ -369,12 +369,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ThreadItem FromChatkitTaskGroup(global::tryAGI.OpenAI.TaskGroupItem? value) => new ThreadItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ThreadItem(
             global::tryAGI.OpenAI.ThreadItemDiscriminatorType? type,
@@ -397,7 +397,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ChatkitTaskGroup as object ??
@@ -405,11 +405,11 @@ namespace tryAGI.OpenAI
             ChatkitClientToolCall as object ??
             ChatkitWidget as object ??
             ChatkitAssistantMessage as object ??
-            ChatkitUserMessage as object 
+            ChatkitUserMessage as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ChatkitUserMessage?.ToString() ??
@@ -417,11 +417,11 @@ namespace tryAGI.OpenAI
             ChatkitWidget?.ToString() ??
             ChatkitClientToolCall?.ToString() ??
             ChatkitTask?.ToString() ??
-            ChatkitTaskGroup?.ToString() 
+            ChatkitTaskGroup?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -429,7 +429,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.UserMessageItem, TResult>? chatkitUserMessage = null,
@@ -474,7 +474,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.UserMessageItem>? chatkitUserMessage = null,
@@ -522,7 +522,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.UserMessageItem>? chatkitUserMessage = null,
@@ -565,7 +565,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -594,7 +594,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ThreadItem other)
         {
@@ -604,12 +604,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WidgetMessageItem?>.Default.Equals(ChatkitWidget, other.ChatkitWidget) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ClientToolCallItem?>.Default.Equals(ChatkitClientToolCall, other.ChatkitClientToolCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TaskItem?>.Default.Equals(ChatkitTask, other.ChatkitTask) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TaskGroupItem?>.Default.Equals(ChatkitTaskGroup, other.ChatkitTaskGroup) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TaskGroupItem?>.Default.Equals(ChatkitTaskGroup, other.ChatkitTaskGroup)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ThreadItem obj1, ThreadItem obj2)
         {
@@ -617,7 +617,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ThreadItem obj1, ThreadItem obj2)
         {
@@ -625,7 +625,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

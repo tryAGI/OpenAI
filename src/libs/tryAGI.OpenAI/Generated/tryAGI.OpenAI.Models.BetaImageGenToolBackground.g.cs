@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         Opaque,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Transparent,
     }

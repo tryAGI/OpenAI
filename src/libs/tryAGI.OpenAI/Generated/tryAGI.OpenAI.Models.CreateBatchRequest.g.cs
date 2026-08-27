@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateBatchRequest
     {
@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateBatchRequestCompletionWindow CompletionWindow { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }

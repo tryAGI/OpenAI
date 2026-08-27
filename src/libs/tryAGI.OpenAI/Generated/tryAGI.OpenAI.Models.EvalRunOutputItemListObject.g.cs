@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum EvalRunOutputItemListObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         List,
     }

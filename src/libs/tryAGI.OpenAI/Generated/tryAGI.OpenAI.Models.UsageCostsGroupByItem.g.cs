@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UsageCostsGroupByItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiKeyId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LineItem,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProjectId,
     }

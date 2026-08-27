@@ -9,27 +9,27 @@ namespace tryAGI.OpenAI
     public enum ProjectDataRetentionType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EnhancedModifiedAbuseMonitoring,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EnhancedZeroDataRetention,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModifiedAbuseMonitoring,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationDefault,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZeroDataRetention,
     }

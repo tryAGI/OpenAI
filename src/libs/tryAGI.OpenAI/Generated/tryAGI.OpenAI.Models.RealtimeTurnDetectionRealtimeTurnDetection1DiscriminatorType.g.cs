@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RealtimeTurnDetectionRealtimeTurnDetection1DiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SemanticVad,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServerVad,
     }

@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ProjectUserDeleteResponseObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationProjectUserDeleted,
     }

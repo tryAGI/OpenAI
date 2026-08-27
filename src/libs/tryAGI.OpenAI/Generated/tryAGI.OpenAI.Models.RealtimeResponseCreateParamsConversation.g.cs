@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum RealtimeResponseCreateParamsConversation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

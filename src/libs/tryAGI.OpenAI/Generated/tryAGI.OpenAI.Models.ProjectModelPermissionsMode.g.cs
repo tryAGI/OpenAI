@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ProjectModelPermissionsMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AllowList,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DenyList,
     }

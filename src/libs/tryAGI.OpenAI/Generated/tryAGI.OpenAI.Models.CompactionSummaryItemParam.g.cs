@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class CompactionSummaryItemParam
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }

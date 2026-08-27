@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI.Realtime
     public enum RealtimeConversationItemMessageUserContentItemType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputText,
     }

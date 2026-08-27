@@ -9,13 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeSessionCreateResponseGAAudio
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAAudioInput? Input { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAAudioOutput? Output { get; set; }

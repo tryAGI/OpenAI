@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum FunctionShellCallType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShellCall,
     }

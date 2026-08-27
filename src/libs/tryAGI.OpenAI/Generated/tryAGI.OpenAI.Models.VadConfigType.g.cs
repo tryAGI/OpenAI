@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum VadConfigType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServerVad,
     }

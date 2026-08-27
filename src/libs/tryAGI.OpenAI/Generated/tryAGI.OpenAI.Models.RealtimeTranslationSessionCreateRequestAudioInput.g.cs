@@ -4,18 +4,18 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RealtimeTranslationSessionCreateRequestAudioInput
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transcription")]
         public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInputTranscription2? Transcription { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("noise_reduction")]
         public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInputNoiseReduction2? NoiseReduction { get; set; }

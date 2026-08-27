@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaInputFileContentType Type { get; set; } = global::tryAGI.OpenAI.BetaInputFileContentType.InputFile;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         public string? FileId { get; set; }

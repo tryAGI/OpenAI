@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum ResponseCustomToolCallInputDoneEventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCustomToolCallInputDone,
     }

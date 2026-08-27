@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum GetEvalRunsOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

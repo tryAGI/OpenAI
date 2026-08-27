@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         public required bool HasMore { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("next_page")]
         public string? NextPage { get; set; }

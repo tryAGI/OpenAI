@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaContainerAutoParamSkillDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inline,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SkillReference,
     }

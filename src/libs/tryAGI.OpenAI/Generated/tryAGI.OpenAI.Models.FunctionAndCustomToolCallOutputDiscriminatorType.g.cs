@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FunctionAndCustomToolCallOutputDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputText,
     }

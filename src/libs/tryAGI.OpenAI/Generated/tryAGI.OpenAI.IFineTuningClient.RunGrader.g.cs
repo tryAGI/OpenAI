@@ -36,14 +36,14 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="item">
         /// The dataset item provided to the grader. This will be used to populate <br/>
-        /// the `item` namespace. See [the guide](/docs/guides/graders) for more details. 
+        /// the `item` namespace. See [the guide](/docs/guides/graders) for more details.
         /// </param>
         /// <param name="modelSample">
         /// The model sample to be evaluated. This value will be used to populate <br/>
         /// the `sample` namespace. See [the guide](/docs/guides/graders) for more details.<br/>
         /// The `output_json` variable will be populated if the model sample is a <br/>
         /// valid JSON string.<br/>
-        ///  
+        ///
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

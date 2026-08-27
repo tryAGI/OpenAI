@@ -9,19 +9,19 @@ namespace tryAGI.OpenAI.Realtime
     public enum RealtimeResponseStatusDetailsReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ClientCancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFilter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxOutputTokens,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TurnDetected,
     }

@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         public string? Arguments { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         public string? Output { get; set; }

@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum WebSearchToolCallActionDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FindInPage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OpenPage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Search,
     }

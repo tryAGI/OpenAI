@@ -4,26 +4,26 @@
 namespace tryAGI.OpenAI.Realtime
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RealtimeMCPProtocolError
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.RealtimeMCPProtocolErrorTypeJsonConverter))]
         public global::tryAGI.OpenAI.Realtime.RealtimeMCPProtocolErrorType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Code { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]

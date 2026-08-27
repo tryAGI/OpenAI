@@ -48,7 +48,7 @@ namespace tryAGI.OpenAI
         public string? Namespace { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         public global::tryAGI.OpenAI.BetaToolCallCallerParam? Caller { get; set; }

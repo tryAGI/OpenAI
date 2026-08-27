@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaInputImageContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputImage,
     }

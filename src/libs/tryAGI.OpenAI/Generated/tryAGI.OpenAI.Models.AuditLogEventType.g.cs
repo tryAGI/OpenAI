@@ -9,575 +9,575 @@ namespace tryAGI.OpenAI
     public enum AuditLogEventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiKeyCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiKeyDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiKeyUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CertificateCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CertificateDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CertificateUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CertificatesActivated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CertificatesDeactivated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CheckpointPermissionCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CheckpointPermissionDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExternalKeyRegistered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ExternalKeyRemoved,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GroupCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GroupDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GroupUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InviteAccepted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InviteDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InviteSent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IpAllowlistConfigActivated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IpAllowlistConfigDeactivated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IpAllowlistCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IpAllowlistDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IpAllowlistUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LoginFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LoginSucceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LogoutFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LogoutSucceeded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProjectArchived,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProjectCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProjectDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProjectUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RateLimitDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RateLimitUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResourceDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RoleAssignmentCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RoleAssignmentDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RoleBoundToResource,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RoleCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RoleDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RoleUnboundFromResource,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RoleUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ScimDisabled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ScimEnabled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServiceAccountCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServiceAccountDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServiceAccountUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantAdminApiKeyCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantAdminApiKeyDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantAdminApiKeyUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantApiOrganizationInviteDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantApiOrganizationInviteUpserted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantBillingAlertsUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantBillingInfoUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantBillingOverageLimitUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantChatgptAccessTokenRevoked,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantChatgptWorkspaceInviteUpserted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantCustomRoleCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantCustomRoleDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantCustomRoleUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantDomainsMigrated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantGroupCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantGroupDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantGroupMemberAdded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantGroupMemberRemoved,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantGroupUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantMembershipAccepted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantMembershipDeclined,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantMembershipRevoked,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantMetadataUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantMicrosoftEntraMappingDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantMicrosoftEntraMappingUpserted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantMigrationCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantMigrationRolloutStatusUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantMigrationRolloutTierUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantPolicyAttached,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantPolicyCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantPolicyDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantPolicyDetached,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantPolicyUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantPrincipalAuthenticationPolicyResolved,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantProductAccessPolicyUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantProjectApiKeyCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantResourceAccessDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantResourceAccessUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantResourceRoleAssignmentCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantResourceRoleAssignmentDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantResourceShareGrantAccepted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantResourceShareGrantCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantResourceShareGrantDeclined,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantResourceShareGrantDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantResourceShareGrantRevoked,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantResourceShareGrantUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantRoleMetadataUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantRoleAssignmentCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantRoleAssignmentDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantScimDeletionRequested,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantScimDirectoryCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantScimSetupStarted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantServiceAccountDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantServiceAccountTokenRevoked,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantServiceAccountUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantSessionPolicyCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantSessionPolicyDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantSessionPolicyUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantSessionRevocationStarted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantSsoMigrated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantSsoConnectionCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantSsoConnectionDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantSsoConnectionSetupStarted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantSsoConnectionUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantThirdPartyAppPolicyUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantUsageLimitGroupUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantUsageLimitIncreaseRequestResolved,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantUsageLimitIncreaseRequestUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantUsageLimitUserUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantUsageLimitWorkspaceUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantUserAdded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantUserInvited,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantUserLookedUp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantUserRemoved,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantUserUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantWorkloadIdentityBindingCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantWorkloadIdentityMappingArchived,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantWorkloadIdentityMappingCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantWorkloadIdentityMappingUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantWorkloadIdentityPrincipalProvisioned,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantWorkloadIdentityProviderArchived,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantWorkloadIdentityProviderCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantWorkloadIdentityProviderUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantWorkspaceInviteEmailSettingsUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TunnelCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TunnelDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TunnelUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserAdded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkloadIdentityProviderCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkloadIdentityProviderDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkloadIdentityProviderUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkloadIdentityProviderMappingCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkloadIdentityProviderMappingDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkloadIdentityProviderMappingUpdated,
     }

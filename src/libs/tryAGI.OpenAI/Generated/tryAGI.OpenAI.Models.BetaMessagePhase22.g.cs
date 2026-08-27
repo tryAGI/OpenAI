@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaMessagePhase22
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Commentary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FinalAnswer,
     }

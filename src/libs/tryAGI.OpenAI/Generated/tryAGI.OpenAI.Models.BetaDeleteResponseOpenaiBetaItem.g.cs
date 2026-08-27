@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaDeleteResponseOpenaiBetaItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponsesMultiAgent_v1,
     }

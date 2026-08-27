@@ -6,19 +6,19 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateResponseVariant3
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncation")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public global::tryAGI.OpenAI.CreateResponseVariant3Truncation2? Truncation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
         public global::tryAGI.OpenAI.Reasoning? Reasoning { get; set; }
@@ -37,61 +37,61 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.InputParam? Input { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.IncludeEnum>? Include { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
         public bool? ParallelToolCalls { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("store")]
         public bool? Store { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         public string? Instructions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("moderation")]
         public global::tryAGI.OpenAI.ModerationParam? Moderation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
         public bool? Stream { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_options")]
         public global::tryAGI.OpenAI.ResponseStreamOptionsVariant1? StreamOptions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conversation")]
         public global::tryAGI.OpenAI.ConversationParam? Conversation { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context_management")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContextManagementParam>? ContextManagement { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
         public int? MaxOutputTokens { get; set; }

@@ -4,32 +4,32 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateTranscriptionRequestModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMiniTranscribe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMiniTranscribe20251215,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oTranscribe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oTranscribeDiarize,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptTranscribe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Whisper1,
     }

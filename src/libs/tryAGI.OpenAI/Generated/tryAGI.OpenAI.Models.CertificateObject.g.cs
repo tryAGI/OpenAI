@@ -12,15 +12,15 @@ namespace tryAGI.OpenAI
     public enum CertificateObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Certificate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationCertificate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OrganizationProjectCertificate,
     }

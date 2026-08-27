@@ -10,12 +10,12 @@ namespace tryAGI.OpenAI
     public readonly partial struct BetaToolCallCaller : global::System.IEquatable<BetaToolCallCaller>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaToolCallCallerDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaDirectToolCallCaller? Direct { get; init; }
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Direct))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsDirect => Direct != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDirect(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaDirectToolCallCaller PickDirect() => IsDirect
             ? Direct!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Direct' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaProgramToolCallCaller? Program { get; init; }
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Program))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsProgram => Program != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProgram(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaProgramToolCallCaller PickProgram() => IsProgram
             ? Program!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Program' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaToolCallCaller(global::tryAGI.OpenAI.BetaDirectToolCallCaller value) => new BetaToolCallCaller((global::tryAGI.OpenAI.BetaDirectToolCallCaller?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaDirectToolCallCaller?(BetaToolCallCaller @this) => @this.Direct;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaToolCallCaller(global::tryAGI.OpenAI.BetaDirectToolCallCaller? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaToolCallCaller FromDirect(global::tryAGI.OpenAI.BetaDirectToolCallCaller? value) => new BetaToolCallCaller(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaToolCallCaller(global::tryAGI.OpenAI.BetaProgramToolCallCaller value) => new BetaToolCallCaller((global::tryAGI.OpenAI.BetaProgramToolCallCaller?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaProgramToolCallCaller?(BetaToolCallCaller @this) => @this.Program;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaToolCallCaller(global::tryAGI.OpenAI.BetaProgramToolCallCaller? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaToolCallCaller FromProgram(global::tryAGI.OpenAI.BetaProgramToolCallCaller? value) => new BetaToolCallCaller(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaToolCallCaller(
             global::tryAGI.OpenAI.BetaToolCallCallerDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Program as object ??
-            Direct as object 
+            Direct as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Direct?.ToString() ??
-            Program?.ToString() 
+            Program?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaDirectToolCallCaller, TResult>? direct = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaDirectToolCallCaller>? direct = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaDirectToolCallCaller>? direct = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaToolCallCaller other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaDirectToolCallCaller?>.Default.Equals(Direct, other.Direct) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaProgramToolCallCaller?>.Default.Equals(Program, other.Program) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaProgramToolCallCaller?>.Default.Equals(Program, other.Program)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaToolCallCaller obj1, BetaToolCallCaller obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaToolCallCaller obj1, BetaToolCallCaller obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

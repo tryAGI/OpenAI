@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI.Realtime
     public enum RealtimeConversationItemMessageUserStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Incomplete,
     }

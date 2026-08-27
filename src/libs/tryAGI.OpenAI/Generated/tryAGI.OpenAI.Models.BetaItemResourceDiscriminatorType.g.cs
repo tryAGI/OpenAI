@@ -4,112 +4,112 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaItemResourceDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AdditionalTools,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentMessage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplyPatchCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplyPatchCallOutput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeInterpreterCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Compaction,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ComputerCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileSearchCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGenerationCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LocalShellCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LocalShellCallOutput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpApprovalRequest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpApprovalResponse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpListTools,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Message,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MultiAgentCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MultiAgentCallOutput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Program,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProgramOutput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Reasoning,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShellCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ShellCallOutput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchOutput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchCall,
     }

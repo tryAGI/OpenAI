@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ResponseOutputTextAnnotationDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         File,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Url,
     }

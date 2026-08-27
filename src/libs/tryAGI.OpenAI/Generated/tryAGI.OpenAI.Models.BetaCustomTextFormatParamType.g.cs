@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaCustomTextFormatParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

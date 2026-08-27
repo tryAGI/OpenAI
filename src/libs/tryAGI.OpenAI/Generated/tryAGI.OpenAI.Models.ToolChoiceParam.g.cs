@@ -25,7 +25,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolChoiceMode))]
@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         public bool IsToolChoiceMode => ToolChoiceMode != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolChoiceMode(
 #if NET6_0_OR_GREATER
@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ToolChoiceOptions PickToolChoiceMode() => IsToolChoiceMode
             ? ToolChoiceMode!.Value
@@ -62,7 +62,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AllowedTools))]
@@ -70,7 +70,7 @@ namespace tryAGI.OpenAI
         public bool IsAllowedTools => AllowedTools != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAllowedTools(
 #if NET6_0_OR_GREATER
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ToolChoiceAllowed PickAllowedTools() => IsAllowedTools
             ? AllowedTools!
@@ -100,7 +100,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(HostedTool))]
@@ -108,7 +108,7 @@ namespace tryAGI.OpenAI
         public bool IsHostedTool => HostedTool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickHostedTool(
 #if NET6_0_OR_GREATER
@@ -121,7 +121,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ToolChoiceTypes PickHostedTool() => IsHostedTool
             ? HostedTool!
@@ -137,7 +137,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionTool))]
@@ -145,7 +145,7 @@ namespace tryAGI.OpenAI
         public bool IsFunctionTool => FunctionTool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionTool(
 #if NET6_0_OR_GREATER
@@ -158,7 +158,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ToolChoiceFunction PickFunctionTool() => IsFunctionTool
             ? FunctionTool!
@@ -174,7 +174,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpTool))]
@@ -182,7 +182,7 @@ namespace tryAGI.OpenAI
         public bool IsMcpTool => McpTool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpTool(
 #if NET6_0_OR_GREATER
@@ -195,7 +195,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ToolChoiceMCP PickMcpTool() => IsMcpTool
             ? McpTool!
@@ -211,7 +211,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomTool))]
@@ -219,7 +219,7 @@ namespace tryAGI.OpenAI
         public bool IsCustomTool => CustomTool != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustomTool(
 #if NET6_0_OR_GREATER
@@ -232,14 +232,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ToolChoiceCustom PickCustomTool() => IsCustomTool
             ? CustomTool!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomTool' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam? SpecificProgrammaticCalling { get; init; }
@@ -248,7 +248,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpecificProgrammaticCalling))]
@@ -256,7 +256,7 @@ namespace tryAGI.OpenAI
         public bool IsSpecificProgrammaticCalling => SpecificProgrammaticCalling != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpecificProgrammaticCalling(
 #if NET6_0_OR_GREATER
@@ -269,7 +269,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam PickSpecificProgrammaticCalling() => IsSpecificProgrammaticCalling
             ? SpecificProgrammaticCalling!
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpecificApplyPatchToolChoice))]
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         public bool IsSpecificApplyPatchToolChoice => SpecificApplyPatchToolChoice != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpecificApplyPatchToolChoice(
 #if NET6_0_OR_GREATER
@@ -306,7 +306,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.SpecificApplyPatchParam PickSpecificApplyPatchToolChoice() => IsSpecificApplyPatchToolChoice
             ? SpecificApplyPatchToolChoice!
@@ -322,7 +322,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpecificShellToolChoice))]
@@ -330,7 +330,7 @@ namespace tryAGI.OpenAI
         public bool IsSpecificShellToolChoice => SpecificShellToolChoice != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpecificShellToolChoice(
 #if NET6_0_OR_GREATER
@@ -343,23 +343,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.SpecificFunctionShellParam PickSpecificShellToolChoice() => IsSpecificShellToolChoice
             ? SpecificShellToolChoice!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpecificShellToolChoice' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceOptions value) => new ToolChoiceParam((global::tryAGI.OpenAI.ToolChoiceOptions?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ToolChoiceOptions?(ToolChoiceParam @this) => @this.ToolChoiceMode;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceOptions? value)
         {
@@ -367,22 +367,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoiceParam FromToolChoiceMode(global::tryAGI.OpenAI.ToolChoiceOptions? value) => new ToolChoiceParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceAllowed value) => new ToolChoiceParam((global::tryAGI.OpenAI.ToolChoiceAllowed?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ToolChoiceAllowed?(ToolChoiceParam @this) => @this.AllowedTools;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceAllowed? value)
         {
@@ -390,22 +390,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoiceParam FromAllowedTools(global::tryAGI.OpenAI.ToolChoiceAllowed? value) => new ToolChoiceParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceTypes value) => new ToolChoiceParam((global::tryAGI.OpenAI.ToolChoiceTypes?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ToolChoiceTypes?(ToolChoiceParam @this) => @this.HostedTool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceTypes? value)
         {
@@ -413,22 +413,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoiceParam FromHostedTool(global::tryAGI.OpenAI.ToolChoiceTypes? value) => new ToolChoiceParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceFunction value) => new ToolChoiceParam((global::tryAGI.OpenAI.ToolChoiceFunction?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ToolChoiceFunction?(ToolChoiceParam @this) => @this.FunctionTool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceFunction? value)
         {
@@ -436,22 +436,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoiceParam FromFunctionTool(global::tryAGI.OpenAI.ToolChoiceFunction? value) => new ToolChoiceParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceMCP value) => new ToolChoiceParam((global::tryAGI.OpenAI.ToolChoiceMCP?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ToolChoiceMCP?(ToolChoiceParam @this) => @this.McpTool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceMCP? value)
         {
@@ -459,22 +459,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoiceParam FromMcpTool(global::tryAGI.OpenAI.ToolChoiceMCP? value) => new ToolChoiceParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceCustom value) => new ToolChoiceParam((global::tryAGI.OpenAI.ToolChoiceCustom?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ToolChoiceCustom?(ToolChoiceParam @this) => @this.CustomTool;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoiceParam(global::tryAGI.OpenAI.ToolChoiceCustom? value)
         {
@@ -482,22 +482,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoiceParam FromCustomTool(global::tryAGI.OpenAI.ToolChoiceCustom? value) => new ToolChoiceParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam value) => new ToolChoiceParam((global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam?(ToolChoiceParam @this) => @this.SpecificProgrammaticCalling;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoiceParam(global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam? value)
         {
@@ -505,22 +505,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoiceParam FromSpecificProgrammaticCalling(global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam? value) => new ToolChoiceParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.SpecificApplyPatchParam value) => new ToolChoiceParam((global::tryAGI.OpenAI.SpecificApplyPatchParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.SpecificApplyPatchParam?(ToolChoiceParam @this) => @this.SpecificApplyPatchToolChoice;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoiceParam(global::tryAGI.OpenAI.SpecificApplyPatchParam? value)
         {
@@ -528,22 +528,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoiceParam FromSpecificApplyPatchToolChoice(global::tryAGI.OpenAI.SpecificApplyPatchParam? value) => new ToolChoiceParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolChoiceParam(global::tryAGI.OpenAI.SpecificFunctionShellParam value) => new ToolChoiceParam((global::tryAGI.OpenAI.SpecificFunctionShellParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.SpecificFunctionShellParam?(ToolChoiceParam @this) => @this.SpecificShellToolChoice;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoiceParam(global::tryAGI.OpenAI.SpecificFunctionShellParam? value)
         {
@@ -551,12 +551,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolChoiceParam FromSpecificShellToolChoice(global::tryAGI.OpenAI.SpecificFunctionShellParam? value) => new ToolChoiceParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolChoiceParam(
             global::tryAGI.OpenAI.ToolChoiceOptions? toolChoiceMode,
@@ -582,7 +582,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SpecificShellToolChoice as object ??
@@ -593,11 +593,11 @@ namespace tryAGI.OpenAI
             FunctionTool as object ??
             HostedTool as object ??
             AllowedTools as object ??
-            ToolChoiceMode as object 
+            ToolChoiceMode as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ToolChoiceMode?.ToValueString() ??
@@ -608,11 +608,11 @@ namespace tryAGI.OpenAI
             CustomTool?.ToString() ??
             SpecificProgrammaticCalling?.ToString() ??
             SpecificApplyPatchToolChoice?.ToString() ??
-            SpecificShellToolChoice?.ToString() 
+            SpecificShellToolChoice?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -620,7 +620,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ToolChoiceOptions?, TResult>? toolChoiceMode = null,
@@ -680,7 +680,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ToolChoiceOptions?>? toolChoiceMode = null,
@@ -746,7 +746,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ToolChoiceOptions?>? toolChoiceMode = null,
@@ -804,7 +804,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -839,7 +839,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ToolChoiceParam other)
         {
@@ -852,12 +852,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ToolChoiceCustom?>.Default.Equals(CustomTool, other.CustomTool) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam?>.Default.Equals(SpecificProgrammaticCalling, other.SpecificProgrammaticCalling) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpecificApplyPatchParam?>.Default.Equals(SpecificApplyPatchToolChoice, other.SpecificApplyPatchToolChoice) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpecificFunctionShellParam?>.Default.Equals(SpecificShellToolChoice, other.SpecificShellToolChoice) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpecificFunctionShellParam?>.Default.Equals(SpecificShellToolChoice, other.SpecificShellToolChoice)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ToolChoiceParam obj1, ToolChoiceParam obj2)
         {
@@ -865,7 +865,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ToolChoiceParam obj1, ToolChoiceParam obj2)
         {
@@ -873,7 +873,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

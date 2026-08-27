@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum RealtimeBetaServerEventMCPListToolsFailedType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpListToolsFailed,
     }

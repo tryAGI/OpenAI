@@ -4,36 +4,36 @@
 namespace tryAGI.OpenAI.Realtime
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RealtimeConversationItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FunctionCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FunctionCallOutput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpApprovalRequest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpApprovalResponse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpListTools,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Message,
     }

@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ListAssistantsOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

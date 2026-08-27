@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum CreateTranscriptionRequestChunkingStrategyVariant1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
     }

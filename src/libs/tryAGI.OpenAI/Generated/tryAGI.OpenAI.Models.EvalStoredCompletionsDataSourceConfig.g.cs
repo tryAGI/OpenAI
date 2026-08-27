@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfigType Type { get; set; } = global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfigType.StoredCompletions;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Obsolete("This property marked as deprecated.")]

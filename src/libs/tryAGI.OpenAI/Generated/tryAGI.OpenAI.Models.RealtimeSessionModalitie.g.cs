@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum RealtimeSessionModalitie
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

@@ -50,13 +50,13 @@ namespace tryAGI.OpenAI
         public required string Arguments { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         public string? Output { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public string? Error { get; set; }
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaMCPToolCallStatus? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("approval_request_id")]
         public string? ApprovalRequestId { get; set; }

@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum ChatSessionResourceObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatkitSession,
     }

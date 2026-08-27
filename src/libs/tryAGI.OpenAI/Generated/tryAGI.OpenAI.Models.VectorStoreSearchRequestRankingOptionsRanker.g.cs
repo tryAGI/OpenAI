@@ -10,15 +10,15 @@ namespace tryAGI.OpenAI
     public enum VectorStoreSearchRequestRankingOptionsRanker
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default20241115,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

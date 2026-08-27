@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI.Realtime
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RealtimeServerEventConversationItemAddedPreviousItemId
     {

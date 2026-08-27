@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct CreateChatCompletionRequest : global::System.IEquatable<CreateChatCompletionRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.CreateModelResponseProperties? ModelResponseProperties { get; init; }
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelResponseProperties))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsModelResponseProperties => ModelResponseProperties != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickModelResponseProperties(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CreateModelResponseProperties PickModelResponseProperties() => IsModelResponseProperties
             ? ModelResponseProperties!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelResponseProperties' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2? CreateChatCompletionRequestVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CreateChatCompletionRequestVariant2))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsCreateChatCompletionRequestVariant2 => CreateChatCompletionRequestVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCreateChatCompletionRequestVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2 PickCreateChatCompletionRequestVariant2() => IsCreateChatCompletionRequestVariant2
             ? CreateChatCompletionRequestVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateChatCompletionRequestVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateChatCompletionRequest(global::tryAGI.OpenAI.CreateModelResponseProperties value) => new CreateChatCompletionRequest((global::tryAGI.OpenAI.CreateModelResponseProperties?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.CreateModelResponseProperties?(CreateChatCompletionRequest @this) => @this.ModelResponseProperties;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateChatCompletionRequest(global::tryAGI.OpenAI.CreateModelResponseProperties? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateChatCompletionRequest FromModelResponseProperties(global::tryAGI.OpenAI.CreateModelResponseProperties? value) => new CreateChatCompletionRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateChatCompletionRequest(global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2 value) => new CreateChatCompletionRequest((global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2?(CreateChatCompletionRequest @this) => @this.CreateChatCompletionRequestVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateChatCompletionRequest(global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateChatCompletionRequest FromCreateChatCompletionRequestVariant2(global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2? value) => new CreateChatCompletionRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateChatCompletionRequest(
             global::tryAGI.OpenAI.CreateModelResponseProperties? modelResponseProperties,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CreateChatCompletionRequestVariant2 as object ??
-            ModelResponseProperties as object 
+            ModelResponseProperties as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ModelResponseProperties?.ToString() ??
-            CreateChatCompletionRequestVariant2?.ToString() 
+            CreateChatCompletionRequestVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.CreateModelResponseProperties?, TResult>? modelResponseProperties = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.CreateModelResponseProperties?>? modelResponseProperties = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.CreateModelResponseProperties?>? modelResponseProperties = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CreateChatCompletionRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateModelResponseProperties?>.Default.Equals(ModelResponseProperties, other.ModelResponseProperties) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2?>.Default.Equals(CreateChatCompletionRequestVariant2, other.CreateChatCompletionRequestVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2?>.Default.Equals(CreateChatCompletionRequestVariant2, other.CreateChatCompletionRequestVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CreateChatCompletionRequest obj1, CreateChatCompletionRequest obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CreateChatCompletionRequest obj1, CreateChatCompletionRequest obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

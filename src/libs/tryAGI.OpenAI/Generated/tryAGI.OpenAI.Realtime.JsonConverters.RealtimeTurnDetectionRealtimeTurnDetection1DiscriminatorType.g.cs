@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI.Realtime.JsonConverters
                     {
                         return global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1DiscriminatorTypeExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown discriminator value '{stringValue}' for global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1DiscriminatorType.");
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

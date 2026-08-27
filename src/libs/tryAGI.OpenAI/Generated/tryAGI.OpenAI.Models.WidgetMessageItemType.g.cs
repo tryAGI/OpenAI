@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum WidgetMessageItemType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatkitWidget,
     }

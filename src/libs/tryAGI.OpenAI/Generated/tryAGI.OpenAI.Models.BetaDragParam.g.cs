@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaCoordParam> Path { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("keys")]
         public global::System.Collections.Generic.IList<string>? Keys { get; set; }

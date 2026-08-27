@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum FineTuningJobEventLevel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Info,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Warn,
     }

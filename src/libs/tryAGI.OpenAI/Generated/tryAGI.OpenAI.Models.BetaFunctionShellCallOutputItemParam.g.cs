@@ -9,13 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class BetaFunctionShellCallOutputItemParam
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
         public global::tryAGI.OpenAI.BetaAgentTagParam? Agent { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         public required string CallId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         public global::tryAGI.OpenAI.BetaToolCallCallerParam? Caller { get; set; }
@@ -50,13 +50,13 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaFunctionShellCallOutputContentParam> Output { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public global::tryAGI.OpenAI.BetaFunctionShellCallItemStatus? Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_length")]
         public int? MaxOutputLength { get; set; }

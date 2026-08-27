@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum GroupResponseGroupType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Group,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TenantGroup,
     }

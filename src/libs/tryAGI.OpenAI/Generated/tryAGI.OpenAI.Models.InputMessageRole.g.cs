@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum InputMessageRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Developer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         System,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

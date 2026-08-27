@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum CreateModerationRequestInputVariant3ItemVariant1Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageUrl,
     }

@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum RealtimeBetaClientEventConversationItemTruncateType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemTruncate,
     }

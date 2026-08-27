@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateChatCompletionResponseChoice
     {
@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.ChatCompletionResponseMessage Message { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
         public global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceLogprobs2? Logprobs { get; set; }

@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct Status : global::System.IEquatable<Status>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ThreadResourceStatusDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Active))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsActive => Active != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickActive(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ActiveStatus PickActive() => IsActive
             ? Active!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Locked))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsLocked => Locked != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLocked(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.LockedStatus PickLocked() => IsLocked
             ? Locked!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Closed))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsClosed => Closed != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickClosed(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ClosedStatus PickClosed() => IsClosed
             ? Closed!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Closed' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Status(global::tryAGI.OpenAI.ActiveStatus value) => new Status((global::tryAGI.OpenAI.ActiveStatus?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ActiveStatus?(Status @this) => @this.Active;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Status(global::tryAGI.OpenAI.ActiveStatus? value)
         {
@@ -143,22 +143,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Status FromActive(global::tryAGI.OpenAI.ActiveStatus? value) => new Status(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Status(global::tryAGI.OpenAI.LockedStatus value) => new Status((global::tryAGI.OpenAI.LockedStatus?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.LockedStatus?(Status @this) => @this.Locked;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Status(global::tryAGI.OpenAI.LockedStatus? value)
         {
@@ -166,22 +166,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Status FromLocked(global::tryAGI.OpenAI.LockedStatus? value) => new Status(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Status(global::tryAGI.OpenAI.ClosedStatus value) => new Status((global::tryAGI.OpenAI.ClosedStatus?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ClosedStatus?(Status @this) => @this.Closed;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Status(global::tryAGI.OpenAI.ClosedStatus? value)
         {
@@ -189,12 +189,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Status FromClosed(global::tryAGI.OpenAI.ClosedStatus? value) => new Status(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Status(
             global::tryAGI.OpenAI.ThreadResourceStatusDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Closed as object ??
             Locked as object ??
-            Active as object 
+            Active as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Active?.ToString() ??
             Locked?.ToString() ??
-            Closed?.ToString() 
+            Closed?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ActiveStatus, TResult>? active = null,
@@ -267,7 +267,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ActiveStatus>? active = null,
@@ -297,7 +297,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ActiveStatus>? active = null,
@@ -325,7 +325,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Status other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ActiveStatus?>.Default.Equals(Active, other.Active) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LockedStatus?>.Default.Equals(Locked, other.Locked) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ClosedStatus?>.Default.Equals(Closed, other.Closed) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ClosedStatus?>.Default.Equals(Closed, other.Closed)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Status obj1, Status obj2)
         {
@@ -368,7 +368,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Status obj1, Status obj2)
         {
@@ -376,7 +376,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

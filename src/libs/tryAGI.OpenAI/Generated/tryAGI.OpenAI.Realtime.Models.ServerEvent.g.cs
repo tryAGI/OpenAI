@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI.Realtime
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ServerEvent : global::System.IEquatable<ServerEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.ServerEventDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationCreated))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationCreated => ConversationCreated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationCreated(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated PickConversationCreated() => IsConversationCreated
             ? ConversationCreated!
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemAdded))]
@@ -73,7 +73,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemAdded => ConversationItemAdded != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationItemAdded(
 #if NET6_0_OR_GREATER
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded PickConversationItemAdded() => IsConversationItemAdded
             ? ConversationItemAdded!
@@ -110,7 +110,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemCreated))]
@@ -118,7 +118,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemCreated => ConversationItemCreated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationItemCreated(
 #if NET6_0_OR_GREATER
@@ -131,7 +131,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated PickConversationItemCreated() => IsConversationItemCreated
             ? ConversationItemCreated!
@@ -149,7 +149,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemDeleted))]
@@ -157,7 +157,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemDeleted => ConversationItemDeleted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationItemDeleted(
 #if NET6_0_OR_GREATER
@@ -170,7 +170,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted PickConversationItemDeleted() => IsConversationItemDeleted
             ? ConversationItemDeleted!
@@ -187,7 +187,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemDone))]
@@ -195,7 +195,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemDone => ConversationItemDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationItemDone(
 #if NET6_0_OR_GREATER
@@ -208,7 +208,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone PickConversationItemDone() => IsConversationItemDone
             ? ConversationItemDone!
@@ -232,7 +232,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemInputAudioTranscriptionCompleted))]
@@ -240,7 +240,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemInputAudioTranscriptionCompleted => ConversationItemInputAudioTranscriptionCompleted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationItemInputAudioTranscriptionCompleted(
 #if NET6_0_OR_GREATER
@@ -253,7 +253,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted PickConversationItemInputAudioTranscriptionCompleted() => IsConversationItemInputAudioTranscriptionCompleted
             ? ConversationItemInputAudioTranscriptionCompleted!
@@ -269,7 +269,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemInputAudioTranscriptionDelta))]
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemInputAudioTranscriptionDelta => ConversationItemInputAudioTranscriptionDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationItemInputAudioTranscriptionDelta(
 #if NET6_0_OR_GREATER
@@ -290,7 +290,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta PickConversationItemInputAudioTranscriptionDelta() => IsConversationItemInputAudioTranscriptionDelta
             ? ConversationItemInputAudioTranscriptionDelta!
@@ -308,7 +308,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemInputAudioTranscriptionFailed))]
@@ -316,7 +316,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemInputAudioTranscriptionFailed => ConversationItemInputAudioTranscriptionFailed != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationItemInputAudioTranscriptionFailed(
 #if NET6_0_OR_GREATER
@@ -329,7 +329,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed PickConversationItemInputAudioTranscriptionFailed() => IsConversationItemInputAudioTranscriptionFailed
             ? ConversationItemInputAudioTranscriptionFailed!
@@ -345,7 +345,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemInputAudioTranscriptionSegment))]
@@ -353,7 +353,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemInputAudioTranscriptionSegment => ConversationItemInputAudioTranscriptionSegment != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationItemInputAudioTranscriptionSegment(
 #if NET6_0_OR_GREATER
@@ -366,7 +366,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment PickConversationItemInputAudioTranscriptionSegment() => IsConversationItemInputAudioTranscriptionSegment
             ? ConversationItemInputAudioTranscriptionSegment!
@@ -382,7 +382,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemRetrieved))]
@@ -390,7 +390,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemRetrieved => ConversationItemRetrieved != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationItemRetrieved(
 #if NET6_0_OR_GREATER
@@ -403,7 +403,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved PickConversationItemRetrieved() => IsConversationItemRetrieved
             ? ConversationItemRetrieved!
@@ -423,7 +423,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationItemTruncated))]
@@ -431,7 +431,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsConversationItemTruncated => ConversationItemTruncated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationItemTruncated(
 #if NET6_0_OR_GREATER
@@ -444,7 +444,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated PickConversationItemTruncated() => IsConversationItemTruncated
             ? ConversationItemTruncated!
@@ -462,7 +462,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
@@ -470,7 +470,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsError => Error != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickError(
 #if NET6_0_OR_GREATER
@@ -483,7 +483,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventError PickError() => IsError
             ? Error!
@@ -500,7 +500,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferCleared))]
@@ -508,7 +508,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsInputAudioBufferCleared => InputAudioBufferCleared != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputAudioBufferCleared(
 #if NET6_0_OR_GREATER
@@ -521,7 +521,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared PickInputAudioBufferCleared() => IsInputAudioBufferCleared
             ? InputAudioBufferCleared!
@@ -540,7 +540,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferCommitted))]
@@ -548,7 +548,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsInputAudioBufferCommitted => InputAudioBufferCommitted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputAudioBufferCommitted(
 #if NET6_0_OR_GREATER
@@ -561,7 +561,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted PickInputAudioBufferCommitted() => IsInputAudioBufferCommitted
             ? InputAudioBufferCommitted!
@@ -580,7 +580,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferDtmfEventReceived))]
@@ -588,7 +588,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsInputAudioBufferDtmfEventReceived => InputAudioBufferDtmfEventReceived != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputAudioBufferDtmfEventReceived(
 #if NET6_0_OR_GREATER
@@ -601,7 +601,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived PickInputAudioBufferDtmfEventReceived() => IsInputAudioBufferDtmfEventReceived
             ? InputAudioBufferDtmfEventReceived!
@@ -625,7 +625,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferSpeechStarted))]
@@ -633,7 +633,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsInputAudioBufferSpeechStarted => InputAudioBufferSpeechStarted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputAudioBufferSpeechStarted(
 #if NET6_0_OR_GREATER
@@ -646,7 +646,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted PickInputAudioBufferSpeechStarted() => IsInputAudioBufferSpeechStarted
             ? InputAudioBufferSpeechStarted!
@@ -664,7 +664,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferSpeechStopped))]
@@ -672,7 +672,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsInputAudioBufferSpeechStopped => InputAudioBufferSpeechStopped != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputAudioBufferSpeechStopped(
 #if NET6_0_OR_GREATER
@@ -685,7 +685,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped PickInputAudioBufferSpeechStopped() => IsInputAudioBufferSpeechStopped
             ? InputAudioBufferSpeechStopped!
@@ -711,7 +711,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudioBufferTimeoutTriggered))]
@@ -719,7 +719,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsInputAudioBufferTimeoutTriggered => InputAudioBufferTimeoutTriggered != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputAudioBufferTimeoutTriggered(
 #if NET6_0_OR_GREATER
@@ -732,7 +732,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered PickInputAudioBufferTimeoutTriggered() => IsInputAudioBufferTimeoutTriggered
             ? InputAudioBufferTimeoutTriggered!
@@ -748,7 +748,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpListToolsCompleted))]
@@ -756,7 +756,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsMcpListToolsCompleted => McpListToolsCompleted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpListToolsCompleted(
 #if NET6_0_OR_GREATER
@@ -769,7 +769,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted PickMcpListToolsCompleted() => IsMcpListToolsCompleted
             ? McpListToolsCompleted!
@@ -785,7 +785,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpListToolsFailed))]
@@ -793,7 +793,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsMcpListToolsFailed => McpListToolsFailed != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpListToolsFailed(
 #if NET6_0_OR_GREATER
@@ -806,7 +806,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed PickMcpListToolsFailed() => IsMcpListToolsFailed
             ? McpListToolsFailed!
@@ -822,7 +822,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpListToolsInProgress))]
@@ -830,7 +830,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsMcpListToolsInProgress => McpListToolsInProgress != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpListToolsInProgress(
 #if NET6_0_OR_GREATER
@@ -843,7 +843,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress PickMcpListToolsInProgress() => IsMcpListToolsInProgress
             ? McpListToolsInProgress!
@@ -863,7 +863,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputAudioBufferCleared))]
@@ -871,7 +871,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsOutputAudioBufferCleared => OutputAudioBufferCleared != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputAudioBufferCleared(
 #if NET6_0_OR_GREATER
@@ -884,7 +884,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared PickOutputAudioBufferCleared() => IsOutputAudioBufferCleared
             ? OutputAudioBufferCleared!
@@ -903,7 +903,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputAudioBufferStarted))]
@@ -911,7 +911,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsOutputAudioBufferStarted => OutputAudioBufferStarted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputAudioBufferStarted(
 #if NET6_0_OR_GREATER
@@ -924,7 +924,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted PickOutputAudioBufferStarted() => IsOutputAudioBufferStarted
             ? OutputAudioBufferStarted!
@@ -943,7 +943,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputAudioBufferStopped))]
@@ -951,7 +951,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsOutputAudioBufferStopped => OutputAudioBufferStopped != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputAudioBufferStopped(
 #if NET6_0_OR_GREATER
@@ -964,7 +964,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped PickOutputAudioBufferStopped() => IsOutputAudioBufferStopped
             ? OutputAudioBufferStopped!
@@ -983,7 +983,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RateLimitsUpdated))]
@@ -991,7 +991,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsRateLimitsUpdated => RateLimitsUpdated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRateLimitsUpdated(
 #if NET6_0_OR_GREATER
@@ -1004,7 +1004,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated PickRateLimitsUpdated() => IsRateLimitsUpdated
             ? RateLimitsUpdated!
@@ -1021,7 +1021,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseContentPartAdded))]
@@ -1029,7 +1029,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseContentPartAdded => ResponseContentPartAdded != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseContentPartAdded(
 #if NET6_0_OR_GREATER
@@ -1042,7 +1042,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded PickResponseContentPartAdded() => IsResponseContentPartAdded
             ? ResponseContentPartAdded!
@@ -1059,7 +1059,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseContentPartDone))]
@@ -1067,7 +1067,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseContentPartDone => ResponseContentPartDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseContentPartDone(
 #if NET6_0_OR_GREATER
@@ -1080,7 +1080,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone PickResponseContentPartDone() => IsResponseContentPartDone
             ? ResponseContentPartDone!
@@ -1097,7 +1097,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCreated))]
@@ -1105,7 +1105,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseCreated => ResponseCreated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseCreated(
 #if NET6_0_OR_GREATER
@@ -1118,7 +1118,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated PickResponseCreated() => IsResponseCreated
             ? ResponseCreated!
@@ -1140,7 +1140,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseDone))]
@@ -1148,7 +1148,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseDone => ResponseDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseDone(
 #if NET6_0_OR_GREATER
@@ -1161,7 +1161,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone PickResponseDone() => IsResponseDone
             ? ResponseDone!
@@ -1177,7 +1177,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFunctionCallArgumentsDelta))]
@@ -1185,7 +1185,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseFunctionCallArgumentsDelta => ResponseFunctionCallArgumentsDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseFunctionCallArgumentsDelta(
 #if NET6_0_OR_GREATER
@@ -1198,7 +1198,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta PickResponseFunctionCallArgumentsDelta() => IsResponseFunctionCallArgumentsDelta
             ? ResponseFunctionCallArgumentsDelta!
@@ -1215,7 +1215,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseFunctionCallArgumentsDone))]
@@ -1223,7 +1223,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseFunctionCallArgumentsDone => ResponseFunctionCallArgumentsDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseFunctionCallArgumentsDone(
 #if NET6_0_OR_GREATER
@@ -1236,7 +1236,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone PickResponseFunctionCallArgumentsDone() => IsResponseFunctionCallArgumentsDone
             ? ResponseFunctionCallArgumentsDone!
@@ -1252,7 +1252,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallCompleted))]
@@ -1260,7 +1260,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseMcpCallCompleted => ResponseMcpCallCompleted != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseMcpCallCompleted(
 #if NET6_0_OR_GREATER
@@ -1273,7 +1273,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted PickResponseMcpCallCompleted() => IsResponseMcpCallCompleted
             ? ResponseMcpCallCompleted!
@@ -1289,7 +1289,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallFailed))]
@@ -1297,7 +1297,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseMcpCallFailed => ResponseMcpCallFailed != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseMcpCallFailed(
 #if NET6_0_OR_GREATER
@@ -1310,7 +1310,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed PickResponseMcpCallFailed() => IsResponseMcpCallFailed
             ? ResponseMcpCallFailed!
@@ -1326,7 +1326,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallInProgress))]
@@ -1334,7 +1334,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseMcpCallInProgress => ResponseMcpCallInProgress != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseMcpCallInProgress(
 #if NET6_0_OR_GREATER
@@ -1347,7 +1347,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress PickResponseMcpCallInProgress() => IsResponseMcpCallInProgress
             ? ResponseMcpCallInProgress!
@@ -1363,7 +1363,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallArgumentsDelta))]
@@ -1371,7 +1371,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseMcpCallArgumentsDelta => ResponseMcpCallArgumentsDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseMcpCallArgumentsDelta(
 #if NET6_0_OR_GREATER
@@ -1384,7 +1384,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta PickResponseMcpCallArgumentsDelta() => IsResponseMcpCallArgumentsDelta
             ? ResponseMcpCallArgumentsDelta!
@@ -1400,7 +1400,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseMcpCallArgumentsDone))]
@@ -1408,7 +1408,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseMcpCallArgumentsDone => ResponseMcpCallArgumentsDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseMcpCallArgumentsDone(
 #if NET6_0_OR_GREATER
@@ -1421,7 +1421,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone PickResponseMcpCallArgumentsDone() => IsResponseMcpCallArgumentsDone
             ? ResponseMcpCallArgumentsDone!
@@ -1437,7 +1437,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputAudioDelta))]
@@ -1445,7 +1445,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseOutputAudioDelta => ResponseOutputAudioDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputAudioDelta(
 #if NET6_0_OR_GREATER
@@ -1458,7 +1458,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta PickResponseOutputAudioDelta() => IsResponseOutputAudioDelta
             ? ResponseOutputAudioDelta!
@@ -1475,7 +1475,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputAudioDone))]
@@ -1483,7 +1483,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseOutputAudioDone => ResponseOutputAudioDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputAudioDone(
 #if NET6_0_OR_GREATER
@@ -1496,7 +1496,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone PickResponseOutputAudioDone() => IsResponseOutputAudioDone
             ? ResponseOutputAudioDone!
@@ -1512,7 +1512,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputAudioTranscriptDelta))]
@@ -1520,7 +1520,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseOutputAudioTranscriptDelta => ResponseOutputAudioTranscriptDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputAudioTranscriptDelta(
 #if NET6_0_OR_GREATER
@@ -1533,7 +1533,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta PickResponseOutputAudioTranscriptDelta() => IsResponseOutputAudioTranscriptDelta
             ? ResponseOutputAudioTranscriptDelta!
@@ -1551,7 +1551,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputAudioTranscriptDone))]
@@ -1559,7 +1559,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseOutputAudioTranscriptDone => ResponseOutputAudioTranscriptDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputAudioTranscriptDone(
 #if NET6_0_OR_GREATER
@@ -1572,7 +1572,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone PickResponseOutputAudioTranscriptDone() => IsResponseOutputAudioTranscriptDone
             ? ResponseOutputAudioTranscriptDone!
@@ -1588,7 +1588,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputItemAdded))]
@@ -1596,7 +1596,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseOutputItemAdded => ResponseOutputItemAdded != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputItemAdded(
 #if NET6_0_OR_GREATER
@@ -1609,7 +1609,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded PickResponseOutputItemAdded() => IsResponseOutputItemAdded
             ? ResponseOutputItemAdded!
@@ -1626,7 +1626,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputItemDone))]
@@ -1634,7 +1634,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseOutputItemDone => ResponseOutputItemDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputItemDone(
 #if NET6_0_OR_GREATER
@@ -1647,7 +1647,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone PickResponseOutputItemDone() => IsResponseOutputItemDone
             ? ResponseOutputItemDone!
@@ -1663,7 +1663,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputTextDelta))]
@@ -1671,7 +1671,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseOutputTextDelta => ResponseOutputTextDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputTextDelta(
 #if NET6_0_OR_GREATER
@@ -1684,7 +1684,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta PickResponseOutputTextDelta() => IsResponseOutputTextDelta
             ? ResponseOutputTextDelta!
@@ -1701,7 +1701,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseOutputTextDone))]
@@ -1709,7 +1709,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsResponseOutputTextDone => ResponseOutputTextDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseOutputTextDone(
 #if NET6_0_OR_GREATER
@@ -1722,7 +1722,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone PickResponseOutputTextDone() => IsResponseOutputTextDone
             ? ResponseOutputTextDone!
@@ -1740,7 +1740,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionCreated))]
@@ -1748,7 +1748,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsSessionCreated => SessionCreated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionCreated(
 #if NET6_0_OR_GREATER
@@ -1761,7 +1761,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated PickSessionCreated() => IsSessionCreated
             ? SessionCreated!
@@ -1778,7 +1778,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionUpdated))]
@@ -1786,7 +1786,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsSessionUpdated => SessionUpdated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionUpdated(
 #if NET6_0_OR_GREATER
@@ -1799,7 +1799,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated PickSessionUpdated() => IsSessionUpdated
             ? SessionUpdated!
@@ -1816,7 +1816,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionSessionUpdated))]
@@ -1824,7 +1824,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsTranscriptionSessionUpdated => TranscriptionSessionUpdated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTranscriptionSessionUpdated(
 #if NET6_0_OR_GREATER
@@ -1837,23 +1837,23 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventTranscriptionSessionUpdated PickTranscriptionSessionUpdated() => IsTranscriptionSessionUpdated
             ? TranscriptionSessionUpdated!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionSessionUpdated' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated?(ServerEvent @this) => @this.ConversationCreated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated? value)
         {
@@ -1861,22 +1861,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromConversationCreated(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded?(ServerEvent @this) => @this.ConversationItemAdded;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded? value)
         {
@@ -1884,22 +1884,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromConversationItemAdded(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated?(ServerEvent @this) => @this.ConversationItemCreated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated? value)
         {
@@ -1907,22 +1907,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromConversationItemCreated(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted?(ServerEvent @this) => @this.ConversationItemDeleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted? value)
         {
@@ -1930,22 +1930,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromConversationItemDeleted(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone?(ServerEvent @this) => @this.ConversationItemDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone? value)
         {
@@ -1953,22 +1953,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromConversationItemDone(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted?(ServerEvent @this) => @this.ConversationItemInputAudioTranscriptionCompleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted? value)
         {
@@ -1976,22 +1976,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromConversationItemInputAudioTranscriptionCompleted(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta?(ServerEvent @this) => @this.ConversationItemInputAudioTranscriptionDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta? value)
         {
@@ -1999,22 +1999,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromConversationItemInputAudioTranscriptionDelta(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed?(ServerEvent @this) => @this.ConversationItemInputAudioTranscriptionFailed;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed? value)
         {
@@ -2022,22 +2022,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromConversationItemInputAudioTranscriptionFailed(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment?(ServerEvent @this) => @this.ConversationItemInputAudioTranscriptionSegment;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment? value)
         {
@@ -2045,22 +2045,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromConversationItemInputAudioTranscriptionSegment(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved?(ServerEvent @this) => @this.ConversationItemRetrieved;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved? value)
         {
@@ -2068,22 +2068,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromConversationItemRetrieved(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated?(ServerEvent @this) => @this.ConversationItemTruncated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated? value)
         {
@@ -2091,22 +2091,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromConversationItemTruncated(global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventError value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventError?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventError?(ServerEvent @this) => @this.Error;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventError? value)
         {
@@ -2114,22 +2114,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromError(global::tryAGI.OpenAI.Realtime.RealtimeServerEventError? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared?(ServerEvent @this) => @this.InputAudioBufferCleared;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared? value)
         {
@@ -2137,22 +2137,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromInputAudioBufferCleared(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted?(ServerEvent @this) => @this.InputAudioBufferCommitted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted? value)
         {
@@ -2160,22 +2160,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromInputAudioBufferCommitted(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived?(ServerEvent @this) => @this.InputAudioBufferDtmfEventReceived;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived? value)
         {
@@ -2183,22 +2183,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromInputAudioBufferDtmfEventReceived(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted?(ServerEvent @this) => @this.InputAudioBufferSpeechStarted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted? value)
         {
@@ -2206,22 +2206,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromInputAudioBufferSpeechStarted(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped?(ServerEvent @this) => @this.InputAudioBufferSpeechStopped;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped? value)
         {
@@ -2229,22 +2229,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromInputAudioBufferSpeechStopped(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered?(ServerEvent @this) => @this.InputAudioBufferTimeoutTriggered;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered? value)
         {
@@ -2252,22 +2252,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromInputAudioBufferTimeoutTriggered(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted?(ServerEvent @this) => @this.McpListToolsCompleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted? value)
         {
@@ -2275,22 +2275,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromMcpListToolsCompleted(global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed?(ServerEvent @this) => @this.McpListToolsFailed;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed? value)
         {
@@ -2298,22 +2298,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromMcpListToolsFailed(global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress?(ServerEvent @this) => @this.McpListToolsInProgress;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress? value)
         {
@@ -2321,22 +2321,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromMcpListToolsInProgress(global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared?(ServerEvent @this) => @this.OutputAudioBufferCleared;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared? value)
         {
@@ -2344,22 +2344,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromOutputAudioBufferCleared(global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted?(ServerEvent @this) => @this.OutputAudioBufferStarted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted? value)
         {
@@ -2367,22 +2367,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromOutputAudioBufferStarted(global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped?(ServerEvent @this) => @this.OutputAudioBufferStopped;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped? value)
         {
@@ -2390,22 +2390,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromOutputAudioBufferStopped(global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated?(ServerEvent @this) => @this.RateLimitsUpdated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated? value)
         {
@@ -2413,22 +2413,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromRateLimitsUpdated(global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded?(ServerEvent @this) => @this.ResponseContentPartAdded;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded? value)
         {
@@ -2436,22 +2436,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseContentPartAdded(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone?(ServerEvent @this) => @this.ResponseContentPartDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone? value)
         {
@@ -2459,22 +2459,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseContentPartDone(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated?(ServerEvent @this) => @this.ResponseCreated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated? value)
         {
@@ -2482,22 +2482,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseCreated(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone?(ServerEvent @this) => @this.ResponseDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone? value)
         {
@@ -2505,22 +2505,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseDone(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta?(ServerEvent @this) => @this.ResponseFunctionCallArgumentsDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta? value)
         {
@@ -2528,22 +2528,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseFunctionCallArgumentsDelta(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone?(ServerEvent @this) => @this.ResponseFunctionCallArgumentsDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone? value)
         {
@@ -2551,22 +2551,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseFunctionCallArgumentsDone(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted?(ServerEvent @this) => @this.ResponseMcpCallCompleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted? value)
         {
@@ -2574,22 +2574,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseMcpCallCompleted(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed?(ServerEvent @this) => @this.ResponseMcpCallFailed;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed? value)
         {
@@ -2597,22 +2597,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseMcpCallFailed(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress?(ServerEvent @this) => @this.ResponseMcpCallInProgress;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress? value)
         {
@@ -2620,22 +2620,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseMcpCallInProgress(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta?(ServerEvent @this) => @this.ResponseMcpCallArgumentsDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta? value)
         {
@@ -2643,22 +2643,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseMcpCallArgumentsDelta(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone?(ServerEvent @this) => @this.ResponseMcpCallArgumentsDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone? value)
         {
@@ -2666,22 +2666,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseMcpCallArgumentsDone(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta?(ServerEvent @this) => @this.ResponseOutputAudioDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta? value)
         {
@@ -2689,22 +2689,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseOutputAudioDelta(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone?(ServerEvent @this) => @this.ResponseOutputAudioDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone? value)
         {
@@ -2712,22 +2712,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseOutputAudioDone(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta?(ServerEvent @this) => @this.ResponseOutputAudioTranscriptDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta? value)
         {
@@ -2735,22 +2735,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseOutputAudioTranscriptDelta(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone?(ServerEvent @this) => @this.ResponseOutputAudioTranscriptDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone? value)
         {
@@ -2758,22 +2758,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseOutputAudioTranscriptDone(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded?(ServerEvent @this) => @this.ResponseOutputItemAdded;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded? value)
         {
@@ -2781,22 +2781,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseOutputItemAdded(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone?(ServerEvent @this) => @this.ResponseOutputItemDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone? value)
         {
@@ -2804,22 +2804,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseOutputItemDone(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta?(ServerEvent @this) => @this.ResponseOutputTextDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta? value)
         {
@@ -2827,22 +2827,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseOutputTextDelta(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone?(ServerEvent @this) => @this.ResponseOutputTextDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone? value)
         {
@@ -2850,22 +2850,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromResponseOutputTextDone(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated?(ServerEvent @this) => @this.SessionCreated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated? value)
         {
@@ -2873,22 +2873,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromSessionCreated(global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated?(ServerEvent @this) => @this.SessionUpdated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated? value)
         {
@@ -2896,22 +2896,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromSessionUpdated(global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventTranscriptionSessionUpdated value) => new ServerEvent((global::tryAGI.OpenAI.Realtime.RealtimeServerEventTranscriptionSessionUpdated?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeServerEventTranscriptionSessionUpdated?(ServerEvent @this) => @this.TranscriptionSessionUpdated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(global::tryAGI.OpenAI.Realtime.RealtimeServerEventTranscriptionSessionUpdated? value)
         {
@@ -2919,12 +2919,12 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ServerEvent FromTranscriptionSessionUpdated(global::tryAGI.OpenAI.Realtime.RealtimeServerEventTranscriptionSessionUpdated? value) => new ServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ServerEvent(
             global::tryAGI.OpenAI.Realtime.ServerEventDiscriminatorType? type,
@@ -3029,7 +3029,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             TranscriptionSessionUpdated as object ??
@@ -3078,11 +3078,11 @@ namespace tryAGI.OpenAI.Realtime
             ConversationItemDeleted as object ??
             ConversationItemCreated as object ??
             ConversationItemAdded as object ??
-            ConversationCreated as object 
+            ConversationCreated as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ConversationCreated?.ToString() ??
@@ -3131,11 +3131,11 @@ namespace tryAGI.OpenAI.Realtime
             ResponseOutputTextDone?.ToString() ??
             SessionCreated?.ToString() ??
             SessionUpdated?.ToString() ??
-            TranscriptionSessionUpdated?.ToString() 
+            TranscriptionSessionUpdated?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -3143,7 +3143,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated, TResult>? conversationCreated = null,
@@ -3393,7 +3393,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated>? conversationCreated = null,
@@ -3687,7 +3687,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated>? conversationCreated = null,
@@ -3935,7 +3935,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -4046,7 +4046,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ServerEvent other)
         {
@@ -4097,12 +4097,12 @@ namespace tryAGI.OpenAI.Realtime
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone?>.Default.Equals(ResponseOutputTextDone, other.ResponseOutputTextDone) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated?>.Default.Equals(SessionCreated, other.SessionCreated) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated?>.Default.Equals(SessionUpdated, other.SessionUpdated) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Realtime.RealtimeServerEventTranscriptionSessionUpdated?>.Default.Equals(TranscriptionSessionUpdated, other.TranscriptionSessionUpdated) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Realtime.RealtimeServerEventTranscriptionSessionUpdated?>.Default.Equals(TranscriptionSessionUpdated, other.TranscriptionSessionUpdated)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ServerEvent obj1, ServerEvent obj2)
         {
@@ -4110,7 +4110,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ServerEvent obj1, ServerEvent obj2)
         {
@@ -4118,7 +4118,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum AuditLogActorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiKey,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Session,
     }

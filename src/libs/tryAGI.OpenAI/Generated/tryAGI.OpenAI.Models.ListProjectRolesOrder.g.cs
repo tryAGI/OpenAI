@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ListProjectRolesOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

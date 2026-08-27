@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum BetaResponsesClientEventResponseCreateVariant1Type
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCreate,
     }

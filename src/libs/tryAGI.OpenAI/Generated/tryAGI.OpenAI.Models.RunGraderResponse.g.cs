@@ -4,33 +4,33 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RunGraderResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reward")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Reward { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.RunGraderResponseMetadata Metadata { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sub_rewards")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object SubRewards { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_grader_token_usage_per_model")]
         [global::System.Text.Json.Serialization.JsonRequired]

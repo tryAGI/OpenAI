@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputContentDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReasoningText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Refusal,
     }

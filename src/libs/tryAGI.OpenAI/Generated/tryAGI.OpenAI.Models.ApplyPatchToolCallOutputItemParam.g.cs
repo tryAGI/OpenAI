@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParamType Type { get; set; } = global::tryAGI.OpenAI.ApplyPatchToolCallOutputItemParamType.ApplyPatchCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         public required string CallId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         public global::tryAGI.OpenAI.ToolCallCallerParam? Caller { get; set; }
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.ApplyPatchCallOutputStatusParam Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         public string? Output { get; set; }

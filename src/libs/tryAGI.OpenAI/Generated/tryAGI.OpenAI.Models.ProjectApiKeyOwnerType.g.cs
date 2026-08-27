@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ProjectApiKeyOwnerType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServiceAccount,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         User,
     }

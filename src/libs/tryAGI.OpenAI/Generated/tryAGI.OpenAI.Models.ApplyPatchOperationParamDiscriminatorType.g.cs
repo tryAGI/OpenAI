@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ApplyPatchOperationParamDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateFile,
     }

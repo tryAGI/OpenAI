@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaDirectToolCallCallerParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Direct,
     }

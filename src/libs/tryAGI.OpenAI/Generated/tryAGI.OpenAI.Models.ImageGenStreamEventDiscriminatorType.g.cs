@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ImageGenStreamEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGenerationCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGenerationPartialImage,
     }

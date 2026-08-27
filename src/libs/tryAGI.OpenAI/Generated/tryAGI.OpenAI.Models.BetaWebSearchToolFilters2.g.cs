@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class BetaWebSearchToolFilters2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allowed_domains")]
         public global::System.Collections.Generic.IList<string>? AllowedDomains { get; set; }

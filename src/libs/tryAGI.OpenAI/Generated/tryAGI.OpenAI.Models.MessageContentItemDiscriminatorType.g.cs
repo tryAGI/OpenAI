@@ -4,44 +4,44 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessageContentItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ComputerScreenshot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReasoningText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Refusal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SummaryText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

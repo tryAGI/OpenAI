@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum FunctionShellCallOutputContentOutcomeDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Exit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Timeout,
     }

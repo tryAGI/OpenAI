@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum BetaWebSearchToolCallType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchCall,
     }

@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaFormat? Format { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("elapsed_ms")]
         public int? ElapsedMs { get; set; }

@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum ProgramOutputType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProgramOutput,
     }

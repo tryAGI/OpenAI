@@ -4,40 +4,40 @@
 namespace tryAGI.OpenAI.Realtime
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AudioTranscriptionResponseModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMiniTranscribe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMiniTranscribe20251215,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oTranscribe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oTranscribeDiarize,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptLiveTranscribe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptRealtimeWhisper,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptTranscribe,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Whisper1,
     }

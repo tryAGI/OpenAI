@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ListContainersOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

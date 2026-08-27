@@ -83,13 +83,13 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeSessionOutputAudioFormat? OutputAudioFormat { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_audio_transcription")]
         public global::tryAGI.OpenAI.AudioTranscriptionResponse? InputAudioTranscription { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("turn_detection")]
         public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1? TurnDetection { get; set; }
@@ -113,7 +113,7 @@ namespace tryAGI.OpenAI
         public double? Speed { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tracing")]
         public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum?, global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum2>? Tracing { get; set; }
@@ -156,13 +156,13 @@ namespace tryAGI.OpenAI
         public int? ExpiresAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public global::tryAGI.OpenAI.PromptVariant1? Prompt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("include")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionIncludeVariant1Item>? Include { get; set; }

@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum RunStepObjectType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MessageCreation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolCalls,
     }

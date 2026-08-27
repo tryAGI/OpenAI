@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum RealtimeTranslationClientSecretCreateRequestExpiresAfterAnchor
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatedAt,
     }

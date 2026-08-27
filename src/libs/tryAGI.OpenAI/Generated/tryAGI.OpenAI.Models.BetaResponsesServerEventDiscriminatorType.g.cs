@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaResponsesServerEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseInjectCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseInjectFailed,
     }

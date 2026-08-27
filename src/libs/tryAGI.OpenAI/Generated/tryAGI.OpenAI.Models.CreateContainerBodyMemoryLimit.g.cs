@@ -9,19 +9,19 @@ namespace tryAGI.OpenAI
     public enum CreateContainerBodyMemoryLimit
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x16g,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1g,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x4g,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x64g,
     }

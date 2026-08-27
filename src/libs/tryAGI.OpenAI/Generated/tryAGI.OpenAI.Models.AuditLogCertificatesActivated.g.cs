@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class AuditLogCertificatesActivated
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("certificates")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLogCertificatesActivatedCertificate>? Certificates { get; set; }

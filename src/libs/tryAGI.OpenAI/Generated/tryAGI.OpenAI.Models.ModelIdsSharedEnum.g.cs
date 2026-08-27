@@ -4,336 +4,336 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ModelIdsSharedEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Chatgpt4oLatest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodexMiniLatest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo0125,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo0301,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo0613,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo1106,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo16k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo16k0613,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt40125Preview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt40314,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt40613,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41106Preview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt432k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt432k0314,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt432k0613,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4Turbo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4Turbo20240409,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4TurboPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4VisionPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4120250414,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41Mini20250414,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41Nano,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41Nano20250414,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4o,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4o20240513,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4o20240806,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4o20241120,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oAudioPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oAudioPreview20241001,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oAudioPreview20241217,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oAudioPreview20250603,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMini20240718,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMiniAudioPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMiniAudioPreview20241217,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMiniSearchPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMiniSearchPreview20250311,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oSearchPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oSearchPreview20250311,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt520250807,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5ChatLatest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5Mini20250807,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5Nano,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5Nano20250807,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt51,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5120251113,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt51ChatLatest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt51Codex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt51Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt52,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5220251211,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt52ChatLatest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt52Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt52Pro20251211,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt53ChatLatest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt54,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt54Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt54Mini20260317,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt54Nano,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt54Nano20260317,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt55,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt56Luna,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt56Sol,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt56Terra,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O120241217,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O1Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O1Mini20240912,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O1Preview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O1Preview20240912,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O320250416,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O3Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O3Mini20250131,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O4Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O4Mini20250416,
     }

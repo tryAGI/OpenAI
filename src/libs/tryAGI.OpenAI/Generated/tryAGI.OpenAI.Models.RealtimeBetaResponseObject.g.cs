@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum RealtimeBetaResponseObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RealtimeResponse,
     }

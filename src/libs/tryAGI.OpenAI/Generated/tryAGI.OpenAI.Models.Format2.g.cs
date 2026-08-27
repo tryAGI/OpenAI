@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct Format2 : global::System.IEquatable<Format2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CustomToolParamFormatDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CustomTextFormatParam PickText() => IsText
             ? Text!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Grammar))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsGrammar => Grammar != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGrammar(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CustomGrammarFormatParam PickGrammar() => IsGrammar
             ? Grammar!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Grammar' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Format2(global::tryAGI.OpenAI.CustomTextFormatParam value) => new Format2((global::tryAGI.OpenAI.CustomTextFormatParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.CustomTextFormatParam?(Format2 @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Format2(global::tryAGI.OpenAI.CustomTextFormatParam? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Format2 FromText(global::tryAGI.OpenAI.CustomTextFormatParam? value) => new Format2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Format2(global::tryAGI.OpenAI.CustomGrammarFormatParam value) => new Format2((global::tryAGI.OpenAI.CustomGrammarFormatParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.CustomGrammarFormatParam?(Format2 @this) => @this.Grammar;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Format2(global::tryAGI.OpenAI.CustomGrammarFormatParam? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Format2 FromGrammar(global::tryAGI.OpenAI.CustomGrammarFormatParam? value) => new Format2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Format2(
             global::tryAGI.OpenAI.CustomToolParamFormatDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Grammar as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            Grammar?.ToString() 
+            Grammar?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.CustomTextFormatParam, TResult>? text = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.CustomTextFormatParam>? text = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.CustomTextFormatParam>? text = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Format2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomTextFormatParam?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomGrammarFormatParam?>.Default.Equals(Grammar, other.Grammar) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CustomGrammarFormatParam?>.Default.Equals(Grammar, other.Grammar)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Format2 obj1, Format2 obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Format2 obj1, Format2 obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

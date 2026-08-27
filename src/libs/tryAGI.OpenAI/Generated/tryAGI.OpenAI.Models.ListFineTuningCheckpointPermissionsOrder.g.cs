@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ListFineTuningCheckpointPermissionsOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ascending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Descending,
     }

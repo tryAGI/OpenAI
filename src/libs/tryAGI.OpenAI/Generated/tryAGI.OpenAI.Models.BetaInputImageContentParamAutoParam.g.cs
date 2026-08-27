@@ -18,25 +18,25 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaInputImageContentParamAutoParamType Type { get; set; } = global::tryAGI.OpenAI.BetaInputImageContentParamAutoParamType.InputImage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         public string? ImageUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         public string? FileId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         public global::tryAGI.OpenAI.BetaDetailEnum? Detail { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
         public global::tryAGI.OpenAI.BetaPromptCacheBreakpointParam? PromptCacheBreakpoint { get; set; }

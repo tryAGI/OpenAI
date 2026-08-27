@@ -148,7 +148,7 @@ namespace tryAGI.OpenAI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
@@ -445,7 +445,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="limit">
         /// Default Value: 20
-        /// </param> 
+        /// </param>
         /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.Invite> ListInvitesAutoPagingAsync(

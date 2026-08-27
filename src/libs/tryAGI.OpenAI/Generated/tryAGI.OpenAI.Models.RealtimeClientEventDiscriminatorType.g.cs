@@ -4,52 +4,52 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RealtimeClientEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemCreate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemDelete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemRetrieve,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemTruncate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudioBufferAppend,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudioBufferClear,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudioBufferCommit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputAudioBufferClear,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCancel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCreate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionUpdate,
     }

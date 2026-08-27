@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ListVectorStoresOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

@@ -10,15 +10,15 @@ namespace tryAGI.OpenAI
     public enum BetaWebSearchToolSearchContextSize
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Medium,
     }

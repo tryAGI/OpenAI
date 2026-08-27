@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum ItemReferenceParamType2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ItemReference,
     }

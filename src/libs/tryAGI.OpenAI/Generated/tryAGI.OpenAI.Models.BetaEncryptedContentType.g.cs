@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaEncryptedContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EncryptedContent,
     }

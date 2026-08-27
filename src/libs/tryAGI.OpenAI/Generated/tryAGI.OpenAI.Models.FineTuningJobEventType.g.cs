@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum FineTuningJobEventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Message,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Metrics,
     }

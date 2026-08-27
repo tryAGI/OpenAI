@@ -56,13 +56,13 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.TaskType TaskType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("heading")]
         public string? Heading { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         public string? Summary { get; set; }

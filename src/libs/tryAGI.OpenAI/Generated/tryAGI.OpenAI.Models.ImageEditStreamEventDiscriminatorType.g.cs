@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ImageEditStreamEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageEditCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageEditPartialImage,
     }

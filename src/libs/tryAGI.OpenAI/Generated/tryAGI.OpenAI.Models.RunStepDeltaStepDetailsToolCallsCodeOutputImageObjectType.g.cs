@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
     }

@@ -46,13 +46,13 @@ namespace tryAGI.OpenAI
         public required string ContainerId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         public string? Code { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputsVariant1Item2>? Outputs { get; set; }

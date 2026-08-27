@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaApplyPatchToolCallOperationDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreateFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DeleteFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdateFile,
     }

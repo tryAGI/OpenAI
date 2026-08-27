@@ -10,11 +10,11 @@ namespace tryAGI.OpenAI
     public enum CreateSpeechRequestStreamFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sse,
     }

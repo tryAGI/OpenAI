@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaInputContent : global::System.IEquatable<BetaInputContent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaInputContentDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsInputText => InputText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputText(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaInputTextContent PickInputText() => IsInputText
             ? InputText!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputImage(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaInputImageContent PickInputImage() => IsInputImage
             ? InputImage!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsInputFile => InputFile != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputFile(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaInputFileContent PickInputFile() => IsInputFile
             ? InputFile!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaInputContent(global::tryAGI.OpenAI.BetaInputTextContent value) => new BetaInputContent((global::tryAGI.OpenAI.BetaInputTextContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaInputTextContent?(BetaInputContent @this) => @this.InputText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputContent(global::tryAGI.OpenAI.BetaInputTextContent? value)
         {
@@ -143,22 +143,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaInputContent FromInputText(global::tryAGI.OpenAI.BetaInputTextContent? value) => new BetaInputContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaInputContent(global::tryAGI.OpenAI.BetaInputImageContent value) => new BetaInputContent((global::tryAGI.OpenAI.BetaInputImageContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaInputImageContent?(BetaInputContent @this) => @this.InputImage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputContent(global::tryAGI.OpenAI.BetaInputImageContent? value)
         {
@@ -166,22 +166,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaInputContent FromInputImage(global::tryAGI.OpenAI.BetaInputImageContent? value) => new BetaInputContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaInputContent(global::tryAGI.OpenAI.BetaInputFileContent value) => new BetaInputContent((global::tryAGI.OpenAI.BetaInputFileContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaInputFileContent?(BetaInputContent @this) => @this.InputFile;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputContent(global::tryAGI.OpenAI.BetaInputFileContent? value)
         {
@@ -189,12 +189,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaInputContent FromInputFile(global::tryAGI.OpenAI.BetaInputFileContent? value) => new BetaInputContent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputContent(
             global::tryAGI.OpenAI.BetaInputContentDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             InputFile as object ??
             InputImage as object ??
-            InputText as object 
+            InputText as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputText?.ToString() ??
             InputImage?.ToString() ??
-            InputFile?.ToString() 
+            InputFile?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaInputTextContent, TResult>? inputText = null,
@@ -267,7 +267,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaInputTextContent>? inputText = null,
@@ -297,7 +297,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaInputTextContent>? inputText = null,
@@ -325,7 +325,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaInputContent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputTextContent?>.Default.Equals(InputText, other.InputText) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputImageContent?>.Default.Equals(InputImage, other.InputImage) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputFileContent?>.Default.Equals(InputFile, other.InputFile) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputFileContent?>.Default.Equals(InputFile, other.InputFile)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaInputContent obj1, BetaInputContent obj2)
         {
@@ -368,7 +368,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaInputContent obj1, BetaInputContent obj2)
         {
@@ -376,7 +376,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

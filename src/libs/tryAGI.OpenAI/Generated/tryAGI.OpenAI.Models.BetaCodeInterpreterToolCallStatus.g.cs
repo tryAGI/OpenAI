@@ -9,23 +9,23 @@ namespace tryAGI.OpenAI
     public enum BetaCodeInterpreterToolCallStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Incomplete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Interpreting,
     }

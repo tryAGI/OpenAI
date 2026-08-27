@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaClickParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Click,
     }

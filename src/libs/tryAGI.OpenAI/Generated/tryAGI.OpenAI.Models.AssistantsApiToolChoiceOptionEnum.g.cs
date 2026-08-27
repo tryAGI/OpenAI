@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum AssistantsApiToolChoiceOptionEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Required,
     }

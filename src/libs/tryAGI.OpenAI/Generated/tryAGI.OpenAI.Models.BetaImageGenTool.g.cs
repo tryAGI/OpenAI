@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaImageGenToolType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.BetaImageGenToolModel?>))]
@@ -73,7 +73,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaImageGenToolBackground? Background { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_fidelity")]
         public global::tryAGI.OpenAI.BetaInputFidelity? InputFidelity { get; set; }

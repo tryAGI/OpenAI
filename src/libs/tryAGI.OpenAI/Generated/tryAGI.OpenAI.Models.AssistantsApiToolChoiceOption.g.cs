@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         public bool IsEnum => Enum != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEnum(
 #if NET6_0_OR_GREATER
@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum PickEnum() => IsEnum
             ? Enum!.Value
@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Named))]
@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
         public bool IsNamed => Named != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickNamed(
 #if NET6_0_OR_GREATER
@@ -81,23 +81,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.AssistantsNamedToolChoice PickNamed() => IsNamed
             ? Named!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Named' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AssistantsApiToolChoiceOption(global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum value) => new AssistantsApiToolChoiceOption((global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?(AssistantsApiToolChoiceOption @this) => @this.Enum;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AssistantsApiToolChoiceOption(global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum? value)
         {
@@ -105,22 +105,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AssistantsApiToolChoiceOption FromEnum(global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum? value) => new AssistantsApiToolChoiceOption(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AssistantsApiToolChoiceOption(global::tryAGI.OpenAI.AssistantsNamedToolChoice value) => new AssistantsApiToolChoiceOption((global::tryAGI.OpenAI.AssistantsNamedToolChoice?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.AssistantsNamedToolChoice?(AssistantsApiToolChoiceOption @this) => @this.Named;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AssistantsApiToolChoiceOption(global::tryAGI.OpenAI.AssistantsNamedToolChoice? value)
         {
@@ -128,12 +128,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AssistantsApiToolChoiceOption FromNamed(global::tryAGI.OpenAI.AssistantsNamedToolChoice? value) => new AssistantsApiToolChoiceOption(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AssistantsApiToolChoiceOption(
             global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum? @enum,
@@ -145,23 +145,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Named as object ??
-            Enum as object 
+            Enum as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Enum?.ToValueString() ??
-            Named?.ToString() 
+            Named?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -169,7 +169,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?, TResult>? @enum = null,
@@ -194,7 +194,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?>? @enum = null,
@@ -218,7 +218,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?>? @enum = null,
@@ -241,7 +241,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -262,18 +262,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AssistantsApiToolChoiceOption other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AssistantsApiToolChoiceOptionEnum?>.Default.Equals(Enum, other.Enum) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AssistantsNamedToolChoice?>.Default.Equals(Named, other.Named) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AssistantsNamedToolChoice?>.Default.Equals(Named, other.Named)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AssistantsApiToolChoiceOption obj1, AssistantsApiToolChoiceOption obj2)
         {
@@ -281,7 +281,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AssistantsApiToolChoiceOption obj1, AssistantsApiToolChoiceOption obj2)
         {
@@ -289,7 +289,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

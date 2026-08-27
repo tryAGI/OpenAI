@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AdminApiKeyCreateResponse : global::System.IEquatable<AdminApiKeyCreateResponse>
     {
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdminApiKey))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsAdminApiKey => AdminApiKey != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAdminApiKey(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.AdminApiKey PickAdminApiKey() => IsAdminApiKey
             ? AdminApiKey!
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdminApiKeyCreateResponseVariant2))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsAdminApiKeyCreateResponseVariant2 => AdminApiKeyCreateResponseVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAdminApiKeyCreateResponseVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2 PickAdminApiKeyCreateResponseVariant2() => IsAdminApiKeyCreateResponseVariant2
             ? AdminApiKeyCreateResponseVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AdminApiKeyCreateResponseVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AdminApiKeyCreateResponse(global::tryAGI.OpenAI.AdminApiKey value) => new AdminApiKeyCreateResponse((global::tryAGI.OpenAI.AdminApiKey?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.AdminApiKey?(AdminApiKeyCreateResponse @this) => @this.AdminApiKey;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AdminApiKeyCreateResponse(global::tryAGI.OpenAI.AdminApiKey? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AdminApiKeyCreateResponse FromAdminApiKey(global::tryAGI.OpenAI.AdminApiKey? value) => new AdminApiKeyCreateResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AdminApiKeyCreateResponse(global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2 value) => new AdminApiKeyCreateResponse((global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2?(AdminApiKeyCreateResponse @this) => @this.AdminApiKeyCreateResponseVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AdminApiKeyCreateResponse(global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AdminApiKeyCreateResponse FromAdminApiKeyCreateResponseVariant2(global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2? value) => new AdminApiKeyCreateResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AdminApiKeyCreateResponse(
             global::tryAGI.OpenAI.AdminApiKey? adminApiKey,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             AdminApiKeyCreateResponseVariant2 as object ??
-            AdminApiKey as object 
+            AdminApiKey as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             AdminApiKey?.ToString() ??
-            AdminApiKeyCreateResponseVariant2?.ToString() 
+            AdminApiKeyCreateResponseVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.AdminApiKey, TResult>? adminApiKey = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.AdminApiKey>? adminApiKey = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.AdminApiKey>? adminApiKey = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AdminApiKeyCreateResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AdminApiKey?>.Default.Equals(AdminApiKey, other.AdminApiKey) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2?>.Default.Equals(AdminApiKeyCreateResponseVariant2, other.AdminApiKeyCreateResponseVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2?>.Default.Equals(AdminApiKeyCreateResponseVariant2, other.AdminApiKeyCreateResponseVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AdminApiKeyCreateResponse obj1, AdminApiKeyCreateResponse obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AdminApiKeyCreateResponse obj1, AdminApiKeyCreateResponse obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

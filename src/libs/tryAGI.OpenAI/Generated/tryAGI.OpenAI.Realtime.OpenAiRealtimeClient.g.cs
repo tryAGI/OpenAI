@@ -456,7 +456,7 @@ namespace tryAGI.OpenAI.Realtime
         public event global::System.EventHandler<AutoSDKWebSocketMessageEventArgs<global::tryAGI.OpenAI.Realtime.RealtimeServerEventTranscriptionSessionUpdated>>? TranscriptionSessionUpdatedReceived;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; } = global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContext.Default;

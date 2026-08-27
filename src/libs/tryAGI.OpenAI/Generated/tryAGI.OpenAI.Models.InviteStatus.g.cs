@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum InviteStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Accepted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Expired,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
     }

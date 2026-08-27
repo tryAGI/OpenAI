@@ -9,19 +9,19 @@ namespace tryAGI.OpenAI
     public enum RealtimeConversationItemWithReferenceContentItemType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ItemReference,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

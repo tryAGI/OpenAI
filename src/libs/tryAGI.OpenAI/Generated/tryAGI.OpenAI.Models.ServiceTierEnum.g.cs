@@ -16,27 +16,27 @@ namespace tryAGI.OpenAI
     public enum ServiceTierEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Fast,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Priority,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Scale,
     }

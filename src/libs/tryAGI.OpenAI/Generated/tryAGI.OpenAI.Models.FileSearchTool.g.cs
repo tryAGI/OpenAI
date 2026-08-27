@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RankingOptions? RankingOptions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         public global::tryAGI.OpenAI.Filters2? Filters { get; set; }

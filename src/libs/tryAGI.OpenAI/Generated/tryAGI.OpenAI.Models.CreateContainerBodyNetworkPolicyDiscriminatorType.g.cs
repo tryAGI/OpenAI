@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateContainerBodyNetworkPolicyDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Allowlist,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
     }

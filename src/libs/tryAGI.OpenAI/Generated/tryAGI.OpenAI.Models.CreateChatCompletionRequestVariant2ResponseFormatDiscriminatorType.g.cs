@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateChatCompletionRequestVariant2ResponseFormatDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JsonObject,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         JsonSchema,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

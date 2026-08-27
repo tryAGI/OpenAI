@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum BetaResponseVariant3IncompleteDetailsReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFilter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaxOutputTokens,
     }

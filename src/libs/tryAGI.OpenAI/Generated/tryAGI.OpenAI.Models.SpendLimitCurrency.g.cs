@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct SpendLimitCurrency : global::System.IEquatable<SpendLimitCurrency>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? SpendLimitCurrencyVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpendLimitCurrencyVariant1))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsSpendLimitCurrencyVariant1 => SpendLimitCurrencyVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpendLimitCurrencyVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickSpendLimitCurrencyVariant1() => IsSpendLimitCurrencyVariant1
             ? SpendLimitCurrencyVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpendLimitCurrencyVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.SpendLimitCurrencyEnum? Enum { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsEnum => Enum != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEnum(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.SpendLimitCurrencyEnum PickEnum() => IsEnum
             ? Enum!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SpendLimitCurrency(string value) => new SpendLimitCurrency((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(SpendLimitCurrency @this) => @this.SpendLimitCurrencyVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpendLimitCurrency(string? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SpendLimitCurrency FromSpendLimitCurrencyVariant1(string? value) => new SpendLimitCurrency(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SpendLimitCurrency(global::tryAGI.OpenAI.SpendLimitCurrencyEnum value) => new SpendLimitCurrency((global::tryAGI.OpenAI.SpendLimitCurrencyEnum?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.SpendLimitCurrencyEnum?(SpendLimitCurrency @this) => @this.Enum;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpendLimitCurrency(global::tryAGI.OpenAI.SpendLimitCurrencyEnum? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SpendLimitCurrency FromEnum(global::tryAGI.OpenAI.SpendLimitCurrencyEnum? value) => new SpendLimitCurrency(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpendLimitCurrency(
             string? spendLimitCurrencyVariant1,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Enum as object ??
-            SpendLimitCurrencyVariant1 as object 
+            SpendLimitCurrencyVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SpendLimitCurrencyVariant1?.ToString() ??
-            Enum?.ToValueString() 
+            Enum?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? spendLimitCurrencyVariant1 = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? spendLimitCurrencyVariant1 = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? spendLimitCurrencyVariant1 = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SpendLimitCurrency other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(SpendLimitCurrencyVariant1, other.SpendLimitCurrencyVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpendLimitCurrencyEnum?>.Default.Equals(Enum, other.Enum) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpendLimitCurrencyEnum?>.Default.Equals(Enum, other.Enum)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SpendLimitCurrency obj1, SpendLimitCurrency obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SpendLimitCurrency obj1, SpendLimitCurrency obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

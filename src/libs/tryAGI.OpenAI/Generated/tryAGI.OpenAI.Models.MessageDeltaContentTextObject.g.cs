@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.MessageDeltaContentTextObjectType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         public global::tryAGI.OpenAI.MessageDeltaContentTextObjectText? Text { get; set; }

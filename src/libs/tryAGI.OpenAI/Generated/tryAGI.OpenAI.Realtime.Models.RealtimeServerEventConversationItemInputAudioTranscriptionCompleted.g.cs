@@ -59,7 +59,7 @@ namespace tryAGI.OpenAI.Realtime
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Realtime.TranscriptionLanguage>? Languages { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Realtime.LogProbProperties>? Logprobs { get; set; }

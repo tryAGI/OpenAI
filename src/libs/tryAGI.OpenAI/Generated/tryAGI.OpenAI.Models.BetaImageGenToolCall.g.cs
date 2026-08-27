@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.BetaImageGenToolCallStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
         public string? Result { get; set; }

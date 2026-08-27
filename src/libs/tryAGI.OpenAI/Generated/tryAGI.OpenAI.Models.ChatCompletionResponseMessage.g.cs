@@ -11,13 +11,13 @@ namespace tryAGI.OpenAI
     public sealed partial class ChatCompletionResponseMessage
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         public string? Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
         public string? Refusal { get; set; }
@@ -50,7 +50,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ChatCompletionResponseMessageFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
         public global::tryAGI.OpenAI.ChatCompletionResponseMessageAudio2? Audio { get; set; }

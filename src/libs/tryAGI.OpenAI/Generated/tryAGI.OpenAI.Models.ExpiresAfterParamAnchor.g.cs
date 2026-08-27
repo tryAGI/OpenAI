@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum ExpiresAfterParamAnchor
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatedAt,
     }

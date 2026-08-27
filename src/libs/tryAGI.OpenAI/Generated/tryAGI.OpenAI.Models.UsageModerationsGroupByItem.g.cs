@@ -4,24 +4,24 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UsageModerationsGroupByItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiKeyId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Model,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProjectId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserId,
     }

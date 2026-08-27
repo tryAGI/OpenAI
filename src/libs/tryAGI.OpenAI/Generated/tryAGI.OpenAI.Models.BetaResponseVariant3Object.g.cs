@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum BetaResponseVariant3Object
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Response,
     }

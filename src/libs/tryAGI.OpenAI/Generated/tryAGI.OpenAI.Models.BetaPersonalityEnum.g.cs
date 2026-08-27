@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaPersonalityEnum : global::System.IEquatable<BetaPersonalityEnum>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? BetaPersonalityEnumVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaPersonalityEnumVariant1))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsBetaPersonalityEnumVariant1 => BetaPersonalityEnumVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBetaPersonalityEnumVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickBetaPersonalityEnumVariant1() => IsBetaPersonalityEnumVariant1
             ? BetaPersonalityEnumVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaPersonalityEnumVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaPersonalityEnumEnum? BetaPersonalityEnumEnum { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaPersonalityEnumEnum))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsBetaPersonalityEnumEnum => BetaPersonalityEnumEnum != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBetaPersonalityEnumEnum(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaPersonalityEnumEnum PickBetaPersonalityEnumEnum() => IsBetaPersonalityEnumEnum
             ? BetaPersonalityEnumEnum!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaPersonalityEnumEnum' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaPersonalityEnum(string value) => new BetaPersonalityEnum((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(BetaPersonalityEnum @this) => @this.BetaPersonalityEnumVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaPersonalityEnum(string? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaPersonalityEnum FromBetaPersonalityEnumVariant1(string? value) => new BetaPersonalityEnum(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaPersonalityEnum(global::tryAGI.OpenAI.BetaPersonalityEnumEnum value) => new BetaPersonalityEnum((global::tryAGI.OpenAI.BetaPersonalityEnumEnum?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaPersonalityEnumEnum?(BetaPersonalityEnum @this) => @this.BetaPersonalityEnumEnum;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaPersonalityEnum(global::tryAGI.OpenAI.BetaPersonalityEnumEnum? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaPersonalityEnum FromBetaPersonalityEnumEnum(global::tryAGI.OpenAI.BetaPersonalityEnumEnum? value) => new BetaPersonalityEnum(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaPersonalityEnum(
             string? betaPersonalityEnumVariant1,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BetaPersonalityEnumEnum as object ??
-            BetaPersonalityEnumVariant1 as object 
+            BetaPersonalityEnumVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BetaPersonalityEnumVariant1?.ToString() ??
-            BetaPersonalityEnumEnum?.ToValueString() 
+            BetaPersonalityEnumEnum?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? betaPersonalityEnumVariant1 = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? betaPersonalityEnumVariant1 = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? betaPersonalityEnumVariant1 = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaPersonalityEnum other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaPersonalityEnumVariant1, other.BetaPersonalityEnumVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaPersonalityEnumEnum?>.Default.Equals(BetaPersonalityEnumEnum, other.BetaPersonalityEnumEnum) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaPersonalityEnumEnum?>.Default.Equals(BetaPersonalityEnumEnum, other.BetaPersonalityEnumEnum)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaPersonalityEnum obj1, BetaPersonalityEnum obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaPersonalityEnum obj1, BetaPersonalityEnum obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

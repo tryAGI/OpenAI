@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum WebhookFineTuningJobSucceededType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FineTuningJobSucceeded,
     }

@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ListGroupsOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

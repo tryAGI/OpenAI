@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum PromptCacheRetentionEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x24h,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InMemory,
     }

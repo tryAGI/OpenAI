@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UsageImagesSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageEdit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageVariation,
     }

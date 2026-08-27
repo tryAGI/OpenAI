@@ -11,15 +11,15 @@ namespace tryAGI.OpenAI
     public enum CreateImageRequestOutputFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webp,
     }

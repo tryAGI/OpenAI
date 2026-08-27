@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI.Realtime
     public sealed partial class OpenAiRealtimeClient
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <param name="message">The message to send.</param>
         /// <param name="cancellationToken">A cancellation token.</param>

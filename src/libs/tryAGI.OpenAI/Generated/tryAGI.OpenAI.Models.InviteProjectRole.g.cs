@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum InviteProjectRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Member,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Owner,
     }

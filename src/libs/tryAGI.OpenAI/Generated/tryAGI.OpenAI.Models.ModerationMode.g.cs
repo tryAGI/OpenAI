@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ModerationMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Block,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Score,
     }

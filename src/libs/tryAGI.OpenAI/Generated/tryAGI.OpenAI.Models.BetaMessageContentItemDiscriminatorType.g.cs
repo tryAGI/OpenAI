@@ -4,48 +4,48 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaMessageContentItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ComputerScreenshot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EncryptedContent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ReasoningText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Refusal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SummaryText,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

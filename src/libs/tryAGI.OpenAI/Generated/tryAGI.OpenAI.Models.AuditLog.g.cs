@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.AuditLogProject? Project { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
         public global::tryAGI.OpenAI.AuditLogActor2? Actor { get; set; }

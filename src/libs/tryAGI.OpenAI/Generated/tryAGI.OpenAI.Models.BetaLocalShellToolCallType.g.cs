@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum BetaLocalShellToolCallType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LocalShellCall,
     }

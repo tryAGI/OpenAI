@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
         public required string MimeType { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preview_url")]
         public string? PreviewUrl { get; set; }

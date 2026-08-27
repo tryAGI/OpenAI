@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaGrammarSyntax1
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Lark,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Regex,
     }

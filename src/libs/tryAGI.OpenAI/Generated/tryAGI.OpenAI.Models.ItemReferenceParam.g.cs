@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class ItemReferenceParam
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public global::tryAGI.OpenAI.ItemReferenceParamType2? Type { get; set; }

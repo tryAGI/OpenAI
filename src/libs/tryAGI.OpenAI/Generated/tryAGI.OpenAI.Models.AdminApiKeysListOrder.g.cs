@@ -10,11 +10,11 @@ namespace tryAGI.OpenAI
     public enum AdminApiKeysListOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

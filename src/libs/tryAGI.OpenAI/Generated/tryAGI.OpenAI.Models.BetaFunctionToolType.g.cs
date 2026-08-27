@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaFunctionToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
     }

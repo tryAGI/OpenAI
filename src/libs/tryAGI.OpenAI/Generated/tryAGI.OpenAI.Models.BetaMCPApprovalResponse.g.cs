@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaMCPApprovalResponseType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
         public required bool Approve { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
         public string? Reason { get; set; }

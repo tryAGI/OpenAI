@@ -4,24 +4,24 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaContainerMemoryLimit
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x16g,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1g,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x4g,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x64g,
     }

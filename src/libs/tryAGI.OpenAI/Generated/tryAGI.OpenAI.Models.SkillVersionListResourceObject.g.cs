@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum SkillVersionListResourceObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         List,
     }

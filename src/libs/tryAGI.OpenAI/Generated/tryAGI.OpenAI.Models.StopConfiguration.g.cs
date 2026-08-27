@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StopConfigurationVariant1))]
@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         public bool IsStopConfigurationVariant1 => StopConfigurationVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStopConfigurationVariant1(
 #if NET6_0_OR_GREATER
@@ -43,14 +43,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickStopConfigurationVariant1() => IsStopConfigurationVariant1
             ? StopConfigurationVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'StopConfigurationVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<string>? StopConfigurationVariant2 { get; init; }
@@ -59,7 +59,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StopConfigurationVariant2))]
@@ -67,7 +67,7 @@ namespace tryAGI.OpenAI
         public bool IsStopConfigurationVariant2 => StopConfigurationVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickStopConfigurationVariant2(
 #if NET6_0_OR_GREATER
@@ -80,23 +80,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<string> PickStopConfigurationVariant2() => IsStopConfigurationVariant2
             ? StopConfigurationVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'StopConfigurationVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator StopConfiguration(string value) => new StopConfiguration((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(StopConfiguration @this) => @this.StopConfigurationVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StopConfiguration(string? value)
         {
@@ -104,12 +104,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static StopConfiguration FromStopConfigurationVariant1(string? value) => new StopConfiguration(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public StopConfiguration(
             string? stopConfigurationVariant1,
@@ -121,23 +121,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             StopConfigurationVariant2 as object ??
-            StopConfigurationVariant1 as object 
+            StopConfigurationVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             StopConfigurationVariant1?.ToString() ??
-            StopConfigurationVariant2?.ToString() 
+            StopConfigurationVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -145,7 +145,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? stopConfigurationVariant1 = null,
@@ -170,7 +170,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? stopConfigurationVariant1 = null,
@@ -194,7 +194,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? stopConfigurationVariant1 = null,
@@ -217,7 +217,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -238,18 +238,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(StopConfiguration other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(StopConfigurationVariant1, other.StopConfigurationVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(StopConfigurationVariant2, other.StopConfigurationVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<string>?>.Default.Equals(StopConfigurationVariant2, other.StopConfigurationVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(StopConfiguration obj1, StopConfiguration obj2)
         {
@@ -257,7 +257,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(StopConfiguration obj1, StopConfiguration obj2)
         {
@@ -265,7 +265,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

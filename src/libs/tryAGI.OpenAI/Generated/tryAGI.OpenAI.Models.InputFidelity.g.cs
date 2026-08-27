@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum InputFidelity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
     }

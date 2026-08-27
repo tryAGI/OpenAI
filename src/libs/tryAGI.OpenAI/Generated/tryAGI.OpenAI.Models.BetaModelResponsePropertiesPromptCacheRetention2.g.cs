@@ -17,11 +17,11 @@ namespace tryAGI.OpenAI
     public enum BetaModelResponsePropertiesPromptCacheRetention2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x24h,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InMemory,
     }

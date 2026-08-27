@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaInputFileContentParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputFile,
     }

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class RealtimeSessionCreateResponseGAAudioInput
     {
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAAudioInputNoiseReduction? NoiseReduction { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("turn_detection")]
         public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1? TurnDetection { get; set; }

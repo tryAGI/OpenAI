@@ -20,13 +20,13 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.BetaWebSearchToolType Type { get; set; } = global::tryAGI.OpenAI.BetaWebSearchToolType.WebSearch;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
         public global::tryAGI.OpenAI.BetaWebSearchToolFilters2? Filters { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
         public global::tryAGI.OpenAI.BetaWebSearchApproximateLocationWebSearchApproximateLocation? UserLocation { get; set; }

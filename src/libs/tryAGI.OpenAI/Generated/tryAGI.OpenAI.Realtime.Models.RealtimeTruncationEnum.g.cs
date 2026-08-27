@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI.Realtime
     public enum RealtimeTruncationEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
     }

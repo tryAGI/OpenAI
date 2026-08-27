@@ -4,24 +4,24 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum C2PAValidationStateApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Invalid,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotPresent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Trusted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Valid,
     }

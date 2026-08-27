@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum SkillResourceObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Skill,
     }

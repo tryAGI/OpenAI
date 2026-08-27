@@ -10,11 +10,11 @@ namespace tryAGI.OpenAI
     public enum BetaInputAudioInputAudioFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wav,
     }

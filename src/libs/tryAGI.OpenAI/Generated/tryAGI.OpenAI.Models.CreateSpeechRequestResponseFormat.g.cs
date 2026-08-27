@@ -10,27 +10,27 @@ namespace tryAGI.OpenAI
     public enum CreateSpeechRequestResponseFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Aac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Opus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pcm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wav,
     }

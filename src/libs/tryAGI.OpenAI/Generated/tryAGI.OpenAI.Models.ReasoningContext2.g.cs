@@ -14,15 +14,15 @@ namespace tryAGI.OpenAI
     public enum ReasoningContext2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AllTurns,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CurrentTurn,
     }

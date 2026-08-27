@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -48,7 +48,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaResponseFormatText PickText() => IsText
             ? Text!
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonSchema))]
@@ -73,7 +73,7 @@ namespace tryAGI.OpenAI
         public bool IsJsonSchema => JsonSchema != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickJsonSchema(
 #if NET6_0_OR_GREATER
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaTextResponseFormatJsonSchema PickJsonSchema() => IsJsonSchema
             ? JsonSchema!
@@ -105,7 +105,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonObject))]
@@ -113,7 +113,7 @@ namespace tryAGI.OpenAI
         public bool IsJsonObject => JsonObject != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickJsonObject(
 #if NET6_0_OR_GREATER
@@ -126,23 +126,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaResponseFormatJsonObject PickJsonObject() => IsJsonObject
             ? JsonObject!
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaTextResponseFormatConfiguration(global::tryAGI.OpenAI.BetaResponseFormatText value) => new BetaTextResponseFormatConfiguration((global::tryAGI.OpenAI.BetaResponseFormatText?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaResponseFormatText?(BetaTextResponseFormatConfiguration @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaTextResponseFormatConfiguration(global::tryAGI.OpenAI.BetaResponseFormatText? value)
         {
@@ -150,22 +150,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaTextResponseFormatConfiguration FromText(global::tryAGI.OpenAI.BetaResponseFormatText? value) => new BetaTextResponseFormatConfiguration(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaTextResponseFormatConfiguration(global::tryAGI.OpenAI.BetaTextResponseFormatJsonSchema value) => new BetaTextResponseFormatConfiguration((global::tryAGI.OpenAI.BetaTextResponseFormatJsonSchema?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaTextResponseFormatJsonSchema?(BetaTextResponseFormatConfiguration @this) => @this.JsonSchema;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaTextResponseFormatConfiguration(global::tryAGI.OpenAI.BetaTextResponseFormatJsonSchema? value)
         {
@@ -173,22 +173,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaTextResponseFormatConfiguration FromJsonSchema(global::tryAGI.OpenAI.BetaTextResponseFormatJsonSchema? value) => new BetaTextResponseFormatConfiguration(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaTextResponseFormatConfiguration(global::tryAGI.OpenAI.BetaResponseFormatJsonObject value) => new BetaTextResponseFormatConfiguration((global::tryAGI.OpenAI.BetaResponseFormatJsonObject?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaResponseFormatJsonObject?(BetaTextResponseFormatConfiguration @this) => @this.JsonObject;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaTextResponseFormatConfiguration(global::tryAGI.OpenAI.BetaResponseFormatJsonObject? value)
         {
@@ -196,12 +196,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaTextResponseFormatConfiguration FromJsonObject(global::tryAGI.OpenAI.BetaResponseFormatJsonObject? value) => new BetaTextResponseFormatConfiguration(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaTextResponseFormatConfiguration(
             global::tryAGI.OpenAI.BetaResponseFormatText? text,
@@ -215,25 +215,25 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             JsonObject as object ??
             JsonSchema as object ??
-            Text as object 
+            Text as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
             JsonSchema?.ToString() ??
-            JsonObject?.ToString() 
+            JsonObject?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -241,7 +241,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaResponseFormatText, TResult>? text = null,
@@ -271,7 +271,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaResponseFormatText>? text = null,
@@ -301,7 +301,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaResponseFormatText>? text = null,
@@ -329,7 +329,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -352,19 +352,19 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaTextResponseFormatConfiguration other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseFormatText?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaTextResponseFormatJsonSchema?>.Default.Equals(JsonSchema, other.JsonSchema) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseFormatJsonObject?>.Default.Equals(JsonObject, other.JsonObject) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseFormatJsonObject?>.Default.Equals(JsonObject, other.JsonObject)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaTextResponseFormatConfiguration obj1, BetaTextResponseFormatConfiguration obj2)
         {
@@ -372,7 +372,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaTextResponseFormatConfiguration obj1, BetaTextResponseFormatConfiguration obj2)
         {
@@ -380,7 +380,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI.Realtime
     public enum RealtimeServerEventConversationItemDoneType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemDone,
     }

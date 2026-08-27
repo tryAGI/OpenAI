@@ -16,13 +16,13 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<string> Commands { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timeout_ms")]
         public int? TimeoutMs { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_length")]
         public int? MaxOutputLength { get; set; }

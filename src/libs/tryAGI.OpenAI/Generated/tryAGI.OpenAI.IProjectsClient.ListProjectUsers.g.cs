@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         /// <param name="projectId"></param>
         /// <param name="limit">
         /// Default Value: 20
-        /// </param> 
+        /// </param>
         /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ProjectUser> ListProjectUsersAutoPagingAsync(

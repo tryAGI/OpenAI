@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="order"></param>
         /// <param name="include"></param>
-        /// <param name="openaiBeta"></param> 
+        /// <param name="openaiBeta"></param>
         /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.BetaItemResource> ListInputItems2AutoPagingAsync(

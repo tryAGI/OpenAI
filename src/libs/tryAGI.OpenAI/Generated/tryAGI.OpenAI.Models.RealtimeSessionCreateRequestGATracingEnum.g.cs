@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum RealtimeSessionCreateRequestGATracingEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
     }
