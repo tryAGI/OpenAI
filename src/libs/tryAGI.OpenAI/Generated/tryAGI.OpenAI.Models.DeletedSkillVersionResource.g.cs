@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class DeletedSkillVersionResource
     {
@@ -17,14 +17,14 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.DeletedSkillVersionResourceObject Object { get; set; } = global::tryAGI.OpenAI.DeletedSkillVersionResourceObject.SkillVersionDeleted;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Deleted { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]

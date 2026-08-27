@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaTextContentType Type { get; set; } = global::tryAGI.OpenAI.BetaTextContentType.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]

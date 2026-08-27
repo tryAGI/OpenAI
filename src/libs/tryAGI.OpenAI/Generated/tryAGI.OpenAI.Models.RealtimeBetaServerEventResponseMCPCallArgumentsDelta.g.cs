@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         public required string Delta { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("obfuscation")]
         public string? Obfuscation { get; set; }

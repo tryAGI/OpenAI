@@ -9,13 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class ModifyThreadRequestToolResources2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_interpreter")]
         public global::tryAGI.OpenAI.ModifyThreadRequestToolResourcesCodeInterpreter? CodeInterpreter { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_search")]
         public global::tryAGI.OpenAI.ModifyThreadRequestToolResourcesFileSearch? FileSearch { get; set; }

@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public required bool Enabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("recent_threads")]
         public int? RecentThreads { get; set; }

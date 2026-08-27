@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaItemReferenceParamType2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ItemReference,
     }

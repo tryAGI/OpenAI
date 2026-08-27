@@ -4,32 +4,32 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaMultiAgentAction
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FollowupTask,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InterruptAgent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ListAgents,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SendMessage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpawnAgent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WaitAgent,
     }

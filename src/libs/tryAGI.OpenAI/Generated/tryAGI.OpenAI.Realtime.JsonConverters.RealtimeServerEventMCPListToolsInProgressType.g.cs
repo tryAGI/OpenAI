@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI.Realtime.JsonConverters
                     {
                         return global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgressTypeExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

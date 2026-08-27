@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class BetaApplyPatchToolCallItemParam
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
         public global::tryAGI.OpenAI.BetaAgentTagParam? Agent { get; set; }
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaApplyPatchToolCallItemParamType Type { get; set; } = global::tryAGI.OpenAI.BetaApplyPatchToolCallItemParamType.ApplyPatchCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         public required string CallId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         public global::tryAGI.OpenAI.BetaToolCallCallerParam? Caller { get; set; }

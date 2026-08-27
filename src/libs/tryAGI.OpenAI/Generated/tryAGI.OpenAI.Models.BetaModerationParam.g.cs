@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public required string Model { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("policy")]
         public global::tryAGI.OpenAI.BetaModerationPolicyParam? Policy { get; set; }

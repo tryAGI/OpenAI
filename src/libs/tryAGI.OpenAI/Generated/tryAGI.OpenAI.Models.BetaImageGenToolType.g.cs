@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum BetaImageGenToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGeneration,
     }

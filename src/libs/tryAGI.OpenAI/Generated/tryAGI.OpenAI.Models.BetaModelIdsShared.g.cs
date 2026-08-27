@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct BetaModelIdsShared : global::System.IEquatable<BetaModelIdsShared>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? BetaModelIdsSharedVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaModelIdsSharedVariant1))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsBetaModelIdsSharedVariant1 => BetaModelIdsSharedVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBetaModelIdsSharedVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickBetaModelIdsSharedVariant1() => IsBetaModelIdsSharedVariant1
             ? BetaModelIdsSharedVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaModelIdsSharedVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaModelIdsSharedEnum? Enum { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsEnum => Enum != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEnum(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaModelIdsSharedEnum PickEnum() => IsEnum
             ? Enum!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaModelIdsShared(string value) => new BetaModelIdsShared((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(BetaModelIdsShared @this) => @this.BetaModelIdsSharedVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaModelIdsShared(string? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaModelIdsShared FromBetaModelIdsSharedVariant1(string? value) => new BetaModelIdsShared(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaModelIdsShared(global::tryAGI.OpenAI.BetaModelIdsSharedEnum value) => new BetaModelIdsShared((global::tryAGI.OpenAI.BetaModelIdsSharedEnum?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaModelIdsSharedEnum?(BetaModelIdsShared @this) => @this.Enum;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaModelIdsShared(global::tryAGI.OpenAI.BetaModelIdsSharedEnum? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaModelIdsShared FromEnum(global::tryAGI.OpenAI.BetaModelIdsSharedEnum? value) => new BetaModelIdsShared(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaModelIdsShared(
             string? betaModelIdsSharedVariant1,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Enum as object ??
-            BetaModelIdsSharedVariant1 as object 
+            BetaModelIdsSharedVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             BetaModelIdsSharedVariant1?.ToString() ??
-            Enum?.ToValueString() 
+            Enum?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? betaModelIdsSharedVariant1 = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? betaModelIdsSharedVariant1 = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? betaModelIdsSharedVariant1 = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaModelIdsShared other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaModelIdsSharedVariant1, other.BetaModelIdsSharedVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaModelIdsSharedEnum?>.Default.Equals(Enum, other.Enum) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaModelIdsSharedEnum?>.Default.Equals(Enum, other.Enum)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaModelIdsShared obj1, BetaModelIdsShared obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaModelIdsShared obj1, BetaModelIdsShared obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

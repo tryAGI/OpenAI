@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
     public sealed partial class OpenAiClient : global::tryAGI.OpenAI.IOpenAiClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://api.openai.com/v1";
 
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::tryAGI.OpenAI.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -84,7 +84,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CertificatesClient Certificates => new CertificatesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -120,7 +120,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DataRetentionClient DataRetention => new DataRetentionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GroupOrganizationRoleAssignmentsClient GroupOrganizationRoleAssignments => new GroupOrganizationRoleAssignmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -174,7 +174,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GroupUsersClient GroupUsers => new GroupUsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -183,7 +183,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public GroupsClient Groups => new GroupsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -192,7 +192,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public HostedToolsClient HostedTools => new HostedToolsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -210,7 +210,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public InvitesClient Invites => new InvitesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProjectGroupRoleAssignmentsClient ProjectGroupRoleAssignments => new ProjectGroupRoleAssignmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -246,7 +246,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProjectGroupsClient ProjectGroups => new ProjectGroupsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -255,7 +255,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProjectUserRoleAssignmentsClient ProjectUserRoleAssignments => new ProjectUserRoleAssignmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -264,7 +264,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ProjectsClient Projects => new ProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -273,7 +273,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeClient Realtime => new RealtimeClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -282,7 +282,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesClient Responses => new ResponsesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -291,7 +291,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RolesClient Roles => new RolesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -300,7 +300,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SkillsClient Skills => new SkillsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -309,7 +309,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpendAlertsClient SpendAlerts => new SpendAlertsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -327,7 +327,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UsageClient Usage => new UsageClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -336,7 +336,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UserOrganizationRoleAssignmentsClient UserOrganizationRoleAssignments => new UserOrganizationRoleAssignmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -345,7 +345,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public UsersClient Users => new UsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -354,7 +354,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VectorStoresClient VectorStores => new VectorStoresClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -363,7 +363,7 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VideosClient Videos => new VideosClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

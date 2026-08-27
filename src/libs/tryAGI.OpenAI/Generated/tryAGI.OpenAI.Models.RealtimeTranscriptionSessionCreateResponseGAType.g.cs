@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum RealtimeTranscriptionSessionCreateResponseGAType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Transcription,
     }

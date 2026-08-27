@@ -4,44 +4,44 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaComputerActionDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Click,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DoubleClick,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Drag,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Keypress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Move,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Screenshot,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Scroll,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Type,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wait,
     }

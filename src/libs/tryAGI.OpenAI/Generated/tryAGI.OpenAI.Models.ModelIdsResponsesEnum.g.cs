@@ -4,64 +4,64 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ModelIdsResponsesEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ComputerUsePreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ComputerUsePreview20250311,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5Codex,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5Pro20251006,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt51CodexMax,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O1Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O1Pro20250319,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O3DeepResearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O3DeepResearch20250626,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O3Pro,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O3Pro20250610,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O4MiniDeepResearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         O4MiniDeepResearch20250626,
     }

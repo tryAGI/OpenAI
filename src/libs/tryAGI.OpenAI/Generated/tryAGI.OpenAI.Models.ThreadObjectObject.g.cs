@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum ThreadObjectObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thread,
     }

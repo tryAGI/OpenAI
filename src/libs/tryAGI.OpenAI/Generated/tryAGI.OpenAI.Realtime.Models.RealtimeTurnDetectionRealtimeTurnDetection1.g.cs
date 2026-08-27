@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI.Realtime
     public readonly partial struct RealtimeTurnDetectionRealtimeTurnDetection1 : global::System.IEquatable<RealtimeTurnDetectionRealtimeTurnDetection1>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1DiscriminatorType? Type { get; }
 
@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ServerVad))]
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsServerVad => ServerVad != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickServerVad(
 #if NET6_0_OR_GREATER
@@ -49,7 +49,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad PickServerVad() => IsServerVad
             ? ServerVad!
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI.Realtime
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SemanticVad))]
@@ -73,7 +73,7 @@ namespace tryAGI.OpenAI.Realtime
         public bool IsSemanticVad => SemanticVad != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSemanticVad(
 #if NET6_0_OR_GREATER
@@ -86,23 +86,23 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad PickSemanticVad() => IsSemanticVad
             ? SemanticVad!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SemanticVad' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTurnDetectionRealtimeTurnDetection1(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad value) => new RealtimeTurnDetectionRealtimeTurnDetection1((global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad?(RealtimeTurnDetectionRealtimeTurnDetection1 @this) => @this.ServerVad;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTurnDetectionRealtimeTurnDetection1(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad? value)
         {
@@ -110,22 +110,22 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTurnDetectionRealtimeTurnDetection1 FromServerVad(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad? value) => new RealtimeTurnDetectionRealtimeTurnDetection1(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTurnDetectionRealtimeTurnDetection1(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad value) => new RealtimeTurnDetectionRealtimeTurnDetection1((global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad?(RealtimeTurnDetectionRealtimeTurnDetection1 @this) => @this.SemanticVad;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTurnDetectionRealtimeTurnDetection1(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad? value)
         {
@@ -133,12 +133,12 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTurnDetectionRealtimeTurnDetection1 FromSemanticVad(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad? value) => new RealtimeTurnDetectionRealtimeTurnDetection1(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTurnDetectionRealtimeTurnDetection1(
             global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1DiscriminatorType? type,
@@ -153,23 +153,23 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SemanticVad as object ??
-            ServerVad as object 
+            ServerVad as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ServerVad?.ToString() ??
-            SemanticVad?.ToString() 
+            SemanticVad?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -177,7 +177,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad, TResult>? serverVad = null,
@@ -202,7 +202,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad>? serverVad = null,
@@ -226,7 +226,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad>? serverVad = null,
@@ -249,7 +249,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -270,18 +270,18 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RealtimeTurnDetectionRealtimeTurnDetection1 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad?>.Default.Equals(ServerVad, other.ServerVad) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad?>.Default.Equals(SemanticVad, other.SemanticVad) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad?>.Default.Equals(SemanticVad, other.SemanticVad)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RealtimeTurnDetectionRealtimeTurnDetection1 obj1, RealtimeTurnDetectionRealtimeTurnDetection1 obj2)
         {
@@ -289,7 +289,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RealtimeTurnDetectionRealtimeTurnDetection1 obj1, RealtimeTurnDetectionRealtimeTurnDetection1 obj2)
         {
@@ -297,7 +297,7 @@ namespace tryAGI.OpenAI.Realtime
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

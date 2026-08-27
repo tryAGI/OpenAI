@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemInputAudioTranscriptionSegment,
     }

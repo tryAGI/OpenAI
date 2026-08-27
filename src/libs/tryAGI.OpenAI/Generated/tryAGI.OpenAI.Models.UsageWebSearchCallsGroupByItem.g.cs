@@ -4,28 +4,28 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UsageWebSearchCallsGroupByItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiKeyId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContextLevel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Model,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProjectId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserId,
     }

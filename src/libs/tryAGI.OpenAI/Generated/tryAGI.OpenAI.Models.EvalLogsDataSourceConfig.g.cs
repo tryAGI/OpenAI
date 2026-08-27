@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.EvalLogsDataSourceConfigType Type { get; set; } = global::tryAGI.OpenAI.EvalLogsDataSourceConfigType.Logs;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }

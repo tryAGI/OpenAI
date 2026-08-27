@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct RealtimeConversationItem : global::System.IEquatable<RealtimeConversationItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeConversationItemDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message1))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsMessage1 => Message1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessage1(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystem PickMessage1() => IsMessage1
             ? Message1!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message2))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsMessage2 => Message2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessage2(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeConversationItemMessageUser PickMessage2() => IsMessage2
             ? Message2!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message3))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsMessage3 => Message3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessage3(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistant PickMessage3() => IsMessage3
             ? Message3!
@@ -135,7 +135,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCall))]
@@ -143,7 +143,7 @@ namespace tryAGI.OpenAI
         public bool IsFunctionCall => FunctionCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionCall(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCall PickFunctionCall() => IsFunctionCall
             ? FunctionCall!
@@ -172,7 +172,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallOutput))]
@@ -180,7 +180,7 @@ namespace tryAGI.OpenAI
         public bool IsFunctionCallOutput => FunctionCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionCallOutput(
 #if NET6_0_OR_GREATER
@@ -193,7 +193,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutput PickFunctionCallOutput() => IsFunctionCallOutput
             ? FunctionCallOutput!
@@ -209,7 +209,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalResponse))]
@@ -217,7 +217,7 @@ namespace tryAGI.OpenAI
         public bool IsMcpApprovalResponse => McpApprovalResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpApprovalResponse(
 #if NET6_0_OR_GREATER
@@ -230,7 +230,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeMCPApprovalResponse PickMcpApprovalResponse() => IsMcpApprovalResponse
             ? McpApprovalResponse!
@@ -246,7 +246,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpListTools))]
@@ -254,7 +254,7 @@ namespace tryAGI.OpenAI
         public bool IsMcpListTools => McpListTools != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpListTools(
 #if NET6_0_OR_GREATER
@@ -267,7 +267,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeMCPListTools PickMcpListTools() => IsMcpListTools
             ? McpListTools!
@@ -283,7 +283,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpCall))]
@@ -291,7 +291,7 @@ namespace tryAGI.OpenAI
         public bool IsMcpCall => McpCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpCall(
 #if NET6_0_OR_GREATER
@@ -304,7 +304,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeMCPToolCall PickMcpCall() => IsMcpCall
             ? McpCall!
@@ -320,7 +320,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalRequest))]
@@ -328,7 +328,7 @@ namespace tryAGI.OpenAI
         public bool IsMcpApprovalRequest => McpApprovalRequest != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpApprovalRequest(
 #if NET6_0_OR_GREATER
@@ -341,23 +341,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeMCPApprovalRequest PickMcpApprovalRequest() => IsMcpApprovalRequest
             ? McpApprovalRequest!
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalRequest' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeConversationItemMessageSystem value) => new RealtimeConversationItem((global::tryAGI.OpenAI.RealtimeConversationItemMessageSystem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeConversationItemMessageSystem?(RealtimeConversationItem @this) => @this.Message1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeConversationItemMessageSystem? value)
         {
@@ -365,22 +365,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeConversationItem FromMessage1(global::tryAGI.OpenAI.RealtimeConversationItemMessageSystem? value) => new RealtimeConversationItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeConversationItemMessageUser value) => new RealtimeConversationItem((global::tryAGI.OpenAI.RealtimeConversationItemMessageUser?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeConversationItemMessageUser?(RealtimeConversationItem @this) => @this.Message2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeConversationItemMessageUser? value)
         {
@@ -388,22 +388,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeConversationItem FromMessage2(global::tryAGI.OpenAI.RealtimeConversationItemMessageUser? value) => new RealtimeConversationItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistant value) => new RealtimeConversationItem((global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistant?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistant?(RealtimeConversationItem @this) => @this.Message3;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistant? value)
         {
@@ -411,22 +411,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeConversationItem FromMessage3(global::tryAGI.OpenAI.RealtimeConversationItemMessageAssistant? value) => new RealtimeConversationItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeConversationItemFunctionCall value) => new RealtimeConversationItem((global::tryAGI.OpenAI.RealtimeConversationItemFunctionCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeConversationItemFunctionCall?(RealtimeConversationItem @this) => @this.FunctionCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeConversationItemFunctionCall? value)
         {
@@ -434,22 +434,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeConversationItem FromFunctionCall(global::tryAGI.OpenAI.RealtimeConversationItemFunctionCall? value) => new RealtimeConversationItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutput value) => new RealtimeConversationItem((global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutput?(RealtimeConversationItem @this) => @this.FunctionCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutput? value)
         {
@@ -457,22 +457,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeConversationItem FromFunctionCallOutput(global::tryAGI.OpenAI.RealtimeConversationItemFunctionCallOutput? value) => new RealtimeConversationItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeMCPApprovalResponse value) => new RealtimeConversationItem((global::tryAGI.OpenAI.RealtimeMCPApprovalResponse?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeMCPApprovalResponse?(RealtimeConversationItem @this) => @this.McpApprovalResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeMCPApprovalResponse? value)
         {
@@ -480,22 +480,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeConversationItem FromMcpApprovalResponse(global::tryAGI.OpenAI.RealtimeMCPApprovalResponse? value) => new RealtimeConversationItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeMCPListTools value) => new RealtimeConversationItem((global::tryAGI.OpenAI.RealtimeMCPListTools?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeMCPListTools?(RealtimeConversationItem @this) => @this.McpListTools;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeMCPListTools? value)
         {
@@ -503,22 +503,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeConversationItem FromMcpListTools(global::tryAGI.OpenAI.RealtimeMCPListTools? value) => new RealtimeConversationItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeMCPToolCall value) => new RealtimeConversationItem((global::tryAGI.OpenAI.RealtimeMCPToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeMCPToolCall?(RealtimeConversationItem @this) => @this.McpCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeMCPToolCall? value)
         {
@@ -526,22 +526,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeConversationItem FromMcpCall(global::tryAGI.OpenAI.RealtimeMCPToolCall? value) => new RealtimeConversationItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeMCPApprovalRequest value) => new RealtimeConversationItem((global::tryAGI.OpenAI.RealtimeMCPApprovalRequest?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeMCPApprovalRequest?(RealtimeConversationItem @this) => @this.McpApprovalRequest;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeConversationItem(global::tryAGI.OpenAI.RealtimeMCPApprovalRequest? value)
         {
@@ -549,12 +549,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeConversationItem FromMcpApprovalRequest(global::tryAGI.OpenAI.RealtimeMCPApprovalRequest? value) => new RealtimeConversationItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeConversationItem(
             global::tryAGI.OpenAI.RealtimeConversationItemDiscriminatorType? type,
@@ -583,7 +583,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             McpApprovalRequest as object ??
@@ -594,11 +594,11 @@ namespace tryAGI.OpenAI
             FunctionCall as object ??
             Message3 as object ??
             Message2 as object ??
-            Message1 as object 
+            Message1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Message1?.ToString() ??
@@ -609,11 +609,11 @@ namespace tryAGI.OpenAI
             McpApprovalResponse?.ToString() ??
             McpListTools?.ToString() ??
             McpCall?.ToString() ??
-            McpApprovalRequest?.ToString() 
+            McpApprovalRequest?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -621,7 +621,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.RealtimeConversationItemMessageSystem, TResult>? message1 = null,
@@ -681,7 +681,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.RealtimeConversationItemMessageSystem>? message1 = null,
@@ -747,7 +747,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.RealtimeConversationItemMessageSystem>? message1 = null,
@@ -805,7 +805,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -840,7 +840,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RealtimeConversationItem other)
         {
@@ -853,12 +853,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeMCPApprovalResponse?>.Default.Equals(McpApprovalResponse, other.McpApprovalResponse) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeMCPListTools?>.Default.Equals(McpListTools, other.McpListTools) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeMCPToolCall?>.Default.Equals(McpCall, other.McpCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeMCPApprovalRequest?>.Default.Equals(McpApprovalRequest, other.McpApprovalRequest) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeMCPApprovalRequest?>.Default.Equals(McpApprovalRequest, other.McpApprovalRequest)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RealtimeConversationItem obj1, RealtimeConversationItem obj2)
         {
@@ -866,7 +866,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RealtimeConversationItem obj1, RealtimeConversationItem obj2)
         {
@@ -874,7 +874,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaFunctionToolCallResource : global::System.IEquatable<BetaFunctionToolCallResource>
     {
@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCall))]
@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         public bool IsFunctionToolCall => FunctionToolCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionToolCall(
 #if NET6_0_OR_GREATER
@@ -41,14 +41,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaFunctionToolCall PickFunctionToolCall() => IsFunctionToolCall
             ? FunctionToolCall!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionToolCall' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaFunctionToolCallResourceVariant2? BetaFunctionToolCallResourceVariant2 { get; init; }
@@ -57,7 +57,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaFunctionToolCallResourceVariant2))]
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         public bool IsBetaFunctionToolCallResourceVariant2 => BetaFunctionToolCallResourceVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBetaFunctionToolCallResourceVariant2(
 #if NET6_0_OR_GREATER
@@ -78,23 +78,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaFunctionToolCallResourceVariant2 PickBetaFunctionToolCallResourceVariant2() => IsBetaFunctionToolCallResourceVariant2
             ? BetaFunctionToolCallResourceVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaFunctionToolCallResourceVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaFunctionToolCallResource(global::tryAGI.OpenAI.BetaFunctionToolCall value) => new BetaFunctionToolCallResource((global::tryAGI.OpenAI.BetaFunctionToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaFunctionToolCall?(BetaFunctionToolCallResource @this) => @this.FunctionToolCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaFunctionToolCallResource(global::tryAGI.OpenAI.BetaFunctionToolCall? value)
         {
@@ -102,22 +102,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaFunctionToolCallResource FromFunctionToolCall(global::tryAGI.OpenAI.BetaFunctionToolCall? value) => new BetaFunctionToolCallResource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaFunctionToolCallResource(global::tryAGI.OpenAI.BetaFunctionToolCallResourceVariant2 value) => new BetaFunctionToolCallResource((global::tryAGI.OpenAI.BetaFunctionToolCallResourceVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaFunctionToolCallResourceVariant2?(BetaFunctionToolCallResource @this) => @this.BetaFunctionToolCallResourceVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaFunctionToolCallResource(global::tryAGI.OpenAI.BetaFunctionToolCallResourceVariant2? value)
         {
@@ -125,12 +125,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaFunctionToolCallResource FromBetaFunctionToolCallResourceVariant2(global::tryAGI.OpenAI.BetaFunctionToolCallResourceVariant2? value) => new BetaFunctionToolCallResource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaFunctionToolCallResource(
             global::tryAGI.OpenAI.BetaFunctionToolCall? functionToolCall,
@@ -142,23 +142,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BetaFunctionToolCallResourceVariant2 as object ??
-            FunctionToolCall as object 
+            FunctionToolCall as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             FunctionToolCall?.ToString() ??
-            BetaFunctionToolCallResourceVariant2?.ToString() 
+            BetaFunctionToolCallResourceVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -166,7 +166,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaFunctionToolCall, TResult>? functionToolCall = null,
@@ -191,7 +191,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaFunctionToolCall>? functionToolCall = null,
@@ -215,7 +215,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaFunctionToolCall>? functionToolCall = null,
@@ -238,7 +238,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -259,18 +259,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaFunctionToolCallResource other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaFunctionToolCall?>.Default.Equals(FunctionToolCall, other.FunctionToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaFunctionToolCallResourceVariant2?>.Default.Equals(BetaFunctionToolCallResourceVariant2, other.BetaFunctionToolCallResourceVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaFunctionToolCallResourceVariant2?>.Default.Equals(BetaFunctionToolCallResourceVariant2, other.BetaFunctionToolCallResourceVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaFunctionToolCallResource obj1, BetaFunctionToolCallResource obj2)
         {
@@ -278,7 +278,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaFunctionToolCallResource obj1, BetaFunctionToolCallResource obj2)
         {
@@ -286,7 +286,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

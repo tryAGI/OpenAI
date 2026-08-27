@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MessageStreamEventVariant3Event
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ThreadMessageDelta,
     }

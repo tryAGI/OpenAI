@@ -18,25 +18,25 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.InputFileContentParamType Type { get; set; } = global::tryAGI.OpenAI.InputFileContentParamType.InputFile;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         public string? FileId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         public string? Filename { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_data")]
         public string? FileData { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_url")]
         public string? FileUrl { get; set; }
@@ -49,7 +49,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.FileDetailEnum? Detail { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
         public global::tryAGI.OpenAI.PromptCacheBreakpointParam? PromptCacheBreakpoint { get; set; }

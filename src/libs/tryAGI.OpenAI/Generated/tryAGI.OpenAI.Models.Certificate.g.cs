@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
         public required int CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("certificate_details")]
         [global::System.Text.Json.Serialization.JsonRequired]

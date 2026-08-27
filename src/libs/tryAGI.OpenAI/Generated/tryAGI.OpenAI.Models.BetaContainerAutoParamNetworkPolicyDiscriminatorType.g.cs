@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaContainerAutoParamNetworkPolicyDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Allowlist,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
     }

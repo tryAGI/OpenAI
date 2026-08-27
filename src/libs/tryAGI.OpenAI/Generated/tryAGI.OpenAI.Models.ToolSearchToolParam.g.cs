@@ -25,13 +25,13 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ToolSearchExecutionType? Execution { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
         public global::tryAGI.OpenAI.EmptyModelParam? Parameters { get; set; }

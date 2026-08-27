@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         public required string Model { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
         public global::tryAGI.OpenAI.ServiceTierEnum? ServiceTier { get; set; }
@@ -66,7 +66,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CompletionUsage? Usage { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("moderation")]
         public global::tryAGI.OpenAI.ChatCompletionModeration? Moderation { get; set; }

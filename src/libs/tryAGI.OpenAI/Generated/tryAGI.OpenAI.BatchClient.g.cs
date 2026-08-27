@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
     public sealed partial class BatchClient : global::tryAGI.OpenAI.IBatchClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://api.openai.com/v1";
 
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::tryAGI.OpenAI.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {

@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ResultsItem : global::System.IEquatable<ResultsItem>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminatorObject? Object { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageCompletionsResult))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageCompletionsResult => OrganizationUsageCompletionsResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrganizationUsageCompletionsResult(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UsageCompletionsResult PickOrganizationUsageCompletionsResult() => IsOrganizationUsageCompletionsResult
             ? OrganizationUsageCompletionsResult!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageEmbeddingsResult))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageEmbeddingsResult => OrganizationUsageEmbeddingsResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrganizationUsageEmbeddingsResult(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UsageEmbeddingsResult PickOrganizationUsageEmbeddingsResult() => IsOrganizationUsageEmbeddingsResult
             ? OrganizationUsageEmbeddingsResult!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageModerationsResult))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageModerationsResult => OrganizationUsageModerationsResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrganizationUsageModerationsResult(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UsageModerationsResult PickOrganizationUsageModerationsResult() => IsOrganizationUsageModerationsResult
             ? OrganizationUsageModerationsResult!
@@ -135,7 +135,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageImagesResult))]
@@ -143,7 +143,7 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageImagesResult => OrganizationUsageImagesResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrganizationUsageImagesResult(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UsageImagesResult PickOrganizationUsageImagesResult() => IsOrganizationUsageImagesResult
             ? OrganizationUsageImagesResult!
@@ -172,7 +172,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageAudioSpeechesResult))]
@@ -180,7 +180,7 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageAudioSpeechesResult => OrganizationUsageAudioSpeechesResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrganizationUsageAudioSpeechesResult(
 #if NET6_0_OR_GREATER
@@ -193,7 +193,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UsageAudioSpeechesResult PickOrganizationUsageAudioSpeechesResult() => IsOrganizationUsageAudioSpeechesResult
             ? OrganizationUsageAudioSpeechesResult!
@@ -209,7 +209,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageAudioTranscriptionsResult))]
@@ -217,7 +217,7 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageAudioTranscriptionsResult => OrganizationUsageAudioTranscriptionsResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrganizationUsageAudioTranscriptionsResult(
 #if NET6_0_OR_GREATER
@@ -230,7 +230,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UsageAudioTranscriptionsResult PickOrganizationUsageAudioTranscriptionsResult() => IsOrganizationUsageAudioTranscriptionsResult
             ? OrganizationUsageAudioTranscriptionsResult!
@@ -246,7 +246,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageVectorStoresResult))]
@@ -254,7 +254,7 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageVectorStoresResult => OrganizationUsageVectorStoresResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrganizationUsageVectorStoresResult(
 #if NET6_0_OR_GREATER
@@ -267,7 +267,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UsageVectorStoresResult PickOrganizationUsageVectorStoresResult() => IsOrganizationUsageVectorStoresResult
             ? OrganizationUsageVectorStoresResult!
@@ -283,7 +283,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageCodeInterpreterSessionsResult))]
@@ -291,7 +291,7 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageCodeInterpreterSessionsResult => OrganizationUsageCodeInterpreterSessionsResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrganizationUsageCodeInterpreterSessionsResult(
 #if NET6_0_OR_GREATER
@@ -304,7 +304,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult PickOrganizationUsageCodeInterpreterSessionsResult() => IsOrganizationUsageCodeInterpreterSessionsResult
             ? OrganizationUsageCodeInterpreterSessionsResult!
@@ -320,7 +320,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageFileSearchesResult))]
@@ -328,7 +328,7 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageFileSearchesResult => OrganizationUsageFileSearchesResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrganizationUsageFileSearchesResult(
 #if NET6_0_OR_GREATER
@@ -341,7 +341,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UsageFileSearchCallsResult PickOrganizationUsageFileSearchesResult() => IsOrganizationUsageFileSearchesResult
             ? OrganizationUsageFileSearchesResult!
@@ -357,7 +357,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationUsageWebSearchesResult))]
@@ -365,7 +365,7 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationUsageWebSearchesResult => OrganizationUsageWebSearchesResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrganizationUsageWebSearchesResult(
 #if NET6_0_OR_GREATER
@@ -378,7 +378,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UsageWebSearchCallsResult PickOrganizationUsageWebSearchesResult() => IsOrganizationUsageWebSearchesResult
             ? OrganizationUsageWebSearchesResult!
@@ -394,7 +394,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OrganizationCostsResult))]
@@ -402,7 +402,7 @@ namespace tryAGI.OpenAI
         public bool IsOrganizationCostsResult => OrganizationCostsResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOrganizationCostsResult(
 #if NET6_0_OR_GREATER
@@ -415,23 +415,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CostsResult PickOrganizationCostsResult() => IsOrganizationCostsResult
             ? OrganizationCostsResult!
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationCostsResult' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageCompletionsResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageCompletionsResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UsageCompletionsResult?(ResultsItem @this) => @this.OrganizationUsageCompletionsResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(global::tryAGI.OpenAI.UsageCompletionsResult? value)
         {
@@ -439,22 +439,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem FromOrganizationUsageCompletionsResult(global::tryAGI.OpenAI.UsageCompletionsResult? value) => new ResultsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageEmbeddingsResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageEmbeddingsResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UsageEmbeddingsResult?(ResultsItem @this) => @this.OrganizationUsageEmbeddingsResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(global::tryAGI.OpenAI.UsageEmbeddingsResult? value)
         {
@@ -462,22 +462,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem FromOrganizationUsageEmbeddingsResult(global::tryAGI.OpenAI.UsageEmbeddingsResult? value) => new ResultsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageModerationsResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageModerationsResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UsageModerationsResult?(ResultsItem @this) => @this.OrganizationUsageModerationsResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(global::tryAGI.OpenAI.UsageModerationsResult? value)
         {
@@ -485,22 +485,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem FromOrganizationUsageModerationsResult(global::tryAGI.OpenAI.UsageModerationsResult? value) => new ResultsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageImagesResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageImagesResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UsageImagesResult?(ResultsItem @this) => @this.OrganizationUsageImagesResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(global::tryAGI.OpenAI.UsageImagesResult? value)
         {
@@ -508,22 +508,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem FromOrganizationUsageImagesResult(global::tryAGI.OpenAI.UsageImagesResult? value) => new ResultsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageAudioSpeechesResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageAudioSpeechesResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UsageAudioSpeechesResult?(ResultsItem @this) => @this.OrganizationUsageAudioSpeechesResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(global::tryAGI.OpenAI.UsageAudioSpeechesResult? value)
         {
@@ -531,22 +531,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem FromOrganizationUsageAudioSpeechesResult(global::tryAGI.OpenAI.UsageAudioSpeechesResult? value) => new ResultsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageAudioTranscriptionsResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageAudioTranscriptionsResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UsageAudioTranscriptionsResult?(ResultsItem @this) => @this.OrganizationUsageAudioTranscriptionsResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(global::tryAGI.OpenAI.UsageAudioTranscriptionsResult? value)
         {
@@ -554,22 +554,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem FromOrganizationUsageAudioTranscriptionsResult(global::tryAGI.OpenAI.UsageAudioTranscriptionsResult? value) => new ResultsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageVectorStoresResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageVectorStoresResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UsageVectorStoresResult?(ResultsItem @this) => @this.OrganizationUsageVectorStoresResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(global::tryAGI.OpenAI.UsageVectorStoresResult? value)
         {
@@ -577,22 +577,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem FromOrganizationUsageVectorStoresResult(global::tryAGI.OpenAI.UsageVectorStoresResult? value) => new ResultsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult?(ResultsItem @this) => @this.OrganizationUsageCodeInterpreterSessionsResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult? value)
         {
@@ -600,22 +600,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem FromOrganizationUsageCodeInterpreterSessionsResult(global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult? value) => new ResultsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageFileSearchCallsResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageFileSearchCallsResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UsageFileSearchCallsResult?(ResultsItem @this) => @this.OrganizationUsageFileSearchesResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(global::tryAGI.OpenAI.UsageFileSearchCallsResult? value)
         {
@@ -623,22 +623,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem FromOrganizationUsageFileSearchesResult(global::tryAGI.OpenAI.UsageFileSearchCallsResult? value) => new ResultsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.UsageWebSearchCallsResult value) => new ResultsItem((global::tryAGI.OpenAI.UsageWebSearchCallsResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UsageWebSearchCallsResult?(ResultsItem @this) => @this.OrganizationUsageWebSearchesResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(global::tryAGI.OpenAI.UsageWebSearchCallsResult? value)
         {
@@ -646,22 +646,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem FromOrganizationUsageWebSearchesResult(global::tryAGI.OpenAI.UsageWebSearchCallsResult? value) => new ResultsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResultsItem(global::tryAGI.OpenAI.CostsResult value) => new ResultsItem((global::tryAGI.OpenAI.CostsResult?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.CostsResult?(ResultsItem @this) => @this.OrganizationCostsResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(global::tryAGI.OpenAI.CostsResult? value)
         {
@@ -669,12 +669,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResultsItem FromOrganizationCostsResult(global::tryAGI.OpenAI.CostsResult? value) => new ResultsItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResultsItem(
             global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminatorObject? @object,
@@ -707,7 +707,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object1 =>
             OrganizationCostsResult as object ??
@@ -720,11 +720,11 @@ namespace tryAGI.OpenAI
             OrganizationUsageImagesResult as object ??
             OrganizationUsageModerationsResult as object ??
             OrganizationUsageEmbeddingsResult as object ??
-            OrganizationUsageCompletionsResult as object 
+            OrganizationUsageCompletionsResult as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             OrganizationUsageCompletionsResult?.ToString() ??
@@ -737,11 +737,11 @@ namespace tryAGI.OpenAI
             OrganizationUsageCodeInterpreterSessionsResult?.ToString() ??
             OrganizationUsageFileSearchesResult?.ToString() ??
             OrganizationUsageWebSearchesResult?.ToString() ??
-            OrganizationCostsResult?.ToString() 
+            OrganizationCostsResult?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -749,7 +749,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.UsageCompletionsResult, TResult>? organizationUsageCompletionsResult = null,
@@ -819,7 +819,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.UsageCompletionsResult>? organizationUsageCompletionsResult = null,
@@ -897,7 +897,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.UsageCompletionsResult>? organizationUsageCompletionsResult = null,
@@ -965,7 +965,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -1004,7 +1004,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ResultsItem other)
         {
@@ -1019,12 +1019,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult?>.Default.Equals(OrganizationUsageCodeInterpreterSessionsResult, other.OrganizationUsageCodeInterpreterSessionsResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UsageFileSearchCallsResult?>.Default.Equals(OrganizationUsageFileSearchesResult, other.OrganizationUsageFileSearchesResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UsageWebSearchCallsResult?>.Default.Equals(OrganizationUsageWebSearchesResult, other.OrganizationUsageWebSearchesResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CostsResult?>.Default.Equals(OrganizationCostsResult, other.OrganizationCostsResult) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CostsResult?>.Default.Equals(OrganizationCostsResult, other.OrganizationCostsResult)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ResultsItem obj1, ResultsItem obj2)
         {
@@ -1032,7 +1032,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ResultsItem obj1, ResultsItem obj2)
         {
@@ -1040,7 +1040,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

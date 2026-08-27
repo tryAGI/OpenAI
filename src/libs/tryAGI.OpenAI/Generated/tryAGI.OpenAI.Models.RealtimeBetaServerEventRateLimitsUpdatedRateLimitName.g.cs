@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum RealtimeBetaServerEventRateLimitsUpdatedRateLimitName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Requests,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tokens,
     }

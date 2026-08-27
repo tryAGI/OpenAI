@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum TruncationObjectType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LastMessages,
     }

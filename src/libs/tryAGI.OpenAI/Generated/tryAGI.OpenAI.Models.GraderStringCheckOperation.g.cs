@@ -9,19 +9,19 @@ namespace tryAGI.OpenAI
     public enum GraderStringCheckOperation
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Eq,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ilike,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Like,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ne,
     }

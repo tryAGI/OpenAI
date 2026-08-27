@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum ChatCompletionRequestMessageContentPartAudioType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudio,
     }

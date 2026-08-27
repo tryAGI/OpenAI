@@ -4,19 +4,19 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class AssignedRoleDetailsAssignmentSourcesVariant1Item
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("principal_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PrincipalId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("principal_type")]
         [global::System.Text.Json.Serialization.JsonRequired]

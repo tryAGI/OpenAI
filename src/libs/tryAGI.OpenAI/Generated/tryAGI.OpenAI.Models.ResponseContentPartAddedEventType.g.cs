@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum ResponseContentPartAddedEventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseContentPartAdded,
     }

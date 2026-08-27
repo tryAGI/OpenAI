@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationId))]
@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         public bool IsConversationId => ConversationId != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationId(
 #if NET6_0_OR_GREATER
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickConversationId() => IsConversationId
             ? ConversationId!
@@ -58,7 +58,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ConversationObject))]
@@ -66,7 +66,7 @@ namespace tryAGI.OpenAI
         public bool IsConversationObject => ConversationObject != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickConversationObject(
 #if NET6_0_OR_GREATER
@@ -79,23 +79,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaConversationParam2 PickConversationObject() => IsConversationObject
             ? ConversationObject!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationObject' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaConversationParam(string value) => new BetaConversationParam((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(BetaConversationParam @this) => @this.ConversationId;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaConversationParam(string? value)
         {
@@ -103,22 +103,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaConversationParam FromConversationId(string? value) => new BetaConversationParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaConversationParam(global::tryAGI.OpenAI.BetaConversationParam2 value) => new BetaConversationParam((global::tryAGI.OpenAI.BetaConversationParam2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaConversationParam2?(BetaConversationParam @this) => @this.ConversationObject;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaConversationParam(global::tryAGI.OpenAI.BetaConversationParam2? value)
         {
@@ -126,12 +126,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaConversationParam FromConversationObject(global::tryAGI.OpenAI.BetaConversationParam2? value) => new BetaConversationParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaConversationParam(
             string? conversationId,
@@ -143,23 +143,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ConversationObject as object ??
-            ConversationId as object 
+            ConversationId as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ConversationId?.ToString() ??
-            ConversationObject?.ToString() 
+            ConversationObject?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -167,7 +167,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? conversationId = null,
@@ -192,7 +192,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? conversationId = null,
@@ -216,7 +216,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? conversationId = null,
@@ -239,7 +239,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -260,18 +260,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaConversationParam other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ConversationId, other.ConversationId) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaConversationParam2?>.Default.Equals(ConversationObject, other.ConversationObject) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaConversationParam2?>.Default.Equals(ConversationObject, other.ConversationObject)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaConversationParam obj1, BetaConversationParam obj2)
         {
@@ -279,7 +279,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaConversationParam obj1, BetaConversationParam obj2)
         {
@@ -287,7 +287,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

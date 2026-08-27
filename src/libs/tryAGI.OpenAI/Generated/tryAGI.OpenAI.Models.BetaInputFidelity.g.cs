@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum BetaInputFidelity
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
     }

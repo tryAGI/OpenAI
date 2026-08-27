@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct FunctionAndCustomToolCallOutput : global::System.IEquatable<FunctionAndCustomToolCallOutput>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.FunctionAndCustomToolCallOutputDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsInputText => InputText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputText(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.InputTextContent PickInputText() => IsInputText
             ? InputText!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputImage(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.InputImageContent PickInputImage() => IsInputImage
             ? InputImage!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsInputFile => InputFile != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputFile(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.InputFileContent PickInputFile() => IsInputFile
             ? InputFile!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FunctionAndCustomToolCallOutput(global::tryAGI.OpenAI.InputTextContent value) => new FunctionAndCustomToolCallOutput((global::tryAGI.OpenAI.InputTextContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.InputTextContent?(FunctionAndCustomToolCallOutput @this) => @this.InputText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FunctionAndCustomToolCallOutput(global::tryAGI.OpenAI.InputTextContent? value)
         {
@@ -143,22 +143,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FunctionAndCustomToolCallOutput FromInputText(global::tryAGI.OpenAI.InputTextContent? value) => new FunctionAndCustomToolCallOutput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FunctionAndCustomToolCallOutput(global::tryAGI.OpenAI.InputImageContent value) => new FunctionAndCustomToolCallOutput((global::tryAGI.OpenAI.InputImageContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.InputImageContent?(FunctionAndCustomToolCallOutput @this) => @this.InputImage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FunctionAndCustomToolCallOutput(global::tryAGI.OpenAI.InputImageContent? value)
         {
@@ -166,22 +166,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FunctionAndCustomToolCallOutput FromInputImage(global::tryAGI.OpenAI.InputImageContent? value) => new FunctionAndCustomToolCallOutput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FunctionAndCustomToolCallOutput(global::tryAGI.OpenAI.InputFileContent value) => new FunctionAndCustomToolCallOutput((global::tryAGI.OpenAI.InputFileContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.InputFileContent?(FunctionAndCustomToolCallOutput @this) => @this.InputFile;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FunctionAndCustomToolCallOutput(global::tryAGI.OpenAI.InputFileContent? value)
         {
@@ -189,12 +189,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FunctionAndCustomToolCallOutput FromInputFile(global::tryAGI.OpenAI.InputFileContent? value) => new FunctionAndCustomToolCallOutput(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FunctionAndCustomToolCallOutput(
             global::tryAGI.OpenAI.FunctionAndCustomToolCallOutputDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             InputFile as object ??
             InputImage as object ??
-            InputText as object 
+            InputText as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputText?.ToString() ??
             InputImage?.ToString() ??
-            InputFile?.ToString() 
+            InputFile?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.InputTextContent, TResult>? inputText = null,
@@ -267,7 +267,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.InputTextContent>? inputText = null,
@@ -297,7 +297,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.InputTextContent>? inputText = null,
@@ -325,7 +325,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(FunctionAndCustomToolCallOutput other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputTextContent?>.Default.Equals(InputText, other.InputText) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputImageContent?>.Default.Equals(InputImage, other.InputImage) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputFileContent?>.Default.Equals(InputFile, other.InputFile) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputFileContent?>.Default.Equals(InputFile, other.InputFile)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(FunctionAndCustomToolCallOutput obj1, FunctionAndCustomToolCallOutput obj2)
         {
@@ -368,7 +368,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(FunctionAndCustomToolCallOutput obj1, FunctionAndCustomToolCallOutput obj2)
         {
@@ -376,7 +376,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

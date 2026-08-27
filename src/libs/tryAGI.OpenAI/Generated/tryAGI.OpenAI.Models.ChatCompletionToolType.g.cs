@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum ChatCompletionToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
     }

@@ -25,7 +25,7 @@ namespace tryAGI.OpenAI
         public required string Text { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
         public global::tryAGI.OpenAI.BetaPromptCacheBreakpointParam? PromptCacheBreakpoint { get; set; }

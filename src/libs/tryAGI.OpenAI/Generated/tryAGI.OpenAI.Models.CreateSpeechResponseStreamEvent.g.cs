@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct CreateSpeechResponseStreamEvent : global::System.IEquatable<CreateSpeechResponseStreamEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CreateSpeechResponseStreamEventDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpeechAudioDelta))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsSpeechAudioDelta => SpeechAudioDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpeechAudioDelta(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.SpeechAudioDeltaEvent PickSpeechAudioDelta() => IsSpeechAudioDelta
             ? SpeechAudioDelta!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpeechAudioDone))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsSpeechAudioDone => SpeechAudioDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpeechAudioDone(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.SpeechAudioDoneEvent PickSpeechAudioDone() => IsSpeechAudioDone
             ? SpeechAudioDone!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpeechAudioDone' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateSpeechResponseStreamEvent(global::tryAGI.OpenAI.SpeechAudioDeltaEvent value) => new CreateSpeechResponseStreamEvent((global::tryAGI.OpenAI.SpeechAudioDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.SpeechAudioDeltaEvent?(CreateSpeechResponseStreamEvent @this) => @this.SpeechAudioDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateSpeechResponseStreamEvent(global::tryAGI.OpenAI.SpeechAudioDeltaEvent? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateSpeechResponseStreamEvent FromSpeechAudioDelta(global::tryAGI.OpenAI.SpeechAudioDeltaEvent? value) => new CreateSpeechResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateSpeechResponseStreamEvent(global::tryAGI.OpenAI.SpeechAudioDoneEvent value) => new CreateSpeechResponseStreamEvent((global::tryAGI.OpenAI.SpeechAudioDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.SpeechAudioDoneEvent?(CreateSpeechResponseStreamEvent @this) => @this.SpeechAudioDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateSpeechResponseStreamEvent(global::tryAGI.OpenAI.SpeechAudioDoneEvent? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateSpeechResponseStreamEvent FromSpeechAudioDone(global::tryAGI.OpenAI.SpeechAudioDoneEvent? value) => new CreateSpeechResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateSpeechResponseStreamEvent(
             global::tryAGI.OpenAI.CreateSpeechResponseStreamEventDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SpeechAudioDone as object ??
-            SpeechAudioDelta as object 
+            SpeechAudioDelta as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SpeechAudioDelta?.ToString() ??
-            SpeechAudioDone?.ToString() 
+            SpeechAudioDone?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.SpeechAudioDeltaEvent, TResult>? speechAudioDelta = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.SpeechAudioDeltaEvent>? speechAudioDelta = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.SpeechAudioDeltaEvent>? speechAudioDelta = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CreateSpeechResponseStreamEvent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpeechAudioDeltaEvent?>.Default.Equals(SpeechAudioDelta, other.SpeechAudioDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpeechAudioDoneEvent?>.Default.Equals(SpeechAudioDone, other.SpeechAudioDone) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpeechAudioDoneEvent?>.Default.Equals(SpeechAudioDone, other.SpeechAudioDone)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CreateSpeechResponseStreamEvent obj1, CreateSpeechResponseStreamEvent obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CreateSpeechResponseStreamEvent obj1, CreateSpeechResponseStreamEvent obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

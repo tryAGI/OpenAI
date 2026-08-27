@@ -9,35 +9,35 @@ namespace tryAGI.OpenAI
     public enum CreateBatchRequestEndpoint
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1ChatCompletions,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1Completions,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1Embeddings,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1ImagesEdits,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1ImagesGenerations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1Moderations,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1Responses,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         V1Videos,
     }

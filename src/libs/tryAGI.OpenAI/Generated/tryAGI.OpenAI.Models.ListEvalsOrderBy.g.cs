@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ListEvalsOrderBy
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CreatedAt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UpdatedAt,
     }

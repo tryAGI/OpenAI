@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
     public enum ComputerScreenshotImageType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ComputerScreenshot,
     }

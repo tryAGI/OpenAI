@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Attachment> Attachments { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inference_options")]
         public global::tryAGI.OpenAI.InferenceOptions? InferenceOptions { get; set; }

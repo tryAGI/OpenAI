@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class ChatCompletionRequestFunctionMessage
@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessageRole Role { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Obsolete("This property marked as deprecated.")]

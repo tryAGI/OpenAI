@@ -9,23 +9,23 @@ namespace tryAGI.OpenAI
     public enum AuditLogRoleBoundToResourceSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConnectorPublish,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RoleConnectorUpdate,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RoleDelete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RoleToggle,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WorkspacePermissions,
     }

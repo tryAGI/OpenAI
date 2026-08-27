@@ -4,24 +4,24 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VideoSize
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1792,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1280x720,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1792x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x720x1280,
     }

@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum ChatCompletionListObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         List,
     }

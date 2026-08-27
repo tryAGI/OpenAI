@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum SkillReferenceParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SkillReference,
     }

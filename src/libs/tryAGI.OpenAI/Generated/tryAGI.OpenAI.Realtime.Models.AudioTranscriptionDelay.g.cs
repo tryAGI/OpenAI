@@ -11,23 +11,23 @@ namespace tryAGI.OpenAI.Realtime
     public enum AudioTranscriptionDelay
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Medium,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Minimal,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Xhigh,
     }

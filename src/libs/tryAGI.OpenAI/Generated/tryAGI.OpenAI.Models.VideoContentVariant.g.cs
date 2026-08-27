@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VideoContentVariant
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Spritesheet,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Thumbnail,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Video,
     }

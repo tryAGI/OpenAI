@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolChoiceMode))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsToolChoiceMode => ToolChoiceMode != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolChoiceMode(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum PickToolChoiceMode() => IsToolChoiceMode
             ? ToolChoiceMode!.Value
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AllowedTools))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsAllowedTools => AllowedTools != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAllowedTools(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice PickAllowedTools() => IsAllowedTools
             ? AllowedTools!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolChoice))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsFunctionToolChoice => FunctionToolChoice != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionToolChoice(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ChatCompletionNamedToolChoice PickFunctionToolChoice() => IsFunctionToolChoice
             ? FunctionToolChoice!
@@ -135,7 +135,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolChoice))]
@@ -143,7 +143,7 @@ namespace tryAGI.OpenAI
         public bool IsCustomToolChoice => CustomToolChoice != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustomToolChoice(
 #if NET6_0_OR_GREATER
@@ -156,23 +156,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom PickCustomToolChoice() => IsCustomToolChoice
             ? CustomToolChoice!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolChoice' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum value) => new ChatCompletionToolChoiceOption((global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum?(ChatCompletionToolChoiceOption @this) => @this.ToolChoiceMode;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum? value)
         {
@@ -180,22 +180,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatCompletionToolChoiceOption FromToolChoiceMode(global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum? value) => new ChatCompletionToolChoiceOption(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice value) => new ChatCompletionToolChoiceOption((global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice?(ChatCompletionToolChoiceOption @this) => @this.AllowedTools;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice? value)
         {
@@ -203,22 +203,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatCompletionToolChoiceOption FromAllowedTools(global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice? value) => new ChatCompletionToolChoiceOption(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionNamedToolChoice value) => new ChatCompletionToolChoiceOption((global::tryAGI.OpenAI.ChatCompletionNamedToolChoice?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ChatCompletionNamedToolChoice?(ChatCompletionToolChoiceOption @this) => @this.FunctionToolChoice;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionNamedToolChoice? value)
         {
@@ -226,22 +226,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatCompletionToolChoiceOption FromFunctionToolChoice(global::tryAGI.OpenAI.ChatCompletionNamedToolChoice? value) => new ChatCompletionToolChoiceOption(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom value) => new ChatCompletionToolChoiceOption((global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom?(ChatCompletionToolChoiceOption @this) => @this.CustomToolChoice;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatCompletionToolChoiceOption(global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom? value)
         {
@@ -249,12 +249,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatCompletionToolChoiceOption FromCustomToolChoice(global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom? value) => new ChatCompletionToolChoiceOption(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatCompletionToolChoiceOption(
             global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum? toolChoiceMode,
@@ -270,27 +270,27 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CustomToolChoice as object ??
             FunctionToolChoice as object ??
             AllowedTools as object ??
-            ToolChoiceMode as object 
+            ToolChoiceMode as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ToolChoiceMode?.ToValueString() ??
             AllowedTools?.ToString() ??
             FunctionToolChoice?.ToString() ??
-            CustomToolChoice?.ToString() 
+            CustomToolChoice?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -298,7 +298,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum?, TResult>? toolChoiceMode = null,
@@ -333,7 +333,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum?>? toolChoiceMode = null,
@@ -369,7 +369,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum?>? toolChoiceMode = null,
@@ -402,7 +402,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -427,7 +427,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatCompletionToolChoiceOption other)
         {
@@ -435,12 +435,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum?>.Default.Equals(ToolChoiceMode, other.ToolChoiceMode) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice?>.Default.Equals(AllowedTools, other.AllowedTools) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionNamedToolChoice?>.Default.Equals(FunctionToolChoice, other.FunctionToolChoice) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom?>.Default.Equals(CustomToolChoice, other.CustomToolChoice) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom?>.Default.Equals(CustomToolChoice, other.CustomToolChoice)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatCompletionToolChoiceOption obj1, ChatCompletionToolChoiceOption obj2)
         {
@@ -448,7 +448,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatCompletionToolChoiceOption obj1, ChatCompletionToolChoiceOption obj2)
         {
@@ -456,7 +456,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

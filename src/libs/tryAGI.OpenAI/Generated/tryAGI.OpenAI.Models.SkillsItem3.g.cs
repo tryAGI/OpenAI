@@ -5,17 +5,17 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct SkillsItem3 : global::System.IEquatable<SkillsItem3>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaContainerAutoParamSkillDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaSkillReferenceParam? SkillReference { get; init; }
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SkillReference))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsSkillReference => SkillReference != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSkillReference(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaSkillReferenceParam PickSkillReference() => IsSkillReference
             ? SkillReference!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SkillReference' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaInlineSkillParam? Inline { get; init; }
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Inline))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsInline => Inline != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInline(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaInlineSkillParam PickInline() => IsInline
             ? Inline!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Inline' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SkillsItem3(global::tryAGI.OpenAI.BetaSkillReferenceParam value) => new SkillsItem3((global::tryAGI.OpenAI.BetaSkillReferenceParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaSkillReferenceParam?(SkillsItem3 @this) => @this.SkillReference;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SkillsItem3(global::tryAGI.OpenAI.BetaSkillReferenceParam? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SkillsItem3 FromSkillReference(global::tryAGI.OpenAI.BetaSkillReferenceParam? value) => new SkillsItem3(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SkillsItem3(global::tryAGI.OpenAI.BetaInlineSkillParam value) => new SkillsItem3((global::tryAGI.OpenAI.BetaInlineSkillParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaInlineSkillParam?(SkillsItem3 @this) => @this.Inline;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SkillsItem3(global::tryAGI.OpenAI.BetaInlineSkillParam? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SkillsItem3 FromInline(global::tryAGI.OpenAI.BetaInlineSkillParam? value) => new SkillsItem3(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SkillsItem3(
             global::tryAGI.OpenAI.BetaContainerAutoParamSkillDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Inline as object ??
-            SkillReference as object 
+            SkillReference as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SkillReference?.ToString() ??
-            Inline?.ToString() 
+            Inline?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaSkillReferenceParam, TResult>? skillReference = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaSkillReferenceParam>? skillReference = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaSkillReferenceParam>? skillReference = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SkillsItem3 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaSkillReferenceParam?>.Default.Equals(SkillReference, other.SkillReference) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInlineSkillParam?>.Default.Equals(Inline, other.Inline) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInlineSkillParam?>.Default.Equals(Inline, other.Inline)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SkillsItem3 obj1, SkillsItem3 obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SkillsItem3 obj1, SkillsItem3 obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

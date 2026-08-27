@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
     public enum MCPToolRequireApprovalVariant1Enum2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Always,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Never,
     }

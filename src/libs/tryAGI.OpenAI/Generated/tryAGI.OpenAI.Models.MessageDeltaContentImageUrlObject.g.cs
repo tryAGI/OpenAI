@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectImageUrl? ImageUrl { get; set; }

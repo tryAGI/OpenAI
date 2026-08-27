@@ -4,28 +4,28 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ComputerEnvironment
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Browser,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Linux,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ubuntu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Windows,
     }

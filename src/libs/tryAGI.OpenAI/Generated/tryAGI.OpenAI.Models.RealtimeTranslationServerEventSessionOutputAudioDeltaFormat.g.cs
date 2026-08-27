@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum RealtimeTranslationServerEventSessionOutputAudioDeltaFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pcm16,
     }

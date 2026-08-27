@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaLocalShellExecActionType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Exec,
     }

@@ -23,19 +23,19 @@ namespace tryAGI.OpenAI
         public required int CreatedAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public global::tryAGI.OpenAI.FineTuningJobError2? Error { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fine_tuned_model")]
         public string? FineTunedModel { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finished_at")]
         public int? FinishedAt { get; set; }
@@ -84,7 +84,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.FineTuningJobStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trained_tokens")]
         public int? TrainedTokens { get; set; }
@@ -97,13 +97,13 @@ namespace tryAGI.OpenAI
         public required string TrainingFile { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("validation_file")]
         public string? ValidationFile { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integrations")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningIntegration>? Integrations { get; set; }
@@ -116,7 +116,7 @@ namespace tryAGI.OpenAI
         public required int Seed { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("estimated_finish")]
         public int? EstimatedFinish { get; set; }
@@ -128,7 +128,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.FineTuneMethod? Method { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }

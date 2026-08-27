@@ -13,15 +13,15 @@ namespace tryAGI.OpenAI
     public enum BetaToolChoiceOptions
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Required,
     }

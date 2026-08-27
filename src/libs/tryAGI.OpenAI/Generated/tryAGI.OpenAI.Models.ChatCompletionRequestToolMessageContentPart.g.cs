@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ChatCompletionRequestToolMessageContentPart : global::System.IEquatable<ChatCompletionRequestToolMessageContentPart>
     {
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextContentPart))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsTextContentPart => TextContentPart != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextContentPart(
 #if NET6_0_OR_GREATER
@@ -40,23 +40,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText PickTextContentPart() => IsTextContentPart
             ? TextContentPart!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextContentPart' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ChatCompletionRequestToolMessageContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText value) => new ChatCompletionRequestToolMessageContentPart((global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?(ChatCompletionRequestToolMessageContentPart @this) => @this.TextContentPart;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ChatCompletionRequestToolMessageContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? value)
         {
@@ -64,26 +64,26 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ChatCompletionRequestToolMessageContentPart FromTextContentPart(global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? value) => new ChatCompletionRequestToolMessageContentPart(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            TextContentPart as object 
+            TextContentPart as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            TextContentPart?.ToString() 
+            TextContentPart?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -91,7 +91,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText, TResult>? textContentPart = null,
@@ -111,7 +111,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText>? textContentPart = null,
@@ -129,7 +129,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText>? textContentPart = null,
@@ -147,7 +147,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -166,17 +166,17 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ChatCompletionRequestToolMessageContentPart other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?>.Default.Equals(TextContentPart, other.TextContentPart) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText?>.Default.Equals(TextContentPart, other.TextContentPart)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ChatCompletionRequestToolMessageContentPart obj1, ChatCompletionRequestToolMessageContentPart obj2)
         {
@@ -184,7 +184,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ChatCompletionRequestToolMessageContentPart obj1, ChatCompletionRequestToolMessageContentPart obj2)
         {
@@ -192,7 +192,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

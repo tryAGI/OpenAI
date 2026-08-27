@@ -10,19 +10,19 @@ namespace tryAGI.OpenAI
     public enum FineTuneReinforcementHyperparametersReasoningEffort
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Medium,
     }

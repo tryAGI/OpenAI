@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum BetaApplyPatchCallOutputStatusParam
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
     }

@@ -10,15 +10,15 @@ namespace tryAGI.OpenAI
     public enum MessageContentImageFileObjectImageFileDetail
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
     }

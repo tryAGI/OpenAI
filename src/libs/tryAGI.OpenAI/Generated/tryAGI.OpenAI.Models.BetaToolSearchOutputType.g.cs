@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaToolSearchOutputType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearchOutput,
     }

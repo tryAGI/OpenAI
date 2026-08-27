@@ -4,32 +4,32 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ThreadItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatkitAssistantMessage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatkitClientToolCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatkitTask,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatkitTaskGroup,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatkitUserMessage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatkitWidget,
     }

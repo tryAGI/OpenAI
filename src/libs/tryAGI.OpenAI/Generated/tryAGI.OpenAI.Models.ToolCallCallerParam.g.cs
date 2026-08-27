@@ -10,12 +10,12 @@ namespace tryAGI.OpenAI
     public readonly partial struct ToolCallCallerParam : global::System.IEquatable<ToolCallCallerParam>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ToolCallCallerParamDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.DirectToolCallCallerParam? Direct { get; init; }
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Direct))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsDirect => Direct != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDirect(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.DirectToolCallCallerParam PickDirect() => IsDirect
             ? Direct!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Direct' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ProgramToolCallCallerParam? Program { get; init; }
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Program))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsProgram => Program != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProgram(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ProgramToolCallCallerParam PickProgram() => IsProgram
             ? Program!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Program' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolCallCallerParam(global::tryAGI.OpenAI.DirectToolCallCallerParam value) => new ToolCallCallerParam((global::tryAGI.OpenAI.DirectToolCallCallerParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.DirectToolCallCallerParam?(ToolCallCallerParam @this) => @this.Direct;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolCallCallerParam(global::tryAGI.OpenAI.DirectToolCallCallerParam? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolCallCallerParam FromDirect(global::tryAGI.OpenAI.DirectToolCallCallerParam? value) => new ToolCallCallerParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ToolCallCallerParam(global::tryAGI.OpenAI.ProgramToolCallCallerParam value) => new ToolCallCallerParam((global::tryAGI.OpenAI.ProgramToolCallCallerParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ProgramToolCallCallerParam?(ToolCallCallerParam @this) => @this.Program;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolCallCallerParam(global::tryAGI.OpenAI.ProgramToolCallCallerParam? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ToolCallCallerParam FromProgram(global::tryAGI.OpenAI.ProgramToolCallCallerParam? value) => new ToolCallCallerParam(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ToolCallCallerParam(
             global::tryAGI.OpenAI.ToolCallCallerParamDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Program as object ??
-            Direct as object 
+            Direct as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Direct?.ToString() ??
-            Program?.ToString() 
+            Program?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.DirectToolCallCallerParam, TResult>? direct = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.DirectToolCallCallerParam>? direct = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.DirectToolCallCallerParam>? direct = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ToolCallCallerParam other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.DirectToolCallCallerParam?>.Default.Equals(Direct, other.Direct) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ProgramToolCallCallerParam?>.Default.Equals(Program, other.Program) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ProgramToolCallCallerParam?>.Default.Equals(Program, other.Program)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ToolCallCallerParam obj1, ToolCallCallerParam obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ToolCallCallerParam obj1, ToolCallCallerParam obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

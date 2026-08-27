@@ -4,84 +4,84 @@
 namespace tryAGI.OpenAI.Realtime
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RealtimeSessionCreateResponseGAModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMiniRealtimePreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMiniRealtimePreview20241217,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oRealtimePreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oRealtimePreview20241001,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oRealtimePreview20241217,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oRealtimePreview20250603,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptAudio15,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptAudioMini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptAudioMini20251006,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptAudioMini20251215,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptRealtime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptRealtime15,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptRealtime2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptRealtime21,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptRealtime21Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptRealtime20250828,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptRealtimeMini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptRealtimeMini20251006,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptRealtimeMini20251215,
     }

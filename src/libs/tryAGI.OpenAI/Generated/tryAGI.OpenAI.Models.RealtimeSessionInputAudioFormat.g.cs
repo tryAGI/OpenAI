@@ -12,15 +12,15 @@ namespace tryAGI.OpenAI
     public enum RealtimeSessionInputAudioFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         G711Alaw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         G711Ulaw,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pcm16,
     }

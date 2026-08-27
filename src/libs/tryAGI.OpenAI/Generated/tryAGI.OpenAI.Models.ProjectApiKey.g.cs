@@ -58,7 +58,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.ProjectApiKeyOwnerProjectAccess OwnerProjectAccess { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner")]
         [global::System.Text.Json.Serialization.JsonRequired]

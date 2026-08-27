@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Responses))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsResponses => Responses != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponses(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ModelIdsResponses PickResponses() => IsResponses
             ? Responses!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Responses' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ModelIdsCompactionVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelIdsCompactionVariant2))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsModelIdsCompactionVariant2 => ModelIdsCompactionVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickModelIdsCompactionVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickModelIdsCompactionVariant2() => IsModelIdsCompactionVariant2
             ? ModelIdsCompactionVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelIdsCompactionVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public object? ModelIdsCompactionVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelIdsCompactionVariant3))]
@@ -101,7 +101,7 @@ namespace tryAGI.OpenAI
         public bool IsModelIdsCompactionVariant3 => ModelIdsCompactionVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickModelIdsCompactionVariant3(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickModelIdsCompactionVariant3() => IsModelIdsCompactionVariant3
             ? ModelIdsCompactionVariant3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelIdsCompactionVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ModelIdsCompaction(global::tryAGI.OpenAI.ModelIdsResponses value) => new ModelIdsCompaction((global::tryAGI.OpenAI.ModelIdsResponses?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ModelIdsResponses?(ModelIdsCompaction @this) => @this.Responses;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelIdsCompaction(global::tryAGI.OpenAI.ModelIdsResponses? value)
         {
@@ -138,22 +138,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ModelIdsCompaction FromResponses(global::tryAGI.OpenAI.ModelIdsResponses? value) => new ModelIdsCompaction(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ModelIdsCompaction(string value) => new ModelIdsCompaction((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ModelIdsCompaction @this) => @this.ModelIdsCompactionVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelIdsCompaction(string? value)
         {
@@ -161,12 +161,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ModelIdsCompaction FromModelIdsCompactionVariant2(string? value) => new ModelIdsCompaction(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelIdsCompaction(
             global::tryAGI.OpenAI.ModelIdsResponses? responses,
@@ -180,25 +180,25 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ModelIdsCompactionVariant3 as object ??
             ModelIdsCompactionVariant2 as object ??
-            Responses as object 
+            Responses as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Responses?.ToString() ??
             ModelIdsCompactionVariant2?.ToString() ??
-            ModelIdsCompactionVariant3?.ToString() 
+            ModelIdsCompactionVariant3?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -206,7 +206,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ModelIdsResponses?, TResult>? responses = null,
@@ -236,7 +236,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ModelIdsResponses?>? responses = null,
@@ -266,7 +266,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ModelIdsResponses?>? responses = null,
@@ -294,7 +294,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -317,19 +317,19 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ModelIdsCompaction other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ModelIdsResponses?>.Default.Equals(Responses, other.Responses) &&
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelIdsCompactionVariant2, other.ModelIdsCompactionVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ModelIdsCompactionVariant3, other.ModelIdsCompactionVariant3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ModelIdsCompactionVariant3, other.ModelIdsCompactionVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ModelIdsCompaction obj1, ModelIdsCompaction obj2)
         {
@@ -337,7 +337,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ModelIdsCompaction obj1, ModelIdsCompaction obj2)
         {
@@ -345,7 +345,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

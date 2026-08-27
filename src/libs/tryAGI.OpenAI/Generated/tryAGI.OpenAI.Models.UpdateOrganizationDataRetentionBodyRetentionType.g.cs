@@ -9,19 +9,19 @@ namespace tryAGI.OpenAI
     public enum UpdateOrganizationDataRetentionBodyRetentionType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EnhancedModifiedAbuseMonitoring,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EnhancedZeroDataRetention,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModifiedAbuseMonitoring,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ZeroDataRetention,
     }

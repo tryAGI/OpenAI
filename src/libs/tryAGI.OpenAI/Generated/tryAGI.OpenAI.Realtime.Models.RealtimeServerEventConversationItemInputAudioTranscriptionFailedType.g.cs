@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI.Realtime
     public enum RealtimeServerEventConversationItemInputAudioTranscriptionFailedType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemInputAudioTranscriptionFailed,
     }

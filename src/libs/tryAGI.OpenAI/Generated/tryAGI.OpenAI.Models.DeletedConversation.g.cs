@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct DeletedConversation : global::System.IEquatable<DeletedConversation>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.DeletedConversationResource? Resource { get; init; }
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Resource))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsResource => Resource != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResource(
 #if NET6_0_OR_GREATER
@@ -40,23 +40,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.DeletedConversationResource PickResource() => IsResource
             ? Resource!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Resource' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator DeletedConversation(global::tryAGI.OpenAI.DeletedConversationResource value) => new DeletedConversation((global::tryAGI.OpenAI.DeletedConversationResource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.DeletedConversationResource?(DeletedConversation @this) => @this.Resource;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public DeletedConversation(global::tryAGI.OpenAI.DeletedConversationResource? value)
         {
@@ -64,26 +64,26 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static DeletedConversation FromResource(global::tryAGI.OpenAI.DeletedConversationResource? value) => new DeletedConversation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            Resource as object 
+            Resource as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            Resource?.ToString() 
+            Resource?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -91,7 +91,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.DeletedConversationResource, TResult>? resource = null,
@@ -111,7 +111,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.DeletedConversationResource>? resource = null,
@@ -129,7 +129,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.DeletedConversationResource>? resource = null,
@@ -147,7 +147,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -166,17 +166,17 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(DeletedConversation other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.DeletedConversationResource?>.Default.Equals(Resource, other.Resource) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.DeletedConversationResource?>.Default.Equals(Resource, other.Resource)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(DeletedConversation obj1, DeletedConversation obj2)
         {
@@ -184,7 +184,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(DeletedConversation obj1, DeletedConversation obj2)
         {
@@ -192,7 +192,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

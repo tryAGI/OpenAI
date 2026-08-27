@@ -9,19 +9,19 @@ namespace tryAGI.OpenAI
     public enum ImageGenToolCallStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Generating,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
     }

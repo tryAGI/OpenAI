@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum RealtimeBetaServerEventResponseAudioTranscriptDeltaType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputAudioTranscriptDelta,
     }

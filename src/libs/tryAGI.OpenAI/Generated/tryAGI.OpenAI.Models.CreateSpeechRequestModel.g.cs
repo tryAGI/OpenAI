@@ -4,24 +4,24 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateSpeechRequestModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMiniTts,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMiniTts20251215,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tts1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Tts1Hd,
     }

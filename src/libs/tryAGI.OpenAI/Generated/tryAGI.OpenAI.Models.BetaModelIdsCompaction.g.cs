@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Responses))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsResponses => Responses != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponses(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaModelIdsResponses PickResponses() => IsResponses
             ? Responses!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Responses' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? BetaModelIdsCompactionVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaModelIdsCompactionVariant2))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsBetaModelIdsCompactionVariant2 => BetaModelIdsCompactionVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBetaModelIdsCompactionVariant2(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickBetaModelIdsCompactionVariant2() => IsBetaModelIdsCompactionVariant2
             ? BetaModelIdsCompactionVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaModelIdsCompactionVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public object? BetaModelIdsCompactionVariant3 { get; init; }
@@ -93,7 +93,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaModelIdsCompactionVariant3))]
@@ -101,7 +101,7 @@ namespace tryAGI.OpenAI
         public bool IsBetaModelIdsCompactionVariant3 => BetaModelIdsCompactionVariant3 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBetaModelIdsCompactionVariant3(
 #if NET6_0_OR_GREATER
@@ -114,23 +114,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickBetaModelIdsCompactionVariant3() => IsBetaModelIdsCompactionVariant3
             ? BetaModelIdsCompactionVariant3!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaModelIdsCompactionVariant3' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaModelIdsCompaction(global::tryAGI.OpenAI.BetaModelIdsResponses value) => new BetaModelIdsCompaction((global::tryAGI.OpenAI.BetaModelIdsResponses?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaModelIdsResponses?(BetaModelIdsCompaction @this) => @this.Responses;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaModelIdsCompaction(global::tryAGI.OpenAI.BetaModelIdsResponses? value)
         {
@@ -138,22 +138,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaModelIdsCompaction FromResponses(global::tryAGI.OpenAI.BetaModelIdsResponses? value) => new BetaModelIdsCompaction(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaModelIdsCompaction(string value) => new BetaModelIdsCompaction((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(BetaModelIdsCompaction @this) => @this.BetaModelIdsCompactionVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaModelIdsCompaction(string? value)
         {
@@ -161,12 +161,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaModelIdsCompaction FromBetaModelIdsCompactionVariant2(string? value) => new BetaModelIdsCompaction(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaModelIdsCompaction(
             global::tryAGI.OpenAI.BetaModelIdsResponses? responses,
@@ -180,25 +180,25 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BetaModelIdsCompactionVariant3 as object ??
             BetaModelIdsCompactionVariant2 as object ??
-            Responses as object 
+            Responses as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Responses?.ToString() ??
             BetaModelIdsCompactionVariant2?.ToString() ??
-            BetaModelIdsCompactionVariant3?.ToString() 
+            BetaModelIdsCompactionVariant3?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -206,7 +206,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaModelIdsResponses?, TResult>? responses = null,
@@ -236,7 +236,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaModelIdsResponses?>? responses = null,
@@ -266,7 +266,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaModelIdsResponses?>? responses = null,
@@ -294,7 +294,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -317,19 +317,19 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaModelIdsCompaction other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaModelIdsResponses?>.Default.Equals(Responses, other.Responses) &&
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaModelIdsCompactionVariant2, other.BetaModelIdsCompactionVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(BetaModelIdsCompactionVariant3, other.BetaModelIdsCompactionVariant3) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(BetaModelIdsCompactionVariant3, other.BetaModelIdsCompactionVariant3)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaModelIdsCompaction obj1, BetaModelIdsCompaction obj2)
         {
@@ -337,7 +337,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaModelIdsCompaction obj1, BetaModelIdsCompaction obj2)
         {
@@ -345,7 +345,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

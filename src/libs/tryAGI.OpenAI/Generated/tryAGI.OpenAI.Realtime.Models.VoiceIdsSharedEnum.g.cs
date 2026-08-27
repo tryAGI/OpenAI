@@ -4,48 +4,48 @@
 namespace tryAGI.OpenAI.Realtime
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VoiceIdsSharedEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Alloy,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ash,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ballad,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cedar,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Coral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Echo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Marin,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shimmer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Verse,
     }

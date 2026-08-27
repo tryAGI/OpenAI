@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public required string CallId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("caller")]
         public global::tryAGI.OpenAI.ToolCallCaller? Caller { get; set; }
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.FunctionShellCallStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
         public global::tryAGI.OpenAI.EnvironmentVariant12? Environment { get; set; }

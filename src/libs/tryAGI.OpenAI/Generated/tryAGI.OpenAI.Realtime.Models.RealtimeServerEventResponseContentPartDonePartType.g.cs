@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI.Realtime
     public enum RealtimeServerEventResponseContentPartDonePartType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

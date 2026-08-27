@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.TruncationObjectType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_messages")]
         public int? LastMessages { get; set; }

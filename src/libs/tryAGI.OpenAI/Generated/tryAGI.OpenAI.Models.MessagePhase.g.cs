@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
     public enum MessagePhase
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Commentary,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FinalAnswer,
     }

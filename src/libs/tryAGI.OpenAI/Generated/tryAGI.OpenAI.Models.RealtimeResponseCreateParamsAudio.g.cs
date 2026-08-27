@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class RealtimeResponseCreateParamsAudio
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         public global::tryAGI.OpenAI.RealtimeResponseCreateParamsAudioOutput? Output { get; set; }

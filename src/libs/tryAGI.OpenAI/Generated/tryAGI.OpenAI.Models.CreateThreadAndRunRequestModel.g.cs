@@ -4,160 +4,160 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateThreadAndRunRequestModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo0125,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo0613,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo1106,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo16k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt35Turbo16k0613,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt40125Preview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt40314,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt40613,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41106Preview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt432k,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt432k0314,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt432k0613,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4Turbo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4Turbo20240409,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4TurboPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4VisionPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4120250414,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41Mini20250414,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41Nano,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt41Nano20250414,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt45Preview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt45Preview20250227,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4o,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4o20240513,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4o20240806,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4o20241120,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt4oMini20240718,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt520250807,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5Mini20250807,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5Nano,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gpt5Nano20250807,
     }

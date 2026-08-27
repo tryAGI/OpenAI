@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum ResponseReasoningSummaryPartDoneEventStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Incomplete,
     }

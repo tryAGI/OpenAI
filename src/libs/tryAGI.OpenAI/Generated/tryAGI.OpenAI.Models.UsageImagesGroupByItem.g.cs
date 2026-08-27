@@ -4,32 +4,32 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum UsageImagesGroupByItem
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApiKeyId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Model,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProjectId,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Size,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Source,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UserId,
     }

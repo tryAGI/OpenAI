@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum CodeInterpreterOutputImageType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Image,
     }

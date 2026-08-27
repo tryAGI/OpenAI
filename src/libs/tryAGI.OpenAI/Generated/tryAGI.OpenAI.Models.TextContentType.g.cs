@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum TextContentType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
     }

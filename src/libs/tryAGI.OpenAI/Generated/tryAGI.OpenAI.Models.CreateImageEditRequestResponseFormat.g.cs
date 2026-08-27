@@ -10,11 +10,11 @@ namespace tryAGI.OpenAI
     public enum CreateImageEditRequestResponseFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         B64Json,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Url,
     }

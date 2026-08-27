@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class ComputerCallOutputItemParam
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -38,13 +38,13 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.ComputerScreenshotImage Output { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("acknowledged_safety_checks")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>? AcknowledgedSafetyChecks { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public global::tryAGI.OpenAI.FunctionCallItemStatus? Status { get; set; }

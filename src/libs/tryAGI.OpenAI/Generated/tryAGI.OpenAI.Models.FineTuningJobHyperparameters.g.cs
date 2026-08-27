@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class FineTuningJobHyperparameters
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
         public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuningJobHyperparametersBatchSizeVariant1?, int?>? BatchSize { get; set; }

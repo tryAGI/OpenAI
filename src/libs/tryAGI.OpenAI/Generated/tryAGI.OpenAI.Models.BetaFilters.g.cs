@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaFilters : global::System.IEquatable<BetaFilters>
     {
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComparisonFilter))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsComparisonFilter => ComparisonFilter != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickComparisonFilter(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaComparisonFilter PickComparisonFilter() => IsComparisonFilter
             ? ComparisonFilter!
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompoundFilter))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsCompoundFilter => CompoundFilter != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCompoundFilter(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaCompoundFilter PickCompoundFilter() => IsCompoundFilter
             ? CompoundFilter!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CompoundFilter' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaFilters(global::tryAGI.OpenAI.BetaComparisonFilter value) => new BetaFilters((global::tryAGI.OpenAI.BetaComparisonFilter?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaComparisonFilter?(BetaFilters @this) => @this.ComparisonFilter;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaFilters(global::tryAGI.OpenAI.BetaComparisonFilter? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaFilters FromComparisonFilter(global::tryAGI.OpenAI.BetaComparisonFilter? value) => new BetaFilters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaFilters(global::tryAGI.OpenAI.BetaCompoundFilter value) => new BetaFilters((global::tryAGI.OpenAI.BetaCompoundFilter?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaCompoundFilter?(BetaFilters @this) => @this.CompoundFilter;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaFilters(global::tryAGI.OpenAI.BetaCompoundFilter? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaFilters FromCompoundFilter(global::tryAGI.OpenAI.BetaCompoundFilter? value) => new BetaFilters(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaFilters(
             global::tryAGI.OpenAI.BetaComparisonFilter? comparisonFilter,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CompoundFilter as object ??
-            ComparisonFilter as object 
+            ComparisonFilter as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ComparisonFilter?.ToString() ??
-            CompoundFilter?.ToString() 
+            CompoundFilter?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaComparisonFilter, TResult>? comparisonFilter = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaComparisonFilter>? comparisonFilter = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaComparisonFilter>? comparisonFilter = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaFilters other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaComparisonFilter?>.Default.Equals(ComparisonFilter, other.ComparisonFilter) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCompoundFilter?>.Default.Equals(CompoundFilter, other.CompoundFilter) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCompoundFilter?>.Default.Equals(CompoundFilter, other.CompoundFilter)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaFilters obj1, BetaFilters obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaFilters obj1, BetaFilters obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

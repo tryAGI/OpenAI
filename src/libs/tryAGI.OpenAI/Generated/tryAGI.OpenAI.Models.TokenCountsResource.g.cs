@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.TokenCountsResourceObject Object { get; set; } = global::tryAGI.OpenAI.TokenCountsResourceObject.ResponseInputTokens;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]

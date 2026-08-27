@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ListRolesOrder
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Asc,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Desc,
     }

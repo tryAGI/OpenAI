@@ -4,220 +4,220 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaResponseStreamEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseAudioDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseAudioDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseAudioTranscriptDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseAudioTranscriptDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCodeInterpreterCallCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCodeInterpreterCallInProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCodeInterpreterCallInterpreting,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCodeInterpreterCallCodeDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCodeInterpreterCallCodeDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseContentPartAdded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseContentPartDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCustomToolCallInputDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCustomToolCallInputDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseFileSearchCallCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseFileSearchCallInProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseFileSearchCallSearching,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseFunctionCallArgumentsDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseFunctionCallArgumentsDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseImageGenerationCallCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseImageGenerationCallGenerating,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseImageGenerationCallInProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseImageGenerationCallPartialImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseInProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseIncomplete,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpCallCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpCallFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpCallInProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpCallArgumentsDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpCallArgumentsDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpListToolsCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpListToolsFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpListToolsInProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputItemAdded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputItemDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputTextAnnotationAdded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputTextDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputTextDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseQueued,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseReasoningSummaryPartAdded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseReasoningSummaryPartDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseReasoningSummaryTextDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseReasoningSummaryTextDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseReasoningTextDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseReasoningTextDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseRefusalDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseRefusalDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseWebSearchCallCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseWebSearchCallInProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseWebSearchCallSearching,
     }

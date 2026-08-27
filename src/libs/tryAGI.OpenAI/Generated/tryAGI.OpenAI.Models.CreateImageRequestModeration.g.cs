@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
     public enum CreateImageRequestModeration
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
     }

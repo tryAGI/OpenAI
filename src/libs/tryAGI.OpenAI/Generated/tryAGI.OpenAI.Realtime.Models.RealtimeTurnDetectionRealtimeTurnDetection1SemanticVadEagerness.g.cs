@@ -10,19 +10,19 @@ namespace tryAGI.OpenAI.Realtime
     public enum RealtimeTurnDetectionRealtimeTurnDetection1SemanticVadEagerness
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Medium,
     }

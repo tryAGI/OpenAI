@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum BetaLocalShellToolCallOutputStatus2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Incomplete,
     }

@@ -18,35 +18,35 @@ namespace tryAGI.OpenAI
     public enum BetaToolChoiceTypesType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeInterpreter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Computer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ComputerUse,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ComputerUsePreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileSearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchPreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearchPreview20250311,
     }

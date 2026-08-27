@@ -48,7 +48,7 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem3> Content { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
         public global::tryAGI.OpenAI.MessagePhase2? Phase { get; set; }

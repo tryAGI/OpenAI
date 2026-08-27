@@ -4,28 +4,28 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateImageRequestModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DallE2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DallE3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage1Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage15,
     }

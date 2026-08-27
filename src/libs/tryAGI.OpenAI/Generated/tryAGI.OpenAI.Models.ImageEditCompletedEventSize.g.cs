@@ -9,19 +9,19 @@ namespace tryAGI.OpenAI
     public enum ImageEditCompletedEventSize
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024x1536,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1536x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
     }

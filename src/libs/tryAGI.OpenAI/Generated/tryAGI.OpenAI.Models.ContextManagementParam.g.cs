@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ContextManagementParam
     {
@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public required string Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compact_threshold")]
         public int? CompactThreshold { get; set; }

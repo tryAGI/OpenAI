@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaTextResponseFormatConfiguration? Format { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("verbosity")]
         public global::tryAGI.OpenAI.BetaVerbosityEnum? Verbosity { get; set; }

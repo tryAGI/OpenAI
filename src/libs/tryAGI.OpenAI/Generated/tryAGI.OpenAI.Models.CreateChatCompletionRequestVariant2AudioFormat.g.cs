@@ -10,27 +10,27 @@ namespace tryAGI.OpenAI
     public enum CreateChatCompletionRequestVariant2AudioFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Aac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Opus,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pcm16,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wav,
     }

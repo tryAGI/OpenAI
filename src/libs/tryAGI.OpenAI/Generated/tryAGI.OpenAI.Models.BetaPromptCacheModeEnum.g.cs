@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaPromptCacheModeEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Explicit,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Implicit,
     }

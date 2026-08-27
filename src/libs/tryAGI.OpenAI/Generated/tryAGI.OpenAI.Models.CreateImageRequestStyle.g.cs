@@ -11,11 +11,11 @@ namespace tryAGI.OpenAI
     public enum CreateImageRequestStyle
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Natural,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vivid,
     }

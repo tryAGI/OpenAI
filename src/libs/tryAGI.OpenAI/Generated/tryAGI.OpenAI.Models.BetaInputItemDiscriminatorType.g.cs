@@ -4,24 +4,24 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaInputItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CompactionTrigger,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Message,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Program,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProgramOutput,
     }

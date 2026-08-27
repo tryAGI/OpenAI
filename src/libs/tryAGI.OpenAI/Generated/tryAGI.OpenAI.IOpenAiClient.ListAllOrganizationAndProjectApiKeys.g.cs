@@ -63,7 +63,7 @@ namespace tryAGI.OpenAI
         /// <param name="limit">
         /// Maximum number of keys to return.<br/>
         /// Default Value: 20
-        /// </param> 
+        /// </param>
         /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.AdminApiKey> ListAllOrganizationAndProjectApiKeysAutoPagingAsync(

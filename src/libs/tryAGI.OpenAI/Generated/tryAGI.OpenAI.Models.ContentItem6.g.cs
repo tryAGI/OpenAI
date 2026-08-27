@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ContentItem6 : global::System.IEquatable<ContentItem6>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsInputText => InputText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputText(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaInputTextContent PickInputText() => IsInputText
             ? InputText!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputText))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsOutputText => OutputText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputText(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaOutputTextContent PickOutputText() => IsOutputText
             ? OutputText!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsText => Text != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickText(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaTextContent PickText() => IsText
             ? Text!
@@ -135,7 +135,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SummaryText))]
@@ -143,7 +143,7 @@ namespace tryAGI.OpenAI
         public bool IsSummaryText => SummaryText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSummaryText(
 #if NET6_0_OR_GREATER
@@ -156,7 +156,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaSummaryTextContent PickSummaryText() => IsSummaryText
             ? SummaryText!
@@ -172,7 +172,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningText))]
@@ -180,7 +180,7 @@ namespace tryAGI.OpenAI
         public bool IsReasoningText => ReasoningText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReasoningText(
 #if NET6_0_OR_GREATER
@@ -193,7 +193,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaReasoningTextContent PickReasoningText() => IsReasoningText
             ? ReasoningText!
@@ -209,7 +209,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
@@ -217,7 +217,7 @@ namespace tryAGI.OpenAI
         public bool IsRefusal => Refusal != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRefusal(
 #if NET6_0_OR_GREATER
@@ -230,7 +230,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaRefusalContent PickRefusal() => IsRefusal
             ? Refusal!
@@ -246,7 +246,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
@@ -254,7 +254,7 @@ namespace tryAGI.OpenAI
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputImage(
 #if NET6_0_OR_GREATER
@@ -267,7 +267,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaInputImageContent PickInputImage() => IsInputImage
             ? InputImage!
@@ -283,7 +283,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerScreenshot))]
@@ -291,7 +291,7 @@ namespace tryAGI.OpenAI
         public bool IsComputerScreenshot => ComputerScreenshot != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickComputerScreenshot(
 #if NET6_0_OR_GREATER
@@ -304,7 +304,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaComputerScreenshotContent PickComputerScreenshot() => IsComputerScreenshot
             ? ComputerScreenshot!
@@ -320,7 +320,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
@@ -328,7 +328,7 @@ namespace tryAGI.OpenAI
         public bool IsInputFile => InputFile != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputFile(
 #if NET6_0_OR_GREATER
@@ -341,7 +341,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaInputFileContent PickInputFile() => IsInputFile
             ? InputFile!
@@ -357,7 +357,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EncryptedContent))]
@@ -365,7 +365,7 @@ namespace tryAGI.OpenAI
         public bool IsEncryptedContent => EncryptedContent != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEncryptedContent(
 #if NET6_0_OR_GREATER
@@ -378,23 +378,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaEncryptedContent PickEncryptedContent() => IsEncryptedContent
             ? EncryptedContent!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EncryptedContent' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem6(global::tryAGI.OpenAI.BetaInputTextContent value) => new ContentItem6((global::tryAGI.OpenAI.BetaInputTextContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaInputTextContent?(ContentItem6 @this) => @this.InputText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem6(global::tryAGI.OpenAI.BetaInputTextContent? value)
         {
@@ -402,22 +402,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem6 FromInputText(global::tryAGI.OpenAI.BetaInputTextContent? value) => new ContentItem6(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem6(global::tryAGI.OpenAI.BetaOutputTextContent value) => new ContentItem6((global::tryAGI.OpenAI.BetaOutputTextContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaOutputTextContent?(ContentItem6 @this) => @this.OutputText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem6(global::tryAGI.OpenAI.BetaOutputTextContent? value)
         {
@@ -425,22 +425,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem6 FromOutputText(global::tryAGI.OpenAI.BetaOutputTextContent? value) => new ContentItem6(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem6(global::tryAGI.OpenAI.BetaTextContent value) => new ContentItem6((global::tryAGI.OpenAI.BetaTextContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaTextContent?(ContentItem6 @this) => @this.Text;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem6(global::tryAGI.OpenAI.BetaTextContent? value)
         {
@@ -448,22 +448,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem6 FromText(global::tryAGI.OpenAI.BetaTextContent? value) => new ContentItem6(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem6(global::tryAGI.OpenAI.BetaSummaryTextContent value) => new ContentItem6((global::tryAGI.OpenAI.BetaSummaryTextContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaSummaryTextContent?(ContentItem6 @this) => @this.SummaryText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem6(global::tryAGI.OpenAI.BetaSummaryTextContent? value)
         {
@@ -471,22 +471,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem6 FromSummaryText(global::tryAGI.OpenAI.BetaSummaryTextContent? value) => new ContentItem6(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem6(global::tryAGI.OpenAI.BetaReasoningTextContent value) => new ContentItem6((global::tryAGI.OpenAI.BetaReasoningTextContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaReasoningTextContent?(ContentItem6 @this) => @this.ReasoningText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem6(global::tryAGI.OpenAI.BetaReasoningTextContent? value)
         {
@@ -494,22 +494,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem6 FromReasoningText(global::tryAGI.OpenAI.BetaReasoningTextContent? value) => new ContentItem6(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem6(global::tryAGI.OpenAI.BetaRefusalContent value) => new ContentItem6((global::tryAGI.OpenAI.BetaRefusalContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaRefusalContent?(ContentItem6 @this) => @this.Refusal;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem6(global::tryAGI.OpenAI.BetaRefusalContent? value)
         {
@@ -517,22 +517,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem6 FromRefusal(global::tryAGI.OpenAI.BetaRefusalContent? value) => new ContentItem6(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem6(global::tryAGI.OpenAI.BetaInputImageContent value) => new ContentItem6((global::tryAGI.OpenAI.BetaInputImageContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaInputImageContent?(ContentItem6 @this) => @this.InputImage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem6(global::tryAGI.OpenAI.BetaInputImageContent? value)
         {
@@ -540,22 +540,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem6 FromInputImage(global::tryAGI.OpenAI.BetaInputImageContent? value) => new ContentItem6(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem6(global::tryAGI.OpenAI.BetaComputerScreenshotContent value) => new ContentItem6((global::tryAGI.OpenAI.BetaComputerScreenshotContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaComputerScreenshotContent?(ContentItem6 @this) => @this.ComputerScreenshot;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem6(global::tryAGI.OpenAI.BetaComputerScreenshotContent? value)
         {
@@ -563,22 +563,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem6 FromComputerScreenshot(global::tryAGI.OpenAI.BetaComputerScreenshotContent? value) => new ContentItem6(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem6(global::tryAGI.OpenAI.BetaInputFileContent value) => new ContentItem6((global::tryAGI.OpenAI.BetaInputFileContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaInputFileContent?(ContentItem6 @this) => @this.InputFile;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem6(global::tryAGI.OpenAI.BetaInputFileContent? value)
         {
@@ -586,22 +586,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem6 FromInputFile(global::tryAGI.OpenAI.BetaInputFileContent? value) => new ContentItem6(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem6(global::tryAGI.OpenAI.BetaEncryptedContent value) => new ContentItem6((global::tryAGI.OpenAI.BetaEncryptedContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaEncryptedContent?(ContentItem6 @this) => @this.EncryptedContent;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem6(global::tryAGI.OpenAI.BetaEncryptedContent? value)
         {
@@ -609,12 +609,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem6 FromEncryptedContent(global::tryAGI.OpenAI.BetaEncryptedContent? value) => new ContentItem6(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem6(
             global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType? type,
@@ -645,7 +645,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EncryptedContent as object ??
@@ -657,11 +657,11 @@ namespace tryAGI.OpenAI
             SummaryText as object ??
             Text as object ??
             OutputText as object ??
-            InputText as object 
+            InputText as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputText?.ToString() ??
@@ -673,11 +673,11 @@ namespace tryAGI.OpenAI
             InputImage?.ToString() ??
             ComputerScreenshot?.ToString() ??
             InputFile?.ToString() ??
-            EncryptedContent?.ToString() 
+            EncryptedContent?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -685,7 +685,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaInputTextContent, TResult>? inputText = null,
@@ -750,7 +750,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaInputTextContent>? inputText = null,
@@ -822,7 +822,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaInputTextContent>? inputText = null,
@@ -885,7 +885,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -922,7 +922,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ContentItem6 other)
         {
@@ -936,12 +936,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputImageContent?>.Default.Equals(InputImage, other.InputImage) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaComputerScreenshotContent?>.Default.Equals(ComputerScreenshot, other.ComputerScreenshot) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputFileContent?>.Default.Equals(InputFile, other.InputFile) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaEncryptedContent?>.Default.Equals(EncryptedContent, other.EncryptedContent) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaEncryptedContent?>.Default.Equals(EncryptedContent, other.EncryptedContent)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ContentItem6 obj1, ContentItem6 obj2)
         {
@@ -949,7 +949,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ContentItem6 obj1, ContentItem6 obj2)
         {
@@ -957,7 +957,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -4,28 +4,28 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ClickButtonType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Back,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Forward,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Left,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Right,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wheel,
     }

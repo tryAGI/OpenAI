@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct SpendLimitEnforcementStatus : global::System.IEquatable<SpendLimitEnforcementStatus>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? SpendLimitEnforcementStatusVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SpendLimitEnforcementStatusVariant1))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsSpendLimitEnforcementStatusVariant1 => SpendLimitEnforcementStatusVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSpendLimitEnforcementStatusVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickSpendLimitEnforcementStatusVariant1() => IsSpendLimitEnforcementStatusVariant1
             ? SpendLimitEnforcementStatusVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpendLimitEnforcementStatusVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.SpendLimitEnforcementStatusEnum? Enum { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsEnum => Enum != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEnum(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.SpendLimitEnforcementStatusEnum PickEnum() => IsEnum
             ? Enum!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SpendLimitEnforcementStatus(string value) => new SpendLimitEnforcementStatus((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(SpendLimitEnforcementStatus @this) => @this.SpendLimitEnforcementStatusVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpendLimitEnforcementStatus(string? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SpendLimitEnforcementStatus FromSpendLimitEnforcementStatusVariant1(string? value) => new SpendLimitEnforcementStatus(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator SpendLimitEnforcementStatus(global::tryAGI.OpenAI.SpendLimitEnforcementStatusEnum value) => new SpendLimitEnforcementStatus((global::tryAGI.OpenAI.SpendLimitEnforcementStatusEnum?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.SpendLimitEnforcementStatusEnum?(SpendLimitEnforcementStatus @this) => @this.Enum;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpendLimitEnforcementStatus(global::tryAGI.OpenAI.SpendLimitEnforcementStatusEnum? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static SpendLimitEnforcementStatus FromEnum(global::tryAGI.OpenAI.SpendLimitEnforcementStatusEnum? value) => new SpendLimitEnforcementStatus(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public SpendLimitEnforcementStatus(
             string? spendLimitEnforcementStatusVariant1,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Enum as object ??
-            SpendLimitEnforcementStatusVariant1 as object 
+            SpendLimitEnforcementStatusVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             SpendLimitEnforcementStatusVariant1?.ToString() ??
-            Enum?.ToValueString() 
+            Enum?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? spendLimitEnforcementStatusVariant1 = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? spendLimitEnforcementStatusVariant1 = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? spendLimitEnforcementStatusVariant1 = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(SpendLimitEnforcementStatus other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(SpendLimitEnforcementStatusVariant1, other.SpendLimitEnforcementStatusVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpendLimitEnforcementStatusEnum?>.Default.Equals(Enum, other.Enum) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SpendLimitEnforcementStatusEnum?>.Default.Equals(Enum, other.Enum)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(SpendLimitEnforcementStatus obj1, SpendLimitEnforcementStatus obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(SpendLimitEnforcementStatus obj1, SpendLimitEnforcementStatus obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

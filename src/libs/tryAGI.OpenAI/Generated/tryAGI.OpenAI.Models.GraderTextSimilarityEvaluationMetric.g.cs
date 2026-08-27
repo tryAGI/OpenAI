@@ -11,47 +11,47 @@ namespace tryAGI.OpenAI
     public enum GraderTextSimilarityEvaluationMetric
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Bleu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cosine,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FuzzyMatch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Gleu,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Meteor,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rouge1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rouge2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rouge3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rouge4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rouge5,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RougeL,
     }

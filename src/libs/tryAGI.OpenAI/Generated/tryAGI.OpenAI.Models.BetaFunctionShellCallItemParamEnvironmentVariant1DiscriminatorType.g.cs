@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaFunctionShellCallItemParamEnvironmentVariant1DiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainerReference,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Local,
     }

@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum UsageCostsBucketWidth
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1d,
     }

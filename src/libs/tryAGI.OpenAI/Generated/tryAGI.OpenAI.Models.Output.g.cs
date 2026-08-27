@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct Output : global::System.IEquatable<Output>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ChatCompletionModerationOutputDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModerationResults))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsModerationResults => ModerationResults != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickModerationResults(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ChatCompletionModerationResults PickModerationResults() => IsModerationResults
             ? ModerationResults!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsError => Error != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickError(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ChatCompletionModerationError PickError() => IsError
             ? Error!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Output(global::tryAGI.OpenAI.ChatCompletionModerationResults value) => new Output((global::tryAGI.OpenAI.ChatCompletionModerationResults?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ChatCompletionModerationResults?(Output @this) => @this.ModerationResults;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Output(global::tryAGI.OpenAI.ChatCompletionModerationResults? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Output FromModerationResults(global::tryAGI.OpenAI.ChatCompletionModerationResults? value) => new Output(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Output(global::tryAGI.OpenAI.ChatCompletionModerationError value) => new Output((global::tryAGI.OpenAI.ChatCompletionModerationError?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ChatCompletionModerationError?(Output @this) => @this.Error;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Output(global::tryAGI.OpenAI.ChatCompletionModerationError? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Output FromError(global::tryAGI.OpenAI.ChatCompletionModerationError? value) => new Output(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Output(
             global::tryAGI.OpenAI.ChatCompletionModerationOutputDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Error as object ??
-            ModerationResults as object 
+            ModerationResults as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ModerationResults?.ToString() ??
-            Error?.ToString() 
+            Error?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ChatCompletionModerationResults, TResult>? moderationResults = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ChatCompletionModerationResults>? moderationResults = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ChatCompletionModerationResults>? moderationResults = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Output other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionModerationResults?>.Default.Equals(ModerationResults, other.ModerationResults) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionModerationError?>.Default.Equals(Error, other.Error) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ChatCompletionModerationError?>.Default.Equals(Error, other.Error)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Output obj1, Output obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Output obj1, Output obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

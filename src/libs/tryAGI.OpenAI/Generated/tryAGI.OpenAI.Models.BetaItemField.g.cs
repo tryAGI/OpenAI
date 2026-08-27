@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsMessage => Message != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessage(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaMessage PickMessage() => IsMessage
             ? Message!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaProgram? Program { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Program))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsProgram => Program != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProgram(
 #if NET6_0_OR_GREATER
@@ -77,14 +77,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaProgram PickProgram() => IsProgram
             ? Program!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Program' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaProgramOutput? ProgramOutput { get; init; }
@@ -93,7 +93,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProgramOutput))]
@@ -101,7 +101,7 @@ namespace tryAGI.OpenAI
         public bool IsProgramOutput => ProgramOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProgramOutput(
 #if NET6_0_OR_GREATER
@@ -114,7 +114,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaProgramOutput PickProgramOutput() => IsProgramOutput
             ? ProgramOutput!
@@ -131,7 +131,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCall))]
@@ -139,7 +139,7 @@ namespace tryAGI.OpenAI
         public bool IsFunctionCall => FunctionCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionCall(
 #if NET6_0_OR_GREATER
@@ -152,14 +152,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaFunctionToolCall PickFunctionCall() => IsFunctionCall
             ? FunctionCall!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCall' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaMultiAgentCall? MultiAgentCall { get; init; }
@@ -168,7 +168,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MultiAgentCall))]
@@ -176,7 +176,7 @@ namespace tryAGI.OpenAI
         public bool IsMultiAgentCall => MultiAgentCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMultiAgentCall(
 #if NET6_0_OR_GREATER
@@ -189,14 +189,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaMultiAgentCall PickMultiAgentCall() => IsMultiAgentCall
             ? MultiAgentCall!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MultiAgentCall' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaMultiAgentCallOutput? MultiAgentCallOutput { get; init; }
@@ -205,7 +205,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MultiAgentCallOutput))]
@@ -213,7 +213,7 @@ namespace tryAGI.OpenAI
         public bool IsMultiAgentCallOutput => MultiAgentCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMultiAgentCallOutput(
 #if NET6_0_OR_GREATER
@@ -226,14 +226,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaMultiAgentCallOutput PickMultiAgentCallOutput() => IsMultiAgentCallOutput
             ? MultiAgentCallOutput!
             : throw new global::System.InvalidOperationException($"Expected union variant 'MultiAgentCallOutput' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaToolSearchCall? ToolSearchCall { get; init; }
@@ -242,7 +242,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchCall))]
@@ -250,7 +250,7 @@ namespace tryAGI.OpenAI
         public bool IsToolSearchCall => ToolSearchCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolSearchCall(
 #if NET6_0_OR_GREATER
@@ -263,14 +263,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaToolSearchCall PickToolSearchCall() => IsToolSearchCall
             ? ToolSearchCall!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchCall' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaToolSearchOutput? ToolSearchOutput { get; init; }
@@ -279,7 +279,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearchOutput))]
@@ -287,7 +287,7 @@ namespace tryAGI.OpenAI
         public bool IsToolSearchOutput => ToolSearchOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickToolSearchOutput(
 #if NET6_0_OR_GREATER
@@ -300,14 +300,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaToolSearchOutput PickToolSearchOutput() => IsToolSearchOutput
             ? ToolSearchOutput!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchOutput' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaAdditionalTools? AdditionalTools { get; init; }
@@ -316,7 +316,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AdditionalTools))]
@@ -324,7 +324,7 @@ namespace tryAGI.OpenAI
         public bool IsAdditionalTools => AdditionalTools != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAdditionalTools(
 #if NET6_0_OR_GREATER
@@ -337,14 +337,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaAdditionalTools PickAdditionalTools() => IsAdditionalTools
             ? AdditionalTools!
             : throw new global::System.InvalidOperationException($"Expected union variant 'AdditionalTools' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaAgentMessage? AgentMessage { get; init; }
@@ -353,7 +353,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentMessage))]
@@ -361,7 +361,7 @@ namespace tryAGI.OpenAI
         public bool IsAgentMessage => AgentMessage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickAgentMessage(
 #if NET6_0_OR_GREATER
@@ -374,7 +374,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaAgentMessage PickAgentMessage() => IsAgentMessage
             ? AgentMessage!
@@ -390,7 +390,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallOutput))]
@@ -398,7 +398,7 @@ namespace tryAGI.OpenAI
         public bool IsFunctionCallOutput => FunctionCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionCallOutput(
 #if NET6_0_OR_GREATER
@@ -411,7 +411,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaFunctionToolCallOutput PickFunctionCallOutput() => IsFunctionCallOutput
             ? FunctionCallOutput!
@@ -428,7 +428,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCall))]
@@ -436,7 +436,7 @@ namespace tryAGI.OpenAI
         public bool IsFileSearchCall => FileSearchCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFileSearchCall(
 #if NET6_0_OR_GREATER
@@ -449,7 +449,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaFileSearchToolCall PickFileSearchCall() => IsFileSearchCall
             ? FileSearchCall!
@@ -466,7 +466,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCall))]
@@ -474,7 +474,7 @@ namespace tryAGI.OpenAI
         public bool IsWebSearchCall => WebSearchCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebSearchCall(
 #if NET6_0_OR_GREATER
@@ -487,7 +487,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaWebSearchToolCall PickWebSearchCall() => IsWebSearchCall
             ? WebSearchCall!
@@ -503,7 +503,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGenerationCall))]
@@ -511,7 +511,7 @@ namespace tryAGI.OpenAI
         public bool IsImageGenerationCall => ImageGenerationCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickImageGenerationCall(
 #if NET6_0_OR_GREATER
@@ -524,7 +524,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaImageGenToolCall PickImageGenerationCall() => IsImageGenerationCall
             ? ImageGenerationCall!
@@ -541,7 +541,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerCall))]
@@ -549,7 +549,7 @@ namespace tryAGI.OpenAI
         public bool IsComputerCall => ComputerCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickComputerCall(
 #if NET6_0_OR_GREATER
@@ -562,14 +562,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaComputerToolCall PickComputerCall() => IsComputerCall
             ? ComputerCall!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerCall' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaComputerToolCallOutputResource? ComputerToolCallOutputResource { get; init; }
@@ -578,7 +578,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerToolCallOutputResource))]
@@ -586,7 +586,7 @@ namespace tryAGI.OpenAI
         public bool IsComputerToolCallOutputResource => ComputerToolCallOutputResource != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickComputerToolCallOutputResource(
 #if NET6_0_OR_GREATER
@@ -599,7 +599,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaComputerToolCallOutputResource PickComputerToolCallOutputResource() => IsComputerToolCallOutputResource
             ? ComputerToolCallOutputResource!.Value
@@ -618,7 +618,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Reasoning))]
@@ -626,7 +626,7 @@ namespace tryAGI.OpenAI
         public bool IsReasoning => Reasoning != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReasoning(
 #if NET6_0_OR_GREATER
@@ -639,7 +639,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaReasoningItem PickReasoning() => IsReasoning
             ? Reasoning!
@@ -655,7 +655,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Compaction))]
@@ -663,7 +663,7 @@ namespace tryAGI.OpenAI
         public bool IsCompaction => Compaction != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCompaction(
 #if NET6_0_OR_GREATER
@@ -676,7 +676,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaCompactionBody PickCompaction() => IsCompaction
             ? Compaction!
@@ -692,7 +692,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCall))]
@@ -700,7 +700,7 @@ namespace tryAGI.OpenAI
         public bool IsCodeInterpreterCall => CodeInterpreterCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCodeInterpreterCall(
 #if NET6_0_OR_GREATER
@@ -713,7 +713,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaCodeInterpreterToolCall PickCodeInterpreterCall() => IsCodeInterpreterCall
             ? CodeInterpreterCall!
@@ -729,7 +729,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellCall))]
@@ -737,7 +737,7 @@ namespace tryAGI.OpenAI
         public bool IsLocalShellCall => LocalShellCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLocalShellCall(
 #if NET6_0_OR_GREATER
@@ -750,7 +750,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaLocalShellToolCall PickLocalShellCall() => IsLocalShellCall
             ? LocalShellCall!
@@ -766,7 +766,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LocalShellCallOutput))]
@@ -774,7 +774,7 @@ namespace tryAGI.OpenAI
         public bool IsLocalShellCallOutput => LocalShellCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLocalShellCallOutput(
 #if NET6_0_OR_GREATER
@@ -787,7 +787,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaLocalShellToolCallOutput PickLocalShellCallOutput() => IsLocalShellCallOutput
             ? LocalShellCallOutput!
@@ -803,7 +803,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellCall))]
@@ -811,7 +811,7 @@ namespace tryAGI.OpenAI
         public bool IsShellCall => ShellCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShellCall(
 #if NET6_0_OR_GREATER
@@ -824,7 +824,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaFunctionShellCall PickShellCall() => IsShellCall
             ? ShellCall!
@@ -840,7 +840,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ShellCallOutput))]
@@ -848,7 +848,7 @@ namespace tryAGI.OpenAI
         public bool IsShellCallOutput => ShellCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShellCallOutput(
 #if NET6_0_OR_GREATER
@@ -861,7 +861,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaFunctionShellCallOutput PickShellCallOutput() => IsShellCallOutput
             ? ShellCallOutput!
@@ -877,7 +877,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCall))]
@@ -885,7 +885,7 @@ namespace tryAGI.OpenAI
         public bool IsApplyPatchCall => ApplyPatchCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApplyPatchCall(
 #if NET6_0_OR_GREATER
@@ -898,7 +898,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaApplyPatchToolCall PickApplyPatchCall() => IsApplyPatchCall
             ? ApplyPatchCall!
@@ -914,7 +914,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatchCallOutput))]
@@ -922,7 +922,7 @@ namespace tryAGI.OpenAI
         public bool IsApplyPatchCallOutput => ApplyPatchCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickApplyPatchCallOutput(
 #if NET6_0_OR_GREATER
@@ -935,7 +935,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaApplyPatchToolCallOutput PickApplyPatchCallOutput() => IsApplyPatchCallOutput
             ? ApplyPatchCallOutput!
@@ -951,7 +951,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpListTools))]
@@ -959,7 +959,7 @@ namespace tryAGI.OpenAI
         public bool IsMcpListTools => McpListTools != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpListTools(
 #if NET6_0_OR_GREATER
@@ -972,7 +972,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaMCPListTools PickMcpListTools() => IsMcpListTools
             ? McpListTools!
@@ -988,7 +988,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalRequest))]
@@ -996,7 +996,7 @@ namespace tryAGI.OpenAI
         public bool IsMcpApprovalRequest => McpApprovalRequest != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpApprovalRequest(
 #if NET6_0_OR_GREATER
@@ -1009,7 +1009,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaMCPApprovalRequest PickMcpApprovalRequest() => IsMcpApprovalRequest
             ? McpApprovalRequest!
@@ -1025,7 +1025,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpApprovalResponse))]
@@ -1033,7 +1033,7 @@ namespace tryAGI.OpenAI
         public bool IsMcpApprovalResponse => McpApprovalResponse != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpApprovalResponse(
 #if NET6_0_OR_GREATER
@@ -1046,7 +1046,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaMCPApprovalResponseResource PickMcpApprovalResponse() => IsMcpApprovalResponse
             ? McpApprovalResponse!
@@ -1062,7 +1062,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(McpCall))]
@@ -1070,7 +1070,7 @@ namespace tryAGI.OpenAI
         public bool IsMcpCall => McpCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMcpCall(
 #if NET6_0_OR_GREATER
@@ -1083,7 +1083,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaMCPToolCall PickMcpCall() => IsMcpCall
             ? McpCall!
@@ -1099,7 +1099,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCall))]
@@ -1107,7 +1107,7 @@ namespace tryAGI.OpenAI
         public bool IsCustomToolCall => CustomToolCall != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustomToolCall(
 #if NET6_0_OR_GREATER
@@ -1120,7 +1120,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaCustomToolCall PickCustomToolCall() => IsCustomToolCall
             ? CustomToolCall!
@@ -1136,7 +1136,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomToolCallOutput))]
@@ -1144,7 +1144,7 @@ namespace tryAGI.OpenAI
         public bool IsCustomToolCallOutput => CustomToolCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCustomToolCallOutput(
 #if NET6_0_OR_GREATER
@@ -1157,23 +1157,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaCustomToolCallOutput PickCustomToolCallOutput() => IsCustomToolCallOutput
             ? CustomToolCallOutput!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCallOutput' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaMessage value) => new BetaItemField((global::tryAGI.OpenAI.BetaMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaMessage?(BetaItemField @this) => @this.Message;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaMessage? value)
         {
@@ -1181,22 +1181,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromMessage(global::tryAGI.OpenAI.BetaMessage? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaProgram value) => new BetaItemField((global::tryAGI.OpenAI.BetaProgram?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaProgram?(BetaItemField @this) => @this.Program;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaProgram? value)
         {
@@ -1204,22 +1204,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromProgram(global::tryAGI.OpenAI.BetaProgram? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaProgramOutput value) => new BetaItemField((global::tryAGI.OpenAI.BetaProgramOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaProgramOutput?(BetaItemField @this) => @this.ProgramOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaProgramOutput? value)
         {
@@ -1227,22 +1227,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromProgramOutput(global::tryAGI.OpenAI.BetaProgramOutput? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaFunctionToolCall value) => new BetaItemField((global::tryAGI.OpenAI.BetaFunctionToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaFunctionToolCall?(BetaItemField @this) => @this.FunctionCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaFunctionToolCall? value)
         {
@@ -1250,22 +1250,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromFunctionCall(global::tryAGI.OpenAI.BetaFunctionToolCall? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaMultiAgentCall value) => new BetaItemField((global::tryAGI.OpenAI.BetaMultiAgentCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaMultiAgentCall?(BetaItemField @this) => @this.MultiAgentCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaMultiAgentCall? value)
         {
@@ -1273,22 +1273,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromMultiAgentCall(global::tryAGI.OpenAI.BetaMultiAgentCall? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaMultiAgentCallOutput value) => new BetaItemField((global::tryAGI.OpenAI.BetaMultiAgentCallOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaMultiAgentCallOutput?(BetaItemField @this) => @this.MultiAgentCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaMultiAgentCallOutput? value)
         {
@@ -1296,22 +1296,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromMultiAgentCallOutput(global::tryAGI.OpenAI.BetaMultiAgentCallOutput? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaToolSearchCall value) => new BetaItemField((global::tryAGI.OpenAI.BetaToolSearchCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaToolSearchCall?(BetaItemField @this) => @this.ToolSearchCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaToolSearchCall? value)
         {
@@ -1319,22 +1319,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromToolSearchCall(global::tryAGI.OpenAI.BetaToolSearchCall? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaToolSearchOutput value) => new BetaItemField((global::tryAGI.OpenAI.BetaToolSearchOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaToolSearchOutput?(BetaItemField @this) => @this.ToolSearchOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaToolSearchOutput? value)
         {
@@ -1342,22 +1342,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromToolSearchOutput(global::tryAGI.OpenAI.BetaToolSearchOutput? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaAdditionalTools value) => new BetaItemField((global::tryAGI.OpenAI.BetaAdditionalTools?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaAdditionalTools?(BetaItemField @this) => @this.AdditionalTools;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaAdditionalTools? value)
         {
@@ -1365,22 +1365,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromAdditionalTools(global::tryAGI.OpenAI.BetaAdditionalTools? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaAgentMessage value) => new BetaItemField((global::tryAGI.OpenAI.BetaAgentMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaAgentMessage?(BetaItemField @this) => @this.AgentMessage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaAgentMessage? value)
         {
@@ -1388,22 +1388,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromAgentMessage(global::tryAGI.OpenAI.BetaAgentMessage? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaFunctionToolCallOutput value) => new BetaItemField((global::tryAGI.OpenAI.BetaFunctionToolCallOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaFunctionToolCallOutput?(BetaItemField @this) => @this.FunctionCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaFunctionToolCallOutput? value)
         {
@@ -1411,22 +1411,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromFunctionCallOutput(global::tryAGI.OpenAI.BetaFunctionToolCallOutput? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaFileSearchToolCall value) => new BetaItemField((global::tryAGI.OpenAI.BetaFileSearchToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaFileSearchToolCall?(BetaItemField @this) => @this.FileSearchCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaFileSearchToolCall? value)
         {
@@ -1434,22 +1434,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromFileSearchCall(global::tryAGI.OpenAI.BetaFileSearchToolCall? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaWebSearchToolCall value) => new BetaItemField((global::tryAGI.OpenAI.BetaWebSearchToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaWebSearchToolCall?(BetaItemField @this) => @this.WebSearchCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaWebSearchToolCall? value)
         {
@@ -1457,22 +1457,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromWebSearchCall(global::tryAGI.OpenAI.BetaWebSearchToolCall? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaImageGenToolCall value) => new BetaItemField((global::tryAGI.OpenAI.BetaImageGenToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaImageGenToolCall?(BetaItemField @this) => @this.ImageGenerationCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaImageGenToolCall? value)
         {
@@ -1480,22 +1480,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromImageGenerationCall(global::tryAGI.OpenAI.BetaImageGenToolCall? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaComputerToolCall value) => new BetaItemField((global::tryAGI.OpenAI.BetaComputerToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaComputerToolCall?(BetaItemField @this) => @this.ComputerCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaComputerToolCall? value)
         {
@@ -1503,22 +1503,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromComputerCall(global::tryAGI.OpenAI.BetaComputerToolCall? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaComputerToolCallOutputResource value) => new BetaItemField((global::tryAGI.OpenAI.BetaComputerToolCallOutputResource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaComputerToolCallOutputResource?(BetaItemField @this) => @this.ComputerToolCallOutputResource;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaComputerToolCallOutputResource? value)
         {
@@ -1526,22 +1526,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromComputerToolCallOutputResource(global::tryAGI.OpenAI.BetaComputerToolCallOutputResource? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaReasoningItem value) => new BetaItemField((global::tryAGI.OpenAI.BetaReasoningItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaReasoningItem?(BetaItemField @this) => @this.Reasoning;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaReasoningItem? value)
         {
@@ -1549,22 +1549,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromReasoning(global::tryAGI.OpenAI.BetaReasoningItem? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaCompactionBody value) => new BetaItemField((global::tryAGI.OpenAI.BetaCompactionBody?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaCompactionBody?(BetaItemField @this) => @this.Compaction;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaCompactionBody? value)
         {
@@ -1572,22 +1572,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromCompaction(global::tryAGI.OpenAI.BetaCompactionBody? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaCodeInterpreterToolCall value) => new BetaItemField((global::tryAGI.OpenAI.BetaCodeInterpreterToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaCodeInterpreterToolCall?(BetaItemField @this) => @this.CodeInterpreterCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaCodeInterpreterToolCall? value)
         {
@@ -1595,22 +1595,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromCodeInterpreterCall(global::tryAGI.OpenAI.BetaCodeInterpreterToolCall? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaLocalShellToolCall value) => new BetaItemField((global::tryAGI.OpenAI.BetaLocalShellToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaLocalShellToolCall?(BetaItemField @this) => @this.LocalShellCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaLocalShellToolCall? value)
         {
@@ -1618,22 +1618,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromLocalShellCall(global::tryAGI.OpenAI.BetaLocalShellToolCall? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaLocalShellToolCallOutput value) => new BetaItemField((global::tryAGI.OpenAI.BetaLocalShellToolCallOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaLocalShellToolCallOutput?(BetaItemField @this) => @this.LocalShellCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaLocalShellToolCallOutput? value)
         {
@@ -1641,22 +1641,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromLocalShellCallOutput(global::tryAGI.OpenAI.BetaLocalShellToolCallOutput? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaFunctionShellCall value) => new BetaItemField((global::tryAGI.OpenAI.BetaFunctionShellCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaFunctionShellCall?(BetaItemField @this) => @this.ShellCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaFunctionShellCall? value)
         {
@@ -1664,22 +1664,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromShellCall(global::tryAGI.OpenAI.BetaFunctionShellCall? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaFunctionShellCallOutput value) => new BetaItemField((global::tryAGI.OpenAI.BetaFunctionShellCallOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaFunctionShellCallOutput?(BetaItemField @this) => @this.ShellCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaFunctionShellCallOutput? value)
         {
@@ -1687,22 +1687,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromShellCallOutput(global::tryAGI.OpenAI.BetaFunctionShellCallOutput? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaApplyPatchToolCall value) => new BetaItemField((global::tryAGI.OpenAI.BetaApplyPatchToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaApplyPatchToolCall?(BetaItemField @this) => @this.ApplyPatchCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaApplyPatchToolCall? value)
         {
@@ -1710,22 +1710,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromApplyPatchCall(global::tryAGI.OpenAI.BetaApplyPatchToolCall? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaApplyPatchToolCallOutput value) => new BetaItemField((global::tryAGI.OpenAI.BetaApplyPatchToolCallOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaApplyPatchToolCallOutput?(BetaItemField @this) => @this.ApplyPatchCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaApplyPatchToolCallOutput? value)
         {
@@ -1733,22 +1733,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromApplyPatchCallOutput(global::tryAGI.OpenAI.BetaApplyPatchToolCallOutput? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaMCPListTools value) => new BetaItemField((global::tryAGI.OpenAI.BetaMCPListTools?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaMCPListTools?(BetaItemField @this) => @this.McpListTools;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaMCPListTools? value)
         {
@@ -1756,22 +1756,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromMcpListTools(global::tryAGI.OpenAI.BetaMCPListTools? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaMCPApprovalRequest value) => new BetaItemField((global::tryAGI.OpenAI.BetaMCPApprovalRequest?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaMCPApprovalRequest?(BetaItemField @this) => @this.McpApprovalRequest;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaMCPApprovalRequest? value)
         {
@@ -1779,22 +1779,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromMcpApprovalRequest(global::tryAGI.OpenAI.BetaMCPApprovalRequest? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaMCPApprovalResponseResource value) => new BetaItemField((global::tryAGI.OpenAI.BetaMCPApprovalResponseResource?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaMCPApprovalResponseResource?(BetaItemField @this) => @this.McpApprovalResponse;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaMCPApprovalResponseResource? value)
         {
@@ -1802,22 +1802,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromMcpApprovalResponse(global::tryAGI.OpenAI.BetaMCPApprovalResponseResource? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaMCPToolCall value) => new BetaItemField((global::tryAGI.OpenAI.BetaMCPToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaMCPToolCall?(BetaItemField @this) => @this.McpCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaMCPToolCall? value)
         {
@@ -1825,22 +1825,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromMcpCall(global::tryAGI.OpenAI.BetaMCPToolCall? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaCustomToolCall value) => new BetaItemField((global::tryAGI.OpenAI.BetaCustomToolCall?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaCustomToolCall?(BetaItemField @this) => @this.CustomToolCall;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaCustomToolCall? value)
         {
@@ -1848,22 +1848,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromCustomToolCall(global::tryAGI.OpenAI.BetaCustomToolCall? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaItemField(global::tryAGI.OpenAI.BetaCustomToolCallOutput value) => new BetaItemField((global::tryAGI.OpenAI.BetaCustomToolCallOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaCustomToolCallOutput?(BetaItemField @this) => @this.CustomToolCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(global::tryAGI.OpenAI.BetaCustomToolCallOutput? value)
         {
@@ -1871,12 +1871,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaItemField FromCustomToolCallOutput(global::tryAGI.OpenAI.BetaCustomToolCallOutput? value) => new BetaItemField(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaItemField(
             global::tryAGI.OpenAI.BetaMessage? message,
@@ -1946,7 +1946,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CustomToolCallOutput as object ??
@@ -1979,11 +1979,11 @@ namespace tryAGI.OpenAI
             FunctionCall as object ??
             ProgramOutput as object ??
             Program as object ??
-            Message as object 
+            Message as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Message?.ToString() ??
@@ -2016,11 +2016,11 @@ namespace tryAGI.OpenAI
             McpApprovalResponse?.ToString() ??
             McpCall?.ToString() ??
             CustomToolCall?.ToString() ??
-            CustomToolCallOutput?.ToString() 
+            CustomToolCallOutput?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -2028,7 +2028,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaMessage, TResult>? message = null,
@@ -2198,7 +2198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaMessage>? message = null,
@@ -2396,7 +2396,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaMessage>? message = null,
@@ -2564,7 +2564,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -2643,7 +2643,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaItemField other)
         {
@@ -2678,12 +2678,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaMCPApprovalResponseResource?>.Default.Equals(McpApprovalResponse, other.McpApprovalResponse) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaMCPToolCall?>.Default.Equals(McpCall, other.McpCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCustomToolCall?>.Default.Equals(CustomToolCall, other.CustomToolCall) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCustomToolCallOutput?>.Default.Equals(CustomToolCallOutput, other.CustomToolCallOutput) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCustomToolCallOutput?>.Default.Equals(CustomToolCallOutput, other.CustomToolCallOutput)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaItemField obj1, BetaItemField obj2)
         {
@@ -2691,7 +2691,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaItemField obj1, BetaItemField obj2)
         {
@@ -2699,7 +2699,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

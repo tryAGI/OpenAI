@@ -16,13 +16,13 @@ namespace tryAGI.OpenAI
         public required bool Enabled { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_file_size")]
         public long? MaxFileSize { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_files")]
         public int? MaxFiles { get; set; }

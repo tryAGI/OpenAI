@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum BetaOutputMessageRole
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Assistant,
     }

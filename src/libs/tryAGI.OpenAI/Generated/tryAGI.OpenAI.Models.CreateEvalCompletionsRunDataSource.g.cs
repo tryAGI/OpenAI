@@ -25,7 +25,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesTemplateInputMessages, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessages>? InputMessages { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sampling_params")]
         public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceSamplingParams? SamplingParams { get; set; }

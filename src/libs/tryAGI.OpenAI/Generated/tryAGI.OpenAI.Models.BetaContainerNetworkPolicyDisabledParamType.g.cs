@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaContainerNetworkPolicyDisabledParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
     }

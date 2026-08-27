@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         public required string Output { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public global::tryAGI.OpenAI.LocalShellToolCallOutputStatus2? Status { get; set; }

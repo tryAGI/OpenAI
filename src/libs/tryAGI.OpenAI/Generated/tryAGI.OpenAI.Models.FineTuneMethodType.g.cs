@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum FineTuneMethodType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Dpo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Reinforcement,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Supervised,
     }

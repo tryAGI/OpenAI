@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum FunctionShellCallOutputExitOutcomeParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Exit,
     }

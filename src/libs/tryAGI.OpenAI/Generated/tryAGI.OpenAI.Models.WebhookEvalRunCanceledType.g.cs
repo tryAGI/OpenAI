@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum WebhookEvalRunCanceledType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EvalRunCanceled,
     }

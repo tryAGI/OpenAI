@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
     public sealed partial class ChatCompletionStreamResponseDelta
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         public string? Content { get; set; }
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ChatCompletionStreamResponseDeltaFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionMessageToolCallChunk>? ToolCalls { get; set; }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ChatCompletionStreamResponseDeltaRole? Role { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("refusal")]
         public string? Refusal { get; set; }

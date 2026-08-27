@@ -14,11 +14,11 @@ namespace tryAGI.OpenAI
         /// </summary>
         GptImage1,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage1Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         GptImage15,
     }

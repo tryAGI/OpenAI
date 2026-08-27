@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum ScreenshotParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Screenshot,
     }

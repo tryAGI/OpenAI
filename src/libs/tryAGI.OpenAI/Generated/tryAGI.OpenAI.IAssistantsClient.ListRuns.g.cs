@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
         /// <param name="order">
         /// Default Value: desc
         /// </param>
-        /// <param name="before"></param> 
+        /// <param name="before"></param>
         /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.RunObject> ListRunsAutoPagingAsync(

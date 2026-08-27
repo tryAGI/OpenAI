@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum RealtimeConversationItemMessageAssistantContentItemType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputAudio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputText,
     }

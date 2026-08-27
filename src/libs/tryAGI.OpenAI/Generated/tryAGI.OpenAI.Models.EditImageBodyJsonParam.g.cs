@@ -132,7 +132,7 @@ namespace tryAGI.OpenAI
         public bool? Stream { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("partial_images")]
         public int? PartialImages { get; set; }

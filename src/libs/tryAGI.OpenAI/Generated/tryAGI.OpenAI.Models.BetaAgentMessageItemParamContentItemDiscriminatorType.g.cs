@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaAgentMessageItemParamContentItemDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         EncryptedContent,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputText,
     }

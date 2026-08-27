@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
         public required long UsageBytes { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_counts")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -65,19 +65,19 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.VectorStoreExpirationAfter? ExpiresAfter { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         public int? ExpiresAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_active_at")]
         public int? LastActiveAt { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }

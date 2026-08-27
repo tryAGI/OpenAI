@@ -18,13 +18,13 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaInputImageContentType Type { get; set; } = global::tryAGI.OpenAI.BetaInputImageContentType.InputImage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         public string? ImageUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_id")]
         public string? FileId { get; set; }

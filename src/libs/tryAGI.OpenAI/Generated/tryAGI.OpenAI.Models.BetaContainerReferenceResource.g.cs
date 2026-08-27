@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaContainerReferenceResourceType Type { get; set; } = global::tryAGI.OpenAI.BetaContainerReferenceResourceType.ContainerReference;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("container_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

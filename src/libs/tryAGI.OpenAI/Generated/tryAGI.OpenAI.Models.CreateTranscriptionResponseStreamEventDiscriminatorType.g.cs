@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateTranscriptionResponseStreamEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranscriptTextDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranscriptTextDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TranscriptTextSegment,
     }

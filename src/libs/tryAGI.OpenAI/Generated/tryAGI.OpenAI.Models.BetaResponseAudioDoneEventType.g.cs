@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum BetaResponseAudioDoneEventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseAudioDone,
     }

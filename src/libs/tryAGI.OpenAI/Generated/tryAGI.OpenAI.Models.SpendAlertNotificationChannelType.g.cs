@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum SpendAlertNotificationChannelType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Email,
     }

@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum ClientToolCallItemType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatkitClientToolCall,
     }

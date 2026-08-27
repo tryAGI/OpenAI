@@ -5,17 +5,17 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct AnnotationsItem4 : global::System.IEquatable<AnnotationsItem4>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaOutputTextContentParamAnnotationDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaFileCitationParam? FileCitation { get; init; }
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileCitation))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsFileCitation => FileCitation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFileCitation(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaFileCitationParam PickFileCitation() => IsFileCitation
             ? FileCitation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileCitation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaUrlCitationParam? UrlCitation { get; init; }
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UrlCitation))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsUrlCitation => UrlCitation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUrlCitation(
 #if NET6_0_OR_GREATER
@@ -82,14 +82,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaUrlCitationParam PickUrlCitation() => IsUrlCitation
             ? UrlCitation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'UrlCitation' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaContainerFileCitationParam? ContainerFileCitation { get; init; }
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerFileCitation))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsContainerFileCitation => ContainerFileCitation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContainerFileCitation(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaContainerFileCitationParam PickContainerFileCitation() => IsContainerFileCitation
             ? ContainerFileCitation!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerFileCitation' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnnotationsItem4(global::tryAGI.OpenAI.BetaFileCitationParam value) => new AnnotationsItem4((global::tryAGI.OpenAI.BetaFileCitationParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaFileCitationParam?(AnnotationsItem4 @this) => @this.FileCitation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnnotationsItem4(global::tryAGI.OpenAI.BetaFileCitationParam? value)
         {
@@ -143,22 +143,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnnotationsItem4 FromFileCitation(global::tryAGI.OpenAI.BetaFileCitationParam? value) => new AnnotationsItem4(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnnotationsItem4(global::tryAGI.OpenAI.BetaUrlCitationParam value) => new AnnotationsItem4((global::tryAGI.OpenAI.BetaUrlCitationParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaUrlCitationParam?(AnnotationsItem4 @this) => @this.UrlCitation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnnotationsItem4(global::tryAGI.OpenAI.BetaUrlCitationParam? value)
         {
@@ -166,22 +166,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnnotationsItem4 FromUrlCitation(global::tryAGI.OpenAI.BetaUrlCitationParam? value) => new AnnotationsItem4(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnnotationsItem4(global::tryAGI.OpenAI.BetaContainerFileCitationParam value) => new AnnotationsItem4((global::tryAGI.OpenAI.BetaContainerFileCitationParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaContainerFileCitationParam?(AnnotationsItem4 @this) => @this.ContainerFileCitation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnnotationsItem4(global::tryAGI.OpenAI.BetaContainerFileCitationParam? value)
         {
@@ -189,12 +189,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnnotationsItem4 FromContainerFileCitation(global::tryAGI.OpenAI.BetaContainerFileCitationParam? value) => new AnnotationsItem4(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnnotationsItem4(
             global::tryAGI.OpenAI.BetaOutputTextContentParamAnnotationDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ContainerFileCitation as object ??
             UrlCitation as object ??
-            FileCitation as object 
+            FileCitation as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             FileCitation?.ToString() ??
             UrlCitation?.ToString() ??
-            ContainerFileCitation?.ToString() 
+            ContainerFileCitation?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaFileCitationParam, TResult>? fileCitation = null,
@@ -267,7 +267,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaFileCitationParam>? fileCitation = null,
@@ -297,7 +297,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaFileCitationParam>? fileCitation = null,
@@ -325,7 +325,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AnnotationsItem4 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaFileCitationParam?>.Default.Equals(FileCitation, other.FileCitation) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaUrlCitationParam?>.Default.Equals(UrlCitation, other.UrlCitation) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaContainerFileCitationParam?>.Default.Equals(ContainerFileCitation, other.ContainerFileCitation) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaContainerFileCitationParam?>.Default.Equals(ContainerFileCitation, other.ContainerFileCitation)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AnnotationsItem4 obj1, AnnotationsItem4 obj2)
         {
@@ -368,7 +368,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AnnotationsItem4 obj1, AnnotationsItem4 obj2)
         {
@@ -376,7 +376,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

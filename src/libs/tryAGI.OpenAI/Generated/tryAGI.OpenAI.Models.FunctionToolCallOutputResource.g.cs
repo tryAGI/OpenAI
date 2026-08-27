@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct FunctionToolCallOutputResource : global::System.IEquatable<FunctionToolCallOutputResource>
     {
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallOutput))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsFunctionToolCallOutput => FunctionToolCallOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionToolCallOutput(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.FunctionToolCallOutput PickFunctionToolCallOutput() => IsFunctionToolCallOutput
             ? FunctionToolCallOutput!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionToolCallOutput' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.FunctionToolCallOutputResourceVariant2? FunctionToolCallOutputResourceVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionToolCallOutputResourceVariant2))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsFunctionToolCallOutputResourceVariant2 => FunctionToolCallOutputResourceVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFunctionToolCallOutputResourceVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.FunctionToolCallOutputResourceVariant2 PickFunctionToolCallOutputResourceVariant2() => IsFunctionToolCallOutputResourceVariant2
             ? FunctionToolCallOutputResourceVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionToolCallOutputResourceVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FunctionToolCallOutputResource(global::tryAGI.OpenAI.FunctionToolCallOutput value) => new FunctionToolCallOutputResource((global::tryAGI.OpenAI.FunctionToolCallOutput?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.FunctionToolCallOutput?(FunctionToolCallOutputResource @this) => @this.FunctionToolCallOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FunctionToolCallOutputResource(global::tryAGI.OpenAI.FunctionToolCallOutput? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FunctionToolCallOutputResource FromFunctionToolCallOutput(global::tryAGI.OpenAI.FunctionToolCallOutput? value) => new FunctionToolCallOutputResource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FunctionToolCallOutputResource(global::tryAGI.OpenAI.FunctionToolCallOutputResourceVariant2 value) => new FunctionToolCallOutputResource((global::tryAGI.OpenAI.FunctionToolCallOutputResourceVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.FunctionToolCallOutputResourceVariant2?(FunctionToolCallOutputResource @this) => @this.FunctionToolCallOutputResourceVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FunctionToolCallOutputResource(global::tryAGI.OpenAI.FunctionToolCallOutputResourceVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FunctionToolCallOutputResource FromFunctionToolCallOutputResourceVariant2(global::tryAGI.OpenAI.FunctionToolCallOutputResourceVariant2? value) => new FunctionToolCallOutputResource(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FunctionToolCallOutputResource(
             global::tryAGI.OpenAI.FunctionToolCallOutput? functionToolCallOutput,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             FunctionToolCallOutputResourceVariant2 as object ??
-            FunctionToolCallOutput as object 
+            FunctionToolCallOutput as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             FunctionToolCallOutput?.ToString() ??
-            FunctionToolCallOutputResourceVariant2?.ToString() 
+            FunctionToolCallOutputResourceVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.FunctionToolCallOutput, TResult>? functionToolCallOutput = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.FunctionToolCallOutput>? functionToolCallOutput = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.FunctionToolCallOutput>? functionToolCallOutput = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(FunctionToolCallOutputResource other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCallOutput?>.Default.Equals(FunctionToolCallOutput, other.FunctionToolCallOutput) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCallOutputResourceVariant2?>.Default.Equals(FunctionToolCallOutputResourceVariant2, other.FunctionToolCallOutputResourceVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionToolCallOutputResourceVariant2?>.Default.Equals(FunctionToolCallOutputResourceVariant2, other.FunctionToolCallOutputResourceVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(FunctionToolCallOutputResource obj1, FunctionToolCallOutputResource obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(FunctionToolCallOutputResource obj1, FunctionToolCallOutputResource obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

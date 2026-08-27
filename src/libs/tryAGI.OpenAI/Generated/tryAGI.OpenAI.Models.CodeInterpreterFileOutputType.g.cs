@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum CodeInterpreterFileOutputType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Files,
     }

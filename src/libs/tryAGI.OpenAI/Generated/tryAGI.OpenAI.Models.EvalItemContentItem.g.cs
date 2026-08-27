@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextInput))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsTextInput => TextInput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextInput(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickTextInput() => IsTextInput
             ? TextInput!
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsInputText => InputText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputText(
 #if NET6_0_OR_GREATER
@@ -77,7 +77,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.InputTextContent PickInputText() => IsInputText
             ? InputText!
@@ -93,7 +93,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputText))]
@@ -101,7 +101,7 @@ namespace tryAGI.OpenAI
         public bool IsOutputText => OutputText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickOutputText(
 #if NET6_0_OR_GREATER
@@ -114,7 +114,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.EvalItemContentOutputText PickOutputText() => IsOutputText
             ? OutputText!
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
@@ -138,7 +138,7 @@ namespace tryAGI.OpenAI
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputImage(
 #if NET6_0_OR_GREATER
@@ -151,7 +151,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.EvalItemInputImage PickInputImage() => IsInputImage
             ? InputImage!
@@ -167,7 +167,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
@@ -175,7 +175,7 @@ namespace tryAGI.OpenAI
         public bool IsInputAudio => InputAudio != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputAudio(
 #if NET6_0_OR_GREATER
@@ -188,23 +188,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.InputAudio PickInputAudio() => IsInputAudio
             ? InputAudio!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudio' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EvalItemContentItem(string value) => new EvalItemContentItem((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(EvalItemContentItem @this) => @this.TextInput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EvalItemContentItem(string? value)
         {
@@ -212,22 +212,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EvalItemContentItem FromTextInput(string? value) => new EvalItemContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EvalItemContentItem(global::tryAGI.OpenAI.InputTextContent value) => new EvalItemContentItem((global::tryAGI.OpenAI.InputTextContent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.InputTextContent?(EvalItemContentItem @this) => @this.InputText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EvalItemContentItem(global::tryAGI.OpenAI.InputTextContent? value)
         {
@@ -235,22 +235,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EvalItemContentItem FromInputText(global::tryAGI.OpenAI.InputTextContent? value) => new EvalItemContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EvalItemContentItem(global::tryAGI.OpenAI.EvalItemContentOutputText value) => new EvalItemContentItem((global::tryAGI.OpenAI.EvalItemContentOutputText?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.EvalItemContentOutputText?(EvalItemContentItem @this) => @this.OutputText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EvalItemContentItem(global::tryAGI.OpenAI.EvalItemContentOutputText? value)
         {
@@ -258,22 +258,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EvalItemContentItem FromOutputText(global::tryAGI.OpenAI.EvalItemContentOutputText? value) => new EvalItemContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EvalItemContentItem(global::tryAGI.OpenAI.EvalItemInputImage value) => new EvalItemContentItem((global::tryAGI.OpenAI.EvalItemInputImage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.EvalItemInputImage?(EvalItemContentItem @this) => @this.InputImage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EvalItemContentItem(global::tryAGI.OpenAI.EvalItemInputImage? value)
         {
@@ -281,22 +281,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EvalItemContentItem FromInputImage(global::tryAGI.OpenAI.EvalItemInputImage? value) => new EvalItemContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EvalItemContentItem(global::tryAGI.OpenAI.InputAudio value) => new EvalItemContentItem((global::tryAGI.OpenAI.InputAudio?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.InputAudio?(EvalItemContentItem @this) => @this.InputAudio;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EvalItemContentItem(global::tryAGI.OpenAI.InputAudio? value)
         {
@@ -304,12 +304,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EvalItemContentItem FromInputAudio(global::tryAGI.OpenAI.InputAudio? value) => new EvalItemContentItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EvalItemContentItem(
             string? textInput,
@@ -327,29 +327,29 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             InputAudio as object ??
             InputImage as object ??
             OutputText as object ??
             InputText as object ??
-            TextInput as object 
+            TextInput as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             TextInput?.ToString() ??
             InputText?.ToString() ??
             OutputText?.ToString() ??
             InputImage?.ToString() ??
-            InputAudio?.ToString() 
+            InputAudio?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -357,7 +357,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? textInput = null,
@@ -397,7 +397,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? textInput = null,
@@ -439,7 +439,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? textInput = null,
@@ -477,7 +477,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -504,7 +504,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EvalItemContentItem other)
         {
@@ -513,12 +513,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputTextContent?>.Default.Equals(InputText, other.InputText) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.EvalItemContentOutputText?>.Default.Equals(OutputText, other.OutputText) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.EvalItemInputImage?>.Default.Equals(InputImage, other.InputImage) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputAudio?>.Default.Equals(InputAudio, other.InputAudio) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.InputAudio?>.Default.Equals(InputAudio, other.InputAudio)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EvalItemContentItem obj1, EvalItemContentItem obj2)
         {
@@ -526,7 +526,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EvalItemContentItem obj1, EvalItemContentItem obj2)
         {
@@ -534,7 +534,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

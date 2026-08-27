@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct AnnotationsItem3 : global::System.IEquatable<AnnotationsItem3>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseOutputTextAnnotationDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsFile => File != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFile(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.FileAnnotation PickFile() => IsFile
             ? File!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsUrl => Url != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUrl(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UrlAnnotation PickUrl() => IsUrl
             ? Url!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnnotationsItem3(global::tryAGI.OpenAI.FileAnnotation value) => new AnnotationsItem3((global::tryAGI.OpenAI.FileAnnotation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.FileAnnotation?(AnnotationsItem3 @this) => @this.File;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnnotationsItem3(global::tryAGI.OpenAI.FileAnnotation? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnnotationsItem3 FromFile(global::tryAGI.OpenAI.FileAnnotation? value) => new AnnotationsItem3(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator AnnotationsItem3(global::tryAGI.OpenAI.UrlAnnotation value) => new AnnotationsItem3((global::tryAGI.OpenAI.UrlAnnotation?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UrlAnnotation?(AnnotationsItem3 @this) => @this.Url;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnnotationsItem3(global::tryAGI.OpenAI.UrlAnnotation? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static AnnotationsItem3 FromUrl(global::tryAGI.OpenAI.UrlAnnotation? value) => new AnnotationsItem3(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AnnotationsItem3(
             global::tryAGI.OpenAI.ResponseOutputTextAnnotationDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Url as object ??
-            File as object 
+            File as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             File?.ToString() ??
-            Url?.ToString() 
+            Url?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.FileAnnotation, TResult>? file = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.FileAnnotation>? file = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.FileAnnotation>? file = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(AnnotationsItem3 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FileAnnotation?>.Default.Equals(File, other.File) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UrlAnnotation?>.Default.Equals(Url, other.Url) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UrlAnnotation?>.Default.Equals(Url, other.Url)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(AnnotationsItem3 obj1, AnnotationsItem3 obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(AnnotationsItem3 obj1, AnnotationsItem3 obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

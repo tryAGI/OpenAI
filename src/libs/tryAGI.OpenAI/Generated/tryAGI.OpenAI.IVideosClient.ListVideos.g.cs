@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
         /// Wraps ListVideosAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.VideoResource&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="limit"></param>
-        /// <param name="order"></param> 
+        /// <param name="order"></param>
         /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.VideoResource> ListVideosAutoPagingAsync(

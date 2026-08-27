@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum MCPApprovalResponseResourceType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpApprovalResponse,
     }

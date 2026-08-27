@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum FileAnnotationSourceType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         File,
     }

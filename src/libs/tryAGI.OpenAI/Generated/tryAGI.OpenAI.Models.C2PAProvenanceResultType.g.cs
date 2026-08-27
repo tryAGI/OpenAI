@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum C2PAProvenanceResultType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         C2pa,
     }

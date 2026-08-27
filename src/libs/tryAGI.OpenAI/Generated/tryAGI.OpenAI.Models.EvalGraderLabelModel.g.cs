@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct EvalGraderLabelModel : global::System.IEquatable<EvalGraderLabelModel>
     {
@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(LabelModelGrader))]
@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         public bool IsLabelModelGrader => LabelModelGrader != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickLabelModelGrader(
 #if NET6_0_OR_GREATER
@@ -41,23 +41,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.GraderLabelModel PickLabelModelGrader() => IsLabelModelGrader
             ? LabelModelGrader!
             : throw new global::System.InvalidOperationException($"Expected union variant 'LabelModelGrader' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator EvalGraderLabelModel(global::tryAGI.OpenAI.GraderLabelModel value) => new EvalGraderLabelModel((global::tryAGI.OpenAI.GraderLabelModel?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.GraderLabelModel?(EvalGraderLabelModel @this) => @this.LabelModelGrader;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public EvalGraderLabelModel(global::tryAGI.OpenAI.GraderLabelModel? value)
         {
@@ -65,26 +65,26 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static EvalGraderLabelModel FromLabelModelGrader(global::tryAGI.OpenAI.GraderLabelModel? value) => new EvalGraderLabelModel(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            LabelModelGrader as object 
+            LabelModelGrader as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            LabelModelGrader?.ToString() 
+            LabelModelGrader?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -92,7 +92,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.GraderLabelModel, TResult>? labelModelGrader = null,
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.GraderLabelModel>? labelModelGrader = null,
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.GraderLabelModel>? labelModelGrader = null,
@@ -148,7 +148,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -167,17 +167,17 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(EvalGraderLabelModel other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.GraderLabelModel?>.Default.Equals(LabelModelGrader, other.LabelModelGrader) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.GraderLabelModel?>.Default.Equals(LabelModelGrader, other.LabelModelGrader)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(EvalGraderLabelModel obj1, EvalGraderLabelModel obj2)
         {
@@ -185,7 +185,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(EvalGraderLabelModel obj1, EvalGraderLabelModel obj2)
         {
@@ -193,7 +193,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

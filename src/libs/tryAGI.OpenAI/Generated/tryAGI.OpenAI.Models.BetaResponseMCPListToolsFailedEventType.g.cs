@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum BetaResponseMCPListToolsFailedEventType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpListToolsFailed,
     }

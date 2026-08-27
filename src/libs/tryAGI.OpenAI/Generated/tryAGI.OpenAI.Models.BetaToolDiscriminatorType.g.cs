@@ -4,64 +4,64 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum BetaToolDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplyPatch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         CodeInterpreter,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Computer,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ComputerUsePreview,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Custom,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileSearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Function,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageGeneration,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LocalShell,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mcp,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Namespace,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProgrammaticToolCalling,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Shell,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ToolSearch,
     }

@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum CreateEvalResponsesRunDataSourceInputMessagesInputMessagesItemReferenceType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ItemReference,
     }

@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ApplyPatchCallStatusParam
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
     }

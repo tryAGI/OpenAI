@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum ThreadResourceObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ChatkitThread,
     }

@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ProvenanceDetectionResultApi
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Detected,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NotDetected,
     }

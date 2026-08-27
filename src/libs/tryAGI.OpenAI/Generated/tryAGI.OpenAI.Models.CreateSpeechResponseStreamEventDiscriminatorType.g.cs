@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateSpeechResponseStreamEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpeechAudioDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SpeechAudioDone,
     }

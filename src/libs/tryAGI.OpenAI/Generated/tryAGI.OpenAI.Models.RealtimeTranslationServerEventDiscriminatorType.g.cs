@@ -4,36 +4,36 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RealtimeTranslationServerEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionClosed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionInputTranscriptDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionOutputAudioDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionOutputTranscriptDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionUpdated,
     }

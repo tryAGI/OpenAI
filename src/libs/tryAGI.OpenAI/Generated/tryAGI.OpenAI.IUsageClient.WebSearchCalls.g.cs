@@ -85,7 +85,7 @@ namespace tryAGI.OpenAI
         /// <param name="models"></param>
         /// <param name="contextLevels"></param>
         /// <param name="groupBy"></param>
-        /// <param name="limit"></param> 
+        /// <param name="limit"></param>
         /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.UsageTimeBucket> WebSearchCallsAutoPagingAsync(

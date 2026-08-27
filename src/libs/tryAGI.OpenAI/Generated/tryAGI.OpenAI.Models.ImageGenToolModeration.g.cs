@@ -14,7 +14,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
     }

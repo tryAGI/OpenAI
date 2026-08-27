@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI.Realtime
     public enum RealtimeAudioFormatsPcmuAudioFormatType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioPcmu,
     }

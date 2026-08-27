@@ -9,43 +9,43 @@ namespace tryAGI.OpenAI
     public sealed partial class FineTuningJobCheckpointMetrics
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step")]
         public double? Step { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("train_loss")]
         public double? TrainLoss { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("train_mean_token_accuracy")]
         public double? TrainMeanTokenAccuracy { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("valid_loss")]
         public double? ValidLoss { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("valid_mean_token_accuracy")]
         public double? ValidMeanTokenAccuracy { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_valid_loss")]
         public double? FullValidLoss { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_valid_mean_token_accuracy")]
         public double? FullValidMeanTokenAccuracy { get; set; }

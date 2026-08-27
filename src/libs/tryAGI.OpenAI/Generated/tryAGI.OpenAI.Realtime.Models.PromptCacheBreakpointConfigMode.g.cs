@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI.Realtime
     public enum PromptCacheBreakpointConfigMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Explicit,
     }

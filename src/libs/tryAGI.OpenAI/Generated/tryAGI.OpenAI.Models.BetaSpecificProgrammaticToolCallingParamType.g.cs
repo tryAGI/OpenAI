@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaSpecificProgrammaticToolCallingParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ProgrammaticToolCalling,
     }

@@ -12,11 +12,11 @@ namespace tryAGI.OpenAI
     public enum BetaToolChoiceAllowedMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Required,
     }

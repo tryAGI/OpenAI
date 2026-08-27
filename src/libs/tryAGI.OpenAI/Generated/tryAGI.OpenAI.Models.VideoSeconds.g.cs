@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum VideoSeconds
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x12,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x4,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x8,
     }

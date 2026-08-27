@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BetaResponseProperties
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_response_id")]
         public string? PreviousResponseId { get; set; }
@@ -27,13 +27,13 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaModelIdsResponses? Model { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("background")]
         public bool? Background { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tool_calls")]
         public int? MaxToolCalls { get; set; }
@@ -77,7 +77,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaToolChoiceParam? ToolChoice { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public global::tryAGI.OpenAI.BetaPromptVariant1? Prompt { get; set; }

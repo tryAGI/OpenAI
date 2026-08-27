@@ -19,25 +19,25 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaReasoningModeEnum? Mode { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("effort")]
         public global::tryAGI.OpenAI.BetaReasoningEffortEnum? Effort { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         public global::tryAGI.OpenAI.BetaReasoningSummary2? Summary { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         public global::tryAGI.OpenAI.BetaReasoningContext2? Context { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generate_summary")]
         public global::tryAGI.OpenAI.BetaReasoningGenerateSummary2? GenerateSummary { get; set; }

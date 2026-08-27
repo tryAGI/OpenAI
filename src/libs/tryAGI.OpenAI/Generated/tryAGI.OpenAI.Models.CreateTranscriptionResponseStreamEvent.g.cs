@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct CreateTranscriptionResponseStreamEvent : global::System.IEquatable<CreateTranscriptionResponseStreamEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CreateTranscriptionResponseStreamEventDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptTextSegment))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsTranscriptTextSegment => TranscriptTextSegment != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTranscriptTextSegment(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.TranscriptTextSegmentEvent PickTranscriptTextSegment() => IsTranscriptTextSegment
             ? TranscriptTextSegment!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptTextDelta))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsTranscriptTextDelta => TranscriptTextDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTranscriptTextDelta(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.TranscriptTextDeltaEvent PickTranscriptTextDelta() => IsTranscriptTextDelta
             ? TranscriptTextDelta!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptTextDone))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsTranscriptTextDone => TranscriptTextDone != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTranscriptTextDone(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.TranscriptTextDoneEvent PickTranscriptTextDone() => IsTranscriptTextDone
             ? TranscriptTextDone!
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptTextDone' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateTranscriptionResponseStreamEvent(global::tryAGI.OpenAI.TranscriptTextSegmentEvent value) => new CreateTranscriptionResponseStreamEvent((global::tryAGI.OpenAI.TranscriptTextSegmentEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.TranscriptTextSegmentEvent?(CreateTranscriptionResponseStreamEvent @this) => @this.TranscriptTextSegment;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateTranscriptionResponseStreamEvent(global::tryAGI.OpenAI.TranscriptTextSegmentEvent? value)
         {
@@ -143,22 +143,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateTranscriptionResponseStreamEvent FromTranscriptTextSegment(global::tryAGI.OpenAI.TranscriptTextSegmentEvent? value) => new CreateTranscriptionResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateTranscriptionResponseStreamEvent(global::tryAGI.OpenAI.TranscriptTextDeltaEvent value) => new CreateTranscriptionResponseStreamEvent((global::tryAGI.OpenAI.TranscriptTextDeltaEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.TranscriptTextDeltaEvent?(CreateTranscriptionResponseStreamEvent @this) => @this.TranscriptTextDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateTranscriptionResponseStreamEvent(global::tryAGI.OpenAI.TranscriptTextDeltaEvent? value)
         {
@@ -166,22 +166,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateTranscriptionResponseStreamEvent FromTranscriptTextDelta(global::tryAGI.OpenAI.TranscriptTextDeltaEvent? value) => new CreateTranscriptionResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateTranscriptionResponseStreamEvent(global::tryAGI.OpenAI.TranscriptTextDoneEvent value) => new CreateTranscriptionResponseStreamEvent((global::tryAGI.OpenAI.TranscriptTextDoneEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.TranscriptTextDoneEvent?(CreateTranscriptionResponseStreamEvent @this) => @this.TranscriptTextDone;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateTranscriptionResponseStreamEvent(global::tryAGI.OpenAI.TranscriptTextDoneEvent? value)
         {
@@ -189,12 +189,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateTranscriptionResponseStreamEvent FromTranscriptTextDone(global::tryAGI.OpenAI.TranscriptTextDoneEvent? value) => new CreateTranscriptionResponseStreamEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateTranscriptionResponseStreamEvent(
             global::tryAGI.OpenAI.CreateTranscriptionResponseStreamEventDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             TranscriptTextDone as object ??
             TranscriptTextDelta as object ??
-            TranscriptTextSegment as object 
+            TranscriptTextSegment as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             TranscriptTextSegment?.ToString() ??
             TranscriptTextDelta?.ToString() ??
-            TranscriptTextDone?.ToString() 
+            TranscriptTextDone?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.TranscriptTextSegmentEvent, TResult>? transcriptTextSegment = null,
@@ -267,7 +267,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.TranscriptTextSegmentEvent>? transcriptTextSegment = null,
@@ -297,7 +297,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.TranscriptTextSegmentEvent>? transcriptTextSegment = null,
@@ -325,7 +325,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CreateTranscriptionResponseStreamEvent other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TranscriptTextSegmentEvent?>.Default.Equals(TranscriptTextSegment, other.TranscriptTextSegment) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TranscriptTextDeltaEvent?>.Default.Equals(TranscriptTextDelta, other.TranscriptTextDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TranscriptTextDoneEvent?>.Default.Equals(TranscriptTextDone, other.TranscriptTextDone) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TranscriptTextDoneEvent?>.Default.Equals(TranscriptTextDone, other.TranscriptTextDone)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CreateTranscriptionResponseStreamEvent obj1, CreateTranscriptionResponseStreamEvent obj2)
         {
@@ -368,7 +368,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CreateTranscriptionResponseStreamEvent obj1, CreateTranscriptionResponseStreamEvent obj2)
         {
@@ -376,7 +376,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

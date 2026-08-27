@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct FiltersItem2 : global::System.IEquatable<FiltersItem2>
     {
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComparisonFilter))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsComparisonFilter => ComparisonFilter != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickComparisonFilter(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaComparisonFilter PickComparisonFilter() => IsComparisonFilter
             ? ComparisonFilter!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComparisonFilter' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public object? BetaCompoundFilterVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaCompoundFilterVariant2))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsBetaCompoundFilterVariant2 => BetaCompoundFilterVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickBetaCompoundFilterVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object PickBetaCompoundFilterVariant2() => IsBetaCompoundFilterVariant2
             ? BetaCompoundFilterVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaCompoundFilterVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator FiltersItem2(global::tryAGI.OpenAI.BetaComparisonFilter value) => new FiltersItem2((global::tryAGI.OpenAI.BetaComparisonFilter?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaComparisonFilter?(FiltersItem2 @this) => @this.ComparisonFilter;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FiltersItem2(global::tryAGI.OpenAI.BetaComparisonFilter? value)
         {
@@ -101,12 +101,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static FiltersItem2 FromComparisonFilter(global::tryAGI.OpenAI.BetaComparisonFilter? value) => new FiltersItem2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public FiltersItem2(
             global::tryAGI.OpenAI.BetaComparisonFilter? comparisonFilter,
@@ -118,23 +118,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             BetaCompoundFilterVariant2 as object ??
-            ComparisonFilter as object 
+            ComparisonFilter as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ComparisonFilter?.ToString() ??
-            BetaCompoundFilterVariant2?.ToString() 
+            BetaCompoundFilterVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaComparisonFilter, TResult>? comparisonFilter = null,
@@ -167,7 +167,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaComparisonFilter>? comparisonFilter = null,
@@ -191,7 +191,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaComparisonFilter>? comparisonFilter = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(FiltersItem2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaComparisonFilter?>.Default.Equals(ComparisonFilter, other.ComparisonFilter) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(BetaCompoundFilterVariant2, other.BetaCompoundFilterVariant2) 
+                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(BetaCompoundFilterVariant2, other.BetaCompoundFilterVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(FiltersItem2 obj1, FiltersItem2 obj2)
         {
@@ -254,7 +254,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(FiltersItem2 obj1, FiltersItem2 obj2)
         {
@@ -262,7 +262,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

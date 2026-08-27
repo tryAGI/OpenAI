@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct Annotation : global::System.IEquatable<Annotation>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.AnnotationDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileCitation))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsFileCitation => FileCitation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFileCitation(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.FileCitationBody PickFileCitation() => IsFileCitation
             ? FileCitation!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UrlCitation))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsUrlCitation => UrlCitation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickUrlCitation(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UrlCitationBody PickUrlCitation() => IsUrlCitation
             ? UrlCitation!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerFileCitation))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsContainerFileCitation => ContainerFileCitation != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickContainerFileCitation(
 #if NET6_0_OR_GREATER
@@ -119,7 +119,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ContainerFileCitationBody PickContainerFileCitation() => IsContainerFileCitation
             ? ContainerFileCitation!
@@ -135,7 +135,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilePath))]
@@ -143,7 +143,7 @@ namespace tryAGI.OpenAI
         public bool IsFilePath => FilePath != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickFilePath(
 #if NET6_0_OR_GREATER
@@ -156,23 +156,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.FilePath PickFilePath() => IsFilePath
             ? FilePath!
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilePath' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Annotation(global::tryAGI.OpenAI.FileCitationBody value) => new Annotation((global::tryAGI.OpenAI.FileCitationBody?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.FileCitationBody?(Annotation @this) => @this.FileCitation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Annotation(global::tryAGI.OpenAI.FileCitationBody? value)
         {
@@ -180,22 +180,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Annotation FromFileCitation(global::tryAGI.OpenAI.FileCitationBody? value) => new Annotation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Annotation(global::tryAGI.OpenAI.UrlCitationBody value) => new Annotation((global::tryAGI.OpenAI.UrlCitationBody?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UrlCitationBody?(Annotation @this) => @this.UrlCitation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Annotation(global::tryAGI.OpenAI.UrlCitationBody? value)
         {
@@ -203,22 +203,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Annotation FromUrlCitation(global::tryAGI.OpenAI.UrlCitationBody? value) => new Annotation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Annotation(global::tryAGI.OpenAI.ContainerFileCitationBody value) => new Annotation((global::tryAGI.OpenAI.ContainerFileCitationBody?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ContainerFileCitationBody?(Annotation @this) => @this.ContainerFileCitation;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Annotation(global::tryAGI.OpenAI.ContainerFileCitationBody? value)
         {
@@ -226,22 +226,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Annotation FromContainerFileCitation(global::tryAGI.OpenAI.ContainerFileCitationBody? value) => new Annotation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Annotation(global::tryAGI.OpenAI.FilePath value) => new Annotation((global::tryAGI.OpenAI.FilePath?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.FilePath?(Annotation @this) => @this.FilePath;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Annotation(global::tryAGI.OpenAI.FilePath? value)
         {
@@ -249,12 +249,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Annotation FromFilePath(global::tryAGI.OpenAI.FilePath? value) => new Annotation(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Annotation(
             global::tryAGI.OpenAI.AnnotationDiscriminatorType? type,
@@ -273,27 +273,27 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             FilePath as object ??
             ContainerFileCitation as object ??
             UrlCitation as object ??
-            FileCitation as object 
+            FileCitation as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             FileCitation?.ToString() ??
             UrlCitation?.ToString() ??
             ContainerFileCitation?.ToString() ??
-            FilePath?.ToString() 
+            FilePath?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -301,7 +301,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.FileCitationBody, TResult>? fileCitation = null,
@@ -336,7 +336,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.FileCitationBody>? fileCitation = null,
@@ -372,7 +372,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.FileCitationBody>? fileCitation = null,
@@ -405,7 +405,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -430,7 +430,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Annotation other)
         {
@@ -438,12 +438,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FileCitationBody?>.Default.Equals(FileCitation, other.FileCitation) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UrlCitationBody?>.Default.Equals(UrlCitation, other.UrlCitation) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ContainerFileCitationBody?>.Default.Equals(ContainerFileCitation, other.ContainerFileCitation) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FilePath?>.Default.Equals(FilePath, other.FilePath) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FilePath?>.Default.Equals(FilePath, other.FilePath)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Annotation obj1, Annotation obj2)
         {
@@ -451,7 +451,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Annotation obj1, Annotation obj2)
         {
@@ -459,7 +459,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

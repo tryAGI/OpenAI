@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum FileSearchRanker
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default20240821,
     }

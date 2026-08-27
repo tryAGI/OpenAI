@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct Filters2 : global::System.IEquatable<Filters2>
     {
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComparisonFilter))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsComparisonFilter => ComparisonFilter != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickComparisonFilter(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ComparisonFilter PickComparisonFilter() => IsComparisonFilter
             ? ComparisonFilter!
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompoundFilter))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsCompoundFilter => CompoundFilter != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCompoundFilter(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CompoundFilter PickCompoundFilter() => IsCompoundFilter
             ? CompoundFilter!
             : throw new global::System.InvalidOperationException($"Expected union variant 'CompoundFilter' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Filters2(global::tryAGI.OpenAI.ComparisonFilter value) => new Filters2((global::tryAGI.OpenAI.ComparisonFilter?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ComparisonFilter?(Filters2 @this) => @this.ComparisonFilter;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Filters2(global::tryAGI.OpenAI.ComparisonFilter? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Filters2 FromComparisonFilter(global::tryAGI.OpenAI.ComparisonFilter? value) => new Filters2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Filters2(global::tryAGI.OpenAI.CompoundFilter value) => new Filters2((global::tryAGI.OpenAI.CompoundFilter?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.CompoundFilter?(Filters2 @this) => @this.CompoundFilter;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Filters2(global::tryAGI.OpenAI.CompoundFilter? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Filters2 FromCompoundFilter(global::tryAGI.OpenAI.CompoundFilter? value) => new Filters2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Filters2(
             global::tryAGI.OpenAI.ComparisonFilter? comparisonFilter,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             CompoundFilter as object ??
-            ComparisonFilter as object 
+            ComparisonFilter as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ComparisonFilter?.ToString() ??
-            CompoundFilter?.ToString() 
+            CompoundFilter?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ComparisonFilter, TResult>? comparisonFilter = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ComparisonFilter>? comparisonFilter = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ComparisonFilter>? comparisonFilter = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Filters2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComparisonFilter?>.Default.Equals(ComparisonFilter, other.ComparisonFilter) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CompoundFilter?>.Default.Equals(CompoundFilter, other.CompoundFilter) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CompoundFilter?>.Default.Equals(CompoundFilter, other.CompoundFilter)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Filters2 obj1, Filters2 obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Filters2 obj1, Filters2 obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum ScrollParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Scroll,
     }

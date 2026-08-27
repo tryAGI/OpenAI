@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ChatCompletionMessageToolCallChunk
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ChatCompletionMessageToolCallChunkType? Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         public global::tryAGI.OpenAI.ChatCompletionMessageToolCallChunkFunction? Function { get; set; }

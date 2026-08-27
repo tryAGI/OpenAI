@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum VectorStoreFileObjectLastErrorCode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InvalidFile,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ServerError,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UnsupportedFile,
     }

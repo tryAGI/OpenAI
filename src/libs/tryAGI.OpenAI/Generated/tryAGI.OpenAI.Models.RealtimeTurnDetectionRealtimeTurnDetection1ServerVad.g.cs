@@ -57,7 +57,7 @@ namespace tryAGI.OpenAI
         public bool? InterruptResponse { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("idle_timeout_ms")]
         public int? IdleTimeoutMs { get; set; }

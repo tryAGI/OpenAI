@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaAgentMessageType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AgentMessage,
     }

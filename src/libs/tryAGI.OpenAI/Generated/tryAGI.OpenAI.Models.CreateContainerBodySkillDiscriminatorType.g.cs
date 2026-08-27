@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateContainerBodySkillDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inline,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SkillReference,
     }

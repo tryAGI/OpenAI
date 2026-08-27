@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct RealtimeTranslationServerEvent : global::System.IEquatable<RealtimeTranslationServerEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeTranslationServerEventDiscriminatorType? Type { get; }
 
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
@@ -34,7 +34,7 @@ namespace tryAGI.OpenAI
         public bool IsError => Error != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickError(
 #if NET6_0_OR_GREATER
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeServerEventError PickError() => IsError
             ? Error!
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionCreated))]
@@ -73,7 +73,7 @@ namespace tryAGI.OpenAI
         public bool IsSessionCreated => SessionCreated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionCreated(
 #if NET6_0_OR_GREATER
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated PickSessionCreated() => IsSessionCreated
             ? SessionCreated!
@@ -103,7 +103,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionUpdated))]
@@ -111,7 +111,7 @@ namespace tryAGI.OpenAI
         public bool IsSessionUpdated => SessionUpdated != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionUpdated(
 #if NET6_0_OR_GREATER
@@ -124,7 +124,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated PickSessionUpdated() => IsSessionUpdated
             ? SessionUpdated!
@@ -140,7 +140,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionClosed))]
@@ -148,7 +148,7 @@ namespace tryAGI.OpenAI
         public bool IsSessionClosed => SessionClosed != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionClosed(
 #if NET6_0_OR_GREATER
@@ -161,7 +161,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed PickSessionClosed() => IsSessionClosed
             ? SessionClosed!
@@ -180,7 +180,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionInputTranscriptDelta))]
@@ -188,7 +188,7 @@ namespace tryAGI.OpenAI
         public bool IsSessionInputTranscriptDelta => SessionInputTranscriptDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionInputTranscriptDelta(
 #if NET6_0_OR_GREATER
@@ -201,7 +201,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta PickSessionInputTranscriptDelta() => IsSessionInputTranscriptDelta
             ? SessionInputTranscriptDelta!
@@ -219,7 +219,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionOutputTranscriptDelta))]
@@ -227,7 +227,7 @@ namespace tryAGI.OpenAI
         public bool IsSessionOutputTranscriptDelta => SessionOutputTranscriptDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionOutputTranscriptDelta(
 #if NET6_0_OR_GREATER
@@ -240,7 +240,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta PickSessionOutputTranscriptDelta() => IsSessionOutputTranscriptDelta
             ? SessionOutputTranscriptDelta!
@@ -257,7 +257,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionOutputAudioDelta))]
@@ -265,7 +265,7 @@ namespace tryAGI.OpenAI
         public bool IsSessionOutputAudioDelta => SessionOutputAudioDelta != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSessionOutputAudioDelta(
 #if NET6_0_OR_GREATER
@@ -278,23 +278,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta PickSessionOutputAudioDelta() => IsSessionOutputAudioDelta
             ? SessionOutputAudioDelta!
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutputAudioDelta' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeServerEventError value) => new RealtimeTranslationServerEvent((global::tryAGI.OpenAI.RealtimeServerEventError?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeServerEventError?(RealtimeTranslationServerEvent @this) => @this.Error;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeServerEventError? value)
         {
@@ -302,22 +302,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranslationServerEvent FromError(global::tryAGI.OpenAI.RealtimeServerEventError? value) => new RealtimeTranslationServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated value) => new RealtimeTranslationServerEvent((global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated?(RealtimeTranslationServerEvent @this) => @this.SessionCreated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated? value)
         {
@@ -325,22 +325,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranslationServerEvent FromSessionCreated(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated? value) => new RealtimeTranslationServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated value) => new RealtimeTranslationServerEvent((global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated?(RealtimeTranslationServerEvent @this) => @this.SessionUpdated;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated? value)
         {
@@ -348,22 +348,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranslationServerEvent FromSessionUpdated(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated? value) => new RealtimeTranslationServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed value) => new RealtimeTranslationServerEvent((global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed?(RealtimeTranslationServerEvent @this) => @this.SessionClosed;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed? value)
         {
@@ -371,22 +371,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranslationServerEvent FromSessionClosed(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed? value) => new RealtimeTranslationServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta value) => new RealtimeTranslationServerEvent((global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta?(RealtimeTranslationServerEvent @this) => @this.SessionInputTranscriptDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta? value)
         {
@@ -394,22 +394,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranslationServerEvent FromSessionInputTranscriptDelta(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta? value) => new RealtimeTranslationServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta value) => new RealtimeTranslationServerEvent((global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta?(RealtimeTranslationServerEvent @this) => @this.SessionOutputTranscriptDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta? value)
         {
@@ -417,22 +417,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranslationServerEvent FromSessionOutputTranscriptDelta(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta? value) => new RealtimeTranslationServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta value) => new RealtimeTranslationServerEvent((global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta?(RealtimeTranslationServerEvent @this) => @this.SessionOutputAudioDelta;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranslationServerEvent(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta? value)
         {
@@ -440,12 +440,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static RealtimeTranslationServerEvent FromSessionOutputAudioDelta(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta? value) => new RealtimeTranslationServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public RealtimeTranslationServerEvent(
             global::tryAGI.OpenAI.RealtimeTranslationServerEventDiscriminatorType? type,
@@ -470,7 +470,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             SessionOutputAudioDelta as object ??
@@ -479,11 +479,11 @@ namespace tryAGI.OpenAI
             SessionClosed as object ??
             SessionUpdated as object ??
             SessionCreated as object ??
-            Error as object 
+            Error as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Error?.ToString() ??
@@ -492,11 +492,11 @@ namespace tryAGI.OpenAI
             SessionClosed?.ToString() ??
             SessionInputTranscriptDelta?.ToString() ??
             SessionOutputTranscriptDelta?.ToString() ??
-            SessionOutputAudioDelta?.ToString() 
+            SessionOutputAudioDelta?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -504,7 +504,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.RealtimeServerEventError, TResult>? error = null,
@@ -554,7 +554,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.RealtimeServerEventError>? error = null,
@@ -608,7 +608,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.RealtimeServerEventError>? error = null,
@@ -656,7 +656,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -687,7 +687,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(RealtimeTranslationServerEvent other)
         {
@@ -698,12 +698,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed?>.Default.Equals(SessionClosed, other.SessionClosed) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta?>.Default.Equals(SessionInputTranscriptDelta, other.SessionInputTranscriptDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta?>.Default.Equals(SessionOutputTranscriptDelta, other.SessionOutputTranscriptDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta?>.Default.Equals(SessionOutputAudioDelta, other.SessionOutputAudioDelta) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta?>.Default.Equals(SessionOutputAudioDelta, other.SessionOutputAudioDelta)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(RealtimeTranslationServerEvent obj1, RealtimeTranslationServerEvent obj2)
         {
@@ -711,7 +711,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(RealtimeTranslationServerEvent obj1, RealtimeTranslationServerEvent obj2)
         {
@@ -719,7 +719,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

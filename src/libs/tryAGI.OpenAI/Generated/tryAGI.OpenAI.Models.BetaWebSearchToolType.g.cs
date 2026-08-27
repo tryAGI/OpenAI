@@ -10,11 +10,11 @@ namespace tryAGI.OpenAI
     public enum BetaWebSearchToolType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearch,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         WebSearch20250826,
     }

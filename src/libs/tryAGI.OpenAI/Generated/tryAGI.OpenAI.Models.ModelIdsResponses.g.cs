@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Shared))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsShared => Shared != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickShared(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ModelIdsShared PickShared() => IsShared
             ? Shared!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ModelIdsResponsesEnum? ResponsesOnlyModel { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponsesOnlyModel))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsResponsesOnlyModel => ResponsesOnlyModel != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponsesOnlyModel(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ModelIdsResponsesEnum PickResponsesOnlyModel() => IsResponsesOnlyModel
             ? ResponsesOnlyModel!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesOnlyModel' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ModelIdsResponses(global::tryAGI.OpenAI.ModelIdsShared value) => new ModelIdsResponses((global::tryAGI.OpenAI.ModelIdsShared?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ModelIdsShared?(ModelIdsResponses @this) => @this.Shared;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelIdsResponses(global::tryAGI.OpenAI.ModelIdsShared? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ModelIdsResponses FromShared(global::tryAGI.OpenAI.ModelIdsShared? value) => new ModelIdsResponses(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ModelIdsResponses(global::tryAGI.OpenAI.ModelIdsResponsesEnum value) => new ModelIdsResponses((global::tryAGI.OpenAI.ModelIdsResponsesEnum?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ModelIdsResponsesEnum?(ModelIdsResponses @this) => @this.ResponsesOnlyModel;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelIdsResponses(global::tryAGI.OpenAI.ModelIdsResponsesEnum? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ModelIdsResponses FromResponsesOnlyModel(global::tryAGI.OpenAI.ModelIdsResponsesEnum? value) => new ModelIdsResponses(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ModelIdsResponses(
             global::tryAGI.OpenAI.ModelIdsShared? shared,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ResponsesOnlyModel as object ??
-            Shared as object 
+            Shared as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Shared?.ToString() ??
-            ResponsesOnlyModel?.ToValueString() 
+            ResponsesOnlyModel?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ModelIdsShared?, TResult>? shared = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ModelIdsShared?>? shared = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ModelIdsShared?>? shared = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ModelIdsResponses other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ModelIdsShared?>.Default.Equals(Shared, other.Shared) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ModelIdsResponsesEnum?>.Default.Equals(ResponsesOnlyModel, other.ResponsesOnlyModel) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ModelIdsResponsesEnum?>.Default.Equals(ResponsesOnlyModel, other.ResponsesOnlyModel)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ModelIdsResponses obj1, ModelIdsResponses obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ModelIdsResponses obj1, ModelIdsResponses obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

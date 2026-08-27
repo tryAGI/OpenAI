@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct BetaInputItem : global::System.IEquatable<BetaInputItem>
     {
@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Message))]
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         public bool IsMessage => Message != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMessage(
 #if NET6_0_OR_GREATER
@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaEasyInputMessage PickMessage() => IsMessage
             ? Message!
@@ -62,7 +62,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Item))]
@@ -70,7 +70,7 @@ namespace tryAGI.OpenAI
         public bool IsItem => Item != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickItem(
 #if NET6_0_OR_GREATER
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaItem PickItem() => IsItem
             ? Item!.Value
@@ -99,7 +99,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompactionTrigger))]
@@ -107,7 +107,7 @@ namespace tryAGI.OpenAI
         public bool IsCompactionTrigger => CompactionTrigger != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickCompactionTrigger(
 #if NET6_0_OR_GREATER
@@ -120,7 +120,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaCompactionTriggerItemParam PickCompactionTrigger() => IsCompactionTrigger
             ? CompactionTrigger!
@@ -136,7 +136,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ItemReference))]
@@ -144,7 +144,7 @@ namespace tryAGI.OpenAI
         public bool IsItemReference => ItemReference != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickItemReference(
 #if NET6_0_OR_GREATER
@@ -157,14 +157,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaItemReferenceParam PickItemReference() => IsItemReference
             ? ItemReference!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ItemReference' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaProgramItemParam? Program { get; init; }
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Program))]
@@ -181,7 +181,7 @@ namespace tryAGI.OpenAI
         public bool IsProgram => Program != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProgram(
 #if NET6_0_OR_GREATER
@@ -194,14 +194,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaProgramItemParam PickProgram() => IsProgram
             ? Program!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Program' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaProgramOutputItemParam? ProgramOutput { get; init; }
@@ -210,7 +210,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProgramOutput))]
@@ -218,7 +218,7 @@ namespace tryAGI.OpenAI
         public bool IsProgramOutput => ProgramOutput != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickProgramOutput(
 #if NET6_0_OR_GREATER
@@ -231,23 +231,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaProgramOutputItemParam PickProgramOutput() => IsProgramOutput
             ? ProgramOutput!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProgramOutput' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaInputItem(global::tryAGI.OpenAI.BetaEasyInputMessage value) => new BetaInputItem((global::tryAGI.OpenAI.BetaEasyInputMessage?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaEasyInputMessage?(BetaInputItem @this) => @this.Message;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputItem(global::tryAGI.OpenAI.BetaEasyInputMessage? value)
         {
@@ -255,22 +255,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaInputItem FromMessage(global::tryAGI.OpenAI.BetaEasyInputMessage? value) => new BetaInputItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaInputItem(global::tryAGI.OpenAI.BetaItem value) => new BetaInputItem((global::tryAGI.OpenAI.BetaItem?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaItem?(BetaInputItem @this) => @this.Item;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputItem(global::tryAGI.OpenAI.BetaItem? value)
         {
@@ -278,22 +278,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaInputItem FromItem(global::tryAGI.OpenAI.BetaItem? value) => new BetaInputItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaInputItem(global::tryAGI.OpenAI.BetaCompactionTriggerItemParam value) => new BetaInputItem((global::tryAGI.OpenAI.BetaCompactionTriggerItemParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaCompactionTriggerItemParam?(BetaInputItem @this) => @this.CompactionTrigger;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputItem(global::tryAGI.OpenAI.BetaCompactionTriggerItemParam? value)
         {
@@ -301,22 +301,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaInputItem FromCompactionTrigger(global::tryAGI.OpenAI.BetaCompactionTriggerItemParam? value) => new BetaInputItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaInputItem(global::tryAGI.OpenAI.BetaItemReferenceParam value) => new BetaInputItem((global::tryAGI.OpenAI.BetaItemReferenceParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaItemReferenceParam?(BetaInputItem @this) => @this.ItemReference;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputItem(global::tryAGI.OpenAI.BetaItemReferenceParam? value)
         {
@@ -324,22 +324,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaInputItem FromItemReference(global::tryAGI.OpenAI.BetaItemReferenceParam? value) => new BetaInputItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaInputItem(global::tryAGI.OpenAI.BetaProgramItemParam value) => new BetaInputItem((global::tryAGI.OpenAI.BetaProgramItemParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaProgramItemParam?(BetaInputItem @this) => @this.Program;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputItem(global::tryAGI.OpenAI.BetaProgramItemParam? value)
         {
@@ -347,22 +347,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaInputItem FromProgram(global::tryAGI.OpenAI.BetaProgramItemParam? value) => new BetaInputItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator BetaInputItem(global::tryAGI.OpenAI.BetaProgramOutputItemParam value) => new BetaInputItem((global::tryAGI.OpenAI.BetaProgramOutputItemParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaProgramOutputItemParam?(BetaInputItem @this) => @this.ProgramOutput;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputItem(global::tryAGI.OpenAI.BetaProgramOutputItemParam? value)
         {
@@ -370,12 +370,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static BetaInputItem FromProgramOutput(global::tryAGI.OpenAI.BetaProgramOutputItemParam? value) => new BetaInputItem(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public BetaInputItem(
             global::tryAGI.OpenAI.BetaEasyInputMessage? message,
@@ -395,7 +395,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ProgramOutput as object ??
@@ -403,11 +403,11 @@ namespace tryAGI.OpenAI
             ItemReference as object ??
             CompactionTrigger as object ??
             Item as object ??
-            Message as object 
+            Message as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Message?.ToString() ??
@@ -415,11 +415,11 @@ namespace tryAGI.OpenAI
             CompactionTrigger?.ToString() ??
             ItemReference?.ToString() ??
             Program?.ToString() ??
-            ProgramOutput?.ToString() 
+            ProgramOutput?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -427,7 +427,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaEasyInputMessage, TResult>? message = null,
@@ -472,7 +472,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaEasyInputMessage>? message = null,
@@ -520,7 +520,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaEasyInputMessage>? message = null,
@@ -563,7 +563,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -592,7 +592,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(BetaInputItem other)
         {
@@ -602,12 +602,12 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCompactionTriggerItemParam?>.Default.Equals(CompactionTrigger, other.CompactionTrigger) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaItemReferenceParam?>.Default.Equals(ItemReference, other.ItemReference) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaProgramItemParam?>.Default.Equals(Program, other.Program) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaProgramOutputItemParam?>.Default.Equals(ProgramOutput, other.ProgramOutput) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaProgramOutputItemParam?>.Default.Equals(ProgramOutput, other.ProgramOutput)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(BetaInputItem obj1, BetaInputItem obj2)
         {
@@ -615,7 +615,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(BetaInputItem obj1, BetaInputItem obj2)
         {
@@ -623,7 +623,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -11,19 +11,19 @@ namespace tryAGI.OpenAI.Realtime
     public enum RealtimeResponseStatusDetailsType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Completed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Incomplete,
     }

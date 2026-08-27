@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum SpendLimitEnforcementStatusEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Enforcing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inactive,
     }

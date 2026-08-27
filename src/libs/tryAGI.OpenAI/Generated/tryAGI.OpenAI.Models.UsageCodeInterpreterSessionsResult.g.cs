@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class UsageCodeInterpreterSessionsResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UsageCodeInterpreterSessionsResultObjectJsonConverter))]
@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         public required int NumSessions { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_id")]
         public string? ProjectId { get; set; }

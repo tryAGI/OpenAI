@@ -9,13 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class BetaItemReferenceParam
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
         public global::tryAGI.OpenAI.BetaAgentTagParam? Agent { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public global::tryAGI.OpenAI.BetaItemReferenceParamType2? Type { get; set; }

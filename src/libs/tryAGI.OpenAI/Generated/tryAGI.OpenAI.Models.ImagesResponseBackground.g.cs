@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ImagesResponseBackground
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Opaque,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Transparent,
     }

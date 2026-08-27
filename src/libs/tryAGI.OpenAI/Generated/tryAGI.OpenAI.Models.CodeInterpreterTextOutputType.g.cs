@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum CodeInterpreterTextOutputType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Logs,
     }

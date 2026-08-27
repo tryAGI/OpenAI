@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum CreateChatCompletionRequestVariant2FunctionCall
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
     }

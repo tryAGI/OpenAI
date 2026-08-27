@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct CreateTranscriptionResponseDiarizedJsonUsage : global::System.IEquatable<CreateTranscriptionResponseDiarizedJsonUsage>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsageDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tokens))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsTokens => Tokens != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTokens(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.TranscriptTextUsageTokens PickTokens() => IsTokens
             ? Tokens!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Duration))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsDuration => Duration != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickDuration(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.TranscriptTextUsageDuration PickDuration() => IsDuration
             ? Duration!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Duration' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateTranscriptionResponseDiarizedJsonUsage(global::tryAGI.OpenAI.TranscriptTextUsageTokens value) => new CreateTranscriptionResponseDiarizedJsonUsage((global::tryAGI.OpenAI.TranscriptTextUsageTokens?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.TranscriptTextUsageTokens?(CreateTranscriptionResponseDiarizedJsonUsage @this) => @this.Tokens;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateTranscriptionResponseDiarizedJsonUsage(global::tryAGI.OpenAI.TranscriptTextUsageTokens? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateTranscriptionResponseDiarizedJsonUsage FromTokens(global::tryAGI.OpenAI.TranscriptTextUsageTokens? value) => new CreateTranscriptionResponseDiarizedJsonUsage(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateTranscriptionResponseDiarizedJsonUsage(global::tryAGI.OpenAI.TranscriptTextUsageDuration value) => new CreateTranscriptionResponseDiarizedJsonUsage((global::tryAGI.OpenAI.TranscriptTextUsageDuration?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.TranscriptTextUsageDuration?(CreateTranscriptionResponseDiarizedJsonUsage @this) => @this.Duration;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateTranscriptionResponseDiarizedJsonUsage(global::tryAGI.OpenAI.TranscriptTextUsageDuration? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateTranscriptionResponseDiarizedJsonUsage FromDuration(global::tryAGI.OpenAI.TranscriptTextUsageDuration? value) => new CreateTranscriptionResponseDiarizedJsonUsage(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateTranscriptionResponseDiarizedJsonUsage(
             global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsageDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Duration as object ??
-            Tokens as object 
+            Tokens as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Tokens?.ToString() ??
-            Duration?.ToString() 
+            Duration?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.TranscriptTextUsageTokens, TResult>? tokens = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.TranscriptTextUsageTokens>? tokens = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.TranscriptTextUsageTokens>? tokens = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CreateTranscriptionResponseDiarizedJsonUsage other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TranscriptTextUsageTokens?>.Default.Equals(Tokens, other.Tokens) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TranscriptTextUsageDuration?>.Default.Equals(Duration, other.Duration) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TranscriptTextUsageDuration?>.Default.Equals(Duration, other.Duration)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CreateTranscriptionResponseDiarizedJsonUsage obj1, CreateTranscriptionResponseDiarizedJsonUsage obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CreateTranscriptionResponseDiarizedJsonUsage obj1, CreateTranscriptionResponseDiarizedJsonUsage obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

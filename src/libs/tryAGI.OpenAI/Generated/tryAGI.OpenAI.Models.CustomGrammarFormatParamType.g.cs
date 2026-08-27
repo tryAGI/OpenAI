@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum CustomGrammarFormatParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Grammar,
     }

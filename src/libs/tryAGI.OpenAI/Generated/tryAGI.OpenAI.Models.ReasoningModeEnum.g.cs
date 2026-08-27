@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ReasoningModeEnum : global::System.IEquatable<ReasoningModeEnum>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public string? ReasoningModeEnumVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningModeEnumVariant1))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsReasoningModeEnumVariant1 => ReasoningModeEnumVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReasoningModeEnumVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public string PickReasoningModeEnumVariant1() => IsReasoningModeEnumVariant1
             ? ReasoningModeEnumVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningModeEnumVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ReasoningModeEnumEnum? ReasoningModeEnumEnum { get; init; }
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ReasoningModeEnumEnum))]
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         public bool IsReasoningModeEnumEnum => ReasoningModeEnumEnum != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickReasoningModeEnumEnum(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ReasoningModeEnumEnum PickReasoningModeEnumEnum() => IsReasoningModeEnumEnum
             ? ReasoningModeEnumEnum!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningModeEnumEnum' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ReasoningModeEnum(string value) => new ReasoningModeEnum((string?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator string?(ReasoningModeEnum @this) => @this.ReasoningModeEnumVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReasoningModeEnum(string? value)
         {
@@ -101,22 +101,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ReasoningModeEnum FromReasoningModeEnumVariant1(string? value) => new ReasoningModeEnum(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ReasoningModeEnum(global::tryAGI.OpenAI.ReasoningModeEnumEnum value) => new ReasoningModeEnum((global::tryAGI.OpenAI.ReasoningModeEnumEnum?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ReasoningModeEnumEnum?(ReasoningModeEnum @this) => @this.ReasoningModeEnumEnum;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReasoningModeEnum(global::tryAGI.OpenAI.ReasoningModeEnumEnum? value)
         {
@@ -124,12 +124,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ReasoningModeEnum FromReasoningModeEnumEnum(global::tryAGI.OpenAI.ReasoningModeEnumEnum? value) => new ReasoningModeEnum(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ReasoningModeEnum(
             string? reasoningModeEnumVariant1,
@@ -141,23 +141,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ReasoningModeEnumEnum as object ??
-            ReasoningModeEnumVariant1 as object 
+            ReasoningModeEnumVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ReasoningModeEnumVariant1?.ToString() ??
-            ReasoningModeEnumEnum?.ToValueString() 
+            ReasoningModeEnumEnum?.ToValueString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<string, TResult>? reasoningModeEnumVariant1 = null,
@@ -190,7 +190,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<string>? reasoningModeEnumVariant1 = null,
@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<string>? reasoningModeEnumVariant1 = null,
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ReasoningModeEnum other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ReasoningModeEnumVariant1, other.ReasoningModeEnumVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ReasoningModeEnumEnum?>.Default.Equals(ReasoningModeEnumEnum, other.ReasoningModeEnumEnum) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ReasoningModeEnumEnum?>.Default.Equals(ReasoningModeEnumEnum, other.ReasoningModeEnumEnum)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ReasoningModeEnum obj1, ReasoningModeEnum obj2)
         {
@@ -277,7 +277,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ReasoningModeEnum obj1, ReasoningModeEnum obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

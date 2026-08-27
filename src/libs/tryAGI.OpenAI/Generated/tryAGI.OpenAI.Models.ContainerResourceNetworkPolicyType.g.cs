@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ContainerResourceNetworkPolicyType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Allowlist,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Disabled,
     }

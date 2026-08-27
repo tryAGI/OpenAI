@@ -4,20 +4,20 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RealtimeTranslationClientEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionClose,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionInputAudioBufferAppend,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionUpdate,
     }

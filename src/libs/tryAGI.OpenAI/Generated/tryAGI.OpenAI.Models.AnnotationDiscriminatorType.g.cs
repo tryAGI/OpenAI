@@ -4,24 +4,24 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum AnnotationDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContainerFileCitation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileCitation,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FilePath,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         UrlCitation,
     }

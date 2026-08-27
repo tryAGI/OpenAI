@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI.Realtime
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAddedType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_item_id")]
         public string? PreviousItemId { get; set; }

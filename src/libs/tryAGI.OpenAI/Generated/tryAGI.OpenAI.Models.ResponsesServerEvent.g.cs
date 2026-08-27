@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ResponsesServerEvent : global::System.IEquatable<ResponsesServerEvent>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ResponseStreamEvent? ResponseStream { get; init; }
@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseStream))]
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public bool IsResponseStream => ResponseStream != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickResponseStream(
 #if NET6_0_OR_GREATER
@@ -40,23 +40,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.ResponseStreamEvent PickResponseStream() => IsResponseStream
             ? ResponseStream!.Value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseStream' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ResponsesServerEvent(global::tryAGI.OpenAI.ResponseStreamEvent value) => new ResponsesServerEvent((global::tryAGI.OpenAI.ResponseStreamEvent?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.ResponseStreamEvent?(ResponsesServerEvent @this) => @this.ResponseStream;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ResponsesServerEvent(global::tryAGI.OpenAI.ResponseStreamEvent? value)
         {
@@ -64,26 +64,26 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ResponsesServerEvent FromResponseStream(global::tryAGI.OpenAI.ResponseStreamEvent? value) => new ResponsesServerEvent(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
-            ResponseStream as object 
+            ResponseStream as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
-            ResponseStream?.ToString() 
+            ResponseStream?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -91,7 +91,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ResponseStreamEvent?, TResult>? responseStream = null,
@@ -111,7 +111,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ResponseStreamEvent?>? responseStream = null,
@@ -129,7 +129,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ResponseStreamEvent?>? responseStream = null,
@@ -147,7 +147,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -166,17 +166,17 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ResponsesServerEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseStreamEvent?>.Default.Equals(ResponseStream, other.ResponseStream) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseStreamEvent?>.Default.Equals(ResponseStream, other.ResponseStream)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ResponsesServerEvent obj1, ResponsesServerEvent obj2)
         {
@@ -184,7 +184,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ResponsesServerEvent obj1, ResponsesServerEvent obj2)
         {
@@ -192,7 +192,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

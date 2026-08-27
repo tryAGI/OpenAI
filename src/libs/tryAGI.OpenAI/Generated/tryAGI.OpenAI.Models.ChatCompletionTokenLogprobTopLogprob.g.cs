@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ChatCompletionTokenLogprobTopLogprob
     {
@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         public required double Logprob { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         public global::System.Collections.Generic.IList<long>? Bytes { get; set; }

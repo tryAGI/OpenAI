@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum OpenAIFileStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Uploaded,
     }

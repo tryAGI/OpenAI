@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum ApplyPatchToolCallType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplyPatchCall,
     }

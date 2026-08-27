@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ContentItem5 : global::System.IEquatable<ContentItem5>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaAgentMessageItemParamContentItemDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsInputText => InputText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputText(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaInputTextContentParam PickInputText() => IsInputText
             ? InputText!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsInputImage => InputImage != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputImage(
 #if NET6_0_OR_GREATER
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam PickInputImage() => IsInputImage
             ? InputImage!
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EncryptedContent))]
@@ -106,7 +106,7 @@ namespace tryAGI.OpenAI
         public bool IsEncryptedContent => EncryptedContent != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickEncryptedContent(
 #if NET6_0_OR_GREATER
@@ -119,23 +119,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaEncryptedContentParam PickEncryptedContent() => IsEncryptedContent
             ? EncryptedContent!
             : throw new global::System.InvalidOperationException($"Expected union variant 'EncryptedContent' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem5(global::tryAGI.OpenAI.BetaInputTextContentParam value) => new ContentItem5((global::tryAGI.OpenAI.BetaInputTextContentParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaInputTextContentParam?(ContentItem5 @this) => @this.InputText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem5(global::tryAGI.OpenAI.BetaInputTextContentParam? value)
         {
@@ -143,22 +143,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem5 FromInputText(global::tryAGI.OpenAI.BetaInputTextContentParam? value) => new ContentItem5(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem5(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam value) => new ContentItem5((global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam?(ContentItem5 @this) => @this.InputImage;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem5(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? value)
         {
@@ -166,22 +166,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem5 FromInputImage(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? value) => new ContentItem5(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem5(global::tryAGI.OpenAI.BetaEncryptedContentParam value) => new ContentItem5((global::tryAGI.OpenAI.BetaEncryptedContentParam?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaEncryptedContentParam?(ContentItem5 @this) => @this.EncryptedContent;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem5(global::tryAGI.OpenAI.BetaEncryptedContentParam? value)
         {
@@ -189,12 +189,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem5 FromEncryptedContent(global::tryAGI.OpenAI.BetaEncryptedContentParam? value) => new ContentItem5(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem5(
             global::tryAGI.OpenAI.BetaAgentMessageItemParamContentItemDiscriminatorType? type,
@@ -211,25 +211,25 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             EncryptedContent as object ??
             InputImage as object ??
-            InputText as object 
+            InputText as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputText?.ToString() ??
             InputImage?.ToString() ??
-            EncryptedContent?.ToString() 
+            EncryptedContent?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaInputTextContentParam, TResult>? inputText = null,
@@ -267,7 +267,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaInputTextContentParam>? inputText = null,
@@ -297,7 +297,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaInputTextContentParam>? inputText = null,
@@ -325,7 +325,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -348,19 +348,19 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ContentItem5 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputTextContentParam?>.Default.Equals(InputText, other.InputText) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam?>.Default.Equals(InputImage, other.InputImage) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaEncryptedContentParam?>.Default.Equals(EncryptedContent, other.EncryptedContent) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaEncryptedContentParam?>.Default.Equals(EncryptedContent, other.EncryptedContent)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ContentItem5 obj1, ContentItem5 obj2)
         {
@@ -368,7 +368,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ContentItem5 obj1, ContentItem5 obj2)
         {
@@ -376,7 +376,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

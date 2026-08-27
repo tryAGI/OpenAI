@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct Session2 : global::System.IEquatable<Session2>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeCreateClientSecretResponseSessionDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Realtime))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsRealtime => Realtime != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickRealtime(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA PickRealtime() => IsRealtime
             ? Realtime!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Transcription))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsTranscription => Transcription != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTranscription(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA PickTranscription() => IsTranscription
             ? Transcription!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Transcription' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Session2(global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA value) => new Session2((global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA?(Session2 @this) => @this.Realtime;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Session2(global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Session2 FromRealtime(global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA? value) => new Session2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Session2(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA value) => new Session2((global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA?(Session2 @this) => @this.Transcription;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Session2(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Session2 FromTranscription(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA? value) => new Session2(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Session2(
             global::tryAGI.OpenAI.RealtimeCreateClientSecretResponseSessionDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Transcription as object ??
-            Realtime as object 
+            Realtime as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Realtime?.ToString() ??
-            Transcription?.ToString() 
+            Transcription?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA, TResult>? realtime = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA>? realtime = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA>? realtime = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Session2 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA?>.Default.Equals(Realtime, other.Realtime) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA?>.Default.Equals(Transcription, other.Transcription) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA?>.Default.Equals(Transcription, other.Transcription)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Session2 obj1, Session2 obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Session2 obj1, Session2 obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

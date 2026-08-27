@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum RealtimeConversationItemWithReferenceType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FunctionCall,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FunctionCallOutput,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Message,
     }

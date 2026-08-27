@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.VectorStoreFileObjectStatus Status { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_error")]
         public global::tryAGI.OpenAI.VectorStoreFileObjectLastError2? LastError { get; set; }
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam, global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam>? ChunkingStrategy { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("attributes")]
         public object? Attributes { get; set; }

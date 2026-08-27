@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum BetaFileCitationBodyType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FileCitation,
     }

@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ContentItem4 : global::System.IEquatable<ContentItem4>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UserMessageItemContentItemDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsInputText => InputText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickInputText(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UserMessageInputText PickInputText() => IsInputText
             ? InputText!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QuotedText))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsQuotedText => QuotedText != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickQuotedText(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.UserMessageQuotedText PickQuotedText() => IsQuotedText
             ? QuotedText!
             : throw new global::System.InvalidOperationException($"Expected union variant 'QuotedText' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem4(global::tryAGI.OpenAI.UserMessageInputText value) => new ContentItem4((global::tryAGI.OpenAI.UserMessageInputText?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UserMessageInputText?(ContentItem4 @this) => @this.InputText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem4(global::tryAGI.OpenAI.UserMessageInputText? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem4 FromInputText(global::tryAGI.OpenAI.UserMessageInputText? value) => new ContentItem4(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ContentItem4(global::tryAGI.OpenAI.UserMessageQuotedText value) => new ContentItem4((global::tryAGI.OpenAI.UserMessageQuotedText?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.UserMessageQuotedText?(ContentItem4 @this) => @this.QuotedText;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem4(global::tryAGI.OpenAI.UserMessageQuotedText? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ContentItem4 FromQuotedText(global::tryAGI.OpenAI.UserMessageQuotedText? value) => new ContentItem4(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ContentItem4(
             global::tryAGI.OpenAI.UserMessageItemContentItemDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             QuotedText as object ??
-            InputText as object 
+            InputText as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             InputText?.ToString() ??
-            QuotedText?.ToString() 
+            QuotedText?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.UserMessageInputText, TResult>? inputText = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.UserMessageInputText>? inputText = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.UserMessageInputText>? inputText = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ContentItem4 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UserMessageInputText?>.Default.Equals(InputText, other.InputText) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UserMessageQuotedText?>.Default.Equals(QuotedText, other.QuotedText) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UserMessageQuotedText?>.Default.Equals(QuotedText, other.QuotedText)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ContentItem4 obj1, ContentItem4 obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ContentItem4 obj1, ContentItem4 obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

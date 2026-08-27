@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.AssistantsNamedToolChoiceType Type { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         public global::tryAGI.OpenAI.AssistantsNamedToolChoiceFunction? Function { get; set; }

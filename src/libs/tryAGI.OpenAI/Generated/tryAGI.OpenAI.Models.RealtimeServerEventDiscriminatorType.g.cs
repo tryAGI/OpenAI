@@ -4,192 +4,192 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum RealtimeServerEventDiscriminatorType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemAdded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemDeleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemInputAudioTranscriptionCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemInputAudioTranscriptionDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemInputAudioTranscriptionFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemInputAudioTranscriptionSegment,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemRetrieved,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ConversationItemTruncated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudioBufferCleared,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudioBufferCommitted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudioBufferDtmfEventReceived,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudioBufferSpeechStarted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudioBufferSpeechStopped,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InputAudioBufferTimeoutTriggered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpListToolsCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpListToolsFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         McpListToolsInProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputAudioBufferCleared,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputAudioBufferStarted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OutputAudioBufferStopped,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         RateLimitsUpdated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseContentPartAdded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseContentPartDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseFunctionCallArgumentsDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseFunctionCallArgumentsDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpCallCompleted,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpCallFailed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpCallInProgress,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpCallArgumentsDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseMcpCallArgumentsDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputAudioDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputAudioDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputAudioTranscriptDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputAudioTranscriptDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputItemAdded,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputItemDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputTextDelta,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ResponseOutputTextDone,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionCreated,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         SessionUpdated,
     }

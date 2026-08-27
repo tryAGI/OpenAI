@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
         public required bool Approve { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
         public string? Reason { get; set; }

@@ -4,24 +4,24 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateModerationRequestModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OmniModeration20240926,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         OmniModerationLatest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextModerationLatest,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextModerationStable,
     }

@@ -13,15 +13,15 @@ namespace tryAGI.OpenAI
     public enum BetaVerbosityEnum
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         High,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Low,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Medium,
     }

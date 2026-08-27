@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public enum ContainerListResourceObject
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         List,
     }

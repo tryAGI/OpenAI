@@ -9,11 +9,11 @@ namespace tryAGI.OpenAI
     public enum ProjectApiKeyOwnerProjectAccess
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Active,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Inactive,
     }

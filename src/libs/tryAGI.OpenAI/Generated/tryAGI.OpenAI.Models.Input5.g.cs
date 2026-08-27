@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct Input5 : global::System.IEquatable<Input5>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaModerationInputDiscriminatorType? Type { get; }
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModerationResult))]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         public bool IsModerationResult => ModerationResult != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickModerationResult(
 #if NET6_0_OR_GREATER
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaModerationResultBody PickModerationResult() => IsModerationResult
             ? ModerationResult!
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public bool IsError => Error != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickError(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::tryAGI.OpenAI.BetaModerationErrorBody PickError() => IsError
             ? Error!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Input5(global::tryAGI.OpenAI.BetaModerationResultBody value) => new Input5((global::tryAGI.OpenAI.BetaModerationResultBody?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaModerationResultBody?(Input5 @this) => @this.ModerationResult;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Input5(global::tryAGI.OpenAI.BetaModerationResultBody? value)
         {
@@ -106,22 +106,22 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Input5 FromModerationResult(global::tryAGI.OpenAI.BetaModerationResultBody? value) => new Input5(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator Input5(global::tryAGI.OpenAI.BetaModerationErrorBody value) => new Input5((global::tryAGI.OpenAI.BetaModerationErrorBody?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::tryAGI.OpenAI.BetaModerationErrorBody?(Input5 @this) => @this.Error;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Input5(global::tryAGI.OpenAI.BetaModerationErrorBody? value)
         {
@@ -129,12 +129,12 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static Input5 FromError(global::tryAGI.OpenAI.BetaModerationErrorBody? value) => new Input5(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public Input5(
             global::tryAGI.OpenAI.BetaModerationInputDiscriminatorType? type,
@@ -149,23 +149,23 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Error as object ??
-            ModerationResult as object 
+            ModerationResult as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ModerationResult?.ToString() ??
-            Error?.ToString() 
+            Error?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaModerationResultBody, TResult>? moderationResult = null,
@@ -198,7 +198,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaModerationResultBody>? moderationResult = null,
@@ -222,7 +222,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaModerationResultBody>? moderationResult = null,
@@ -245,7 +245,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(Input5 other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaModerationResultBody?>.Default.Equals(ModerationResult, other.ModerationResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaModerationErrorBody?>.Default.Equals(Error, other.Error) 
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaModerationErrorBody?>.Default.Equals(Error, other.Error)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(Input5 obj1, Input5 obj2)
         {
@@ -285,7 +285,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(Input5 obj1, Input5 obj2)
         {
@@ -293,7 +293,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public enum SpecificApplyPatchParamType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplyPatch,
     }

@@ -9,15 +9,15 @@ namespace tryAGI.OpenAI
     public enum ImageGenPartialImageEventBackground
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Auto,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Opaque,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Transparent,
     }

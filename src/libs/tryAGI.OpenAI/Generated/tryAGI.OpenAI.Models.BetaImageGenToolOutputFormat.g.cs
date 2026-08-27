@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webp,
     }
