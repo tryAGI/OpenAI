@@ -11,6 +11,7 @@ internal static class RealtimeApiGroupCommand
         var command = new Command(@"realtime", @"Realtime endpoint commands.");
                          command.Subcommands.Add(RealtimeAcceptCallCommandApiCommand.Create());
                          command.Subcommands.Add(RealtimeCreateCallCommandApiCommand.Create());
+                         command.Subcommands.Add(RealtimeCreateCallWithRawBodyCommandApiCommand.Create());
                          command.Subcommands.Add(RealtimeCreateClientSecretCommandApiCommand.Create());
                          command.Subcommands.Add(RealtimeCreateSessionCommandApiCommand.Create());
                          command.Subcommands.Add(RealtimeCreateTranscriptionSessionCommandApiCommand.Create());
