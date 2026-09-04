@@ -6515,6 +6515,7 @@ namespace tryAGI.OpenAI
     {
         private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
 
+
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
 
         /// <summary>
