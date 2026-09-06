@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_retention")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::tryAGI.OpenAI.BetaModelResponsePropertiesPromptCacheRetention2? PromptCacheRetention { get; set; }
+        public global::tryAGI.OpenAI.BetaModelResponsePropertiesPromptCacheRetention? PromptCacheRetention { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// User details for the actor that created the role, when available.
+    ///
     /// </summary>
     public sealed partial class AssignedRoleDetailsCreatedByUserObj
     {

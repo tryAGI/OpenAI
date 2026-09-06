@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
-        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAudio2? Audio { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAudio? Audio { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionMessageToolCallsItem>? toolCalls,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotation>? annotations,
             global::tryAGI.OpenAI.ChatCompletionResponseMessageRole role,
-            global::tryAGI.OpenAI.ChatCompletionResponseMessageAudio2? audio)
+            global::tryAGI.OpenAI.ChatCompletionResponseMessageAudio? audio)
         {
             this.Content = content;
             this.Refusal = refusal;

@@ -28,19 +28,19 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        public global::tryAGI.OpenAI.ReasoningSummary2? Summary { get; set; }
+        public global::tryAGI.OpenAI.ReasoningSummary? Summary { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
-        public global::tryAGI.OpenAI.ReasoningContext2? Context { get; set; }
+        public global::tryAGI.OpenAI.ReasoningContext? Context { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generate_summary")]
-        public global::tryAGI.OpenAI.ReasoningGenerateSummary2? GenerateSummary { get; set; }
+        public global::tryAGI.OpenAI.ReasoningGenerateSummary? GenerateSummary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -65,9 +65,9 @@ namespace tryAGI.OpenAI
         public Reasoning(
             global::tryAGI.OpenAI.ReasoningModeEnum? mode,
             global::tryAGI.OpenAI.ReasoningEffortEnum? effort,
-            global::tryAGI.OpenAI.ReasoningSummary2? summary,
-            global::tryAGI.OpenAI.ReasoningContext2? context,
-            global::tryAGI.OpenAI.ReasoningGenerateSummary2? generateSummary)
+            global::tryAGI.OpenAI.ReasoningSummary? summary,
+            global::tryAGI.OpenAI.ReasoningContext? context,
+            global::tryAGI.OpenAI.ReasoningGenerateSummary? generateSummary)
         {
             this.Mode = mode;
             this.Effort = effort;

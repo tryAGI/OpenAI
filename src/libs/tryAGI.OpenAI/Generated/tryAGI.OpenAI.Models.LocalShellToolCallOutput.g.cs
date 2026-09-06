@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public global::tryAGI.OpenAI.LocalShellToolCallOutputStatus2? Status { get; set; }
+        public global::tryAGI.OpenAI.LocalShellToolCallOutputStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
             string id,
             string output,
             global::tryAGI.OpenAI.LocalShellToolCallOutputType type,
-            global::tryAGI.OpenAI.LocalShellToolCallOutputStatus2? status)
+            global::tryAGI.OpenAI.LocalShellToolCallOutputStatus? status)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

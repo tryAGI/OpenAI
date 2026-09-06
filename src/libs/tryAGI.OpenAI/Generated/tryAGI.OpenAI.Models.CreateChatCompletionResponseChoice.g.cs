@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        public global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceLogprobs2? Logprobs { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceLogprobs? Logprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,7 +70,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceFinishReason finishReason,
             int index,
             global::tryAGI.OpenAI.ChatCompletionResponseMessage message,
-            global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceLogprobs2? logprobs)
+            global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceLogprobs? logprobs)
         {
             this.FinishReason = finishReason;
             this.Index = index;

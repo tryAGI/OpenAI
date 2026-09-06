@@ -76,7 +76,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_resources")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::tryAGI.OpenAI.AssistantObjectToolResources2? ToolResources { get; set; }
+        public global::tryAGI.OpenAI.AssistantObjectToolResources? ToolResources { get; set; }
 
         /// <summary>
         ///
@@ -151,7 +151,7 @@ namespace tryAGI.OpenAI
             string? name,
             string? description,
             string? instructions,
-            global::tryAGI.OpenAI.AssistantObjectToolResources2? toolResources,
+            global::tryAGI.OpenAI.AssistantObjectToolResources? toolResources,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             double? temperature,
             double? topP,

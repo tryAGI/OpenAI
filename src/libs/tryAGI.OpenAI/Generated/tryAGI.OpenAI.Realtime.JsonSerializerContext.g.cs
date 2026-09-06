@@ -1024,7 +1024,7 @@ namespace tryAGI.OpenAI.Realtime
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGAAudio))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGAAudioInput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGAAudioInputNoiseReduction))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum), TypeInfoPropertyName = "RealtimeTruncationEnum2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnumType), TypeInfoPropertyName = "RealtimeTruncationEnumType2")]

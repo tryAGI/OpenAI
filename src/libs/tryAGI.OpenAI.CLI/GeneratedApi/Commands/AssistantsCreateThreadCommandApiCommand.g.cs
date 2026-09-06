@@ -13,7 +13,7 @@ internal static partial class AssistantsCreateThreadCommandApiCommand
         Description = @"A list of [messages](/docs/api-reference/messages) to start the thread with.",
     };
 
-    private static Option<global::tryAGI.OpenAI.CreateThreadRequestToolResources2?> ToolResources { get; } = new(
+    private static Option<global::tryAGI.OpenAI.CreateThreadRequestToolResources?> ToolResources { get; } = new(
         name: @"--tool-resources")
     {
         Description = @"",

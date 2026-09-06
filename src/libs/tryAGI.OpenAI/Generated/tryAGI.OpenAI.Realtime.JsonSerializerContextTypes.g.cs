@@ -1377,7 +1377,7 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection2? Type336 { get; set; }
+        public global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection? Type336 { get; set; }
         /// <summary>
         ///
         /// </summary>

@@ -57,7 +57,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
-        public global::tryAGI.OpenAI.BetaMessagePhase22? Phase { get; set; }
+        public global::tryAGI.OpenAI.BetaMessagePhase2? Phase { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -97,7 +97,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaMessageRole role,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem7> content,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaMessagePhase22? phase,
+            global::tryAGI.OpenAI.BetaMessagePhase2? phase,
             global::tryAGI.OpenAI.BetaMessageType type = global::tryAGI.OpenAI.BetaMessageType.Message)
         {
             this.Agent = agent;

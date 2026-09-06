@@ -4,16 +4,54 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    ///
+    /// The status of the item. One of `in_progress`, `completed`, or `incomplete`.
     /// </summary>
-    public sealed partial class LocalShellToolCallOutputStatus
+    public enum LocalShellToolCallOutputStatus
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Completed,
+        /// <summary>
+        ///
+        /// </summary>
+        InProgress,
+        /// <summary>
+        ///
+        /// </summary>
+        Incomplete,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class LocalShellToolCallOutputStatusExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this LocalShellToolCallOutputStatus value)
+        {
+            return value switch
+            {
+                LocalShellToolCallOutputStatus.Completed => "completed",
+                LocalShellToolCallOutputStatus.InProgress => "in_progress",
+                LocalShellToolCallOutputStatus.Incomplete => "incomplete",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static LocalShellToolCallOutputStatus? ToEnum(string value)
+        {
+            return value switch
+            {
+                "completed" => LocalShellToolCallOutputStatus.Completed,
+                "in_progress" => LocalShellToolCallOutputStatus.InProgress,
+                "incomplete" => LocalShellToolCallOutputStatus.Incomplete,
+                _ => null,
+            };
+        }
     }
 }

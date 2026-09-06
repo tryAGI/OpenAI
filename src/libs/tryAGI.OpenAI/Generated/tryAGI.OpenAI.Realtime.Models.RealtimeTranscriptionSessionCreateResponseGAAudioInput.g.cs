@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI.Realtime
         /// Configuration for turn detection. For `gpt-realtime-whisper`, this must be `null`; VAD is not supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("turn_detection")]
-        public global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection2? TurnDetection { get; set; }
+        public global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection? TurnDetection { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,7 +59,7 @@ namespace tryAGI.OpenAI.Realtime
             global::tryAGI.OpenAI.Realtime.RealtimeAudioFormats? format,
             global::tryAGI.OpenAI.Realtime.AudioTranscriptionResponse? transcription,
             global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGAAudioInputNoiseReduction? noiseReduction,
-            global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection2? turnDetection)
+            global::tryAGI.OpenAI.Realtime.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection? turnDetection)
         {
             this.Format = format;
             this.Transcription = transcription;

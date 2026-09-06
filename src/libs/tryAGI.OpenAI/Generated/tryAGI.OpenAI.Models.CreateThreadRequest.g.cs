@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_resources")]
-        public global::tryAGI.OpenAI.CreateThreadRequestToolResources2? ToolResources { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadRequestToolResources? ToolResources { get; set; }
 
         /// <summary>
         ///
@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateThreadRequest(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequest>? messages,
-            global::tryAGI.OpenAI.CreateThreadRequestToolResources2? toolResources,
+            global::tryAGI.OpenAI.CreateThreadRequestToolResources? toolResources,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Messages = messages;

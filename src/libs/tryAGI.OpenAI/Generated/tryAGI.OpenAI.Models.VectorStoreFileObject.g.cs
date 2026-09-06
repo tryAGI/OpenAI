@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_error")]
-        public global::tryAGI.OpenAI.VectorStoreFileObjectLastError2? LastError { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileObjectLastError? LastError { get; set; }
 
         /// <summary>
         /// The strategy used to chunk the file.
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
             string vectorStoreId,
             global::tryAGI.OpenAI.VectorStoreFileObjectStatus status,
             global::tryAGI.OpenAI.VectorStoreFileObjectObject @object,
-            global::tryAGI.OpenAI.VectorStoreFileObjectLastError2? lastError,
+            global::tryAGI.OpenAI.VectorStoreFileObjectLastError? lastError,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam, global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam>? chunkingStrategy,
             object? attributes)
         {

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Optional sample or intermediate data produced by the grader.
+    ///
     /// </summary>
     public sealed partial class EvalRunOutputItemResultSample
     {

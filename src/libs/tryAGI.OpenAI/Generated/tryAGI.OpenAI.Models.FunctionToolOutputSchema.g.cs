@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    ///
+    /// A JSON schema object describing the JSON value encoded in string outputs for this function.
     /// </summary>
     public sealed partial class FunctionToolOutputSchema
     {

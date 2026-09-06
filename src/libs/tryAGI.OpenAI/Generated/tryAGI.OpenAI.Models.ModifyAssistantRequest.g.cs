@@ -50,7 +50,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_resources")]
-        public global::tryAGI.OpenAI.ModifyAssistantRequestToolResources2? ToolResources { get; set; }
+        public global::tryAGI.OpenAI.ModifyAssistantRequestToolResources? ToolResources { get; set; }
 
         /// <summary>
         ///
@@ -111,7 +111,7 @@ namespace tryAGI.OpenAI
             string? description,
             string? instructions,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>>? tools,
-            global::tryAGI.OpenAI.ModifyAssistantRequestToolResources2? toolResources,
+            global::tryAGI.OpenAI.ModifyAssistantRequestToolResources? toolResources,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             double? temperature,
             double? topP,

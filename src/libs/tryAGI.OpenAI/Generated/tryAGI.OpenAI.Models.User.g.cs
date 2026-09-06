@@ -105,7 +105,7 @@ namespace tryAGI.OpenAI
         /// Projects associated with the user, if included.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
-        public global::tryAGI.OpenAI.UserProjects2? Projects { get; set; }
+        public global::tryAGI.OpenAI.UserProjects? Projects { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -183,7 +183,7 @@ namespace tryAGI.OpenAI
             int? apiKeyLastUsedAt,
             string? technicalLevel,
             string? developerPersona,
-            global::tryAGI.OpenAI.UserProjects2? projects)
+            global::tryAGI.OpenAI.UserProjects? projects)
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

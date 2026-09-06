@@ -4,18 +4,54 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Background behavior for generated image output.<br/>
-    /// Default Value: auto<br/>
-    /// Example: transparent
+    ///
     /// </summary>
-    public sealed partial class EditImageBodyJsonParamBackground
+    public enum EditImageBodyJsonParamBackground
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Auto,
+        /// <summary>
+        ///
+        /// </summary>
+        Opaque,
+        /// <summary>
+        ///
+        /// </summary>
+        Transparent,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class EditImageBodyJsonParamBackgroundExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this EditImageBodyJsonParamBackground value)
+        {
+            return value switch
+            {
+                EditImageBodyJsonParamBackground.Auto => "auto",
+                EditImageBodyJsonParamBackground.Opaque => "opaque",
+                EditImageBodyJsonParamBackground.Transparent => "transparent",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static EditImageBodyJsonParamBackground? ToEnum(string value)
+        {
+            return value switch
+            {
+                "auto" => EditImageBodyJsonParamBackground.Auto,
+                "opaque" => EditImageBodyJsonParamBackground.Opaque,
+                "transparent" => EditImageBodyJsonParamBackground.Transparent,
+                _ => null,
+            };
+        }
     }
 }

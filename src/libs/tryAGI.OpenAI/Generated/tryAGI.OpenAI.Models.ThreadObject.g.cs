@@ -33,7 +33,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_resources")]
-        public global::tryAGI.OpenAI.ThreadObjectToolResources2? ToolResources { get; set; }
+        public global::tryAGI.OpenAI.ThreadObjectToolResources? ToolResources { get; set; }
 
         /// <summary>
         ///
@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
             string id,
             int createdAt,
             global::tryAGI.OpenAI.ThreadObjectObject @object,
-            global::tryAGI.OpenAI.ThreadObjectToolResources2? toolResources,
+            global::tryAGI.OpenAI.ThreadObjectToolResources? toolResources,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
