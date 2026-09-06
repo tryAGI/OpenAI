@@ -12,13 +12,13 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("transcription")]
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputTranscription2? Transcription { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputTranscription? Transcription { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("noise_reduction")]
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputNoiseReduction2? NoiseReduction { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputNoiseReduction? NoiseReduction { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -35,8 +35,8 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeTranslationSessionUpdateRequestAudioInput(
-            global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputTranscription2? transcription,
-            global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputNoiseReduction2? noiseReduction)
+            global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputTranscription? transcription,
+            global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputNoiseReduction? noiseReduction)
         {
             this.Transcription = transcription;
             this.NoiseReduction = noiseReduction;

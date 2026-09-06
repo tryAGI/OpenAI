@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    ///
+    /// State variable key-value pairs applied when invoking the workflow. Defaults to null when no overrides were provided.
     /// </summary>
     public sealed partial class ChatkitWorkflowStateVariables
     {

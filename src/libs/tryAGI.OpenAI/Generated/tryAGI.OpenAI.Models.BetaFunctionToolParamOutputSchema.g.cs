@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    ///
+    /// A JSON Schema describing the JSON value encoded in string outputs for this function tool. This does not describe content-array outputs.
     /// </summary>
     public sealed partial class BetaFunctionToolParamOutputSchema
     {

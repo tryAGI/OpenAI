@@ -4,18 +4,48 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Moderation level for GPT image models.<br/>
-    /// Default Value: auto<br/>
-    /// Example: auto
+    ///
     /// </summary>
-    public sealed partial class EditImageBodyJsonParamModeration
+    public enum EditImageBodyJsonParamModeration
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Auto,
+        /// <summary>
+        ///
+        /// </summary>
+        Low,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class EditImageBodyJsonParamModerationExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this EditImageBodyJsonParamModeration value)
+        {
+            return value switch
+            {
+                EditImageBodyJsonParamModeration.Auto => "auto",
+                EditImageBodyJsonParamModeration.Low => "low",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static EditImageBodyJsonParamModeration? ToEnum(string value)
+        {
+            return value switch
+            {
+                "auto" => EditImageBodyJsonParamModeration.Auto,
+                "low" => EditImageBodyJsonParamModeration.Low,
+                _ => null,
+            };
+        }
     }
 }

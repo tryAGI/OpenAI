@@ -133,7 +133,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AssistantObjectToolResources2? Type25 { get; set; }
+        public global::tryAGI.OpenAI.AssistantObjectToolResources? Type25 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -301,7 +301,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AuditLogActor2? Type67 { get; set; }
+        public global::tryAGI.OpenAI.AuditLogActor? Type67 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -965,11 +965,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageAudio2? Type233 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageAudio? Type233 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageFunctionCall2? Type234 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessageFunctionCall? Type234 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1157,7 +1157,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAudio2? Type281 { get; set; }
+        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAudio? Type281 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1697,7 +1697,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CreateAssistantRequestToolResources2? Type416 { get; set; }
+        public global::tryAGI.OpenAI.CreateAssistantRequestToolResources? Type416 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1873,7 +1873,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceLogprobs2? Type460 { get; set; }
+        public global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceLogprobs? Type460 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -1953,7 +1953,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CreateCompletionResponseChoiceLogprobs2? Type480 { get; set; }
+        public global::tryAGI.OpenAI.CreateCompletionResponseChoiceLogprobs? Type480 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2733,7 +2733,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CreateResponseVariant3Truncation2? Type675 { get; set; }
+        public global::tryAGI.OpenAI.CreateResponseVariant3Truncation? Type675 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -2869,7 +2869,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CreateThreadRequestToolResources2? Type709 { get; set; }
+        public global::tryAGI.OpenAI.CreateThreadRequestToolResources? Type709 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3333,27 +3333,27 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamQuality2? Type825 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamQuality? Type825 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity2? Type826 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity? Type826 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamSize2? Type827 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamSize? Type827 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamOutputFormat2? Type828 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamOutputFormat? Type828 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamModeration2? Type829 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamModeration? Type829 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamBackground2? Type830 { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamBackground? Type830 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -3849,7 +3849,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuningJobError2? Type954 { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobError? Type954 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -4753,7 +4753,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LocalShellToolCallOutputStatus2? Type1180 { get; set; }
+        public global::tryAGI.OpenAI.LocalShellToolCallOutputStatus? Type1180 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -5009,7 +5009,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.MessageObjectIncompleteDetails2? Type1244 { get; set; }
+        public global::tryAGI.OpenAI.MessageObjectIncompleteDetails? Type1244 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -5097,7 +5097,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ModelResponsePropertiesPromptCacheRetention2? Type1266 { get; set; }
+        public global::tryAGI.OpenAI.ModelResponsePropertiesPromptCacheRetention? Type1266 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -5105,7 +5105,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ModifyAssistantRequestToolResources2? Type1268 { get; set; }
+        public global::tryAGI.OpenAI.ModifyAssistantRequestToolResources? Type1268 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -5133,7 +5133,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ModifyThreadRequestToolResources2? Type1275 { get; set; }
+        public global::tryAGI.OpenAI.ModifyThreadRequestToolResources? Type1275 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -7669,7 +7669,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection2? Type1909 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudioInputTurnDetection? Type1909 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -7813,11 +7813,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudioInputTranscription2? Type1945 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudioInputTranscription? Type1945 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudioInputNoiseReduction2? Type1946 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionAudioInputNoiseReduction? Type1946 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -7833,11 +7833,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInputTranscription2? Type1950 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInputTranscription? Type1950 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInputNoiseReduction2? Type1951 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInputNoiseReduction? Type1951 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -7853,11 +7853,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputTranscription2? Type1955 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputTranscription? Type1955 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputNoiseReduction2? Type1956 { get; set; }
+        public global::tryAGI.OpenAI.RealtimeTranslationSessionUpdateRequestAudioInputNoiseReduction? Type1956 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -7905,15 +7905,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ReasoningSummary2? Type1968 { get; set; }
+        public global::tryAGI.OpenAI.ReasoningSummary? Type1968 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ReasoningContext2? Type1969 { get; set; }
+        public global::tryAGI.OpenAI.ReasoningContext? Type1969 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ReasoningGenerateSummary2? Type1970 { get; set; }
+        public global::tryAGI.OpenAI.ReasoningGenerateSummary? Type1970 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -7945,7 +7945,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseVariant3Truncation2? Type1978 { get; set; }
+        public global::tryAGI.OpenAI.ResponseVariant3Truncation? Type1978 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -7961,7 +7961,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseVariant3IncompleteDetails2? Type1982 { get; set; }
+        public global::tryAGI.OpenAI.ResponseVariant3IncompleteDetails? Type1982 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -8877,7 +8877,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RunStepObjectLastError2? Type2211 { get; set; }
+        public global::tryAGI.OpenAI.RunStepObjectLastError? Type2211 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -9089,7 +9089,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadObjectToolResources2? Type2264 { get; set; }
+        public global::tryAGI.OpenAI.ThreadObjectToolResources? Type2264 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -9481,7 +9481,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UserProjects2? Type2362 { get; set; }
+        public global::tryAGI.OpenAI.UserProjects? Type2362 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -9601,7 +9601,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.VectorStoreFileObjectLastError2? Type2392 { get; set; }
+        public global::tryAGI.OpenAI.VectorStoreFileObjectLastError? Type2392 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -9765,7 +9765,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchToolFilters2? Type2433 { get; set; }
+        public global::tryAGI.OpenAI.WebSearchToolFilters? Type2433 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -11037,7 +11037,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ItemReferenceParamType2? Type2751 { get; set; }
+        public global::tryAGI.OpenAI.ItemReferenceParamType? Type2751 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -12045,15 +12045,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaReasoningSummary2? Type3003 { get; set; }
+        public global::tryAGI.OpenAI.BetaReasoningSummary? Type3003 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaReasoningContext2? Type3004 { get; set; }
+        public global::tryAGI.OpenAI.BetaReasoningContext? Type3004 { get; set; }
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaReasoningGenerateSummary2? Type3005 { get; set; }
+        public global::tryAGI.OpenAI.BetaReasoningGenerateSummary? Type3005 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -12529,7 +12529,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaWebSearchToolFilters2? Type3124 { get; set; }
+        public global::tryAGI.OpenAI.BetaWebSearchToolFilters? Type3124 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -12657,7 +12657,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaItemReferenceParamType2? Type3156 { get; set; }
+        public global::tryAGI.OpenAI.BetaItemReferenceParamType? Type3156 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -13069,7 +13069,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaLocalShellToolCallOutputStatus2? Type3259 { get; set; }
+        public global::tryAGI.OpenAI.BetaLocalShellToolCallOutputStatus? Type3259 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -14217,7 +14217,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaMessagePhase22? Type3546 { get; set; }
+        public global::tryAGI.OpenAI.BetaMessagePhase2? Type3546 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -14261,7 +14261,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponseVariant3Truncation2? Type3557 { get; set; }
+        public global::tryAGI.OpenAI.BetaResponseVariant3Truncation? Type3557 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -14277,7 +14277,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponseVariant3IncompleteDetails2? Type3561 { get; set; }
+        public global::tryAGI.OpenAI.BetaResponseVariant3IncompleteDetails? Type3561 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -14381,7 +14381,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaModelResponsePropertiesPromptCacheRetention2? Type3587 { get; set; }
+        public global::tryAGI.OpenAI.BetaModelResponsePropertiesPromptCacheRetention? Type3587 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -14961,7 +14961,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaCreateResponseVariant3Truncation2? Type3732 { get; set; }
+        public global::tryAGI.OpenAI.BetaCreateResponseVariant3Truncation? Type3732 { get; set; }
         /// <summary>
         ///
         /// </summary>

@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public global::tryAGI.OpenAI.FineTuningJobError2? Error { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobError? Error { get; set; }
 
         /// <summary>
         ///
@@ -196,7 +196,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.FineTuningJobStatus status,
             string trainingFile,
             int seed,
-            global::tryAGI.OpenAI.FineTuningJobError2? error,
+            global::tryAGI.OpenAI.FineTuningJobError? error,
             string? fineTunedModel,
             int? finishedAt,
             global::tryAGI.OpenAI.FineTuningJobObject @object,

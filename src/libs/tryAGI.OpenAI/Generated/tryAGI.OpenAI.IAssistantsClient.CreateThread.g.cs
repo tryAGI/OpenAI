@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ThreadObject> CreateThreadAsync(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequest>? messages = default,
-            global::tryAGI.OpenAI.CreateThreadRequestToolResources2? toolResources = default,
+            global::tryAGI.OpenAI.CreateThreadRequestToolResources? toolResources = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

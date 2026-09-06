@@ -28,19 +28,19 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        public global::tryAGI.OpenAI.BetaReasoningSummary2? Summary { get; set; }
+        public global::tryAGI.OpenAI.BetaReasoningSummary? Summary { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
-        public global::tryAGI.OpenAI.BetaReasoningContext2? Context { get; set; }
+        public global::tryAGI.OpenAI.BetaReasoningContext? Context { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generate_summary")]
-        public global::tryAGI.OpenAI.BetaReasoningGenerateSummary2? GenerateSummary { get; set; }
+        public global::tryAGI.OpenAI.BetaReasoningGenerateSummary? GenerateSummary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -65,9 +65,9 @@ namespace tryAGI.OpenAI
         public BetaReasoning(
             global::tryAGI.OpenAI.BetaReasoningModeEnum? mode,
             global::tryAGI.OpenAI.BetaReasoningEffortEnum? effort,
-            global::tryAGI.OpenAI.BetaReasoningSummary2? summary,
-            global::tryAGI.OpenAI.BetaReasoningContext2? context,
-            global::tryAGI.OpenAI.BetaReasoningGenerateSummary2? generateSummary)
+            global::tryAGI.OpenAI.BetaReasoningSummary? summary,
+            global::tryAGI.OpenAI.BetaReasoningContext? context,
+            global::tryAGI.OpenAI.BetaReasoningGenerateSummary? generateSummary)
         {
             this.Mode = mode;
             this.Effort = effort;

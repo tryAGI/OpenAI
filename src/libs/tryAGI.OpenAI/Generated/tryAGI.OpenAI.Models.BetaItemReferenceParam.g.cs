@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public global::tryAGI.OpenAI.BetaItemReferenceParamType2? Type { get; set; }
+        public global::tryAGI.OpenAI.BetaItemReferenceParamType? Type { get; set; }
 
         /// <summary>
         /// The ID of the item to reference.
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         public BetaItemReferenceParam(
             string id,
             global::tryAGI.OpenAI.BetaAgentTagParam? agent,
-            global::tryAGI.OpenAI.BetaItemReferenceParamType2? type)
+            global::tryAGI.OpenAI.BetaItemReferenceParamType? type)
         {
             this.Agent = agent;
             this.Type = type;

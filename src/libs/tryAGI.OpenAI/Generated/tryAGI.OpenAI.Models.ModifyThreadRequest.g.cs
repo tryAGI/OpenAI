@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_resources")]
-        public global::tryAGI.OpenAI.ModifyThreadRequestToolResources2? ToolResources { get; set; }
+        public global::tryAGI.OpenAI.ModifyThreadRequestToolResources? ToolResources { get; set; }
 
         /// <summary>
         ///
@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ModifyThreadRequest(
-            global::tryAGI.OpenAI.ModifyThreadRequestToolResources2? toolResources,
+            global::tryAGI.OpenAI.ModifyThreadRequestToolResources? toolResources,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.ToolResources = toolResources;

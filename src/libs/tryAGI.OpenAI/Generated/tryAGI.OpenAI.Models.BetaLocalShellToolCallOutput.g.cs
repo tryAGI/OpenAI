@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        public global::tryAGI.OpenAI.BetaLocalShellToolCallOutputStatus2? Status { get; set; }
+        public global::tryAGI.OpenAI.BetaLocalShellToolCallOutputStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,7 +71,7 @@ namespace tryAGI.OpenAI
             string output,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
             global::tryAGI.OpenAI.BetaLocalShellToolCallOutputType type,
-            global::tryAGI.OpenAI.BetaLocalShellToolCallOutputStatus2? status)
+            global::tryAGI.OpenAI.BetaLocalShellToolCallOutputStatus? status)
         {
             this.Agent = agent;
             this.Type = type;

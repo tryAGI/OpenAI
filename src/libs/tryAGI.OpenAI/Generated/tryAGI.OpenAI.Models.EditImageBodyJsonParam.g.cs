@@ -61,13 +61,13 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>high</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamQuality2? Quality { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamQuality? Quality { get; set; }
 
         /// <summary>
         /// Controls fidelity to the original input image(s).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_fidelity")]
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity2? InputFidelity { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity? InputFidelity { get; set; }
 
         /// <summary>
         /// Requested output image size.<br/>
@@ -76,7 +76,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>1024x1024</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamSize2? Size { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamSize? Size { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI<br/>
@@ -94,7 +94,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>png</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamOutputFormat2? OutputFormat { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamOutputFormat? OutputFormat { get; set; }
 
         /// <summary>
         /// Compression level for `jpeg` or `webp` output.<br/>
@@ -111,7 +111,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>auto</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("moderation")]
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamModeration2? Moderation { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamModeration? Moderation { get; set; }
 
         /// <summary>
         /// Background behavior for generated image output.<br/>
@@ -120,7 +120,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>transparent</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("background")]
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamBackground2? Background { get; set; }
+        public global::tryAGI.OpenAI.EditImageBodyJsonParamBackground? Background { get; set; }
 
         /// <summary>
         /// Stream partial image results as events.<br/>
@@ -220,14 +220,14 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamModel?, object>? model,
             global::tryAGI.OpenAI.ImageRefParam? mask,
             int? n,
-            global::tryAGI.OpenAI.EditImageBodyJsonParamQuality2? quality,
-            global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity2? inputFidelity,
-            global::tryAGI.OpenAI.EditImageBodyJsonParamSize2? size,
+            global::tryAGI.OpenAI.EditImageBodyJsonParamQuality? quality,
+            global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity? inputFidelity,
+            global::tryAGI.OpenAI.EditImageBodyJsonParamSize? size,
             string? user,
-            global::tryAGI.OpenAI.EditImageBodyJsonParamOutputFormat2? outputFormat,
+            global::tryAGI.OpenAI.EditImageBodyJsonParamOutputFormat? outputFormat,
             int? outputCompression,
-            global::tryAGI.OpenAI.EditImageBodyJsonParamModeration2? moderation,
-            global::tryAGI.OpenAI.EditImageBodyJsonParamBackground2? background,
+            global::tryAGI.OpenAI.EditImageBodyJsonParamModeration? moderation,
+            global::tryAGI.OpenAI.EditImageBodyJsonParamBackground? background,
             bool? stream,
             int? partialImages)
         {

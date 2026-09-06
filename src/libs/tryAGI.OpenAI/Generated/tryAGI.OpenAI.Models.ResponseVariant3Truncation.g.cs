@@ -4,16 +4,54 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    ///
+    /// The truncation strategy to use for the model response.<br/>
+    /// - `auto`: If the input to this Response exceeds<br/>
+    ///   the model's context window size, the model will truncate the<br/>
+    ///   response to fit the context window by dropping items from the beginning of the conversation.<br/>
+    /// - `disabled` (default): If the input size will exceed the context window<br/>
+    ///   size for a model, the request will fail with a 400 error.<br/>
+    /// Default Value: disabled
     /// </summary>
-    public sealed partial class ResponseVariant3Truncation
+    public enum ResponseVariant3Truncation
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// If the input to this Response exceeds
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Auto,
+        /// <summary>
+        /// If the input size will exceed the context window
+        /// </summary>
+        Disabled,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ResponseVariant3TruncationExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ResponseVariant3Truncation value)
+        {
+            return value switch
+            {
+                ResponseVariant3Truncation.Auto => "auto",
+                ResponseVariant3Truncation.Disabled => "disabled",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ResponseVariant3Truncation? ToEnum(string value)
+        {
+            return value switch
+            {
+                "auto" => ResponseVariant3Truncation.Auto,
+                "disabled" => ResponseVariant3Truncation.Disabled,
+                _ => null,
+            };
+        }
     }
 }

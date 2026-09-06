@@ -23,7 +23,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        public global::tryAGI.OpenAI.BetaWebSearchToolFilters2? Filters { get; set; }
+        public global::tryAGI.OpenAI.BetaWebSearchToolFilters? Filters { get; set; }
 
         /// <summary>
         ///
@@ -63,7 +63,7 @@ namespace tryAGI.OpenAI
 #endif
         public BetaWebSearchTool(
             global::tryAGI.OpenAI.BetaWebSearchToolType type,
-            global::tryAGI.OpenAI.BetaWebSearchToolFilters2? filters,
+            global::tryAGI.OpenAI.BetaWebSearchToolFilters? filters,
             global::tryAGI.OpenAI.BetaWebSearchApproximateLocationWebSearchApproximateLocation? userLocation,
             global::tryAGI.OpenAI.BetaWebSearchToolSearchContextSize? searchContextSize)
         {

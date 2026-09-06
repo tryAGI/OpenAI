@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public global::tryAGI.OpenAI.ItemReferenceParamType2? Type { get; set; }
+        public global::tryAGI.OpenAI.ItemReferenceParamType? Type { get; set; }
 
         /// <summary>
         /// The ID of the item to reference.
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
 #endif
         public ItemReferenceParam(
             string id,
-            global::tryAGI.OpenAI.ItemReferenceParamType2? type)
+            global::tryAGI.OpenAI.ItemReferenceParamType? type)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

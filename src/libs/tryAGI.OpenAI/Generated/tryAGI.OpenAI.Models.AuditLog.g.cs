@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actor")]
-        public global::tryAGI.OpenAI.AuditLogActor2? Actor { get; set; }
+        public global::tryAGI.OpenAI.AuditLogActor? Actor { get; set; }
 
         /// <summary>
         /// The details for events with this `type`.
@@ -567,7 +567,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AuditLogEventType type,
             int effectiveAt,
             global::tryAGI.OpenAI.AuditLogProject? project,
-            global::tryAGI.OpenAI.AuditLogActor2? actor,
+            global::tryAGI.OpenAI.AuditLogActor? actor,
             global::tryAGI.OpenAI.AuditLogApiKeyCreated? apiKeyCreated,
             global::tryAGI.OpenAI.AuditLogApiKeyUpdated? apiKeyUpdated,
             global::tryAGI.OpenAI.AuditLogApiKeyDeleted? apiKeyDeleted,

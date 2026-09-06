@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Arbitrary metadata stored on the role.
+    ///
     /// </summary>
     public sealed partial class AssignedRoleDetailsMetadata
     {

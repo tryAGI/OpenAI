@@ -78,7 +78,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_error")]
-        public global::tryAGI.OpenAI.RunStepObjectLastError2? LastError { get; set; }
+        public global::tryAGI.OpenAI.RunStepObjectLastError? LastError { get; set; }
 
         /// <summary>
         ///
@@ -172,7 +172,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RunStepObjectStatus status,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsObject> stepDetails,
             global::tryAGI.OpenAI.RunStepObjectObject @object,
-            global::tryAGI.OpenAI.RunStepObjectLastError2? lastError,
+            global::tryAGI.OpenAI.RunStepObjectLastError? lastError,
             int? expiredAt,
             int? cancelledAt,
             int? failedAt,

@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncation")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::tryAGI.OpenAI.BetaCreateResponseVariant3Truncation2? Truncation { get; set; }
+        public global::tryAGI.OpenAI.BetaCreateResponseVariant3Truncation? Truncation { get; set; }
 
         /// <summary>
         ///

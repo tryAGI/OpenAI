@@ -13,7 +13,7 @@ internal static partial class AssistantsModifyThreadCommandApiCommand
         Description = @"The ID of the thread to modify. Only the `metadata` can be modified.",
     };
 
-    private static Option<global::tryAGI.OpenAI.ModifyThreadRequestToolResources2?> ToolResources { get; } = new(
+    private static Option<global::tryAGI.OpenAI.ModifyThreadRequestToolResources?> ToolResources { get; } = new(
         name: @"--tool-resources")
     {
         Description = @"",

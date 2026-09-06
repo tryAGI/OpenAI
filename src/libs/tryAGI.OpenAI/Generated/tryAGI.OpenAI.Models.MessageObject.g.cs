@@ -48,7 +48,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("incomplete_details")]
-        public global::tryAGI.OpenAI.MessageObjectIncompleteDetails2? IncompleteDetails { get; set; }
+        public global::tryAGI.OpenAI.MessageObjectIncompleteDetails? IncompleteDetails { get; set; }
 
         /// <summary>
         ///
@@ -149,7 +149,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.MessageObjectRole role,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageContentTextObject, global::tryAGI.OpenAI.MessageContentRefusalObject>> content,
             global::tryAGI.OpenAI.MessageObjectObject @object,
-            global::tryAGI.OpenAI.MessageObjectIncompleteDetails2? incompleteDetails,
+            global::tryAGI.OpenAI.MessageObjectIncompleteDetails? incompleteDetails,
             int? completedAt,
             int? incompleteAt,
             string? assistantId,
