@@ -13,7 +13,7 @@ fetch_spec() {
     --connect-timeout 30 --max-time 300
 }
 
-# OpenAPI spec: https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml (+ AsyncAPI)
+# OpenAPI spec: https://github.com/openai/openai-openapi (+ AsyncAPI)
 
 use_pinned_spec=false
 for arg in "$@"; do
@@ -32,7 +32,7 @@ if [[ "${TRYAGI_PINNED_SPEC:-0}" == "1" ]]; then
 fi
 install_autosdk_cli
 if [[ "$use_pinned_spec" == false ]]; then
-  fetch_spec --fail --silent --show-error -L -o openapi.yaml https://app.stainless.com/api/spec/documented/openai/openapi.documented.yml
+  fetch_spec --fail --silent --show-error -L -o openapi.yaml https://raw.githubusercontent.com/openai/openai-openapi/main/openapi.yaml
 elif [[ ! -f openapi.yaml ]]; then
   echo "error: --pinned-spec requested but openapi.yaml does not exist." >&2
   exit 1
