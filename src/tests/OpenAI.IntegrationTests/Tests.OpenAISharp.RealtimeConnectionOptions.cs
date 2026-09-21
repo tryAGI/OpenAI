@@ -41,6 +41,19 @@ public partial class Tests
         uri.ToString().Should().Be("wss://api.openai.com/v1/realtime/translations?existing=1&model=gpt-realtime-translate");
     }
 
+    [TestMethod]
+    public void OpenAISharp_BuildUri_LiveSession_UsesDedicatedPathWithoutModelQuery()
+    {
+        var uri = BuildOpenAISharpUri(new OpenAIRealtimeConnectOptions
+        {
+            Model = "gpt-live-1",
+            SessionKind = OpenAIRealtimeSessionKind.Live,
+        });
+
+        uri.ToString().Should().Be("wss://api.openai.com/v1/live/sessions");
+        uri.Query.Should().BeEmpty();
+    }
+
     private static Uri BuildOpenAISharpUri(OpenAIRealtimeConnectOptions options)
     {
         using var client = OpenAIClient.Create(new OpenAIConfig

@@ -92,7 +92,7 @@ public sealed class OpenAIRealtimeService
         {
             query.Add("intent=transcription");
         }
-        else
+        else if (options.SessionKind != OpenAIRealtimeSessionKind.Live)
         {
             query.Add($"model={Uri.EscapeDataString(options.Model)}");
         }
@@ -107,6 +107,15 @@ public sealed class OpenAIRealtimeService
 
     private static Uri ApplySessionKindPath(Uri baseUri, OpenAIRealtimeSessionKind sessionKind)
     {
+        if (sessionKind == OpenAIRealtimeSessionKind.Live)
+        {
+            return new UriBuilder(baseUri)
+            {
+                Path = "/v1/live/sessions",
+                Query = string.Empty,
+            }.Uri;
+        }
+
         if (sessionKind != OpenAIRealtimeSessionKind.Translation)
         {
             return baseUri;

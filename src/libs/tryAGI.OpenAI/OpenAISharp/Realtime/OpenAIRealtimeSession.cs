@@ -66,6 +66,46 @@ public sealed class OpenAIRealtimeSession : IAsyncDisposable
     }
 
     /// <summary>
+    /// Sends a GPT-Live client event. A primary Live WebSocket must begin with
+    /// <see cref="OpenAILiveSessionStartEvent"/> and wait for
+    /// <c>session.started</c> before sending subsequent events.
+    /// </summary>
+    public Task SendLiveEventAsync(OpenAILiveClientEvent payload, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(payload);
+        var json = JsonSerializer.Serialize(payload, JsonContext.Default.OpenAILiveClientEvent);
+        return SendTextAsync(json, cancellationToken);
+    }
+
+    /// <summary>
+    /// Starts a GPT-Live session on a primary WebSocket.
+    /// </summary>
+    public Task StartLiveSessionAsync(OpenAILiveSessionConfiguration configuration, CancellationToken cancellationToken = default)
+        => SendLiveEventAsync(new OpenAILiveSessionStartEvent { Session = configuration }, cancellationToken);
+
+    /// <summary>
+    /// Appends 24 kHz PCM16 input audio to a GPT-Live session.
+    /// </summary>
+    public Task SendLiveInputAudioAsync(ReadOnlyMemory<byte> audioBytes, CancellationToken cancellationToken = default)
+        => SendLiveEventAsync(new OpenAILiveInputAudioAppendEvent
+        {
+            Audio = Convert.ToBase64String(audioBytes.Span),
+        }, cancellationToken);
+
+    /// <summary>
+    /// Appends instructions or text context to a GPT-Live session.
+    /// </summary>
+    public Task AppendLiveInstructionsAsync(
+        string content,
+        string? delegationId = null,
+        CancellationToken cancellationToken = default)
+        => SendLiveEventAsync(new OpenAILiveInstructionsAppendEvent
+        {
+            Content = content,
+            DelegationId = delegationId,
+        }, cancellationToken);
+
+    /// <summary>
     /// Sends PCM16 audio bytes as an input audio buffer append event.
     /// </summary>
     public Task SendInputAudioAsync(ReadOnlyMemory<byte> audioBytes, CancellationToken cancellationToken = default)

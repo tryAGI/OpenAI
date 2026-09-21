@@ -6,6 +6,47 @@ namespace tryAGI.OpenAI.IntegrationTests;
 public partial class Tests
 {
     [TestMethod]
+    public void OpenAISharp_Serialize_LiveSessionStart_IncludesResponsesDelegationAndTools()
+    {
+        using var toolDocument = JsonDocument.Parse("""
+            {"type":"function","name":"lookup_weather","description":"Lookup weather","parameters":{"type":"object"}}
+            """);
+        OpenAILiveClientEvent message = new OpenAILiveSessionStartEvent
+        {
+            Session = new OpenAILiveSessionConfiguration
+            {
+                Model = "gpt-live-1",
+                Instructions = "Keep the spoken answer concise.",
+                Audio = new OpenAILiveAudioConfiguration
+                {
+                    Output = new OpenAILiveAudioOutputConfiguration { Voice = "marin" },
+                },
+                Delegation = OpenAILiveDelegation.ToResponses(new OpenAILiveResponsesDelegationSettings
+                {
+                    Model = "gpt-6-astra",
+                    Instructions = "Use only tools allowed by the current Advantage mode.",
+                    Reasoning = new OpenAILiveReasoningConfiguration { Effort = "medium" },
+                    Tools = [toolDocument.RootElement.Clone()],
+                    ParallelToolCalls = true,
+                }),
+            },
+        };
+
+        var json = JsonSerializer.Serialize(message, JsonContext.Default.OpenAILiveClientEvent);
+        using var document = JsonDocument.Parse(json);
+        var root = document.RootElement;
+        var session = root.GetProperty("session");
+        var responses = session.GetProperty("delegation").GetProperty("responses");
+
+        root.GetProperty("type").GetString().Should().Be("session.start");
+        session.GetProperty("model").GetString().Should().Be("gpt-live-1");
+        session.GetProperty("audio").GetProperty("format").GetProperty("rate").GetInt32().Should().Be(24_000);
+        responses.GetProperty("model").GetString().Should().Be("gpt-6-astra");
+        responses.GetProperty("reasoning").GetProperty("effort").GetString().Should().Be("medium");
+        responses.GetProperty("tools")[0].GetProperty("name").GetString().Should().Be("lookup_weather");
+    }
+
+    [TestMethod]
     public void OpenAISharp_Serialize_InputAudioAppend_UsesBase64AndType()
     {
         var audio = new byte[] { 0x01, 0x02, 0x03, 0x04 };

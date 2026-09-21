@@ -70,4 +70,10 @@ public enum OpenAIRealtimeSessionKind
     Transcription,
     /// <inheritdoc />
     Translation,
+    /// <summary>
+    /// GPT-Live primary WebSocket session at <c>/v1/live/sessions</c>.
+    /// The model is selected by the required <c>session.start</c> event rather
+    /// than a URL query parameter.
+    /// </summary>
+    Live,
 }
