@@ -10,6 +10,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -522,6 +523,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -1034,6 +1036,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -1546,6 +1549,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -2058,6 +2062,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -2570,6 +2575,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -3082,6 +3088,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -3594,6 +3601,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -4106,6 +4114,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -4618,6 +4627,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -5130,6 +5140,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -5642,6 +5653,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -6154,6 +6166,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -6666,6 +6679,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -7178,6 +7192,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -7690,6 +7705,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -8202,6 +8218,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
@@ -8714,6 +8731,7 @@ namespace tryAGI.OpenAI
     ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        GenerationMode = global::System.Text.Json.Serialization.JsonSourceGenerationMode.Metadata,
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {

@@ -82,6 +82,10 @@ autosdk generate asyncapi.json \
   --output Generated \
   --base-url wss://api.openai.com
 
+# Metadata generation avoids compiling fast-path serializers for thousands of
+# models while retaining source-generated, trimming-safe JSON type metadata.
+python3 set_metadata_serializer_mode.py
+
 # Regenerate the Claude skill bundle (SKILL.md + commands.md + auth.md) from the spec.
 autosdk skill openapi.yaml \
   --package-id tryAGI.OpenAI.CLI \
