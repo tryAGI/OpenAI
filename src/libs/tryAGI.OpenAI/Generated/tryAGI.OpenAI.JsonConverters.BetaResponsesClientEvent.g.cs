@@ -30,14 +30,20 @@ namespace tryAGI.OpenAI.JsonConverters
             var __score0 = 0;
             var __score1 = 0;
             if (__jsonProps.Contains("input")) __score1++;
-            if (__jsonProps.Contains("response_id")) __score1++;
+            if (__jsonProps.Contains("previous_response_id")) __score1++;
             if (__jsonProps.Contains("type")) __score1++;
+            var __score2 = 0;
+            if (__jsonProps.Contains("input")) __score2++;
+            if (__jsonProps.Contains("response_id")) __score2++;
+            if (__jsonProps.Contains("type")) __score2++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
+            if (__score2 > __bestScore) { __bestScore = __score2; __bestIndex = 2; }
 
             global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate? responseCreate = default;
+            global::tryAGI.OpenAI.BetaResponseSteerEvent? responseSteer = default;
             global::tryAGI.OpenAI.BetaResponseInjectEvent? responseInject = default;
             if (__bestIndex >= 0)
             {
@@ -60,6 +66,21 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseSteerEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseSteerEvent> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseSteerEvent).Name}");
+                        responseSteer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    }
+                    catch (global::System.Text.Json.JsonException)
+                    {
+                    }
+                    catch (global::System.InvalidOperationException)
+                    {
+                    }
+                }
+                else if (__bestIndex == 2)
+                {
+                    try
+                    {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseInjectEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseInjectEvent> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseInjectEvent).Name}");
                         responseInject = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -73,7 +94,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (responseCreate == null && responseInject == null)
+            if (responseCreate == null && responseSteer == null && responseInject == null)
             {
                 try
                 {
@@ -90,7 +111,24 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (responseCreate == null && responseInject == null)
+            if (responseCreate == null && responseSteer == null && responseInject == null)
+            {
+                try
+                {
+
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseSteerEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseSteerEvent> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseSteerEvent).Name}");
+                    responseSteer = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                }
+                catch (global::System.Text.Json.JsonException)
+                {
+                }
+                catch (global::System.InvalidOperationException)
+                {
+                }
+            }
+
+            if (responseCreate == null && responseSteer == null && responseInject == null)
             {
                 try
                 {
@@ -109,6 +147,8 @@ namespace tryAGI.OpenAI.JsonConverters
 
             var __value = new global::tryAGI.OpenAI.BetaResponsesClientEvent(
                 responseCreate,
+
+                responseSteer,
 
                 responseInject
                 );
@@ -130,6 +170,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCreate!.Value, typeInfo);
+            }
+            else if (value.IsResponseSteer)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseSteerEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseSteerEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseSteerEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseSteer!, typeInfo);
             }
             else if (value.IsResponseInject)
             {

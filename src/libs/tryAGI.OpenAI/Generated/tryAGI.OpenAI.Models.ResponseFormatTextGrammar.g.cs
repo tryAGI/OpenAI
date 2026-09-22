@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// A custom grammar for the model to follow when generating text.<br/>
-    /// Learn more in the [custom grammars guide](/docs/guides/custom-grammars).
+    /// Learn more in the [custom grammars guide](https://developers.openai.com/api/docs/guides/function-calling#context-free-grammars).
     /// </summary>
     public sealed partial class ResponseFormatTextGrammar
     {

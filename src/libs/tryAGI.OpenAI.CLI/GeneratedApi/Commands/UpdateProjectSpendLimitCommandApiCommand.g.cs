@@ -5,7 +5,7 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static partial class UpdateProjectSpendLimitCommandApiCommand
+internal static partial class UpdateprojectspendlimitCommandApiCommand
 {
     private static Argument<string> ProjectId { get; } = new(
         name: @"project-id")
@@ -70,7 +70,8 @@ internal static partial class UpdateProjectSpendLimitCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"update-project-spend-limit", @"Create or replace a project's hard spend limit.");
+        var command = new Command(@"updateprojectspendlimit", @"Update project spend limit
+Create or replace a project's hard spend limit.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(ThresholdAmount);
                         command.Options.Add(Currency);
@@ -107,7 +108,7 @@ internal static partial class UpdateProjectSpendLimitCommandApiCommand
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
-                                var response = await client.UpdateProjectSpendLimitAsync(
+                                var response = await client.UpdateprojectspendlimitAsync(
                                     projectId: projectId,
                                     thresholdAmount: thresholdAmount,
                                     currency: currency,

@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Archive project<br/>
         /// Archives a project in the organization. Archived projects cannot be used or updated.
         /// </summary>
         /// <param name="projectId"></param>
@@ -62,6 +63,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Archive project<br/>
         /// Archives a project in the organization. Archived projects cannot be used or updated.
         /// </summary>
         /// <param name="projectId"></param>

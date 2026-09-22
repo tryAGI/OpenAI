@@ -59,7 +59,8 @@ internal static partial class SpendAlertsListProjectSpendAlertsCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-project-spend-alerts", @"Lists project spend alerts.");
+        var command = new Command(@"list-project-spend-alerts", @"List project spend alerts
+Lists project spend alerts.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Limit);
                         command.Options.Add(Order);

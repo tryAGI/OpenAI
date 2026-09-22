@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ICertificatesClient
     {
         /// <summary>
+        /// Delete certificate<br/>
         /// Delete a certificate from the organization.<br/>
         /// The certificate must be inactive for the organization and all projects.
         /// </summary>
@@ -17,6 +18,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Delete certificate<br/>
         /// Delete a certificate from the organization.<br/>
         /// The certificate must be inactive for the organization and all projects.
         /// </summary>

@@ -59,7 +59,8 @@ internal static partial class EvalsGetEvalRunsCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"get-eval-runs", @"Get a list of runs for an evaluation.
+        var command = new Command(@"get-eval-runs", @"Get eval runs
+Get a list of runs for an evaluation.
 ");
                         command.Arguments.Add(EvalId);
                         command.Options.Add(After);

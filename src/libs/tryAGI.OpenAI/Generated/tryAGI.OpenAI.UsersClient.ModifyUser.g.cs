@@ -44,6 +44,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Modify user<br/>
         /// Modifies a user's role in the organization.
         /// </summary>
         /// <param name="userId"></param>
@@ -69,6 +70,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Modify user<br/>
         /// Modifies a user's role in the organization.
         /// </summary>
         /// <param name="userId"></param>
@@ -443,6 +445,7 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Modify user<br/>
         /// Modifies a user's role in the organization.
         /// </summary>
         /// <param name="userId"></param>

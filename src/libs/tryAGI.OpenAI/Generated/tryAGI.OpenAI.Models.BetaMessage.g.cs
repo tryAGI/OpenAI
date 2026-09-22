@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem7> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem8> Content { get; set; }
 
         /// <summary>
         ///
@@ -95,7 +95,7 @@ namespace tryAGI.OpenAI
             string id,
             global::tryAGI.OpenAI.BetaMessageStatus status,
             global::tryAGI.OpenAI.BetaMessageRole role,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem7> content,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem8> content,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
             global::tryAGI.OpenAI.BetaMessagePhase2? phase,
             global::tryAGI.OpenAI.BetaMessageType type = global::tryAGI.OpenAI.BetaMessageType.Message)

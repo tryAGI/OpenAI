@@ -51,6 +51,30 @@ namespace tryAGI.OpenAI
         public required string PartialImageB64 { get; set; }
 
         /// <summary>
+        /// The image size that was used.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("size")]
+        public string? Size { get; set; }
+
+        /// <summary>
+        /// The image quality that was used.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
+        public string? Quality { get; set; }
+
+        /// <summary>
+        /// The background setting that was used.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("background")]
+        public string? Background { get; set; }
+
+        /// <summary>
+        /// The output format that was used.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
+        public string? OutputFormat { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -77,6 +101,18 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// The type of the event. Always 'response.image_generation_call.partial_image'.
         /// </param>
+        /// <param name="size">
+        /// The image size that was used.
+        /// </param>
+        /// <param name="quality">
+        /// The image quality that was used.
+        /// </param>
+        /// <param name="background">
+        /// The background setting that was used.
+        /// </param>
+        /// <param name="outputFormat">
+        /// The output format that was used.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,7 +122,11 @@ namespace tryAGI.OpenAI
             int sequenceNumber,
             int partialImageIndex,
             string partialImageB64,
-            global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEventType type)
+            global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEventType type,
+            string? size,
+            string? quality,
+            string? background,
+            string? outputFormat)
         {
             this.Type = type;
             this.OutputIndex = outputIndex;
@@ -94,6 +134,10 @@ namespace tryAGI.OpenAI
             this.SequenceNumber = sequenceNumber;
             this.PartialImageIndex = partialImageIndex;
             this.PartialImageB64 = partialImageB64 ?? throw new global::System.ArgumentNullException(nameof(partialImageB64));
+            this.Size = size;
+            this.Quality = quality;
+            this.Background = background;
+            this.OutputFormat = outputFormat;
         }
 
         /// <summary>

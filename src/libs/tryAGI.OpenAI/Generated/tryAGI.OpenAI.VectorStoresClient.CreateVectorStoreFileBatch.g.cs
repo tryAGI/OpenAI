@@ -44,10 +44,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Create a vector store file batch.<br/>
-        /// The maximum number of files in a single batch request is 2000.<br/>
-        /// Vector store file attach requests are rate limited per vector store (300 requests per minute across both this endpoint and `/vector_stores/{vector_store_id}/files`).<br/>
-        /// For ingesting multiple files into the same vector store, this batch endpoint is recommended.
+        /// Create vector store file batch<br/>
+        /// Create a vector store file batch.
         /// </summary>
         /// <param name="vectorStoreId">
         /// Example: vs_abc123
@@ -74,10 +72,8 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
-        /// Create a vector store file batch.<br/>
-        /// The maximum number of files in a single batch request is 2000.<br/>
-        /// Vector store file attach requests are rate limited per vector store (300 requests per minute across both this endpoint and `/vector_stores/{vector_store_id}/files`).<br/>
-        /// For ingesting multiple files into the same vector store, this batch endpoint is recommended.
+        /// Create vector store file batch<br/>
+        /// Create a vector store file batch.
         /// </summary>
         /// <param name="vectorStoreId">
         /// Example: vs_abc123
@@ -354,6 +350,43 @@ namespace tryAGI.OpenAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // The request was rejected because a rate limit was exceeded.
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -451,16 +484,14 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
-        /// Create a vector store file batch.<br/>
-        /// The maximum number of files in a single batch request is 2000.<br/>
-        /// Vector store file attach requests are rate limited per vector store (300 requests per minute across both this endpoint and `/vector_stores/{vector_store_id}/files`).<br/>
-        /// For ingesting multiple files into the same vector store, this batch endpoint is recommended.
+        /// Create vector store file batch<br/>
+        /// Create a vector store file batch.
         /// </summary>
         /// <param name="vectorStoreId">
         /// Example: vs_abc123
         /// </param>
         /// <param name="fileIds">
-        /// A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.  If `attributes` or `chunking_strategy` are provided, they will be  applied to all files in the batch. The maximum batch size is 2000 files. This endpoint is recommended for multi-file ingestion and helps reduce per-vector-store write request pressure. Mutually exclusive with `files`.
+        /// A list of [File](https://developers.openai.com/api/reference/resources/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files. If `attributes` or `chunking_strategy` are provided, they will be applied to all files in the batch. The maximum batch size is 2000 files. This endpoint is recommended for multi-file ingestion and helps reduce per-vector-store write request pressure. Mutually exclusive with `files`.
         /// </param>
         /// <param name="files">
         /// A list of objects that each include a `file_id` plus optional `attributes` or `chunking_strategy`. Use this when you need to override metadata for specific files. The global `attributes` or `chunking_strategy` will be ignored and must be specified for each file. The maximum batch size is 2000 files. This endpoint is recommended for multi-file ingestion and helps reduce per-vector-store write request pressure. Mutually exclusive with `file_ids`.

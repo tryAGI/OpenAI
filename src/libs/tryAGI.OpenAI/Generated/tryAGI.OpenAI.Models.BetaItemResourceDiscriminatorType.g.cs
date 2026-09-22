@@ -39,6 +39,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ConfigurationUpdate,
+        /// <summary>
+        ///
+        /// </summary>
         FileSearchCall,
         /// <summary>
         ///
@@ -133,6 +137,7 @@ namespace tryAGI.OpenAI
                 BetaItemResourceDiscriminatorType.CodeInterpreterCall => "code_interpreter_call",
                 BetaItemResourceDiscriminatorType.Compaction => "compaction",
                 BetaItemResourceDiscriminatorType.ComputerCall => "computer_call",
+                BetaItemResourceDiscriminatorType.ConfigurationUpdate => "configuration_update",
                 BetaItemResourceDiscriminatorType.FileSearchCall => "file_search_call",
                 BetaItemResourceDiscriminatorType.ImageGenerationCall => "image_generation_call",
                 BetaItemResourceDiscriminatorType.LocalShellCall => "local_shell_call",
@@ -169,6 +174,7 @@ namespace tryAGI.OpenAI
                 "code_interpreter_call" => BetaItemResourceDiscriminatorType.CodeInterpreterCall,
                 "compaction" => BetaItemResourceDiscriminatorType.Compaction,
                 "computer_call" => BetaItemResourceDiscriminatorType.ComputerCall,
+                "configuration_update" => BetaItemResourceDiscriminatorType.ConfigurationUpdate,
                 "file_search_call" => BetaItemResourceDiscriminatorType.FileSearchCall,
                 "image_generation_call" => BetaItemResourceDiscriminatorType.ImageGenerationCall,
                 "local_shell_call" => BetaItemResourceDiscriminatorType.LocalShellCall,

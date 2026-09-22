@@ -11,11 +11,27 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Error,
+        /// <summary>
+        ///
+        /// </summary>
         ResponseInjectCreated,
         /// <summary>
         ///
         /// </summary>
         ResponseInjectFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseSteerAccepted,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseSteerFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseSteerPending,
     }
 
     /// <summary>
@@ -30,8 +46,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                BetaResponsesServerEventDiscriminatorType.Error => "error",
                 BetaResponsesServerEventDiscriminatorType.ResponseInjectCreated => "response.inject.created",
                 BetaResponsesServerEventDiscriminatorType.ResponseInjectFailed => "response.inject.failed",
+                BetaResponsesServerEventDiscriminatorType.ResponseSteerAccepted => "response.steer.accepted",
+                BetaResponsesServerEventDiscriminatorType.ResponseSteerFailed => "response.steer.failed",
+                BetaResponsesServerEventDiscriminatorType.ResponseSteerPending => "response.steer.pending",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +62,12 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "error" => BetaResponsesServerEventDiscriminatorType.Error,
                 "response.inject.created" => BetaResponsesServerEventDiscriminatorType.ResponseInjectCreated,
                 "response.inject.failed" => BetaResponsesServerEventDiscriminatorType.ResponseInjectFailed,
+                "response.steer.accepted" => BetaResponsesServerEventDiscriminatorType.ResponseSteerAccepted,
+                "response.steer.failed" => BetaResponsesServerEventDiscriminatorType.ResponseSteerFailed,
+                "response.steer.pending" => BetaResponsesServerEventDiscriminatorType.ResponseSteerPending,
                 _ => null,
             };
         }

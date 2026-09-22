@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateThreadRequest
     {
         /// <summary>
-        /// A list of [messages](/docs/api-reference/messages) to start the thread with.
+        /// A list of [messages](https://developers.openai.com/api/docs/assistants/migration) to start the thread with.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequest>? Messages { get; set; }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateThreadRequest" /> class.
         /// </summary>
         /// <param name="messages">
-        /// A list of [messages](/docs/api-reference/messages) to start the thread with.
+        /// A list of [messages](https://developers.openai.com/api/docs/assistants/migration) to start the thread with.
         /// </param>
         /// <param name="toolResources"></param>
         /// <param name="metadata"></param>

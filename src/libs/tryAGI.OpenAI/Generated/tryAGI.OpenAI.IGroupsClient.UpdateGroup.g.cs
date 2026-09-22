@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IGroupsClient
     {
         /// <summary>
+        /// Update group<br/>
         /// Updates a group's information.
         /// </summary>
         /// <param name="groupId"></param>
@@ -19,6 +20,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Update group<br/>
         /// Updates a group's information.
         /// </summary>
         /// <param name="groupId"></param>
@@ -33,6 +35,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Update group<br/>
         /// Updates a group's information.
         /// </summary>
         /// <param name="groupId"></param>

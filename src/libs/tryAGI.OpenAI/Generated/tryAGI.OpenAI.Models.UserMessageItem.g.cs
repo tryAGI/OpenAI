@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem4> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem5> Content { get; set; }
 
         /// <summary>
         /// Attachments associated with the user message. Defaults to an empty list.
@@ -105,7 +105,7 @@ namespace tryAGI.OpenAI
             string id,
             int createdAt,
             string threadId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem4> content,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem5> content,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Attachment> attachments,
             global::tryAGI.OpenAI.InferenceOptions? inferenceOptions,
             global::tryAGI.OpenAI.UserMessageItemObject @object = global::tryAGI.OpenAI.UserMessageItemObject.ChatkitThreadItem,

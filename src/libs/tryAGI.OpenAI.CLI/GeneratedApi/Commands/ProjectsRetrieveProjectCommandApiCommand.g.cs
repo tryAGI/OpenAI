@@ -35,7 +35,8 @@ internal static partial class ProjectsRetrieveProjectCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-project", @"Retrieves a project.");
+        var command = new Command(@"retrieve-project", @"Retrieve project
+Retrieves a project.");
                         command.Arguments.Add(ProjectId);
 
 

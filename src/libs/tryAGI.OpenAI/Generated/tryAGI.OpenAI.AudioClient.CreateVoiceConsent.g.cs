@@ -42,9 +42,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Upload a voice consent recording.<br/>
-        /// Upload a consent recording that authorizes creation of a custom voice.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
+        /// Create voice consent<br/>
+        /// Upload a voice consent recording.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -66,9 +65,8 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
-        /// Upload a voice consent recording.<br/>
-        /// Upload a consent recording that authorizes creation of a custom voice.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
+        /// Create voice consent<br/>
+        /// Upload a voice consent recording.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -480,9 +478,8 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
-        /// Upload a voice consent recording.<br/>
-        /// Upload a consent recording that authorizes creation of a custom voice.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
+        /// Create voice consent<br/>
+        /// Upload a voice consent recording.
         /// </summary>
         /// <param name="name">
         /// The label to use for this consent recording.
@@ -526,9 +523,8 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Upload a voice consent recording.<br/>
-        /// Upload a consent recording that authorizes creation of a custom voice.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
+        /// Create voice consent<br/>
+        /// Upload a voice consent recording.
         /// </summary>
         /// <param name="name">
         /// The label to use for this consent recording.
@@ -956,9 +952,8 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
-        /// Upload a voice consent recording.<br/>
-        /// Upload a consent recording that authorizes creation of a custom voice.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
+        /// Create voice consent<br/>
+        /// Upload a voice consent recording.
         /// </summary>
         /// <param name="name">
         /// The label to use for this consent recording.

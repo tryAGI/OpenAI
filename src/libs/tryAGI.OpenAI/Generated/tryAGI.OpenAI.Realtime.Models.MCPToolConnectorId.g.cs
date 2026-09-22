@@ -6,7 +6,10 @@ namespace tryAGI.OpenAI.Realtime
     /// <summary>
     /// Identifier for service connectors, like those available in ChatGPT. One of<br/>
     /// `server_url`, `connector_id`, or `tunnel_id` must be provided. Learn more<br/>
-    /// about service connectors [here](/docs/guides/tools-remote-mcp#connectors).<br/>
+    /// about service connectors [here](https://developers.openai.com/api/docs/guides/tools-connectors-mcp#connectors).<br/>
+    /// This field is deprecated for models released after September 1, 2026.<br/>
+    /// Use `server_url` to connect to a remote MCP server, or `tunnel_id` to<br/>
+    /// connect through a Secure MCP Tunnel.<br/>
     /// Currently supported `connector_id` values are:<br/>
     /// - Dropbox: `connector_dropbox`<br/>
     /// - Gmail: `connector_gmail`<br/>

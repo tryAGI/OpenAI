@@ -22,7 +22,7 @@ internal static partial class AuditLogsListAuditLogsCommandApiCommand
     private static Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLogEventType>?> EventTypes { get; } = new(
         name: @"--event-types")
     {
-        Description = @"Return only events with a `type` in one of these values. For example, `project.created`. For all options, see the documentation for the [audit log object](/docs/api-reference/audit-logs/object).",
+        Description = @"Return only events with a `type` in one of these values. For example, `project.created`. For all options, see the documentation for the [audit log object](https://developers.openai.com/api/reference/resources/admin/subresources/organization/subresources/audit_logs).",
     };
 
     private static Option<global::System.Collections.Generic.IList<string>?> ActorIds { get; } = new(
@@ -90,7 +90,8 @@ internal static partial class AuditLogsListAuditLogsCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-audit-logs", @"List user actions and configuration changes within this organization.");
+        var command = new Command(@"list-audit-logs", @"List audit logs
+List user actions and configuration changes within this organization.");
                         command.Options.Add(EffectiveAt);
                         command.Options.Add(ProjectIds);
                         command.Options.Add(EventTypes);

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IOpenAiClient
     {
         /// <summary>
+        /// Update project spend limit<br/>
         /// Create or replace a project's hard spend limit.
         /// </summary>
         /// <param name="projectId">
@@ -14,13 +15,14 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectSpendLimitResource> UpdateProjectSpendLimitAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectSpendLimitResource> UpdateprojectspendlimitAsync(
             string projectId,
 
             global::tryAGI.OpenAI.UpdateProjectSpendLimitBody request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Update project spend limit<br/>
         /// Create or replace a project's hard spend limit.
         /// </summary>
         /// <param name="projectId">
@@ -30,13 +32,14 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ProjectSpendLimitResource>> UpdateProjectSpendLimitAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ProjectSpendLimitResource>> UpdateprojectspendlimitAsResponseAsync(
             string projectId,
 
             global::tryAGI.OpenAI.UpdateProjectSpendLimitBody request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Update project spend limit<br/>
         /// Create or replace a project's hard spend limit.
         /// </summary>
         /// <param name="projectId">
@@ -54,7 +57,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectSpendLimitResource> UpdateProjectSpendLimitAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectSpendLimitResource> UpdateprojectspendlimitAsync(
             string projectId,
             int thresholdAmount,
             global::tryAGI.OpenAI.UpdateProjectSpendLimitBodyCurrency currency = default,

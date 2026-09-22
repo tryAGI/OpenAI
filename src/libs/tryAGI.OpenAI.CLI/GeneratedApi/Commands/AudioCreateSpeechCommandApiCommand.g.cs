@@ -10,7 +10,7 @@ internal static partial class AudioCreateSpeechCommandApiCommand
     private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?>> Model { get; } = new(
         name: @"--model")
     {
-        Description = @"One of the available [TTS models](/docs/models#tts): `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, or `gpt-4o-mini-tts-2025-12-15`.
+        Description = @"One of the available [TTS models](https://developers.openai.com/api/docs/guides/text-to-speech): `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, or `gpt-4o-mini-tts-2025-12-15`.
 ",
         Required = true,
     };
@@ -18,7 +18,7 @@ internal static partial class AudioCreateSpeechCommandApiCommand
     private static Option<global::tryAGI.OpenAI.VoiceIdsOrCustomVoice> Voice { get; } = new(
         name: @"--voice")
     {
-        Description = @"The voice to use when generating the audio. Supported built-in voices are `alloy`, `ash`, `ballad`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage`, `shimmer`, `verse`, `marin`, and `cedar`. You may also provide a custom voice object with an `id`, for example `{ ""id"": ""voice_1234"" }`. Previews of the voices are available in the [Text to speech guide](/docs/guides/text-to-speech#voice-options).",
+        Description = @"The voice to use when generating the audio. Supported built-in voices are `alloy`, `ash`, `ballad`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage`, `shimmer`, `verse`, `marin`, and `cedar`. You may also provide a custom voice object with an `id`, for example `{ ""id"": ""voice_1234"" }`. Previews of the voices are available in the [Text to speech guide](https://developers.openai.com/api/docs/guides/text-to-speech#voice-options).",
         Required = true,
     };
     private static readonly CreateSpeechRequestOptionSet CreateSpeechRequestOptionSetOptions = CreateSpeechRequestOptionSet.Create();
@@ -41,7 +41,8 @@ internal static partial class AudioCreateSpeechCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-speech", @"Generates audio from the input text.
+        var command = new Command(@"create-speech", @"Create speech
+Generates audio from the input text.
 
 Returns the audio file content, or a stream of audio events.
 ");

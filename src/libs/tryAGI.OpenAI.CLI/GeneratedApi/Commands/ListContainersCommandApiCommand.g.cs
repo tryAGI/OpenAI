@@ -56,8 +56,8 @@ internal static partial class ListContainersCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-containers", @"List Containers
-Lists containers.");
+        var command = new Command(@"list-containers", @"List containers
+List Containers");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);
                         command.Options.Add(After);

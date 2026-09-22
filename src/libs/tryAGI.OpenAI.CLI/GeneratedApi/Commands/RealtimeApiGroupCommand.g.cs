@@ -9,16 +9,16 @@ internal static class RealtimeApiGroupCommand
     public static Command Create()
     {
         var command = new Command(@"realtime", @"Realtime endpoint commands.");
-                         command.Subcommands.Add(RealtimeAcceptCallCommandApiCommand.Create());
-                         command.Subcommands.Add(RealtimeCreateCallCommandApiCommand.Create());
-                         command.Subcommands.Add(RealtimeCreateCallWithRawBodyCommandApiCommand.Create());
-                         command.Subcommands.Add(RealtimeCreateClientSecretCommandApiCommand.Create());
-                         command.Subcommands.Add(RealtimeCreateSessionCommandApiCommand.Create());
-                         command.Subcommands.Add(RealtimeCreateTranscriptionSessionCommandApiCommand.Create());
-                         command.Subcommands.Add(RealtimeCreateTranslationClientSecretCommandApiCommand.Create());
-                         command.Subcommands.Add(RealtimeHangUpCallCommandApiCommand.Create());
-                         command.Subcommands.Add(RealtimeReferCallCommandApiCommand.Create());
-                         command.Subcommands.Add(RealtimeRejectCallCommandApiCommand.Create());
+                         command.Subcommands.Add(RealtimeAcceptRealtimeCallCommandApiCommand.Create());
+                         command.Subcommands.Add(RealtimeCreateRealtimeCallCommandApiCommand.Create());
+                         command.Subcommands.Add(RealtimeCreateRealtimeCallWithRawBodyCommandApiCommand.Create());
+                         command.Subcommands.Add(RealtimeCreateRealtimeClientSecretCommandApiCommand.Create());
+                         command.Subcommands.Add(RealtimeCreateRealtimeSessionCommandApiCommand.Create());
+                         command.Subcommands.Add(RealtimeCreateRealtimeTranscriptionSessionCommandApiCommand.Create());
+                         command.Subcommands.Add(RealtimeCreateRealtimeTranslationClientSecretCommandApiCommand.Create());
+                         command.Subcommands.Add(RealtimeHangupRealtimeCallCommandApiCommand.Create());
+                         command.Subcommands.Add(RealtimeReferRealtimeCallCommandApiCommand.Create());
+                         command.Subcommands.Add(RealtimeRejectRealtimeCallCommandApiCommand.Create());
         return command;
     }
 }

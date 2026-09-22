@@ -50,6 +50,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List Chat Completions<br/>
         /// List stored Chat Completions. Only Chat Completions that have been stored<br/>
         /// with the `store` parameter set to `true` will be returned.
         /// </summary>
@@ -87,6 +88,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// List Chat Completions<br/>
         /// List stored Chat Completions. Only Chat Completions that have been stored<br/>
         /// with the `store` parameter set to `true` will be returned.
         /// </summary>

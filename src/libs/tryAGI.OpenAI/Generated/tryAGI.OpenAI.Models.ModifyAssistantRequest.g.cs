@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class ModifyAssistantRequest
     {
         /// <summary>
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
+        /// ID of the model to use. You can use the [List models](https://developers.openai.com/api/reference/resources/models/methods/list) API to see all of your available models, or see our [Model overview](https://developers.openai.com/api/docs/models) for descriptions of them.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.AssistantSupportedModels?>))]
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ModifyAssistantRequest" /> class.
         /// </summary>
         /// <param name="model">
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
+        /// ID of the model to use. You can use the [List models](https://developers.openai.com/api/reference/resources/models/methods/list) API to see all of your available models, or see our [Model overview](https://developers.openai.com/api/docs/models) for descriptions of them.
         /// </param>
         /// <param name="reasoningEffort"></param>
         /// <param name="name"></param>

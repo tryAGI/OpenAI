@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Represents a message within a [thread](/docs/api-reference/threads).
+    /// Represents a message within a [thread](https://developers.openai.com/api/docs/assistants/migration).
     /// </summary>
     public sealed partial class MessageObject
     {
@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         public required int CreatedAt { get; set; }
 
         /// <summary>
-        /// The [thread](/docs/api-reference/threads) ID that this message belongs to.
+        /// The [thread](https://developers.openai.com/api/docs/assistants/migration) ID that this message belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -117,7 +117,7 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the message was created.
         /// </param>
         /// <param name="threadId">
-        /// The [thread](/docs/api-reference/threads) ID that this message belongs to.
+        /// The [thread](https://developers.openai.com/api/docs/assistants/migration) ID that this message belongs to.
         /// </param>
         /// <param name="status">
         /// The status of the message, which can be either `in_progress`, `incomplete`, or `completed`.

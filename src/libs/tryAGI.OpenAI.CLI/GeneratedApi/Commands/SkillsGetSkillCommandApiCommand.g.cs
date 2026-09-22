@@ -35,7 +35,8 @@ internal static partial class SkillsGetSkillCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"get-skill", @"Get a skill by its ID.");
+        var command = new Command(@"get-skill", @"Get Skill
+Get a skill by its ID.");
                         command.Arguments.Add(SkillId);
 
 

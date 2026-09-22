@@ -75,6 +75,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        MisalignmentPolicyViolation,
+        /// <summary>
+        ///
+        /// </summary>
         RateLimitExceeded,
         /// <summary>
         ///
@@ -118,6 +122,7 @@ namespace tryAGI.OpenAI
                 BetaResponseErrorCode.InvalidImageMode => "invalid_image_mode",
                 BetaResponseErrorCode.InvalidImageUrl => "invalid_image_url",
                 BetaResponseErrorCode.InvalidPrompt => "invalid_prompt",
+                BetaResponseErrorCode.MisalignmentPolicyViolation => "misalignment_policy_violation",
                 BetaResponseErrorCode.RateLimitExceeded => "rate_limit_exceeded",
                 BetaResponseErrorCode.ServerError => "server_error",
                 BetaResponseErrorCode.UnsupportedImageMediaType => "unsupported_image_media_type",
@@ -148,6 +153,7 @@ namespace tryAGI.OpenAI
                 "invalid_image_mode" => BetaResponseErrorCode.InvalidImageMode,
                 "invalid_image_url" => BetaResponseErrorCode.InvalidImageUrl,
                 "invalid_prompt" => BetaResponseErrorCode.InvalidPrompt,
+                "misalignment_policy_violation" => BetaResponseErrorCode.MisalignmentPolicyViolation,
                 "rate_limit_exceeded" => BetaResponseErrorCode.RateLimitExceeded,
                 "server_error" => BetaResponseErrorCode.ServerError,
                 "unsupported_image_media_type" => BetaResponseErrorCode.UnsupportedImageMediaType,

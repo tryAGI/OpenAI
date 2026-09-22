@@ -27,21 +27,22 @@ internal static partial class ChatCreateChatCompletionAsStreamCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-chat-completion-as-stream", @"**Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses)
+        var command = new Command(@"create-chat-completion-as-stream", @"Create chat completion
+**Starting a new project?** We recommend trying [Responses](https://developers.openai.com/api/reference/resources/responses)
 to take advantage of the latest OpenAI platform features. Compare
-[Chat Completions with Responses](/docs/guides/responses-vs-chat-completions?api-mode=responses).
+[Chat Completions with Responses](https://developers.openai.com/api/docs/guides/migrate-to-responses?api-mode=responses).
 
 ---
 
 Creates a model response for the given chat conversation. Learn more in the
-[text generation](/docs/guides/text-generation), [vision](/docs/guides/vision),
-and [audio](/docs/guides/audio) guides.
+[text generation](https://developers.openai.com/api/docs/guides/text), [vision](https://developers.openai.com/api/docs/guides/images-vision),
+and [audio](https://developers.openai.com/api/docs/guides/audio) guides.
 
 Parameter support can differ depending on the model used to generate the
 response, particularly for newer reasoning models. Parameters that are only
 supported for reasoning models are noted below. For the current state of
 unsupported parameters in reasoning models,
-[refer to the reasoning guide](/docs/guides/reasoning).
+[refer to the reasoning guide](https://developers.openai.com/api/docs/guides/reasoning).
 
 Returns a chat completion object, or a streamed sequence of chat completion
 chunk objects if the request is streamed.

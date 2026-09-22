@@ -49,7 +49,8 @@ internal static partial class ProjectGroupsAddProjectGroupCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"add-project-group", @"Grants a group access to a project.");
+        var command = new Command(@"add-project-group", @"Add project group
+Grants a group access to a project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(GroupId);
                         command.Options.Add(Role);

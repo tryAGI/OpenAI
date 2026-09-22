@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
     /// `thread.message.in_progress` event, many `thread.message.delta` events, and finally a<br/>
     /// `thread.message.completed` event.<br/>
     /// We may add additional events over time, so we recommend handling unknown events gracefully<br/>
-    /// in your code. See the [Assistants API quickstart](/docs/assistants/overview) to learn how to<br/>
+    /// in your code. See the [Assistants API quickstart](https://developers.openai.com/api/docs/assistants/migration) to learn how to<br/>
     /// integrate the Assistants API with streaming.
     /// </summary>
     public readonly partial struct AssistantStreamEvent : global::System.IEquatable<AssistantStreamEvent>
@@ -172,7 +172,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
-        /// Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
+        /// Occurs when an [error](https://developers.openai.com/api/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ErrorEvent? Error { get; init; }

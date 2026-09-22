@@ -63,7 +63,8 @@ internal static partial class ProjectsModifyProjectUserCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"modify-project-user", @"Modifies a user's role in the project.");
+        var command = new Command(@"modify-project-user", @"Modify project user
+Modifies a user's role in the project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(UserId);
                         command.Options.Add(Role);

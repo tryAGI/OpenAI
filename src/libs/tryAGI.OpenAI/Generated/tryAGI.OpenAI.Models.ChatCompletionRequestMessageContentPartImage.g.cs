@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Learn about [image inputs](/docs/guides/vision).
+    /// Learn about [image inputs](https://developers.openai.com/api/docs/guides/images-vision).
     /// </summary>
     public sealed partial class ChatCompletionRequestMessageContentPartImage
     {

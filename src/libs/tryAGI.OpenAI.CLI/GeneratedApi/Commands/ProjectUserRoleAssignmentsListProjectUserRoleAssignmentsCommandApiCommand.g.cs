@@ -59,7 +59,8 @@ internal static partial class ProjectUserRoleAssignmentsListProjectUserRoleAssig
 
     public static Command Create()
     {
-        var command = new Command(@"list-project-user-role-assignments", @"Lists the project roles assigned to a user within a project.");
+        var command = new Command(@"list-project-user-role-assignments", @"List project user role assignments
+Lists the project roles assigned to a user within a project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(UserId);
                         command.Options.Add(Limit);

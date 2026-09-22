@@ -23,6 +23,18 @@ namespace tryAGI.OpenAI
         public int? CachedTokens { get; set; }
 
         /// <summary>
+        /// Text input tokens present in the prompt.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text_tokens")]
+        public int? TextTokens { get; set; }
+
+        /// <summary>
+        /// Image input tokens present in the prompt.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_tokens")]
+        public int? ImageTokens { get; set; }
+
+        /// <summary>
         /// The unadjusted number of prompt tokens written to cache.<br/>
         /// Default Value: 0
         /// </summary>
@@ -46,6 +58,12 @@ namespace tryAGI.OpenAI
         /// Cached tokens present in the prompt.<br/>
         /// Default Value: 0
         /// </param>
+        /// <param name="textTokens">
+        /// Text input tokens present in the prompt.
+        /// </param>
+        /// <param name="imageTokens">
+        /// Image input tokens present in the prompt.
+        /// </param>
         /// <param name="cacheWriteTokens">
         /// The unadjusted number of prompt tokens written to cache.<br/>
         /// Default Value: 0
@@ -56,10 +74,14 @@ namespace tryAGI.OpenAI
         public CompletionUsagePromptTokensDetails(
             int? audioTokens,
             int? cachedTokens,
+            int? textTokens,
+            int? imageTokens,
             int? cacheWriteTokens)
         {
             this.AudioTokens = audioTokens;
             this.CachedTokens = cachedTokens;
+            this.TextTokens = textTokens;
+            this.ImageTokens = imageTokens;
             this.CacheWriteTokens = cacheWriteTokens;
         }
 

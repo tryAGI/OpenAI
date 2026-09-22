@@ -23,7 +23,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Max,
+        /// <summary>
+        ///
+        /// </summary>
         Medium,
+        /// <summary>
+        ///
+        /// </summary>
+        Xhigh,
     }
 
     /// <summary>
@@ -41,7 +49,9 @@ namespace tryAGI.OpenAI
                 ImageEditPartialImageEventQuality.Auto => "auto",
                 ImageEditPartialImageEventQuality.High => "high",
                 ImageEditPartialImageEventQuality.Low => "low",
+                ImageEditPartialImageEventQuality.Max => "max",
                 ImageEditPartialImageEventQuality.Medium => "medium",
+                ImageEditPartialImageEventQuality.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,7 +65,9 @@ namespace tryAGI.OpenAI
                 "auto" => ImageEditPartialImageEventQuality.Auto,
                 "high" => ImageEditPartialImageEventQuality.High,
                 "low" => ImageEditPartialImageEventQuality.Low,
+                "max" => ImageEditPartialImageEventQuality.Max,
                 "medium" => ImageEditPartialImageEventQuality.Medium,
+                "xhigh" => ImageEditPartialImageEventQuality.Xhigh,
                 _ => null,
             };
         }

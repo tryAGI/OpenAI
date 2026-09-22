@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
     {
         /// <summary>
-        /// Occurs when a [message](/docs/api-reference/messages/object) is created.
+        /// Occurs when a [message](https://developers.openai.com/api/docs/assistants/migration) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MessageStreamEventVariant1? MessageStreamEventVariant1 { get; init; }
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.
+        /// Occurs when a [message](https://developers.openai.com/api/docs/assistants/migration) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MessageStreamEventVariant2? MessageStreamEventVariant2 { get; init; }
@@ -84,7 +84,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.
+        /// Occurs when parts of a [Message](https://developers.openai.com/api/docs/assistants/migration) are being streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MessageStreamEventVariant3? MessageStreamEventVariant3 { get; init; }
@@ -121,7 +121,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant3' but the value was {ToString()}.");
 
         /// <summary>
-        /// Occurs when a [message](/docs/api-reference/messages/object) is completed.
+        /// Occurs when a [message](https://developers.openai.com/api/docs/assistants/migration) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MessageStreamEventVariant4? MessageStreamEventVariant4 { get; init; }
@@ -158,7 +158,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant4' but the value was {ToString()}.");
 
         /// <summary>
-        /// Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.
+        /// Occurs when a [message](https://developers.openai.com/api/docs/assistants/migration) ends before it is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MessageStreamEventVariant5? MessageStreamEventVariant5 { get; init; }

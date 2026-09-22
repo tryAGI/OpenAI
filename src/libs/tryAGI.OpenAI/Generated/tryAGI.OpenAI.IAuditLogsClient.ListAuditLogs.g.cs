@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IAuditLogsClient
     {
         /// <summary>
+        /// List audit logs<br/>
         /// List user actions and configuration changes within this organization.
         /// </summary>
         /// <param name="effectiveAt"></param>
@@ -38,6 +39,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List audit logs<br/>
         /// List user actions and configuration changes within this organization.
         /// </summary>
         /// <param name="effectiveAt"></param>

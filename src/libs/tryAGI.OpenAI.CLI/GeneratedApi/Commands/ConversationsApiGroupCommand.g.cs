@@ -9,14 +9,14 @@ internal static class ConversationsApiGroupCommand
     public static Command Create()
     {
         var command = new Command(@"conversations", @"Conversations endpoint commands.");
-                         command.Subcommands.Add(ConversationsCreateAConversationCommandApiCommand.Create());
-                         command.Subcommands.Add(ConversationsCreateItemsCommandApiCommand.Create());
-                         command.Subcommands.Add(ConversationsDeleteAConversationCommandApiCommand.Create());
-                         command.Subcommands.Add(ConversationsDeleteAnItemCommandApiCommand.Create());
-                         command.Subcommands.Add(ConversationsListItemsCommandApiCommand.Create());
-                         command.Subcommands.Add(ConversationsRetrieveAConversationCommandApiCommand.Create());
-                         command.Subcommands.Add(ConversationsRetrieveAnItemCommandApiCommand.Create());
-                         command.Subcommands.Add(ConversationsUpdateAConversationCommandApiCommand.Create());
+                         command.Subcommands.Add(ConversationsCreateConversationCommandApiCommand.Create());
+                         command.Subcommands.Add(ConversationsCreateConversationItemsCommandApiCommand.Create());
+                         command.Subcommands.Add(ConversationsDeleteConversationCommandApiCommand.Create());
+                         command.Subcommands.Add(ConversationsDeleteConversationItemCommandApiCommand.Create());
+                         command.Subcommands.Add(ConversationsGetConversationCommandApiCommand.Create());
+                         command.Subcommands.Add(ConversationsGetConversationItemCommandApiCommand.Create());
+                         command.Subcommands.Add(ConversationsListConversationItemsCommandApiCommand.Create());
+                         command.Subcommands.Add(ConversationsUpdateConversationCommandApiCommand.Create());
         return command;
     }
 }

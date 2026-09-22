@@ -17,7 +17,7 @@ internal static partial class VectorStoresCreateVectorStoreFileCommandApiCommand
     private static Option<string> FileId { get; } = new(
         name: @"--file-id")
     {
-        Description = @"A [File](/docs/api-reference/files) ID that the vector store should use. Useful for tools like `file_search` that can access files. For multi-file ingestion, we recommend [`file_batches`](/docs/api-reference/vector-stores-file-batches/createBatch) to minimize per-vector-store write requests.",
+        Description = @"A [File](https://developers.openai.com/api/reference/resources/files) ID that the vector store should use. Useful for tools like `file_search` that can access files. For multi-file ingestion, we recommend [`file_batches`](https://developers.openai.com/api/reference/resources/vector_stores/subresources/file_batches/methods/create) to minimize per-vector-store write requests.",
         Required = true,
     };
 
@@ -71,9 +71,8 @@ internal static partial class VectorStoresCreateVectorStoreFileCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-vector-store-file", @"Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).
-This endpoint is subject to a per-vector-store write rate limit of 300 requests per minute, shared with `/vector_stores/{vector_store_id}/file_batches`.
-For uploading multiple files to the same vector store, use the file batches endpoint to reduce request volume.");
+        var command = new Command(@"create-vector-store-file", @"Create vector store file
+Create a vector store file by attaching a [File](https://developers.openai.com/api/reference/resources/files) to a [vector store](https://developers.openai.com/api/reference/resources/vector_stores).");
                         command.Arguments.Add(VectorStoreId);
                         command.Options.Add(FileId);
                         command.Options.Add(ChunkingStrategy);

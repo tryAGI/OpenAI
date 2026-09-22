@@ -38,12 +38,21 @@ namespace tryAGI.OpenAI
         /// </summary>
         public global::tryAGI.OpenAI.AutoSDKClientOptions Options { get; }
 
+        /// <summary>
+        /// Creates idempotency keys for generated idempotent requests when the caller does not provide one.
+        /// </summary>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
+
+        /// <summary>
+        ///
+        /// </summary>
+        public AgentsClient Agents { get; }
 
         /// <summary>
         /// Build Assistants that can call models and use tools.
@@ -141,6 +150,11 @@ namespace tryAGI.OpenAI
         public InvitesClient Invites { get; }
 
         /// <summary>
+        ///
+        /// </summary>
+        public LiveClient Live { get; }
+
+        /// <summary>
         /// List and describe the various models available in the API.
         /// </summary>
         public ModelsClient Models { get; }
@@ -176,7 +190,7 @@ namespace tryAGI.OpenAI
         public RealtimeClient Realtime { get; }
 
         /// <summary>
-        ///
+        /// Create and manage model responses.
         /// </summary>
         public ResponsesClient Responses { get; }
 
@@ -218,12 +232,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public VectorStoresClient VectorStores { get; }
+        public VaultsClient Vaults { get; }
 
         /// <summary>
         ///
         /// </summary>
-        public VideosClient Videos { get; }
+        public VectorStoresClient VectorStores { get; }
 
     }
 }

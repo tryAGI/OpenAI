@@ -12,15 +12,15 @@ internal static class EvalsApiGroupCommand
                          command.Subcommands.Add(EvalsCancelEvalRunCommandApiCommand.Create());
                          command.Subcommands.Add(EvalsCreateEvalCommandApiCommand.Create());
                          command.Subcommands.Add(EvalsCreateEvalRunCommandApiCommand.Create());
-                         command.Subcommands.Add(EvalsDeleteAnEvalCommandApiCommand.Create());
+                         command.Subcommands.Add(EvalsDeleteEvalCommandApiCommand.Create());
                          command.Subcommands.Add(EvalsDeleteEvalRunCommandApiCommand.Create());
-                         command.Subcommands.Add(EvalsGetAnEvalCommandApiCommand.Create());
-                         command.Subcommands.Add(EvalsGetAnEvalRunCommandApiCommand.Create());
-                         command.Subcommands.Add(EvalsGetAnOutputItemOfAnEvalRunCommandApiCommand.Create());
+                         command.Subcommands.Add(EvalsGetEvalCommandApiCommand.Create());
+                         command.Subcommands.Add(EvalsGetEvalRunCommandApiCommand.Create());
+                         command.Subcommands.Add(EvalsGetEvalRunOutputItemCommandApiCommand.Create());
                          command.Subcommands.Add(EvalsGetEvalRunOutputItemsCommandApiCommand.Create());
                          command.Subcommands.Add(EvalsGetEvalRunsCommandApiCommand.Create());
                          command.Subcommands.Add(EvalsListEvalsCommandApiCommand.Create());
-                         command.Subcommands.Add(EvalsUpdateAnEvalCommandApiCommand.Create());
+                         command.Subcommands.Add(EvalsUpdateEvalCommandApiCommand.Create());
         return command;
     }
 }

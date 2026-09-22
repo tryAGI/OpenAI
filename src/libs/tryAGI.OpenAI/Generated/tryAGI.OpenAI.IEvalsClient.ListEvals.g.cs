@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IEvalsClient
     {
         /// <summary>
+        /// List evals<br/>
         /// List evaluations for a project.
         /// </summary>
         /// <param name="after"></param>
@@ -28,6 +29,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List evals<br/>
         /// List evaluations for a project.
         /// </summary>
         /// <param name="after"></param>

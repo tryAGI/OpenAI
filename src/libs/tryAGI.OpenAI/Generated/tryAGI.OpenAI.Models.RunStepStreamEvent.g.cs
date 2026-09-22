@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct RunStepStreamEvent : global::System.IEquatable<RunStepStreamEvent>
     {
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is created.
+        /// Occurs when a [run step](https://developers.openai.com/api/docs/assistants/migration) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant1? RunStepStreamEventVariant1 { get; init; }
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
+        /// Occurs when a [run step](https://developers.openai.com/api/docs/assistants/migration) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant2? RunStepStreamEventVariant2 { get; init; }
@@ -84,7 +84,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant2' but the value was {ToString()}.");
 
         /// <summary>
-        /// Occurs when parts of a [run step](/docs/api-reference/run-steps/step-object) are being streamed.
+        /// Occurs when parts of a [run step](https://developers.openai.com/api/docs/assistants/migration) are being streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant3? RunStepStreamEventVariant3 { get; init; }
@@ -121,7 +121,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant3' but the value was {ToString()}.");
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.
+        /// Occurs when a [run step](https://developers.openai.com/api/docs/assistants/migration) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant4? RunStepStreamEventVariant4 { get; init; }
@@ -158,7 +158,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant4' but the value was {ToString()}.");
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.
+        /// Occurs when a [run step](https://developers.openai.com/api/docs/assistants/migration) fails.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant5? RunStepStreamEventVariant5 { get; init; }
@@ -195,7 +195,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant5' but the value was {ToString()}.");
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is cancelled.
+        /// Occurs when a [run step](https://developers.openai.com/api/docs/assistants/migration) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant6? RunStepStreamEventVariant6 { get; init; }
@@ -232,7 +232,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStepStreamEventVariant6' but the value was {ToString()}.");
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.
+        /// Occurs when a [run step](https://developers.openai.com/api/docs/assistants/migration) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RunStepStreamEventVariant7? RunStepStreamEventVariant7 { get; init; }

@@ -5,8 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IOpenAiClient
     {
         /// <summary>
-        /// Create Container<br/>
-        /// Creates a container.
+        /// Create container<br/>
+        /// Create Container
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,8 +18,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create Container<br/>
-        /// Creates a container.
+        /// Create container<br/>
+        /// Create Container
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,8 +31,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Create Container<br/>
-        /// Creates a container.
+        /// Create container<br/>
+        /// Create Container
         /// </summary>
         /// <param name="name">
         /// Name of the container to create.

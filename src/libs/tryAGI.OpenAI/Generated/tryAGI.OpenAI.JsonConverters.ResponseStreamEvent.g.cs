@@ -84,6 +84,13 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent)}");
                 responseCodeInterpreterCallInterpreting = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.ResponseCompactionCompactingStreamingEvent? responseCompactionCompacting = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.ResponseStreamEventDiscriminatorType.ResponseCompactionCompacting)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseCompactionCompactingStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseCompactionCompactingStreamingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ResponseCompactionCompactingStreamingEvent)}");
+                responseCompactionCompacting = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.ResponseCompletedEvent? responseCompleted = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.ResponseStreamEventDiscriminatorType.ResponseCompleted)
             {
@@ -153,6 +160,41 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent)}");
                 responseFunctionCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.ResponseShellCallCommandAddedStreamingEvent? responseShellCallCommandAdded = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.ResponseStreamEventDiscriminatorType.ResponseShellCallCommandAdded)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseShellCallCommandAddedStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseShellCallCommandAddedStreamingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ResponseShellCallCommandAddedStreamingEvent)}");
+                responseShellCallCommandAdded = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.ResponseShellCallCommandDeltaStreamingEvent? responseShellCallCommandDelta = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.ResponseStreamEventDiscriminatorType.ResponseShellCallCommandDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseShellCallCommandDeltaStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseShellCallCommandDeltaStreamingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ResponseShellCallCommandDeltaStreamingEvent)}");
+                responseShellCallCommandDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.ResponseShellCallCommandDoneStreamingEvent? responseShellCallCommandDone = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.ResponseStreamEventDiscriminatorType.ResponseShellCallCommandDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseShellCallCommandDoneStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseShellCallCommandDoneStreamingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ResponseShellCallCommandDoneStreamingEvent)}");
+                responseShellCallCommandDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.ResponseShellCallOutputContentDeltaStreamingEvent? responseShellCallOutputContentDelta = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.ResponseStreamEventDiscriminatorType.ResponseShellCallOutputContentDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseShellCallOutputContentDeltaStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseShellCallOutputContentDeltaStreamingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ResponseShellCallOutputContentDeltaStreamingEvent)}");
+                responseShellCallOutputContentDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.ResponseShellCallOutputContentDoneStreamingEvent? responseShellCallOutputContentDone = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.ResponseStreamEventDiscriminatorType.ResponseShellCallOutputContentDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseShellCallOutputContentDoneStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseShellCallOutputContentDoneStreamingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ResponseShellCallOutputContentDoneStreamingEvent)}");
+                responseShellCallOutputContentDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.ResponseInProgressEvent? responseInProgress = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.ResponseStreamEventDiscriminatorType.ResponseInProgress)
@@ -413,6 +455,8 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 responseCodeInterpreterCallInterpreting,
 
+                responseCompactionCompacting,
+
                 responseCompleted,
 
                 responseContentPartAdded,
@@ -432,6 +476,16 @@ namespace tryAGI.OpenAI.JsonConverters
                 responseFunctionCallArgumentsDelta,
 
                 responseFunctionCallArgumentsDone,
+
+                responseShellCallCommandAdded,
+
+                responseShellCallCommandDelta,
+
+                responseShellCallCommandDone,
+
+                responseShellCallOutputContentDelta,
+
+                responseShellCallOutputContentDone,
 
                 responseInProgress,
 
@@ -568,6 +622,12 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCodeInterpreterCallInterpreting!, typeInfo);
             }
+            else if (value.IsResponseCompactionCompacting)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseCompactionCompactingStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseCompactionCompactingStreamingEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseCompactionCompactingStreamingEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCompactionCompacting!, typeInfo);
+            }
             else if (value.IsResponseCompleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseCompletedEvent?> ??
@@ -627,6 +687,36 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseFunctionCallArgumentsDone!, typeInfo);
+            }
+            else if (value.IsResponseShellCallCommandAdded)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseShellCallCommandAddedStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseShellCallCommandAddedStreamingEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseShellCallCommandAddedStreamingEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseShellCallCommandAdded!, typeInfo);
+            }
+            else if (value.IsResponseShellCallCommandDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseShellCallCommandDeltaStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseShellCallCommandDeltaStreamingEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseShellCallCommandDeltaStreamingEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseShellCallCommandDelta!, typeInfo);
+            }
+            else if (value.IsResponseShellCallCommandDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseShellCallCommandDoneStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseShellCallCommandDoneStreamingEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseShellCallCommandDoneStreamingEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseShellCallCommandDone!, typeInfo);
+            }
+            else if (value.IsResponseShellCallOutputContentDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseShellCallOutputContentDeltaStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseShellCallOutputContentDeltaStreamingEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseShellCallOutputContentDeltaStreamingEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseShellCallOutputContentDelta!, typeInfo);
+            }
+            else if (value.IsResponseShellCallOutputContentDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseShellCallOutputContentDoneStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseShellCallOutputContentDoneStreamingEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseShellCallOutputContentDoneStreamingEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseShellCallOutputContentDone!, typeInfo);
             }
             else if (value.IsResponseInProgress)
             {

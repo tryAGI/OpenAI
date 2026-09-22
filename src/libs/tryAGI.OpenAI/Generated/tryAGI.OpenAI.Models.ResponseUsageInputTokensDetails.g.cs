@@ -9,8 +9,8 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseUsageInputTokensDetails
     {
         /// <summary>
-        /// The number of tokens that were retrieved from the cache. <br/>
-        /// [More on prompt caching](/docs/guides/prompt-caching).
+        /// The number of tokens that were retrieved from the cache.<br/>
+        /// [More on prompt caching](https://developers.openai.com/api/docs/guides/prompt-caching).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -33,8 +33,8 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ResponseUsageInputTokensDetails" /> class.
         /// </summary>
         /// <param name="cachedTokens">
-        /// The number of tokens that were retrieved from the cache. <br/>
-        /// [More on prompt caching](/docs/guides/prompt-caching).
+        /// The number of tokens that were retrieved from the cache.<br/>
+        /// [More on prompt caching](https://developers.openai.com/api/docs/guides/prompt-caching).
         /// </param>
         /// <param name="cacheWriteTokens">
         /// The number of input tokens that were written to the cache.

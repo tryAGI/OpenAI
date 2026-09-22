@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Run grader<br/>
         /// Run a grader.
         /// </summary>
         /// <param name="request"></param>
@@ -64,6 +65,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Run grader<br/>
         /// Run a grader.
         /// </summary>
         /// <param name="request"></param>
@@ -432,21 +434,21 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Run grader<br/>
         /// Run a grader.
         /// </summary>
         /// <param name="grader">
         /// The grader used for the fine-tuning job.
         /// </param>
         /// <param name="item">
-        /// The dataset item provided to the grader. This will be used to populate <br/>
-        /// the `item` namespace. See [the guide](/docs/guides/graders) for more details.
+        /// The dataset item provided to the grader. This will be used to populate<br/>
+        /// the `item` namespace. See [the guide](https://developers.openai.com/api/docs/guides/graders) for more details.
         /// </param>
         /// <param name="modelSample">
-        /// The model sample to be evaluated. This value will be used to populate <br/>
-        /// the `sample` namespace. See [the guide](/docs/guides/graders) for more details.<br/>
-        /// The `output_json` variable will be populated if the model sample is a <br/>
-        /// valid JSON string.<br/>
-        ///
+        /// The model sample to be evaluated. This value will be used to populate<br/>
+        /// the `sample` namespace. See [the guide](https://developers.openai.com/api/docs/guides/graders) for more details.<br/>
+        /// The `output_json` variable will be populated if the model sample is a<br/>
+        /// valid JSON string.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

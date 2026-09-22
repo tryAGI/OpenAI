@@ -24,6 +24,30 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         GptImage15,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage2,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage220260421,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage25Flare,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage25Flare20260908,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage25Sunburst,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage25Sunburst20260908,
     }
 
     /// <summary>
@@ -42,6 +66,12 @@ namespace tryAGI.OpenAI
                 EditImageBodyJsonParamModel.GptImage1 => "gpt-image-1",
                 EditImageBodyJsonParamModel.GptImage1Mini => "gpt-image-1-mini",
                 EditImageBodyJsonParamModel.GptImage15 => "gpt-image-1.5",
+                EditImageBodyJsonParamModel.GptImage2 => "gpt-image-2",
+                EditImageBodyJsonParamModel.GptImage220260421 => "gpt-image-2-2026-04-21",
+                EditImageBodyJsonParamModel.GptImage25Flare => "gpt-image-2.5-flare",
+                EditImageBodyJsonParamModel.GptImage25Flare20260908 => "gpt-image-2.5-flare-2026-09-08",
+                EditImageBodyJsonParamModel.GptImage25Sunburst => "gpt-image-2.5-sunburst",
+                EditImageBodyJsonParamModel.GptImage25Sunburst20260908 => "gpt-image-2.5-sunburst-2026-09-08",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +86,12 @@ namespace tryAGI.OpenAI
                 "gpt-image-1" => EditImageBodyJsonParamModel.GptImage1,
                 "gpt-image-1-mini" => EditImageBodyJsonParamModel.GptImage1Mini,
                 "gpt-image-1.5" => EditImageBodyJsonParamModel.GptImage15,
+                "gpt-image-2" => EditImageBodyJsonParamModel.GptImage2,
+                "gpt-image-2-2026-04-21" => EditImageBodyJsonParamModel.GptImage220260421,
+                "gpt-image-2.5-flare" => EditImageBodyJsonParamModel.GptImage25Flare,
+                "gpt-image-2.5-flare-2026-09-08" => EditImageBodyJsonParamModel.GptImage25Flare20260908,
+                "gpt-image-2.5-sunburst" => EditImageBodyJsonParamModel.GptImage25Sunburst,
+                "gpt-image-2.5-sunburst-2026-09-08" => EditImageBodyJsonParamModel.GptImage25Sunburst20260908,
                 _ => null,
             };
         }

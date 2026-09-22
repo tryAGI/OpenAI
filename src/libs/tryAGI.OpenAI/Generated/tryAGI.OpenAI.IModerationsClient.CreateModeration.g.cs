@@ -5,8 +5,9 @@ namespace tryAGI.OpenAI
     public partial interface IModerationsClient
     {
         /// <summary>
+        /// Create moderation<br/>
         /// Classifies if text and/or image inputs are potentially harmful. Learn<br/>
-        /// more in the [moderation guide](/docs/guides/moderation).
+        /// more in the [moderation guide](https://developers.openai.com/api/docs/guides/moderation).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,8 +19,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Create moderation<br/>
         /// Classifies if text and/or image inputs are potentially harmful. Learn<br/>
-        /// more in the [moderation guide](/docs/guides/moderation).
+        /// more in the [moderation guide](https://developers.openai.com/api/docs/guides/moderation).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -31,8 +33,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Create moderation<br/>
         /// Classifies if text and/or image inputs are potentially harmful. Learn<br/>
-        /// more in the [moderation guide](/docs/guides/moderation).
+        /// more in the [moderation guide](https://developers.openai.com/api/docs/guides/moderation).
         /// </summary>
         /// <param name="input">
         /// Input (or inputs) to classify. Can be a single string, an array of strings, or<br/>
@@ -40,8 +43,8 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="model">
         /// The content moderation model you would like to use. Learn more in<br/>
-        /// [the moderation guide](/docs/guides/moderation), and learn about<br/>
-        /// available models [here](/docs/models#moderation).<br/>
+        /// [the moderation guide](https://developers.openai.com/api/docs/guides/moderation), and learn about<br/>
+        /// available models [here](https://developers.openai.com/api/docs/guides/moderation).<br/>
         /// Default Value: omni-moderation-latest<br/>
         /// Example: omni-moderation-2024-09-26
         /// </param>

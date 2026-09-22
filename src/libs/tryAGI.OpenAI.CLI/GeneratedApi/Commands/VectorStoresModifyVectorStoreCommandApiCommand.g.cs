@@ -69,7 +69,8 @@ internal static partial class VectorStoresModifyVectorStoreCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"modify-vector-store", @"Modifies a vector store.");
+        var command = new Command(@"modify-vector-store", @"Modify vector store
+Modifies a vector store.");
                         command.Arguments.Add(VectorStoreId);
                         command.Options.Add(NameOption);
                         command.Options.Add(ExpiresAfter);

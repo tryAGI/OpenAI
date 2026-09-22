@@ -308,6 +308,9 @@ namespace tryAGI.OpenAI
     /// </summary>
     public sealed class AutoSDKRequestOptions
     {
+        // Set only by AutoSDKPager on a generated next-URL paging call.
+        internal string? PaginationUrl { get; set; }
+
         /// <summary>
         /// Additional headers applied after generated and client-level headers.
         /// </summary>

@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Get chat completion<br/>
         /// Get a stored chat completion. Only Chat Completions that have been created<br/>
         /// with the `store` parameter set to `true` will be returned.
         /// </summary>
@@ -63,6 +64,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Get chat completion<br/>
         /// Get a stored chat completion. Only Chat Completions that have been created<br/>
         /// with the `store` parameter set to `true` will be returned.
         /// </summary>

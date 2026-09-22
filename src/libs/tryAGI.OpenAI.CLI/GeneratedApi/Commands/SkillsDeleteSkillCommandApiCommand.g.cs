@@ -35,7 +35,8 @@ internal static partial class SkillsDeleteSkillCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"delete-skill", @"Delete a skill by its ID.");
+        var command = new Command(@"delete-skill", @"Delete Skill
+Delete a skill by its ID.");
                         command.Arguments.Add(SkillId);
 
 

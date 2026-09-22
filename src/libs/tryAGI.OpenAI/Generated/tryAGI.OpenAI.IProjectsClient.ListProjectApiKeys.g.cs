@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// List project API keys<br/>
         /// Returns a list of API keys in the project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -24,6 +25,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List project API keys<br/>
         /// Returns a list of API keys in the project.
         /// </summary>
         /// <param name="projectId"></param>

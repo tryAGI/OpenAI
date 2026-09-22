@@ -53,7 +53,8 @@ internal static partial class SpendAlertsListOrganizationSpendAlertsCommandApiCo
 
     public static Command Create()
     {
-        var command = new Command(@"list-organization-spend-alerts", @"Lists organization spend alerts.");
+        var command = new Command(@"list-organization-spend-alerts", @"List organization spend alerts
+Lists organization spend alerts.");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);
                         command.Options.Add(After);

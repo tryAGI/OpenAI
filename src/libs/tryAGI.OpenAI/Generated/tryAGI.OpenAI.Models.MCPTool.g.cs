@@ -1,11 +1,13 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Give the model access to additional tools via remote Model Context Protocol<br/>
-    /// (MCP) servers. [Learn more about MCP](/docs/guides/tools-remote-mcp).
+    /// (MCP) servers. [Learn more about MCP](https://developers.openai.com/api/docs/guides/tools-connectors-mcp).
     /// </summary>
     public sealed partial class MCPTool
     {
@@ -33,7 +35,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Identifier for service connectors, like those available in ChatGPT. One of<br/>
         /// `server_url`, `connector_id`, or `tunnel_id` must be provided. Learn more<br/>
-        /// about service connectors [here](/docs/guides/tools-remote-mcp#connectors).<br/>
+        /// about service connectors [here](https://developers.openai.com/api/docs/guides/tools-connectors-mcp#connectors).<br/>
+        /// This field is deprecated for models released after September 1, 2026.<br/>
+        /// Use `server_url` to connect to a remote MCP server, or `tunnel_id` to<br/>
+        /// connect through a Secure MCP Tunnel.<br/>
         /// Currently supported `connector_id` values are:<br/>
         /// - Dropbox: `connector_dropbox`<br/>
         /// - Gmail: `connector_gmail`<br/>
@@ -46,6 +51,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("connector_id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MCPToolConnectorIdJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::tryAGI.OpenAI.MCPToolConnectorId? ConnectorId { get; set; }
 
         /// <summary>
@@ -118,20 +124,6 @@ namespace tryAGI.OpenAI
         /// The URL for the MCP server. One of `server_url`, `connector_id`, or<br/>
         /// `tunnel_id` must be provided.
         /// </param>
-        /// <param name="connectorId">
-        /// Identifier for service connectors, like those available in ChatGPT. One of<br/>
-        /// `server_url`, `connector_id`, or `tunnel_id` must be provided. Learn more<br/>
-        /// about service connectors [here](/docs/guides/tools-remote-mcp#connectors).<br/>
-        /// Currently supported `connector_id` values are:<br/>
-        /// - Dropbox: `connector_dropbox`<br/>
-        /// - Gmail: `connector_gmail`<br/>
-        /// - Google Calendar: `connector_googlecalendar`<br/>
-        /// - Google Drive: `connector_googledrive`<br/>
-        /// - Microsoft Teams: `connector_microsoftteams`<br/>
-        /// - Outlook Calendar: `connector_outlookcalendar`<br/>
-        /// - Outlook Email: `connector_outlookemail`<br/>
-        /// - SharePoint: `connector_sharepoint`
-        /// </param>
         /// <param name="tunnelId">
         /// The Secure MCP Tunnel ID to use instead of a direct server URL. One of<br/>
         /// `server_url`, `connector_id`, or `tunnel_id` must be provided.
@@ -158,7 +150,6 @@ namespace tryAGI.OpenAI
             string serverLabel,
             global::tryAGI.OpenAI.MCPToolType type,
             string? serverUrl,
-            global::tryAGI.OpenAI.MCPToolConnectorId? connectorId,
             string? tunnelId,
             string? authorization,
             string? serverDescription,
@@ -171,7 +162,6 @@ namespace tryAGI.OpenAI
             this.Type = type;
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
             this.ServerUrl = serverUrl;
-            this.ConnectorId = connectorId;
             this.TunnelId = tunnelId;
             this.Authorization = authorization;
             this.ServerDescription = serverDescription;

@@ -30,21 +30,21 @@ namespace tryAGI.OpenAI
         public required int CreatedAt { get; set; }
 
         /// <summary>
-        /// The ID of the [assistant](/docs/api-reference/assistants) associated with the run step.
+        /// The ID of the [assistant](https://developers.openai.com/api/docs/assistants/migration) associated with the run step.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assistant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AssistantId { get; set; }
 
         /// <summary>
-        /// The ID of the [thread](/docs/api-reference/threads) that was run.
+        /// The ID of the [thread](https://developers.openai.com/api/docs/assistants/migration) that was run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ThreadId { get; set; }
 
         /// <summary>
-        /// The ID of the [run](/docs/api-reference/runs) that this run step is a part of.
+        /// The ID of the [run](https://developers.openai.com/api/docs/assistants/migration) that this run step is a part of.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -132,13 +132,13 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the run step was created.
         /// </param>
         /// <param name="assistantId">
-        /// The ID of the [assistant](/docs/api-reference/assistants) associated with the run step.
+        /// The ID of the [assistant](https://developers.openai.com/api/docs/assistants/migration) associated with the run step.
         /// </param>
         /// <param name="threadId">
-        /// The ID of the [thread](/docs/api-reference/threads) that was run.
+        /// The ID of the [thread](https://developers.openai.com/api/docs/assistants/migration) that was run.
         /// </param>
         /// <param name="runId">
-        /// The ID of the [run](/docs/api-reference/runs) that this run step is a part of.
+        /// The ID of the [run](https://developers.openai.com/api/docs/assistants/migration) that this run step is a part of.
         /// </param>
         /// <param name="type">
         /// The type of run step, which can be either `message_creation` or `tool_calls`.

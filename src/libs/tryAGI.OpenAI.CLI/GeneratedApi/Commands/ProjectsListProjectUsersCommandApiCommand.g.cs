@@ -49,7 +49,8 @@ internal static partial class ProjectsListProjectUsersCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-project-users", @"Returns a list of users in the project.");
+        var command = new Command(@"list-project-users", @"List project users
+Returns a list of users in the project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Limit);
                         command.Options.Add(After);

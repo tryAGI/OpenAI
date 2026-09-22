@@ -9,10 +9,10 @@ internal static class CertificatesApiGroupCommand
     public static Command Create()
     {
         var command = new Command(@"certificates", @"Certificates endpoint commands.");
-                         command.Subcommands.Add(CertificatesActivateCertificatesForOrganizationCommandApiCommand.Create());
-                         command.Subcommands.Add(CertificatesActivateCertificatesForProjectCommandApiCommand.Create());
-                         command.Subcommands.Add(CertificatesDeactivateCertificatesForOrganizationCommandApiCommand.Create());
-                         command.Subcommands.Add(CertificatesDeactivateCertificatesForProjectCommandApiCommand.Create());
+                         command.Subcommands.Add(CertificatesActivateOrganizationCertificatesCommandApiCommand.Create());
+                         command.Subcommands.Add(CertificatesActivateProjectCertificatesCommandApiCommand.Create());
+                         command.Subcommands.Add(CertificatesDeactivateOrganizationCertificatesCommandApiCommand.Create());
+                         command.Subcommands.Add(CertificatesDeactivateProjectCertificatesCommandApiCommand.Create());
                          command.Subcommands.Add(CertificatesDeleteCertificateCommandApiCommand.Create());
                          command.Subcommands.Add(CertificatesGetCertificateCommandApiCommand.Create());
                          command.Subcommands.Add(CertificatesListOrganizationCertificatesCommandApiCommand.Create());

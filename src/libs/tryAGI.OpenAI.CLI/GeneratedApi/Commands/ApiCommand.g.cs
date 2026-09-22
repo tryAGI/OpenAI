@@ -14,6 +14,7 @@ internal static class ApiCommand
           command.Options.Add(CliOptions.Json);
           command.Options.Add(CliOptions.Output);
           command.Options.Add(CliOptions.OutputDirectory);
+                         command.Subcommands.Add(AgentsApiGroupCommand.Create());
                          command.Subcommands.Add(AssistantsApiGroupCommand.Create());
                          command.Subcommands.Add(AudioApiGroupCommand.Create());
                          command.Subcommands.Add(AuditLogsApiGroupCommand.Create());
@@ -34,6 +35,7 @@ internal static class ApiCommand
                          command.Subcommands.Add(HostedToolsApiGroupCommand.Create());
                          command.Subcommands.Add(ImagesApiGroupCommand.Create());
                          command.Subcommands.Add(InvitesApiGroupCommand.Create());
+                         command.Subcommands.Add(LiveApiGroupCommand.Create());
                          command.Subcommands.Add(ModelsApiGroupCommand.Create());
                          command.Subcommands.Add(ModerationsApiGroupCommand.Create());
                          command.Subcommands.Add(ProjectGroupRoleAssignmentsApiGroupCommand.Create());
@@ -49,8 +51,8 @@ internal static class ApiCommand
                          command.Subcommands.Add(UsageApiGroupCommand.Create());
                          command.Subcommands.Add(UserOrganizationRoleAssignmentsApiGroupCommand.Create());
                          command.Subcommands.Add(UsersApiGroupCommand.Create());
+                         command.Subcommands.Add(VaultsApiGroupCommand.Create());
                          command.Subcommands.Add(VectorStoresApiGroupCommand.Create());
-                         command.Subcommands.Add(VideosApiGroupCommand.Create());
         return command;
     }
 }

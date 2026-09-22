@@ -41,7 +41,8 @@ internal static partial class EvalsDeleteEvalRunCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"delete-eval-run", @"Delete an eval run.
+        var command = new Command(@"delete-eval-run", @"Delete eval run
+Delete an eval run.
 ");
                         command.Arguments.Add(EvalId);
                         command.Arguments.Add(RunId);

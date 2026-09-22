@@ -41,7 +41,8 @@ internal static partial class EvalsCancelEvalRunCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"cancel-eval-run", @"Cancel an ongoing evaluation run.
+        var command = new Command(@"cancel-eval-run", @"Cancel eval run
+Cancel an ongoing evaluation run.
 ");
                         command.Arguments.Add(EvalId);
                         command.Arguments.Add(RunId);

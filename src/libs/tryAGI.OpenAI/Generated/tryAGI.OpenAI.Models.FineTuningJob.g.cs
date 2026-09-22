@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
         public required string OrganizationId { get; set; }
 
         /// <summary>
-        /// The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](/docs/api-reference/files/retrieve-contents).
+        /// The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](https://developers.openai.com/api/reference/resources/files/methods/content).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -90,7 +90,7 @@ namespace tryAGI.OpenAI
         public int? TrainedTokens { get; set; }
 
         /// <summary>
-        /// The file ID used for training. You can retrieve the training data with the [Files API](/docs/api-reference/files/retrieve-contents).
+        /// The file ID used for training. You can retrieve the training data with the [Files API](https://developers.openai.com/api/reference/resources/files/methods/content).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("training_file")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -158,13 +158,13 @@ namespace tryAGI.OpenAI
         /// The organization that owns the fine-tuning job.
         /// </param>
         /// <param name="resultFiles">
-        /// The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](/docs/api-reference/files/retrieve-contents).
+        /// The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](https://developers.openai.com/api/reference/resources/files/methods/content).
         /// </param>
         /// <param name="status">
         /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
         /// </param>
         /// <param name="trainingFile">
-        /// The file ID used for training. You can retrieve the training data with the [Files API](/docs/api-reference/files/retrieve-contents).
+        /// The file ID used for training. You can retrieve the training data with the [Files API](https://developers.openai.com/api/reference/resources/files/methods/content).
         /// </param>
         /// <param name="seed">
         /// The seed used for the fine-tuning job.

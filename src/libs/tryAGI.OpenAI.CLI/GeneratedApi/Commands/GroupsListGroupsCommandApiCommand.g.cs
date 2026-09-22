@@ -49,7 +49,8 @@ internal static partial class GroupsListGroupsCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-groups", @"Lists all groups in the organization.");
+        var command = new Command(@"list-groups", @"List groups
+Lists all groups in the organization.");
                         command.Options.Add(Limit);
                         command.Options.Add(After);
                         command.Options.Add(Order);

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IFilesClient
     {
         /// <summary>
+        /// List files<br/>
         /// Returns a list of files.
         /// </summary>
         /// <param name="purpose"></param>
@@ -26,6 +27,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List files<br/>
         /// Returns a list of files.
         /// </summary>
         /// <param name="purpose"></param>

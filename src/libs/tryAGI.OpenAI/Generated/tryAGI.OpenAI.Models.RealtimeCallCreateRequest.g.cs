@@ -19,7 +19,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Optional session configuration to apply before the realtime session is<br/>
-        /// created. Use the same parameters you would send in a [`create client secret`](/docs/api-reference/realtime-sessions/create-realtime-client-secret)<br/>
+        /// created. Use the same parameters you would send in a [`create client secret`](https://developers.openai.com/api/reference/resources/realtime/subresources/client_secrets/methods/create)<br/>
         /// request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="session">
         /// Optional session configuration to apply before the realtime session is<br/>
-        /// created. Use the same parameters you would send in a [`create client secret`](/docs/api-reference/realtime-sessions/create-realtime-client-secret)<br/>
+        /// created. Use the same parameters you would send in a [`create client secret`](https://developers.openai.com/api/reference/resources/realtime/subresources/client_secrets/methods/create)<br/>
         /// request.
         /// </param>
 #if NET7_0_OR_GREATER

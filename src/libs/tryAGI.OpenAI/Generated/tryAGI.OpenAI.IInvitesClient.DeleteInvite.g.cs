@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IInvitesClient
     {
         /// <summary>
+        /// Delete invite<br/>
         /// Delete an invite. If the invite has already been accepted, it cannot be deleted.
         /// </summary>
         /// <param name="inviteId"></param>
@@ -16,6 +17,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Delete invite<br/>
         /// Delete an invite. If the invite has already been accepted, it cannot be deleted.
         /// </summary>
         /// <param name="inviteId"></param>

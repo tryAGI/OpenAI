@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Validate grader<br/>
         /// Validate a grader.
         /// </summary>
         /// <param name="request"></param>
@@ -64,6 +65,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Validate grader<br/>
         /// Validate a grader.
         /// </summary>
         /// <param name="request"></param>
@@ -432,6 +434,7 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Validate grader<br/>
         /// Validate a grader.
         /// </summary>
         /// <param name="grader">

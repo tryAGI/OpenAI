@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Represents a ChatKit session and its resolved configuration.<br/>
-    /// Example: {"id":"cksess_123","object":"chatkit.session","client_secret":"ek_token_123","expires_at":1712349876,"workflow":{"id":"workflow_alpha","version":"2024-10-01T00:00:00.000Z"},"user":"user_789","rate_limits":{"max_requests_per_1_minute":60},"max_requests_per_1_minute":60,"status":"cancelled","chatkit_configuration":{"automatic_thread_titling":{"enabled":true},"file_upload":{"enabled":true,"max_file_size":16,"max_files":20},"history":{"enabled":true,"recent_threads":10}}}
+    /// Example: {"id":"cksess_123","object":"chatkit.session","client_secret":"ek_token_123","expires_at":1712349876,"workflow":{"id":"workflow_alpha","version":"2024-10-01"},"user":"user_789","rate_limits":{"max_requests_per_1_minute":60},"max_requests_per_1_minute":60,"status":"cancelled","chatkit_configuration":{"automatic_thread_titling":{"enabled":true},"file_upload":{"enabled":true,"max_file_size":16,"max_files":20},"history":{"enabled":true,"recent_threads":10}}}
     /// </summary>
     public sealed partial class ChatSessionResource
     {

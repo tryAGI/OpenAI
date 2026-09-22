@@ -47,7 +47,8 @@ internal static partial class ProjectUserRoleAssignmentsRetrieveProjectUserRoleC
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-project-user-role", @"Retrieves a project role assigned to a user.");
+        var command = new Command(@"retrieve-project-user-role", @"Retrieve project user role
+Retrieves a project role assigned to a user.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(UserId);
                         command.Arguments.Add(RoleId);

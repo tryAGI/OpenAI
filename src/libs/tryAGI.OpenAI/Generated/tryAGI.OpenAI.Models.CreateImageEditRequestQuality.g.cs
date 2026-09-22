@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The quality of the image that will be generated for GPT image models. Defaults to `auto`.<br/>
+    /// The quality of the image that will be generated for GPT image models. The GPT image models support `low`, `medium`, and `high`. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08` snapshots, also support `xhigh` and `max`. Defaults to `auto`.<br/>
     /// Default Value: auto<br/>
     /// Example: high
     /// </summary>
@@ -25,11 +25,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Max,
+        /// <summary>
+        ///
+        /// </summary>
         Medium,
         /// <summary>
         ///
         /// </summary>
         Standard,
+        /// <summary>
+        ///
+        /// </summary>
+        Xhigh,
     }
 
     /// <summary>
@@ -47,8 +55,10 @@ namespace tryAGI.OpenAI
                 CreateImageEditRequestQuality.Auto => "auto",
                 CreateImageEditRequestQuality.High => "high",
                 CreateImageEditRequestQuality.Low => "low",
+                CreateImageEditRequestQuality.Max => "max",
                 CreateImageEditRequestQuality.Medium => "medium",
                 CreateImageEditRequestQuality.Standard => "standard",
+                CreateImageEditRequestQuality.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,8 +72,10 @@ namespace tryAGI.OpenAI
                 "auto" => CreateImageEditRequestQuality.Auto,
                 "high" => CreateImageEditRequestQuality.High,
                 "low" => CreateImageEditRequestQuality.Low,
+                "max" => CreateImageEditRequestQuality.Max,
                 "medium" => CreateImageEditRequestQuality.Medium,
                 "standard" => CreateImageEditRequestQuality.Standard,
+                "xhigh" => CreateImageEditRequestQuality.Xhigh,
                 _ => null,
             };
         }

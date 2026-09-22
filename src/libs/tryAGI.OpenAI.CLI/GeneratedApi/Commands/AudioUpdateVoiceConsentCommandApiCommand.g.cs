@@ -42,11 +42,8 @@ internal static partial class AudioUpdateVoiceConsentCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"update-voice-consent", @"Updates a voice consent recording (metadata only).
-Update consent recording metadata used for creating custom voices. This endpoint updates metadata only and does not replace the underlying audio.
-
-See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
-");
+        var command = new Command(@"update-voice-consent", @"Update voice consent
+Updates a voice consent recording (metadata only).");
                         command.Arguments.Add(ConsentId);
                         command.Options.Add(NameOption);
 

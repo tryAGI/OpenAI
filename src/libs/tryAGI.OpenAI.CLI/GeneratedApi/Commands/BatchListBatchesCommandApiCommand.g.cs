@@ -43,7 +43,8 @@ internal static partial class BatchListBatchesCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-batches", @"List your organization's batches.");
+        var command = new Command(@"list-batches", @"List batches
+List your organization's batches.");
                         command.Options.Add(After);
                         command.Options.Add(Limit);
 

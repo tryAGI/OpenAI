@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IAssistantsClient
     {
         /// <summary>
+        /// Create message<br/>
         /// Create a message.
         /// </summary>
         /// <param name="threadId"></param>
@@ -19,6 +20,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Create message<br/>
         /// Create a message.
         /// </summary>
         /// <param name="threadId"></param>
@@ -33,6 +35,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Create message<br/>
         /// Create a message.
         /// </summary>
         /// <param name="threadId"></param>

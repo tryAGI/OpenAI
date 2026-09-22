@@ -63,7 +63,8 @@ internal static partial class AssistantsModifyMessageCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"modify-message", @"Modifies a message.");
+        var command = new Command(@"modify-message", @"Modify message
+Modifies a message.");
                         command.Arguments.Add(ThreadId);
                         command.Arguments.Add(MessageId);
                         command.Options.Add(Metadata);

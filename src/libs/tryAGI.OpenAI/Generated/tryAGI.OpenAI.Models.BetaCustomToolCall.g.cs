@@ -61,6 +61,12 @@ namespace tryAGI.OpenAI
         public required string Input { get; set; }
 
         /// <summary>
+        /// Whether the custom tool call runs asynchronously.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("async")]
+        public bool? Async { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -91,6 +97,9 @@ namespace tryAGI.OpenAI
         /// <param name="namespace">
         /// The namespace of the custom tool being called.
         /// </param>
+        /// <param name="async">
+        /// Whether the custom tool call runs asynchronously.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -102,7 +111,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaCustomToolCallType type,
             string? id,
             global::tryAGI.OpenAI.BetaToolCallCaller? caller,
-            string? @namespace)
+            string? @namespace,
+            bool? async)
         {
             this.Agent = agent;
             this.Type = type;
@@ -112,6 +122,7 @@ namespace tryAGI.OpenAI
             this.Namespace = @namespace;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
+            this.Async = async;
         }
 
         /// <summary>

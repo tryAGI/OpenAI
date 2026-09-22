@@ -43,6 +43,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ConfigurationUpdate,
+        /// <summary>
+        ///
+        /// </summary>
         CustomToolCall,
         /// <summary>
         ///
@@ -146,6 +150,7 @@ namespace tryAGI.OpenAI
                 BetaItemDiscriminatorType.Compaction => "compaction",
                 BetaItemDiscriminatorType.ComputerCall => "computer_call",
                 BetaItemDiscriminatorType.ComputerCallOutput => "computer_call_output",
+                BetaItemDiscriminatorType.ConfigurationUpdate => "configuration_update",
                 BetaItemDiscriminatorType.CustomToolCall => "custom_tool_call",
                 BetaItemDiscriminatorType.CustomToolCallOutput => "custom_tool_call_output",
                 BetaItemDiscriminatorType.FileSearchCall => "file_search_call",
@@ -185,6 +190,7 @@ namespace tryAGI.OpenAI
                 "compaction" => BetaItemDiscriminatorType.Compaction,
                 "computer_call" => BetaItemDiscriminatorType.ComputerCall,
                 "computer_call_output" => BetaItemDiscriminatorType.ComputerCallOutput,
+                "configuration_update" => BetaItemDiscriminatorType.ConfigurationUpdate,
                 "custom_tool_call" => BetaItemDiscriminatorType.CustomToolCall,
                 "custom_tool_call_output" => BetaItemDiscriminatorType.CustomToolCallOutput,
                 "file_search_call" => BetaItemDiscriminatorType.FileSearchCall,

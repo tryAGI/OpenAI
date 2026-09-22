@@ -279,6 +279,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Gpt5520260423,
+        /// <summary>
+        ///
+        /// </summary>
         Gpt56Luna,
         /// <summary>
         ///
@@ -288,6 +292,26 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         Gpt56Terra,
+        /// <summary>
+        ///
+        /// </summary>
+        Gpt6Astra,
+        /// <summary>
+        ///
+        /// </summary>
+        Gpt6Luna,
+        /// <summary>
+        ///
+        /// </summary>
+        Gpt6Sol,
+        /// <summary>
+        ///
+        /// </summary>
+        GptAudioMini,
+        /// <summary>
+        ///
+        /// </summary>
+        GptAudioMini20251215,
         /// <summary>
         ///
         /// </summary>
@@ -417,9 +441,15 @@ namespace tryAGI.OpenAI
                 BetaModelIdsSharedEnum.Gpt54Nano => "gpt-5.4-nano",
                 BetaModelIdsSharedEnum.Gpt54Nano20260317 => "gpt-5.4-nano-2026-03-17",
                 BetaModelIdsSharedEnum.Gpt55 => "gpt-5.5",
+                BetaModelIdsSharedEnum.Gpt5520260423 => "gpt-5.5-2026-04-23",
                 BetaModelIdsSharedEnum.Gpt56Luna => "gpt-5.6-luna",
                 BetaModelIdsSharedEnum.Gpt56Sol => "gpt-5.6-sol",
                 BetaModelIdsSharedEnum.Gpt56Terra => "gpt-5.6-terra",
+                BetaModelIdsSharedEnum.Gpt6Astra => "gpt-6-astra",
+                BetaModelIdsSharedEnum.Gpt6Luna => "gpt-6-luna",
+                BetaModelIdsSharedEnum.Gpt6Sol => "gpt-6-sol",
+                BetaModelIdsSharedEnum.GptAudioMini => "gpt-audio-mini",
+                BetaModelIdsSharedEnum.GptAudioMini20251215 => "gpt-audio-mini-2025-12-15",
                 BetaModelIdsSharedEnum.O1 => "o1",
                 BetaModelIdsSharedEnum.O120241217 => "o1-2024-12-17",
                 BetaModelIdsSharedEnum.O1Mini => "o1-mini",
@@ -509,9 +539,15 @@ namespace tryAGI.OpenAI
                 "gpt-5.4-nano" => BetaModelIdsSharedEnum.Gpt54Nano,
                 "gpt-5.4-nano-2026-03-17" => BetaModelIdsSharedEnum.Gpt54Nano20260317,
                 "gpt-5.5" => BetaModelIdsSharedEnum.Gpt55,
+                "gpt-5.5-2026-04-23" => BetaModelIdsSharedEnum.Gpt5520260423,
                 "gpt-5.6-luna" => BetaModelIdsSharedEnum.Gpt56Luna,
                 "gpt-5.6-sol" => BetaModelIdsSharedEnum.Gpt56Sol,
                 "gpt-5.6-terra" => BetaModelIdsSharedEnum.Gpt56Terra,
+                "gpt-6-astra" => BetaModelIdsSharedEnum.Gpt6Astra,
+                "gpt-6-luna" => BetaModelIdsSharedEnum.Gpt6Luna,
+                "gpt-6-sol" => BetaModelIdsSharedEnum.Gpt6Sol,
+                "gpt-audio-mini" => BetaModelIdsSharedEnum.GptAudioMini,
+                "gpt-audio-mini-2025-12-15" => BetaModelIdsSharedEnum.GptAudioMini20251215,
                 "o1" => BetaModelIdsSharedEnum.O1,
                 "o1-2024-12-17" => BetaModelIdsSharedEnum.O120241217,
                 "o1-mini" => BetaModelIdsSharedEnum.O1Mini,

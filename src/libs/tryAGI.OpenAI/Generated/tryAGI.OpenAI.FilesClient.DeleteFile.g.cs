@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Delete file<br/>
         /// Delete a file and remove it from all vector stores.
         /// </summary>
         /// <param name="fileId"></param>
@@ -62,6 +63,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Delete file<br/>
         /// Delete a file and remove it from all vector stores.
         /// </summary>
         /// <param name="fileId"></param>

@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Retrieve invite<br/>
         /// Retrieves an invite.
         /// </summary>
         /// <param name="inviteId"></param>
@@ -62,6 +63,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Retrieve invite<br/>
         /// Retrieves an invite.
         /// </summary>
         /// <param name="inviteId"></param>

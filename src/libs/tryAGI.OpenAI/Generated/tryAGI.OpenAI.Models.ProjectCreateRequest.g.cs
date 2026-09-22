@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -16,10 +18,18 @@ namespace tryAGI.OpenAI
         public required string Name { get; set; }
 
         /// <summary>
-        /// Create the project with the specified data residency region. Your organization must have access to Data residency functionality in order to use. See [data residency controls](/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.
+        /// Create the project with the specified data residency region. Your organization must have access to Data residency functionality in order to use. See [data residency controls](https://developers.openai.com/api/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.<br/>
+        /// Deprecated: use `residency` instead. Do not provide both `geography` and `residency`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("geography")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Geography { get; set; }
+
+        /// <summary>
+        /// Create the project with the specified residency configuration. Your organization must have access to the requested residency configuration in order to use it. See [data residency controls](https://developers.openai.com/api/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("residency")]
+        public global::tryAGI.OpenAI.PublicProjectResidency? Residency { get; set; }
 
         /// <summary>
         /// External key ID to associate with the project.
@@ -39,8 +49,8 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// The friendly name of the project, this name appears in reports.
         /// </param>
-        /// <param name="geography">
-        /// Create the project with the specified data residency region. Your organization must have access to Data residency functionality in order to use. See [data residency controls](/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.
+        /// <param name="residency">
+        /// Create the project with the specified residency configuration. Your organization must have access to the requested residency configuration in order to use it. See [data residency controls](https://developers.openai.com/api/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.
         /// </param>
         /// <param name="externalKeyId">
         /// External key ID to associate with the project.
@@ -50,11 +60,11 @@ namespace tryAGI.OpenAI
 #endif
         public ProjectCreateRequest(
             string name,
-            string? geography,
+            global::tryAGI.OpenAI.PublicProjectResidency? residency,
             string? externalKeyId)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Geography = geography;
+            this.Residency = residency;
             this.ExternalKeyId = externalKeyId;
         }
 

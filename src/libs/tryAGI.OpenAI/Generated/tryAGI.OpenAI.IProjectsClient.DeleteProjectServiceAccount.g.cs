@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// Delete project service account<br/>
         /// Deletes a service account from the project.<br/>
         /// Returns confirmation of service account deletion, or an error if the project<br/>
         /// is archived (archived projects have no service accounts).
@@ -20,6 +21,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Delete project service account<br/>
         /// Deletes a service account from the project.<br/>
         /// Returns confirmation of service account deletion, or an error if the project<br/>
         /// is archived (archived projects have no service accounts).

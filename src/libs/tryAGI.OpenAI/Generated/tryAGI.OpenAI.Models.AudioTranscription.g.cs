@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// An optional text to guide the model's style or continue a previous audio<br/>
         /// segment.<br/>
-        /// For `whisper-1`, the [prompt is a list of keywords](/docs/guides/speech-to-text#prompting).<br/>
+        /// For `whisper-1`, the [prompt is a list of keywords](https://developers.openai.com/api/docs/guides/speech-to-text#prompting).<br/>
         /// For `gpt-4o-transcribe` models (excluding `gpt-4o-transcribe-diarize`), the prompt is a free text string, for example "expect words related to technology".<br/>
         /// Prompt is not supported with `gpt-realtime-whisper` in GA Realtime sessions.
         /// </summary>
@@ -80,7 +80,7 @@ namespace tryAGI.OpenAI
         /// <param name="prompt">
         /// An optional text to guide the model's style or continue a previous audio<br/>
         /// segment.<br/>
-        /// For `whisper-1`, the [prompt is a list of keywords](/docs/guides/speech-to-text#prompting).<br/>
+        /// For `whisper-1`, the [prompt is a list of keywords](https://developers.openai.com/api/docs/guides/speech-to-text#prompting).<br/>
         /// For `gpt-4o-transcribe` models (excluding `gpt-4o-transcribe-diarize`), the prompt is a free text string, for example "expect words related to technology".<br/>
         /// Prompt is not supported with `gpt-realtime-whisper` in GA Realtime sessions.
         /// </param>

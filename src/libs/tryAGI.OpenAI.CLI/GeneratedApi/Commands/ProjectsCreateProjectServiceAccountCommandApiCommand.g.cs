@@ -23,6 +23,12 @@ internal static partial class ProjectsCreateProjectServiceAccountCommandApiComma
     private static Option<bool?> CreateServiceAccountOnly { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--create-service-account-only",
         description: @"");
+
+    private static Option<int?> ExpiresInSeconds { get; } = new(
+        name: @"--expires-in-seconds")
+    {
+        Description = @"Number of seconds until the initial API key expires. If omitted or null, the key does not expire unless the effective organization or project policy requires an expiration. When a policy sets a maximum lifetime, this value must be provided and must not exceed that limit. A non-null value cannot be used when `create_service_account_only` is true.",
+    };
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -62,10 +68,12 @@ internal static partial class ProjectsCreateProjectServiceAccountCommandApiComma
 
     public static Command Create()
     {
-        var command = new Command(@"create-project-service-account", @"Creates a new service account in the project. By default, this also returns an unredacted API key for the service account.");
+        var command = new Command(@"create-project-service-account", @"Create project service account
+Creates a new service account in the project. By default, this also returns an unredacted API key for the service account.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(NameOption);
                         command.Options.Add(CreateServiceAccountOnly);
+                        command.Options.Add(ExpiresInSeconds);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -94,6 +102,7 @@ internal static partial class ProjectsCreateProjectServiceAccountCommandApiComma
                         var projectId = parseResult.GetRequiredValue(ProjectId);
                         var name = parseResult.GetRequiredValue(NameOption);
                         var createServiceAccountOnly = CliRuntime.WasSpecified(parseResult, CreateServiceAccountOnly) ? parseResult.GetValue(CreateServiceAccountOnly) : (__requestBase is { } __CreateServiceAccountOnlyBaseValue ? __CreateServiceAccountOnlyBaseValue.CreateServiceAccountOnly : default);
+                        var expiresInSeconds = CliRuntime.WasSpecified(parseResult, ExpiresInSeconds) ? parseResult.GetValue(ExpiresInSeconds) : (__requestBase is { } __ExpiresInSecondsBaseValue ? __ExpiresInSecondsBaseValue.ExpiresInSeconds : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -101,6 +110,7 @@ internal static partial class ProjectsCreateProjectServiceAccountCommandApiComma
                                     projectId: projectId,
                                     name: name,
                                     createServiceAccountOnly: createServiceAccountOnly,
+                                    expiresInSeconds: expiresInSeconds,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

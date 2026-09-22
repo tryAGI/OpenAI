@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// List projects<br/>
         /// Returns a list of projects.
         /// </summary>
         /// <param name="limit">
@@ -24,6 +25,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List projects<br/>
         /// Returns a list of projects.
         /// </summary>
         /// <param name="limit">

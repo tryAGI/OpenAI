@@ -60,7 +60,8 @@ internal static partial class SpendAlertsUpdateProjectSpendAlertCommandApiComman
 
     public static Command Create()
     {
-        var command = new Command(@"update-project-spend-alert", @"Updates a project spend alert.");
+        var command = new Command(@"update-project-spend-alert", @"Update project spend alert
+Updates a project spend alert.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(AlertId);                        command.Options.Add(CreateSpendAlertBodyOptionSetOptions.ThresholdAmount);
                         command.Options.Add(CreateSpendAlertBodyOptionSetOptions.Currency);

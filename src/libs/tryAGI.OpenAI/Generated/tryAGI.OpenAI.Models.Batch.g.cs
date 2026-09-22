@@ -30,10 +30,10 @@ namespace tryAGI.OpenAI
         public required string Endpoint { get; set; }
 
         /// <summary>
-        /// Model ID used to process the batch, like `gpt-5-2025-08-07`. OpenAI<br/>
+        /// Model ID used to process the batch, like `gpt-6-astra`. OpenAI<br/>
         /// offers a wide range of models with different capabilities, performance<br/>
         /// characteristics, and price points. Refer to the [model<br/>
-        /// guide](/docs/models) to browse and compare available models.
+        /// guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
@@ -182,10 +182,10 @@ namespace tryAGI.OpenAI
         /// The object type, which is always `batch`.
         /// </param>
         /// <param name="model">
-        /// Model ID used to process the batch, like `gpt-5-2025-08-07`. OpenAI<br/>
+        /// Model ID used to process the batch, like `gpt-6-astra`. OpenAI<br/>
         /// offers a wide range of models with different capabilities, performance<br/>
         /// characteristics, and price points. Refer to the [model<br/>
-        /// guide](/docs/models) to browse and compare available models.
+        /// guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
         /// </param>
         /// <param name="errors"></param>
         /// <param name="outputFileId">

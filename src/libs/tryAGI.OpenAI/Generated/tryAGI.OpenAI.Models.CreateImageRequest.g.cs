@@ -18,11 +18,11 @@ namespace tryAGI.OpenAI
         public required string Prompt { get; set; }
 
         /// <summary>
-        /// The model to use for image generation. One of `dall-e-2`, `dall-e-3`, or a GPT image model (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`). Defaults to `dall-e-2` unless a parameter specific to the GPT image models is used.<br/>
+        /// The model to use for image generation. One of `dall-e-2`, `dall-e-3`, or a GPT image model (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`). Defaults to `dall-e-2` unless a parameter specific to the GPT image models is used.<br/>
         /// Default Value: dall-e-2<br/>
-        /// Example: gpt-image-1.5
+        /// Example: gpt-image-2.5-flare
         /// </summary>
-        /// <example>gpt-image-1.5</example>
+        /// <example>gpt-image-2.5-flare</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateImageRequestModel?>))]
         public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestModel?>? Model { get; set; }
@@ -38,8 +38,11 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// The quality of the image that will be generated.<br/>
-        /// - `auto` (default value) will automatically select the best quality for the given model.<br/>
+        /// - `auto` (default value) will automatically select the best quality for the given<br/>
+        ///   model.<br/>
         /// - `high`, `medium` and `low` are supported for the GPT image models.<br/>
+        /// - `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08`<br/>
+        ///   snapshots, also support `xhigh` and `max`.<br/>
         /// - `hd` and `standard` are supported for `dall-e-3`.<br/>
         /// - `standard` is the only option for `dall-e-2`.<br/>
         /// Default Value: auto<br/>
@@ -81,7 +84,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Generate the image in streaming mode. Defaults to `false`. See the<br/>
-        /// [Image generation guide](/docs/guides/image-generation) for more information.<br/>
+        /// [Image generation guide](https://developers.openai.com/api/docs/guides/image-generation) for more information.<br/>
         /// This parameter is only supported for the GPT image models.<br/>
         /// Default Value: false<br/>
         /// Example: false
@@ -97,7 +100,7 @@ namespace tryAGI.OpenAI
         public int? PartialImages { get; set; }
 
         /// <summary>
-        /// The size of the generated images. For `gpt-image-2` and `gpt-image-2-2026-04-21`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.<br/>
+        /// The size of the generated images. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.<br/>
         /// Default Value: auto<br/>
         /// Example: 1024x1024
         /// </summary>
@@ -117,12 +120,15 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateImageRequestModeration? Moderation { get; set; }
 
         /// <summary>
-        /// Allows to set transparency for the background of the generated image(s).<br/>
-        /// This parameter is only supported for the GPT image models. Must be one of<br/>
-        /// `transparent`, `opaque` or `auto` (default value). When `auto` is used, the<br/>
-        /// model will automatically determine the best background for the image.<br/>
-        /// If `transparent`, the output format needs to support transparency, so it<br/>
-        /// should be set to either `png` (default value) or `webp`.<br/>
+        /// Set the background of the generated image(s). This parameter is only supported for<br/>
+        /// the GPT image models. Must be one of `transparent`, `opaque`, or `auto` (default<br/>
+        /// value). When `auto` is used, the model will automatically determine the best<br/>
+        /// background for the image.<br/>
+        /// `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08`<br/>
+        /// snapshots, support `opaque` and `transparent` backgrounds. Transparent backgrounds<br/>
+        /// are available for supported GPT Image models. For `gpt-image-2` and<br/>
+        /// `gpt-image-2-2026-04-21`, this support is in preview. When using `transparent`,<br/>
+        /// set the output format to `png` or `webp`.<br/>
         /// Default Value: auto<br/>
         /// Example: transparent
         /// </summary>
@@ -142,7 +148,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateImageRequestStyle? Style { get; set; }
 
         /// <summary>
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
         /// Example: user-1234
         /// </summary>
         /// <example>user-1234</example>
@@ -163,9 +169,9 @@ namespace tryAGI.OpenAI
         /// Example: A cute baby sea otter
         /// </param>
         /// <param name="model">
-        /// The model to use for image generation. One of `dall-e-2`, `dall-e-3`, or a GPT image model (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`). Defaults to `dall-e-2` unless a parameter specific to the GPT image models is used.<br/>
+        /// The model to use for image generation. One of `dall-e-2`, `dall-e-3`, or a GPT image model (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`). Defaults to `dall-e-2` unless a parameter specific to the GPT image models is used.<br/>
         /// Default Value: dall-e-2<br/>
-        /// Example: gpt-image-1.5
+        /// Example: gpt-image-2.5-flare
         /// </param>
         /// <param name="n">
         /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>
@@ -174,8 +180,11 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="quality">
         /// The quality of the image that will be generated.<br/>
-        /// - `auto` (default value) will automatically select the best quality for the given model.<br/>
+        /// - `auto` (default value) will automatically select the best quality for the given<br/>
+        ///   model.<br/>
         /// - `high`, `medium` and `low` are supported for the GPT image models.<br/>
+        /// - `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08`<br/>
+        ///   snapshots, also support `xhigh` and `max`.<br/>
         /// - `hd` and `standard` are supported for `dall-e-3`.<br/>
         /// - `standard` is the only option for `dall-e-2`.<br/>
         /// Default Value: auto<br/>
@@ -198,14 +207,14 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="stream">
         /// Generate the image in streaming mode. Defaults to `false`. See the<br/>
-        /// [Image generation guide](/docs/guides/image-generation) for more information.<br/>
+        /// [Image generation guide](https://developers.openai.com/api/docs/guides/image-generation) for more information.<br/>
         /// This parameter is only supported for the GPT image models.<br/>
         /// Default Value: false<br/>
         /// Example: false
         /// </param>
         /// <param name="partialImages"></param>
         /// <param name="size">
-        /// The size of the generated images. For `gpt-image-2` and `gpt-image-2-2026-04-21`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.<br/>
+        /// The size of the generated images. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.<br/>
         /// Default Value: auto<br/>
         /// Example: 1024x1024
         /// </param>
@@ -215,12 +224,15 @@ namespace tryAGI.OpenAI
         /// Example: low
         /// </param>
         /// <param name="background">
-        /// Allows to set transparency for the background of the generated image(s).<br/>
-        /// This parameter is only supported for the GPT image models. Must be one of<br/>
-        /// `transparent`, `opaque` or `auto` (default value). When `auto` is used, the<br/>
-        /// model will automatically determine the best background for the image.<br/>
-        /// If `transparent`, the output format needs to support transparency, so it<br/>
-        /// should be set to either `png` (default value) or `webp`.<br/>
+        /// Set the background of the generated image(s). This parameter is only supported for<br/>
+        /// the GPT image models. Must be one of `transparent`, `opaque`, or `auto` (default<br/>
+        /// value). When `auto` is used, the model will automatically determine the best<br/>
+        /// background for the image.<br/>
+        /// `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08`<br/>
+        /// snapshots, support `opaque` and `transparent` backgrounds. Transparent backgrounds<br/>
+        /// are available for supported GPT Image models. For `gpt-image-2` and<br/>
+        /// `gpt-image-2-2026-04-21`, this support is in preview. When using `transparent`,<br/>
+        /// set the output format to `png` or `webp`.<br/>
         /// Default Value: auto<br/>
         /// Example: transparent
         /// </param>
@@ -230,7 +242,7 @@ namespace tryAGI.OpenAI
         /// Example: vivid
         /// </param>
         /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
         /// Example: user-1234
         /// </param>
 #if NET7_0_OR_GREATER

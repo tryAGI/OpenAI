@@ -10,7 +10,7 @@ internal static partial class AssistantsCreateMessageCommandApiCommand
     private static Argument<string> ThreadId { get; } = new(
         name: @"thread-id")
     {
-        Description = @"The ID of the [thread](/docs/api-reference/threads) to create a message for.",
+        Description = @"The ID of the [thread](https://developers.openai.com/api/docs/assistants/migration) to create a message for.",
     };
 
     private static Option<global::tryAGI.OpenAI.CreateMessageRequestRole> Role { get; } = new(
@@ -80,7 +80,8 @@ internal static partial class AssistantsCreateMessageCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-message", @"Create a message.");
+        var command = new Command(@"create-message", @"Create message
+Create a message.");
                         command.Arguments.Add(ThreadId);
                         command.Options.Add(Role);
                         command.Options.Add(Content);

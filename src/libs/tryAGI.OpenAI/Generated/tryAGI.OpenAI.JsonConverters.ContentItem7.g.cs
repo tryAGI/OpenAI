@@ -17,75 +17,75 @@ namespace tryAGI.OpenAI.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaMessageContentItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaMessageContentItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaMessageContentItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::tryAGI.OpenAI.BetaInputTextContent? inputText = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType.InputText)
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType.InputText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaInputTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaInputTextContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaInputTextContent)}");
                 inputText = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.BetaOutputTextContent? outputText = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType.OutputText)
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType.OutputText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaOutputTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaOutputTextContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaOutputTextContent)}");
                 outputText = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.BetaTextContent? text = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType.Text)
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaTextContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaTextContent)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.BetaSummaryTextContent? summaryText = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType.SummaryText)
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType.SummaryText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaSummaryTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaSummaryTextContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaSummaryTextContent)}");
                 summaryText = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.BetaReasoningTextContent? reasoningText = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType.ReasoningText)
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType.ReasoningText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaReasoningTextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaReasoningTextContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaReasoningTextContent)}");
                 reasoningText = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.BetaRefusalContent? refusal = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType.Refusal)
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType.Refusal)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaRefusalContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaRefusalContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaRefusalContent)}");
                 refusal = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.BetaInputImageContent? inputImage = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType.InputImage)
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType.InputImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaInputImageContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaInputImageContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaInputImageContent)}");
                 inputImage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.BetaComputerScreenshotContent? computerScreenshot = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType.ComputerScreenshot)
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType.ComputerScreenshot)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaComputerScreenshotContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaComputerScreenshotContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaComputerScreenshotContent)}");
                 computerScreenshot = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.BetaInputFileContent? inputFile = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType.InputFile)
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType.InputFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaInputFileContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaInputFileContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaInputFileContent)}");
                 inputFile = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.BetaEncryptedContent? encryptedContent = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType.EncryptedContent)
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType.EncryptedContent)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaEncryptedContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaEncryptedContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaEncryptedContent)}");

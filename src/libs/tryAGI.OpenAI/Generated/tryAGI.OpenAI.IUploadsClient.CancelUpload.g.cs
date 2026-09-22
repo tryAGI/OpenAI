@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IUploadsClient
     {
         /// <summary>
+        /// Cancel upload<br/>
         /// Cancels the Upload. No Parts may be added after an Upload is cancelled.<br/>
         /// Returns the Upload object with status `cancelled`.
         /// </summary>
@@ -19,6 +20,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Cancel upload<br/>
         /// Cancels the Upload. No Parts may be added after an Upload is cancelled.<br/>
         /// Returns the Upload object with status `cancelled`.
         /// </summary>

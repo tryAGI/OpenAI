@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IVectorStoresClient
     {
         /// <summary>
+        /// Create vector store<br/>
         /// Create a vector store.
         /// </summary>
         /// <param name="request"></param>
@@ -17,6 +18,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Create vector store<br/>
         /// Create a vector store.
         /// </summary>
         /// <param name="request"></param>
@@ -29,10 +31,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Create vector store<br/>
         /// Create a vector store.
         /// </summary>
         /// <param name="fileIds">
-        /// A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
+        /// A list of [File](https://developers.openai.com/api/reference/resources/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
         /// </param>
         /// <param name="name">
         /// The name of the vector store.

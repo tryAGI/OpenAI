@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IVectorStoresClient
     {
         /// <summary>
+        /// Search vector store<br/>
         /// Search a vector store for relevant chunks based on a query and file attributes filter.
         /// </summary>
         /// <param name="vectorStoreId">
@@ -21,6 +22,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Search vector store<br/>
         /// Search a vector store for relevant chunks based on a query and file attributes filter.
         /// </summary>
         /// <param name="vectorStoreId">
@@ -37,6 +39,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Search vector store<br/>
         /// Search a vector store for relevant chunks based on a query and file attributes filter.
         /// </summary>
         /// <param name="vectorStoreId">

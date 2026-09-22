@@ -57,7 +57,8 @@ internal static partial class VectorStoresListVectorStoresCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-vector-stores", @"Returns a list of vector stores.");
+        var command = new Command(@"list-vector-stores", @"List vector stores
+Returns a list of vector stores.");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);
                         command.Options.Add(After);

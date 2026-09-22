@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The results of a web search tool call. See the<br/>
-    /// [web search guide](/docs/guides/tools-web-search) for more information.
+    /// [web search guide](https://developers.openai.com/api/docs/guides/tools-web-search) for more information.
     /// </summary>
     public sealed partial class BetaWebSearchToolCall
     {
@@ -33,9 +33,9 @@ namespace tryAGI.OpenAI
         /// The status of the web search tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaWebSearchToolCallStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaWebSearchCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.BetaWebSearchToolCallStatus Status { get; set; }
+        public required global::tryAGI.OpenAI.BetaWebSearchCallStatus Status { get; set; }
 
         /// <summary>
         /// An object describing the specific action taken in this web search call.<br/>
@@ -76,7 +76,7 @@ namespace tryAGI.OpenAI
 #endif
         public BetaWebSearchToolCall(
             string id,
-            global::tryAGI.OpenAI.BetaWebSearchToolCallStatus status,
+            global::tryAGI.OpenAI.BetaWebSearchCallStatus status,
             global::tryAGI.OpenAI.BetaWebSearchToolCallAction action,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
             global::tryAGI.OpenAI.BetaWebSearchToolCallType type)

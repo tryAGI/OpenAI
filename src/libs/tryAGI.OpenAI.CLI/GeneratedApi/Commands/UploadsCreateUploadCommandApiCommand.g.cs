@@ -21,7 +21,7 @@ internal static partial class UploadsCreateUploadCommandApiCommand
         Description = @"The intended purpose of the uploaded file.
 
 See the [documentation on File
-purposes](/docs/api-reference/files/create#files-create-purpose).
+purposes](https://developers.openai.com/api/reference/resources/files/methods/create#%28resource%29%20files%20%3E%20%28method%29%20create%20%3E%20%28params%29%200%20%3E%20%28param%29%20purpose%20%3E%20%28schema%29).
 ",
         Required = true,
     };
@@ -85,23 +85,24 @@ the supported MIME types for assistants and vision.
 
     public static Command Create()
     {
-        var command = new Command(@"create-upload", @"Creates an intermediate [Upload](/docs/api-reference/uploads/object) object
-that you can add [Parts](/docs/api-reference/uploads/part-object) to.
+        var command = new Command(@"create-upload", @"Create upload
+Creates an intermediate [Upload](https://developers.openai.com/api/reference/resources/uploads) object
+that you can add [Parts](https://developers.openai.com/api/reference/resources/uploads/subresources/parts) to.
 Currently, an Upload can accept at most 8 GB in total and expires after an
 hour after you create it.
 
 Once you complete the Upload, we will create a
-[File](/docs/api-reference/files/object) object that contains all the parts
+[File](https://developers.openai.com/api/reference/resources/files) object that contains all the parts
 you uploaded. This File is usable in the rest of our platform as a regular
 File object.
 
 For certain `purpose` values, the correct `mime_type` must be specified.
 Please refer to documentation for the
-[supported MIME types for your use case](/docs/assistants/tools/file-search#supported-files).
+[supported MIME types for your use case](https://developers.openai.com/api/docs/guides/tools-file-search#supported-files).
 
 For guidance on the proper filename extensions for each purpose, please
 follow the documentation on [creating a
-File](/docs/api-reference/files/create).
+File](https://developers.openai.com/api/reference/resources/files/methods/create).
 
 Returns the Upload object with status `pending`.
 ");

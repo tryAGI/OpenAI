@@ -41,7 +41,8 @@ internal static partial class CertificatesGetCertificateCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"get-certificate", @"Get a certificate that has been uploaded to the organization.
+        var command = new Command(@"get-certificate", @"Get certificate
+Get a certificate that has been uploaded to the organization.
 
 You can get a certificate regardless of whether it is active or not.
 ");

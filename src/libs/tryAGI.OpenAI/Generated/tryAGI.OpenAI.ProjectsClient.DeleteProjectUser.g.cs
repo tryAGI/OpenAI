@@ -44,6 +44,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Delete project user<br/>
         /// Deletes a user from the project.<br/>
         /// Returns confirmation of project user deletion, or an error if the project is<br/>
         /// archived (archived projects have no users).
@@ -69,6 +70,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Delete project user<br/>
         /// Deletes a user from the project.<br/>
         /// Returns confirmation of project user deletion, or an error if the project is<br/>
         /// archived (archived projects have no users).

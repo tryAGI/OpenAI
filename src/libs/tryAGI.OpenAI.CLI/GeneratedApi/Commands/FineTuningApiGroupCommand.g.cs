@@ -9,16 +9,16 @@ internal static class FineTuningApiGroupCommand
     public static Command Create()
     {
         var command = new Command(@"fine-tuning", @"Fine-tuning endpoint commands.");
-                         command.Subcommands.Add(FineTuningCancelFineTuningCommandApiCommand.Create());
-                         command.Subcommands.Add(FineTuningCreateCheckpointPermissionsCommandApiCommand.Create());
+                         command.Subcommands.Add(FineTuningCancelFineTuningJobCommandApiCommand.Create());
+                         command.Subcommands.Add(FineTuningCreateFineTuningCheckpointPermissionCommandApiCommand.Create());
                          command.Subcommands.Add(FineTuningCreateFineTuningJobCommandApiCommand.Create());
-                         command.Subcommands.Add(FineTuningDeleteCheckpointPermissionCommandApiCommand.Create());
-                         command.Subcommands.Add(FineTuningListCheckpointPermissionsCommandApiCommand.Create());
-                         command.Subcommands.Add(FineTuningListFineTuningCheckpointsCommandApiCommand.Create());
+                         command.Subcommands.Add(FineTuningDeleteFineTuningCheckpointPermissionCommandApiCommand.Create());
+                         command.Subcommands.Add(FineTuningListFineTuningCheckpointPermissionsCommandApiCommand.Create());
                          command.Subcommands.Add(FineTuningListFineTuningEventsCommandApiCommand.Create());
-                         command.Subcommands.Add(FineTuningListFineTuningJobsCommandApiCommand.Create());
-                         command.Subcommands.Add(FineTuningPauseFineTuningCommandApiCommand.Create());
-                         command.Subcommands.Add(FineTuningResumeFineTuningCommandApiCommand.Create());
+                         command.Subcommands.Add(FineTuningListFineTuningJobCheckpointsCommandApiCommand.Create());
+                         command.Subcommands.Add(FineTuningListPaginatedFineTuningJobsCommandApiCommand.Create());
+                         command.Subcommands.Add(FineTuningPauseFineTuningJobCommandApiCommand.Create());
+                         command.Subcommands.Add(FineTuningResumeFineTuningJobCommandApiCommand.Create());
                          command.Subcommands.Add(FineTuningRetrieveFineTuningJobCommandApiCommand.Create());
                          command.Subcommands.Add(FineTuningRunGraderCommandApiCommand.Create());
                          command.Subcommands.Add(FineTuningValidateGraderCommandApiCommand.Create());

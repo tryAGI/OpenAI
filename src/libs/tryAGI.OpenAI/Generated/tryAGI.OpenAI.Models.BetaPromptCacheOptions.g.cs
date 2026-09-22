@@ -24,6 +24,12 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.BetaPromptCacheModeEnum Mode { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("comparison_response_id")]
+        public string? ComparisonResponseId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,15 +44,18 @@ namespace tryAGI.OpenAI
         /// <param name="ttl">
         /// The minimum lifetime applied to each cache breakpoint.
         /// </param>
+        /// <param name="comparisonResponseId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaPromptCacheOptions(
             global::tryAGI.OpenAI.BetaPromptCacheModeEnum mode,
-            global::tryAGI.OpenAI.BetaPromptCacheTTLEnum ttl)
+            global::tryAGI.OpenAI.BetaPromptCacheTTLEnum ttl,
+            string? comparisonResponseId)
         {
             this.Ttl = ttl;
             this.Mode = mode;
+            this.ComparisonResponseId = comparisonResponseId;
         }
 
         /// <summary>

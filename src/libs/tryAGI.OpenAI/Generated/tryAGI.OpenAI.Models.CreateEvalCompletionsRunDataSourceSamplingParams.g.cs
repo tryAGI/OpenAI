@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
         /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
         /// Structured Outputs which ensures the model will match your supplied JSON<br/>
         /// schema. Learn more in the [Structured Outputs<br/>
-        /// guide](/docs/guides/structured-outputs).<br/>
+        /// guide](https://developers.openai.com/api/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
         /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
         /// is preferred for models that support it.
@@ -91,7 +91,7 @@ namespace tryAGI.OpenAI
         /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables<br/>
         /// Structured Outputs which ensures the model will match your supplied JSON<br/>
         /// schema. Learn more in the [Structured Outputs<br/>
-        /// guide](/docs/guides/structured-outputs).<br/>
+        /// guide](https://developers.openai.com/api/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
         /// ensures the message the model generates is valid JSON. Using `json_schema`<br/>
         /// is preferred for models that support it.

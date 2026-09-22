@@ -42,6 +42,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.FunctionToolParamType Type { get; set; } = global::tryAGI.OpenAI.FunctionToolParamType.Function;
 
         /// <summary>
+        /// Whether the tool response can be returned asynchronously versus immediately returned on next response creation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("async")]
+        public bool? Async { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_schema")]
@@ -72,6 +78,9 @@ namespace tryAGI.OpenAI
         /// <param name="description"></param>
         /// <param name="parameters"></param>
         /// <param name="strict"></param>
+        /// <param name="async">
+        /// Whether the tool response can be returned asynchronously versus immediately returned on next response creation.
+        /// </param>
         /// <param name="outputSchema"></param>
         /// <param name="deferLoading">
         /// Whether this function should be deferred and discovered via tool search.
@@ -88,6 +97,7 @@ namespace tryAGI.OpenAI
             string? description,
             global::tryAGI.OpenAI.EmptyModelParam? parameters,
             bool? strict,
+            bool? async,
             object? outputSchema,
             bool? deferLoading,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? allowedCallers,
@@ -98,6 +108,7 @@ namespace tryAGI.OpenAI
             this.Parameters = parameters;
             this.Strict = strict;
             this.Type = type;
+            this.Async = async;
             this.OutputSchema = outputSchema;
             this.DeferLoading = deferLoading;
             this.AllowedCallers = allowedCallers;

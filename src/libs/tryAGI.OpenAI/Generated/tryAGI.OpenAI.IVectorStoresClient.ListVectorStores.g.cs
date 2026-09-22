@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IVectorStoresClient
     {
         /// <summary>
+        /// List vector stores<br/>
         /// Returns a list of vector stores.
         /// </summary>
         /// <param name="limit">
@@ -26,6 +27,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List vector stores<br/>
         /// Returns a list of vector stores.
         /// </summary>
         /// <param name="limit">

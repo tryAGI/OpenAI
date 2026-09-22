@@ -44,9 +44,10 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create eval<br/>
         /// Create the structure of an evaluation that can be used to test a model's performance.<br/>
         /// An evaluation is a set of testing criteria and the config for a data source, which dictates the schema of the data used in the evaluation. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.<br/>
-        /// For more information, see the [Evals guide](/docs/guides/evals).
+        /// For more information, see the [Evals guide](https://developers.openai.com/api/docs/guides/evals).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -68,9 +69,10 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Create eval<br/>
         /// Create the structure of an evaluation that can be used to test a model's performance.<br/>
         /// An evaluation is a set of testing criteria and the config for a data source, which dictates the schema of the data used in the evaluation. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.<br/>
-        /// For more information, see the [Evals guide](/docs/guides/evals).
+        /// For more information, see the [Evals guide](https://developers.openai.com/api/docs/guides/evals).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -341,6 +343,43 @@ namespace tryAGI.OpenAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // The request was rejected because a rate limit was exceeded.
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -438,9 +477,10 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Create eval<br/>
         /// Create the structure of an evaluation that can be used to test a model's performance.<br/>
         /// An evaluation is a set of testing criteria and the config for a data source, which dictates the schema of the data used in the evaluation. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.<br/>
-        /// For more information, see the [Evals guide](/docs/guides/evals).
+        /// For more information, see the [Evals guide](https://developers.openai.com/api/docs/guides/evals).
         /// </summary>
         /// <param name="name">
         /// The name of the evaluation.

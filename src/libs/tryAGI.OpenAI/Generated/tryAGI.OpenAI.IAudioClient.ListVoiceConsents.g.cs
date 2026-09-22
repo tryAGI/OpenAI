@@ -5,9 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IAudioClient
     {
         /// <summary>
-        /// Returns a list of voice consent recordings.<br/>
-        /// List consent recordings available to your organization for creating custom voices.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
+        /// List voice consents<br/>
+        /// Returns a list of voice consent recordings.
         /// </summary>
         /// <param name="after"></param>
         /// <param name="limit">
@@ -22,9 +21,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Returns a list of voice consent recordings.<br/>
-        /// List consent recordings available to your organization for creating custom voices.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
+        /// List voice consents<br/>
+        /// Returns a list of voice consent recordings.
         /// </summary>
         /// <param name="after"></param>
         /// <param name="limit">

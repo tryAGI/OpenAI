@@ -44,9 +44,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Updates a voice consent recording (metadata only).<br/>
-        /// Update consent recording metadata used for creating custom voices. This endpoint updates metadata only and does not replace the underlying audio.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
+        /// Update voice consent<br/>
+        /// Updates a voice consent recording (metadata only).
         /// </summary>
         /// <param name="consentId"></param>
         /// <param name="request"></param>
@@ -71,9 +70,8 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
-        /// Updates a voice consent recording (metadata only).<br/>
-        /// Update consent recording metadata used for creating custom voices. This endpoint updates metadata only and does not replace the underlying audio.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
+        /// Update voice consent<br/>
+        /// Updates a voice consent recording (metadata only).
         /// </summary>
         /// <param name="consentId"></param>
         /// <param name="request"></param>
@@ -445,9 +443,8 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
-        /// Updates a voice consent recording (metadata only).<br/>
-        /// Update consent recording metadata used for creating custom voices. This endpoint updates metadata only and does not replace the underlying audio.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
+        /// Update voice consent<br/>
+        /// Updates a voice consent recording (metadata only).
         /// </summary>
         /// <param name="consentId"></param>
         /// <param name="name">

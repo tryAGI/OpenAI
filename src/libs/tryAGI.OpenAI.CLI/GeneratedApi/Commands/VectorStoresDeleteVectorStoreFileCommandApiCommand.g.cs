@@ -41,7 +41,8 @@ internal static partial class VectorStoresDeleteVectorStoreFileCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"delete-vector-store-file", @"Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.");
+        var command = new Command(@"delete-vector-store-file", @"Delete vector store file
+Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](https://developers.openai.com/api/reference/resources/files/methods/delete) endpoint.");
                         command.Arguments.Add(VectorStoreId);
                         command.Arguments.Add(FileId);
 

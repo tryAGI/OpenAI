@@ -57,7 +57,8 @@ internal static partial class ChatUpdateChatCompletionCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"update-chat-completion", @"Modify a stored chat completion. Only Chat Completions that have been
+        var command = new Command(@"update-chat-completion", @"Update chat completion
+Modify a stored chat completion. Only Chat Completions that have been
 created with the `store` parameter set to `true` can be modified. Currently,
 the only supported modification is to update the `metadata` field.
 ");

@@ -36,6 +36,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
             var __score0 = 0;
             if (__jsonProps.Contains("allowed_callers")) __score0++;
+            if (__jsonProps.Contains("async")) __score0++;
             if (__jsonProps.Contains("defer_loading")) __score0++;
             if (__jsonProps.Contains("description")) __score0++;
             if (__jsonProps.Contains("name")) __score0++;
@@ -60,6 +61,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("environment")) __score3++;
             if (__jsonProps.Contains("type")) __score3++;
             var __score4 = 0;
+            if (__jsonProps.Contains("external_web_access")) __score4++;
             if (__jsonProps.Contains("filters")) __score4++;
             if (__jsonProps.Contains("search_context_size")) __score4++;
             if (__jsonProps.Contains("type")) __score4++;
@@ -106,6 +108,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("type")) __score10++;
             var __score11 = 0;
             if (__jsonProps.Contains("allowed_callers")) __score11++;
+            if (__jsonProps.Contains("async")) __score11++;
             if (__jsonProps.Contains("defer_loading")) __score11++;
             if (__jsonProps.Contains("description")) __score11++;
             if (__jsonProps.Contains("format")) __score11++;

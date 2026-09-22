@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ChatCompletionRequestSystemMessageContentPart : global::System.IEquatable<ChatCompletionRequestSystemMessageContentPart>
     {
         /// <summary>
-        /// Learn about [text inputs](/docs/guides/text-generation).
+        /// Learn about [text inputs](https://developers.openai.com/api/docs/guides/text).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? TextContentPart { get; init; }

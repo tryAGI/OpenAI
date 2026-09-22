@@ -4,9 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// **gpt-5 and o-series models only**<br/>
     /// Configuration options for<br/>
-    /// [reasoning models](https://platform.openai.com/docs/guides/reasoning).
+    /// [reasoning models](https://developers.openai.com/api/docs/guides/reasoning).
     /// </summary>
     public sealed partial class BetaReasoning
     {

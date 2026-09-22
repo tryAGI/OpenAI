@@ -35,7 +35,8 @@ internal static partial class BatchRetrieveBatchCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-batch", @"Retrieves a batch.");
+        var command = new Command(@"retrieve-batch", @"Retrieve batch
+Retrieves a batch.");
                         command.Arguments.Add(BatchId);
 
 

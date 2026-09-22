@@ -41,7 +41,8 @@ internal static partial class ProjectGroupsRemoveProjectGroupCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"remove-project-group", @"Revokes a group's access to a project.");
+        var command = new Command(@"remove-project-group", @"Remove project group
+Revokes a group's access to a project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(GroupId);
 

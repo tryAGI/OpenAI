@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateThreadAndRunRequestToolResourcesCodeInterpreter
     {
         /// <summary>
-        /// A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.<br/>
+        /// A list of [file](https://developers.openai.com/api/reference/resources/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.<br/>
         /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
@@ -25,7 +25,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateThreadAndRunRequestToolResourcesCodeInterpreter" /> class.
         /// </summary>
         /// <param name="fileIds">
-        /// A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.<br/>
+        /// A list of [file](https://developers.openai.com/api/reference/resources/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.<br/>
         /// Default Value: []
         /// </param>
 #if NET7_0_OR_GREATER

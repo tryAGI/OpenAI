@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Search the Internet for sources related to the prompt. Learn more about the<br/>
-    /// [web search tool](/docs/guides/tools-web-search).
+    /// [web search tool](https://developers.openai.com/api/docs/guides/tools-web-search).
     /// </summary>
     public sealed partial class BetaWebSearchTool
     {
@@ -18,6 +18,13 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaWebSearchToolTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.BetaWebSearchToolType Type { get; set; } = global::tryAGI.OpenAI.BetaWebSearchToolType.WebSearch;
+
+        /// <summary>
+        /// Allow live internet access for web search. Defaults to true when omitted. When false, the web search tool runs in offline/cache-only mode and will not fetch new external content.<br/>
+        /// Default Value: true
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_web_access")]
+        public bool? ExternalWebAccess { get; set; }
 
         /// <summary>
         ///
@@ -52,6 +59,10 @@ namespace tryAGI.OpenAI
         /// The type of the web search tool. One of `web_search` or `web_search_2025_08_26`.<br/>
         /// Default Value: web_search
         /// </param>
+        /// <param name="externalWebAccess">
+        /// Allow live internet access for web search. Defaults to true when omitted. When false, the web search tool runs in offline/cache-only mode and will not fetch new external content.<br/>
+        /// Default Value: true
+        /// </param>
         /// <param name="filters"></param>
         /// <param name="userLocation"></param>
         /// <param name="searchContextSize">
@@ -63,11 +74,13 @@ namespace tryAGI.OpenAI
 #endif
         public BetaWebSearchTool(
             global::tryAGI.OpenAI.BetaWebSearchToolType type,
+            bool? externalWebAccess,
             global::tryAGI.OpenAI.BetaWebSearchToolFilters? filters,
             global::tryAGI.OpenAI.BetaWebSearchApproximateLocationWebSearchApproximateLocation? userLocation,
             global::tryAGI.OpenAI.BetaWebSearchToolSearchContextSize? searchContextSize)
         {
             this.Type = type;
+            this.ExternalWebAccess = externalWebAccess;
             this.Filters = filters;
             this.UserLocation = userLocation;
             this.SearchContextSize = searchContextSize;

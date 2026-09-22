@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create image variation<br/>
         /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
         /// </summary>
         /// <param name="request"></param>
@@ -64,6 +65,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Create image variation<br/>
         /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
         /// </summary>
         /// <param name="request"></param>
@@ -509,6 +511,7 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Create image variation<br/>
         /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
         /// </summary>
         /// <param name="image">
@@ -538,7 +541,7 @@ namespace tryAGI.OpenAI
         /// Example: 1024x1024
         /// </param>
         /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
         /// Example: user-1234
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -573,6 +576,7 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Create image variation<br/>
         /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
         /// </summary>
         /// <param name="image">
@@ -602,7 +606,7 @@ namespace tryAGI.OpenAI
         /// Example: 1024x1024
         /// </param>
         /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
         /// Example: user-1234
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -1054,6 +1058,7 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Create image variation<br/>
         /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
         /// </summary>
         /// <param name="image">
@@ -1083,7 +1088,7 @@ namespace tryAGI.OpenAI
         /// Example: 1024x1024
         /// </param>
         /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
         /// Example: user-1234
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

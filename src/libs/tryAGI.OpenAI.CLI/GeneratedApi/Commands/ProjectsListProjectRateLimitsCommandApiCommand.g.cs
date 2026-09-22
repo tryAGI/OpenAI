@@ -56,7 +56,8 @@ internal static partial class ProjectsListProjectRateLimitsCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-project-rate-limits", @"Returns the rate limits per model for a project.");
+        var command = new Command(@"list-project-rate-limits", @"List project rate limits
+Returns the rate limits per model for a project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Limit);
                         command.Options.Add(After);

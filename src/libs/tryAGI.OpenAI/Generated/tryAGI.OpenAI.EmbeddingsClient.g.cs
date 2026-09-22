@@ -35,7 +35,11 @@ namespace tryAGI.OpenAI
         /// <inheritdoc/>
         public global::tryAGI.OpenAI.AutoSDKClientOptions Options { get; }
 
-        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::tryAGI.OpenAI.SourceGenerationContext.Default);
+
+        /// <inheritdoc/>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; } = () => global::System.Guid.NewGuid().ToString("D");
+
+        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::tryAGI.OpenAI.EmbeddingsSourceGenerationContext.Default);
 
         /// <summary>
         ///

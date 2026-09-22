@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IRolesClient
     {
         /// <summary>
+        /// Delete project role<br/>
         /// Deletes a custom role from a project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -18,6 +19,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Delete project role<br/>
         /// Deletes a custom role from a project.
         /// </summary>
         /// <param name="projectId"></param>

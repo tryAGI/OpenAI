@@ -63,7 +63,8 @@ internal static partial class AssistantsModifyThreadCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"modify-thread", @"Modifies a thread.");
+        var command = new Command(@"modify-thread", @"Modify thread
+Modifies a thread.");
                         command.Arguments.Add(ThreadId);
                         command.Options.Add(ToolResources);
                         command.Options.Add(Metadata);

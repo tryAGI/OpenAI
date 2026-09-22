@@ -35,7 +35,8 @@ internal static partial class CertificatesDeleteCertificateCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"delete-certificate", @"Delete a certificate from the organization.
+        var command = new Command(@"delete-certificate", @"Delete certificate
+Delete a certificate from the organization.
 
 The certificate must be inactive for the organization and all projects.
 ");

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IRolesClient
     {
         /// <summary>
+        /// Update project role<br/>
         /// Updates an existing project role.
         /// </summary>
         /// <param name="projectId"></param>
@@ -21,6 +22,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Update project role<br/>
         /// Updates an existing project role.
         /// </summary>
         /// <param name="projectId"></param>
@@ -37,6 +39,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Update project role<br/>
         /// Updates an existing project role.
         /// </summary>
         /// <param name="projectId"></param>

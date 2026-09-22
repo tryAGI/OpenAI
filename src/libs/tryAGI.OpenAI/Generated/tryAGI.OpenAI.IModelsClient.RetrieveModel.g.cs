@@ -5,10 +5,11 @@ namespace tryAGI.OpenAI
     public partial interface IModelsClient
     {
         /// <summary>
+        /// Retrieve model<br/>
         /// Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
         /// </summary>
         /// <param name="model">
-        /// Example: gpt-4o-mini
+        /// Example: gpt-6-astra
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -18,10 +19,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Retrieve model<br/>
         /// Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
         /// </summary>
         /// <param name="model">
-        /// Example: gpt-4o-mini
+        /// Example: gpt-6-astra
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

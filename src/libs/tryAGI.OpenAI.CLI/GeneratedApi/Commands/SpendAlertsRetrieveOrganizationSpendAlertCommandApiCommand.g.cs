@@ -35,7 +35,8 @@ internal static partial class SpendAlertsRetrieveOrganizationSpendAlertCommandAp
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-organization-spend-alert", @"Retrieves an organization spend alert.");
+        var command = new Command(@"retrieve-organization-spend-alert", @"Retrieve organization spend alert
+Retrieves an organization spend alert.");
                         command.Arguments.Add(AlertId);
 
 

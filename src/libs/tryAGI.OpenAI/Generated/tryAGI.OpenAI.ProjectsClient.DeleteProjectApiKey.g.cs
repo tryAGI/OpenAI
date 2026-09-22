@@ -44,6 +44,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Delete project API key<br/>
         /// Deletes an API key from the project.<br/>
         /// Returns confirmation of the key deletion, or an error if the key belonged to<br/>
         /// a service account.
@@ -69,6 +70,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Delete project API key<br/>
         /// Deletes an API key from the project.<br/>
         /// Returns confirmation of the key deletion, or an error if the key belonged to<br/>
         /// a service account.

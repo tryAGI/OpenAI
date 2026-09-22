@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create batch<br/>
         /// Creates and executes a batch from an uploaded file of requests
         /// </summary>
         /// <param name="request"></param>
@@ -64,6 +65,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Create batch<br/>
         /// Creates and executes a batch from an uploaded file of requests
         /// </summary>
         /// <param name="request"></param>
@@ -432,12 +434,13 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Create batch<br/>
         /// Creates and executes a batch from an uploaded file of requests
         /// </summary>
         /// <param name="inputFileId">
         /// The ID of an uploaded file that contains requests for the new batch.<br/>
-        /// See [upload file](/docs/api-reference/files/create) for how to upload a file.<br/>
-        /// Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.
+        /// See [upload file](https://developers.openai.com/api/reference/resources/files/methods/create) for how to upload a file.<br/>
+        /// Your input file must be formatted as a [JSONL file](https://developers.openai.com/api/docs/guides/batch#1-prepare-your-batch-file), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.
         /// </param>
         /// <param name="endpoint">
         /// The endpoint to be used for all requests in the batch. Currently `/v1/responses`, `/v1/chat/completions`, `/v1/embeddings`, `/v1/completions`, `/v1/moderations`, `/v1/images/generations`, `/v1/images/edits`, and `/v1/videos` are supported. Note that `/v1/embeddings` batches are also restricted to a maximum of 50,000 embedding inputs across all requests in the batch.

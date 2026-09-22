@@ -19,8 +19,8 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// The content moderation model you would like to use. Learn more in<br/>
-        /// [the moderation guide](/docs/guides/moderation), and learn about<br/>
-        /// available models [here](/docs/models#moderation).<br/>
+        /// [the moderation guide](https://developers.openai.com/api/docs/guides/moderation), and learn about<br/>
+        /// available models [here](https://developers.openai.com/api/docs/guides/moderation).<br/>
         /// Default Value: omni-moderation-latest<br/>
         /// Example: omni-moderation-2024-09-26
         /// </summary>
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="model">
         /// The content moderation model you would like to use. Learn more in<br/>
-        /// [the moderation guide](/docs/guides/moderation), and learn about<br/>
-        /// available models [here](/docs/models#moderation).<br/>
+        /// [the moderation guide](https://developers.openai.com/api/docs/guides/moderation), and learn about<br/>
+        /// available models [here](https://developers.openai.com/api/docs/guides/moderation).<br/>
         /// Default Value: omni-moderation-latest<br/>
         /// Example: omni-moderation-2024-09-26
         /// </param>

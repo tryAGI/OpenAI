@@ -62,7 +62,8 @@ internal static partial class SkillsCreateSkillVersionCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-skill-version", @"Create a new immutable skill version.");
+        var command = new Command(@"create-skill-version", @"Create Skill Version
+Create a new immutable skill version.");
                         command.Arguments.Add(SkillId);
                         command.Options.Add(Files);
                         command.Options.Add(Default);

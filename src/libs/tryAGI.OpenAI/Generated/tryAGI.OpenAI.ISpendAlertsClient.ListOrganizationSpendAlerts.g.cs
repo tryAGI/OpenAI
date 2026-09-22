@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ISpendAlertsClient
     {
         /// <summary>
+        /// List organization spend alerts<br/>
         /// Lists organization spend alerts.
         /// </summary>
         /// <param name="limit"></param>
@@ -24,6 +25,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List organization spend alerts<br/>
         /// Lists organization spend alerts.
         /// </summary>
         /// <param name="limit"></param>

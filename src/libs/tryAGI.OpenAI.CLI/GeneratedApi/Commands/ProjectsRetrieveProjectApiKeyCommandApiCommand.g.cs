@@ -41,7 +41,8 @@ internal static partial class ProjectsRetrieveProjectApiKeyCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-project-api-key", @"Retrieves an API key in the project.");
+        var command = new Command(@"retrieve-project-api-key", @"Retrieve project API key
+Retrieves an API key in the project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(ApiKeyId);
 

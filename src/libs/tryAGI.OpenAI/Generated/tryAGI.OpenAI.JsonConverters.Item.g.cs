@@ -98,6 +98,13 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.AdditionalToolsItemParam)}");
                 additionalTools = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParam? configurationUpdate = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.ItemDiscriminatorType.ConfigurationUpdate)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParam)}");
+                configurationUpdate = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.ReasoningItem? reasoning = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.ItemDiscriminatorType.Reasoning)
             {
@@ -235,6 +242,8 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 additionalTools,
 
+                configurationUpdate,
+
                 reasoning,
 
                 compaction,
@@ -345,6 +354,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AdditionalToolsItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AdditionalToolsItemParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AdditionalToolsItemParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.AdditionalTools!, typeInfo);
+            }
+            else if (value.IsConfigurationUpdate)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ConfigurationUpdate!, typeInfo);
             }
             else if (value.IsReasoning)
             {

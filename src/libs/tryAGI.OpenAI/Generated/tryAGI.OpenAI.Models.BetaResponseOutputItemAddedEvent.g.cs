@@ -36,7 +36,10 @@ namespace tryAGI.OpenAI
         public required int SequenceNumber { get; set; }
 
         /// <summary>
-        /// The output item that was added.
+        /// The output item that was added. For reasoning items, `encrypted_content`<br/>
+        /// may be incomplete while the item is in progress. Use the reasoning item<br/>
+        /// from the corresponding `response.output_item.done` event when passing it<br/>
+        /// as input to a subsequent request.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaOutputItemJsonConverter))]
@@ -59,7 +62,10 @@ namespace tryAGI.OpenAI
         /// The sequence number of this event.
         /// </param>
         /// <param name="item">
-        /// The output item that was added.
+        /// The output item that was added. For reasoning items, `encrypted_content`<br/>
+        /// may be incomplete while the item is in progress. Use the reasoning item<br/>
+        /// from the corresponding `response.output_item.done` event when passing it<br/>
+        /// as input to a subsequent request.
         /// </param>
         /// <param name="agent">
         /// The agent that owns this multi-agent streaming event.

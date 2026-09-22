@@ -1229,7 +1229,7 @@ namespace tryAGI.OpenAI
         /// **WebRTC/SIP Only:** Emitted when the server begins streaming audio to the client. This event is<br/>
         /// emitted after an audio content part has been added (`response.content_part.added`)<br/>
         /// to the response.<br/>
-        /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
+        /// [Learn more](https://developers.openai.com/api/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStarted? OutputAudioBufferStarted { get; init; }
@@ -1269,7 +1269,7 @@ namespace tryAGI.OpenAI
         /// **WebRTC/SIP Only:** Emitted when the output audio buffer has been completely drained on the server,<br/>
         /// and no more audio is forthcoming. This event is emitted after the full response<br/>
         /// data has been sent to the client (`response.done`).<br/>
-        /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
+        /// [Learn more](https://developers.openai.com/api/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStopped? OutputAudioBufferStopped { get; init; }
@@ -1310,7 +1310,7 @@ namespace tryAGI.OpenAI
         /// mode when the user has interrupted (`input_audio_buffer.speech_started`),<br/>
         /// or when the client has emitted the `output_audio_buffer.clear` event to manually<br/>
         /// cut off the current audio response.<br/>
-        /// [Learn more](/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
+        /// [Learn more](https://developers.openai.com/api/docs/guides/realtime-conversations#client-and-server-events-for-audio-in-webrtc).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferCleared? OutputAudioBufferCleared { get; init; }

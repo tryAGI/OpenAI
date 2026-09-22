@@ -37,6 +37,7 @@ namespace tryAGI.OpenAI
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
         /// <summary>
+        /// Create transcription<br/>
         /// Transcribes audio into the input language.<br/>
         /// Returns a transcription object in `json`, `diarized_json`, or `verbose_json`<br/>
         /// format, or a stream of transcript events.
@@ -537,15 +538,18 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Create transcription<br/>
         /// Transcribes audio into the input language.<br/>
         /// Returns a transcription object in `json`, `diarized_json`, or `verbose_json`<br/>
         /// format, or a stream of transcript events.
         /// </summary>
         /// <param name="file">
-        /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+        /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.<br/>
+        /// The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
         /// </param>
         /// <param name="filename">
-        /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+        /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.<br/>
+        /// The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
         /// </param>
         /// <param name="model">
         /// ID of the model to use. The options are `gpt-transcribe`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.<br/>
@@ -561,7 +565,7 @@ namespace tryAGI.OpenAI
         /// Words or phrases to guide transcription of the input audio. Supported by `gpt-transcribe`.
         /// </param>
         /// <param name="prompt">
-        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should match the audio language. This field is not supported when using `gpt-4o-transcribe-diarize`.
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](https://developers.openai.com/api/docs/guides/speech-to-text#prompting) should match the audio language. This field is not supported when using `gpt-4o-transcribe-diarize`.
         /// </param>
         /// <param name="responseFormat">
         /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, `vtt`, or `diarized_json`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`. For `gpt-4o-transcribe-diarize`, the supported formats are `json`, `text`, and `diarized_json`, with `diarized_json` required to receive speaker annotations.<br/>
@@ -642,15 +646,18 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
+        /// Create transcription<br/>
         /// Transcribes audio into the input language.<br/>
         /// Returns a transcription object in `json`, `diarized_json`, or `verbose_json`<br/>
         /// format, or a stream of transcript events.
         /// </summary>
         /// <param name="file">
-        /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+        /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.<br/>
+        /// The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
         /// </param>
         /// <param name="filename">
-        /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+        /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.<br/>
+        /// The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
         /// </param>
         /// <param name="model">
         /// ID of the model to use. The options are `gpt-transcribe`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.<br/>
@@ -666,7 +673,7 @@ namespace tryAGI.OpenAI
         /// Words or phrases to guide transcription of the input audio. Supported by `gpt-transcribe`.
         /// </param>
         /// <param name="prompt">
-        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should match the audio language. This field is not supported when using `gpt-4o-transcribe-diarize`.
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](https://developers.openai.com/api/docs/guides/speech-to-text#prompting) should match the audio language. This field is not supported when using `gpt-4o-transcribe-diarize`.
         /// </param>
         /// <param name="responseFormat">
         /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, `vtt`, or `diarized_json`. For `gpt-4o-transcribe` and `gpt-4o-mini-transcribe`, the only supported format is `json`. For `gpt-4o-transcribe-diarize`, the supported formats are `json`, `text`, and `diarized_json`, with `diarized_json` required to receive speaker annotations.<br/>

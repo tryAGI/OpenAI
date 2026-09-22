@@ -41,7 +41,8 @@ internal static partial class SpendAlertsDeleteProjectSpendAlertCommandApiComman
 
     public static Command Create()
     {
-        var command = new Command(@"delete-project-spend-alert", @"Deletes a project spend alert.");
+        var command = new Command(@"delete-project-spend-alert", @"Delete project spend alert
+Deletes a project spend alert.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(AlertId);
 

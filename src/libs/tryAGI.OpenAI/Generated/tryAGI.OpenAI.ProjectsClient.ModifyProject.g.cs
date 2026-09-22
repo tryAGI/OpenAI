@@ -1,6 +1,8 @@
 
 #nullable enable
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 namespace tryAGI.OpenAI
 {
     public partial class ProjectsClient
@@ -44,6 +46,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Modify project<br/>
         /// Modifies a project in the organization.
         /// </summary>
         /// <param name="projectId"></param>
@@ -69,6 +72,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Modify project<br/>
         /// Modifies a project in the organization.
         /// </summary>
         /// <param name="projectId"></param>
@@ -480,6 +484,7 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Modify project<br/>
         /// Modifies a project in the organization.
         /// </summary>
         /// <param name="projectId"></param>
@@ -489,9 +494,6 @@ namespace tryAGI.OpenAI
         /// <param name="externalKeyId">
         /// External key ID to associate with the project.
         /// </param>
-        /// <param name="geography">
-        /// Geography for the project.
-        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -499,7 +501,6 @@ namespace tryAGI.OpenAI
             string projectId,
             string? name = default,
             string? externalKeyId = default,
-            string? geography = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -507,7 +508,6 @@ namespace tryAGI.OpenAI
             {
                 Name = name,
                 ExternalKeyId = externalKeyId,
-                Geography = geography,
             };
 
             return await ModifyProjectAsync(

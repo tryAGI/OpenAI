@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The size of the image generated. Either `1024x1024`, `1024x1536`, or `1536x1024`.
+    ///
     /// </summary>
     public enum ImagesResponseSize
     {

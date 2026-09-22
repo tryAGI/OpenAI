@@ -55,7 +55,8 @@ internal static partial class GroupUsersListGroupUsersCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-group-users", @"Lists the users assigned to a group.");
+        var command = new Command(@"list-group-users", @"List group users
+Lists the users assigned to a group.");
                         command.Arguments.Add(GroupId);
                         command.Options.Add(Limit);
                         command.Options.Add(After);

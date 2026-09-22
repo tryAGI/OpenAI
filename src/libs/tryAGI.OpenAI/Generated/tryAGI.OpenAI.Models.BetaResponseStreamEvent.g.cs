@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    ///
+    /// Event emitted while a response is streamed.
     /// </summary>
     public readonly partial struct BetaResponseStreamEvent : global::System.IEquatable<BetaResponseStreamEvent>
     {
@@ -346,6 +346,43 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInterpretingEvent PickResponseCodeInterpreterCallInterpreting() => IsResponseCodeInterpreterCallInterpreting
             ? ResponseCodeInterpreterCallInterpreting!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallInterpreting' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Emitted when new summary content is sampled for a compaction trigger. Contains no summary content.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent? ResponseCompactionCompacting { get; init; }
+#else
+        public global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent? ResponseCompactionCompacting { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseCompactionCompacting))]
+#endif
+        public bool IsResponseCompactionCompacting => ResponseCompactionCompacting != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickResponseCompactionCompacting(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent? value)
+        {
+            value = ResponseCompactionCompacting;
+            return IsResponseCompactionCompacting;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent PickResponseCompactionCompacting() => IsResponseCompactionCompacting
+            ? ResponseCompactionCompacting!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCompactionCompacting' but the value was {ToString()}.");
 
         /// <summary>
         /// Emitted when the model response is complete.
@@ -718,6 +755,191 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDone' but the value was {ToString()}.");
 
         /// <summary>
+        /// A streaming event that indicated a shell command was added to a tool call.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent? ResponseShellCallCommandAdded { get; init; }
+#else
+        public global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent? ResponseShellCallCommandAdded { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseShellCallCommandAdded))]
+#endif
+        public bool IsResponseShellCallCommandAdded => ResponseShellCallCommandAdded != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickResponseShellCallCommandAdded(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent? value)
+        {
+            value = ResponseShellCallCommandAdded;
+            return IsResponseShellCallCommandAdded;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent PickResponseShellCallCommandAdded() => IsResponseShellCallCommandAdded
+            ? ResponseShellCallCommandAdded!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseShellCallCommandAdded' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A streaming event that indicated a shell command was incrementally updated.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent? ResponseShellCallCommandDelta { get; init; }
+#else
+        public global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent? ResponseShellCallCommandDelta { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseShellCallCommandDelta))]
+#endif
+        public bool IsResponseShellCallCommandDelta => ResponseShellCallCommandDelta != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickResponseShellCallCommandDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent? value)
+        {
+            value = ResponseShellCallCommandDelta;
+            return IsResponseShellCallCommandDelta;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent PickResponseShellCallCommandDelta() => IsResponseShellCallCommandDelta
+            ? ResponseShellCallCommandDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseShellCallCommandDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A streaming event that indicated a shell command was completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent? ResponseShellCallCommandDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent? ResponseShellCallCommandDone { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseShellCallCommandDone))]
+#endif
+        public bool IsResponseShellCallCommandDone => ResponseShellCallCommandDone != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickResponseShellCallCommandDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent? value)
+        {
+            value = ResponseShellCallCommandDone;
+            return IsResponseShellCallCommandDone;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent PickResponseShellCallCommandDone() => IsResponseShellCallCommandDone
+            ? ResponseShellCallCommandDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseShellCallCommandDone' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A streaming event that indicated shell call output was incrementally added.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent? ResponseShellCallOutputContentDelta { get; init; }
+#else
+        public global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent? ResponseShellCallOutputContentDelta { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseShellCallOutputContentDelta))]
+#endif
+        public bool IsResponseShellCallOutputContentDelta => ResponseShellCallOutputContentDelta != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickResponseShellCallOutputContentDelta(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent? value)
+        {
+            value = ResponseShellCallOutputContentDelta;
+            return IsResponseShellCallOutputContentDelta;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent PickResponseShellCallOutputContentDelta() => IsResponseShellCallOutputContentDelta
+            ? ResponseShellCallOutputContentDelta!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseShellCallOutputContentDelta' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A streaming event that indicated shell call output was completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent? ResponseShellCallOutputContentDone { get; init; }
+#else
+        public global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent? ResponseShellCallOutputContentDone { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ResponseShellCallOutputContentDone))]
+#endif
+        public bool IsResponseShellCallOutputContentDone => ResponseShellCallOutputContentDone != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickResponseShellCallOutputContentDone(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent? value)
+        {
+            value = ResponseShellCallOutputContentDone;
+            return IsResponseShellCallOutputContentDone;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent PickResponseShellCallOutputContentDone() => IsResponseShellCallOutputContentDone
+            ? ResponseShellCallOutputContentDone!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseShellCallOutputContentDone' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted when the response is in progress.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -792,7 +1014,10 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFailed' but the value was {ToString()}.");
 
         /// <summary>
-        /// An event that is emitted when a response finishes as incomplete.
+        /// An event that is emitted when a response finishes as incomplete.<br/>
+        /// Over WebSocket, steering can finish a response with<br/>
+        /// `response.incomplete_details.reason` set to `steered`, followed automatically<br/>
+        /// by a successor `response.created` that commits the queued steering input.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaResponseIncompleteEvent? ResponseIncomplete { get; init; }
@@ -2184,6 +2409,29 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator BetaResponseStreamEvent(global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent value) => new BetaResponseStreamEvent((global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent?(BetaResponseStreamEvent @this) => @this.ResponseCompactionCompacting;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaResponseStreamEvent(global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent? value)
+        {
+            ResponseCompactionCompacting = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaResponseStreamEvent FromResponseCompactionCompacting(global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent? value) => new BetaResponseStreamEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator BetaResponseStreamEvent(global::tryAGI.OpenAI.BetaResponseCompletedEvent value) => new BetaResponseStreamEvent((global::tryAGI.OpenAI.BetaResponseCompletedEvent?)value);
 
         /// <summary>
@@ -2410,6 +2658,121 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public static BetaResponseStreamEvent FromResponseFunctionCallArgumentsDone(global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent? value) => new BetaResponseStreamEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaResponseStreamEvent(global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent value) => new BetaResponseStreamEvent((global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent?(BetaResponseStreamEvent @this) => @this.ResponseShellCallCommandAdded;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaResponseStreamEvent(global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent? value)
+        {
+            ResponseShellCallCommandAdded = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaResponseStreamEvent FromResponseShellCallCommandAdded(global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent? value) => new BetaResponseStreamEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaResponseStreamEvent(global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent value) => new BetaResponseStreamEvent((global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent?(BetaResponseStreamEvent @this) => @this.ResponseShellCallCommandDelta;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaResponseStreamEvent(global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent? value)
+        {
+            ResponseShellCallCommandDelta = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaResponseStreamEvent FromResponseShellCallCommandDelta(global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent? value) => new BetaResponseStreamEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaResponseStreamEvent(global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent value) => new BetaResponseStreamEvent((global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent?(BetaResponseStreamEvent @this) => @this.ResponseShellCallCommandDone;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaResponseStreamEvent(global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent? value)
+        {
+            ResponseShellCallCommandDone = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaResponseStreamEvent FromResponseShellCallCommandDone(global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent? value) => new BetaResponseStreamEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaResponseStreamEvent(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent value) => new BetaResponseStreamEvent((global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent?(BetaResponseStreamEvent @this) => @this.ResponseShellCallOutputContentDelta;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaResponseStreamEvent(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent? value)
+        {
+            ResponseShellCallOutputContentDelta = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaResponseStreamEvent FromResponseShellCallOutputContentDelta(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent? value) => new BetaResponseStreamEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator BetaResponseStreamEvent(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent value) => new BetaResponseStreamEvent((global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent?(BetaResponseStreamEvent @this) => @this.ResponseShellCallOutputContentDone;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public BetaResponseStreamEvent(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent? value)
+        {
+            ResponseShellCallOutputContentDone = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static BetaResponseStreamEvent FromResponseShellCallOutputContentDone(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent? value) => new BetaResponseStreamEvent(value);
 
         /// <summary>
         ///
@@ -3207,6 +3570,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCompletedEvent? responseCodeInterpreterCallCompleted,
             global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInProgressEvent? responseCodeInterpreterCallInProgress,
             global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInterpretingEvent? responseCodeInterpreterCallInterpreting,
+            global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent? responseCompactionCompacting,
             global::tryAGI.OpenAI.BetaResponseCompletedEvent? responseCompleted,
             global::tryAGI.OpenAI.BetaResponseContentPartAddedEvent? responseContentPartAdded,
             global::tryAGI.OpenAI.BetaResponseContentPartDoneEvent? responseContentPartDone,
@@ -3217,6 +3581,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaResponseFileSearchCallSearchingEvent? responseFileSearchCallSearching,
             global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDeltaEvent? responseFunctionCallArgumentsDelta,
             global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent? responseFunctionCallArgumentsDone,
+            global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent? responseShellCallCommandAdded,
+            global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent? responseShellCallCommandDelta,
+            global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent? responseShellCallCommandDone,
+            global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent? responseShellCallOutputContentDelta,
+            global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent? responseShellCallOutputContentDone,
             global::tryAGI.OpenAI.BetaResponseInProgressEvent? responseInProgress,
             global::tryAGI.OpenAI.BetaResponseFailedEvent? responseFailed,
             global::tryAGI.OpenAI.BetaResponseIncompleteEvent? responseIncomplete,
@@ -3264,6 +3633,7 @@ namespace tryAGI.OpenAI
             ResponseCodeInterpreterCallCompleted = responseCodeInterpreterCallCompleted;
             ResponseCodeInterpreterCallInProgress = responseCodeInterpreterCallInProgress;
             ResponseCodeInterpreterCallInterpreting = responseCodeInterpreterCallInterpreting;
+            ResponseCompactionCompacting = responseCompactionCompacting;
             ResponseCompleted = responseCompleted;
             ResponseContentPartAdded = responseContentPartAdded;
             ResponseContentPartDone = responseContentPartDone;
@@ -3274,6 +3644,11 @@ namespace tryAGI.OpenAI
             ResponseFileSearchCallSearching = responseFileSearchCallSearching;
             ResponseFunctionCallArgumentsDelta = responseFunctionCallArgumentsDelta;
             ResponseFunctionCallArgumentsDone = responseFunctionCallArgumentsDone;
+            ResponseShellCallCommandAdded = responseShellCallCommandAdded;
+            ResponseShellCallCommandDelta = responseShellCallCommandDelta;
+            ResponseShellCallCommandDone = responseShellCallCommandDone;
+            ResponseShellCallOutputContentDelta = responseShellCallOutputContentDelta;
+            ResponseShellCallOutputContentDone = responseShellCallOutputContentDone;
             ResponseInProgress = responseInProgress;
             ResponseFailed = responseFailed;
             ResponseIncomplete = responseIncomplete;
@@ -3348,6 +3723,11 @@ namespace tryAGI.OpenAI
             ResponseIncomplete as object ??
             ResponseFailed as object ??
             ResponseInProgress as object ??
+            ResponseShellCallOutputContentDone as object ??
+            ResponseShellCallOutputContentDelta as object ??
+            ResponseShellCallCommandDone as object ??
+            ResponseShellCallCommandDelta as object ??
+            ResponseShellCallCommandAdded as object ??
             ResponseFunctionCallArgumentsDone as object ??
             ResponseFunctionCallArgumentsDelta as object ??
             ResponseFileSearchCallSearching as object ??
@@ -3358,6 +3738,7 @@ namespace tryAGI.OpenAI
             ResponseContentPartDone as object ??
             ResponseContentPartAdded as object ??
             ResponseCompleted as object ??
+            ResponseCompactionCompacting as object ??
             ResponseCodeInterpreterCallInterpreting as object ??
             ResponseCodeInterpreterCallInProgress as object ??
             ResponseCodeInterpreterCallCompleted as object ??
@@ -3382,6 +3763,7 @@ namespace tryAGI.OpenAI
             ResponseCodeInterpreterCallCompleted?.ToString() ??
             ResponseCodeInterpreterCallInProgress?.ToString() ??
             ResponseCodeInterpreterCallInterpreting?.ToString() ??
+            ResponseCompactionCompacting?.ToString() ??
             ResponseCompleted?.ToString() ??
             ResponseContentPartAdded?.ToString() ??
             ResponseContentPartDone?.ToString() ??
@@ -3392,6 +3774,11 @@ namespace tryAGI.OpenAI
             ResponseFileSearchCallSearching?.ToString() ??
             ResponseFunctionCallArgumentsDelta?.ToString() ??
             ResponseFunctionCallArgumentsDone?.ToString() ??
+            ResponseShellCallCommandAdded?.ToString() ??
+            ResponseShellCallCommandDelta?.ToString() ??
+            ResponseShellCallCommandDone?.ToString() ??
+            ResponseShellCallOutputContentDelta?.ToString() ??
+            ResponseShellCallOutputContentDone?.ToString() ??
             ResponseInProgress?.ToString() ??
             ResponseFailed?.ToString() ??
             ResponseIncomplete?.ToString() ??
@@ -3433,7 +3820,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsResponseAudioDelta || IsResponseAudioDone || IsResponseAudioTranscriptDelta || IsResponseAudioTranscriptDone || IsResponseCodeInterpreterCallCodeDelta || IsResponseCodeInterpreterCallCodeDone || IsResponseCodeInterpreterCallCompleted || IsResponseCodeInterpreterCallInProgress || IsResponseCodeInterpreterCallInterpreting || IsResponseCompleted || IsResponseContentPartAdded || IsResponseContentPartDone || IsResponseCreated || IsError || IsResponseFileSearchCallCompleted || IsResponseFileSearchCallInProgress || IsResponseFileSearchCallSearching || IsResponseFunctionCallArgumentsDelta || IsResponseFunctionCallArgumentsDone || IsResponseInProgress || IsResponseFailed || IsResponseIncomplete || IsResponseOutputItemAdded || IsResponseOutputItemDone || IsResponseReasoningSummaryPartAdded || IsResponseReasoningSummaryPartDone || IsResponseReasoningSummaryTextDelta || IsResponseReasoningSummaryTextDone || IsResponseReasoningTextDelta || IsResponseReasoningTextDone || IsResponseRefusalDelta || IsResponseRefusalDone || IsResponseOutputTextDelta || IsResponseOutputTextDone || IsResponseWebSearchCallCompleted || IsResponseWebSearchCallInProgress || IsResponseWebSearchCallSearching || IsResponseImageGenerationCallCompleted || IsResponseImageGenerationCallGenerating || IsResponseImageGenerationCallInProgress || IsResponseImageGenerationCallPartialImage || IsResponseMcpCallArgumentsDelta || IsResponseMcpCallArgumentsDone || IsResponseMcpCallCompleted || IsResponseMcpCallFailed || IsResponseMcpCallInProgress || IsResponseMcpListToolsCompleted || IsResponseMcpListToolsFailed || IsResponseMcpListToolsInProgress || IsResponseOutputTextAnnotationAdded || IsResponseQueued || IsResponseCustomToolCallInputDelta || IsResponseCustomToolCallInputDone;
+            return IsResponseAudioDelta || IsResponseAudioDone || IsResponseAudioTranscriptDelta || IsResponseAudioTranscriptDone || IsResponseCodeInterpreterCallCodeDelta || IsResponseCodeInterpreterCallCodeDone || IsResponseCodeInterpreterCallCompleted || IsResponseCodeInterpreterCallInProgress || IsResponseCodeInterpreterCallInterpreting || IsResponseCompactionCompacting || IsResponseCompleted || IsResponseContentPartAdded || IsResponseContentPartDone || IsResponseCreated || IsError || IsResponseFileSearchCallCompleted || IsResponseFileSearchCallInProgress || IsResponseFileSearchCallSearching || IsResponseFunctionCallArgumentsDelta || IsResponseFunctionCallArgumentsDone || IsResponseShellCallCommandAdded || IsResponseShellCallCommandDelta || IsResponseShellCallCommandDone || IsResponseShellCallOutputContentDelta || IsResponseShellCallOutputContentDone || IsResponseInProgress || IsResponseFailed || IsResponseIncomplete || IsResponseOutputItemAdded || IsResponseOutputItemDone || IsResponseReasoningSummaryPartAdded || IsResponseReasoningSummaryPartDone || IsResponseReasoningSummaryTextDelta || IsResponseReasoningSummaryTextDone || IsResponseReasoningTextDelta || IsResponseReasoningTextDone || IsResponseRefusalDelta || IsResponseRefusalDone || IsResponseOutputTextDelta || IsResponseOutputTextDone || IsResponseWebSearchCallCompleted || IsResponseWebSearchCallInProgress || IsResponseWebSearchCallSearching || IsResponseImageGenerationCallCompleted || IsResponseImageGenerationCallGenerating || IsResponseImageGenerationCallInProgress || IsResponseImageGenerationCallPartialImage || IsResponseMcpCallArgumentsDelta || IsResponseMcpCallArgumentsDone || IsResponseMcpCallCompleted || IsResponseMcpCallFailed || IsResponseMcpCallInProgress || IsResponseMcpListToolsCompleted || IsResponseMcpListToolsFailed || IsResponseMcpListToolsInProgress || IsResponseOutputTextAnnotationAdded || IsResponseQueued || IsResponseCustomToolCallInputDelta || IsResponseCustomToolCallInputDone;
         }
 
         /// <summary>
@@ -3449,6 +3836,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCompletedEvent, TResult>? responseCodeInterpreterCallCompleted = null,
             global::System.Func<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInProgressEvent, TResult>? responseCodeInterpreterCallInProgress = null,
             global::System.Func<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInterpretingEvent, TResult>? responseCodeInterpreterCallInterpreting = null,
+            global::System.Func<global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent, TResult>? responseCompactionCompacting = null,
             global::System.Func<global::tryAGI.OpenAI.BetaResponseCompletedEvent, TResult>? responseCompleted = null,
             global::System.Func<global::tryAGI.OpenAI.BetaResponseContentPartAddedEvent, TResult>? responseContentPartAdded = null,
             global::System.Func<global::tryAGI.OpenAI.BetaResponseContentPartDoneEvent, TResult>? responseContentPartDone = null,
@@ -3459,6 +3847,11 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.BetaResponseFileSearchCallSearchingEvent, TResult>? responseFileSearchCallSearching = null,
             global::System.Func<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDeltaEvent, TResult>? responseFunctionCallArgumentsDelta = null,
             global::System.Func<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent, TResult>? responseFunctionCallArgumentsDone = null,
+            global::System.Func<global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent, TResult>? responseShellCallCommandAdded = null,
+            global::System.Func<global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent, TResult>? responseShellCallCommandDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent, TResult>? responseShellCallCommandDone = null,
+            global::System.Func<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent, TResult>? responseShellCallOutputContentDelta = null,
+            global::System.Func<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent, TResult>? responseShellCallOutputContentDone = null,
             global::System.Func<global::tryAGI.OpenAI.BetaResponseInProgressEvent, TResult>? responseInProgress = null,
             global::System.Func<global::tryAGI.OpenAI.BetaResponseFailedEvent, TResult>? responseFailed = null,
             global::System.Func<global::tryAGI.OpenAI.BetaResponseIncompleteEvent, TResult>? responseIncomplete = null,
@@ -3536,6 +3929,10 @@ namespace tryAGI.OpenAI
             {
                 return responseCodeInterpreterCallInterpreting(ResponseCodeInterpreterCallInterpreting!);
             }
+            else if (IsResponseCompactionCompacting && responseCompactionCompacting != null)
+            {
+                return responseCompactionCompacting(ResponseCompactionCompacting!);
+            }
             else if (IsResponseCompleted && responseCompleted != null)
             {
                 return responseCompleted(ResponseCompleted!);
@@ -3575,6 +3972,26 @@ namespace tryAGI.OpenAI
             else if (IsResponseFunctionCallArgumentsDone && responseFunctionCallArgumentsDone != null)
             {
                 return responseFunctionCallArgumentsDone(ResponseFunctionCallArgumentsDone!);
+            }
+            else if (IsResponseShellCallCommandAdded && responseShellCallCommandAdded != null)
+            {
+                return responseShellCallCommandAdded(ResponseShellCallCommandAdded!);
+            }
+            else if (IsResponseShellCallCommandDelta && responseShellCallCommandDelta != null)
+            {
+                return responseShellCallCommandDelta(ResponseShellCallCommandDelta!);
+            }
+            else if (IsResponseShellCallCommandDone && responseShellCallCommandDone != null)
+            {
+                return responseShellCallCommandDone(ResponseShellCallCommandDone!);
+            }
+            else if (IsResponseShellCallOutputContentDelta && responseShellCallOutputContentDelta != null)
+            {
+                return responseShellCallOutputContentDelta(ResponseShellCallOutputContentDelta!);
+            }
+            else if (IsResponseShellCallOutputContentDone && responseShellCallOutputContentDone != null)
+            {
+                return responseShellCallOutputContentDone(ResponseShellCallOutputContentDone!);
             }
             else if (IsResponseInProgress && responseInProgress != null)
             {
@@ -3738,6 +4155,8 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInterpretingEvent>? responseCodeInterpreterCallInterpreting = null,
 
+            global::System.Action<global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent>? responseCompactionCompacting = null,
+
             global::System.Action<global::tryAGI.OpenAI.BetaResponseCompletedEvent>? responseCompleted = null,
 
             global::System.Action<global::tryAGI.OpenAI.BetaResponseContentPartAddedEvent>? responseContentPartAdded = null,
@@ -3757,6 +4176,16 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDeltaEvent>? responseFunctionCallArgumentsDelta = null,
 
             global::System.Action<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent>? responseFunctionCallArgumentsDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent>? responseShellCallCommandAdded = null,
+
+            global::System.Action<global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent>? responseShellCallCommandDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent>? responseShellCallCommandDone = null,
+
+            global::System.Action<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent>? responseShellCallOutputContentDelta = null,
+
+            global::System.Action<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent>? responseShellCallOutputContentDone = null,
 
             global::System.Action<global::tryAGI.OpenAI.BetaResponseInProgressEvent>? responseInProgress = null,
 
@@ -3868,6 +4297,10 @@ namespace tryAGI.OpenAI
             {
                 responseCodeInterpreterCallInterpreting?.Invoke(ResponseCodeInterpreterCallInterpreting!);
             }
+            else if (IsResponseCompactionCompacting)
+            {
+                responseCompactionCompacting?.Invoke(ResponseCompactionCompacting!);
+            }
             else if (IsResponseCompleted)
             {
                 responseCompleted?.Invoke(ResponseCompleted!);
@@ -3907,6 +4340,26 @@ namespace tryAGI.OpenAI
             else if (IsResponseFunctionCallArgumentsDone)
             {
                 responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+            }
+            else if (IsResponseShellCallCommandAdded)
+            {
+                responseShellCallCommandAdded?.Invoke(ResponseShellCallCommandAdded!);
+            }
+            else if (IsResponseShellCallCommandDelta)
+            {
+                responseShellCallCommandDelta?.Invoke(ResponseShellCallCommandDelta!);
+            }
+            else if (IsResponseShellCallCommandDone)
+            {
+                responseShellCallCommandDone?.Invoke(ResponseShellCallCommandDone!);
+            }
+            else if (IsResponseShellCallOutputContentDelta)
+            {
+                responseShellCallOutputContentDelta?.Invoke(ResponseShellCallOutputContentDelta!);
+            }
+            else if (IsResponseShellCallOutputContentDone)
+            {
+                responseShellCallOutputContentDone?.Invoke(ResponseShellCallOutputContentDone!);
             }
             else if (IsResponseInProgress)
             {
@@ -4059,6 +4512,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCompletedEvent>? responseCodeInterpreterCallCompleted = null,
             global::System.Action<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInProgressEvent>? responseCodeInterpreterCallInProgress = null,
             global::System.Action<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInterpretingEvent>? responseCodeInterpreterCallInterpreting = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent>? responseCompactionCompacting = null,
             global::System.Action<global::tryAGI.OpenAI.BetaResponseCompletedEvent>? responseCompleted = null,
             global::System.Action<global::tryAGI.OpenAI.BetaResponseContentPartAddedEvent>? responseContentPartAdded = null,
             global::System.Action<global::tryAGI.OpenAI.BetaResponseContentPartDoneEvent>? responseContentPartDone = null,
@@ -4069,6 +4523,11 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.BetaResponseFileSearchCallSearchingEvent>? responseFileSearchCallSearching = null,
             global::System.Action<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDeltaEvent>? responseFunctionCallArgumentsDelta = null,
             global::System.Action<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent>? responseFunctionCallArgumentsDone = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent>? responseShellCallCommandAdded = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent>? responseShellCallCommandDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent>? responseShellCallCommandDone = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent>? responseShellCallOutputContentDelta = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent>? responseShellCallOutputContentDone = null,
             global::System.Action<global::tryAGI.OpenAI.BetaResponseInProgressEvent>? responseInProgress = null,
             global::System.Action<global::tryAGI.OpenAI.BetaResponseFailedEvent>? responseFailed = null,
             global::System.Action<global::tryAGI.OpenAI.BetaResponseIncompleteEvent>? responseIncomplete = null,
@@ -4146,6 +4605,10 @@ namespace tryAGI.OpenAI
             {
                 responseCodeInterpreterCallInterpreting?.Invoke(ResponseCodeInterpreterCallInterpreting!);
             }
+            else if (IsResponseCompactionCompacting)
+            {
+                responseCompactionCompacting?.Invoke(ResponseCompactionCompacting!);
+            }
             else if (IsResponseCompleted)
             {
                 responseCompleted?.Invoke(ResponseCompleted!);
@@ -4185,6 +4648,26 @@ namespace tryAGI.OpenAI
             else if (IsResponseFunctionCallArgumentsDone)
             {
                 responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+            }
+            else if (IsResponseShellCallCommandAdded)
+            {
+                responseShellCallCommandAdded?.Invoke(ResponseShellCallCommandAdded!);
+            }
+            else if (IsResponseShellCallCommandDelta)
+            {
+                responseShellCallCommandDelta?.Invoke(ResponseShellCallCommandDelta!);
+            }
+            else if (IsResponseShellCallCommandDone)
+            {
+                responseShellCallCommandDone?.Invoke(ResponseShellCallCommandDone!);
+            }
+            else if (IsResponseShellCallOutputContentDelta)
+            {
+                responseShellCallOutputContentDelta?.Invoke(ResponseShellCallOutputContentDelta!);
+            }
+            else if (IsResponseShellCallOutputContentDone)
+            {
+                responseShellCallOutputContentDone?.Invoke(ResponseShellCallOutputContentDone!);
             }
             else if (IsResponseInProgress)
             {
@@ -4349,6 +4832,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInProgressEvent),
                 ResponseCodeInterpreterCallInterpreting,
                 typeof(global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInterpretingEvent),
+                ResponseCompactionCompacting,
+                typeof(global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent),
                 ResponseCompleted,
                 typeof(global::tryAGI.OpenAI.BetaResponseCompletedEvent),
                 ResponseContentPartAdded,
@@ -4369,6 +4854,16 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDeltaEvent),
                 ResponseFunctionCallArgumentsDone,
                 typeof(global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent),
+                ResponseShellCallCommandAdded,
+                typeof(global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent),
+                ResponseShellCallCommandDelta,
+                typeof(global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent),
+                ResponseShellCallCommandDone,
+                typeof(global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent),
+                ResponseShellCallOutputContentDelta,
+                typeof(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent),
+                ResponseShellCallOutputContentDone,
+                typeof(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent),
                 ResponseInProgress,
                 typeof(global::tryAGI.OpenAI.BetaResponseInProgressEvent),
                 ResponseFailed,
@@ -4462,6 +4957,7 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCompletedEvent?>.Default.Equals(ResponseCodeInterpreterCallCompleted, other.ResponseCodeInterpreterCallCompleted) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInProgressEvent?>.Default.Equals(ResponseCodeInterpreterCallInProgress, other.ResponseCodeInterpreterCallInProgress) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInterpretingEvent?>.Default.Equals(ResponseCodeInterpreterCallInterpreting, other.ResponseCodeInterpreterCallInterpreting) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent?>.Default.Equals(ResponseCompactionCompacting, other.ResponseCompactionCompacting) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseCompletedEvent?>.Default.Equals(ResponseCompleted, other.ResponseCompleted) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseContentPartAddedEvent?>.Default.Equals(ResponseContentPartAdded, other.ResponseContentPartAdded) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseContentPartDoneEvent?>.Default.Equals(ResponseContentPartDone, other.ResponseContentPartDone) &&
@@ -4472,6 +4968,11 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseFileSearchCallSearchingEvent?>.Default.Equals(ResponseFileSearchCallSearching, other.ResponseFileSearchCallSearching) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDeltaEvent?>.Default.Equals(ResponseFunctionCallArgumentsDelta, other.ResponseFunctionCallArgumentsDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent?>.Default.Equals(ResponseFunctionCallArgumentsDone, other.ResponseFunctionCallArgumentsDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent?>.Default.Equals(ResponseShellCallCommandAdded, other.ResponseShellCallCommandAdded) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent?>.Default.Equals(ResponseShellCallCommandDelta, other.ResponseShellCallCommandDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent?>.Default.Equals(ResponseShellCallCommandDone, other.ResponseShellCallCommandDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent?>.Default.Equals(ResponseShellCallOutputContentDelta, other.ResponseShellCallOutputContentDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent?>.Default.Equals(ResponseShellCallOutputContentDone, other.ResponseShellCallOutputContentDone) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseInProgressEvent?>.Default.Equals(ResponseInProgress, other.ResponseInProgress) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseFailedEvent?>.Default.Equals(ResponseFailed, other.ResponseFailed) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaResponseIncompleteEvent?>.Default.Equals(ResponseIncomplete, other.ResponseIncomplete) &&

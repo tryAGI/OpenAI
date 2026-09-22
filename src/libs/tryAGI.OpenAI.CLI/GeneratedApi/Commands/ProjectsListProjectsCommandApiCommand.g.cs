@@ -47,7 +47,8 @@ internal static partial class ProjectsListProjectsCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-projects", @"Returns a list of projects.");
+        var command = new Command(@"list-projects", @"List projects
+Returns a list of projects.");
                         command.Options.Add(Limit);
                         command.Options.Add(After);
                         command.Options.Add(IncludeArchived);

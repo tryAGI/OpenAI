@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Represents an execution run on a [thread](/docs/api-reference/threads).
+    /// Represents an execution run on a [thread](https://developers.openai.com/api/docs/assistants/migration).
     /// </summary>
     public sealed partial class RunObject
     {
@@ -30,14 +30,14 @@ namespace tryAGI.OpenAI
         public required int CreatedAt { get; set; }
 
         /// <summary>
-        /// The ID of the [thread](/docs/api-reference/threads) that was executed on as a part of this run.
+        /// The ID of the [thread](https://developers.openai.com/api/docs/assistants/migration) that was executed on as a part of this run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("thread_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ThreadId { get; set; }
 
         /// <summary>
-        /// The ID of the [assistant](/docs/api-reference/assistants) used for execution of this run.
+        /// The ID of the [assistant](https://developers.openai.com/api/docs/assistants/migration) used for execution of this run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assistant_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -100,21 +100,21 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RunObjectIncompleteDetails? IncompleteDetails { get; set; }
 
         /// <summary>
-        /// The model that the [assistant](/docs/api-reference/assistants) used for this run.
+        /// The model that the [assistant](https://developers.openai.com/api/docs/assistants/migration) used for this run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
 
         /// <summary>
-        /// The instructions that the [assistant](/docs/api-reference/assistants) used for this run.
+        /// The instructions that the [assistant](https://developers.openai.com/api/docs/assistants/migration) used for this run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Instructions { get; set; }
 
         /// <summary>
-        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.<br/>
+        /// The list of tools that the [assistant](https://developers.openai.com/api/docs/assistants/migration) used for this run.<br/>
         /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
@@ -174,7 +174,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.AssistantsApiToolChoiceOption?, object> ToolChoice { get; set; }
 
         /// <summary>
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
+        /// Whether to enable [parallel function calling](https://developers.openai.com/api/docs/guides/function-calling#parallel-function-calling) during tool use.<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
@@ -182,8 +182,8 @@ namespace tryAGI.OpenAI
         public required bool ParallelToolCalls { get; set; }
 
         /// <summary>
-        /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
+        /// Specifies the format that the model must output. Compatible with [GPT-4o](https://developers.openai.com/api/docs/models/gpt-4o), [GPT-4 Turbo](https://developers.openai.com/api/docs/models/gpt-4-turbo), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](https://developers.openai.com/api/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
@@ -208,33 +208,33 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the run was created.
         /// </param>
         /// <param name="threadId">
-        /// The ID of the [thread](/docs/api-reference/threads) that was executed on as a part of this run.
+        /// The ID of the [thread](https://developers.openai.com/api/docs/assistants/migration) that was executed on as a part of this run.
         /// </param>
         /// <param name="assistantId">
-        /// The ID of the [assistant](/docs/api-reference/assistants) used for execution of this run.
+        /// The ID of the [assistant](https://developers.openai.com/api/docs/assistants/migration) used for execution of this run.
         /// </param>
         /// <param name="status">
         /// The status of the run, which can be either `queued`, `in_progress`, `requires_action`, `cancelling`, `cancelled`, `failed`, `completed`, `incomplete`, or `expired`.
         /// </param>
         /// <param name="model">
-        /// The model that the [assistant](/docs/api-reference/assistants) used for this run.
+        /// The model that the [assistant](https://developers.openai.com/api/docs/assistants/migration) used for this run.
         /// </param>
         /// <param name="instructions">
-        /// The instructions that the [assistant](/docs/api-reference/assistants) used for this run.
+        /// The instructions that the [assistant](https://developers.openai.com/api/docs/assistants/migration) used for this run.
         /// </param>
         /// <param name="tools">
-        /// The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.<br/>
+        /// The list of tools that the [assistant](https://developers.openai.com/api/docs/assistants/migration) used for this run.<br/>
         /// Default Value: []
         /// </param>
         /// <param name="truncationStrategy"></param>
         /// <param name="toolChoice"></param>
         /// <param name="parallelToolCalls">
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
+        /// Whether to enable [parallel function calling](https://developers.openai.com/api/docs/guides/function-calling#parallel-function-calling) during tool use.<br/>
         /// Default Value: true
         /// </param>
         /// <param name="responseFormat">
-        /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
+        /// Specifies the format that the model must output. Compatible with [GPT-4o](https://developers.openai.com/api/docs/models/gpt-4o), [GPT-4 Turbo](https://developers.openai.com/api/docs/models/gpt-4-turbo), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](https://developers.openai.com/api/docs/guides/structured-outputs).<br/>
         /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </param>

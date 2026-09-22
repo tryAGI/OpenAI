@@ -46,6 +46,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Modify project user<br/>
         /// Modifies a user's role in the project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -74,6 +75,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Modify project user<br/>
         /// Modifies a user's role in the project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -489,6 +491,7 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Modify project user<br/>
         /// Modifies a user's role in the project.
         /// </summary>
         /// <param name="projectId"></param>

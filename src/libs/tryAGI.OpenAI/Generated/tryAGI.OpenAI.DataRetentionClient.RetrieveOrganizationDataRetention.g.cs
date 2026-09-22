@@ -40,6 +40,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Retrieve organization data retention<br/>
         /// Retrieves organization data retention controls.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -57,6 +58,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Retrieve organization data retention<br/>
         /// Retrieves organization data retention controls.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

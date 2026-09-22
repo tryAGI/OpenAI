@@ -35,7 +35,8 @@ internal static partial class ChatGetChatCompletionCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"get-chat-completion", @"Get a stored chat completion. Only Chat Completions that have been created
+        var command = new Command(@"get-chat-completion", @"Get chat completion
+Get a stored chat completion. Only Chat Completions that have been created
 with the `store` parameter set to `true` will be returned.
 ");
                         command.Arguments.Add(CompletionId);

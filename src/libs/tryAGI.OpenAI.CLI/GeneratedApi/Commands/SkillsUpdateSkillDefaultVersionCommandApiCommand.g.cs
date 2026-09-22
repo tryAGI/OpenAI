@@ -42,7 +42,8 @@ internal static partial class SkillsUpdateSkillDefaultVersionCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"update-skill-default-version", @"Update the default version pointer for a skill.");
+        var command = new Command(@"update-skill-default-version", @"Update Skill Default Version
+Update the default version pointer for a skill.");
                         command.Arguments.Add(SkillId);
                         command.Options.Add(DefaultVersion);
 

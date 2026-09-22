@@ -57,7 +57,8 @@ internal static partial class CertificatesModifyCertificateCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"modify-certificate", @"Modify a certificate. Note that only the name can be modified.
+        var command = new Command(@"modify-certificate", @"Modify certificate
+Modify a certificate. Note that only the name can be modified.
 ");
                         command.Arguments.Add(CertificateId);
                         command.Options.Add(NameOption);

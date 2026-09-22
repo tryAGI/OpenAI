@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IAssistantsClient
     {
         /// <summary>
+        /// Delete thread<br/>
         /// Delete a thread.
         /// </summary>
         /// <param name="threadId"></param>
@@ -16,6 +17,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Delete thread<br/>
         /// Delete a thread.
         /// </summary>
         /// <param name="threadId"></param>

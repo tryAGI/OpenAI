@@ -35,7 +35,8 @@ internal static partial class GroupsRetrieveGroupCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-group", @"Retrieves a group.");
+        var command = new Command(@"retrieve-group", @"Retrieve group
+Retrieves a group.");
                         command.Arguments.Add(GroupId);
 
 

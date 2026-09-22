@@ -39,6 +39,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ConfigurationUpdate,
+        /// <summary>
+        ///
+        /// </summary>
         CustomToolCall,
         /// <summary>
         ///
@@ -133,6 +137,7 @@ namespace tryAGI.OpenAI
                 ItemDiscriminatorType.Compaction => "compaction",
                 ItemDiscriminatorType.ComputerCall => "computer_call",
                 ItemDiscriminatorType.ComputerCallOutput => "computer_call_output",
+                ItemDiscriminatorType.ConfigurationUpdate => "configuration_update",
                 ItemDiscriminatorType.CustomToolCall => "custom_tool_call",
                 ItemDiscriminatorType.CustomToolCallOutput => "custom_tool_call_output",
                 ItemDiscriminatorType.FileSearchCall => "file_search_call",
@@ -169,6 +174,7 @@ namespace tryAGI.OpenAI
                 "compaction" => ItemDiscriminatorType.Compaction,
                 "computer_call" => ItemDiscriminatorType.ComputerCall,
                 "computer_call_output" => ItemDiscriminatorType.ComputerCallOutput,
+                "configuration_update" => ItemDiscriminatorType.ConfigurationUpdate,
                 "custom_tool_call" => ItemDiscriminatorType.CustomToolCall,
                 "custom_tool_call_output" => ItemDiscriminatorType.CustomToolCallOutput,
                 "file_search_call" => ItemDiscriminatorType.FileSearchCall,

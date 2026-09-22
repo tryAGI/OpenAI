@@ -59,7 +59,8 @@ internal static partial class ProjectGroupRoleAssignmentsListProjectGroupRoleAss
 
     public static Command Create()
     {
-        var command = new Command(@"list-project-group-role-assignments", @"Lists the project roles assigned to a group within a project.");
+        var command = new Command(@"list-project-group-role-assignments", @"List project group role assignments
+Lists the project roles assigned to a group within a project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(GroupId);
                         command.Options.Add(Limit);

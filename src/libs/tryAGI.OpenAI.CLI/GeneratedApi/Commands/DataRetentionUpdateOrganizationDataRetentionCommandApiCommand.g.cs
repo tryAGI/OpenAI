@@ -36,7 +36,8 @@ internal static partial class DataRetentionUpdateOrganizationDataRetentionComman
 
     public static Command Create()
     {
-        var command = new Command(@"update-organization-data-retention", @"Updates organization data retention controls.");
+        var command = new Command(@"update-organization-data-retention", @"Update organization data retention
+Updates organization data retention controls.");
                         command.Options.Add(RetentionType);
 
 

@@ -7,8 +7,8 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Represents a streamed chunk of a chat completion response returned<br/>
-    /// by the model, based on the provided input. <br/>
-    /// [Learn more](/docs/guides/streaming-responses).
+    /// by the model, based on the provided input.<br/>
+    /// [Learn more](https://developers.openai.com/api/docs/guides/streaming-responses).
     /// </summary>
     public sealed partial class CreateChatCompletionStreamResponse
     {
@@ -40,6 +40,14 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
+
+        /// <summary>
+        /// An obfuscation string added to normalize the size of streamed chunks as a<br/>
+        /// mitigation to certain side-channel attacks. The field is included by<br/>
+        /// default and omitted when `stream_options.include_obfuscation` is `false`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("obfuscation")]
+        public string? Obfuscation { get; set; }
 
         /// <summary>
         ///
@@ -102,6 +110,11 @@ namespace tryAGI.OpenAI
         /// <param name="model">
         /// The model to generate the completion.
         /// </param>
+        /// <param name="obfuscation">
+        /// An obfuscation string added to normalize the size of streamed chunks as a<br/>
+        /// mitigation to certain side-channel attacks. The field is included by<br/>
+        /// default and omitted when `stream_options.include_obfuscation` is `false`.
+        /// </param>
         /// <param name="serviceTier"></param>
         /// <param name="object">
         /// The object type, which is always `chat.completion.chunk`.
@@ -124,6 +137,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoice> choices,
             int created,
             string model,
+            string? obfuscation,
             global::tryAGI.OpenAI.ServiceTierEnum? serviceTier,
             global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject @object,
             global::tryAGI.OpenAI.CompletionUsage? usage,
@@ -133,6 +147,7 @@ namespace tryAGI.OpenAI
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
             this.Created = created;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Obfuscation = obfuscation;
             this.ServiceTier = serviceTier;
             this.Object = @object;
             this.Usage = usage;

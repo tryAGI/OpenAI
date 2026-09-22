@@ -40,6 +40,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List models<br/>
         /// Lists the currently available models, and provides basic information about each one such as the owner and availability.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -57,6 +58,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// List models<br/>
         /// Lists the currently available models, and provides basic information about each one such as the owner and availability.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

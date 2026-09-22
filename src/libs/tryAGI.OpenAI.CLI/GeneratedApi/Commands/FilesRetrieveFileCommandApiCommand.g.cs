@@ -35,7 +35,8 @@ internal static partial class FilesRetrieveFileCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-file", @"Returns information about a specific file.");
+        var command = new Command(@"retrieve-file", @"Retrieve file
+Returns information about a specific file.");
                         command.Arguments.Add(FileId);
 
 

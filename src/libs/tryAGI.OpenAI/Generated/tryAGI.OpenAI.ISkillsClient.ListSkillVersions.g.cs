@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ISkillsClient
     {
         /// <summary>
+        /// List Skill Versions<br/>
         /// List skill versions for a skill.
         /// </summary>
         /// <param name="skillId">
@@ -26,6 +27,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List Skill Versions<br/>
         /// List skill versions for a skill.
         /// </summary>
         /// <param name="skillId">

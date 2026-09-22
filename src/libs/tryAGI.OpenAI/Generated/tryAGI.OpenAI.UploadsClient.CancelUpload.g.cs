@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Cancel upload<br/>
         /// Cancels the Upload. No Parts may be added after an Upload is cancelled.<br/>
         /// Returns the Upload object with status `cancelled`.
         /// </summary>
@@ -65,6 +66,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Cancel upload<br/>
         /// Cancels the Upload. No Parts may be added after an Upload is cancelled.<br/>
         /// Returns the Upload object with status `cancelled`.
         /// </summary>

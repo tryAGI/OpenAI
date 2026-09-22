@@ -67,9 +67,10 @@ internal static partial class UploadsCompleteUploadCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"complete-upload", @"Completes the [Upload](/docs/api-reference/uploads/object).
+        var command = new Command(@"complete-upload", @"Complete upload
+Completes the [Upload](https://developers.openai.com/api/reference/resources/uploads).
 
-Within the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.
+Within the returned Upload object, there is a nested [File](https://developers.openai.com/api/reference/resources/files) object that is ready to use in the rest of the platform.
 
 You can specify the order of the Parts by passing in an ordered list of the Part IDs.
 

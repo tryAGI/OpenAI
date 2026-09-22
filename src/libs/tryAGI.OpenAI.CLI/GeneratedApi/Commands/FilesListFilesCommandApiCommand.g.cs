@@ -56,7 +56,8 @@ internal static partial class FilesListFilesCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-files", @"Returns a list of files.");
+        var command = new Command(@"list-files", @"List files
+Returns a list of files.");
                         command.Options.Add(Purpose);
                         command.Options.Add(Limit);
                         command.Options.Add(Order);

@@ -18,21 +18,21 @@ internal static partial class AssistantsCreateRunCommandApiCommand
     {
         Description = @"A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content.
 
-See the [file search tool documentation](/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.
+See the [file search tool documentation](https://developers.openai.com/api/docs/guides/tools-file-search#retrieval-customization) for more information.
 ",
     };
 
     private static Option<string> AssistantId { get; } = new(
         name: @"--assistant-id")
     {
-        Description = @"The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.",
+        Description = @"The ID of the [assistant](https://developers.openai.com/api/docs/assistants/migration) to use to execute this run.",
         Required = true,
     };
 
     private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?>?> Model { get; } = new(
         name: @"--model")
     {
-        Description = @"The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.",
+        Description = @"The ID of the [Model](https://developers.openai.com/api/reference/resources/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.",
     };
 
     private static Option<global::tryAGI.OpenAI.ReasoningEffortEnum?> ReasoningEffort { get; } = new(
@@ -44,7 +44,7 @@ See the [file search tool documentation](/docs/assistants/tools/file-search#cust
     private static Option<string?> Instructions { get; } = new(
         name: @"--instructions")
     {
-        Description = @"Overrides the [instructions](/docs/api-reference/assistants/createAssistant) of the assistant. This is useful for modifying the behavior on a per-run basis.",
+        Description = @"Overrides the [instructions](https://developers.openai.com/api/docs/assistants/migration) of the assistant. This is useful for modifying the behavior on a per-run basis.",
     };
 
     private static Option<string?> AdditionalInstructions { get; } = new(
@@ -120,14 +120,14 @@ We generally recommend altering this or temperature but not both.
 
     private static Option<bool?> ParallelToolCalls { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--parallel-tool-calls",
-        description: @"Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.");
+        description: @"Whether to enable [parallel function calling](https://developers.openai.com/api/docs/guides/function-calling#parallel-function-calling) during tool use.");
 
     private static Option<global::tryAGI.OpenAI.AssistantsApiResponseFormatOption?> ResponseFormat { get; } = new(
         name: @"--response-format")
     {
-        Description = @"Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+        Description = @"Specifies the format that the model must output. Compatible with [GPT-4o](https://developers.openai.com/api/docs/models/gpt-4o), [GPT-4 Turbo](https://developers.openai.com/api/docs/models/gpt-4-turbo), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
-Setting to `{ ""type"": ""json_schema"", ""json_schema"": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).
+Setting to `{ ""type"": ""json_schema"", ""json_schema"": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](https://developers.openai.com/api/docs/guides/structured-outputs).
 
 Setting to `{ ""type"": ""json_object"" }` enables JSON mode, which ensures the message the model generates is valid JSON.
 
@@ -173,7 +173,8 @@ Setting to `{ ""type"": ""json_object"" }` enables JSON mode, which ensures the 
 
     public static Command Create()
     {
-        var command = new Command(@"create-run", @"Create a run.");
+        var command = new Command(@"create-run", @"Create run
+Create a run.");
                         command.Arguments.Add(ThreadId);
                         command.Options.Add(Include);
                         command.Options.Add(AssistantId);

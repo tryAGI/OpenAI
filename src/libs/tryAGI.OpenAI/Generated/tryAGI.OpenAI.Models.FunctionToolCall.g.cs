@@ -4,8 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A tool call to run a function. See the <br/>
-    /// [function calling guide](/docs/guides/function-calling) for more information.
+    /// A tool call to run a function. See the<br/>
+    /// [function calling guide](https://developers.openai.com/api/docs/guides/function-calling) for more information.
     /// </summary>
     public sealed partial class FunctionToolCall
     {
@@ -64,6 +64,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.FunctionToolCallStatus? Status { get; set; }
 
         /// <summary>
+        /// Whether the function tool call runs asynchronously.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("async")]
+        public bool? Async { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -95,6 +101,9 @@ namespace tryAGI.OpenAI
         /// The status of the item. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when items are returned via API.
         /// </param>
+        /// <param name="async">
+        /// Whether the function tool call runs asynchronously.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -106,7 +115,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.FunctionToolCallType type,
             global::tryAGI.OpenAI.ToolCallCaller? caller,
             string? @namespace,
-            global::tryAGI.OpenAI.FunctionToolCallStatus? status)
+            global::tryAGI.OpenAI.FunctionToolCallStatus? status,
+            bool? async)
         {
             this.Id = id;
             this.Type = type;
@@ -116,6 +126,7 @@ namespace tryAGI.OpenAI
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
             this.Status = status;
+            this.Async = async;
         }
 
         /// <summary>

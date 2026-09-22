@@ -60,8 +60,7 @@ namespace tryAGI.OpenAI
         /// The annotation object being added. (See annotation schema for details.)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotation")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Annotation { get; set; }
+        public global::tryAGI.OpenAI.BetaAnnotation? Annotation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -87,14 +86,14 @@ namespace tryAGI.OpenAI
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
-        /// <param name="annotation">
-        /// The annotation object being added. (See annotation schema for details.)
-        /// </param>
         /// <param name="agent">
         /// The agent that owns this multi-agent streaming event.
         /// </param>
         /// <param name="type">
         /// The type of the event. Always 'response.output_text.annotation.added'.
+        /// </param>
+        /// <param name="annotation">
+        /// The annotation object being added. (See annotation schema for details.)
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -105,9 +104,9 @@ namespace tryAGI.OpenAI
             int contentIndex,
             int annotationIndex,
             int sequenceNumber,
-            object annotation,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseOutputTextAnnotationAddedEventType type)
+            global::tryAGI.OpenAI.BetaResponseOutputTextAnnotationAddedEventType type,
+            global::tryAGI.OpenAI.BetaAnnotation? annotation)
         {
             this.Agent = agent;
             this.Type = type;
@@ -116,7 +115,7 @@ namespace tryAGI.OpenAI
             this.ContentIndex = contentIndex;
             this.AnnotationIndex = annotationIndex;
             this.SequenceNumber = sequenceNumber;
-            this.Annotation = annotation ?? throw new global::System.ArgumentNullException(nameof(annotation));
+            this.Annotation = annotation;
         }
 
         /// <summary>

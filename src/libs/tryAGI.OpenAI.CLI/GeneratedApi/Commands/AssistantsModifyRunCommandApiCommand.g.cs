@@ -10,7 +10,7 @@ internal static partial class AssistantsModifyRunCommandApiCommand
     private static Argument<string> ThreadId { get; } = new(
         name: @"thread-id")
     {
-        Description = @"The ID of the [thread](/docs/api-reference/threads) that was run.",
+        Description = @"The ID of the [thread](https://developers.openai.com/api/docs/assistants/migration) that was run.",
     };
 
     private static Argument<string> RunId { get; } = new(
@@ -63,7 +63,8 @@ internal static partial class AssistantsModifyRunCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"modify-run", @"Modifies a run.");
+        var command = new Command(@"modify-run", @"Modify run
+Modifies a run.");
                         command.Arguments.Add(ThreadId);
                         command.Arguments.Add(RunId);
                         command.Options.Add(Metadata);

@@ -37,6 +37,12 @@ namespace tryAGI.OpenAI
         public required int CreatedAt { get; set; }
 
         /// <summary>
+        /// The Unix timestamp (in seconds) when the API key expires, or null if it does not expire.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public int? ExpiresAt { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -59,6 +65,9 @@ namespace tryAGI.OpenAI
         /// <param name="object">
         /// The object type, which is always `organization.project.service_account.api_key`
         /// </param>
+        /// <param name="expiresAt">
+        /// The Unix timestamp (in seconds) when the API key expires, or null if it does not expire.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,12 +76,14 @@ namespace tryAGI.OpenAI
             string name,
             int createdAt,
             string id,
-            global::tryAGI.OpenAI.ProjectServiceAccountApiKeyObject @object)
+            global::tryAGI.OpenAI.ProjectServiceAccountApiKeyObject @object,
+            int? expiresAt)
         {
             this.Object = @object;
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
+            this.ExpiresAt = expiresAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
         }
 

@@ -41,7 +41,8 @@ internal static partial class ProjectsDeleteProjectServiceAccountCommandApiComma
 
     public static Command Create()
     {
-        var command = new Command(@"delete-project-service-account", @"Deletes a service account from the project.
+        var command = new Command(@"delete-project-service-account", @"Delete project service account
+Deletes a service account from the project.
 
 Returns confirmation of service account deletion, or an error if the project
 is archived (archived projects have no service accounts).

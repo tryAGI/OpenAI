@@ -41,7 +41,8 @@ internal static partial class GroupUsersRetrieveGroupUserCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-group-user", @"Retrieves a user in a group.");
+        var command = new Command(@"retrieve-group-user", @"Retrieve group user
+Retrieves a user in a group.");
                         command.Arguments.Add(GroupId);
                         command.Arguments.Add(UserId);
 

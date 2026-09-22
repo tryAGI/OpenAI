@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct Tool : global::System.IEquatable<Tool>
     {
         /// <summary>
-        /// Defines a function in your own code the model can choose to call. Learn more about [function calling](https://platform.openai.com/docs/guides/function-calling).
+        /// Defines a function in your own code the model can choose to call. Learn more about [function calling](https://developers.openai.com/api/docs/guides/function-calling).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.FunctionTool? Function { get; init; }
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
-        /// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://platform.openai.com/docs/guides/tools-file-search).
+        /// A tool that searches for relevant content from uploaded files. Learn more about the [file search tool](https://developers.openai.com/api/docs/guides/tools-file-search).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.FileSearchTool? FileSearch { get; init; }
@@ -84,7 +84,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearch' but the value was {ToString()}.");
 
         /// <summary>
-        /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
+        /// A tool that controls a virtual computer. Learn more about the [computer tool](https://developers.openai.com/api/docs/guides/tools-computer-use).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ComputerTool? Computer { get; init; }
@@ -121,7 +121,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'Computer' but the value was {ToString()}.");
 
         /// <summary>
-        /// A tool that controls a virtual computer. Learn more about the [computer tool](https://platform.openai.com/docs/guides/tools-computer-use).
+        /// A tool that controls a virtual computer. Learn more about the [computer tool](https://developers.openai.com/api/docs/guides/tools-computer-use).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ComputerUsePreviewTool? ComputerUsePreview { get; init; }
@@ -159,7 +159,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Search the Internet for sources related to the prompt. Learn more about the<br/>
-        /// [web search tool](/docs/guides/tools-web-search).
+        /// [web search tool](https://developers.openai.com/api/docs/guides/tools-web-search).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.WebSearchTool? WebSearch { get; init; }
@@ -197,7 +197,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Give the model access to additional tools via remote Model Context Protocol<br/>
-        /// (MCP) servers. [Learn more about MCP](/docs/guides/tools-remote-mcp).
+        /// (MCP) servers. [Learn more about MCP](https://developers.openai.com/api/docs/guides/tools-connectors-mcp).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.MCPTool? Mcp { get; init; }
@@ -419,7 +419,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'Shell' but the value was {ToString()}.");
 
         /// <summary>
-        /// A custom tool that processes input using a specified format. Learn more about   [custom tools](/docs/guides/function-calling#custom-tools)
+        /// A custom tool that processes input using a specified format. Learn more about   [custom tools](https://developers.openai.com/api/docs/guides/function-calling#custom-tools)
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.CustomToolParam? Custom { get; init; }
@@ -530,7 +530,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearch' but the value was {ToString()}.");
 
         /// <summary>
-        /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://platform.openai.com/docs/guides/tools-web-search).
+        /// This tool searches the web for relevant results to use in a response. Learn more about the [web search tool](https://developers.openai.com/api/docs/guides/tools-web-search).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.WebSearchPreviewTool? WebSearchPreview { get; init; }

@@ -41,7 +41,8 @@ internal static partial class ProjectsDeleteProjectUserCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"delete-project-user", @"Deletes a user from the project.
+        var command = new Command(@"delete-project-user", @"Delete project user
+Deletes a user from the project.
 
 Returns confirmation of project user deletion, or an error if the project is
 archived (archived projects have no users).

@@ -25,6 +25,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 
 | Group | Operations | Summary |
 |-------|-----------:|---------|
+| `agent` | 33 |  |
 | `assistant` | 18 | Build Assistants that can call models and use tools. |
 | `audio` | 9 | Turn audio into text or text into audio. |
 | `audit-log` | 1 | List user actions and configuration changes within this organization. |
@@ -44,6 +45,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `hosted-tool` | 2 |  |
 | `image` | 3 | Given a prompt and/or an input image, the model will generate a new image. |
 | `invite` | 4 |  |
+| `live` | 7 |  |
 | `model` | 3 | List and describe the various models available in the API. |
 | `moderation` | 1 | Given text and/or image inputs, classifies if those inputs are potentially harmful. |
 | `project` | 23 |  |
@@ -51,7 +53,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `project-group-role-assignment` | 4 |  |
 | `project-user-role-assignment` | 4 |  |
 | `realtime` | 9 |  |
-| `response` | 10 |  |
+| `response` | 14 | Create and manage model responses. |
 | `role` | 10 |  |
 | `skill` | 11 |  |
 | `spend-alert` | 10 |  |
@@ -59,9 +61,9 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `usage` | 11 |  |
 | `user` | 4 |  |
 | `user-organization-role-assignment` | 4 |  |
+| `vault` | 9 |  |
 | `vector-store` | 16 |  |
-| `video` | 10 |  |
-| `default` | 31 |  |
+| `default` | 42 |  |
 
 ## References
 

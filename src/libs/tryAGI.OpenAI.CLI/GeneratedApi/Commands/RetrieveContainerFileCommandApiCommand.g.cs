@@ -41,8 +41,8 @@ internal static partial class RetrieveContainerFileCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-container-file", @"Retrieve Container File
-Retrieves a container file.");
+        var command = new Command(@"retrieve-container-file", @"Retrieve container file
+Retrieve Container File");
                         command.Arguments.Add(ContainerId);
                         command.Arguments.Add(FileId);
 

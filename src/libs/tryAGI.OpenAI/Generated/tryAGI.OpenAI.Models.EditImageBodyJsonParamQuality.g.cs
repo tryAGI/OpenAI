@@ -23,7 +23,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Max,
+        /// <summary>
+        ///
+        /// </summary>
         Medium,
+        /// <summary>
+        ///
+        /// </summary>
+        Xhigh,
     }
 
     /// <summary>
@@ -41,7 +49,9 @@ namespace tryAGI.OpenAI
                 EditImageBodyJsonParamQuality.Auto => "auto",
                 EditImageBodyJsonParamQuality.High => "high",
                 EditImageBodyJsonParamQuality.Low => "low",
+                EditImageBodyJsonParamQuality.Max => "max",
                 EditImageBodyJsonParamQuality.Medium => "medium",
+                EditImageBodyJsonParamQuality.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -55,7 +65,9 @@ namespace tryAGI.OpenAI
                 "auto" => EditImageBodyJsonParamQuality.Auto,
                 "high" => EditImageBodyJsonParamQuality.High,
                 "low" => EditImageBodyJsonParamQuality.Low,
+                "max" => EditImageBodyJsonParamQuality.Max,
                 "medium" => EditImageBodyJsonParamQuality.Medium,
+                "xhigh" => EditImageBodyJsonParamQuality.Xhigh,
                 _ => null,
             };
         }

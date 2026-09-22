@@ -17,8 +17,8 @@ internal static class AudioApiGroupCommand
                          command.Subcommands.Add(AudioCreateVoiceCommandApiCommand.Create());
                          command.Subcommands.Add(AudioCreateVoiceConsentCommandApiCommand.Create());
                          command.Subcommands.Add(AudioDeleteVoiceConsentCommandApiCommand.Create());
+                         command.Subcommands.Add(AudioGetVoiceConsentCommandApiCommand.Create());
                          command.Subcommands.Add(AudioListVoiceConsentsCommandApiCommand.Create());
-                         command.Subcommands.Add(AudioRetrieveVoiceConsentCommandApiCommand.Create());
                          command.Subcommands.Add(AudioUpdateVoiceConsentCommandApiCommand.Create());
         return command;
     }

@@ -9,14 +9,14 @@ namespace tryAGI.OpenAI
     public sealed partial class ChatCompletionRequestMessageContentPartFileFile
     {
         /// <summary>
-        /// The name of the file, used when passing the file to the model as a <br/>
+        /// The name of the file, used when passing the file to the model as a<br/>
         /// string.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         public string? Filename { get; set; }
 
         /// <summary>
-        /// The base64 encoded file data, used when passing the file to the model <br/>
+        /// The base64 encoded file data, used when passing the file to the model<br/>
         /// as a string.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_data")]
@@ -38,11 +38,11 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartFileFile" /> class.
         /// </summary>
         /// <param name="filename">
-        /// The name of the file, used when passing the file to the model as a <br/>
+        /// The name of the file, used when passing the file to the model as a<br/>
         /// string.
         /// </param>
         /// <param name="fileData">
-        /// The base64 encoded file data, used when passing the file to the model <br/>
+        /// The base64 encoded file data, used when passing the file to the model<br/>
         /// as a string.
         /// </param>
         /// <param name="fileId">

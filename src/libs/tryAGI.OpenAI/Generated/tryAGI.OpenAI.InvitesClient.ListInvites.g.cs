@@ -44,6 +44,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List invites<br/>
         /// Returns a list of invites in the organization.
         /// </summary>
         /// <param name="limit">
@@ -69,6 +70,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// List invites<br/>
         /// Returns a list of invites in the organization.
         /// </summary>
         /// <param name="limit">

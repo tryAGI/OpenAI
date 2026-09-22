@@ -10,8 +10,8 @@ namespace tryAGI.OpenAI
     public readonly partial struct BetaFunctionToolCallResource : global::System.IEquatable<BetaFunctionToolCallResource>
     {
         /// <summary>
-        /// A tool call to run a function. See the <br/>
-        /// [function calling guide](/docs/guides/function-calling) for more information.
+        /// A tool call to run a function. See the<br/>
+        /// [function calling guide](https://developers.openai.com/api/docs/guides/function-calling) for more information.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaFunctionToolCall? FunctionToolCall { get; init; }

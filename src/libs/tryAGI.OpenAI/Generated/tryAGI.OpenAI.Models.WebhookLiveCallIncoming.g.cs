@@ -4,10 +4,13 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
+    /// Deprecated: use `live.transport.incoming`. Retained for existing subscriptions<br/>
+    /// during migration; new subscriptions to this event are not allowed.<br/>
     /// Sent when an incoming API SIP session is available for Live acceptance. The<br/>
     /// same pending session can also emit `realtime.call.incoming`; the first<br/>
     /// successful Realtime or Live accept endpoint selects the runtime surface.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class WebhookLiveCallIncoming
     {
         /// <summary>
@@ -15,6 +18,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required int CreatedAt { get; set; }
 
         /// <summary>
@@ -22,6 +26,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string Id { get; set; }
 
         /// <summary>
@@ -29,6 +34,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required global::tryAGI.OpenAI.WebhookLiveCallIncomingData Data { get; set; }
 
         /// <summary>
@@ -36,6 +42,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookLiveCallIncomingObjectJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::tryAGI.OpenAI.WebhookLiveCallIncomingObject? Object { get; set; }
 
         /// <summary>
@@ -43,6 +50,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookLiveCallIncomingTypeJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::tryAGI.OpenAI.WebhookLiveCallIncomingType Type { get; set; }
 
         /// <summary>

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ISkillsClient
     {
         /// <summary>
+        /// Create Skill Version<br/>
         /// Create a new immutable skill version.
         /// </summary>
         /// <param name="skillId">
@@ -21,6 +22,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Create Skill Version<br/>
         /// Create a new immutable skill version.
         /// </summary>
         /// <param name="skillId">
@@ -37,6 +39,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Create Skill Version<br/>
         /// Create a new immutable skill version.
         /// </summary>
         /// <param name="skillId">

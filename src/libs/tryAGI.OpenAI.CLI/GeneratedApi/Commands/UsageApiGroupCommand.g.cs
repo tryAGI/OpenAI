@@ -9,17 +9,17 @@ internal static class UsageApiGroupCommand
     public static Command Create()
     {
         var command = new Command(@"usage", @"Usage endpoint commands.");
-                         command.Subcommands.Add(UsageAudioSpeechesCommandApiCommand.Create());
-                         command.Subcommands.Add(UsageAudioTranscriptionsCommandApiCommand.Create());
-                         command.Subcommands.Add(UsageCodeInterpreterSessionsCommandApiCommand.Create());
-                         command.Subcommands.Add(UsageCompletionsCommandApiCommand.Create());
-                         command.Subcommands.Add(UsageCostsCommandApiCommand.Create());
-                         command.Subcommands.Add(UsageEmbeddingsCommandApiCommand.Create());
-                         command.Subcommands.Add(UsageFileSearchCallsCommandApiCommand.Create());
-                         command.Subcommands.Add(UsageImagesCommandApiCommand.Create());
-                         command.Subcommands.Add(UsageModerationsCommandApiCommand.Create());
-                         command.Subcommands.Add(UsageVectorStoresCommandApiCommand.Create());
-                         command.Subcommands.Add(UsageWebSearchCallsCommandApiCommand.Create());
+                         command.Subcommands.Add(UsageUsageAudioSpeechesCommandApiCommand.Create());
+                         command.Subcommands.Add(UsageUsageAudioTranscriptionsCommandApiCommand.Create());
+                         command.Subcommands.Add(UsageUsageCodeInterpreterSessionsCommandApiCommand.Create());
+                         command.Subcommands.Add(UsageUsageCompletionsCommandApiCommand.Create());
+                         command.Subcommands.Add(UsageUsageCostsCommandApiCommand.Create());
+                         command.Subcommands.Add(UsageUsageEmbeddingsCommandApiCommand.Create());
+                         command.Subcommands.Add(UsageUsageFileSearchCallsCommandApiCommand.Create());
+                         command.Subcommands.Add(UsageUsageImagesCommandApiCommand.Create());
+                         command.Subcommands.Add(UsageUsageModerationsCommandApiCommand.Create());
+                         command.Subcommands.Add(UsageUsageVectorStoresCommandApiCommand.Create());
+                         command.Subcommands.Add(UsageUsageWebSearchCallsCommandApiCommand.Create());
         return command;
     }
 }

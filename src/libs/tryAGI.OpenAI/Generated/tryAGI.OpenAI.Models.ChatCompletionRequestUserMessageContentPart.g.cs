@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ChatCompletionRequestUserMessageContentPart : global::System.IEquatable<ChatCompletionRequestUserMessageContentPart>
     {
         /// <summary>
-        /// Learn about [text inputs](/docs/guides/text-generation).
+        /// Learn about [text inputs](https://developers.openai.com/api/docs/guides/text).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText? TextContentPart { get; init; }
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextContentPart' but the value was {ToString()}.");
 
         /// <summary>
-        /// Learn about [image inputs](/docs/guides/vision).
+        /// Learn about [image inputs](https://developers.openai.com/api/docs/guides/images-vision).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage? ImageContentPart { get; init; }
@@ -84,7 +84,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageContentPart' but the value was {ToString()}.");
 
         /// <summary>
-        /// Learn about [audio inputs](/docs/guides/audio).
+        /// Learn about [audio inputs](https://developers.openai.com/api/docs/guides/audio).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio? AudioContentPart { get; init; }
@@ -121,7 +121,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'AudioContentPart' but the value was {ToString()}.");
 
         /// <summary>
-        /// Learn about [file inputs](/docs/guides/text) for text generation.
+        /// Learn about [file inputs](https://developers.openai.com/api/docs/guides/text) for text generation.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile? FileContentPart { get; init; }

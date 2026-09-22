@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateThreadRequestToolResourcesFileSearchVectorStore
     {
         /// <summary>
-        /// A list of [file](/docs/api-reference/files) IDs to add to the vector store. For vector stores created before Nov 2025, there can be a maximum of 10,000 files in a vector store. For vector stores created starting in Nov 2025, the limit is 100,000,000 files.
+        /// A list of [file](https://developers.openai.com/api/reference/resources/files) IDs to add to the vector store. For vector stores created before Nov 2025, there can be a maximum of 10,000 files in a vector store. For vector stores created starting in Nov 2025, the limit is 100,000,000 files.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
         public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateThreadRequestToolResourcesFileSearchVectorStore" /> class.
         /// </summary>
         /// <param name="fileIds">
-        /// A list of [file](/docs/api-reference/files) IDs to add to the vector store. For vector stores created before Nov 2025, there can be a maximum of 10,000 files in a vector store. For vector stores created starting in Nov 2025, the limit is 100,000,000 files.
+        /// A list of [file](https://developers.openai.com/api/reference/resources/files) IDs to add to the vector store. For vector stores created before Nov 2025, there can be a maximum of 10,000 files in a vector store. For vector stores created starting in Nov 2025, the limit is 100,000,000 files.
         /// </param>
         /// <param name="chunkingStrategy">
         /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.

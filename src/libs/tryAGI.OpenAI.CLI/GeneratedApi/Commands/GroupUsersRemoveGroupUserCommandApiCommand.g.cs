@@ -41,7 +41,8 @@ internal static partial class GroupUsersRemoveGroupUserCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"remove-group-user", @"Removes a user from a group.");
+        var command = new Command(@"remove-group-user", @"Remove group user
+Removes a user from a group.");
                         command.Arguments.Add(GroupId);
                         command.Arguments.Add(UserId);
 

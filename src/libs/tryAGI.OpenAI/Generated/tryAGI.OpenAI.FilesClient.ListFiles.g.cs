@@ -48,6 +48,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List files<br/>
         /// Returns a list of files.
         /// </summary>
         /// <param name="purpose"></param>
@@ -81,6 +82,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// List files<br/>
         /// Returns a list of files.
         /// </summary>
         /// <param name="purpose"></param>

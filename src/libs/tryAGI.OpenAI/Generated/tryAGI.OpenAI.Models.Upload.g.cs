@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         public required long Bytes { get; set; }
 
         /// <summary>
-        /// The intended purpose of the file. [Please refer here](/docs/api-reference/files/object#files/object-purpose) for acceptable values.
+        /// The intended purpose of the file. [Please refer here](https://developers.openai.com/api/reference/resources/files#%28resource%29%20files%20%3E%20%28model%29%20file_object%20%3E%20%28schema%29%20%3E%20%28property%29%20purpose) for acceptable values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -94,7 +94,7 @@ namespace tryAGI.OpenAI
         /// The intended number of bytes to be uploaded.
         /// </param>
         /// <param name="purpose">
-        /// The intended purpose of the file. [Please refer here](/docs/api-reference/files/object#files/object-purpose) for acceptable values.
+        /// The intended purpose of the file. [Please refer here](https://developers.openai.com/api/reference/resources/files#%28resource%29%20files%20%3E%20%28model%29%20file_object%20%3E%20%28schema%29%20%3E%20%28property%29%20purpose) for acceptable values.
         /// </param>
         /// <param name="status">
         /// The status of the Upload.

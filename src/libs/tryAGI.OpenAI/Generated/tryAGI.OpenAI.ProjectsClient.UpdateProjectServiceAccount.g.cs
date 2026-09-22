@@ -46,6 +46,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Update project service account<br/>
         /// Updates a service account in the project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -74,6 +75,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Update project service account<br/>
         /// Updates a service account in the project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -452,6 +454,7 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Update project service account<br/>
         /// Updates a service account in the project.
         /// </summary>
         /// <param name="projectId"></param>

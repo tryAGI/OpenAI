@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
 
         /// <summary>
-        /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
+        /// An image input to the model. Learn about [image inputs](https://developers.openai.com/api/docs/guides/images-vision).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.InputImageContent? InputImage { get; init; }

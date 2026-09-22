@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is created.
+    /// Occurs when a [run step](https://developers.openai.com/api/docs/assistants/migration) is created.
     /// </summary>
     public sealed partial class RunStepStreamEventVariant1
     {

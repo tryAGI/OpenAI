@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectGroupsClient
     {
         /// <summary>
+        /// Retrieve project group<br/>
         /// Retrieves a project's group.
         /// </summary>
         /// <param name="projectId"></param>
@@ -22,6 +23,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Retrieve project group<br/>
         /// Retrieves a project's group.
         /// </summary>
         /// <param name="projectId"></param>

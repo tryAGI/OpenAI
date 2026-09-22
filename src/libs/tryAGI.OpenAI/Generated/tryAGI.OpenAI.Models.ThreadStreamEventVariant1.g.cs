@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when a new [thread](/docs/api-reference/threads/object) is created.
+    /// Occurs when a new [thread](https://developers.openai.com/api/docs/assistants/migration) is created.
     /// </summary>
     public sealed partial class ThreadStreamEventVariant1
     {
@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ThreadStreamEventVariant1Event Event { get; set; }
 
         /// <summary>
-        /// Represents a thread that contains [messages](/docs/api-reference/messages).
+        /// Represents a thread that contains [messages](https://developers.openai.com/api/docs/assistants/migration).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ThreadStreamEventVariant1" /> class.
         /// </summary>
         /// <param name="data">
-        /// Represents a thread that contains [messages](/docs/api-reference/messages).
+        /// Represents a thread that contains [messages](https://developers.openai.com/api/docs/assistants/migration).
         /// </param>
         /// <param name="enabled">
         /// Whether to enable input audio transcription.

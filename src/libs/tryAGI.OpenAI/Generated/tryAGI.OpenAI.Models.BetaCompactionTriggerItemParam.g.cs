@@ -15,6 +15,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaAgentTagParam? Agent { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
+
+        /// <summary>
         /// The type of the item. Always `compaction_trigger`.<br/>
         /// Default Value: compaction_trigger
         /// </summary>
@@ -33,6 +39,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="BetaCompactionTriggerItemParam" /> class.
         /// </summary>
         /// <param name="agent"></param>
+        /// <param name="id"></param>
         /// <param name="type">
         /// The type of the item. Always `compaction_trigger`.<br/>
         /// Default Value: compaction_trigger
@@ -42,9 +49,11 @@ namespace tryAGI.OpenAI
 #endif
         public BetaCompactionTriggerItemParam(
             global::tryAGI.OpenAI.BetaAgentTagParam? agent,
+            string? id,
             global::tryAGI.OpenAI.BetaCompactionTriggerItemParamType type = global::tryAGI.OpenAI.BetaCompactionTriggerItemParamType.CompactionTrigger)
         {
             this.Agent = agent;
+            this.Id = id;
             this.Type = type;
         }
 

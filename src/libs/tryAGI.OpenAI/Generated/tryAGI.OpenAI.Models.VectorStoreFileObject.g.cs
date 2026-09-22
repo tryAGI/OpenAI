@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         public required int CreatedAt { get; set; }
 
         /// <summary>
-        /// The ID of the [vector store](/docs/api-reference/vector-stores/object) that the [File](/docs/api-reference/files) is attached to.
+        /// The ID of the [vector store](https://developers.openai.com/api/reference/resources/vector_stores) that the [File](https://developers.openai.com/api/reference/resources/files) is attached to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vector_store_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -89,7 +89,7 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp (in seconds) for when the vector store file was created.
         /// </param>
         /// <param name="vectorStoreId">
-        /// The ID of the [vector store](/docs/api-reference/vector-stores/object) that the [File](/docs/api-reference/files) is attached to.
+        /// The ID of the [vector store](https://developers.openai.com/api/reference/resources/vector_stores) that the [File](https://developers.openai.com/api/reference/resources/files) is attached to.
         /// </param>
         /// <param name="status">
         /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.

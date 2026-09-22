@@ -35,7 +35,8 @@ internal static partial class ModelsRetrieveModelCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-model", @"Retrieves a model instance, providing basic information about the model such as the owner and permissioning.");
+        var command = new Command(@"retrieve-model", @"Retrieve model
+Retrieves a model instance, providing basic information about the model such as the owner and permissioning.");
                         command.Arguments.Add(Model);
 
 

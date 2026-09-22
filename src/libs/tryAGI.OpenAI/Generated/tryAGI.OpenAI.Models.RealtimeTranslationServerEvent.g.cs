@@ -247,8 +247,9 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutputTranscriptDelta' but the value was {ToString()}.");
 
         /// <summary>
-        /// Returned when translated output audio is available. Output audio deltas are<br/>
-        /// 200 ms frames of PCM16 audio.
+        /// Returned when translated output audio is available. The `delta` contains a<br/>
+        /// PCM16 audio chunk whose length can vary. Clients should decode and queue the<br/>
+        /// complete delta instead of assuming a fixed byte or sample count.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta? SessionOutputAudioDelta { get; init; }

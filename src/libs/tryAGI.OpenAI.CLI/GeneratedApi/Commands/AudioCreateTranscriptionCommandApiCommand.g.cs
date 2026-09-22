@@ -11,6 +11,7 @@ internal static partial class AudioCreateTranscriptionCommandApiCommand
         name: @"--file")
     {
         Description = @"The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
 ",
         Required = true,
     };
@@ -68,7 +69,8 @@ internal static partial class AudioCreateTranscriptionCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-transcription", @"Transcribes audio into the input language.
+        var command = new Command(@"create-transcription", @"Create transcription
+Transcribes audio into the input language.
 
 Returns a transcription object in `json`, `diarized_json`, or `verbose_json`
 format, or a stream of transcript events.

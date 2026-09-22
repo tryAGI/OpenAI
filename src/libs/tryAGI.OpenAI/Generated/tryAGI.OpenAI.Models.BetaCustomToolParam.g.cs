@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A custom tool that processes input using a specified format. Learn more about   [custom tools](/docs/guides/function-calling#custom-tools)
+    /// A custom tool that processes input using a specified format. Learn more about   [custom tools](https://developers.openai.com/api/docs/guides/function-calling#custom-tools)
     /// </summary>
     public sealed partial class BetaCustomToolParam
     {
@@ -23,6 +23,12 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
+
+        /// <summary>
+        /// Whether the tool response can be returned asynchronously versus immediately returned on next response creation.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("async")]
+        public bool? Async { get; set; }
 
         /// <summary>
         /// Optional description of the custom tool, used to provide more context.
@@ -61,6 +67,9 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// The name of the custom tool, used to identify it in tool calls.
         /// </param>
+        /// <param name="async">
+        /// Whether the tool response can be returned asynchronously versus immediately returned on next response creation.
+        /// </param>
         /// <param name="description">
         /// Optional description of the custom tool, used to provide more context.
         /// </param>
@@ -80,6 +89,7 @@ namespace tryAGI.OpenAI
 #endif
         public BetaCustomToolParam(
             string name,
+            bool? async,
             string? description,
             global::tryAGI.OpenAI.Format3? format,
             bool? deferLoading,
@@ -88,6 +98,7 @@ namespace tryAGI.OpenAI
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Async = async;
             this.Description = description;
             this.Format = format;
             this.DeferLoading = deferLoading;

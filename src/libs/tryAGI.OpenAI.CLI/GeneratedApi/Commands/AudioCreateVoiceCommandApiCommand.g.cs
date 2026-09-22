@@ -64,11 +64,8 @@ Supported MIME types:
 
     public static Command Create()
     {
-        var command = new Command(@"create-voice", @"Creates a custom voice.
-Create a custom voice you can use for audio output (for example, in Text-to-Speech and the Realtime API). This requires an audio sample and a previously uploaded consent recording.
-
-See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
-");
+        var command = new Command(@"create-voice", @"Create voice
+Creates a custom voice.");
                         command.Arguments.Add(NameOption);
                         command.Options.Add(AudioSample);
                         command.Options.Add(AudioSamplename);

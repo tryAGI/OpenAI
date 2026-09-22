@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ISkillsClient
     {
         /// <summary>
+        /// List Skills<br/>
         /// List all skills for the current project.
         /// </summary>
         /// <param name="limit"></param>
@@ -22,6 +23,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List Skills<br/>
         /// List all skills for the current project.
         /// </summary>
         /// <param name="limit"></param>

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectGroupRoleAssignmentsClient
     {
         /// <summary>
+        /// Retrieve project group role<br/>
         /// Retrieves a project role assigned to a group.
         /// </summary>
         /// <param name="projectId"></param>
@@ -20,6 +21,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Retrieve project group role<br/>
         /// Retrieves a project role assigned to a group.
         /// </summary>
         /// <param name="projectId"></param>

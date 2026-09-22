@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Sent when an incoming API SIP session is available for Realtime acceptance.<br/>
-    /// The same pending session can also emit `live.call.incoming`; the first<br/>
+    /// The same pending session can also emit `live.transport.incoming`; the first<br/>
     /// successful Realtime or Live accept endpoint selects the runtime surface.
     /// </summary>
     public sealed partial class WebhookRealtimeCallIncoming

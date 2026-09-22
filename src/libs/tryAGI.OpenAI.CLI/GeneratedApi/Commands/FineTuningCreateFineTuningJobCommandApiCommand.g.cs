@@ -11,7 +11,7 @@ internal static partial class FineTuningCreateFineTuningJobCommandApiCommand
         name: @"--model")
     {
         Description = @"The name of the model to fine-tune. You can select one of the
-[supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).
+[supported models](https://developers.openai.com/api/docs/guides/model-optimization#fine-tuning-methods).
 ",
         Required = true,
     };
@@ -21,13 +21,13 @@ internal static partial class FineTuningCreateFineTuningJobCommandApiCommand
     {
         Description = @"The ID of an uploaded file that contains training data.
 
-See [upload file](/docs/api-reference/files/create) for how to upload a file.
+See [upload file](https://developers.openai.com/api/reference/resources/files/methods/create) for how to upload a file.
 
 Your dataset must be formatted as a JSONL file. Additionally, you must upload your file with the purpose `fine-tune`.
 
-The contents of the file should differ depending on if the model uses the [chat](/docs/api-reference/fine-tuning/chat-input), [completions](/docs/api-reference/fine-tuning/completions-input) format, or if the fine-tuning method uses the [preference](/docs/api-reference/fine-tuning/preference-input) format.
+The contents of the file should differ depending on if the model uses the [chat](https://developers.openai.com/api/docs/guides/supervised-fine-tuning#formatting-your-data), [completions](https://developers.openai.com/api/docs/guides/supervised-fine-tuning#formatting-your-data) format, or if the fine-tuning method uses the [preference](https://developers.openai.com/api/docs/guides/direct-preference-optimization) format.
 
-See the [fine-tuning guide](/docs/guides/model-optimization) for more details.
+See the [fine-tuning guide](https://developers.openai.com/api/docs/guides/model-optimization) for more details.
 ",
         Required = true,
     };
@@ -53,7 +53,7 @@ The same data should not be present in both train and validation files.
 
 Your dataset must be formatted as a JSONL file. You must upload your file with the purpose `fine-tune`.
 
-See the [fine-tuning guide](/docs/guides/model-optimization) for more details.
+See the [fine-tuning guide](https://developers.openai.com/api/docs/guides/model-optimization) for more details.
 ",
     };
 
@@ -121,11 +121,12 @@ If a seed is not specified, one will be generated for you.
 
     public static Command Create()
     {
-        var command = new Command(@"create-fine-tuning-job", @"Creates a fine-tuning job which begins the process of creating a new model from a given dataset.
+        var command = new Command(@"create-fine-tuning-job", @"Create fine-tuning job
+Creates a fine-tuning job which begins the process of creating a new model from a given dataset.
 
 Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.
 
-[Learn more about fine-tuning](/docs/guides/model-optimization)
+[Learn more about fine-tuning](https://developers.openai.com/api/docs/guides/model-optimization)
 ");
                         command.Options.Add(Model);
                         command.Options.Add(TrainingFile);

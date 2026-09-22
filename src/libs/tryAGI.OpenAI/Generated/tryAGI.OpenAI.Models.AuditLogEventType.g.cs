@@ -59,6 +59,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ExternalStorageRegistered,
+        /// <summary>
+        ///
+        /// </summary>
+        ExternalStorageRemoved,
+        /// <summary>
+        ///
+        /// </summary>
         GroupCreated,
         /// <summary>
         ///
@@ -208,6 +216,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         TenantAdminApiKeyUpdated,
+        /// <summary>
+        ///
+        /// </summary>
+        TenantAdsAccountOnboardingRedemption,
         /// <summary>
         ///
         /// </summary>
@@ -459,6 +471,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        TenantTrustedAccessApplicationSubmitted,
+        /// <summary>
+        ///
+        /// </summary>
+        TenantTrustedAccessBusinessVerificationStarted,
+        /// <summary>
+        ///
+        /// </summary>
         TenantUsageLimitGroupUpdated,
         /// <summary>
         ///
@@ -496,6 +516,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         TenantUserUpdated,
+        /// <summary>
+        ///
+        /// </summary>
+        TenantWorkloadIdentityAccessTokenIssued,
         /// <summary>
         ///
         /// </summary>
@@ -606,6 +630,8 @@ namespace tryAGI.OpenAI
                 AuditLogEventType.CheckpointPermissionDeleted => "checkpoint.permission.deleted",
                 AuditLogEventType.ExternalKeyRegistered => "external_key.registered",
                 AuditLogEventType.ExternalKeyRemoved => "external_key.removed",
+                AuditLogEventType.ExternalStorageRegistered => "external_storage.registered",
+                AuditLogEventType.ExternalStorageRemoved => "external_storage.removed",
                 AuditLogEventType.GroupCreated => "group.created",
                 AuditLogEventType.GroupDeleted => "group.deleted",
                 AuditLogEventType.GroupUpdated => "group.updated",
@@ -644,6 +670,7 @@ namespace tryAGI.OpenAI
                 AuditLogEventType.TenantAdminApiKeyCreated => "tenant.admin_api_key.created",
                 AuditLogEventType.TenantAdminApiKeyDeleted => "tenant.admin_api_key.deleted",
                 AuditLogEventType.TenantAdminApiKeyUpdated => "tenant.admin_api_key.updated",
+                AuditLogEventType.TenantAdsAccountOnboardingRedemption => "tenant.ads_account.onboarding.redemption",
                 AuditLogEventType.TenantApiOrganizationInviteDeleted => "tenant.api_organization_invite.deleted",
                 AuditLogEventType.TenantApiOrganizationInviteUpserted => "tenant.api_organization_invite.upserted",
                 AuditLogEventType.TenantBillingAlertsUpdated => "tenant.billing.alerts.updated",
@@ -706,6 +733,8 @@ namespace tryAGI.OpenAI
                 AuditLogEventType.TenantSsoConnectionSetupStarted => "tenant.sso_connection.setup.started",
                 AuditLogEventType.TenantSsoConnectionUpdated => "tenant.sso_connection.updated",
                 AuditLogEventType.TenantThirdPartyAppPolicyUpdated => "tenant.third_party_app_policy.updated",
+                AuditLogEventType.TenantTrustedAccessApplicationSubmitted => "tenant.trusted_access.application.submitted",
+                AuditLogEventType.TenantTrustedAccessBusinessVerificationStarted => "tenant.trusted_access.business_verification.started",
                 AuditLogEventType.TenantUsageLimitGroupUpdated => "tenant.usage_limit.group.updated",
                 AuditLogEventType.TenantUsageLimitIncreaseRequestResolved => "tenant.usage_limit.increase_request.resolved",
                 AuditLogEventType.TenantUsageLimitIncreaseRequestUpdated => "tenant.usage_limit.increase_request.updated",
@@ -716,6 +745,7 @@ namespace tryAGI.OpenAI
                 AuditLogEventType.TenantUserLookedUp => "tenant.user.looked_up",
                 AuditLogEventType.TenantUserRemoved => "tenant.user.removed",
                 AuditLogEventType.TenantUserUpdated => "tenant.user.updated",
+                AuditLogEventType.TenantWorkloadIdentityAccessTokenIssued => "tenant.workload_identity.access_token.issued",
                 AuditLogEventType.TenantWorkloadIdentityBindingCreated => "tenant.workload_identity.binding.created",
                 AuditLogEventType.TenantWorkloadIdentityMappingArchived => "tenant.workload_identity.mapping.archived",
                 AuditLogEventType.TenantWorkloadIdentityMappingCreated => "tenant.workload_identity.mapping.created",
@@ -759,6 +789,8 @@ namespace tryAGI.OpenAI
                 "checkpoint.permission.deleted" => AuditLogEventType.CheckpointPermissionDeleted,
                 "external_key.registered" => AuditLogEventType.ExternalKeyRegistered,
                 "external_key.removed" => AuditLogEventType.ExternalKeyRemoved,
+                "external_storage.registered" => AuditLogEventType.ExternalStorageRegistered,
+                "external_storage.removed" => AuditLogEventType.ExternalStorageRemoved,
                 "group.created" => AuditLogEventType.GroupCreated,
                 "group.deleted" => AuditLogEventType.GroupDeleted,
                 "group.updated" => AuditLogEventType.GroupUpdated,
@@ -797,6 +829,7 @@ namespace tryAGI.OpenAI
                 "tenant.admin_api_key.created" => AuditLogEventType.TenantAdminApiKeyCreated,
                 "tenant.admin_api_key.deleted" => AuditLogEventType.TenantAdminApiKeyDeleted,
                 "tenant.admin_api_key.updated" => AuditLogEventType.TenantAdminApiKeyUpdated,
+                "tenant.ads_account.onboarding.redemption" => AuditLogEventType.TenantAdsAccountOnboardingRedemption,
                 "tenant.api_organization_invite.deleted" => AuditLogEventType.TenantApiOrganizationInviteDeleted,
                 "tenant.api_organization_invite.upserted" => AuditLogEventType.TenantApiOrganizationInviteUpserted,
                 "tenant.billing.alerts.updated" => AuditLogEventType.TenantBillingAlertsUpdated,
@@ -859,6 +892,8 @@ namespace tryAGI.OpenAI
                 "tenant.sso_connection.setup.started" => AuditLogEventType.TenantSsoConnectionSetupStarted,
                 "tenant.sso_connection.updated" => AuditLogEventType.TenantSsoConnectionUpdated,
                 "tenant.third_party_app_policy.updated" => AuditLogEventType.TenantThirdPartyAppPolicyUpdated,
+                "tenant.trusted_access.application.submitted" => AuditLogEventType.TenantTrustedAccessApplicationSubmitted,
+                "tenant.trusted_access.business_verification.started" => AuditLogEventType.TenantTrustedAccessBusinessVerificationStarted,
                 "tenant.usage_limit.group.updated" => AuditLogEventType.TenantUsageLimitGroupUpdated,
                 "tenant.usage_limit.increase_request.resolved" => AuditLogEventType.TenantUsageLimitIncreaseRequestResolved,
                 "tenant.usage_limit.increase_request.updated" => AuditLogEventType.TenantUsageLimitIncreaseRequestUpdated,
@@ -869,6 +904,7 @@ namespace tryAGI.OpenAI
                 "tenant.user.looked_up" => AuditLogEventType.TenantUserLookedUp,
                 "tenant.user.removed" => AuditLogEventType.TenantUserRemoved,
                 "tenant.user.updated" => AuditLogEventType.TenantUserUpdated,
+                "tenant.workload_identity.access_token.issued" => AuditLogEventType.TenantWorkloadIdentityAccessTokenIssued,
                 "tenant.workload_identity.binding.created" => AuditLogEventType.TenantWorkloadIdentityBindingCreated,
                 "tenant.workload_identity.mapping.archived" => AuditLogEventType.TenantWorkloadIdentityMappingArchived,
                 "tenant.workload_identity.mapping.created" => AuditLogEventType.TenantWorkloadIdentityMappingCreated,

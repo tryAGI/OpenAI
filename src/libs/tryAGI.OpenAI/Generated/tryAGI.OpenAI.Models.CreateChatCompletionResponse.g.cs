@@ -41,6 +41,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
         public global::tryAGI.OpenAI.ServiceTierEnum? ServiceTier { get; set; }
 
@@ -92,6 +98,7 @@ namespace tryAGI.OpenAI
         /// <param name="model">
         /// The model used for the chat completion.
         /// </param>
+        /// <param name="metadata"></param>
         /// <param name="serviceTier"></param>
         /// <param name="object">
         /// The object type, which is always `chat.completion`.
@@ -108,6 +115,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateChatCompletionResponseChoice> choices,
             int created,
             string model,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.ServiceTierEnum? serviceTier,
             global::tryAGI.OpenAI.CreateChatCompletionResponseObject @object,
             global::tryAGI.OpenAI.CompletionUsage? usage,
@@ -117,6 +125,7 @@ namespace tryAGI.OpenAI
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
             this.Created = created;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Metadata = metadata;
             this.ServiceTier = serviceTier;
             this.Object = @object;
             this.Usage = usage;

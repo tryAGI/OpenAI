@@ -42,7 +42,8 @@ internal static partial class DataRetentionUpdateProjectDataRetentionCommandApiC
 
     public static Command Create()
     {
-        var command = new Command(@"update-project-data-retention", @"Updates project data retention controls.");
+        var command = new Command(@"update-project-data-retention", @"Update project data retention
+Updates project data retention controls.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(RetentionType);
 

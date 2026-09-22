@@ -50,7 +50,8 @@ internal static partial class CertificatesListOrganizationCertificatesCommandApi
 
     public static Command Create()
     {
-        var command = new Command(@"list-organization-certificates", @"List uploaded certificates for this organization.");
+        var command = new Command(@"list-organization-certificates", @"List organization certificates
+List uploaded certificates for this organization.");
                         command.Options.Add(Limit);
                         command.Options.Add(After);
                         command.Options.Add(Order);

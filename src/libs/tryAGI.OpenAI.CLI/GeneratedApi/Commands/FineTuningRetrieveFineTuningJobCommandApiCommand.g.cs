@@ -36,9 +36,10 @@ internal static partial class FineTuningRetrieveFineTuningJobCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-fine-tuning-job", @"Get info about a fine-tuning job.
+        var command = new Command(@"retrieve-fine-tuning-job", @"Retrieve fine-tuning job
+Get info about a fine-tuning job.
 
-[Learn more about fine-tuning](/docs/guides/model-optimization)
+[Learn more about fine-tuning](https://developers.openai.com/api/docs/guides/model-optimization)
 ");
                         command.Arguments.Add(FineTuningJobId);
 

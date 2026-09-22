@@ -10,7 +10,7 @@ internal static partial class VectorStoresCreateVectorStoreCommandApiCommand
     private static Option<global::System.Collections.Generic.IList<string>?> FileIds { get; } = new(
         name: @"--file-ids")
     {
-        Description = @"A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.",
+        Description = @"A list of [File](https://developers.openai.com/api/reference/resources/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.",
     };
 
     private static Option<string?> NameOption { get; } = new(
@@ -81,7 +81,8 @@ internal static partial class VectorStoresCreateVectorStoreCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-vector-store", @"Create a vector store.");
+        var command = new Command(@"create-vector-store", @"Create vector store
+Create a vector store.");
                         command.Options.Add(FileIds);
                         command.Options.Add(NameOption);
                         command.Options.Add(DescriptionOption);

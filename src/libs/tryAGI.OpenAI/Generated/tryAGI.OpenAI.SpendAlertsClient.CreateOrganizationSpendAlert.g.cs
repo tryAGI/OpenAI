@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create organization spend alert<br/>
         /// Creates an organization spend alert.
         /// </summary>
         /// <param name="request"></param>
@@ -64,6 +65,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Create organization spend alert<br/>
         /// Creates an organization spend alert.
         /// </summary>
         /// <param name="request"></param>
@@ -434,6 +436,7 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Create organization spend alert<br/>
         /// Creates an organization spend alert.
         /// </summary>
         /// <param name="thresholdAmount">

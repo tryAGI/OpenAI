@@ -10,7 +10,7 @@ internal static partial class AssistantsListMessagesCommandApiCommand
     private static Argument<string> ThreadId { get; } = new(
         name: @"thread-id")
     {
-        Description = @"The ID of the [thread](/docs/api-reference/threads) the messages belong to.",
+        Description = @"The ID of the [thread](https://developers.openai.com/api/docs/assistants/migration) the messages belong to.",
     };
 
     private static Option<int?> Limit { get; } = new(
@@ -70,7 +70,8 @@ internal static partial class AssistantsListMessagesCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-messages", @"Returns a list of messages for a given thread.");
+        var command = new Command(@"list-messages", @"List messages
+Returns a list of messages for a given thread.");
                         command.Arguments.Add(ThreadId);
                         command.Options.Add(Limit);
                         command.Options.Add(Order);

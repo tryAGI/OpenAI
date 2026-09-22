@@ -53,7 +53,8 @@ internal static partial class ProjectGroupsListProjectGroupsCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-project-groups", @"Lists the groups that have access to a project.");
+        var command = new Command(@"list-project-groups", @"List project groups
+Lists the groups that have access to a project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Limit);
                         command.Options.Add(After);

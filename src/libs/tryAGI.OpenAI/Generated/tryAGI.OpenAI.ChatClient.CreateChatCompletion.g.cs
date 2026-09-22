@@ -42,18 +42,19 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// **Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses)<br/>
+        /// Create chat completion<br/>
+        /// **Starting a new project?** We recommend trying [Responses](https://developers.openai.com/api/reference/resources/responses)<br/>
         /// to take advantage of the latest OpenAI platform features. Compare<br/>
-        /// [Chat Completions with Responses](/docs/guides/responses-vs-chat-completions?api-mode=responses).<br/>
+        /// [Chat Completions with Responses](https://developers.openai.com/api/docs/guides/migrate-to-responses?api-mode=responses).<br/>
         /// ---<br/>
         /// Creates a model response for the given chat conversation. Learn more in the<br/>
-        /// [text generation](/docs/guides/text-generation), [vision](/docs/guides/vision),<br/>
-        /// and [audio](/docs/guides/audio) guides.<br/>
+        /// [text generation](https://developers.openai.com/api/docs/guides/text), [vision](https://developers.openai.com/api/docs/guides/images-vision),<br/>
+        /// and [audio](https://developers.openai.com/api/docs/guides/audio) guides.<br/>
         /// Parameter support can differ depending on the model used to generate the<br/>
         /// response, particularly for newer reasoning models. Parameters that are only<br/>
         /// supported for reasoning models are noted below. For the current state of<br/>
         /// unsupported parameters in reasoning models,<br/>
-        /// [refer to the reasoning guide](/docs/guides/reasoning).<br/>
+        /// [refer to the reasoning guide](https://developers.openai.com/api/docs/guides/reasoning).<br/>
         /// Returns a chat completion object, or a streamed sequence of chat completion<br/>
         /// chunk objects if the request is streamed.
         /// </summary>
@@ -77,18 +78,19 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
-        /// **Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses)<br/>
+        /// Create chat completion<br/>
+        /// **Starting a new project?** We recommend trying [Responses](https://developers.openai.com/api/reference/resources/responses)<br/>
         /// to take advantage of the latest OpenAI platform features. Compare<br/>
-        /// [Chat Completions with Responses](/docs/guides/responses-vs-chat-completions?api-mode=responses).<br/>
+        /// [Chat Completions with Responses](https://developers.openai.com/api/docs/guides/migrate-to-responses?api-mode=responses).<br/>
         /// ---<br/>
         /// Creates a model response for the given chat conversation. Learn more in the<br/>
-        /// [text generation](/docs/guides/text-generation), [vision](/docs/guides/vision),<br/>
-        /// and [audio](/docs/guides/audio) guides.<br/>
+        /// [text generation](https://developers.openai.com/api/docs/guides/text), [vision](https://developers.openai.com/api/docs/guides/images-vision),<br/>
+        /// and [audio](https://developers.openai.com/api/docs/guides/audio) guides.<br/>
         /// Parameter support can differ depending on the model used to generate the<br/>
         /// response, particularly for newer reasoning models. Parameters that are only<br/>
         /// supported for reasoning models are noted below. For the current state of<br/>
         /// unsupported parameters in reasoning models,<br/>
-        /// [refer to the reasoning guide](/docs/guides/reasoning).<br/>
+        /// [refer to the reasoning guide](https://developers.openai.com/api/docs/guides/reasoning).<br/>
         /// Returns a chat completion object, or a streamed sequence of chat completion<br/>
         /// chunk objects if the request is streamed.
         /// </summary>
@@ -363,6 +365,80 @@ namespace tryAGI.OpenAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // The request was rejected because a rate limit was exceeded. A slow_down error means traffic increased too quickly; reduce your request rate, then increase it gradually.
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The service is temporarily unavailable. A server_is_overloaded error means the requested model is temporarily overloaded; retry after a brief delay.
+                            if ((int)__response.StatusCode == 503)
+                            {
+                                string? __content_503 = null;
+                                global::System.Exception? __exception_503 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_503 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_503 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_503 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_503 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_503,
+                                    responseBody: __content_503,
+                                    responseObject: __value_503,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -460,18 +536,19 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
-        /// **Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses)<br/>
+        /// Create chat completion<br/>
+        /// **Starting a new project?** We recommend trying [Responses](https://developers.openai.com/api/reference/resources/responses)<br/>
         /// to take advantage of the latest OpenAI platform features. Compare<br/>
-        /// [Chat Completions with Responses](/docs/guides/responses-vs-chat-completions?api-mode=responses).<br/>
+        /// [Chat Completions with Responses](https://developers.openai.com/api/docs/guides/migrate-to-responses?api-mode=responses).<br/>
         /// ---<br/>
         /// Creates a model response for the given chat conversation. Learn more in the<br/>
-        /// [text generation](/docs/guides/text-generation), [vision](/docs/guides/vision),<br/>
-        /// and [audio](/docs/guides/audio) guides.<br/>
+        /// [text generation](https://developers.openai.com/api/docs/guides/text), [vision](https://developers.openai.com/api/docs/guides/images-vision),<br/>
+        /// and [audio](https://developers.openai.com/api/docs/guides/audio) guides.<br/>
         /// Parameter support can differ depending on the model used to generate the<br/>
         /// response, particularly for newer reasoning models. Parameters that are only<br/>
         /// supported for reasoning models are noted below. For the current state of<br/>
         /// unsupported parameters in reasoning models,<br/>
-        /// [refer to the reasoning guide](/docs/guides/reasoning).<br/>
+        /// [refer to the reasoning guide](https://developers.openai.com/api/docs/guides/reasoning).<br/>
         /// Returns a chat completion object, or a streamed sequence of chat completion<br/>
         /// chunk objects if the request is streamed.
         /// </summary>

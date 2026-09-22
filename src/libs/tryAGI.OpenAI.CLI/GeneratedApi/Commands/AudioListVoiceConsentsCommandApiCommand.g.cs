@@ -43,11 +43,8 @@ internal static partial class AudioListVoiceConsentsCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-voice-consents", @"Returns a list of voice consent recordings.
-List consent recordings available to your organization for creating custom voices.
-
-See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
-");
+        var command = new Command(@"list-voice-consents", @"List voice consents
+Returns a list of voice consent recordings.");
                         command.Options.Add(After);
                         command.Options.Add(Limit);
 

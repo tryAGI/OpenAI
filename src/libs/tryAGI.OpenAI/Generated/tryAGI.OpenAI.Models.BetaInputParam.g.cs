@@ -7,11 +7,11 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Text, image, or file inputs to the model, used to generate a response.<br/>
     /// Learn more:<br/>
-    /// - [Text inputs and outputs](/docs/guides/text)<br/>
-    /// - [Image inputs](/docs/guides/images)<br/>
-    /// - [File inputs](/docs/guides/pdf-files)<br/>
-    /// - [Conversation state](/docs/guides/conversation-state)<br/>
-    /// - [Function calling](/docs/guides/function-calling)
+    /// - [Text inputs and outputs](https://developers.openai.com/api/docs/guides/text)<br/>
+    /// - [Image inputs](https://developers.openai.com/api/docs/guides/images-vision)<br/>
+    /// - [File inputs](https://developers.openai.com/api/docs/guides/file-inputs)<br/>
+    /// - [Conversation state](https://developers.openai.com/api/docs/guides/conversation-state)<br/>
+    /// - [Function calling](https://developers.openai.com/api/docs/guides/function-calling)
     /// </summary>
     public readonly partial struct BetaInputParam : global::System.IEquatable<BetaInputParam>
     {

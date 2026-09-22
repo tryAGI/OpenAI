@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The size of the generated image.
+    ///
     /// </summary>
     public enum ImageGenCompletedEventSize
     {

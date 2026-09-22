@@ -47,7 +47,8 @@ internal static partial class SkillsListSkillsCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-skills", @"List all skills for the current project.");
+        var command = new Command(@"list-skills", @"List Skills
+List all skills for the current project.");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);
                         command.Options.Add(After);

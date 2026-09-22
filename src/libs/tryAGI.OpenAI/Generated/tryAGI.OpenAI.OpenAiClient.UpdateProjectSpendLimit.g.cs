@@ -7,7 +7,7 @@ namespace tryAGI.OpenAI
     {
 
 
-        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_UpdateProjectSpendLimitSecurityRequirement0 =
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_UpdateprojectspendlimitSecurityRequirement0 =
             new global::tryAGI.OpenAI.EndPointSecurityRequirement
             {
                 Authorizations = new global::tryAGI.OpenAI.EndPointAuthorizationRequirement[]
@@ -21,29 +21,30 @@ namespace tryAGI.OpenAI
                     },
                 },
             };
-        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_UpdateProjectSpendLimitSecurityRequirements =
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_UpdateprojectspendlimitSecurityRequirements =
             new global::tryAGI.OpenAI.EndPointSecurityRequirement[]
-            {                s_UpdateProjectSpendLimitSecurityRequirement0,
+            {                s_UpdateprojectspendlimitSecurityRequirement0,
             };
-        partial void PrepareUpdateProjectSpendLimitArguments(
+        partial void PrepareUpdateprojectspendlimitArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string projectId,
             global::tryAGI.OpenAI.UpdateProjectSpendLimitBody request);
-        partial void PrepareUpdateProjectSpendLimitRequest(
+        partial void PrepareUpdateprojectspendlimitRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string projectId,
             global::tryAGI.OpenAI.UpdateProjectSpendLimitBody request);
-        partial void ProcessUpdateProjectSpendLimitResponse(
+        partial void ProcessUpdateprojectspendlimitResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessUpdateProjectSpendLimitResponseContent(
+        partial void ProcessUpdateprojectspendlimitResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
+        /// Update project spend limit<br/>
         /// Create or replace a project's hard spend limit.
         /// </summary>
         /// <param name="projectId">
@@ -53,14 +54,14 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectSpendLimitResource> UpdateProjectSpendLimitAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectSpendLimitResource> UpdateprojectspendlimitAsync(
             string projectId,
 
             global::tryAGI.OpenAI.UpdateProjectSpendLimitBody request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await UpdateProjectSpendLimitAsResponseAsync(
+            var __response = await UpdateprojectspendlimitAsResponseAsync(
                 projectId: projectId,
 
                 request: request,
@@ -71,6 +72,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Update project spend limit<br/>
         /// Create or replace a project's hard spend limit.
         /// </summary>
         /// <param name="projectId">
@@ -80,7 +82,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ProjectSpendLimitResource>> UpdateProjectSpendLimitAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.ProjectSpendLimitResource>> UpdateprojectspendlimitAsResponseAsync(
             string projectId,
 
             global::tryAGI.OpenAI.UpdateProjectSpendLimitBody request,
@@ -91,7 +93,7 @@ namespace tryAGI.OpenAI
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareUpdateProjectSpendLimitArguments(
+            PrepareUpdateprojectspendlimitArguments(
                 httpClient: HttpClient,
                 projectId: ref projectId,
                 request: request);
@@ -99,8 +101,8 @@ namespace tryAGI.OpenAI
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_UpdateProjectSpendLimitSecurityRequirements,
-                operationName: "UpdateProjectSpendLimitAsync");
+                securityRequirements: s_UpdateprojectspendlimitSecurityRequirements,
+                operationName: "UpdateprojectspendlimitAsync");
 
             using var __timeoutCancellationTokenSource = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -165,7 +167,7 @@ namespace tryAGI.OpenAI
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareUpdateProjectSpendLimitRequest(
+                PrepareUpdateprojectspendlimitRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     projectId: projectId!,
@@ -188,8 +190,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateProjectSpendLimit",
-                                methodName: "UpdateProjectSpendLimitAsync",
+                                operationId: "Updateprojectspendlimit",
+                                methodName: "UpdateprojectspendlimitAsync",
                                 pathTemplate: "$\"/organization/projects/{projectId}/spend_limit\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -222,8 +224,8 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateProjectSpendLimit",
-                                methodName: "UpdateProjectSpendLimitAsync",
+                                operationId: "Updateprojectspendlimit",
+                                methodName: "UpdateprojectspendlimitAsync",
                                 pathTemplate: "$\"/organization/projects/{projectId}/spend_limit\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -263,8 +265,8 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateProjectSpendLimit",
-                                methodName: "UpdateProjectSpendLimitAsync",
+                                operationId: "Updateprojectspendlimit",
+                                methodName: "UpdateprojectspendlimitAsync",
                                 pathTemplate: "$\"/organization/projects/{projectId}/spend_limit\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -303,7 +305,7 @@ namespace tryAGI.OpenAI
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessUpdateProjectSpendLimitResponse(
+                ProcessUpdateprojectspendlimitResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -311,8 +313,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateProjectSpendLimit",
-                                methodName: "UpdateProjectSpendLimitAsync",
+                                operationId: "Updateprojectspendlimit",
+                                methodName: "UpdateprojectspendlimitAsync",
                                 pathTemplate: "$\"/organization/projects/{projectId}/spend_limit\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -333,8 +335,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "UpdateProjectSpendLimit",
-                                methodName: "UpdateProjectSpendLimitAsync",
+                                operationId: "Updateprojectspendlimit",
+                                methodName: "UpdateprojectspendlimitAsync",
                                 pathTemplate: "$\"/organization/projects/{projectId}/spend_limit\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -363,7 +365,7 @@ namespace tryAGI.OpenAI
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessUpdateProjectSpendLimitResponseContent(
+                                ProcessUpdateprojectspendlimitResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -447,6 +449,7 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Update project spend limit<br/>
         /// Create or replace a project's hard spend limit.
         /// </summary>
         /// <param name="projectId">
@@ -464,7 +467,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectSpendLimitResource> UpdateProjectSpendLimitAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectSpendLimitResource> UpdateprojectspendlimitAsync(
             string projectId,
             int thresholdAmount,
             global::tryAGI.OpenAI.UpdateProjectSpendLimitBodyCurrency currency = default,
@@ -479,7 +482,7 @@ namespace tryAGI.OpenAI
                 Interval = interval,
             };
 
-            return await UpdateProjectSpendLimitAsync(
+            return await UpdateprojectspendlimitAsync(
                 projectId: projectId,
                 request: __request,
                 requestOptions: requestOptions,

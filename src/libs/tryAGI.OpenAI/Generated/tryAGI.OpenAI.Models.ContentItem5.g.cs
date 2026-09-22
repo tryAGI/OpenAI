@@ -5,22 +5,22 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A plaintext, image, or encrypted agent message content part.
+    /// Content blocks that comprise a user message.
     /// </summary>
     public readonly partial struct ContentItem5 : global::System.IEquatable<ContentItem5>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaAgentMessageItemParamContentItemDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.UserMessageItemContentItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// A text input to the model.
+        /// Text block that a user contributed to the thread.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaInputTextContentParam? InputText { get; init; }
+        public global::tryAGI.OpenAI.UserMessageInputText? InputText { get; init; }
 #else
-        public global::tryAGI.OpenAI.BetaInputTextContentParam? InputText { get; }
+        public global::tryAGI.OpenAI.UserMessageInputText? InputText { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.BetaInputTextContentParam? value)
+            out global::tryAGI.OpenAI.UserMessageInputText? value)
         {
             value = InputText;
             return IsInputText;
@@ -47,97 +47,60 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaInputTextContentParam PickInputText() => IsInputText
+        public global::tryAGI.OpenAI.UserMessageInputText PickInputText() => IsInputText
             ? InputText!
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
-        /// An image input to the model. Learn about [image inputs](/docs/guides/vision)
+        /// Quoted snippet that the user referenced in their message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? InputImage { get; init; }
+        public global::tryAGI.OpenAI.UserMessageQuotedText? QuotedText { get; init; }
 #else
-        public global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? InputImage { get; }
+        public global::tryAGI.OpenAI.UserMessageQuotedText? QuotedText { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QuotedText))]
 #endif
-        public bool IsInputImage => InputImage != null;
+        public bool IsQuotedText => QuotedText != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickInputImage(
+        public bool TryPickQuotedText(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? value)
+            out global::tryAGI.OpenAI.UserMessageQuotedText? value)
         {
-            value = InputImage;
-            return IsInputImage;
+            value = QuotedText;
+            return IsQuotedText;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam PickInputImage() => IsInputImage
-            ? InputImage!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
-
+        public global::tryAGI.OpenAI.UserMessageQuotedText PickQuotedText() => IsQuotedText
+            ? QuotedText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'QuotedText' but the value was {ToString()}.");
         /// <summary>
-        /// Opaque encrypted content that Responses API decrypts inside trusted model execution.
+        ///
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaEncryptedContentParam? EncryptedContent { get; init; }
-#else
-        public global::tryAGI.OpenAI.BetaEncryptedContentParam? EncryptedContent { get; }
-#endif
+        public static implicit operator ContentItem5(global::tryAGI.OpenAI.UserMessageInputText value) => new ContentItem5((global::tryAGI.OpenAI.UserMessageInputText?)value);
 
         /// <summary>
         ///
         /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(EncryptedContent))]
-#endif
-        public bool IsEncryptedContent => EncryptedContent != null;
+        public static implicit operator global::tryAGI.OpenAI.UserMessageInputText?(ContentItem5 @this) => @this.InputText;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickEncryptedContent(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::tryAGI.OpenAI.BetaEncryptedContentParam? value)
-        {
-            value = EncryptedContent;
-            return IsEncryptedContent;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::tryAGI.OpenAI.BetaEncryptedContentParam PickEncryptedContent() => IsEncryptedContent
-            ? EncryptedContent!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'EncryptedContent' but the value was {ToString()}.");
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator ContentItem5(global::tryAGI.OpenAI.BetaInputTextContentParam value) => new ContentItem5((global::tryAGI.OpenAI.BetaInputTextContentParam?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaInputTextContentParam?(ContentItem5 @this) => @this.InputText;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ContentItem5(global::tryAGI.OpenAI.BetaInputTextContentParam? value)
+        public ContentItem5(global::tryAGI.OpenAI.UserMessageInputText? value)
         {
             InputText = value;
         }
@@ -145,77 +108,51 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static ContentItem5 FromInputText(global::tryAGI.OpenAI.BetaInputTextContentParam? value) => new ContentItem5(value);
+        public static ContentItem5 FromInputText(global::tryAGI.OpenAI.UserMessageInputText? value) => new ContentItem5(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ContentItem5(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam value) => new ContentItem5((global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam?)value);
+        public static implicit operator ContentItem5(global::tryAGI.OpenAI.UserMessageQuotedText value) => new ContentItem5((global::tryAGI.OpenAI.UserMessageQuotedText?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam?(ContentItem5 @this) => @this.InputImage;
+        public static implicit operator global::tryAGI.OpenAI.UserMessageQuotedText?(ContentItem5 @this) => @this.QuotedText;
 
         /// <summary>
         ///
         /// </summary>
-        public ContentItem5(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? value)
+        public ContentItem5(global::tryAGI.OpenAI.UserMessageQuotedText? value)
         {
-            InputImage = value;
+            QuotedText = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ContentItem5 FromInputImage(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? value) => new ContentItem5(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator ContentItem5(global::tryAGI.OpenAI.BetaEncryptedContentParam value) => new ContentItem5((global::tryAGI.OpenAI.BetaEncryptedContentParam?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaEncryptedContentParam?(ContentItem5 @this) => @this.EncryptedContent;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public ContentItem5(global::tryAGI.OpenAI.BetaEncryptedContentParam? value)
-        {
-            EncryptedContent = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static ContentItem5 FromEncryptedContent(global::tryAGI.OpenAI.BetaEncryptedContentParam? value) => new ContentItem5(value);
+        public static ContentItem5 FromQuotedText(global::tryAGI.OpenAI.UserMessageQuotedText? value) => new ContentItem5(value);
 
         /// <summary>
         ///
         /// </summary>
         public ContentItem5(
-            global::tryAGI.OpenAI.BetaAgentMessageItemParamContentItemDiscriminatorType? type,
-            global::tryAGI.OpenAI.BetaInputTextContentParam? inputText,
-            global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? inputImage,
-            global::tryAGI.OpenAI.BetaEncryptedContentParam? encryptedContent
+            global::tryAGI.OpenAI.UserMessageItemContentItemDiscriminatorType? type,
+            global::tryAGI.OpenAI.UserMessageInputText? inputText,
+            global::tryAGI.OpenAI.UserMessageQuotedText? quotedText
             )
         {
             Type = type;
 
             InputText = inputText;
-            InputImage = inputImage;
-            EncryptedContent = encryptedContent;
+            QuotedText = quotedText;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            EncryptedContent as object ??
-            InputImage as object ??
+            QuotedText as object ??
             InputText as object
             ;
 
@@ -224,8 +161,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             InputText?.ToString() ??
-            InputImage?.ToString() ??
-            EncryptedContent?.ToString()
+            QuotedText?.ToString()
             ;
 
         /// <summary>
@@ -233,16 +169,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsInputText && !IsInputImage && !IsEncryptedContent || !IsInputText && IsInputImage && !IsEncryptedContent || !IsInputText && !IsInputImage && IsEncryptedContent;
+            return IsInputText && !IsQuotedText || !IsInputText && IsQuotedText;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.BetaInputTextContentParam, TResult>? inputText = null,
-            global::System.Func<global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam, TResult>? inputImage = null,
-            global::System.Func<global::tryAGI.OpenAI.BetaEncryptedContentParam, TResult>? encryptedContent = null,
+            global::System.Func<global::tryAGI.OpenAI.UserMessageInputText, TResult>? inputText = null,
+            global::System.Func<global::tryAGI.OpenAI.UserMessageQuotedText, TResult>? quotedText = null,
             bool validate = true)
         {
             if (validate)
@@ -254,13 +189,9 @@ namespace tryAGI.OpenAI
             {
                 return inputText(InputText!);
             }
-            else if (IsInputImage && inputImage != null)
+            else if (IsQuotedText && quotedText != null)
             {
-                return inputImage(InputImage!);
-            }
-            else if (IsEncryptedContent && encryptedContent != null)
-            {
-                return encryptedContent(EncryptedContent!);
+                return quotedText(QuotedText!);
             }
 
             return default(TResult);
@@ -270,11 +201,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.BetaInputTextContentParam>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.UserMessageInputText>? inputText = null,
 
-            global::System.Action<global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam>? inputImage = null,
-
-            global::System.Action<global::tryAGI.OpenAI.BetaEncryptedContentParam>? encryptedContent = null,
+            global::System.Action<global::tryAGI.OpenAI.UserMessageQuotedText>? quotedText = null,
             bool validate = true)
         {
             if (validate)
@@ -286,13 +215,9 @@ namespace tryAGI.OpenAI
             {
                 inputText?.Invoke(InputText!);
             }
-            else if (IsInputImage)
+            else if (IsQuotedText)
             {
-                inputImage?.Invoke(InputImage!);
-            }
-            else if (IsEncryptedContent)
-            {
-                encryptedContent?.Invoke(EncryptedContent!);
+                quotedText?.Invoke(QuotedText!);
             }
         }
 
@@ -300,9 +225,8 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.BetaInputTextContentParam>? inputText = null,
-            global::System.Action<global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam>? inputImage = null,
-            global::System.Action<global::tryAGI.OpenAI.BetaEncryptedContentParam>? encryptedContent = null,
+            global::System.Action<global::tryAGI.OpenAI.UserMessageInputText>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.UserMessageQuotedText>? quotedText = null,
             bool validate = true)
         {
             if (validate)
@@ -314,13 +238,9 @@ namespace tryAGI.OpenAI
             {
                 inputText?.Invoke(InputText!);
             }
-            else if (IsInputImage)
+            else if (IsQuotedText)
             {
-                inputImage?.Invoke(InputImage!);
-            }
-            else if (IsEncryptedContent)
-            {
-                encryptedContent?.Invoke(EncryptedContent!);
+                quotedText?.Invoke(QuotedText!);
             }
         }
 
@@ -332,11 +252,9 @@ namespace tryAGI.OpenAI
             var fields = new object?[]
             {
                 InputText,
-                typeof(global::tryAGI.OpenAI.BetaInputTextContentParam),
-                InputImage,
-                typeof(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam),
-                EncryptedContent,
-                typeof(global::tryAGI.OpenAI.BetaEncryptedContentParam),
+                typeof(global::tryAGI.OpenAI.UserMessageInputText),
+                QuotedText,
+                typeof(global::tryAGI.OpenAI.UserMessageQuotedText),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -353,9 +271,8 @@ namespace tryAGI.OpenAI
         public bool Equals(ContentItem5 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputTextContentParam?>.Default.Equals(InputText, other.InputText) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam?>.Default.Equals(InputImage, other.InputImage) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaEncryptedContentParam?>.Default.Equals(EncryptedContent, other.EncryptedContent)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UserMessageInputText?>.Default.Equals(InputText, other.InputText) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UserMessageQuotedText?>.Default.Equals(QuotedText, other.QuotedText)
                 ;
         }
 

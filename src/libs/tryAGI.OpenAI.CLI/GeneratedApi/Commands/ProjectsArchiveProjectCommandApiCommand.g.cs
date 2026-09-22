@@ -35,7 +35,8 @@ internal static partial class ProjectsArchiveProjectCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"archive-project", @"Archives a project in the organization. Archived projects cannot be used or updated.");
+        var command = new Command(@"archive-project", @"Archive project
+Archives a project in the organization. Archived projects cannot be used or updated.");
                         command.Arguments.Add(ProjectId);
 
 

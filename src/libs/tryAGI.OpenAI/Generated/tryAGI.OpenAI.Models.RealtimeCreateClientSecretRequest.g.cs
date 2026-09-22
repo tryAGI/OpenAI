@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Create a session and client secret for the Realtime API. The request can specify<br/>
     /// either a realtime or a transcription session configuration.<br/>
-    /// [Learn more about the Realtime API](/docs/guides/realtime).
+    /// [Learn more about the Realtime API](https://developers.openai.com/api/docs/guides/realtime).
     /// </summary>
     public sealed partial class RealtimeCreateClientSecretRequest
     {

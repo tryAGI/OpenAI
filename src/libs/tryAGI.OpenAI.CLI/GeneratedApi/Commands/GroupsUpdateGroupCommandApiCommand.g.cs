@@ -42,7 +42,8 @@ internal static partial class GroupsUpdateGroupCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"update-group", @"Updates a group's information.");
+        var command = new Command(@"update-group", @"Update group
+Updates a group's information.");
                         command.Arguments.Add(GroupId);
                         command.Options.Add(NameOption);
 

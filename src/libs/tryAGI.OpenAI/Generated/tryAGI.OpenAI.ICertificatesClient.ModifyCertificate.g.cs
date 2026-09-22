@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ICertificatesClient
     {
         /// <summary>
+        /// Modify certificate<br/>
         /// Modify a certificate. Note that only the name can be modified.
         /// </summary>
         /// <param name="certificateId"></param>
@@ -19,6 +20,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Modify certificate<br/>
         /// Modify a certificate. Note that only the name can be modified.
         /// </summary>
         /// <param name="certificateId"></param>
@@ -33,6 +35,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Modify certificate<br/>
         /// Modify a certificate. Note that only the name can be modified.
         /// </summary>
         /// <param name="certificateId"></param>

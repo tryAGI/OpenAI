@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     /// Reducing reasoning effort can result in faster responses and fewer tokens<br/>
     /// used on reasoning in a response. Not all reasoning models support every<br/>
     /// value. See the<br/>
-    /// [reasoning guide](https://platform.openai.com/docs/guides/reasoning)<br/>
+    /// [reasoning guide](https://developers.openai.com/api/docs/guides/reasoning)<br/>
     /// for model-specific support.<br/>
     /// Default Value: medium
     /// </summary>

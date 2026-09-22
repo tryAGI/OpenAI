@@ -67,7 +67,8 @@ items or `pass` to filter by passed output items.
 
     public static Command Create()
     {
-        var command = new Command(@"get-eval-run-output-items", @"Get a list of output items for an evaluation run.
+        var command = new Command(@"get-eval-run-output-items", @"Get eval run output items
+Get a list of output items for an evaluation run.
 ");
                         command.Arguments.Add(EvalId);
                         command.Arguments.Add(RunId);

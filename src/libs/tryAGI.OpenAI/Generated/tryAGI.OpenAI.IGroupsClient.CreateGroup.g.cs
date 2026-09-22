@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IGroupsClient
     {
         /// <summary>
+        /// Create group<br/>
         /// Creates a new group in the organization.
         /// </summary>
         /// <param name="request"></param>
@@ -17,6 +18,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Create group<br/>
         /// Creates a new group in the organization.
         /// </summary>
         /// <param name="request"></param>
@@ -29,6 +31,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Create group<br/>
         /// Creates a new group in the organization.
         /// </summary>
         /// <param name="name">

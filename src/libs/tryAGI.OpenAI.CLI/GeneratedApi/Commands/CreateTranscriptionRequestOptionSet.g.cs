@@ -27,6 +27,7 @@ internal sealed record CreateTranscriptionRequestOptionSet(
                         Filename: new Option<string>($"--{normalizedPrefix}filename")
                 {
                     Description = @"The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
 ",
                     Required = true,
                 },
@@ -47,7 +48,7 @@ internal sealed record CreateTranscriptionRequestOptionSet(
                 },
                 Prompt: new Option<string?>($"--{normalizedPrefix}prompt")
                 {
-                    Description = @"An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should match the audio language. This field is not supported when using `gpt-4o-transcribe-diarize`.
+                    Description = @"An optional text to guide the model's style or continue a previous audio segment. The [prompt](https://developers.openai.com/api/docs/guides/speech-to-text#prompting) should match the audio language. This field is not supported when using `gpt-4o-transcribe-diarize`.
 ",
                 },
                 ResponseFormat: new Option<global::tryAGI.OpenAI.AudioResponseFormat?>($"--{normalizedPrefix}response-format")

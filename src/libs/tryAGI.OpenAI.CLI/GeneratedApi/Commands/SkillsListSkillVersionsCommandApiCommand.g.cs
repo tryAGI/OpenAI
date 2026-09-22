@@ -53,7 +53,8 @@ internal static partial class SkillsListSkillVersionsCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-skill-versions", @"List skill versions for a skill.");
+        var command = new Command(@"list-skill-versions", @"List Skill Versions
+List skill versions for a skill.");
                         command.Arguments.Add(SkillId);
                         command.Options.Add(Limit);
                         command.Options.Add(Order);

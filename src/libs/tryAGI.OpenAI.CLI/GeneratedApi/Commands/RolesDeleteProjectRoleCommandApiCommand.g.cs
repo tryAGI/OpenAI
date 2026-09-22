@@ -41,7 +41,8 @@ internal static partial class RolesDeleteProjectRoleCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"delete-project-role", @"Deletes a custom role from a project.");
+        var command = new Command(@"delete-project-role", @"Delete project role
+Deletes a custom role from a project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(RoleId);
 

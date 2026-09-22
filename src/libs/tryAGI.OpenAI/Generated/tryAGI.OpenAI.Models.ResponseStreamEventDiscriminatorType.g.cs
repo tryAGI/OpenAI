@@ -51,6 +51,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ResponseCompactionCompacting,
+        /// <summary>
+        ///
+        /// </summary>
         ResponseCompleted,
         /// <summary>
         ///
@@ -211,6 +215,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ResponseShellCallCommandAdded,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseShellCallCommandDelta,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseShellCallCommandDone,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseShellCallOutputContentDelta,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseShellCallOutputContentDone,
+        /// <summary>
+        ///
+        /// </summary>
         ResponseWebSearchCallCompleted,
         /// <summary>
         ///
@@ -244,6 +268,7 @@ namespace tryAGI.OpenAI
                 ResponseStreamEventDiscriminatorType.ResponseCodeInterpreterCallInterpreting => "response.code_interpreter_call.interpreting",
                 ResponseStreamEventDiscriminatorType.ResponseCodeInterpreterCallCodeDelta => "response.code_interpreter_call_code.delta",
                 ResponseStreamEventDiscriminatorType.ResponseCodeInterpreterCallCodeDone => "response.code_interpreter_call_code.done",
+                ResponseStreamEventDiscriminatorType.ResponseCompactionCompacting => "response.compaction.compacting",
                 ResponseStreamEventDiscriminatorType.ResponseCompleted => "response.completed",
                 ResponseStreamEventDiscriminatorType.ResponseContentPartAdded => "response.content_part.added",
                 ResponseStreamEventDiscriminatorType.ResponseContentPartDone => "response.content_part.done",
@@ -284,6 +309,11 @@ namespace tryAGI.OpenAI
                 ResponseStreamEventDiscriminatorType.ResponseReasoningTextDone => "response.reasoning_text.done",
                 ResponseStreamEventDiscriminatorType.ResponseRefusalDelta => "response.refusal.delta",
                 ResponseStreamEventDiscriminatorType.ResponseRefusalDone => "response.refusal.done",
+                ResponseStreamEventDiscriminatorType.ResponseShellCallCommandAdded => "response.shell_call_command.added",
+                ResponseStreamEventDiscriminatorType.ResponseShellCallCommandDelta => "response.shell_call_command.delta",
+                ResponseStreamEventDiscriminatorType.ResponseShellCallCommandDone => "response.shell_call_command.done",
+                ResponseStreamEventDiscriminatorType.ResponseShellCallOutputContentDelta => "response.shell_call_output_content.delta",
+                ResponseStreamEventDiscriminatorType.ResponseShellCallOutputContentDone => "response.shell_call_output_content.done",
                 ResponseStreamEventDiscriminatorType.ResponseWebSearchCallCompleted => "response.web_search_call.completed",
                 ResponseStreamEventDiscriminatorType.ResponseWebSearchCallInProgress => "response.web_search_call.in_progress",
                 ResponseStreamEventDiscriminatorType.ResponseWebSearchCallSearching => "response.web_search_call.searching",
@@ -307,6 +337,7 @@ namespace tryAGI.OpenAI
                 "response.code_interpreter_call.interpreting" => ResponseStreamEventDiscriminatorType.ResponseCodeInterpreterCallInterpreting,
                 "response.code_interpreter_call_code.delta" => ResponseStreamEventDiscriminatorType.ResponseCodeInterpreterCallCodeDelta,
                 "response.code_interpreter_call_code.done" => ResponseStreamEventDiscriminatorType.ResponseCodeInterpreterCallCodeDone,
+                "response.compaction.compacting" => ResponseStreamEventDiscriminatorType.ResponseCompactionCompacting,
                 "response.completed" => ResponseStreamEventDiscriminatorType.ResponseCompleted,
                 "response.content_part.added" => ResponseStreamEventDiscriminatorType.ResponseContentPartAdded,
                 "response.content_part.done" => ResponseStreamEventDiscriminatorType.ResponseContentPartDone,
@@ -347,6 +378,11 @@ namespace tryAGI.OpenAI
                 "response.reasoning_text.done" => ResponseStreamEventDiscriminatorType.ResponseReasoningTextDone,
                 "response.refusal.delta" => ResponseStreamEventDiscriminatorType.ResponseRefusalDelta,
                 "response.refusal.done" => ResponseStreamEventDiscriminatorType.ResponseRefusalDone,
+                "response.shell_call_command.added" => ResponseStreamEventDiscriminatorType.ResponseShellCallCommandAdded,
+                "response.shell_call_command.delta" => ResponseStreamEventDiscriminatorType.ResponseShellCallCommandDelta,
+                "response.shell_call_command.done" => ResponseStreamEventDiscriminatorType.ResponseShellCallCommandDone,
+                "response.shell_call_output_content.delta" => ResponseStreamEventDiscriminatorType.ResponseShellCallOutputContentDelta,
+                "response.shell_call_output_content.done" => ResponseStreamEventDiscriminatorType.ResponseShellCallOutputContentDone,
                 "response.web_search_call.completed" => ResponseStreamEventDiscriminatorType.ResponseWebSearchCallCompleted,
                 "response.web_search_call.in_progress" => ResponseStreamEventDiscriminatorType.ResponseWebSearchCallInProgress,
                 "response.web_search_call.searching" => ResponseStreamEventDiscriminatorType.ResponseWebSearchCallSearching,

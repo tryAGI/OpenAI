@@ -55,7 +55,8 @@ internal static partial class EvalsListEvalsCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-evals", @"List evaluations for a project.
+        var command = new Command(@"list-evals", @"List evals
+List evaluations for a project.
 ");
                         command.Options.Add(After);
                         command.Options.Add(Limit);

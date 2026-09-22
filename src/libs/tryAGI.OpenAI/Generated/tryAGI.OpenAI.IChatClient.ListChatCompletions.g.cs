@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IChatClient
     {
         /// <summary>
+        /// List Chat Completions<br/>
         /// List stored Chat Completions. Only Chat Completions that have been stored<br/>
         /// with the `store` parameter set to `true` will be returned.
         /// </summary>
@@ -29,6 +30,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List Chat Completions<br/>
         /// List stored Chat Completions. Only Chat Completions that have been stored<br/>
         /// with the `store` parameter set to `true` will be returned.
         /// </summary>

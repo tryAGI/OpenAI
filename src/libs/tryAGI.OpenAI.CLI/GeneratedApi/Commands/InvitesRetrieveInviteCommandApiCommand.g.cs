@@ -35,7 +35,8 @@ internal static partial class InvitesRetrieveInviteCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-invite", @"Retrieves an invite.");
+        var command = new Command(@"retrieve-invite", @"Retrieve invite
+Retrieves an invite.");
                         command.Arguments.Add(InviteId);
 
 

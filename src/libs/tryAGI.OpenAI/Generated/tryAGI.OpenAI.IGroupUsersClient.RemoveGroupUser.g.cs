@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IGroupUsersClient
     {
         /// <summary>
+        /// Remove group user<br/>
         /// Removes a user from a group.
         /// </summary>
         /// <param name="groupId"></param>
@@ -18,6 +19,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Remove group user<br/>
         /// Removes a user from a group.
         /// </summary>
         /// <param name="groupId"></param>

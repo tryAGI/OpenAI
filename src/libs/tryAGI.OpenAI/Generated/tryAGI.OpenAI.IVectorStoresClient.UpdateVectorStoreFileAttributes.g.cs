@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IVectorStoresClient
     {
         /// <summary>
+        /// Update vector store file attributes<br/>
         /// Update attributes on a vector store file.
         /// </summary>
         /// <param name="vectorStoreId">
@@ -25,6 +26,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Update vector store file attributes<br/>
         /// Update attributes on a vector store file.
         /// </summary>
         /// <param name="vectorStoreId">
@@ -45,6 +47,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Update vector store file attributes<br/>
         /// Update attributes on a vector store file.
         /// </summary>
         /// <param name="vectorStoreId">

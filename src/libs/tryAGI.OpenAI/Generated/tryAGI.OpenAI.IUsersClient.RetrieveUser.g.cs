@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IUsersClient
     {
         /// <summary>
+        /// Retrieve user<br/>
         /// Retrieves a user by their identifier.
         /// </summary>
         /// <param name="userId"></param>
@@ -16,6 +17,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Retrieve user<br/>
         /// Retrieves a user by their identifier.
         /// </summary>
         /// <param name="userId"></param>

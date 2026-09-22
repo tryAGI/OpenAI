@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IInvitesClient
     {
         /// <summary>
+        /// Retrieve invite<br/>
         /// Retrieves an invite.
         /// </summary>
         /// <param name="inviteId"></param>
@@ -16,6 +17,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Retrieve invite<br/>
         /// Retrieves an invite.
         /// </summary>
         /// <param name="inviteId"></param>

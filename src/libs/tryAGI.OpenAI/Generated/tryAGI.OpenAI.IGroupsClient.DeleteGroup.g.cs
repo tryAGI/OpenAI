@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IGroupsClient
     {
         /// <summary>
+        /// Delete group<br/>
         /// Deletes a group from the organization.
         /// </summary>
         /// <param name="groupId"></param>
@@ -16,6 +17,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Delete group<br/>
         /// Deletes a group from the organization.
         /// </summary>
         /// <param name="groupId"></param>

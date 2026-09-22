@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectUserRoleAssignmentsClient
     {
         /// <summary>
+        /// List project user role assignments<br/>
         /// Lists the project roles assigned to a user within a project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -24,6 +25,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List project user role assignments<br/>
         /// Lists the project roles assigned to a user within a project.
         /// </summary>
         /// <param name="projectId"></param>

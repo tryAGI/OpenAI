@@ -10,7 +10,7 @@ internal static partial class AssistantsCreateThreadAndRunCommandApiCommand
     private static Option<string> AssistantId { get; } = new(
         name: @"--assistant-id")
     {
-        Description = @"The ID of the [assistant](/docs/api-reference/assistants) to use to execute this run.",
+        Description = @"The ID of the [assistant](https://developers.openai.com/api/docs/assistants/migration) to use to execute this run.",
         Required = true,
     };
 
@@ -25,7 +25,7 @@ request, an empty thread will be created.
     private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateThreadAndRunRequestModel?>?> Model { get; } = new(
         name: @"--model")
     {
-        Description = @"The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.",
+        Description = @"The ID of the [Model](https://developers.openai.com/api/reference/resources/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.",
     };
 
     private static Option<string?> Instructions { get; } = new(
@@ -102,14 +102,14 @@ We generally recommend altering this or temperature but not both.
 
     private static Option<bool?> ParallelToolCalls { get; } = CliRuntime.CreateNullableBoolOption(
         name: @"--parallel-tool-calls",
-        description: @"Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.");
+        description: @"Whether to enable [parallel function calling](https://developers.openai.com/api/docs/guides/function-calling#parallel-function-calling) during tool use.");
 
     private static Option<global::tryAGI.OpenAI.AssistantsApiResponseFormatOption?> ResponseFormat { get; } = new(
         name: @"--response-format")
     {
-        Description = @"Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
+        Description = @"Specifies the format that the model must output. Compatible with [GPT-4o](https://developers.openai.com/api/docs/models/gpt-4o), [GPT-4 Turbo](https://developers.openai.com/api/docs/models/gpt-4-turbo), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.
 
-Setting to `{ ""type"": ""json_schema"", ""json_schema"": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).
+Setting to `{ ""type"": ""json_schema"", ""json_schema"": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](https://developers.openai.com/api/docs/guides/structured-outputs).
 
 Setting to `{ ""type"": ""json_object"" }` enables JSON mode, which ensures the message the model generates is valid JSON.
 
@@ -155,7 +155,8 @@ Setting to `{ ""type"": ""json_object"" }` enables JSON mode, which ensures the 
 
     public static Command Create()
     {
-        var command = new Command(@"create-thread-and-run", @"Create a thread and run it in one request.");
+        var command = new Command(@"create-thread-and-run", @"Create thread and run
+Create a thread and run it in one request.");
                         command.Options.Add(AssistantId);
                         command.Options.Add(Thread);
                         command.Options.Add(Model);

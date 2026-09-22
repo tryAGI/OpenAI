@@ -54,7 +54,8 @@ internal static partial class SpendAlertsUpdateOrganizationSpendAlertCommandApiC
 
     public static Command Create()
     {
-        var command = new Command(@"update-organization-spend-alert", @"Updates an organization spend alert.");
+        var command = new Command(@"update-organization-spend-alert", @"Update organization spend alert
+Updates an organization spend alert.");
                         command.Arguments.Add(AlertId);                        command.Options.Add(CreateSpendAlertBodyOptionSetOptions.ThresholdAmount);
                         command.Options.Add(CreateSpendAlertBodyOptionSetOptions.Currency);
                         command.Options.Add(CreateSpendAlertBodyOptionSetOptions.Interval);                        command.Options.Add(NotificationChannelOptions.Type);

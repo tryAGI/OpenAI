@@ -37,6 +37,42 @@ namespace tryAGI.OpenAI
         public string? Result { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("size")]
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolCallSizeVariant1?>? Size { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
+        public global::tryAGI.OpenAI.ImageGenToolCallQuality? Quality { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("action")]
+        public global::tryAGI.OpenAI.ImageGenActionEnum? Action { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("background")]
+        public global::tryAGI.OpenAI.ImageBackground? Background { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
+        public global::tryAGI.OpenAI.ImageOutputFormat? OutputFormat { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("revised_prompt")]
+        public string? RevisedPrompt { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -55,6 +91,12 @@ namespace tryAGI.OpenAI
         /// The type of the image generation call. Always `image_generation_call`.
         /// </param>
         /// <param name="result"></param>
+        /// <param name="size"></param>
+        /// <param name="quality"></param>
+        /// <param name="action"></param>
+        /// <param name="background"></param>
+        /// <param name="outputFormat"></param>
+        /// <param name="revisedPrompt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -62,12 +104,24 @@ namespace tryAGI.OpenAI
             string id,
             global::tryAGI.OpenAI.ImageGenToolCallStatus status,
             global::tryAGI.OpenAI.ImageGenToolCallType type,
-            string? result)
+            string? result,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolCallSizeVariant1?>? size,
+            global::tryAGI.OpenAI.ImageGenToolCallQuality? quality,
+            global::tryAGI.OpenAI.ImageGenActionEnum? action,
+            global::tryAGI.OpenAI.ImageBackground? background,
+            global::tryAGI.OpenAI.ImageOutputFormat? outputFormat,
+            string? revisedPrompt)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
             this.Result = result;
+            this.Size = size;
+            this.Quality = quality;
+            this.Action = action;
+            this.Background = background;
+            this.OutputFormat = outputFormat;
+            this.RevisedPrompt = revisedPrompt;
         }
 
         /// <summary>

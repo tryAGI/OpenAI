@@ -8,8 +8,9 @@ namespace tryAGI.OpenAI.Realtime
     /// calls, and function call responses. This event can be used both to populate a <br/>
     /// "history" of the conversation and to add new items mid-stream, but has the <br/>
     /// current limitation that it cannot populate assistant audio messages.<br/>
-    /// If successful, the server will respond with a `conversation.item.created` <br/>
-    /// event, otherwise an `error` event will be sent.
+    /// If successful, the server will emit a `conversation.item.added` event and,<br/>
+    /// when the item is finalized, a `conversation.item.done` event. Otherwise, an<br/>
+    /// `error` event will be sent.
     /// </summary>
     public sealed partial class RealtimeClientEventConversationItemCreate
     {

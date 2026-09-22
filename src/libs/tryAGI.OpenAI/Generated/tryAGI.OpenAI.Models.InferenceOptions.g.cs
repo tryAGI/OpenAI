@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        public global::tryAGI.OpenAI.ToolChoice8? ToolChoice { get; set; }
+        public global::tryAGI.OpenAI.ToolChoice10? ToolChoice { get; set; }
 
         /// <summary>
         ///
@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InferenceOptions(
-            global::tryAGI.OpenAI.ToolChoice8? toolChoice,
+            global::tryAGI.OpenAI.ToolChoice10? toolChoice,
             string? model)
         {
             this.ToolChoice = toolChoice;

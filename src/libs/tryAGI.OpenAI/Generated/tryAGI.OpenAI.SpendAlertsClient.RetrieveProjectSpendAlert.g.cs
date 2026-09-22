@@ -44,6 +44,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Retrieve project spend alert<br/>
         /// Retrieves a project spend alert.
         /// </summary>
         /// <param name="projectId"></param>
@@ -67,6 +68,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Retrieve project spend alert<br/>
         /// Retrieves a project spend alert.
         /// </summary>
         /// <param name="projectId"></param>

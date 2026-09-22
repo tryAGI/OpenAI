@@ -12,9 +12,9 @@ internal static partial class BatchCreateBatchCommandApiCommand
     {
         Description = @"The ID of an uploaded file that contains requests for the new batch.
 
-See [upload file](/docs/api-reference/files/create) for how to upload a file.
+See [upload file](https://developers.openai.com/api/reference/resources/files/methods/create) for how to upload a file.
 
-Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/request-input), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.
+Your input file must be formatted as a [JSONL file](https://developers.openai.com/api/docs/guides/batch#1-prepare-your-batch-file), and must be uploaded with the purpose `batch`. The file can contain up to 50,000 requests, and can be up to 200 MB in size.
 ",
         Required = true,
     };
@@ -82,7 +82,8 @@ Your input file must be formatted as a [JSONL file](/docs/api-reference/batch/re
 
     public static Command Create()
     {
-        var command = new Command(@"create-batch", @"Creates and executes a batch from an uploaded file of requests");
+        var command = new Command(@"create-batch", @"Create batch
+Creates and executes a batch from an uploaded file of requests");
                         command.Options.Add(InputFileId);
                         command.Options.Add(Endpoint);
                         command.Options.Add(CompletionWindow);

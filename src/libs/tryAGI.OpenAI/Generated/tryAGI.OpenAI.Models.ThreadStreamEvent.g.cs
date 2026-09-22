@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ThreadStreamEvent : global::System.IEquatable<ThreadStreamEvent>
     {
         /// <summary>
-        /// Occurs when a new [thread](/docs/api-reference/threads/object) is created.
+        /// Occurs when a new [thread](https://developers.openai.com/api/docs/assistants/migration) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ThreadStreamEventVariant1? ThreadStreamEventVariant1 { get; init; }

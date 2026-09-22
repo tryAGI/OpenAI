@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IVectorStoresClient
     {
         /// <summary>
+        /// Retrieve vector store file content<br/>
         /// Retrieve the parsed contents of a vector store file.
         /// </summary>
         /// <param name="vectorStoreId">
@@ -22,6 +23,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Retrieve vector store file content<br/>
         /// Retrieve the parsed contents of a vector store file.
         /// </summary>
         /// <param name="vectorStoreId">

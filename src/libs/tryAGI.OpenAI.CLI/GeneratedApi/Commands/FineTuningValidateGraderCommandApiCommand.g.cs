@@ -36,7 +36,8 @@ internal static partial class FineTuningValidateGraderCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"validate-grader", @"Validate a grader.
+        var command = new Command(@"validate-grader", @"Validate grader
+Validate a grader.
 ");
                         command.Options.Add(Grader);
 

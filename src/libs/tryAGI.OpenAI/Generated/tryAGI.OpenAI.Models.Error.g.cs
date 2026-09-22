@@ -35,6 +35,12 @@ namespace tryAGI.OpenAI
         public required string Type { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("misalignment")]
+        public global::tryAGI.OpenAI.MisalignmentErrorDetailsResource? Misalignment { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,6 +53,7 @@ namespace tryAGI.OpenAI
         /// <param name="type"></param>
         /// <param name="code"></param>
         /// <param name="param"></param>
+        /// <param name="misalignment"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -54,12 +61,14 @@ namespace tryAGI.OpenAI
             string message,
             string type,
             string? code,
-            string? param)
+            string? param,
+            global::tryAGI.OpenAI.MisalignmentErrorDetailsResource? misalignment)
         {
             this.Code = code;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Param = param;
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Misalignment = misalignment;
         }
 
         /// <summary>

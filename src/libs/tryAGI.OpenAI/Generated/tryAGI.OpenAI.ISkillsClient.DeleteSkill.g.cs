@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ISkillsClient
     {
         /// <summary>
+        /// Delete Skill<br/>
         /// Delete a skill by its ID.
         /// </summary>
         /// <param name="skillId">
@@ -18,6 +19,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Delete Skill<br/>
         /// Delete a skill by its ID.
         /// </summary>
         /// <param name="skillId">

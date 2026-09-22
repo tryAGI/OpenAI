@@ -52,6 +52,7 @@ namespace tryAGI.OpenAI.JsonConverters
             var __score2 = 0;
             if (__jsonProps.Contains("agent")) __score2++;
             if (__jsonProps.Contains("arguments")) __score2++;
+            if (__jsonProps.Contains("async")) __score2++;
             if (__jsonProps.Contains("call_id")) __score2++;
             if (__jsonProps.Contains("caller")) __score2++;
             if (__jsonProps.Contains("id")) __score2++;
@@ -159,9 +160,15 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("id")) __score16++;
             if (__jsonProps.Contains("type")) __score16++;
             var __score17 = 0;
+            if (__jsonProps.Contains("action")) __score17++;
             if (__jsonProps.Contains("agent")) __score17++;
+            if (__jsonProps.Contains("background")) __score17++;
             if (__jsonProps.Contains("id")) __score17++;
+            if (__jsonProps.Contains("output_format")) __score17++;
+            if (__jsonProps.Contains("quality")) __score17++;
             if (__jsonProps.Contains("result")) __score17++;
+            if (__jsonProps.Contains("revised_prompt")) __score17++;
+            if (__jsonProps.Contains("size")) __score17++;
             if (__jsonProps.Contains("status")) __score17++;
             if (__jsonProps.Contains("type")) __score17++;
             var __score18 = 0;
@@ -270,6 +277,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("type")) __score28++;
             var __score29 = 0;
             if (__jsonProps.Contains("agent")) __score29++;
+            if (__jsonProps.Contains("async")) __score29++;
             if (__jsonProps.Contains("call_id")) __score29++;
             if (__jsonProps.Contains("caller")) __score29++;
             if (__jsonProps.Contains("id")) __score29++;

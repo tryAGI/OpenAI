@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ICertificatesClient
     {
         /// <summary>
+        /// List project certificates<br/>
         /// List certificates for this project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -26,6 +27,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List project certificates<br/>
         /// List certificates for this project.
         /// </summary>
         /// <param name="projectId"></param>

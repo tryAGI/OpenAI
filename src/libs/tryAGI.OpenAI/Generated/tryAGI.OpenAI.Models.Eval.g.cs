@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
     /// Like:<br/>
     ///  - Improve the quality of my chatbot<br/>
     ///  - See how well my chatbot handles customer support<br/>
-    ///  - Check if o4-mini is better at my usecase than gpt-4o
+    ///  - Check if o4-mini is better at my usecase than gpt-6-astra
     /// </summary>
     public sealed partial class Eval
     {

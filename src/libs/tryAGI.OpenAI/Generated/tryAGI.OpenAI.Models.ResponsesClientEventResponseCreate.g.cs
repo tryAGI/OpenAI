@@ -6,10 +6,12 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Client event for creating a response over a persistent WebSocket connection.<br/>
-    /// This payload uses the same top-level fields as `POST /v1/responses`.<br/>
+    /// This payload uses the same top-level fields as `POST /v1/responses`, plus<br/>
+    /// WebSocket-only envelope metadata.<br/>
     /// Notes:<br/>
     /// - `stream` is implicit over WebSocket and should not be sent.<br/>
-    /// - `background` is not supported over WebSocket.
+    /// - `background` is not supported over WebSocket.<br/>
+    /// - `stream_id` is WebSocket-only and is not part of `POST /v1/responses`.
     /// </summary>
     public readonly partial struct ResponsesClientEventResponseCreate : global::System.IEquatable<ResponsesClientEventResponseCreate>
     {

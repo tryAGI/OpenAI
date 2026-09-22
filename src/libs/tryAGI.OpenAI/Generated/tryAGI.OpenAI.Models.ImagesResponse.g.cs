@@ -36,14 +36,14 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ImagesResponseOutputFormat? OutputFormat { get; set; }
 
         /// <summary>
-        /// The size of the image generated. Either `1024x1024`, `1024x1536`, or `1536x1024`.
+        /// The image dimensions as a `WIDTHxHEIGHT` string, for example `1536x864`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImagesResponseSizeJsonConverter))]
-        public global::tryAGI.OpenAI.ImagesResponseSize? Size { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.ImagesResponseSize?>))]
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImagesResponseSize?>? Size { get; set; }
 
         /// <summary>
-        /// The quality of the image generated. Either `low`, `medium`, or `high`.
+        /// The quality of the image generated. One of `low`, `medium`, `high`, `xhigh`, or `max`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImagesResponseQualityJsonConverter))]
@@ -77,10 +77,10 @@ namespace tryAGI.OpenAI
         /// The output format of the image generation. Either `png`, `webp`, or `jpeg`.
         /// </param>
         /// <param name="size">
-        /// The size of the image generated. Either `1024x1024`, `1024x1536`, or `1536x1024`.
+        /// The image dimensions as a `WIDTHxHEIGHT` string, for example `1536x864`.
         /// </param>
         /// <param name="quality">
-        /// The quality of the image generated. Either `low`, `medium`, or `high`.
+        /// The quality of the image generated. One of `low`, `medium`, `high`, `xhigh`, or `max`.
         /// </param>
         /// <param name="usage">
         /// For `gpt-image-1` only, the token usage information for the image generation.
@@ -93,7 +93,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Image2>? data,
             global::tryAGI.OpenAI.ImagesResponseBackground? background,
             global::tryAGI.OpenAI.ImagesResponseOutputFormat? outputFormat,
-            global::tryAGI.OpenAI.ImagesResponseSize? size,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImagesResponseSize?>? size,
             global::tryAGI.OpenAI.ImagesResponseQuality? quality,
             global::tryAGI.OpenAI.ImageGenUsage? usage)
         {

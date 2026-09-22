@@ -5,7 +5,7 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static partial class DeleteProjectSpendLimitCommandApiCommand
+internal static partial class DeleteprojectspendlimitCommandApiCommand
 {
     private static Argument<string> ProjectId { get; } = new(
         name: @"project-id")
@@ -35,7 +35,8 @@ internal static partial class DeleteProjectSpendLimitCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"delete-project-spend-limit", @"Delete a project's hard spend limit.");
+        var command = new Command(@"deleteprojectspendlimit", @"Delete project spend limit
+Delete a project's hard spend limit.");
                         command.Arguments.Add(ProjectId);
 
 
@@ -46,7 +47,7 @@ internal static partial class DeleteProjectSpendLimitCommandApiCommand
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
-                                var response = await client.DeleteProjectSpendLimitAsync(
+                                var response = await client.DeleteprojectspendlimitAsync(
                                     projectId: projectId,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 

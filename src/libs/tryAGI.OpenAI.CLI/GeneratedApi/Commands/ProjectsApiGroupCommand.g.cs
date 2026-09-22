@@ -23,14 +23,14 @@ internal static class ProjectsApiGroupCommand
                          command.Subcommands.Add(ProjectsListProjectUsersCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsListProjectsCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsModifyProjectCommandApiCommand.Create());
-                         command.Subcommands.Add(ProjectsModifyProjectModelPermissionsCommandApiCommand.Create());
-                         command.Subcommands.Add(ProjectsModifyProjectRateLimitCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsModifyProjectUserCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsRetrieveProjectCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsRetrieveProjectApiKeyCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsRetrieveProjectModelPermissionsCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsRetrieveProjectServiceAccountCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsRetrieveProjectUserCommandApiCommand.Create());
+                         command.Subcommands.Add(ProjectsUpdateProjectModelPermissionsCommandApiCommand.Create());
+                         command.Subcommands.Add(ProjectsUpdateProjectRateLimitsCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsUpdateProjectServiceAccountCommandApiCommand.Create());
         return command;
     }

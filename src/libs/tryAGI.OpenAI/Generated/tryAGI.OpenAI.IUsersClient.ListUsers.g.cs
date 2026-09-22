@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IUsersClient
     {
         /// <summary>
+        /// List users<br/>
         /// Lists all of the users in the organization.
         /// </summary>
         /// <param name="limit">
@@ -22,6 +23,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List users<br/>
         /// Lists all of the users in the organization.
         /// </summary>
         /// <param name="limit">

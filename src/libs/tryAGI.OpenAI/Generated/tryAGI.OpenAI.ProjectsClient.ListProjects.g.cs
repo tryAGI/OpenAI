@@ -46,6 +46,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List projects<br/>
         /// Returns a list of projects.
         /// </summary>
         /// <param name="limit">
@@ -76,6 +77,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// List projects<br/>
         /// Returns a list of projects.
         /// </summary>
         /// <param name="limit">

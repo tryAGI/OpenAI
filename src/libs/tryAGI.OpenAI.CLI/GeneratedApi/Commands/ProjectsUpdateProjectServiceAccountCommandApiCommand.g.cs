@@ -69,7 +69,8 @@ internal static partial class ProjectsUpdateProjectServiceAccountCommandApiComma
 
     public static Command Create()
     {
-        var command = new Command(@"update-project-service-account", @"Updates a service account in the project.");
+        var command = new Command(@"update-project-service-account", @"Update project service account
+Updates a service account in the project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(ServiceAccountId);
                         command.Options.Add(NameOption);

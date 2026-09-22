@@ -56,7 +56,8 @@ internal static partial class CertificatesListProjectCertificatesCommandApiComma
 
     public static Command Create()
     {
-        var command = new Command(@"list-project-certificates", @"List certificates for this project.");
+        var command = new Command(@"list-project-certificates", @"List project certificates
+List certificates for this project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Limit);
                         command.Options.Add(After);

@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class CompactResponseMethodPublicBody
     {
         /// <summary>
-        /// Model ID used to generate the response, like `gpt-5` or `o3`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](/docs/models) to browse and compare available models.
+        /// Model ID used to generate the response, like `gpt-6-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsCompactionJsonConverter))]
@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CompactResponseMethodPublicBody" /> class.
         /// </summary>
         /// <param name="model">
-        /// Model ID used to generate the response, like `gpt-5` or `o3`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](/docs/models) to browse and compare available models.
+        /// Model ID used to generate the response, like `gpt-6-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
         /// </param>
         /// <param name="input"></param>
         /// <param name="previousResponseId"></param>

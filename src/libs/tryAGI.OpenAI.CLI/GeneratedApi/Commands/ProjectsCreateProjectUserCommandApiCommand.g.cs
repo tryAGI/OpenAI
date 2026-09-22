@@ -70,7 +70,8 @@ internal static partial class ProjectsCreateProjectUserCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-project-user", @"Adds a user to the project. Users must already be members of the organization to be added to a project.");
+        var command = new Command(@"create-project-user", @"Create project user
+Adds a user to the project. Users must already be members of the organization to be added to a project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(UserId);
                         command.Options.Add(Email);

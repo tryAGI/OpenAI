@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The size of the requested edited image.
+    ///
     /// </summary>
     public enum ImageEditPartialImageEventSize
     {

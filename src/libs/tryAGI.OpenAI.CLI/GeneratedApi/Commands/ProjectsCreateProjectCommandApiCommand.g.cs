@@ -13,10 +13,10 @@ internal static partial class ProjectsCreateProjectCommandApiCommand
         Description = @"The friendly name of the project, this name appears in reports.",
     };
 
-    private static Option<string?> Geography { get; } = new(
-        name: @"--geography")
+    private static Option<global::tryAGI.OpenAI.PublicProjectResidency?> Residency { get; } = new(
+        name: @"--residency")
     {
-        Description = @"Create the project with the specified data residency region. Your organization must have access to Data residency functionality in order to use. See [data residency controls](/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.",
+        Description = @"Create the project with the specified residency configuration. Your organization must have access to the requested residency configuration in order to use it. See [data residency controls](https://developers.openai.com/api/docs/guides/your-data#data-residency-controls) to review the functionality and limitations of setting this field.",
     };
 
     private static Option<string?> ExternalKeyId { get; } = new(
@@ -63,9 +63,10 @@ internal static partial class ProjectsCreateProjectCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-project", @"Create a new project in the organization. Projects can be created and archived, but cannot be deleted.");
+        var command = new Command(@"create-project", @"Create project
+Create a new project in the organization. Projects can be created and archived, but cannot be deleted.");
                         command.Arguments.Add(NameOption);
-                        command.Options.Add(Geography);
+                        command.Options.Add(Residency);
                         command.Options.Add(ExternalKeyId);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
@@ -93,14 +94,14 @@ internal static partial class ProjectsCreateProjectCommandApiCommand
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var name = parseResult.GetRequiredValue(NameOption);
-                        var geography = CliRuntime.WasSpecified(parseResult, Geography) ? parseResult.GetValue(Geography) : (__requestBase is { } __GeographyBaseValue ? __GeographyBaseValue.Geography : default);
+                        var residency = CliRuntime.WasSpecified(parseResult, Residency) ? parseResult.GetValue(Residency) : (__requestBase is { } __ResidencyBaseValue ? __ResidencyBaseValue.Residency : default);
                         var externalKeyId = CliRuntime.WasSpecified(parseResult, ExternalKeyId) ? parseResult.GetValue(ExternalKeyId) : (__requestBase is { } __ExternalKeyIdBaseValue ? __ExternalKeyIdBaseValue.ExternalKeyId : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 var response = await client.Projects.CreateProjectAsync(
                                     name: name,
-                                    geography: geography,
+                                    residency: residency,
                                     externalKeyId: externalKeyId,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 

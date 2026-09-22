@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("data")) __score4++;
             if (__jsonProps.Contains("data.code")) __score4++;
             if (__jsonProps.Contains("data.message")) __score4++;
+            if (__jsonProps.Contains("data.misalignment")) __score4++;
             if (__jsonProps.Contains("data.param")) __score4++;
             if (__jsonProps.Contains("data.type")) __score4++;
             if (__jsonProps.Contains("event")) __score4++;

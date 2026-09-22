@@ -4,8 +4,13 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Background type for the generated image. One of `transparent`,<br/>
-    /// `opaque`, or `auto`. Default: `auto`.<br/>
+    /// Set the background of the generated image. One of `transparent`, `opaque`,<br/>
+    /// or `auto`. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including<br/>
+    /// their `2026-09-08` snapshots, support `opaque` and `transparent`<br/>
+    /// backgrounds. Transparent backgrounds are available for supported GPT Image<br/>
+    /// models. For `gpt-image-2` and `gpt-image-2-2026-04-21`, this support is in<br/>
+    /// preview. When using `transparent`, set the output format to `png` or `webp`.<br/>
+    /// Default: `auto`.<br/>
     /// Default Value: auto
     /// </summary>
     public enum BetaImageGenToolBackground
@@ -15,7 +20,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         Auto,
         /// <summary>
-        /// `auto`.
+        ///
         /// </summary>
         Opaque,
         /// <summary>

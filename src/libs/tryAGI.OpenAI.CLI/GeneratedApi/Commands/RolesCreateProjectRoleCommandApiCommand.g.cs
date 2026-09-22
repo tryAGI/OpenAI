@@ -52,7 +52,8 @@ internal static partial class RolesCreateProjectRoleCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-project-role", @"Creates a custom role for a project.");
+        var command = new Command(@"create-project-role", @"Create project role
+Creates a custom role for a project.");
                         command.Arguments.Add(ProjectId);                        command.Options.Add(PublicCreateOrganizationRoleBodyOptionSetOptions.RoleName);
                         command.Options.Add(PublicCreateOrganizationRoleBodyOptionSetOptions.Permissions);
                         command.Options.Add(PublicCreateOrganizationRoleBodyOptionSetOptions.DescriptionOption);

@@ -97,7 +97,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public global::tryAGI.OpenAI.Error2? Error { get; set; }
+        public global::tryAGI.OpenAI.Error22? Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -153,7 +153,7 @@ namespace tryAGI.OpenAI
             int? expiresAt,
             string? prompt,
             string? remixedFromVideoId,
-            global::tryAGI.OpenAI.Error2? error,
+            global::tryAGI.OpenAI.Error22? error,
             global::tryAGI.OpenAI.VideoResourceObject @object = global::tryAGI.OpenAI.VideoResourceObject.Video)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

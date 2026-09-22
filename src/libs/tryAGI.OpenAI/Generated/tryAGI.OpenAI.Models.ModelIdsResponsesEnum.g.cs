@@ -35,6 +35,30 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Gpt55Pro,
+        /// <summary>
+        ///
+        /// </summary>
+        Gpt55Pro20260423,
+        /// <summary>
+        ///
+        /// </summary>
+        Gpt56Cyber,
+        /// <summary>
+        ///
+        /// </summary>
+        GptDaybreakBlueLatest,
+        /// <summary>
+        ///
+        /// </summary>
+        GptDaybreakRedLatest,
+        /// <summary>
+        ///
+        /// </summary>
+        GptRosalindResearch,
+        /// <summary>
+        ///
+        /// </summary>
         O1Pro,
         /// <summary>
         ///
@@ -84,6 +108,12 @@ namespace tryAGI.OpenAI
                 ModelIdsResponsesEnum.Gpt5Pro => "gpt-5-pro",
                 ModelIdsResponsesEnum.Gpt5Pro20251006 => "gpt-5-pro-2025-10-06",
                 ModelIdsResponsesEnum.Gpt51CodexMax => "gpt-5.1-codex-max",
+                ModelIdsResponsesEnum.Gpt55Pro => "gpt-5.5-pro",
+                ModelIdsResponsesEnum.Gpt55Pro20260423 => "gpt-5.5-pro-2026-04-23",
+                ModelIdsResponsesEnum.Gpt56Cyber => "gpt-5.6-cyber",
+                ModelIdsResponsesEnum.GptDaybreakBlueLatest => "gpt-daybreak-blue-latest",
+                ModelIdsResponsesEnum.GptDaybreakRedLatest => "gpt-daybreak-red-latest",
+                ModelIdsResponsesEnum.GptRosalindResearch => "gpt-rosalind-research",
                 ModelIdsResponsesEnum.O1Pro => "o1-pro",
                 ModelIdsResponsesEnum.O1Pro20250319 => "o1-pro-2025-03-19",
                 ModelIdsResponsesEnum.O3DeepResearch => "o3-deep-research",
@@ -108,6 +138,12 @@ namespace tryAGI.OpenAI
                 "gpt-5-pro" => ModelIdsResponsesEnum.Gpt5Pro,
                 "gpt-5-pro-2025-10-06" => ModelIdsResponsesEnum.Gpt5Pro20251006,
                 "gpt-5.1-codex-max" => ModelIdsResponsesEnum.Gpt51CodexMax,
+                "gpt-5.5-pro" => ModelIdsResponsesEnum.Gpt55Pro,
+                "gpt-5.5-pro-2026-04-23" => ModelIdsResponsesEnum.Gpt55Pro20260423,
+                "gpt-5.6-cyber" => ModelIdsResponsesEnum.Gpt56Cyber,
+                "gpt-daybreak-blue-latest" => ModelIdsResponsesEnum.GptDaybreakBlueLatest,
+                "gpt-daybreak-red-latest" => ModelIdsResponsesEnum.GptDaybreakRedLatest,
+                "gpt-rosalind-research" => ModelIdsResponsesEnum.GptRosalindResearch,
                 "o1-pro" => ModelIdsResponsesEnum.O1Pro,
                 "o1-pro-2025-03-19" => ModelIdsResponsesEnum.O1Pro20250319,
                 "o3-deep-research" => ModelIdsResponsesEnum.O3DeepResearch,

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// List project users<br/>
         /// Returns a list of users in the project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -22,6 +23,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List project users<br/>
         /// Returns a list of users in the project.
         /// </summary>
         /// <param name="projectId"></param>

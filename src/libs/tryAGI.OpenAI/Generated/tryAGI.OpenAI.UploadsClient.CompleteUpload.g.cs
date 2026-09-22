@@ -44,8 +44,9 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Completes the [Upload](/docs/api-reference/uploads/object). <br/>
-        /// Within the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>
+        /// Complete upload<br/>
+        /// Completes the [Upload](https://developers.openai.com/api/reference/resources/uploads).<br/>
+        /// Within the returned Upload object, there is a nested [File](https://developers.openai.com/api/reference/resources/files) object that is ready to use in the rest of the platform.<br/>
         /// You can specify the order of the Parts by passing in an ordered list of the Part IDs.<br/>
         /// The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.<br/>
         /// Returns the Upload object with status `completed`, including an additional `file` property containing the created usable File object.
@@ -75,8 +76,9 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
-        /// Completes the [Upload](/docs/api-reference/uploads/object). <br/>
-        /// Within the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>
+        /// Complete upload<br/>
+        /// Completes the [Upload](https://developers.openai.com/api/reference/resources/uploads).<br/>
+        /// Within the returned Upload object, there is a nested [File](https://developers.openai.com/api/reference/resources/files) object that is ready to use in the rest of the platform.<br/>
         /// You can specify the order of the Parts by passing in an ordered list of the Part IDs.<br/>
         /// The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.<br/>
         /// Returns the Upload object with status `completed`, including an additional `file` property containing the created usable File object.
@@ -453,8 +455,9 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
-        /// Completes the [Upload](/docs/api-reference/uploads/object). <br/>
-        /// Within the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.<br/>
+        /// Complete upload<br/>
+        /// Completes the [Upload](https://developers.openai.com/api/reference/resources/uploads).<br/>
+        /// Within the returned Upload object, there is a nested [File](https://developers.openai.com/api/reference/resources/files) object that is ready to use in the rest of the platform.<br/>
         /// You can specify the order of the Parts by passing in an ordered list of the Part IDs.<br/>
         /// The number of bytes uploaded upon completion must match the number of bytes initially specified when creating the Upload object. No Parts may be added after an Upload is completed.<br/>
         /// Returns the Upload object with status `completed`, including an additional `file` property containing the created usable File object.

@@ -4,7 +4,10 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The reason why the response is incomplete.
+    /// The reason why the response is incomplete. `steered` means<br/>
+    /// the response stopped at a safe output boundary after a<br/>
+    /// WebSocket `response.steer` event. The server can then create<br/>
+    /// a successor response automatically with the queued input.
     /// </summary>
     public enum ResponseVariant3IncompleteDetailsReason
     {
@@ -15,7 +18,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        MaxMessages,
+        /// <summary>
+        ///
+        /// </summary>
         MaxOutputTokens,
+        /// <summary>
+        ///
+        /// </summary>
+        Steered,
     }
 
     /// <summary>
@@ -31,7 +42,9 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 ResponseVariant3IncompleteDetailsReason.ContentFilter => "content_filter",
+                ResponseVariant3IncompleteDetailsReason.MaxMessages => "max_messages",
                 ResponseVariant3IncompleteDetailsReason.MaxOutputTokens => "max_output_tokens",
+                ResponseVariant3IncompleteDetailsReason.Steered => "steered",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,7 +56,9 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "content_filter" => ResponseVariant3IncompleteDetailsReason.ContentFilter,
+                "max_messages" => ResponseVariant3IncompleteDetailsReason.MaxMessages,
                 "max_output_tokens" => ResponseVariant3IncompleteDetailsReason.MaxOutputTokens,
+                "steered" => ResponseVariant3IncompleteDetailsReason.Steered,
                 _ => null,
             };
         }

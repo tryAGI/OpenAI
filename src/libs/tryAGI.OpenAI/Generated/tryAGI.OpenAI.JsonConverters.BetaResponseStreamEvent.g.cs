@@ -84,6 +84,13 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInterpretingEvent)}");
                 responseCodeInterpreterCallInterpreting = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent? responseCompactionCompacting = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaResponseStreamEventDiscriminatorType.ResponseCompactionCompacting)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent)}");
+                responseCompactionCompacting = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.BetaResponseCompletedEvent? responseCompleted = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.BetaResponseStreamEventDiscriminatorType.ResponseCompleted)
             {
@@ -153,6 +160,41 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent)}");
                 responseFunctionCallArgumentsDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent? responseShellCallCommandAdded = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaResponseStreamEventDiscriminatorType.ResponseShellCallCommandAdded)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent)}");
+                responseShellCallCommandAdded = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent? responseShellCallCommandDelta = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaResponseStreamEventDiscriminatorType.ResponseShellCallCommandDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent)}");
+                responseShellCallCommandDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent? responseShellCallCommandDone = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaResponseStreamEventDiscriminatorType.ResponseShellCallCommandDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent)}");
+                responseShellCallCommandDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent? responseShellCallOutputContentDelta = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaResponseStreamEventDiscriminatorType.ResponseShellCallOutputContentDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent)}");
+                responseShellCallOutputContentDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent? responseShellCallOutputContentDone = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.BetaResponseStreamEventDiscriminatorType.ResponseShellCallOutputContentDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent)}");
+                responseShellCallOutputContentDone = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.BetaResponseInProgressEvent? responseInProgress = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.BetaResponseStreamEventDiscriminatorType.ResponseInProgress)
@@ -413,6 +455,8 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 responseCodeInterpreterCallInterpreting,
 
+                responseCompactionCompacting,
+
                 responseCompleted,
 
                 responseContentPartAdded,
@@ -432,6 +476,16 @@ namespace tryAGI.OpenAI.JsonConverters
                 responseFunctionCallArgumentsDelta,
 
                 responseFunctionCallArgumentsDone,
+
+                responseShellCallCommandAdded,
+
+                responseShellCallCommandDelta,
+
+                responseShellCallCommandDone,
+
+                responseShellCallOutputContentDelta,
+
+                responseShellCallOutputContentDone,
 
                 responseInProgress,
 
@@ -568,6 +622,12 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInterpretingEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCodeInterpreterCallInterpreting!, typeInfo);
             }
+            else if (value.IsResponseCompactionCompacting)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCompactionCompacting!, typeInfo);
+            }
             else if (value.IsResponseCompleted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseCompletedEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseCompletedEvent?> ??
@@ -627,6 +687,36 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseFunctionCallArgumentsDone!, typeInfo);
+            }
+            else if (value.IsResponseShellCallCommandAdded)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseShellCallCommandAdded!, typeInfo);
+            }
+            else if (value.IsResponseShellCallCommandDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseShellCallCommandDelta!, typeInfo);
+            }
+            else if (value.IsResponseShellCallCommandDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseShellCallCommandDone!, typeInfo);
+            }
+            else if (value.IsResponseShellCallOutputContentDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseShellCallOutputContentDelta!, typeInfo);
+            }
+            else if (value.IsResponseShellCallOutputContentDone)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseShellCallOutputContentDone!, typeInfo);
             }
             else if (value.IsResponseInProgress)
             {

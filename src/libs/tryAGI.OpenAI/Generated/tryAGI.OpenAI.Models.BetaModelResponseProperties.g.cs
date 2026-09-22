@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// This field is being replaced by `safety_identifier` and `prompt_cache_key`. Use `prompt_cache_key` instead to maintain caching optimizations.<br/>
         /// A stable identifier for your end-users.<br/>
-        /// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](/docs/guides/safety-best-practices#safety-identifiers).<br/>
+        /// Used to boost cache hit rates by better bucketing similar requests and  to help OpenAI detect and prevent abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
         /// Example: user-1234
         /// </summary>
         /// <example>user-1234</example>
@@ -56,12 +56,6 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_key")]
         public string? PromptCacheKey { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        public global::tryAGI.OpenAI.BetaServiceTierEnum2? ServiceTier { get; set; }
 
         /// <summary>
         ///
@@ -85,7 +79,6 @@ namespace tryAGI.OpenAI
         /// <param name="topP"></param>
         /// <param name="safetyIdentifier"></param>
         /// <param name="promptCacheKey"></param>
-        /// <param name="serviceTier"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -95,8 +88,7 @@ namespace tryAGI.OpenAI
             double? temperature,
             double? topP,
             string? safetyIdentifier,
-            string? promptCacheKey,
-            global::tryAGI.OpenAI.BetaServiceTierEnum2? serviceTier)
+            string? promptCacheKey)
         {
             this.Metadata = metadata;
             this.TopLogprobs = topLogprobs;
@@ -104,7 +96,6 @@ namespace tryAGI.OpenAI
             this.TopP = topP;
             this.SafetyIdentifier = safetyIdentifier;
             this.PromptCacheKey = promptCacheKey;
-            this.ServiceTier = serviceTier;
         }
 
         /// <summary>

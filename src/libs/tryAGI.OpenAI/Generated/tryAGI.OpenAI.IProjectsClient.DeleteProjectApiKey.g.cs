@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// Delete project API key<br/>
         /// Deletes an API key from the project.<br/>
         /// Returns confirmation of the key deletion, or an error if the key belonged to<br/>
         /// a service account.
@@ -20,6 +21,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Delete project API key<br/>
         /// Deletes an API key from the project.<br/>
         /// Returns confirmation of the key deletion, or an error if the key belonged to<br/>
         /// a service account.

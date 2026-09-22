@@ -49,7 +49,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem6> Content { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem7> Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
             string id,
             string author,
             string recipient,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem6> content,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem7> content,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
             global::tryAGI.OpenAI.BetaAgentMessageType type = global::tryAGI.OpenAI.BetaAgentMessageType.AgentMessage)
         {

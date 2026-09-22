@@ -7,8 +7,8 @@ namespace tryAGI.OpenAI
     /// Specifies the processing type used for serving the request.<br/>
     ///   - If set to 'auto', then the request will be processed with the service tier configured in the Project settings. Unless otherwise configured, the Project will use 'default'.<br/>
     ///   - If set to 'default', then the request will be processed with the standard pricing and performance for the selected model.<br/>
-    ///   - If set to '[flex](/docs/guides/flex-processing)', then the request will be processed with the Flex Processing service tier.<br/>
-    ///   - To opt-in to [Fast mode](/api/docs/guides/fast-mode) at the request level, include the `service_tier=fast` or `service_tier=priority` parameter for Responses or Chat Completions. The response will show `service_tier=priority` regardless of if you specify `service_tier=fast` or `priority` in your request.<br/>
+    ///   - If set to '[flex](https://developers.openai.com/api/docs/guides/flex-processing)', then the request will be processed with the Flex Processing service tier.<br/>
+    ///   - To opt-in to [Fast mode](https://developers.openai.com/api/docs/guides/fast-mode) at the request level, include the `service_tier=fast` or `service_tier=priority` parameter for Responses or Chat Completions. The response will show `service_tier=priority` regardless of if you specify `service_tier=fast` or `priority` in your request.<br/>
     ///   - When not set, the default behavior is 'auto'.<br/>
     ///   When the `service_tier` parameter is set, the response body will include the `service_tier` value based on the processing mode actually used to serve the request. This response value may be different from the value set in the parameter.<br/>
     /// Default Value: auto
@@ -24,15 +24,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         Default,
         /// <summary>
-        ///
+        /// //developers.openai.com/api/docs/guides/fast-mode) at the request level, include the `service_tier=fast` or `service_tier=priority` parameter for Responses or Chat Completions. The response will show `service_tier=priority` regardless of if you specify `service_tier=fast` or `priority` in your request.
         /// </summary>
         Fast,
         /// <summary>
-        ///
+        /// //developers.openai.com/api/docs/guides/flex-processing)', then the request will be processed with the Flex Processing service tier.
         /// </summary>
         Flex,
         /// <summary>
-        ///
+        /// //developers.openai.com/api/docs/guides/fast-mode) at the request level, include the `service_tier=fast` or `service_tier=priority` parameter for Responses or Chat Completions. The response will show `service_tier=priority` regardless of if you specify `service_tier=fast` or `priority` in your request.
         /// </summary>
         Priority,
         /// <summary>

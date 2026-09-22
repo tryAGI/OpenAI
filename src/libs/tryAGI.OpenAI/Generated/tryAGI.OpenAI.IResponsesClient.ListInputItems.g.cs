@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IResponsesClient
     {
         /// <summary>
+        /// List input items<br/>
         /// Returns a list of input items for a given response.
         /// </summary>
         /// <param name="responseId"></param>
@@ -26,6 +27,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List input items<br/>
         /// Returns a list of input items for a given response.
         /// </summary>
         /// <param name="responseId"></param>

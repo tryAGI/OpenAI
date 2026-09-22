@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IEvalsClient
     {
         /// <summary>
+        /// Delete eval run<br/>
         /// Delete an eval run.
         /// </summary>
         /// <param name="evalId"></param>
@@ -18,6 +19,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Delete eval run<br/>
         /// Delete an eval run.
         /// </summary>
         /// <param name="evalId"></param>

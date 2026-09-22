@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectGroupsClient
     {
         /// <summary>
+        /// Remove project group<br/>
         /// Revokes a group's access to a project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -18,6 +19,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Remove project group<br/>
         /// Revokes a group's access to a project.
         /// </summary>
         /// <param name="projectId"></param>

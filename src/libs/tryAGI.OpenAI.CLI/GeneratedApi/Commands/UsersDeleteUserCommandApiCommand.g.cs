@@ -35,7 +35,8 @@ internal static partial class UsersDeleteUserCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"delete-user", @"Deletes a user from the organization.");
+        var command = new Command(@"delete-user", @"Delete user
+Deletes a user from the organization.");
                         command.Arguments.Add(UserId);
 
 

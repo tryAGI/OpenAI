@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Defines a function in your own code the model can choose to call. Learn more about [function calling](https://platform.openai.com/docs/guides/function-calling).
+    /// Defines a function in your own code the model can choose to call. Learn more about [function calling](https://developers.openai.com/api/docs/guides/function-calling).
     /// </summary>
     public sealed partial class FunctionTool
     {
@@ -23,6 +23,12 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("async")]
+        public bool? Async { get; set; }
 
         /// <summary>
         ///
@@ -72,6 +78,7 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// The name of the function to call.
         /// </param>
+        /// <param name="async"></param>
         /// <param name="description"></param>
         /// <param name="parameters"></param>
         /// <param name="outputSchema"></param>
@@ -89,6 +96,7 @@ namespace tryAGI.OpenAI
 #endif
         public FunctionTool(
             string name,
+            bool? async,
             string? description,
             object? parameters,
             object? outputSchema,
@@ -99,6 +107,7 @@ namespace tryAGI.OpenAI
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Async = async;
             this.Description = description;
             this.Parameters = parameters;
             this.OutputSchema = outputSchema;

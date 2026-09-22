@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// A text input to the model.
@@ -237,7 +237,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
 
         /// <summary>
-        /// An image input to the model. Learn about [image inputs](/docs/guides/vision).
+        /// An image input to the model. Learn about [image inputs](https://developers.openai.com/api/docs/guides/images-vision).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.BetaInputImageContent? InputImage { get; init; }
@@ -617,7 +617,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public ContentItem7(
-            global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType? type,
+            global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType? type,
             global::tryAGI.OpenAI.BetaInputTextContent? inputText,
             global::tryAGI.OpenAI.BetaOutputTextContent? outputText,
             global::tryAGI.OpenAI.BetaTextContent? text,

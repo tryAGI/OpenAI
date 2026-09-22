@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateTranscriptionResponseStreamEventDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Emitted when a diarized transcription returns a completed segment with speaker information. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with `stream` set to `true` and `response_format` set to `diarized_json`.
+        /// Emitted when a diarized transcription returns a completed segment with speaker information. Only emitted when you [create a transcription](https://developers.openai.com/api/reference/resources/audio/subresources/transcriptions/methods/create) with `stream` set to `true` and `response_format` set to `diarized_json`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.TranscriptTextSegmentEvent? TranscriptTextSegment { get; init; }
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptTextSegment' but the value was {ToString()}.");
 
         /// <summary>
-        /// Emitted when there is an additional text delta. This is also the first event emitted when the transcription starts. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
+        /// Emitted when there is an additional text delta. This is also the first event emitted when the transcription starts. Only emitted when you [create a transcription](https://developers.openai.com/api/reference/resources/audio/subresources/transcriptions/methods/create) with the `Stream` parameter set to `true`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.TranscriptTextDeltaEvent? TranscriptTextDelta { get; init; }
@@ -89,7 +89,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptTextDelta' but the value was {ToString()}.");
 
         /// <summary>
-        /// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](/docs/api-reference/audio/create-transcription) with the `Stream` parameter set to `true`.
+        /// Emitted when the transcription is complete. Contains the complete transcription text. Only emitted when you [create a transcription](https://developers.openai.com/api/reference/resources/audio/subresources/transcriptions/methods/create) with the `Stream` parameter set to `true`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.TranscriptTextDoneEvent? TranscriptTextDone { get; init; }

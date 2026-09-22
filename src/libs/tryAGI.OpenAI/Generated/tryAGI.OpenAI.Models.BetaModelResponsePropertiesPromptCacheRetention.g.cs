@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Deprecated. Use `prompt_cache_options.ttl` instead.<br/>
-    /// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](/docs/guides/prompt-caching#prompt-cache-retention).<br/>
+    /// The retention policy for the prompt cache. Set to `24h` to enable extended prompt caching, which keeps cached prefixes active for longer, up to a maximum of 24 hours. [Learn more](https://developers.openai.com/api/docs/guides/prompt-caching#prompt-cache-retention).<br/>
     /// This field expresses a maximum retention policy, while<br/>
     /// `prompt_cache_options.ttl` expresses a minimum cache lifetime. The two<br/>
     /// fields are independent and do not interact.<br/>
@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
     public enum BetaModelResponsePropertiesPromptCacheRetention
     {
         /// <summary>
-        ///
+        /// //developers.openai.com/api/docs/guides/prompt-caching#prompt-cache-retention).
         /// </summary>
         x24h,
         /// <summary>

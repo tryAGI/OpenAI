@@ -9,18 +9,22 @@ internal static class ResponsesApiGroupCommand
     public static Command Create()
     {
         var command = new Command(@"responses", @"Responses endpoint commands.");
-                         command.Subcommands.Add(ResponsesCancelAResponseCommandApiCommand.Create());
-                         command.Subcommands.Add(ResponsesCancelAResponse2CommandApiCommand.Create());
-                         command.Subcommands.Add(ResponsesCreateAModelResponseCommandApiCommand.Create());
-                         command.Subcommands.Add(ResponsesCreateAModelResponse2CommandApiCommand.Create());
-                         command.Subcommands.Add(ResponsesCreateAModelResponse2AsStreamCommandApiCommand.Create());
-                         command.Subcommands.Add(ResponsesCreateAModelResponseAsStreamCommandApiCommand.Create());
-                         command.Subcommands.Add(ResponsesDeleteAModelResponseCommandApiCommand.Create());
-                         command.Subcommands.Add(ResponsesDeleteAModelResponse2CommandApiCommand.Create());
-                         command.Subcommands.Add(ResponsesGetAModelResponseCommandApiCommand.Create());
-                         command.Subcommands.Add(ResponsesGetAModelResponse2CommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesBetaCancelResponseCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesBetaCompactconversationCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesBetaCreateResponseCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesBetaCreateResponseAsStreamCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesBetaDeleteResponseCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesBetaGetResponseCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesBetaGetinputtokencountsCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesBetaListInputItemsCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesCancelResponseCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesCompactconversationCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesCreateResponseCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesCreateResponseAsStreamCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesDeleteResponseCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesGetResponseCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesGetinputtokencountsCommandApiCommand.Create());
                          command.Subcommands.Add(ResponsesListInputItemsCommandApiCommand.Create());
-                         command.Subcommands.Add(ResponsesListInputItems2CommandApiCommand.Create());
         return command;
     }
 }

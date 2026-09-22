@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
     public sealed partial class EditImageBodyJsonParam
     {
         /// <summary>
-        /// The model to use for image editing.<br/>
+        /// The GPT image model to use for image editing, including `gpt-image-2`, its dated snapshot `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`.<br/>
         /// Default Value: gpt-image-1.5<br/>
         /// Example: gpt-image-1.5
         /// </summary>
@@ -55,7 +55,9 @@ namespace tryAGI.OpenAI
         public int? N { get; set; }
 
         /// <summary>
-        /// Output quality for GPT image models.<br/>
+        /// Output quality for GPT image models. The GPT image models support `low`, `medium`,<br/>
+        /// and `high`. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their<br/>
+        /// `2026-09-08` snapshots, also support `xhigh` and `max`. Defaults to `auto`.<br/>
         /// Default Value: auto<br/>
         /// Example: high
         /// </summary>
@@ -70,13 +72,14 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity? InputFidelity { get; set; }
 
         /// <summary>
-        /// Requested output image size.<br/>
+        /// The size of the generated images. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing.<br/>
         /// Default Value: auto<br/>
         /// Example: 1024x1024
         /// </summary>
         /// <example>1024x1024</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        public global::tryAGI.OpenAI.EditImageBodyJsonParamSize? Size { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.EditImageBodyJsonParamSize?, object>))]
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamSize?, object>? Size { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI<br/>
@@ -114,7 +117,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.EditImageBodyJsonParamModeration? Moderation { get; set; }
 
         /// <summary>
-        /// Background behavior for generated image output.<br/>
+        /// Set the background of the generated image output. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08` snapshots, support `opaque` and `transparent` backgrounds. Transparent backgrounds are available for supported GPT Image models. For `gpt-image-2` and `gpt-image-2-2026-04-21`, this support is in preview. When using `transparent`, set the output format to `png` or `webp`.<br/>
         /// Default Value: auto<br/>
         /// Example: transparent
         /// </summary>
@@ -155,7 +158,7 @@ namespace tryAGI.OpenAI
         /// Example: Add a watercolor effect and keep the subject centered
         /// </param>
         /// <param name="model">
-        /// The model to use for image editing.<br/>
+        /// The GPT image model to use for image editing, including `gpt-image-2`, its dated snapshot `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`.<br/>
         /// Default Value: gpt-image-1.5<br/>
         /// Example: gpt-image-1.5
         /// </param>
@@ -169,7 +172,9 @@ namespace tryAGI.OpenAI
         /// Example: 1
         /// </param>
         /// <param name="quality">
-        /// Output quality for GPT image models.<br/>
+        /// Output quality for GPT image models. The GPT image models support `low`, `medium`,<br/>
+        /// and `high`. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their<br/>
+        /// `2026-09-08` snapshots, also support `xhigh` and `max`. Defaults to `auto`.<br/>
         /// Default Value: auto<br/>
         /// Example: high
         /// </param>
@@ -177,7 +182,7 @@ namespace tryAGI.OpenAI
         /// Controls fidelity to the original input image(s).
         /// </param>
         /// <param name="size">
-        /// Requested output image size.<br/>
+        /// The size of the generated images. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing.<br/>
         /// Default Value: auto<br/>
         /// Example: 1024x1024
         /// </param>
@@ -201,7 +206,7 @@ namespace tryAGI.OpenAI
         /// Example: auto
         /// </param>
         /// <param name="background">
-        /// Background behavior for generated image output.<br/>
+        /// Set the background of the generated image output. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08` snapshots, support `opaque` and `transparent` backgrounds. Transparent backgrounds are available for supported GPT Image models. For `gpt-image-2` and `gpt-image-2-2026-04-21`, this support is in preview. When using `transparent`, set the output format to `png` or `webp`.<br/>
         /// Default Value: auto<br/>
         /// Example: transparent
         /// </param>
@@ -222,7 +227,7 @@ namespace tryAGI.OpenAI
             int? n,
             global::tryAGI.OpenAI.EditImageBodyJsonParamQuality? quality,
             global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity? inputFidelity,
-            global::tryAGI.OpenAI.EditImageBodyJsonParamSize? size,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamSize?, object>? size,
             string? user,
             global::tryAGI.OpenAI.EditImageBodyJsonParamOutputFormat? outputFormat,
             int? outputCompression,

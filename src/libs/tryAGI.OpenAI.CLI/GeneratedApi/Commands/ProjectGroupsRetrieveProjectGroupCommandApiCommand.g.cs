@@ -47,7 +47,8 @@ internal static partial class ProjectGroupsRetrieveProjectGroupCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-project-group", @"Retrieves a project's group.");
+        var command = new Command(@"retrieve-project-group", @"Retrieve project group
+Retrieves a project's group.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(GroupId);
                         command.Options.Add(GroupType);

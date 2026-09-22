@@ -44,9 +44,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Returns a list of voice consent recordings.<br/>
-        /// List consent recordings available to your organization for creating custom voices.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
+        /// List voice consents<br/>
+        /// Returns a list of voice consent recordings.
         /// </summary>
         /// <param name="after"></param>
         /// <param name="limit">
@@ -71,9 +70,8 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
-        /// Returns a list of voice consent recordings.<br/>
-        /// List consent recordings available to your organization for creating custom voices.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
+        /// List voice consents<br/>
+        /// Returns a list of voice consent recordings.
         /// </summary>
         /// <param name="after"></param>
         /// <param name="limit">

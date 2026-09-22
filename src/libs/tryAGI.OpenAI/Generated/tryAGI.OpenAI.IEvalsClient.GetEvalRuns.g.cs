@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IEvalsClient
     {
         /// <summary>
+        /// Get eval runs<br/>
         /// Get a list of runs for an evaluation.
         /// </summary>
         /// <param name="evalId"></param>
@@ -28,6 +29,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Get eval runs<br/>
         /// Get a list of runs for an evaluation.
         /// </summary>
         /// <param name="evalId"></param>

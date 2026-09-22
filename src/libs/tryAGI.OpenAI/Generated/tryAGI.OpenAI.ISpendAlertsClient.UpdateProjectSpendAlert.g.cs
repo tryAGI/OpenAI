@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ISpendAlertsClient
     {
         /// <summary>
+        /// Update project spend alert<br/>
         /// Updates a project spend alert.
         /// </summary>
         /// <param name="projectId"></param>
@@ -21,6 +22,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Update project spend alert<br/>
         /// Updates a project spend alert.
         /// </summary>
         /// <param name="projectId"></param>
@@ -37,6 +39,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Update project spend alert<br/>
         /// Updates a project spend alert.
         /// </summary>
         /// <param name="projectId"></param>

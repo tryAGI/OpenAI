@@ -35,7 +35,8 @@ internal static partial class BatchCancelBatchCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"cancel-batch", @"Cancels an in-progress batch. The batch will be in status `cancelling` for up to 10 minutes, before changing to `cancelled`, where it will have partial results (if any) available in the output file.");
+        var command = new Command(@"cancel-batch", @"Cancel batch
+Cancels an in-progress batch. The batch will be in status `cancelling` for up to 10 minutes, before changing to `cancelled`, where it will have partial results (if any) available in the output file.");
                         command.Arguments.Add(BatchId);
 
 

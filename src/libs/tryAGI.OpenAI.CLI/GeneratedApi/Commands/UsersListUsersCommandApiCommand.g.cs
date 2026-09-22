@@ -49,7 +49,8 @@ internal static partial class UsersListUsersCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-users", @"Lists all of the users in the organization.");
+        var command = new Command(@"list-users", @"List users
+Lists all of the users in the organization.");
                         command.Options.Add(Limit);
                         command.Options.Add(After);
                         command.Options.Add(Emails);

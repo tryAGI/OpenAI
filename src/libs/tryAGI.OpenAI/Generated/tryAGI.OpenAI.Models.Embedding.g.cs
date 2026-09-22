@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public required int Index { get; set; }
 
         /// <summary>
-        /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](/docs/guides/embeddings).
+        /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](https://developers.openai.com/api/docs/guides/embeddings).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
         /// The index of the embedding in the list of embeddings.
         /// </param>
         /// <param name="embedding1">
-        /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](/docs/guides/embeddings).
+        /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](https://developers.openai.com/api/docs/guides/embeddings).
         /// </param>
         /// <param name="object">
         /// The object type, which is always "embedding".

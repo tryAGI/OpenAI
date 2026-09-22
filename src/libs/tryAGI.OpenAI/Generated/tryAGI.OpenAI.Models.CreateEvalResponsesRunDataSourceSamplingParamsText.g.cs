@@ -6,16 +6,16 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Configuration options for a text response from the model. Can be plain<br/>
     /// text or structured JSON data. Learn more:<br/>
-    /// - [Text inputs and outputs](/docs/guides/text)<br/>
-    /// - [Structured Outputs](/docs/guides/structured-outputs)
+    /// - [Text inputs and outputs](https://developers.openai.com/api/docs/guides/text)<br/>
+    /// - [Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs)
     /// </summary>
     public sealed partial class CreateEvalResponsesRunDataSourceSamplingParamsText
     {
         /// <summary>
         /// An object specifying the format that the model must output.<br/>
-        /// Configuring `{ "type": "json_schema" }` enables Structured Outputs, <br/>
-        /// which ensures the model will match your supplied JSON schema. Learn more in the <br/>
-        /// [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
+        /// Configuring `{ "type": "json_schema" }` enables Structured Outputs,<br/>
+        /// which ensures the model will match your supplied JSON schema. Learn more in the<br/>
+        /// [Structured Outputs guide](https://developers.openai.com/api/docs/guides/structured-outputs).<br/>
         /// The default format is `{ "type": "text" }` with no additional options.<br/>
         /// **Not recommended for gpt-4o and newer models:**<br/>
         /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>
@@ -37,9 +37,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="format">
         /// An object specifying the format that the model must output.<br/>
-        /// Configuring `{ "type": "json_schema" }` enables Structured Outputs, <br/>
-        /// which ensures the model will match your supplied JSON schema. Learn more in the <br/>
-        /// [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
+        /// Configuring `{ "type": "json_schema" }` enables Structured Outputs,<br/>
+        /// which ensures the model will match your supplied JSON schema. Learn more in the<br/>
+        /// [Structured Outputs guide](https://developers.openai.com/api/docs/guides/structured-outputs).<br/>
         /// The default format is `{ "type": "text" }` with no additional options.<br/>
         /// **Not recommended for gpt-4o and newer models:**<br/>
         /// Setting to `{ "type": "json_object" }` enables the older JSON mode, which<br/>

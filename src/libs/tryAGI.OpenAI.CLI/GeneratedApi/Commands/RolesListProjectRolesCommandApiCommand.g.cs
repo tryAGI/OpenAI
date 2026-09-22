@@ -53,7 +53,8 @@ internal static partial class RolesListProjectRolesCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-project-roles", @"Lists the roles configured for a project.");
+        var command = new Command(@"list-project-roles", @"List project roles
+Lists the roles configured for a project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Limit);
                         command.Options.Add(After);

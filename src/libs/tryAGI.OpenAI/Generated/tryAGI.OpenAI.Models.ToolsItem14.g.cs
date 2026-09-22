@@ -5,22 +5,22 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A function or custom tool that belongs to a namespace.
+    ///
     /// </summary>
     public readonly partial struct ToolsItem14 : global::System.IEquatable<ToolsItem14>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaNamespaceToolParamToolDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType? Type { get; }
 
         /// <summary>
-        ///
+        /// A function tool available to the Responses backend when the Live model delegates a task.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaFunctionToolParam? Function { get; init; }
+        public global::tryAGI.OpenAI.LiveFunctionToolInputParam? Function { get; init; }
 #else
-        public global::tryAGI.OpenAI.BetaFunctionToolParam? Function { get; }
+        public global::tryAGI.OpenAI.LiveFunctionToolInputParam? Function { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.BetaFunctionToolParam? value)
+            out global::tryAGI.OpenAI.LiveFunctionToolInputParam? value)
         {
             value = Function;
             return IsFunction;
@@ -47,60 +47,60 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaFunctionToolParam PickFunction() => IsFunction
+        public global::tryAGI.OpenAI.LiveFunctionToolInputParam PickFunction() => IsFunction
             ? Function!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
-        /// A custom tool that processes input using a specified format. Learn more about   [custom tools](/docs/guides/function-calling#custom-tools)
+        /// A web search tool available to the Live session’s Responses backend.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaCustomToolParam? Custom { get; init; }
+        public global::tryAGI.OpenAI.LiveWebSearchToolInputParam? WebSearch { get; init; }
 #else
-        public global::tryAGI.OpenAI.BetaCustomToolParam? Custom { get; }
+        public global::tryAGI.OpenAI.LiveWebSearchToolInputParam? WebSearch { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearch))]
 #endif
-        public bool IsCustom => Custom != null;
+        public bool IsWebSearch => WebSearch != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickCustom(
+        public bool TryPickWebSearch(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.BetaCustomToolParam? value)
+            out global::tryAGI.OpenAI.LiveWebSearchToolInputParam? value)
         {
-            value = Custom;
-            return IsCustom;
+            value = WebSearch;
+            return IsWebSearch;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaCustomToolParam PickCustom() => IsCustom
-            ? Custom!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
+        public global::tryAGI.OpenAI.LiveWebSearchToolInputParam PickWebSearch() => IsWebSearch
+            ? WebSearch!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ToolsItem14(global::tryAGI.OpenAI.BetaFunctionToolParam value) => new ToolsItem14((global::tryAGI.OpenAI.BetaFunctionToolParam?)value);
+        public static implicit operator ToolsItem14(global::tryAGI.OpenAI.LiveFunctionToolInputParam value) => new ToolsItem14((global::tryAGI.OpenAI.LiveFunctionToolInputParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaFunctionToolParam?(ToolsItem14 @this) => @this.Function;
+        public static implicit operator global::tryAGI.OpenAI.LiveFunctionToolInputParam?(ToolsItem14 @this) => @this.Function;
 
         /// <summary>
         ///
         /// </summary>
-        public ToolsItem14(global::tryAGI.OpenAI.BetaFunctionToolParam? value)
+        public ToolsItem14(global::tryAGI.OpenAI.LiveFunctionToolInputParam? value)
         {
             Function = value;
         }
@@ -108,51 +108,51 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static ToolsItem14 FromFunction(global::tryAGI.OpenAI.BetaFunctionToolParam? value) => new ToolsItem14(value);
+        public static ToolsItem14 FromFunction(global::tryAGI.OpenAI.LiveFunctionToolInputParam? value) => new ToolsItem14(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ToolsItem14(global::tryAGI.OpenAI.BetaCustomToolParam value) => new ToolsItem14((global::tryAGI.OpenAI.BetaCustomToolParam?)value);
+        public static implicit operator ToolsItem14(global::tryAGI.OpenAI.LiveWebSearchToolInputParam value) => new ToolsItem14((global::tryAGI.OpenAI.LiveWebSearchToolInputParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaCustomToolParam?(ToolsItem14 @this) => @this.Custom;
+        public static implicit operator global::tryAGI.OpenAI.LiveWebSearchToolInputParam?(ToolsItem14 @this) => @this.WebSearch;
 
         /// <summary>
         ///
         /// </summary>
-        public ToolsItem14(global::tryAGI.OpenAI.BetaCustomToolParam? value)
+        public ToolsItem14(global::tryAGI.OpenAI.LiveWebSearchToolInputParam? value)
         {
-            Custom = value;
+            WebSearch = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ToolsItem14 FromCustom(global::tryAGI.OpenAI.BetaCustomToolParam? value) => new ToolsItem14(value);
+        public static ToolsItem14 FromWebSearch(global::tryAGI.OpenAI.LiveWebSearchToolInputParam? value) => new ToolsItem14(value);
 
         /// <summary>
         ///
         /// </summary>
         public ToolsItem14(
-            global::tryAGI.OpenAI.BetaNamespaceToolParamToolDiscriminatorType? type,
-            global::tryAGI.OpenAI.BetaFunctionToolParam? function,
-            global::tryAGI.OpenAI.BetaCustomToolParam? custom
+            global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType? type,
+            global::tryAGI.OpenAI.LiveFunctionToolInputParam? function,
+            global::tryAGI.OpenAI.LiveWebSearchToolInputParam? webSearch
             )
         {
             Type = type;
 
             Function = function;
-            Custom = custom;
+            WebSearch = webSearch;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            Custom as object ??
+            WebSearch as object ??
             Function as object
             ;
 
@@ -161,7 +161,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             Function?.ToString() ??
-            Custom?.ToString()
+            WebSearch?.ToString()
             ;
 
         /// <summary>
@@ -169,15 +169,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsFunction && !IsCustom || !IsFunction && IsCustom;
+            return IsFunction && !IsWebSearch || !IsFunction && IsWebSearch;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.BetaFunctionToolParam, TResult>? function = null,
-            global::System.Func<global::tryAGI.OpenAI.BetaCustomToolParam, TResult>? custom = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveFunctionToolInputParam, TResult>? function = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveWebSearchToolInputParam, TResult>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -189,9 +189,9 @@ namespace tryAGI.OpenAI
             {
                 return function(Function!);
             }
-            else if (IsCustom && custom != null)
+            else if (IsWebSearch && webSearch != null)
             {
-                return custom(Custom!);
+                return webSearch(WebSearch!);
             }
 
             return default(TResult);
@@ -201,9 +201,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.BetaFunctionToolParam>? function = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveFunctionToolInputParam>? function = null,
 
-            global::System.Action<global::tryAGI.OpenAI.BetaCustomToolParam>? custom = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveWebSearchToolInputParam>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -215,9 +215,9 @@ namespace tryAGI.OpenAI
             {
                 function?.Invoke(Function!);
             }
-            else if (IsCustom)
+            else if (IsWebSearch)
             {
-                custom?.Invoke(Custom!);
+                webSearch?.Invoke(WebSearch!);
             }
         }
 
@@ -225,8 +225,8 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.BetaFunctionToolParam>? function = null,
-            global::System.Action<global::tryAGI.OpenAI.BetaCustomToolParam>? custom = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveFunctionToolInputParam>? function = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveWebSearchToolInputParam>? webSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -238,9 +238,9 @@ namespace tryAGI.OpenAI
             {
                 function?.Invoke(Function!);
             }
-            else if (IsCustom)
+            else if (IsWebSearch)
             {
-                custom?.Invoke(Custom!);
+                webSearch?.Invoke(WebSearch!);
             }
         }
 
@@ -252,9 +252,9 @@ namespace tryAGI.OpenAI
             var fields = new object?[]
             {
                 Function,
-                typeof(global::tryAGI.OpenAI.BetaFunctionToolParam),
-                Custom,
-                typeof(global::tryAGI.OpenAI.BetaCustomToolParam),
+                typeof(global::tryAGI.OpenAI.LiveFunctionToolInputParam),
+                WebSearch,
+                typeof(global::tryAGI.OpenAI.LiveWebSearchToolInputParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +271,8 @@ namespace tryAGI.OpenAI
         public bool Equals(ToolsItem14 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaFunctionToolParam?>.Default.Equals(Function, other.Function) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCustomToolParam?>.Default.Equals(Custom, other.Custom)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveFunctionToolInputParam?>.Default.Equals(Function, other.Function) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveWebSearchToolInputParam?>.Default.Equals(WebSearch, other.WebSearch)
                 ;
         }
 

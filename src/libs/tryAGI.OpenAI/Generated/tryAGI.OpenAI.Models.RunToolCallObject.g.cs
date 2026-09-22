@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class RunToolCallObject
     {
         /// <summary>
-        /// The ID of the tool call. This ID must be referenced when you submit the tool outputs in using the [Submit tool outputs to run](/docs/api-reference/runs/submitToolOutputs) endpoint.
+        /// The ID of the tool call. This ID must be referenced when you submit the tool outputs in using the [Submit tool outputs to run](https://developers.openai.com/api/docs/assistants/migration) endpoint.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RunToolCallObject" /> class.
         /// </summary>
         /// <param name="id">
-        /// The ID of the tool call. This ID must be referenced when you submit the tool outputs in using the [Submit tool outputs to run](/docs/api-reference/runs/submitToolOutputs) endpoint.
+        /// The ID of the tool call. This ID must be referenced when you submit the tool outputs in using the [Submit tool outputs to run](https://developers.openai.com/api/docs/assistants/migration) endpoint.
         /// </param>
         /// <param name="function">
         /// The function definition.

@@ -48,6 +48,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List organization spend alerts<br/>
         /// Lists organization spend alerts.
         /// </summary>
         /// <param name="limit"></param>
@@ -79,6 +80,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// List organization spend alerts<br/>
         /// Lists organization spend alerts.
         /// </summary>
         /// <param name="limit"></param>

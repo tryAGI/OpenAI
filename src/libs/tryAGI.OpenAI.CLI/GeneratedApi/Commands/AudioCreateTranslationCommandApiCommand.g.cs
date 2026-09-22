@@ -10,7 +10,7 @@ internal static partial class AudioCreateTranslationCommandApiCommand
     private static Option<byte[]> File { get; } = new(
         name: @"--file")
     {
-        Description = @"The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+        Description = @"The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm. The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
 ",
         Required = true,
     };
@@ -18,7 +18,7 @@ internal static partial class AudioCreateTranslationCommandApiCommand
     private static Option<string> Filename { get; } = new(
         name: @"--filename")
     {
-        Description = @"The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.
+        Description = @"The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm. The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
 ",
         Required = true,
     };
@@ -34,7 +34,7 @@ internal static partial class AudioCreateTranslationCommandApiCommand
     private static Option<string?> Prompt { get; } = new(
         name: @"--prompt")
     {
-        Description = @"An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should be in English.
+        Description = @"An optional text to guide the model's style or continue a previous audio segment. The [prompt](https://developers.openai.com/api/docs/guides/speech-to-text#prompting) should be in English.
 ",
     };
 
@@ -90,7 +90,8 @@ internal static partial class AudioCreateTranslationCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-translation", @"Translates audio into English.");
+        var command = new Command(@"create-translation", @"Create translation
+Translates audio into English.");
                         command.Options.Add(File);
                         command.Options.Add(Filename);
                         command.Options.Add(Model);

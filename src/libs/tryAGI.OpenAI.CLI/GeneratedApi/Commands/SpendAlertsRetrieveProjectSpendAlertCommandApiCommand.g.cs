@@ -41,7 +41,8 @@ internal static partial class SpendAlertsRetrieveProjectSpendAlertCommandApiComm
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-project-spend-alert", @"Retrieves a project spend alert.");
+        var command = new Command(@"retrieve-project-spend-alert", @"Retrieve project spend alert
+Retrieves a project spend alert.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(AlertId);
 

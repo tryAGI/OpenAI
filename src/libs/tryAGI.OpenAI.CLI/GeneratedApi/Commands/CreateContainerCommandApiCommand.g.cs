@@ -81,8 +81,8 @@ internal static partial class CreateContainerCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-container", @"Create Container
-Creates a container.");
+        var command = new Command(@"create-container", @"Create container
+Create Container");
                         command.Arguments.Add(NameOption);
                         command.Options.Add(FileIds);
                         command.Options.Add(ExpiresAfter);

@@ -12,12 +12,15 @@ internal static partial class ImagesCreateImageEditCommandApiCommand
     {
         Description = @"The image(s) to edit. Must be a supported image file or an array of images.
 
-For the GPT image models (`gpt-image-1`, `gpt-image-1-mini`, and `gpt-image-1.5`), each image should be a `png`, `webp`, or `jpg`
-file less than 50MB. You can provide up to 16 images.
-`chatgpt-image-latest` follows the same input constraints as GPT image models.
+For the GPT image models (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`,
+`gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,
+`gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and
+`gpt-image-2.5-flare-2026-09-08`), each image should be a `png`, `webp`, or `jpg`
+file less than 50MB. You can provide up to 16 images. `chatgpt-image-latest`
+follows the same input constraints as GPT image models.
 
-For `dall-e-2`, you can only provide one image, and it should be a square
-`png` file less than 4MB.
+For `dall-e-2`, you can only provide one image, and it should be a square `png`
+file less than 4MB.
 ",
         Required = true,
     };
@@ -31,13 +34,13 @@ For `dall-e-2`, you can only provide one image, and it should be a square
     private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?>?> Model { get; } = new(
         name: @"--model")
     {
-        Description = @"The model to use for image generation. Defaults to `gpt-image-1.5`.",
+        Description = @"The model to use for image generation. One of `dall-e-2` or a GPT image model (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`, or `chatgpt-image-latest`). Defaults to `gpt-image-1.5`.",
     };
 
     private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestSize?>?> Size { get; } = new(
         name: @"--size")
     {
-        Description = @"The size of the generated images. For `gpt-image-2` and `gpt-image-2-2026-04-21`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.",
+        Description = @"The size of the generated images. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.",
     };
 
     private static Option<global::tryAGI.OpenAI.InputFidelity?> InputFidelity { get; } = new(
@@ -85,14 +88,8 @@ For `dall-e-2`, you can only provide one image, and it should be a square
 
     public static Command Create()
     {
-        var command = new Command(@"create-image-edit", @"Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models (`gpt-image-1.5`, `gpt-image-1`, `gpt-image-1-mini`, and `chatgpt-image-latest`) and `dall-e-2`.
-You can call this endpoint with either:
-
-- `multipart/form-data`: use binary uploads via `image` (and optional `mask`).
-- `application/json`: use `images` (and optional `mask`) as references with either `image_url` or `file_id`.
-
-Note that JSON requests use `images` (array) instead of the multipart `image` field.
-");
+        var command = new Command(@"create-image-edit", @"Create image edit
+Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models and `dall-e-2`.");
                         command.Options.Add(Image);
                         command.Options.Add(Mask);
                         command.Options.Add(Model);

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when a new [run](/docs/api-reference/runs/object) is created.
+    /// Occurs when a new [run](https://developers.openai.com/api/docs/assistants/migration) is created.
     /// </summary>
     public sealed partial class RunStreamEventVariant1
     {
@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.RunStreamEventVariant1Event Event { get; set; }
 
         /// <summary>
-        /// Represents an execution run on a [thread](/docs/api-reference/threads).
+        /// Represents an execution run on a [thread](https://developers.openai.com/api/docs/assistants/migration).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="RunStreamEventVariant1" /> class.
         /// </summary>
         /// <param name="data">
-        /// Represents an execution run on a [thread](/docs/api-reference/threads).
+        /// Represents an execution run on a [thread](https://developers.openai.com/api/docs/assistants/migration).
         /// </param>
         /// <param name="event"></param>
 #if NET7_0_OR_GREATER

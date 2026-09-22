@@ -29,13 +29,6 @@ namespace tryAGI.OpenAI
         public required string ItemId { get; set; }
 
         /// <summary>
-        /// The name of the function that was called.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
-
-        /// <summary>
         /// The index of the output item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_index")]
@@ -68,9 +61,6 @@ namespace tryAGI.OpenAI
         /// <param name="itemId">
         /// The ID of the item.
         /// </param>
-        /// <param name="name">
-        /// The name of the function that was called.
-        /// </param>
         /// <param name="outputIndex">
         /// The index of the output item.
         /// </param>
@@ -89,7 +79,6 @@ namespace tryAGI.OpenAI
 #endif
         public BetaResponseFunctionCallArgumentsDoneEvent(
             string itemId,
-            string name,
             int outputIndex,
             int sequenceNumber,
             string arguments,
@@ -99,7 +88,6 @@ namespace tryAGI.OpenAI
             this.Agent = agent;
             this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.OutputIndex = outputIndex;
             this.SequenceNumber = sequenceNumber;
             this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));

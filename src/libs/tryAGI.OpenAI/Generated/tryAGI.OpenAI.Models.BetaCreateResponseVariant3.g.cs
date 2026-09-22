@@ -11,6 +11,18 @@ namespace tryAGI.OpenAI
     public sealed partial class BetaCreateResponseVariant3
     {
         /// <summary>
+        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`, which is currently the only supported value. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
+        public global::tryAGI.OpenAI.BetaResponsePromptCacheOptionsParam? PromptCacheOptions { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        public global::tryAGI.OpenAI.BetaServiceTierResponsesEnum? ServiceTier { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncation")]
@@ -26,11 +38,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Text, image, or file inputs to the model, used to generate a response.<br/>
         /// Learn more:<br/>
-        /// - [Text inputs and outputs](/docs/guides/text)<br/>
-        /// - [Image inputs](/docs/guides/images)<br/>
-        /// - [File inputs](/docs/guides/pdf-files)<br/>
-        /// - [Conversation state](/docs/guides/conversation-state)<br/>
-        /// - [Function calling](/docs/guides/function-calling)
+        /// - [Text inputs and outputs](https://developers.openai.com/api/docs/guides/text)<br/>
+        /// - [Image inputs](https://developers.openai.com/api/docs/guides/images-vision)<br/>
+        /// - [File inputs](https://developers.openai.com/api/docs/guides/file-inputs)<br/>
+        /// - [Conversation state](https://developers.openai.com/api/docs/guides/conversation-state)<br/>
+        /// - [Function calling](https://developers.openai.com/api/docs/guides/function-calling)
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaInputParamJsonConverter))]
@@ -111,15 +123,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaCreateResponseVariant3" /> class.
         /// </summary>
+        /// <param name="promptCacheOptions">
+        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`, which is currently the only supported value. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
+        /// </param>
+        /// <param name="serviceTier"></param>
         /// <param name="reasoning"></param>
         /// <param name="input">
         /// Text, image, or file inputs to the model, used to generate a response.<br/>
         /// Learn more:<br/>
-        /// - [Text inputs and outputs](/docs/guides/text)<br/>
-        /// - [Image inputs](/docs/guides/images)<br/>
-        /// - [File inputs](/docs/guides/pdf-files)<br/>
-        /// - [Conversation state](/docs/guides/conversation-state)<br/>
-        /// - [Function calling](/docs/guides/function-calling)
+        /// - [Text inputs and outputs](https://developers.openai.com/api/docs/guides/text)<br/>
+        /// - [Image inputs](https://developers.openai.com/api/docs/guides/images-vision)<br/>
+        /// - [File inputs](https://developers.openai.com/api/docs/guides/file-inputs)<br/>
+        /// - [Conversation state](https://developers.openai.com/api/docs/guides/conversation-state)<br/>
+        /// - [Function calling](https://developers.openai.com/api/docs/guides/function-calling)
         /// </param>
         /// <param name="include"></param>
         /// <param name="parallelToolCalls"></param>
@@ -136,6 +152,8 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaCreateResponseVariant3(
+            global::tryAGI.OpenAI.BetaResponsePromptCacheOptionsParam? promptCacheOptions,
+            global::tryAGI.OpenAI.BetaServiceTierResponsesEnum? serviceTier,
             global::tryAGI.OpenAI.BetaReasoning? reasoning,
             global::tryAGI.OpenAI.BetaInputParam? input,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaIncludeEnum>? include,
@@ -150,6 +168,8 @@ namespace tryAGI.OpenAI
             int? maxOutputTokens,
             global::tryAGI.OpenAI.BetaMultiAgentParam? multiAgent)
         {
+            this.PromptCacheOptions = promptCacheOptions;
+            this.ServiceTier = serviceTier;
             this.Reasoning = reasoning;
             this.Input = input;
             this.Include = include;

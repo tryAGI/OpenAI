@@ -18,7 +18,7 @@ internal static partial class FineTuningRunGraderCommandApiCommand
         name: @"--item")
     {
         Description = @"The dataset item provided to the grader. This will be used to populate
-the `item` namespace. See [the guide](/docs/guides/graders) for more details.
+the `item` namespace. See [the guide](https://developers.openai.com/api/docs/guides/graders) for more details.
 ",
     };
 
@@ -26,10 +26,9 @@ the `item` namespace. See [the guide](/docs/guides/graders) for more details.
         name: @"--model-sample")
     {
         Description = @"The model sample to be evaluated. This value will be used to populate
-the `sample` namespace. See [the guide](/docs/guides/graders) for more details.
+the `sample` namespace. See [the guide](https://developers.openai.com/api/docs/guides/graders) for more details.
 The `output_json` variable will be populated if the model sample is a
 valid JSON string.
-
 ",
         Required = true,
     };
@@ -72,7 +71,8 @@ valid JSON string.
 
     public static Command Create()
     {
-        var command = new Command(@"run-grader", @"Run a grader.
+        var command = new Command(@"run-grader", @"Run grader
+Run a grader.
 ");
                         command.Options.Add(Grader);
                         command.Options.Add(Item);

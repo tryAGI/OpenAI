@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IGroupUsersClient
     {
         /// <summary>
+        /// Add group user<br/>
         /// Adds a user to a group.
         /// </summary>
         /// <param name="groupId"></param>
@@ -19,6 +20,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Add group user<br/>
         /// Adds a user to a group.
         /// </summary>
         /// <param name="groupId"></param>
@@ -33,6 +35,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Add group user<br/>
         /// Adds a user to a group.
         /// </summary>
         /// <param name="groupId"></param>

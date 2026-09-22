@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// Delete project user<br/>
         /// Deletes a user from the project.<br/>
         /// Returns confirmation of project user deletion, or an error if the project is<br/>
         /// archived (archived projects have no users).
@@ -20,6 +21,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Delete project user<br/>
         /// Deletes a user from the project.<br/>
         /// Returns confirmation of project user deletion, or an error if the project is<br/>
         /// archived (archived projects have no users).

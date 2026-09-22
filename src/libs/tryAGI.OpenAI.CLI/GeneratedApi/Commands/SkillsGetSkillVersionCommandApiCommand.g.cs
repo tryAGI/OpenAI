@@ -41,7 +41,8 @@ internal static partial class SkillsGetSkillVersionCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"get-skill-version", @"Get a specific skill version.");
+        var command = new Command(@"get-skill-version", @"Get Skill Version
+Get a specific skill version.");
                         command.Arguments.Add(SkillId);
                         command.Arguments.Add(Version);
 

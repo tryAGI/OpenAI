@@ -9,15 +9,28 @@ namespace tryAGI.OpenAI
     public sealed partial class WebhookLiveCallIncomingData
     {
         /// <summary>
-        /// The Transceiver `rtc_...` ID of the pending SIP session. The same<br/>
-        /// value appears as `call_id` in `realtime.call.incoming`.
+        /// The `live_...` ID of the pending SIP session. Pass this value unchanged<br/>
+        /// to Live call controls and sideband connections. The corresponding<br/>
+        /// `realtime.call.incoming` event uses a separate `rtc_...` call ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SessionId { get; set; }
 
         /// <summary>
-        /// Headers from the SIP Invite.
+        /// Media protection selected on the SIP leg during SDP negotiation. `srtp`<br/>
+        /// indicates SRTP; `rtp` indicates unencrypted RTP. Omitted when unknown.<br/>
+        /// This does not describe SIP signaling security or confirm that media has<br/>
+        /// flowed. Clients should handle unrecognized values as unknown.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sip_media_security")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.WebhookLiveCallIncomingDataSipMediaSecurity?, string>))]
+        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.WebhookLiveCallIncomingDataSipMediaSecurity?, string>? SipMediaSecurity { get; set; }
+
+        /// <summary>
+        /// Headers from the SIP INVITE, excluding SIP authorization headers.<br/>
+        /// Retained names, values, repeated entries, and order are preserved.<br/>
+        /// Treat these values as untrusted call metadata.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sip_headers")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -33,20 +46,31 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="WebhookLiveCallIncomingData" /> class.
         /// </summary>
         /// <param name="sessionId">
-        /// The Transceiver `rtc_...` ID of the pending SIP session. The same<br/>
-        /// value appears as `call_id` in `realtime.call.incoming`.
+        /// The `live_...` ID of the pending SIP session. Pass this value unchanged<br/>
+        /// to Live call controls and sideband connections. The corresponding<br/>
+        /// `realtime.call.incoming` event uses a separate `rtc_...` call ID.
         /// </param>
         /// <param name="sipHeaders">
-        /// Headers from the SIP Invite.
+        /// Headers from the SIP INVITE, excluding SIP authorization headers.<br/>
+        /// Retained names, values, repeated entries, and order are preserved.<br/>
+        /// Treat these values as untrusted call metadata.
+        /// </param>
+        /// <param name="sipMediaSecurity">
+        /// Media protection selected on the SIP leg during SDP negotiation. `srtp`<br/>
+        /// indicates SRTP; `rtp` indicates unencrypted RTP. Omitted when unknown.<br/>
+        /// This does not describe SIP signaling security or confirm that media has<br/>
+        /// flowed. Clients should handle unrecognized values as unknown.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebhookLiveCallIncomingData(
             string sessionId,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebhookLiveCallIncomingDataSipHeader> sipHeaders)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebhookLiveCallIncomingDataSipHeader> sipHeaders,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.WebhookLiveCallIncomingDataSipMediaSecurity?, string>? sipMediaSecurity)
         {
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
+            this.SipMediaSecurity = sipMediaSecurity;
             this.SipHeaders = sipHeaders ?? throw new global::System.ArgumentNullException(nameof(sipHeaders));
         }
 

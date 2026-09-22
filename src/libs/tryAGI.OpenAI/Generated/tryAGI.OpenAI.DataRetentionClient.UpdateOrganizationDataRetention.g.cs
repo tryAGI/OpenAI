@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Update organization data retention<br/>
         /// Updates organization data retention controls.
         /// </summary>
         /// <param name="request"></param>
@@ -64,6 +65,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Update organization data retention<br/>
         /// Updates organization data retention controls.
         /// </summary>
         /// <param name="request"></param>
@@ -434,6 +436,7 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Update organization data retention<br/>
         /// Updates organization data retention controls.
         /// </summary>
         /// <param name="retentionType">

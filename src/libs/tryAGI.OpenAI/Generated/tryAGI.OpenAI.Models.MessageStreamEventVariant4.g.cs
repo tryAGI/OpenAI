@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Occurs when a [message](/docs/api-reference/messages/object) is completed.
+    /// Occurs when a [message](https://developers.openai.com/api/docs/assistants/migration) is completed.
     /// </summary>
     public sealed partial class MessageStreamEventVariant4
     {
@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.MessageStreamEventVariant4Event Event { get; set; }
 
         /// <summary>
-        /// Represents a message within a [thread](/docs/api-reference/threads).
+        /// Represents a message within a [thread](https://developers.openai.com/api/docs/assistants/migration).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="MessageStreamEventVariant4" /> class.
         /// </summary>
         /// <param name="data">
-        /// Represents a message within a [thread](/docs/api-reference/threads).
+        /// Represents a message within a [thread](https://developers.openai.com/api/docs/assistants/migration).
         /// </param>
         /// <param name="event"></param>
 #if NET7_0_OR_GREATER

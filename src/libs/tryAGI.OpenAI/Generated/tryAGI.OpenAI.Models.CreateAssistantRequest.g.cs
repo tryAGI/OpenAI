@@ -9,10 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateAssistantRequest
     {
         /// <summary>
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.<br/>
-        /// Example: gpt-4o
+        /// ID of the model to use. You can use the [List models](https://developers.openai.com/api/reference/resources/models/methods/list) API to see all of your available models, or see our [Model overview](https://developers.openai.com/api/docs/models) for descriptions of them.<br/>
+        /// Example: gpt-5
         /// </summary>
-        /// <example>gpt-4o</example>
+        /// <example>gpt-5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.AssistantSupportedModels?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -89,8 +89,8 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateAssistantRequest" /> class.
         /// </summary>
         /// <param name="model">
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.<br/>
-        /// Example: gpt-4o
+        /// ID of the model to use. You can use the [List models](https://developers.openai.com/api/reference/resources/models/methods/list) API to see all of your available models, or see our [Model overview](https://developers.openai.com/api/docs/models) for descriptions of them.<br/>
+        /// Example: gpt-5
         /// </param>
         /// <param name="name"></param>
         /// <param name="description"></param>

@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Retrieve project<br/>
         /// Retrieves a project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -62,6 +63,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Retrieve project<br/>
         /// Retrieves a project.
         /// </summary>
         /// <param name="projectId"></param>

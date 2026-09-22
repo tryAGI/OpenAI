@@ -13,7 +13,7 @@ internal static class ChatApiGroupCommand
                          command.Subcommands.Add(ChatCreateChatCompletionAsStreamCommandApiCommand.Create());
                          command.Subcommands.Add(ChatDeleteChatCompletionCommandApiCommand.Create());
                          command.Subcommands.Add(ChatGetChatCompletionCommandApiCommand.Create());
-                         command.Subcommands.Add(ChatGetChatMessagesCommandApiCommand.Create());
+                         command.Subcommands.Add(ChatGetChatCompletionMessagesCommandApiCommand.Create());
                          command.Subcommands.Add(ChatListChatCompletionsCommandApiCommand.Create());
                          command.Subcommands.Add(ChatUpdateChatCompletionCommandApiCommand.Create());
         return command;

@@ -41,7 +41,8 @@ internal static partial class VectorStoresCancelVectorStoreFileBatchCommandApiCo
 
     public static Command Create()
     {
-        var command = new Command(@"cancel-vector-store-file-batch", @"Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.");
+        var command = new Command(@"cancel-vector-store-file-batch", @"Cancel vector store file batch
+Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.");
                         command.Arguments.Add(VectorStoreId);
                         command.Arguments.Add(BatchId);
 

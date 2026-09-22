@@ -56,10 +56,10 @@ namespace tryAGI.OpenAI
         public string? Output { get; set; }
 
         /// <summary>
-        ///
+        /// The error from the tool call, if any.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public string? Error { get; set; }
+        public global::tryAGI.OpenAI.BetaMCPToolCallError? Error { get; set; }
 
         /// <summary>
         /// The status of the tool call. One of `in_progress`, `completed`, `incomplete`, `calling`, or `failed`.
@@ -102,7 +102,9 @@ namespace tryAGI.OpenAI
         /// The type of the item. Always `mcp_call`.
         /// </param>
         /// <param name="output"></param>
-        /// <param name="error"></param>
+        /// <param name="error">
+        /// The error from the tool call, if any.
+        /// </param>
         /// <param name="status">
         /// The status of the tool call. One of `in_progress`, `completed`, `incomplete`, `calling`, or `failed`.
         /// </param>
@@ -118,7 +120,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaAgentTag? agent,
             global::tryAGI.OpenAI.BetaMCPToolCallType type,
             string? output,
-            string? error,
+            global::tryAGI.OpenAI.BetaMCPToolCallError? error,
             global::tryAGI.OpenAI.BetaMCPToolCallStatus? status,
             string? approvalRequestId)
         {

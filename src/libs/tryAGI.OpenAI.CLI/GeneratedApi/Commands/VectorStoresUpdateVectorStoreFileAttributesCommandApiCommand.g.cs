@@ -63,7 +63,8 @@ internal static partial class VectorStoresUpdateVectorStoreFileAttributesCommand
 
     public static Command Create()
     {
-        var command = new Command(@"update-vector-store-file-attributes", @"Update attributes on a vector store file.");
+        var command = new Command(@"update-vector-store-file-attributes", @"Update vector store file attributes
+Update attributes on a vector store file.");
                         command.Arguments.Add(VectorStoreId);
                         command.Arguments.Add(FileId);
                         command.Options.Add(Attributes);

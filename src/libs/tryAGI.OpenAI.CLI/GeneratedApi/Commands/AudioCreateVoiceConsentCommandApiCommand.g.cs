@@ -64,11 +64,8 @@ Supported MIME types:
 
     public static Command Create()
     {
-        var command = new Command(@"create-voice-consent", @"Upload a voice consent recording.
-Upload a consent recording that authorizes creation of a custom voice.
-
-See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
-");
+        var command = new Command(@"create-voice-consent", @"Create voice consent
+Upload a voice consent recording.");
                         command.Arguments.Add(NameOption);
                         command.Options.Add(Recording);
                         command.Options.Add(Recordingname);

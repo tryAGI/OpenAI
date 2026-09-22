@@ -41,7 +41,8 @@ internal static partial class RolesRetrieveProjectRoleCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-project-role", @"Retrieves a project role.");
+        var command = new Command(@"retrieve-project-role", @"Retrieve project role
+Retrieves a project role.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(RoleId);
 

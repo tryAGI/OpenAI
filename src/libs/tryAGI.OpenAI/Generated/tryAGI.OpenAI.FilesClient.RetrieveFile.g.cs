@@ -42,6 +42,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Retrieve file<br/>
         /// Returns information about a specific file.
         /// </summary>
         /// <param name="fileId"></param>
@@ -62,6 +63,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Retrieve file<br/>
         /// Returns information about a specific file.
         /// </summary>
         /// <param name="fileId"></param>

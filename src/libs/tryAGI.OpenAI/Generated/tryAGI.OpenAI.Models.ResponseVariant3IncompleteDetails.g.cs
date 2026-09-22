@@ -9,7 +9,10 @@ namespace tryAGI.OpenAI
     public sealed partial class ResponseVariant3IncompleteDetails
     {
         /// <summary>
-        /// The reason why the response is incomplete.
+        /// The reason why the response is incomplete. `steered` means<br/>
+        /// the response stopped at a safe output boundary after a<br/>
+        /// WebSocket `response.steer` event. The server can then create<br/>
+        /// a successor response automatically with the queued input.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseVariant3IncompleteDetailsReasonJsonConverter))]
@@ -25,7 +28,10 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="ResponseVariant3IncompleteDetails" /> class.
         /// </summary>
         /// <param name="reason">
-        /// The reason why the response is incomplete.
+        /// The reason why the response is incomplete. `steered` means<br/>
+        /// the response stopped at a safe output boundary after a<br/>
+        /// WebSocket `response.steer` event. The server can then create<br/>
+        /// a successor response automatically with the queued input.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -28,6 +28,30 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         GptImage15,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage2,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage220260421,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage25Flare,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage25Flare20260908,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage25Sunburst,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage25Sunburst20260908,
     }
 
     /// <summary>
@@ -47,6 +71,12 @@ namespace tryAGI.OpenAI
                 CreateImageRequestModel.GptImage1 => "gpt-image-1",
                 CreateImageRequestModel.GptImage1Mini => "gpt-image-1-mini",
                 CreateImageRequestModel.GptImage15 => "gpt-image-1.5",
+                CreateImageRequestModel.GptImage2 => "gpt-image-2",
+                CreateImageRequestModel.GptImage220260421 => "gpt-image-2-2026-04-21",
+                CreateImageRequestModel.GptImage25Flare => "gpt-image-2.5-flare",
+                CreateImageRequestModel.GptImage25Flare20260908 => "gpt-image-2.5-flare-2026-09-08",
+                CreateImageRequestModel.GptImage25Sunburst => "gpt-image-2.5-sunburst",
+                CreateImageRequestModel.GptImage25Sunburst20260908 => "gpt-image-2.5-sunburst-2026-09-08",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +92,12 @@ namespace tryAGI.OpenAI
                 "gpt-image-1" => CreateImageRequestModel.GptImage1,
                 "gpt-image-1-mini" => CreateImageRequestModel.GptImage1Mini,
                 "gpt-image-1.5" => CreateImageRequestModel.GptImage15,
+                "gpt-image-2" => CreateImageRequestModel.GptImage2,
+                "gpt-image-2-2026-04-21" => CreateImageRequestModel.GptImage220260421,
+                "gpt-image-2.5-flare" => CreateImageRequestModel.GptImage25Flare,
+                "gpt-image-2.5-flare-2026-09-08" => CreateImageRequestModel.GptImage25Flare20260908,
+                "gpt-image-2.5-sunburst" => CreateImageRequestModel.GptImage25Sunburst,
+                "gpt-image-2.5-sunburst-2026-09-08" => CreateImageRequestModel.GptImage25Sunburst20260908,
                 _ => null,
             };
         }

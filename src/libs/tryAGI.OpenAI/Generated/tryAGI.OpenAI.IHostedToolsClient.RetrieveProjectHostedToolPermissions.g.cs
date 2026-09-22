@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IHostedToolsClient
     {
         /// <summary>
+        /// Retrieve project hosted tool permissions<br/>
         /// Returns hosted tool permissions for a project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -16,6 +17,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Retrieve project hosted tool permissions<br/>
         /// Returns hosted tool permissions for a project.
         /// </summary>
         /// <param name="projectId"></param>

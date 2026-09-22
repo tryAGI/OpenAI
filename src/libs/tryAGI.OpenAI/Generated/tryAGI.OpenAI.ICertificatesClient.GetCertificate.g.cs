@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ICertificatesClient
     {
         /// <summary>
+        /// Get certificate<br/>
         /// Get a certificate that has been uploaded to the organization.<br/>
         /// You can get a certificate regardless of whether it is active or not.
         /// </summary>
@@ -19,6 +20,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Get certificate<br/>
         /// Get a certificate that has been uploaded to the organization.<br/>
         /// You can get a certificate regardless of whether it is active or not.
         /// </summary>

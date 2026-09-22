@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI.Realtime
 {
     /// <summary>
     /// Reference to a prompt template and its variables.<br/>
-    /// [Learn more](/docs/guides/text?api-mode=responses#reusable-prompts).
+    /// [Learn more](https://developers.openai.com/api/docs/guides/text?api-mode=responses#version-prompts-in-code).
     /// </summary>
     public sealed partial class PromptVariant1
     {

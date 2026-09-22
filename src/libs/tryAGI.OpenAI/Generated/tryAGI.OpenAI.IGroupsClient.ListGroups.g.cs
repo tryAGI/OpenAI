@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IGroupsClient
     {
         /// <summary>
+        /// List groups<br/>
         /// Lists all groups in the organization.
         /// </summary>
         /// <param name="limit">
@@ -24,6 +25,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List groups<br/>
         /// Lists all groups in the organization.
         /// </summary>
         /// <param name="limit">

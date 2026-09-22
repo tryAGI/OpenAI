@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateVectorStoreRequest
     {
         /// <summary>
-        /// A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
+        /// A list of [File](https://developers.openai.com/api/reference/resources/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_ids")]
         public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateVectorStoreRequest" /> class.
         /// </summary>
         /// <param name="fileIds">
-        /// A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
+        /// A list of [File](https://developers.openai.com/api/reference/resources/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
         /// </param>
         /// <param name="name">
         /// The name of the vector store.

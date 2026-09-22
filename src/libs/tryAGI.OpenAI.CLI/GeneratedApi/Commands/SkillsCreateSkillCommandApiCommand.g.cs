@@ -36,7 +36,8 @@ internal static partial class SkillsCreateSkillCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-skill", @"Create a new skill.");
+        var command = new Command(@"create-skill", @"Create Skill
+Create a new skill.");
                         command.Options.Add(Files);
 
 

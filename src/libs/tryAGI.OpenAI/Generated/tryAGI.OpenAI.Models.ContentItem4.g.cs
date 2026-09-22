@@ -5,163 +5,163 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Content blocks that comprise a user message.
+    ///
     /// </summary>
     public readonly partial struct ContentItem4 : global::System.IEquatable<ContentItem4>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageItemContentItemDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParamContentItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Text block that a user contributed to the thread.
+        /// Assistant text supplied as conversation history when starting a Live session.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.UserMessageInputText? InputText { get; init; }
+        public global::tryAGI.OpenAI.LiveInitialTextContentPartParam? Text { get; init; }
 #else
-        public global::tryAGI.OpenAI.UserMessageInputText? InputText { get; }
+        public global::tryAGI.OpenAI.LiveInitialTextContentPartParam? Text { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsInputText => InputText != null;
+        public bool IsText => Text != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickInputText(
+        public bool TryPickText(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.UserMessageInputText? value)
+            out global::tryAGI.OpenAI.LiveInitialTextContentPartParam? value)
         {
-            value = InputText;
-            return IsInputText;
+            value = Text;
+            return IsText;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageInputText PickInputText() => IsInputText
-            ? InputText!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
+        public global::tryAGI.OpenAI.LiveInitialTextContentPartParam PickText() => IsText
+            ? Text!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
-        /// Quoted snippet that the user referenced in their message.
+        /// Assistant output text supplied as conversation history when starting a Live session.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.UserMessageQuotedText? QuotedText { get; init; }
+        public global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam? OutputText { get; init; }
 #else
-        public global::tryAGI.OpenAI.UserMessageQuotedText? QuotedText { get; }
+        public global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam? OutputText { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(QuotedText))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputText))]
 #endif
-        public bool IsQuotedText => QuotedText != null;
+        public bool IsOutputText => OutputText != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickQuotedText(
+        public bool TryPickOutputText(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.UserMessageQuotedText? value)
+            out global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam? value)
         {
-            value = QuotedText;
-            return IsQuotedText;
+            value = OutputText;
+            return IsOutputText;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageQuotedText PickQuotedText() => IsQuotedText
-            ? QuotedText!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'QuotedText' but the value was {ToString()}.");
+        public global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam PickOutputText() => IsOutputText
+            ? OutputText!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputText' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ContentItem4(global::tryAGI.OpenAI.UserMessageInputText value) => new ContentItem4((global::tryAGI.OpenAI.UserMessageInputText?)value);
+        public static implicit operator ContentItem4(global::tryAGI.OpenAI.LiveInitialTextContentPartParam value) => new ContentItem4((global::tryAGI.OpenAI.LiveInitialTextContentPartParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.UserMessageInputText?(ContentItem4 @this) => @this.InputText;
+        public static implicit operator global::tryAGI.OpenAI.LiveInitialTextContentPartParam?(ContentItem4 @this) => @this.Text;
 
         /// <summary>
         ///
         /// </summary>
-        public ContentItem4(global::tryAGI.OpenAI.UserMessageInputText? value)
+        public ContentItem4(global::tryAGI.OpenAI.LiveInitialTextContentPartParam? value)
         {
-            InputText = value;
+            Text = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ContentItem4 FromInputText(global::tryAGI.OpenAI.UserMessageInputText? value) => new ContentItem4(value);
+        public static ContentItem4 FromText(global::tryAGI.OpenAI.LiveInitialTextContentPartParam? value) => new ContentItem4(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ContentItem4(global::tryAGI.OpenAI.UserMessageQuotedText value) => new ContentItem4((global::tryAGI.OpenAI.UserMessageQuotedText?)value);
+        public static implicit operator ContentItem4(global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam value) => new ContentItem4((global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.UserMessageQuotedText?(ContentItem4 @this) => @this.QuotedText;
+        public static implicit operator global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam?(ContentItem4 @this) => @this.OutputText;
 
         /// <summary>
         ///
         /// </summary>
-        public ContentItem4(global::tryAGI.OpenAI.UserMessageQuotedText? value)
+        public ContentItem4(global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam? value)
         {
-            QuotedText = value;
+            OutputText = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ContentItem4 FromQuotedText(global::tryAGI.OpenAI.UserMessageQuotedText? value) => new ContentItem4(value);
+        public static ContentItem4 FromOutputText(global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam? value) => new ContentItem4(value);
 
         /// <summary>
         ///
         /// </summary>
         public ContentItem4(
-            global::tryAGI.OpenAI.UserMessageItemContentItemDiscriminatorType? type,
-            global::tryAGI.OpenAI.UserMessageInputText? inputText,
-            global::tryAGI.OpenAI.UserMessageQuotedText? quotedText
+            global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParamContentItemDiscriminatorType? type,
+            global::tryAGI.OpenAI.LiveInitialTextContentPartParam? text,
+            global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam? outputText
             )
         {
             Type = type;
 
-            InputText = inputText;
-            QuotedText = quotedText;
+            Text = text;
+            OutputText = outputText;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            QuotedText as object ??
-            InputText as object
+            OutputText as object ??
+            Text as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            InputText?.ToString() ??
-            QuotedText?.ToString()
+            Text?.ToString() ??
+            OutputText?.ToString()
             ;
 
         /// <summary>
@@ -169,15 +169,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsInputText && !IsQuotedText || !IsInputText && IsQuotedText;
+            return IsText && !IsOutputText || !IsText && IsOutputText;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.UserMessageInputText, TResult>? inputText = null,
-            global::System.Func<global::tryAGI.OpenAI.UserMessageQuotedText, TResult>? quotedText = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveInitialTextContentPartParam, TResult>? text = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam, TResult>? outputText = null,
             bool validate = true)
         {
             if (validate)
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputText && inputText != null)
+            if (IsText && text != null)
             {
-                return inputText(InputText!);
+                return text(Text!);
             }
-            else if (IsQuotedText && quotedText != null)
+            else if (IsOutputText && outputText != null)
             {
-                return quotedText(QuotedText!);
+                return outputText(OutputText!);
             }
 
             return default(TResult);
@@ -201,9 +201,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.UserMessageInputText>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveInitialTextContentPartParam>? text = null,
 
-            global::System.Action<global::tryAGI.OpenAI.UserMessageQuotedText>? quotedText = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam>? outputText = null,
             bool validate = true)
         {
             if (validate)
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputText)
+            if (IsText)
             {
-                inputText?.Invoke(InputText!);
+                text?.Invoke(Text!);
             }
-            else if (IsQuotedText)
+            else if (IsOutputText)
             {
-                quotedText?.Invoke(QuotedText!);
+                outputText?.Invoke(OutputText!);
             }
         }
 
@@ -225,8 +225,8 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.UserMessageInputText>? inputText = null,
-            global::System.Action<global::tryAGI.OpenAI.UserMessageQuotedText>? quotedText = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveInitialTextContentPartParam>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam>? outputText = null,
             bool validate = true)
         {
             if (validate)
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputText)
+            if (IsText)
             {
-                inputText?.Invoke(InputText!);
+                text?.Invoke(Text!);
             }
-            else if (IsQuotedText)
+            else if (IsOutputText)
             {
-                quotedText?.Invoke(QuotedText!);
+                outputText?.Invoke(OutputText!);
             }
         }
 
@@ -251,10 +251,10 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                InputText,
-                typeof(global::tryAGI.OpenAI.UserMessageInputText),
-                QuotedText,
-                typeof(global::tryAGI.OpenAI.UserMessageQuotedText),
+                Text,
+                typeof(global::tryAGI.OpenAI.LiveInitialTextContentPartParam),
+                OutputText,
+                typeof(global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +271,8 @@ namespace tryAGI.OpenAI
         public bool Equals(ContentItem4 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UserMessageInputText?>.Default.Equals(InputText, other.InputText) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UserMessageQuotedText?>.Default.Equals(QuotedText, other.QuotedText)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInitialTextContentPartParam?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam?>.Default.Equals(OutputText, other.OutputText)
                 ;
         }
 

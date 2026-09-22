@@ -54,6 +54,13 @@ namespace tryAGI.OpenAI
         public string? ExternalKeyId { get; set; }
 
         /// <summary>
+        /// The residency configuration for the project.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("residency")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.PublicProjectResidencyJsonConverter))]
+        public global::tryAGI.OpenAI.PublicProjectResidency? Residency { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -81,6 +88,9 @@ namespace tryAGI.OpenAI
         /// <param name="externalKeyId">
         /// The external key associated with the project.
         /// </param>
+        /// <param name="residency">
+        /// The residency configuration for the project.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -91,7 +101,8 @@ namespace tryAGI.OpenAI
             string? name,
             int? archivedAt,
             string? status,
-            string? externalKeyId)
+            string? externalKeyId,
+            global::tryAGI.OpenAI.PublicProjectResidency? residency)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
@@ -100,6 +111,7 @@ namespace tryAGI.OpenAI
             this.ArchivedAt = archivedAt;
             this.Status = status;
             this.ExternalKeyId = externalKeyId;
+            this.Residency = residency;
         }
 
         /// <summary>

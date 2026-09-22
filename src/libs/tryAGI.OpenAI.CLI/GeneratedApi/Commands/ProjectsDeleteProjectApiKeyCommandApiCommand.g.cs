@@ -41,7 +41,8 @@ internal static partial class ProjectsDeleteProjectApiKeyCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"delete-project-api-key", @"Deletes an API key from the project.
+        var command = new Command(@"delete-project-api-key", @"Delete project API key
+Deletes an API key from the project.
 
 Returns confirmation of the key deletion, or an error if the key belonged to
 a service account.

@@ -64,7 +64,8 @@ internal static partial class RolesUpdateProjectRoleCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"update-project-role", @"Updates an existing project role.");
+        var command = new Command(@"update-project-role", @"Update project role
+Updates an existing project role.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(RoleId);
                         command.Options.Add(Permissions);                        command.Options.Add(PublicUpdateOrganizationRoleBodyOptionSetOptions.DescriptionOption);

@@ -42,11 +42,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models (`gpt-image-1.5`, `gpt-image-1`, `gpt-image-1-mini`, and `chatgpt-image-latest`) and `dall-e-2`.<br/>
-        /// You can call this endpoint with either:<br/>
-        /// - `multipart/form-data`: use binary uploads via `image` (and optional `mask`).<br/>
-        /// - `application/json`: use `images` (and optional `mask`) as references with either `image_url` or `file_id`.<br/>
-        /// Note that JSON requests use `images` (array) instead of the multipart `image` field.
+        /// Create image edit<br/>
+        /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models and `dall-e-2`.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -68,11 +65,8 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
-        /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models (`gpt-image-1.5`, `gpt-image-1`, `gpt-image-1-mini`, and `chatgpt-image-latest`) and `dall-e-2`.<br/>
-        /// You can call this endpoint with either:<br/>
-        /// - `multipart/form-data`: use binary uploads via `image` (and optional `mask`).<br/>
-        /// - `application/json`: use `images` (and optional `mask`) as references with either `image_url` or `file_id`.<br/>
-        /// Note that JSON requests use `images` (array) instead of the multipart `image` field.
+        /// Create image edit<br/>
+        /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models and `dall-e-2`.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -596,6 +590,80 @@ namespace tryAGI.OpenAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // The request was rejected because a rate limit was exceeded. A slow_down error means traffic increased too quickly; reduce your request rate, then increase it gradually.
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The service is temporarily unavailable. A server_is_overloaded error means the requested model is temporarily overloaded; retry after a brief delay.
+                            if ((int)__response.StatusCode == 503)
+                            {
+                                string? __content_503 = null;
+                                global::System.Exception? __exception_503 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_503 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_503 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_503 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_503 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_503,
+                                    responseBody: __content_503,
+                                    responseObject: __value_503,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -693,19 +761,19 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
-        /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models (`gpt-image-1.5`, `gpt-image-1`, `gpt-image-1-mini`, and `chatgpt-image-latest`) and `dall-e-2`.<br/>
-        /// You can call this endpoint with either:<br/>
-        /// - `multipart/form-data`: use binary uploads via `image` (and optional `mask`).<br/>
-        /// - `application/json`: use `images` (and optional `mask`) as references with either `image_url` or `file_id`.<br/>
-        /// Note that JSON requests use `images` (array) instead of the multipart `image` field.
+        /// Create image edit<br/>
+        /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models and `dall-e-2`.
         /// </summary>
         /// <param name="image">
         /// The image(s) to edit. Must be a supported image file or an array of images.<br/>
-        /// For the GPT image models (`gpt-image-1`, `gpt-image-1-mini`, and `gpt-image-1.5`), each image should be a `png`, `webp`, or `jpg`<br/>
-        /// file less than 50MB. You can provide up to 16 images.<br/>
-        /// `chatgpt-image-latest` follows the same input constraints as GPT image models.<br/>
-        /// For `dall-e-2`, you can only provide one image, and it should be a square<br/>
-        /// `png` file less than 4MB.
+        /// For the GPT image models (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`,<br/>
+        /// `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,<br/>
+        /// `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and<br/>
+        /// `gpt-image-2.5-flare-2026-09-08`), each image should be a `png`, `webp`, or `jpg`<br/>
+        /// file less than 50MB. You can provide up to 16 images. `chatgpt-image-latest`<br/>
+        /// follows the same input constraints as GPT image models.<br/>
+        /// For `dall-e-2`, you can only provide one image, and it should be a square `png`<br/>
+        /// file less than 4MB.
         /// </param>
         /// <param name="prompt">
         /// A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2`, and 32000 characters for the GPT image models.<br/>
@@ -718,17 +786,20 @@ namespace tryAGI.OpenAI
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </param>
         /// <param name="background">
-        /// Allows to set transparency for the background of the generated image(s).<br/>
-        /// This parameter is only supported for the GPT image models. Must be one of<br/>
-        /// `transparent`, `opaque` or `auto` (default value). When `auto` is used, the<br/>
-        /// model will automatically determine the best background for the image.<br/>
-        /// If `transparent`, the output format needs to support transparency, so it<br/>
-        /// should be set to either `png` (default value) or `webp`.<br/>
+        /// Set the background of the generated image(s). This parameter is only supported for<br/>
+        /// the GPT image models. Must be one of `transparent`, `opaque`, or `auto` (default<br/>
+        /// value). When `auto` is used, the model will automatically determine the best<br/>
+        /// background for the image.<br/>
+        /// `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08`<br/>
+        /// snapshots, support `opaque` and `transparent` backgrounds. Transparent backgrounds<br/>
+        /// are available for supported GPT Image models. For `gpt-image-2` and<br/>
+        /// `gpt-image-2-2026-04-21`, this support is in preview. When using `transparent`,<br/>
+        /// set the output format to `png` or `webp`.<br/>
         /// Default Value: auto<br/>
         /// Example: transparent
         /// </param>
         /// <param name="model">
-        /// The model to use for image generation. Defaults to `gpt-image-1.5`.<br/>
+        /// The model to use for image generation. One of `dall-e-2` or a GPT image model (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`, or `chatgpt-image-latest`). Defaults to `gpt-image-1.5`.<br/>
         /// Default Value: gpt-image-1.5<br/>
         /// Example: gpt-image-1.5
         /// </param>
@@ -738,7 +809,7 @@ namespace tryAGI.OpenAI
         /// Example: 1
         /// </param>
         /// <param name="size">
-        /// The size of the generated images. For `gpt-image-2` and `gpt-image-2-2026-04-21`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.<br/>
+        /// The size of the generated images. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.<br/>
         /// Default Value: 1024x1024<br/>
         /// Example: 1024x1024
         /// </param>
@@ -761,13 +832,13 @@ namespace tryAGI.OpenAI
         /// Example: 100
         /// </param>
         /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
         /// Example: user-1234
         /// </param>
         /// <param name="inputFidelity"></param>
         /// <param name="partialImages"></param>
         /// <param name="quality">
-        /// The quality of the image that will be generated for GPT image models. Defaults to `auto`.<br/>
+        /// The quality of the image that will be generated for GPT image models. The GPT image models support `low`, `medium`, and `high`. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08` snapshots, also support `xhigh` and `max`. Defaults to `auto`.<br/>
         /// Default Value: auto<br/>
         /// Example: high
         /// </param>

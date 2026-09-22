@@ -91,7 +91,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Indicates that the model should use a built-in tool to generate a response.<br/>
-        /// [Learn more about built-in tools](/docs/guides/tools).
+        /// [Learn more about built-in tools](https://developers.openai.com/api/docs/guides/tools).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ToolChoiceTypes? HostedTool { get; init; }

@@ -71,11 +71,10 @@ internal static partial class CreateContainerFileCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-container-file", @"Create a Container File
+        var command = new Command(@"create-container-file", @"Create container file
+Create a Container File
 
 You can send either a multipart/form-data request with the raw file content, or a JSON request with a file ID.
-
-Creates a container file.
 ");
                         command.Arguments.Add(ContainerId);
                         command.Options.Add(FileId);

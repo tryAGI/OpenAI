@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IProjectsClient
     {
         /// <summary>
+        /// Delete project model permissions<br/>
         /// Deletes model permissions for a project.
         /// </summary>
         /// <param name="projectId"></param>
@@ -16,6 +17,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Delete project model permissions<br/>
         /// Deletes model permissions for a project.
         /// </summary>
         /// <param name="projectId"></param>

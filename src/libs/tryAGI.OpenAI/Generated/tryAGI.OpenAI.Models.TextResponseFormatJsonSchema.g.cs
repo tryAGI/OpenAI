@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// JSON Schema response format. Used to generate structured JSON responses.<br/>
-    /// Learn more about [Structured Outputs](/docs/guides/structured-outputs).
+    /// Learn more about [Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs).
     /// </summary>
     public sealed partial class TextResponseFormatJsonSchema
     {

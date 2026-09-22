@@ -37,6 +37,12 @@ namespace tryAGI.OpenAI
         public required string OwnedBy { get; set; }
 
         /// <summary>
+        /// The date when the model will shut down, or null if not announced.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shutdown_date")]
+        public global::System.DateTime? ShutdownDate { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -57,6 +63,9 @@ namespace tryAGI.OpenAI
         /// <param name="object">
         /// The object type, which is always "model".
         /// </param>
+        /// <param name="shutdownDate">
+        /// The date when the model will shut down, or null if not announced.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -64,12 +73,14 @@ namespace tryAGI.OpenAI
             string id,
             int created,
             string ownedBy,
-            global::tryAGI.OpenAI.ModelObject @object)
+            global::tryAGI.OpenAI.ModelObject @object,
+            global::System.DateTime? shutdownDate)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Created = created;
             this.Object = @object;
             this.OwnedBy = ownedBy ?? throw new global::System.ArgumentNullException(nameof(ownedBy));
+            this.ShutdownDate = shutdownDate;
         }
 
         /// <summary>

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IDataRetentionClient
     {
         /// <summary>
+        /// Update project data retention<br/>
         /// Updates project data retention controls.
         /// </summary>
         /// <param name="projectId"></param>
@@ -19,6 +20,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Update project data retention<br/>
         /// Updates project data retention controls.
         /// </summary>
         /// <param name="projectId"></param>
@@ -33,6 +35,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Update project data retention<br/>
         /// Updates project data retention controls.
         /// </summary>
         /// <param name="projectId"></param>

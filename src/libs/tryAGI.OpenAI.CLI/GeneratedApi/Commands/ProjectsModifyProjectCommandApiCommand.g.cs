@@ -24,12 +24,6 @@ internal static partial class ProjectsModifyProjectCommandApiCommand
     {
         Description = @"External key ID to associate with the project.",
     };
-
-    private static Option<string?> Geography { get; } = new(
-        name: @"--geography")
-    {
-        Description = @"Geography for the project.",
-    };
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -69,11 +63,11 @@ internal static partial class ProjectsModifyProjectCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"modify-project", @"Modifies a project in the organization.");
+        var command = new Command(@"modify-project", @"Modify project
+Modifies a project in the organization.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(NameOption);
                         command.Options.Add(ExternalKeyId);
-                        command.Options.Add(Geography);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -102,7 +96,6 @@ internal static partial class ProjectsModifyProjectCommandApiCommand
                         var projectId = parseResult.GetRequiredValue(ProjectId);
                         var name = CliRuntime.WasSpecified(parseResult, NameOption) ? parseResult.GetValue(NameOption) : (__requestBase is { } __NameBaseValue ? __NameBaseValue.Name : default);
                         var externalKeyId = CliRuntime.WasSpecified(parseResult, ExternalKeyId) ? parseResult.GetValue(ExternalKeyId) : (__requestBase is { } __ExternalKeyIdBaseValue ? __ExternalKeyIdBaseValue.ExternalKeyId : default);
-                        var geography = CliRuntime.WasSpecified(parseResult, Geography) ? parseResult.GetValue(Geography) : (__requestBase is { } __GeographyBaseValue ? __GeographyBaseValue.Geography : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -110,7 +103,6 @@ internal static partial class ProjectsModifyProjectCommandApiCommand
                                     projectId: projectId,
                                     name: name,
                                     externalKeyId: externalKeyId,
-                                    geography: geography,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

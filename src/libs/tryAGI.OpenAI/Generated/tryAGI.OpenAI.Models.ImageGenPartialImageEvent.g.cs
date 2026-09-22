@@ -30,12 +30,12 @@ namespace tryAGI.OpenAI
         public required int CreatedAt { get; set; }
 
         /// <summary>
-        /// The size of the requested image.
+        /// The image dimensions as a `WIDTHxHEIGHT` string, for example `1536x864`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageGenPartialImageEventSizeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.ImageGenPartialImageEventSize?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ImageGenPartialImageEventSize Size { get; set; }
+        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenPartialImageEventSize?> Size { get; set; }
 
         /// <summary>
         /// The quality setting for the requested image.
@@ -84,7 +84,7 @@ namespace tryAGI.OpenAI
         /// The Unix timestamp when the event was created.
         /// </param>
         /// <param name="size">
-        /// The size of the requested image.
+        /// The image dimensions as a `WIDTHxHEIGHT` string, for example `1536x864`.
         /// </param>
         /// <param name="quality">
         /// The quality setting for the requested image.
@@ -107,7 +107,7 @@ namespace tryAGI.OpenAI
         public ImageGenPartialImageEvent(
             string b64Json,
             int createdAt,
-            global::tryAGI.OpenAI.ImageGenPartialImageEventSize size,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenPartialImageEventSize?> size,
             global::tryAGI.OpenAI.ImageGenPartialImageEventQuality quality,
             global::tryAGI.OpenAI.ImageGenPartialImageEventBackground background,
             global::tryAGI.OpenAI.ImageGenPartialImageEventOutputFormat outputFormat,

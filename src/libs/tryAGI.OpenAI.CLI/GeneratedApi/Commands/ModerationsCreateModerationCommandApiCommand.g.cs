@@ -20,8 +20,8 @@ an array of multi-modal input objects similar to other models.
         name: @"--model")
     {
         Description = @"The content moderation model you would like to use. Learn more in
-[the moderation guide](/docs/guides/moderation), and learn about
-available models [here](/docs/models#moderation).
+[the moderation guide](https://developers.openai.com/api/docs/guides/moderation), and learn about
+available models [here](https://developers.openai.com/api/docs/guides/moderation).
 ",
     };
       private static Option<string?> RequestInput { get; } = new(@"--request-input")
@@ -63,8 +63,9 @@ available models [here](/docs/models#moderation).
 
     public static Command Create()
     {
-        var command = new Command(@"create-moderation", @"Classifies if text and/or image inputs are potentially harmful. Learn
-more in the [moderation guide](/docs/guides/moderation).
+        var command = new Command(@"create-moderation", @"Create moderation
+Classifies if text and/or image inputs are potentially harmful. Learn
+more in the [moderation guide](https://developers.openai.com/api/docs/guides/moderation).
 ");
                         command.Options.Add(InputOption);
                         command.Options.Add(Model);

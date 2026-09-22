@@ -48,7 +48,7 @@ internal static partial class ImagesCreateImageVariationCommandApiCommand
     private static Option<string?> User { get; } = new(
         name: @"--user")
     {
-        Description = @"A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).
+        Description = @"A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).
 ",
     };
       private static Option<string?> Input { get; } = new(@"--input")
@@ -90,7 +90,8 @@ internal static partial class ImagesCreateImageVariationCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-image-variation", @"Creates a variation of a given image. This endpoint only supports `dall-e-2`.");
+        var command = new Command(@"create-image-variation", @"Create image variation
+Creates a variation of a given image. This endpoint only supports `dall-e-2`.");
                         command.Options.Add(Image);
                         command.Options.Add(Imagename);
                         command.Options.Add(Model);

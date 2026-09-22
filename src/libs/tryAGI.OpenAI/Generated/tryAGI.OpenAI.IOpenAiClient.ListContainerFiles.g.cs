@@ -5,8 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IOpenAiClient
     {
         /// <summary>
-        /// List Container files<br/>
-        /// Lists container files.
+        /// List container files<br/>
+        /// List Container files
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="limit">
@@ -27,8 +27,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// List Container files<br/>
-        /// Lists container files.
+        /// List container files<br/>
+        /// List Container files
         /// </summary>
         /// <param name="containerId"></param>
         /// <param name="limit">

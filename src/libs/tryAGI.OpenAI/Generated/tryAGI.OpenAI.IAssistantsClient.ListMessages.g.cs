@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IAssistantsClient
     {
         /// <summary>
+        /// List messages<br/>
         /// Returns a list of messages for a given thread.
         /// </summary>
         /// <param name="threadId"></param>
@@ -30,6 +31,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List messages<br/>
         /// Returns a list of messages for a given thread.
         /// </summary>
         /// <param name="threadId"></param>

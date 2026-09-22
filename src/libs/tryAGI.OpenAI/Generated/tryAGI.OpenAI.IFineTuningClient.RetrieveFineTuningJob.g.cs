@@ -5,8 +5,9 @@ namespace tryAGI.OpenAI
     public partial interface IFineTuningClient
     {
         /// <summary>
+        /// Retrieve fine-tuning job<br/>
         /// Get info about a fine-tuning job.<br/>
-        /// [Learn more about fine-tuning](/docs/guides/model-optimization)
+        /// [Learn more about fine-tuning](https://developers.openai.com/api/docs/guides/model-optimization)
         /// </summary>
         /// <param name="fineTuningJobId">
         /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
@@ -19,8 +20,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Retrieve fine-tuning job<br/>
         /// Get info about a fine-tuning job.<br/>
-        /// [Learn more about fine-tuning](/docs/guides/model-optimization)
+        /// [Learn more about fine-tuning](https://developers.openai.com/api/docs/guides/model-optimization)
         /// </summary>
         /// <param name="fineTuningJobId">
         /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F

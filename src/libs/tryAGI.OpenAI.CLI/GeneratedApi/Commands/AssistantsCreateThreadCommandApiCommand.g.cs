@@ -10,7 +10,7 @@ internal static partial class AssistantsCreateThreadCommandApiCommand
     private static Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequest>?> Messages { get; } = new(
         name: @"--messages")
     {
-        Description = @"A list of [messages](/docs/api-reference/messages) to start the thread with.",
+        Description = @"A list of [messages](https://developers.openai.com/api/docs/assistants/migration) to start the thread with.",
     };
 
     private static Option<global::tryAGI.OpenAI.CreateThreadRequestToolResources?> ToolResources { get; } = new(
@@ -63,7 +63,8 @@ internal static partial class AssistantsCreateThreadCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"create-thread", @"Create a thread.");
+        var command = new Command(@"create-thread", @"Create thread
+Create a thread.");
                         command.Options.Add(Messages);
                         command.Options.Add(ToolResources);
                         command.Options.Add(Metadata);

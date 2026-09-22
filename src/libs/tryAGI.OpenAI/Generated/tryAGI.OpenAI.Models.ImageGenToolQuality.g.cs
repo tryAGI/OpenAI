@@ -4,8 +4,10 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The quality of the generated image. One of `low`, `medium`, `high`,<br/>
-    /// or `auto`. Default: `auto`.<br/>
+    /// The quality of the generated image. The GPT image models support `low`,<br/>
+    /// `medium`, and `high`. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`,<br/>
+    /// including their `2026-09-08` snapshots, also support `xhigh` and `max`.<br/>
+    /// Default: `auto`.<br/>
     /// Default Value: auto
     /// </summary>
     public enum ImageGenToolQuality
@@ -25,7 +27,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Max,
+        /// <summary>
+        ///
+        /// </summary>
         Medium,
+        /// <summary>
+        ///
+        /// </summary>
+        Xhigh,
     }
 
     /// <summary>
@@ -43,7 +53,9 @@ namespace tryAGI.OpenAI
                 ImageGenToolQuality.Auto => "auto",
                 ImageGenToolQuality.High => "high",
                 ImageGenToolQuality.Low => "low",
+                ImageGenToolQuality.Max => "max",
                 ImageGenToolQuality.Medium => "medium",
+                ImageGenToolQuality.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,7 +69,9 @@ namespace tryAGI.OpenAI
                 "auto" => ImageGenToolQuality.Auto,
                 "high" => ImageGenToolQuality.High,
                 "low" => ImageGenToolQuality.Low,
+                "max" => ImageGenToolQuality.Max,
                 "medium" => ImageGenToolQuality.Medium,
+                "xhigh" => ImageGenToolQuality.Xhigh,
                 _ => null,
             };
         }

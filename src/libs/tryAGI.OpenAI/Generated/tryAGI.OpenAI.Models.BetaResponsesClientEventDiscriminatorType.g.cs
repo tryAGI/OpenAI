@@ -12,6 +12,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         ResponseInject,
+        /// <summary>
+        ///
+        /// </summary>
+        ResponseSteer,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 BetaResponsesClientEventDiscriminatorType.ResponseInject => "response.inject",
+                BetaResponsesClientEventDiscriminatorType.ResponseSteer => "response.steer",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "response.inject" => BetaResponsesClientEventDiscriminatorType.ResponseInject,
+                "response.steer" => BetaResponsesClientEventDiscriminatorType.ResponseSteer,
                 _ => null,
             };
         }

@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -21,9 +23,11 @@ namespace tryAGI.OpenAI
         public string? ExternalKeyId { get; set; }
 
         /// <summary>
-        /// Geography for the project.
+        /// Geography for the project.<br/>
+        /// Deprecated: use `residency` when creating a project to configure data residency. This field is retained for backward compatibility.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("geography")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? Geography { get; set; }
 
         /// <summary>
@@ -41,20 +45,15 @@ namespace tryAGI.OpenAI
         /// <param name="externalKeyId">
         /// External key ID to associate with the project.
         /// </param>
-        /// <param name="geography">
-        /// Geography for the project.
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ProjectUpdateRequest(
             string? name,
-            string? externalKeyId,
-            string? geography)
+            string? externalKeyId)
         {
             this.Name = name;
             this.ExternalKeyId = externalKeyId;
-            this.Geography = geography;
         }
 
         /// <summary>

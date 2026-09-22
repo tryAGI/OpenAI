@@ -44,6 +44,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// Create project service account<br/>
         /// Creates a new service account in the project. By default, this also returns an unredacted API key for the service account.
         /// </summary>
         /// <param name="projectId"></param>
@@ -69,6 +70,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Create project service account<br/>
         /// Creates a new service account in the project. By default, this also returns an unredacted API key for the service account.
         /// </summary>
         /// <param name="projectId"></param>
@@ -480,6 +482,7 @@ namespace tryAGI.OpenAI
             }
         }
         /// <summary>
+        /// Create project service account<br/>
         /// Creates a new service account in the project. By default, this also returns an unredacted API key for the service account.
         /// </summary>
         /// <param name="projectId"></param>
@@ -487,6 +490,9 @@ namespace tryAGI.OpenAI
         /// The name of the service account being created.
         /// </param>
         /// <param name="createServiceAccountOnly"></param>
+        /// <param name="expiresInSeconds">
+        /// Number of seconds until the initial API key expires. If omitted or null, the key does not expire unless the effective organization or project policy requires an expiration. When a policy sets a maximum lifetime, this value must be provided and must not exceed that limit. A non-null value cannot be used when `create_service_account_only` is true.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -494,6 +500,7 @@ namespace tryAGI.OpenAI
             string projectId,
             string name,
             bool? createServiceAccountOnly = default,
+            int? expiresInSeconds = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -501,6 +508,7 @@ namespace tryAGI.OpenAI
             {
                 Name = name,
                 CreateServiceAccountOnly = createServiceAccountOnly,
+                ExpiresInSeconds = expiresInSeconds,
             };
 
             return await CreateProjectServiceAccountAsync(

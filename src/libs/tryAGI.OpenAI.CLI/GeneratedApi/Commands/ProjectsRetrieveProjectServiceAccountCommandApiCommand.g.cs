@@ -41,7 +41,8 @@ internal static partial class ProjectsRetrieveProjectServiceAccountCommandApiCom
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-project-service-account", @"Retrieves a service account in the project.");
+        var command = new Command(@"retrieve-project-service-account", @"Retrieve project service account
+Retrieves a service account in the project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(ServiceAccountId);
 

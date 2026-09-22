@@ -31,7 +31,8 @@ internal static partial class ModelsListModelsCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"list-models", @"Lists the currently available models, and provides basic information about each one such as the owner and availability.");
+        var command = new Command(@"list-models", @"List models
+Lists the currently available models, and provides basic information about each one such as the owner and availability.");
 
 
 

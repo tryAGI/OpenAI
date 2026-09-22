@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The quality of the image generated. Either `low`, `medium`, or `high`.
+    /// The quality of the image generated. One of `low`, `medium`, `high`, `xhigh`, or `max`.
     /// </summary>
     public enum ImagesResponseQuality
     {
@@ -19,7 +19,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Max,
+        /// <summary>
+        ///
+        /// </summary>
         Medium,
+        /// <summary>
+        ///
+        /// </summary>
+        Xhigh,
     }
 
     /// <summary>
@@ -36,7 +44,9 @@ namespace tryAGI.OpenAI
             {
                 ImagesResponseQuality.High => "high",
                 ImagesResponseQuality.Low => "low",
+                ImagesResponseQuality.Max => "max",
                 ImagesResponseQuality.Medium => "medium",
+                ImagesResponseQuality.Xhigh => "xhigh",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,7 +59,9 @@ namespace tryAGI.OpenAI
             {
                 "high" => ImagesResponseQuality.High,
                 "low" => ImagesResponseQuality.Low,
+                "max" => ImagesResponseQuality.Max,
                 "medium" => ImagesResponseQuality.Medium,
+                "xhigh" => ImagesResponseQuality.Xhigh,
                 _ => null,
             };
         }

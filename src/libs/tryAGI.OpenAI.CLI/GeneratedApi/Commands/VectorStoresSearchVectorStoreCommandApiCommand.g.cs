@@ -80,7 +80,8 @@ internal static partial class VectorStoresSearchVectorStoreCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"search-vector-store", @"Search a vector store for relevant chunks based on a query and file attributes filter.");
+        var command = new Command(@"search-vector-store", @"Search vector store
+Search a vector store for relevant chunks based on a query and file attributes filter.");
                         command.Arguments.Add(VectorStoreId);
                         command.Options.Add(Query);
                         command.Options.Add(RewriteQuery);

@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Annotations for the message, when applicable, as when using the<br/>
-        /// [web search tool](/docs/guides/tools-web-search?api-mode=chat).
+        /// [web search tool](https://developers.openai.com/api/docs/guides/tools-web-search).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotation>? Annotations { get; set; }
@@ -71,7 +71,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="annotations">
         /// Annotations for the message, when applicable, as when using the<br/>
-        /// [web search tool](/docs/guides/tools-web-search?api-mode=chat).
+        /// [web search tool](https://developers.openai.com/api/docs/guides/tools-web-search).
         /// </param>
         /// <param name="role">
         /// The role of the author of this message.

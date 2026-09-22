@@ -35,11 +35,8 @@ internal static partial class AudioDeleteVoiceConsentCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"delete-voice-consent", @"Deletes a voice consent recording.
-Delete a consent recording that was uploaded for creating custom voices.
-
-See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
-");
+        var command = new Command(@"delete-voice-consent", @"Delete voice consent
+Deletes a voice consent recording.");
                         command.Arguments.Add(ConsentId);
 
 

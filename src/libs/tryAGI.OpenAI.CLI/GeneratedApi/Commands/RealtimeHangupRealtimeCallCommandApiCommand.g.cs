@@ -1,0 +1,43 @@
+#nullable enable
+#pragma warning disable CS0618
+
+using System.CommandLine;
+
+namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
+
+internal static partial class RealtimeHangupRealtimeCallCommandApiCommand
+{
+    private static Argument<string> CallId { get; } = new(
+        name: @"call-id")
+    {
+        Description = @"The identifier for the call. For SIP calls, use the value provided in the
+[`realtime.call.incoming`](https://developers.openai.com/api/reference/resources/webhooks#realtime.call.incoming)
+webhook. For WebRTC sessions, reuse the call ID returned in the `Location`
+header when creating the call with
+[`POST /v1/realtime/calls`](https://developers.openai.com/api/reference/resources/realtime/subresources/calls/methods/create).",
+    };
+
+    public static Command Create()
+    {
+        var command = new Command(@"hangup-realtime-call", @"Hang up call
+End an active Realtime API call, whether it was initiated over SIP or
+WebRTC.");
+                        command.Arguments.Add(CallId);
+
+
+        command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
+            await CliRuntime.RunAsync(async () =>
+            {
+                        var callId = parseResult.GetRequiredValue(CallId);
+                using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
+
+
+                                await client.Realtime.HangupRealtimeCallAsync(
+                                    callId: callId,
+                                    cancellationToken: cancellationToken).ConfigureAwait(false);
+
+                                await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
+            }, cancellationToken).ConfigureAwait(false));
+        return command;
+    }
+}

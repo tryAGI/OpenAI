@@ -52,7 +52,7 @@ internal static partial class AssistantsListRunStepsCommandApiCommand
     {
         Description = @"A list of additional fields to include in the response. Currently the only supported value is `step_details.tool_calls[*].file_search.results[*].content` to fetch the file search result content.
 
-See the [file search tool documentation](/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.
+See the [file search tool documentation](https://developers.openai.com/api/docs/guides/tools-file-search#retrieval-customization) for more information.
 ",
     };
 
@@ -78,7 +78,8 @@ See the [file search tool documentation](/docs/assistants/tools/file-search#cust
 
     public static Command Create()
     {
-        var command = new Command(@"list-run-steps", @"Returns a list of run steps belonging to a run.");
+        var command = new Command(@"list-run-steps", @"List run steps
+Returns a list of run steps belonging to a run.");
                         command.Arguments.Add(ThreadId);
                         command.Arguments.Add(RunId);
                         command.Options.Add(Limit);

@@ -41,7 +41,8 @@ internal static partial class SkillsGetSkillVersionContentCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"get-skill-version-content", @"Download a skill version zip bundle.");
+        var command = new Command(@"get-skill-version-content", @"Get Skill Version Content
+Download a skill version zip bundle.");
                         command.Arguments.Add(SkillId);
                         command.Arguments.Add(Version);
 

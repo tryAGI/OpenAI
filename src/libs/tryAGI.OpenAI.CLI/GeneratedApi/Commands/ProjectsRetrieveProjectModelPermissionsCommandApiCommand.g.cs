@@ -35,7 +35,8 @@ internal static partial class ProjectsRetrieveProjectModelPermissionsCommandApiC
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-project-model-permissions", @"Returns model permissions for a project.");
+        var command = new Command(@"retrieve-project-model-permissions", @"Retrieve project model permissions
+Returns model permissions for a project.");
                         command.Arguments.Add(ProjectId);
 
 

@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IBatchClient
     {
         /// <summary>
+        /// Cancel batch<br/>
         /// Cancels an in-progress batch. The batch will be in status `cancelling` for up to 10 minutes, before changing to `cancelled`, where it will have partial results (if any) available in the output file.
         /// </summary>
         /// <param name="batchId"></param>
@@ -16,6 +17,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Cancel batch<br/>
         /// Cancels an in-progress batch. The batch will be in status `cancelling` for up to 10 minutes, before changing to `cancelled`, where it will have partial results (if any) available in the output file.
         /// </summary>
         /// <param name="batchId"></param>

@@ -37,8 +37,11 @@ internal sealed record CreateImageRequestOptionSet(
                 {
                     Description = @"The quality of the image that will be generated.
 
-- `auto` (default value) will automatically select the best quality for the given model.
+- `auto` (default value) will automatically select the best quality for the given
+  model.
 - `high`, `medium` and `low` are supported for the GPT image models.
+- `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08`
+  snapshots, also support `xhigh` and `max`.
 - `hd` and `standard` are supported for `dall-e-3`.
 - `standard` is the only option for `dall-e-2`.
 ",
@@ -56,7 +59,7 @@ internal sealed record CreateImageRequestOptionSet(
                     Description = @"The compression level (0-100%) for the generated images. This parameter is only supported for the GPT image models with the `webp` or `jpeg` output formats, and defaults to 100.",
                 },
                 Stream: CliRuntime.CreateNullableBoolOption(name: $"--{normalizedPrefix}stream", description: @"Generate the image in streaming mode. Defaults to `false`. See the
-[Image generation guide](/docs/guides/image-generation) for more information.
+[Image generation guide](https://developers.openai.com/api/docs/guides/image-generation) for more information.
 This parameter is only supported for the GPT image models.
 "),
                 PartialImages: new Option<int?>($"--{normalizedPrefix}partial-images")
@@ -69,13 +72,16 @@ This parameter is only supported for the GPT image models.
                 },
                 Background: new Option<global::tryAGI.OpenAI.CreateImageRequestBackground?>($"--{normalizedPrefix}background")
                 {
-                    Description = @"Allows to set transparency for the background of the generated image(s).
-This parameter is only supported for the GPT image models. Must be one of
-`transparent`, `opaque` or `auto` (default value). When `auto` is used, the
-model will automatically determine the best background for the image.
+                    Description = @"Set the background of the generated image(s). This parameter is only supported for
+the GPT image models. Must be one of `transparent`, `opaque`, or `auto` (default
+value). When `auto` is used, the model will automatically determine the best
+background for the image.
 
-If `transparent`, the output format needs to support transparency, so it
-should be set to either `png` (default value) or `webp`.
+`gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08`
+snapshots, support `opaque` and `transparent` backgrounds. Transparent backgrounds
+are available for supported GPT Image models. For `gpt-image-2` and
+`gpt-image-2-2026-04-21`, this support is in preview. When using `transparent`,
+set the output format to `png` or `webp`.
 ",
                 },
                 Style: new Option<global::tryAGI.OpenAI.CreateImageRequestStyle?>($"--{normalizedPrefix}style")
@@ -84,7 +90,7 @@ should be set to either `png` (default value) or `webp`.
                 },
                 User: new Option<string?>($"--{normalizedPrefix}user")
                 {
-                    Description = @"A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).
+                    Description = @"A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).
 ",
                 }
         );

@@ -46,6 +46,13 @@ namespace tryAGI.OpenAI
         public double? Quantity { get; set; }
 
         /// <summary>
+        /// The unit of the `quantity` value. If no single supported unit applies to the result, this field is `null`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("quantity_unit")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CostsResultQuantityUnit?, object>))]
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CostsResultQuantityUnit?, object>? QuantityUnit { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -62,6 +69,9 @@ namespace tryAGI.OpenAI
         /// <param name="projectId"></param>
         /// <param name="apiKeyId"></param>
         /// <param name="quantity"></param>
+        /// <param name="quantityUnit">
+        /// The unit of the `quantity` value. If no single supported unit applies to the result, this field is `null`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -71,7 +81,8 @@ namespace tryAGI.OpenAI
             string? lineItem,
             string? projectId,
             string? apiKeyId,
-            double? quantity)
+            double? quantity,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CostsResultQuantityUnit?, object>? quantityUnit)
         {
             this.Object = @object;
             this.Amount = amount;
@@ -79,6 +90,7 @@ namespace tryAGI.OpenAI
             this.ProjectId = projectId;
             this.ApiKeyId = apiKeyId;
             this.Quantity = quantity;
+            this.QuantityUnit = quantityUnit;
         }
 
         /// <summary>

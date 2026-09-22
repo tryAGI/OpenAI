@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IFineTuningClient
     {
         /// <summary>
+        /// List fine-tuning events<br/>
         /// Get status updates for a fine-tuning job.
         /// </summary>
         /// <param name="fineTuningJobId">
@@ -24,6 +25,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// List fine-tuning events<br/>
         /// Get status updates for a fine-tuning job.
         /// </summary>
         /// <param name="fineTuningJobId">

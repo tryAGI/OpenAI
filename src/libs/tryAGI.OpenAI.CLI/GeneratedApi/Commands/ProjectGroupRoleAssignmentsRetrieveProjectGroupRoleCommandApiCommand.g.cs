@@ -47,7 +47,8 @@ internal static partial class ProjectGroupRoleAssignmentsRetrieveProjectGroupRol
 
     public static Command Create()
     {
-        var command = new Command(@"retrieve-project-group-role", @"Retrieves a project role assigned to a group.");
+        var command = new Command(@"retrieve-project-group-role", @"Retrieve project group role
+Retrieves a project role assigned to a group.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(GroupId);
                         command.Arguments.Add(RoleId);

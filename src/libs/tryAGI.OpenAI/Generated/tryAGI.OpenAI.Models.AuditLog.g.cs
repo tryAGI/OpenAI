@@ -87,6 +87,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_storage.registered")]
+        public global::tryAGI.OpenAI.AuditLogExternalStorageRegistered? ExternalStorageRegistered { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("external_storage.removed")]
+        public global::tryAGI.OpenAI.AuditLogExternalStorageRemoved? ExternalStorageRemoved { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("group.created")]
         public global::tryAGI.OpenAI.AuditLogGroupCreated? GroupCreated { get; set; }
 
@@ -415,6 +427,12 @@ namespace tryAGI.OpenAI
         /// <param name="externalKeyRemoved">
         /// The details for events with this `type`.
         /// </param>
+        /// <param name="externalStorageRegistered">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="externalStorageRemoved">
+        /// The details for events with this `type`.
+        /// </param>
         /// <param name="groupCreated">
         /// The details for events with this `type`.
         /// </param>
@@ -575,6 +593,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AuditLogCheckpointPermissionDeleted? checkpointPermissionDeleted,
             global::tryAGI.OpenAI.AuditLogExternalKeyRegistered? externalKeyRegistered,
             global::tryAGI.OpenAI.AuditLogExternalKeyRemoved? externalKeyRemoved,
+            global::tryAGI.OpenAI.AuditLogExternalStorageRegistered? externalStorageRegistered,
+            global::tryAGI.OpenAI.AuditLogExternalStorageRemoved? externalStorageRemoved,
             global::tryAGI.OpenAI.AuditLogGroupCreated? groupCreated,
             global::tryAGI.OpenAI.AuditLogGroupUpdated? groupUpdated,
             global::tryAGI.OpenAI.AuditLogGroupDeleted? groupDeleted,
@@ -636,6 +656,8 @@ namespace tryAGI.OpenAI
             this.CheckpointPermissionDeleted = checkpointPermissionDeleted;
             this.ExternalKeyRegistered = externalKeyRegistered;
             this.ExternalKeyRemoved = externalKeyRemoved;
+            this.ExternalStorageRegistered = externalStorageRegistered;
+            this.ExternalStorageRemoved = externalStorageRemoved;
             this.GroupCreated = groupCreated;
             this.GroupUpdated = groupUpdated;
             this.GroupDeleted = groupDeleted;

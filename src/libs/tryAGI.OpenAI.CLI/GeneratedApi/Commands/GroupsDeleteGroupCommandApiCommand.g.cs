@@ -35,7 +35,8 @@ internal static partial class GroupsDeleteGroupCommandApiCommand
 
     public static Command Create()
     {
-        var command = new Command(@"delete-group", @"Deletes a group from the organization.");
+        var command = new Command(@"delete-group", @"Delete group
+Deletes a group from the organization.");
                         command.Arguments.Add(GroupId);
 
 

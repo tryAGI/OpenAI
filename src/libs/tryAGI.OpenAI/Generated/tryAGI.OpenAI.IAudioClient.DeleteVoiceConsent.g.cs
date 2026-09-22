@@ -5,9 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IAudioClient
     {
         /// <summary>
-        /// Deletes a voice consent recording.<br/>
-        /// Delete a consent recording that was uploaded for creating custom voices.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
+        /// Delete voice consent<br/>
+        /// Deletes a voice consent recording.
         /// </summary>
         /// <param name="consentId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -18,9 +17,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Deletes a voice consent recording.<br/>
-        /// Delete a consent recording that was uploaded for creating custom voices.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices). Custom voices are limited to eligible customers.
+        /// Delete voice consent<br/>
+        /// Deletes a voice consent recording.
         /// </summary>
         /// <param name="consentId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

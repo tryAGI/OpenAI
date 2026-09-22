@@ -11,6 +11,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
+        public global::tryAGI.OpenAI.BetaServiceTierResponsesEnum? ServiceTier { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncation")]
         public global::tryAGI.OpenAI.BetaResponseVariant3Truncation? Truncation { get; set; }
 
@@ -106,6 +112,13 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaPromptCacheOptions? PromptCacheOptions { get; set; }
 
         /// <summary>
+        /// Prompt cache diagnostics requested for this response.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_diagnostics")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaPromptCacheDiagnosticsJsonConverter))]
+        public global::tryAGI.OpenAI.BetaPromptCacheDiagnostics? PromptCacheDiagnostics { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("moderation")]
@@ -159,6 +172,7 @@ namespace tryAGI.OpenAI
         /// Whether to allow the model to run tool calls in parallel.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="serviceTier"></param>
         /// <param name="truncation"></param>
         /// <param name="object">
         /// The object type of this resource - always set to `response`.
@@ -180,6 +194,9 @@ namespace tryAGI.OpenAI
         /// <param name="promptCacheOptions">
         /// The prompt-caching options that were applied to the response. Supported for `gpt-5.6` and later models.
         /// </param>
+        /// <param name="promptCacheDiagnostics">
+        /// Prompt cache diagnostics requested for this response.
+        /// </param>
         /// <param name="moderation"></param>
         /// <param name="conversation"></param>
         /// <param name="maxOutputTokens"></param>
@@ -191,6 +208,7 @@ namespace tryAGI.OpenAI
             double createdAt,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaOutputItem> output,
             bool parallelToolCalls,
+            global::tryAGI.OpenAI.BetaServiceTierResponsesEnum? serviceTier,
             global::tryAGI.OpenAI.BetaResponseVariant3Truncation? truncation,
             global::tryAGI.OpenAI.BetaResponseVariant3Object @object,
             global::tryAGI.OpenAI.BetaResponseVariant3Status? status,
@@ -202,10 +220,12 @@ namespace tryAGI.OpenAI
             string? outputText,
             global::tryAGI.OpenAI.BetaResponseUsage? usage,
             global::tryAGI.OpenAI.BetaPromptCacheOptions? promptCacheOptions,
+            global::tryAGI.OpenAI.BetaPromptCacheDiagnostics? promptCacheDiagnostics,
             global::tryAGI.OpenAI.BetaModeration? moderation,
             global::tryAGI.OpenAI.BetaResponseConversation? conversation,
             int? maxOutputTokens)
         {
+            this.ServiceTier = serviceTier;
             this.Truncation = truncation;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
@@ -220,6 +240,7 @@ namespace tryAGI.OpenAI
             this.OutputText = outputText;
             this.Usage = usage;
             this.PromptCacheOptions = promptCacheOptions;
+            this.PromptCacheDiagnostics = promptCacheDiagnostics;
             this.Moderation = moderation;
             this.ParallelToolCalls = parallelToolCalls;
             this.Conversation = conversation;

@@ -35,6 +35,10 @@ namespace tryAGI.OpenAI
         /// <inheritdoc/>
         public global::tryAGI.OpenAI.AutoSDKClientOptions Options { get; }
 
+
+        /// <inheritdoc/>
+        public global::System.Func<string> CreateIdempotencyKey { get; set; } = () => global::System.Guid.NewGuid().ToString("D");
+
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::tryAGI.OpenAI.SourceGenerationContext.Default);
 
         /// <summary>
@@ -48,11 +52,22 @@ namespace tryAGI.OpenAI
 
 
         /// <summary>
+        ///
+        /// </summary>
+        public AgentsClient Agents => new AgentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+        };
+
+        /// <summary>
         /// Build Assistants that can call models and use tools.
         /// </summary>
         public AssistantsClient Assistants => new AssistantsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -62,6 +77,7 @@ namespace tryAGI.OpenAI
         public AudioClient Audio => new AudioClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -71,6 +87,7 @@ namespace tryAGI.OpenAI
         public AuditLogsClient AuditLogs => new AuditLogsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -80,6 +97,7 @@ namespace tryAGI.OpenAI
         public BatchClient Batch => new BatchClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -89,6 +107,7 @@ namespace tryAGI.OpenAI
         public CertificatesClient Certificates => new CertificatesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -98,6 +117,7 @@ namespace tryAGI.OpenAI
         public ChatClient Chat => new ChatClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -107,6 +127,7 @@ namespace tryAGI.OpenAI
         public CompletionsClient Completions => new CompletionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -116,6 +137,7 @@ namespace tryAGI.OpenAI
         public ConversationsClient Conversations => new ConversationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -125,6 +147,7 @@ namespace tryAGI.OpenAI
         public DataRetentionClient DataRetention => new DataRetentionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -134,6 +157,7 @@ namespace tryAGI.OpenAI
         public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -143,6 +167,7 @@ namespace tryAGI.OpenAI
         public EvalsClient Evals => new EvalsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -152,6 +177,7 @@ namespace tryAGI.OpenAI
         public FilesClient Files => new FilesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -161,6 +187,7 @@ namespace tryAGI.OpenAI
         public FineTuningClient FineTuning => new FineTuningClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -170,6 +197,7 @@ namespace tryAGI.OpenAI
         public GroupOrganizationRoleAssignmentsClient GroupOrganizationRoleAssignments => new GroupOrganizationRoleAssignmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -179,6 +207,7 @@ namespace tryAGI.OpenAI
         public GroupUsersClient GroupUsers => new GroupUsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -188,6 +217,7 @@ namespace tryAGI.OpenAI
         public GroupsClient Groups => new GroupsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -197,6 +227,7 @@ namespace tryAGI.OpenAI
         public HostedToolsClient HostedTools => new HostedToolsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -206,6 +237,7 @@ namespace tryAGI.OpenAI
         public ImagesClient Images => new ImagesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -215,6 +247,17 @@ namespace tryAGI.OpenAI
         public InvitesClient Invites => new InvitesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public LiveClient Live => new LiveClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -224,6 +267,7 @@ namespace tryAGI.OpenAI
         public ModelsClient Models => new ModelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -233,6 +277,7 @@ namespace tryAGI.OpenAI
         public ModerationsClient Moderations => new ModerationsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -242,6 +287,7 @@ namespace tryAGI.OpenAI
         public ProjectGroupRoleAssignmentsClient ProjectGroupRoleAssignments => new ProjectGroupRoleAssignmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -251,6 +297,7 @@ namespace tryAGI.OpenAI
         public ProjectGroupsClient ProjectGroups => new ProjectGroupsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -260,6 +307,7 @@ namespace tryAGI.OpenAI
         public ProjectUserRoleAssignmentsClient ProjectUserRoleAssignments => new ProjectUserRoleAssignmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -269,6 +317,7 @@ namespace tryAGI.OpenAI
         public ProjectsClient Projects => new ProjectsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -278,15 +327,17 @@ namespace tryAGI.OpenAI
         public RealtimeClient Realtime => new RealtimeClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
         /// <summary>
-        ///
+        /// Create and manage model responses.
         /// </summary>
         public ResponsesClient Responses => new ResponsesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -296,6 +347,7 @@ namespace tryAGI.OpenAI
         public RolesClient Roles => new RolesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -305,6 +357,7 @@ namespace tryAGI.OpenAI
         public SkillsClient Skills => new SkillsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -314,6 +367,7 @@ namespace tryAGI.OpenAI
         public SpendAlertsClient SpendAlerts => new SpendAlertsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -323,6 +377,7 @@ namespace tryAGI.OpenAI
         public UploadsClient Uploads => new UploadsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -332,6 +387,7 @@ namespace tryAGI.OpenAI
         public UsageClient Usage => new UsageClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -341,6 +397,7 @@ namespace tryAGI.OpenAI
         public UserOrganizationRoleAssignmentsClient UserOrganizationRoleAssignments => new UserOrganizationRoleAssignmentsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -350,6 +407,17 @@ namespace tryAGI.OpenAI
         public UsersClient Users => new UsersClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+        };
+
+        /// <summary>
+        ///
+        /// </summary>
+        public VaultsClient Vaults => new VaultsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 
@@ -359,15 +427,7 @@ namespace tryAGI.OpenAI
         public VectorStoresClient VectorStores => new VectorStoresClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContextProvider = JsonSerializerContextProvider,
-        };
-
-        /// <summary>
-        ///
-        /// </summary>
-        public VideosClient Videos => new VideosClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
-        {
-            ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
             JsonSerializerContextProvider = JsonSerializerContextProvider,
         };
 

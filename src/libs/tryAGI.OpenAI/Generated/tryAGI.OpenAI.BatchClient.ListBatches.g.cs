@@ -44,6 +44,7 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
+        /// List batches<br/>
         /// List your organization's batches.
         /// </summary>
         /// <param name="after"></param>
@@ -69,6 +70,7 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// List batches<br/>
         /// List your organization's batches.
         /// </summary>
         /// <param name="after"></param>

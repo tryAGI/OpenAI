@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface ICertificatesClient
     {
         /// <summary>
+        /// Upload certificate<br/>
         /// Upload a certificate to the organization. This does **not** automatically activate the certificate.<br/>
         /// Organizations can upload up to 50 certificates.
         /// </summary>
@@ -18,6 +19,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Upload certificate<br/>
         /// Upload a certificate to the organization. This does **not** automatically activate the certificate.<br/>
         /// Organizations can upload up to 50 certificates.
         /// </summary>
@@ -31,6 +33,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Upload certificate<br/>
         /// Upload a certificate to the organization. This does **not** automatically activate the certificate.<br/>
         /// Organizations can upload up to 50 certificates.
         /// </summary>

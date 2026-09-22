@@ -5,9 +5,8 @@ namespace tryAGI.OpenAI
     public partial interface IAudioClient
     {
         /// <summary>
-        /// Upload a voice consent recording.<br/>
-        /// Upload a consent recording that authorizes creation of a custom voice.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
+        /// Create voice consent<br/>
+        /// Upload a voice consent recording.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -19,9 +18,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Upload a voice consent recording.<br/>
-        /// Upload a consent recording that authorizes creation of a custom voice.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
+        /// Create voice consent<br/>
+        /// Upload a voice consent recording.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -33,9 +31,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Upload a voice consent recording.<br/>
-        /// Upload a consent recording that authorizes creation of a custom voice.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
+        /// Create voice consent<br/>
+        /// Upload a voice consent recording.
         /// </summary>
         /// <param name="name">
         /// The label to use for this consent recording.
@@ -65,9 +62,8 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Upload a voice consent recording.<br/>
-        /// Upload a consent recording that authorizes creation of a custom voice.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
+        /// Create voice consent<br/>
+        /// Upload a voice consent recording.
         /// </summary>
         /// <param name="name">
         /// The label to use for this consent recording.
@@ -96,9 +92,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Upload a voice consent recording.<br/>
-        /// Upload a consent recording that authorizes creation of a custom voice.<br/>
-        /// See the [custom voices guide](/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
+        /// Create voice consent<br/>
+        /// Upload a voice consent recording.
         /// </summary>
         /// <param name="name">
         /// The label to use for this consent recording.

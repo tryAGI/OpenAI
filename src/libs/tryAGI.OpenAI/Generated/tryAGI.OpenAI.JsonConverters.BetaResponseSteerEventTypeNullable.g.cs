@@ -1,0 +1,60 @@
+#nullable enable
+
+namespace tryAGI.OpenAI.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class BetaResponseSteerEventTypeNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::tryAGI.OpenAI.BetaResponseSteerEventType?>
+    {
+        /// <inheritdoc />
+        public override global::tryAGI.OpenAI.BetaResponseSteerEventType? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::tryAGI.OpenAI.BetaResponseSteerEventTypeExtensions.ToEnum(stringValue);
+                    }
+
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::tryAGI.OpenAI.BetaResponseSteerEventType)numValue;
+                }
+                case global::System.Text.Json.JsonTokenType.Null:
+                {
+                    return default(global::tryAGI.OpenAI.BetaResponseSteerEventType?);
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::tryAGI.OpenAI.BetaResponseSteerEventType? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::tryAGI.OpenAI.BetaResponseSteerEventTypeExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}

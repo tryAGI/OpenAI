@@ -37,6 +37,12 @@ namespace tryAGI.OpenAI
         public required int CreatedAt { get; set; }
 
         /// <summary>
+        /// The Unix timestamp (in seconds) when the API key expires, or null if it does not expire.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
+        public int? ExpiresAt { get; set; }
+
+        /// <summary>
         /// The Unix timestamp (in seconds) of when the API key was last used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
@@ -92,6 +98,9 @@ namespace tryAGI.OpenAI
         /// <param name="object">
         /// The object type, which is always `organization.project.api_key`
         /// </param>
+        /// <param name="expiresAt">
+        /// The Unix timestamp (in seconds) when the API key expires, or null if it does not expire.
+        /// </param>
         /// <param name="lastUsedAt">
         /// The Unix timestamp (in seconds) of when the API key was last used.
         /// </param>
@@ -106,12 +115,14 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ProjectApiKeyOwnerProjectAccess ownerProjectAccess,
             global::tryAGI.OpenAI.ProjectApiKeyOwner owner,
             global::tryAGI.OpenAI.ProjectApiKeyObject @object,
+            int? expiresAt,
             int? lastUsedAt)
         {
             this.Object = @object;
             this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
+            this.ExpiresAt = expiresAt;
             this.LastUsedAt = lastUsedAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.OwnerProjectAccess = ownerProjectAccess;

@@ -21,7 +21,8 @@ internal static partial class SkillsGetSkillVersionContentAsBytesCommandApiComma
 
     public static Command Create()
     {
-        var command = new Command(@"get-skill-version-content-as-bytes", @"Download a skill version zip bundle.");
+        var command = new Command(@"get-skill-version-content-as-bytes", @"Get Skill Version Content
+Download a skill version zip bundle.");
                         command.Arguments.Add(SkillId);
                         command.Arguments.Add(Version);
 

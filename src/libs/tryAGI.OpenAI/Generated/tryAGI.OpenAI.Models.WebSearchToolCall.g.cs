@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The results of a web search tool call. See the<br/>
-    /// [web search guide](/docs/guides/tools-web-search) for more information.
+    /// [web search guide](https://developers.openai.com/api/docs/guides/tools-web-search) for more information.
     /// </summary>
     public sealed partial class WebSearchToolCall
     {
@@ -27,9 +27,9 @@ namespace tryAGI.OpenAI
         /// The status of the web search tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchToolCallStatusJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchCallStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.WebSearchToolCallStatus Status { get; set; }
+        public required global::tryAGI.OpenAI.WebSearchCallStatus Status { get; set; }
 
         /// <summary>
         /// An object describing the specific action taken in this web search call.<br/>
@@ -67,7 +67,7 @@ namespace tryAGI.OpenAI
 #endif
         public WebSearchToolCall(
             string id,
-            global::tryAGI.OpenAI.WebSearchToolCallStatus status,
+            global::tryAGI.OpenAI.WebSearchCallStatus status,
             global::tryAGI.OpenAI.WebSearchToolCallAction action,
             global::tryAGI.OpenAI.WebSearchToolCallType type)
         {

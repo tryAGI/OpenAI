@@ -5,6 +5,7 @@ namespace tryAGI.OpenAI
     public partial interface IFilesClient
     {
         /// <summary>
+        /// Delete file<br/>
         /// Delete a file and remove it from all vector stores.
         /// </summary>
         /// <param name="fileId"></param>
@@ -16,6 +17,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Delete file<br/>
         /// Delete a file and remove it from all vector stores.
         /// </summary>
         /// <param name="fileId"></param>

@@ -7,7 +7,7 @@ namespace tryAGI.OpenAI
     {
 
 
-        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_DeleteOrganizationSpendLimitSecurityRequirement0 =
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_DeleteorganizationspendlimitSecurityRequirement0 =
             new global::tryAGI.OpenAI.EndPointSecurityRequirement
             {
                 Authorizations = new global::tryAGI.OpenAI.EndPointAuthorizationRequirement[]
@@ -21,35 +21,36 @@ namespace tryAGI.OpenAI
                     },
                 },
             };
-        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_DeleteOrganizationSpendLimitSecurityRequirements =
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_DeleteorganizationspendlimitSecurityRequirements =
             new global::tryAGI.OpenAI.EndPointSecurityRequirement[]
-            {                s_DeleteOrganizationSpendLimitSecurityRequirement0,
+            {                s_DeleteorganizationspendlimitSecurityRequirement0,
             };
-        partial void PrepareDeleteOrganizationSpendLimitArguments(
+        partial void PrepareDeleteorganizationspendlimitArguments(
             global::System.Net.Http.HttpClient httpClient);
-        partial void PrepareDeleteOrganizationSpendLimitRequest(
+        partial void PrepareDeleteorganizationspendlimitRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage);
-        partial void ProcessDeleteOrganizationSpendLimitResponse(
+        partial void ProcessDeleteorganizationspendlimitResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessDeleteOrganizationSpendLimitResponseContent(
+        partial void ProcessDeleteorganizationspendlimitResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
+        /// Delete organization spend limit<br/>
         /// Delete the organization's hard spend limit.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OrganizationSpendLimitDeletedResource> DeleteOrganizationSpendLimitAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OrganizationSpendLimitDeletedResource> DeleteorganizationspendlimitAsync(
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await DeleteOrganizationSpendLimitAsResponseAsync(
+            var __response = await DeleteorganizationspendlimitAsResponseAsync(
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -57,25 +58,26 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
+        /// Delete organization spend limit<br/>
         /// Delete the organization's hard spend limit.
         /// </summary>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.OrganizationSpendLimitDeletedResource>> DeleteOrganizationSpendLimitAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.OrganizationSpendLimitDeletedResource>> DeleteorganizationspendlimitAsResponseAsync(
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
-            PrepareDeleteOrganizationSpendLimitArguments(
+            PrepareDeleteorganizationspendlimitArguments(
                 httpClient: HttpClient);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_DeleteOrganizationSpendLimitSecurityRequirements,
-                operationName: "DeleteOrganizationSpendLimitAsync");
+                securityRequirements: s_DeleteorganizationspendlimitSecurityRequirements,
+                operationName: "DeleteorganizationspendlimitAsync");
 
             using var __timeoutCancellationTokenSource = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -134,7 +136,7 @@ namespace tryAGI.OpenAI
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareDeleteOrganizationSpendLimitRequest(
+                PrepareDeleteorganizationspendlimitRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest);
 
@@ -155,8 +157,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteOrganizationSpendLimit",
-                                methodName: "DeleteOrganizationSpendLimitAsync",
+                                operationId: "Deleteorganizationspendlimit",
+                                methodName: "DeleteorganizationspendlimitAsync",
                                 pathTemplate: "\"/organization/spend_limit\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
@@ -189,8 +191,8 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteOrganizationSpendLimit",
-                                methodName: "DeleteOrganizationSpendLimitAsync",
+                                operationId: "Deleteorganizationspendlimit",
+                                methodName: "DeleteorganizationspendlimitAsync",
                                 pathTemplate: "\"/organization/spend_limit\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
@@ -230,8 +232,8 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteOrganizationSpendLimit",
-                                methodName: "DeleteOrganizationSpendLimitAsync",
+                                operationId: "Deleteorganizationspendlimit",
+                                methodName: "DeleteorganizationspendlimitAsync",
                                 pathTemplate: "\"/organization/spend_limit\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
@@ -270,7 +272,7 @@ namespace tryAGI.OpenAI
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessDeleteOrganizationSpendLimitResponse(
+                ProcessDeleteorganizationspendlimitResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -278,8 +280,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteOrganizationSpendLimit",
-                                methodName: "DeleteOrganizationSpendLimitAsync",
+                                operationId: "Deleteorganizationspendlimit",
+                                methodName: "DeleteorganizationspendlimitAsync",
                                 pathTemplate: "\"/organization/spend_limit\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
@@ -300,8 +302,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "DeleteOrganizationSpendLimit",
-                                methodName: "DeleteOrganizationSpendLimitAsync",
+                                operationId: "Deleteorganizationspendlimit",
+                                methodName: "DeleteorganizationspendlimitAsync",
                                 pathTemplate: "\"/organization/spend_limit\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
@@ -330,7 +332,7 @@ namespace tryAGI.OpenAI
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessDeleteOrganizationSpendLimitResponseContent(
+                                ProcessDeleteorganizationspendlimitResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
