@@ -15,9 +15,11 @@ public partial class Tests
     {
         using var client = GetAuthenticatedClient();
 
-        var response = await client.Embeddings.CreateEmbeddingsAsync(
-            input: "Hello, world",
-            model: CreateEmbeddingRequestModel.TextEmbedding3Small);
+        var response = await client.Embeddings.CreateEmbeddingAsync(new CreateEmbeddingRequest
+        {
+            Input = "Hello, world",
+            Model = CreateEmbeddingRequestModel.TextEmbedding3Small,
+        });
 
         foreach (var data in response.Data.ElementAt(0).Embedding1)
         {

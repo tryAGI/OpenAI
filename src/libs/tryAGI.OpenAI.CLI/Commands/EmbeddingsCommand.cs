@@ -45,10 +45,19 @@ internal static class EmbeddingsCommand
 
             var model = CreateEmbeddingRequestModelExtensions.ToEnum(modelValue);
 
-            var response = await client.Embeddings.CreateEmbeddingsAsync(
-                input: input,
-                model: model,
-                dimensions: dimensions,
+            var request = new CreateEmbeddingRequest
+            {
+                Input = input,
+                Model = modelValue,
+                Dimensions = dimensions,
+            };
+            if (model is not null)
+            {
+                request.Model = model.Value;
+            }
+
+            var response = await client.Embeddings.CreateEmbeddingAsync(
+                request: request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             var vectors = response.Data ?? [];
