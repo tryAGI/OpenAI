@@ -69,12 +69,11 @@ jobs:
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
-
-      - name: Install AutoSDK CLI
-        run: dotnet tool install --global autosdk.cli --prerelease
+        with:
+          dotnet-version: 10.0.x
 
       - name: Run trimming check
-        run: autosdk trim src/libs/tryAGI.OpenAI/tryAGI.OpenAI.csproj
+        run: bash scripts/check-trimming.sh
 
   release:
     name: Release
