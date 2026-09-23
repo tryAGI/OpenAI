@@ -79,7 +79,7 @@ autosdk generate asyncapi.json \
   --websocket-class-name OpenAiRealtimeClient \
   --json-serializer-context RealtimeSourceGenerationContext \
   --targetFramework net10.0 \
-  --output Generated \
+  --output Generated/Realtime \
   --base-url wss://api.openai.com
 
 # Metadata generation avoids compiling fast-path serializers for thousands of
