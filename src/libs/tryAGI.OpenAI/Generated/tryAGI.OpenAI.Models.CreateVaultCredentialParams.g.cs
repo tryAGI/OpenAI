@@ -24,6 +24,12 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.CreateVaultCredentialAuthParam Auth { get; set; }
 
         /// <summary>
+        /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Defaults to an empty map.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -38,15 +44,20 @@ namespace tryAGI.OpenAI
         /// <param name="auth">
         /// The authentication method and write-only secret values to store.
         /// </param>
+        /// <param name="metadata">
+        /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Defaults to an empty map.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateVaultCredentialParams(
             string name,
-            global::tryAGI.OpenAI.CreateVaultCredentialAuthParam auth)
+            global::tryAGI.OpenAI.CreateVaultCredentialAuthParam auth,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Auth = auth;
+            this.Metadata = metadata;
         }
 
         /// <summary>

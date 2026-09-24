@@ -47,6 +47,13 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.VaultCredentialAuthResource Auth { get; set; }
 
         /// <summary>
+        /// Application-defined key-value pairs associated with this credential.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.Dictionary<string, string> Metadata { get; set; }
+
+        /// <summary>
         /// The Unix timestamp, in seconds, when the credential was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
@@ -83,6 +90,9 @@ namespace tryAGI.OpenAI
         /// <param name="auth">
         /// The authentication method and non-secret configuration of the credential.
         /// </param>
+        /// <param name="metadata">
+        /// Application-defined key-value pairs associated with this credential.
+        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp, in seconds, when the credential was created.
         /// </param>
@@ -101,6 +111,7 @@ namespace tryAGI.OpenAI
             string vaultId,
             string name,
             global::tryAGI.OpenAI.VaultCredentialAuthResource auth,
+            global::System.Collections.Generic.Dictionary<string, string> metadata,
             global::System.DateTimeOffset createdAt,
             global::System.DateTimeOffset updatedAt,
             global::tryAGI.OpenAI.VaultCredentialResourceObject @object = global::tryAGI.OpenAI.VaultCredentialResourceObject.VaultCredential)
@@ -110,6 +121,7 @@ namespace tryAGI.OpenAI
             this.VaultId = vaultId ?? throw new global::System.ArgumentNullException(nameof(vaultId));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Auth = auth;
+            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }

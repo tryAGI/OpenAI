@@ -214,7 +214,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public int? Seed { get; set; }
+        public long? Seed { get; set; }
 
         /// <summary>
         ///

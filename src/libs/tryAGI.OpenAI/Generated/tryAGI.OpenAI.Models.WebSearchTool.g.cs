@@ -33,7 +33,9 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.WebSearchToolFilters? Filters { get; set; }
 
         /// <summary>
-        ///
+        /// The approximate location of the user. If omitted or null, defaults to the<br/>
+        /// United States. To avoid this fallback, pass `{"type": "approximate"}` without<br/>
+        /// location fields. To localize results, provide the relevant location fields.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_location")]
         public global::tryAGI.OpenAI.WebSearchApproximateLocationWebSearchApproximateLocation1? UserLocation { get; set; }
@@ -64,7 +66,11 @@ namespace tryAGI.OpenAI
         /// Default Value: true
         /// </param>
         /// <param name="filters"></param>
-        /// <param name="userLocation"></param>
+        /// <param name="userLocation">
+        /// The approximate location of the user. If omitted or null, defaults to the<br/>
+        /// United States. To avoid this fallback, pass `{"type": "approximate"}` without<br/>
+        /// location fields. To localize results, provide the relevant location fields.
+        /// </param>
         /// <param name="searchContextSize">
         /// High level guidance for the amount of context window space to use for the search. One of `low`, `medium`, or `high`. `medium` is the default.<br/>
         /// Default Value: medium

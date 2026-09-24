@@ -712,6 +712,9 @@ namespace tryAGI.OpenAI
         /// <param name="auth">
         /// The authentication method and write-only secret values to store.
         /// </param>
+        /// <param name="metadata">
+        /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Defaults to an empty map.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -719,6 +722,7 @@ namespace tryAGI.OpenAI
             string vaultId,
             string name,
             global::tryAGI.OpenAI.CreateVaultCredentialAuthParam auth,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -726,6 +730,7 @@ namespace tryAGI.OpenAI
             {
                 Name = name,
                 Auth = auth,
+                Metadata = metadata,
             };
 
             return await CreateVaultCredentialAsync(
