@@ -43,6 +43,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaResponseVariant3Status? Status { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("access_programs")]
+        public global::tryAGI.OpenAI.BetaAccessProgramsBody? AccessPrograms { get; set; }
+
+        /// <summary>
         /// Unix timestamp (in seconds) of when this Response was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
@@ -181,6 +187,7 @@ namespace tryAGI.OpenAI
         /// The status of the response generation. One of `completed`, `failed`,<br/>
         /// `in_progress`, `cancelled`, `queued`, or `incomplete`.
         /// </param>
+        /// <param name="accessPrograms"></param>
         /// <param name="completedAt"></param>
         /// <param name="error"></param>
         /// <param name="incompleteDetails"></param>
@@ -212,6 +219,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaResponseVariant3Truncation? truncation,
             global::tryAGI.OpenAI.BetaResponseVariant3Object @object,
             global::tryAGI.OpenAI.BetaResponseVariant3Status? status,
+            global::tryAGI.OpenAI.BetaAccessProgramsBody? accessPrograms,
             double? completedAt,
             global::tryAGI.OpenAI.BetaResponseErrorVariant1? error,
             global::tryAGI.OpenAI.BetaResponseVariant3IncompleteDetails? incompleteDetails,
@@ -230,6 +238,7 @@ namespace tryAGI.OpenAI
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
             this.Status = status;
+            this.AccessPrograms = accessPrograms;
             this.CreatedAt = createdAt;
             this.CompletedAt = completedAt;
             this.Error = error;

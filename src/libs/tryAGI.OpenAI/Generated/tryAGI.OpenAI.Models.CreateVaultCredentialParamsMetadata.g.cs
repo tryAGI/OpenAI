@@ -4,10 +4,9 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The set of modalities the model can respond with. To disable audio,<br/>
-    /// set this to ["text"].
+    /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Defaults to an empty map.
     /// </summary>
-    public sealed partial class RealtimeSessionModalities
+    public sealed partial class CreateVaultCredentialParamsMetadata
     {
 
         /// <summary>

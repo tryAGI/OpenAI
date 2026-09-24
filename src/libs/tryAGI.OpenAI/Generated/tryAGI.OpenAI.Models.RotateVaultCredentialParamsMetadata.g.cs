@@ -4,10 +4,9 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The set of modalities the model can respond with. To disable audio,<br/>
-    /// set this to ["text"].
+    /// Replaces all metadata. Omit to preserve it, or pass {} to clear it. Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters.
     /// </summary>
-    public sealed partial class RealtimeSessionCreateRequestModalities
+    public sealed partial class RotateVaultCredentialParamsMetadata
     {
 
         /// <summary>

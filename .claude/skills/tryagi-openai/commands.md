@@ -496,7 +496,7 @@ Use Uploads to upload large files in multiple parts.
 | `list-vaults` | `GET /vaults` | List vaults |
 | `retrieve-vault` | `GET /vaults/{vault_id}` | Retrieve a vault |
 | `retrieve-vault-credential` | `GET /vaults/{vault_id}/credentials/{credential_id}` | Retrieve a vault credential |
-| `rotate-vault-credential` | `POST /vaults/{vault_id}/credentials/{credential_id}` | Rotate a vault credential |
+| `rotate-vault-credential` | `POST /vaults/{vault_id}/credentials/{credential_id}` | Update a vault credential |
 
 ## `vector-store`
 

@@ -11,6 +11,12 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateResponseVariant3
     {
         /// <summary>
+        /// Domain-specific access programs to use for this request.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("access_programs")]
+        public global::tryAGI.OpenAI.AccessProgramsParam? AccessPrograms { get; set; }
+
+        /// <summary>
         /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`, which is currently the only supported value. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
@@ -117,6 +123,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateResponseVariant3" /> class.
         /// </summary>
+        /// <param name="accessPrograms">
+        /// Domain-specific access programs to use for this request.
+        /// </param>
         /// <param name="promptCacheOptions">
         /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`, which is currently the only supported value. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
         /// </param>
@@ -145,6 +154,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateResponseVariant3(
+            global::tryAGI.OpenAI.AccessProgramsParam? accessPrograms,
             global::tryAGI.OpenAI.ResponsePromptCacheOptionsParam? promptCacheOptions,
             global::tryAGI.OpenAI.ServiceTierResponsesEnum? serviceTier,
             global::tryAGI.OpenAI.Reasoning? reasoning,
@@ -160,6 +170,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContextManagementParam>? contextManagement,
             int? maxOutputTokens)
         {
+            this.AccessPrograms = accessPrograms;
             this.PromptCacheOptions = promptCacheOptions;
             this.ServiceTier = serviceTier;
             this.Reasoning = reasoning;
