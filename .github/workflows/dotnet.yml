@@ -54,11 +54,25 @@ jobs:
           SAMBANOVA_API_KEY: ${{ secrets.SAMBANOVA_API_KEY }}
           
       - name: Publish to NuGet
-        run: dotnet nuget push
-          **.nupkg
-          --skip-duplicate
-          --source https://api.nuget.org/v3/index.json
-          --api-key ${{ secrets.NUGET_KEY }}
+        shell: bash
+        env:
+          NUGET_KEY: ${{ secrets.NUGET_KEY }}
+        run: |
+          set -euo pipefail
+          mapfile -t packages < <(find . -type f -name '*.nupkg' | sort)
+          for package in "${packages[@]}"; do
+            dotnet nuget push "$package" \
+              --skip-duplicate \
+              --source https://api.nuget.org/v3/index.json \
+              --api-key "$NUGET_KEY"
+          done
+
+      - name: Upload tested NuGet packages
+        uses: actions/upload-artifact@v7
+        with:
+          name: nuget-packages-Linux
+          path: '**/*.nupkg'
+          if-no-files-found: error
   
   trim-check:
     name: Trimming Check
@@ -74,6 +88,15 @@ jobs:
 
       - name: Run trimming check
         run: bash scripts/check-trimming.sh
+
+  auto-stable-release:
+    needs: [publish, trim-check]
+    if: github.ref == 'refs/heads/main'
+    uses: tryAGI/workflows/.github/workflows/auto-stable-release.yml@main
+    with:
+      project-path: OpenAI.slnx
+    secrets:
+      nuget-key: ${{ secrets.NUGET_KEY }}
 
   release:
     name: Release
