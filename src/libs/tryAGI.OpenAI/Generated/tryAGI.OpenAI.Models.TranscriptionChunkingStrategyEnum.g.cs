@@ -4,8 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Automatically set chunking parameters based on the audio. Must be set to `"auto"`.<br/>
-    /// Default Value: [auto]
+    /// Automatically set chunking parameters based on the audio. Must be set to `"auto"`.
     /// </summary>
     public enum TranscriptionChunkingStrategyEnum
     {

@@ -13,8 +13,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct TranscriptionChunkingStrategy : global::System.IEquatable<TranscriptionChunkingStrategy>
     {
         /// <summary>
-        /// Automatically set chunking parameters based on the audio. Must be set to `"auto"`.<br/>
-        /// Default Value: [auto]
+        /// Automatically set chunking parameters based on the audio. Must be set to `"auto"`.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? Enum { get; init; }

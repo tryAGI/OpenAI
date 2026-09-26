@@ -23,35 +23,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The json schema for the run data source items.<br/>
         /// Learn how to build JSON schemas [here](https://json-schema.org/).<br/>
-        /// Example: {<br/>
-        ///   "type": "object",<br/>
-        ///   "properties": {<br/>
-        ///     "item": {<br/>
-        ///       "type": "object",<br/>
-        ///       "properties": {<br/>
-        ///         "label": {"type": "string"},<br/>
-        ///       },<br/>
-        ///       "required": ["label"]<br/>
-        ///     }<br/>
-        ///   },<br/>
-        ///   "required": ["item"]<br/>
-        /// }
+        /// Example: {"type":"object","properties":{"item":{"type":"object","properties":{"label":{"type":"string"}},"required":["label"]}},"required":["item"]}
         /// </summary>
-        /// <example>
-        /// {<br/>
-        ///   "type": "object",<br/>
-        ///   "properties": {<br/>
-        ///     "item": {<br/>
-        ///       "type": "object",<br/>
-        ///       "properties": {<br/>
-        ///         "label": {"type": "string"},<br/>
-        ///       },<br/>
-        ///       "required": ["label"]<br/>
-        ///     }<br/>
-        ///   },<br/>
-        ///   "required": ["item"]<br/>
-        /// }
-        /// </example>
+        /// <example>{"type":"object","properties":{"item":{"type":"object","properties":{"label":{"type":"string"}},"required":["label"]}},"required":["item"]}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required object Schema { get; set; }
@@ -68,19 +42,7 @@ namespace tryAGI.OpenAI
         /// <param name="schema">
         /// The json schema for the run data source items.<br/>
         /// Learn how to build JSON schemas [here](https://json-schema.org/).<br/>
-        /// Example: {<br/>
-        ///   "type": "object",<br/>
-        ///   "properties": {<br/>
-        ///     "item": {<br/>
-        ///       "type": "object",<br/>
-        ///       "properties": {<br/>
-        ///         "label": {"type": "string"},<br/>
-        ///       },<br/>
-        ///       "required": ["label"]<br/>
-        ///     }<br/>
-        ///   },<br/>
-        ///   "required": ["item"]<br/>
-        /// }
+        /// Example: {"type":"object","properties":{"item":{"type":"object","properties":{"label":{"type":"string"}},"required":["label"]}},"required":["item"]}
         /// </param>
         /// <param name="type">
         /// The type of data source. Always `custom`.<br/>
