@@ -328,19 +328,19 @@ namespace tryAGI.OpenAI
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::tryAGI.OpenAI.Error? __value_404 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::tryAGI.OpenAI.Error.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::tryAGI.OpenAI.Error.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -349,7 +349,7 @@ namespace tryAGI.OpenAI
                                 }
 
 
-                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.Error>.Create(
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
