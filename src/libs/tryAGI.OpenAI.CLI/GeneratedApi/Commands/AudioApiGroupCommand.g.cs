@@ -13,7 +13,9 @@ internal static class AudioApiGroupCommand
                          command.Subcommands.Add(AudioCreateSpeechAsEventStreamCommandApiCommand.Create());
                          command.Subcommands.Add(AudioCreateTranscriptionCommandApiCommand.Create());
                          command.Subcommands.Add(AudioCreateTranscriptionAsStreamCommandApiCommand.Create());
+                         command.Subcommands.Add(AudioCreateTranscriptionAsTextCommandApiCommand.Create());
                          command.Subcommands.Add(AudioCreateTranslationCommandApiCommand.Create());
+                         command.Subcommands.Add(AudioCreateTranslationAsTextCommandApiCommand.Create());
                          command.Subcommands.Add(AudioCreateVoiceCommandApiCommand.Create());
                          command.Subcommands.Add(AudioCreateVoiceConsentCommandApiCommand.Create());
                          command.Subcommands.Add(AudioDeleteVoiceConsentCommandApiCommand.Create());

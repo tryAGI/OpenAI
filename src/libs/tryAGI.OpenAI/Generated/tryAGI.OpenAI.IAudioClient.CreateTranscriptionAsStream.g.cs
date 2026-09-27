@@ -8,7 +8,8 @@ namespace tryAGI.OpenAI
         /// Create transcription<br/>
         /// Transcribes audio into the input language.<br/>
         /// Returns a transcription object in `json`, `diarized_json`, or `verbose_json`<br/>
-        /// format, or a stream of transcript events.
+        /// format, plain text in `text`, `srt`, or `vtt` format, or a stream of<br/>
+        /// transcript events. Supported formats depend on the model.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -23,7 +24,8 @@ namespace tryAGI.OpenAI
         /// Create transcription<br/>
         /// Transcribes audio into the input language.<br/>
         /// Returns a transcription object in `json`, `diarized_json`, or `verbose_json`<br/>
-        /// format, or a stream of transcript events.
+        /// format, plain text in `text`, `srt`, or `vtt` format, or a stream of<br/>
+        /// transcript events. Supported formats depend on the model.
         /// </summary>
         /// <param name="file">
         /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.<br/>
@@ -101,7 +103,8 @@ namespace tryAGI.OpenAI
         /// Create transcription<br/>
         /// Transcribes audio into the input language.<br/>
         /// Returns a transcription object in `json`, `diarized_json`, or `verbose_json`<br/>
-        /// format, or a stream of transcript events.
+        /// format, plain text in `text`, `srt`, or `vtt` format, or a stream of<br/>
+        /// transcript events. Supported formats depend on the model.
         /// </summary>
         /// <param name="file">
         /// The audio file object (not file name) to transcribe, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm.<br/>

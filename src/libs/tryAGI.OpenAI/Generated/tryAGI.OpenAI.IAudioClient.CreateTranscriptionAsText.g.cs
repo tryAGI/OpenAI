@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
+        global::System.Threading.Tasks.Task<string> CreateTranscriptionAsTextAsync(
 
             global::tryAGI.OpenAI.CreateTranscriptionRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>>> CreateTranscriptionAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<string>> CreateTranscriptionAsTextAsResponseAsync(
 
             global::tryAGI.OpenAI.CreateTranscriptionRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
@@ -97,7 +97,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
+        global::System.Threading.Tasks.Task<string> CreateTranscriptionAsTextAsync(
             byte[] file,
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?> model,
@@ -176,7 +176,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
+        global::System.Threading.Tasks.Task<string> CreateTranscriptionAsTextAsync(
             global::System.IO.Stream file,
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?> model,
@@ -254,7 +254,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>>> CreateTranscriptionAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<string>> CreateTranscriptionAsTextAsResponseAsync(
             global::System.IO.Stream file,
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?> model,

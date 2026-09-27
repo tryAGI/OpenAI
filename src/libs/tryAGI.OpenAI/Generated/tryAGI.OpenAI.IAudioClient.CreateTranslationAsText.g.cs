@@ -1,0 +1,146 @@
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    public partial interface IAudioClient
+    {
+        /// <summary>
+        /// Create translation<br/>
+        /// Translates audio into English.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<string> CreateTranslationAsTextAsync(
+
+            global::tryAGI.OpenAI.CreateTranslationRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create translation<br/>
+        /// Translates audio into English.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<string>> CreateTranslationAsTextAsResponseAsync(
+
+            global::tryAGI.OpenAI.CreateTranslationRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create translation<br/>
+        /// Translates audio into English.
+        /// </summary>
+        /// <param name="file">
+        /// The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm. The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
+        /// </param>
+        /// <param name="filename">
+        /// The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm. The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
+        /// </param>
+        /// <param name="model">
+        /// ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.<br/>
+        /// Example: whisper-1
+        /// </param>
+        /// <param name="prompt">
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](https://developers.openai.com/api/docs/guides/speech-to-text#prompting) should be in English.
+        /// </param>
+        /// <param name="responseFormat">
+        /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+        /// Default Value: json
+        /// </param>
+        /// <param name="temperature">
+        /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<string> CreateTranslationAsTextAsync(
+            byte[] file,
+            string filename,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranslationRequestModel?> model,
+            string? prompt = default,
+            global::tryAGI.OpenAI.CreateTranslationRequestResponseFormat? responseFormat = default,
+            double? temperature = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create translation<br/>
+        /// Translates audio into English.
+        /// </summary>
+        /// <param name="file">
+        /// The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm. The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
+        /// </param>
+        /// <param name="filename">
+        /// The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm. The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
+        /// </param>
+        /// <param name="model">
+        /// ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.<br/>
+        /// Example: whisper-1
+        /// </param>
+        /// <param name="prompt">
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](https://developers.openai.com/api/docs/guides/speech-to-text#prompting) should be in English.
+        /// </param>
+        /// <param name="responseFormat">
+        /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+        /// Default Value: json
+        /// </param>
+        /// <param name="temperature">
+        /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<string> CreateTranslationAsTextAsync(
+            global::System.IO.Stream file,
+            string filename,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranslationRequestModel?> model,
+            string? prompt = default,
+            global::tryAGI.OpenAI.CreateTranslationRequestResponseFormat? responseFormat = default,
+            double? temperature = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Create translation<br/>
+        /// Translates audio into English.
+        /// </summary>
+        /// <param name="file">
+        /// The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm. The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
+        /// </param>
+        /// <param name="filename">
+        /// The audio file object (not file name) translate, in one of these formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, or webm. The request must include enough format metadata for the file to be identified. We recommend an extension-bearing filename and an appropriate content type.
+        /// </param>
+        /// <param name="model">
+        /// ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.<br/>
+        /// Example: whisper-1
+        /// </param>
+        /// <param name="prompt">
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](https://developers.openai.com/api/docs/guides/speech-to-text#prompting) should be in English.
+        /// </param>
+        /// <param name="responseFormat">
+        /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+        /// Default Value: json
+        /// </param>
+        /// <param name="temperature">
+        /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<string>> CreateTranslationAsTextAsResponseAsync(
+            global::System.IO.Stream file,
+            string filename,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranslationRequestModel?> model,
+            string? prompt = default,
+            global::tryAGI.OpenAI.CreateTranslationRequestResponseFormat? responseFormat = default,
+            double? temperature = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

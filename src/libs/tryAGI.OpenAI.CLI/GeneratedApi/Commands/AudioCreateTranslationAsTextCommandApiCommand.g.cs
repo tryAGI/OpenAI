@@ -5,7 +5,7 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static partial class AudioCreateTranslationCommandApiCommand
+internal static partial class AudioCreateTranslationAsTextCommandApiCommand
 {
     private static Option<byte[]> File { get; } = new(
         name: @"--file")
@@ -40,7 +40,7 @@ internal static partial class AudioCreateTranslationCommandApiCommand
           Hidden = true,
       };
 
-                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranslationResponseJson, global::tryAGI.OpenAI.CreateTranslationResponseVerboseJson> value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    private static string FormatResponse(ParseResult parseResult, string value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
                     {
                         string? text = null;
                         CustomizeResponseText(parseResult, value, ref text);
@@ -56,13 +56,13 @@ internal static partial class AudioCreateTranslationCommandApiCommand
                         return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
                     }
 
-                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranslationResponseJson, global::tryAGI.OpenAI.CreateTranslationResponseVerboseJson> value, ref string? text);
+                    static partial void CustomizeResponseText(ParseResult parseResult, string value, ref string? text);
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
     public static Command Create()
     {
-        var command = new Command(@"create-translation", @"Create translation
+        var command = new Command(@"create-translation-as-text", @"Create translation
 Translates audio into English.");
                         command.Options.Add(File);
                         command.Options.Add(Model);                        command.Options.Add(CreateTranslationRequestOptionSetOptions.Filename);
@@ -102,7 +102,7 @@ Translates audio into English.");
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
-                                var response = await client.Audio.CreateTranslationAsync(
+                                var response = await client.Audio.CreateTranslationAsTextAsync(
                                     file: file,
                                     model: model,
                                     filename: filename,
