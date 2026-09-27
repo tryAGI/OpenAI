@@ -4,8 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Options for streaming responses. Only set this when you set `stream: true`.<br/>
-    /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+    /// Options for streaming responses. Only set this when you set `stream: true`.
     /// </summary>
     public sealed partial class BetaResponseStreamOptionsVariant1
     {

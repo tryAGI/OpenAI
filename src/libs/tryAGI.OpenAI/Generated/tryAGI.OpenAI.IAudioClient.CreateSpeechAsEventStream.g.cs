@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.CreateSpeechResponseStreamEvent> CreateSpeechAsEventStreamAsync(
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateSpeechRequestModel?> model,
             string input,
-            global::tryAGI.OpenAI.VoiceIdsOrCustomVoice voice,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.VoiceIdsShared?, global::tryAGI.OpenAI.CreateSpeechRequestVoice?>?, global::tryAGI.OpenAI.CreateSpeechRequestVoice2> voice,
             string? instructions = default,
             global::tryAGI.OpenAI.CreateSpeechRequestResponseFormat? responseFormat = default,
             double? speed = default,

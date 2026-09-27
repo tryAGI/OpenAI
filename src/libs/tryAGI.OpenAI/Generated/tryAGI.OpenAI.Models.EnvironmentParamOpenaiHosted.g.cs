@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SetupCommandParam>? SetupCommands { get; set; }
 
         /// <summary>
-        /// Network access policy for the environment. Defaults to disabled for GA requests and enabled for alpha/beta requests.
+        /// Network access policy for the environment. Defaults to disabled for GA requests and enabled for beta requests.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("network")]
         public global::tryAGI.OpenAI.NetworkPolicyParam? Network { get; set; }
@@ -87,7 +87,7 @@ namespace tryAGI.OpenAI
         /// Ordered, confidential setup commands. Command bodies are never returned.
         /// </param>
         /// <param name="network">
-        /// Network access policy for the environment. Defaults to disabled for GA requests and enabled for alpha/beta requests.
+        /// Network access policy for the environment. Defaults to disabled for GA requests and enabled for beta requests.
         /// </param>
         /// <param name="env">
         /// Environment variables made available to the agent.

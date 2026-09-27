@@ -13,26 +13,6 @@ internal static partial class FilesDownloadFileCommandApiCommand
         Description = @"The ID of the file to use for this request.",
     };
 
-                    private static string FormatResponse(ParseResult parseResult, string value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
-                    {
-                        string? text = null;
-                        CustomizeResponseText(parseResult, value, ref text);
-                        if (!string.IsNullOrWhiteSpace(text))
-                        {
-                            return text;
-                        }
-
-                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
-                        {
-                        };
-                        CustomizeResponseFormatHints(hints);
-                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
-                    }
-
-                    static partial void CustomizeResponseText(ParseResult parseResult, string value, ref string? text);
-                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
-
-
     public static Command Create()
     {
         var command = new Command(@"download-file", @"Retrieve file content
@@ -51,13 +31,7 @@ Returns a response containing the contents of the specified file.");
                                     fileId: fileId,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-
-                                await CliRuntime.WriteResponseAsync(
-                                    parseResult,
-                                    response,
-                                    global::tryAGI.OpenAI.SourceGenerationContext.Default,
-                                    FormatResponse,
-                                    cancellationToken).ConfigureAwait(false);
+                                await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
         return command;
     }
