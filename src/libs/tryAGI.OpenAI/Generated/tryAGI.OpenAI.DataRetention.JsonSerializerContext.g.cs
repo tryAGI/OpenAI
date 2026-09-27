@@ -5,57 +5,15 @@
 #pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
 
 namespace tryAGI.OpenAI
-{
-    /// <summary>
-    ///
-    /// </summary>
-    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
-        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
-        Converters = new global::System.Type[]
-        {
-        })]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Error))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.MisalignmentErrorDetailsResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ErrorResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OrganizationDataRetention))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OrganizationDataRetentionObject), TypeInfoPropertyName = "OrganizationDataRetentionObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OrganizationDataRetentionType), TypeInfoPropertyName = "OrganizationDataRetentionType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PermissionErrorResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.Error, string>), TypeInfoPropertyName = "AnyOfErrorString2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectDataRetention))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectDataRetentionObject), TypeInfoPropertyName = "ProjectDataRetentionObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectDataRetentionType), TypeInfoPropertyName = "ProjectDataRetentionType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.UpdateOrganizationDataRetentionBody))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.UpdateOrganizationDataRetentionBodyRetentionType), TypeInfoPropertyName = "UpdateOrganizationDataRetentionBodyRetentionType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.UpdateProjectDataRetentionBody))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.UpdateProjectDataRetentionBodyRetentionType), TypeInfoPropertyName = "UpdateProjectDataRetentionBodyRetentionType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.MisalignmentErrorType), TypeInfoPropertyName = "MisalignmentErrorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.MisalignmentErrorTypeEnum), TypeInfoPropertyName = "MisalignmentErrorTypeEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.MisalignmentSteer))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OrganizationDataRetentionObject?), TypeInfoPropertyName = "NullableOrganizationDataRetentionObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OrganizationDataRetentionType?), TypeInfoPropertyName = "NullableOrganizationDataRetentionType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.Error, string>?), TypeInfoPropertyName = "NullableAnyOfErrorString2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectDataRetentionObject?), TypeInfoPropertyName = "NullableProjectDataRetentionObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectDataRetentionType?), TypeInfoPropertyName = "NullableProjectDataRetentionType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.UpdateOrganizationDataRetentionBodyRetentionType?), TypeInfoPropertyName = "NullableUpdateOrganizationDataRetentionBodyRetentionType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.UpdateProjectDataRetentionBodyRetentionType?), TypeInfoPropertyName = "NullableUpdateProjectDataRetentionBodyRetentionType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.MisalignmentErrorType?), TypeInfoPropertyName = "NullableMisalignmentErrorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.MisalignmentErrorTypeEnum?), TypeInfoPropertyName = "NullableMisalignmentErrorTypeEnum2")]
-    internal sealed partial class DataRetentionSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
-    {
-    }
-    /// <summary>
+{    /// <summary>
     ///
     /// </summary>
     public sealed partial class DataRetentionSourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
     {
         private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
+
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        internal static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver TypeInfoResolver => Resolver;
 
 
         private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
@@ -91,24 +49,7 @@ namespace tryAGI.OpenAI
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.MisalignmentErrorTypeJsonConverter());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, double?, bool?, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<string, double?>>>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, double?>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<byte[], global::System.Collections.Generic.IList<byte[]>>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.Error, string>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, double?, bool?>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<byte[]>, byte[]>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<byte[]>, byte[]>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, int?, bool?, double?>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, int?, bool?, double?>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, double?, bool?, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<string, double?>>>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, double?>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, double?, bool?>());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter());
-            options.Converters.Add(new LazyEnumJsonConverterFactory());
+            global::tryAGI.OpenAI.SourceGenerationContext.AddConverters(options);
         }
 
         private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
@@ -121,118 +62,6 @@ namespace tryAGI.OpenAI
             AddConverters(options);
 
             return options;
-        }
-
-
-        private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
-        {
-            public override bool CanConvert(global::System.Type typeToConvert)
-            {
-                return
-                    typeToConvert == typeof(global::tryAGI.OpenAI.OrganizationDataRetentionObject)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.OrganizationDataRetentionObject?)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.OrganizationDataRetentionType)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.OrganizationDataRetentionType?)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.ProjectDataRetentionObject)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.ProjectDataRetentionObject?)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.ProjectDataRetentionType)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.ProjectDataRetentionType?)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.UpdateOrganizationDataRetentionBodyRetentionType)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.UpdateOrganizationDataRetentionBodyRetentionType?)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.UpdateProjectDataRetentionBodyRetentionType)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.UpdateProjectDataRetentionBodyRetentionType?)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.MisalignmentErrorTypeEnum)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.MisalignmentErrorTypeEnum?);
-            }
-
-            public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
-                global::System.Type typeToConvert,
-                global::System.Text.Json.JsonSerializerOptions options)
-            {
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.OrganizationDataRetentionObject))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.OrganizationDataRetentionObjectJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.OrganizationDataRetentionObject?))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.OrganizationDataRetentionObjectNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.OrganizationDataRetentionType))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.OrganizationDataRetentionTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.OrganizationDataRetentionType?))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.OrganizationDataRetentionTypeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.ProjectDataRetentionObject))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.ProjectDataRetentionObjectJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.ProjectDataRetentionObject?))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.ProjectDataRetentionObjectNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.ProjectDataRetentionType))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.ProjectDataRetentionTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.ProjectDataRetentionType?))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.ProjectDataRetentionTypeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.UpdateOrganizationDataRetentionBodyRetentionType))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.UpdateOrganizationDataRetentionBodyRetentionTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.UpdateOrganizationDataRetentionBodyRetentionType?))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.UpdateOrganizationDataRetentionBodyRetentionTypeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.UpdateProjectDataRetentionBodyRetentionType))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.UpdateProjectDataRetentionBodyRetentionTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.UpdateProjectDataRetentionBodyRetentionType?))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.UpdateProjectDataRetentionBodyRetentionTypeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.MisalignmentErrorTypeEnum))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.MisalignmentErrorTypeEnumJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.MisalignmentErrorTypeEnum?))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.MisalignmentErrorTypeEnumNullableJsonConverter();
-                }
-                throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
-            }
         }
 
         private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
@@ -274,7 +103,7 @@ namespace tryAGI.OpenAI
             {
                 return index switch
                 {
-                    0 => new DataRetentionSourceGenerationContextChunk0(new global::System.Text.Json.JsonSerializerOptions()),
+                    0 => global::tryAGI.OpenAI.SourceGenerationContext.TypeInfoResolver,
                     _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
                 };
             }
