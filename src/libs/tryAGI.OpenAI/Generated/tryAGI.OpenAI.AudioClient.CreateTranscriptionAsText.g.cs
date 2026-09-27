@@ -7,7 +7,7 @@ namespace tryAGI.OpenAI
     {
 
 
-        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_CreateTranscriptionSecurityRequirement0 =
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_CreateTranscriptionAsTextSecurityRequirement0 =
             new global::tryAGI.OpenAI.EndPointSecurityRequirement
             {
                 Authorizations = new global::tryAGI.OpenAI.EndPointAuthorizationRequirement[]
@@ -21,22 +21,22 @@ namespace tryAGI.OpenAI
                     },
                 },
             };
-        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_CreateTranscriptionSecurityRequirements =
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_CreateTranscriptionAsTextSecurityRequirements =
             new global::tryAGI.OpenAI.EndPointSecurityRequirement[]
-            {                s_CreateTranscriptionSecurityRequirement0,
+            {                s_CreateTranscriptionAsTextSecurityRequirement0,
             };
-        partial void PrepareCreateTranscriptionArguments(
+        partial void PrepareCreateTranscriptionAsTextArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::tryAGI.OpenAI.CreateTranscriptionRequest request);
-        partial void PrepareCreateTranscriptionRequest(
+        partial void PrepareCreateTranscriptionAsTextRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::tryAGI.OpenAI.CreateTranscriptionRequest request);
-        partial void ProcessCreateTranscriptionResponse(
+        partial void ProcessCreateTranscriptionAsTextResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateTranscriptionResponseContent(
+        partial void ProcessCreateTranscriptionAsTextResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
@@ -52,13 +52,13 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateTranscriptionAsTextAsync(
 
             global::tryAGI.OpenAI.CreateTranscriptionRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await CreateTranscriptionAsResponseAsync(
+            var __response = await CreateTranscriptionAsTextAsResponseAsync(
 
                 request: request,
                 requestOptions: requestOptions,
@@ -78,7 +78,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>>> CreateTranscriptionAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<string>> CreateTranscriptionAsTextAsResponseAsync(
 
             global::tryAGI.OpenAI.CreateTranscriptionRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
@@ -106,15 +106,15 @@ namespace tryAGI.OpenAI
             };
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateTranscriptionArguments(
+            PrepareCreateTranscriptionAsTextArguments(
                 httpClient: HttpClient,
                 request: request);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateTranscriptionSecurityRequirements,
-                operationName: "CreateTranscriptionAsync");
+                securityRequirements: s_CreateTranscriptionAsTextSecurityRequirements,
+                operationName: "CreateTranscriptionAsTextAsync");
 
             using var __timeoutCancellationTokenSource = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -151,7 +151,7 @@ namespace tryAGI.OpenAI
 
                 __httpRequest.Headers.TryAddWithoutValidation(
                     "Accept",
-                    "application/json");
+                    "text/plain");
 
             foreach (var __authorization in __authorizations)
             {
@@ -320,7 +320,7 @@ namespace tryAGI.OpenAI
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateTranscriptionRequest(
+                PrepareCreateTranscriptionAsTextRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     request: request);
@@ -340,8 +340,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -374,8 +374,8 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -415,8 +415,8 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -455,7 +455,7 @@ namespace tryAGI.OpenAI
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateTranscriptionResponse(
+                ProcessCreateTranscriptionAsTextResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -463,8 +463,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -485,8 +485,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -544,19 +544,19 @@ namespace tryAGI.OpenAI
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::tryAGI.OpenAI.ErrorResponse? __value_401 = null;
+                                string? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(string), JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(string), JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -565,7 +565,7 @@ namespace tryAGI.OpenAI
                                 }
 
 
-                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                throw global::tryAGI.OpenAI.ApiException<string>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -811,7 +811,7 @@ namespace tryAGI.OpenAI
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateTranscriptionResponseContent(
+                                ProcessCreateTranscriptionAsTextResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -820,13 +820,11 @@ namespace tryAGI.OpenAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJson(__content, JsonSerializerContext) ??
-                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>>(
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<string>(
                                         statusCode: __response.StatusCode,
                                         headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -846,19 +844,17 @@ namespace tryAGI.OpenAI
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                                    var __content = await __response.Content.ReadAsStringAsync(
                 #if NET5_0_OR_GREATER
                                         __effectiveCancellationToken
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>>(
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<string>(
                                         statusCode: __response.StatusCode,
                                         headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -955,7 +951,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateTranscriptionAsTextAsync(
             byte[] file,
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?> model,
@@ -992,7 +988,7 @@ namespace tryAGI.OpenAI
                 KnownSpeakerReferences = knownSpeakerReferences,
             };
 
-            return await CreateTranscriptionAsync(
+            return await CreateTranscriptionAsTextAsync(
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -1059,7 +1055,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>> CreateTranscriptionAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateTranscriptionAsTextAsync(
             global::System.IO.Stream file,
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?> model,
@@ -1099,15 +1095,15 @@ namespace tryAGI.OpenAI
             };
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateTranscriptionArguments(
+            PrepareCreateTranscriptionAsTextArguments(
                 httpClient: HttpClient,
                 request: request);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateTranscriptionSecurityRequirements,
-                operationName: "CreateTranscriptionAsync");
+                securityRequirements: s_CreateTranscriptionAsTextSecurityRequirements,
+                operationName: "CreateTranscriptionAsTextAsync");
 
             using var __timeoutCancellationTokenSource = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -1144,7 +1140,7 @@ namespace tryAGI.OpenAI
 
                 __httpRequest.Headers.TryAddWithoutValidation(
                     "Accept",
-                    "application/json");
+                    "text/plain");
 
             foreach (var __authorization in __authorizations)
             {
@@ -1313,7 +1309,7 @@ namespace tryAGI.OpenAI
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateTranscriptionRequest(
+                PrepareCreateTranscriptionAsTextRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     request: request);
@@ -1333,8 +1329,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -1367,8 +1363,8 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -1408,8 +1404,8 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -1448,7 +1444,7 @@ namespace tryAGI.OpenAI
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateTranscriptionResponse(
+                ProcessCreateTranscriptionAsTextResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -1456,8 +1452,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -1478,8 +1474,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -1537,19 +1533,19 @@ namespace tryAGI.OpenAI
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::tryAGI.OpenAI.ErrorResponse? __value_401 = null;
+                                string? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(string), JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(string), JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1558,7 +1554,7 @@ namespace tryAGI.OpenAI
                                 }
 
 
-                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                throw global::tryAGI.OpenAI.ApiException<string>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -1804,7 +1800,7 @@ namespace tryAGI.OpenAI
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateTranscriptionResponseContent(
+                                ProcessCreateTranscriptionAsTextResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -1813,9 +1809,7 @@ namespace tryAGI.OpenAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJson(__content, JsonSerializerContext) ??
-                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return __content;
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -1835,15 +1829,13 @@ namespace tryAGI.OpenAI
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                                    var __content = await __response.Content.ReadAsStringAsync(
                 #if NET5_0_OR_GREATER
                                         __effectiveCancellationToken
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return __content;
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -1940,7 +1932,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>>> CreateTranscriptionAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<string>> CreateTranscriptionAsTextAsResponseAsync(
             global::System.IO.Stream file,
             string filename,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?> model,
@@ -1980,15 +1972,15 @@ namespace tryAGI.OpenAI
             };
             PrepareArguments(
                 client: HttpClient);
-            PrepareCreateTranscriptionArguments(
+            PrepareCreateTranscriptionAsTextArguments(
                 httpClient: HttpClient,
                 request: request);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_CreateTranscriptionSecurityRequirements,
-                operationName: "CreateTranscriptionAsync");
+                securityRequirements: s_CreateTranscriptionAsTextSecurityRequirements,
+                operationName: "CreateTranscriptionAsTextAsync");
 
             using var __timeoutCancellationTokenSource = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -2025,7 +2017,7 @@ namespace tryAGI.OpenAI
 
                 __httpRequest.Headers.TryAddWithoutValidation(
                     "Accept",
-                    "application/json");
+                    "text/plain");
 
             foreach (var __authorization in __authorizations)
             {
@@ -2194,7 +2186,7 @@ namespace tryAGI.OpenAI
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareCreateTranscriptionRequest(
+                PrepareCreateTranscriptionAsTextRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     request: request);
@@ -2214,8 +2206,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -2248,8 +2240,8 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -2289,8 +2281,8 @@ namespace tryAGI.OpenAI
                         await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -2329,7 +2321,7 @@ namespace tryAGI.OpenAI
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessCreateTranscriptionResponse(
+                ProcessCreateTranscriptionAsTextResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -2337,8 +2329,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -2359,8 +2351,8 @@ namespace tryAGI.OpenAI
                     await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "CreateTranscription",
-                                methodName: "CreateTranscriptionAsync",
+                                operationId: "CreateTranscriptionAsText",
+                                methodName: "CreateTranscriptionAsTextAsync",
                                 pathTemplate: "\"/audio/transcriptions\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
@@ -2418,19 +2410,19 @@ namespace tryAGI.OpenAI
                             {
                                 string? __content_401 = null;
                                 global::System.Exception? __exception_401 = null;
-                                global::tryAGI.OpenAI.ErrorResponse? __value_401 = null;
+                                string? __value_401 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_401 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(string), JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_401 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_401 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_401, JsonSerializerContext);
+                                        __value_401 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_401, typeof(string), JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -2439,7 +2431,7 @@ namespace tryAGI.OpenAI
                                 }
 
 
-                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                throw global::tryAGI.OpenAI.ApiException<string>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
@@ -2685,7 +2677,7 @@ namespace tryAGI.OpenAI
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessCreateTranscriptionResponseContent(
+                                ProcessCreateTranscriptionAsTextResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -2694,13 +2686,11 @@ namespace tryAGI.OpenAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJson(__content, JsonSerializerContext) ??
-                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>>(
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<string>(
                                         statusCode: __response.StatusCode,
                                         headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -2720,19 +2710,17 @@ namespace tryAGI.OpenAI
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                                    var __content = await __response.Content.ReadAsStringAsync(
                 #if NET5_0_OR_GREATER
                                         __effectiveCancellationToken
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateTranscriptionResponseJson, global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJson, global::tryAGI.OpenAI.CreateTranscriptionResponseVerboseJson>>(
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<string>(
                                         statusCode: __response.StatusCode,
                                         headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
