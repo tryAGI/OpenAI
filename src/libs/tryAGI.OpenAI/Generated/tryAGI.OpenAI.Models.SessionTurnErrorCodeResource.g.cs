@@ -39,6 +39,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        FlexUnavailable,
+        /// <summary>
+        ///
+        /// </summary>
         InternalError,
         /// <summary>
         ///
@@ -101,6 +105,7 @@ namespace tryAGI.OpenAI
                 SessionTurnErrorCodeResource.CreditBalanceExhausted => "credit_balance_exhausted",
                 SessionTurnErrorCodeResource.CyberPolicy => "cyber_policy",
                 SessionTurnErrorCodeResource.ExecutorVersionIncompatible => "executor_version_incompatible",
+                SessionTurnErrorCodeResource.FlexUnavailable => "flex_unavailable",
                 SessionTurnErrorCodeResource.InternalError => "internal_error",
                 SessionTurnErrorCodeResource.InvalidRequest => "invalid_request",
                 SessionTurnErrorCodeResource.MisalignmentPolicyViolation => "misalignment_policy_violation",
@@ -129,6 +134,7 @@ namespace tryAGI.OpenAI
                 "credit_balance_exhausted" => SessionTurnErrorCodeResource.CreditBalanceExhausted,
                 "cyber_policy" => SessionTurnErrorCodeResource.CyberPolicy,
                 "executor_version_incompatible" => SessionTurnErrorCodeResource.ExecutorVersionIncompatible,
+                "flex_unavailable" => SessionTurnErrorCodeResource.FlexUnavailable,
                 "internal_error" => SessionTurnErrorCodeResource.InternalError,
                 "invalid_request" => SessionTurnErrorCodeResource.InvalidRequest,
                 "misalignment_policy_violation" => SessionTurnErrorCodeResource.MisalignmentPolicyViolation,
