@@ -79,7 +79,8 @@ internal static class AudioCommand
             await foreach (var streamEvent in client.Audio.CreateSpeechAsEventStreamAsync(
                 model: model,
                 input: text,
-                voice: (VoiceIdsShared)voice,
+                voice: AnyOf<AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>?, CreateSpeechRequestVoice2>.FromValue1(
+                    AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>.FromValue1((VoiceIdsShared)voice)),
                 responseFormat: format,
                 speed: speed,
                 streamFormat: CreateSpeechRequestStreamFormat.Sse,

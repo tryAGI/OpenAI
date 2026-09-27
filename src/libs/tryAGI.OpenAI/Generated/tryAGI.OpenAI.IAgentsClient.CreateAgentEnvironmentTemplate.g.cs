@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
         /// Ordered, confidential setup commands. Command bodies are never returned.
         /// </param>
         /// <param name="network">
-        /// Network access policy for the environment. Defaults to disabled for GA requests and enabled for alpha/beta requests.
+        /// Network access policy for the environment. Defaults to disabled for GA requests and enabled for beta requests.
         /// </param>
         /// <param name="env">
         /// Environment variables made available to the agent.

@@ -15,7 +15,7 @@ internal static partial class AudioCreateSpeechAsEventStreamCommandApiCommand
         Required = true,
     };
 
-    private static Option<global::tryAGI.OpenAI.VoiceIdsOrCustomVoice> Voice { get; } = new(
+    private static Option<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.VoiceIdsShared?, global::tryAGI.OpenAI.CreateSpeechRequestVoice?>?, global::tryAGI.OpenAI.CreateSpeechRequestVoice2>> Voice { get; } = new(
         name: @"--voice")
     {
         Description = @"The voice to use when generating the audio. Supported built-in voices are `alloy`, `ash`, `ballad`, `coral`, `echo`, `fable`, `onyx`, `nova`, `sage`, `shimmer`, `verse`, `marin`, and `cedar`. You may also provide a custom voice object with an `id`, for example `{ ""id"": ""voice_1234"" }`. Previews of the voices are available in the [Text to speech guide](https://developers.openai.com/api/docs/guides/text-to-speech#voice-options).",

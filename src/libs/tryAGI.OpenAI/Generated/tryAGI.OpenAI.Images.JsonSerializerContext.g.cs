@@ -486,13 +486,13 @@ namespace tryAGI.OpenAI
 
                     || typeToConvert == typeof(global::tryAGI.OpenAI.ImagesResponseQuality?)
 
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.InputFidelity)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.InputFidelity?)
-
                     || typeToConvert == typeof(global::tryAGI.OpenAI.MisalignmentErrorTypeEnum)
 
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.MisalignmentErrorTypeEnum?);
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.MisalignmentErrorTypeEnum?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.InputFidelity)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.InputFidelity?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -999,16 +999,6 @@ namespace tryAGI.OpenAI
                     return new global::tryAGI.OpenAI.JsonConverters.ImagesResponseQualityNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.InputFidelity))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.InputFidelityJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.InputFidelity?))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.InputFidelityNullableJsonConverter();
-                }
-
                 if (typeToConvert == typeof(global::tryAGI.OpenAI.MisalignmentErrorTypeEnum))
                 {
                     return new global::tryAGI.OpenAI.JsonConverters.MisalignmentErrorTypeEnumJsonConverter();
@@ -1017,6 +1007,16 @@ namespace tryAGI.OpenAI
                 if (typeToConvert == typeof(global::tryAGI.OpenAI.MisalignmentErrorTypeEnum?))
                 {
                     return new global::tryAGI.OpenAI.JsonConverters.MisalignmentErrorTypeEnumNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.InputFidelity))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.InputFidelityJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.InputFidelity?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.InputFidelityNullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

@@ -11,7 +11,8 @@ public partial class Tests
         await foreach (var streamEvent in api.Audio.CreateSpeechAsEventStreamAsync(
             model: CreateSpeechRequestModel.Gpt4oMiniTts,
             input: "Create speech test is successful.",
-            voice: (VoiceIdsShared)VoiceIdsSharedEnum.Alloy,
+            voice: AnyOf<AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>?, CreateSpeechRequestVoice2>.FromValue1(
+                AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>.FromValue1((VoiceIdsShared)VoiceIdsSharedEnum.Alloy)),
             responseFormat: CreateSpeechRequestResponseFormat.Mp3,
             speed: 1.0,
             streamFormat: CreateSpeechRequestStreamFormat.Sse))

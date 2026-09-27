@@ -225,29 +225,54 @@ public sealed partial class OpenAiClient : Meai.ITextToSpeechClient
             || (model.Value1 is not null && string.IsNullOrWhiteSpace(model.Value1));
     }
 
-    private static VoiceIdsOrCustomVoice CreateSpeechVoice(Meai.TextToSpeechOptions? options)
+    private static AnyOf<AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>?, CreateSpeechRequestVoice2> CreateSpeechVoice(Meai.TextToSpeechOptions? options)
     {
         var voiceId = options?.VoiceId is { Length: > 0 } value ? value : DefaultTextToSpeechVoice;
         var customVoice = options.GetBool(OpenAiTextToSpeechPropertyNames.CustomVoice)
             ?? voiceId.StartsWith("voice_", StringComparison.OrdinalIgnoreCase);
         if (customVoice)
         {
-            return VoiceIdsOrCustomVoice.FromVoiceIdsOrCustomVoiceVariant2(new VoiceIdsOrCustomVoiceVariant2
+            return AnyOf<AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>?, CreateSpeechRequestVoice2>.FromValue2(new CreateSpeechRequestVoice2
             {
                 Id = voiceId,
             });
         }
 
         var knownVoice = VoiceIdsSharedEnumExtensions.ToEnum(voiceId);
-        return knownVoice is { } known
-            ? VoiceIdsOrCustomVoice.FromShared(VoiceIdsShared.FromEnum(known))
-            : VoiceIdsOrCustomVoice.FromShared(VoiceIdsShared.FromVoiceIdsSharedVariant1(voiceId));
+        var sharedVoice = knownVoice is { } known
+            ? VoiceIdsShared.FromEnum(known)
+            : VoiceIdsShared.FromVoiceIdsSharedVariant1(voiceId);
+        return AnyOf<AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>?, CreateSpeechRequestVoice2>.FromValue1(
+            AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>.FromValue1(sharedVoice));
     }
 
-    private static bool IsMissingVoice(VoiceIdsOrCustomVoice voice)
+    private static bool IsMissingVoice(AnyOf<AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>?, CreateSpeechRequestVoice2> voice)
     {
         return !voice.Validate()
-            || string.IsNullOrWhiteSpace(voice.ToString());
+            || string.IsNullOrWhiteSpace(GetSpeechVoiceId(voice));
+    }
+
+    private static string? GetSpeechVoiceId(AnyOf<AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>?, CreateSpeechRequestVoice2> voice)
+    {
+        if (voice.Value2 is { } customVoice)
+        {
+            return customVoice.Id;
+        }
+
+        if (voice.Value1 is { } standardVoice)
+        {
+            if (standardVoice.Value1 is { } sharedVoice)
+            {
+                return sharedVoice.ToString();
+            }
+
+            if (standardVoice.Value2 is { } namedVoice)
+            {
+                return namedVoice.ToValueString();
+            }
+        }
+
+        return null;
     }
 
     private static CreateSpeechRequestResponseFormat ResolveResponseFormat(string? format)
@@ -336,7 +361,7 @@ public sealed partial class OpenAiClient : Meai.ITextToSpeechClient
         Meai.AdditionalPropertiesDictionary properties = new()
         {
             ["model_id"] = resolved.ModelId,
-            ["voice"] = request.Voice.ToString() ?? DefaultTextToSpeechVoice,
+            ["voice"] = GetSpeechVoiceId(request.Voice) is { Length: > 0 } voiceId ? voiceId : DefaultTextToSpeechVoice,
             ["response_format"] = resolved.ResponseFormat.ToValueString(),
             ["media_type"] = resolved.MediaType,
         };

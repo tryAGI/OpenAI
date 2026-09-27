@@ -19,7 +19,8 @@ public partial class Tests
         await foreach (var streamEvent in client.Audio.CreateSpeechAsEventStreamAsync(
             model: CreateSpeechRequestModel.Gpt4oMiniTts,
             input: "Hello! This is a text-to-speech test.",
-            voice: (VoiceIdsShared)VoiceIdsSharedEnum.Alloy,
+            voice: AnyOf<AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>?, CreateSpeechRequestVoice2>.FromValue1(
+                AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>.FromValue1((VoiceIdsShared)VoiceIdsSharedEnum.Alloy)),
             responseFormat: CreateSpeechRequestResponseFormat.Mp3,
             speed: 1.0,
             streamFormat: CreateSpeechRequestStreamFormat.Sse))

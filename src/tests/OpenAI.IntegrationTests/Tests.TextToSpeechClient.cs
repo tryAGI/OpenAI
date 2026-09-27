@@ -56,7 +56,9 @@ public partial class Tests
                     {
                         Model = string.Empty,
                         Input = string.Empty,
-                        Voice = VoiceIdsOrCustomVoice.FromShared(VoiceIdsShared.FromVoiceIdsSharedVariant1(string.Empty)),
+                        Voice = AnyOf<AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>?, CreateSpeechRequestVoice2>.FromValue1(
+                            AnyOf<VoiceIdsShared?, CreateSpeechRequestVoice?>.FromValue1(
+                                VoiceIdsShared.FromVoiceIdsSharedVariant1(string.Empty))),
                     };
 
                     return capturedRequest;
@@ -88,6 +90,30 @@ public partial class Tests
         document.RootElement.GetProperty("response_format").GetString().Should().Be("wav");
         document.RootElement.GetProperty("instructions").GetString().Should().Be("Speak with warm, clear energy.");
         document.RootElement.GetProperty("language").GetString().Should().Be("fr");
+    }
+
+    [TestMethod]
+    public async Task TextToSpeechClient_MapsCustomVoiceId()
+    {
+        var handler = new StaticResponseHandler(HttpStatusCode.OK, [1, 2, 3], "audio/mpeg");
+        using var client = new OpenAiClient(
+            "test-api-key",
+            new HttpClient(handler)
+            {
+                BaseAddress = new Uri(OpenAiClient.DefaultBaseUrl),
+            });
+        ITextToSpeechClient ttsClient = client;
+
+        var response = await ttsClient.GetAudioAsync(
+            "Hello from a custom voice.",
+            new TextToSpeechOptions
+            {
+                VoiceId = "voice_1234",
+            });
+
+        using var document = JsonDocument.Parse(handler.LastRequestBody!);
+        document.RootElement.GetProperty("voice").GetProperty("id").GetString().Should().Be("voice_1234");
+        response.AdditionalProperties!["voice"].Should().Be("voice_1234");
     }
 
     [TestMethod]

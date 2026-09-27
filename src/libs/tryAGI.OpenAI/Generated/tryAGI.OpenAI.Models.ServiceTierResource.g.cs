@@ -28,6 +28,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         Priority,
+        /// <summary>
+        ///
+        /// </summary>
+        Ultrafast,
     }
 
     /// <summary>
@@ -47,6 +51,7 @@ namespace tryAGI.OpenAI
                 ServiceTierResource.Fast => "fast",
                 ServiceTierResource.Flex => "flex",
                 ServiceTierResource.Priority => "priority",
+                ServiceTierResource.Ultrafast => "ultrafast",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -62,6 +67,7 @@ namespace tryAGI.OpenAI
                 "fast" => ServiceTierResource.Fast,
                 "flex" => ServiceTierResource.Flex,
                 "priority" => ServiceTierResource.Priority,
+                "ultrafast" => ServiceTierResource.Ultrafast,
                 _ => null,
             };
         }
