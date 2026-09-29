@@ -25,6 +25,12 @@ namespace tryAGI.OpenAI
         public required string Id { get; set; }
 
         /// <summary>
+        /// The effective CPU and memory tier, or null when unknown or outside the public tiers.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("container_size")]
+        public global::tryAGI.OpenAI.ContainerSizeResource? ContainerSize { get; set; }
+
+        /// <summary>
         /// Packages installed in the environment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("packages")]
@@ -96,6 +102,9 @@ namespace tryAGI.OpenAI
         /// <param name="files">
         /// Files available in the environment, excluding their contents.
         /// </param>
+        /// <param name="containerSize">
+        /// The effective CPU and memory tier, or null when unknown or outside the public tiers.
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `openai_hosted`.<br/>
         /// Default Value: openai_hosted
@@ -111,10 +120,12 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.HostedSkillResource> skills,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.HostedPluginResource> plugins,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.HostedEnvironmentFileResource> files,
+            global::tryAGI.OpenAI.ContainerSizeResource? containerSize,
             global::tryAGI.OpenAI.EnvironmentResourceOpenaiHostedType type = global::tryAGI.OpenAI.EnvironmentResourceOpenaiHostedType.OpenaiHosted)
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.ContainerSize = containerSize;
             this.Packages = packages ?? throw new global::System.ArgumentNullException(nameof(packages));
             this.Network = network ?? throw new global::System.ArgumentNullException(nameof(network));
             this.CapabilityDirectories = capabilityDirectories ?? throw new global::System.ArgumentNullException(nameof(capabilityDirectories));
