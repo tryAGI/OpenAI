@@ -15,6 +15,43 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.SessionRequiredActionResourceDiscriminatorType? Type { get; }
 
         /// <summary>
+        /// Respond to a computer-use request.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest? ComputerUseApprovalRequest { get; init; }
+#else
+        public global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest? ComputerUseApprovalRequest { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerUseApprovalRequest))]
+#endif
+        public bool IsComputerUseApprovalRequest => ComputerUseApprovalRequest != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickComputerUseApprovalRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest? value)
+        {
+            value = ComputerUseApprovalRequest;
+            return IsComputerUseApprovalRequest;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest PickComputerUseApprovalRequest() => ComputerUseApprovalRequest is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUseApprovalRequest' but the value was {ToString()}.");
+
+        /// <summary>
         /// Run a function tool and submit its result.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -90,6 +127,29 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator SessionRequiredActionResource(global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest value) => new SessionRequiredActionResource((global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest?(SessionRequiredActionResource @this) => @this.ComputerUseApprovalRequest;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public SessionRequiredActionResource(global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest? value)
+        {
+            ComputerUseApprovalRequest = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static SessionRequiredActionResource FromComputerUseApprovalRequest(global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest? value) => new SessionRequiredActionResource(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator SessionRequiredActionResource(global::tryAGI.OpenAI.SessionRequiredActionResourceFunctionCall value) => new SessionRequiredActionResource((global::tryAGI.OpenAI.SessionRequiredActionResourceFunctionCall?)value);
 
         /// <summary>
@@ -138,12 +198,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public SessionRequiredActionResource(
             global::tryAGI.OpenAI.SessionRequiredActionResourceDiscriminatorType? type,
+            global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest? computerUseApprovalRequest,
             global::tryAGI.OpenAI.SessionRequiredActionResourceFunctionCall? functionCall,
             global::tryAGI.OpenAI.SessionRequiredActionResourceEnvironmentConnection? environmentConnection
             )
         {
             Type = type;
 
+            ComputerUseApprovalRequest = computerUseApprovalRequest;
             FunctionCall = functionCall;
             EnvironmentConnection = environmentConnection;
         }
@@ -153,13 +215,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             EnvironmentConnection as object ??
-            FunctionCall as object
+            FunctionCall as object ??
+            ComputerUseApprovalRequest as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
+            ComputerUseApprovalRequest?.ToString() ??
             FunctionCall?.ToString() ??
             EnvironmentConnection?.ToString()
             ;
@@ -169,13 +233,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsFunctionCall && !IsEnvironmentConnection || !IsFunctionCall && IsEnvironmentConnection;
+            return IsComputerUseApprovalRequest && !IsFunctionCall && !IsEnvironmentConnection || !IsComputerUseApprovalRequest && IsFunctionCall && !IsEnvironmentConnection || !IsComputerUseApprovalRequest && !IsFunctionCall && IsEnvironmentConnection;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
+            global::System.Func<global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest, TResult>? computerUseApprovalRequest = null,
             global::System.Func<global::tryAGI.OpenAI.SessionRequiredActionResourceFunctionCall, TResult>? functionCall = null,
             global::System.Func<global::tryAGI.OpenAI.SessionRequiredActionResourceEnvironmentConnection, TResult>? environmentConnection = null,
             bool validate = true)
@@ -185,13 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (FunctionCall is { } __value0 && functionCall != null)
+            if (ComputerUseApprovalRequest is { } __value0 && computerUseApprovalRequest != null)
             {
-                return functionCall(__value0);
+                return computerUseApprovalRequest(__value0);
             }
-            else if (EnvironmentConnection is { } __value1 && environmentConnection != null)
+            else if (FunctionCall is { } __value1 && functionCall != null)
             {
-                return environmentConnection(__value1);
+                return functionCall(__value1);
+            }
+            else if (EnvironmentConnection is { } __value2 && environmentConnection != null)
+            {
+                return environmentConnection(__value2);
             }
 
             return default(TResult);
@@ -201,6 +270,8 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
+            global::System.Action<global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest>? computerUseApprovalRequest = null,
+
             global::System.Action<global::tryAGI.OpenAI.SessionRequiredActionResourceFunctionCall>? functionCall = null,
 
             global::System.Action<global::tryAGI.OpenAI.SessionRequiredActionResourceEnvironmentConnection>? environmentConnection = null,
@@ -211,13 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (FunctionCall is { } __value0)
+            if (ComputerUseApprovalRequest is { } __value0)
             {
-                functionCall?.Invoke(__value0);
+                computerUseApprovalRequest?.Invoke(__value0);
             }
-            else if (EnvironmentConnection is { } __value1)
+            else if (FunctionCall is { } __value1)
             {
-                environmentConnection?.Invoke(__value1);
+                functionCall?.Invoke(__value1);
+            }
+            else if (EnvironmentConnection is { } __value2)
+            {
+                environmentConnection?.Invoke(__value2);
             }
         }
 
@@ -225,6 +300,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest>? computerUseApprovalRequest = null,
             global::System.Action<global::tryAGI.OpenAI.SessionRequiredActionResourceFunctionCall>? functionCall = null,
             global::System.Action<global::tryAGI.OpenAI.SessionRequiredActionResourceEnvironmentConnection>? environmentConnection = null,
             bool validate = true)
@@ -234,13 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (FunctionCall is { } __value0)
+            if (ComputerUseApprovalRequest is { } __value0)
             {
-                functionCall?.Invoke(__value0);
+                computerUseApprovalRequest?.Invoke(__value0);
             }
-            else if (EnvironmentConnection is { } __value1)
+            else if (FunctionCall is { } __value1)
             {
-                environmentConnection?.Invoke(__value1);
+                functionCall?.Invoke(__value1);
+            }
+            else if (EnvironmentConnection is { } __value2)
+            {
+                environmentConnection?.Invoke(__value2);
             }
         }
 
@@ -251,6 +331,8 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
+                ComputerUseApprovalRequest,
+                typeof(global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest),
                 FunctionCall,
                 typeof(global::tryAGI.OpenAI.SessionRequiredActionResourceFunctionCall),
                 EnvironmentConnection,
@@ -271,6 +353,7 @@ namespace tryAGI.OpenAI
         public bool Equals(SessionRequiredActionResource other)
         {
             return
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest?>.Default.Equals(ComputerUseApprovalRequest, other.ComputerUseApprovalRequest) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionRequiredActionResourceFunctionCall?>.Default.Equals(FunctionCall, other.FunctionCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionRequiredActionResourceEnvironmentConnection?>.Default.Equals(EnvironmentConnection, other.EnvironmentConnection)
                 ;

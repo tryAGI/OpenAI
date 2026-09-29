@@ -718,6 +718,9 @@ namespace tryAGI.OpenAI
         /// <param name="network">
         /// Network access available after setup completes. Omit to preserve the current policy, or pass `null` to reset to disabled for GA requests or enabled for beta requests.
         /// </param>
+        /// <param name="desktop">
+        /// Replacement desktop configuration, or null to disable the desktop.
+        /// </param>
         /// <param name="env">
         /// Replacement confidential environment values.
         /// </param>
@@ -742,6 +745,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.EnvironmentPackagesParam? packages = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SetupCommandParam>? setupCommands = default,
             global::tryAGI.OpenAI.NetworkPolicyParam? network = default,
+            global::tryAGI.OpenAI.DesktopParam? desktop = default,
             global::System.Collections.Generic.Dictionary<string, string>? env = default,
             global::System.Collections.Generic.IList<string>? capabilityDirectories = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.HostedSkillParam>? skills = default,
@@ -756,6 +760,7 @@ namespace tryAGI.OpenAI
                 Packages = packages,
                 SetupCommands = setupCommands,
                 Network = network,
+                Desktop = desktop,
                 Env = env,
                 CapabilityDirectories = capabilityDirectories,
                 Skills = skills,

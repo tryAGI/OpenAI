@@ -43,6 +43,9 @@ namespace tryAGI.OpenAI
         /// <param name="network">
         /// Network access policy for the environment. Defaults to disabled for GA requests and enabled for beta requests.
         /// </param>
+        /// <param name="desktop">
+        /// Desktop provisioning. Omission or null inherits the template setting, or defaults to disabled.
+        /// </param>
         /// <param name="env">
         /// Environment variables made available to the agent.
         /// </param>
@@ -68,6 +71,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.EnvironmentPackagesParam? packages = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SetupCommandParam>? setupCommands = default,
             global::tryAGI.OpenAI.NetworkPolicyParam? network = default,
+            global::tryAGI.OpenAI.DesktopParam? desktop = default,
             global::System.Collections.Generic.Dictionary<string, string>? env = default,
             global::System.Collections.Generic.IList<string>? capabilityDirectories = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.HostedSkillParam>? skills = default,

@@ -307,6 +307,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Gpt61Sol,
+        /// <summary>
+        ///
+        /// </summary>
         GptAudioMini,
         /// <summary>
         ///
@@ -448,6 +452,7 @@ namespace tryAGI.OpenAI
                 BetaModelIdsSharedEnum.Gpt6Astra => "gpt-6-astra",
                 BetaModelIdsSharedEnum.Gpt6Luna => "gpt-6-luna",
                 BetaModelIdsSharedEnum.Gpt6Sol => "gpt-6-sol",
+                BetaModelIdsSharedEnum.Gpt61Sol => "gpt-6.1-sol",
                 BetaModelIdsSharedEnum.GptAudioMini => "gpt-audio-mini",
                 BetaModelIdsSharedEnum.GptAudioMini20251215 => "gpt-audio-mini-2025-12-15",
                 BetaModelIdsSharedEnum.O1 => "o1",
@@ -546,6 +551,7 @@ namespace tryAGI.OpenAI
                 "gpt-6-astra" => BetaModelIdsSharedEnum.Gpt6Astra,
                 "gpt-6-luna" => BetaModelIdsSharedEnum.Gpt6Luna,
                 "gpt-6-sol" => BetaModelIdsSharedEnum.Gpt6Sol,
+                "gpt-6.1-sol" => BetaModelIdsSharedEnum.Gpt61Sol,
                 "gpt-audio-mini" => BetaModelIdsSharedEnum.GptAudioMini,
                 "gpt-audio-mini-2025-12-15" => BetaModelIdsSharedEnum.GptAudioMini20251215,
                 "o1" => BetaModelIdsSharedEnum.O1,

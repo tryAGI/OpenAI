@@ -21,6 +21,13 @@ namespace tryAGI.OpenAI.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.SessionInputParamDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
+            global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult? agentSessionInputComputerUseApprovalRequestResult = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.SessionInputParamDiscriminatorType.AgentSessionInputComputerUseApprovalRequestResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult)}");
+                agentSessionInputComputerUseApprovalRequestResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage? agentSessionInputMessage = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.SessionInputParamDiscriminatorType.AgentSessionInputMessage)
             {
@@ -45,6 +52,8 @@ namespace tryAGI.OpenAI.JsonConverters
 
             var __value = new global::tryAGI.OpenAI.SessionInputParam(
                 discriminator?.Type,
+                agentSessionInputComputerUseApprovalRequestResult,
+
                 agentSessionInputMessage,
 
                 agentSessionInputCancel,
@@ -64,7 +73,13 @@ namespace tryAGI.OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsAgentSessionInputMessage)
+            if (value.IsAgentSessionInputComputerUseApprovalRequestResult)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentSessionInputComputerUseApprovalRequestResult(), typeInfo);
+            }
+            else if (value.IsAgentSessionInputMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage).Name}");

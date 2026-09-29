@@ -23,6 +23,12 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<string>? AllowedDomains { get; set; }
 
         /// <summary>
+        /// Domains blocked for both executor and browser when access is restricted. A nonempty list requires `access: restricted` and cannot be combined with nonempty `allowed_domains`. Wildcard domains are not supported.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("blocked_domains")]
+        public global::System.Collections.Generic.IList<string>? BlockedDomains { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,15 +43,20 @@ namespace tryAGI.OpenAI
         /// <param name="allowedDomains">
         /// Domains the environment may access when network access is restricted.
         /// </param>
+        /// <param name="blockedDomains">
+        /// Domains blocked for both executor and browser when access is restricted. A nonempty list requires `access: restricted` and cannot be combined with nonempty `allowed_domains`. Wildcard domains are not supported.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public NetworkPolicyParam(
             global::tryAGI.OpenAI.NetworkAccessParam access,
-            global::System.Collections.Generic.IList<string>? allowedDomains)
+            global::System.Collections.Generic.IList<string>? allowedDomains,
+            global::System.Collections.Generic.IList<string>? blockedDomains)
         {
             this.Access = access;
             this.AllowedDomains = allowedDomains;
+            this.BlockedDomains = blockedDomains;
         }
 
         /// <summary>

@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ComputerUse,
+        /// <summary>
+        ///
+        /// </summary>
         Function,
         /// <summary>
         ///
@@ -38,6 +42,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                AgentToolResourceDiscriminatorType.ComputerUse => "computer_use",
                 AgentToolResourceDiscriminatorType.Function => "function",
                 AgentToolResourceDiscriminatorType.Mcp => "mcp",
                 AgentToolResourceDiscriminatorType.ProgrammaticToolCalling => "programmatic_tool_calling",
@@ -52,6 +57,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "computer_use" => AgentToolResourceDiscriminatorType.ComputerUse,
                 "function" => AgentToolResourceDiscriminatorType.Function,
                 "mcp" => AgentToolResourceDiscriminatorType.Mcp,
                 "programmatic_tool_calling" => AgentToolResourceDiscriminatorType.ProgrammaticToolCalling,

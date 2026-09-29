@@ -19,6 +19,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ComputerUseApprovalRequest,
+        /// <summary>
+        ///
+        /// </summary>
+        ComputerUseCall,
+        /// <summary>
+        ///
+        /// </summary>
         CreateSubagentCall,
         /// <summary>
         ///
@@ -72,6 +80,8 @@ namespace tryAGI.OpenAI
             {
                 AgentOutputItemResourceDiscriminatorType.CloseSubagentCall => "close_subagent_call",
                 AgentOutputItemResourceDiscriminatorType.CommandExecution => "command_execution",
+                AgentOutputItemResourceDiscriminatorType.ComputerUseApprovalRequest => "computer_use_approval_request",
+                AgentOutputItemResourceDiscriminatorType.ComputerUseCall => "computer_use_call",
                 AgentOutputItemResourceDiscriminatorType.CreateSubagentCall => "create_subagent_call",
                 AgentOutputItemResourceDiscriminatorType.FunctionCall => "function_call",
                 AgentOutputItemResourceDiscriminatorType.InterruptSubagentCall => "interrupt_subagent_call",
@@ -94,6 +104,8 @@ namespace tryAGI.OpenAI
             {
                 "close_subagent_call" => AgentOutputItemResourceDiscriminatorType.CloseSubagentCall,
                 "command_execution" => AgentOutputItemResourceDiscriminatorType.CommandExecution,
+                "computer_use_approval_request" => AgentOutputItemResourceDiscriminatorType.ComputerUseApprovalRequest,
+                "computer_use_call" => AgentOutputItemResourceDiscriminatorType.ComputerUseCall,
                 "create_subagent_call" => AgentOutputItemResourceDiscriminatorType.CreateSubagentCall,
                 "function_call" => AgentOutputItemResourceDiscriminatorType.FunctionCall,
                 "interrupt_subagent_call" => AgentOutputItemResourceDiscriminatorType.InterruptSubagentCall,

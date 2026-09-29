@@ -51,6 +51,8 @@ internal static partial class AgentsCreateAgentEnvironmentTemplateCommandApiComm
     private static readonly EnvironmentPackagesParamOptionSet PackagesOptions = EnvironmentPackagesParamOptionSet.Create(@"packages");
 
     private static readonly NetworkPolicyParamOptionSet NetworkOptions = NetworkPolicyParamOptionSet.Create(@"network");
+
+    private static readonly DesktopParamOptionSet DesktopOptions = DesktopParamOptionSet.Create(@"desktop");
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -104,6 +106,7 @@ Creates reusable environment configuration without returning confidential setup 
                         command.Options.Add(PackagesOptions.System);
                         command.Options.Add(PackagesOptions.Npm);                        command.Options.Add(NetworkOptions.Access);
                         command.Options.Add(NetworkOptions.AllowedDomains);
+                        command.Options.Add(NetworkOptions.BlockedDomains);                        command.Options.Add(DesktopOptions.Enabled);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -154,16 +157,29 @@ Creates reusable environment configuration without returning confidential setup 
 
                         var __NetworkBase = __requestBase is { } __NetworkBaseValue ? __NetworkBaseValue.Network : default;                        var networkAccess = parseResult.GetValue(NetworkOptions.Access);
                         var networkAllowedDomains = CliRuntime.WasSpecified(parseResult, NetworkOptions.AllowedDomains) ? parseResult.GetValue(NetworkOptions.AllowedDomains) : (__NetworkBase is { } __NetworkallowedDomainsBaseValue ? __NetworkallowedDomainsBaseValue.AllowedDomains : default);
-                        var __NetworkSpecified = CliRuntime.WasSpecified(parseResult, NetworkOptions.Access) || CliRuntime.WasSpecified(parseResult, NetworkOptions.AllowedDomains);
+                        var networkBlockedDomains = CliRuntime.WasSpecified(parseResult, NetworkOptions.BlockedDomains) ? parseResult.GetValue(NetworkOptions.BlockedDomains) : (__NetworkBase is { } __NetworkblockedDomainsBaseValue ? __NetworkblockedDomainsBaseValue.BlockedDomains : default);
+                        var __NetworkSpecified = CliRuntime.WasSpecified(parseResult, NetworkOptions.Access) || CliRuntime.WasSpecified(parseResult, NetworkOptions.AllowedDomains) || CliRuntime.WasSpecified(parseResult, NetworkOptions.BlockedDomains);
                         var network =
                             __NetworkSpecified || __NetworkBase is not null
                                 ? new global::tryAGI.OpenAI.NetworkPolicyParam
                                 {
 	                                Access = networkAccess!,
                                 AllowedDomains = networkAllowedDomains,
+                                BlockedDomains = networkBlockedDomains,
 
                                 }
                                 : __NetworkBase;
+
+                        var __DesktopBase = __requestBase is { } __DesktopBaseValue ? __DesktopBaseValue.Desktop : default;                        var desktopEnabled = parseResult.GetValue(DesktopOptions.Enabled);
+                        var __DesktopSpecified = CliRuntime.WasSpecified(parseResult, DesktopOptions.Enabled);
+                        var desktop =
+                            __DesktopSpecified || __DesktopBase is not null
+                                ? new global::tryAGI.OpenAI.DesktopParam
+                                {
+	                                Enabled = desktopEnabled!,
+
+                                }
+                                : __DesktopBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -177,6 +193,7 @@ Creates reusable environment configuration without returning confidential setup 
                                     name: name,
                                     packages: packages,
                                     network: network,
+                                    desktop: desktop,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

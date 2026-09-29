@@ -23,6 +23,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ComputerUseApprovalRequest,
+        /// <summary>
+        ///
+        /// </summary>
+        ComputerUseApprovalRequestResult,
+        /// <summary>
+        ///
+        /// </summary>
+        ComputerUseCall,
+        /// <summary>
+        ///
+        /// </summary>
         CreateSubagentCall,
         /// <summary>
         ///
@@ -81,6 +93,9 @@ namespace tryAGI.OpenAI
                 SessionTurnItemResourceDiscriminatorType.AgentMessage => "agent_message",
                 SessionTurnItemResourceDiscriminatorType.CloseSubagentCall => "close_subagent_call",
                 SessionTurnItemResourceDiscriminatorType.CommandExecution => "command_execution",
+                SessionTurnItemResourceDiscriminatorType.ComputerUseApprovalRequest => "computer_use_approval_request",
+                SessionTurnItemResourceDiscriminatorType.ComputerUseApprovalRequestResult => "computer_use_approval_request_result",
+                SessionTurnItemResourceDiscriminatorType.ComputerUseCall => "computer_use_call",
                 SessionTurnItemResourceDiscriminatorType.CreateSubagentCall => "create_subagent_call",
                 SessionTurnItemResourceDiscriminatorType.FunctionCall => "function_call",
                 SessionTurnItemResourceDiscriminatorType.FunctionCallOutput => "function_call_output",
@@ -105,6 +120,9 @@ namespace tryAGI.OpenAI
                 "agent_message" => SessionTurnItemResourceDiscriminatorType.AgentMessage,
                 "close_subagent_call" => SessionTurnItemResourceDiscriminatorType.CloseSubagentCall,
                 "command_execution" => SessionTurnItemResourceDiscriminatorType.CommandExecution,
+                "computer_use_approval_request" => SessionTurnItemResourceDiscriminatorType.ComputerUseApprovalRequest,
+                "computer_use_approval_request_result" => SessionTurnItemResourceDiscriminatorType.ComputerUseApprovalRequestResult,
+                "computer_use_call" => SessionTurnItemResourceDiscriminatorType.ComputerUseCall,
                 "create_subagent_call" => SessionTurnItemResourceDiscriminatorType.CreateSubagentCall,
                 "function_call" => SessionTurnItemResourceDiscriminatorType.FunctionCall,
                 "function_call_output" => SessionTurnItemResourceDiscriminatorType.FunctionCallOutput,

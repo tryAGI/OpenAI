@@ -15,6 +15,43 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.SessionInputParamDiscriminatorType? Type { get; }
 
         /// <summary>
+        /// Responds to a pending Computer Use approval request.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult? AgentSessionInputComputerUseApprovalRequestResult { get; init; }
+#else
+        public global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult? AgentSessionInputComputerUseApprovalRequestResult { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentSessionInputComputerUseApprovalRequestResult))]
+#endif
+        public bool IsAgentSessionInputComputerUseApprovalRequestResult => AgentSessionInputComputerUseApprovalRequestResult != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickAgentSessionInputComputerUseApprovalRequestResult(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult? value)
+        {
+            value = AgentSessionInputComputerUseApprovalRequestResult;
+            return IsAgentSessionInputComputerUseApprovalRequestResult;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult PickAgentSessionInputComputerUseApprovalRequestResult() => AgentSessionInputComputerUseApprovalRequestResult is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionInputComputerUseApprovalRequestResult' but the value was {ToString()}.");
+
+        /// <summary>
         /// Adds one or more user messages and starts a turn.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -127,6 +164,29 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator SessionInputParam(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult value) => new SessionInputParam((global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult?(SessionInputParam @this) => @this.AgentSessionInputComputerUseApprovalRequestResult;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public SessionInputParam(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult? value)
+        {
+            AgentSessionInputComputerUseApprovalRequestResult = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static SessionInputParam FromAgentSessionInputComputerUseApprovalRequestResult(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult? value) => new SessionInputParam(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator SessionInputParam(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage value) => new SessionInputParam((global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage?)value);
 
         /// <summary>
@@ -198,6 +258,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public SessionInputParam(
             global::tryAGI.OpenAI.SessionInputParamDiscriminatorType? type,
+            global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult? agentSessionInputComputerUseApprovalRequestResult,
             global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage? agentSessionInputMessage,
             global::tryAGI.OpenAI.SessionInputParamAgentSessionInputCancel? agentSessionInputCancel,
             global::tryAGI.OpenAI.SessionInputParamAgentSessionInputToolResult? agentSessionInputToolResult
@@ -205,6 +266,7 @@ namespace tryAGI.OpenAI
         {
             Type = type;
 
+            AgentSessionInputComputerUseApprovalRequestResult = agentSessionInputComputerUseApprovalRequestResult;
             AgentSessionInputMessage = agentSessionInputMessage;
             AgentSessionInputCancel = agentSessionInputCancel;
             AgentSessionInputToolResult = agentSessionInputToolResult;
@@ -216,13 +278,15 @@ namespace tryAGI.OpenAI
         public object? Object =>
             AgentSessionInputToolResult as object ??
             AgentSessionInputCancel as object ??
-            AgentSessionInputMessage as object
+            AgentSessionInputMessage as object ??
+            AgentSessionInputComputerUseApprovalRequestResult as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
+            AgentSessionInputComputerUseApprovalRequestResult?.ToString() ??
             AgentSessionInputMessage?.ToString() ??
             AgentSessionInputCancel?.ToString() ??
             AgentSessionInputToolResult?.ToString()
@@ -233,13 +297,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsAgentSessionInputMessage && !IsAgentSessionInputCancel && !IsAgentSessionInputToolResult || !IsAgentSessionInputMessage && IsAgentSessionInputCancel && !IsAgentSessionInputToolResult || !IsAgentSessionInputMessage && !IsAgentSessionInputCancel && IsAgentSessionInputToolResult;
+            return IsAgentSessionInputComputerUseApprovalRequestResult && !IsAgentSessionInputMessage && !IsAgentSessionInputCancel && !IsAgentSessionInputToolResult || !IsAgentSessionInputComputerUseApprovalRequestResult && IsAgentSessionInputMessage && !IsAgentSessionInputCancel && !IsAgentSessionInputToolResult || !IsAgentSessionInputComputerUseApprovalRequestResult && !IsAgentSessionInputMessage && IsAgentSessionInputCancel && !IsAgentSessionInputToolResult || !IsAgentSessionInputComputerUseApprovalRequestResult && !IsAgentSessionInputMessage && !IsAgentSessionInputCancel && IsAgentSessionInputToolResult;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
+            global::System.Func<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult, TResult>? agentSessionInputComputerUseApprovalRequestResult = null,
             global::System.Func<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage, TResult>? agentSessionInputMessage = null,
             global::System.Func<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputCancel, TResult>? agentSessionInputCancel = null,
             global::System.Func<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputToolResult, TResult>? agentSessionInputToolResult = null,
@@ -250,17 +315,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (AgentSessionInputMessage is { } __value0 && agentSessionInputMessage != null)
+            if (AgentSessionInputComputerUseApprovalRequestResult is { } __value0 && agentSessionInputComputerUseApprovalRequestResult != null)
             {
-                return agentSessionInputMessage(__value0);
+                return agentSessionInputComputerUseApprovalRequestResult(__value0);
             }
-            else if (AgentSessionInputCancel is { } __value1 && agentSessionInputCancel != null)
+            else if (AgentSessionInputMessage is { } __value1 && agentSessionInputMessage != null)
             {
-                return agentSessionInputCancel(__value1);
+                return agentSessionInputMessage(__value1);
             }
-            else if (AgentSessionInputToolResult is { } __value2 && agentSessionInputToolResult != null)
+            else if (AgentSessionInputCancel is { } __value2 && agentSessionInputCancel != null)
             {
-                return agentSessionInputToolResult(__value2);
+                return agentSessionInputCancel(__value2);
+            }
+            else if (AgentSessionInputToolResult is { } __value3 && agentSessionInputToolResult != null)
+            {
+                return agentSessionInputToolResult(__value3);
             }
 
             return default(TResult);
@@ -270,6 +339,8 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
+            global::System.Action<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult>? agentSessionInputComputerUseApprovalRequestResult = null,
+
             global::System.Action<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage>? agentSessionInputMessage = null,
 
             global::System.Action<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputCancel>? agentSessionInputCancel = null,
@@ -282,17 +353,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (AgentSessionInputMessage is { } __value0)
+            if (AgentSessionInputComputerUseApprovalRequestResult is { } __value0)
             {
-                agentSessionInputMessage?.Invoke(__value0);
+                agentSessionInputComputerUseApprovalRequestResult?.Invoke(__value0);
             }
-            else if (AgentSessionInputCancel is { } __value1)
+            else if (AgentSessionInputMessage is { } __value1)
             {
-                agentSessionInputCancel?.Invoke(__value1);
+                agentSessionInputMessage?.Invoke(__value1);
             }
-            else if (AgentSessionInputToolResult is { } __value2)
+            else if (AgentSessionInputCancel is { } __value2)
             {
-                agentSessionInputToolResult?.Invoke(__value2);
+                agentSessionInputCancel?.Invoke(__value2);
+            }
+            else if (AgentSessionInputToolResult is { } __value3)
+            {
+                agentSessionInputToolResult?.Invoke(__value3);
             }
         }
 
@@ -300,6 +375,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
+            global::System.Action<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult>? agentSessionInputComputerUseApprovalRequestResult = null,
             global::System.Action<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage>? agentSessionInputMessage = null,
             global::System.Action<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputCancel>? agentSessionInputCancel = null,
             global::System.Action<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputToolResult>? agentSessionInputToolResult = null,
@@ -310,17 +386,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (AgentSessionInputMessage is { } __value0)
+            if (AgentSessionInputComputerUseApprovalRequestResult is { } __value0)
             {
-                agentSessionInputMessage?.Invoke(__value0);
+                agentSessionInputComputerUseApprovalRequestResult?.Invoke(__value0);
             }
-            else if (AgentSessionInputCancel is { } __value1)
+            else if (AgentSessionInputMessage is { } __value1)
             {
-                agentSessionInputCancel?.Invoke(__value1);
+                agentSessionInputMessage?.Invoke(__value1);
             }
-            else if (AgentSessionInputToolResult is { } __value2)
+            else if (AgentSessionInputCancel is { } __value2)
             {
-                agentSessionInputToolResult?.Invoke(__value2);
+                agentSessionInputCancel?.Invoke(__value2);
+            }
+            else if (AgentSessionInputToolResult is { } __value3)
+            {
+                agentSessionInputToolResult?.Invoke(__value3);
             }
         }
 
@@ -331,6 +411,8 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
+                AgentSessionInputComputerUseApprovalRequestResult,
+                typeof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult),
                 AgentSessionInputMessage,
                 typeof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage),
                 AgentSessionInputCancel,
@@ -353,6 +435,7 @@ namespace tryAGI.OpenAI
         public bool Equals(SessionInputParam other)
         {
             return
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputComputerUseApprovalRequestResult?>.Default.Equals(AgentSessionInputComputerUseApprovalRequestResult, other.AgentSessionInputComputerUseApprovalRequestResult) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage?>.Default.Equals(AgentSessionInputMessage, other.AgentSessionInputMessage) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputCancel?>.Default.Equals(AgentSessionInputCancel, other.AgentSessionInputCancel) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputToolResult?>.Default.Equals(AgentSessionInputToolResult, other.AgentSessionInputToolResult)

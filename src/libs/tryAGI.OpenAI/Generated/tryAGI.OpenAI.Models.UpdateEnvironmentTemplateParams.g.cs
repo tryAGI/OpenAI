@@ -33,6 +33,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.NetworkPolicyParam? Network { get; set; }
 
         /// <summary>
+        /// Replacement desktop configuration, or null to disable the desktop.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("desktop")]
+        public global::tryAGI.OpenAI.DesktopParam? Desktop { get; set; }
+
+        /// <summary>
         /// Replacement confidential environment values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("env")]
@@ -83,6 +89,9 @@ namespace tryAGI.OpenAI
         /// <param name="network">
         /// Network access available after setup completes. Omit to preserve the current policy, or pass `null` to reset to disabled for GA requests or enabled for beta requests.
         /// </param>
+        /// <param name="desktop">
+        /// Replacement desktop configuration, or null to disable the desktop.
+        /// </param>
         /// <param name="env">
         /// Replacement confidential environment values.
         /// </param>
@@ -106,6 +115,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.EnvironmentPackagesParam? packages,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SetupCommandParam>? setupCommands,
             global::tryAGI.OpenAI.NetworkPolicyParam? network,
+            global::tryAGI.OpenAI.DesktopParam? desktop,
             global::System.Collections.Generic.Dictionary<string, string>? env,
             global::System.Collections.Generic.IList<string>? capabilityDirectories,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.HostedSkillParam>? skills,
@@ -116,6 +126,7 @@ namespace tryAGI.OpenAI
             this.Packages = packages;
             this.SetupCommands = setupCommands;
             this.Network = network;
+            this.Desktop = desktop;
             this.Env = env;
             this.CapabilityDirectories = capabilityDirectories;
             this.Skills = skills;

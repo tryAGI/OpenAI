@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_usage")]
-        public int? TokenUsage { get; set; }
+        public global::tryAGI.OpenAI.RunGraderResponseMetadataTokenUsage? TokenUsage { get; set; }
 
         /// <summary>
         ///
@@ -80,7 +80,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RunGraderResponseMetadataErrors errors,
             double executionTime,
             object scores,
-            int? tokenUsage,
+            global::tryAGI.OpenAI.RunGraderResponseMetadataTokenUsage? tokenUsage,
             string? sampledModelName)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

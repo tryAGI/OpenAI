@@ -198,6 +198,43 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.PersistedAgentToolConfigParamWebSearch PickWebSearch() => WebSearch is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Browser use in an OpenAI-hosted session.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse? ComputerUse { get; init; }
+#else
+        public global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse? ComputerUse { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerUse))]
+#endif
+        public bool IsComputerUse => ComputerUse != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickComputerUse(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse? value)
+        {
+            value = ComputerUse;
+            return IsComputerUse;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse PickComputerUse() => ComputerUse is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUse' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -316,13 +353,37 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator PersistedAgentToolConfigParam(global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse value) => new PersistedAgentToolConfigParam((global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse?(PersistedAgentToolConfigParam @this) => @this.ComputerUse;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public PersistedAgentToolConfigParam(global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse? value)
+        {
+            ComputerUse = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static PersistedAgentToolConfigParam FromComputerUse(global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse? value) => new PersistedAgentToolConfigParam(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public PersistedAgentToolConfigParam(
             global::tryAGI.OpenAI.PersistedAgentToolConfigParamDiscriminatorType? type,
             global::tryAGI.OpenAI.PersistedAgentToolConfigParamFunction? function,
             global::tryAGI.OpenAI.PersistedAgentToolConfigParamToolSearch? toolSearch,
             global::tryAGI.OpenAI.PersistedAgentToolConfigParamProgrammaticToolCalling? programmaticToolCalling,
             global::tryAGI.OpenAI.PersistedAgentToolConfigParamMcp? mcp,
-            global::tryAGI.OpenAI.PersistedAgentToolConfigParamWebSearch? webSearch
+            global::tryAGI.OpenAI.PersistedAgentToolConfigParamWebSearch? webSearch,
+            global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse? computerUse
             )
         {
             Type = type;
@@ -332,12 +393,14 @@ namespace tryAGI.OpenAI
             ProgrammaticToolCalling = programmaticToolCalling;
             Mcp = mcp;
             WebSearch = webSearch;
+            ComputerUse = computerUse;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            ComputerUse as object ??
             WebSearch as object ??
             Mcp as object ??
             ProgrammaticToolCalling as object ??
@@ -353,7 +416,8 @@ namespace tryAGI.OpenAI
             ToolSearch?.ToString() ??
             ProgrammaticToolCalling?.ToString() ??
             Mcp?.ToString() ??
-            WebSearch?.ToString()
+            WebSearch?.ToString() ??
+            ComputerUse?.ToString()
             ;
 
         /// <summary>
@@ -361,7 +425,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsFunction && !IsToolSearch && !IsProgrammaticToolCalling && !IsMcp && !IsWebSearch || !IsFunction && IsToolSearch && !IsProgrammaticToolCalling && !IsMcp && !IsWebSearch || !IsFunction && !IsToolSearch && IsProgrammaticToolCalling && !IsMcp && !IsWebSearch || !IsFunction && !IsToolSearch && !IsProgrammaticToolCalling && IsMcp && !IsWebSearch || !IsFunction && !IsToolSearch && !IsProgrammaticToolCalling && !IsMcp && IsWebSearch;
+            return IsFunction && !IsToolSearch && !IsProgrammaticToolCalling && !IsMcp && !IsWebSearch && !IsComputerUse || !IsFunction && IsToolSearch && !IsProgrammaticToolCalling && !IsMcp && !IsWebSearch && !IsComputerUse || !IsFunction && !IsToolSearch && IsProgrammaticToolCalling && !IsMcp && !IsWebSearch && !IsComputerUse || !IsFunction && !IsToolSearch && !IsProgrammaticToolCalling && IsMcp && !IsWebSearch && !IsComputerUse || !IsFunction && !IsToolSearch && !IsProgrammaticToolCalling && !IsMcp && IsWebSearch && !IsComputerUse || !IsFunction && !IsToolSearch && !IsProgrammaticToolCalling && !IsMcp && !IsWebSearch && IsComputerUse;
         }
 
         /// <summary>
@@ -373,6 +437,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.PersistedAgentToolConfigParamProgrammaticToolCalling, TResult>? programmaticToolCalling = null,
             global::System.Func<global::tryAGI.OpenAI.PersistedAgentToolConfigParamMcp, TResult>? mcp = null,
             global::System.Func<global::tryAGI.OpenAI.PersistedAgentToolConfigParamWebSearch, TResult>? webSearch = null,
+            global::System.Func<global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse, TResult>? computerUse = null,
             bool validate = true)
         {
             if (validate)
@@ -400,6 +465,10 @@ namespace tryAGI.OpenAI
             {
                 return webSearch(__value4);
             }
+            else if (ComputerUse is { } __value5 && computerUse != null)
+            {
+                return computerUse(__value5);
+            }
 
             return default(TResult);
         }
@@ -417,6 +486,8 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.PersistedAgentToolConfigParamMcp>? mcp = null,
 
             global::System.Action<global::tryAGI.OpenAI.PersistedAgentToolConfigParamWebSearch>? webSearch = null,
+
+            global::System.Action<global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse>? computerUse = null,
             bool validate = true)
         {
             if (validate)
@@ -443,6 +514,10 @@ namespace tryAGI.OpenAI
             else if (WebSearch is { } __value4)
             {
                 webSearch?.Invoke(__value4);
+            }
+            else if (ComputerUse is { } __value5)
+            {
+                computerUse?.Invoke(__value5);
             }
         }
 
@@ -455,6 +530,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.PersistedAgentToolConfigParamProgrammaticToolCalling>? programmaticToolCalling = null,
             global::System.Action<global::tryAGI.OpenAI.PersistedAgentToolConfigParamMcp>? mcp = null,
             global::System.Action<global::tryAGI.OpenAI.PersistedAgentToolConfigParamWebSearch>? webSearch = null,
+            global::System.Action<global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse>? computerUse = null,
             bool validate = true)
         {
             if (validate)
@@ -481,6 +557,10 @@ namespace tryAGI.OpenAI
             else if (WebSearch is { } __value4)
             {
                 webSearch?.Invoke(__value4);
+            }
+            else if (ComputerUse is { } __value5)
+            {
+                computerUse?.Invoke(__value5);
             }
         }
 
@@ -501,6 +581,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.PersistedAgentToolConfigParamMcp),
                 WebSearch,
                 typeof(global::tryAGI.OpenAI.PersistedAgentToolConfigParamWebSearch),
+                ComputerUse,
+                typeof(global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -521,7 +603,8 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.PersistedAgentToolConfigParamToolSearch?>.Default.Equals(ToolSearch, other.ToolSearch) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.PersistedAgentToolConfigParamProgrammaticToolCalling?>.Default.Equals(ProgrammaticToolCalling, other.ProgrammaticToolCalling) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.PersistedAgentToolConfigParamMcp?>.Default.Equals(Mcp, other.Mcp) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.PersistedAgentToolConfigParamWebSearch?>.Default.Equals(WebSearch, other.WebSearch)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.PersistedAgentToolConfigParamWebSearch?>.Default.Equals(WebSearch, other.WebSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse?>.Default.Equals(ComputerUse, other.ComputerUse)
                 ;
         }
 
