@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.C2PAProvenanceResult PickC2pa() => IsC2pa
-            ? C2pa!
+        public global::tryAGI.OpenAI.C2PAProvenanceResult PickC2pa() => C2pa is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'C2pa' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SynthIDProvenanceResult PickSynthid() => IsSynthid
-            ? Synthid!
+        public global::tryAGI.OpenAI.SynthIDProvenanceResult PickSynthid() => Synthid is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Synthid' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsC2pa && c2pa != null)
+            if (C2pa is { } __value0 && c2pa != null)
             {
-                return c2pa(C2pa!);
+                return c2pa(__value0);
             }
-            else if (IsSynthid && synthid != null)
+            else if (Synthid is { } __value1 && synthid != null)
             {
-                return synthid(Synthid!);
+                return synthid(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsC2pa)
+            if (C2pa is { } __value0)
             {
-                c2pa?.Invoke(C2pa!);
+                c2pa?.Invoke(__value0);
             }
-            else if (IsSynthid)
+            else if (Synthid is { } __value1)
             {
-                synthid?.Invoke(Synthid!);
+                synthid?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsC2pa)
+            if (C2pa is { } __value0)
             {
-                c2pa?.Invoke(C2pa!);
+                c2pa?.Invoke(__value0);
             }
-            else if (IsSynthid)
+            else if (Synthid is { } __value1)
             {
-                synthid?.Invoke(Synthid!);
+                synthid?.Invoke(__value1);
             }
         }
 

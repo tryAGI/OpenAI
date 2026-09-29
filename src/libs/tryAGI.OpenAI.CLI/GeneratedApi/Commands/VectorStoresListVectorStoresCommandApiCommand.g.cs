@@ -55,9 +55,11 @@ internal static partial class VectorStoresListVectorStoresCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-vector-stores", @"List vector stores
+        var command = new Command(commandName ?? @"list-vector-stores", @"List vector stores
 Returns a list of vector stores.");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);
@@ -98,6 +100,7 @@ Returns a list of vector stores.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

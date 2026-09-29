@@ -67,9 +67,11 @@ internal static partial class UpdateWebhookEndpointCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-webhook-endpoint", @"Update Webhook Endpoint
+        var command = new Command(commandName ?? @"update-webhook-endpoint", @"Update Webhook Endpoint
 Updates a webhook endpoint for the authenticated project.");
                         command.Arguments.Add(WebhookEndpointId);
                         command.Options.Add(NameOption);
@@ -130,6 +132,7 @@ Updates a webhook endpoint for the authenticated project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

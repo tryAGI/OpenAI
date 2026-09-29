@@ -34,9 +34,11 @@ internal static partial class UploadsCancelUploadCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"cancel-upload", @"Cancel upload
+        var command = new Command(commandName ?? @"cancel-upload", @"Cancel upload
 Cancels the Upload. No Parts may be added after an Upload is cancelled.
 
 Returns the Upload object with status `cancelled`.
@@ -63,6 +65,7 @@ Returns the Upload object with status `cancelled`.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

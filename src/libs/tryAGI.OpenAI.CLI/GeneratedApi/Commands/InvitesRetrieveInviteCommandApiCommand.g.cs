@@ -33,9 +33,11 @@ internal static partial class InvitesRetrieveInviteCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-invite", @"Retrieve invite
+        var command = new Command(commandName ?? @"retrieve-invite", @"Retrieve invite
 Retrieves an invite.");
                         command.Arguments.Add(InviteId);
 
@@ -67,6 +69,7 @@ Retrieves an invite.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -29,9 +29,11 @@ internal static partial class GetorganizationspendlimitCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"getorganizationspendlimit", @"Get organization spend limit
+        var command = new Command(commandName ?? @"getorganizationspendlimit", @"Get organization spend limit
 Get the organization's hard spend limit.");
 
 
@@ -55,6 +57,7 @@ Get the organization's hard spend limit.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

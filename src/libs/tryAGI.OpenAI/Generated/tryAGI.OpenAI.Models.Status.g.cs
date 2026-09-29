@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ActiveStatus PickActive() => IsActive
-            ? Active!
+        public global::tryAGI.OpenAI.ActiveStatus PickActive() => Active is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Active' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LockedStatus PickLocked() => IsLocked
-            ? Locked!
+        public global::tryAGI.OpenAI.LockedStatus PickLocked() => Locked is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Locked' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ClosedStatus PickClosed() => IsClosed
-            ? Closed!
+        public global::tryAGI.OpenAI.ClosedStatus PickClosed() => Closed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Closed' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsActive && active != null)
+            if (Active is { } __value0 && active != null)
             {
-                return active(Active!);
+                return active(__value0);
             }
-            else if (IsLocked && locked != null)
+            else if (Locked is { } __value1 && locked != null)
             {
-                return locked(Locked!);
+                return locked(__value1);
             }
-            else if (IsClosed && closed != null)
+            else if (Closed is { } __value2 && closed != null)
             {
-                return closed(Closed!);
+                return closed(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsActive)
+            if (Active is { } __value0)
             {
-                active?.Invoke(Active!);
+                active?.Invoke(__value0);
             }
-            else if (IsLocked)
+            else if (Locked is { } __value1)
             {
-                locked?.Invoke(Locked!);
+                locked?.Invoke(__value1);
             }
-            else if (IsClosed)
+            else if (Closed is { } __value2)
             {
-                closed?.Invoke(Closed!);
+                closed?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsActive)
+            if (Active is { } __value0)
             {
-                active?.Invoke(Active!);
+                active?.Invoke(__value0);
             }
-            else if (IsLocked)
+            else if (Locked is { } __value1)
             {
-                locked?.Invoke(Locked!);
+                locked?.Invoke(__value1);
             }
-            else if (IsClosed)
+            else if (Closed is { } __value2)
             {
-                closed?.Invoke(Closed!);
+                closed?.Invoke(__value2);
             }
         }
 

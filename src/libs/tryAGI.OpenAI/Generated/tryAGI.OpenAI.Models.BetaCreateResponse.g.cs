@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaCreateModelResponseProperties PickModelProperties() => IsModelProperties
-            ? ModelProperties!.Value
+        public global::tryAGI.OpenAI.BetaCreateModelResponseProperties PickModelProperties() => ModelProperties is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelProperties' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponseProperties PickProperties() => IsProperties
-            ? Properties!
+        public global::tryAGI.OpenAI.BetaResponseProperties PickProperties() => Properties is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Properties' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaCreateResponseVariant3 PickBetaCreateResponseVariant3() => IsBetaCreateResponseVariant3
-            ? BetaCreateResponseVariant3!
+        public global::tryAGI.OpenAI.BetaCreateResponseVariant3 PickBetaCreateResponseVariant3() => BetaCreateResponseVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaCreateResponseVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelProperties && modelProperties != null)
+            if (ModelProperties is { } __value0 && modelProperties != null)
             {
-                return modelProperties(ModelProperties!);
+                return modelProperties(__value0);
             }
-            else if (IsProperties && properties != null)
+            else if (Properties is { } __value1 && properties != null)
             {
-                return properties(Properties!);
+                return properties(__value1);
             }
-            else if (IsBetaCreateResponseVariant3 && betaCreateResponseVariant3 != null)
+            else if (BetaCreateResponseVariant3 is { } __value2 && betaCreateResponseVariant3 != null)
             {
-                return betaCreateResponseVariant3(BetaCreateResponseVariant3!);
+                return betaCreateResponseVariant3(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelProperties)
+            if (ModelProperties is { } __value0)
             {
-                modelProperties?.Invoke(ModelProperties!);
+                modelProperties?.Invoke(__value0);
             }
-            else if (IsProperties)
+            else if (Properties is { } __value1)
             {
-                properties?.Invoke(Properties!);
+                properties?.Invoke(__value1);
             }
-            else if (IsBetaCreateResponseVariant3)
+            else if (BetaCreateResponseVariant3 is { } __value2)
             {
-                betaCreateResponseVariant3?.Invoke(BetaCreateResponseVariant3!);
+                betaCreateResponseVariant3?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelProperties)
+            if (ModelProperties is { } __value0)
             {
-                modelProperties?.Invoke(ModelProperties!);
+                modelProperties?.Invoke(__value0);
             }
-            else if (IsProperties)
+            else if (Properties is { } __value1)
             {
-                properties?.Invoke(Properties!);
+                properties?.Invoke(__value1);
             }
-            else if (IsBetaCreateResponseVariant3)
+            else if (BetaCreateResponseVariant3 is { } __value2)
             {
-                betaCreateResponseVariant3?.Invoke(BetaCreateResponseVariant3!);
+                betaCreateResponseVariant3?.Invoke(__value2);
             }
         }
 

@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaContainerNetworkPolicyDisabledParam PickDisabled() => IsDisabled
-            ? Disabled!
+        public global::tryAGI.OpenAI.BetaContainerNetworkPolicyDisabledParam PickDisabled() => Disabled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Disabled' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaContainerNetworkPolicyAllowlistParam PickAllowlist() => IsAllowlist
-            ? Allowlist!
+        public global::tryAGI.OpenAI.BetaContainerNetworkPolicyAllowlistParam PickAllowlist() => Allowlist is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Allowlist' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsDisabled && disabled != null)
+            if (Disabled is { } __value0 && disabled != null)
             {
-                return disabled(Disabled!);
+                return disabled(__value0);
             }
-            else if (IsAllowlist && allowlist != null)
+            else if (Allowlist is { } __value1 && allowlist != null)
             {
-                return allowlist(Allowlist!);
+                return allowlist(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsDisabled)
+            if (Disabled is { } __value0)
             {
-                disabled?.Invoke(Disabled!);
+                disabled?.Invoke(__value0);
             }
-            else if (IsAllowlist)
+            else if (Allowlist is { } __value1)
             {
-                allowlist?.Invoke(Allowlist!);
+                allowlist?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsDisabled)
+            if (Disabled is { } __value0)
             {
-                disabled?.Invoke(Disabled!);
+                disabled?.Invoke(__value0);
             }
-            else if (IsAllowlist)
+            else if (Allowlist is { } __value1)
             {
-                allowlist?.Invoke(Allowlist!);
+                allowlist?.Invoke(__value1);
             }
         }
 

@@ -43,8 +43,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.GraderLabelModel PickLabelModelGrader() => IsLabelModelGrader
-            ? LabelModelGrader!
+        public global::tryAGI.OpenAI.GraderLabelModel PickLabelModelGrader() => LabelModelGrader is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LabelModelGrader' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -103,9 +103,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsLabelModelGrader && labelModelGrader != null)
+            if (LabelModelGrader is { } __value0 && labelModelGrader != null)
             {
-                return labelModelGrader(LabelModelGrader!);
+                return labelModelGrader(__value0);
             }
 
             return default(TResult);
@@ -123,9 +123,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsLabelModelGrader)
+            if (LabelModelGrader is { } __value0)
             {
-                labelModelGrader?.Invoke(LabelModelGrader!);
+                labelModelGrader?.Invoke(__value0);
             }
         }
 
@@ -141,9 +141,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsLabelModelGrader)
+            if (LabelModelGrader is { } __value0)
             {
-                labelModelGrader?.Invoke(LabelModelGrader!);
+                labelModelGrader?.Invoke(__value0);
             }
         }
 

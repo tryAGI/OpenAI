@@ -262,6 +262,88 @@ internal static class CliRuntime
     }
 
 
+         public static async Task<T> PollUntilTerminalAsync<T>(
+             Func<CancellationToken, Task<T>> fetchAsync,
+             TimeSpan pollInterval,
+             TimeSpan waitTimeout,
+             JsonSerializerContext context,
+             CancellationToken cancellationToken)
+         {
+             if (pollInterval <= TimeSpan.Zero || waitTimeout <= TimeSpan.Zero)
+             {
+                 throw new CliException("--poll-interval and --wait-timeout must be greater than zero.");
+             }
+
+             using var timeout = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+             timeout.CancelAfter(waitTimeout);
+             try
+             {
+                 while (true)
+                 {
+                     var response = await fetchAsync(timeout.Token).ConfigureAwait(false);
+                     var status = FindJobStatus(ToJsonElement(response, context), depth: 0);
+                     if (string.IsNullOrWhiteSpace(status))
+                     {
+                         throw new CliException("The status response did not contain a status value.");
+                     }
+
+                     switch (status.Trim().ToUpperInvariant())
+                     {
+                         case "COMPLETED":
+                         case "SUCCEEDED":
+                         case "SUCCESS":
+                         case "DONE":
+                         case "FINISHED":
+                             return response;
+                         case "FAILED":
+                         case "ERRORED":
+                         case "ERROR":
+                         case "CANCELLED":
+                         case "CANCELED":
+                         case "ABORTED":
+                             throw new CliException($"The job ended with status '{status}'.");
+                     }
+
+                     await Task.Delay(pollInterval, timeout.Token).ConfigureAwait(false);
+                 }
+             }
+             catch (OperationCanceledException) when (timeout.IsCancellationRequested && !cancellationToken.IsCancellationRequested)
+             {
+                 throw new CliException($"The job did not finish within {waitTimeout}.");
+             }
+         }
+
+         private static string? FindJobStatus(JsonElement element, int depth)
+         {
+             if (element.ValueKind != JsonValueKind.Object || depth > 3)
+             {
+                 return null;
+             }
+
+             foreach (var property in element.EnumerateObject())
+             {
+                 if (string.Equals(property.Name, "status", StringComparison.OrdinalIgnoreCase))
+                 {
+                     return property.Value.ValueKind == JsonValueKind.String
+                         ? property.Value.GetString()
+                         : property.Value.ToString();
+                 }
+             }
+
+             foreach (var property in element.EnumerateObject())
+             {
+                 if (property.Name is "data" or "result" or "job" or "task")
+                 {
+                     var status = FindJobStatus(property.Value, depth + 1);
+                     if (status is not null)
+                     {
+                         return status;
+                     }
+                 }
+             }
+
+             return null;
+         }
 
     public static async global::System.Threading.Tasks.Task<string?> ReadInputAsync(
         ParseResult parseResult,
@@ -355,9 +437,10 @@ internal static class CliRuntime
 
     public static T DeserializeJsonValue<T>(string json, JsonSerializerContext context)
     {
-        _ = context;
-        return JsonSerializer.Deserialize<T>(json) ??
-            throw new CliException($"Unable to deserialize generated CLI value as {typeof(T).Name}.");
+        var value = JsonSerializer.Deserialize(json, typeof(T), context);
+        return value is T typed
+            ? typed
+            : throw new CliException($"Unable to deserialize generated CLI value as {typeof(T).Name}.");
     }
 
     public static string SerializeKeyValuePairs(IEnumerable<string> pairs)

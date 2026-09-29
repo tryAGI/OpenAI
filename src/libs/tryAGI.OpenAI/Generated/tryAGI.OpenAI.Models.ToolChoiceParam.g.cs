@@ -48,8 +48,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceOptions PickToolChoiceMode() => IsToolChoiceMode
-            ? ToolChoiceMode!.Value
+        public global::tryAGI.OpenAI.ToolChoiceOptions PickToolChoiceMode() => ToolChoiceMode is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolChoiceMode' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceAllowed PickAllowedTools() => IsAllowedTools
-            ? AllowedTools!
+        public global::tryAGI.OpenAI.ToolChoiceAllowed PickAllowedTools() => AllowedTools is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AllowedTools' but the value was {ToString()}.");
 
         /// <summary>
@@ -123,8 +123,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceTypes PickHostedTool() => IsHostedTool
-            ? HostedTool!
+        public global::tryAGI.OpenAI.ToolChoiceTypes PickHostedTool() => HostedTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'HostedTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -160,8 +160,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceFunction PickFunctionTool() => IsFunctionTool
-            ? FunctionTool!
+        public global::tryAGI.OpenAI.ToolChoiceFunction PickFunctionTool() => FunctionTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -197,8 +197,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceMCP PickMcpTool() => IsMcpTool
-            ? McpTool!
+        public global::tryAGI.OpenAI.ToolChoiceMCP PickMcpTool() => McpTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -234,8 +234,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ToolChoiceCustom PickCustomTool() => IsCustomTool
-            ? CustomTool!
+        public global::tryAGI.OpenAI.ToolChoiceCustom PickCustomTool() => CustomTool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomTool' but the value was {ToString()}.");
 
         /// <summary>
@@ -271,8 +271,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam PickSpecificProgrammaticCalling() => IsSpecificProgrammaticCalling
-            ? SpecificProgrammaticCalling!
+        public global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam PickSpecificProgrammaticCalling() => SpecificProgrammaticCalling is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpecificProgrammaticCalling' but the value was {ToString()}.");
 
         /// <summary>
@@ -308,8 +308,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SpecificApplyPatchParam PickSpecificApplyPatchToolChoice() => IsSpecificApplyPatchToolChoice
-            ? SpecificApplyPatchToolChoice!
+        public global::tryAGI.OpenAI.SpecificApplyPatchParam PickSpecificApplyPatchToolChoice() => SpecificApplyPatchToolChoice is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpecificApplyPatchToolChoice' but the value was {ToString()}.");
 
         /// <summary>
@@ -345,8 +345,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SpecificFunctionShellParam PickSpecificShellToolChoice() => IsSpecificShellToolChoice
-            ? SpecificShellToolChoice!
+        public global::tryAGI.OpenAI.SpecificFunctionShellParam PickSpecificShellToolChoice() => SpecificShellToolChoice is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpecificShellToolChoice' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -639,41 +639,41 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsToolChoiceMode && toolChoiceMode != null)
+            if (ToolChoiceMode is { } __value0 && toolChoiceMode != null)
             {
-                return toolChoiceMode(ToolChoiceMode!);
+                return toolChoiceMode(__value0);
             }
-            else if (IsAllowedTools && allowedTools != null)
+            else if (AllowedTools is { } __value1 && allowedTools != null)
             {
-                return allowedTools(AllowedTools!);
+                return allowedTools(__value1);
             }
-            else if (IsHostedTool && hostedTool != null)
+            else if (HostedTool is { } __value2 && hostedTool != null)
             {
-                return hostedTool(HostedTool!);
+                return hostedTool(__value2);
             }
-            else if (IsFunctionTool && functionTool != null)
+            else if (FunctionTool is { } __value3 && functionTool != null)
             {
-                return functionTool(FunctionTool!);
+                return functionTool(__value3);
             }
-            else if (IsMcpTool && mcpTool != null)
+            else if (McpTool is { } __value4 && mcpTool != null)
             {
-                return mcpTool(McpTool!);
+                return mcpTool(__value4);
             }
-            else if (IsCustomTool && customTool != null)
+            else if (CustomTool is { } __value5 && customTool != null)
             {
-                return customTool(CustomTool!);
+                return customTool(__value5);
             }
-            else if (IsSpecificProgrammaticCalling && specificProgrammaticCalling != null)
+            else if (SpecificProgrammaticCalling is { } __value6 && specificProgrammaticCalling != null)
             {
-                return specificProgrammaticCalling(SpecificProgrammaticCalling!);
+                return specificProgrammaticCalling(__value6);
             }
-            else if (IsSpecificApplyPatchToolChoice && specificApplyPatchToolChoice != null)
+            else if (SpecificApplyPatchToolChoice is { } __value7 && specificApplyPatchToolChoice != null)
             {
-                return specificApplyPatchToolChoice(SpecificApplyPatchToolChoice!);
+                return specificApplyPatchToolChoice(__value7);
             }
-            else if (IsSpecificShellToolChoice && specificShellToolChoice != null)
+            else if (SpecificShellToolChoice is { } __value8 && specificShellToolChoice != null)
             {
-                return specificShellToolChoice(SpecificShellToolChoice!);
+                return specificShellToolChoice(__value8);
             }
 
             return default(TResult);
@@ -707,41 +707,41 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsToolChoiceMode)
+            if (ToolChoiceMode is { } __value0)
             {
-                toolChoiceMode?.Invoke(ToolChoiceMode!);
+                toolChoiceMode?.Invoke(__value0);
             }
-            else if (IsAllowedTools)
+            else if (AllowedTools is { } __value1)
             {
-                allowedTools?.Invoke(AllowedTools!);
+                allowedTools?.Invoke(__value1);
             }
-            else if (IsHostedTool)
+            else if (HostedTool is { } __value2)
             {
-                hostedTool?.Invoke(HostedTool!);
+                hostedTool?.Invoke(__value2);
             }
-            else if (IsFunctionTool)
+            else if (FunctionTool is { } __value3)
             {
-                functionTool?.Invoke(FunctionTool!);
+                functionTool?.Invoke(__value3);
             }
-            else if (IsMcpTool)
+            else if (McpTool is { } __value4)
             {
-                mcpTool?.Invoke(McpTool!);
+                mcpTool?.Invoke(__value4);
             }
-            else if (IsCustomTool)
+            else if (CustomTool is { } __value5)
             {
-                customTool?.Invoke(CustomTool!);
+                customTool?.Invoke(__value5);
             }
-            else if (IsSpecificProgrammaticCalling)
+            else if (SpecificProgrammaticCalling is { } __value6)
             {
-                specificProgrammaticCalling?.Invoke(SpecificProgrammaticCalling!);
+                specificProgrammaticCalling?.Invoke(__value6);
             }
-            else if (IsSpecificApplyPatchToolChoice)
+            else if (SpecificApplyPatchToolChoice is { } __value7)
             {
-                specificApplyPatchToolChoice?.Invoke(SpecificApplyPatchToolChoice!);
+                specificApplyPatchToolChoice?.Invoke(__value7);
             }
-            else if (IsSpecificShellToolChoice)
+            else if (SpecificShellToolChoice is { } __value8)
             {
-                specificShellToolChoice?.Invoke(SpecificShellToolChoice!);
+                specificShellToolChoice?.Invoke(__value8);
             }
         }
 
@@ -765,41 +765,41 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsToolChoiceMode)
+            if (ToolChoiceMode is { } __value0)
             {
-                toolChoiceMode?.Invoke(ToolChoiceMode!);
+                toolChoiceMode?.Invoke(__value0);
             }
-            else if (IsAllowedTools)
+            else if (AllowedTools is { } __value1)
             {
-                allowedTools?.Invoke(AllowedTools!);
+                allowedTools?.Invoke(__value1);
             }
-            else if (IsHostedTool)
+            else if (HostedTool is { } __value2)
             {
-                hostedTool?.Invoke(HostedTool!);
+                hostedTool?.Invoke(__value2);
             }
-            else if (IsFunctionTool)
+            else if (FunctionTool is { } __value3)
             {
-                functionTool?.Invoke(FunctionTool!);
+                functionTool?.Invoke(__value3);
             }
-            else if (IsMcpTool)
+            else if (McpTool is { } __value4)
             {
-                mcpTool?.Invoke(McpTool!);
+                mcpTool?.Invoke(__value4);
             }
-            else if (IsCustomTool)
+            else if (CustomTool is { } __value5)
             {
-                customTool?.Invoke(CustomTool!);
+                customTool?.Invoke(__value5);
             }
-            else if (IsSpecificProgrammaticCalling)
+            else if (SpecificProgrammaticCalling is { } __value6)
             {
-                specificProgrammaticCalling?.Invoke(SpecificProgrammaticCalling!);
+                specificProgrammaticCalling?.Invoke(__value6);
             }
-            else if (IsSpecificApplyPatchToolChoice)
+            else if (SpecificApplyPatchToolChoice is { } __value7)
             {
-                specificApplyPatchToolChoice?.Invoke(SpecificApplyPatchToolChoice!);
+                specificApplyPatchToolChoice?.Invoke(__value7);
             }
-            else if (IsSpecificShellToolChoice)
+            else if (SpecificShellToolChoice is { } __value8)
             {
-                specificShellToolChoice?.Invoke(SpecificShellToolChoice!);
+                specificShellToolChoice?.Invoke(__value8);
             }
         }
 

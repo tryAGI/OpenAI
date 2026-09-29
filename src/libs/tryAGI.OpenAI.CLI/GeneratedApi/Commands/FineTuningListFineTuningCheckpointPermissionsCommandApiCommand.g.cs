@@ -58,9 +58,11 @@ internal static partial class FineTuningListFineTuningCheckpointPermissionsComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-fine-tuning-checkpoint-permissions", @"List checkpoint permissions
+        var command = new Command(commandName ?? @"list-fine-tuning-checkpoint-permissions", @"List checkpoint permissions
 **NOTE:** This endpoint requires an [admin API key](https://developers.openai.com/api/reference/resources/admin/subresources/organization/subresources/admin_api_keys).
 
 Organization owners can use this endpoint to view all permissions for a fine-tuned model checkpoint.
@@ -107,6 +109,7 @@ Organization owners can use this endpoint to view all permissions for a fine-tun
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

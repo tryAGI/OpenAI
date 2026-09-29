@@ -39,9 +39,11 @@ internal static partial class ProjectsDeleteProjectApiKeyCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-project-api-key", @"Delete project API key
+        var command = new Command(commandName ?? @"delete-project-api-key", @"Delete project API key
 Deletes an API key from the project.
 
 Returns confirmation of the key deletion, or an error if the key belonged to
@@ -72,6 +74,7 @@ a service account.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

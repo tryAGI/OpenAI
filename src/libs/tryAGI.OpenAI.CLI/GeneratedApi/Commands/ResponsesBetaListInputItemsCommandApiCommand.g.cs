@@ -71,9 +71,11 @@ parameter for Response creation above for more information.
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"beta-list-input-items", @"List input items
+        var command = new Command(commandName ?? @"beta-list-input-items", @"List input items
 Returns a list of input items for a given response.");
                         command.Arguments.Add(ResponseId);
                         command.Options.Add(Limit);
@@ -120,6 +122,7 @@ Returns a list of input items for a given response.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

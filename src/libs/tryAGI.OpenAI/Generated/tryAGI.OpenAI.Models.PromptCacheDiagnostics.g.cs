@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.PromptCacheMissDiagnosticsBody PickCacheMiss() => IsCacheMiss
-            ? CacheMiss!
+        public global::tryAGI.OpenAI.PromptCacheMissDiagnosticsBody PickCacheMiss() => CacheMiss is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CacheMiss' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.PromptCacheHitDiagnosticsBody PickCacheHit() => IsCacheHit
-            ? CacheHit!
+        public global::tryAGI.OpenAI.PromptCacheHitDiagnosticsBody PickCacheHit() => CacheHit is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CacheHit' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.PromptCacheComparisonResponseNotFoundDiagnosticsBody PickComparisonResponseNotFound() => IsComparisonResponseNotFound
-            ? ComparisonResponseNotFound!
+        public global::tryAGI.OpenAI.PromptCacheComparisonResponseNotFoundDiagnosticsBody PickComparisonResponseNotFound() => ComparisonResponseNotFound is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComparisonResponseNotFound' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.PromptCacheUnavailableDiagnosticsBody PickUnavailable() => IsUnavailable
-            ? Unavailable!
+        public global::tryAGI.OpenAI.PromptCacheUnavailableDiagnosticsBody PickUnavailable() => Unavailable is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Unavailable' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsCacheMiss && cacheMiss != null)
+            if (CacheMiss is { } __value0 && cacheMiss != null)
             {
-                return cacheMiss(CacheMiss!);
+                return cacheMiss(__value0);
             }
-            else if (IsCacheHit && cacheHit != null)
+            else if (CacheHit is { } __value1 && cacheHit != null)
             {
-                return cacheHit(CacheHit!);
+                return cacheHit(__value1);
             }
-            else if (IsComparisonResponseNotFound && comparisonResponseNotFound != null)
+            else if (ComparisonResponseNotFound is { } __value2 && comparisonResponseNotFound != null)
             {
-                return comparisonResponseNotFound(ComparisonResponseNotFound!);
+                return comparisonResponseNotFound(__value2);
             }
-            else if (IsUnavailable && unavailable != null)
+            else if (Unavailable is { } __value3 && unavailable != null)
             {
-                return unavailable(Unavailable!);
+                return unavailable(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsCacheMiss)
+            if (CacheMiss is { } __value0)
             {
-                cacheMiss?.Invoke(CacheMiss!);
+                cacheMiss?.Invoke(__value0);
             }
-            else if (IsCacheHit)
+            else if (CacheHit is { } __value1)
             {
-                cacheHit?.Invoke(CacheHit!);
+                cacheHit?.Invoke(__value1);
             }
-            else if (IsComparisonResponseNotFound)
+            else if (ComparisonResponseNotFound is { } __value2)
             {
-                comparisonResponseNotFound?.Invoke(ComparisonResponseNotFound!);
+                comparisonResponseNotFound?.Invoke(__value2);
             }
-            else if (IsUnavailable)
+            else if (Unavailable is { } __value3)
             {
-                unavailable?.Invoke(Unavailable!);
+                unavailable?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsCacheMiss)
+            if (CacheMiss is { } __value0)
             {
-                cacheMiss?.Invoke(CacheMiss!);
+                cacheMiss?.Invoke(__value0);
             }
-            else if (IsCacheHit)
+            else if (CacheHit is { } __value1)
             {
-                cacheHit?.Invoke(CacheHit!);
+                cacheHit?.Invoke(__value1);
             }
-            else if (IsComparisonResponseNotFound)
+            else if (ComparisonResponseNotFound is { } __value2)
             {
-                comparisonResponseNotFound?.Invoke(ComparisonResponseNotFound!);
+                comparisonResponseNotFound?.Invoke(__value2);
             }
-            else if (IsUnavailable)
+            else if (Unavailable is { } __value3)
             {
-                unavailable?.Invoke(Unavailable!);
+                unavailable?.Invoke(__value3);
             }
         }
 

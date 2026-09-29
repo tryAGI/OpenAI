@@ -29,9 +29,11 @@ internal static partial class CertificatesActivateOrganizationCertificatesComman
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"activate-organization-certificates", @"Activate certificates for organization
+        var command = new Command(commandName ?? @"activate-organization-certificates", @"Activate certificates for organization
 Activate certificates at the organization level.
 
 You can atomically and idempotently activate up to 10 certificates at a time.
@@ -66,6 +68,7 @@ You can atomically and idempotently activate up to 10 certificates at a time.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -39,9 +39,11 @@ internal static partial class ProjectsDeleteProjectUserCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-project-user", @"Delete project user
+        var command = new Command(commandName ?? @"delete-project-user", @"Delete project user
 Deletes a user from the project.
 
 Returns confirmation of project user deletion, or an error if the project is
@@ -72,6 +74,7 @@ archived (archived projects have no users).
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

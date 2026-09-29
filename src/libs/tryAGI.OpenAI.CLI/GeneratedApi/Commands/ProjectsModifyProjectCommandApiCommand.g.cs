@@ -61,9 +61,11 @@ internal static partial class ProjectsModifyProjectCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"modify-project", @"Modify project
+        var command = new Command(commandName ?? @"modify-project", @"Modify project
 Modifies a project in the organization.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(NameOption);
@@ -113,6 +115,7 @@ Modifies a project in the organization.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseAudioDeltaEvent PickResponseAudioDelta() => IsResponseAudioDelta
-            ? ResponseAudioDelta!
+        public global::tryAGI.OpenAI.ResponseAudioDeltaEvent PickResponseAudioDelta() => ResponseAudioDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseAudioDoneEvent PickResponseAudioDone() => IsResponseAudioDone
-            ? ResponseAudioDone!
+        public global::tryAGI.OpenAI.ResponseAudioDoneEvent PickResponseAudioDone() => ResponseAudioDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent PickResponseAudioTranscriptDelta() => IsResponseAudioTranscriptDelta
-            ? ResponseAudioTranscriptDelta!
+        public global::tryAGI.OpenAI.ResponseAudioTranscriptDeltaEvent PickResponseAudioTranscriptDelta() => ResponseAudioTranscriptDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioTranscriptDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent PickResponseAudioTranscriptDone() => IsResponseAudioTranscriptDone
-            ? ResponseAudioTranscriptDone!
+        public global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEvent PickResponseAudioTranscriptDone() => ResponseAudioTranscriptDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseAudioTranscriptDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent PickResponseCodeInterpreterCallCodeDelta() => IsResponseCodeInterpreterCallCodeDelta
-            ? ResponseCodeInterpreterCallCodeDelta!
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDeltaEvent PickResponseCodeInterpreterCallCodeDelta() => ResponseCodeInterpreterCallCodeDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallCodeDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent PickResponseCodeInterpreterCallCodeDone() => IsResponseCodeInterpreterCallCodeDone
-            ? ResponseCodeInterpreterCallCodeDone!
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent PickResponseCodeInterpreterCallCodeDone() => ResponseCodeInterpreterCallCodeDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallCodeDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent PickResponseCodeInterpreterCallCompleted() => IsResponseCodeInterpreterCallCompleted
-            ? ResponseCodeInterpreterCallCompleted!
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallCompletedEvent PickResponseCodeInterpreterCallCompleted() => ResponseCodeInterpreterCallCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent PickResponseCodeInterpreterCallInProgress() => IsResponseCodeInterpreterCallInProgress
-            ? ResponseCodeInterpreterCallInProgress!
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInProgressEvent PickResponseCodeInterpreterCallInProgress() => ResponseCodeInterpreterCallInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent PickResponseCodeInterpreterCallInterpreting() => IsResponseCodeInterpreterCallInterpreting
-            ? ResponseCodeInterpreterCallInterpreting!
+        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEvent PickResponseCodeInterpreterCallInterpreting() => ResponseCodeInterpreterCallInterpreting is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCodeInterpreterCallInterpreting' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCompactionCompactingStreamingEvent PickResponseCompactionCompacting() => IsResponseCompactionCompacting
-            ? ResponseCompactionCompacting!
+        public global::tryAGI.OpenAI.ResponseCompactionCompactingStreamingEvent PickResponseCompactionCompacting() => ResponseCompactionCompacting is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCompactionCompacting' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCompletedEvent PickResponseCompleted() => IsResponseCompleted
-            ? ResponseCompleted!
+        public global::tryAGI.OpenAI.ResponseCompletedEvent PickResponseCompleted() => ResponseCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseContentPartAddedEvent PickResponseContentPartAdded() => IsResponseContentPartAdded
-            ? ResponseContentPartAdded!
+        public global::tryAGI.OpenAI.ResponseContentPartAddedEvent PickResponseContentPartAdded() => ResponseContentPartAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -491,8 +491,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseContentPartDoneEvent PickResponseContentPartDone() => IsResponseContentPartDone
-            ? ResponseContentPartDone!
+        public global::tryAGI.OpenAI.ResponseContentPartDoneEvent PickResponseContentPartDone() => ResponseContentPartDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -528,8 +528,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCreatedEvent PickResponseCreated() => IsResponseCreated
-            ? ResponseCreated!
+        public global::tryAGI.OpenAI.ResponseCreatedEvent PickResponseCreated() => ResponseCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -565,8 +565,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseErrorEvent PickError() => IsError
-            ? Error!
+        public global::tryAGI.OpenAI.ResponseErrorEvent PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
 
         /// <summary>
@@ -602,8 +602,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent PickResponseFileSearchCallCompleted() => IsResponseFileSearchCallCompleted
-            ? ResponseFileSearchCallCompleted!
+        public global::tryAGI.OpenAI.ResponseFileSearchCallCompletedEvent PickResponseFileSearchCallCompleted() => ResponseFileSearchCallCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFileSearchCallCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -639,8 +639,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent PickResponseFileSearchCallInProgress() => IsResponseFileSearchCallInProgress
-            ? ResponseFileSearchCallInProgress!
+        public global::tryAGI.OpenAI.ResponseFileSearchCallInProgressEvent PickResponseFileSearchCallInProgress() => ResponseFileSearchCallInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFileSearchCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -676,8 +676,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent PickResponseFileSearchCallSearching() => IsResponseFileSearchCallSearching
-            ? ResponseFileSearchCallSearching!
+        public global::tryAGI.OpenAI.ResponseFileSearchCallSearchingEvent PickResponseFileSearchCallSearching() => ResponseFileSearchCallSearching is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFileSearchCallSearching' but the value was {ToString()}.");
 
         /// <summary>
@@ -713,8 +713,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent PickResponseFunctionCallArgumentsDelta() => IsResponseFunctionCallArgumentsDelta
-            ? ResponseFunctionCallArgumentsDelta!
+        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDeltaEvent PickResponseFunctionCallArgumentsDelta() => ResponseFunctionCallArgumentsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -750,8 +750,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent PickResponseFunctionCallArgumentsDone() => IsResponseFunctionCallArgumentsDone
-            ? ResponseFunctionCallArgumentsDone!
+        public global::tryAGI.OpenAI.ResponseFunctionCallArgumentsDoneEvent PickResponseFunctionCallArgumentsDone() => ResponseFunctionCallArgumentsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -787,8 +787,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseShellCallCommandAddedStreamingEvent PickResponseShellCallCommandAdded() => IsResponseShellCallCommandAdded
-            ? ResponseShellCallCommandAdded!
+        public global::tryAGI.OpenAI.ResponseShellCallCommandAddedStreamingEvent PickResponseShellCallCommandAdded() => ResponseShellCallCommandAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseShellCallCommandAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -824,8 +824,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseShellCallCommandDeltaStreamingEvent PickResponseShellCallCommandDelta() => IsResponseShellCallCommandDelta
-            ? ResponseShellCallCommandDelta!
+        public global::tryAGI.OpenAI.ResponseShellCallCommandDeltaStreamingEvent PickResponseShellCallCommandDelta() => ResponseShellCallCommandDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseShellCallCommandDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -861,8 +861,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseShellCallCommandDoneStreamingEvent PickResponseShellCallCommandDone() => IsResponseShellCallCommandDone
-            ? ResponseShellCallCommandDone!
+        public global::tryAGI.OpenAI.ResponseShellCallCommandDoneStreamingEvent PickResponseShellCallCommandDone() => ResponseShellCallCommandDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseShellCallCommandDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -898,8 +898,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseShellCallOutputContentDeltaStreamingEvent PickResponseShellCallOutputContentDelta() => IsResponseShellCallOutputContentDelta
-            ? ResponseShellCallOutputContentDelta!
+        public global::tryAGI.OpenAI.ResponseShellCallOutputContentDeltaStreamingEvent PickResponseShellCallOutputContentDelta() => ResponseShellCallOutputContentDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseShellCallOutputContentDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -935,8 +935,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseShellCallOutputContentDoneStreamingEvent PickResponseShellCallOutputContentDone() => IsResponseShellCallOutputContentDone
-            ? ResponseShellCallOutputContentDone!
+        public global::tryAGI.OpenAI.ResponseShellCallOutputContentDoneStreamingEvent PickResponseShellCallOutputContentDone() => ResponseShellCallOutputContentDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseShellCallOutputContentDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -972,8 +972,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseInProgressEvent PickResponseInProgress() => IsResponseInProgress
-            ? ResponseInProgress!
+        public global::tryAGI.OpenAI.ResponseInProgressEvent PickResponseInProgress() => ResponseInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -1009,8 +1009,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFailedEvent PickResponseFailed() => IsResponseFailed
-            ? ResponseFailed!
+        public global::tryAGI.OpenAI.ResponseFailedEvent PickResponseFailed() => ResponseFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -1049,8 +1049,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseIncompleteEvent PickResponseIncomplete() => IsResponseIncomplete
-            ? ResponseIncomplete!
+        public global::tryAGI.OpenAI.ResponseIncompleteEvent PickResponseIncomplete() => ResponseIncomplete is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseIncomplete' but the value was {ToString()}.");
 
         /// <summary>
@@ -1086,8 +1086,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseOutputItemAddedEvent PickResponseOutputItemAdded() => IsResponseOutputItemAdded
-            ? ResponseOutputItemAdded!
+        public global::tryAGI.OpenAI.ResponseOutputItemAddedEvent PickResponseOutputItemAdded() => ResponseOutputItemAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -1123,8 +1123,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseOutputItemDoneEvent PickResponseOutputItemDone() => IsResponseOutputItemDone
-            ? ResponseOutputItemDone!
+        public global::tryAGI.OpenAI.ResponseOutputItemDoneEvent PickResponseOutputItemDone() => ResponseOutputItemDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1160,8 +1160,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent PickResponseReasoningSummaryPartAdded() => IsResponseReasoningSummaryPartAdded
-            ? ResponseReasoningSummaryPartAdded!
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEvent PickResponseReasoningSummaryPartAdded() => ResponseReasoningSummaryPartAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryPartAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -1197,8 +1197,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent PickResponseReasoningSummaryPartDone() => IsResponseReasoningSummaryPartDone
-            ? ResponseReasoningSummaryPartDone!
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEvent PickResponseReasoningSummaryPartDone() => ResponseReasoningSummaryPartDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryPartDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1234,8 +1234,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent PickResponseReasoningSummaryTextDelta() => IsResponseReasoningSummaryTextDelta
-            ? ResponseReasoningSummaryTextDelta!
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDeltaEvent PickResponseReasoningSummaryTextDelta() => ResponseReasoningSummaryTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1271,8 +1271,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent PickResponseReasoningSummaryTextDone() => IsResponseReasoningSummaryTextDone
-            ? ResponseReasoningSummaryTextDone!
+        public global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent PickResponseReasoningSummaryTextDone() => ResponseReasoningSummaryTextDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningSummaryTextDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1308,8 +1308,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent PickResponseReasoningTextDelta() => IsResponseReasoningTextDelta
-            ? ResponseReasoningTextDelta!
+        public global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent PickResponseReasoningTextDelta() => ResponseReasoningTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1345,8 +1345,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent PickResponseReasoningTextDone() => IsResponseReasoningTextDone
-            ? ResponseReasoningTextDone!
+        public global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent PickResponseReasoningTextDone() => ResponseReasoningTextDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseReasoningTextDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1382,8 +1382,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseRefusalDeltaEvent PickResponseRefusalDelta() => IsResponseRefusalDelta
-            ? ResponseRefusalDelta!
+        public global::tryAGI.OpenAI.ResponseRefusalDeltaEvent PickResponseRefusalDelta() => ResponseRefusalDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseRefusalDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1419,8 +1419,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseRefusalDoneEvent PickResponseRefusalDone() => IsResponseRefusalDone
-            ? ResponseRefusalDone!
+        public global::tryAGI.OpenAI.ResponseRefusalDoneEvent PickResponseRefusalDone() => ResponseRefusalDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseRefusalDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1456,8 +1456,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseTextDeltaEvent PickResponseOutputTextDelta() => IsResponseOutputTextDelta
-            ? ResponseOutputTextDelta!
+        public global::tryAGI.OpenAI.ResponseTextDeltaEvent PickResponseOutputTextDelta() => ResponseOutputTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1493,8 +1493,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseTextDoneEvent PickResponseOutputTextDone() => IsResponseOutputTextDone
-            ? ResponseOutputTextDone!
+        public global::tryAGI.OpenAI.ResponseTextDoneEvent PickResponseOutputTextDone() => ResponseOutputTextDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputTextDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1530,8 +1530,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent PickResponseWebSearchCallCompleted() => IsResponseWebSearchCallCompleted
-            ? ResponseWebSearchCallCompleted!
+        public global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent PickResponseWebSearchCallCompleted() => ResponseWebSearchCallCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseWebSearchCallCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1567,8 +1567,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent PickResponseWebSearchCallInProgress() => IsResponseWebSearchCallInProgress
-            ? ResponseWebSearchCallInProgress!
+        public global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent PickResponseWebSearchCallInProgress() => ResponseWebSearchCallInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseWebSearchCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -1604,8 +1604,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent PickResponseWebSearchCallSearching() => IsResponseWebSearchCallSearching
-            ? ResponseWebSearchCallSearching!
+        public global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent PickResponseWebSearchCallSearching() => ResponseWebSearchCallSearching is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseWebSearchCallSearching' but the value was {ToString()}.");
 
         /// <summary>
@@ -1641,8 +1641,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent PickResponseImageGenerationCallCompleted() => IsResponseImageGenerationCallCompleted
-            ? ResponseImageGenerationCallCompleted!
+        public global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent PickResponseImageGenerationCallCompleted() => ResponseImageGenerationCallCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseImageGenerationCallCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1678,8 +1678,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent PickResponseImageGenerationCallGenerating() => IsResponseImageGenerationCallGenerating
-            ? ResponseImageGenerationCallGenerating!
+        public global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent PickResponseImageGenerationCallGenerating() => ResponseImageGenerationCallGenerating is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseImageGenerationCallGenerating' but the value was {ToString()}.");
 
         /// <summary>
@@ -1715,8 +1715,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent PickResponseImageGenerationCallInProgress() => IsResponseImageGenerationCallInProgress
-            ? ResponseImageGenerationCallInProgress!
+        public global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent PickResponseImageGenerationCallInProgress() => ResponseImageGenerationCallInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseImageGenerationCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -1752,8 +1752,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent PickResponseImageGenerationCallPartialImage() => IsResponseImageGenerationCallPartialImage
-            ? ResponseImageGenerationCallPartialImage!
+        public global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent PickResponseImageGenerationCallPartialImage() => ResponseImageGenerationCallPartialImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseImageGenerationCallPartialImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -1789,8 +1789,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent PickResponseMcpCallArgumentsDelta() => IsResponseMcpCallArgumentsDelta
-            ? ResponseMcpCallArgumentsDelta!
+        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent PickResponseMcpCallArgumentsDelta() => ResponseMcpCallArgumentsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallArgumentsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1826,8 +1826,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent PickResponseMcpCallArgumentsDone() => IsResponseMcpCallArgumentsDone
-            ? ResponseMcpCallArgumentsDone!
+        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent PickResponseMcpCallArgumentsDone() => ResponseMcpCallArgumentsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallArgumentsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1863,8 +1863,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent PickResponseMcpCallCompleted() => IsResponseMcpCallCompleted
-            ? ResponseMcpCallCompleted!
+        public global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent PickResponseMcpCallCompleted() => ResponseMcpCallCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1900,8 +1900,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallFailedEvent PickResponseMcpCallFailed() => IsResponseMcpCallFailed
-            ? ResponseMcpCallFailed!
+        public global::tryAGI.OpenAI.ResponseMCPCallFailedEvent PickResponseMcpCallFailed() => ResponseMcpCallFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -1937,8 +1937,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent PickResponseMcpCallInProgress() => IsResponseMcpCallInProgress
-            ? ResponseMcpCallInProgress!
+        public global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent PickResponseMcpCallInProgress() => ResponseMcpCallInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -1974,8 +1974,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent PickResponseMcpListToolsCompleted() => IsResponseMcpListToolsCompleted
-            ? ResponseMcpListToolsCompleted!
+        public global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent PickResponseMcpListToolsCompleted() => ResponseMcpListToolsCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpListToolsCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -2011,8 +2011,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent PickResponseMcpListToolsFailed() => IsResponseMcpListToolsFailed
-            ? ResponseMcpListToolsFailed!
+        public global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent PickResponseMcpListToolsFailed() => ResponseMcpListToolsFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpListToolsFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -2048,8 +2048,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent PickResponseMcpListToolsInProgress() => IsResponseMcpListToolsInProgress
-            ? ResponseMcpListToolsInProgress!
+        public global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent PickResponseMcpListToolsInProgress() => ResponseMcpListToolsInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpListToolsInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -2085,8 +2085,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent PickResponseOutputTextAnnotationAdded() => IsResponseOutputTextAnnotationAdded
-            ? ResponseOutputTextAnnotationAdded!
+        public global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent PickResponseOutputTextAnnotationAdded() => ResponseOutputTextAnnotationAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputTextAnnotationAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -2122,8 +2122,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseQueuedEvent PickResponseQueued() => IsResponseQueued
-            ? ResponseQueued!
+        public global::tryAGI.OpenAI.ResponseQueuedEvent PickResponseQueued() => ResponseQueued is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseQueued' but the value was {ToString()}.");
 
         /// <summary>
@@ -2159,8 +2159,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent PickResponseCustomToolCallInputDelta() => IsResponseCustomToolCallInputDelta
-            ? ResponseCustomToolCallInputDelta!
+        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent PickResponseCustomToolCallInputDelta() => ResponseCustomToolCallInputDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCustomToolCallInputDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -2196,8 +2196,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent PickResponseCustomToolCallInputDone() => IsResponseCustomToolCallInputDone
-            ? ResponseCustomToolCallInputDone!
+        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent PickResponseCustomToolCallInputDone() => ResponseCustomToolCallInputDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCustomToolCallInputDone' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -3893,241 +3893,241 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponseAudioDelta && responseAudioDelta != null)
+            if (ResponseAudioDelta is { } __value0 && responseAudioDelta != null)
             {
-                return responseAudioDelta(ResponseAudioDelta!);
+                return responseAudioDelta(__value0);
             }
-            else if (IsResponseAudioDone && responseAudioDone != null)
+            else if (ResponseAudioDone is { } __value1 && responseAudioDone != null)
             {
-                return responseAudioDone(ResponseAudioDone!);
+                return responseAudioDone(__value1);
             }
-            else if (IsResponseAudioTranscriptDelta && responseAudioTranscriptDelta != null)
+            else if (ResponseAudioTranscriptDelta is { } __value2 && responseAudioTranscriptDelta != null)
             {
-                return responseAudioTranscriptDelta(ResponseAudioTranscriptDelta!);
+                return responseAudioTranscriptDelta(__value2);
             }
-            else if (IsResponseAudioTranscriptDone && responseAudioTranscriptDone != null)
+            else if (ResponseAudioTranscriptDone is { } __value3 && responseAudioTranscriptDone != null)
             {
-                return responseAudioTranscriptDone(ResponseAudioTranscriptDone!);
+                return responseAudioTranscriptDone(__value3);
             }
-            else if (IsResponseCodeInterpreterCallCodeDelta && responseCodeInterpreterCallCodeDelta != null)
+            else if (ResponseCodeInterpreterCallCodeDelta is { } __value4 && responseCodeInterpreterCallCodeDelta != null)
             {
-                return responseCodeInterpreterCallCodeDelta(ResponseCodeInterpreterCallCodeDelta!);
+                return responseCodeInterpreterCallCodeDelta(__value4);
             }
-            else if (IsResponseCodeInterpreterCallCodeDone && responseCodeInterpreterCallCodeDone != null)
+            else if (ResponseCodeInterpreterCallCodeDone is { } __value5 && responseCodeInterpreterCallCodeDone != null)
             {
-                return responseCodeInterpreterCallCodeDone(ResponseCodeInterpreterCallCodeDone!);
+                return responseCodeInterpreterCallCodeDone(__value5);
             }
-            else if (IsResponseCodeInterpreterCallCompleted && responseCodeInterpreterCallCompleted != null)
+            else if (ResponseCodeInterpreterCallCompleted is { } __value6 && responseCodeInterpreterCallCompleted != null)
             {
-                return responseCodeInterpreterCallCompleted(ResponseCodeInterpreterCallCompleted!);
+                return responseCodeInterpreterCallCompleted(__value6);
             }
-            else if (IsResponseCodeInterpreterCallInProgress && responseCodeInterpreterCallInProgress != null)
+            else if (ResponseCodeInterpreterCallInProgress is { } __value7 && responseCodeInterpreterCallInProgress != null)
             {
-                return responseCodeInterpreterCallInProgress(ResponseCodeInterpreterCallInProgress!);
+                return responseCodeInterpreterCallInProgress(__value7);
             }
-            else if (IsResponseCodeInterpreterCallInterpreting && responseCodeInterpreterCallInterpreting != null)
+            else if (ResponseCodeInterpreterCallInterpreting is { } __value8 && responseCodeInterpreterCallInterpreting != null)
             {
-                return responseCodeInterpreterCallInterpreting(ResponseCodeInterpreterCallInterpreting!);
+                return responseCodeInterpreterCallInterpreting(__value8);
             }
-            else if (IsResponseCompactionCompacting && responseCompactionCompacting != null)
+            else if (ResponseCompactionCompacting is { } __value9 && responseCompactionCompacting != null)
             {
-                return responseCompactionCompacting(ResponseCompactionCompacting!);
+                return responseCompactionCompacting(__value9);
             }
-            else if (IsResponseCompleted && responseCompleted != null)
+            else if (ResponseCompleted is { } __value10 && responseCompleted != null)
             {
-                return responseCompleted(ResponseCompleted!);
+                return responseCompleted(__value10);
             }
-            else if (IsResponseContentPartAdded && responseContentPartAdded != null)
+            else if (ResponseContentPartAdded is { } __value11 && responseContentPartAdded != null)
             {
-                return responseContentPartAdded(ResponseContentPartAdded!);
+                return responseContentPartAdded(__value11);
             }
-            else if (IsResponseContentPartDone && responseContentPartDone != null)
+            else if (ResponseContentPartDone is { } __value12 && responseContentPartDone != null)
             {
-                return responseContentPartDone(ResponseContentPartDone!);
+                return responseContentPartDone(__value12);
             }
-            else if (IsResponseCreated && responseCreated != null)
+            else if (ResponseCreated is { } __value13 && responseCreated != null)
             {
-                return responseCreated(ResponseCreated!);
+                return responseCreated(__value13);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value14 && error != null)
             {
-                return error(Error!);
+                return error(__value14);
             }
-            else if (IsResponseFileSearchCallCompleted && responseFileSearchCallCompleted != null)
+            else if (ResponseFileSearchCallCompleted is { } __value15 && responseFileSearchCallCompleted != null)
             {
-                return responseFileSearchCallCompleted(ResponseFileSearchCallCompleted!);
+                return responseFileSearchCallCompleted(__value15);
             }
-            else if (IsResponseFileSearchCallInProgress && responseFileSearchCallInProgress != null)
+            else if (ResponseFileSearchCallInProgress is { } __value16 && responseFileSearchCallInProgress != null)
             {
-                return responseFileSearchCallInProgress(ResponseFileSearchCallInProgress!);
+                return responseFileSearchCallInProgress(__value16);
             }
-            else if (IsResponseFileSearchCallSearching && responseFileSearchCallSearching != null)
+            else if (ResponseFileSearchCallSearching is { } __value17 && responseFileSearchCallSearching != null)
             {
-                return responseFileSearchCallSearching(ResponseFileSearchCallSearching!);
+                return responseFileSearchCallSearching(__value17);
             }
-            else if (IsResponseFunctionCallArgumentsDelta && responseFunctionCallArgumentsDelta != null)
+            else if (ResponseFunctionCallArgumentsDelta is { } __value18 && responseFunctionCallArgumentsDelta != null)
             {
-                return responseFunctionCallArgumentsDelta(ResponseFunctionCallArgumentsDelta!);
+                return responseFunctionCallArgumentsDelta(__value18);
             }
-            else if (IsResponseFunctionCallArgumentsDone && responseFunctionCallArgumentsDone != null)
+            else if (ResponseFunctionCallArgumentsDone is { } __value19 && responseFunctionCallArgumentsDone != null)
             {
-                return responseFunctionCallArgumentsDone(ResponseFunctionCallArgumentsDone!);
+                return responseFunctionCallArgumentsDone(__value19);
             }
-            else if (IsResponseShellCallCommandAdded && responseShellCallCommandAdded != null)
+            else if (ResponseShellCallCommandAdded is { } __value20 && responseShellCallCommandAdded != null)
             {
-                return responseShellCallCommandAdded(ResponseShellCallCommandAdded!);
+                return responseShellCallCommandAdded(__value20);
             }
-            else if (IsResponseShellCallCommandDelta && responseShellCallCommandDelta != null)
+            else if (ResponseShellCallCommandDelta is { } __value21 && responseShellCallCommandDelta != null)
             {
-                return responseShellCallCommandDelta(ResponseShellCallCommandDelta!);
+                return responseShellCallCommandDelta(__value21);
             }
-            else if (IsResponseShellCallCommandDone && responseShellCallCommandDone != null)
+            else if (ResponseShellCallCommandDone is { } __value22 && responseShellCallCommandDone != null)
             {
-                return responseShellCallCommandDone(ResponseShellCallCommandDone!);
+                return responseShellCallCommandDone(__value22);
             }
-            else if (IsResponseShellCallOutputContentDelta && responseShellCallOutputContentDelta != null)
+            else if (ResponseShellCallOutputContentDelta is { } __value23 && responseShellCallOutputContentDelta != null)
             {
-                return responseShellCallOutputContentDelta(ResponseShellCallOutputContentDelta!);
+                return responseShellCallOutputContentDelta(__value23);
             }
-            else if (IsResponseShellCallOutputContentDone && responseShellCallOutputContentDone != null)
+            else if (ResponseShellCallOutputContentDone is { } __value24 && responseShellCallOutputContentDone != null)
             {
-                return responseShellCallOutputContentDone(ResponseShellCallOutputContentDone!);
+                return responseShellCallOutputContentDone(__value24);
             }
-            else if (IsResponseInProgress && responseInProgress != null)
+            else if (ResponseInProgress is { } __value25 && responseInProgress != null)
             {
-                return responseInProgress(ResponseInProgress!);
+                return responseInProgress(__value25);
             }
-            else if (IsResponseFailed && responseFailed != null)
+            else if (ResponseFailed is { } __value26 && responseFailed != null)
             {
-                return responseFailed(ResponseFailed!);
+                return responseFailed(__value26);
             }
-            else if (IsResponseIncomplete && responseIncomplete != null)
+            else if (ResponseIncomplete is { } __value27 && responseIncomplete != null)
             {
-                return responseIncomplete(ResponseIncomplete!);
+                return responseIncomplete(__value27);
             }
-            else if (IsResponseOutputItemAdded && responseOutputItemAdded != null)
+            else if (ResponseOutputItemAdded is { } __value28 && responseOutputItemAdded != null)
             {
-                return responseOutputItemAdded(ResponseOutputItemAdded!);
+                return responseOutputItemAdded(__value28);
             }
-            else if (IsResponseOutputItemDone && responseOutputItemDone != null)
+            else if (ResponseOutputItemDone is { } __value29 && responseOutputItemDone != null)
             {
-                return responseOutputItemDone(ResponseOutputItemDone!);
+                return responseOutputItemDone(__value29);
             }
-            else if (IsResponseReasoningSummaryPartAdded && responseReasoningSummaryPartAdded != null)
+            else if (ResponseReasoningSummaryPartAdded is { } __value30 && responseReasoningSummaryPartAdded != null)
             {
-                return responseReasoningSummaryPartAdded(ResponseReasoningSummaryPartAdded!);
+                return responseReasoningSummaryPartAdded(__value30);
             }
-            else if (IsResponseReasoningSummaryPartDone && responseReasoningSummaryPartDone != null)
+            else if (ResponseReasoningSummaryPartDone is { } __value31 && responseReasoningSummaryPartDone != null)
             {
-                return responseReasoningSummaryPartDone(ResponseReasoningSummaryPartDone!);
+                return responseReasoningSummaryPartDone(__value31);
             }
-            else if (IsResponseReasoningSummaryTextDelta && responseReasoningSummaryTextDelta != null)
+            else if (ResponseReasoningSummaryTextDelta is { } __value32 && responseReasoningSummaryTextDelta != null)
             {
-                return responseReasoningSummaryTextDelta(ResponseReasoningSummaryTextDelta!);
+                return responseReasoningSummaryTextDelta(__value32);
             }
-            else if (IsResponseReasoningSummaryTextDone && responseReasoningSummaryTextDone != null)
+            else if (ResponseReasoningSummaryTextDone is { } __value33 && responseReasoningSummaryTextDone != null)
             {
-                return responseReasoningSummaryTextDone(ResponseReasoningSummaryTextDone!);
+                return responseReasoningSummaryTextDone(__value33);
             }
-            else if (IsResponseReasoningTextDelta && responseReasoningTextDelta != null)
+            else if (ResponseReasoningTextDelta is { } __value34 && responseReasoningTextDelta != null)
             {
-                return responseReasoningTextDelta(ResponseReasoningTextDelta!);
+                return responseReasoningTextDelta(__value34);
             }
-            else if (IsResponseReasoningTextDone && responseReasoningTextDone != null)
+            else if (ResponseReasoningTextDone is { } __value35 && responseReasoningTextDone != null)
             {
-                return responseReasoningTextDone(ResponseReasoningTextDone!);
+                return responseReasoningTextDone(__value35);
             }
-            else if (IsResponseRefusalDelta && responseRefusalDelta != null)
+            else if (ResponseRefusalDelta is { } __value36 && responseRefusalDelta != null)
             {
-                return responseRefusalDelta(ResponseRefusalDelta!);
+                return responseRefusalDelta(__value36);
             }
-            else if (IsResponseRefusalDone && responseRefusalDone != null)
+            else if (ResponseRefusalDone is { } __value37 && responseRefusalDone != null)
             {
-                return responseRefusalDone(ResponseRefusalDone!);
+                return responseRefusalDone(__value37);
             }
-            else if (IsResponseOutputTextDelta && responseOutputTextDelta != null)
+            else if (ResponseOutputTextDelta is { } __value38 && responseOutputTextDelta != null)
             {
-                return responseOutputTextDelta(ResponseOutputTextDelta!);
+                return responseOutputTextDelta(__value38);
             }
-            else if (IsResponseOutputTextDone && responseOutputTextDone != null)
+            else if (ResponseOutputTextDone is { } __value39 && responseOutputTextDone != null)
             {
-                return responseOutputTextDone(ResponseOutputTextDone!);
+                return responseOutputTextDone(__value39);
             }
-            else if (IsResponseWebSearchCallCompleted && responseWebSearchCallCompleted != null)
+            else if (ResponseWebSearchCallCompleted is { } __value40 && responseWebSearchCallCompleted != null)
             {
-                return responseWebSearchCallCompleted(ResponseWebSearchCallCompleted!);
+                return responseWebSearchCallCompleted(__value40);
             }
-            else if (IsResponseWebSearchCallInProgress && responseWebSearchCallInProgress != null)
+            else if (ResponseWebSearchCallInProgress is { } __value41 && responseWebSearchCallInProgress != null)
             {
-                return responseWebSearchCallInProgress(ResponseWebSearchCallInProgress!);
+                return responseWebSearchCallInProgress(__value41);
             }
-            else if (IsResponseWebSearchCallSearching && responseWebSearchCallSearching != null)
+            else if (ResponseWebSearchCallSearching is { } __value42 && responseWebSearchCallSearching != null)
             {
-                return responseWebSearchCallSearching(ResponseWebSearchCallSearching!);
+                return responseWebSearchCallSearching(__value42);
             }
-            else if (IsResponseImageGenerationCallCompleted && responseImageGenerationCallCompleted != null)
+            else if (ResponseImageGenerationCallCompleted is { } __value43 && responseImageGenerationCallCompleted != null)
             {
-                return responseImageGenerationCallCompleted(ResponseImageGenerationCallCompleted!);
+                return responseImageGenerationCallCompleted(__value43);
             }
-            else if (IsResponseImageGenerationCallGenerating && responseImageGenerationCallGenerating != null)
+            else if (ResponseImageGenerationCallGenerating is { } __value44 && responseImageGenerationCallGenerating != null)
             {
-                return responseImageGenerationCallGenerating(ResponseImageGenerationCallGenerating!);
+                return responseImageGenerationCallGenerating(__value44);
             }
-            else if (IsResponseImageGenerationCallInProgress && responseImageGenerationCallInProgress != null)
+            else if (ResponseImageGenerationCallInProgress is { } __value45 && responseImageGenerationCallInProgress != null)
             {
-                return responseImageGenerationCallInProgress(ResponseImageGenerationCallInProgress!);
+                return responseImageGenerationCallInProgress(__value45);
             }
-            else if (IsResponseImageGenerationCallPartialImage && responseImageGenerationCallPartialImage != null)
+            else if (ResponseImageGenerationCallPartialImage is { } __value46 && responseImageGenerationCallPartialImage != null)
             {
-                return responseImageGenerationCallPartialImage(ResponseImageGenerationCallPartialImage!);
+                return responseImageGenerationCallPartialImage(__value46);
             }
-            else if (IsResponseMcpCallArgumentsDelta && responseMcpCallArgumentsDelta != null)
+            else if (ResponseMcpCallArgumentsDelta is { } __value47 && responseMcpCallArgumentsDelta != null)
             {
-                return responseMcpCallArgumentsDelta(ResponseMcpCallArgumentsDelta!);
+                return responseMcpCallArgumentsDelta(__value47);
             }
-            else if (IsResponseMcpCallArgumentsDone && responseMcpCallArgumentsDone != null)
+            else if (ResponseMcpCallArgumentsDone is { } __value48 && responseMcpCallArgumentsDone != null)
             {
-                return responseMcpCallArgumentsDone(ResponseMcpCallArgumentsDone!);
+                return responseMcpCallArgumentsDone(__value48);
             }
-            else if (IsResponseMcpCallCompleted && responseMcpCallCompleted != null)
+            else if (ResponseMcpCallCompleted is { } __value49 && responseMcpCallCompleted != null)
             {
-                return responseMcpCallCompleted(ResponseMcpCallCompleted!);
+                return responseMcpCallCompleted(__value49);
             }
-            else if (IsResponseMcpCallFailed && responseMcpCallFailed != null)
+            else if (ResponseMcpCallFailed is { } __value50 && responseMcpCallFailed != null)
             {
-                return responseMcpCallFailed(ResponseMcpCallFailed!);
+                return responseMcpCallFailed(__value50);
             }
-            else if (IsResponseMcpCallInProgress && responseMcpCallInProgress != null)
+            else if (ResponseMcpCallInProgress is { } __value51 && responseMcpCallInProgress != null)
             {
-                return responseMcpCallInProgress(ResponseMcpCallInProgress!);
+                return responseMcpCallInProgress(__value51);
             }
-            else if (IsResponseMcpListToolsCompleted && responseMcpListToolsCompleted != null)
+            else if (ResponseMcpListToolsCompleted is { } __value52 && responseMcpListToolsCompleted != null)
             {
-                return responseMcpListToolsCompleted(ResponseMcpListToolsCompleted!);
+                return responseMcpListToolsCompleted(__value52);
             }
-            else if (IsResponseMcpListToolsFailed && responseMcpListToolsFailed != null)
+            else if (ResponseMcpListToolsFailed is { } __value53 && responseMcpListToolsFailed != null)
             {
-                return responseMcpListToolsFailed(ResponseMcpListToolsFailed!);
+                return responseMcpListToolsFailed(__value53);
             }
-            else if (IsResponseMcpListToolsInProgress && responseMcpListToolsInProgress != null)
+            else if (ResponseMcpListToolsInProgress is { } __value54 && responseMcpListToolsInProgress != null)
             {
-                return responseMcpListToolsInProgress(ResponseMcpListToolsInProgress!);
+                return responseMcpListToolsInProgress(__value54);
             }
-            else if (IsResponseOutputTextAnnotationAdded && responseOutputTextAnnotationAdded != null)
+            else if (ResponseOutputTextAnnotationAdded is { } __value55 && responseOutputTextAnnotationAdded != null)
             {
-                return responseOutputTextAnnotationAdded(ResponseOutputTextAnnotationAdded!);
+                return responseOutputTextAnnotationAdded(__value55);
             }
-            else if (IsResponseQueued && responseQueued != null)
+            else if (ResponseQueued is { } __value56 && responseQueued != null)
             {
-                return responseQueued(ResponseQueued!);
+                return responseQueued(__value56);
             }
-            else if (IsResponseCustomToolCallInputDelta && responseCustomToolCallInputDelta != null)
+            else if (ResponseCustomToolCallInputDelta is { } __value57 && responseCustomToolCallInputDelta != null)
             {
-                return responseCustomToolCallInputDelta(ResponseCustomToolCallInputDelta!);
+                return responseCustomToolCallInputDelta(__value57);
             }
-            else if (IsResponseCustomToolCallInputDone && responseCustomToolCallInputDone != null)
+            else if (ResponseCustomToolCallInputDone is { } __value58 && responseCustomToolCallInputDone != null)
             {
-                return responseCustomToolCallInputDone(ResponseCustomToolCallInputDone!);
+                return responseCustomToolCallInputDone(__value58);
             }
 
             return default(TResult);
@@ -4261,241 +4261,241 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponseAudioDelta)
+            if (ResponseAudioDelta is { } __value0)
             {
-                responseAudioDelta?.Invoke(ResponseAudioDelta!);
+                responseAudioDelta?.Invoke(__value0);
             }
-            else if (IsResponseAudioDone)
+            else if (ResponseAudioDone is { } __value1)
             {
-                responseAudioDone?.Invoke(ResponseAudioDone!);
+                responseAudioDone?.Invoke(__value1);
             }
-            else if (IsResponseAudioTranscriptDelta)
+            else if (ResponseAudioTranscriptDelta is { } __value2)
             {
-                responseAudioTranscriptDelta?.Invoke(ResponseAudioTranscriptDelta!);
+                responseAudioTranscriptDelta?.Invoke(__value2);
             }
-            else if (IsResponseAudioTranscriptDone)
+            else if (ResponseAudioTranscriptDone is { } __value3)
             {
-                responseAudioTranscriptDone?.Invoke(ResponseAudioTranscriptDone!);
+                responseAudioTranscriptDone?.Invoke(__value3);
             }
-            else if (IsResponseCodeInterpreterCallCodeDelta)
+            else if (ResponseCodeInterpreterCallCodeDelta is { } __value4)
             {
-                responseCodeInterpreterCallCodeDelta?.Invoke(ResponseCodeInterpreterCallCodeDelta!);
+                responseCodeInterpreterCallCodeDelta?.Invoke(__value4);
             }
-            else if (IsResponseCodeInterpreterCallCodeDone)
+            else if (ResponseCodeInterpreterCallCodeDone is { } __value5)
             {
-                responseCodeInterpreterCallCodeDone?.Invoke(ResponseCodeInterpreterCallCodeDone!);
+                responseCodeInterpreterCallCodeDone?.Invoke(__value5);
             }
-            else if (IsResponseCodeInterpreterCallCompleted)
+            else if (ResponseCodeInterpreterCallCompleted is { } __value6)
             {
-                responseCodeInterpreterCallCompleted?.Invoke(ResponseCodeInterpreterCallCompleted!);
+                responseCodeInterpreterCallCompleted?.Invoke(__value6);
             }
-            else if (IsResponseCodeInterpreterCallInProgress)
+            else if (ResponseCodeInterpreterCallInProgress is { } __value7)
             {
-                responseCodeInterpreterCallInProgress?.Invoke(ResponseCodeInterpreterCallInProgress!);
+                responseCodeInterpreterCallInProgress?.Invoke(__value7);
             }
-            else if (IsResponseCodeInterpreterCallInterpreting)
+            else if (ResponseCodeInterpreterCallInterpreting is { } __value8)
             {
-                responseCodeInterpreterCallInterpreting?.Invoke(ResponseCodeInterpreterCallInterpreting!);
+                responseCodeInterpreterCallInterpreting?.Invoke(__value8);
             }
-            else if (IsResponseCompactionCompacting)
+            else if (ResponseCompactionCompacting is { } __value9)
             {
-                responseCompactionCompacting?.Invoke(ResponseCompactionCompacting!);
+                responseCompactionCompacting?.Invoke(__value9);
             }
-            else if (IsResponseCompleted)
+            else if (ResponseCompleted is { } __value10)
             {
-                responseCompleted?.Invoke(ResponseCompleted!);
+                responseCompleted?.Invoke(__value10);
             }
-            else if (IsResponseContentPartAdded)
+            else if (ResponseContentPartAdded is { } __value11)
             {
-                responseContentPartAdded?.Invoke(ResponseContentPartAdded!);
+                responseContentPartAdded?.Invoke(__value11);
             }
-            else if (IsResponseContentPartDone)
+            else if (ResponseContentPartDone is { } __value12)
             {
-                responseContentPartDone?.Invoke(ResponseContentPartDone!);
+                responseContentPartDone?.Invoke(__value12);
             }
-            else if (IsResponseCreated)
+            else if (ResponseCreated is { } __value13)
             {
-                responseCreated?.Invoke(ResponseCreated!);
+                responseCreated?.Invoke(__value13);
             }
-            else if (IsError)
+            else if (Error is { } __value14)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value14);
             }
-            else if (IsResponseFileSearchCallCompleted)
+            else if (ResponseFileSearchCallCompleted is { } __value15)
             {
-                responseFileSearchCallCompleted?.Invoke(ResponseFileSearchCallCompleted!);
+                responseFileSearchCallCompleted?.Invoke(__value15);
             }
-            else if (IsResponseFileSearchCallInProgress)
+            else if (ResponseFileSearchCallInProgress is { } __value16)
             {
-                responseFileSearchCallInProgress?.Invoke(ResponseFileSearchCallInProgress!);
+                responseFileSearchCallInProgress?.Invoke(__value16);
             }
-            else if (IsResponseFileSearchCallSearching)
+            else if (ResponseFileSearchCallSearching is { } __value17)
             {
-                responseFileSearchCallSearching?.Invoke(ResponseFileSearchCallSearching!);
+                responseFileSearchCallSearching?.Invoke(__value17);
             }
-            else if (IsResponseFunctionCallArgumentsDelta)
+            else if (ResponseFunctionCallArgumentsDelta is { } __value18)
             {
-                responseFunctionCallArgumentsDelta?.Invoke(ResponseFunctionCallArgumentsDelta!);
+                responseFunctionCallArgumentsDelta?.Invoke(__value18);
             }
-            else if (IsResponseFunctionCallArgumentsDone)
+            else if (ResponseFunctionCallArgumentsDone is { } __value19)
             {
-                responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+                responseFunctionCallArgumentsDone?.Invoke(__value19);
             }
-            else if (IsResponseShellCallCommandAdded)
+            else if (ResponseShellCallCommandAdded is { } __value20)
             {
-                responseShellCallCommandAdded?.Invoke(ResponseShellCallCommandAdded!);
+                responseShellCallCommandAdded?.Invoke(__value20);
             }
-            else if (IsResponseShellCallCommandDelta)
+            else if (ResponseShellCallCommandDelta is { } __value21)
             {
-                responseShellCallCommandDelta?.Invoke(ResponseShellCallCommandDelta!);
+                responseShellCallCommandDelta?.Invoke(__value21);
             }
-            else if (IsResponseShellCallCommandDone)
+            else if (ResponseShellCallCommandDone is { } __value22)
             {
-                responseShellCallCommandDone?.Invoke(ResponseShellCallCommandDone!);
+                responseShellCallCommandDone?.Invoke(__value22);
             }
-            else if (IsResponseShellCallOutputContentDelta)
+            else if (ResponseShellCallOutputContentDelta is { } __value23)
             {
-                responseShellCallOutputContentDelta?.Invoke(ResponseShellCallOutputContentDelta!);
+                responseShellCallOutputContentDelta?.Invoke(__value23);
             }
-            else if (IsResponseShellCallOutputContentDone)
+            else if (ResponseShellCallOutputContentDone is { } __value24)
             {
-                responseShellCallOutputContentDone?.Invoke(ResponseShellCallOutputContentDone!);
+                responseShellCallOutputContentDone?.Invoke(__value24);
             }
-            else if (IsResponseInProgress)
+            else if (ResponseInProgress is { } __value25)
             {
-                responseInProgress?.Invoke(ResponseInProgress!);
+                responseInProgress?.Invoke(__value25);
             }
-            else if (IsResponseFailed)
+            else if (ResponseFailed is { } __value26)
             {
-                responseFailed?.Invoke(ResponseFailed!);
+                responseFailed?.Invoke(__value26);
             }
-            else if (IsResponseIncomplete)
+            else if (ResponseIncomplete is { } __value27)
             {
-                responseIncomplete?.Invoke(ResponseIncomplete!);
+                responseIncomplete?.Invoke(__value27);
             }
-            else if (IsResponseOutputItemAdded)
+            else if (ResponseOutputItemAdded is { } __value28)
             {
-                responseOutputItemAdded?.Invoke(ResponseOutputItemAdded!);
+                responseOutputItemAdded?.Invoke(__value28);
             }
-            else if (IsResponseOutputItemDone)
+            else if (ResponseOutputItemDone is { } __value29)
             {
-                responseOutputItemDone?.Invoke(ResponseOutputItemDone!);
+                responseOutputItemDone?.Invoke(__value29);
             }
-            else if (IsResponseReasoningSummaryPartAdded)
+            else if (ResponseReasoningSummaryPartAdded is { } __value30)
             {
-                responseReasoningSummaryPartAdded?.Invoke(ResponseReasoningSummaryPartAdded!);
+                responseReasoningSummaryPartAdded?.Invoke(__value30);
             }
-            else if (IsResponseReasoningSummaryPartDone)
+            else if (ResponseReasoningSummaryPartDone is { } __value31)
             {
-                responseReasoningSummaryPartDone?.Invoke(ResponseReasoningSummaryPartDone!);
+                responseReasoningSummaryPartDone?.Invoke(__value31);
             }
-            else if (IsResponseReasoningSummaryTextDelta)
+            else if (ResponseReasoningSummaryTextDelta is { } __value32)
             {
-                responseReasoningSummaryTextDelta?.Invoke(ResponseReasoningSummaryTextDelta!);
+                responseReasoningSummaryTextDelta?.Invoke(__value32);
             }
-            else if (IsResponseReasoningSummaryTextDone)
+            else if (ResponseReasoningSummaryTextDone is { } __value33)
             {
-                responseReasoningSummaryTextDone?.Invoke(ResponseReasoningSummaryTextDone!);
+                responseReasoningSummaryTextDone?.Invoke(__value33);
             }
-            else if (IsResponseReasoningTextDelta)
+            else if (ResponseReasoningTextDelta is { } __value34)
             {
-                responseReasoningTextDelta?.Invoke(ResponseReasoningTextDelta!);
+                responseReasoningTextDelta?.Invoke(__value34);
             }
-            else if (IsResponseReasoningTextDone)
+            else if (ResponseReasoningTextDone is { } __value35)
             {
-                responseReasoningTextDone?.Invoke(ResponseReasoningTextDone!);
+                responseReasoningTextDone?.Invoke(__value35);
             }
-            else if (IsResponseRefusalDelta)
+            else if (ResponseRefusalDelta is { } __value36)
             {
-                responseRefusalDelta?.Invoke(ResponseRefusalDelta!);
+                responseRefusalDelta?.Invoke(__value36);
             }
-            else if (IsResponseRefusalDone)
+            else if (ResponseRefusalDone is { } __value37)
             {
-                responseRefusalDone?.Invoke(ResponseRefusalDone!);
+                responseRefusalDone?.Invoke(__value37);
             }
-            else if (IsResponseOutputTextDelta)
+            else if (ResponseOutputTextDelta is { } __value38)
             {
-                responseOutputTextDelta?.Invoke(ResponseOutputTextDelta!);
+                responseOutputTextDelta?.Invoke(__value38);
             }
-            else if (IsResponseOutputTextDone)
+            else if (ResponseOutputTextDone is { } __value39)
             {
-                responseOutputTextDone?.Invoke(ResponseOutputTextDone!);
+                responseOutputTextDone?.Invoke(__value39);
             }
-            else if (IsResponseWebSearchCallCompleted)
+            else if (ResponseWebSearchCallCompleted is { } __value40)
             {
-                responseWebSearchCallCompleted?.Invoke(ResponseWebSearchCallCompleted!);
+                responseWebSearchCallCompleted?.Invoke(__value40);
             }
-            else if (IsResponseWebSearchCallInProgress)
+            else if (ResponseWebSearchCallInProgress is { } __value41)
             {
-                responseWebSearchCallInProgress?.Invoke(ResponseWebSearchCallInProgress!);
+                responseWebSearchCallInProgress?.Invoke(__value41);
             }
-            else if (IsResponseWebSearchCallSearching)
+            else if (ResponseWebSearchCallSearching is { } __value42)
             {
-                responseWebSearchCallSearching?.Invoke(ResponseWebSearchCallSearching!);
+                responseWebSearchCallSearching?.Invoke(__value42);
             }
-            else if (IsResponseImageGenerationCallCompleted)
+            else if (ResponseImageGenerationCallCompleted is { } __value43)
             {
-                responseImageGenerationCallCompleted?.Invoke(ResponseImageGenerationCallCompleted!);
+                responseImageGenerationCallCompleted?.Invoke(__value43);
             }
-            else if (IsResponseImageGenerationCallGenerating)
+            else if (ResponseImageGenerationCallGenerating is { } __value44)
             {
-                responseImageGenerationCallGenerating?.Invoke(ResponseImageGenerationCallGenerating!);
+                responseImageGenerationCallGenerating?.Invoke(__value44);
             }
-            else if (IsResponseImageGenerationCallInProgress)
+            else if (ResponseImageGenerationCallInProgress is { } __value45)
             {
-                responseImageGenerationCallInProgress?.Invoke(ResponseImageGenerationCallInProgress!);
+                responseImageGenerationCallInProgress?.Invoke(__value45);
             }
-            else if (IsResponseImageGenerationCallPartialImage)
+            else if (ResponseImageGenerationCallPartialImage is { } __value46)
             {
-                responseImageGenerationCallPartialImage?.Invoke(ResponseImageGenerationCallPartialImage!);
+                responseImageGenerationCallPartialImage?.Invoke(__value46);
             }
-            else if (IsResponseMcpCallArgumentsDelta)
+            else if (ResponseMcpCallArgumentsDelta is { } __value47)
             {
-                responseMcpCallArgumentsDelta?.Invoke(ResponseMcpCallArgumentsDelta!);
+                responseMcpCallArgumentsDelta?.Invoke(__value47);
             }
-            else if (IsResponseMcpCallArgumentsDone)
+            else if (ResponseMcpCallArgumentsDone is { } __value48)
             {
-                responseMcpCallArgumentsDone?.Invoke(ResponseMcpCallArgumentsDone!);
+                responseMcpCallArgumentsDone?.Invoke(__value48);
             }
-            else if (IsResponseMcpCallCompleted)
+            else if (ResponseMcpCallCompleted is { } __value49)
             {
-                responseMcpCallCompleted?.Invoke(ResponseMcpCallCompleted!);
+                responseMcpCallCompleted?.Invoke(__value49);
             }
-            else if (IsResponseMcpCallFailed)
+            else if (ResponseMcpCallFailed is { } __value50)
             {
-                responseMcpCallFailed?.Invoke(ResponseMcpCallFailed!);
+                responseMcpCallFailed?.Invoke(__value50);
             }
-            else if (IsResponseMcpCallInProgress)
+            else if (ResponseMcpCallInProgress is { } __value51)
             {
-                responseMcpCallInProgress?.Invoke(ResponseMcpCallInProgress!);
+                responseMcpCallInProgress?.Invoke(__value51);
             }
-            else if (IsResponseMcpListToolsCompleted)
+            else if (ResponseMcpListToolsCompleted is { } __value52)
             {
-                responseMcpListToolsCompleted?.Invoke(ResponseMcpListToolsCompleted!);
+                responseMcpListToolsCompleted?.Invoke(__value52);
             }
-            else if (IsResponseMcpListToolsFailed)
+            else if (ResponseMcpListToolsFailed is { } __value53)
             {
-                responseMcpListToolsFailed?.Invoke(ResponseMcpListToolsFailed!);
+                responseMcpListToolsFailed?.Invoke(__value53);
             }
-            else if (IsResponseMcpListToolsInProgress)
+            else if (ResponseMcpListToolsInProgress is { } __value54)
             {
-                responseMcpListToolsInProgress?.Invoke(ResponseMcpListToolsInProgress!);
+                responseMcpListToolsInProgress?.Invoke(__value54);
             }
-            else if (IsResponseOutputTextAnnotationAdded)
+            else if (ResponseOutputTextAnnotationAdded is { } __value55)
             {
-                responseOutputTextAnnotationAdded?.Invoke(ResponseOutputTextAnnotationAdded!);
+                responseOutputTextAnnotationAdded?.Invoke(__value55);
             }
-            else if (IsResponseQueued)
+            else if (ResponseQueued is { } __value56)
             {
-                responseQueued?.Invoke(ResponseQueued!);
+                responseQueued?.Invoke(__value56);
             }
-            else if (IsResponseCustomToolCallInputDelta)
+            else if (ResponseCustomToolCallInputDelta is { } __value57)
             {
-                responseCustomToolCallInputDelta?.Invoke(ResponseCustomToolCallInputDelta!);
+                responseCustomToolCallInputDelta?.Invoke(__value57);
             }
-            else if (IsResponseCustomToolCallInputDone)
+            else if (ResponseCustomToolCallInputDone is { } __value58)
             {
-                responseCustomToolCallInputDone?.Invoke(ResponseCustomToolCallInputDone!);
+                responseCustomToolCallInputDone?.Invoke(__value58);
             }
         }
 
@@ -4569,241 +4569,241 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponseAudioDelta)
+            if (ResponseAudioDelta is { } __value0)
             {
-                responseAudioDelta?.Invoke(ResponseAudioDelta!);
+                responseAudioDelta?.Invoke(__value0);
             }
-            else if (IsResponseAudioDone)
+            else if (ResponseAudioDone is { } __value1)
             {
-                responseAudioDone?.Invoke(ResponseAudioDone!);
+                responseAudioDone?.Invoke(__value1);
             }
-            else if (IsResponseAudioTranscriptDelta)
+            else if (ResponseAudioTranscriptDelta is { } __value2)
             {
-                responseAudioTranscriptDelta?.Invoke(ResponseAudioTranscriptDelta!);
+                responseAudioTranscriptDelta?.Invoke(__value2);
             }
-            else if (IsResponseAudioTranscriptDone)
+            else if (ResponseAudioTranscriptDone is { } __value3)
             {
-                responseAudioTranscriptDone?.Invoke(ResponseAudioTranscriptDone!);
+                responseAudioTranscriptDone?.Invoke(__value3);
             }
-            else if (IsResponseCodeInterpreterCallCodeDelta)
+            else if (ResponseCodeInterpreterCallCodeDelta is { } __value4)
             {
-                responseCodeInterpreterCallCodeDelta?.Invoke(ResponseCodeInterpreterCallCodeDelta!);
+                responseCodeInterpreterCallCodeDelta?.Invoke(__value4);
             }
-            else if (IsResponseCodeInterpreterCallCodeDone)
+            else if (ResponseCodeInterpreterCallCodeDone is { } __value5)
             {
-                responseCodeInterpreterCallCodeDone?.Invoke(ResponseCodeInterpreterCallCodeDone!);
+                responseCodeInterpreterCallCodeDone?.Invoke(__value5);
             }
-            else if (IsResponseCodeInterpreterCallCompleted)
+            else if (ResponseCodeInterpreterCallCompleted is { } __value6)
             {
-                responseCodeInterpreterCallCompleted?.Invoke(ResponseCodeInterpreterCallCompleted!);
+                responseCodeInterpreterCallCompleted?.Invoke(__value6);
             }
-            else if (IsResponseCodeInterpreterCallInProgress)
+            else if (ResponseCodeInterpreterCallInProgress is { } __value7)
             {
-                responseCodeInterpreterCallInProgress?.Invoke(ResponseCodeInterpreterCallInProgress!);
+                responseCodeInterpreterCallInProgress?.Invoke(__value7);
             }
-            else if (IsResponseCodeInterpreterCallInterpreting)
+            else if (ResponseCodeInterpreterCallInterpreting is { } __value8)
             {
-                responseCodeInterpreterCallInterpreting?.Invoke(ResponseCodeInterpreterCallInterpreting!);
+                responseCodeInterpreterCallInterpreting?.Invoke(__value8);
             }
-            else if (IsResponseCompactionCompacting)
+            else if (ResponseCompactionCompacting is { } __value9)
             {
-                responseCompactionCompacting?.Invoke(ResponseCompactionCompacting!);
+                responseCompactionCompacting?.Invoke(__value9);
             }
-            else if (IsResponseCompleted)
+            else if (ResponseCompleted is { } __value10)
             {
-                responseCompleted?.Invoke(ResponseCompleted!);
+                responseCompleted?.Invoke(__value10);
             }
-            else if (IsResponseContentPartAdded)
+            else if (ResponseContentPartAdded is { } __value11)
             {
-                responseContentPartAdded?.Invoke(ResponseContentPartAdded!);
+                responseContentPartAdded?.Invoke(__value11);
             }
-            else if (IsResponseContentPartDone)
+            else if (ResponseContentPartDone is { } __value12)
             {
-                responseContentPartDone?.Invoke(ResponseContentPartDone!);
+                responseContentPartDone?.Invoke(__value12);
             }
-            else if (IsResponseCreated)
+            else if (ResponseCreated is { } __value13)
             {
-                responseCreated?.Invoke(ResponseCreated!);
+                responseCreated?.Invoke(__value13);
             }
-            else if (IsError)
+            else if (Error is { } __value14)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value14);
             }
-            else if (IsResponseFileSearchCallCompleted)
+            else if (ResponseFileSearchCallCompleted is { } __value15)
             {
-                responseFileSearchCallCompleted?.Invoke(ResponseFileSearchCallCompleted!);
+                responseFileSearchCallCompleted?.Invoke(__value15);
             }
-            else if (IsResponseFileSearchCallInProgress)
+            else if (ResponseFileSearchCallInProgress is { } __value16)
             {
-                responseFileSearchCallInProgress?.Invoke(ResponseFileSearchCallInProgress!);
+                responseFileSearchCallInProgress?.Invoke(__value16);
             }
-            else if (IsResponseFileSearchCallSearching)
+            else if (ResponseFileSearchCallSearching is { } __value17)
             {
-                responseFileSearchCallSearching?.Invoke(ResponseFileSearchCallSearching!);
+                responseFileSearchCallSearching?.Invoke(__value17);
             }
-            else if (IsResponseFunctionCallArgumentsDelta)
+            else if (ResponseFunctionCallArgumentsDelta is { } __value18)
             {
-                responseFunctionCallArgumentsDelta?.Invoke(ResponseFunctionCallArgumentsDelta!);
+                responseFunctionCallArgumentsDelta?.Invoke(__value18);
             }
-            else if (IsResponseFunctionCallArgumentsDone)
+            else if (ResponseFunctionCallArgumentsDone is { } __value19)
             {
-                responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+                responseFunctionCallArgumentsDone?.Invoke(__value19);
             }
-            else if (IsResponseShellCallCommandAdded)
+            else if (ResponseShellCallCommandAdded is { } __value20)
             {
-                responseShellCallCommandAdded?.Invoke(ResponseShellCallCommandAdded!);
+                responseShellCallCommandAdded?.Invoke(__value20);
             }
-            else if (IsResponseShellCallCommandDelta)
+            else if (ResponseShellCallCommandDelta is { } __value21)
             {
-                responseShellCallCommandDelta?.Invoke(ResponseShellCallCommandDelta!);
+                responseShellCallCommandDelta?.Invoke(__value21);
             }
-            else if (IsResponseShellCallCommandDone)
+            else if (ResponseShellCallCommandDone is { } __value22)
             {
-                responseShellCallCommandDone?.Invoke(ResponseShellCallCommandDone!);
+                responseShellCallCommandDone?.Invoke(__value22);
             }
-            else if (IsResponseShellCallOutputContentDelta)
+            else if (ResponseShellCallOutputContentDelta is { } __value23)
             {
-                responseShellCallOutputContentDelta?.Invoke(ResponseShellCallOutputContentDelta!);
+                responseShellCallOutputContentDelta?.Invoke(__value23);
             }
-            else if (IsResponseShellCallOutputContentDone)
+            else if (ResponseShellCallOutputContentDone is { } __value24)
             {
-                responseShellCallOutputContentDone?.Invoke(ResponseShellCallOutputContentDone!);
+                responseShellCallOutputContentDone?.Invoke(__value24);
             }
-            else if (IsResponseInProgress)
+            else if (ResponseInProgress is { } __value25)
             {
-                responseInProgress?.Invoke(ResponseInProgress!);
+                responseInProgress?.Invoke(__value25);
             }
-            else if (IsResponseFailed)
+            else if (ResponseFailed is { } __value26)
             {
-                responseFailed?.Invoke(ResponseFailed!);
+                responseFailed?.Invoke(__value26);
             }
-            else if (IsResponseIncomplete)
+            else if (ResponseIncomplete is { } __value27)
             {
-                responseIncomplete?.Invoke(ResponseIncomplete!);
+                responseIncomplete?.Invoke(__value27);
             }
-            else if (IsResponseOutputItemAdded)
+            else if (ResponseOutputItemAdded is { } __value28)
             {
-                responseOutputItemAdded?.Invoke(ResponseOutputItemAdded!);
+                responseOutputItemAdded?.Invoke(__value28);
             }
-            else if (IsResponseOutputItemDone)
+            else if (ResponseOutputItemDone is { } __value29)
             {
-                responseOutputItemDone?.Invoke(ResponseOutputItemDone!);
+                responseOutputItemDone?.Invoke(__value29);
             }
-            else if (IsResponseReasoningSummaryPartAdded)
+            else if (ResponseReasoningSummaryPartAdded is { } __value30)
             {
-                responseReasoningSummaryPartAdded?.Invoke(ResponseReasoningSummaryPartAdded!);
+                responseReasoningSummaryPartAdded?.Invoke(__value30);
             }
-            else if (IsResponseReasoningSummaryPartDone)
+            else if (ResponseReasoningSummaryPartDone is { } __value31)
             {
-                responseReasoningSummaryPartDone?.Invoke(ResponseReasoningSummaryPartDone!);
+                responseReasoningSummaryPartDone?.Invoke(__value31);
             }
-            else if (IsResponseReasoningSummaryTextDelta)
+            else if (ResponseReasoningSummaryTextDelta is { } __value32)
             {
-                responseReasoningSummaryTextDelta?.Invoke(ResponseReasoningSummaryTextDelta!);
+                responseReasoningSummaryTextDelta?.Invoke(__value32);
             }
-            else if (IsResponseReasoningSummaryTextDone)
+            else if (ResponseReasoningSummaryTextDone is { } __value33)
             {
-                responseReasoningSummaryTextDone?.Invoke(ResponseReasoningSummaryTextDone!);
+                responseReasoningSummaryTextDone?.Invoke(__value33);
             }
-            else if (IsResponseReasoningTextDelta)
+            else if (ResponseReasoningTextDelta is { } __value34)
             {
-                responseReasoningTextDelta?.Invoke(ResponseReasoningTextDelta!);
+                responseReasoningTextDelta?.Invoke(__value34);
             }
-            else if (IsResponseReasoningTextDone)
+            else if (ResponseReasoningTextDone is { } __value35)
             {
-                responseReasoningTextDone?.Invoke(ResponseReasoningTextDone!);
+                responseReasoningTextDone?.Invoke(__value35);
             }
-            else if (IsResponseRefusalDelta)
+            else if (ResponseRefusalDelta is { } __value36)
             {
-                responseRefusalDelta?.Invoke(ResponseRefusalDelta!);
+                responseRefusalDelta?.Invoke(__value36);
             }
-            else if (IsResponseRefusalDone)
+            else if (ResponseRefusalDone is { } __value37)
             {
-                responseRefusalDone?.Invoke(ResponseRefusalDone!);
+                responseRefusalDone?.Invoke(__value37);
             }
-            else if (IsResponseOutputTextDelta)
+            else if (ResponseOutputTextDelta is { } __value38)
             {
-                responseOutputTextDelta?.Invoke(ResponseOutputTextDelta!);
+                responseOutputTextDelta?.Invoke(__value38);
             }
-            else if (IsResponseOutputTextDone)
+            else if (ResponseOutputTextDone is { } __value39)
             {
-                responseOutputTextDone?.Invoke(ResponseOutputTextDone!);
+                responseOutputTextDone?.Invoke(__value39);
             }
-            else if (IsResponseWebSearchCallCompleted)
+            else if (ResponseWebSearchCallCompleted is { } __value40)
             {
-                responseWebSearchCallCompleted?.Invoke(ResponseWebSearchCallCompleted!);
+                responseWebSearchCallCompleted?.Invoke(__value40);
             }
-            else if (IsResponseWebSearchCallInProgress)
+            else if (ResponseWebSearchCallInProgress is { } __value41)
             {
-                responseWebSearchCallInProgress?.Invoke(ResponseWebSearchCallInProgress!);
+                responseWebSearchCallInProgress?.Invoke(__value41);
             }
-            else if (IsResponseWebSearchCallSearching)
+            else if (ResponseWebSearchCallSearching is { } __value42)
             {
-                responseWebSearchCallSearching?.Invoke(ResponseWebSearchCallSearching!);
+                responseWebSearchCallSearching?.Invoke(__value42);
             }
-            else if (IsResponseImageGenerationCallCompleted)
+            else if (ResponseImageGenerationCallCompleted is { } __value43)
             {
-                responseImageGenerationCallCompleted?.Invoke(ResponseImageGenerationCallCompleted!);
+                responseImageGenerationCallCompleted?.Invoke(__value43);
             }
-            else if (IsResponseImageGenerationCallGenerating)
+            else if (ResponseImageGenerationCallGenerating is { } __value44)
             {
-                responseImageGenerationCallGenerating?.Invoke(ResponseImageGenerationCallGenerating!);
+                responseImageGenerationCallGenerating?.Invoke(__value44);
             }
-            else if (IsResponseImageGenerationCallInProgress)
+            else if (ResponseImageGenerationCallInProgress is { } __value45)
             {
-                responseImageGenerationCallInProgress?.Invoke(ResponseImageGenerationCallInProgress!);
+                responseImageGenerationCallInProgress?.Invoke(__value45);
             }
-            else if (IsResponseImageGenerationCallPartialImage)
+            else if (ResponseImageGenerationCallPartialImage is { } __value46)
             {
-                responseImageGenerationCallPartialImage?.Invoke(ResponseImageGenerationCallPartialImage!);
+                responseImageGenerationCallPartialImage?.Invoke(__value46);
             }
-            else if (IsResponseMcpCallArgumentsDelta)
+            else if (ResponseMcpCallArgumentsDelta is { } __value47)
             {
-                responseMcpCallArgumentsDelta?.Invoke(ResponseMcpCallArgumentsDelta!);
+                responseMcpCallArgumentsDelta?.Invoke(__value47);
             }
-            else if (IsResponseMcpCallArgumentsDone)
+            else if (ResponseMcpCallArgumentsDone is { } __value48)
             {
-                responseMcpCallArgumentsDone?.Invoke(ResponseMcpCallArgumentsDone!);
+                responseMcpCallArgumentsDone?.Invoke(__value48);
             }
-            else if (IsResponseMcpCallCompleted)
+            else if (ResponseMcpCallCompleted is { } __value49)
             {
-                responseMcpCallCompleted?.Invoke(ResponseMcpCallCompleted!);
+                responseMcpCallCompleted?.Invoke(__value49);
             }
-            else if (IsResponseMcpCallFailed)
+            else if (ResponseMcpCallFailed is { } __value50)
             {
-                responseMcpCallFailed?.Invoke(ResponseMcpCallFailed!);
+                responseMcpCallFailed?.Invoke(__value50);
             }
-            else if (IsResponseMcpCallInProgress)
+            else if (ResponseMcpCallInProgress is { } __value51)
             {
-                responseMcpCallInProgress?.Invoke(ResponseMcpCallInProgress!);
+                responseMcpCallInProgress?.Invoke(__value51);
             }
-            else if (IsResponseMcpListToolsCompleted)
+            else if (ResponseMcpListToolsCompleted is { } __value52)
             {
-                responseMcpListToolsCompleted?.Invoke(ResponseMcpListToolsCompleted!);
+                responseMcpListToolsCompleted?.Invoke(__value52);
             }
-            else if (IsResponseMcpListToolsFailed)
+            else if (ResponseMcpListToolsFailed is { } __value53)
             {
-                responseMcpListToolsFailed?.Invoke(ResponseMcpListToolsFailed!);
+                responseMcpListToolsFailed?.Invoke(__value53);
             }
-            else if (IsResponseMcpListToolsInProgress)
+            else if (ResponseMcpListToolsInProgress is { } __value54)
             {
-                responseMcpListToolsInProgress?.Invoke(ResponseMcpListToolsInProgress!);
+                responseMcpListToolsInProgress?.Invoke(__value54);
             }
-            else if (IsResponseOutputTextAnnotationAdded)
+            else if (ResponseOutputTextAnnotationAdded is { } __value55)
             {
-                responseOutputTextAnnotationAdded?.Invoke(ResponseOutputTextAnnotationAdded!);
+                responseOutputTextAnnotationAdded?.Invoke(__value55);
             }
-            else if (IsResponseQueued)
+            else if (ResponseQueued is { } __value56)
             {
-                responseQueued?.Invoke(ResponseQueued!);
+                responseQueued?.Invoke(__value56);
             }
-            else if (IsResponseCustomToolCallInputDelta)
+            else if (ResponseCustomToolCallInputDelta is { } __value57)
             {
-                responseCustomToolCallInputDelta?.Invoke(ResponseCustomToolCallInputDelta!);
+                responseCustomToolCallInputDelta?.Invoke(__value57);
             }
-            else if (IsResponseCustomToolCallInputDone)
+            else if (ResponseCustomToolCallInputDone is { } __value58)
             {
-                responseCustomToolCallInputDone?.Invoke(ResponseCustomToolCallInputDone!);
+                responseCustomToolCallInputDone?.Invoke(__value58);
             }
         }
 

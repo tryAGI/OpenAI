@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaFileCitationBody PickFileCitation() => IsFileCitation
-            ? FileCitation!
+        public global::tryAGI.OpenAI.BetaFileCitationBody PickFileCitation() => FileCitation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileCitation' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaUrlCitationBody PickUrlCitation() => IsUrlCitation
-            ? UrlCitation!
+        public global::tryAGI.OpenAI.BetaUrlCitationBody PickUrlCitation() => UrlCitation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UrlCitation' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaContainerFileCitationBody PickContainerFileCitation() => IsContainerFileCitation
-            ? ContainerFileCitation!
+        public global::tryAGI.OpenAI.BetaContainerFileCitationBody PickContainerFileCitation() => ContainerFileCitation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerFileCitation' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaFilePath PickFilePath() => IsFilePath
-            ? FilePath!
+        public global::tryAGI.OpenAI.BetaFilePath PickFilePath() => FilePath is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FilePath' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFileCitation && fileCitation != null)
+            if (FileCitation is { } __value0 && fileCitation != null)
             {
-                return fileCitation(FileCitation!);
+                return fileCitation(__value0);
             }
-            else if (IsUrlCitation && urlCitation != null)
+            else if (UrlCitation is { } __value1 && urlCitation != null)
             {
-                return urlCitation(UrlCitation!);
+                return urlCitation(__value1);
             }
-            else if (IsContainerFileCitation && containerFileCitation != null)
+            else if (ContainerFileCitation is { } __value2 && containerFileCitation != null)
             {
-                return containerFileCitation(ContainerFileCitation!);
+                return containerFileCitation(__value2);
             }
-            else if (IsFilePath && filePath != null)
+            else if (FilePath is { } __value3 && filePath != null)
             {
-                return filePath(FilePath!);
+                return filePath(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFileCitation)
+            if (FileCitation is { } __value0)
             {
-                fileCitation?.Invoke(FileCitation!);
+                fileCitation?.Invoke(__value0);
             }
-            else if (IsUrlCitation)
+            else if (UrlCitation is { } __value1)
             {
-                urlCitation?.Invoke(UrlCitation!);
+                urlCitation?.Invoke(__value1);
             }
-            else if (IsContainerFileCitation)
+            else if (ContainerFileCitation is { } __value2)
             {
-                containerFileCitation?.Invoke(ContainerFileCitation!);
+                containerFileCitation?.Invoke(__value2);
             }
-            else if (IsFilePath)
+            else if (FilePath is { } __value3)
             {
-                filePath?.Invoke(FilePath!);
+                filePath?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFileCitation)
+            if (FileCitation is { } __value0)
             {
-                fileCitation?.Invoke(FileCitation!);
+                fileCitation?.Invoke(__value0);
             }
-            else if (IsUrlCitation)
+            else if (UrlCitation is { } __value1)
             {
-                urlCitation?.Invoke(UrlCitation!);
+                urlCitation?.Invoke(__value1);
             }
-            else if (IsContainerFileCitation)
+            else if (ContainerFileCitation is { } __value2)
             {
-                containerFileCitation?.Invoke(ContainerFileCitation!);
+                containerFileCitation?.Invoke(__value2);
             }
-            else if (IsFilePath)
+            else if (FilePath is { } __value3)
             {
-                filePath?.Invoke(FilePath!);
+                filePath?.Invoke(__value3);
             }
         }
 

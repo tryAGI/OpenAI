@@ -34,9 +34,11 @@ internal static partial class FineTuningCancelFineTuningJobCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"cancel-fine-tuning-job", @"Cancel fine-tuning
+        var command = new Command(commandName ?? @"cancel-fine-tuning-job", @"Cancel fine-tuning
 Immediately cancel a fine-tune job.
 ");
                         command.Arguments.Add(FineTuningJobId);
@@ -69,6 +71,7 @@ Immediately cancel a fine-tune job.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

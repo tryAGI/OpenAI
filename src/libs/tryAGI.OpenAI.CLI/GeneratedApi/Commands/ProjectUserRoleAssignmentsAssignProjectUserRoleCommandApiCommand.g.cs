@@ -40,9 +40,11 @@ internal static partial class ProjectUserRoleAssignmentsAssignProjectUserRoleCom
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"assign-project-user-role", @"Assign project role to user
+        var command = new Command(commandName ?? @"assign-project-user-role", @"Assign project role to user
 Assigns a project role to a user within a project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(UserId);                        command.Options.Add(PublicAssignOrganizationGroupRoleBodyOptionSetOptions.RoleId);
@@ -70,6 +72,7 @@ Assigns a project role to a user within a project.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

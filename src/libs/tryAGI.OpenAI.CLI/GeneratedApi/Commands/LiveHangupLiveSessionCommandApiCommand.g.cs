@@ -13,9 +13,11 @@ internal static partial class LiveHangupLiveSessionCommandApiCommand
         Description = @"Opaque Live session identifier from the creation response or incoming-call webhook. Preserve the returned value unchanged, including its prefix.",
     };
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"hangup-live-session", @"Hang up session
+        var command = new Command(commandName ?? @"hangup-live-session", @"Hang up session
 End a SIP call identified by session_id.");
                         command.Arguments.Add(SessionId);
 
@@ -33,6 +35,7 @@ End a SIP call identified by session_id.");
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

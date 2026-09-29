@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaApplyPatchCreateFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaApplyPatchCreateFileOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaApplyPatchCreateFileOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateFile!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCreateFile(), typeInfo);
             }
             else if (value.IsDeleteFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaApplyPatchDeleteFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaApplyPatchDeleteFileOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaApplyPatchDeleteFileOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteFile!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeleteFile(), typeInfo);
             }
             else if (value.IsUpdateFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaApplyPatchUpdateFileOperation), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaApplyPatchUpdateFileOperation?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaApplyPatchUpdateFileOperation).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateFile!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUpdateFile(), typeInfo);
             }
         }
     }

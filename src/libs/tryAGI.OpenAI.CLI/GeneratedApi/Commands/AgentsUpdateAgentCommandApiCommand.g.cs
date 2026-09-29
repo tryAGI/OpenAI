@@ -98,9 +98,11 @@ internal static partial class AgentsUpdateAgentCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-agent", @"Update an agent
+        var command = new Command(commandName ?? @"update-agent", @"Update an agent
 Updates a reusable agent. See [agent configuration](https://developers.openai.com/api/docs/guides/agents-api/configuration).");
                         command.Arguments.Add(AgentId);
                         command.Options.Add(Model);
@@ -191,6 +193,7 @@ Updates a reusable agent. See [agent configuration](https://developers.openai.co
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

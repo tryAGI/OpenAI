@@ -46,9 +46,11 @@ internal static partial class FineTuningListFineTuningEventsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-fine-tuning-events", @"List fine-tuning events
+        var command = new Command(commandName ?? @"list-fine-tuning-events", @"List fine-tuning events
 Get status updates for a fine-tuning job.
 ");
                         command.Arguments.Add(FineTuningJobId);
@@ -87,6 +89,7 @@ Get status updates for a fine-tuning job.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

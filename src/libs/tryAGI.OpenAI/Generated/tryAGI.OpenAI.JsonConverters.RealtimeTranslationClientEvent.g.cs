@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionUpdate!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionUpdate(), typeInfo);
             }
             else if (value.IsSessionInputAudioBufferAppend)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionInputAudioBufferAppend!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionInputAudioBufferAppend(), typeInfo);
             }
             else if (value.IsSessionClose)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionClose!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionClose(), typeInfo);
             }
         }
     }

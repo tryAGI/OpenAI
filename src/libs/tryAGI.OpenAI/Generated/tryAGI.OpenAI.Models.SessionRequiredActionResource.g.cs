@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionRequiredActionResourceFunctionCall PickFunctionCall() => IsFunctionCall
-            ? FunctionCall!
+        public global::tryAGI.OpenAI.SessionRequiredActionResourceFunctionCall PickFunctionCall() => FunctionCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionRequiredActionResourceEnvironmentConnection PickEnvironmentConnection() => IsEnvironmentConnection
-            ? EnvironmentConnection!
+        public global::tryAGI.OpenAI.SessionRequiredActionResourceEnvironmentConnection PickEnvironmentConnection() => EnvironmentConnection is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EnvironmentConnection' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunctionCall && functionCall != null)
+            if (FunctionCall is { } __value0 && functionCall != null)
             {
-                return functionCall(FunctionCall!);
+                return functionCall(__value0);
             }
-            else if (IsEnvironmentConnection && environmentConnection != null)
+            else if (EnvironmentConnection is { } __value1 && environmentConnection != null)
             {
-                return environmentConnection(EnvironmentConnection!);
+                return environmentConnection(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunctionCall)
+            if (FunctionCall is { } __value0)
             {
-                functionCall?.Invoke(FunctionCall!);
+                functionCall?.Invoke(__value0);
             }
-            else if (IsEnvironmentConnection)
+            else if (EnvironmentConnection is { } __value1)
             {
-                environmentConnection?.Invoke(EnvironmentConnection!);
+                environmentConnection?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunctionCall)
+            if (FunctionCall is { } __value0)
             {
-                functionCall?.Invoke(FunctionCall!);
+                functionCall?.Invoke(__value0);
             }
-            else if (IsEnvironmentConnection)
+            else if (EnvironmentConnection is { } __value1)
             {
-                environmentConnection?.Invoke(EnvironmentConnection!);
+                environmentConnection?.Invoke(__value1);
             }
         }
 

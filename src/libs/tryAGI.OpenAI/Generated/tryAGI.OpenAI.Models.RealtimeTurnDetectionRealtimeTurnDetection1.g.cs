@@ -51,8 +51,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad PickServerVad() => IsServerVad
-            ? ServerVad!
+        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad PickServerVad() => ServerVad is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ServerVad' but the value was {ToString()}.");
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad PickSemanticVad() => IsSemanticVad
-            ? SemanticVad!
+        public global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad PickSemanticVad() => SemanticVad is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SemanticVad' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -189,13 +189,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsServerVad && serverVad != null)
+            if (ServerVad is { } __value0 && serverVad != null)
             {
-                return serverVad(ServerVad!);
+                return serverVad(__value0);
             }
-            else if (IsSemanticVad && semanticVad != null)
+            else if (SemanticVad is { } __value1 && semanticVad != null)
             {
-                return semanticVad(SemanticVad!);
+                return semanticVad(__value1);
             }
 
             return default(TResult);
@@ -215,13 +215,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsServerVad)
+            if (ServerVad is { } __value0)
             {
-                serverVad?.Invoke(ServerVad!);
+                serverVad?.Invoke(__value0);
             }
-            else if (IsSemanticVad)
+            else if (SemanticVad is { } __value1)
             {
-                semanticVad?.Invoke(SemanticVad!);
+                semanticVad?.Invoke(__value1);
             }
         }
 
@@ -238,13 +238,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsServerVad)
+            if (ServerVad is { } __value0)
             {
-                serverVad?.Invoke(ServerVad!);
+                serverVad?.Invoke(__value0);
             }
-            else if (IsSemanticVad)
+            else if (SemanticVad is { } __value1)
             {
-                semanticVad?.Invoke(SemanticVad!);
+                semanticVad?.Invoke(__value1);
             }
         }
 

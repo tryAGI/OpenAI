@@ -137,13 +137,13 @@ namespace tryAGI.OpenAI.Realtime.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Enum!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum(), typeInfo);
             }
             else if (value.IsRetentionRatioTruncation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RetentionRatioTruncation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRetentionRatioTruncation(), typeInfo);
             }
         }
     }

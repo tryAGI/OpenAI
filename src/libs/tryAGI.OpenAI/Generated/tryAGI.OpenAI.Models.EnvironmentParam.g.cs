@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EnvironmentParamNone PickNone() => IsNone
-            ? None!
+        public global::tryAGI.OpenAI.EnvironmentParamNone PickNone() => None is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'None' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EnvironmentParamOpenaiHosted PickOpenaiHosted() => IsOpenaiHosted
-            ? OpenaiHosted!
+        public global::tryAGI.OpenAI.EnvironmentParamOpenaiHosted PickOpenaiHosted() => OpenaiHosted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenaiHosted' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EnvironmentParamSelfHosted PickSelfHosted() => IsSelfHosted
-            ? SelfHosted!
+        public global::tryAGI.OpenAI.EnvironmentParamSelfHosted PickSelfHosted() => SelfHosted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SelfHosted' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsNone && none != null)
+            if (None is { } __value0 && none != null)
             {
-                return none(None!);
+                return none(__value0);
             }
-            else if (IsOpenaiHosted && openaiHosted != null)
+            else if (OpenaiHosted is { } __value1 && openaiHosted != null)
             {
-                return openaiHosted(OpenaiHosted!);
+                return openaiHosted(__value1);
             }
-            else if (IsSelfHosted && selfHosted != null)
+            else if (SelfHosted is { } __value2 && selfHosted != null)
             {
-                return selfHosted(SelfHosted!);
+                return selfHosted(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsNone)
+            if (None is { } __value0)
             {
-                none?.Invoke(None!);
+                none?.Invoke(__value0);
             }
-            else if (IsOpenaiHosted)
+            else if (OpenaiHosted is { } __value1)
             {
-                openaiHosted?.Invoke(OpenaiHosted!);
+                openaiHosted?.Invoke(__value1);
             }
-            else if (IsSelfHosted)
+            else if (SelfHosted is { } __value2)
             {
-                selfHosted?.Invoke(SelfHosted!);
+                selfHosted?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsNone)
+            if (None is { } __value0)
             {
-                none?.Invoke(None!);
+                none?.Invoke(__value0);
             }
-            else if (IsOpenaiHosted)
+            else if (OpenaiHosted is { } __value1)
             {
-                openaiHosted?.Invoke(OpenaiHosted!);
+                openaiHosted?.Invoke(__value1);
             }
-            else if (IsSelfHosted)
+            else if (SelfHosted is { } __value2)
             {
-                selfHosted?.Invoke(SelfHosted!);
+                selfHosted?.Invoke(__value2);
             }
         }
 

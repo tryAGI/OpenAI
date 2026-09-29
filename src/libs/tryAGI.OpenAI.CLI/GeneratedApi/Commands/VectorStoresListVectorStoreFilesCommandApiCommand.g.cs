@@ -67,9 +67,11 @@ internal static partial class VectorStoresListVectorStoreFilesCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-vector-store-files", @"List vector store files
+        var command = new Command(commandName ?? @"list-vector-store-files", @"List vector store files
 Returns a list of vector store files.");
                         command.Arguments.Add(VectorStoreId);
                         command.Options.Add(Limit);
@@ -116,6 +118,7 @@ Returns a list of vector store files.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

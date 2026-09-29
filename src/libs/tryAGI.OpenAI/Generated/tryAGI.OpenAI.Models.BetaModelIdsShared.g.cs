@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaModelIdsSharedVariant1() => IsBetaModelIdsSharedVariant1
-            ? BetaModelIdsSharedVariant1!
+        public string PickBetaModelIdsSharedVariant1() => BetaModelIdsSharedVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaModelIdsSharedVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaModelIdsSharedEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::tryAGI.OpenAI.BetaModelIdsSharedEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaModelIdsSharedVariant1 && betaModelIdsSharedVariant1 != null)
+            if (BetaModelIdsSharedVariant1 is { } __value0 && betaModelIdsSharedVariant1 != null)
             {
-                return betaModelIdsSharedVariant1(BetaModelIdsSharedVariant1!);
+                return betaModelIdsSharedVariant1(__value0);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value1 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaModelIdsSharedVariant1)
+            if (BetaModelIdsSharedVariant1 is { } __value0)
             {
-                betaModelIdsSharedVariant1?.Invoke(BetaModelIdsSharedVariant1!);
+                betaModelIdsSharedVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaModelIdsSharedVariant1)
+            if (BetaModelIdsSharedVariant1 is { } __value0)
             {
-                betaModelIdsSharedVariant1?.Invoke(BetaModelIdsSharedVariant1!);
+                betaModelIdsSharedVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 

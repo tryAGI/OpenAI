@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// For fine-tuning jobs that have `failed`, this will contain more information on the cause of the failure.
     /// </summary>
-    public sealed partial class FineTuningJobError
+    public sealed partial class FineTuningJobErrorVariant1
     {
         /// <summary>
         /// A machine-readable error code.
@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FineTuningJobError" /> class.
+        /// Initializes a new instance of the <see cref="FineTuningJobErrorVariant1" /> class.
         /// </summary>
         /// <param name="code">
         /// A machine-readable error code.
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public FineTuningJobError(
+        public FineTuningJobErrorVariant1(
             string code,
             string message,
             string? param)
@@ -58,9 +58,9 @@ namespace tryAGI.OpenAI
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FineTuningJobError" /> class.
+        /// Initializes a new instance of the <see cref="FineTuningJobErrorVariant1" /> class.
         /// </summary>
-        public FineTuningJobError()
+        public FineTuningJobErrorVariant1()
         {
         }
 

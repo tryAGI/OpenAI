@@ -54,9 +54,11 @@ internal static partial class CertificatesListProjectCertificatesCommandApiComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-project-certificates", @"List project certificates
+        var command = new Command(commandName ?? @"list-project-certificates", @"List project certificates
 List certificates for this project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Limit);
@@ -97,6 +99,7 @@ List certificates for this project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

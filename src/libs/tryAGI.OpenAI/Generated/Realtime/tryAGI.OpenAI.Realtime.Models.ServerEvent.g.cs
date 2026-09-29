@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated PickConversationCreated() => IsConversationCreated
-            ? ConversationCreated!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationCreated PickConversationCreated() => ConversationCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded PickConversationItemAdded() => IsConversationItemAdded
-            ? ConversationItemAdded!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemAdded PickConversationItemAdded() => ConversationItemAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -133,8 +133,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated PickConversationItemCreated() => IsConversationItemCreated
-            ? ConversationItemCreated!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemCreated PickConversationItemCreated() => ConversationItemCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -172,8 +172,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted PickConversationItemDeleted() => IsConversationItemDeleted
-            ? ConversationItemDeleted!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDeleted PickConversationItemDeleted() => ConversationItemDeleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemDeleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -210,8 +210,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone PickConversationItemDone() => IsConversationItemDone
-            ? ConversationItemDone!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemDone PickConversationItemDone() => ConversationItemDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -255,8 +255,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted PickConversationItemInputAudioTranscriptionCompleted() => IsConversationItemInputAudioTranscriptionCompleted
-            ? ConversationItemInputAudioTranscriptionCompleted!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionCompleted PickConversationItemInputAudioTranscriptionCompleted() => ConversationItemInputAudioTranscriptionCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemInputAudioTranscriptionCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -292,8 +292,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta PickConversationItemInputAudioTranscriptionDelta() => IsConversationItemInputAudioTranscriptionDelta
-            ? ConversationItemInputAudioTranscriptionDelta!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionDelta PickConversationItemInputAudioTranscriptionDelta() => ConversationItemInputAudioTranscriptionDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemInputAudioTranscriptionDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -331,8 +331,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed PickConversationItemInputAudioTranscriptionFailed() => IsConversationItemInputAudioTranscriptionFailed
-            ? ConversationItemInputAudioTranscriptionFailed!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionFailed PickConversationItemInputAudioTranscriptionFailed() => ConversationItemInputAudioTranscriptionFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemInputAudioTranscriptionFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -368,8 +368,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment PickConversationItemInputAudioTranscriptionSegment() => IsConversationItemInputAudioTranscriptionSegment
-            ? ConversationItemInputAudioTranscriptionSegment!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemInputAudioTranscriptionSegment PickConversationItemInputAudioTranscriptionSegment() => ConversationItemInputAudioTranscriptionSegment is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemInputAudioTranscriptionSegment' but the value was {ToString()}.");
 
         /// <summary>
@@ -405,8 +405,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved PickConversationItemRetrieved() => IsConversationItemRetrieved
-            ? ConversationItemRetrieved!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemRetrieved PickConversationItemRetrieved() => ConversationItemRetrieved is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemRetrieved' but the value was {ToString()}.");
 
         /// <summary>
@@ -446,8 +446,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated PickConversationItemTruncated() => IsConversationItemTruncated
-            ? ConversationItemTruncated!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventConversationItemTruncated PickConversationItemTruncated() => ConversationItemTruncated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemTruncated' but the value was {ToString()}.");
 
         /// <summary>
@@ -485,8 +485,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventError PickError() => IsError
-            ? Error!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventError PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
 
         /// <summary>
@@ -523,8 +523,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared PickInputAudioBufferCleared() => IsInputAudioBufferCleared
-            ? InputAudioBufferCleared!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCleared PickInputAudioBufferCleared() => InputAudioBufferCleared is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferCleared' but the value was {ToString()}.");
 
         /// <summary>
@@ -563,8 +563,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted PickInputAudioBufferCommitted() => IsInputAudioBufferCommitted
-            ? InputAudioBufferCommitted!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferCommitted PickInputAudioBufferCommitted() => InputAudioBufferCommitted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferCommitted' but the value was {ToString()}.");
 
         /// <summary>
@@ -603,8 +603,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived PickInputAudioBufferDtmfEventReceived() => IsInputAudioBufferDtmfEventReceived
-            ? InputAudioBufferDtmfEventReceived!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived PickInputAudioBufferDtmfEventReceived() => InputAudioBufferDtmfEventReceived is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferDtmfEventReceived' but the value was {ToString()}.");
 
         /// <summary>
@@ -648,8 +648,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted PickInputAudioBufferSpeechStarted() => IsInputAudioBufferSpeechStarted
-            ? InputAudioBufferSpeechStarted!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStarted PickInputAudioBufferSpeechStarted() => InputAudioBufferSpeechStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferSpeechStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -687,8 +687,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped PickInputAudioBufferSpeechStopped() => IsInputAudioBufferSpeechStopped
-            ? InputAudioBufferSpeechStopped!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferSpeechStopped PickInputAudioBufferSpeechStopped() => InputAudioBufferSpeechStopped is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferSpeechStopped' but the value was {ToString()}.");
 
         /// <summary>
@@ -734,8 +734,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered PickInputAudioBufferTimeoutTriggered() => IsInputAudioBufferTimeoutTriggered
-            ? InputAudioBufferTimeoutTriggered!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferTimeoutTriggered PickInputAudioBufferTimeoutTriggered() => InputAudioBufferTimeoutTriggered is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferTimeoutTriggered' but the value was {ToString()}.");
 
         /// <summary>
@@ -771,8 +771,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted PickMcpListToolsCompleted() => IsMcpListToolsCompleted
-            ? McpListToolsCompleted!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsCompleted PickMcpListToolsCompleted() => McpListToolsCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpListToolsCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -808,8 +808,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed PickMcpListToolsFailed() => IsMcpListToolsFailed
-            ? McpListToolsFailed!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsFailed PickMcpListToolsFailed() => McpListToolsFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpListToolsFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -845,8 +845,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress PickMcpListToolsInProgress() => IsMcpListToolsInProgress
-            ? McpListToolsInProgress!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventMCPListToolsInProgress PickMcpListToolsInProgress() => McpListToolsInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpListToolsInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -886,8 +886,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared PickOutputAudioBufferCleared() => IsOutputAudioBufferCleared
-            ? OutputAudioBufferCleared!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferCleared PickOutputAudioBufferCleared() => OutputAudioBufferCleared is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputAudioBufferCleared' but the value was {ToString()}.");
 
         /// <summary>
@@ -926,8 +926,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted PickOutputAudioBufferStarted() => IsOutputAudioBufferStarted
-            ? OutputAudioBufferStarted!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStarted PickOutputAudioBufferStarted() => OutputAudioBufferStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputAudioBufferStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -966,8 +966,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped PickOutputAudioBufferStopped() => IsOutputAudioBufferStopped
-            ? OutputAudioBufferStopped!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped PickOutputAudioBufferStopped() => OutputAudioBufferStopped is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputAudioBufferStopped' but the value was {ToString()}.");
 
         /// <summary>
@@ -1006,8 +1006,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated PickRateLimitsUpdated() => IsRateLimitsUpdated
-            ? RateLimitsUpdated!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventRateLimitsUpdated PickRateLimitsUpdated() => RateLimitsUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RateLimitsUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1044,8 +1044,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded PickResponseContentPartAdded() => IsResponseContentPartAdded
-            ? ResponseContentPartAdded!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartAdded PickResponseContentPartAdded() => ResponseContentPartAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -1082,8 +1082,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone PickResponseContentPartDone() => IsResponseContentPartDone
-            ? ResponseContentPartDone!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDone PickResponseContentPartDone() => ResponseContentPartDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseContentPartDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1120,8 +1120,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated PickResponseCreated() => IsResponseCreated
-            ? ResponseCreated!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseCreated PickResponseCreated() => ResponseCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1163,8 +1163,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone PickResponseDone() => IsResponseDone
-            ? ResponseDone!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseDone PickResponseDone() => ResponseDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1200,8 +1200,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta PickResponseFunctionCallArgumentsDelta() => IsResponseFunctionCallArgumentsDelta
-            ? ResponseFunctionCallArgumentsDelta!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDelta PickResponseFunctionCallArgumentsDelta() => ResponseFunctionCallArgumentsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1238,8 +1238,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone PickResponseFunctionCallArgumentsDone() => IsResponseFunctionCallArgumentsDone
-            ? ResponseFunctionCallArgumentsDone!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseFunctionCallArgumentsDone PickResponseFunctionCallArgumentsDone() => ResponseFunctionCallArgumentsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseFunctionCallArgumentsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1275,8 +1275,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted PickResponseMcpCallCompleted() => IsResponseMcpCallCompleted
-            ? ResponseMcpCallCompleted!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallCompleted PickResponseMcpCallCompleted() => ResponseMcpCallCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1312,8 +1312,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed PickResponseMcpCallFailed() => IsResponseMcpCallFailed
-            ? ResponseMcpCallFailed!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed PickResponseMcpCallFailed() => ResponseMcpCallFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -1349,8 +1349,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress PickResponseMcpCallInProgress() => IsResponseMcpCallInProgress
-            ? ResponseMcpCallInProgress!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallInProgress PickResponseMcpCallInProgress() => ResponseMcpCallInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -1386,8 +1386,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta PickResponseMcpCallArgumentsDelta() => IsResponseMcpCallArgumentsDelta
-            ? ResponseMcpCallArgumentsDelta!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDelta PickResponseMcpCallArgumentsDelta() => ResponseMcpCallArgumentsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallArgumentsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1423,8 +1423,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone PickResponseMcpCallArgumentsDone() => IsResponseMcpCallArgumentsDone
-            ? ResponseMcpCallArgumentsDone!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallArgumentsDone PickResponseMcpCallArgumentsDone() => ResponseMcpCallArgumentsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseMcpCallArgumentsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1460,8 +1460,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta PickResponseOutputAudioDelta() => IsResponseOutputAudioDelta
-            ? ResponseOutputAudioDelta!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDelta PickResponseOutputAudioDelta() => ResponseOutputAudioDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputAudioDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1498,8 +1498,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone PickResponseOutputAudioDone() => IsResponseOutputAudioDone
-            ? ResponseOutputAudioDone!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioDone PickResponseOutputAudioDone() => ResponseOutputAudioDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputAudioDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1535,8 +1535,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta PickResponseOutputAudioTranscriptDelta() => IsResponseOutputAudioTranscriptDelta
-            ? ResponseOutputAudioTranscriptDelta!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDelta PickResponseOutputAudioTranscriptDelta() => ResponseOutputAudioTranscriptDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputAudioTranscriptDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1574,8 +1574,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone PickResponseOutputAudioTranscriptDone() => IsResponseOutputAudioTranscriptDone
-            ? ResponseOutputAudioTranscriptDone!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDone PickResponseOutputAudioTranscriptDone() => ResponseOutputAudioTranscriptDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputAudioTranscriptDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1611,8 +1611,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded PickResponseOutputItemAdded() => IsResponseOutputItemAdded
-            ? ResponseOutputItemAdded!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemAdded PickResponseOutputItemAdded() => ResponseOutputItemAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -1649,8 +1649,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone PickResponseOutputItemDone() => IsResponseOutputItemDone
-            ? ResponseOutputItemDone!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseOutputItemDone PickResponseOutputItemDone() => ResponseOutputItemDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputItemDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1686,8 +1686,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta PickResponseOutputTextDelta() => IsResponseOutputTextDelta
-            ? ResponseOutputTextDelta!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDelta PickResponseOutputTextDelta() => ResponseOutputTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1724,8 +1724,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone PickResponseOutputTextDone() => IsResponseOutputTextDone
-            ? ResponseOutputTextDone!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDone PickResponseOutputTextDone() => ResponseOutputTextDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseOutputTextDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1763,8 +1763,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated PickSessionCreated() => IsSessionCreated
-            ? SessionCreated!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionCreated PickSessionCreated() => SessionCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1801,8 +1801,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated PickSessionUpdated() => IsSessionUpdated
-            ? SessionUpdated!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventSessionUpdated PickSessionUpdated() => SessionUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -1839,8 +1839,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventTranscriptionSessionUpdated PickTranscriptionSessionUpdated() => IsTranscriptionSessionUpdated
-            ? TranscriptionSessionUpdated!
+        public global::tryAGI.OpenAI.Realtime.RealtimeServerEventTranscriptionSessionUpdated PickTranscriptionSessionUpdated() => TranscriptionSessionUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionSessionUpdated' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -3200,193 +3200,193 @@ namespace tryAGI.OpenAI.Realtime
                 Validate();
             }
 
-            if (IsConversationCreated && conversationCreated != null)
+            if (ConversationCreated is { } __value0 && conversationCreated != null)
             {
-                return conversationCreated(ConversationCreated!);
+                return conversationCreated(__value0);
             }
-            else if (IsConversationItemAdded && conversationItemAdded != null)
+            else if (ConversationItemAdded is { } __value1 && conversationItemAdded != null)
             {
-                return conversationItemAdded(ConversationItemAdded!);
+                return conversationItemAdded(__value1);
             }
-            else if (IsConversationItemCreated && conversationItemCreated != null)
+            else if (ConversationItemCreated is { } __value2 && conversationItemCreated != null)
             {
-                return conversationItemCreated(ConversationItemCreated!);
+                return conversationItemCreated(__value2);
             }
-            else if (IsConversationItemDeleted && conversationItemDeleted != null)
+            else if (ConversationItemDeleted is { } __value3 && conversationItemDeleted != null)
             {
-                return conversationItemDeleted(ConversationItemDeleted!);
+                return conversationItemDeleted(__value3);
             }
-            else if (IsConversationItemDone && conversationItemDone != null)
+            else if (ConversationItemDone is { } __value4 && conversationItemDone != null)
             {
-                return conversationItemDone(ConversationItemDone!);
+                return conversationItemDone(__value4);
             }
-            else if (IsConversationItemInputAudioTranscriptionCompleted && conversationItemInputAudioTranscriptionCompleted != null)
+            else if (ConversationItemInputAudioTranscriptionCompleted is { } __value5 && conversationItemInputAudioTranscriptionCompleted != null)
             {
-                return conversationItemInputAudioTranscriptionCompleted(ConversationItemInputAudioTranscriptionCompleted!);
+                return conversationItemInputAudioTranscriptionCompleted(__value5);
             }
-            else if (IsConversationItemInputAudioTranscriptionDelta && conversationItemInputAudioTranscriptionDelta != null)
+            else if (ConversationItemInputAudioTranscriptionDelta is { } __value6 && conversationItemInputAudioTranscriptionDelta != null)
             {
-                return conversationItemInputAudioTranscriptionDelta(ConversationItemInputAudioTranscriptionDelta!);
+                return conversationItemInputAudioTranscriptionDelta(__value6);
             }
-            else if (IsConversationItemInputAudioTranscriptionFailed && conversationItemInputAudioTranscriptionFailed != null)
+            else if (ConversationItemInputAudioTranscriptionFailed is { } __value7 && conversationItemInputAudioTranscriptionFailed != null)
             {
-                return conversationItemInputAudioTranscriptionFailed(ConversationItemInputAudioTranscriptionFailed!);
+                return conversationItemInputAudioTranscriptionFailed(__value7);
             }
-            else if (IsConversationItemInputAudioTranscriptionSegment && conversationItemInputAudioTranscriptionSegment != null)
+            else if (ConversationItemInputAudioTranscriptionSegment is { } __value8 && conversationItemInputAudioTranscriptionSegment != null)
             {
-                return conversationItemInputAudioTranscriptionSegment(ConversationItemInputAudioTranscriptionSegment!);
+                return conversationItemInputAudioTranscriptionSegment(__value8);
             }
-            else if (IsConversationItemRetrieved && conversationItemRetrieved != null)
+            else if (ConversationItemRetrieved is { } __value9 && conversationItemRetrieved != null)
             {
-                return conversationItemRetrieved(ConversationItemRetrieved!);
+                return conversationItemRetrieved(__value9);
             }
-            else if (IsConversationItemTruncated && conversationItemTruncated != null)
+            else if (ConversationItemTruncated is { } __value10 && conversationItemTruncated != null)
             {
-                return conversationItemTruncated(ConversationItemTruncated!);
+                return conversationItemTruncated(__value10);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value11 && error != null)
             {
-                return error(Error!);
+                return error(__value11);
             }
-            else if (IsInputAudioBufferCleared && inputAudioBufferCleared != null)
+            else if (InputAudioBufferCleared is { } __value12 && inputAudioBufferCleared != null)
             {
-                return inputAudioBufferCleared(InputAudioBufferCleared!);
+                return inputAudioBufferCleared(__value12);
             }
-            else if (IsInputAudioBufferCommitted && inputAudioBufferCommitted != null)
+            else if (InputAudioBufferCommitted is { } __value13 && inputAudioBufferCommitted != null)
             {
-                return inputAudioBufferCommitted(InputAudioBufferCommitted!);
+                return inputAudioBufferCommitted(__value13);
             }
-            else if (IsInputAudioBufferDtmfEventReceived && inputAudioBufferDtmfEventReceived != null)
+            else if (InputAudioBufferDtmfEventReceived is { } __value14 && inputAudioBufferDtmfEventReceived != null)
             {
-                return inputAudioBufferDtmfEventReceived(InputAudioBufferDtmfEventReceived!);
+                return inputAudioBufferDtmfEventReceived(__value14);
             }
-            else if (IsInputAudioBufferSpeechStarted && inputAudioBufferSpeechStarted != null)
+            else if (InputAudioBufferSpeechStarted is { } __value15 && inputAudioBufferSpeechStarted != null)
             {
-                return inputAudioBufferSpeechStarted(InputAudioBufferSpeechStarted!);
+                return inputAudioBufferSpeechStarted(__value15);
             }
-            else if (IsInputAudioBufferSpeechStopped && inputAudioBufferSpeechStopped != null)
+            else if (InputAudioBufferSpeechStopped is { } __value16 && inputAudioBufferSpeechStopped != null)
             {
-                return inputAudioBufferSpeechStopped(InputAudioBufferSpeechStopped!);
+                return inputAudioBufferSpeechStopped(__value16);
             }
-            else if (IsInputAudioBufferTimeoutTriggered && inputAudioBufferTimeoutTriggered != null)
+            else if (InputAudioBufferTimeoutTriggered is { } __value17 && inputAudioBufferTimeoutTriggered != null)
             {
-                return inputAudioBufferTimeoutTriggered(InputAudioBufferTimeoutTriggered!);
+                return inputAudioBufferTimeoutTriggered(__value17);
             }
-            else if (IsMcpListToolsCompleted && mcpListToolsCompleted != null)
+            else if (McpListToolsCompleted is { } __value18 && mcpListToolsCompleted != null)
             {
-                return mcpListToolsCompleted(McpListToolsCompleted!);
+                return mcpListToolsCompleted(__value18);
             }
-            else if (IsMcpListToolsFailed && mcpListToolsFailed != null)
+            else if (McpListToolsFailed is { } __value19 && mcpListToolsFailed != null)
             {
-                return mcpListToolsFailed(McpListToolsFailed!);
+                return mcpListToolsFailed(__value19);
             }
-            else if (IsMcpListToolsInProgress && mcpListToolsInProgress != null)
+            else if (McpListToolsInProgress is { } __value20 && mcpListToolsInProgress != null)
             {
-                return mcpListToolsInProgress(McpListToolsInProgress!);
+                return mcpListToolsInProgress(__value20);
             }
-            else if (IsOutputAudioBufferCleared && outputAudioBufferCleared != null)
+            else if (OutputAudioBufferCleared is { } __value21 && outputAudioBufferCleared != null)
             {
-                return outputAudioBufferCleared(OutputAudioBufferCleared!);
+                return outputAudioBufferCleared(__value21);
             }
-            else if (IsOutputAudioBufferStarted && outputAudioBufferStarted != null)
+            else if (OutputAudioBufferStarted is { } __value22 && outputAudioBufferStarted != null)
             {
-                return outputAudioBufferStarted(OutputAudioBufferStarted!);
+                return outputAudioBufferStarted(__value22);
             }
-            else if (IsOutputAudioBufferStopped && outputAudioBufferStopped != null)
+            else if (OutputAudioBufferStopped is { } __value23 && outputAudioBufferStopped != null)
             {
-                return outputAudioBufferStopped(OutputAudioBufferStopped!);
+                return outputAudioBufferStopped(__value23);
             }
-            else if (IsRateLimitsUpdated && rateLimitsUpdated != null)
+            else if (RateLimitsUpdated is { } __value24 && rateLimitsUpdated != null)
             {
-                return rateLimitsUpdated(RateLimitsUpdated!);
+                return rateLimitsUpdated(__value24);
             }
-            else if (IsResponseContentPartAdded && responseContentPartAdded != null)
+            else if (ResponseContentPartAdded is { } __value25 && responseContentPartAdded != null)
             {
-                return responseContentPartAdded(ResponseContentPartAdded!);
+                return responseContentPartAdded(__value25);
             }
-            else if (IsResponseContentPartDone && responseContentPartDone != null)
+            else if (ResponseContentPartDone is { } __value26 && responseContentPartDone != null)
             {
-                return responseContentPartDone(ResponseContentPartDone!);
+                return responseContentPartDone(__value26);
             }
-            else if (IsResponseCreated && responseCreated != null)
+            else if (ResponseCreated is { } __value27 && responseCreated != null)
             {
-                return responseCreated(ResponseCreated!);
+                return responseCreated(__value27);
             }
-            else if (IsResponseDone && responseDone != null)
+            else if (ResponseDone is { } __value28 && responseDone != null)
             {
-                return responseDone(ResponseDone!);
+                return responseDone(__value28);
             }
-            else if (IsResponseFunctionCallArgumentsDelta && responseFunctionCallArgumentsDelta != null)
+            else if (ResponseFunctionCallArgumentsDelta is { } __value29 && responseFunctionCallArgumentsDelta != null)
             {
-                return responseFunctionCallArgumentsDelta(ResponseFunctionCallArgumentsDelta!);
+                return responseFunctionCallArgumentsDelta(__value29);
             }
-            else if (IsResponseFunctionCallArgumentsDone && responseFunctionCallArgumentsDone != null)
+            else if (ResponseFunctionCallArgumentsDone is { } __value30 && responseFunctionCallArgumentsDone != null)
             {
-                return responseFunctionCallArgumentsDone(ResponseFunctionCallArgumentsDone!);
+                return responseFunctionCallArgumentsDone(__value30);
             }
-            else if (IsResponseMcpCallCompleted && responseMcpCallCompleted != null)
+            else if (ResponseMcpCallCompleted is { } __value31 && responseMcpCallCompleted != null)
             {
-                return responseMcpCallCompleted(ResponseMcpCallCompleted!);
+                return responseMcpCallCompleted(__value31);
             }
-            else if (IsResponseMcpCallFailed && responseMcpCallFailed != null)
+            else if (ResponseMcpCallFailed is { } __value32 && responseMcpCallFailed != null)
             {
-                return responseMcpCallFailed(ResponseMcpCallFailed!);
+                return responseMcpCallFailed(__value32);
             }
-            else if (IsResponseMcpCallInProgress && responseMcpCallInProgress != null)
+            else if (ResponseMcpCallInProgress is { } __value33 && responseMcpCallInProgress != null)
             {
-                return responseMcpCallInProgress(ResponseMcpCallInProgress!);
+                return responseMcpCallInProgress(__value33);
             }
-            else if (IsResponseMcpCallArgumentsDelta && responseMcpCallArgumentsDelta != null)
+            else if (ResponseMcpCallArgumentsDelta is { } __value34 && responseMcpCallArgumentsDelta != null)
             {
-                return responseMcpCallArgumentsDelta(ResponseMcpCallArgumentsDelta!);
+                return responseMcpCallArgumentsDelta(__value34);
             }
-            else if (IsResponseMcpCallArgumentsDone && responseMcpCallArgumentsDone != null)
+            else if (ResponseMcpCallArgumentsDone is { } __value35 && responseMcpCallArgumentsDone != null)
             {
-                return responseMcpCallArgumentsDone(ResponseMcpCallArgumentsDone!);
+                return responseMcpCallArgumentsDone(__value35);
             }
-            else if (IsResponseOutputAudioDelta && responseOutputAudioDelta != null)
+            else if (ResponseOutputAudioDelta is { } __value36 && responseOutputAudioDelta != null)
             {
-                return responseOutputAudioDelta(ResponseOutputAudioDelta!);
+                return responseOutputAudioDelta(__value36);
             }
-            else if (IsResponseOutputAudioDone && responseOutputAudioDone != null)
+            else if (ResponseOutputAudioDone is { } __value37 && responseOutputAudioDone != null)
             {
-                return responseOutputAudioDone(ResponseOutputAudioDone!);
+                return responseOutputAudioDone(__value37);
             }
-            else if (IsResponseOutputAudioTranscriptDelta && responseOutputAudioTranscriptDelta != null)
+            else if (ResponseOutputAudioTranscriptDelta is { } __value38 && responseOutputAudioTranscriptDelta != null)
             {
-                return responseOutputAudioTranscriptDelta(ResponseOutputAudioTranscriptDelta!);
+                return responseOutputAudioTranscriptDelta(__value38);
             }
-            else if (IsResponseOutputAudioTranscriptDone && responseOutputAudioTranscriptDone != null)
+            else if (ResponseOutputAudioTranscriptDone is { } __value39 && responseOutputAudioTranscriptDone != null)
             {
-                return responseOutputAudioTranscriptDone(ResponseOutputAudioTranscriptDone!);
+                return responseOutputAudioTranscriptDone(__value39);
             }
-            else if (IsResponseOutputItemAdded && responseOutputItemAdded != null)
+            else if (ResponseOutputItemAdded is { } __value40 && responseOutputItemAdded != null)
             {
-                return responseOutputItemAdded(ResponseOutputItemAdded!);
+                return responseOutputItemAdded(__value40);
             }
-            else if (IsResponseOutputItemDone && responseOutputItemDone != null)
+            else if (ResponseOutputItemDone is { } __value41 && responseOutputItemDone != null)
             {
-                return responseOutputItemDone(ResponseOutputItemDone!);
+                return responseOutputItemDone(__value41);
             }
-            else if (IsResponseOutputTextDelta && responseOutputTextDelta != null)
+            else if (ResponseOutputTextDelta is { } __value42 && responseOutputTextDelta != null)
             {
-                return responseOutputTextDelta(ResponseOutputTextDelta!);
+                return responseOutputTextDelta(__value42);
             }
-            else if (IsResponseOutputTextDone && responseOutputTextDone != null)
+            else if (ResponseOutputTextDone is { } __value43 && responseOutputTextDone != null)
             {
-                return responseOutputTextDone(ResponseOutputTextDone!);
+                return responseOutputTextDone(__value43);
             }
-            else if (IsSessionCreated && sessionCreated != null)
+            else if (SessionCreated is { } __value44 && sessionCreated != null)
             {
-                return sessionCreated(SessionCreated!);
+                return sessionCreated(__value44);
             }
-            else if (IsSessionUpdated && sessionUpdated != null)
+            else if (SessionUpdated is { } __value45 && sessionUpdated != null)
             {
-                return sessionUpdated(SessionUpdated!);
+                return sessionUpdated(__value45);
             }
-            else if (IsTranscriptionSessionUpdated && transcriptionSessionUpdated != null)
+            else if (TranscriptionSessionUpdated is { } __value46 && transcriptionSessionUpdated != null)
             {
-                return transcriptionSessionUpdated(TranscriptionSessionUpdated!);
+                return transcriptionSessionUpdated(__value46);
             }
 
             return default(TResult);
@@ -3496,193 +3496,193 @@ namespace tryAGI.OpenAI.Realtime
                 Validate();
             }
 
-            if (IsConversationCreated)
+            if (ConversationCreated is { } __value0)
             {
-                conversationCreated?.Invoke(ConversationCreated!);
+                conversationCreated?.Invoke(__value0);
             }
-            else if (IsConversationItemAdded)
+            else if (ConversationItemAdded is { } __value1)
             {
-                conversationItemAdded?.Invoke(ConversationItemAdded!);
+                conversationItemAdded?.Invoke(__value1);
             }
-            else if (IsConversationItemCreated)
+            else if (ConversationItemCreated is { } __value2)
             {
-                conversationItemCreated?.Invoke(ConversationItemCreated!);
+                conversationItemCreated?.Invoke(__value2);
             }
-            else if (IsConversationItemDeleted)
+            else if (ConversationItemDeleted is { } __value3)
             {
-                conversationItemDeleted?.Invoke(ConversationItemDeleted!);
+                conversationItemDeleted?.Invoke(__value3);
             }
-            else if (IsConversationItemDone)
+            else if (ConversationItemDone is { } __value4)
             {
-                conversationItemDone?.Invoke(ConversationItemDone!);
+                conversationItemDone?.Invoke(__value4);
             }
-            else if (IsConversationItemInputAudioTranscriptionCompleted)
+            else if (ConversationItemInputAudioTranscriptionCompleted is { } __value5)
             {
-                conversationItemInputAudioTranscriptionCompleted?.Invoke(ConversationItemInputAudioTranscriptionCompleted!);
+                conversationItemInputAudioTranscriptionCompleted?.Invoke(__value5);
             }
-            else if (IsConversationItemInputAudioTranscriptionDelta)
+            else if (ConversationItemInputAudioTranscriptionDelta is { } __value6)
             {
-                conversationItemInputAudioTranscriptionDelta?.Invoke(ConversationItemInputAudioTranscriptionDelta!);
+                conversationItemInputAudioTranscriptionDelta?.Invoke(__value6);
             }
-            else if (IsConversationItemInputAudioTranscriptionFailed)
+            else if (ConversationItemInputAudioTranscriptionFailed is { } __value7)
             {
-                conversationItemInputAudioTranscriptionFailed?.Invoke(ConversationItemInputAudioTranscriptionFailed!);
+                conversationItemInputAudioTranscriptionFailed?.Invoke(__value7);
             }
-            else if (IsConversationItemInputAudioTranscriptionSegment)
+            else if (ConversationItemInputAudioTranscriptionSegment is { } __value8)
             {
-                conversationItemInputAudioTranscriptionSegment?.Invoke(ConversationItemInputAudioTranscriptionSegment!);
+                conversationItemInputAudioTranscriptionSegment?.Invoke(__value8);
             }
-            else if (IsConversationItemRetrieved)
+            else if (ConversationItemRetrieved is { } __value9)
             {
-                conversationItemRetrieved?.Invoke(ConversationItemRetrieved!);
+                conversationItemRetrieved?.Invoke(__value9);
             }
-            else if (IsConversationItemTruncated)
+            else if (ConversationItemTruncated is { } __value10)
             {
-                conversationItemTruncated?.Invoke(ConversationItemTruncated!);
+                conversationItemTruncated?.Invoke(__value10);
             }
-            else if (IsError)
+            else if (Error is { } __value11)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value11);
             }
-            else if (IsInputAudioBufferCleared)
+            else if (InputAudioBufferCleared is { } __value12)
             {
-                inputAudioBufferCleared?.Invoke(InputAudioBufferCleared!);
+                inputAudioBufferCleared?.Invoke(__value12);
             }
-            else if (IsInputAudioBufferCommitted)
+            else if (InputAudioBufferCommitted is { } __value13)
             {
-                inputAudioBufferCommitted?.Invoke(InputAudioBufferCommitted!);
+                inputAudioBufferCommitted?.Invoke(__value13);
             }
-            else if (IsInputAudioBufferDtmfEventReceived)
+            else if (InputAudioBufferDtmfEventReceived is { } __value14)
             {
-                inputAudioBufferDtmfEventReceived?.Invoke(InputAudioBufferDtmfEventReceived!);
+                inputAudioBufferDtmfEventReceived?.Invoke(__value14);
             }
-            else if (IsInputAudioBufferSpeechStarted)
+            else if (InputAudioBufferSpeechStarted is { } __value15)
             {
-                inputAudioBufferSpeechStarted?.Invoke(InputAudioBufferSpeechStarted!);
+                inputAudioBufferSpeechStarted?.Invoke(__value15);
             }
-            else if (IsInputAudioBufferSpeechStopped)
+            else if (InputAudioBufferSpeechStopped is { } __value16)
             {
-                inputAudioBufferSpeechStopped?.Invoke(InputAudioBufferSpeechStopped!);
+                inputAudioBufferSpeechStopped?.Invoke(__value16);
             }
-            else if (IsInputAudioBufferTimeoutTriggered)
+            else if (InputAudioBufferTimeoutTriggered is { } __value17)
             {
-                inputAudioBufferTimeoutTriggered?.Invoke(InputAudioBufferTimeoutTriggered!);
+                inputAudioBufferTimeoutTriggered?.Invoke(__value17);
             }
-            else if (IsMcpListToolsCompleted)
+            else if (McpListToolsCompleted is { } __value18)
             {
-                mcpListToolsCompleted?.Invoke(McpListToolsCompleted!);
+                mcpListToolsCompleted?.Invoke(__value18);
             }
-            else if (IsMcpListToolsFailed)
+            else if (McpListToolsFailed is { } __value19)
             {
-                mcpListToolsFailed?.Invoke(McpListToolsFailed!);
+                mcpListToolsFailed?.Invoke(__value19);
             }
-            else if (IsMcpListToolsInProgress)
+            else if (McpListToolsInProgress is { } __value20)
             {
-                mcpListToolsInProgress?.Invoke(McpListToolsInProgress!);
+                mcpListToolsInProgress?.Invoke(__value20);
             }
-            else if (IsOutputAudioBufferCleared)
+            else if (OutputAudioBufferCleared is { } __value21)
             {
-                outputAudioBufferCleared?.Invoke(OutputAudioBufferCleared!);
+                outputAudioBufferCleared?.Invoke(__value21);
             }
-            else if (IsOutputAudioBufferStarted)
+            else if (OutputAudioBufferStarted is { } __value22)
             {
-                outputAudioBufferStarted?.Invoke(OutputAudioBufferStarted!);
+                outputAudioBufferStarted?.Invoke(__value22);
             }
-            else if (IsOutputAudioBufferStopped)
+            else if (OutputAudioBufferStopped is { } __value23)
             {
-                outputAudioBufferStopped?.Invoke(OutputAudioBufferStopped!);
+                outputAudioBufferStopped?.Invoke(__value23);
             }
-            else if (IsRateLimitsUpdated)
+            else if (RateLimitsUpdated is { } __value24)
             {
-                rateLimitsUpdated?.Invoke(RateLimitsUpdated!);
+                rateLimitsUpdated?.Invoke(__value24);
             }
-            else if (IsResponseContentPartAdded)
+            else if (ResponseContentPartAdded is { } __value25)
             {
-                responseContentPartAdded?.Invoke(ResponseContentPartAdded!);
+                responseContentPartAdded?.Invoke(__value25);
             }
-            else if (IsResponseContentPartDone)
+            else if (ResponseContentPartDone is { } __value26)
             {
-                responseContentPartDone?.Invoke(ResponseContentPartDone!);
+                responseContentPartDone?.Invoke(__value26);
             }
-            else if (IsResponseCreated)
+            else if (ResponseCreated is { } __value27)
             {
-                responseCreated?.Invoke(ResponseCreated!);
+                responseCreated?.Invoke(__value27);
             }
-            else if (IsResponseDone)
+            else if (ResponseDone is { } __value28)
             {
-                responseDone?.Invoke(ResponseDone!);
+                responseDone?.Invoke(__value28);
             }
-            else if (IsResponseFunctionCallArgumentsDelta)
+            else if (ResponseFunctionCallArgumentsDelta is { } __value29)
             {
-                responseFunctionCallArgumentsDelta?.Invoke(ResponseFunctionCallArgumentsDelta!);
+                responseFunctionCallArgumentsDelta?.Invoke(__value29);
             }
-            else if (IsResponseFunctionCallArgumentsDone)
+            else if (ResponseFunctionCallArgumentsDone is { } __value30)
             {
-                responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+                responseFunctionCallArgumentsDone?.Invoke(__value30);
             }
-            else if (IsResponseMcpCallCompleted)
+            else if (ResponseMcpCallCompleted is { } __value31)
             {
-                responseMcpCallCompleted?.Invoke(ResponseMcpCallCompleted!);
+                responseMcpCallCompleted?.Invoke(__value31);
             }
-            else if (IsResponseMcpCallFailed)
+            else if (ResponseMcpCallFailed is { } __value32)
             {
-                responseMcpCallFailed?.Invoke(ResponseMcpCallFailed!);
+                responseMcpCallFailed?.Invoke(__value32);
             }
-            else if (IsResponseMcpCallInProgress)
+            else if (ResponseMcpCallInProgress is { } __value33)
             {
-                responseMcpCallInProgress?.Invoke(ResponseMcpCallInProgress!);
+                responseMcpCallInProgress?.Invoke(__value33);
             }
-            else if (IsResponseMcpCallArgumentsDelta)
+            else if (ResponseMcpCallArgumentsDelta is { } __value34)
             {
-                responseMcpCallArgumentsDelta?.Invoke(ResponseMcpCallArgumentsDelta!);
+                responseMcpCallArgumentsDelta?.Invoke(__value34);
             }
-            else if (IsResponseMcpCallArgumentsDone)
+            else if (ResponseMcpCallArgumentsDone is { } __value35)
             {
-                responseMcpCallArgumentsDone?.Invoke(ResponseMcpCallArgumentsDone!);
+                responseMcpCallArgumentsDone?.Invoke(__value35);
             }
-            else if (IsResponseOutputAudioDelta)
+            else if (ResponseOutputAudioDelta is { } __value36)
             {
-                responseOutputAudioDelta?.Invoke(ResponseOutputAudioDelta!);
+                responseOutputAudioDelta?.Invoke(__value36);
             }
-            else if (IsResponseOutputAudioDone)
+            else if (ResponseOutputAudioDone is { } __value37)
             {
-                responseOutputAudioDone?.Invoke(ResponseOutputAudioDone!);
+                responseOutputAudioDone?.Invoke(__value37);
             }
-            else if (IsResponseOutputAudioTranscriptDelta)
+            else if (ResponseOutputAudioTranscriptDelta is { } __value38)
             {
-                responseOutputAudioTranscriptDelta?.Invoke(ResponseOutputAudioTranscriptDelta!);
+                responseOutputAudioTranscriptDelta?.Invoke(__value38);
             }
-            else if (IsResponseOutputAudioTranscriptDone)
+            else if (ResponseOutputAudioTranscriptDone is { } __value39)
             {
-                responseOutputAudioTranscriptDone?.Invoke(ResponseOutputAudioTranscriptDone!);
+                responseOutputAudioTranscriptDone?.Invoke(__value39);
             }
-            else if (IsResponseOutputItemAdded)
+            else if (ResponseOutputItemAdded is { } __value40)
             {
-                responseOutputItemAdded?.Invoke(ResponseOutputItemAdded!);
+                responseOutputItemAdded?.Invoke(__value40);
             }
-            else if (IsResponseOutputItemDone)
+            else if (ResponseOutputItemDone is { } __value41)
             {
-                responseOutputItemDone?.Invoke(ResponseOutputItemDone!);
+                responseOutputItemDone?.Invoke(__value41);
             }
-            else if (IsResponseOutputTextDelta)
+            else if (ResponseOutputTextDelta is { } __value42)
             {
-                responseOutputTextDelta?.Invoke(ResponseOutputTextDelta!);
+                responseOutputTextDelta?.Invoke(__value42);
             }
-            else if (IsResponseOutputTextDone)
+            else if (ResponseOutputTextDone is { } __value43)
             {
-                responseOutputTextDone?.Invoke(ResponseOutputTextDone!);
+                responseOutputTextDone?.Invoke(__value43);
             }
-            else if (IsSessionCreated)
+            else if (SessionCreated is { } __value44)
             {
-                sessionCreated?.Invoke(SessionCreated!);
+                sessionCreated?.Invoke(__value44);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value45)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value45);
             }
-            else if (IsTranscriptionSessionUpdated)
+            else if (TranscriptionSessionUpdated is { } __value46)
             {
-                transcriptionSessionUpdated?.Invoke(TranscriptionSessionUpdated!);
+                transcriptionSessionUpdated?.Invoke(__value46);
             }
         }
 
@@ -3744,193 +3744,193 @@ namespace tryAGI.OpenAI.Realtime
                 Validate();
             }
 
-            if (IsConversationCreated)
+            if (ConversationCreated is { } __value0)
             {
-                conversationCreated?.Invoke(ConversationCreated!);
+                conversationCreated?.Invoke(__value0);
             }
-            else if (IsConversationItemAdded)
+            else if (ConversationItemAdded is { } __value1)
             {
-                conversationItemAdded?.Invoke(ConversationItemAdded!);
+                conversationItemAdded?.Invoke(__value1);
             }
-            else if (IsConversationItemCreated)
+            else if (ConversationItemCreated is { } __value2)
             {
-                conversationItemCreated?.Invoke(ConversationItemCreated!);
+                conversationItemCreated?.Invoke(__value2);
             }
-            else if (IsConversationItemDeleted)
+            else if (ConversationItemDeleted is { } __value3)
             {
-                conversationItemDeleted?.Invoke(ConversationItemDeleted!);
+                conversationItemDeleted?.Invoke(__value3);
             }
-            else if (IsConversationItemDone)
+            else if (ConversationItemDone is { } __value4)
             {
-                conversationItemDone?.Invoke(ConversationItemDone!);
+                conversationItemDone?.Invoke(__value4);
             }
-            else if (IsConversationItemInputAudioTranscriptionCompleted)
+            else if (ConversationItemInputAudioTranscriptionCompleted is { } __value5)
             {
-                conversationItemInputAudioTranscriptionCompleted?.Invoke(ConversationItemInputAudioTranscriptionCompleted!);
+                conversationItemInputAudioTranscriptionCompleted?.Invoke(__value5);
             }
-            else if (IsConversationItemInputAudioTranscriptionDelta)
+            else if (ConversationItemInputAudioTranscriptionDelta is { } __value6)
             {
-                conversationItemInputAudioTranscriptionDelta?.Invoke(ConversationItemInputAudioTranscriptionDelta!);
+                conversationItemInputAudioTranscriptionDelta?.Invoke(__value6);
             }
-            else if (IsConversationItemInputAudioTranscriptionFailed)
+            else if (ConversationItemInputAudioTranscriptionFailed is { } __value7)
             {
-                conversationItemInputAudioTranscriptionFailed?.Invoke(ConversationItemInputAudioTranscriptionFailed!);
+                conversationItemInputAudioTranscriptionFailed?.Invoke(__value7);
             }
-            else if (IsConversationItemInputAudioTranscriptionSegment)
+            else if (ConversationItemInputAudioTranscriptionSegment is { } __value8)
             {
-                conversationItemInputAudioTranscriptionSegment?.Invoke(ConversationItemInputAudioTranscriptionSegment!);
+                conversationItemInputAudioTranscriptionSegment?.Invoke(__value8);
             }
-            else if (IsConversationItemRetrieved)
+            else if (ConversationItemRetrieved is { } __value9)
             {
-                conversationItemRetrieved?.Invoke(ConversationItemRetrieved!);
+                conversationItemRetrieved?.Invoke(__value9);
             }
-            else if (IsConversationItemTruncated)
+            else if (ConversationItemTruncated is { } __value10)
             {
-                conversationItemTruncated?.Invoke(ConversationItemTruncated!);
+                conversationItemTruncated?.Invoke(__value10);
             }
-            else if (IsError)
+            else if (Error is { } __value11)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value11);
             }
-            else if (IsInputAudioBufferCleared)
+            else if (InputAudioBufferCleared is { } __value12)
             {
-                inputAudioBufferCleared?.Invoke(InputAudioBufferCleared!);
+                inputAudioBufferCleared?.Invoke(__value12);
             }
-            else if (IsInputAudioBufferCommitted)
+            else if (InputAudioBufferCommitted is { } __value13)
             {
-                inputAudioBufferCommitted?.Invoke(InputAudioBufferCommitted!);
+                inputAudioBufferCommitted?.Invoke(__value13);
             }
-            else if (IsInputAudioBufferDtmfEventReceived)
+            else if (InputAudioBufferDtmfEventReceived is { } __value14)
             {
-                inputAudioBufferDtmfEventReceived?.Invoke(InputAudioBufferDtmfEventReceived!);
+                inputAudioBufferDtmfEventReceived?.Invoke(__value14);
             }
-            else if (IsInputAudioBufferSpeechStarted)
+            else if (InputAudioBufferSpeechStarted is { } __value15)
             {
-                inputAudioBufferSpeechStarted?.Invoke(InputAudioBufferSpeechStarted!);
+                inputAudioBufferSpeechStarted?.Invoke(__value15);
             }
-            else if (IsInputAudioBufferSpeechStopped)
+            else if (InputAudioBufferSpeechStopped is { } __value16)
             {
-                inputAudioBufferSpeechStopped?.Invoke(InputAudioBufferSpeechStopped!);
+                inputAudioBufferSpeechStopped?.Invoke(__value16);
             }
-            else if (IsInputAudioBufferTimeoutTriggered)
+            else if (InputAudioBufferTimeoutTriggered is { } __value17)
             {
-                inputAudioBufferTimeoutTriggered?.Invoke(InputAudioBufferTimeoutTriggered!);
+                inputAudioBufferTimeoutTriggered?.Invoke(__value17);
             }
-            else if (IsMcpListToolsCompleted)
+            else if (McpListToolsCompleted is { } __value18)
             {
-                mcpListToolsCompleted?.Invoke(McpListToolsCompleted!);
+                mcpListToolsCompleted?.Invoke(__value18);
             }
-            else if (IsMcpListToolsFailed)
+            else if (McpListToolsFailed is { } __value19)
             {
-                mcpListToolsFailed?.Invoke(McpListToolsFailed!);
+                mcpListToolsFailed?.Invoke(__value19);
             }
-            else if (IsMcpListToolsInProgress)
+            else if (McpListToolsInProgress is { } __value20)
             {
-                mcpListToolsInProgress?.Invoke(McpListToolsInProgress!);
+                mcpListToolsInProgress?.Invoke(__value20);
             }
-            else if (IsOutputAudioBufferCleared)
+            else if (OutputAudioBufferCleared is { } __value21)
             {
-                outputAudioBufferCleared?.Invoke(OutputAudioBufferCleared!);
+                outputAudioBufferCleared?.Invoke(__value21);
             }
-            else if (IsOutputAudioBufferStarted)
+            else if (OutputAudioBufferStarted is { } __value22)
             {
-                outputAudioBufferStarted?.Invoke(OutputAudioBufferStarted!);
+                outputAudioBufferStarted?.Invoke(__value22);
             }
-            else if (IsOutputAudioBufferStopped)
+            else if (OutputAudioBufferStopped is { } __value23)
             {
-                outputAudioBufferStopped?.Invoke(OutputAudioBufferStopped!);
+                outputAudioBufferStopped?.Invoke(__value23);
             }
-            else if (IsRateLimitsUpdated)
+            else if (RateLimitsUpdated is { } __value24)
             {
-                rateLimitsUpdated?.Invoke(RateLimitsUpdated!);
+                rateLimitsUpdated?.Invoke(__value24);
             }
-            else if (IsResponseContentPartAdded)
+            else if (ResponseContentPartAdded is { } __value25)
             {
-                responseContentPartAdded?.Invoke(ResponseContentPartAdded!);
+                responseContentPartAdded?.Invoke(__value25);
             }
-            else if (IsResponseContentPartDone)
+            else if (ResponseContentPartDone is { } __value26)
             {
-                responseContentPartDone?.Invoke(ResponseContentPartDone!);
+                responseContentPartDone?.Invoke(__value26);
             }
-            else if (IsResponseCreated)
+            else if (ResponseCreated is { } __value27)
             {
-                responseCreated?.Invoke(ResponseCreated!);
+                responseCreated?.Invoke(__value27);
             }
-            else if (IsResponseDone)
+            else if (ResponseDone is { } __value28)
             {
-                responseDone?.Invoke(ResponseDone!);
+                responseDone?.Invoke(__value28);
             }
-            else if (IsResponseFunctionCallArgumentsDelta)
+            else if (ResponseFunctionCallArgumentsDelta is { } __value29)
             {
-                responseFunctionCallArgumentsDelta?.Invoke(ResponseFunctionCallArgumentsDelta!);
+                responseFunctionCallArgumentsDelta?.Invoke(__value29);
             }
-            else if (IsResponseFunctionCallArgumentsDone)
+            else if (ResponseFunctionCallArgumentsDone is { } __value30)
             {
-                responseFunctionCallArgumentsDone?.Invoke(ResponseFunctionCallArgumentsDone!);
+                responseFunctionCallArgumentsDone?.Invoke(__value30);
             }
-            else if (IsResponseMcpCallCompleted)
+            else if (ResponseMcpCallCompleted is { } __value31)
             {
-                responseMcpCallCompleted?.Invoke(ResponseMcpCallCompleted!);
+                responseMcpCallCompleted?.Invoke(__value31);
             }
-            else if (IsResponseMcpCallFailed)
+            else if (ResponseMcpCallFailed is { } __value32)
             {
-                responseMcpCallFailed?.Invoke(ResponseMcpCallFailed!);
+                responseMcpCallFailed?.Invoke(__value32);
             }
-            else if (IsResponseMcpCallInProgress)
+            else if (ResponseMcpCallInProgress is { } __value33)
             {
-                responseMcpCallInProgress?.Invoke(ResponseMcpCallInProgress!);
+                responseMcpCallInProgress?.Invoke(__value33);
             }
-            else if (IsResponseMcpCallArgumentsDelta)
+            else if (ResponseMcpCallArgumentsDelta is { } __value34)
             {
-                responseMcpCallArgumentsDelta?.Invoke(ResponseMcpCallArgumentsDelta!);
+                responseMcpCallArgumentsDelta?.Invoke(__value34);
             }
-            else if (IsResponseMcpCallArgumentsDone)
+            else if (ResponseMcpCallArgumentsDone is { } __value35)
             {
-                responseMcpCallArgumentsDone?.Invoke(ResponseMcpCallArgumentsDone!);
+                responseMcpCallArgumentsDone?.Invoke(__value35);
             }
-            else if (IsResponseOutputAudioDelta)
+            else if (ResponseOutputAudioDelta is { } __value36)
             {
-                responseOutputAudioDelta?.Invoke(ResponseOutputAudioDelta!);
+                responseOutputAudioDelta?.Invoke(__value36);
             }
-            else if (IsResponseOutputAudioDone)
+            else if (ResponseOutputAudioDone is { } __value37)
             {
-                responseOutputAudioDone?.Invoke(ResponseOutputAudioDone!);
+                responseOutputAudioDone?.Invoke(__value37);
             }
-            else if (IsResponseOutputAudioTranscriptDelta)
+            else if (ResponseOutputAudioTranscriptDelta is { } __value38)
             {
-                responseOutputAudioTranscriptDelta?.Invoke(ResponseOutputAudioTranscriptDelta!);
+                responseOutputAudioTranscriptDelta?.Invoke(__value38);
             }
-            else if (IsResponseOutputAudioTranscriptDone)
+            else if (ResponseOutputAudioTranscriptDone is { } __value39)
             {
-                responseOutputAudioTranscriptDone?.Invoke(ResponseOutputAudioTranscriptDone!);
+                responseOutputAudioTranscriptDone?.Invoke(__value39);
             }
-            else if (IsResponseOutputItemAdded)
+            else if (ResponseOutputItemAdded is { } __value40)
             {
-                responseOutputItemAdded?.Invoke(ResponseOutputItemAdded!);
+                responseOutputItemAdded?.Invoke(__value40);
             }
-            else if (IsResponseOutputItemDone)
+            else if (ResponseOutputItemDone is { } __value41)
             {
-                responseOutputItemDone?.Invoke(ResponseOutputItemDone!);
+                responseOutputItemDone?.Invoke(__value41);
             }
-            else if (IsResponseOutputTextDelta)
+            else if (ResponseOutputTextDelta is { } __value42)
             {
-                responseOutputTextDelta?.Invoke(ResponseOutputTextDelta!);
+                responseOutputTextDelta?.Invoke(__value42);
             }
-            else if (IsResponseOutputTextDone)
+            else if (ResponseOutputTextDone is { } __value43)
             {
-                responseOutputTextDone?.Invoke(ResponseOutputTextDone!);
+                responseOutputTextDone?.Invoke(__value43);
             }
-            else if (IsSessionCreated)
+            else if (SessionCreated is { } __value44)
             {
-                sessionCreated?.Invoke(SessionCreated!);
+                sessionCreated?.Invoke(__value44);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value45)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value45);
             }
-            else if (IsTranscriptionSessionUpdated)
+            else if (TranscriptionSessionUpdated is { } __value46)
             {
-                transcriptionSessionUpdated?.Invoke(TranscriptionSessionUpdated!);
+                transcriptionSessionUpdated?.Invoke(__value46);
             }
         }
 

@@ -50,9 +50,11 @@ internal static partial class UploadsAddUploadPartCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"add-upload-part", @"Add upload part
+        var command = new Command(commandName ?? @"add-upload-part", @"Add upload part
 Adds a [Part](https://developers.openai.com/api/reference/resources/uploads/subresources/parts) to an [Upload](https://developers.openai.com/api/reference/resources/uploads) object. A Part represents a chunk of bytes from the file you are trying to upload.
 
 Each Part can be at most 64 MB, and you can add Parts until you hit the Upload maximum of 8 GB.
@@ -87,6 +89,7 @@ It is possible to add multiple Parts in parallel. You can decide the intended or
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

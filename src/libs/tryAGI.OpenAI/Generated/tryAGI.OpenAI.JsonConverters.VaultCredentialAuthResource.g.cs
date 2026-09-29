@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VaultCredentialAuthResourceMcpOauth), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VaultCredentialAuthResourceMcpOauth?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VaultCredentialAuthResourceMcpOauth).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpOauth!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpOauth(), typeInfo);
             }
             else if (value.IsStaticBearer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VaultCredentialAuthResourceStaticBearer), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VaultCredentialAuthResourceStaticBearer?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VaultCredentialAuthResourceStaticBearer).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StaticBearer!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickStaticBearer(), typeInfo);
             }
             else if (value.IsEnvironmentVariable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VaultCredentialAuthResourceEnvironmentVariable), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VaultCredentialAuthResourceEnvironmentVariable?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VaultCredentialAuthResourceEnvironmentVariable).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EnvironmentVariable!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnvironmentVariable(), typeInfo);
             }
         }
     }

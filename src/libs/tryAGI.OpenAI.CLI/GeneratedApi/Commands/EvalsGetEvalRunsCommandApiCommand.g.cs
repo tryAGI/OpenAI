@@ -57,9 +57,11 @@ internal static partial class EvalsGetEvalRunsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-eval-runs", @"Get eval runs
+        var command = new Command(commandName ?? @"get-eval-runs", @"Get eval runs
 Get a list of runs for an evaluation.
 ");
                         command.Arguments.Add(EvalId);
@@ -104,6 +106,7 @@ Get a list of runs for an evaluation.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

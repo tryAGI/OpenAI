@@ -50,7 +50,7 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.HostedPluginResourceInline), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.HostedPluginResourceInline?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.HostedPluginResourceInline).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Inline!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInline(), typeInfo);
             }
         }
     }

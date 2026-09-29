@@ -17,9 +17,11 @@ header when creating the call with
 [`POST /v1/realtime/calls`](https://developers.openai.com/api/reference/resources/realtime/subresources/calls/methods/create).",
     };
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"hangup-realtime-call", @"Hang up call
+        var command = new Command(commandName ?? @"hangup-realtime-call", @"Hang up call
 End an active Realtime API call, whether it was initiated over SIP or
 WebRTC.");
                         command.Arguments.Add(CallId);
@@ -38,6 +40,7 @@ WebRTC.");
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

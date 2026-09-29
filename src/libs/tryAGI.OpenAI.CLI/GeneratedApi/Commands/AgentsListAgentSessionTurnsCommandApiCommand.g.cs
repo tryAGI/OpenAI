@@ -51,9 +51,11 @@ internal static partial class AgentsListAgentSessionTurnsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-agent-session-turns", @"List agent session turns
+        var command = new Command(commandName ?? @"list-agent-session-turns", @"List agent session turns
 Lists turns by creation time and turn ID. The after cursor is exclusive in the selected order. See [session turns](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage#inspect-session-turns).");
                         command.Arguments.Add(SessionId);
                         command.Options.Add(Limit);
@@ -94,6 +96,7 @@ Lists turns by creation time and turn ID. The after cursor is exclusive in the s
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

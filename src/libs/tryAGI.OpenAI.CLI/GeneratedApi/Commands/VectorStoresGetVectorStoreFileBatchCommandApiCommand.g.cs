@@ -39,9 +39,11 @@ internal static partial class VectorStoresGetVectorStoreFileBatchCommandApiComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-vector-store-file-batch", @"Retrieve vector store file batch
+        var command = new Command(commandName ?? @"get-vector-store-file-batch", @"Retrieve vector store file batch
 Retrieves a vector store file batch.");
                         command.Arguments.Add(VectorStoreId);
                         command.Arguments.Add(BatchId);
@@ -68,6 +70,7 @@ Retrieves a vector store file batch.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

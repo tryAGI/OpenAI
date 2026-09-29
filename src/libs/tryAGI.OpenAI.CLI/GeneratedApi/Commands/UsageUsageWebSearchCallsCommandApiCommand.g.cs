@@ -98,9 +98,11 @@ internal static partial class UsageUsageWebSearchCallsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"web-search-calls", @"Web search calls
+        var command = new Command(commandName ?? @"web-search-calls", @"Web search calls
 Get web search calls usage details for the organization.");
                         command.Options.Add(StartTime);
                         command.Options.Add(EndTime);
@@ -162,6 +164,7 @@ Get web search calls usage details for the organization.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextSegmentEvent PickTranscriptTextSegment() => IsTranscriptTextSegment
-            ? TranscriptTextSegment!
+        public global::tryAGI.OpenAI.TranscriptTextSegmentEvent PickTranscriptTextSegment() => TranscriptTextSegment is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptTextSegment' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextDeltaEvent PickTranscriptTextDelta() => IsTranscriptTextDelta
-            ? TranscriptTextDelta!
+        public global::tryAGI.OpenAI.TranscriptTextDeltaEvent PickTranscriptTextDelta() => TranscriptTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextDoneEvent PickTranscriptTextDone() => IsTranscriptTextDone
-            ? TranscriptTextDone!
+        public global::tryAGI.OpenAI.TranscriptTextDoneEvent PickTranscriptTextDone() => TranscriptTextDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptTextDone' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTranscriptTextSegment && transcriptTextSegment != null)
+            if (TranscriptTextSegment is { } __value0 && transcriptTextSegment != null)
             {
-                return transcriptTextSegment(TranscriptTextSegment!);
+                return transcriptTextSegment(__value0);
             }
-            else if (IsTranscriptTextDelta && transcriptTextDelta != null)
+            else if (TranscriptTextDelta is { } __value1 && transcriptTextDelta != null)
             {
-                return transcriptTextDelta(TranscriptTextDelta!);
+                return transcriptTextDelta(__value1);
             }
-            else if (IsTranscriptTextDone && transcriptTextDone != null)
+            else if (TranscriptTextDone is { } __value2 && transcriptTextDone != null)
             {
-                return transcriptTextDone(TranscriptTextDone!);
+                return transcriptTextDone(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTranscriptTextSegment)
+            if (TranscriptTextSegment is { } __value0)
             {
-                transcriptTextSegment?.Invoke(TranscriptTextSegment!);
+                transcriptTextSegment?.Invoke(__value0);
             }
-            else if (IsTranscriptTextDelta)
+            else if (TranscriptTextDelta is { } __value1)
             {
-                transcriptTextDelta?.Invoke(TranscriptTextDelta!);
+                transcriptTextDelta?.Invoke(__value1);
             }
-            else if (IsTranscriptTextDone)
+            else if (TranscriptTextDone is { } __value2)
             {
-                transcriptTextDone?.Invoke(TranscriptTextDone!);
+                transcriptTextDone?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTranscriptTextSegment)
+            if (TranscriptTextSegment is { } __value0)
             {
-                transcriptTextSegment?.Invoke(TranscriptTextSegment!);
+                transcriptTextSegment?.Invoke(__value0);
             }
-            else if (IsTranscriptTextDelta)
+            else if (TranscriptTextDelta is { } __value1)
             {
-                transcriptTextDelta?.Invoke(TranscriptTextDelta!);
+                transcriptTextDelta?.Invoke(__value1);
             }
-            else if (IsTranscriptTextDone)
+            else if (TranscriptTextDone is { } __value2)
             {
-                transcriptTextDone?.Invoke(TranscriptTextDone!);
+                transcriptTextDone?.Invoke(__value2);
             }
         }
 

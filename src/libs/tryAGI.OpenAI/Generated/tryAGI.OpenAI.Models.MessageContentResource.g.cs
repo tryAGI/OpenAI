@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentResourceInputText PickInputText() => IsInputText
-            ? InputText!
+        public global::tryAGI.OpenAI.MessageContentResourceInputText PickInputText() => InputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentResourceInputImage PickInputImage() => IsInputImage
-            ? InputImage!
+        public global::tryAGI.OpenAI.MessageContentResourceInputImage PickInputImage() => InputImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.MessageContentResourceOutputText PickOutputText() => IsOutputText
-            ? OutputText!
+        public global::tryAGI.OpenAI.MessageContentResourceOutputText PickOutputText() => OutputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputText' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputText && inputText != null)
+            if (InputText is { } __value0 && inputText != null)
             {
-                return inputText(InputText!);
+                return inputText(__value0);
             }
-            else if (IsInputImage && inputImage != null)
+            else if (InputImage is { } __value1 && inputImage != null)
             {
-                return inputImage(InputImage!);
+                return inputImage(__value1);
             }
-            else if (IsOutputText && outputText != null)
+            else if (OutputText is { } __value2 && outputText != null)
             {
-                return outputText(OutputText!);
+                return outputText(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsInputImage)
+            else if (InputImage is { } __value1)
             {
-                inputImage?.Invoke(InputImage!);
+                inputImage?.Invoke(__value1);
             }
-            else if (IsOutputText)
+            else if (OutputText is { } __value2)
             {
-                outputText?.Invoke(OutputText!);
+                outputText?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsInputImage)
+            else if (InputImage is { } __value1)
             {
-                inputImage?.Invoke(InputImage!);
+                inputImage?.Invoke(__value1);
             }
-            else if (IsOutputText)
+            else if (OutputText is { } __value2)
             {
-                outputText?.Invoke(OutputText!);
+                outputText?.Invoke(__value2);
             }
         }
 

@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSessionAudioFormatPCMParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSessionAudioFormatPCMParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSessionAudioFormatPCMParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AudioPcm!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAudioPcm(), typeInfo);
             }
             else if (value.IsAudioPcmu)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSessionAudioFormatPCMUParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSessionAudioFormatPCMUParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSessionAudioFormatPCMUParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AudioPcmu!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAudioPcmu(), typeInfo);
             }
             else if (value.IsAudioPcma)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSessionAudioFormatPCMAParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSessionAudioFormatPCMAParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSessionAudioFormatPCMAParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AudioPcma!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAudioPcma(), typeInfo);
             }
         }
     }

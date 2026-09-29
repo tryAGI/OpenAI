@@ -39,9 +39,11 @@ internal static partial class ListWebhookEndpointsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-webhook-endpoints", @"List Webhook Endpoints
+        var command = new Command(commandName ?? @"list-webhook-endpoints", @"List Webhook Endpoints
 Returns webhook endpoints for the authenticated project in newest-first order.");
                         command.Options.Add(Limit);
                         command.Options.Add(After);
@@ -76,6 +78,7 @@ Returns webhook endpoints for the authenticated project in newest-first order.")
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

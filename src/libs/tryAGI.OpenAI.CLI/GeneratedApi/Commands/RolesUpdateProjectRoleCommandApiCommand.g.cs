@@ -62,9 +62,11 @@ internal static partial class RolesUpdateProjectRoleCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-project-role", @"Update project role
+        var command = new Command(commandName ?? @"update-project-role", @"Update project role
 Updates an existing project role.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(RoleId);
@@ -126,6 +128,7 @@ Updates an existing project role.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

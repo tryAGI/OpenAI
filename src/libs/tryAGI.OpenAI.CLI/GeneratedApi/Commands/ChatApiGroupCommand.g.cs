@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class ChatApiGroupCommand
+internal static partial class ChatApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"chat", @"Chat endpoint commands.");
@@ -16,6 +18,7 @@ internal static class ChatApiGroupCommand
                          command.Subcommands.Add(ChatGetChatCompletionMessagesCommandApiCommand.Create());
                          command.Subcommands.Add(ChatListChatCompletionsCommandApiCommand.Create());
                          command.Subcommands.Add(ChatUpdateChatCompletionCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

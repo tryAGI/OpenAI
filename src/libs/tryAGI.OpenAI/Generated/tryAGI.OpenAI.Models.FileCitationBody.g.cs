@@ -25,7 +25,7 @@ namespace tryAGI.OpenAI
         public required string FileId { get; set; }
 
         /// <summary>
-        /// The index of the file in the list of files.
+        /// The index in the output text at which to insert the file citation.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         /// The ID of the file.
         /// </param>
         /// <param name="index">
-        /// The index of the file in the list of files.
+        /// The index in the output text at which to insert the file citation.
         /// </param>
         /// <param name="filename">
         /// The filename of the file cited.

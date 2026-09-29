@@ -62,9 +62,11 @@ audio in and translated audio plus transcript deltas out continuously.
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-realtime-translation-client-secret", @"Create translation client secret
+        var command = new Command(commandName ?? @"create-realtime-translation-client-secret", @"Create translation client secret
 Create a Realtime translation client secret with an associated translation session configuration.
 
 Client secrets are short-lived tokens that can be passed to a client app,
@@ -120,6 +122,7 @@ The client secret is a string that looks like `ek_1234`.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioWsDelta2> PickBetaResponseAudioWsDelta() => IsBetaResponseAudioWsDelta
-            ? BetaResponseAudioWsDelta!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioWsDelta2> PickBetaResponseAudioWsDelta() => BetaResponseAudioWsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseAudioWsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioWsDone2> PickBetaResponseAudioWsDone() => IsBetaResponseAudioWsDone
-            ? BetaResponseAudioWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioWsDone2> PickBetaResponseAudioWsDone() => BetaResponseAudioWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseAudioWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioTranscriptDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioTranscriptWsDelta2> PickBetaResponseAudioTranscriptWsDelta() => IsBetaResponseAudioTranscriptWsDelta
-            ? BetaResponseAudioTranscriptWsDelta!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioTranscriptDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioTranscriptWsDelta2> PickBetaResponseAudioTranscriptWsDelta() => BetaResponseAudioTranscriptWsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseAudioTranscriptWsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioTranscriptDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioTranscriptWsDone2> PickBetaResponseAudioTranscriptWsDone() => IsBetaResponseAudioTranscriptWsDone
-            ? BetaResponseAudioTranscriptWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioTranscriptDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioTranscriptWsDone2> PickBetaResponseAudioTranscriptWsDone() => BetaResponseAudioTranscriptWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseAudioTranscriptWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCodeDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCodeInterpreterCallCodeWsDelta2> PickBetaResponseCodeInterpreterCallCodeWsDelta() => IsBetaResponseCodeInterpreterCallCodeWsDelta
-            ? BetaResponseCodeInterpreterCallCodeWsDelta!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCodeDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCodeInterpreterCallCodeWsDelta2> PickBetaResponseCodeInterpreterCallCodeWsDelta() => BetaResponseCodeInterpreterCallCodeWsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseCodeInterpreterCallCodeWsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCodeDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCodeInterpreterCallCodeWsDone2> PickBetaResponseCodeInterpreterCallCodeWsDone() => IsBetaResponseCodeInterpreterCallCodeWsDone
-            ? BetaResponseCodeInterpreterCallCodeWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCodeDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCodeInterpreterCallCodeWsDone2> PickBetaResponseCodeInterpreterCallCodeWsDone() => BetaResponseCodeInterpreterCallCodeWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseCodeInterpreterCallCodeWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCodeInterpreterCallWsCompleted2> PickBetaResponseCodeInterpreterCallWsCompleted() => IsBetaResponseCodeInterpreterCallWsCompleted
-            ? BetaResponseCodeInterpreterCallWsCompleted!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCodeInterpreterCallWsCompleted2> PickBetaResponseCodeInterpreterCallWsCompleted() => BetaResponseCodeInterpreterCallWsCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseCodeInterpreterCallWsCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCodeInterpreterCallInWsProgress2> PickBetaResponseCodeInterpreterCallInWsProgress() => IsBetaResponseCodeInterpreterCallInWsProgress
-            ? BetaResponseCodeInterpreterCallInWsProgress!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCodeInterpreterCallInWsProgress2> PickBetaResponseCodeInterpreterCallInWsProgress() => BetaResponseCodeInterpreterCallInWsProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseCodeInterpreterCallInWsProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -338,8 +338,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInterpretingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCodeInterpreterCallWsInterpreting2> PickBetaResponseCodeInterpreterCallWsInterpreting() => IsBetaResponseCodeInterpreterCallWsInterpreting
-            ? BetaResponseCodeInterpreterCallWsInterpreting!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallInterpretingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCodeInterpreterCallWsInterpreting2> PickBetaResponseCodeInterpreterCallWsInterpreting() => BetaResponseCodeInterpreterCallWsInterpreting is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseCodeInterpreterCallWsInterpreting' but the value was {ToString()}.");
 
         /// <summary>
@@ -375,8 +375,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCompactionWsCompacting2> PickBetaResponseCompactionWsCompacting() => IsBetaResponseCompactionWsCompacting
-            ? BetaResponseCompactionWsCompacting!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCompactionWsCompacting2> PickBetaResponseCompactionWsCompacting() => BetaResponseCompactionWsCompacting is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseCompactionWsCompacting' but the value was {ToString()}.");
 
         /// <summary>
@@ -412,8 +412,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWsCompleted2> PickBetaResponseWsCompleted() => IsBetaResponseWsCompleted
-            ? BetaResponseWsCompleted!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWsCompleted2> PickBetaResponseWsCompleted() => BetaResponseWsCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseWsCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -449,8 +449,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseContentPartAddedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseContentPartWsAdded2> PickBetaResponseContentPartWsAdded() => IsBetaResponseContentPartWsAdded
-            ? BetaResponseContentPartWsAdded!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseContentPartAddedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseContentPartWsAdded2> PickBetaResponseContentPartWsAdded() => BetaResponseContentPartWsAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseContentPartWsAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -486,8 +486,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseContentPartDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseContentPartWsDone2> PickBetaResponseContentPartWsDone() => IsBetaResponseContentPartWsDone
-            ? BetaResponseContentPartWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseContentPartDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseContentPartWsDone2> PickBetaResponseContentPartWsDone() => BetaResponseContentPartWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseContentPartWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -523,8 +523,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCreatedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWsCreated2> PickBetaResponseWsCreated() => IsBetaResponseWsCreated
-            ? BetaResponseWsCreated!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCreatedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWsCreated2> PickBetaResponseWsCreated() => BetaResponseWsCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseWsCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -560,8 +560,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseFileSearchCallCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseFileSearchCallWsCompleted2> PickBetaResponseFileSearchCallWsCompleted() => IsBetaResponseFileSearchCallWsCompleted
-            ? BetaResponseFileSearchCallWsCompleted!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseFileSearchCallCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseFileSearchCallWsCompleted2> PickBetaResponseFileSearchCallWsCompleted() => BetaResponseFileSearchCallWsCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseFileSearchCallWsCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -597,8 +597,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseFileSearchCallInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseFileSearchCallInWsProgress2> PickBetaResponseFileSearchCallInWsProgress() => IsBetaResponseFileSearchCallInWsProgress
-            ? BetaResponseFileSearchCallInWsProgress!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseFileSearchCallInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseFileSearchCallInWsProgress2> PickBetaResponseFileSearchCallInWsProgress() => BetaResponseFileSearchCallInWsProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseFileSearchCallInWsProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -634,8 +634,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseFileSearchCallSearchingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseFileSearchCallWsSearching2> PickBetaResponseFileSearchCallWsSearching() => IsBetaResponseFileSearchCallWsSearching
-            ? BetaResponseFileSearchCallWsSearching!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseFileSearchCallSearchingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseFileSearchCallWsSearching2> PickBetaResponseFileSearchCallWsSearching() => BetaResponseFileSearchCallWsSearching is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseFileSearchCallWsSearching' but the value was {ToString()}.");
 
         /// <summary>
@@ -671,8 +671,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseFunctionCallArgumentsWsDelta2> PickBetaResponseFunctionCallArgumentsWsDelta() => IsBetaResponseFunctionCallArgumentsWsDelta
-            ? BetaResponseFunctionCallArgumentsWsDelta!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseFunctionCallArgumentsWsDelta2> PickBetaResponseFunctionCallArgumentsWsDelta() => BetaResponseFunctionCallArgumentsWsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseFunctionCallArgumentsWsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -708,8 +708,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseFunctionCallArgumentsWsDone2> PickBetaResponseFunctionCallArgumentsWsDone() => IsBetaResponseFunctionCallArgumentsWsDone
-            ? BetaResponseFunctionCallArgumentsWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseFunctionCallArgumentsWsDone2> PickBetaResponseFunctionCallArgumentsWsDone() => BetaResponseFunctionCallArgumentsWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseFunctionCallArgumentsWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -745,8 +745,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseShellCallCommandWsAdded2> PickBetaResponseShellCallCommandWsAdded() => IsBetaResponseShellCallCommandWsAdded
-            ? BetaResponseShellCallCommandWsAdded!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseShellCallCommandAddedStreamingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseShellCallCommandWsAdded2> PickBetaResponseShellCallCommandWsAdded() => BetaResponseShellCallCommandWsAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseShellCallCommandWsAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -782,8 +782,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseShellCallCommandWsDelta2> PickBetaResponseShellCallCommandWsDelta() => IsBetaResponseShellCallCommandWsDelta
-            ? BetaResponseShellCallCommandWsDelta!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseShellCallCommandDeltaStreamingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseShellCallCommandWsDelta2> PickBetaResponseShellCallCommandWsDelta() => BetaResponseShellCallCommandWsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseShellCallCommandWsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -819,8 +819,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseShellCallCommandWsDone2> PickBetaResponseShellCallCommandWsDone() => IsBetaResponseShellCallCommandWsDone
-            ? BetaResponseShellCallCommandWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseShellCallCommandDoneStreamingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseShellCallCommandWsDone2> PickBetaResponseShellCallCommandWsDone() => BetaResponseShellCallCommandWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseShellCallCommandWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -856,8 +856,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseShellCallOutputContentWsDelta2> PickBetaResponseShellCallOutputContentWsDelta() => IsBetaResponseShellCallOutputContentWsDelta
-            ? BetaResponseShellCallOutputContentWsDelta!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDeltaStreamingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseShellCallOutputContentWsDelta2> PickBetaResponseShellCallOutputContentWsDelta() => BetaResponseShellCallOutputContentWsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseShellCallOutputContentWsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -893,8 +893,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseShellCallOutputContentWsDone2> PickBetaResponseShellCallOutputContentWsDone() => IsBetaResponseShellCallOutputContentWsDone
-            ? BetaResponseShellCallOutputContentWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseShellCallOutputContentDoneStreamingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseShellCallOutputContentWsDone2> PickBetaResponseShellCallOutputContentWsDone() => BetaResponseShellCallOutputContentWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseShellCallOutputContentWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -930,8 +930,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseInWsProgress2> PickBetaResponseInWsProgress() => IsBetaResponseInWsProgress
-            ? BetaResponseInWsProgress!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseInWsProgress2> PickBetaResponseInWsProgress() => BetaResponseInWsProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseInWsProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -967,8 +967,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseFailedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWsFailed2> PickBetaResponseWsFailed() => IsBetaResponseWsFailed
-            ? BetaResponseWsFailed!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseFailedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWsFailed2> PickBetaResponseWsFailed() => BetaResponseWsFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseWsFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -1007,8 +1007,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseIncompleteEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWsIncomplete2> PickBetaResponseWsIncomplete() => IsBetaResponseWsIncomplete
-            ? BetaResponseWsIncomplete!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseIncompleteEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWsIncomplete2> PickBetaResponseWsIncomplete() => BetaResponseWsIncomplete is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseWsIncomplete' but the value was {ToString()}.");
 
         /// <summary>
@@ -1044,8 +1044,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseOutputItemAddedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseOutputItemWsAdded2> PickBetaResponseOutputItemWsAdded() => IsBetaResponseOutputItemWsAdded
-            ? BetaResponseOutputItemWsAdded!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseOutputItemAddedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseOutputItemWsAdded2> PickBetaResponseOutputItemWsAdded() => BetaResponseOutputItemWsAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseOutputItemWsAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -1081,8 +1081,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseOutputItemDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseOutputItemWsDone2> PickBetaResponseOutputItemWsDone() => IsBetaResponseOutputItemWsDone
-            ? BetaResponseOutputItemWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseOutputItemDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseOutputItemWsDone2> PickBetaResponseOutputItemWsDone() => BetaResponseOutputItemWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseOutputItemWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1118,8 +1118,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseReasoningSummaryPartAddedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseReasoningSummaryPartWsAdded2> PickBetaResponseReasoningSummaryPartWsAdded() => IsBetaResponseReasoningSummaryPartWsAdded
-            ? BetaResponseReasoningSummaryPartWsAdded!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseReasoningSummaryPartAddedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseReasoningSummaryPartWsAdded2> PickBetaResponseReasoningSummaryPartWsAdded() => BetaResponseReasoningSummaryPartWsAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseReasoningSummaryPartWsAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -1155,8 +1155,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseReasoningSummaryPartDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseReasoningSummaryPartWsDone2> PickBetaResponseReasoningSummaryPartWsDone() => IsBetaResponseReasoningSummaryPartWsDone
-            ? BetaResponseReasoningSummaryPartWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseReasoningSummaryPartDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseReasoningSummaryPartWsDone2> PickBetaResponseReasoningSummaryPartWsDone() => BetaResponseReasoningSummaryPartWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseReasoningSummaryPartWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1192,8 +1192,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseReasoningSummaryTextDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseReasoningSummaryTextWsDelta2> PickBetaResponseReasoningSummaryTextWsDelta() => IsBetaResponseReasoningSummaryTextWsDelta
-            ? BetaResponseReasoningSummaryTextWsDelta!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseReasoningSummaryTextDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseReasoningSummaryTextWsDelta2> PickBetaResponseReasoningSummaryTextWsDelta() => BetaResponseReasoningSummaryTextWsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseReasoningSummaryTextWsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1229,8 +1229,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseReasoningSummaryTextDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseReasoningSummaryTextWsDone2> PickBetaResponseReasoningSummaryTextWsDone() => IsBetaResponseReasoningSummaryTextWsDone
-            ? BetaResponseReasoningSummaryTextWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseReasoningSummaryTextDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseReasoningSummaryTextWsDone2> PickBetaResponseReasoningSummaryTextWsDone() => BetaResponseReasoningSummaryTextWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseReasoningSummaryTextWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1266,8 +1266,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseReasoningTextDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseReasoningTextWsDelta2> PickBetaResponseReasoningTextWsDelta() => IsBetaResponseReasoningTextWsDelta
-            ? BetaResponseReasoningTextWsDelta!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseReasoningTextDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseReasoningTextWsDelta2> PickBetaResponseReasoningTextWsDelta() => BetaResponseReasoningTextWsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseReasoningTextWsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1303,8 +1303,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseReasoningTextDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseReasoningTextWsDone2> PickBetaResponseReasoningTextWsDone() => IsBetaResponseReasoningTextWsDone
-            ? BetaResponseReasoningTextWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseReasoningTextDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseReasoningTextWsDone2> PickBetaResponseReasoningTextWsDone() => BetaResponseReasoningTextWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseReasoningTextWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1340,8 +1340,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseRefusalDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseRefusalWsDelta2> PickBetaResponseRefusalWsDelta() => IsBetaResponseRefusalWsDelta
-            ? BetaResponseRefusalWsDelta!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseRefusalDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseRefusalWsDelta2> PickBetaResponseRefusalWsDelta() => BetaResponseRefusalWsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseRefusalWsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1377,8 +1377,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseRefusalDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseRefusalWsDone2> PickBetaResponseRefusalWsDone() => IsBetaResponseRefusalWsDone
-            ? BetaResponseRefusalWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseRefusalDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseRefusalWsDone2> PickBetaResponseRefusalWsDone() => BetaResponseRefusalWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseRefusalWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1414,8 +1414,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseTextDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseTextWsDelta2> PickBetaResponseTextWsDelta() => IsBetaResponseTextWsDelta
-            ? BetaResponseTextWsDelta!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseTextDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseTextWsDelta2> PickBetaResponseTextWsDelta() => BetaResponseTextWsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseTextWsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1451,8 +1451,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseTextDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseTextWsDone2> PickBetaResponseTextWsDone() => IsBetaResponseTextWsDone
-            ? BetaResponseTextWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseTextDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseTextWsDone2> PickBetaResponseTextWsDone() => BetaResponseTextWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseTextWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1488,8 +1488,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseWebSearchCallCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWebSearchCallWsCompleted2> PickBetaResponseWebSearchCallWsCompleted() => IsBetaResponseWebSearchCallWsCompleted
-            ? BetaResponseWebSearchCallWsCompleted!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseWebSearchCallCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWebSearchCallWsCompleted2> PickBetaResponseWebSearchCallWsCompleted() => BetaResponseWebSearchCallWsCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseWebSearchCallWsCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1525,8 +1525,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseWebSearchCallInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWebSearchCallInWsProgress2> PickBetaResponseWebSearchCallInWsProgress() => IsBetaResponseWebSearchCallInWsProgress
-            ? BetaResponseWebSearchCallInWsProgress!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseWebSearchCallInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWebSearchCallInWsProgress2> PickBetaResponseWebSearchCallInWsProgress() => BetaResponseWebSearchCallInWsProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseWebSearchCallInWsProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -1562,8 +1562,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseWebSearchCallSearchingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWebSearchCallWsSearching2> PickBetaResponseWebSearchCallWsSearching() => IsBetaResponseWebSearchCallWsSearching
-            ? BetaResponseWebSearchCallWsSearching!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseWebSearchCallSearchingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWebSearchCallWsSearching2> PickBetaResponseWebSearchCallWsSearching() => BetaResponseWebSearchCallWsSearching is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseWebSearchCallWsSearching' but the value was {ToString()}.");
 
         /// <summary>
@@ -1599,8 +1599,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseImageGenCallCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseImageGenCallWsCompleted2> PickBetaResponseImageGenCallWsCompleted() => IsBetaResponseImageGenCallWsCompleted
-            ? BetaResponseImageGenCallWsCompleted!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseImageGenCallCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseImageGenCallWsCompleted2> PickBetaResponseImageGenCallWsCompleted() => BetaResponseImageGenCallWsCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseImageGenCallWsCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1636,8 +1636,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseImageGenCallGeneratingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseImageGenCallWsGenerating2> PickBetaResponseImageGenCallWsGenerating() => IsBetaResponseImageGenCallWsGenerating
-            ? BetaResponseImageGenCallWsGenerating!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseImageGenCallGeneratingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseImageGenCallWsGenerating2> PickBetaResponseImageGenCallWsGenerating() => BetaResponseImageGenCallWsGenerating is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseImageGenCallWsGenerating' but the value was {ToString()}.");
 
         /// <summary>
@@ -1673,8 +1673,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseImageGenCallInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseImageGenCallInWsProgress2> PickBetaResponseImageGenCallInWsProgress() => IsBetaResponseImageGenCallInWsProgress
-            ? BetaResponseImageGenCallInWsProgress!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseImageGenCallInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseImageGenCallInWsProgress2> PickBetaResponseImageGenCallInWsProgress() => BetaResponseImageGenCallInWsProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseImageGenCallInWsProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -1710,8 +1710,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseImageGenCallPartialImageEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseImageGenCallPartialWsImage2> PickBetaResponseImageGenCallPartialWsImage() => IsBetaResponseImageGenCallPartialWsImage
-            ? BetaResponseImageGenCallPartialWsImage!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseImageGenCallPartialImageEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseImageGenCallPartialWsImage2> PickBetaResponseImageGenCallPartialWsImage() => BetaResponseImageGenCallPartialWsImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseImageGenCallPartialWsImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -1747,8 +1747,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPCallArgumentsDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpCallArgumentsWsDelta2> PickBetaResponseMcpCallArgumentsWsDelta() => IsBetaResponseMcpCallArgumentsWsDelta
-            ? BetaResponseMcpCallArgumentsWsDelta!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPCallArgumentsDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpCallArgumentsWsDelta2> PickBetaResponseMcpCallArgumentsWsDelta() => BetaResponseMcpCallArgumentsWsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseMcpCallArgumentsWsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1784,8 +1784,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPCallArgumentsDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpCallArgumentsWsDone2> PickBetaResponseMcpCallArgumentsWsDone() => IsBetaResponseMcpCallArgumentsWsDone
-            ? BetaResponseMcpCallArgumentsWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPCallArgumentsDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpCallArgumentsWsDone2> PickBetaResponseMcpCallArgumentsWsDone() => BetaResponseMcpCallArgumentsWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseMcpCallArgumentsWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1821,8 +1821,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPCallCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpCallWsCompleted2> PickBetaResponseMcpCallWsCompleted() => IsBetaResponseMcpCallWsCompleted
-            ? BetaResponseMcpCallWsCompleted!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPCallCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpCallWsCompleted2> PickBetaResponseMcpCallWsCompleted() => BetaResponseMcpCallWsCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseMcpCallWsCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1858,8 +1858,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPCallFailedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpCallWsFailed2> PickBetaResponseMcpCallWsFailed() => IsBetaResponseMcpCallWsFailed
-            ? BetaResponseMcpCallWsFailed!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPCallFailedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpCallWsFailed2> PickBetaResponseMcpCallWsFailed() => BetaResponseMcpCallWsFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseMcpCallWsFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -1895,8 +1895,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPCallInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpCallInWsProgress2> PickBetaResponseMcpCallInWsProgress() => IsBetaResponseMcpCallInWsProgress
-            ? BetaResponseMcpCallInWsProgress!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPCallInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpCallInWsProgress2> PickBetaResponseMcpCallInWsProgress() => BetaResponseMcpCallInWsProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseMcpCallInWsProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -1932,8 +1932,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPListToolsCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpListToolsWsCompleted2> PickBetaResponseMcpListToolsWsCompleted() => IsBetaResponseMcpListToolsWsCompleted
-            ? BetaResponseMcpListToolsWsCompleted!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPListToolsCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpListToolsWsCompleted2> PickBetaResponseMcpListToolsWsCompleted() => BetaResponseMcpListToolsWsCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseMcpListToolsWsCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -1969,8 +1969,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPListToolsFailedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpListToolsWsFailed2> PickBetaResponseMcpListToolsWsFailed() => IsBetaResponseMcpListToolsWsFailed
-            ? BetaResponseMcpListToolsWsFailed!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPListToolsFailedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpListToolsWsFailed2> PickBetaResponseMcpListToolsWsFailed() => BetaResponseMcpListToolsWsFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseMcpListToolsWsFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -2006,8 +2006,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPListToolsInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpListToolsInWsProgress2> PickBetaResponseMcpListToolsInWsProgress() => IsBetaResponseMcpListToolsInWsProgress
-            ? BetaResponseMcpListToolsInWsProgress!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseMCPListToolsInProgressEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseMcpListToolsInWsProgress2> PickBetaResponseMcpListToolsInWsProgress() => BetaResponseMcpListToolsInWsProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseMcpListToolsInWsProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -2043,8 +2043,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseOutputTextAnnotationAddedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseOutputTextAnnotationWsAdded2> PickBetaResponseOutputTextAnnotationWsAdded() => IsBetaResponseOutputTextAnnotationWsAdded
-            ? BetaResponseOutputTextAnnotationWsAdded!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseOutputTextAnnotationAddedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseOutputTextAnnotationWsAdded2> PickBetaResponseOutputTextAnnotationWsAdded() => BetaResponseOutputTextAnnotationWsAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseOutputTextAnnotationWsAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -2080,8 +2080,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseQueuedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWsQueued2> PickBetaResponseWsQueued() => IsBetaResponseWsQueued
-            ? BetaResponseWsQueued!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseQueuedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWsQueued2> PickBetaResponseWsQueued() => BetaResponseWsQueued is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseWsQueued' but the value was {ToString()}.");
 
         /// <summary>
@@ -2117,8 +2117,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCustomToolCallInputDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCustomToolCallInputWsDelta2> PickBetaResponseCustomToolCallInputWsDelta() => IsBetaResponseCustomToolCallInputWsDelta
-            ? BetaResponseCustomToolCallInputWsDelta!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCustomToolCallInputDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCustomToolCallInputWsDelta2> PickBetaResponseCustomToolCallInputWsDelta() => BetaResponseCustomToolCallInputWsDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseCustomToolCallInputWsDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -2154,8 +2154,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCustomToolCallInputDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCustomToolCallInputWsDone2> PickBetaResponseCustomToolCallInputWsDone() => IsBetaResponseCustomToolCallInputWsDone
-            ? BetaResponseCustomToolCallInputWsDone!.Value
+        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCustomToolCallInputDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCustomToolCallInputWsDone2> PickBetaResponseCustomToolCallInputWsDone() => BetaResponseCustomToolCallInputWsDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseCustomToolCallInputWsDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -2191,8 +2191,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponseWsError PickError() => IsError
-            ? Error!
+        public global::tryAGI.OpenAI.BetaResponseWsError PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
 
         /// <summary>
@@ -2236,8 +2236,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponseSteerAcceptedEvent PickResponseSteerAccepted() => IsResponseSteerAccepted
-            ? ResponseSteerAccepted!
+        public global::tryAGI.OpenAI.BetaResponseSteerAcceptedEvent PickResponseSteerAccepted() => ResponseSteerAccepted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseSteerAccepted' but the value was {ToString()}.");
 
         /// <summary>
@@ -2286,8 +2286,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponseSteerPendingEvent PickResponseSteerPending() => IsResponseSteerPending
-            ? ResponseSteerPending!
+        public global::tryAGI.OpenAI.BetaResponseSteerPendingEvent PickResponseSteerPending() => ResponseSteerPending is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseSteerPending' but the value was {ToString()}.");
 
         /// <summary>
@@ -2329,8 +2329,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponseSteerFailedEvent PickResponseSteerFailed() => IsResponseSteerFailed
-            ? ResponseSteerFailed!
+        public global::tryAGI.OpenAI.BetaResponseSteerFailedEvent PickResponseSteerFailed() => ResponseSteerFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseSteerFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -2367,8 +2367,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponseInjectCreatedEvent PickResponseInjectCreated() => IsResponseInjectCreated
-            ? ResponseInjectCreated!
+        public global::tryAGI.OpenAI.BetaResponseInjectCreatedEvent PickResponseInjectCreated() => ResponseInjectCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseInjectCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -2406,8 +2406,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponseInjectFailedEvent PickResponseInjectFailed() => IsResponseInjectFailed
-            ? ResponseInjectFailed!
+        public global::tryAGI.OpenAI.BetaResponseInjectFailedEvent PickResponseInjectFailed() => ResponseInjectFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseInjectFailed' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -4240,261 +4240,261 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaResponseAudioWsDelta && betaResponseAudioWsDelta != null)
+            if (BetaResponseAudioWsDelta is { } __value0 && betaResponseAudioWsDelta != null)
             {
-                return betaResponseAudioWsDelta(BetaResponseAudioWsDelta!);
+                return betaResponseAudioWsDelta(__value0);
             }
-            else if (IsBetaResponseAudioWsDone && betaResponseAudioWsDone != null)
+            else if (BetaResponseAudioWsDone is { } __value1 && betaResponseAudioWsDone != null)
             {
-                return betaResponseAudioWsDone(BetaResponseAudioWsDone!);
+                return betaResponseAudioWsDone(__value1);
             }
-            else if (IsBetaResponseAudioTranscriptWsDelta && betaResponseAudioTranscriptWsDelta != null)
+            else if (BetaResponseAudioTranscriptWsDelta is { } __value2 && betaResponseAudioTranscriptWsDelta != null)
             {
-                return betaResponseAudioTranscriptWsDelta(BetaResponseAudioTranscriptWsDelta!);
+                return betaResponseAudioTranscriptWsDelta(__value2);
             }
-            else if (IsBetaResponseAudioTranscriptWsDone && betaResponseAudioTranscriptWsDone != null)
+            else if (BetaResponseAudioTranscriptWsDone is { } __value3 && betaResponseAudioTranscriptWsDone != null)
             {
-                return betaResponseAudioTranscriptWsDone(BetaResponseAudioTranscriptWsDone!);
+                return betaResponseAudioTranscriptWsDone(__value3);
             }
-            else if (IsBetaResponseCodeInterpreterCallCodeWsDelta && betaResponseCodeInterpreterCallCodeWsDelta != null)
+            else if (BetaResponseCodeInterpreterCallCodeWsDelta is { } __value4 && betaResponseCodeInterpreterCallCodeWsDelta != null)
             {
-                return betaResponseCodeInterpreterCallCodeWsDelta(BetaResponseCodeInterpreterCallCodeWsDelta!);
+                return betaResponseCodeInterpreterCallCodeWsDelta(__value4);
             }
-            else if (IsBetaResponseCodeInterpreterCallCodeWsDone && betaResponseCodeInterpreterCallCodeWsDone != null)
+            else if (BetaResponseCodeInterpreterCallCodeWsDone is { } __value5 && betaResponseCodeInterpreterCallCodeWsDone != null)
             {
-                return betaResponseCodeInterpreterCallCodeWsDone(BetaResponseCodeInterpreterCallCodeWsDone!);
+                return betaResponseCodeInterpreterCallCodeWsDone(__value5);
             }
-            else if (IsBetaResponseCodeInterpreterCallWsCompleted && betaResponseCodeInterpreterCallWsCompleted != null)
+            else if (BetaResponseCodeInterpreterCallWsCompleted is { } __value6 && betaResponseCodeInterpreterCallWsCompleted != null)
             {
-                return betaResponseCodeInterpreterCallWsCompleted(BetaResponseCodeInterpreterCallWsCompleted!);
+                return betaResponseCodeInterpreterCallWsCompleted(__value6);
             }
-            else if (IsBetaResponseCodeInterpreterCallInWsProgress && betaResponseCodeInterpreterCallInWsProgress != null)
+            else if (BetaResponseCodeInterpreterCallInWsProgress is { } __value7 && betaResponseCodeInterpreterCallInWsProgress != null)
             {
-                return betaResponseCodeInterpreterCallInWsProgress(BetaResponseCodeInterpreterCallInWsProgress!);
+                return betaResponseCodeInterpreterCallInWsProgress(__value7);
             }
-            else if (IsBetaResponseCodeInterpreterCallWsInterpreting && betaResponseCodeInterpreterCallWsInterpreting != null)
+            else if (BetaResponseCodeInterpreterCallWsInterpreting is { } __value8 && betaResponseCodeInterpreterCallWsInterpreting != null)
             {
-                return betaResponseCodeInterpreterCallWsInterpreting(BetaResponseCodeInterpreterCallWsInterpreting!);
+                return betaResponseCodeInterpreterCallWsInterpreting(__value8);
             }
-            else if (IsBetaResponseCompactionWsCompacting && betaResponseCompactionWsCompacting != null)
+            else if (BetaResponseCompactionWsCompacting is { } __value9 && betaResponseCompactionWsCompacting != null)
             {
-                return betaResponseCompactionWsCompacting(BetaResponseCompactionWsCompacting!);
+                return betaResponseCompactionWsCompacting(__value9);
             }
-            else if (IsBetaResponseWsCompleted && betaResponseWsCompleted != null)
+            else if (BetaResponseWsCompleted is { } __value10 && betaResponseWsCompleted != null)
             {
-                return betaResponseWsCompleted(BetaResponseWsCompleted!);
+                return betaResponseWsCompleted(__value10);
             }
-            else if (IsBetaResponseContentPartWsAdded && betaResponseContentPartWsAdded != null)
+            else if (BetaResponseContentPartWsAdded is { } __value11 && betaResponseContentPartWsAdded != null)
             {
-                return betaResponseContentPartWsAdded(BetaResponseContentPartWsAdded!);
+                return betaResponseContentPartWsAdded(__value11);
             }
-            else if (IsBetaResponseContentPartWsDone && betaResponseContentPartWsDone != null)
+            else if (BetaResponseContentPartWsDone is { } __value12 && betaResponseContentPartWsDone != null)
             {
-                return betaResponseContentPartWsDone(BetaResponseContentPartWsDone!);
+                return betaResponseContentPartWsDone(__value12);
             }
-            else if (IsBetaResponseWsCreated && betaResponseWsCreated != null)
+            else if (BetaResponseWsCreated is { } __value13 && betaResponseWsCreated != null)
             {
-                return betaResponseWsCreated(BetaResponseWsCreated!);
+                return betaResponseWsCreated(__value13);
             }
-            else if (IsBetaResponseFileSearchCallWsCompleted && betaResponseFileSearchCallWsCompleted != null)
+            else if (BetaResponseFileSearchCallWsCompleted is { } __value14 && betaResponseFileSearchCallWsCompleted != null)
             {
-                return betaResponseFileSearchCallWsCompleted(BetaResponseFileSearchCallWsCompleted!);
+                return betaResponseFileSearchCallWsCompleted(__value14);
             }
-            else if (IsBetaResponseFileSearchCallInWsProgress && betaResponseFileSearchCallInWsProgress != null)
+            else if (BetaResponseFileSearchCallInWsProgress is { } __value15 && betaResponseFileSearchCallInWsProgress != null)
             {
-                return betaResponseFileSearchCallInWsProgress(BetaResponseFileSearchCallInWsProgress!);
+                return betaResponseFileSearchCallInWsProgress(__value15);
             }
-            else if (IsBetaResponseFileSearchCallWsSearching && betaResponseFileSearchCallWsSearching != null)
+            else if (BetaResponseFileSearchCallWsSearching is { } __value16 && betaResponseFileSearchCallWsSearching != null)
             {
-                return betaResponseFileSearchCallWsSearching(BetaResponseFileSearchCallWsSearching!);
+                return betaResponseFileSearchCallWsSearching(__value16);
             }
-            else if (IsBetaResponseFunctionCallArgumentsWsDelta && betaResponseFunctionCallArgumentsWsDelta != null)
+            else if (BetaResponseFunctionCallArgumentsWsDelta is { } __value17 && betaResponseFunctionCallArgumentsWsDelta != null)
             {
-                return betaResponseFunctionCallArgumentsWsDelta(BetaResponseFunctionCallArgumentsWsDelta!);
+                return betaResponseFunctionCallArgumentsWsDelta(__value17);
             }
-            else if (IsBetaResponseFunctionCallArgumentsWsDone && betaResponseFunctionCallArgumentsWsDone != null)
+            else if (BetaResponseFunctionCallArgumentsWsDone is { } __value18 && betaResponseFunctionCallArgumentsWsDone != null)
             {
-                return betaResponseFunctionCallArgumentsWsDone(BetaResponseFunctionCallArgumentsWsDone!);
+                return betaResponseFunctionCallArgumentsWsDone(__value18);
             }
-            else if (IsBetaResponseShellCallCommandWsAdded && betaResponseShellCallCommandWsAdded != null)
+            else if (BetaResponseShellCallCommandWsAdded is { } __value19 && betaResponseShellCallCommandWsAdded != null)
             {
-                return betaResponseShellCallCommandWsAdded(BetaResponseShellCallCommandWsAdded!);
+                return betaResponseShellCallCommandWsAdded(__value19);
             }
-            else if (IsBetaResponseShellCallCommandWsDelta && betaResponseShellCallCommandWsDelta != null)
+            else if (BetaResponseShellCallCommandWsDelta is { } __value20 && betaResponseShellCallCommandWsDelta != null)
             {
-                return betaResponseShellCallCommandWsDelta(BetaResponseShellCallCommandWsDelta!);
+                return betaResponseShellCallCommandWsDelta(__value20);
             }
-            else if (IsBetaResponseShellCallCommandWsDone && betaResponseShellCallCommandWsDone != null)
+            else if (BetaResponseShellCallCommandWsDone is { } __value21 && betaResponseShellCallCommandWsDone != null)
             {
-                return betaResponseShellCallCommandWsDone(BetaResponseShellCallCommandWsDone!);
+                return betaResponseShellCallCommandWsDone(__value21);
             }
-            else if (IsBetaResponseShellCallOutputContentWsDelta && betaResponseShellCallOutputContentWsDelta != null)
+            else if (BetaResponseShellCallOutputContentWsDelta is { } __value22 && betaResponseShellCallOutputContentWsDelta != null)
             {
-                return betaResponseShellCallOutputContentWsDelta(BetaResponseShellCallOutputContentWsDelta!);
+                return betaResponseShellCallOutputContentWsDelta(__value22);
             }
-            else if (IsBetaResponseShellCallOutputContentWsDone && betaResponseShellCallOutputContentWsDone != null)
+            else if (BetaResponseShellCallOutputContentWsDone is { } __value23 && betaResponseShellCallOutputContentWsDone != null)
             {
-                return betaResponseShellCallOutputContentWsDone(BetaResponseShellCallOutputContentWsDone!);
+                return betaResponseShellCallOutputContentWsDone(__value23);
             }
-            else if (IsBetaResponseInWsProgress && betaResponseInWsProgress != null)
+            else if (BetaResponseInWsProgress is { } __value24 && betaResponseInWsProgress != null)
             {
-                return betaResponseInWsProgress(BetaResponseInWsProgress!);
+                return betaResponseInWsProgress(__value24);
             }
-            else if (IsBetaResponseWsFailed && betaResponseWsFailed != null)
+            else if (BetaResponseWsFailed is { } __value25 && betaResponseWsFailed != null)
             {
-                return betaResponseWsFailed(BetaResponseWsFailed!);
+                return betaResponseWsFailed(__value25);
             }
-            else if (IsBetaResponseWsIncomplete && betaResponseWsIncomplete != null)
+            else if (BetaResponseWsIncomplete is { } __value26 && betaResponseWsIncomplete != null)
             {
-                return betaResponseWsIncomplete(BetaResponseWsIncomplete!);
+                return betaResponseWsIncomplete(__value26);
             }
-            else if (IsBetaResponseOutputItemWsAdded && betaResponseOutputItemWsAdded != null)
+            else if (BetaResponseOutputItemWsAdded is { } __value27 && betaResponseOutputItemWsAdded != null)
             {
-                return betaResponseOutputItemWsAdded(BetaResponseOutputItemWsAdded!);
+                return betaResponseOutputItemWsAdded(__value27);
             }
-            else if (IsBetaResponseOutputItemWsDone && betaResponseOutputItemWsDone != null)
+            else if (BetaResponseOutputItemWsDone is { } __value28 && betaResponseOutputItemWsDone != null)
             {
-                return betaResponseOutputItemWsDone(BetaResponseOutputItemWsDone!);
+                return betaResponseOutputItemWsDone(__value28);
             }
-            else if (IsBetaResponseReasoningSummaryPartWsAdded && betaResponseReasoningSummaryPartWsAdded != null)
+            else if (BetaResponseReasoningSummaryPartWsAdded is { } __value29 && betaResponseReasoningSummaryPartWsAdded != null)
             {
-                return betaResponseReasoningSummaryPartWsAdded(BetaResponseReasoningSummaryPartWsAdded!);
+                return betaResponseReasoningSummaryPartWsAdded(__value29);
             }
-            else if (IsBetaResponseReasoningSummaryPartWsDone && betaResponseReasoningSummaryPartWsDone != null)
+            else if (BetaResponseReasoningSummaryPartWsDone is { } __value30 && betaResponseReasoningSummaryPartWsDone != null)
             {
-                return betaResponseReasoningSummaryPartWsDone(BetaResponseReasoningSummaryPartWsDone!);
+                return betaResponseReasoningSummaryPartWsDone(__value30);
             }
-            else if (IsBetaResponseReasoningSummaryTextWsDelta && betaResponseReasoningSummaryTextWsDelta != null)
+            else if (BetaResponseReasoningSummaryTextWsDelta is { } __value31 && betaResponseReasoningSummaryTextWsDelta != null)
             {
-                return betaResponseReasoningSummaryTextWsDelta(BetaResponseReasoningSummaryTextWsDelta!);
+                return betaResponseReasoningSummaryTextWsDelta(__value31);
             }
-            else if (IsBetaResponseReasoningSummaryTextWsDone && betaResponseReasoningSummaryTextWsDone != null)
+            else if (BetaResponseReasoningSummaryTextWsDone is { } __value32 && betaResponseReasoningSummaryTextWsDone != null)
             {
-                return betaResponseReasoningSummaryTextWsDone(BetaResponseReasoningSummaryTextWsDone!);
+                return betaResponseReasoningSummaryTextWsDone(__value32);
             }
-            else if (IsBetaResponseReasoningTextWsDelta && betaResponseReasoningTextWsDelta != null)
+            else if (BetaResponseReasoningTextWsDelta is { } __value33 && betaResponseReasoningTextWsDelta != null)
             {
-                return betaResponseReasoningTextWsDelta(BetaResponseReasoningTextWsDelta!);
+                return betaResponseReasoningTextWsDelta(__value33);
             }
-            else if (IsBetaResponseReasoningTextWsDone && betaResponseReasoningTextWsDone != null)
+            else if (BetaResponseReasoningTextWsDone is { } __value34 && betaResponseReasoningTextWsDone != null)
             {
-                return betaResponseReasoningTextWsDone(BetaResponseReasoningTextWsDone!);
+                return betaResponseReasoningTextWsDone(__value34);
             }
-            else if (IsBetaResponseRefusalWsDelta && betaResponseRefusalWsDelta != null)
+            else if (BetaResponseRefusalWsDelta is { } __value35 && betaResponseRefusalWsDelta != null)
             {
-                return betaResponseRefusalWsDelta(BetaResponseRefusalWsDelta!);
+                return betaResponseRefusalWsDelta(__value35);
             }
-            else if (IsBetaResponseRefusalWsDone && betaResponseRefusalWsDone != null)
+            else if (BetaResponseRefusalWsDone is { } __value36 && betaResponseRefusalWsDone != null)
             {
-                return betaResponseRefusalWsDone(BetaResponseRefusalWsDone!);
+                return betaResponseRefusalWsDone(__value36);
             }
-            else if (IsBetaResponseTextWsDelta && betaResponseTextWsDelta != null)
+            else if (BetaResponseTextWsDelta is { } __value37 && betaResponseTextWsDelta != null)
             {
-                return betaResponseTextWsDelta(BetaResponseTextWsDelta!);
+                return betaResponseTextWsDelta(__value37);
             }
-            else if (IsBetaResponseTextWsDone && betaResponseTextWsDone != null)
+            else if (BetaResponseTextWsDone is { } __value38 && betaResponseTextWsDone != null)
             {
-                return betaResponseTextWsDone(BetaResponseTextWsDone!);
+                return betaResponseTextWsDone(__value38);
             }
-            else if (IsBetaResponseWebSearchCallWsCompleted && betaResponseWebSearchCallWsCompleted != null)
+            else if (BetaResponseWebSearchCallWsCompleted is { } __value39 && betaResponseWebSearchCallWsCompleted != null)
             {
-                return betaResponseWebSearchCallWsCompleted(BetaResponseWebSearchCallWsCompleted!);
+                return betaResponseWebSearchCallWsCompleted(__value39);
             }
-            else if (IsBetaResponseWebSearchCallInWsProgress && betaResponseWebSearchCallInWsProgress != null)
+            else if (BetaResponseWebSearchCallInWsProgress is { } __value40 && betaResponseWebSearchCallInWsProgress != null)
             {
-                return betaResponseWebSearchCallInWsProgress(BetaResponseWebSearchCallInWsProgress!);
+                return betaResponseWebSearchCallInWsProgress(__value40);
             }
-            else if (IsBetaResponseWebSearchCallWsSearching && betaResponseWebSearchCallWsSearching != null)
+            else if (BetaResponseWebSearchCallWsSearching is { } __value41 && betaResponseWebSearchCallWsSearching != null)
             {
-                return betaResponseWebSearchCallWsSearching(BetaResponseWebSearchCallWsSearching!);
+                return betaResponseWebSearchCallWsSearching(__value41);
             }
-            else if (IsBetaResponseImageGenCallWsCompleted && betaResponseImageGenCallWsCompleted != null)
+            else if (BetaResponseImageGenCallWsCompleted is { } __value42 && betaResponseImageGenCallWsCompleted != null)
             {
-                return betaResponseImageGenCallWsCompleted(BetaResponseImageGenCallWsCompleted!);
+                return betaResponseImageGenCallWsCompleted(__value42);
             }
-            else if (IsBetaResponseImageGenCallWsGenerating && betaResponseImageGenCallWsGenerating != null)
+            else if (BetaResponseImageGenCallWsGenerating is { } __value43 && betaResponseImageGenCallWsGenerating != null)
             {
-                return betaResponseImageGenCallWsGenerating(BetaResponseImageGenCallWsGenerating!);
+                return betaResponseImageGenCallWsGenerating(__value43);
             }
-            else if (IsBetaResponseImageGenCallInWsProgress && betaResponseImageGenCallInWsProgress != null)
+            else if (BetaResponseImageGenCallInWsProgress is { } __value44 && betaResponseImageGenCallInWsProgress != null)
             {
-                return betaResponseImageGenCallInWsProgress(BetaResponseImageGenCallInWsProgress!);
+                return betaResponseImageGenCallInWsProgress(__value44);
             }
-            else if (IsBetaResponseImageGenCallPartialWsImage && betaResponseImageGenCallPartialWsImage != null)
+            else if (BetaResponseImageGenCallPartialWsImage is { } __value45 && betaResponseImageGenCallPartialWsImage != null)
             {
-                return betaResponseImageGenCallPartialWsImage(BetaResponseImageGenCallPartialWsImage!);
+                return betaResponseImageGenCallPartialWsImage(__value45);
             }
-            else if (IsBetaResponseMcpCallArgumentsWsDelta && betaResponseMcpCallArgumentsWsDelta != null)
+            else if (BetaResponseMcpCallArgumentsWsDelta is { } __value46 && betaResponseMcpCallArgumentsWsDelta != null)
             {
-                return betaResponseMcpCallArgumentsWsDelta(BetaResponseMcpCallArgumentsWsDelta!);
+                return betaResponseMcpCallArgumentsWsDelta(__value46);
             }
-            else if (IsBetaResponseMcpCallArgumentsWsDone && betaResponseMcpCallArgumentsWsDone != null)
+            else if (BetaResponseMcpCallArgumentsWsDone is { } __value47 && betaResponseMcpCallArgumentsWsDone != null)
             {
-                return betaResponseMcpCallArgumentsWsDone(BetaResponseMcpCallArgumentsWsDone!);
+                return betaResponseMcpCallArgumentsWsDone(__value47);
             }
-            else if (IsBetaResponseMcpCallWsCompleted && betaResponseMcpCallWsCompleted != null)
+            else if (BetaResponseMcpCallWsCompleted is { } __value48 && betaResponseMcpCallWsCompleted != null)
             {
-                return betaResponseMcpCallWsCompleted(BetaResponseMcpCallWsCompleted!);
+                return betaResponseMcpCallWsCompleted(__value48);
             }
-            else if (IsBetaResponseMcpCallWsFailed && betaResponseMcpCallWsFailed != null)
+            else if (BetaResponseMcpCallWsFailed is { } __value49 && betaResponseMcpCallWsFailed != null)
             {
-                return betaResponseMcpCallWsFailed(BetaResponseMcpCallWsFailed!);
+                return betaResponseMcpCallWsFailed(__value49);
             }
-            else if (IsBetaResponseMcpCallInWsProgress && betaResponseMcpCallInWsProgress != null)
+            else if (BetaResponseMcpCallInWsProgress is { } __value50 && betaResponseMcpCallInWsProgress != null)
             {
-                return betaResponseMcpCallInWsProgress(BetaResponseMcpCallInWsProgress!);
+                return betaResponseMcpCallInWsProgress(__value50);
             }
-            else if (IsBetaResponseMcpListToolsWsCompleted && betaResponseMcpListToolsWsCompleted != null)
+            else if (BetaResponseMcpListToolsWsCompleted is { } __value51 && betaResponseMcpListToolsWsCompleted != null)
             {
-                return betaResponseMcpListToolsWsCompleted(BetaResponseMcpListToolsWsCompleted!);
+                return betaResponseMcpListToolsWsCompleted(__value51);
             }
-            else if (IsBetaResponseMcpListToolsWsFailed && betaResponseMcpListToolsWsFailed != null)
+            else if (BetaResponseMcpListToolsWsFailed is { } __value52 && betaResponseMcpListToolsWsFailed != null)
             {
-                return betaResponseMcpListToolsWsFailed(BetaResponseMcpListToolsWsFailed!);
+                return betaResponseMcpListToolsWsFailed(__value52);
             }
-            else if (IsBetaResponseMcpListToolsInWsProgress && betaResponseMcpListToolsInWsProgress != null)
+            else if (BetaResponseMcpListToolsInWsProgress is { } __value53 && betaResponseMcpListToolsInWsProgress != null)
             {
-                return betaResponseMcpListToolsInWsProgress(BetaResponseMcpListToolsInWsProgress!);
+                return betaResponseMcpListToolsInWsProgress(__value53);
             }
-            else if (IsBetaResponseOutputTextAnnotationWsAdded && betaResponseOutputTextAnnotationWsAdded != null)
+            else if (BetaResponseOutputTextAnnotationWsAdded is { } __value54 && betaResponseOutputTextAnnotationWsAdded != null)
             {
-                return betaResponseOutputTextAnnotationWsAdded(BetaResponseOutputTextAnnotationWsAdded!);
+                return betaResponseOutputTextAnnotationWsAdded(__value54);
             }
-            else if (IsBetaResponseWsQueued && betaResponseWsQueued != null)
+            else if (BetaResponseWsQueued is { } __value55 && betaResponseWsQueued != null)
             {
-                return betaResponseWsQueued(BetaResponseWsQueued!);
+                return betaResponseWsQueued(__value55);
             }
-            else if (IsBetaResponseCustomToolCallInputWsDelta && betaResponseCustomToolCallInputWsDelta != null)
+            else if (BetaResponseCustomToolCallInputWsDelta is { } __value56 && betaResponseCustomToolCallInputWsDelta != null)
             {
-                return betaResponseCustomToolCallInputWsDelta(BetaResponseCustomToolCallInputWsDelta!);
+                return betaResponseCustomToolCallInputWsDelta(__value56);
             }
-            else if (IsBetaResponseCustomToolCallInputWsDone && betaResponseCustomToolCallInputWsDone != null)
+            else if (BetaResponseCustomToolCallInputWsDone is { } __value57 && betaResponseCustomToolCallInputWsDone != null)
             {
-                return betaResponseCustomToolCallInputWsDone(BetaResponseCustomToolCallInputWsDone!);
+                return betaResponseCustomToolCallInputWsDone(__value57);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value58 && error != null)
             {
-                return error(Error!);
+                return error(__value58);
             }
-            else if (IsResponseSteerAccepted && responseSteerAccepted != null)
+            else if (ResponseSteerAccepted is { } __value59 && responseSteerAccepted != null)
             {
-                return responseSteerAccepted(ResponseSteerAccepted!);
+                return responseSteerAccepted(__value59);
             }
-            else if (IsResponseSteerPending && responseSteerPending != null)
+            else if (ResponseSteerPending is { } __value60 && responseSteerPending != null)
             {
-                return responseSteerPending(ResponseSteerPending!);
+                return responseSteerPending(__value60);
             }
-            else if (IsResponseSteerFailed && responseSteerFailed != null)
+            else if (ResponseSteerFailed is { } __value61 && responseSteerFailed != null)
             {
-                return responseSteerFailed(ResponseSteerFailed!);
+                return responseSteerFailed(__value61);
             }
-            else if (IsResponseInjectCreated && responseInjectCreated != null)
+            else if (ResponseInjectCreated is { } __value62 && responseInjectCreated != null)
             {
-                return responseInjectCreated(ResponseInjectCreated!);
+                return responseInjectCreated(__value62);
             }
-            else if (IsResponseInjectFailed && responseInjectFailed != null)
+            else if (ResponseInjectFailed is { } __value63 && responseInjectFailed != null)
             {
-                return responseInjectFailed(ResponseInjectFailed!);
+                return responseInjectFailed(__value63);
             }
 
             return default(TResult);
@@ -4638,261 +4638,261 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaResponseAudioWsDelta)
+            if (BetaResponseAudioWsDelta is { } __value0)
             {
-                betaResponseAudioWsDelta?.Invoke(BetaResponseAudioWsDelta!);
+                betaResponseAudioWsDelta?.Invoke(__value0);
             }
-            else if (IsBetaResponseAudioWsDone)
+            else if (BetaResponseAudioWsDone is { } __value1)
             {
-                betaResponseAudioWsDone?.Invoke(BetaResponseAudioWsDone!);
+                betaResponseAudioWsDone?.Invoke(__value1);
             }
-            else if (IsBetaResponseAudioTranscriptWsDelta)
+            else if (BetaResponseAudioTranscriptWsDelta is { } __value2)
             {
-                betaResponseAudioTranscriptWsDelta?.Invoke(BetaResponseAudioTranscriptWsDelta!);
+                betaResponseAudioTranscriptWsDelta?.Invoke(__value2);
             }
-            else if (IsBetaResponseAudioTranscriptWsDone)
+            else if (BetaResponseAudioTranscriptWsDone is { } __value3)
             {
-                betaResponseAudioTranscriptWsDone?.Invoke(BetaResponseAudioTranscriptWsDone!);
+                betaResponseAudioTranscriptWsDone?.Invoke(__value3);
             }
-            else if (IsBetaResponseCodeInterpreterCallCodeWsDelta)
+            else if (BetaResponseCodeInterpreterCallCodeWsDelta is { } __value4)
             {
-                betaResponseCodeInterpreterCallCodeWsDelta?.Invoke(BetaResponseCodeInterpreterCallCodeWsDelta!);
+                betaResponseCodeInterpreterCallCodeWsDelta?.Invoke(__value4);
             }
-            else if (IsBetaResponseCodeInterpreterCallCodeWsDone)
+            else if (BetaResponseCodeInterpreterCallCodeWsDone is { } __value5)
             {
-                betaResponseCodeInterpreterCallCodeWsDone?.Invoke(BetaResponseCodeInterpreterCallCodeWsDone!);
+                betaResponseCodeInterpreterCallCodeWsDone?.Invoke(__value5);
             }
-            else if (IsBetaResponseCodeInterpreterCallWsCompleted)
+            else if (BetaResponseCodeInterpreterCallWsCompleted is { } __value6)
             {
-                betaResponseCodeInterpreterCallWsCompleted?.Invoke(BetaResponseCodeInterpreterCallWsCompleted!);
+                betaResponseCodeInterpreterCallWsCompleted?.Invoke(__value6);
             }
-            else if (IsBetaResponseCodeInterpreterCallInWsProgress)
+            else if (BetaResponseCodeInterpreterCallInWsProgress is { } __value7)
             {
-                betaResponseCodeInterpreterCallInWsProgress?.Invoke(BetaResponseCodeInterpreterCallInWsProgress!);
+                betaResponseCodeInterpreterCallInWsProgress?.Invoke(__value7);
             }
-            else if (IsBetaResponseCodeInterpreterCallWsInterpreting)
+            else if (BetaResponseCodeInterpreterCallWsInterpreting is { } __value8)
             {
-                betaResponseCodeInterpreterCallWsInterpreting?.Invoke(BetaResponseCodeInterpreterCallWsInterpreting!);
+                betaResponseCodeInterpreterCallWsInterpreting?.Invoke(__value8);
             }
-            else if (IsBetaResponseCompactionWsCompacting)
+            else if (BetaResponseCompactionWsCompacting is { } __value9)
             {
-                betaResponseCompactionWsCompacting?.Invoke(BetaResponseCompactionWsCompacting!);
+                betaResponseCompactionWsCompacting?.Invoke(__value9);
             }
-            else if (IsBetaResponseWsCompleted)
+            else if (BetaResponseWsCompleted is { } __value10)
             {
-                betaResponseWsCompleted?.Invoke(BetaResponseWsCompleted!);
+                betaResponseWsCompleted?.Invoke(__value10);
             }
-            else if (IsBetaResponseContentPartWsAdded)
+            else if (BetaResponseContentPartWsAdded is { } __value11)
             {
-                betaResponseContentPartWsAdded?.Invoke(BetaResponseContentPartWsAdded!);
+                betaResponseContentPartWsAdded?.Invoke(__value11);
             }
-            else if (IsBetaResponseContentPartWsDone)
+            else if (BetaResponseContentPartWsDone is { } __value12)
             {
-                betaResponseContentPartWsDone?.Invoke(BetaResponseContentPartWsDone!);
+                betaResponseContentPartWsDone?.Invoke(__value12);
             }
-            else if (IsBetaResponseWsCreated)
+            else if (BetaResponseWsCreated is { } __value13)
             {
-                betaResponseWsCreated?.Invoke(BetaResponseWsCreated!);
+                betaResponseWsCreated?.Invoke(__value13);
             }
-            else if (IsBetaResponseFileSearchCallWsCompleted)
+            else if (BetaResponseFileSearchCallWsCompleted is { } __value14)
             {
-                betaResponseFileSearchCallWsCompleted?.Invoke(BetaResponseFileSearchCallWsCompleted!);
+                betaResponseFileSearchCallWsCompleted?.Invoke(__value14);
             }
-            else if (IsBetaResponseFileSearchCallInWsProgress)
+            else if (BetaResponseFileSearchCallInWsProgress is { } __value15)
             {
-                betaResponseFileSearchCallInWsProgress?.Invoke(BetaResponseFileSearchCallInWsProgress!);
+                betaResponseFileSearchCallInWsProgress?.Invoke(__value15);
             }
-            else if (IsBetaResponseFileSearchCallWsSearching)
+            else if (BetaResponseFileSearchCallWsSearching is { } __value16)
             {
-                betaResponseFileSearchCallWsSearching?.Invoke(BetaResponseFileSearchCallWsSearching!);
+                betaResponseFileSearchCallWsSearching?.Invoke(__value16);
             }
-            else if (IsBetaResponseFunctionCallArgumentsWsDelta)
+            else if (BetaResponseFunctionCallArgumentsWsDelta is { } __value17)
             {
-                betaResponseFunctionCallArgumentsWsDelta?.Invoke(BetaResponseFunctionCallArgumentsWsDelta!);
+                betaResponseFunctionCallArgumentsWsDelta?.Invoke(__value17);
             }
-            else if (IsBetaResponseFunctionCallArgumentsWsDone)
+            else if (BetaResponseFunctionCallArgumentsWsDone is { } __value18)
             {
-                betaResponseFunctionCallArgumentsWsDone?.Invoke(BetaResponseFunctionCallArgumentsWsDone!);
+                betaResponseFunctionCallArgumentsWsDone?.Invoke(__value18);
             }
-            else if (IsBetaResponseShellCallCommandWsAdded)
+            else if (BetaResponseShellCallCommandWsAdded is { } __value19)
             {
-                betaResponseShellCallCommandWsAdded?.Invoke(BetaResponseShellCallCommandWsAdded!);
+                betaResponseShellCallCommandWsAdded?.Invoke(__value19);
             }
-            else if (IsBetaResponseShellCallCommandWsDelta)
+            else if (BetaResponseShellCallCommandWsDelta is { } __value20)
             {
-                betaResponseShellCallCommandWsDelta?.Invoke(BetaResponseShellCallCommandWsDelta!);
+                betaResponseShellCallCommandWsDelta?.Invoke(__value20);
             }
-            else if (IsBetaResponseShellCallCommandWsDone)
+            else if (BetaResponseShellCallCommandWsDone is { } __value21)
             {
-                betaResponseShellCallCommandWsDone?.Invoke(BetaResponseShellCallCommandWsDone!);
+                betaResponseShellCallCommandWsDone?.Invoke(__value21);
             }
-            else if (IsBetaResponseShellCallOutputContentWsDelta)
+            else if (BetaResponseShellCallOutputContentWsDelta is { } __value22)
             {
-                betaResponseShellCallOutputContentWsDelta?.Invoke(BetaResponseShellCallOutputContentWsDelta!);
+                betaResponseShellCallOutputContentWsDelta?.Invoke(__value22);
             }
-            else if (IsBetaResponseShellCallOutputContentWsDone)
+            else if (BetaResponseShellCallOutputContentWsDone is { } __value23)
             {
-                betaResponseShellCallOutputContentWsDone?.Invoke(BetaResponseShellCallOutputContentWsDone!);
+                betaResponseShellCallOutputContentWsDone?.Invoke(__value23);
             }
-            else if (IsBetaResponseInWsProgress)
+            else if (BetaResponseInWsProgress is { } __value24)
             {
-                betaResponseInWsProgress?.Invoke(BetaResponseInWsProgress!);
+                betaResponseInWsProgress?.Invoke(__value24);
             }
-            else if (IsBetaResponseWsFailed)
+            else if (BetaResponseWsFailed is { } __value25)
             {
-                betaResponseWsFailed?.Invoke(BetaResponseWsFailed!);
+                betaResponseWsFailed?.Invoke(__value25);
             }
-            else if (IsBetaResponseWsIncomplete)
+            else if (BetaResponseWsIncomplete is { } __value26)
             {
-                betaResponseWsIncomplete?.Invoke(BetaResponseWsIncomplete!);
+                betaResponseWsIncomplete?.Invoke(__value26);
             }
-            else if (IsBetaResponseOutputItemWsAdded)
+            else if (BetaResponseOutputItemWsAdded is { } __value27)
             {
-                betaResponseOutputItemWsAdded?.Invoke(BetaResponseOutputItemWsAdded!);
+                betaResponseOutputItemWsAdded?.Invoke(__value27);
             }
-            else if (IsBetaResponseOutputItemWsDone)
+            else if (BetaResponseOutputItemWsDone is { } __value28)
             {
-                betaResponseOutputItemWsDone?.Invoke(BetaResponseOutputItemWsDone!);
+                betaResponseOutputItemWsDone?.Invoke(__value28);
             }
-            else if (IsBetaResponseReasoningSummaryPartWsAdded)
+            else if (BetaResponseReasoningSummaryPartWsAdded is { } __value29)
             {
-                betaResponseReasoningSummaryPartWsAdded?.Invoke(BetaResponseReasoningSummaryPartWsAdded!);
+                betaResponseReasoningSummaryPartWsAdded?.Invoke(__value29);
             }
-            else if (IsBetaResponseReasoningSummaryPartWsDone)
+            else if (BetaResponseReasoningSummaryPartWsDone is { } __value30)
             {
-                betaResponseReasoningSummaryPartWsDone?.Invoke(BetaResponseReasoningSummaryPartWsDone!);
+                betaResponseReasoningSummaryPartWsDone?.Invoke(__value30);
             }
-            else if (IsBetaResponseReasoningSummaryTextWsDelta)
+            else if (BetaResponseReasoningSummaryTextWsDelta is { } __value31)
             {
-                betaResponseReasoningSummaryTextWsDelta?.Invoke(BetaResponseReasoningSummaryTextWsDelta!);
+                betaResponseReasoningSummaryTextWsDelta?.Invoke(__value31);
             }
-            else if (IsBetaResponseReasoningSummaryTextWsDone)
+            else if (BetaResponseReasoningSummaryTextWsDone is { } __value32)
             {
-                betaResponseReasoningSummaryTextWsDone?.Invoke(BetaResponseReasoningSummaryTextWsDone!);
+                betaResponseReasoningSummaryTextWsDone?.Invoke(__value32);
             }
-            else if (IsBetaResponseReasoningTextWsDelta)
+            else if (BetaResponseReasoningTextWsDelta is { } __value33)
             {
-                betaResponseReasoningTextWsDelta?.Invoke(BetaResponseReasoningTextWsDelta!);
+                betaResponseReasoningTextWsDelta?.Invoke(__value33);
             }
-            else if (IsBetaResponseReasoningTextWsDone)
+            else if (BetaResponseReasoningTextWsDone is { } __value34)
             {
-                betaResponseReasoningTextWsDone?.Invoke(BetaResponseReasoningTextWsDone!);
+                betaResponseReasoningTextWsDone?.Invoke(__value34);
             }
-            else if (IsBetaResponseRefusalWsDelta)
+            else if (BetaResponseRefusalWsDelta is { } __value35)
             {
-                betaResponseRefusalWsDelta?.Invoke(BetaResponseRefusalWsDelta!);
+                betaResponseRefusalWsDelta?.Invoke(__value35);
             }
-            else if (IsBetaResponseRefusalWsDone)
+            else if (BetaResponseRefusalWsDone is { } __value36)
             {
-                betaResponseRefusalWsDone?.Invoke(BetaResponseRefusalWsDone!);
+                betaResponseRefusalWsDone?.Invoke(__value36);
             }
-            else if (IsBetaResponseTextWsDelta)
+            else if (BetaResponseTextWsDelta is { } __value37)
             {
-                betaResponseTextWsDelta?.Invoke(BetaResponseTextWsDelta!);
+                betaResponseTextWsDelta?.Invoke(__value37);
             }
-            else if (IsBetaResponseTextWsDone)
+            else if (BetaResponseTextWsDone is { } __value38)
             {
-                betaResponseTextWsDone?.Invoke(BetaResponseTextWsDone!);
+                betaResponseTextWsDone?.Invoke(__value38);
             }
-            else if (IsBetaResponseWebSearchCallWsCompleted)
+            else if (BetaResponseWebSearchCallWsCompleted is { } __value39)
             {
-                betaResponseWebSearchCallWsCompleted?.Invoke(BetaResponseWebSearchCallWsCompleted!);
+                betaResponseWebSearchCallWsCompleted?.Invoke(__value39);
             }
-            else if (IsBetaResponseWebSearchCallInWsProgress)
+            else if (BetaResponseWebSearchCallInWsProgress is { } __value40)
             {
-                betaResponseWebSearchCallInWsProgress?.Invoke(BetaResponseWebSearchCallInWsProgress!);
+                betaResponseWebSearchCallInWsProgress?.Invoke(__value40);
             }
-            else if (IsBetaResponseWebSearchCallWsSearching)
+            else if (BetaResponseWebSearchCallWsSearching is { } __value41)
             {
-                betaResponseWebSearchCallWsSearching?.Invoke(BetaResponseWebSearchCallWsSearching!);
+                betaResponseWebSearchCallWsSearching?.Invoke(__value41);
             }
-            else if (IsBetaResponseImageGenCallWsCompleted)
+            else if (BetaResponseImageGenCallWsCompleted is { } __value42)
             {
-                betaResponseImageGenCallWsCompleted?.Invoke(BetaResponseImageGenCallWsCompleted!);
+                betaResponseImageGenCallWsCompleted?.Invoke(__value42);
             }
-            else if (IsBetaResponseImageGenCallWsGenerating)
+            else if (BetaResponseImageGenCallWsGenerating is { } __value43)
             {
-                betaResponseImageGenCallWsGenerating?.Invoke(BetaResponseImageGenCallWsGenerating!);
+                betaResponseImageGenCallWsGenerating?.Invoke(__value43);
             }
-            else if (IsBetaResponseImageGenCallInWsProgress)
+            else if (BetaResponseImageGenCallInWsProgress is { } __value44)
             {
-                betaResponseImageGenCallInWsProgress?.Invoke(BetaResponseImageGenCallInWsProgress!);
+                betaResponseImageGenCallInWsProgress?.Invoke(__value44);
             }
-            else if (IsBetaResponseImageGenCallPartialWsImage)
+            else if (BetaResponseImageGenCallPartialWsImage is { } __value45)
             {
-                betaResponseImageGenCallPartialWsImage?.Invoke(BetaResponseImageGenCallPartialWsImage!);
+                betaResponseImageGenCallPartialWsImage?.Invoke(__value45);
             }
-            else if (IsBetaResponseMcpCallArgumentsWsDelta)
+            else if (BetaResponseMcpCallArgumentsWsDelta is { } __value46)
             {
-                betaResponseMcpCallArgumentsWsDelta?.Invoke(BetaResponseMcpCallArgumentsWsDelta!);
+                betaResponseMcpCallArgumentsWsDelta?.Invoke(__value46);
             }
-            else if (IsBetaResponseMcpCallArgumentsWsDone)
+            else if (BetaResponseMcpCallArgumentsWsDone is { } __value47)
             {
-                betaResponseMcpCallArgumentsWsDone?.Invoke(BetaResponseMcpCallArgumentsWsDone!);
+                betaResponseMcpCallArgumentsWsDone?.Invoke(__value47);
             }
-            else if (IsBetaResponseMcpCallWsCompleted)
+            else if (BetaResponseMcpCallWsCompleted is { } __value48)
             {
-                betaResponseMcpCallWsCompleted?.Invoke(BetaResponseMcpCallWsCompleted!);
+                betaResponseMcpCallWsCompleted?.Invoke(__value48);
             }
-            else if (IsBetaResponseMcpCallWsFailed)
+            else if (BetaResponseMcpCallWsFailed is { } __value49)
             {
-                betaResponseMcpCallWsFailed?.Invoke(BetaResponseMcpCallWsFailed!);
+                betaResponseMcpCallWsFailed?.Invoke(__value49);
             }
-            else if (IsBetaResponseMcpCallInWsProgress)
+            else if (BetaResponseMcpCallInWsProgress is { } __value50)
             {
-                betaResponseMcpCallInWsProgress?.Invoke(BetaResponseMcpCallInWsProgress!);
+                betaResponseMcpCallInWsProgress?.Invoke(__value50);
             }
-            else if (IsBetaResponseMcpListToolsWsCompleted)
+            else if (BetaResponseMcpListToolsWsCompleted is { } __value51)
             {
-                betaResponseMcpListToolsWsCompleted?.Invoke(BetaResponseMcpListToolsWsCompleted!);
+                betaResponseMcpListToolsWsCompleted?.Invoke(__value51);
             }
-            else if (IsBetaResponseMcpListToolsWsFailed)
+            else if (BetaResponseMcpListToolsWsFailed is { } __value52)
             {
-                betaResponseMcpListToolsWsFailed?.Invoke(BetaResponseMcpListToolsWsFailed!);
+                betaResponseMcpListToolsWsFailed?.Invoke(__value52);
             }
-            else if (IsBetaResponseMcpListToolsInWsProgress)
+            else if (BetaResponseMcpListToolsInWsProgress is { } __value53)
             {
-                betaResponseMcpListToolsInWsProgress?.Invoke(BetaResponseMcpListToolsInWsProgress!);
+                betaResponseMcpListToolsInWsProgress?.Invoke(__value53);
             }
-            else if (IsBetaResponseOutputTextAnnotationWsAdded)
+            else if (BetaResponseOutputTextAnnotationWsAdded is { } __value54)
             {
-                betaResponseOutputTextAnnotationWsAdded?.Invoke(BetaResponseOutputTextAnnotationWsAdded!);
+                betaResponseOutputTextAnnotationWsAdded?.Invoke(__value54);
             }
-            else if (IsBetaResponseWsQueued)
+            else if (BetaResponseWsQueued is { } __value55)
             {
-                betaResponseWsQueued?.Invoke(BetaResponseWsQueued!);
+                betaResponseWsQueued?.Invoke(__value55);
             }
-            else if (IsBetaResponseCustomToolCallInputWsDelta)
+            else if (BetaResponseCustomToolCallInputWsDelta is { } __value56)
             {
-                betaResponseCustomToolCallInputWsDelta?.Invoke(BetaResponseCustomToolCallInputWsDelta!);
+                betaResponseCustomToolCallInputWsDelta?.Invoke(__value56);
             }
-            else if (IsBetaResponseCustomToolCallInputWsDone)
+            else if (BetaResponseCustomToolCallInputWsDone is { } __value57)
             {
-                betaResponseCustomToolCallInputWsDone?.Invoke(BetaResponseCustomToolCallInputWsDone!);
+                betaResponseCustomToolCallInputWsDone?.Invoke(__value57);
             }
-            else if (IsError)
+            else if (Error is { } __value58)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value58);
             }
-            else if (IsResponseSteerAccepted)
+            else if (ResponseSteerAccepted is { } __value59)
             {
-                responseSteerAccepted?.Invoke(ResponseSteerAccepted!);
+                responseSteerAccepted?.Invoke(__value59);
             }
-            else if (IsResponseSteerPending)
+            else if (ResponseSteerPending is { } __value60)
             {
-                responseSteerPending?.Invoke(ResponseSteerPending!);
+                responseSteerPending?.Invoke(__value60);
             }
-            else if (IsResponseSteerFailed)
+            else if (ResponseSteerFailed is { } __value61)
             {
-                responseSteerFailed?.Invoke(ResponseSteerFailed!);
+                responseSteerFailed?.Invoke(__value61);
             }
-            else if (IsResponseInjectCreated)
+            else if (ResponseInjectCreated is { } __value62)
             {
-                responseInjectCreated?.Invoke(ResponseInjectCreated!);
+                responseInjectCreated?.Invoke(__value62);
             }
-            else if (IsResponseInjectFailed)
+            else if (ResponseInjectFailed is { } __value63)
             {
-                responseInjectFailed?.Invoke(ResponseInjectFailed!);
+                responseInjectFailed?.Invoke(__value63);
             }
         }
 
@@ -4971,261 +4971,261 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaResponseAudioWsDelta)
+            if (BetaResponseAudioWsDelta is { } __value0)
             {
-                betaResponseAudioWsDelta?.Invoke(BetaResponseAudioWsDelta!);
+                betaResponseAudioWsDelta?.Invoke(__value0);
             }
-            else if (IsBetaResponseAudioWsDone)
+            else if (BetaResponseAudioWsDone is { } __value1)
             {
-                betaResponseAudioWsDone?.Invoke(BetaResponseAudioWsDone!);
+                betaResponseAudioWsDone?.Invoke(__value1);
             }
-            else if (IsBetaResponseAudioTranscriptWsDelta)
+            else if (BetaResponseAudioTranscriptWsDelta is { } __value2)
             {
-                betaResponseAudioTranscriptWsDelta?.Invoke(BetaResponseAudioTranscriptWsDelta!);
+                betaResponseAudioTranscriptWsDelta?.Invoke(__value2);
             }
-            else if (IsBetaResponseAudioTranscriptWsDone)
+            else if (BetaResponseAudioTranscriptWsDone is { } __value3)
             {
-                betaResponseAudioTranscriptWsDone?.Invoke(BetaResponseAudioTranscriptWsDone!);
+                betaResponseAudioTranscriptWsDone?.Invoke(__value3);
             }
-            else if (IsBetaResponseCodeInterpreterCallCodeWsDelta)
+            else if (BetaResponseCodeInterpreterCallCodeWsDelta is { } __value4)
             {
-                betaResponseCodeInterpreterCallCodeWsDelta?.Invoke(BetaResponseCodeInterpreterCallCodeWsDelta!);
+                betaResponseCodeInterpreterCallCodeWsDelta?.Invoke(__value4);
             }
-            else if (IsBetaResponseCodeInterpreterCallCodeWsDone)
+            else if (BetaResponseCodeInterpreterCallCodeWsDone is { } __value5)
             {
-                betaResponseCodeInterpreterCallCodeWsDone?.Invoke(BetaResponseCodeInterpreterCallCodeWsDone!);
+                betaResponseCodeInterpreterCallCodeWsDone?.Invoke(__value5);
             }
-            else if (IsBetaResponseCodeInterpreterCallWsCompleted)
+            else if (BetaResponseCodeInterpreterCallWsCompleted is { } __value6)
             {
-                betaResponseCodeInterpreterCallWsCompleted?.Invoke(BetaResponseCodeInterpreterCallWsCompleted!);
+                betaResponseCodeInterpreterCallWsCompleted?.Invoke(__value6);
             }
-            else if (IsBetaResponseCodeInterpreterCallInWsProgress)
+            else if (BetaResponseCodeInterpreterCallInWsProgress is { } __value7)
             {
-                betaResponseCodeInterpreterCallInWsProgress?.Invoke(BetaResponseCodeInterpreterCallInWsProgress!);
+                betaResponseCodeInterpreterCallInWsProgress?.Invoke(__value7);
             }
-            else if (IsBetaResponseCodeInterpreterCallWsInterpreting)
+            else if (BetaResponseCodeInterpreterCallWsInterpreting is { } __value8)
             {
-                betaResponseCodeInterpreterCallWsInterpreting?.Invoke(BetaResponseCodeInterpreterCallWsInterpreting!);
+                betaResponseCodeInterpreterCallWsInterpreting?.Invoke(__value8);
             }
-            else if (IsBetaResponseCompactionWsCompacting)
+            else if (BetaResponseCompactionWsCompacting is { } __value9)
             {
-                betaResponseCompactionWsCompacting?.Invoke(BetaResponseCompactionWsCompacting!);
+                betaResponseCompactionWsCompacting?.Invoke(__value9);
             }
-            else if (IsBetaResponseWsCompleted)
+            else if (BetaResponseWsCompleted is { } __value10)
             {
-                betaResponseWsCompleted?.Invoke(BetaResponseWsCompleted!);
+                betaResponseWsCompleted?.Invoke(__value10);
             }
-            else if (IsBetaResponseContentPartWsAdded)
+            else if (BetaResponseContentPartWsAdded is { } __value11)
             {
-                betaResponseContentPartWsAdded?.Invoke(BetaResponseContentPartWsAdded!);
+                betaResponseContentPartWsAdded?.Invoke(__value11);
             }
-            else if (IsBetaResponseContentPartWsDone)
+            else if (BetaResponseContentPartWsDone is { } __value12)
             {
-                betaResponseContentPartWsDone?.Invoke(BetaResponseContentPartWsDone!);
+                betaResponseContentPartWsDone?.Invoke(__value12);
             }
-            else if (IsBetaResponseWsCreated)
+            else if (BetaResponseWsCreated is { } __value13)
             {
-                betaResponseWsCreated?.Invoke(BetaResponseWsCreated!);
+                betaResponseWsCreated?.Invoke(__value13);
             }
-            else if (IsBetaResponseFileSearchCallWsCompleted)
+            else if (BetaResponseFileSearchCallWsCompleted is { } __value14)
             {
-                betaResponseFileSearchCallWsCompleted?.Invoke(BetaResponseFileSearchCallWsCompleted!);
+                betaResponseFileSearchCallWsCompleted?.Invoke(__value14);
             }
-            else if (IsBetaResponseFileSearchCallInWsProgress)
+            else if (BetaResponseFileSearchCallInWsProgress is { } __value15)
             {
-                betaResponseFileSearchCallInWsProgress?.Invoke(BetaResponseFileSearchCallInWsProgress!);
+                betaResponseFileSearchCallInWsProgress?.Invoke(__value15);
             }
-            else if (IsBetaResponseFileSearchCallWsSearching)
+            else if (BetaResponseFileSearchCallWsSearching is { } __value16)
             {
-                betaResponseFileSearchCallWsSearching?.Invoke(BetaResponseFileSearchCallWsSearching!);
+                betaResponseFileSearchCallWsSearching?.Invoke(__value16);
             }
-            else if (IsBetaResponseFunctionCallArgumentsWsDelta)
+            else if (BetaResponseFunctionCallArgumentsWsDelta is { } __value17)
             {
-                betaResponseFunctionCallArgumentsWsDelta?.Invoke(BetaResponseFunctionCallArgumentsWsDelta!);
+                betaResponseFunctionCallArgumentsWsDelta?.Invoke(__value17);
             }
-            else if (IsBetaResponseFunctionCallArgumentsWsDone)
+            else if (BetaResponseFunctionCallArgumentsWsDone is { } __value18)
             {
-                betaResponseFunctionCallArgumentsWsDone?.Invoke(BetaResponseFunctionCallArgumentsWsDone!);
+                betaResponseFunctionCallArgumentsWsDone?.Invoke(__value18);
             }
-            else if (IsBetaResponseShellCallCommandWsAdded)
+            else if (BetaResponseShellCallCommandWsAdded is { } __value19)
             {
-                betaResponseShellCallCommandWsAdded?.Invoke(BetaResponseShellCallCommandWsAdded!);
+                betaResponseShellCallCommandWsAdded?.Invoke(__value19);
             }
-            else if (IsBetaResponseShellCallCommandWsDelta)
+            else if (BetaResponseShellCallCommandWsDelta is { } __value20)
             {
-                betaResponseShellCallCommandWsDelta?.Invoke(BetaResponseShellCallCommandWsDelta!);
+                betaResponseShellCallCommandWsDelta?.Invoke(__value20);
             }
-            else if (IsBetaResponseShellCallCommandWsDone)
+            else if (BetaResponseShellCallCommandWsDone is { } __value21)
             {
-                betaResponseShellCallCommandWsDone?.Invoke(BetaResponseShellCallCommandWsDone!);
+                betaResponseShellCallCommandWsDone?.Invoke(__value21);
             }
-            else if (IsBetaResponseShellCallOutputContentWsDelta)
+            else if (BetaResponseShellCallOutputContentWsDelta is { } __value22)
             {
-                betaResponseShellCallOutputContentWsDelta?.Invoke(BetaResponseShellCallOutputContentWsDelta!);
+                betaResponseShellCallOutputContentWsDelta?.Invoke(__value22);
             }
-            else if (IsBetaResponseShellCallOutputContentWsDone)
+            else if (BetaResponseShellCallOutputContentWsDone is { } __value23)
             {
-                betaResponseShellCallOutputContentWsDone?.Invoke(BetaResponseShellCallOutputContentWsDone!);
+                betaResponseShellCallOutputContentWsDone?.Invoke(__value23);
             }
-            else if (IsBetaResponseInWsProgress)
+            else if (BetaResponseInWsProgress is { } __value24)
             {
-                betaResponseInWsProgress?.Invoke(BetaResponseInWsProgress!);
+                betaResponseInWsProgress?.Invoke(__value24);
             }
-            else if (IsBetaResponseWsFailed)
+            else if (BetaResponseWsFailed is { } __value25)
             {
-                betaResponseWsFailed?.Invoke(BetaResponseWsFailed!);
+                betaResponseWsFailed?.Invoke(__value25);
             }
-            else if (IsBetaResponseWsIncomplete)
+            else if (BetaResponseWsIncomplete is { } __value26)
             {
-                betaResponseWsIncomplete?.Invoke(BetaResponseWsIncomplete!);
+                betaResponseWsIncomplete?.Invoke(__value26);
             }
-            else if (IsBetaResponseOutputItemWsAdded)
+            else if (BetaResponseOutputItemWsAdded is { } __value27)
             {
-                betaResponseOutputItemWsAdded?.Invoke(BetaResponseOutputItemWsAdded!);
+                betaResponseOutputItemWsAdded?.Invoke(__value27);
             }
-            else if (IsBetaResponseOutputItemWsDone)
+            else if (BetaResponseOutputItemWsDone is { } __value28)
             {
-                betaResponseOutputItemWsDone?.Invoke(BetaResponseOutputItemWsDone!);
+                betaResponseOutputItemWsDone?.Invoke(__value28);
             }
-            else if (IsBetaResponseReasoningSummaryPartWsAdded)
+            else if (BetaResponseReasoningSummaryPartWsAdded is { } __value29)
             {
-                betaResponseReasoningSummaryPartWsAdded?.Invoke(BetaResponseReasoningSummaryPartWsAdded!);
+                betaResponseReasoningSummaryPartWsAdded?.Invoke(__value29);
             }
-            else if (IsBetaResponseReasoningSummaryPartWsDone)
+            else if (BetaResponseReasoningSummaryPartWsDone is { } __value30)
             {
-                betaResponseReasoningSummaryPartWsDone?.Invoke(BetaResponseReasoningSummaryPartWsDone!);
+                betaResponseReasoningSummaryPartWsDone?.Invoke(__value30);
             }
-            else if (IsBetaResponseReasoningSummaryTextWsDelta)
+            else if (BetaResponseReasoningSummaryTextWsDelta is { } __value31)
             {
-                betaResponseReasoningSummaryTextWsDelta?.Invoke(BetaResponseReasoningSummaryTextWsDelta!);
+                betaResponseReasoningSummaryTextWsDelta?.Invoke(__value31);
             }
-            else if (IsBetaResponseReasoningSummaryTextWsDone)
+            else if (BetaResponseReasoningSummaryTextWsDone is { } __value32)
             {
-                betaResponseReasoningSummaryTextWsDone?.Invoke(BetaResponseReasoningSummaryTextWsDone!);
+                betaResponseReasoningSummaryTextWsDone?.Invoke(__value32);
             }
-            else if (IsBetaResponseReasoningTextWsDelta)
+            else if (BetaResponseReasoningTextWsDelta is { } __value33)
             {
-                betaResponseReasoningTextWsDelta?.Invoke(BetaResponseReasoningTextWsDelta!);
+                betaResponseReasoningTextWsDelta?.Invoke(__value33);
             }
-            else if (IsBetaResponseReasoningTextWsDone)
+            else if (BetaResponseReasoningTextWsDone is { } __value34)
             {
-                betaResponseReasoningTextWsDone?.Invoke(BetaResponseReasoningTextWsDone!);
+                betaResponseReasoningTextWsDone?.Invoke(__value34);
             }
-            else if (IsBetaResponseRefusalWsDelta)
+            else if (BetaResponseRefusalWsDelta is { } __value35)
             {
-                betaResponseRefusalWsDelta?.Invoke(BetaResponseRefusalWsDelta!);
+                betaResponseRefusalWsDelta?.Invoke(__value35);
             }
-            else if (IsBetaResponseRefusalWsDone)
+            else if (BetaResponseRefusalWsDone is { } __value36)
             {
-                betaResponseRefusalWsDone?.Invoke(BetaResponseRefusalWsDone!);
+                betaResponseRefusalWsDone?.Invoke(__value36);
             }
-            else if (IsBetaResponseTextWsDelta)
+            else if (BetaResponseTextWsDelta is { } __value37)
             {
-                betaResponseTextWsDelta?.Invoke(BetaResponseTextWsDelta!);
+                betaResponseTextWsDelta?.Invoke(__value37);
             }
-            else if (IsBetaResponseTextWsDone)
+            else if (BetaResponseTextWsDone is { } __value38)
             {
-                betaResponseTextWsDone?.Invoke(BetaResponseTextWsDone!);
+                betaResponseTextWsDone?.Invoke(__value38);
             }
-            else if (IsBetaResponseWebSearchCallWsCompleted)
+            else if (BetaResponseWebSearchCallWsCompleted is { } __value39)
             {
-                betaResponseWebSearchCallWsCompleted?.Invoke(BetaResponseWebSearchCallWsCompleted!);
+                betaResponseWebSearchCallWsCompleted?.Invoke(__value39);
             }
-            else if (IsBetaResponseWebSearchCallInWsProgress)
+            else if (BetaResponseWebSearchCallInWsProgress is { } __value40)
             {
-                betaResponseWebSearchCallInWsProgress?.Invoke(BetaResponseWebSearchCallInWsProgress!);
+                betaResponseWebSearchCallInWsProgress?.Invoke(__value40);
             }
-            else if (IsBetaResponseWebSearchCallWsSearching)
+            else if (BetaResponseWebSearchCallWsSearching is { } __value41)
             {
-                betaResponseWebSearchCallWsSearching?.Invoke(BetaResponseWebSearchCallWsSearching!);
+                betaResponseWebSearchCallWsSearching?.Invoke(__value41);
             }
-            else if (IsBetaResponseImageGenCallWsCompleted)
+            else if (BetaResponseImageGenCallWsCompleted is { } __value42)
             {
-                betaResponseImageGenCallWsCompleted?.Invoke(BetaResponseImageGenCallWsCompleted!);
+                betaResponseImageGenCallWsCompleted?.Invoke(__value42);
             }
-            else if (IsBetaResponseImageGenCallWsGenerating)
+            else if (BetaResponseImageGenCallWsGenerating is { } __value43)
             {
-                betaResponseImageGenCallWsGenerating?.Invoke(BetaResponseImageGenCallWsGenerating!);
+                betaResponseImageGenCallWsGenerating?.Invoke(__value43);
             }
-            else if (IsBetaResponseImageGenCallInWsProgress)
+            else if (BetaResponseImageGenCallInWsProgress is { } __value44)
             {
-                betaResponseImageGenCallInWsProgress?.Invoke(BetaResponseImageGenCallInWsProgress!);
+                betaResponseImageGenCallInWsProgress?.Invoke(__value44);
             }
-            else if (IsBetaResponseImageGenCallPartialWsImage)
+            else if (BetaResponseImageGenCallPartialWsImage is { } __value45)
             {
-                betaResponseImageGenCallPartialWsImage?.Invoke(BetaResponseImageGenCallPartialWsImage!);
+                betaResponseImageGenCallPartialWsImage?.Invoke(__value45);
             }
-            else if (IsBetaResponseMcpCallArgumentsWsDelta)
+            else if (BetaResponseMcpCallArgumentsWsDelta is { } __value46)
             {
-                betaResponseMcpCallArgumentsWsDelta?.Invoke(BetaResponseMcpCallArgumentsWsDelta!);
+                betaResponseMcpCallArgumentsWsDelta?.Invoke(__value46);
             }
-            else if (IsBetaResponseMcpCallArgumentsWsDone)
+            else if (BetaResponseMcpCallArgumentsWsDone is { } __value47)
             {
-                betaResponseMcpCallArgumentsWsDone?.Invoke(BetaResponseMcpCallArgumentsWsDone!);
+                betaResponseMcpCallArgumentsWsDone?.Invoke(__value47);
             }
-            else if (IsBetaResponseMcpCallWsCompleted)
+            else if (BetaResponseMcpCallWsCompleted is { } __value48)
             {
-                betaResponseMcpCallWsCompleted?.Invoke(BetaResponseMcpCallWsCompleted!);
+                betaResponseMcpCallWsCompleted?.Invoke(__value48);
             }
-            else if (IsBetaResponseMcpCallWsFailed)
+            else if (BetaResponseMcpCallWsFailed is { } __value49)
             {
-                betaResponseMcpCallWsFailed?.Invoke(BetaResponseMcpCallWsFailed!);
+                betaResponseMcpCallWsFailed?.Invoke(__value49);
             }
-            else if (IsBetaResponseMcpCallInWsProgress)
+            else if (BetaResponseMcpCallInWsProgress is { } __value50)
             {
-                betaResponseMcpCallInWsProgress?.Invoke(BetaResponseMcpCallInWsProgress!);
+                betaResponseMcpCallInWsProgress?.Invoke(__value50);
             }
-            else if (IsBetaResponseMcpListToolsWsCompleted)
+            else if (BetaResponseMcpListToolsWsCompleted is { } __value51)
             {
-                betaResponseMcpListToolsWsCompleted?.Invoke(BetaResponseMcpListToolsWsCompleted!);
+                betaResponseMcpListToolsWsCompleted?.Invoke(__value51);
             }
-            else if (IsBetaResponseMcpListToolsWsFailed)
+            else if (BetaResponseMcpListToolsWsFailed is { } __value52)
             {
-                betaResponseMcpListToolsWsFailed?.Invoke(BetaResponseMcpListToolsWsFailed!);
+                betaResponseMcpListToolsWsFailed?.Invoke(__value52);
             }
-            else if (IsBetaResponseMcpListToolsInWsProgress)
+            else if (BetaResponseMcpListToolsInWsProgress is { } __value53)
             {
-                betaResponseMcpListToolsInWsProgress?.Invoke(BetaResponseMcpListToolsInWsProgress!);
+                betaResponseMcpListToolsInWsProgress?.Invoke(__value53);
             }
-            else if (IsBetaResponseOutputTextAnnotationWsAdded)
+            else if (BetaResponseOutputTextAnnotationWsAdded is { } __value54)
             {
-                betaResponseOutputTextAnnotationWsAdded?.Invoke(BetaResponseOutputTextAnnotationWsAdded!);
+                betaResponseOutputTextAnnotationWsAdded?.Invoke(__value54);
             }
-            else if (IsBetaResponseWsQueued)
+            else if (BetaResponseWsQueued is { } __value55)
             {
-                betaResponseWsQueued?.Invoke(BetaResponseWsQueued!);
+                betaResponseWsQueued?.Invoke(__value55);
             }
-            else if (IsBetaResponseCustomToolCallInputWsDelta)
+            else if (BetaResponseCustomToolCallInputWsDelta is { } __value56)
             {
-                betaResponseCustomToolCallInputWsDelta?.Invoke(BetaResponseCustomToolCallInputWsDelta!);
+                betaResponseCustomToolCallInputWsDelta?.Invoke(__value56);
             }
-            else if (IsBetaResponseCustomToolCallInputWsDone)
+            else if (BetaResponseCustomToolCallInputWsDone is { } __value57)
             {
-                betaResponseCustomToolCallInputWsDone?.Invoke(BetaResponseCustomToolCallInputWsDone!);
+                betaResponseCustomToolCallInputWsDone?.Invoke(__value57);
             }
-            else if (IsError)
+            else if (Error is { } __value58)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value58);
             }
-            else if (IsResponseSteerAccepted)
+            else if (ResponseSteerAccepted is { } __value59)
             {
-                responseSteerAccepted?.Invoke(ResponseSteerAccepted!);
+                responseSteerAccepted?.Invoke(__value59);
             }
-            else if (IsResponseSteerPending)
+            else if (ResponseSteerPending is { } __value60)
             {
-                responseSteerPending?.Invoke(ResponseSteerPending!);
+                responseSteerPending?.Invoke(__value60);
             }
-            else if (IsResponseSteerFailed)
+            else if (ResponseSteerFailed is { } __value61)
             {
-                responseSteerFailed?.Invoke(ResponseSteerFailed!);
+                responseSteerFailed?.Invoke(__value61);
             }
-            else if (IsResponseInjectCreated)
+            else if (ResponseInjectCreated is { } __value62)
             {
-                responseInjectCreated?.Invoke(ResponseInjectCreated!);
+                responseInjectCreated?.Invoke(__value62);
             }
-            else if (IsResponseInjectFailed)
+            else if (ResponseInjectFailed is { } __value63)
             {
-                responseInjectFailed?.Invoke(ResponseInjectFailed!);
+                responseInjectFailed?.Invoke(__value63);
             }
         }
 

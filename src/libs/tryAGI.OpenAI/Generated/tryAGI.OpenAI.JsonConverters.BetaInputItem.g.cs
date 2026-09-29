@@ -296,37 +296,37 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaEasyInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaEasyInputMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaEasyInputMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessage(), typeInfo);
             }
             else if (value.IsItem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaItem), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaItem> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaItem).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Item!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickItem(), typeInfo);
             }
             else if (value.IsCompactionTrigger)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaCompactionTriggerItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaCompactionTriggerItemParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaCompactionTriggerItemParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CompactionTrigger!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompactionTrigger(), typeInfo);
             }
             else if (value.IsItemReference)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaItemReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaItemReferenceParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaItemReferenceParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ItemReference!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickItemReference(), typeInfo);
             }
             else if (value.IsProgram)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaProgramItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaProgramItemParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaProgramItemParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Program!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProgram(), typeInfo);
             }
             else if (value.IsProgramOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaProgramOutputItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaProgramOutputItemParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaProgramOutputItemParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProgramOutput!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProgramOutput(), typeInfo);
             }
         }
     }

@@ -39,9 +39,11 @@ internal static partial class SpendAlertsRetrieveProjectSpendAlertCommandApiComm
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-project-spend-alert", @"Retrieve project spend alert
+        var command = new Command(commandName ?? @"retrieve-project-spend-alert", @"Retrieve project spend alert
 Retrieves a project spend alert.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(AlertId);
@@ -68,6 +70,7 @@ Retrieves a project spend alert.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -39,9 +39,11 @@ internal static partial class SkillsDeleteSkillVersionCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-skill-version", @"Delete Skill Version
+        var command = new Command(commandName ?? @"delete-skill-version", @"Delete Skill Version
 Delete a skill version.");
                         command.Arguments.Add(SkillId);
                         command.Arguments.Add(Version);
@@ -68,6 +70,7 @@ Delete a skill version.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

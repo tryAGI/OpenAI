@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaMisalignmentErrorTypeVariant1() => IsBetaMisalignmentErrorTypeVariant1
-            ? BetaMisalignmentErrorTypeVariant1!
+        public string PickBetaMisalignmentErrorTypeVariant1() => BetaMisalignmentErrorTypeVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaMisalignmentErrorTypeVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaMisalignmentErrorTypeEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::tryAGI.OpenAI.BetaMisalignmentErrorTypeEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaMisalignmentErrorTypeVariant1 && betaMisalignmentErrorTypeVariant1 != null)
+            if (BetaMisalignmentErrorTypeVariant1 is { } __value0 && betaMisalignmentErrorTypeVariant1 != null)
             {
-                return betaMisalignmentErrorTypeVariant1(BetaMisalignmentErrorTypeVariant1!);
+                return betaMisalignmentErrorTypeVariant1(__value0);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value1 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaMisalignmentErrorTypeVariant1)
+            if (BetaMisalignmentErrorTypeVariant1 is { } __value0)
             {
-                betaMisalignmentErrorTypeVariant1?.Invoke(BetaMisalignmentErrorTypeVariant1!);
+                betaMisalignmentErrorTypeVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaMisalignmentErrorTypeVariant1)
+            if (BetaMisalignmentErrorTypeVariant1 is { } __value0)
             {
-                betaMisalignmentErrorTypeVariant1?.Invoke(BetaMisalignmentErrorTypeVariant1!);
+                betaMisalignmentErrorTypeVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 

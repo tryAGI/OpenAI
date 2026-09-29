@@ -49,9 +49,11 @@ internal static partial class AgentsCreateAgentEnvironmentFileCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-agent-environment-file", @"Create an agent environment file
+        var command = new Command(commandName ?? @"create-agent-environment-file", @"Create an agent environment file
 Copies inline bytes or a Files API file into a connected execution environment. See [environment files](https://developers.openai.com/api/docs/guides/agents-api/environments/files).");
                         command.Arguments.Add(EnvironmentId);
           command.Options.Add(Input);
@@ -96,6 +98,7 @@ Copies inline bytes or a Files API file into a connected execution environment. 
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

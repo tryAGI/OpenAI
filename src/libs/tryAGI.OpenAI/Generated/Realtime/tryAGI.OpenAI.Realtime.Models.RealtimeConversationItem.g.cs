@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageSystem PickMessage1() => IsMessage1
-            ? Message1!
+        public global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageSystem PickMessage1() => Message1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message1' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageUser PickMessage2() => IsMessage2
-            ? Message2!
+        public global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageUser PickMessage2() => Message2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message2' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageAssistant PickMessage3() => IsMessage3
-            ? Message3!
+        public global::tryAGI.OpenAI.Realtime.RealtimeConversationItemMessageAssistant PickMessage3() => Message3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message3' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCall PickFunctionCall() => IsFunctionCall
-            ? FunctionCall!
+        public global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCall PickFunctionCall() => FunctionCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallOutput PickFunctionCallOutput() => IsFunctionCallOutput
-            ? FunctionCallOutput!
+        public global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallOutput PickFunctionCallOutput() => FunctionCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalResponse PickMcpApprovalResponse() => IsMcpApprovalResponse
-            ? McpApprovalResponse!
+        public global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalResponse PickMcpApprovalResponse() => McpApprovalResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalResponse' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeMCPListTools PickMcpListTools() => IsMcpListTools
-            ? McpListTools!
+        public global::tryAGI.OpenAI.Realtime.RealtimeMCPListTools PickMcpListTools() => McpListTools is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpListTools' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeMCPToolCall PickMcpCall() => IsMcpCall
-            ? McpCall!
+        public global::tryAGI.OpenAI.Realtime.RealtimeMCPToolCall PickMcpCall() => McpCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalRequest PickMcpApprovalRequest() => IsMcpApprovalRequest
-            ? McpApprovalRequest!
+        public global::tryAGI.OpenAI.Realtime.RealtimeMCPApprovalRequest PickMcpApprovalRequest() => McpApprovalRequest is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalRequest' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -640,41 +640,41 @@ namespace tryAGI.OpenAI.Realtime
                 Validate();
             }
 
-            if (IsMessage1 && message1 != null)
+            if (Message1 is { } __value0 && message1 != null)
             {
-                return message1(Message1!);
+                return message1(__value0);
             }
-            else if (IsMessage2 && message2 != null)
+            else if (Message2 is { } __value1 && message2 != null)
             {
-                return message2(Message2!);
+                return message2(__value1);
             }
-            else if (IsMessage3 && message3 != null)
+            else if (Message3 is { } __value2 && message3 != null)
             {
-                return message3(Message3!);
+                return message3(__value2);
             }
-            else if (IsFunctionCall && functionCall != null)
+            else if (FunctionCall is { } __value3 && functionCall != null)
             {
-                return functionCall(FunctionCall!);
+                return functionCall(__value3);
             }
-            else if (IsFunctionCallOutput && functionCallOutput != null)
+            else if (FunctionCallOutput is { } __value4 && functionCallOutput != null)
             {
-                return functionCallOutput(FunctionCallOutput!);
+                return functionCallOutput(__value4);
             }
-            else if (IsMcpApprovalResponse && mcpApprovalResponse != null)
+            else if (McpApprovalResponse is { } __value5 && mcpApprovalResponse != null)
             {
-                return mcpApprovalResponse(McpApprovalResponse!);
+                return mcpApprovalResponse(__value5);
             }
-            else if (IsMcpListTools && mcpListTools != null)
+            else if (McpListTools is { } __value6 && mcpListTools != null)
             {
-                return mcpListTools(McpListTools!);
+                return mcpListTools(__value6);
             }
-            else if (IsMcpCall && mcpCall != null)
+            else if (McpCall is { } __value7 && mcpCall != null)
             {
-                return mcpCall(McpCall!);
+                return mcpCall(__value7);
             }
-            else if (IsMcpApprovalRequest && mcpApprovalRequest != null)
+            else if (McpApprovalRequest is { } __value8 && mcpApprovalRequest != null)
             {
-                return mcpApprovalRequest(McpApprovalRequest!);
+                return mcpApprovalRequest(__value8);
             }
 
             return default(TResult);
@@ -708,41 +708,41 @@ namespace tryAGI.OpenAI.Realtime
                 Validate();
             }
 
-            if (IsMessage1)
+            if (Message1 is { } __value0)
             {
-                message1?.Invoke(Message1!);
+                message1?.Invoke(__value0);
             }
-            else if (IsMessage2)
+            else if (Message2 is { } __value1)
             {
-                message2?.Invoke(Message2!);
+                message2?.Invoke(__value1);
             }
-            else if (IsMessage3)
+            else if (Message3 is { } __value2)
             {
-                message3?.Invoke(Message3!);
+                message3?.Invoke(__value2);
             }
-            else if (IsFunctionCall)
+            else if (FunctionCall is { } __value3)
             {
-                functionCall?.Invoke(FunctionCall!);
+                functionCall?.Invoke(__value3);
             }
-            else if (IsFunctionCallOutput)
+            else if (FunctionCallOutput is { } __value4)
             {
-                functionCallOutput?.Invoke(FunctionCallOutput!);
+                functionCallOutput?.Invoke(__value4);
             }
-            else if (IsMcpApprovalResponse)
+            else if (McpApprovalResponse is { } __value5)
             {
-                mcpApprovalResponse?.Invoke(McpApprovalResponse!);
+                mcpApprovalResponse?.Invoke(__value5);
             }
-            else if (IsMcpListTools)
+            else if (McpListTools is { } __value6)
             {
-                mcpListTools?.Invoke(McpListTools!);
+                mcpListTools?.Invoke(__value6);
             }
-            else if (IsMcpCall)
+            else if (McpCall is { } __value7)
             {
-                mcpCall?.Invoke(McpCall!);
+                mcpCall?.Invoke(__value7);
             }
-            else if (IsMcpApprovalRequest)
+            else if (McpApprovalRequest is { } __value8)
             {
-                mcpApprovalRequest?.Invoke(McpApprovalRequest!);
+                mcpApprovalRequest?.Invoke(__value8);
             }
         }
 
@@ -766,41 +766,41 @@ namespace tryAGI.OpenAI.Realtime
                 Validate();
             }
 
-            if (IsMessage1)
+            if (Message1 is { } __value0)
             {
-                message1?.Invoke(Message1!);
+                message1?.Invoke(__value0);
             }
-            else if (IsMessage2)
+            else if (Message2 is { } __value1)
             {
-                message2?.Invoke(Message2!);
+                message2?.Invoke(__value1);
             }
-            else if (IsMessage3)
+            else if (Message3 is { } __value2)
             {
-                message3?.Invoke(Message3!);
+                message3?.Invoke(__value2);
             }
-            else if (IsFunctionCall)
+            else if (FunctionCall is { } __value3)
             {
-                functionCall?.Invoke(FunctionCall!);
+                functionCall?.Invoke(__value3);
             }
-            else if (IsFunctionCallOutput)
+            else if (FunctionCallOutput is { } __value4)
             {
-                functionCallOutput?.Invoke(FunctionCallOutput!);
+                functionCallOutput?.Invoke(__value4);
             }
-            else if (IsMcpApprovalResponse)
+            else if (McpApprovalResponse is { } __value5)
             {
-                mcpApprovalResponse?.Invoke(McpApprovalResponse!);
+                mcpApprovalResponse?.Invoke(__value5);
             }
-            else if (IsMcpListTools)
+            else if (McpListTools is { } __value6)
             {
-                mcpListTools?.Invoke(McpListTools!);
+                mcpListTools?.Invoke(__value6);
             }
-            else if (IsMcpCall)
+            else if (McpCall is { } __value7)
             {
-                mcpCall?.Invoke(McpCall!);
+                mcpCall?.Invoke(__value7);
             }
-            else if (IsMcpApprovalRequest)
+            else if (McpApprovalRequest is { } __value8)
             {
-                mcpApprovalRequest?.Invoke(McpApprovalRequest!);
+                mcpApprovalRequest?.Invoke(__value8);
             }
         }
 

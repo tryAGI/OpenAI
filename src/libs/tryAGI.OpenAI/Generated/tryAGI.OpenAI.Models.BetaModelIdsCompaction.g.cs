@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaModelIdsResponses PickResponses() => IsResponses
-            ? Responses!.Value
+        public global::tryAGI.OpenAI.BetaModelIdsResponses PickResponses() => Responses is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Responses' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaModelIdsCompactionVariant2() => IsBetaModelIdsCompactionVariant2
-            ? BetaModelIdsCompactionVariant2!
+        public string PickBetaModelIdsCompactionVariant2() => BetaModelIdsCompactionVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaModelIdsCompactionVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public object PickBetaModelIdsCompactionVariant3() => IsBetaModelIdsCompactionVariant3
-            ? BetaModelIdsCompactionVariant3!
+        public object PickBetaModelIdsCompactionVariant3() => BetaModelIdsCompactionVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaModelIdsCompactionVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -219,17 +219,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponses && responses != null)
+            if (Responses is { } __value0 && responses != null)
             {
-                return responses(Responses!);
+                return responses(__value0);
             }
-            else if (IsBetaModelIdsCompactionVariant2 && betaModelIdsCompactionVariant2 != null)
+            else if (BetaModelIdsCompactionVariant2 is { } __value1 && betaModelIdsCompactionVariant2 != null)
             {
-                return betaModelIdsCompactionVariant2(BetaModelIdsCompactionVariant2!);
+                return betaModelIdsCompactionVariant2(__value1);
             }
-            else if (IsBetaModelIdsCompactionVariant3 && betaModelIdsCompactionVariant3 != null)
+            else if (BetaModelIdsCompactionVariant3 is { } __value2 && betaModelIdsCompactionVariant3 != null)
             {
-                return betaModelIdsCompactionVariant3(BetaModelIdsCompactionVariant3!);
+                return betaModelIdsCompactionVariant3(__value2);
             }
 
             return default(TResult);
@@ -251,17 +251,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponses)
+            if (Responses is { } __value0)
             {
-                responses?.Invoke(Responses!);
+                responses?.Invoke(__value0);
             }
-            else if (IsBetaModelIdsCompactionVariant2)
+            else if (BetaModelIdsCompactionVariant2 is { } __value1)
             {
-                betaModelIdsCompactionVariant2?.Invoke(BetaModelIdsCompactionVariant2!);
+                betaModelIdsCompactionVariant2?.Invoke(__value1);
             }
-            else if (IsBetaModelIdsCompactionVariant3)
+            else if (BetaModelIdsCompactionVariant3 is { } __value2)
             {
-                betaModelIdsCompactionVariant3?.Invoke(BetaModelIdsCompactionVariant3!);
+                betaModelIdsCompactionVariant3?.Invoke(__value2);
             }
         }
 
@@ -279,17 +279,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponses)
+            if (Responses is { } __value0)
             {
-                responses?.Invoke(Responses!);
+                responses?.Invoke(__value0);
             }
-            else if (IsBetaModelIdsCompactionVariant2)
+            else if (BetaModelIdsCompactionVariant2 is { } __value1)
             {
-                betaModelIdsCompactionVariant2?.Invoke(BetaModelIdsCompactionVariant2!);
+                betaModelIdsCompactionVariant2?.Invoke(__value1);
             }
-            else if (IsBetaModelIdsCompactionVariant3)
+            else if (BetaModelIdsCompactionVariant3 is { } __value2)
             {
-                betaModelIdsCompactionVariant3?.Invoke(BetaModelIdsCompactionVariant3!);
+                betaModelIdsCompactionVariant3?.Invoke(__value2);
             }
         }
 

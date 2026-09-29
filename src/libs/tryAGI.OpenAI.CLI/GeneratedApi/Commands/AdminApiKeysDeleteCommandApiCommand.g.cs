@@ -33,9 +33,11 @@ internal static partial class AdminApiKeysDeleteCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"admin-api-keys-delete", @"Delete admin API key
+        var command = new Command(commandName ?? @"admin-api-keys-delete", @"Delete admin API key
 Delete an organization admin API key");
                         command.Arguments.Add(KeyId);
 
@@ -59,6 +61,7 @@ Delete an organization admin API key");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

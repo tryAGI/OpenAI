@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Example: {"id":"resp_67ccd3a9da748190baa7f1570fe91ac604becb25c45c1d41","object":"response","access_programs":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","created_at":1741476777,"status":"completed","completed_at":1741476778,"error":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","incomplete_details":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","instructions":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","max_output_tokens":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","model":"gpt-6-astra","output":[{"type":"message","id":"msg_67ccd3acc8d48190a77525dc6de64b4104becb25c45c1d41","status":"completed","role":"assistant","content":[{"type":"output_text","text":"The image depicts a scenic landscape with a wooden boardwalk or pathway leading through lush, green grass under a blue sky with some clouds. The setting suggests a peaceful natural area, possibly a park or nature reserve. There are trees and shrubs in the background.","annotations":[]}]}],"parallel_tool_calls":true,"previous_response_id":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","reasoning":{"effort":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","summary":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","context":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464"},"store":true,"temperature":1,"text":{"format":{"type":"text"}},"tool_choice":"auto","tools":[],"top_p":1,"truncation":"disabled","usage":{"input_tokens":328,"input_tokens_details":{"cached_tokens":0,"cache_write_tokens":0},"output_tokens":52,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":380},"user":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","metadata":{}}
+    /// Example: {"id":"resp_67ccd3a9da748190baa7f1570fe91ac604becb25c45c1d41","object":"response","access_programs":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","created_at":1741476777,"status":"completed","completed_at":1741476778,"error":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","incomplete_details":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","instructions":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","max_output_tokens":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","model":"gpt-6-astra","output":[{"type":"message","id":"msg_67ccd3acc8d48190a77525dc6de64b4104becb25c45c1d41","status":"completed","role":"assistant","content":[{"type":"output_text","text":"The image depicts a scenic landscape with a wooden boardwalk or pathway leading through lush, green grass under a blue sky with some clouds. The setting suggests a peaceful natural area, possibly a park or nature reserve. There are trees and shrubs in the background.","annotations":[],"logprobs":[]}]}],"parallel_tool_calls":true,"previous_response_id":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","reasoning":{"effort":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","summary":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","context":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464"},"store":true,"temperature":1,"text":{"format":{"type":"text"}},"tool_choice":"auto","tools":[],"top_p":1,"truncation":"disabled","usage":{"input_tokens":328,"input_tokens_details":{"cached_tokens":0,"cache_write_tokens":0},"output_tokens":52,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":380},"user":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","metadata":{}}
     /// </summary>
     public readonly partial struct BetaResponse : global::System.IEquatable<BetaResponse>
     {
@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaModelResponseProperties PickModelProperties() => IsModelProperties
-            ? ModelProperties!
+        public global::tryAGI.OpenAI.BetaModelResponseProperties PickModelProperties() => ModelProperties is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelProperties' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponseProperties PickProperties() => IsProperties
-            ? Properties!
+        public global::tryAGI.OpenAI.BetaResponseProperties PickProperties() => Properties is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Properties' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponseVariant3 PickBetaResponseVariant3() => IsBetaResponseVariant3
-            ? BetaResponseVariant3!
+        public global::tryAGI.OpenAI.BetaResponseVariant3 PickBetaResponseVariant3() => BetaResponseVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponseVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelProperties && modelProperties != null)
+            if (ModelProperties is { } __value0 && modelProperties != null)
             {
-                return modelProperties(ModelProperties!);
+                return modelProperties(__value0);
             }
-            else if (IsProperties && properties != null)
+            else if (Properties is { } __value1 && properties != null)
             {
-                return properties(Properties!);
+                return properties(__value1);
             }
-            else if (IsBetaResponseVariant3 && betaResponseVariant3 != null)
+            else if (BetaResponseVariant3 is { } __value2 && betaResponseVariant3 != null)
             {
-                return betaResponseVariant3(BetaResponseVariant3!);
+                return betaResponseVariant3(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelProperties)
+            if (ModelProperties is { } __value0)
             {
-                modelProperties?.Invoke(ModelProperties!);
+                modelProperties?.Invoke(__value0);
             }
-            else if (IsProperties)
+            else if (Properties is { } __value1)
             {
-                properties?.Invoke(Properties!);
+                properties?.Invoke(__value1);
             }
-            else if (IsBetaResponseVariant3)
+            else if (BetaResponseVariant3 is { } __value2)
             {
-                betaResponseVariant3?.Invoke(BetaResponseVariant3!);
+                betaResponseVariant3?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelProperties)
+            if (ModelProperties is { } __value0)
             {
-                modelProperties?.Invoke(ModelProperties!);
+                modelProperties?.Invoke(__value0);
             }
-            else if (IsProperties)
+            else if (Properties is { } __value1)
             {
-                properties?.Invoke(Properties!);
+                properties?.Invoke(__value1);
             }
-            else if (IsBetaResponseVariant3)
+            else if (BetaResponseVariant3 is { } __value2)
             {
-                betaResponseVariant3?.Invoke(BetaResponseVariant3!);
+                betaResponseVariant3?.Invoke(__value2);
             }
         }
 

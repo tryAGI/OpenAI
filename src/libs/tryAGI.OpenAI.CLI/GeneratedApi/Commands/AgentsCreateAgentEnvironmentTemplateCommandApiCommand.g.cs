@@ -88,9 +88,11 @@ internal static partial class AgentsCreateAgentEnvironmentTemplateCommandApiComm
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-agent-environment-template", @"Create an agent environment template
+        var command = new Command(commandName ?? @"create-agent-environment-template", @"Create an agent environment template
 Creates reusable environment configuration without returning confidential setup commands or environment values. See [reusing a hosted setup](https://developers.openai.com/api/docs/guides/agents-api/tools#reuse-a-hosted-plugin-setup).");
                         command.Options.Add(SetupCommands);
                         command.Options.Add(Env);
@@ -185,6 +187,7 @@ Creates reusable environment configuration without returning confidential setup 
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

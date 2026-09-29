@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A SIP DTMF keypress successfully sent by the hosted tool. Delivered only to sideband observers; this is not a client command.<br/>
+    /// A SIP DTMF keypress successfully sent to the SIP trunk. Delivered only to sideband observers; this is not a client command.<br/>
     /// Example: {"type":"transport.dtmf.send","event_id":"event_dtmf_2","event":"#"}
     /// </summary>
     public sealed partial class LiveTransportDTMFSend
@@ -32,6 +32,12 @@ namespace tryAGI.OpenAI
         public required string Event { get; set; }
 
         /// <summary>
+        /// The event_id of the client command, when supplied.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("client_event_id")]
+        public string? ClientEventId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -42,6 +48,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="eventId"></param>
         /// <param name="event"></param>
+        /// <param name="clientEventId">
+        /// The event_id of the client command, when supplied.
+        /// </param>
         /// <param name="type">
         /// Default Value: transport.dtmf.send
         /// </param>
@@ -51,11 +60,13 @@ namespace tryAGI.OpenAI
         public LiveTransportDTMFSend(
             string eventId,
             string @event,
+            string? clientEventId,
             global::tryAGI.OpenAI.LiveTransportDTMFSendType type = global::tryAGI.OpenAI.LiveTransportDTMFSendType.TransportDtmfSend)
         {
             this.Type = type;
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
+            this.ClientEventId = clientEventId;
         }
 
         /// <summary>

@@ -67,9 +67,11 @@ internal static partial class VaultsRotateVaultCredentialCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"rotate-vault-credential", @"Update a vault credential
+        var command = new Command(commandName ?? @"rotate-vault-credential", @"Update a vault credential
 Updates credential metadata or rotates its write-only secret. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).");
                         command.Arguments.Add(VaultId);
                         command.Arguments.Add(CredentialId);
@@ -122,6 +124,7 @@ Updates credential metadata or rotates its write-only secret. See [vaults](https
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -33,9 +33,11 @@ internal static partial class AssistantsGetThreadCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-thread", @"Retrieve thread
+        var command = new Command(commandName ?? @"get-thread", @"Retrieve thread
 Retrieves a thread.");
                         command.Arguments.Add(ThreadId);
 
@@ -59,6 +61,7 @@ Retrieves a thread.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

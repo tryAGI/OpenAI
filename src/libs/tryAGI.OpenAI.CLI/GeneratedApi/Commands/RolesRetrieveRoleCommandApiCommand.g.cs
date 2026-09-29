@@ -33,9 +33,11 @@ internal static partial class RolesRetrieveRoleCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-role", @"Retrieve organization role
+        var command = new Command(commandName ?? @"retrieve-role", @"Retrieve organization role
 Retrieves an organization role.");
                         command.Arguments.Add(RoleId);
 
@@ -67,6 +69,7 @@ Retrieves an organization role.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

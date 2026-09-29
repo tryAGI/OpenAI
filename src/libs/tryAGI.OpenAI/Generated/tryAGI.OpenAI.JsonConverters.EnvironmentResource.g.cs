@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.EnvironmentResourceNone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.EnvironmentResourceNone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EnvironmentResourceNone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.None!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNone(), typeInfo);
             }
             else if (value.IsOpenaiHosted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.EnvironmentResourceOpenaiHosted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.EnvironmentResourceOpenaiHosted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EnvironmentResourceOpenaiHosted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenaiHosted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenaiHosted(), typeInfo);
             }
             else if (value.IsSelfHosted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.EnvironmentResourceSelfHosted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.EnvironmentResourceSelfHosted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EnvironmentResourceSelfHosted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SelfHosted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSelfHosted(), typeInfo);
             }
         }
     }

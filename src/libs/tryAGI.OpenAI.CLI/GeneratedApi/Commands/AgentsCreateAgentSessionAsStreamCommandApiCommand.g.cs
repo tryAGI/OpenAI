@@ -45,9 +45,11 @@ internal static partial class AgentsCreateAgentSessionAsStreamCommandApiCommand
           Hidden = true,
       };
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-agent-session-as-stream", @"Create an agent session
+        var command = new Command(commandName ?? @"create-agent-session-as-stream", @"Create an agent session
 Creates a managed agent session, optionally submits initial input, and returns the session or streams its events when stream is true. See [running sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions).");
                         command.Options.Add(Metadata);
                         command.Options.Add(Environment);
@@ -117,6 +119,7 @@ Creates a managed agent session, optionally submits initial input, and returns t
                                         cancellationToken: cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

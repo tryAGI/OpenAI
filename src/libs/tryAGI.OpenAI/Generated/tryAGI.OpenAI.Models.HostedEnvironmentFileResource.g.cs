@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.HostedEnvironmentFileResourceFileId PickFileId() => IsFileId
-            ? FileId!
+        public global::tryAGI.OpenAI.HostedEnvironmentFileResourceFileId PickFileId() => FileId is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileId' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.HostedEnvironmentFileResourceInline PickInline() => IsInline
-            ? Inline!
+        public global::tryAGI.OpenAI.HostedEnvironmentFileResourceInline PickInline() => Inline is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Inline' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFileId && fileId != null)
+            if (FileId is { } __value0 && fileId != null)
             {
-                return fileId(FileId!);
+                return fileId(__value0);
             }
-            else if (IsInline && inline != null)
+            else if (Inline is { } __value1 && inline != null)
             {
-                return inline(Inline!);
+                return inline(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFileId)
+            if (FileId is { } __value0)
             {
-                fileId?.Invoke(FileId!);
+                fileId?.Invoke(__value0);
             }
-            else if (IsInline)
+            else if (Inline is { } __value1)
             {
-                inline?.Invoke(Inline!);
+                inline?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFileId)
+            if (FileId is { } __value0)
             {
-                fileId?.Invoke(FileId!);
+                fileId?.Invoke(__value0);
             }
-            else if (IsInline)
+            else if (Inline is { } __value1)
             {
-                inline?.Invoke(Inline!);
+                inline?.Invoke(__value1);
             }
         }
 

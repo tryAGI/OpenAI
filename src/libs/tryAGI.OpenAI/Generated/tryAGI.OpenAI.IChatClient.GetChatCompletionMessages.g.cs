@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Wraps GetChatCompletionMessagesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.AllOf&lt;global::tryAGI.OpenAI.ChatCompletionResponseMessage, global::tryAGI.OpenAI.ChatCompletionMessageListDataItem&gt;&gt; that auto-pages over the response.
+        /// Wraps GetChatCompletionMessagesAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.ChatCompletionMessageListDataItem&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="completionId"></param>
         /// <param name="limit">
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
-        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ChatCompletionResponseMessage, global::tryAGI.OpenAI.ChatCompletionMessageListDataItem>> GetChatCompletionMessagesAutoPagingAsync(
+        global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.ChatCompletionMessageListDataItem> GetChatCompletionMessagesAutoPagingAsync(
             string completionId,             int? limit = default,
             global::tryAGI.OpenAI.GetChatCompletionMessagesOrder? order = default,
             string? after = null,

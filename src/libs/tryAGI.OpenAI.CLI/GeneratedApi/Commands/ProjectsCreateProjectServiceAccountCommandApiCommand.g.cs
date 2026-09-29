@@ -66,9 +66,11 @@ internal static partial class ProjectsCreateProjectServiceAccountCommandApiComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-project-service-account", @"Create project service account
+        var command = new Command(commandName ?? @"create-project-service-account", @"Create project service account
 Creates a new service account in the project. By default, this also returns an unredacted API key for the service account.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(NameOption);
@@ -121,6 +123,7 @@ Creates a new service account in the project. By default, this also returns an u
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -57,9 +57,11 @@ internal static partial class VaultsListVaultCredentialsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-vault-credentials", @"List vault credentials
+        var command = new Command(commandName ?? @"list-vault-credentials", @"List vault credentials
 Lists a vault's credentials using ID-based pagination without returning secret values. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).");
                         command.Arguments.Add(VaultId);
                         command.Options.Add(Order);
@@ -103,6 +105,7 @@ Lists a vault's credentials using ID-based pagination without returning secret v
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

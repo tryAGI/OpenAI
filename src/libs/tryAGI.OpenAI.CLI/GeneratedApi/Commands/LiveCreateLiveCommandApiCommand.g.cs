@@ -35,9 +35,11 @@ internal static partial class LiveCreateLiveCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-live", @"Create session
+        var command = new Command(commandName ?? @"create-live", @"Create session
 Create a Live WebRTC session. Start with the [Live prompting guide](https://developers.openai.com/api/docs/guides/live-prompting).");
                         command.Options.Add(Session);                        command.Options.Add(TransportOptions.Type);
                         command.Options.Add(TransportOptions.Sdp);
@@ -75,6 +77,7 @@ Create a Live WebRTC session. Start with the [Live prompting guide](https://deve
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

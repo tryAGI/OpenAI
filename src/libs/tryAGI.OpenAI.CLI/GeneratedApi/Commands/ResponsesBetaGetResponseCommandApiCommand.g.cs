@@ -73,9 +73,11 @@ the network links between your application and the OpenAI API.
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"beta-get-response", @"Get a model response
+        var command = new Command(commandName ?? @"beta-get-response", @"Get a model response
 Retrieves a model response with the given ID.
 ");
                         command.Arguments.Add(ResponseId);
@@ -115,6 +117,7 @@ Retrieves a model response with the given ID.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

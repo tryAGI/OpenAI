@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchActionResourceSearch PickSearch() => IsSearch
-            ? Search!
+        public global::tryAGI.OpenAI.WebSearchActionResourceSearch PickSearch() => Search is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Search' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchActionResourceOpenPage PickOpenPage() => IsOpenPage
-            ? OpenPage!
+        public global::tryAGI.OpenAI.WebSearchActionResourceOpenPage PickOpenPage() => OpenPage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OpenPage' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchActionResourceFindInPage PickFindInPage() => IsFindInPage
-            ? FindInPage!
+        public global::tryAGI.OpenAI.WebSearchActionResourceFindInPage PickFindInPage() => FindInPage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FindInPage' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchActionResourceOther PickOther() => IsOther
-            ? Other!
+        public global::tryAGI.OpenAI.WebSearchActionResourceOther PickOther() => Other is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Other' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSearch && search != null)
+            if (Search is { } __value0 && search != null)
             {
-                return search(Search!);
+                return search(__value0);
             }
-            else if (IsOpenPage && openPage != null)
+            else if (OpenPage is { } __value1 && openPage != null)
             {
-                return openPage(OpenPage!);
+                return openPage(__value1);
             }
-            else if (IsFindInPage && findInPage != null)
+            else if (FindInPage is { } __value2 && findInPage != null)
             {
-                return findInPage(FindInPage!);
+                return findInPage(__value2);
             }
-            else if (IsOther && other != null)
+            else if (Other is { } __value3 && other != null)
             {
-                return other(Other!);
+                return other(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSearch)
+            if (Search is { } __value0)
             {
-                search?.Invoke(Search!);
+                search?.Invoke(__value0);
             }
-            else if (IsOpenPage)
+            else if (OpenPage is { } __value1)
             {
-                openPage?.Invoke(OpenPage!);
+                openPage?.Invoke(__value1);
             }
-            else if (IsFindInPage)
+            else if (FindInPage is { } __value2)
             {
-                findInPage?.Invoke(FindInPage!);
+                findInPage?.Invoke(__value2);
             }
-            else if (IsOther)
+            else if (Other is { } __value3)
             {
-                other?.Invoke(Other!);
+                other?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSearch)
+            if (Search is { } __value0)
             {
-                search?.Invoke(Search!);
+                search?.Invoke(__value0);
             }
-            else if (IsOpenPage)
+            else if (OpenPage is { } __value1)
             {
-                openPage?.Invoke(OpenPage!);
+                openPage?.Invoke(__value1);
             }
-            else if (IsFindInPage)
+            else if (FindInPage is { } __value2)
             {
-                findInPage?.Invoke(FindInPage!);
+                findInPage?.Invoke(__value2);
             }
-            else if (IsOther)
+            else if (Other is { } __value3)
             {
-                other?.Invoke(Other!);
+                other?.Invoke(__value3);
             }
         }
 

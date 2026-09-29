@@ -39,9 +39,11 @@ internal static partial class ProjectsRetrieveProjectApiKeyCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-project-api-key", @"Retrieve project API key
+        var command = new Command(commandName ?? @"retrieve-project-api-key", @"Retrieve project API key
 Retrieves an API key in the project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(ApiKeyId);
@@ -68,6 +70,7 @@ Retrieves an API key in the project.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

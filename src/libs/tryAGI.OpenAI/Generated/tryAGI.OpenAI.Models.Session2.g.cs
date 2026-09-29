@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA PickRealtime() => IsRealtime
-            ? Realtime!
+        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA PickRealtime() => Realtime is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Realtime' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA PickTranscription() => IsTranscription
-            ? Transcription!
+        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA PickTranscription() => Transcription is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Transcription' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsRealtime && realtime != null)
+            if (Realtime is { } __value0 && realtime != null)
             {
-                return realtime(Realtime!);
+                return realtime(__value0);
             }
-            else if (IsTranscription && transcription != null)
+            else if (Transcription is { } __value1 && transcription != null)
             {
-                return transcription(Transcription!);
+                return transcription(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsRealtime)
+            if (Realtime is { } __value0)
             {
-                realtime?.Invoke(Realtime!);
+                realtime?.Invoke(__value0);
             }
-            else if (IsTranscription)
+            else if (Transcription is { } __value1)
             {
-                transcription?.Invoke(Transcription!);
+                transcription?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsRealtime)
+            if (Realtime is { } __value0)
             {
-                realtime?.Invoke(Realtime!);
+                realtime?.Invoke(__value0);
             }
-            else if (IsTranscription)
+            else if (Transcription is { } __value1)
             {
-                transcription?.Invoke(Transcription!);
+                transcription?.Invoke(__value1);
             }
         }
 

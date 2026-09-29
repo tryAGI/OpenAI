@@ -33,9 +33,11 @@ internal static partial class ConversationsGetConversationCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-conversation", @"Retrieve a conversation
+        var command = new Command(commandName ?? @"get-conversation", @"Retrieve a conversation
 Get a conversation");
                         command.Arguments.Add(ConversationId);
 
@@ -59,6 +61,7 @@ Get a conversation");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

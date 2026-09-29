@@ -92,9 +92,11 @@ internal static partial class UsageUsageFileSearchCallsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"file-search-calls", @"File search calls
+        var command = new Command(commandName ?? @"file-search-calls", @"File search calls
 Get file search calls usage details for the organization.");
                         command.Options.Add(StartTime);
                         command.Options.Add(EndTime);
@@ -153,6 +155,7 @@ Get file search calls usage details for the organization.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

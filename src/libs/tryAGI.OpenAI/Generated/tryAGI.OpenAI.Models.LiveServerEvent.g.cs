@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveServerEvent2 PickEvent2() => IsEvent2
-            ? Event2!.Value
+        public global::tryAGI.OpenAI.LiveServerEvent2 PickEvent2() => Event2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Event2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -102,9 +102,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsEvent2 && event2 != null)
+            if (Event2 is { } __value0 && event2 != null)
             {
-                return event2(Event2!);
+                return event2(__value0);
             }
 
             return default(TResult);
@@ -122,9 +122,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsEvent2)
+            if (Event2 is { } __value0)
             {
-                event2?.Invoke(Event2!);
+                event2?.Invoke(__value0);
             }
         }
 
@@ -140,9 +140,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsEvent2)
+            if (Event2 is { } __value0)
             {
-                event2?.Invoke(Event2!);
+                event2?.Invoke(__value0);
             }
         }
 

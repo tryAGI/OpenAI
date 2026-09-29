@@ -41,9 +41,11 @@ internal static partial class FineTuningCreateFineTuningCheckpointPermissionComm
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-fine-tuning-checkpoint-permission", @"Create checkpoint permissions
+        var command = new Command(commandName ?? @"create-fine-tuning-checkpoint-permission", @"Create checkpoint permissions
 **NOTE:** Calling this endpoint requires an [admin API key](https://developers.openai.com/api/reference/resources/admin/subresources/organization/subresources/admin_api_keys).
 
 This enables organization owners to share fine-tuned models with other projects in their organization.
@@ -81,6 +83,7 @@ This enables organization owners to share fine-tuned models with other projects 
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

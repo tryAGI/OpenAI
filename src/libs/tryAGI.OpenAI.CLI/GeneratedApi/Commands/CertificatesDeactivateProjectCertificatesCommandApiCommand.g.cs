@@ -34,9 +34,11 @@ internal static partial class CertificatesDeactivateProjectCertificatesCommandAp
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"deactivate-project-certificates", @"Deactivate certificates for project
+        var command = new Command(commandName ?? @"deactivate-project-certificates", @"Deactivate certificates for project
 Deactivate certificates at the project level. You can atomically and
 idempotently deactivate up to 10 certificates at a time.
 ");
@@ -71,6 +73,7 @@ idempotently deactivate up to 10 certificates at a time.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

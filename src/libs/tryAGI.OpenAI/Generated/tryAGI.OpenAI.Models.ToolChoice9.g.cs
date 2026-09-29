@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     /// Tool selection that the assistant should honor when executing the item.
     /// </summary>
-    public sealed partial class ToolChoice10
+    public sealed partial class ToolChoice9
     {
         /// <summary>
         /// Identifier of the requested tool.
@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ToolChoice10" /> class.
+        /// Initializes a new instance of the <see cref="ToolChoice9" /> class.
         /// </summary>
         /// <param name="id">
         /// Identifier of the requested tool.
@@ -30,16 +30,16 @@ namespace tryAGI.OpenAI
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public ToolChoice10(
+        public ToolChoice9(
             string id)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ToolChoice10" /> class.
+        /// Initializes a new instance of the <see cref="ToolChoice9" /> class.
         /// </summary>
-        public ToolChoice10()
+        public ToolChoice9()
         {
         }
 

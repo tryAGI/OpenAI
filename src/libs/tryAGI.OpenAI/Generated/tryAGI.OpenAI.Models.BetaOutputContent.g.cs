@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaOutputTextContent PickOutputText() => IsOutputText
-            ? OutputText!
+        public global::tryAGI.OpenAI.BetaOutputTextContent PickOutputText() => OutputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaRefusalContent PickRefusal() => IsRefusal
-            ? Refusal!
+        public global::tryAGI.OpenAI.BetaRefusalContent PickRefusal() => Refusal is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaReasoningTextContent PickReasoningText() => IsReasoningText
-            ? ReasoningText!
+        public global::tryAGI.OpenAI.BetaReasoningTextContent PickReasoningText() => ReasoningText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningText' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsOutputText && outputText != null)
+            if (OutputText is { } __value0 && outputText != null)
             {
-                return outputText(OutputText!);
+                return outputText(__value0);
             }
-            else if (IsRefusal && refusal != null)
+            else if (Refusal is { } __value1 && refusal != null)
             {
-                return refusal(Refusal!);
+                return refusal(__value1);
             }
-            else if (IsReasoningText && reasoningText != null)
+            else if (ReasoningText is { } __value2 && reasoningText != null)
             {
-                return reasoningText(ReasoningText!);
+                return reasoningText(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsOutputText)
+            if (OutputText is { } __value0)
             {
-                outputText?.Invoke(OutputText!);
+                outputText?.Invoke(__value0);
             }
-            else if (IsRefusal)
+            else if (Refusal is { } __value1)
             {
-                refusal?.Invoke(Refusal!);
+                refusal?.Invoke(__value1);
             }
-            else if (IsReasoningText)
+            else if (ReasoningText is { } __value2)
             {
-                reasoningText?.Invoke(ReasoningText!);
+                reasoningText?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsOutputText)
+            if (OutputText is { } __value0)
             {
-                outputText?.Invoke(OutputText!);
+                outputText?.Invoke(__value0);
             }
-            else if (IsRefusal)
+            else if (Refusal is { } __value1)
             {
-                refusal?.Invoke(Refusal!);
+                refusal?.Invoke(__value1);
             }
-            else if (IsReasoningText)
+            else if (ReasoningText is { } __value2)
             {
-                reasoningText?.Invoke(ReasoningText!);
+                reasoningText?.Invoke(__value2);
             }
         }
 

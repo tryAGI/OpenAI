@@ -61,9 +61,11 @@ internal static partial class ProjectsModifyProjectUserCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"modify-project-user", @"Modify project user
+        var command = new Command(commandName ?? @"modify-project-user", @"Modify project user
 Modifies a user's role in the project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(UserId);
@@ -113,6 +115,7 @@ Modifies a user's role in the project.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

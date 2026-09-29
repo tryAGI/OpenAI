@@ -29,9 +29,11 @@ internal static partial class CertificatesDeactivateOrganizationCertificatesComm
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"deactivate-organization-certificates", @"Deactivate certificates for organization
+        var command = new Command(commandName ?? @"deactivate-organization-certificates", @"Deactivate certificates for organization
 Deactivate certificates at the organization level.
 
 You can atomically and idempotently deactivate up to 10 certificates at a time.
@@ -66,6 +68,7 @@ You can atomically and idempotently deactivate up to 10 certificates at a time.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

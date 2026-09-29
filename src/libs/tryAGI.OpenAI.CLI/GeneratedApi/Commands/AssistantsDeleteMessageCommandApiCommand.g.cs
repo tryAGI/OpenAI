@@ -39,9 +39,11 @@ internal static partial class AssistantsDeleteMessageCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-message", @"Delete message
+        var command = new Command(commandName ?? @"delete-message", @"Delete message
 Deletes a message.");
                         command.Arguments.Add(ThreadId);
                         command.Arguments.Add(MessageId);
@@ -68,6 +70,7 @@ Deletes a message.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

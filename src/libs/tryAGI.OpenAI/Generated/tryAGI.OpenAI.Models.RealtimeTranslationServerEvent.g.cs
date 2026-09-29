@@ -49,8 +49,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeServerEventError PickError() => IsError
-            ? Error!
+        public global::tryAGI.OpenAI.RealtimeServerEventError PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated PickSessionCreated() => IsSessionCreated
-            ? SessionCreated!
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated PickSessionCreated() => SessionCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -126,8 +126,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated PickSessionUpdated() => IsSessionUpdated
-            ? SessionUpdated!
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated PickSessionUpdated() => SessionUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -163,8 +163,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed PickSessionClosed() => IsSessionClosed
-            ? SessionClosed!
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed PickSessionClosed() => SessionClosed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionClosed' but the value was {ToString()}.");
 
         /// <summary>
@@ -203,8 +203,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta PickSessionInputTranscriptDelta() => IsSessionInputTranscriptDelta
-            ? SessionInputTranscriptDelta!
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta PickSessionInputTranscriptDelta() => SessionInputTranscriptDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputTranscriptDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -242,8 +242,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta PickSessionOutputTranscriptDelta() => IsSessionOutputTranscriptDelta
-            ? SessionOutputTranscriptDelta!
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta PickSessionOutputTranscriptDelta() => SessionOutputTranscriptDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutputTranscriptDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -281,8 +281,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta PickSessionOutputAudioDelta() => IsSessionOutputAudioDelta
-            ? SessionOutputAudioDelta!
+        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta PickSessionOutputAudioDelta() => SessionOutputAudioDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutputAudioDelta' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -522,33 +522,33 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsError && error != null)
+            if (Error is { } __value0 && error != null)
             {
-                return error(Error!);
+                return error(__value0);
             }
-            else if (IsSessionCreated && sessionCreated != null)
+            else if (SessionCreated is { } __value1 && sessionCreated != null)
             {
-                return sessionCreated(SessionCreated!);
+                return sessionCreated(__value1);
             }
-            else if (IsSessionUpdated && sessionUpdated != null)
+            else if (SessionUpdated is { } __value2 && sessionUpdated != null)
             {
-                return sessionUpdated(SessionUpdated!);
+                return sessionUpdated(__value2);
             }
-            else if (IsSessionClosed && sessionClosed != null)
+            else if (SessionClosed is { } __value3 && sessionClosed != null)
             {
-                return sessionClosed(SessionClosed!);
+                return sessionClosed(__value3);
             }
-            else if (IsSessionInputTranscriptDelta && sessionInputTranscriptDelta != null)
+            else if (SessionInputTranscriptDelta is { } __value4 && sessionInputTranscriptDelta != null)
             {
-                return sessionInputTranscriptDelta(SessionInputTranscriptDelta!);
+                return sessionInputTranscriptDelta(__value4);
             }
-            else if (IsSessionOutputTranscriptDelta && sessionOutputTranscriptDelta != null)
+            else if (SessionOutputTranscriptDelta is { } __value5 && sessionOutputTranscriptDelta != null)
             {
-                return sessionOutputTranscriptDelta(SessionOutputTranscriptDelta!);
+                return sessionOutputTranscriptDelta(__value5);
             }
-            else if (IsSessionOutputAudioDelta && sessionOutputAudioDelta != null)
+            else if (SessionOutputAudioDelta is { } __value6 && sessionOutputAudioDelta != null)
             {
-                return sessionOutputAudioDelta(SessionOutputAudioDelta!);
+                return sessionOutputAudioDelta(__value6);
             }
 
             return default(TResult);
@@ -578,33 +578,33 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsError)
+            if (Error is { } __value0)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value0);
             }
-            else if (IsSessionCreated)
+            else if (SessionCreated is { } __value1)
             {
-                sessionCreated?.Invoke(SessionCreated!);
+                sessionCreated?.Invoke(__value1);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value2)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value2);
             }
-            else if (IsSessionClosed)
+            else if (SessionClosed is { } __value3)
             {
-                sessionClosed?.Invoke(SessionClosed!);
+                sessionClosed?.Invoke(__value3);
             }
-            else if (IsSessionInputTranscriptDelta)
+            else if (SessionInputTranscriptDelta is { } __value4)
             {
-                sessionInputTranscriptDelta?.Invoke(SessionInputTranscriptDelta!);
+                sessionInputTranscriptDelta?.Invoke(__value4);
             }
-            else if (IsSessionOutputTranscriptDelta)
+            else if (SessionOutputTranscriptDelta is { } __value5)
             {
-                sessionOutputTranscriptDelta?.Invoke(SessionOutputTranscriptDelta!);
+                sessionOutputTranscriptDelta?.Invoke(__value5);
             }
-            else if (IsSessionOutputAudioDelta)
+            else if (SessionOutputAudioDelta is { } __value6)
             {
-                sessionOutputAudioDelta?.Invoke(SessionOutputAudioDelta!);
+                sessionOutputAudioDelta?.Invoke(__value6);
             }
         }
 
@@ -626,33 +626,33 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsError)
+            if (Error is { } __value0)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value0);
             }
-            else if (IsSessionCreated)
+            else if (SessionCreated is { } __value1)
             {
-                sessionCreated?.Invoke(SessionCreated!);
+                sessionCreated?.Invoke(__value1);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value2)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value2);
             }
-            else if (IsSessionClosed)
+            else if (SessionClosed is { } __value3)
             {
-                sessionClosed?.Invoke(SessionClosed!);
+                sessionClosed?.Invoke(__value3);
             }
-            else if (IsSessionInputTranscriptDelta)
+            else if (SessionInputTranscriptDelta is { } __value4)
             {
-                sessionInputTranscriptDelta?.Invoke(SessionInputTranscriptDelta!);
+                sessionInputTranscriptDelta?.Invoke(__value4);
             }
-            else if (IsSessionOutputTranscriptDelta)
+            else if (SessionOutputTranscriptDelta is { } __value5)
             {
-                sessionOutputTranscriptDelta?.Invoke(SessionOutputTranscriptDelta!);
+                sessionOutputTranscriptDelta?.Invoke(__value5);
             }
-            else if (IsSessionOutputAudioDelta)
+            else if (SessionOutputAudioDelta is { } __value6)
             {
-                sessionOutputAudioDelta?.Invoke(SessionOutputAudioDelta!);
+                sessionOutputAudioDelta?.Invoke(__value6);
             }
         }
 

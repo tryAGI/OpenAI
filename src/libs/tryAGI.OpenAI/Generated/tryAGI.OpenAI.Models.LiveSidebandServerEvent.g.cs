@@ -48,8 +48,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveSessionStarted PickSessionStarted() => IsSessionStarted
-            ? SessionStarted!
+        public global::tryAGI.OpenAI.LiveSessionStarted PickSessionStarted() => SessionStarted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStarted' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveSessionUpdated PickSessionUpdated() => IsSessionUpdated
-            ? SessionUpdated!
+        public global::tryAGI.OpenAI.LiveSessionUpdated PickSessionUpdated() => SessionUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -124,8 +124,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveInputAudioMuted PickSessionInputAudioMuted() => IsSessionInputAudioMuted
-            ? SessionInputAudioMuted!
+        public global::tryAGI.OpenAI.LiveInputAudioMuted PickSessionInputAudioMuted() => SessionInputAudioMuted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioMuted' but the value was {ToString()}.");
 
         /// <summary>
@@ -162,8 +162,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveInputAudioUnmuted PickSessionInputAudioUnmuted() => IsSessionInputAudioUnmuted
-            ? SessionInputAudioUnmuted!
+        public global::tryAGI.OpenAI.LiveInputAudioUnmuted PickSessionInputAudioUnmuted() => SessionInputAudioUnmuted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioUnmuted' but the value was {ToString()}.");
 
         /// <summary>
@@ -200,8 +200,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveInstructionsAppended PickSessionInstructionsAppended() => IsSessionInstructionsAppended
-            ? SessionInstructionsAppended!
+        public global::tryAGI.OpenAI.LiveInstructionsAppended PickSessionInstructionsAppended() => SessionInstructionsAppended is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInstructionsAppended' but the value was {ToString()}.");
 
         /// <summary>
@@ -238,8 +238,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveThinkingAppended PickSessionThinkingAppended() => IsSessionThinkingAppended
-            ? SessionThinkingAppended!
+        public global::tryAGI.OpenAI.LiveThinkingAppended PickSessionThinkingAppended() => SessionThinkingAppended is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThinkingAppended' but the value was {ToString()}.");
 
         /// <summary>
@@ -276,8 +276,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveCommentaryAppended PickSessionCommentaryAppended() => IsSessionCommentaryAppended
-            ? SessionCommentaryAppended!
+        public global::tryAGI.OpenAI.LiveCommentaryAppended PickSessionCommentaryAppended() => SessionCommentaryAppended is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCommentaryAppended' but the value was {ToString()}.");
 
         /// <summary>
@@ -314,8 +314,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveInputTranscriptDelta PickSessionInputTranscriptDelta() => IsSessionInputTranscriptDelta
-            ? SessionInputTranscriptDelta!
+        public global::tryAGI.OpenAI.LiveInputTranscriptDelta PickSessionInputTranscriptDelta() => SessionInputTranscriptDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputTranscriptDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -352,8 +352,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveOutputTranscriptDelta PickSessionOutputTranscriptDelta() => IsSessionOutputTranscriptDelta
-            ? SessionOutputTranscriptDelta!
+        public global::tryAGI.OpenAI.LiveOutputTranscriptDelta PickSessionOutputTranscriptDelta() => SessionOutputTranscriptDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutputTranscriptDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -390,8 +390,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveDelegationCreated PickSessionDelegationCreated() => IsSessionDelegationCreated
-            ? SessionDelegationCreated!
+        public global::tryAGI.OpenAI.LiveDelegationCreated PickSessionDelegationCreated() => SessionDelegationCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionDelegationCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -428,8 +428,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveResponseEvent PickResponseEvent() => IsResponseEvent
-            ? ResponseEvent!
+        public global::tryAGI.OpenAI.LiveResponseEvent PickResponseEvent() => ResponseEvent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseEvent' but the value was {ToString()}.");
 
         /// <summary>
@@ -466,8 +466,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveSessionUsageUpdated PickSessionUsageUpdated() => IsSessionUsageUpdated
-            ? SessionUsageUpdated!
+        public global::tryAGI.OpenAI.LiveSessionUsageUpdated PickSessionUsageUpdated() => SessionUsageUpdated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUsageUpdated' but the value was {ToString()}.");
 
         /// <summary>
@@ -504,8 +504,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveSessionClosed PickSessionClosed() => IsSessionClosed
-            ? SessionClosed!
+        public global::tryAGI.OpenAI.LiveSessionClosed PickSessionClosed() => SessionClosed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionClosed' but the value was {ToString()}.");
 
         /// <summary>
@@ -542,8 +542,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveErrorEvent PickError() => IsError
-            ? Error!
+        public global::tryAGI.OpenAI.LiveErrorEvent PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
 
         /// <summary>
@@ -580,8 +580,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveInfoEvent PickInfo() => IsInfo
-            ? Info!
+        public global::tryAGI.OpenAI.LiveInfoEvent PickInfo() => Info is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Info' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -1045,65 +1045,65 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSessionStarted && sessionStarted != null)
+            if (SessionStarted is { } __value0 && sessionStarted != null)
             {
-                return sessionStarted(SessionStarted!);
+                return sessionStarted(__value0);
             }
-            else if (IsSessionUpdated && sessionUpdated != null)
+            else if (SessionUpdated is { } __value1 && sessionUpdated != null)
             {
-                return sessionUpdated(SessionUpdated!);
+                return sessionUpdated(__value1);
             }
-            else if (IsSessionInputAudioMuted && sessionInputAudioMuted != null)
+            else if (SessionInputAudioMuted is { } __value2 && sessionInputAudioMuted != null)
             {
-                return sessionInputAudioMuted(SessionInputAudioMuted!);
+                return sessionInputAudioMuted(__value2);
             }
-            else if (IsSessionInputAudioUnmuted && sessionInputAudioUnmuted != null)
+            else if (SessionInputAudioUnmuted is { } __value3 && sessionInputAudioUnmuted != null)
             {
-                return sessionInputAudioUnmuted(SessionInputAudioUnmuted!);
+                return sessionInputAudioUnmuted(__value3);
             }
-            else if (IsSessionInstructionsAppended && sessionInstructionsAppended != null)
+            else if (SessionInstructionsAppended is { } __value4 && sessionInstructionsAppended != null)
             {
-                return sessionInstructionsAppended(SessionInstructionsAppended!);
+                return sessionInstructionsAppended(__value4);
             }
-            else if (IsSessionThinkingAppended && sessionThinkingAppended != null)
+            else if (SessionThinkingAppended is { } __value5 && sessionThinkingAppended != null)
             {
-                return sessionThinkingAppended(SessionThinkingAppended!);
+                return sessionThinkingAppended(__value5);
             }
-            else if (IsSessionCommentaryAppended && sessionCommentaryAppended != null)
+            else if (SessionCommentaryAppended is { } __value6 && sessionCommentaryAppended != null)
             {
-                return sessionCommentaryAppended(SessionCommentaryAppended!);
+                return sessionCommentaryAppended(__value6);
             }
-            else if (IsSessionInputTranscriptDelta && sessionInputTranscriptDelta != null)
+            else if (SessionInputTranscriptDelta is { } __value7 && sessionInputTranscriptDelta != null)
             {
-                return sessionInputTranscriptDelta(SessionInputTranscriptDelta!);
+                return sessionInputTranscriptDelta(__value7);
             }
-            else if (IsSessionOutputTranscriptDelta && sessionOutputTranscriptDelta != null)
+            else if (SessionOutputTranscriptDelta is { } __value8 && sessionOutputTranscriptDelta != null)
             {
-                return sessionOutputTranscriptDelta(SessionOutputTranscriptDelta!);
+                return sessionOutputTranscriptDelta(__value8);
             }
-            else if (IsSessionDelegationCreated && sessionDelegationCreated != null)
+            else if (SessionDelegationCreated is { } __value9 && sessionDelegationCreated != null)
             {
-                return sessionDelegationCreated(SessionDelegationCreated!);
+                return sessionDelegationCreated(__value9);
             }
-            else if (IsResponseEvent && responseEvent != null)
+            else if (ResponseEvent is { } __value10 && responseEvent != null)
             {
-                return responseEvent(ResponseEvent!);
+                return responseEvent(__value10);
             }
-            else if (IsSessionUsageUpdated && sessionUsageUpdated != null)
+            else if (SessionUsageUpdated is { } __value11 && sessionUsageUpdated != null)
             {
-                return sessionUsageUpdated(SessionUsageUpdated!);
+                return sessionUsageUpdated(__value11);
             }
-            else if (IsSessionClosed && sessionClosed != null)
+            else if (SessionClosed is { } __value12 && sessionClosed != null)
             {
-                return sessionClosed(SessionClosed!);
+                return sessionClosed(__value12);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value13 && error != null)
             {
-                return error(Error!);
+                return error(__value13);
             }
-            else if (IsInfo && info != null)
+            else if (Info is { } __value14 && info != null)
             {
-                return info(Info!);
+                return info(__value14);
             }
 
             return default(TResult);
@@ -1149,65 +1149,65 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSessionStarted)
+            if (SessionStarted is { } __value0)
             {
-                sessionStarted?.Invoke(SessionStarted!);
+                sessionStarted?.Invoke(__value0);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value1)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value1);
             }
-            else if (IsSessionInputAudioMuted)
+            else if (SessionInputAudioMuted is { } __value2)
             {
-                sessionInputAudioMuted?.Invoke(SessionInputAudioMuted!);
+                sessionInputAudioMuted?.Invoke(__value2);
             }
-            else if (IsSessionInputAudioUnmuted)
+            else if (SessionInputAudioUnmuted is { } __value3)
             {
-                sessionInputAudioUnmuted?.Invoke(SessionInputAudioUnmuted!);
+                sessionInputAudioUnmuted?.Invoke(__value3);
             }
-            else if (IsSessionInstructionsAppended)
+            else if (SessionInstructionsAppended is { } __value4)
             {
-                sessionInstructionsAppended?.Invoke(SessionInstructionsAppended!);
+                sessionInstructionsAppended?.Invoke(__value4);
             }
-            else if (IsSessionThinkingAppended)
+            else if (SessionThinkingAppended is { } __value5)
             {
-                sessionThinkingAppended?.Invoke(SessionThinkingAppended!);
+                sessionThinkingAppended?.Invoke(__value5);
             }
-            else if (IsSessionCommentaryAppended)
+            else if (SessionCommentaryAppended is { } __value6)
             {
-                sessionCommentaryAppended?.Invoke(SessionCommentaryAppended!);
+                sessionCommentaryAppended?.Invoke(__value6);
             }
-            else if (IsSessionInputTranscriptDelta)
+            else if (SessionInputTranscriptDelta is { } __value7)
             {
-                sessionInputTranscriptDelta?.Invoke(SessionInputTranscriptDelta!);
+                sessionInputTranscriptDelta?.Invoke(__value7);
             }
-            else if (IsSessionOutputTranscriptDelta)
+            else if (SessionOutputTranscriptDelta is { } __value8)
             {
-                sessionOutputTranscriptDelta?.Invoke(SessionOutputTranscriptDelta!);
+                sessionOutputTranscriptDelta?.Invoke(__value8);
             }
-            else if (IsSessionDelegationCreated)
+            else if (SessionDelegationCreated is { } __value9)
             {
-                sessionDelegationCreated?.Invoke(SessionDelegationCreated!);
+                sessionDelegationCreated?.Invoke(__value9);
             }
-            else if (IsResponseEvent)
+            else if (ResponseEvent is { } __value10)
             {
-                responseEvent?.Invoke(ResponseEvent!);
+                responseEvent?.Invoke(__value10);
             }
-            else if (IsSessionUsageUpdated)
+            else if (SessionUsageUpdated is { } __value11)
             {
-                sessionUsageUpdated?.Invoke(SessionUsageUpdated!);
+                sessionUsageUpdated?.Invoke(__value11);
             }
-            else if (IsSessionClosed)
+            else if (SessionClosed is { } __value12)
             {
-                sessionClosed?.Invoke(SessionClosed!);
+                sessionClosed?.Invoke(__value12);
             }
-            else if (IsError)
+            else if (Error is { } __value13)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value13);
             }
-            else if (IsInfo)
+            else if (Info is { } __value14)
             {
-                info?.Invoke(Info!);
+                info?.Invoke(__value14);
             }
         }
 
@@ -1237,65 +1237,65 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSessionStarted)
+            if (SessionStarted is { } __value0)
             {
-                sessionStarted?.Invoke(SessionStarted!);
+                sessionStarted?.Invoke(__value0);
             }
-            else if (IsSessionUpdated)
+            else if (SessionUpdated is { } __value1)
             {
-                sessionUpdated?.Invoke(SessionUpdated!);
+                sessionUpdated?.Invoke(__value1);
             }
-            else if (IsSessionInputAudioMuted)
+            else if (SessionInputAudioMuted is { } __value2)
             {
-                sessionInputAudioMuted?.Invoke(SessionInputAudioMuted!);
+                sessionInputAudioMuted?.Invoke(__value2);
             }
-            else if (IsSessionInputAudioUnmuted)
+            else if (SessionInputAudioUnmuted is { } __value3)
             {
-                sessionInputAudioUnmuted?.Invoke(SessionInputAudioUnmuted!);
+                sessionInputAudioUnmuted?.Invoke(__value3);
             }
-            else if (IsSessionInstructionsAppended)
+            else if (SessionInstructionsAppended is { } __value4)
             {
-                sessionInstructionsAppended?.Invoke(SessionInstructionsAppended!);
+                sessionInstructionsAppended?.Invoke(__value4);
             }
-            else if (IsSessionThinkingAppended)
+            else if (SessionThinkingAppended is { } __value5)
             {
-                sessionThinkingAppended?.Invoke(SessionThinkingAppended!);
+                sessionThinkingAppended?.Invoke(__value5);
             }
-            else if (IsSessionCommentaryAppended)
+            else if (SessionCommentaryAppended is { } __value6)
             {
-                sessionCommentaryAppended?.Invoke(SessionCommentaryAppended!);
+                sessionCommentaryAppended?.Invoke(__value6);
             }
-            else if (IsSessionInputTranscriptDelta)
+            else if (SessionInputTranscriptDelta is { } __value7)
             {
-                sessionInputTranscriptDelta?.Invoke(SessionInputTranscriptDelta!);
+                sessionInputTranscriptDelta?.Invoke(__value7);
             }
-            else if (IsSessionOutputTranscriptDelta)
+            else if (SessionOutputTranscriptDelta is { } __value8)
             {
-                sessionOutputTranscriptDelta?.Invoke(SessionOutputTranscriptDelta!);
+                sessionOutputTranscriptDelta?.Invoke(__value8);
             }
-            else if (IsSessionDelegationCreated)
+            else if (SessionDelegationCreated is { } __value9)
             {
-                sessionDelegationCreated?.Invoke(SessionDelegationCreated!);
+                sessionDelegationCreated?.Invoke(__value9);
             }
-            else if (IsResponseEvent)
+            else if (ResponseEvent is { } __value10)
             {
-                responseEvent?.Invoke(ResponseEvent!);
+                responseEvent?.Invoke(__value10);
             }
-            else if (IsSessionUsageUpdated)
+            else if (SessionUsageUpdated is { } __value11)
             {
-                sessionUsageUpdated?.Invoke(SessionUsageUpdated!);
+                sessionUsageUpdated?.Invoke(__value11);
             }
-            else if (IsSessionClosed)
+            else if (SessionClosed is { } __value12)
             {
-                sessionClosed?.Invoke(SessionClosed!);
+                sessionClosed?.Invoke(__value12);
             }
-            else if (IsError)
+            else if (Error is { } __value13)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value13);
             }
-            else if (IsInfo)
+            else if (Info is { } __value14)
             {
-                info?.Invoke(Info!);
+                info?.Invoke(__value14);
             }
         }
 

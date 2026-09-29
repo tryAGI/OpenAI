@@ -39,9 +39,11 @@ internal static partial class AgentsRetrieveAgentSessionArtifactCommandApiComman
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-agent-session-artifact", @"Retrieve an agent session artifact
+        var command = new Command(commandName ?? @"retrieve-agent-session-artifact", @"Retrieve an agent session artifact
 Retrieves immutable metadata for one durable session artifact. See [session artifacts](https://developers.openai.com/api/docs/guides/agents-api/environments/files#openai-hosted-artifacts).");
                         command.Arguments.Add(SessionId);
                         command.Arguments.Add(ArtifactId);
@@ -68,6 +70,7 @@ Retrieves immutable metadata for one durable session artifact. See [session arti
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

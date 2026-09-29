@@ -39,9 +39,11 @@ internal static partial class GroupUsersRemoveGroupUserCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"remove-group-user", @"Remove group user
+        var command = new Command(commandName ?? @"remove-group-user", @"Remove group user
 Removes a user from a group.");
                         command.Arguments.Add(GroupId);
                         command.Arguments.Add(UserId);
@@ -68,6 +70,7 @@ Removes a user from a group.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

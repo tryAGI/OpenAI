@@ -38,9 +38,11 @@ when omitted.",
           Hidden = true,
       };
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"reject-realtime-call", @"Reject call
+        var command = new Command(commandName ?? @"reject-realtime-call", @"Reject call
 Decline an incoming SIP call by returning a SIP status code to the caller.");
                         command.Arguments.Add(CallId);
                         command.Options.Add(StatusCode);
@@ -81,6 +83,7 @@ Decline an incoming SIP call by returning a SIP status code to the caller.");
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

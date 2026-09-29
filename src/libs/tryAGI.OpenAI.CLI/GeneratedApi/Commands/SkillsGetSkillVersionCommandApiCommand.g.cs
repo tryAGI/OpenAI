@@ -39,9 +39,11 @@ internal static partial class SkillsGetSkillVersionCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-skill-version", @"Get Skill Version
+        var command = new Command(commandName ?? @"get-skill-version", @"Get Skill Version
 Get a specific skill version.");
                         command.Arguments.Add(SkillId);
                         command.Arguments.Add(Version);
@@ -68,6 +70,7 @@ Get a specific skill version.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

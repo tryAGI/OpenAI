@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaContainerAutoParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaContainerAutoParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaContainerAutoParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerAuto!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContainerAuto(), typeInfo);
             }
             else if (value.IsLocal)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaLocalEnvironmentParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaLocalEnvironmentParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaLocalEnvironmentParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Local!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLocal(), typeInfo);
             }
             else if (value.IsContainerReference)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaContainerReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaContainerReferenceParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaContainerReferenceParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerReference!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContainerReference(), typeInfo);
             }
         }
     }

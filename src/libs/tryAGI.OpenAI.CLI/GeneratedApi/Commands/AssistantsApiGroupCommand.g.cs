@@ -4,16 +4,20 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class AssistantsApiGroupCommand
+internal static partial class AssistantsApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"assistants", @"Assistants endpoint commands.");
                          command.Subcommands.Add(AssistantsCancelRunCommandApiCommand.Create());
                          command.Subcommands.Add(AssistantsCreateMessageCommandApiCommand.Create());
                          command.Subcommands.Add(AssistantsCreateRunCommandApiCommand.Create());
+                         command.Subcommands.Add(AssistantsCreateRunAsStreamCommandApiCommand.Create());
                          command.Subcommands.Add(AssistantsCreateThreadCommandApiCommand.Create());
                          command.Subcommands.Add(AssistantsCreateThreadAndRunCommandApiCommand.Create());
+                         command.Subcommands.Add(AssistantsCreateThreadAndRunAsStreamCommandApiCommand.Create());
                          command.Subcommands.Add(AssistantsDeleteMessageCommandApiCommand.Create());
                          command.Subcommands.Add(AssistantsDeleteThreadCommandApiCommand.Create());
                          command.Subcommands.Add(AssistantsGetMessageCommandApiCommand.Create());
@@ -27,6 +31,8 @@ internal static class AssistantsApiGroupCommand
                          command.Subcommands.Add(AssistantsModifyRunCommandApiCommand.Create());
                          command.Subcommands.Add(AssistantsModifyThreadCommandApiCommand.Create());
                          command.Subcommands.Add(AssistantsSubmitToolOuputsToRunCommandApiCommand.Create());
+                         command.Subcommands.Add(AssistantsSubmitToolOuputsToRunAsStreamCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

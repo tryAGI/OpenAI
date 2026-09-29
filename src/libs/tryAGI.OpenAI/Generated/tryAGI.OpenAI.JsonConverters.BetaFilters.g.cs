@@ -131,13 +131,13 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaComparisonFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaComparisonFilter?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaComparisonFilter).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComparisonFilter!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickComparisonFilter(), typeInfo);
             }
             else if (value.IsCompoundFilter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaCompoundFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaCompoundFilter?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaCompoundFilter).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CompoundFilter!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompoundFilter(), typeInfo);
             }
         }
     }

@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveFunctionToolInputParam PickFunction() => IsFunction
-            ? Function!
+        public global::tryAGI.OpenAI.LiveFunctionToolInputParam PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveWebSearchToolInputParam PickWebSearch() => IsWebSearch
-            ? WebSearch!
+        public global::tryAGI.OpenAI.LiveWebSearchToolInputParam PickWebSearch() => WebSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunction && function != null)
+            if (Function is { } __value0 && function != null)
             {
-                return function(Function!);
+                return function(__value0);
             }
-            else if (IsWebSearch && webSearch != null)
+            else if (WebSearch is { } __value1 && webSearch != null)
             {
-                return webSearch(WebSearch!);
+                return webSearch(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value1)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value1)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value1);
             }
         }
 

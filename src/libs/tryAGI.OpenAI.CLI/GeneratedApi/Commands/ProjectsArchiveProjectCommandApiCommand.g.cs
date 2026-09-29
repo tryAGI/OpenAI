@@ -33,9 +33,11 @@ internal static partial class ProjectsArchiveProjectCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"archive-project", @"Archive project
+        var command = new Command(commandName ?? @"archive-project", @"Archive project
 Archives a project in the organization. Archived projects cannot be used or updated.");
                         command.Arguments.Add(ProjectId);
 
@@ -59,6 +61,7 @@ Archives a project in the organization. Archived projects cannot be used or upda
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

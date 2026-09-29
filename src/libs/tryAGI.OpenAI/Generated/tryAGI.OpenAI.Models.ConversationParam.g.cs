@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickConversationId() => IsConversationId
-            ? ConversationId!
+        public string PickConversationId() => ConversationId is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationId' but the value was {ToString()}.");
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ConversationParam2 PickConversationObject() => IsConversationObject
-            ? ConversationObject!
+        public global::tryAGI.OpenAI.ConversationParam2 PickConversationObject() => ConversationObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationObject' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -179,13 +179,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsConversationId && conversationId != null)
+            if (ConversationId is { } __value0 && conversationId != null)
             {
-                return conversationId(ConversationId!);
+                return conversationId(__value0);
             }
-            else if (IsConversationObject && conversationObject != null)
+            else if (ConversationObject is { } __value1 && conversationObject != null)
             {
-                return conversationObject(ConversationObject!);
+                return conversationObject(__value1);
             }
 
             return default(TResult);
@@ -205,13 +205,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsConversationId)
+            if (ConversationId is { } __value0)
             {
-                conversationId?.Invoke(ConversationId!);
+                conversationId?.Invoke(__value0);
             }
-            else if (IsConversationObject)
+            else if (ConversationObject is { } __value1)
             {
-                conversationObject?.Invoke(ConversationObject!);
+                conversationObject?.Invoke(__value1);
             }
         }
 
@@ -228,13 +228,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsConversationId)
+            if (ConversationId is { } __value0)
             {
-                conversationId?.Invoke(ConversationId!);
+                conversationId?.Invoke(__value0);
             }
-            else if (IsConversationObject)
+            else if (ConversationObject is { } __value1)
             {
-                conversationObject?.Invoke(ConversationObject!);
+                conversationObject?.Invoke(__value1);
             }
         }
 

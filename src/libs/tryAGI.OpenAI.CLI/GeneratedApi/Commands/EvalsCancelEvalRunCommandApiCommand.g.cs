@@ -39,9 +39,11 @@ internal static partial class EvalsCancelEvalRunCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"cancel-eval-run", @"Cancel eval run
+        var command = new Command(commandName ?? @"cancel-eval-run", @"Cancel eval run
 Cancel an ongoing evaluation run.
 ");
                         command.Arguments.Add(EvalId);
@@ -69,6 +71,7 @@ Cancel an ongoing evaluation run.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

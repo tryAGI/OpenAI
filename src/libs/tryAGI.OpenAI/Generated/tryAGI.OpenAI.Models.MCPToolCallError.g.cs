@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.MCPProtocolError PickMcpProtocolError() => IsMcpProtocolError
-            ? McpProtocolError!
+        public global::tryAGI.OpenAI.MCPProtocolError PickMcpProtocolError() => McpProtocolError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpProtocolError' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.MCPToolExecutionError PickMcpToolExecutionError() => IsMcpToolExecutionError
-            ? McpToolExecutionError!
+        public global::tryAGI.OpenAI.MCPToolExecutionError PickMcpToolExecutionError() => McpToolExecutionError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpToolExecutionError' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.HTTPError PickHttpError() => IsHttpError
-            ? HttpError!
+        public global::tryAGI.OpenAI.HTTPError PickHttpError() => HttpError is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'HttpError' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMcpProtocolError && mcpProtocolError != null)
+            if (McpProtocolError is { } __value0 && mcpProtocolError != null)
             {
-                return mcpProtocolError(McpProtocolError!);
+                return mcpProtocolError(__value0);
             }
-            else if (IsMcpToolExecutionError && mcpToolExecutionError != null)
+            else if (McpToolExecutionError is { } __value1 && mcpToolExecutionError != null)
             {
-                return mcpToolExecutionError(McpToolExecutionError!);
+                return mcpToolExecutionError(__value1);
             }
-            else if (IsHttpError && httpError != null)
+            else if (HttpError is { } __value2 && httpError != null)
             {
-                return httpError(HttpError!);
+                return httpError(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMcpProtocolError)
+            if (McpProtocolError is { } __value0)
             {
-                mcpProtocolError?.Invoke(McpProtocolError!);
+                mcpProtocolError?.Invoke(__value0);
             }
-            else if (IsMcpToolExecutionError)
+            else if (McpToolExecutionError is { } __value1)
             {
-                mcpToolExecutionError?.Invoke(McpToolExecutionError!);
+                mcpToolExecutionError?.Invoke(__value1);
             }
-            else if (IsHttpError)
+            else if (HttpError is { } __value2)
             {
-                httpError?.Invoke(HttpError!);
+                httpError?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMcpProtocolError)
+            if (McpProtocolError is { } __value0)
             {
-                mcpProtocolError?.Invoke(McpProtocolError!);
+                mcpProtocolError?.Invoke(__value0);
             }
-            else if (IsMcpToolExecutionError)
+            else if (McpToolExecutionError is { } __value1)
             {
-                mcpToolExecutionError?.Invoke(McpToolExecutionError!);
+                mcpToolExecutionError?.Invoke(__value1);
             }
-            else if (IsHttpError)
+            else if (HttpError is { } __value2)
             {
-                httpError?.Invoke(HttpError!);
+                httpError?.Invoke(__value2);
             }
         }
 

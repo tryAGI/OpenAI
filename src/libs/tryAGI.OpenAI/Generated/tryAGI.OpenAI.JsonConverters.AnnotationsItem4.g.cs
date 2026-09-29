@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaFileCitationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaFileCitationParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaFileCitationParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileCitation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFileCitation(), typeInfo);
             }
             else if (value.IsUrlCitation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaUrlCitationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaUrlCitationParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaUrlCitationParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UrlCitation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUrlCitation(), typeInfo);
             }
             else if (value.IsContainerFileCitation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaContainerFileCitationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaContainerFileCitationParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaContainerFileCitationParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContainerFileCitation!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickContainerFileCitation(), typeInfo);
             }
         }
     }

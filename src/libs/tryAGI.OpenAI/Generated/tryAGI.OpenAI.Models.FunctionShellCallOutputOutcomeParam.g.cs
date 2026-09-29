@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam PickTimeout() => IsTimeout
-            ? Timeout!
+        public global::tryAGI.OpenAI.FunctionShellCallOutputTimeoutOutcomeParam PickTimeout() => Timeout is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Timeout' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam PickExit() => IsExit
-            ? Exit!
+        public global::tryAGI.OpenAI.FunctionShellCallOutputExitOutcomeParam PickExit() => Exit is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Exit' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTimeout && timeout != null)
+            if (Timeout is { } __value0 && timeout != null)
             {
-                return timeout(Timeout!);
+                return timeout(__value0);
             }
-            else if (IsExit && exit != null)
+            else if (Exit is { } __value1 && exit != null)
             {
-                return exit(Exit!);
+                return exit(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTimeout)
+            if (Timeout is { } __value0)
             {
-                timeout?.Invoke(Timeout!);
+                timeout?.Invoke(__value0);
             }
-            else if (IsExit)
+            else if (Exit is { } __value1)
             {
-                exit?.Invoke(Exit!);
+                exit?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTimeout)
+            if (Timeout is { } __value0)
             {
-                timeout?.Invoke(Timeout!);
+                timeout?.Invoke(__value0);
             }
-            else if (IsExit)
+            else if (Exit is { } __value1)
             {
-                exit?.Invoke(Exit!);
+                exit?.Invoke(__value1);
             }
         }
 

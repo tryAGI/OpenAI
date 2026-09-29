@@ -39,9 +39,11 @@ internal static partial class RetrieveContainerFileCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-container-file", @"Retrieve container file
+        var command = new Command(commandName ?? @"retrieve-container-file", @"Retrieve container file
 Retrieve Container File");
                         command.Arguments.Add(ContainerId);
                         command.Arguments.Add(FileId);
@@ -68,6 +70,7 @@ Retrieve Container File");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

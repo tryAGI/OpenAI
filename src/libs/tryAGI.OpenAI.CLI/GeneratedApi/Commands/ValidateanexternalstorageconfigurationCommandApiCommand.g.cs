@@ -33,9 +33,11 @@ internal static partial class ValidateanexternalstorageconfigurationCommandApiCo
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"validateanexternalstorageconfiguration", @"Validate an external storage configuration
+        var command = new Command(commandName ?? @"validateanexternalstorageconfiguration", @"Validate an external storage configuration
 Validate one customer-managed external storage configuration.");
                         command.Arguments.Add(ExternalStorageId);
 
@@ -59,6 +61,7 @@ Validate one customer-managed external storage configuration.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

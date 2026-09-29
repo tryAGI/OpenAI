@@ -39,9 +39,11 @@ internal static partial class VectorStoresGetVectorStoreFileCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-vector-store-file", @"Retrieve vector store file
+        var command = new Command(commandName ?? @"get-vector-store-file", @"Retrieve vector store file
 Retrieves a vector store file.");
                         command.Arguments.Add(VectorStoreId);
                         command.Arguments.Add(FileId);
@@ -68,6 +70,7 @@ Retrieves a vector store file.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

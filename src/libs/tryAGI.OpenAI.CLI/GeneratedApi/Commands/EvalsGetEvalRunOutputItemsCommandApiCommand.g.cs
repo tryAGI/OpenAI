@@ -65,9 +65,11 @@ items or `pass` to filter by passed output items.
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-eval-run-output-items", @"Get eval run output items
+        var command = new Command(commandName ?? @"get-eval-run-output-items", @"Get eval run output items
 Get a list of output items for an evaluation run.
 ");
                         command.Arguments.Add(EvalId);
@@ -115,6 +117,7 @@ Get a list of output items for an evaluation run.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

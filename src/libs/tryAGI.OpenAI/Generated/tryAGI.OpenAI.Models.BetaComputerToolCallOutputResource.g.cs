@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaComputerToolCallOutput PickComputerToolCallOutput() => IsComputerToolCallOutput
-            ? ComputerToolCallOutput!
+        public global::tryAGI.OpenAI.BetaComputerToolCallOutput PickComputerToolCallOutput() => ComputerToolCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerToolCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaComputerToolCallOutputResourceVariant2 PickBetaComputerToolCallOutputResourceVariant2() => IsBetaComputerToolCallOutputResourceVariant2
-            ? BetaComputerToolCallOutputResourceVariant2!
+        public global::tryAGI.OpenAI.BetaComputerToolCallOutputResourceVariant2 PickBetaComputerToolCallOutputResourceVariant2() => BetaComputerToolCallOutputResourceVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaComputerToolCallOutputResourceVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsComputerToolCallOutput && computerToolCallOutput != null)
+            if (ComputerToolCallOutput is { } __value0 && computerToolCallOutput != null)
             {
-                return computerToolCallOutput(ComputerToolCallOutput!);
+                return computerToolCallOutput(__value0);
             }
-            else if (IsBetaComputerToolCallOutputResourceVariant2 && betaComputerToolCallOutputResourceVariant2 != null)
+            else if (BetaComputerToolCallOutputResourceVariant2 is { } __value1 && betaComputerToolCallOutputResourceVariant2 != null)
             {
-                return betaComputerToolCallOutputResourceVariant2(BetaComputerToolCallOutputResourceVariant2!);
+                return betaComputerToolCallOutputResourceVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsComputerToolCallOutput)
+            if (ComputerToolCallOutput is { } __value0)
             {
-                computerToolCallOutput?.Invoke(ComputerToolCallOutput!);
+                computerToolCallOutput?.Invoke(__value0);
             }
-            else if (IsBetaComputerToolCallOutputResourceVariant2)
+            else if (BetaComputerToolCallOutputResourceVariant2 is { } __value1)
             {
-                betaComputerToolCallOutputResourceVariant2?.Invoke(BetaComputerToolCallOutputResourceVariant2!);
+                betaComputerToolCallOutputResourceVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsComputerToolCallOutput)
+            if (ComputerToolCallOutput is { } __value0)
             {
-                computerToolCallOutput?.Invoke(ComputerToolCallOutput!);
+                computerToolCallOutput?.Invoke(__value0);
             }
-            else if (IsBetaComputerToolCallOutputResourceVariant2)
+            else if (BetaComputerToolCallOutputResourceVariant2 is { } __value1)
             {
-                betaComputerToolCallOutputResourceVariant2?.Invoke(BetaComputerToolCallOutputResourceVariant2!);
+                betaComputerToolCallOutputResourceVariant2?.Invoke(__value1);
             }
         }
 

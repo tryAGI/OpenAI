@@ -40,9 +40,11 @@ internal static partial class AudioUpdateVoiceConsentCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-voice-consent", @"Update voice consent
+        var command = new Command(commandName ?? @"update-voice-consent", @"Update voice consent
 Updates a voice consent recording (metadata only).");
                         command.Arguments.Add(ConsentId);
                         command.Options.Add(NameOption);
@@ -69,6 +71,7 @@ Updates a voice consent recording (metadata only).");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

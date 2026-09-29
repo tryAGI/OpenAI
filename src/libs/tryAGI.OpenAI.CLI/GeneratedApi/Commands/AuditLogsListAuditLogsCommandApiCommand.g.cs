@@ -88,9 +88,11 @@ internal static partial class AuditLogsListAuditLogsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-audit-logs", @"List audit logs
+        var command = new Command(commandName ?? @"list-audit-logs", @"List audit logs
 List user actions and configuration changes within this organization.");
                         command.Options.Add(EffectiveAt);
                         command.Options.Add(ProjectIds);
@@ -149,6 +151,7 @@ List user actions and configuration changes within this organization.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

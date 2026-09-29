@@ -54,9 +54,11 @@ internal static partial class FilesListFilesCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-files", @"List files
+        var command = new Command(commandName ?? @"list-files", @"List files
 Returns a list of files.");
                         command.Options.Add(Purpose);
                         command.Options.Add(Limit);
@@ -97,6 +99,7 @@ Returns a list of files.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

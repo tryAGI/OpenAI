@@ -61,9 +61,11 @@ internal static partial class AssistantsListRunsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-runs", @"List runs
+        var command = new Command(commandName ?? @"list-runs", @"List runs
 Returns a list of runs belonging to a thread.");
                         command.Arguments.Add(ThreadId);
                         command.Options.Add(Limit);
@@ -107,6 +109,7 @@ Returns a list of runs belonging to a thread.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

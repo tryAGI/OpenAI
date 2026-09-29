@@ -54,9 +54,11 @@ internal static partial class ProjectsListProjectRateLimitsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-project-rate-limits", @"List project rate limits
+        var command = new Command(commandName ?? @"list-project-rate-limits", @"List project rate limits
 Returns the rate limits per model for a project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Limit);
@@ -97,6 +99,7 @@ Returns the rate limits per model for a project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -33,9 +33,11 @@ internal static partial class VectorStoresDeleteVectorStoreCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-vector-store", @"Delete vector store
+        var command = new Command(commandName ?? @"delete-vector-store", @"Delete vector store
 Delete a vector store.");
                         command.Arguments.Add(VectorStoreId);
 
@@ -59,6 +61,7 @@ Delete a vector store.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

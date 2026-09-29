@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaComparisonFilter PickComparisonFilter() => IsComparisonFilter
-            ? ComparisonFilter!
+        public global::tryAGI.OpenAI.BetaComparisonFilter PickComparisonFilter() => ComparisonFilter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComparisonFilter' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaCompoundFilter PickCompoundFilter() => IsCompoundFilter
-            ? CompoundFilter!
+        public global::tryAGI.OpenAI.BetaCompoundFilter PickCompoundFilter() => CompoundFilter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CompoundFilter' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsComparisonFilter && comparisonFilter != null)
+            if (ComparisonFilter is { } __value0 && comparisonFilter != null)
             {
-                return comparisonFilter(ComparisonFilter!);
+                return comparisonFilter(__value0);
             }
-            else if (IsCompoundFilter && compoundFilter != null)
+            else if (CompoundFilter is { } __value1 && compoundFilter != null)
             {
-                return compoundFilter(CompoundFilter!);
+                return compoundFilter(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsComparisonFilter)
+            if (ComparisonFilter is { } __value0)
             {
-                comparisonFilter?.Invoke(ComparisonFilter!);
+                comparisonFilter?.Invoke(__value0);
             }
-            else if (IsCompoundFilter)
+            else if (CompoundFilter is { } __value1)
             {
-                compoundFilter?.Invoke(CompoundFilter!);
+                compoundFilter?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsComparisonFilter)
+            if (ComparisonFilter is { } __value0)
             {
-                comparisonFilter?.Invoke(ComparisonFilter!);
+                comparisonFilter?.Invoke(__value0);
             }
-            else if (IsCompoundFilter)
+            else if (CompoundFilter is { } __value1)
             {
-                compoundFilter?.Invoke(CompoundFilter!);
+                compoundFilter?.Invoke(__value1);
             }
         }
 

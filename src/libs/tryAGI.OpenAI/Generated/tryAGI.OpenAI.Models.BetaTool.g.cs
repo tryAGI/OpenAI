@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaFunctionTool PickFunction() => IsFunction
-            ? Function!
+        public global::tryAGI.OpenAI.BetaFunctionTool PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaFileSearchTool PickFileSearch() => IsFileSearch
-            ? FileSearch!
+        public global::tryAGI.OpenAI.BetaFileSearchTool PickFileSearch() => FileSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaComputerTool PickComputer() => IsComputer
-            ? Computer!
+        public global::tryAGI.OpenAI.BetaComputerTool PickComputer() => Computer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Computer' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaComputerUsePreviewTool PickComputerUsePreview() => IsComputerUsePreview
-            ? ComputerUsePreview!
+        public global::tryAGI.OpenAI.BetaComputerUsePreviewTool PickComputerUsePreview() => ComputerUsePreview is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUsePreview' but the value was {ToString()}.");
 
         /// <summary>
@@ -191,8 +191,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaWebSearchTool PickWebSearch() => IsWebSearch
-            ? WebSearch!
+        public global::tryAGI.OpenAI.BetaWebSearchTool PickWebSearch() => WebSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -229,8 +229,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaMCPTool PickMcp() => IsMcp
-            ? Mcp!
+        public global::tryAGI.OpenAI.BetaMCPTool PickMcp() => Mcp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
 
         /// <summary>
@@ -266,8 +266,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaCodeInterpreterTool PickCodeInterpreter() => IsCodeInterpreter
-            ? CodeInterpreter!
+        public global::tryAGI.OpenAI.BetaCodeInterpreterTool PickCodeInterpreter() => CodeInterpreter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreter' but the value was {ToString()}.");
 
         /// <summary>
@@ -303,8 +303,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaProgrammaticToolCallingParam PickProgrammaticToolCalling() => IsProgrammaticToolCalling
-            ? ProgrammaticToolCalling!
+        public global::tryAGI.OpenAI.BetaProgrammaticToolCallingParam PickProgrammaticToolCalling() => ProgrammaticToolCalling is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProgrammaticToolCalling' but the value was {ToString()}.");
 
         /// <summary>
@@ -340,8 +340,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaImageGenTool PickImageGeneration() => IsImageGeneration
-            ? ImageGeneration!
+        public global::tryAGI.OpenAI.BetaImageGenTool PickImageGeneration() => ImageGeneration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGeneration' but the value was {ToString()}.");
 
         /// <summary>
@@ -377,8 +377,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaLocalShellToolParam PickLocalShell() => IsLocalShell
-            ? LocalShell!
+        public global::tryAGI.OpenAI.BetaLocalShellToolParam PickLocalShell() => LocalShell is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'LocalShell' but the value was {ToString()}.");
 
         /// <summary>
@@ -414,8 +414,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaFunctionShellToolParam PickShell() => IsShell
-            ? Shell!
+        public global::tryAGI.OpenAI.BetaFunctionShellToolParam PickShell() => Shell is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Shell' but the value was {ToString()}.");
 
         /// <summary>
@@ -451,8 +451,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaCustomToolParam PickCustom() => IsCustom
-            ? Custom!
+        public global::tryAGI.OpenAI.BetaCustomToolParam PickCustom() => Custom is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
 
         /// <summary>
@@ -488,8 +488,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaNamespaceToolParam PickNamespace() => IsNamespace
-            ? Namespace!
+        public global::tryAGI.OpenAI.BetaNamespaceToolParam PickNamespace() => Namespace is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Namespace' but the value was {ToString()}.");
 
         /// <summary>
@@ -525,8 +525,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaToolSearchToolParam PickToolSearch() => IsToolSearch
-            ? ToolSearch!
+        public global::tryAGI.OpenAI.BetaToolSearchToolParam PickToolSearch() => ToolSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -562,8 +562,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaWebSearchPreviewTool PickWebSearchPreview() => IsWebSearchPreview
-            ? WebSearchPreview!
+        public global::tryAGI.OpenAI.BetaWebSearchPreviewTool PickWebSearchPreview() => WebSearchPreview is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchPreview' but the value was {ToString()}.");
 
         /// <summary>
@@ -599,8 +599,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaApplyPatchToolParam PickApplyPatch() => IsApplyPatch
-            ? ApplyPatch!
+        public global::tryAGI.OpenAI.BetaApplyPatchToolParam PickApplyPatch() => ApplyPatch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatch' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -1089,69 +1089,69 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunction && function != null)
+            if (Function is { } __value0 && function != null)
             {
-                return function(Function!);
+                return function(__value0);
             }
-            else if (IsFileSearch && fileSearch != null)
+            else if (FileSearch is { } __value1 && fileSearch != null)
             {
-                return fileSearch(FileSearch!);
+                return fileSearch(__value1);
             }
-            else if (IsComputer && computer != null)
+            else if (Computer is { } __value2 && computer != null)
             {
-                return computer(Computer!);
+                return computer(__value2);
             }
-            else if (IsComputerUsePreview && computerUsePreview != null)
+            else if (ComputerUsePreview is { } __value3 && computerUsePreview != null)
             {
-                return computerUsePreview(ComputerUsePreview!);
+                return computerUsePreview(__value3);
             }
-            else if (IsWebSearch && webSearch != null)
+            else if (WebSearch is { } __value4 && webSearch != null)
             {
-                return webSearch(WebSearch!);
+                return webSearch(__value4);
             }
-            else if (IsMcp && mcp != null)
+            else if (Mcp is { } __value5 && mcp != null)
             {
-                return mcp(Mcp!);
+                return mcp(__value5);
             }
-            else if (IsCodeInterpreter && codeInterpreter != null)
+            else if (CodeInterpreter is { } __value6 && codeInterpreter != null)
             {
-                return codeInterpreter(CodeInterpreter!);
+                return codeInterpreter(__value6);
             }
-            else if (IsProgrammaticToolCalling && programmaticToolCalling != null)
+            else if (ProgrammaticToolCalling is { } __value7 && programmaticToolCalling != null)
             {
-                return programmaticToolCalling(ProgrammaticToolCalling!);
+                return programmaticToolCalling(__value7);
             }
-            else if (IsImageGeneration && imageGeneration != null)
+            else if (ImageGeneration is { } __value8 && imageGeneration != null)
             {
-                return imageGeneration(ImageGeneration!);
+                return imageGeneration(__value8);
             }
-            else if (IsLocalShell && localShell != null)
+            else if (LocalShell is { } __value9 && localShell != null)
             {
-                return localShell(LocalShell!);
+                return localShell(__value9);
             }
-            else if (IsShell && shell != null)
+            else if (Shell is { } __value10 && shell != null)
             {
-                return shell(Shell!);
+                return shell(__value10);
             }
-            else if (IsCustom && custom != null)
+            else if (Custom is { } __value11 && custom != null)
             {
-                return custom(Custom!);
+                return custom(__value11);
             }
-            else if (IsNamespace && @namespace != null)
+            else if (Namespace is { } __value12 && @namespace != null)
             {
-                return @namespace(Namespace!);
+                return @namespace(__value12);
             }
-            else if (IsToolSearch && toolSearch != null)
+            else if (ToolSearch is { } __value13 && toolSearch != null)
             {
-                return toolSearch(ToolSearch!);
+                return toolSearch(__value13);
             }
-            else if (IsWebSearchPreview && webSearchPreview != null)
+            else if (WebSearchPreview is { } __value14 && webSearchPreview != null)
             {
-                return webSearchPreview(WebSearchPreview!);
+                return webSearchPreview(__value14);
             }
-            else if (IsApplyPatch && applyPatch != null)
+            else if (ApplyPatch is { } __value15 && applyPatch != null)
             {
-                return applyPatch(ApplyPatch!);
+                return applyPatch(__value15);
             }
 
             return default(TResult);
@@ -1199,69 +1199,69 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsFileSearch)
+            else if (FileSearch is { } __value1)
             {
-                fileSearch?.Invoke(FileSearch!);
+                fileSearch?.Invoke(__value1);
             }
-            else if (IsComputer)
+            else if (Computer is { } __value2)
             {
-                computer?.Invoke(Computer!);
+                computer?.Invoke(__value2);
             }
-            else if (IsComputerUsePreview)
+            else if (ComputerUsePreview is { } __value3)
             {
-                computerUsePreview?.Invoke(ComputerUsePreview!);
+                computerUsePreview?.Invoke(__value3);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value4)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value4);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value5)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value5);
             }
-            else if (IsCodeInterpreter)
+            else if (CodeInterpreter is { } __value6)
             {
-                codeInterpreter?.Invoke(CodeInterpreter!);
+                codeInterpreter?.Invoke(__value6);
             }
-            else if (IsProgrammaticToolCalling)
+            else if (ProgrammaticToolCalling is { } __value7)
             {
-                programmaticToolCalling?.Invoke(ProgrammaticToolCalling!);
+                programmaticToolCalling?.Invoke(__value7);
             }
-            else if (IsImageGeneration)
+            else if (ImageGeneration is { } __value8)
             {
-                imageGeneration?.Invoke(ImageGeneration!);
+                imageGeneration?.Invoke(__value8);
             }
-            else if (IsLocalShell)
+            else if (LocalShell is { } __value9)
             {
-                localShell?.Invoke(LocalShell!);
+                localShell?.Invoke(__value9);
             }
-            else if (IsShell)
+            else if (Shell is { } __value10)
             {
-                shell?.Invoke(Shell!);
+                shell?.Invoke(__value10);
             }
-            else if (IsCustom)
+            else if (Custom is { } __value11)
             {
-                custom?.Invoke(Custom!);
+                custom?.Invoke(__value11);
             }
-            else if (IsNamespace)
+            else if (Namespace is { } __value12)
             {
-                @namespace?.Invoke(Namespace!);
+                @namespace?.Invoke(__value12);
             }
-            else if (IsToolSearch)
+            else if (ToolSearch is { } __value13)
             {
-                toolSearch?.Invoke(ToolSearch!);
+                toolSearch?.Invoke(__value13);
             }
-            else if (IsWebSearchPreview)
+            else if (WebSearchPreview is { } __value14)
             {
-                webSearchPreview?.Invoke(WebSearchPreview!);
+                webSearchPreview?.Invoke(__value14);
             }
-            else if (IsApplyPatch)
+            else if (ApplyPatch is { } __value15)
             {
-                applyPatch?.Invoke(ApplyPatch!);
+                applyPatch?.Invoke(__value15);
             }
         }
 
@@ -1292,69 +1292,69 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsFileSearch)
+            else if (FileSearch is { } __value1)
             {
-                fileSearch?.Invoke(FileSearch!);
+                fileSearch?.Invoke(__value1);
             }
-            else if (IsComputer)
+            else if (Computer is { } __value2)
             {
-                computer?.Invoke(Computer!);
+                computer?.Invoke(__value2);
             }
-            else if (IsComputerUsePreview)
+            else if (ComputerUsePreview is { } __value3)
             {
-                computerUsePreview?.Invoke(ComputerUsePreview!);
+                computerUsePreview?.Invoke(__value3);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value4)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value4);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value5)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value5);
             }
-            else if (IsCodeInterpreter)
+            else if (CodeInterpreter is { } __value6)
             {
-                codeInterpreter?.Invoke(CodeInterpreter!);
+                codeInterpreter?.Invoke(__value6);
             }
-            else if (IsProgrammaticToolCalling)
+            else if (ProgrammaticToolCalling is { } __value7)
             {
-                programmaticToolCalling?.Invoke(ProgrammaticToolCalling!);
+                programmaticToolCalling?.Invoke(__value7);
             }
-            else if (IsImageGeneration)
+            else if (ImageGeneration is { } __value8)
             {
-                imageGeneration?.Invoke(ImageGeneration!);
+                imageGeneration?.Invoke(__value8);
             }
-            else if (IsLocalShell)
+            else if (LocalShell is { } __value9)
             {
-                localShell?.Invoke(LocalShell!);
+                localShell?.Invoke(__value9);
             }
-            else if (IsShell)
+            else if (Shell is { } __value10)
             {
-                shell?.Invoke(Shell!);
+                shell?.Invoke(__value10);
             }
-            else if (IsCustom)
+            else if (Custom is { } __value11)
             {
-                custom?.Invoke(Custom!);
+                custom?.Invoke(__value11);
             }
-            else if (IsNamespace)
+            else if (Namespace is { } __value12)
             {
-                @namespace?.Invoke(Namespace!);
+                @namespace?.Invoke(__value12);
             }
-            else if (IsToolSearch)
+            else if (ToolSearch is { } __value13)
             {
-                toolSearch?.Invoke(ToolSearch!);
+                toolSearch?.Invoke(__value13);
             }
-            else if (IsWebSearchPreview)
+            else if (WebSearchPreview is { } __value14)
             {
-                webSearchPreview?.Invoke(WebSearchPreview!);
+                webSearchPreview?.Invoke(__value14);
             }
-            else if (IsApplyPatch)
+            else if (ApplyPatch is { } __value15)
             {
-                applyPatch?.Invoke(ApplyPatch!);
+                applyPatch?.Invoke(__value15);
             }
         }
 

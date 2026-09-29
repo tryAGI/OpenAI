@@ -41,9 +41,11 @@ internal static partial class InvitesListInvitesCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-invites", @"List invites
+        var command = new Command(commandName ?? @"list-invites", @"List invites
 Returns a list of invites in the organization.");
                         command.Options.Add(Limit);
                         command.Options.Add(After);
@@ -78,6 +80,7 @@ Returns a list of invites in the organization.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

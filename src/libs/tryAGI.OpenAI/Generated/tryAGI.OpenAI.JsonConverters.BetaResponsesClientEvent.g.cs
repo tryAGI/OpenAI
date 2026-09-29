@@ -169,19 +169,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseCreate!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseCreate(), typeInfo);
             }
             else if (value.IsResponseSteer)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseSteerEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseSteerEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseSteerEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseSteer!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseSteer(), typeInfo);
             }
             else if (value.IsResponseInject)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaResponseInjectEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaResponseInjectEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaResponseInjectEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponseInject!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponseInject(), typeInfo);
             }
         }
     }

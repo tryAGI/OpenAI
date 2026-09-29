@@ -149,13 +149,13 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ModelIdsShared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ModelIdsShared> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ModelIdsShared).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Shared!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickShared(), typeInfo);
             }
             else if (value.IsResponsesOnlyModel)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ModelIdsResponsesEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ModelIdsResponsesEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ModelIdsResponsesEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResponsesOnlyModel!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponsesOnlyModel(), typeInfo);
             }
         }
     }

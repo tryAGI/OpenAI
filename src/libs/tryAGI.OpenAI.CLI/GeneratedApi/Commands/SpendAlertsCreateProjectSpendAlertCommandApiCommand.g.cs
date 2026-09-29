@@ -52,9 +52,11 @@ internal static partial class SpendAlertsCreateProjectSpendAlertCommandApiComman
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-project-spend-alert", @"Create project spend alert
+        var command = new Command(commandName ?? @"create-project-spend-alert", @"Create project spend alert
 Creates a project spend alert.");
                         command.Arguments.Add(ProjectId);                        command.Options.Add(CreateSpendAlertBodyOptionSetOptions.ThresholdAmount);
                         command.Options.Add(CreateSpendAlertBodyOptionSetOptions.Currency);
@@ -123,6 +125,7 @@ Creates a project spend alert.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

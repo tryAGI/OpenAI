@@ -51,9 +51,11 @@ internal static partial class ChatGetChatCompletionMessagesCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-chat-completion-messages", @"Get chat messages
+        var command = new Command(commandName ?? @"get-chat-completion-messages", @"Get chat messages
 Get the messages in a stored chat completion. Only Chat Completions that
 have been created with the `store` parameter set to `true` will be
 returned.
@@ -97,6 +99,7 @@ returned.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -45,9 +45,11 @@ internal static partial class ProjectsListProjectsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-projects", @"List projects
+        var command = new Command(commandName ?? @"list-projects", @"List projects
 Returns a list of projects.");
                         command.Options.Add(Limit);
                         command.Options.Add(After);
@@ -85,6 +87,7 @@ Returns a list of projects.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

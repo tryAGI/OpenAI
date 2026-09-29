@@ -292,37 +292,37 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.EasyInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.EasyInputMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EasyInputMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessage(), typeInfo);
             }
             else if (value.IsItem)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.Item), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.Item> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.Item).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Item!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickItem(), typeInfo);
             }
             else if (value.IsCompactionTrigger)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CompactionTriggerItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CompactionTriggerItemParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CompactionTriggerItemParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CompactionTrigger!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompactionTrigger(), typeInfo);
             }
             else if (value.IsItemReference)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ItemReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ItemReferenceParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ItemReferenceParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ItemReference!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickItemReference(), typeInfo);
             }
             else if (value.IsProgram)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgramItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgramItemParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgramItemParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Program!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProgram(), typeInfo);
             }
             else if (value.IsProgramOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ProgramOutputItemParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ProgramOutputItemParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ProgramOutputItemParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ProgramOutput!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProgramOutput(), typeInfo);
             }
         }
     }

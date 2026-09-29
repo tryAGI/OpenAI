@@ -46,8 +46,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaEasyInputMessage PickMessage() => IsMessage
-            ? Message!
+        public global::tryAGI.OpenAI.BetaEasyInputMessage PickMessage() => Message is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaItem PickItem() => IsItem
-            ? Item!.Value
+        public global::tryAGI.OpenAI.BetaItem PickItem() => Item is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Item' but the value was {ToString()}.");
 
         /// <summary>
@@ -122,8 +122,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaCompactionTriggerItemParam PickCompactionTrigger() => IsCompactionTrigger
-            ? CompactionTrigger!
+        public global::tryAGI.OpenAI.BetaCompactionTriggerItemParam PickCompactionTrigger() => CompactionTrigger is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CompactionTrigger' but the value was {ToString()}.");
 
         /// <summary>
@@ -159,8 +159,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaItemReferenceParam PickItemReference() => IsItemReference
-            ? ItemReference!
+        public global::tryAGI.OpenAI.BetaItemReferenceParam PickItemReference() => ItemReference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ItemReference' but the value was {ToString()}.");
 
         /// <summary>
@@ -196,8 +196,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaProgramItemParam PickProgram() => IsProgram
-            ? Program!
+        public global::tryAGI.OpenAI.BetaProgramItemParam PickProgram() => Program is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Program' but the value was {ToString()}.");
 
         /// <summary>
@@ -233,8 +233,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaProgramOutputItemParam PickProgramOutput() => IsProgramOutput
-            ? ProgramOutput!
+        public global::tryAGI.OpenAI.BetaProgramOutputItemParam PickProgramOutput() => ProgramOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProgramOutput' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -443,29 +443,29 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMessage && message != null)
+            if (Message is { } __value0 && message != null)
             {
-                return message(Message!);
+                return message(__value0);
             }
-            else if (IsItem && item != null)
+            else if (Item is { } __value1 && item != null)
             {
-                return item(Item!);
+                return item(__value1);
             }
-            else if (IsCompactionTrigger && compactionTrigger != null)
+            else if (CompactionTrigger is { } __value2 && compactionTrigger != null)
             {
-                return compactionTrigger(CompactionTrigger!);
+                return compactionTrigger(__value2);
             }
-            else if (IsItemReference && itemReference != null)
+            else if (ItemReference is { } __value3 && itemReference != null)
             {
-                return itemReference(ItemReference!);
+                return itemReference(__value3);
             }
-            else if (IsProgram && program != null)
+            else if (Program is { } __value4 && program != null)
             {
-                return program(Program!);
+                return program(__value4);
             }
-            else if (IsProgramOutput && programOutput != null)
+            else if (ProgramOutput is { } __value5 && programOutput != null)
             {
-                return programOutput(ProgramOutput!);
+                return programOutput(__value5);
             }
 
             return default(TResult);
@@ -493,29 +493,29 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsItem)
+            else if (Item is { } __value1)
             {
-                item?.Invoke(Item!);
+                item?.Invoke(__value1);
             }
-            else if (IsCompactionTrigger)
+            else if (CompactionTrigger is { } __value2)
             {
-                compactionTrigger?.Invoke(CompactionTrigger!);
+                compactionTrigger?.Invoke(__value2);
             }
-            else if (IsItemReference)
+            else if (ItemReference is { } __value3)
             {
-                itemReference?.Invoke(ItemReference!);
+                itemReference?.Invoke(__value3);
             }
-            else if (IsProgram)
+            else if (Program is { } __value4)
             {
-                program?.Invoke(Program!);
+                program?.Invoke(__value4);
             }
-            else if (IsProgramOutput)
+            else if (ProgramOutput is { } __value5)
             {
-                programOutput?.Invoke(ProgramOutput!);
+                programOutput?.Invoke(__value5);
             }
         }
 
@@ -536,29 +536,29 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsItem)
+            else if (Item is { } __value1)
             {
-                item?.Invoke(Item!);
+                item?.Invoke(__value1);
             }
-            else if (IsCompactionTrigger)
+            else if (CompactionTrigger is { } __value2)
             {
-                compactionTrigger?.Invoke(CompactionTrigger!);
+                compactionTrigger?.Invoke(__value2);
             }
-            else if (IsItemReference)
+            else if (ItemReference is { } __value3)
             {
-                itemReference?.Invoke(ItemReference!);
+                itemReference?.Invoke(__value3);
             }
-            else if (IsProgram)
+            else if (Program is { } __value4)
             {
-                program?.Invoke(Program!);
+                program?.Invoke(__value4);
             }
-            else if (IsProgramOutput)
+            else if (ProgramOutput is { } __value5)
             {
-                programOutput?.Invoke(ProgramOutput!);
+                programOutput?.Invoke(__value5);
             }
         }
 

@@ -47,9 +47,11 @@ The request must include enough format metadata for the file to be identified. W
           Hidden = true,
       };
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-transcription-as-stream", @"Create transcription
+        var command = new Command(commandName ?? @"create-transcription-as-stream", @"Create transcription
 Transcribes audio into the input language.
 
 Returns a transcription object in `json`, `diarized_json`, or `verbose_json`
@@ -136,6 +138,7 @@ transcript events. Supported formats depend on the model.
                                         cancellationToken: cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

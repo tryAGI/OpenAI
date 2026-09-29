@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.HostedPluginParamInline PickInline() => IsInline
-            ? Inline!
+        public global::tryAGI.OpenAI.HostedPluginParamInline PickInline() => Inline is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Inline' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -120,9 +120,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInline && inline != null)
+            if (Inline is { } __value0 && inline != null)
             {
-                return inline(Inline!);
+                return inline(__value0);
             }
 
             return default(TResult);
@@ -140,9 +140,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInline)
+            if (Inline is { } __value0)
             {
-                inline?.Invoke(Inline!);
+                inline?.Invoke(__value0);
             }
         }
 
@@ -158,9 +158,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInline)
+            if (Inline is { } __value0)
             {
-                inline?.Invoke(Inline!);
+                inline?.Invoke(__value0);
             }
         }
 

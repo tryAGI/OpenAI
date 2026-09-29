@@ -39,9 +39,11 @@ internal static partial class GroupUsersRetrieveGroupUserCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-group-user", @"Retrieve group user
+        var command = new Command(commandName ?? @"retrieve-group-user", @"Retrieve group user
 Retrieves a user in a group.");
                         command.Arguments.Add(GroupId);
                         command.Arguments.Add(UserId);
@@ -68,6 +70,7 @@ Retrieves a user in a group.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

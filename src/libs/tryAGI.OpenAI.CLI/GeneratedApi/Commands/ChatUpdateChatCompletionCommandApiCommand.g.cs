@@ -55,9 +55,11 @@ internal static partial class ChatUpdateChatCompletionCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-chat-completion", @"Update chat completion
+        var command = new Command(commandName ?? @"update-chat-completion", @"Update chat completion
 Modify a stored chat completion. Only Chat Completions that have been
 created with the `store` parameter set to `true` can be modified. Currently,
 the only supported modification is to update the `metadata` field.
@@ -115,6 +117,7 @@ the only supported modification is to update the `metadata` field.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

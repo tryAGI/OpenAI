@@ -40,9 +40,11 @@ internal static partial class GroupUsersAddGroupUserCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"add-group-user", @"Add group user
+        var command = new Command(commandName ?? @"add-group-user", @"Add group user
 Adds a user to a group.");
                         command.Arguments.Add(GroupId);
                         command.Options.Add(UserId);
@@ -69,6 +71,7 @@ Adds a user to a group.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

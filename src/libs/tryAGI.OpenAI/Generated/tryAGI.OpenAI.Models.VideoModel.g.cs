@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickVideoModelVariant1() => IsVideoModelVariant1
-            ? VideoModelVariant1!
+        public string PickVideoModelVariant1() => VideoModelVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VideoModelVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.VideoModelEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::tryAGI.OpenAI.VideoModelEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsVideoModelVariant1 && videoModelVariant1 != null)
+            if (VideoModelVariant1 is { } __value0 && videoModelVariant1 != null)
             {
-                return videoModelVariant1(VideoModelVariant1!);
+                return videoModelVariant1(__value0);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value1 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsVideoModelVariant1)
+            if (VideoModelVariant1 is { } __value0)
             {
-                videoModelVariant1?.Invoke(VideoModelVariant1!);
+                videoModelVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsVideoModelVariant1)
+            if (VideoModelVariant1 is { } __value0)
             {
-                videoModelVariant1?.Invoke(VideoModelVariant1!);
+                videoModelVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 

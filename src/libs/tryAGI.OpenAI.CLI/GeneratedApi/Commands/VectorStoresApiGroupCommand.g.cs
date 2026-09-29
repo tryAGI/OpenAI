@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class VectorStoresApiGroupCommand
+internal static partial class VectorStoresApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"vector-stores", @"Vector stores endpoint commands.");
@@ -25,6 +27,7 @@ internal static class VectorStoresApiGroupCommand
                          command.Subcommands.Add(VectorStoresRetrieveVectorStoreFileContentCommandApiCommand.Create());
                          command.Subcommands.Add(VectorStoresSearchVectorStoreCommandApiCommand.Create());
                          command.Subcommands.Add(VectorStoresUpdateVectorStoreFileAttributesCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -45,9 +45,11 @@ internal static partial class ProjectGroupsRetrieveProjectGroupCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-project-group", @"Retrieve project group
+        var command = new Command(commandName ?? @"retrieve-project-group", @"Retrieve project group
 Retrieves a project's group.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(GroupId);
@@ -77,6 +79,7 @@ Retrieves a project's group.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

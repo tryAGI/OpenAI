@@ -33,9 +33,11 @@ internal static partial class RolesDeleteRoleCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-role", @"Delete organization role
+        var command = new Command(commandName ?? @"delete-role", @"Delete organization role
 Deletes a custom role from the organization.");
                         command.Arguments.Add(RoleId);
 
@@ -59,6 +61,7 @@ Deletes a custom role from the organization.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

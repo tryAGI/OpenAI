@@ -47,9 +47,11 @@ internal static partial class ProjectsListProjectUsersCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-project-users", @"List project users
+        var command = new Command(commandName ?? @"list-project-users", @"List project users
 Returns a list of users in the project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Limit);
@@ -87,6 +89,7 @@ Returns a list of users in the project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

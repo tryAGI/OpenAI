@@ -13,9 +13,31 @@ internal static partial class DeleteContainerCommandApiCommand
         Description = @"The ID of the container to delete.",
     };
 
-    public static Command Create()
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.DeleteContainerResponse value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.DeleteContainerResponse value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
+
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-container", @"Delete a container
+        var command = new Command(commandName ?? @"delete-container", @"Delete a container
 Delete Container");
                         command.Arguments.Add(ContainerId);
 
@@ -27,12 +49,19 @@ Delete Container");
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
-                                await client.DeleteContainerAsync(
+                                var response = await client.DeleteContainerAsync(
                                     containerId: containerId,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
+
+                                await CliRuntime.WriteResponseAsync(
+                                    parseResult,
+                                    response,
+                                    global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
+                                    cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

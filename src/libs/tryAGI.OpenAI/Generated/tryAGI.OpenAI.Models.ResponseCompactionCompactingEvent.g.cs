@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseCompactionCompactingStreamingEvent PickStreaming() => IsStreaming
-            ? Streaming!
+        public global::tryAGI.OpenAI.ResponseCompactionCompactingStreamingEvent PickStreaming() => Streaming is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Streaming' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -102,9 +102,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsStreaming && streaming != null)
+            if (Streaming is { } __value0 && streaming != null)
             {
-                return streaming(Streaming!);
+                return streaming(__value0);
             }
 
             return default(TResult);
@@ -122,9 +122,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsStreaming)
+            if (Streaming is { } __value0)
             {
-                streaming?.Invoke(Streaming!);
+                streaming?.Invoke(__value0);
             }
         }
 
@@ -140,9 +140,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsStreaming)
+            if (Streaming is { } __value0)
             {
-                streaming?.Invoke(Streaming!);
+                streaming?.Invoke(__value0);
             }
         }
 

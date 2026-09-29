@@ -33,9 +33,11 @@ internal static partial class AudioGetVoiceConsentCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-voice-consent", @"Retrieve voice consent
+        var command = new Command(commandName ?? @"get-voice-consent", @"Retrieve voice consent
 Retrieves a voice consent recording.");
                         command.Arguments.Add(ConsentId);
 
@@ -59,6 +61,7 @@ Retrieves a voice consent recording.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

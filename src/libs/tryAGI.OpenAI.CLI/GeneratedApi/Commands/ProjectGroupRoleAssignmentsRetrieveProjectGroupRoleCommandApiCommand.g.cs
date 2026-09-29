@@ -45,9 +45,11 @@ internal static partial class ProjectGroupRoleAssignmentsRetrieveProjectGroupRol
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-project-group-role", @"Retrieve project group role
+        var command = new Command(commandName ?? @"retrieve-project-group-role", @"Retrieve project group role
 Retrieves a project role assigned to a group.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(GroupId);
@@ -85,6 +87,7 @@ Retrieves a project role assigned to a group.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -34,9 +34,11 @@ internal static partial class FineTuningResumeFineTuningJobCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"resume-fine-tuning-job", @"Resume fine-tuning
+        var command = new Command(commandName ?? @"resume-fine-tuning-job", @"Resume fine-tuning
 Resume a fine-tune job.
 ");
                         command.Arguments.Add(FineTuningJobId);
@@ -69,6 +71,7 @@ Resume a fine-tune job.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

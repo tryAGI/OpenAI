@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AgentToolResourceFunction PickFunction() => IsFunction
-            ? Function!
+        public global::tryAGI.OpenAI.AgentToolResourceFunction PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AgentToolResourceProgrammaticToolCalling PickProgrammaticToolCalling() => IsProgrammaticToolCalling
-            ? ProgrammaticToolCalling!
+        public global::tryAGI.OpenAI.AgentToolResourceProgrammaticToolCalling PickProgrammaticToolCalling() => ProgrammaticToolCalling is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProgrammaticToolCalling' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AgentToolResourceMcp PickMcp() => IsMcp
-            ? Mcp!
+        public global::tryAGI.OpenAI.AgentToolResourceMcp PickMcp() => Mcp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AgentToolResourceWebSearch PickWebSearch() => IsWebSearch
-            ? WebSearch!
+        public global::tryAGI.OpenAI.AgentToolResourceWebSearch PickWebSearch() => WebSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -315,21 +315,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunction && function != null)
+            if (Function is { } __value0 && function != null)
             {
-                return function(Function!);
+                return function(__value0);
             }
-            else if (IsProgrammaticToolCalling && programmaticToolCalling != null)
+            else if (ProgrammaticToolCalling is { } __value1 && programmaticToolCalling != null)
             {
-                return programmaticToolCalling(ProgrammaticToolCalling!);
+                return programmaticToolCalling(__value1);
             }
-            else if (IsMcp && mcp != null)
+            else if (Mcp is { } __value2 && mcp != null)
             {
-                return mcp(Mcp!);
+                return mcp(__value2);
             }
-            else if (IsWebSearch && webSearch != null)
+            else if (WebSearch is { } __value3 && webSearch != null)
             {
-                return webSearch(WebSearch!);
+                return webSearch(__value3);
             }
 
             return default(TResult);
@@ -353,21 +353,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsProgrammaticToolCalling)
+            else if (ProgrammaticToolCalling is { } __value1)
             {
-                programmaticToolCalling?.Invoke(ProgrammaticToolCalling!);
+                programmaticToolCalling?.Invoke(__value1);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value2)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value2);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value3)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value3);
             }
         }
 
@@ -386,21 +386,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsProgrammaticToolCalling)
+            else if (ProgrammaticToolCalling is { } __value1)
             {
-                programmaticToolCalling?.Invoke(ProgrammaticToolCalling!);
+                programmaticToolCalling?.Invoke(__value1);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value2)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value2);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value3)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value3);
             }
         }
 

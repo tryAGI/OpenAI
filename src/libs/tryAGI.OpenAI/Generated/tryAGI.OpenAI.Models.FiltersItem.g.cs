@@ -42,46 +42,46 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ComparisonFilter PickComparisonFilter() => IsComparisonFilter
-            ? ComparisonFilter!
+        public global::tryAGI.OpenAI.ComparisonFilter PickComparisonFilter() => ComparisonFilter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComparisonFilter' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// Combine multiple filters using `and` or `or`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? CompoundFilterVariant2 { get; init; }
+        public global::tryAGI.OpenAI.CompoundFilter? CompoundFilter { get; init; }
 #else
-        public object? CompoundFilterVariant2 { get; }
+        public global::tryAGI.OpenAI.CompoundFilter? CompoundFilter { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompoundFilterVariant2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompoundFilter))]
 #endif
-        public bool IsCompoundFilterVariant2 => CompoundFilterVariant2 != null;
+        public bool IsCompoundFilter => CompoundFilter != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickCompoundFilterVariant2(
+        public bool TryPickCompoundFilter(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out object? value)
+            out global::tryAGI.OpenAI.CompoundFilter? value)
         {
-            value = CompoundFilterVariant2;
-            return IsCompoundFilterVariant2;
+            value = CompoundFilter;
+            return IsCompoundFilter;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public object PickCompoundFilterVariant2() => IsCompoundFilterVariant2
-            ? CompoundFilterVariant2!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'CompoundFilterVariant2' but the value was {ToString()}.");
+        public global::tryAGI.OpenAI.CompoundFilter PickCompoundFilter() => CompoundFilter is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompoundFilter' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -108,20 +108,43 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator FiltersItem(global::tryAGI.OpenAI.CompoundFilter value) => new FiltersItem((global::tryAGI.OpenAI.CompoundFilter?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.CompoundFilter?(FiltersItem @this) => @this.CompoundFilter;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public FiltersItem(global::tryAGI.OpenAI.CompoundFilter? value)
+        {
+            CompoundFilter = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static FiltersItem FromCompoundFilter(global::tryAGI.OpenAI.CompoundFilter? value) => new FiltersItem(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public FiltersItem(
             global::tryAGI.OpenAI.ComparisonFilter? comparisonFilter,
-            object? compoundFilterVariant2
+            global::tryAGI.OpenAI.CompoundFilter? compoundFilter
             )
         {
             ComparisonFilter = comparisonFilter;
-            CompoundFilterVariant2 = compoundFilterVariant2;
+            CompoundFilter = compoundFilter;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            CompoundFilterVariant2 as object ??
+            CompoundFilter as object ??
             ComparisonFilter as object
             ;
 
@@ -130,7 +153,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             ComparisonFilter?.ToString() ??
-            CompoundFilterVariant2?.ToString()
+            CompoundFilter?.ToString()
             ;
 
         /// <summary>
@@ -138,7 +161,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsComparisonFilter && !IsCompoundFilterVariant2 || !IsComparisonFilter && IsCompoundFilterVariant2;
+            return IsComparisonFilter && !IsCompoundFilter || !IsComparisonFilter && IsCompoundFilter;
         }
 
         /// <summary>
@@ -146,7 +169,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ComparisonFilter, TResult>? comparisonFilter = null,
-            global::System.Func<object, TResult>? compoundFilterVariant2 = null,
+            global::System.Func<global::tryAGI.OpenAI.CompoundFilter, TResult>? compoundFilter = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsComparisonFilter && comparisonFilter != null)
+            if (ComparisonFilter is { } __value0 && comparisonFilter != null)
             {
-                return comparisonFilter(ComparisonFilter!);
+                return comparisonFilter(__value0);
             }
-            else if (IsCompoundFilterVariant2 && compoundFilterVariant2 != null)
+            else if (CompoundFilter is { } __value1 && compoundFilter != null)
             {
-                return compoundFilterVariant2(CompoundFilterVariant2!);
+                return compoundFilter(__value1);
             }
 
             return default(TResult);
@@ -172,7 +195,7 @@ namespace tryAGI.OpenAI
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.ComparisonFilter>? comparisonFilter = null,
 
-            global::System.Action<object>? compoundFilterVariant2 = null,
+            global::System.Action<global::tryAGI.OpenAI.CompoundFilter>? compoundFilter = null,
             bool validate = true)
         {
             if (validate)
@@ -180,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsComparisonFilter)
+            if (ComparisonFilter is { } __value0)
             {
-                comparisonFilter?.Invoke(ComparisonFilter!);
+                comparisonFilter?.Invoke(__value0);
             }
-            else if (IsCompoundFilterVariant2)
+            else if (CompoundFilter is { } __value1)
             {
-                compoundFilterVariant2?.Invoke(CompoundFilterVariant2!);
+                compoundFilter?.Invoke(__value1);
             }
         }
 
@@ -195,7 +218,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ComparisonFilter>? comparisonFilter = null,
-            global::System.Action<object>? compoundFilterVariant2 = null,
+            global::System.Action<global::tryAGI.OpenAI.CompoundFilter>? compoundFilter = null,
             bool validate = true)
         {
             if (validate)
@@ -203,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsComparisonFilter)
+            if (ComparisonFilter is { } __value0)
             {
-                comparisonFilter?.Invoke(ComparisonFilter!);
+                comparisonFilter?.Invoke(__value0);
             }
-            else if (IsCompoundFilterVariant2)
+            else if (CompoundFilter is { } __value1)
             {
-                compoundFilterVariant2?.Invoke(CompoundFilterVariant2!);
+                compoundFilter?.Invoke(__value1);
             }
         }
 
@@ -222,8 +245,8 @@ namespace tryAGI.OpenAI
             {
                 ComparisonFilter,
                 typeof(global::tryAGI.OpenAI.ComparisonFilter),
-                CompoundFilterVariant2,
-                typeof(object),
+                CompoundFilter,
+                typeof(global::tryAGI.OpenAI.CompoundFilter),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -241,7 +264,7 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComparisonFilter?>.Default.Equals(ComparisonFilter, other.ComparisonFilter) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(CompoundFilterVariant2, other.CompoundFilterVariant2)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CompoundFilter?>.Default.Equals(CompoundFilter, other.CompoundFilter)
                 ;
         }
 

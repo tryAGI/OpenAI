@@ -79,9 +79,11 @@ internal static partial class EmbeddingsCreateEmbeddingCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-embedding", @"Create embeddings
+        var command = new Command(commandName ?? @"create-embedding", @"Create embeddings
 Creates an embedding vector representing the input text.");
                         command.Options.Add(InputOption);
                         command.Options.Add(Model);
@@ -145,6 +147,7 @@ Creates an embedding vector representing the input text.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

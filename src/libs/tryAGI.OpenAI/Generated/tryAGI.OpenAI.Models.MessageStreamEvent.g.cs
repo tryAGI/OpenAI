@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant1 PickMessageStreamEventVariant1() => IsMessageStreamEventVariant1
-            ? MessageStreamEventVariant1!
+        public global::tryAGI.OpenAI.MessageStreamEventVariant1 PickMessageStreamEventVariant1() => MessageStreamEventVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant2 PickMessageStreamEventVariant2() => IsMessageStreamEventVariant2
-            ? MessageStreamEventVariant2!
+        public global::tryAGI.OpenAI.MessageStreamEventVariant2 PickMessageStreamEventVariant2() => MessageStreamEventVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant3 PickMessageStreamEventVariant3() => IsMessageStreamEventVariant3
-            ? MessageStreamEventVariant3!
+        public global::tryAGI.OpenAI.MessageStreamEventVariant3 PickMessageStreamEventVariant3() => MessageStreamEventVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant4 PickMessageStreamEventVariant4() => IsMessageStreamEventVariant4
-            ? MessageStreamEventVariant4!
+        public global::tryAGI.OpenAI.MessageStreamEventVariant4 PickMessageStreamEventVariant4() => MessageStreamEventVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.MessageStreamEventVariant5 PickMessageStreamEventVariant5() => IsMessageStreamEventVariant5
-            ? MessageStreamEventVariant5!
+        public global::tryAGI.OpenAI.MessageStreamEventVariant5 PickMessageStreamEventVariant5() => MessageStreamEventVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MessageStreamEventVariant5' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -372,25 +372,25 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMessageStreamEventVariant1 && messageStreamEventVariant1 != null)
+            if (MessageStreamEventVariant1 is { } __value0 && messageStreamEventVariant1 != null)
             {
-                return messageStreamEventVariant1(MessageStreamEventVariant1!);
+                return messageStreamEventVariant1(__value0);
             }
-            else if (IsMessageStreamEventVariant2 && messageStreamEventVariant2 != null)
+            else if (MessageStreamEventVariant2 is { } __value1 && messageStreamEventVariant2 != null)
             {
-                return messageStreamEventVariant2(MessageStreamEventVariant2!);
+                return messageStreamEventVariant2(__value1);
             }
-            else if (IsMessageStreamEventVariant3 && messageStreamEventVariant3 != null)
+            else if (MessageStreamEventVariant3 is { } __value2 && messageStreamEventVariant3 != null)
             {
-                return messageStreamEventVariant3(MessageStreamEventVariant3!);
+                return messageStreamEventVariant3(__value2);
             }
-            else if (IsMessageStreamEventVariant4 && messageStreamEventVariant4 != null)
+            else if (MessageStreamEventVariant4 is { } __value3 && messageStreamEventVariant4 != null)
             {
-                return messageStreamEventVariant4(MessageStreamEventVariant4!);
+                return messageStreamEventVariant4(__value3);
             }
-            else if (IsMessageStreamEventVariant5 && messageStreamEventVariant5 != null)
+            else if (MessageStreamEventVariant5 is { } __value4 && messageStreamEventVariant5 != null)
             {
-                return messageStreamEventVariant5(MessageStreamEventVariant5!);
+                return messageStreamEventVariant5(__value4);
             }
 
             return default(TResult);
@@ -416,25 +416,25 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMessageStreamEventVariant1)
+            if (MessageStreamEventVariant1 is { } __value0)
             {
-                messageStreamEventVariant1?.Invoke(MessageStreamEventVariant1!);
+                messageStreamEventVariant1?.Invoke(__value0);
             }
-            else if (IsMessageStreamEventVariant2)
+            else if (MessageStreamEventVariant2 is { } __value1)
             {
-                messageStreamEventVariant2?.Invoke(MessageStreamEventVariant2!);
+                messageStreamEventVariant2?.Invoke(__value1);
             }
-            else if (IsMessageStreamEventVariant3)
+            else if (MessageStreamEventVariant3 is { } __value2)
             {
-                messageStreamEventVariant3?.Invoke(MessageStreamEventVariant3!);
+                messageStreamEventVariant3?.Invoke(__value2);
             }
-            else if (IsMessageStreamEventVariant4)
+            else if (MessageStreamEventVariant4 is { } __value3)
             {
-                messageStreamEventVariant4?.Invoke(MessageStreamEventVariant4!);
+                messageStreamEventVariant4?.Invoke(__value3);
             }
-            else if (IsMessageStreamEventVariant5)
+            else if (MessageStreamEventVariant5 is { } __value4)
             {
-                messageStreamEventVariant5?.Invoke(MessageStreamEventVariant5!);
+                messageStreamEventVariant5?.Invoke(__value4);
             }
         }
 
@@ -454,25 +454,25 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMessageStreamEventVariant1)
+            if (MessageStreamEventVariant1 is { } __value0)
             {
-                messageStreamEventVariant1?.Invoke(MessageStreamEventVariant1!);
+                messageStreamEventVariant1?.Invoke(__value0);
             }
-            else if (IsMessageStreamEventVariant2)
+            else if (MessageStreamEventVariant2 is { } __value1)
             {
-                messageStreamEventVariant2?.Invoke(MessageStreamEventVariant2!);
+                messageStreamEventVariant2?.Invoke(__value1);
             }
-            else if (IsMessageStreamEventVariant3)
+            else if (MessageStreamEventVariant3 is { } __value2)
             {
-                messageStreamEventVariant3?.Invoke(MessageStreamEventVariant3!);
+                messageStreamEventVariant3?.Invoke(__value2);
             }
-            else if (IsMessageStreamEventVariant4)
+            else if (MessageStreamEventVariant4 is { } __value3)
             {
-                messageStreamEventVariant4?.Invoke(MessageStreamEventVariant4!);
+                messageStreamEventVariant4?.Invoke(__value3);
             }
-            else if (IsMessageStreamEventVariant5)
+            else if (MessageStreamEventVariant5 is { } __value4)
             {
-                messageStreamEventVariant5?.Invoke(MessageStreamEventVariant5!);
+                messageStreamEventVariant5?.Invoke(__value4);
             }
         }
 

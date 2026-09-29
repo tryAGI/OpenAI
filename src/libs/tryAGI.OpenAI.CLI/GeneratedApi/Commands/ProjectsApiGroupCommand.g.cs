@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class ProjectsApiGroupCommand
+internal static partial class ProjectsApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"projects", @"Projects endpoint commands.");
@@ -32,6 +34,7 @@ internal static class ProjectsApiGroupCommand
                          command.Subcommands.Add(ProjectsUpdateProjectModelPermissionsCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsUpdateProjectRateLimitsCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsUpdateProjectServiceAccountCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

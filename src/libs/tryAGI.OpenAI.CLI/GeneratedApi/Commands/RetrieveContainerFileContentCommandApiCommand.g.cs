@@ -19,9 +19,11 @@ internal static partial class RetrieveContainerFileContentCommandApiCommand
         Description = @"",
     };
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-container-file-content", @"Retrieve container file content
+        var command = new Command(commandName ?? @"retrieve-container-file-content", @"Retrieve container file content
 Retrieve Container File Content");
                         command.Arguments.Add(ContainerId);
                         command.Arguments.Add(FileId);
@@ -35,13 +37,14 @@ Retrieve Container File Content");
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
-                                await client.RetrieveContainerFileContentAsync(
+                                var response = await client.RetrieveContainerFileContentAsync(
                                     containerId: containerId,
                                     fileId: fileId,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
+                                await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

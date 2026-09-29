@@ -61,9 +61,11 @@ internal static partial class AssistantsModifyRunCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"modify-run", @"Modify run
+        var command = new Command(commandName ?? @"modify-run", @"Modify run
 Modifies a run.");
                         command.Arguments.Add(ThreadId);
                         command.Arguments.Add(RunId);
@@ -121,6 +123,7 @@ Modifies a run.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

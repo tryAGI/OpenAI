@@ -33,9 +33,11 @@ internal static partial class AgentsRetrieveAgentSessionCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-agent-session", @"Retrieve an agent session
+        var command = new Command(commandName ?? @"retrieve-agent-session", @"Retrieve an agent session
 Retrieves the current state of a managed agent session. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).");
                         command.Arguments.Add(SessionId);
 
@@ -59,6 +61,7 @@ Retrieves the current state of a managed agent session. See [managing sessions](
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

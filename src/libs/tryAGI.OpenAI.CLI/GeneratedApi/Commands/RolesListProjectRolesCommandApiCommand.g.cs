@@ -51,9 +51,11 @@ internal static partial class RolesListProjectRolesCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-project-roles", @"List project roles
+        var command = new Command(commandName ?? @"list-project-roles", @"List project roles
 Lists the roles configured for a project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Limit);
@@ -94,6 +96,7 @@ Lists the roles configured for a project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

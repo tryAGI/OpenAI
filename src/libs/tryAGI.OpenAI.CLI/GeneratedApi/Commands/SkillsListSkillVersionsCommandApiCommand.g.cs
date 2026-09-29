@@ -51,9 +51,11 @@ internal static partial class SkillsListSkillVersionsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-skill-versions", @"List Skill Versions
+        var command = new Command(commandName ?? @"list-skill-versions", @"List Skill Versions
 List skill versions for a skill.");
                         command.Arguments.Add(SkillId);
                         command.Options.Add(Limit);
@@ -94,6 +96,7 @@ List skill versions for a skill.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

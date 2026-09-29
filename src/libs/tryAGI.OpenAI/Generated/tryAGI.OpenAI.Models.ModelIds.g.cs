@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ModelIdsShared PickShared() => IsShared
-            ? Shared!.Value
+        public global::tryAGI.OpenAI.ModelIdsShared PickShared() => Shared is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ModelIdsResponses PickResponses() => IsResponses
-            ? Responses!.Value
+        public global::tryAGI.OpenAI.ModelIdsResponses PickResponses() => Responses is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Responses' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsShared && shared != null)
+            if (Shared is { } __value0 && shared != null)
             {
-                return shared(Shared!);
+                return shared(__value0);
             }
-            else if (IsResponses && responses != null)
+            else if (Responses is { } __value1 && responses != null)
             {
-                return responses(Responses!);
+                return responses(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsShared)
+            if (Shared is { } __value0)
             {
-                shared?.Invoke(Shared!);
+                shared?.Invoke(__value0);
             }
-            else if (IsResponses)
+            else if (Responses is { } __value1)
             {
-                responses?.Invoke(Responses!);
+                responses?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsShared)
+            if (Shared is { } __value0)
             {
-                shared?.Invoke(Shared!);
+                shared?.Invoke(__value0);
             }
-            else if (IsResponses)
+            else if (Responses is { } __value1)
             {
-                responses?.Invoke(Responses!);
+                responses?.Invoke(__value1);
             }
         }
 

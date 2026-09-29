@@ -13,9 +13,31 @@ internal static partial class ResponsesDeleteResponseCommandApiCommand
         Description = @"The ID of the response to delete.",
     };
 
-    public static Command Create()
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.DeleteResponseResponse value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    {
+                        string? text = null;
+                        CustomizeResponseText(parseResult, value, ref text);
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            return text;
+                        }
+
+                        var hints = new Dictionary<string, CliFormatHint>(StringComparer.OrdinalIgnoreCase)
+                        {
+                        };
+                        CustomizeResponseFormatHints(hints);
+                        return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
+                    }
+
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.DeleteResponseResponse value, ref string? text);
+                    static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
+
+
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-response", @"Delete a model response
+        var command = new Command(commandName ?? @"delete-response", @"Delete a model response
 Deletes a model response with the given ID.
 ");
                         command.Arguments.Add(ResponseId);
@@ -28,12 +50,19 @@ Deletes a model response with the given ID.
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
-                                await client.Responses.DeleteResponseAsync(
+                                var response = await client.Responses.DeleteResponseAsync(
                                     responseId: responseId,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                                await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
+
+                                await CliRuntime.WriteResponseAsync(
+                                    parseResult,
+                                    response,
+                                    global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                    FormatResponse,
+                                    cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

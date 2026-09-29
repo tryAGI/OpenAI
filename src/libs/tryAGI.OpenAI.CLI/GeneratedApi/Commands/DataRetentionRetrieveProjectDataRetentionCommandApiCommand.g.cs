@@ -33,9 +33,11 @@ internal static partial class DataRetentionRetrieveProjectDataRetentionCommandAp
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-project-data-retention", @"Retrieve project data retention
+        var command = new Command(commandName ?? @"retrieve-project-data-retention", @"Retrieve project data retention
 Retrieves project data retention controls.");
                         command.Arguments.Add(ProjectId);
 
@@ -59,6 +61,7 @@ Retrieves project data retention controls.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ModelResponseProperties PickModelResponseProperties() => IsModelResponseProperties
-            ? ModelResponseProperties!
+        public global::tryAGI.OpenAI.ModelResponseProperties PickModelResponseProperties() => ModelResponseProperties is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelResponseProperties' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2 PickCreateModelResponsePropertiesVariant2() => IsCreateModelResponsePropertiesVariant2
-            ? CreateModelResponsePropertiesVariant2!
+        public global::tryAGI.OpenAI.CreateModelResponsePropertiesVariant2 PickCreateModelResponsePropertiesVariant2() => CreateModelResponsePropertiesVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateModelResponsePropertiesVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelResponseProperties && modelResponseProperties != null)
+            if (ModelResponseProperties is { } __value0 && modelResponseProperties != null)
             {
-                return modelResponseProperties(ModelResponseProperties!);
+                return modelResponseProperties(__value0);
             }
-            else if (IsCreateModelResponsePropertiesVariant2 && createModelResponsePropertiesVariant2 != null)
+            else if (CreateModelResponsePropertiesVariant2 is { } __value1 && createModelResponsePropertiesVariant2 != null)
             {
-                return createModelResponsePropertiesVariant2(CreateModelResponsePropertiesVariant2!);
+                return createModelResponsePropertiesVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelResponseProperties)
+            if (ModelResponseProperties is { } __value0)
             {
-                modelResponseProperties?.Invoke(ModelResponseProperties!);
+                modelResponseProperties?.Invoke(__value0);
             }
-            else if (IsCreateModelResponsePropertiesVariant2)
+            else if (CreateModelResponsePropertiesVariant2 is { } __value1)
             {
-                createModelResponsePropertiesVariant2?.Invoke(CreateModelResponsePropertiesVariant2!);
+                createModelResponsePropertiesVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelResponseProperties)
+            if (ModelResponseProperties is { } __value0)
             {
-                modelResponseProperties?.Invoke(ModelResponseProperties!);
+                modelResponseProperties?.Invoke(__value0);
             }
-            else if (IsCreateModelResponsePropertiesVariant2)
+            else if (CreateModelResponsePropertiesVariant2 is { } __value1)
             {
-                createModelResponsePropertiesVariant2?.Invoke(CreateModelResponsePropertiesVariant2!);
+                createModelResponsePropertiesVariant2?.Invoke(__value1);
             }
         }
 

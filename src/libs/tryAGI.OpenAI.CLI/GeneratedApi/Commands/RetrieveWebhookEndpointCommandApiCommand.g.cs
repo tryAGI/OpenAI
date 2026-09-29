@@ -33,9 +33,11 @@ internal static partial class RetrieveWebhookEndpointCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-webhook-endpoint", @"Retrieve Webhook Endpoint
+        var command = new Command(commandName ?? @"retrieve-webhook-endpoint", @"Retrieve Webhook Endpoint
 Retrieves a webhook endpoint for the authenticated project.");
                         command.Arguments.Add(WebhookEndpointId);
 
@@ -67,6 +69,7 @@ Retrieves a webhook endpoint for the authenticated project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

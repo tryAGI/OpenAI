@@ -69,9 +69,11 @@ internal static partial class VaultsCreateVaultCredentialCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-vault-credential", @"Create a vault credential
+        var command = new Command(commandName ?? @"create-vault-credential", @"Create a vault credential
 Creates a vault credential. Secret values are write-only and are never returned. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).");
                         command.Arguments.Add(VaultId);
                         command.Options.Add(NameOption);
@@ -124,6 +126,7 @@ Creates a vault credential. Secret values are write-only and are never returned.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

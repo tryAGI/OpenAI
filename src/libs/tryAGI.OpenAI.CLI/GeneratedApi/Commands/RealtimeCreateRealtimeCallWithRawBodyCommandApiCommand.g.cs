@@ -25,9 +25,11 @@ internal static partial class RealtimeCreateRealtimeCallWithRawBodyCommandApiCom
           Hidden = true,
       };
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-realtime-call-with-raw-body", @"Create call
+        var command = new Command(commandName ?? @"create-realtime-call-with-raw-body", @"Create call
 Create a new Realtime API call over WebRTC and receive the SDP answer needed
 to complete the peer connection.");
 
@@ -67,6 +69,7 @@ to complete the peer connection.");
 
                                 await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

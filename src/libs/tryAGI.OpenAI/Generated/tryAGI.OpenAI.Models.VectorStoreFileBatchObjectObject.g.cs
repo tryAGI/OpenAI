@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        VectorStoreFilesBatch,
+        VectorStoreFileBatch,
     }
 
     /// <summary>
@@ -26,7 +26,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                VectorStoreFileBatchObjectObject.VectorStoreFilesBatch => "vector_store.files_batch",
+                VectorStoreFileBatchObjectObject.VectorStoreFileBatch => "vector_store.file_batch",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -37,7 +37,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "vector_store.files_batch" => VectorStoreFileBatchObjectObject.VectorStoreFilesBatch,
+                "vector_store.file_batch" => VectorStoreFileBatchObjectObject.VectorStoreFileBatch,
                 _ => null,
             };
         }

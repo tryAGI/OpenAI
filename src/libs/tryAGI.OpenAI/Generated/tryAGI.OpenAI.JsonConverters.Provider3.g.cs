@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AwsExternalStorageProviderParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AwsExternalStorageProviderParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AwsExternalStorageProviderParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Aws!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAws(), typeInfo);
             }
             else if (value.IsAzure)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AzureExternalStorageProviderParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AzureExternalStorageProviderParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AzureExternalStorageProviderParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Azure!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAzure(), typeInfo);
             }
             else if (value.IsGcp)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.GcpExternalStorageProviderParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.GcpExternalStorageProviderParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.GcpExternalStorageProviderParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Gcp!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGcp(), typeInfo);
             }
         }
     }

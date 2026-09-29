@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.PersistedAgentToolResourceFunction PickFunction() => IsFunction
-            ? Function!
+        public global::tryAGI.OpenAI.PersistedAgentToolResourceFunction PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.PersistedAgentToolResourceToolSearch PickToolSearch() => IsToolSearch
-            ? ToolSearch!
+        public global::tryAGI.OpenAI.PersistedAgentToolResourceToolSearch PickToolSearch() => ToolSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearch' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.PersistedAgentToolResourceProgrammaticToolCalling PickProgrammaticToolCalling() => IsProgrammaticToolCalling
-            ? ProgrammaticToolCalling!
+        public global::tryAGI.OpenAI.PersistedAgentToolResourceProgrammaticToolCalling PickProgrammaticToolCalling() => ProgrammaticToolCalling is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ProgrammaticToolCalling' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.PersistedAgentToolResourceMcp PickMcp() => IsMcp
-            ? Mcp!
+        public global::tryAGI.OpenAI.PersistedAgentToolResourceMcp PickMcp() => Mcp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.PersistedAgentToolResourceWebSearch PickWebSearch() => IsWebSearch
-            ? WebSearch!
+        public global::tryAGI.OpenAI.PersistedAgentToolResourceWebSearch PickWebSearch() => WebSearch is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -380,25 +380,25 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunction && function != null)
+            if (Function is { } __value0 && function != null)
             {
-                return function(Function!);
+                return function(__value0);
             }
-            else if (IsToolSearch && toolSearch != null)
+            else if (ToolSearch is { } __value1 && toolSearch != null)
             {
-                return toolSearch(ToolSearch!);
+                return toolSearch(__value1);
             }
-            else if (IsProgrammaticToolCalling && programmaticToolCalling != null)
+            else if (ProgrammaticToolCalling is { } __value2 && programmaticToolCalling != null)
             {
-                return programmaticToolCalling(ProgrammaticToolCalling!);
+                return programmaticToolCalling(__value2);
             }
-            else if (IsMcp && mcp != null)
+            else if (Mcp is { } __value3 && mcp != null)
             {
-                return mcp(Mcp!);
+                return mcp(__value3);
             }
-            else if (IsWebSearch && webSearch != null)
+            else if (WebSearch is { } __value4 && webSearch != null)
             {
-                return webSearch(WebSearch!);
+                return webSearch(__value4);
             }
 
             return default(TResult);
@@ -424,25 +424,25 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsToolSearch)
+            else if (ToolSearch is { } __value1)
             {
-                toolSearch?.Invoke(ToolSearch!);
+                toolSearch?.Invoke(__value1);
             }
-            else if (IsProgrammaticToolCalling)
+            else if (ProgrammaticToolCalling is { } __value2)
             {
-                programmaticToolCalling?.Invoke(ProgrammaticToolCalling!);
+                programmaticToolCalling?.Invoke(__value2);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value3)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value3);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value4)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value4);
             }
         }
 
@@ -462,25 +462,25 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunction)
+            if (Function is { } __value0)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value0);
             }
-            else if (IsToolSearch)
+            else if (ToolSearch is { } __value1)
             {
-                toolSearch?.Invoke(ToolSearch!);
+                toolSearch?.Invoke(__value1);
             }
-            else if (IsProgrammaticToolCalling)
+            else if (ProgrammaticToolCalling is { } __value2)
             {
-                programmaticToolCalling?.Invoke(ProgrammaticToolCalling!);
+                programmaticToolCalling?.Invoke(__value2);
             }
-            else if (IsMcp)
+            else if (Mcp is { } __value3)
             {
-                mcp?.Invoke(Mcp!);
+                mcp?.Invoke(__value3);
             }
-            else if (IsWebSearch)
+            else if (WebSearch is { } __value4)
             {
-                webSearch?.Invoke(WebSearch!);
+                webSearch?.Invoke(__value4);
             }
         }
 

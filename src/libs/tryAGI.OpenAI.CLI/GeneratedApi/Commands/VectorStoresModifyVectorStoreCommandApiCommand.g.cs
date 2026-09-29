@@ -67,9 +67,11 @@ internal static partial class VectorStoresModifyVectorStoreCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"modify-vector-store", @"Modify vector store
+        var command = new Command(commandName ?? @"modify-vector-store", @"Modify vector store
 Modifies a vector store.");
                         command.Arguments.Add(VectorStoreId);
                         command.Options.Add(NameOption);
@@ -122,6 +124,7 @@ Modifies a vector store.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

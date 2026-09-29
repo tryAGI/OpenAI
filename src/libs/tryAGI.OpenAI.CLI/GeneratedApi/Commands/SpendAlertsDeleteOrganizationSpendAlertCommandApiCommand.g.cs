@@ -33,9 +33,11 @@ internal static partial class SpendAlertsDeleteOrganizationSpendAlertCommandApiC
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-organization-spend-alert", @"Delete organization spend alert
+        var command = new Command(commandName ?? @"delete-organization-spend-alert", @"Delete organization spend alert
 Deletes an organization spend alert.");
                         command.Arguments.Add(AlertId);
 
@@ -59,6 +61,7 @@ Deletes an organization spend alert.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

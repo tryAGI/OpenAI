@@ -60,9 +60,11 @@ internal static partial class AudioCreateTranslationAsTextCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-translation-as-text", @"Create translation
+        var command = new Command(commandName ?? @"create-translation-as-text", @"Create translation
 Translates audio into English.");
                         command.Options.Add(File);
                         command.Options.Add(Model);                        command.Options.Add(CreateTranslationRequestOptionSetOptions.Filename);
@@ -119,6 +121,7 @@ Translates audio into English.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

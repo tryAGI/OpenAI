@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaApplyPatchCreateFileOperationParam PickCreateFile() => IsCreateFile
-            ? CreateFile!
+        public global::tryAGI.OpenAI.BetaApplyPatchCreateFileOperationParam PickCreateFile() => CreateFile is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateFile' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaApplyPatchDeleteFileOperationParam PickDeleteFile() => IsDeleteFile
-            ? DeleteFile!
+        public global::tryAGI.OpenAI.BetaApplyPatchDeleteFileOperationParam PickDeleteFile() => DeleteFile is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DeleteFile' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaApplyPatchUpdateFileOperationParam PickUpdateFile() => IsUpdateFile
-            ? UpdateFile!
+        public global::tryAGI.OpenAI.BetaApplyPatchUpdateFileOperationParam PickUpdateFile() => UpdateFile is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'UpdateFile' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsCreateFile && createFile != null)
+            if (CreateFile is { } __value0 && createFile != null)
             {
-                return createFile(CreateFile!);
+                return createFile(__value0);
             }
-            else if (IsDeleteFile && deleteFile != null)
+            else if (DeleteFile is { } __value1 && deleteFile != null)
             {
-                return deleteFile(DeleteFile!);
+                return deleteFile(__value1);
             }
-            else if (IsUpdateFile && updateFile != null)
+            else if (UpdateFile is { } __value2 && updateFile != null)
             {
-                return updateFile(UpdateFile!);
+                return updateFile(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsCreateFile)
+            if (CreateFile is { } __value0)
             {
-                createFile?.Invoke(CreateFile!);
+                createFile?.Invoke(__value0);
             }
-            else if (IsDeleteFile)
+            else if (DeleteFile is { } __value1)
             {
-                deleteFile?.Invoke(DeleteFile!);
+                deleteFile?.Invoke(__value1);
             }
-            else if (IsUpdateFile)
+            else if (UpdateFile is { } __value2)
             {
-                updateFile?.Invoke(UpdateFile!);
+                updateFile?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsCreateFile)
+            if (CreateFile is { } __value0)
             {
-                createFile?.Invoke(CreateFile!);
+                createFile?.Invoke(__value0);
             }
-            else if (IsDeleteFile)
+            else if (DeleteFile is { } __value1)
             {
-                deleteFile?.Invoke(DeleteFile!);
+                deleteFile?.Invoke(__value1);
             }
-            else if (IsUpdateFile)
+            else if (UpdateFile is { } __value2)
             {
-                updateFile?.Invoke(UpdateFile!);
+                updateFile?.Invoke(__value2);
             }
         }
 

@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class CertificatesApiGroupCommand
+internal static partial class CertificatesApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"certificates", @"Certificates endpoint commands.");
@@ -19,6 +21,7 @@ internal static class CertificatesApiGroupCommand
                          command.Subcommands.Add(CertificatesListProjectCertificatesCommandApiCommand.Create());
                          command.Subcommands.Add(CertificatesModifyCertificateCommandApiCommand.Create());
                          command.Subcommands.Add(CertificatesUploadCertificateCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

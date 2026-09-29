@@ -33,9 +33,11 @@ internal static partial class AgentsRetrieveAgentCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-agent", @"Retrieve an agent
+        var command = new Command(commandName ?? @"retrieve-agent", @"Retrieve an agent
 Retrieves a reusable agent by ID. See [agent configuration](https://developers.openai.com/api/docs/guides/agents-api/configuration).");
                         command.Arguments.Add(AgentId);
 
@@ -67,6 +69,7 @@ Retrieves a reusable agent by ID. See [agent configuration](https://developers.o
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

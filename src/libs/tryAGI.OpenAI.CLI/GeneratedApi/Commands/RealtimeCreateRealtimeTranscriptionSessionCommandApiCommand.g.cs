@@ -83,9 +83,11 @@ single channel (mono), and little-endian byte order.
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-realtime-transcription-session", @"Create transcription session
+        var command = new Command(commandName ?? @"create-realtime-transcription-session", @"Create transcription session
 Create an ephemeral API token for use in client-side applications with the
 Realtime API specifically for realtime transcriptions.
 Can be configured with the same session parameters as the `transcription_session.update` client event.
@@ -158,6 +160,7 @@ Returns the created Realtime transcription session object, plus an ephemeral key
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

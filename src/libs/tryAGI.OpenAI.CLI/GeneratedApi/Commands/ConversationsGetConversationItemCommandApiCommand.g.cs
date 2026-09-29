@@ -47,9 +47,11 @@ parameter for [listing Conversation items above](https://developers.openai.com/a
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-conversation-item", @"Retrieve an item
+        var command = new Command(commandName ?? @"get-conversation-item", @"Retrieve an item
 Get a single item from a conversation with the given IDs.");
                         command.Arguments.Add(ConversationId);
                         command.Arguments.Add(ItemId);
@@ -79,6 +81,7 @@ Get a single item from a conversation with the given IDs.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

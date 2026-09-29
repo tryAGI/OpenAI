@@ -57,9 +57,11 @@ internal static partial class AgentsListAgentSessionSubagentTurnsCommandApiComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-agent-session-subagent-turns", @"List subagent turns
+        var command = new Command(commandName ?? @"list-agent-session-subagent-turns", @"List subagent turns
 Lists all turns of this subagent, including turns after a resume. See [subagent workflows](https://developers.openai.com/api/docs/guides/agents-api/multi-agent).");
                         command.Arguments.Add(SessionId);
                         command.Arguments.Add(SubagentId);
@@ -103,6 +105,7 @@ Lists all turns of this subagent, including turns after a resume. See [subagent 
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

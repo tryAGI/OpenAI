@@ -22,13 +22,6 @@ See the [file search tool documentation](https://developers.openai.com/api/docs/
 ",
     };
 
-    private static Option<string> AssistantId { get; } = new(
-        name: @"--assistant-id")
-    {
-        Description = @"The ID of the [assistant](https://developers.openai.com/api/docs/assistants/migration) to use to execute this run.",
-        Required = true,
-    };
-
     private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?>?> Model { get; } = new(
         name: @"--model")
     {
@@ -39,18 +32,6 @@ See the [file search tool documentation](https://developers.openai.com/api/docs/
         name: @"--reasoning-effort")
     {
         Description = @"",
-    };
-
-    private static Option<string?> Instructions { get; } = new(
-        name: @"--instructions")
-    {
-        Description = @"Overrides the [instructions](https://developers.openai.com/api/docs/assistants/migration) of the assistant. This is useful for modifying the behavior on a per-run basis.",
-    };
-
-    private static Option<string?> AdditionalInstructions { get; } = new(
-        name: @"--additional-instructions")
-    {
-        Description = @"Appends additional instructions at the end of the instructions for the run. This is useful for modifying the behavior on a per-run basis without overriding other instructions.",
     };
 
     private static Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateMessageRequest>?> AdditionalMessages { get; } = new(
@@ -71,41 +52,6 @@ See the [file search tool documentation](https://developers.openai.com/api/docs/
         Description = @"",
     };
 
-    private static Option<double?> Temperature { get; } = new(
-        name: @"--temperature")
-    {
-        Description = @"What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.
-",
-    };
-
-    private static Option<double?> TopP { get; } = new(
-        name: @"--top-p")
-    {
-        Description = @"An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
-
-We generally recommend altering this or temperature but not both.
-",
-    };
-
-    private static Option<bool?> Stream { get; } = CliRuntime.CreateNullableBoolOption(
-        name: @"--stream",
-        description: @"If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
-");
-
-    private static Option<int?> MaxPromptTokens { get; } = new(
-        name: @"--max-prompt-tokens")
-    {
-        Description = @"The maximum number of prompt tokens that may be used over the course of the run. The run will make a best effort to use only the number of prompt tokens specified, across multiple turns of the run. If the run exceeds the number of prompt tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
-",
-    };
-
-    private static Option<int?> MaxCompletionTokens { get; } = new(
-        name: @"--max-completion-tokens")
-    {
-        Description = @"The maximum number of completion tokens that may be used over the course of the run. The run will make a best effort to use only the number of completion tokens specified, across multiple turns of the run. If the run exceeds the number of completion tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
-",
-    };
-
     private static Option<global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.TruncationObject, object>?> TruncationStrategy { get; } = new(
         name: @"--truncation-strategy")
     {
@@ -117,10 +63,6 @@ We generally recommend altering this or temperature but not both.
     {
         Description = @"",
     };
-
-    private static Option<bool?> ParallelToolCalls { get; } = CliRuntime.CreateNullableBoolOption(
-        name: @"--parallel-tool-calls",
-        description: @"Whether to enable [parallel function calling](https://developers.openai.com/api/docs/guides/function-calling#parallel-function-calling) during tool use.");
 
     private static Option<global::tryAGI.OpenAI.AssistantsApiResponseFormatOption?> ResponseFormat { get; } = new(
         name: @"--response-format")
@@ -134,6 +76,7 @@ Setting to `{ ""type"": ""json_object"" }` enables JSON mode, which ensures the 
 **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly ""stuck"" request. Also note that the message content may be partially cut off if `finish_reason=""length""`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
 ",
     };
+    private static readonly CreateRunRequestOptionSet CreateRunRequestOptionSetOptions = CreateRunRequestOptionSet.Create();
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -149,6 +92,22 @@ Setting to `{ ""type"": ""json_object"" }` enables JSON mode, which ensures the 
       {
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
+      };
+      private static Option<bool> Wait { get; } = new("--wait")
+      {
+          Description = "Poll the generated wait helper until the resource reaches a terminal state.",
+      };
+
+      private static Option<string> PollInterval { get; } = new("--poll-interval")
+      {
+          Description = "Polling interval, for example 250ms, 2s, 30m, or 01:00:00.",
+          DefaultValueFactory = _ => "2s",
+      };
+
+      private static Option<string> WaitTimeout { get; } = new("--wait-timeout")
+      {
+          Description = "Maximum time to wait before timing out, for example 30m or 00:30:00.",
+          DefaultValueFactory = _ => "30m",
       };
 
                     private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.RunObject value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
@@ -171,29 +130,29 @@ Setting to `{ ""type"": ""json_object"" }` enables JSON mode, which ensures the 
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-run", @"Create run
+        var command = new Command(commandName ?? @"create-run", @"Create run
 Create a run.");
                         command.Arguments.Add(ThreadId);
                         command.Options.Add(Include);
-                        command.Options.Add(AssistantId);
                         command.Options.Add(Model);
                         command.Options.Add(ReasoningEffort);
-                        command.Options.Add(Instructions);
-                        command.Options.Add(AdditionalInstructions);
                         command.Options.Add(AdditionalMessages);
                         command.Options.Add(Tools);
                         command.Options.Add(Metadata);
-                        command.Options.Add(Temperature);
-                        command.Options.Add(TopP);
-                        command.Options.Add(Stream);
-                        command.Options.Add(MaxPromptTokens);
-                        command.Options.Add(MaxCompletionTokens);
                         command.Options.Add(TruncationStrategy);
                         command.Options.Add(ToolChoice);
-                        command.Options.Add(ParallelToolCalls);
-                        command.Options.Add(ResponseFormat);
+                        command.Options.Add(ResponseFormat);                        command.Options.Add(CreateRunRequestOptionSetOptions.AssistantId);
+                        command.Options.Add(CreateRunRequestOptionSetOptions.Instructions);
+                        command.Options.Add(CreateRunRequestOptionSetOptions.AdditionalInstructions);
+                        command.Options.Add(CreateRunRequestOptionSetOptions.Temperature);
+                        command.Options.Add(CreateRunRequestOptionSetOptions.TopP);
+                        command.Options.Add(CreateRunRequestOptionSetOptions.MaxPromptTokens);
+                        command.Options.Add(CreateRunRequestOptionSetOptions.MaxCompletionTokens);
+                        command.Options.Add(CreateRunRequestOptionSetOptions.ParallelToolCalls);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -208,7 +167,9 @@ Create a run.");
                   result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
               }
           });
-
+          command.Options.Add(Wait);
+          command.Options.Add(PollInterval);
+          command.Options.Add(WaitTimeout);
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
@@ -221,46 +182,91 @@ Create a run.");
                             cancellationToken).ConfigureAwait(false);
                         var threadId = parseResult.GetRequiredValue(ThreadId);
                         var include = parseResult.GetValue(Include);
-                        var assistantId = parseResult.GetRequiredValue(AssistantId);
                         var model = CliRuntime.WasSpecified(parseResult, Model) ? parseResult.GetValue(Model) : (__requestBase is { } __ModelBaseValue ? __ModelBaseValue.Model : default);
                         var reasoningEffort = CliRuntime.WasSpecified(parseResult, ReasoningEffort) ? parseResult.GetValue(ReasoningEffort) : (__requestBase is { } __ReasoningEffortBaseValue ? __ReasoningEffortBaseValue.ReasoningEffort : default);
-                        var instructions = CliRuntime.WasSpecified(parseResult, Instructions) ? parseResult.GetValue(Instructions) : (__requestBase is { } __InstructionsBaseValue ? __InstructionsBaseValue.Instructions : default);
-                        var additionalInstructions = CliRuntime.WasSpecified(parseResult, AdditionalInstructions) ? parseResult.GetValue(AdditionalInstructions) : (__requestBase is { } __AdditionalInstructionsBaseValue ? __AdditionalInstructionsBaseValue.AdditionalInstructions : default);
                         var additionalMessages = CliRuntime.WasSpecified(parseResult, AdditionalMessages) ? parseResult.GetValue(AdditionalMessages) : (__requestBase is { } __AdditionalMessagesBaseValue ? __AdditionalMessagesBaseValue.AdditionalMessages : default);
                         var tools = CliRuntime.WasSpecified(parseResult, Tools) ? parseResult.GetValue(Tools) : (__requestBase is { } __ToolsBaseValue ? __ToolsBaseValue.Tools : default);
                         var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
-                        var temperature = CliRuntime.WasSpecified(parseResult, Temperature) ? parseResult.GetValue(Temperature) : (__requestBase is { } __TemperatureBaseValue ? __TemperatureBaseValue.Temperature : default);
-                        var topP = CliRuntime.WasSpecified(parseResult, TopP) ? parseResult.GetValue(TopP) : (__requestBase is { } __TopPBaseValue ? __TopPBaseValue.TopP : default);
-                        var stream = CliRuntime.WasSpecified(parseResult, Stream) ? parseResult.GetValue(Stream) : (__requestBase is { } __StreamBaseValue ? __StreamBaseValue.Stream : default);
-                        var maxPromptTokens = CliRuntime.WasSpecified(parseResult, MaxPromptTokens) ? parseResult.GetValue(MaxPromptTokens) : (__requestBase is { } __MaxPromptTokensBaseValue ? __MaxPromptTokensBaseValue.MaxPromptTokens : default);
-                        var maxCompletionTokens = CliRuntime.WasSpecified(parseResult, MaxCompletionTokens) ? parseResult.GetValue(MaxCompletionTokens) : (__requestBase is { } __MaxCompletionTokensBaseValue ? __MaxCompletionTokensBaseValue.MaxCompletionTokens : default);
                         var truncationStrategy = CliRuntime.WasSpecified(parseResult, TruncationStrategy) ? parseResult.GetValue(TruncationStrategy) : (__requestBase is { } __TruncationStrategyBaseValue ? __TruncationStrategyBaseValue.TruncationStrategy : default);
                         var toolChoice = CliRuntime.WasSpecified(parseResult, ToolChoice) ? parseResult.GetValue(ToolChoice) : (__requestBase is { } __ToolChoiceBaseValue ? __ToolChoiceBaseValue.ToolChoice : default);
-                        var parallelToolCalls = CliRuntime.WasSpecified(parseResult, ParallelToolCalls) ? parseResult.GetValue(ParallelToolCalls) : (__requestBase is { } __ParallelToolCallsBaseValue ? __ParallelToolCallsBaseValue.ParallelToolCalls : default);
-                        var responseFormat = CliRuntime.WasSpecified(parseResult, ResponseFormat) ? parseResult.GetValue(ResponseFormat) : (__requestBase is { } __ResponseFormatBaseValue ? __ResponseFormatBaseValue.ResponseFormat : default);
+                        var responseFormat = CliRuntime.WasSpecified(parseResult, ResponseFormat) ? parseResult.GetValue(ResponseFormat) : (__requestBase is { } __ResponseFormatBaseValue ? __ResponseFormatBaseValue.ResponseFormat : default);                        var assistantId = parseResult.GetRequiredValue(CreateRunRequestOptionSetOptions.AssistantId);
+                        var instructions = CliRuntime.WasSpecified(parseResult, CreateRunRequestOptionSetOptions.Instructions) ? parseResult.GetValue(CreateRunRequestOptionSetOptions.Instructions) : (__requestBase is { } __InstructionsBaseValue ? __InstructionsBaseValue.Instructions : default);
+                        var additionalInstructions = CliRuntime.WasSpecified(parseResult, CreateRunRequestOptionSetOptions.AdditionalInstructions) ? parseResult.GetValue(CreateRunRequestOptionSetOptions.AdditionalInstructions) : (__requestBase is { } __AdditionalInstructionsBaseValue ? __AdditionalInstructionsBaseValue.AdditionalInstructions : default);
+                        var temperature = CliRuntime.WasSpecified(parseResult, CreateRunRequestOptionSetOptions.Temperature) ? parseResult.GetValue(CreateRunRequestOptionSetOptions.Temperature) : (__requestBase is { } __TemperatureBaseValue ? __TemperatureBaseValue.Temperature : default);
+                        var topP = CliRuntime.WasSpecified(parseResult, CreateRunRequestOptionSetOptions.TopP) ? parseResult.GetValue(CreateRunRequestOptionSetOptions.TopP) : (__requestBase is { } __TopPBaseValue ? __TopPBaseValue.TopP : default);
+                        var maxPromptTokens = CliRuntime.WasSpecified(parseResult, CreateRunRequestOptionSetOptions.MaxPromptTokens) ? parseResult.GetValue(CreateRunRequestOptionSetOptions.MaxPromptTokens) : (__requestBase is { } __MaxPromptTokensBaseValue ? __MaxPromptTokensBaseValue.MaxPromptTokens : default);
+                        var maxCompletionTokens = CliRuntime.WasSpecified(parseResult, CreateRunRequestOptionSetOptions.MaxCompletionTokens) ? parseResult.GetValue(CreateRunRequestOptionSetOptions.MaxCompletionTokens) : (__requestBase is { } __MaxCompletionTokensBaseValue ? __MaxCompletionTokensBaseValue.MaxCompletionTokens : default);
+                        var parallelToolCalls = CliRuntime.WasSpecified(parseResult, CreateRunRequestOptionSetOptions.ParallelToolCalls) ? parseResult.GetValue(CreateRunRequestOptionSetOptions.ParallelToolCalls) : (__requestBase is { } __ParallelToolCallsBaseValue ? __ParallelToolCallsBaseValue.ParallelToolCalls : default);          var wait = parseResult.GetValue(Wait);
+          var pollInterval = wait ? CliRuntime.ParseDuration(parseResult.GetRequiredValue(PollInterval), PollInterval.Name) : default;
+          var waitTimeout = wait ? CliRuntime.ParseDuration(parseResult.GetRequiredValue(WaitTimeout), WaitTimeout.Name) : default;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+                                if (wait)
+                                {
+                                var createResponse = await client.Assistants.CreateRunAsync(
+                                    threadId: threadId,
+                                    include: include,
+                                    model: model,
+                                    reasoningEffort: reasoningEffort,
+                                    additionalMessages: additionalMessages,
+                                    tools: tools,
+                                    metadata: metadata,
+                                    truncationStrategy: truncationStrategy,
+                                    toolChoice: toolChoice,
+                                    responseFormat: responseFormat,
+                                    assistantId: assistantId,
+                                    instructions: instructions,
+                                    additionalInstructions: additionalInstructions,
+                                    temperature: temperature,
+                                    topP: topP,
+                                    maxPromptTokens: maxPromptTokens,
+                                    maxCompletionTokens: maxCompletionTokens,
+                                    parallelToolCalls: parallelToolCalls,
+                                    cancellationToken: cancellationToken).ConfigureAwait(false);
+                                    var resourceId = global::System.Convert.ToString(
+                                        createResponse.Id,
+                                        global::System.Globalization.CultureInfo.InvariantCulture);
+                                    if (string.IsNullOrWhiteSpace(resourceId))
+                                    {
+                                        throw new CliException("The create response did not contain a job id.");
+                                    }
+
+                                    var waitResponse = await CliRuntime.PollUntilTerminalAsync(
+                                        fetchAsync: token => client.Assistants.GetRunAsync(
+                                            threadId: threadId,
+                                            runId: resourceId,
+                                            cancellationToken: token),
+                                        pollInterval: pollInterval,
+                                        waitTimeout: waitTimeout,
+                                        context: global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        cancellationToken: cancellationToken).ConfigureAwait(false);
+                                    await CliRuntime.WriteResponseAsync(
+                                        parseResult,
+                                        waitResponse,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        cancellationToken: cancellationToken).ConfigureAwait(false);
+                                    return;
+                                }
 
                                 var response = await client.Assistants.CreateRunAsync(
                                     threadId: threadId,
                                     include: include,
-                                    assistantId: assistantId,
                                     model: model,
                                     reasoningEffort: reasoningEffort,
-                                    instructions: instructions,
-                                    additionalInstructions: additionalInstructions,
                                     additionalMessages: additionalMessages,
                                     tools: tools,
                                     metadata: metadata,
-                                    temperature: temperature,
-                                    topP: topP,
-                                    stream: stream,
-                                    maxPromptTokens: maxPromptTokens,
-                                    maxCompletionTokens: maxCompletionTokens,
                                     truncationStrategy: truncationStrategy,
                                     toolChoice: toolChoice,
-                                    parallelToolCalls: parallelToolCalls,
                                     responseFormat: responseFormat,
+                                    assistantId: assistantId,
+                                    instructions: instructions,
+                                    additionalInstructions: additionalInstructions,
+                                    temperature: temperature,
+                                    topP: topP,
+                                    maxPromptTokens: maxPromptTokens,
+                                    maxCompletionTokens: maxCompletionTokens,
+                                    parallelToolCalls: parallelToolCalls,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 
@@ -279,6 +285,7 @@ Create a run.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

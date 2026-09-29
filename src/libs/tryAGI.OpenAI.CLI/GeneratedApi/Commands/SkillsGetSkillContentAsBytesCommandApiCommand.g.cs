@@ -13,9 +13,11 @@ internal static partial class SkillsGetSkillContentAsBytesCommandApiCommand
         Description = @"The identifier of the skill to download.",
     };
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-skill-content-as-bytes", @"Get Skill Content
+        var command = new Command(commandName ?? @"get-skill-content-as-bytes", @"Get Skill Content
 Download a skill zip bundle by its ID.");
                         command.Arguments.Add(SkillId);
 
@@ -33,6 +35,7 @@ Download a skill zip bundle by its ID.");
 
                                 await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

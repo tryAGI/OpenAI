@@ -49,8 +49,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickTextInput() => IsTextInput
-            ? TextInput!
+        public string PickTextInput() => TextInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextInput' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaResponseSteerInputItem> PickResponseSteerInputItemList() => IsResponseSteerInputItemList
-            ? ResponseSteerInputItemList!
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaResponseSteerInputItem> PickResponseSteerInputItemList() => ResponseSteerInputItemList is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseSteerInputItemList' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -161,13 +161,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextInput && textInput != null)
+            if (TextInput is { } __value0 && textInput != null)
             {
-                return textInput(TextInput!);
+                return textInput(__value0);
             }
-            else if (IsResponseSteerInputItemList && responseSteerInputItemList != null)
+            else if (ResponseSteerInputItemList is { } __value1 && responseSteerInputItemList != null)
             {
-                return responseSteerInputItemList(ResponseSteerInputItemList!);
+                return responseSteerInputItemList(__value1);
             }
 
             return default(TResult);
@@ -187,13 +187,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextInput)
+            if (TextInput is { } __value0)
             {
-                textInput?.Invoke(TextInput!);
+                textInput?.Invoke(__value0);
             }
-            else if (IsResponseSteerInputItemList)
+            else if (ResponseSteerInputItemList is { } __value1)
             {
-                responseSteerInputItemList?.Invoke(ResponseSteerInputItemList!);
+                responseSteerInputItemList?.Invoke(__value1);
             }
         }
 
@@ -210,13 +210,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextInput)
+            if (TextInput is { } __value0)
             {
-                textInput?.Invoke(TextInput!);
+                textInput?.Invoke(__value0);
             }
-            else if (IsResponseSteerInputItemList)
+            else if (ResponseSteerInputItemList is { } __value1)
             {
-                responseSteerInputItemList?.Invoke(ResponseSteerInputItemList!);
+                responseSteerInputItemList?.Invoke(__value1);
             }
         }
 

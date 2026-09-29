@@ -33,9 +33,11 @@ internal static partial class DeleteWebhookEndpointCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-webhook-endpoint", @"Delete Webhook Endpoint
+        var command = new Command(commandName ?? @"delete-webhook-endpoint", @"Delete Webhook Endpoint
 Deletes a webhook endpoint for the authenticated project.");
                         command.Arguments.Add(WebhookEndpointId);
 
@@ -59,6 +61,7 @@ Deletes a webhook endpoint for the authenticated project.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

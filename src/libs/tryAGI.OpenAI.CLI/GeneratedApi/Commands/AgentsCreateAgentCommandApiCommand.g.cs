@@ -93,9 +93,11 @@ internal static partial class AgentsCreateAgentCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-agent", @"Create an agent
+        var command = new Command(commandName ?? @"create-agent", @"Create an agent
 Creates a reusable agent without storing credentials. See [agent configuration](https://developers.openai.com/api/docs/guides/agents-api/configuration).");
                         command.Options.Add(Metadata);
                         command.Options.Add(NameOption);
@@ -183,6 +185,7 @@ Creates a reusable agent without storing credentials. See [agent configuration](
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

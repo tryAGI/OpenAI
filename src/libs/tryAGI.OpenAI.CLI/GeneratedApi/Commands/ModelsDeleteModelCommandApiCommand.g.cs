@@ -33,9 +33,11 @@ internal static partial class ModelsDeleteModelCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-model", @"Delete a fine-tuned model
+        var command = new Command(commandName ?? @"delete-model", @"Delete a fine-tuned model
 Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.");
                         command.Arguments.Add(Model);
 
@@ -59,6 +61,7 @@ Delete a fine-tuned model. You must have the Owner role in your organization to 
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

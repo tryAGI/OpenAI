@@ -69,9 +69,11 @@ internal static partial class EvalsCreateEvalCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-eval", @"Create eval
+        var command = new Command(commandName ?? @"create-eval", @"Create eval
 Create the structure of an evaluation that can be used to test a model's performance.
 An evaluation is a set of testing criteria and the config for a data source, which dictates the schema of the data used in the evaluation. After creating an evaluation, you can run it on different models and model parameters. We support several types of graders and datasources.
 For more information, see the [Evals guide](https://developers.openai.com/api/docs/guides/evals).
@@ -135,6 +137,7 @@ For more information, see the [Evals guide](https://developers.openai.com/api/do
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

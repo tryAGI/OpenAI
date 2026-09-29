@@ -57,9 +57,11 @@ internal static partial class ProjectGroupRoleAssignmentsListProjectGroupRoleAss
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-project-group-role-assignments", @"List project group role assignments
+        var command = new Command(commandName ?? @"list-project-group-role-assignments", @"List project group role assignments
 Lists the project roles assigned to a group within a project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(GroupId);
@@ -103,6 +105,7 @@ Lists the project roles assigned to a group within a project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

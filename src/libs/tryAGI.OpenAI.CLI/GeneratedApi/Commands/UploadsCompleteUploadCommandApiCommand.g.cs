@@ -65,9 +65,11 @@ internal static partial class UploadsCompleteUploadCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"complete-upload", @"Complete upload
+        var command = new Command(commandName ?? @"complete-upload", @"Complete upload
 Completes the [Upload](https://developers.openai.com/api/reference/resources/uploads).
 
 Within the returned Upload object, there is a nested [File](https://developers.openai.com/api/reference/resources/files) object that is ready to use in the rest of the platform.
@@ -125,6 +127,7 @@ Returns the Upload object with status `completed`, including an additional `file
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

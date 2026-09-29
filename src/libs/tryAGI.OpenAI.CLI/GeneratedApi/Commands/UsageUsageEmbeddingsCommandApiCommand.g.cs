@@ -92,9 +92,11 @@ internal static partial class UsageUsageEmbeddingsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"embeddings", @"Embeddings
+        var command = new Command(commandName ?? @"embeddings", @"Embeddings
 Get embeddings usage details for the organization.");
                         command.Options.Add(StartTime);
                         command.Options.Add(EndTime);
@@ -153,6 +155,7 @@ Get embeddings usage details for the organization.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

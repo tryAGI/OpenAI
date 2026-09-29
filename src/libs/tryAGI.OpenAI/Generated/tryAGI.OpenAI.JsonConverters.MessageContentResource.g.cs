@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.MessageContentResourceInputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.MessageContentResourceInputText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MessageContentResourceInputText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputText!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputText(), typeInfo);
             }
             else if (value.IsInputImage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.MessageContentResourceInputImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.MessageContentResourceInputImage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MessageContentResourceInputImage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputImage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputImage(), typeInfo);
             }
             else if (value.IsOutputText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.MessageContentResourceOutputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.MessageContentResourceOutputText?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MessageContentResourceOutputText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputText!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputText(), typeInfo);
             }
         }
     }

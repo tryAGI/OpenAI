@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.VaultStatusParam PickVaultStatusParam() => IsVaultStatusParam
-            ? VaultStatusParam!.Value
+        public global::tryAGI.OpenAI.VaultStatusParam PickVaultStatusParam() => VaultStatusParam is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VaultStatusParam' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VaultStatusParam> PickVaultStatusFilterParamVariant2() => IsVaultStatusFilterParamVariant2
-            ? VaultStatusFilterParamVariant2!
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VaultStatusParam> PickVaultStatusFilterParamVariant2() => VaultStatusFilterParamVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VaultStatusFilterParamVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsVaultStatusParam && vaultStatusParam != null)
+            if (VaultStatusParam is { } __value0 && vaultStatusParam != null)
             {
-                return vaultStatusParam(VaultStatusParam!);
+                return vaultStatusParam(__value0);
             }
-            else if (IsVaultStatusFilterParamVariant2 && vaultStatusFilterParamVariant2 != null)
+            else if (VaultStatusFilterParamVariant2 is { } __value1 && vaultStatusFilterParamVariant2 != null)
             {
-                return vaultStatusFilterParamVariant2(VaultStatusFilterParamVariant2!);
+                return vaultStatusFilterParamVariant2(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsVaultStatusParam)
+            if (VaultStatusParam is { } __value0)
             {
-                vaultStatusParam?.Invoke(VaultStatusParam!);
+                vaultStatusParam?.Invoke(__value0);
             }
-            else if (IsVaultStatusFilterParamVariant2)
+            else if (VaultStatusFilterParamVariant2 is { } __value1)
             {
-                vaultStatusFilterParamVariant2?.Invoke(VaultStatusFilterParamVariant2!);
+                vaultStatusFilterParamVariant2?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsVaultStatusParam)
+            if (VaultStatusParam is { } __value0)
             {
-                vaultStatusParam?.Invoke(VaultStatusParam!);
+                vaultStatusParam?.Invoke(__value0);
             }
-            else if (IsVaultStatusFilterParamVariant2)
+            else if (VaultStatusFilterParamVariant2 is { } __value1)
             {
-                vaultStatusFilterParamVariant2?.Invoke(VaultStatusFilterParamVariant2!);
+                vaultStatusFilterParamVariant2?.Invoke(__value1);
             }
         }
 

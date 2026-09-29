@@ -63,9 +63,11 @@ internal static partial class AgentsListAgentSessionSubagentTurnItemsCommandApiC
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-agent-session-subagent-turn-items", @"List subagent turn items
+        var command = new Command(commandName ?? @"list-agent-session-subagent-turn-items", @"List subagent turn items
 Lists items belonging to one turn of this subagent. See [subagent workflows](https://developers.openai.com/api/docs/guides/agents-api/multi-agent).");
                         command.Arguments.Add(SessionId);
                         command.Arguments.Add(SubagentId);
@@ -112,6 +114,7 @@ Lists items belonging to one turn of this subagent. See [subagent workflows](htt
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

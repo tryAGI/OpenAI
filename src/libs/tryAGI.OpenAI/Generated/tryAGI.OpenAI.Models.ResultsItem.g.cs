@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UsageCompletionsResult PickOrganizationUsageCompletionsResult() => IsOrganizationUsageCompletionsResult
-            ? OrganizationUsageCompletionsResult!
+        public global::tryAGI.OpenAI.UsageCompletionsResult PickOrganizationUsageCompletionsResult() => OrganizationUsageCompletionsResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageCompletionsResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UsageEmbeddingsResult PickOrganizationUsageEmbeddingsResult() => IsOrganizationUsageEmbeddingsResult
-            ? OrganizationUsageEmbeddingsResult!
+        public global::tryAGI.OpenAI.UsageEmbeddingsResult PickOrganizationUsageEmbeddingsResult() => OrganizationUsageEmbeddingsResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageEmbeddingsResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UsageModerationsResult PickOrganizationUsageModerationsResult() => IsOrganizationUsageModerationsResult
-            ? OrganizationUsageModerationsResult!
+        public global::tryAGI.OpenAI.UsageModerationsResult PickOrganizationUsageModerationsResult() => OrganizationUsageModerationsResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageModerationsResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UsageImagesResult PickOrganizationUsageImagesResult() => IsOrganizationUsageImagesResult
-            ? OrganizationUsageImagesResult!
+        public global::tryAGI.OpenAI.UsageImagesResult PickOrganizationUsageImagesResult() => OrganizationUsageImagesResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageImagesResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UsageAudioSpeechesResult PickOrganizationUsageAudioSpeechesResult() => IsOrganizationUsageAudioSpeechesResult
-            ? OrganizationUsageAudioSpeechesResult!
+        public global::tryAGI.OpenAI.UsageAudioSpeechesResult PickOrganizationUsageAudioSpeechesResult() => OrganizationUsageAudioSpeechesResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageAudioSpeechesResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UsageAudioTranscriptionsResult PickOrganizationUsageAudioTranscriptionsResult() => IsOrganizationUsageAudioTranscriptionsResult
-            ? OrganizationUsageAudioTranscriptionsResult!
+        public global::tryAGI.OpenAI.UsageAudioTranscriptionsResult PickOrganizationUsageAudioTranscriptionsResult() => OrganizationUsageAudioTranscriptionsResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageAudioTranscriptionsResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UsageVectorStoresResult PickOrganizationUsageVectorStoresResult() => IsOrganizationUsageVectorStoresResult
-            ? OrganizationUsageVectorStoresResult!
+        public global::tryAGI.OpenAI.UsageVectorStoresResult PickOrganizationUsageVectorStoresResult() => OrganizationUsageVectorStoresResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageVectorStoresResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult PickOrganizationUsageCodeInterpreterSessionsResult() => IsOrganizationUsageCodeInterpreterSessionsResult
-            ? OrganizationUsageCodeInterpreterSessionsResult!
+        public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResult PickOrganizationUsageCodeInterpreterSessionsResult() => OrganizationUsageCodeInterpreterSessionsResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageCodeInterpreterSessionsResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UsageFileSearchCallsResult PickOrganizationUsageFileSearchesResult() => IsOrganizationUsageFileSearchesResult
-            ? OrganizationUsageFileSearchesResult!
+        public global::tryAGI.OpenAI.UsageFileSearchCallsResult PickOrganizationUsageFileSearchesResult() => OrganizationUsageFileSearchesResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageFileSearchesResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UsageWebSearchCallsResult PickOrganizationUsageWebSearchesResult() => IsOrganizationUsageWebSearchesResult
-            ? OrganizationUsageWebSearchesResult!
+        public global::tryAGI.OpenAI.UsageWebSearchCallsResult PickOrganizationUsageWebSearchesResult() => OrganizationUsageWebSearchesResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationUsageWebSearchesResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CostsResult PickOrganizationCostsResult() => IsOrganizationCostsResult
-            ? OrganizationCostsResult!
+        public global::tryAGI.OpenAI.CostsResult PickOrganizationCostsResult() => OrganizationCostsResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OrganizationCostsResult' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -770,49 +770,49 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsOrganizationUsageCompletionsResult && organizationUsageCompletionsResult != null)
+            if (OrganizationUsageCompletionsResult is { } __value0 && organizationUsageCompletionsResult != null)
             {
-                return organizationUsageCompletionsResult(OrganizationUsageCompletionsResult!);
+                return organizationUsageCompletionsResult(__value0);
             }
-            else if (IsOrganizationUsageEmbeddingsResult && organizationUsageEmbeddingsResult != null)
+            else if (OrganizationUsageEmbeddingsResult is { } __value1 && organizationUsageEmbeddingsResult != null)
             {
-                return organizationUsageEmbeddingsResult(OrganizationUsageEmbeddingsResult!);
+                return organizationUsageEmbeddingsResult(__value1);
             }
-            else if (IsOrganizationUsageModerationsResult && organizationUsageModerationsResult != null)
+            else if (OrganizationUsageModerationsResult is { } __value2 && organizationUsageModerationsResult != null)
             {
-                return organizationUsageModerationsResult(OrganizationUsageModerationsResult!);
+                return organizationUsageModerationsResult(__value2);
             }
-            else if (IsOrganizationUsageImagesResult && organizationUsageImagesResult != null)
+            else if (OrganizationUsageImagesResult is { } __value3 && organizationUsageImagesResult != null)
             {
-                return organizationUsageImagesResult(OrganizationUsageImagesResult!);
+                return organizationUsageImagesResult(__value3);
             }
-            else if (IsOrganizationUsageAudioSpeechesResult && organizationUsageAudioSpeechesResult != null)
+            else if (OrganizationUsageAudioSpeechesResult is { } __value4 && organizationUsageAudioSpeechesResult != null)
             {
-                return organizationUsageAudioSpeechesResult(OrganizationUsageAudioSpeechesResult!);
+                return organizationUsageAudioSpeechesResult(__value4);
             }
-            else if (IsOrganizationUsageAudioTranscriptionsResult && organizationUsageAudioTranscriptionsResult != null)
+            else if (OrganizationUsageAudioTranscriptionsResult is { } __value5 && organizationUsageAudioTranscriptionsResult != null)
             {
-                return organizationUsageAudioTranscriptionsResult(OrganizationUsageAudioTranscriptionsResult!);
+                return organizationUsageAudioTranscriptionsResult(__value5);
             }
-            else if (IsOrganizationUsageVectorStoresResult && organizationUsageVectorStoresResult != null)
+            else if (OrganizationUsageVectorStoresResult is { } __value6 && organizationUsageVectorStoresResult != null)
             {
-                return organizationUsageVectorStoresResult(OrganizationUsageVectorStoresResult!);
+                return organizationUsageVectorStoresResult(__value6);
             }
-            else if (IsOrganizationUsageCodeInterpreterSessionsResult && organizationUsageCodeInterpreterSessionsResult != null)
+            else if (OrganizationUsageCodeInterpreterSessionsResult is { } __value7 && organizationUsageCodeInterpreterSessionsResult != null)
             {
-                return organizationUsageCodeInterpreterSessionsResult(OrganizationUsageCodeInterpreterSessionsResult!);
+                return organizationUsageCodeInterpreterSessionsResult(__value7);
             }
-            else if (IsOrganizationUsageFileSearchesResult && organizationUsageFileSearchesResult != null)
+            else if (OrganizationUsageFileSearchesResult is { } __value8 && organizationUsageFileSearchesResult != null)
             {
-                return organizationUsageFileSearchesResult(OrganizationUsageFileSearchesResult!);
+                return organizationUsageFileSearchesResult(__value8);
             }
-            else if (IsOrganizationUsageWebSearchesResult && organizationUsageWebSearchesResult != null)
+            else if (OrganizationUsageWebSearchesResult is { } __value9 && organizationUsageWebSearchesResult != null)
             {
-                return organizationUsageWebSearchesResult(OrganizationUsageWebSearchesResult!);
+                return organizationUsageWebSearchesResult(__value9);
             }
-            else if (IsOrganizationCostsResult && organizationCostsResult != null)
+            else if (OrganizationCostsResult is { } __value10 && organizationCostsResult != null)
             {
-                return organizationCostsResult(OrganizationCostsResult!);
+                return organizationCostsResult(__value10);
             }
 
             return default(TResult);
@@ -850,49 +850,49 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsOrganizationUsageCompletionsResult)
+            if (OrganizationUsageCompletionsResult is { } __value0)
             {
-                organizationUsageCompletionsResult?.Invoke(OrganizationUsageCompletionsResult!);
+                organizationUsageCompletionsResult?.Invoke(__value0);
             }
-            else if (IsOrganizationUsageEmbeddingsResult)
+            else if (OrganizationUsageEmbeddingsResult is { } __value1)
             {
-                organizationUsageEmbeddingsResult?.Invoke(OrganizationUsageEmbeddingsResult!);
+                organizationUsageEmbeddingsResult?.Invoke(__value1);
             }
-            else if (IsOrganizationUsageModerationsResult)
+            else if (OrganizationUsageModerationsResult is { } __value2)
             {
-                organizationUsageModerationsResult?.Invoke(OrganizationUsageModerationsResult!);
+                organizationUsageModerationsResult?.Invoke(__value2);
             }
-            else if (IsOrganizationUsageImagesResult)
+            else if (OrganizationUsageImagesResult is { } __value3)
             {
-                organizationUsageImagesResult?.Invoke(OrganizationUsageImagesResult!);
+                organizationUsageImagesResult?.Invoke(__value3);
             }
-            else if (IsOrganizationUsageAudioSpeechesResult)
+            else if (OrganizationUsageAudioSpeechesResult is { } __value4)
             {
-                organizationUsageAudioSpeechesResult?.Invoke(OrganizationUsageAudioSpeechesResult!);
+                organizationUsageAudioSpeechesResult?.Invoke(__value4);
             }
-            else if (IsOrganizationUsageAudioTranscriptionsResult)
+            else if (OrganizationUsageAudioTranscriptionsResult is { } __value5)
             {
-                organizationUsageAudioTranscriptionsResult?.Invoke(OrganizationUsageAudioTranscriptionsResult!);
+                organizationUsageAudioTranscriptionsResult?.Invoke(__value5);
             }
-            else if (IsOrganizationUsageVectorStoresResult)
+            else if (OrganizationUsageVectorStoresResult is { } __value6)
             {
-                organizationUsageVectorStoresResult?.Invoke(OrganizationUsageVectorStoresResult!);
+                organizationUsageVectorStoresResult?.Invoke(__value6);
             }
-            else if (IsOrganizationUsageCodeInterpreterSessionsResult)
+            else if (OrganizationUsageCodeInterpreterSessionsResult is { } __value7)
             {
-                organizationUsageCodeInterpreterSessionsResult?.Invoke(OrganizationUsageCodeInterpreterSessionsResult!);
+                organizationUsageCodeInterpreterSessionsResult?.Invoke(__value7);
             }
-            else if (IsOrganizationUsageFileSearchesResult)
+            else if (OrganizationUsageFileSearchesResult is { } __value8)
             {
-                organizationUsageFileSearchesResult?.Invoke(OrganizationUsageFileSearchesResult!);
+                organizationUsageFileSearchesResult?.Invoke(__value8);
             }
-            else if (IsOrganizationUsageWebSearchesResult)
+            else if (OrganizationUsageWebSearchesResult is { } __value9)
             {
-                organizationUsageWebSearchesResult?.Invoke(OrganizationUsageWebSearchesResult!);
+                organizationUsageWebSearchesResult?.Invoke(__value9);
             }
-            else if (IsOrganizationCostsResult)
+            else if (OrganizationCostsResult is { } __value10)
             {
-                organizationCostsResult?.Invoke(OrganizationCostsResult!);
+                organizationCostsResult?.Invoke(__value10);
             }
         }
 
@@ -918,49 +918,49 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsOrganizationUsageCompletionsResult)
+            if (OrganizationUsageCompletionsResult is { } __value0)
             {
-                organizationUsageCompletionsResult?.Invoke(OrganizationUsageCompletionsResult!);
+                organizationUsageCompletionsResult?.Invoke(__value0);
             }
-            else if (IsOrganizationUsageEmbeddingsResult)
+            else if (OrganizationUsageEmbeddingsResult is { } __value1)
             {
-                organizationUsageEmbeddingsResult?.Invoke(OrganizationUsageEmbeddingsResult!);
+                organizationUsageEmbeddingsResult?.Invoke(__value1);
             }
-            else if (IsOrganizationUsageModerationsResult)
+            else if (OrganizationUsageModerationsResult is { } __value2)
             {
-                organizationUsageModerationsResult?.Invoke(OrganizationUsageModerationsResult!);
+                organizationUsageModerationsResult?.Invoke(__value2);
             }
-            else if (IsOrganizationUsageImagesResult)
+            else if (OrganizationUsageImagesResult is { } __value3)
             {
-                organizationUsageImagesResult?.Invoke(OrganizationUsageImagesResult!);
+                organizationUsageImagesResult?.Invoke(__value3);
             }
-            else if (IsOrganizationUsageAudioSpeechesResult)
+            else if (OrganizationUsageAudioSpeechesResult is { } __value4)
             {
-                organizationUsageAudioSpeechesResult?.Invoke(OrganizationUsageAudioSpeechesResult!);
+                organizationUsageAudioSpeechesResult?.Invoke(__value4);
             }
-            else if (IsOrganizationUsageAudioTranscriptionsResult)
+            else if (OrganizationUsageAudioTranscriptionsResult is { } __value5)
             {
-                organizationUsageAudioTranscriptionsResult?.Invoke(OrganizationUsageAudioTranscriptionsResult!);
+                organizationUsageAudioTranscriptionsResult?.Invoke(__value5);
             }
-            else if (IsOrganizationUsageVectorStoresResult)
+            else if (OrganizationUsageVectorStoresResult is { } __value6)
             {
-                organizationUsageVectorStoresResult?.Invoke(OrganizationUsageVectorStoresResult!);
+                organizationUsageVectorStoresResult?.Invoke(__value6);
             }
-            else if (IsOrganizationUsageCodeInterpreterSessionsResult)
+            else if (OrganizationUsageCodeInterpreterSessionsResult is { } __value7)
             {
-                organizationUsageCodeInterpreterSessionsResult?.Invoke(OrganizationUsageCodeInterpreterSessionsResult!);
+                organizationUsageCodeInterpreterSessionsResult?.Invoke(__value7);
             }
-            else if (IsOrganizationUsageFileSearchesResult)
+            else if (OrganizationUsageFileSearchesResult is { } __value8)
             {
-                organizationUsageFileSearchesResult?.Invoke(OrganizationUsageFileSearchesResult!);
+                organizationUsageFileSearchesResult?.Invoke(__value8);
             }
-            else if (IsOrganizationUsageWebSearchesResult)
+            else if (OrganizationUsageWebSearchesResult is { } __value9)
             {
-                organizationUsageWebSearchesResult?.Invoke(OrganizationUsageWebSearchesResult!);
+                organizationUsageWebSearchesResult?.Invoke(__value9);
             }
-            else if (IsOrganizationCostsResult)
+            else if (OrganizationCostsResult is { } __value10)
             {
-                organizationCostsResult?.Invoke(OrganizationCostsResult!);
+                organizationCostsResult?.Invoke(__value10);
             }
         }
 

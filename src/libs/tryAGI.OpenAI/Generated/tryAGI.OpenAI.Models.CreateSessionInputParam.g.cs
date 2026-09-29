@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickCreateSessionInputParamVariant1() => IsCreateSessionInputParamVariant1
-            ? CreateSessionInputParamVariant1!
+        public string PickCreateSessionInputParamVariant1() => CreateSessionInputParamVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateSessionInputParamVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputMessageParam> PickCreateSessionInputParamVariant2() => IsCreateSessionInputParamVariant2
-            ? CreateSessionInputParamVariant2!
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputMessageParam> PickCreateSessionInputParamVariant2() => CreateSessionInputParamVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateSessionInputParamVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsCreateSessionInputParamVariant1 && createSessionInputParamVariant1 != null)
+            if (CreateSessionInputParamVariant1 is { } __value0 && createSessionInputParamVariant1 != null)
             {
-                return createSessionInputParamVariant1(CreateSessionInputParamVariant1!);
+                return createSessionInputParamVariant1(__value0);
             }
-            else if (IsCreateSessionInputParamVariant2 && createSessionInputParamVariant2 != null)
+            else if (CreateSessionInputParamVariant2 is { } __value1 && createSessionInputParamVariant2 != null)
             {
-                return createSessionInputParamVariant2(CreateSessionInputParamVariant2!);
+                return createSessionInputParamVariant2(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsCreateSessionInputParamVariant1)
+            if (CreateSessionInputParamVariant1 is { } __value0)
             {
-                createSessionInputParamVariant1?.Invoke(CreateSessionInputParamVariant1!);
+                createSessionInputParamVariant1?.Invoke(__value0);
             }
-            else if (IsCreateSessionInputParamVariant2)
+            else if (CreateSessionInputParamVariant2 is { } __value1)
             {
-                createSessionInputParamVariant2?.Invoke(CreateSessionInputParamVariant2!);
+                createSessionInputParamVariant2?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsCreateSessionInputParamVariant1)
+            if (CreateSessionInputParamVariant1 is { } __value0)
             {
-                createSessionInputParamVariant1?.Invoke(CreateSessionInputParamVariant1!);
+                createSessionInputParamVariant1?.Invoke(__value0);
             }
-            else if (IsCreateSessionInputParamVariant2)
+            else if (CreateSessionInputParamVariant2 is { } __value1)
             {
-                createSessionInputParamVariant2?.Invoke(CreateSessionInputParamVariant2!);
+                createSessionInputParamVariant2?.Invoke(__value1);
             }
         }
 

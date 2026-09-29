@@ -33,9 +33,11 @@ internal static partial class AgentsDeleteAgentCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-agent", @"Delete an agent
+        var command = new Command(commandName ?? @"delete-agent", @"Delete an agent
 Deletes a reusable agent. See [agent configuration](https://developers.openai.com/api/docs/guides/agents-api/configuration).");
                         command.Arguments.Add(AgentId);
 
@@ -59,6 +61,7 @@ Deletes a reusable agent. See [agent configuration](https://developers.openai.co
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

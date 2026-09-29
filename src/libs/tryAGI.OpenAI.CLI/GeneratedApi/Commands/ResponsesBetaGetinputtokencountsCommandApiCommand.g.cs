@@ -113,9 +113,11 @@ internal static partial class ResponsesBetaGetinputtokencountsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"beta-getinputtokencounts", @"Get input token counts
+        var command = new Command(commandName ?? @"beta-getinputtokencounts", @"Get input token counts
 Returns input token counts of the request.
 
 Returns an object with `object` set to `response.input_tokens` and an `input_tokens` count.");
@@ -194,6 +196,7 @@ Returns an object with `object` set to `response.input_tokens` and an `input_tok
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

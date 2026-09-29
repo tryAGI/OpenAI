@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class SpendAlertsApiGroupCommand
+internal static partial class SpendAlertsApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"spend-alerts", @"Spend alerts endpoint commands.");
@@ -19,6 +21,7 @@ internal static class SpendAlertsApiGroupCommand
                          command.Subcommands.Add(SpendAlertsRetrieveProjectSpendAlertCommandApiCommand.Create());
                          command.Subcommands.Add(SpendAlertsUpdateOrganizationSpendAlertCommandApiCommand.Create());
                          command.Subcommands.Add(SpendAlertsUpdateProjectSpendAlertCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

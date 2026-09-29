@@ -39,9 +39,11 @@ internal static partial class AgentsRetrieveAgentSessionSubagentCommandApiComman
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-agent-session-subagent", @"Retrieve a session subagent
+        var command = new Command(commandName ?? @"retrieve-agent-session-subagent", @"Retrieve a session subagent
 Retrieves a subagent belonging to this session. See [subagent workflows](https://developers.openai.com/api/docs/guides/agents-api/multi-agent).");
                         command.Arguments.Add(SessionId);
                         command.Arguments.Add(SubagentId);
@@ -76,6 +78,7 @@ Retrieves a subagent belonging to this session. See [subagent workflows](https:/
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

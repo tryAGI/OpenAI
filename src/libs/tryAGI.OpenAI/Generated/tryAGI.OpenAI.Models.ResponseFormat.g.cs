@@ -54,8 +54,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFormatText PickText() => IsText
-            ? Text!
+        public global::tryAGI.OpenAI.ResponseFormatText PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -92,8 +92,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFormatJsonSchema PickJsonSchema() => IsJsonSchema
-            ? JsonSchema!
+        public global::tryAGI.OpenAI.ResponseFormatJsonSchema PickJsonSchema() => JsonSchema is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
 
         /// <summary>
@@ -132,8 +132,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseFormatJsonObject PickJsonObject() => IsJsonObject
-            ? JsonObject!
+        public global::tryAGI.OpenAI.ResponseFormatJsonObject PickJsonObject() => JsonObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'JsonObject' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -261,17 +261,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsJsonSchema && jsonSchema != null)
+            else if (JsonSchema is { } __value1 && jsonSchema != null)
             {
-                return jsonSchema(JsonSchema!);
+                return jsonSchema(__value1);
             }
-            else if (IsJsonObject && jsonObject != null)
+            else if (JsonObject is { } __value2 && jsonObject != null)
             {
-                return jsonObject(JsonObject!);
+                return jsonObject(__value2);
             }
 
             return default(TResult);
@@ -293,17 +293,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsJsonSchema)
+            else if (JsonSchema is { } __value1)
             {
-                jsonSchema?.Invoke(JsonSchema!);
+                jsonSchema?.Invoke(__value1);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value2)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value2);
             }
         }
 
@@ -321,17 +321,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsJsonSchema)
+            else if (JsonSchema is { } __value1)
             {
-                jsonSchema?.Invoke(JsonSchema!);
+                jsonSchema?.Invoke(__value1);
             }
-            else if (IsJsonObject)
+            else if (JsonObject is { } __value2)
             {
-                jsonObject?.Invoke(JsonObject!);
+                jsonObject?.Invoke(__value2);
             }
         }
 

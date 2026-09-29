@@ -78,9 +78,11 @@ internal static partial class VectorStoresSearchVectorStoreCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"search-vector-store", @"Search vector store
+        var command = new Command(commandName ?? @"search-vector-store", @"Search vector store
 Search a vector store for relevant chunks based on a query and file attributes filter.");
                         command.Arguments.Add(VectorStoreId);
                         command.Options.Add(Query);
@@ -139,6 +141,7 @@ Search a vector store for relevant chunks based on a query and file attributes f
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

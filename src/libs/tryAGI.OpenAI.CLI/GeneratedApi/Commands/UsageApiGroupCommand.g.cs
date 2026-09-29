@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class UsageApiGroupCommand
+internal static partial class UsageApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"usage", @"Usage endpoint commands.");
@@ -20,6 +22,7 @@ internal static class UsageApiGroupCommand
                          command.Subcommands.Add(UsageUsageModerationsCommandApiCommand.Create());
                          command.Subcommands.Add(UsageUsageVectorStoresCommandApiCommand.Create());
                          command.Subcommands.Add(UsageUsageWebSearchCallsCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

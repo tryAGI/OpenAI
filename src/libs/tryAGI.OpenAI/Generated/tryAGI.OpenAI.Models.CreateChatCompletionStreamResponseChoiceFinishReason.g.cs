@@ -26,6 +26,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        /// <summary>
+        ///
+        /// </summary>
         Stop,
         /// <summary>
         ///
@@ -48,6 +52,7 @@ namespace tryAGI.OpenAI
                 CreateChatCompletionStreamResponseChoiceFinishReason.ContentFilter => "content_filter",
                 CreateChatCompletionStreamResponseChoiceFinishReason.FunctionCall => "function_call",
                 CreateChatCompletionStreamResponseChoiceFinishReason.Length => "length",
+                CreateChatCompletionStreamResponseChoiceFinishReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 CreateChatCompletionStreamResponseChoiceFinishReason.Stop => "stop",
                 CreateChatCompletionStreamResponseChoiceFinishReason.ToolCalls => "tool_calls",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -63,6 +68,7 @@ namespace tryAGI.OpenAI
                 "content_filter" => CreateChatCompletionStreamResponseChoiceFinishReason.ContentFilter,
                 "function_call" => CreateChatCompletionStreamResponseChoiceFinishReason.FunctionCall,
                 "length" => CreateChatCompletionStreamResponseChoiceFinishReason.Length,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => CreateChatCompletionStreamResponseChoiceFinishReason.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
                 "stop" => CreateChatCompletionStreamResponseChoiceFinishReason.Stop,
                 "tool_calls" => CreateChatCompletionStreamResponseChoiceFinishReason.ToolCalls,
                 _ => null,

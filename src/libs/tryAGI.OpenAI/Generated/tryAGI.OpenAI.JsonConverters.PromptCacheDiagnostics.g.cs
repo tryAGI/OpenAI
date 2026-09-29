@@ -77,25 +77,25 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.PromptCacheMissDiagnosticsBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.PromptCacheMissDiagnosticsBody?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.PromptCacheMissDiagnosticsBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CacheMiss!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCacheMiss(), typeInfo);
             }
             else if (value.IsCacheHit)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.PromptCacheHitDiagnosticsBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.PromptCacheHitDiagnosticsBody?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.PromptCacheHitDiagnosticsBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CacheHit!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCacheHit(), typeInfo);
             }
             else if (value.IsComparisonResponseNotFound)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.PromptCacheComparisonResponseNotFoundDiagnosticsBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.PromptCacheComparisonResponseNotFoundDiagnosticsBody?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.PromptCacheComparisonResponseNotFoundDiagnosticsBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComparisonResponseNotFound!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickComparisonResponseNotFound(), typeInfo);
             }
             else if (value.IsUnavailable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.PromptCacheUnavailableDiagnosticsBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.PromptCacheUnavailableDiagnosticsBody?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.PromptCacheUnavailableDiagnosticsBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unavailable!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUnavailable(), typeInfo);
             }
         }
     }

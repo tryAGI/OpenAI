@@ -48,9 +48,11 @@ internal static partial class CertificatesListOrganizationCertificatesCommandApi
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-organization-certificates", @"List organization certificates
+        var command = new Command(commandName ?? @"list-organization-certificates", @"List organization certificates
 List uploaded certificates for this organization.");
                         command.Options.Add(Limit);
                         command.Options.Add(After);
@@ -88,6 +90,7 @@ List uploaded certificates for this organization.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

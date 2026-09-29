@@ -33,9 +33,11 @@ internal static partial class GroupsDeleteGroupCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-group", @"Delete group
+        var command = new Command(commandName ?? @"delete-group", @"Delete group
 Deletes a group from the organization.");
                         command.Arguments.Add(GroupId);
 
@@ -59,6 +61,7 @@ Deletes a group from the organization.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

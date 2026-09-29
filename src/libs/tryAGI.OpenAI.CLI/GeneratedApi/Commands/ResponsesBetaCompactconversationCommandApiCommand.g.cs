@@ -98,9 +98,11 @@ internal static partial class ResponsesBetaCompactconversationCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"beta-compactconversation", @"Compact conversation
+        var command = new Command(commandName ?? @"beta-compactconversation", @"Compact conversation
 Compact a conversation. Returns a compacted response object.
 
 Learn when and how to compact long-running conversations in the [conversation state guide](https://developers.openai.com/api/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](https://developers.openai.com/api/docs/guides/conversation-state#compaction-advanced).");
@@ -178,6 +180,7 @@ Learn when and how to compact long-running conversations in the [conversation st
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

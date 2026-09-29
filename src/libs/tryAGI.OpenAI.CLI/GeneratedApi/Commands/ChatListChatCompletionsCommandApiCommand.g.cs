@@ -60,9 +60,11 @@ internal static partial class ChatListChatCompletionsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-chat-completions", @"List Chat Completions
+        var command = new Command(commandName ?? @"list-chat-completions", @"List Chat Completions
 List stored Chat Completions. Only Chat Completions that have been stored
 with the `store` parameter set to `true` will be returned.
 ");
@@ -108,6 +110,7 @@ with the `store` parameter set to `true` will be returned.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

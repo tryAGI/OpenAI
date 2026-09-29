@@ -33,9 +33,11 @@ internal static partial class HostedToolsRetrieveProjectHostedToolPermissionsCom
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-project-hosted-tool-permissions", @"Retrieve project hosted tool permissions
+        var command = new Command(commandName ?? @"retrieve-project-hosted-tool-permissions", @"Retrieve project hosted tool permissions
 Returns hosted tool permissions for a project.");
                         command.Arguments.Add(ProjectId);
 
@@ -59,6 +61,7 @@ Returns hosted tool permissions for a project.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

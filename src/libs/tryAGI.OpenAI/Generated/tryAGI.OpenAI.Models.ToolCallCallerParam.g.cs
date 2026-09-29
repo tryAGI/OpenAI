@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.DirectToolCallCallerParam PickDirect() => IsDirect
-            ? Direct!
+        public global::tryAGI.OpenAI.DirectToolCallCallerParam PickDirect() => Direct is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Direct' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ProgramToolCallCallerParam PickProgram() => IsProgram
-            ? Program!
+        public global::tryAGI.OpenAI.ProgramToolCallCallerParam PickProgram() => Program is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Program' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsDirect && direct != null)
+            if (Direct is { } __value0 && direct != null)
             {
-                return direct(Direct!);
+                return direct(__value0);
             }
-            else if (IsProgram && program != null)
+            else if (Program is { } __value1 && program != null)
             {
-                return program(Program!);
+                return program(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsDirect)
+            if (Direct is { } __value0)
             {
-                direct?.Invoke(Direct!);
+                direct?.Invoke(__value0);
             }
-            else if (IsProgram)
+            else if (Program is { } __value1)
             {
-                program?.Invoke(Program!);
+                program?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsDirect)
+            if (Direct is { } __value0)
             {
-                direct?.Invoke(Direct!);
+                direct?.Invoke(__value0);
             }
-            else if (IsProgram)
+            else if (Program is { } __value1)
             {
-                program?.Invoke(Program!);
+                program?.Invoke(__value1);
             }
         }
 

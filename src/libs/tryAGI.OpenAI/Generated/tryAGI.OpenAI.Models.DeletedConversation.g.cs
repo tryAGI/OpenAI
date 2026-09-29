@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.DeletedConversationResource PickResource() => IsResource
-            ? Resource!
+        public global::tryAGI.OpenAI.DeletedConversationResource PickResource() => Resource is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Resource' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -102,9 +102,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResource && resource != null)
+            if (Resource is { } __value0 && resource != null)
             {
-                return resource(Resource!);
+                return resource(__value0);
             }
 
             return default(TResult);
@@ -122,9 +122,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResource)
+            if (Resource is { } __value0)
             {
-                resource?.Invoke(Resource!);
+                resource?.Invoke(__value0);
             }
         }
 
@@ -140,9 +140,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResource)
+            if (Resource is { } __value0)
             {
-                resource?.Invoke(Resource!);
+                resource?.Invoke(__value0);
             }
         }
 

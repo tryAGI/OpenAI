@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class ChatCompletionMessageListDataItem
     {
         /// <summary>
-        /// The identifier of the chat message.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -18,8 +18,28 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionMessageListDataItemRoleJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.ChatCompletionMessageListDataItemRole Role { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public string? Content { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_parts")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText, global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage>>? ContentParts { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionMessageListDataItemContentPartsVariant1Item>? ContentParts { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,19 +50,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionMessageListDataItem" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The identifier of the chat message.
-        /// </param>
+        /// <param name="id"></param>
+        /// <param name="role"></param>
+        /// <param name="content"></param>
         /// <param name="contentParts"></param>
+        /// <param name="name"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionMessageListDataItem(
             string id,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText, global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage>>? contentParts)
+            global::tryAGI.OpenAI.ChatCompletionMessageListDataItemRole role,
+            string? content,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionMessageListDataItemContentPartsVariant1Item>? contentParts,
+            string? name)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Role = role;
+            this.Content = content;
             this.ContentParts = contentParts;
+            this.Name = name;
         }
 
         /// <summary>

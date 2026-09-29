@@ -33,9 +33,11 @@ internal static partial class GroupsRetrieveGroupCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-group", @"Retrieve group
+        var command = new Command(commandName ?? @"retrieve-group", @"Retrieve group
 Retrieves a group.");
                         command.Arguments.Add(GroupId);
 
@@ -59,6 +61,7 @@ Retrieves a group.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

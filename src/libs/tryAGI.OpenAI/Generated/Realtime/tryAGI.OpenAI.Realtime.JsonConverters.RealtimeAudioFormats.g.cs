@@ -167,19 +167,19 @@ namespace tryAGI.OpenAI.Realtime.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmAudioFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmAudioFormat?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmAudioFormat).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PcmAudioFormat!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPcmAudioFormat(), typeInfo);
             }
             else if (value.IsPcmuAudioFormat)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmuAudioFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmuAudioFormat?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmuAudioFormat).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PcmuAudioFormat!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPcmuAudioFormat(), typeInfo);
             }
             else if (value.IsPcmaAudioFormat)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmaAudioFormat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmaAudioFormat?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmaAudioFormat).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PcmaAudioFormat!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickPcmaAudioFormat(), typeInfo);
             }
         }
     }

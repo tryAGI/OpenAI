@@ -53,9 +53,11 @@ internal static partial class EvalsListEvalsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-evals", @"List evals
+        var command = new Command(commandName ?? @"list-evals", @"List evals
 List evaluations for a project.
 ");
                         command.Options.Add(After);
@@ -97,6 +99,7 @@ List evaluations for a project.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

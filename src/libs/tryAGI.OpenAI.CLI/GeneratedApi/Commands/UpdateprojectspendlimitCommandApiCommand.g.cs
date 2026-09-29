@@ -68,9 +68,11 @@ internal static partial class UpdateprojectspendlimitCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"updateprojectspendlimit", @"Update project spend limit
+        var command = new Command(commandName ?? @"updateprojectspendlimit", @"Update project spend limit
 Create or replace a project's hard spend limit.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(ThresholdAmount);
@@ -123,6 +125,7 @@ Create or replace a project's hard spend limit.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

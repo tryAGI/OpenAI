@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class FineTuningApiGroupCommand
+internal static partial class FineTuningApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"fine-tuning", @"Fine-tuning endpoint commands.");
@@ -22,6 +24,7 @@ internal static class FineTuningApiGroupCommand
                          command.Subcommands.Add(FineTuningRetrieveFineTuningJobCommandApiCommand.Create());
                          command.Subcommands.Add(FineTuningRunGraderCommandApiCommand.Create());
                          command.Subcommands.Add(FineTuningValidateGraderCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

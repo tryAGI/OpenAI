@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaFunctionToolCallOutput PickFunctionToolCallOutput() => IsFunctionToolCallOutput
-            ? FunctionToolCallOutput!
+        public global::tryAGI.OpenAI.BetaFunctionToolCallOutput PickFunctionToolCallOutput() => FunctionToolCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionToolCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaFunctionToolCallOutputResourceVariant2 PickBetaFunctionToolCallOutputResourceVariant2() => IsBetaFunctionToolCallOutputResourceVariant2
-            ? BetaFunctionToolCallOutputResourceVariant2!
+        public global::tryAGI.OpenAI.BetaFunctionToolCallOutputResourceVariant2 PickBetaFunctionToolCallOutputResourceVariant2() => BetaFunctionToolCallOutputResourceVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaFunctionToolCallOutputResourceVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunctionToolCallOutput && functionToolCallOutput != null)
+            if (FunctionToolCallOutput is { } __value0 && functionToolCallOutput != null)
             {
-                return functionToolCallOutput(FunctionToolCallOutput!);
+                return functionToolCallOutput(__value0);
             }
-            else if (IsBetaFunctionToolCallOutputResourceVariant2 && betaFunctionToolCallOutputResourceVariant2 != null)
+            else if (BetaFunctionToolCallOutputResourceVariant2 is { } __value1 && betaFunctionToolCallOutputResourceVariant2 != null)
             {
-                return betaFunctionToolCallOutputResourceVariant2(BetaFunctionToolCallOutputResourceVariant2!);
+                return betaFunctionToolCallOutputResourceVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunctionToolCallOutput)
+            if (FunctionToolCallOutput is { } __value0)
             {
-                functionToolCallOutput?.Invoke(FunctionToolCallOutput!);
+                functionToolCallOutput?.Invoke(__value0);
             }
-            else if (IsBetaFunctionToolCallOutputResourceVariant2)
+            else if (BetaFunctionToolCallOutputResourceVariant2 is { } __value1)
             {
-                betaFunctionToolCallOutputResourceVariant2?.Invoke(BetaFunctionToolCallOutputResourceVariant2!);
+                betaFunctionToolCallOutputResourceVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunctionToolCallOutput)
+            if (FunctionToolCallOutput is { } __value0)
             {
-                functionToolCallOutput?.Invoke(FunctionToolCallOutput!);
+                functionToolCallOutput?.Invoke(__value0);
             }
-            else if (IsBetaFunctionToolCallOutputResourceVariant2)
+            else if (BetaFunctionToolCallOutputResourceVariant2 is { } __value1)
             {
-                betaFunctionToolCallOutputResourceVariant2?.Invoke(BetaFunctionToolCallOutputResourceVariant2!);
+                betaFunctionToolCallOutputResourceVariant2?.Invoke(__value1);
             }
         }
 

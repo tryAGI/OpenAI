@@ -34,9 +34,11 @@ internal static partial class UserOrganizationRoleAssignmentsAssignUserRoleComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"assign-user-role", @"Assign organization role to user
+        var command = new Command(commandName ?? @"assign-user-role", @"Assign organization role to user
 Assigns an organization role to a user within the organization.");
                         command.Arguments.Add(UserId);                        command.Options.Add(PublicAssignOrganizationGroupRoleBodyOptionSetOptions.RoleId);
 
@@ -61,6 +63,7 @@ Assigns an organization role to a user within the organization.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

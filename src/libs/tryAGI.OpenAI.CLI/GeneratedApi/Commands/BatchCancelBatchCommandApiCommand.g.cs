@@ -33,9 +33,11 @@ internal static partial class BatchCancelBatchCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"cancel-batch", @"Cancel batch
+        var command = new Command(commandName ?? @"cancel-batch", @"Cancel batch
 Cancels an in-progress batch. The batch will be in status `cancelling` for up to 10 minutes, before changing to `cancelled`, where it will have partial results (if any) available in the output file.");
                         command.Arguments.Add(BatchId);
 
@@ -59,6 +61,7 @@ Cancels an in-progress batch. The batch will be in status `cancelling` for up to
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

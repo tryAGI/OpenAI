@@ -68,9 +68,11 @@ internal static partial class AssistantsListMessagesCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-messages", @"List messages
+        var command = new Command(commandName ?? @"list-messages", @"List messages
 Returns a list of messages for a given thread.");
                         command.Arguments.Add(ThreadId);
                         command.Options.Add(Limit);
@@ -117,6 +119,7 @@ Returns a list of messages for a given thread.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

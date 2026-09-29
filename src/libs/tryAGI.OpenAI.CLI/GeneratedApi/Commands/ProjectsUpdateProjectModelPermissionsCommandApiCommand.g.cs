@@ -47,9 +47,11 @@ internal static partial class ProjectsUpdateProjectModelPermissionsCommandApiCom
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-project-model-permissions", @"Modify project model permissions
+        var command = new Command(commandName ?? @"update-project-model-permissions", @"Modify project model permissions
 Updates model permissions for a project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Mode);
@@ -87,6 +89,7 @@ Updates model permissions for a project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

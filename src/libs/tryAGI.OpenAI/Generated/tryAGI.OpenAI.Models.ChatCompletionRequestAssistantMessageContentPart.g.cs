@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText PickText() => IsText
-            ? Text!
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal PickRefusal() => IsRefusal
-            ? Refusal!
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartRefusal PickRefusal() => Refusal is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (Text is { } __value0 && text != null)
             {
-                return text(Text!);
+                return text(__value0);
             }
-            else if (IsRefusal && refusal != null)
+            else if (Refusal is { } __value1 && refusal != null)
             {
-                return refusal(Refusal!);
+                return refusal(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsRefusal)
+            else if (Refusal is { } __value1)
             {
-                refusal?.Invoke(Refusal!);
+                refusal?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsText)
+            if (Text is { } __value0)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value0);
             }
-            else if (IsRefusal)
+            else if (Refusal is { } __value1)
             {
-                refusal?.Invoke(Refusal!);
+                refusal?.Invoke(__value1);
             }
         }
 

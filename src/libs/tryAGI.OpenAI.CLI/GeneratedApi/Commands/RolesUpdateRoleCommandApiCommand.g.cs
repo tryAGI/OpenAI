@@ -56,9 +56,11 @@ internal static partial class RolesUpdateRoleCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-role", @"Update organization role
+        var command = new Command(commandName ?? @"update-role", @"Update organization role
 Updates an existing organization role.");
                         command.Arguments.Add(RoleId);
                         command.Options.Add(Permissions);                        command.Options.Add(PublicUpdateOrganizationRoleBodyOptionSetOptions.DescriptionOption);
@@ -117,6 +119,7 @@ Updates an existing organization role.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

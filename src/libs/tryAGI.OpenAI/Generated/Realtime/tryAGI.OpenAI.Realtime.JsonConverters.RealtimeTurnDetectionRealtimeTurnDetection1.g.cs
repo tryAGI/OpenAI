@@ -59,13 +59,13 @@ namespace tryAGI.OpenAI.Realtime.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1ServerVad).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ServerVad!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickServerVad(), typeInfo);
             }
             else if (value.IsSemanticVad)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.Realtime.RealtimeTurnDetectionRealtimeTurnDetection1SemanticVad).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SemanticVad!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSemanticVad(), typeInfo);
             }
         }
     }

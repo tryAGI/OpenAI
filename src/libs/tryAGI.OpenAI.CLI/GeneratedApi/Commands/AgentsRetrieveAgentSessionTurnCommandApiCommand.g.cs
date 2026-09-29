@@ -39,9 +39,11 @@ internal static partial class AgentsRetrieveAgentSessionTurnCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-agent-session-turn", @"Retrieve an agent session turn
+        var command = new Command(commandName ?? @"retrieve-agent-session-turn", @"Retrieve an agent session turn
 Retrieves a turn's current status, timestamps, usage, and error. Returns 404 if the turn does not belong to the session. See [session turns](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage#inspect-session-turns).");
                         command.Arguments.Add(SessionId);
                         command.Arguments.Add(TurnId);
@@ -68,6 +70,7 @@ Retrieves a turn's current status, timestamps, usage, and error. Returns 404 if 
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

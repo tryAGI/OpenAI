@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class SkillsApiGroupCommand
+internal static partial class SkillsApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"skills", @"Skills endpoint commands.");
@@ -22,6 +24,7 @@ internal static class SkillsApiGroupCommand
                          command.Subcommands.Add(SkillsListSkillVersionsCommandApiCommand.Create());
                          command.Subcommands.Add(SkillsListSkillsCommandApiCommand.Create());
                          command.Subcommands.Add(SkillsUpdateSkillDefaultVersionCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

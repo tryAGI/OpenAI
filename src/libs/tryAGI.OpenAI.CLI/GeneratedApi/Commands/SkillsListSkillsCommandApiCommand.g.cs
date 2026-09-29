@@ -45,9 +45,11 @@ internal static partial class SkillsListSkillsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-skills", @"List Skills
+        var command = new Command(commandName ?? @"list-skills", @"List Skills
 List all skills for the current project.");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);
@@ -85,6 +87,7 @@ List all skills for the current project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

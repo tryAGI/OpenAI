@@ -75,9 +75,11 @@ internal static partial class CreateChatSessionMethodCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-chat-session-method", @"Create a ChatKit session
+        var command = new Command(commandName ?? @"create-chat-session-method", @"Create a ChatKit session
 Create a ChatKit session.");
                         command.Options.Add(Workflow);
                         command.Options.Add(User);
@@ -133,6 +135,7 @@ Create a ChatKit session.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

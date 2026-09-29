@@ -33,9 +33,11 @@ internal static partial class FilesRetrieveFileCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-file", @"Retrieve file
+        var command = new Command(commandName ?? @"retrieve-file", @"Retrieve file
 Returns information about a specific file.");
                         command.Arguments.Add(FileId);
 
@@ -59,6 +61,7 @@ Returns information about a specific file.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

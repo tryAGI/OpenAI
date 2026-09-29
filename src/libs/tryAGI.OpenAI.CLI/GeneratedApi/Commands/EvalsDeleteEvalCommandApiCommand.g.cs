@@ -33,9 +33,11 @@ internal static partial class EvalsDeleteEvalCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-eval", @"Delete an eval
+        var command = new Command(commandName ?? @"delete-eval", @"Delete an eval
 Delete an evaluation.
 ");
                         command.Arguments.Add(EvalId);
@@ -60,6 +62,7 @@ Delete an evaluation.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

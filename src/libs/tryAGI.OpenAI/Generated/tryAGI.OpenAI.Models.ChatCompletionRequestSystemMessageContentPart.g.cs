@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText PickTextContentPart() => IsTextContentPart
-            ? TextContentPart!
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText PickTextContentPart() => TextContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextContentPart' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -102,9 +102,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextContentPart && textContentPart != null)
+            if (TextContentPart is { } __value0 && textContentPart != null)
             {
-                return textContentPart(TextContentPart!);
+                return textContentPart(__value0);
             }
 
             return default(TResult);
@@ -122,9 +122,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextContentPart)
+            if (TextContentPart is { } __value0)
             {
-                textContentPart?.Invoke(TextContentPart!);
+                textContentPart?.Invoke(__value0);
             }
         }
 
@@ -140,9 +140,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextContentPart)
+            if (TextContentPart is { } __value0)
             {
-                textContentPart?.Invoke(TextContentPart!);
+                textContentPart?.Invoke(__value0);
             }
         }
 

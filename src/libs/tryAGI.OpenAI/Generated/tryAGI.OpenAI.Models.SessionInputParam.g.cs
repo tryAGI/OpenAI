@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage PickAgentSessionInputMessage() => IsAgentSessionInputMessage
-            ? AgentSessionInputMessage!
+        public global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage PickAgentSessionInputMessage() => AgentSessionInputMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionInputMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionInputParamAgentSessionInputCancel PickAgentSessionInputCancel() => IsAgentSessionInputCancel
-            ? AgentSessionInputCancel!
+        public global::tryAGI.OpenAI.SessionInputParamAgentSessionInputCancel PickAgentSessionInputCancel() => AgentSessionInputCancel is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionInputCancel' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionInputParamAgentSessionInputToolResult PickAgentSessionInputToolResult() => IsAgentSessionInputToolResult
-            ? AgentSessionInputToolResult!
+        public global::tryAGI.OpenAI.SessionInputParamAgentSessionInputToolResult PickAgentSessionInputToolResult() => AgentSessionInputToolResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionInputToolResult' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAgentSessionInputMessage && agentSessionInputMessage != null)
+            if (AgentSessionInputMessage is { } __value0 && agentSessionInputMessage != null)
             {
-                return agentSessionInputMessage(AgentSessionInputMessage!);
+                return agentSessionInputMessage(__value0);
             }
-            else if (IsAgentSessionInputCancel && agentSessionInputCancel != null)
+            else if (AgentSessionInputCancel is { } __value1 && agentSessionInputCancel != null)
             {
-                return agentSessionInputCancel(AgentSessionInputCancel!);
+                return agentSessionInputCancel(__value1);
             }
-            else if (IsAgentSessionInputToolResult && agentSessionInputToolResult != null)
+            else if (AgentSessionInputToolResult is { } __value2 && agentSessionInputToolResult != null)
             {
-                return agentSessionInputToolResult(AgentSessionInputToolResult!);
+                return agentSessionInputToolResult(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAgentSessionInputMessage)
+            if (AgentSessionInputMessage is { } __value0)
             {
-                agentSessionInputMessage?.Invoke(AgentSessionInputMessage!);
+                agentSessionInputMessage?.Invoke(__value0);
             }
-            else if (IsAgentSessionInputCancel)
+            else if (AgentSessionInputCancel is { } __value1)
             {
-                agentSessionInputCancel?.Invoke(AgentSessionInputCancel!);
+                agentSessionInputCancel?.Invoke(__value1);
             }
-            else if (IsAgentSessionInputToolResult)
+            else if (AgentSessionInputToolResult is { } __value2)
             {
-                agentSessionInputToolResult?.Invoke(AgentSessionInputToolResult!);
+                agentSessionInputToolResult?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAgentSessionInputMessage)
+            if (AgentSessionInputMessage is { } __value0)
             {
-                agentSessionInputMessage?.Invoke(AgentSessionInputMessage!);
+                agentSessionInputMessage?.Invoke(__value0);
             }
-            else if (IsAgentSessionInputCancel)
+            else if (AgentSessionInputCancel is { } __value1)
             {
-                agentSessionInputCancel?.Invoke(AgentSessionInputCancel!);
+                agentSessionInputCancel?.Invoke(__value1);
             }
-            else if (IsAgentSessionInputToolResult)
+            else if (AgentSessionInputToolResult is { } __value2)
             {
-                agentSessionInputToolResult?.Invoke(AgentSessionInputToolResult!);
+                agentSessionInputToolResult?.Invoke(__value2);
             }
         }
 

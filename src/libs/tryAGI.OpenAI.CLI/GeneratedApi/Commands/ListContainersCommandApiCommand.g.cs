@@ -54,9 +54,11 @@ internal static partial class ListContainersCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-containers", @"List containers
+        var command = new Command(commandName ?? @"list-containers", @"List containers
 List Containers");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);
@@ -97,6 +99,7 @@ List Containers");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

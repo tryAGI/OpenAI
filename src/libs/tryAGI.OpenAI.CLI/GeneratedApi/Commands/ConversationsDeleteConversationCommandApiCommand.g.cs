@@ -33,9 +33,11 @@ internal static partial class ConversationsDeleteConversationCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-conversation", @"Delete a conversation
+        var command = new Command(commandName ?? @"delete-conversation", @"Delete a conversation
 Delete a conversation. Items in the conversation will not be deleted.");
                         command.Arguments.Add(ConversationId);
 
@@ -59,6 +61,7 @@ Delete a conversation. Items in the conversation will not be deleted.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

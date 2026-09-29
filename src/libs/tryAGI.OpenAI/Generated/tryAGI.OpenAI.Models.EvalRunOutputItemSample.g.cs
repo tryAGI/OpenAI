@@ -44,11 +44,10 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.EvalRunOutputItemSampleUsage Usage { get; set; }
 
         /// <summary>
-        /// An object representing an error response from the Eval API.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EvalApiError Error { get; set; }
+        public global::tryAGI.OpenAI.EvalApiError? Error { get; set; }
 
         /// <summary>
         /// The sampling temperature used.
@@ -102,9 +101,6 @@ namespace tryAGI.OpenAI
         /// <param name="usage">
         /// Token usage details for the sample.
         /// </param>
-        /// <param name="error">
-        /// An object representing an error response from the Eval API.
-        /// </param>
         /// <param name="temperature">
         /// The sampling temperature used.
         /// </param>
@@ -117,6 +113,7 @@ namespace tryAGI.OpenAI
         /// <param name="seed">
         /// The seed used for generating the sample.
         /// </param>
+        /// <param name="error"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -126,18 +123,18 @@ namespace tryAGI.OpenAI
             string finishReason,
             string model,
             global::tryAGI.OpenAI.EvalRunOutputItemSampleUsage usage,
-            global::tryAGI.OpenAI.EvalApiError error,
             double temperature,
             int maxCompletionTokens,
             double topP,
-            int seed)
+            int seed,
+            global::tryAGI.OpenAI.EvalApiError? error)
         {
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
             this.FinishReason = finishReason ?? throw new global::System.ArgumentNullException(nameof(finishReason));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.Error = error;
             this.Temperature = temperature;
             this.MaxCompletionTokens = maxCompletionTokens;
             this.TopP = topP;

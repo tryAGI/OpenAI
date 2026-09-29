@@ -19,9 +19,11 @@ internal static partial class AgentsRetrieveAgentSessionArtifactContentCommandAp
         Description = @"The immutable session artifact ID.",
     };
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-agent-session-artifact-content", @"Retrieve agent session artifact content
+        var command = new Command(commandName ?? @"retrieve-agent-session-artifact-content", @"Retrieve agent session artifact content
 Downloads immutable session artifact bytes after the execution environment expires. See [session artifacts](https://developers.openai.com/api/docs/guides/agents-api/environments/files#openai-hosted-artifacts).");
                         command.Arguments.Add(SessionId);
                         command.Arguments.Add(ArtifactId);
@@ -42,6 +44,7 @@ Downloads immutable session artifact bytes after the execution environment expir
 
                                 await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

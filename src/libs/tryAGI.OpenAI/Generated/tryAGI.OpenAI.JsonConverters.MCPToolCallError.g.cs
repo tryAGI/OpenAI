@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.MCPProtocolError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.MCPProtocolError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MCPProtocolError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpProtocolError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpProtocolError(), typeInfo);
             }
             else if (value.IsMcpToolExecutionError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.MCPToolExecutionError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.MCPToolExecutionError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MCPToolExecutionError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpToolExecutionError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpToolExecutionError(), typeInfo);
             }
             else if (value.IsHttpError)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.HTTPError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.HTTPError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.HTTPError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HttpError!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickHttpError(), typeInfo);
             }
         }
     }

@@ -33,9 +33,11 @@ internal static partial class ProjectsRetrieveProjectCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-project", @"Retrieve project
+        var command = new Command(commandName ?? @"retrieve-project", @"Retrieve project
 Retrieves a project.");
                         command.Arguments.Add(ProjectId);
 
@@ -59,6 +61,7 @@ Retrieves a project.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

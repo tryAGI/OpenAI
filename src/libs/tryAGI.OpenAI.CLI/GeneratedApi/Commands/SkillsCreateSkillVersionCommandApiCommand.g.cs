@@ -60,9 +60,11 @@ internal static partial class SkillsCreateSkillVersionCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-skill-version", @"Create Skill Version
+        var command = new Command(commandName ?? @"create-skill-version", @"Create Skill Version
 Create a new immutable skill version.");
                         command.Arguments.Add(SkillId);
                         command.Options.Add(Files);
@@ -112,6 +114,7 @@ Create a new immutable skill version.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

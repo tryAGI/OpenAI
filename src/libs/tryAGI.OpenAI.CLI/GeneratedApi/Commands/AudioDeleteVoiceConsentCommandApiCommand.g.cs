@@ -33,9 +33,11 @@ internal static partial class AudioDeleteVoiceConsentCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-voice-consent", @"Delete voice consent
+        var command = new Command(commandName ?? @"delete-voice-consent", @"Delete voice consent
 Deletes a voice consent recording.");
                         command.Arguments.Add(ConsentId);
 
@@ -59,6 +61,7 @@ Deletes a voice consent recording.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageItem PickChatkitUserMessage() => IsChatkitUserMessage
-            ? ChatkitUserMessage!
+        public global::tryAGI.OpenAI.UserMessageItem PickChatkitUserMessage() => ChatkitUserMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatkitUserMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AssistantMessageItem PickChatkitAssistantMessage() => IsChatkitAssistantMessage
-            ? ChatkitAssistantMessage!
+        public global::tryAGI.OpenAI.AssistantMessageItem PickChatkitAssistantMessage() => ChatkitAssistantMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatkitAssistantMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.WidgetMessageItem PickChatkitWidget() => IsChatkitWidget
-            ? ChatkitWidget!
+        public global::tryAGI.OpenAI.WidgetMessageItem PickChatkitWidget() => ChatkitWidget is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatkitWidget' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ClientToolCallItem PickChatkitClientToolCall() => IsChatkitClientToolCall
-            ? ChatkitClientToolCall!
+        public global::tryAGI.OpenAI.ClientToolCallItem PickChatkitClientToolCall() => ChatkitClientToolCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatkitClientToolCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.TaskItem PickChatkitTask() => IsChatkitTask
-            ? ChatkitTask!
+        public global::tryAGI.OpenAI.TaskItem PickChatkitTask() => ChatkitTask is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatkitTask' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.TaskGroupItem PickChatkitTaskGroup() => IsChatkitTaskGroup
-            ? ChatkitTaskGroup!
+        public global::tryAGI.OpenAI.TaskGroupItem PickChatkitTaskGroup() => ChatkitTaskGroup is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ChatkitTaskGroup' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -445,29 +445,29 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsChatkitUserMessage && chatkitUserMessage != null)
+            if (ChatkitUserMessage is { } __value0 && chatkitUserMessage != null)
             {
-                return chatkitUserMessage(ChatkitUserMessage!);
+                return chatkitUserMessage(__value0);
             }
-            else if (IsChatkitAssistantMessage && chatkitAssistantMessage != null)
+            else if (ChatkitAssistantMessage is { } __value1 && chatkitAssistantMessage != null)
             {
-                return chatkitAssistantMessage(ChatkitAssistantMessage!);
+                return chatkitAssistantMessage(__value1);
             }
-            else if (IsChatkitWidget && chatkitWidget != null)
+            else if (ChatkitWidget is { } __value2 && chatkitWidget != null)
             {
-                return chatkitWidget(ChatkitWidget!);
+                return chatkitWidget(__value2);
             }
-            else if (IsChatkitClientToolCall && chatkitClientToolCall != null)
+            else if (ChatkitClientToolCall is { } __value3 && chatkitClientToolCall != null)
             {
-                return chatkitClientToolCall(ChatkitClientToolCall!);
+                return chatkitClientToolCall(__value3);
             }
-            else if (IsChatkitTask && chatkitTask != null)
+            else if (ChatkitTask is { } __value4 && chatkitTask != null)
             {
-                return chatkitTask(ChatkitTask!);
+                return chatkitTask(__value4);
             }
-            else if (IsChatkitTaskGroup && chatkitTaskGroup != null)
+            else if (ChatkitTaskGroup is { } __value5 && chatkitTaskGroup != null)
             {
-                return chatkitTaskGroup(ChatkitTaskGroup!);
+                return chatkitTaskGroup(__value5);
             }
 
             return default(TResult);
@@ -495,29 +495,29 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsChatkitUserMessage)
+            if (ChatkitUserMessage is { } __value0)
             {
-                chatkitUserMessage?.Invoke(ChatkitUserMessage!);
+                chatkitUserMessage?.Invoke(__value0);
             }
-            else if (IsChatkitAssistantMessage)
+            else if (ChatkitAssistantMessage is { } __value1)
             {
-                chatkitAssistantMessage?.Invoke(ChatkitAssistantMessage!);
+                chatkitAssistantMessage?.Invoke(__value1);
             }
-            else if (IsChatkitWidget)
+            else if (ChatkitWidget is { } __value2)
             {
-                chatkitWidget?.Invoke(ChatkitWidget!);
+                chatkitWidget?.Invoke(__value2);
             }
-            else if (IsChatkitClientToolCall)
+            else if (ChatkitClientToolCall is { } __value3)
             {
-                chatkitClientToolCall?.Invoke(ChatkitClientToolCall!);
+                chatkitClientToolCall?.Invoke(__value3);
             }
-            else if (IsChatkitTask)
+            else if (ChatkitTask is { } __value4)
             {
-                chatkitTask?.Invoke(ChatkitTask!);
+                chatkitTask?.Invoke(__value4);
             }
-            else if (IsChatkitTaskGroup)
+            else if (ChatkitTaskGroup is { } __value5)
             {
-                chatkitTaskGroup?.Invoke(ChatkitTaskGroup!);
+                chatkitTaskGroup?.Invoke(__value5);
             }
         }
 
@@ -538,29 +538,29 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsChatkitUserMessage)
+            if (ChatkitUserMessage is { } __value0)
             {
-                chatkitUserMessage?.Invoke(ChatkitUserMessage!);
+                chatkitUserMessage?.Invoke(__value0);
             }
-            else if (IsChatkitAssistantMessage)
+            else if (ChatkitAssistantMessage is { } __value1)
             {
-                chatkitAssistantMessage?.Invoke(ChatkitAssistantMessage!);
+                chatkitAssistantMessage?.Invoke(__value1);
             }
-            else if (IsChatkitWidget)
+            else if (ChatkitWidget is { } __value2)
             {
-                chatkitWidget?.Invoke(ChatkitWidget!);
+                chatkitWidget?.Invoke(__value2);
             }
-            else if (IsChatkitClientToolCall)
+            else if (ChatkitClientToolCall is { } __value3)
             {
-                chatkitClientToolCall?.Invoke(ChatkitClientToolCall!);
+                chatkitClientToolCall?.Invoke(__value3);
             }
-            else if (IsChatkitTask)
+            else if (ChatkitTask is { } __value4)
             {
-                chatkitTask?.Invoke(ChatkitTask!);
+                chatkitTask?.Invoke(__value4);
             }
-            else if (IsChatkitTaskGroup)
+            else if (ChatkitTaskGroup is { } __value5)
             {
-                chatkitTaskGroup?.Invoke(ChatkitTaskGroup!);
+                chatkitTaskGroup?.Invoke(__value5);
             }
         }
 

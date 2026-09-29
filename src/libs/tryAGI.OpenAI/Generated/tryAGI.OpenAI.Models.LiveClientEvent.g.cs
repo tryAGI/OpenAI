@@ -48,8 +48,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveSessionStartEvent PickSessionStart() => IsSessionStart
-            ? SessionStart!
+        public global::tryAGI.OpenAI.LiveSessionStartEvent PickSessionStart() => SessionStart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionStart' but the value was {ToString()}.");
 
         /// <summary>
@@ -86,8 +86,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveSessionUpdateParam PickSessionUpdate() => IsSessionUpdate
-            ? SessionUpdate!
+        public global::tryAGI.OpenAI.LiveSessionUpdateParam PickSessionUpdate() => SessionUpdate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdate' but the value was {ToString()}.");
 
         /// <summary>
@@ -124,8 +124,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveInputAudioAppendEvent PickSessionInputAudioAppend() => IsSessionInputAudioAppend
-            ? SessionInputAudioAppend!
+        public global::tryAGI.OpenAI.LiveInputAudioAppendEvent PickSessionInputAudioAppend() => SessionInputAudioAppend is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioAppend' but the value was {ToString()}.");
 
         /// <summary>
@@ -162,8 +162,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveInputAudioMuteParam PickSessionInputAudioMute() => IsSessionInputAudioMute
-            ? SessionInputAudioMute!
+        public global::tryAGI.OpenAI.LiveInputAudioMuteParam PickSessionInputAudioMute() => SessionInputAudioMute is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioMute' but the value was {ToString()}.");
 
         /// <summary>
@@ -200,8 +200,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveInputAudioUnmuteParam PickSessionInputAudioUnmute() => IsSessionInputAudioUnmute
-            ? SessionInputAudioUnmute!
+        public global::tryAGI.OpenAI.LiveInputAudioUnmuteParam PickSessionInputAudioUnmute() => SessionInputAudioUnmute is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioUnmute' but the value was {ToString()}.");
 
         /// <summary>
@@ -238,8 +238,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveInstructionsAppendParam PickSessionInstructionsAppend() => IsSessionInstructionsAppend
-            ? SessionInstructionsAppend!
+        public global::tryAGI.OpenAI.LiveInstructionsAppendParam PickSessionInstructionsAppend() => SessionInstructionsAppend is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInstructionsAppend' but the value was {ToString()}.");
 
         /// <summary>
@@ -276,8 +276,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveThinkingAppendParam PickSessionThinkingAppend() => IsSessionThinkingAppend
-            ? SessionThinkingAppend!
+        public global::tryAGI.OpenAI.LiveThinkingAppendParam PickSessionThinkingAppend() => SessionThinkingAppend is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThinkingAppend' but the value was {ToString()}.");
 
         /// <summary>
@@ -314,8 +314,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveCommentaryAppendParam PickSessionCommentaryAppend() => IsSessionCommentaryAppend
-            ? SessionCommentaryAppend!
+        public global::tryAGI.OpenAI.LiveCommentaryAppendParam PickSessionCommentaryAppend() => SessionCommentaryAppend is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCommentaryAppend' but the value was {ToString()}.");
 
         /// <summary>
@@ -352,8 +352,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveResponseItemCreateParam PickResponseItemCreate() => IsResponseItemCreate
-            ? ResponseItemCreate!
+        public global::tryAGI.OpenAI.LiveResponseItemCreateParam PickResponseItemCreate() => ResponseItemCreate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseItemCreate' but the value was {ToString()}.");
 
         /// <summary>
@@ -390,8 +390,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveResponseCreateParam PickResponseCreate() => IsResponseCreate
-            ? ResponseCreate!
+        public global::tryAGI.OpenAI.LiveResponseCreateParam PickResponseCreate() => ResponseCreate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCreate' but the value was {ToString()}.");
 
         /// <summary>
@@ -428,8 +428,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveSessionCloseParam PickSessionClose() => IsSessionClose
-            ? SessionClose!
+        public global::tryAGI.OpenAI.LiveSessionCloseParam PickSessionClose() => SessionClose is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionClose' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -781,49 +781,49 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSessionStart && sessionStart != null)
+            if (SessionStart is { } __value0 && sessionStart != null)
             {
-                return sessionStart(SessionStart!);
+                return sessionStart(__value0);
             }
-            else if (IsSessionUpdate && sessionUpdate != null)
+            else if (SessionUpdate is { } __value1 && sessionUpdate != null)
             {
-                return sessionUpdate(SessionUpdate!);
+                return sessionUpdate(__value1);
             }
-            else if (IsSessionInputAudioAppend && sessionInputAudioAppend != null)
+            else if (SessionInputAudioAppend is { } __value2 && sessionInputAudioAppend != null)
             {
-                return sessionInputAudioAppend(SessionInputAudioAppend!);
+                return sessionInputAudioAppend(__value2);
             }
-            else if (IsSessionInputAudioMute && sessionInputAudioMute != null)
+            else if (SessionInputAudioMute is { } __value3 && sessionInputAudioMute != null)
             {
-                return sessionInputAudioMute(SessionInputAudioMute!);
+                return sessionInputAudioMute(__value3);
             }
-            else if (IsSessionInputAudioUnmute && sessionInputAudioUnmute != null)
+            else if (SessionInputAudioUnmute is { } __value4 && sessionInputAudioUnmute != null)
             {
-                return sessionInputAudioUnmute(SessionInputAudioUnmute!);
+                return sessionInputAudioUnmute(__value4);
             }
-            else if (IsSessionInstructionsAppend && sessionInstructionsAppend != null)
+            else if (SessionInstructionsAppend is { } __value5 && sessionInstructionsAppend != null)
             {
-                return sessionInstructionsAppend(SessionInstructionsAppend!);
+                return sessionInstructionsAppend(__value5);
             }
-            else if (IsSessionThinkingAppend && sessionThinkingAppend != null)
+            else if (SessionThinkingAppend is { } __value6 && sessionThinkingAppend != null)
             {
-                return sessionThinkingAppend(SessionThinkingAppend!);
+                return sessionThinkingAppend(__value6);
             }
-            else if (IsSessionCommentaryAppend && sessionCommentaryAppend != null)
+            else if (SessionCommentaryAppend is { } __value7 && sessionCommentaryAppend != null)
             {
-                return sessionCommentaryAppend(SessionCommentaryAppend!);
+                return sessionCommentaryAppend(__value7);
             }
-            else if (IsResponseItemCreate && responseItemCreate != null)
+            else if (ResponseItemCreate is { } __value8 && responseItemCreate != null)
             {
-                return responseItemCreate(ResponseItemCreate!);
+                return responseItemCreate(__value8);
             }
-            else if (IsResponseCreate && responseCreate != null)
+            else if (ResponseCreate is { } __value9 && responseCreate != null)
             {
-                return responseCreate(ResponseCreate!);
+                return responseCreate(__value9);
             }
-            else if (IsSessionClose && sessionClose != null)
+            else if (SessionClose is { } __value10 && sessionClose != null)
             {
-                return sessionClose(SessionClose!);
+                return sessionClose(__value10);
             }
 
             return default(TResult);
@@ -861,49 +861,49 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSessionStart)
+            if (SessionStart is { } __value0)
             {
-                sessionStart?.Invoke(SessionStart!);
+                sessionStart?.Invoke(__value0);
             }
-            else if (IsSessionUpdate)
+            else if (SessionUpdate is { } __value1)
             {
-                sessionUpdate?.Invoke(SessionUpdate!);
+                sessionUpdate?.Invoke(__value1);
             }
-            else if (IsSessionInputAudioAppend)
+            else if (SessionInputAudioAppend is { } __value2)
             {
-                sessionInputAudioAppend?.Invoke(SessionInputAudioAppend!);
+                sessionInputAudioAppend?.Invoke(__value2);
             }
-            else if (IsSessionInputAudioMute)
+            else if (SessionInputAudioMute is { } __value3)
             {
-                sessionInputAudioMute?.Invoke(SessionInputAudioMute!);
+                sessionInputAudioMute?.Invoke(__value3);
             }
-            else if (IsSessionInputAudioUnmute)
+            else if (SessionInputAudioUnmute is { } __value4)
             {
-                sessionInputAudioUnmute?.Invoke(SessionInputAudioUnmute!);
+                sessionInputAudioUnmute?.Invoke(__value4);
             }
-            else if (IsSessionInstructionsAppend)
+            else if (SessionInstructionsAppend is { } __value5)
             {
-                sessionInstructionsAppend?.Invoke(SessionInstructionsAppend!);
+                sessionInstructionsAppend?.Invoke(__value5);
             }
-            else if (IsSessionThinkingAppend)
+            else if (SessionThinkingAppend is { } __value6)
             {
-                sessionThinkingAppend?.Invoke(SessionThinkingAppend!);
+                sessionThinkingAppend?.Invoke(__value6);
             }
-            else if (IsSessionCommentaryAppend)
+            else if (SessionCommentaryAppend is { } __value7)
             {
-                sessionCommentaryAppend?.Invoke(SessionCommentaryAppend!);
+                sessionCommentaryAppend?.Invoke(__value7);
             }
-            else if (IsResponseItemCreate)
+            else if (ResponseItemCreate is { } __value8)
             {
-                responseItemCreate?.Invoke(ResponseItemCreate!);
+                responseItemCreate?.Invoke(__value8);
             }
-            else if (IsResponseCreate)
+            else if (ResponseCreate is { } __value9)
             {
-                responseCreate?.Invoke(ResponseCreate!);
+                responseCreate?.Invoke(__value9);
             }
-            else if (IsSessionClose)
+            else if (SessionClose is { } __value10)
             {
-                sessionClose?.Invoke(SessionClose!);
+                sessionClose?.Invoke(__value10);
             }
         }
 
@@ -929,49 +929,49 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSessionStart)
+            if (SessionStart is { } __value0)
             {
-                sessionStart?.Invoke(SessionStart!);
+                sessionStart?.Invoke(__value0);
             }
-            else if (IsSessionUpdate)
+            else if (SessionUpdate is { } __value1)
             {
-                sessionUpdate?.Invoke(SessionUpdate!);
+                sessionUpdate?.Invoke(__value1);
             }
-            else if (IsSessionInputAudioAppend)
+            else if (SessionInputAudioAppend is { } __value2)
             {
-                sessionInputAudioAppend?.Invoke(SessionInputAudioAppend!);
+                sessionInputAudioAppend?.Invoke(__value2);
             }
-            else if (IsSessionInputAudioMute)
+            else if (SessionInputAudioMute is { } __value3)
             {
-                sessionInputAudioMute?.Invoke(SessionInputAudioMute!);
+                sessionInputAudioMute?.Invoke(__value3);
             }
-            else if (IsSessionInputAudioUnmute)
+            else if (SessionInputAudioUnmute is { } __value4)
             {
-                sessionInputAudioUnmute?.Invoke(SessionInputAudioUnmute!);
+                sessionInputAudioUnmute?.Invoke(__value4);
             }
-            else if (IsSessionInstructionsAppend)
+            else if (SessionInstructionsAppend is { } __value5)
             {
-                sessionInstructionsAppend?.Invoke(SessionInstructionsAppend!);
+                sessionInstructionsAppend?.Invoke(__value5);
             }
-            else if (IsSessionThinkingAppend)
+            else if (SessionThinkingAppend is { } __value6)
             {
-                sessionThinkingAppend?.Invoke(SessionThinkingAppend!);
+                sessionThinkingAppend?.Invoke(__value6);
             }
-            else if (IsSessionCommentaryAppend)
+            else if (SessionCommentaryAppend is { } __value7)
             {
-                sessionCommentaryAppend?.Invoke(SessionCommentaryAppend!);
+                sessionCommentaryAppend?.Invoke(__value7);
             }
-            else if (IsResponseItemCreate)
+            else if (ResponseItemCreate is { } __value8)
             {
-                responseItemCreate?.Invoke(ResponseItemCreate!);
+                responseItemCreate?.Invoke(__value8);
             }
-            else if (IsResponseCreate)
+            else if (ResponseCreate is { } __value9)
             {
-                responseCreate?.Invoke(ResponseCreate!);
+                responseCreate?.Invoke(__value9);
             }
-            else if (IsSessionClose)
+            else if (SessionClose is { } __value10)
             {
-                sessionClose?.Invoke(SessionClose!);
+                sessionClose?.Invoke(__value10);
             }
         }
 

@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class RolesApiGroupCommand
+internal static partial class RolesApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"roles", @"Roles endpoint commands.");
@@ -19,6 +21,7 @@ internal static class RolesApiGroupCommand
                          command.Subcommands.Add(RolesRetrieveRoleCommandApiCommand.Create());
                          command.Subcommands.Add(RolesUpdateProjectRoleCommandApiCommand.Create());
                          command.Subcommands.Add(RolesUpdateRoleCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

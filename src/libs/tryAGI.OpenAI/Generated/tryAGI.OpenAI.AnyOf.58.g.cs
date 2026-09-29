@@ -41,8 +41,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T1 PickValue1() => IsValue1
-            ? Value1!
+        public T1 PickValue1() => Value1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value1' but the value was {ToString()}.");
 
         /// <summary>
@@ -78,8 +78,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T2 PickValue2() => IsValue2
-            ? Value2!
+        public T2 PickValue2() => Value2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value2' but the value was {ToString()}.");
 
         /// <summary>
@@ -115,8 +115,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T3 PickValue3() => IsValue3
-            ? Value3!
+        public T3 PickValue3() => Value3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value3' but the value was {ToString()}.");
 
         /// <summary>
@@ -152,8 +152,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T4 PickValue4() => IsValue4
-            ? Value4!
+        public T4 PickValue4() => Value4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value4' but the value was {ToString()}.");
 
         /// <summary>
@@ -189,8 +189,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T5 PickValue5() => IsValue5
-            ? Value5!
+        public T5 PickValue5() => Value5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value5' but the value was {ToString()}.");
 
         /// <summary>
@@ -226,8 +226,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T6 PickValue6() => IsValue6
-            ? Value6!
+        public T6 PickValue6() => Value6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value6' but the value was {ToString()}.");
 
         /// <summary>
@@ -263,8 +263,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T7 PickValue7() => IsValue7
-            ? Value7!
+        public T7 PickValue7() => Value7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value7' but the value was {ToString()}.");
 
         /// <summary>
@@ -300,8 +300,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T8 PickValue8() => IsValue8
-            ? Value8!
+        public T8 PickValue8() => Value8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value8' but the value was {ToString()}.");
 
         /// <summary>
@@ -337,8 +337,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T9 PickValue9() => IsValue9
-            ? Value9!
+        public T9 PickValue9() => Value9 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value9' but the value was {ToString()}.");
 
         /// <summary>
@@ -374,8 +374,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T10 PickValue10() => IsValue10
-            ? Value10!
+        public T10 PickValue10() => Value10 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value10' but the value was {ToString()}.");
 
         /// <summary>
@@ -411,8 +411,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T11 PickValue11() => IsValue11
-            ? Value11!
+        public T11 PickValue11() => Value11 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value11' but the value was {ToString()}.");
 
         /// <summary>
@@ -448,8 +448,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T12 PickValue12() => IsValue12
-            ? Value12!
+        public T12 PickValue12() => Value12 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value12' but the value was {ToString()}.");
 
         /// <summary>
@@ -485,8 +485,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T13 PickValue13() => IsValue13
-            ? Value13!
+        public T13 PickValue13() => Value13 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value13' but the value was {ToString()}.");
 
         /// <summary>
@@ -522,8 +522,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T14 PickValue14() => IsValue14
-            ? Value14!
+        public T14 PickValue14() => Value14 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value14' but the value was {ToString()}.");
 
         /// <summary>
@@ -559,8 +559,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T15 PickValue15() => IsValue15
-            ? Value15!
+        public T15 PickValue15() => Value15 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value15' but the value was {ToString()}.");
 
         /// <summary>
@@ -596,8 +596,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T16 PickValue16() => IsValue16
-            ? Value16!
+        public T16 PickValue16() => Value16 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value16' but the value was {ToString()}.");
 
         /// <summary>
@@ -633,8 +633,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T17 PickValue17() => IsValue17
-            ? Value17!
+        public T17 PickValue17() => Value17 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value17' but the value was {ToString()}.");
 
         /// <summary>
@@ -670,8 +670,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T18 PickValue18() => IsValue18
-            ? Value18!
+        public T18 PickValue18() => Value18 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value18' but the value was {ToString()}.");
 
         /// <summary>
@@ -707,8 +707,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T19 PickValue19() => IsValue19
-            ? Value19!
+        public T19 PickValue19() => Value19 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value19' but the value was {ToString()}.");
 
         /// <summary>
@@ -744,8 +744,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T20 PickValue20() => IsValue20
-            ? Value20!
+        public T20 PickValue20() => Value20 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value20' but the value was {ToString()}.");
 
         /// <summary>
@@ -781,8 +781,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T21 PickValue21() => IsValue21
-            ? Value21!
+        public T21 PickValue21() => Value21 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value21' but the value was {ToString()}.");
 
         /// <summary>
@@ -818,8 +818,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T22 PickValue22() => IsValue22
-            ? Value22!
+        public T22 PickValue22() => Value22 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value22' but the value was {ToString()}.");
 
         /// <summary>
@@ -855,8 +855,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T23 PickValue23() => IsValue23
-            ? Value23!
+        public T23 PickValue23() => Value23 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value23' but the value was {ToString()}.");
 
         /// <summary>
@@ -892,8 +892,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T24 PickValue24() => IsValue24
-            ? Value24!
+        public T24 PickValue24() => Value24 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value24' but the value was {ToString()}.");
 
         /// <summary>
@@ -929,8 +929,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T25 PickValue25() => IsValue25
-            ? Value25!
+        public T25 PickValue25() => Value25 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value25' but the value was {ToString()}.");
 
         /// <summary>
@@ -966,8 +966,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T26 PickValue26() => IsValue26
-            ? Value26!
+        public T26 PickValue26() => Value26 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value26' but the value was {ToString()}.");
 
         /// <summary>
@@ -1003,8 +1003,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T27 PickValue27() => IsValue27
-            ? Value27!
+        public T27 PickValue27() => Value27 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value27' but the value was {ToString()}.");
 
         /// <summary>
@@ -1040,8 +1040,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T28 PickValue28() => IsValue28
-            ? Value28!
+        public T28 PickValue28() => Value28 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value28' but the value was {ToString()}.");
 
         /// <summary>
@@ -1077,8 +1077,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T29 PickValue29() => IsValue29
-            ? Value29!
+        public T29 PickValue29() => Value29 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value29' but the value was {ToString()}.");
 
         /// <summary>
@@ -1114,8 +1114,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T30 PickValue30() => IsValue30
-            ? Value30!
+        public T30 PickValue30() => Value30 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value30' but the value was {ToString()}.");
 
         /// <summary>
@@ -1151,8 +1151,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T31 PickValue31() => IsValue31
-            ? Value31!
+        public T31 PickValue31() => Value31 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value31' but the value was {ToString()}.");
 
         /// <summary>
@@ -1188,8 +1188,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T32 PickValue32() => IsValue32
-            ? Value32!
+        public T32 PickValue32() => Value32 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value32' but the value was {ToString()}.");
 
         /// <summary>
@@ -1225,8 +1225,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T33 PickValue33() => IsValue33
-            ? Value33!
+        public T33 PickValue33() => Value33 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value33' but the value was {ToString()}.");
 
         /// <summary>
@@ -1262,8 +1262,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T34 PickValue34() => IsValue34
-            ? Value34!
+        public T34 PickValue34() => Value34 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value34' but the value was {ToString()}.");
 
         /// <summary>
@@ -1299,8 +1299,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T35 PickValue35() => IsValue35
-            ? Value35!
+        public T35 PickValue35() => Value35 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value35' but the value was {ToString()}.");
 
         /// <summary>
@@ -1336,8 +1336,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T36 PickValue36() => IsValue36
-            ? Value36!
+        public T36 PickValue36() => Value36 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value36' but the value was {ToString()}.");
 
         /// <summary>
@@ -1373,8 +1373,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T37 PickValue37() => IsValue37
-            ? Value37!
+        public T37 PickValue37() => Value37 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value37' but the value was {ToString()}.");
 
         /// <summary>
@@ -1410,8 +1410,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T38 PickValue38() => IsValue38
-            ? Value38!
+        public T38 PickValue38() => Value38 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value38' but the value was {ToString()}.");
 
         /// <summary>
@@ -1447,8 +1447,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T39 PickValue39() => IsValue39
-            ? Value39!
+        public T39 PickValue39() => Value39 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value39' but the value was {ToString()}.");
 
         /// <summary>
@@ -1484,8 +1484,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T40 PickValue40() => IsValue40
-            ? Value40!
+        public T40 PickValue40() => Value40 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value40' but the value was {ToString()}.");
 
         /// <summary>
@@ -1521,8 +1521,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T41 PickValue41() => IsValue41
-            ? Value41!
+        public T41 PickValue41() => Value41 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value41' but the value was {ToString()}.");
 
         /// <summary>
@@ -1558,8 +1558,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T42 PickValue42() => IsValue42
-            ? Value42!
+        public T42 PickValue42() => Value42 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value42' but the value was {ToString()}.");
 
         /// <summary>
@@ -1595,8 +1595,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T43 PickValue43() => IsValue43
-            ? Value43!
+        public T43 PickValue43() => Value43 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value43' but the value was {ToString()}.");
 
         /// <summary>
@@ -1632,8 +1632,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T44 PickValue44() => IsValue44
-            ? Value44!
+        public T44 PickValue44() => Value44 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value44' but the value was {ToString()}.");
 
         /// <summary>
@@ -1669,8 +1669,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T45 PickValue45() => IsValue45
-            ? Value45!
+        public T45 PickValue45() => Value45 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value45' but the value was {ToString()}.");
 
         /// <summary>
@@ -1706,8 +1706,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T46 PickValue46() => IsValue46
-            ? Value46!
+        public T46 PickValue46() => Value46 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value46' but the value was {ToString()}.");
 
         /// <summary>
@@ -1743,8 +1743,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T47 PickValue47() => IsValue47
-            ? Value47!
+        public T47 PickValue47() => Value47 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value47' but the value was {ToString()}.");
 
         /// <summary>
@@ -1780,8 +1780,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T48 PickValue48() => IsValue48
-            ? Value48!
+        public T48 PickValue48() => Value48 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value48' but the value was {ToString()}.");
 
         /// <summary>
@@ -1817,8 +1817,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T49 PickValue49() => IsValue49
-            ? Value49!
+        public T49 PickValue49() => Value49 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value49' but the value was {ToString()}.");
 
         /// <summary>
@@ -1854,8 +1854,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T50 PickValue50() => IsValue50
-            ? Value50!
+        public T50 PickValue50() => Value50 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value50' but the value was {ToString()}.");
 
         /// <summary>
@@ -1891,8 +1891,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T51 PickValue51() => IsValue51
-            ? Value51!
+        public T51 PickValue51() => Value51 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value51' but the value was {ToString()}.");
 
         /// <summary>
@@ -1928,8 +1928,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T52 PickValue52() => IsValue52
-            ? Value52!
+        public T52 PickValue52() => Value52 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value52' but the value was {ToString()}.");
 
         /// <summary>
@@ -1965,8 +1965,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T53 PickValue53() => IsValue53
-            ? Value53!
+        public T53 PickValue53() => Value53 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value53' but the value was {ToString()}.");
 
         /// <summary>
@@ -2002,8 +2002,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T54 PickValue54() => IsValue54
-            ? Value54!
+        public T54 PickValue54() => Value54 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value54' but the value was {ToString()}.");
 
         /// <summary>
@@ -2039,8 +2039,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T55 PickValue55() => IsValue55
-            ? Value55!
+        public T55 PickValue55() => Value55 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value55' but the value was {ToString()}.");
 
         /// <summary>
@@ -2076,8 +2076,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T56 PickValue56() => IsValue56
-            ? Value56!
+        public T56 PickValue56() => Value56 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value56' but the value was {ToString()}.");
 
         /// <summary>
@@ -2113,8 +2113,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T57 PickValue57() => IsValue57
-            ? Value57!
+        public T57 PickValue57() => Value57 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value57' but the value was {ToString()}.");
 
         /// <summary>
@@ -2150,8 +2150,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public T58 PickValue58() => IsValue58
-            ? Value58!
+        public T58 PickValue58() => Value58 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value58' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -3816,237 +3816,237 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (Value1 is { } __value0 && value1 != null)
             {
-                return value1(Value1!);
+                return value1(__value0);
             }
-            else if (IsValue2 && value2 != null)
+            else if (Value2 is { } __value1 && value2 != null)
             {
-                return value2(Value2!);
+                return value2(__value1);
             }
-            else if (IsValue3 && value3 != null)
+            else if (Value3 is { } __value2 && value3 != null)
             {
-                return value3(Value3!);
+                return value3(__value2);
             }
-            else if (IsValue4 && value4 != null)
+            else if (Value4 is { } __value3 && value4 != null)
             {
-                return value4(Value4!);
+                return value4(__value3);
             }
-            else if (IsValue5 && value5 != null)
+            else if (Value5 is { } __value4 && value5 != null)
             {
-                return value5(Value5!);
+                return value5(__value4);
             }
-            else if (IsValue6 && value6 != null)
+            else if (Value6 is { } __value5 && value6 != null)
             {
-                return value6(Value6!);
+                return value6(__value5);
             }
-            else if (IsValue7 && value7 != null)
+            else if (Value7 is { } __value6 && value7 != null)
             {
-                return value7(Value7!);
+                return value7(__value6);
             }
-            else if (IsValue8 && value8 != null)
+            else if (Value8 is { } __value7 && value8 != null)
             {
-                return value8(Value8!);
+                return value8(__value7);
             }
-            else if (IsValue9 && value9 != null)
+            else if (Value9 is { } __value8 && value9 != null)
             {
-                return value9(Value9!);
+                return value9(__value8);
             }
-            else if (IsValue10 && value10 != null)
+            else if (Value10 is { } __value9 && value10 != null)
             {
-                return value10(Value10!);
+                return value10(__value9);
             }
-            else if (IsValue11 && value11 != null)
+            else if (Value11 is { } __value10 && value11 != null)
             {
-                return value11(Value11!);
+                return value11(__value10);
             }
-            else if (IsValue12 && value12 != null)
+            else if (Value12 is { } __value11 && value12 != null)
             {
-                return value12(Value12!);
+                return value12(__value11);
             }
-            else if (IsValue13 && value13 != null)
+            else if (Value13 is { } __value12 && value13 != null)
             {
-                return value13(Value13!);
+                return value13(__value12);
             }
-            else if (IsValue14 && value14 != null)
+            else if (Value14 is { } __value13 && value14 != null)
             {
-                return value14(Value14!);
+                return value14(__value13);
             }
-            else if (IsValue15 && value15 != null)
+            else if (Value15 is { } __value14 && value15 != null)
             {
-                return value15(Value15!);
+                return value15(__value14);
             }
-            else if (IsValue16 && value16 != null)
+            else if (Value16 is { } __value15 && value16 != null)
             {
-                return value16(Value16!);
+                return value16(__value15);
             }
-            else if (IsValue17 && value17 != null)
+            else if (Value17 is { } __value16 && value17 != null)
             {
-                return value17(Value17!);
+                return value17(__value16);
             }
-            else if (IsValue18 && value18 != null)
+            else if (Value18 is { } __value17 && value18 != null)
             {
-                return value18(Value18!);
+                return value18(__value17);
             }
-            else if (IsValue19 && value19 != null)
+            else if (Value19 is { } __value18 && value19 != null)
             {
-                return value19(Value19!);
+                return value19(__value18);
             }
-            else if (IsValue20 && value20 != null)
+            else if (Value20 is { } __value19 && value20 != null)
             {
-                return value20(Value20!);
+                return value20(__value19);
             }
-            else if (IsValue21 && value21 != null)
+            else if (Value21 is { } __value20 && value21 != null)
             {
-                return value21(Value21!);
+                return value21(__value20);
             }
-            else if (IsValue22 && value22 != null)
+            else if (Value22 is { } __value21 && value22 != null)
             {
-                return value22(Value22!);
+                return value22(__value21);
             }
-            else if (IsValue23 && value23 != null)
+            else if (Value23 is { } __value22 && value23 != null)
             {
-                return value23(Value23!);
+                return value23(__value22);
             }
-            else if (IsValue24 && value24 != null)
+            else if (Value24 is { } __value23 && value24 != null)
             {
-                return value24(Value24!);
+                return value24(__value23);
             }
-            else if (IsValue25 && value25 != null)
+            else if (Value25 is { } __value24 && value25 != null)
             {
-                return value25(Value25!);
+                return value25(__value24);
             }
-            else if (IsValue26 && value26 != null)
+            else if (Value26 is { } __value25 && value26 != null)
             {
-                return value26(Value26!);
+                return value26(__value25);
             }
-            else if (IsValue27 && value27 != null)
+            else if (Value27 is { } __value26 && value27 != null)
             {
-                return value27(Value27!);
+                return value27(__value26);
             }
-            else if (IsValue28 && value28 != null)
+            else if (Value28 is { } __value27 && value28 != null)
             {
-                return value28(Value28!);
+                return value28(__value27);
             }
-            else if (IsValue29 && value29 != null)
+            else if (Value29 is { } __value28 && value29 != null)
             {
-                return value29(Value29!);
+                return value29(__value28);
             }
-            else if (IsValue30 && value30 != null)
+            else if (Value30 is { } __value29 && value30 != null)
             {
-                return value30(Value30!);
+                return value30(__value29);
             }
-            else if (IsValue31 && value31 != null)
+            else if (Value31 is { } __value30 && value31 != null)
             {
-                return value31(Value31!);
+                return value31(__value30);
             }
-            else if (IsValue32 && value32 != null)
+            else if (Value32 is { } __value31 && value32 != null)
             {
-                return value32(Value32!);
+                return value32(__value31);
             }
-            else if (IsValue33 && value33 != null)
+            else if (Value33 is { } __value32 && value33 != null)
             {
-                return value33(Value33!);
+                return value33(__value32);
             }
-            else if (IsValue34 && value34 != null)
+            else if (Value34 is { } __value33 && value34 != null)
             {
-                return value34(Value34!);
+                return value34(__value33);
             }
-            else if (IsValue35 && value35 != null)
+            else if (Value35 is { } __value34 && value35 != null)
             {
-                return value35(Value35!);
+                return value35(__value34);
             }
-            else if (IsValue36 && value36 != null)
+            else if (Value36 is { } __value35 && value36 != null)
             {
-                return value36(Value36!);
+                return value36(__value35);
             }
-            else if (IsValue37 && value37 != null)
+            else if (Value37 is { } __value36 && value37 != null)
             {
-                return value37(Value37!);
+                return value37(__value36);
             }
-            else if (IsValue38 && value38 != null)
+            else if (Value38 is { } __value37 && value38 != null)
             {
-                return value38(Value38!);
+                return value38(__value37);
             }
-            else if (IsValue39 && value39 != null)
+            else if (Value39 is { } __value38 && value39 != null)
             {
-                return value39(Value39!);
+                return value39(__value38);
             }
-            else if (IsValue40 && value40 != null)
+            else if (Value40 is { } __value39 && value40 != null)
             {
-                return value40(Value40!);
+                return value40(__value39);
             }
-            else if (IsValue41 && value41 != null)
+            else if (Value41 is { } __value40 && value41 != null)
             {
-                return value41(Value41!);
+                return value41(__value40);
             }
-            else if (IsValue42 && value42 != null)
+            else if (Value42 is { } __value41 && value42 != null)
             {
-                return value42(Value42!);
+                return value42(__value41);
             }
-            else if (IsValue43 && value43 != null)
+            else if (Value43 is { } __value42 && value43 != null)
             {
-                return value43(Value43!);
+                return value43(__value42);
             }
-            else if (IsValue44 && value44 != null)
+            else if (Value44 is { } __value43 && value44 != null)
             {
-                return value44(Value44!);
+                return value44(__value43);
             }
-            else if (IsValue45 && value45 != null)
+            else if (Value45 is { } __value44 && value45 != null)
             {
-                return value45(Value45!);
+                return value45(__value44);
             }
-            else if (IsValue46 && value46 != null)
+            else if (Value46 is { } __value45 && value46 != null)
             {
-                return value46(Value46!);
+                return value46(__value45);
             }
-            else if (IsValue47 && value47 != null)
+            else if (Value47 is { } __value46 && value47 != null)
             {
-                return value47(Value47!);
+                return value47(__value46);
             }
-            else if (IsValue48 && value48 != null)
+            else if (Value48 is { } __value47 && value48 != null)
             {
-                return value48(Value48!);
+                return value48(__value47);
             }
-            else if (IsValue49 && value49 != null)
+            else if (Value49 is { } __value48 && value49 != null)
             {
-                return value49(Value49!);
+                return value49(__value48);
             }
-            else if (IsValue50 && value50 != null)
+            else if (Value50 is { } __value49 && value50 != null)
             {
-                return value50(Value50!);
+                return value50(__value49);
             }
-            else if (IsValue51 && value51 != null)
+            else if (Value51 is { } __value50 && value51 != null)
             {
-                return value51(Value51!);
+                return value51(__value50);
             }
-            else if (IsValue52 && value52 != null)
+            else if (Value52 is { } __value51 && value52 != null)
             {
-                return value52(Value52!);
+                return value52(__value51);
             }
-            else if (IsValue53 && value53 != null)
+            else if (Value53 is { } __value52 && value53 != null)
             {
-                return value53(Value53!);
+                return value53(__value52);
             }
-            else if (IsValue54 && value54 != null)
+            else if (Value54 is { } __value53 && value54 != null)
             {
-                return value54(Value54!);
+                return value54(__value53);
             }
-            else if (IsValue55 && value55 != null)
+            else if (Value55 is { } __value54 && value55 != null)
             {
-                return value55(Value55!);
+                return value55(__value54);
             }
-            else if (IsValue56 && value56 != null)
+            else if (Value56 is { } __value55 && value56 != null)
             {
-                return value56(Value56!);
+                return value56(__value55);
             }
-            else if (IsValue57 && value57 != null)
+            else if (Value57 is { } __value56 && value57 != null)
             {
-                return value57(Value57!);
+                return value57(__value56);
             }
-            else if (IsValue58 && value58 != null)
+            else if (Value58 is { } __value57 && value58 != null)
             {
-                return value58(Value58!);
+                return value58(__value57);
             }
 
             return default(TResult);
@@ -4178,237 +4178,237 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (Value1 is { } __value0)
             {
-                value1?.Invoke(Value1!);
+                value1?.Invoke(__value0);
             }
-            else if (IsValue2)
+            else if (Value2 is { } __value1)
             {
-                value2?.Invoke(Value2!);
+                value2?.Invoke(__value1);
             }
-            else if (IsValue3)
+            else if (Value3 is { } __value2)
             {
-                value3?.Invoke(Value3!);
+                value3?.Invoke(__value2);
             }
-            else if (IsValue4)
+            else if (Value4 is { } __value3)
             {
-                value4?.Invoke(Value4!);
+                value4?.Invoke(__value3);
             }
-            else if (IsValue5)
+            else if (Value5 is { } __value4)
             {
-                value5?.Invoke(Value5!);
+                value5?.Invoke(__value4);
             }
-            else if (IsValue6)
+            else if (Value6 is { } __value5)
             {
-                value6?.Invoke(Value6!);
+                value6?.Invoke(__value5);
             }
-            else if (IsValue7)
+            else if (Value7 is { } __value6)
             {
-                value7?.Invoke(Value7!);
+                value7?.Invoke(__value6);
             }
-            else if (IsValue8)
+            else if (Value8 is { } __value7)
             {
-                value8?.Invoke(Value8!);
+                value8?.Invoke(__value7);
             }
-            else if (IsValue9)
+            else if (Value9 is { } __value8)
             {
-                value9?.Invoke(Value9!);
+                value9?.Invoke(__value8);
             }
-            else if (IsValue10)
+            else if (Value10 is { } __value9)
             {
-                value10?.Invoke(Value10!);
+                value10?.Invoke(__value9);
             }
-            else if (IsValue11)
+            else if (Value11 is { } __value10)
             {
-                value11?.Invoke(Value11!);
+                value11?.Invoke(__value10);
             }
-            else if (IsValue12)
+            else if (Value12 is { } __value11)
             {
-                value12?.Invoke(Value12!);
+                value12?.Invoke(__value11);
             }
-            else if (IsValue13)
+            else if (Value13 is { } __value12)
             {
-                value13?.Invoke(Value13!);
+                value13?.Invoke(__value12);
             }
-            else if (IsValue14)
+            else if (Value14 is { } __value13)
             {
-                value14?.Invoke(Value14!);
+                value14?.Invoke(__value13);
             }
-            else if (IsValue15)
+            else if (Value15 is { } __value14)
             {
-                value15?.Invoke(Value15!);
+                value15?.Invoke(__value14);
             }
-            else if (IsValue16)
+            else if (Value16 is { } __value15)
             {
-                value16?.Invoke(Value16!);
+                value16?.Invoke(__value15);
             }
-            else if (IsValue17)
+            else if (Value17 is { } __value16)
             {
-                value17?.Invoke(Value17!);
+                value17?.Invoke(__value16);
             }
-            else if (IsValue18)
+            else if (Value18 is { } __value17)
             {
-                value18?.Invoke(Value18!);
+                value18?.Invoke(__value17);
             }
-            else if (IsValue19)
+            else if (Value19 is { } __value18)
             {
-                value19?.Invoke(Value19!);
+                value19?.Invoke(__value18);
             }
-            else if (IsValue20)
+            else if (Value20 is { } __value19)
             {
-                value20?.Invoke(Value20!);
+                value20?.Invoke(__value19);
             }
-            else if (IsValue21)
+            else if (Value21 is { } __value20)
             {
-                value21?.Invoke(Value21!);
+                value21?.Invoke(__value20);
             }
-            else if (IsValue22)
+            else if (Value22 is { } __value21)
             {
-                value22?.Invoke(Value22!);
+                value22?.Invoke(__value21);
             }
-            else if (IsValue23)
+            else if (Value23 is { } __value22)
             {
-                value23?.Invoke(Value23!);
+                value23?.Invoke(__value22);
             }
-            else if (IsValue24)
+            else if (Value24 is { } __value23)
             {
-                value24?.Invoke(Value24!);
+                value24?.Invoke(__value23);
             }
-            else if (IsValue25)
+            else if (Value25 is { } __value24)
             {
-                value25?.Invoke(Value25!);
+                value25?.Invoke(__value24);
             }
-            else if (IsValue26)
+            else if (Value26 is { } __value25)
             {
-                value26?.Invoke(Value26!);
+                value26?.Invoke(__value25);
             }
-            else if (IsValue27)
+            else if (Value27 is { } __value26)
             {
-                value27?.Invoke(Value27!);
+                value27?.Invoke(__value26);
             }
-            else if (IsValue28)
+            else if (Value28 is { } __value27)
             {
-                value28?.Invoke(Value28!);
+                value28?.Invoke(__value27);
             }
-            else if (IsValue29)
+            else if (Value29 is { } __value28)
             {
-                value29?.Invoke(Value29!);
+                value29?.Invoke(__value28);
             }
-            else if (IsValue30)
+            else if (Value30 is { } __value29)
             {
-                value30?.Invoke(Value30!);
+                value30?.Invoke(__value29);
             }
-            else if (IsValue31)
+            else if (Value31 is { } __value30)
             {
-                value31?.Invoke(Value31!);
+                value31?.Invoke(__value30);
             }
-            else if (IsValue32)
+            else if (Value32 is { } __value31)
             {
-                value32?.Invoke(Value32!);
+                value32?.Invoke(__value31);
             }
-            else if (IsValue33)
+            else if (Value33 is { } __value32)
             {
-                value33?.Invoke(Value33!);
+                value33?.Invoke(__value32);
             }
-            else if (IsValue34)
+            else if (Value34 is { } __value33)
             {
-                value34?.Invoke(Value34!);
+                value34?.Invoke(__value33);
             }
-            else if (IsValue35)
+            else if (Value35 is { } __value34)
             {
-                value35?.Invoke(Value35!);
+                value35?.Invoke(__value34);
             }
-            else if (IsValue36)
+            else if (Value36 is { } __value35)
             {
-                value36?.Invoke(Value36!);
+                value36?.Invoke(__value35);
             }
-            else if (IsValue37)
+            else if (Value37 is { } __value36)
             {
-                value37?.Invoke(Value37!);
+                value37?.Invoke(__value36);
             }
-            else if (IsValue38)
+            else if (Value38 is { } __value37)
             {
-                value38?.Invoke(Value38!);
+                value38?.Invoke(__value37);
             }
-            else if (IsValue39)
+            else if (Value39 is { } __value38)
             {
-                value39?.Invoke(Value39!);
+                value39?.Invoke(__value38);
             }
-            else if (IsValue40)
+            else if (Value40 is { } __value39)
             {
-                value40?.Invoke(Value40!);
+                value40?.Invoke(__value39);
             }
-            else if (IsValue41)
+            else if (Value41 is { } __value40)
             {
-                value41?.Invoke(Value41!);
+                value41?.Invoke(__value40);
             }
-            else if (IsValue42)
+            else if (Value42 is { } __value41)
             {
-                value42?.Invoke(Value42!);
+                value42?.Invoke(__value41);
             }
-            else if (IsValue43)
+            else if (Value43 is { } __value42)
             {
-                value43?.Invoke(Value43!);
+                value43?.Invoke(__value42);
             }
-            else if (IsValue44)
+            else if (Value44 is { } __value43)
             {
-                value44?.Invoke(Value44!);
+                value44?.Invoke(__value43);
             }
-            else if (IsValue45)
+            else if (Value45 is { } __value44)
             {
-                value45?.Invoke(Value45!);
+                value45?.Invoke(__value44);
             }
-            else if (IsValue46)
+            else if (Value46 is { } __value45)
             {
-                value46?.Invoke(Value46!);
+                value46?.Invoke(__value45);
             }
-            else if (IsValue47)
+            else if (Value47 is { } __value46)
             {
-                value47?.Invoke(Value47!);
+                value47?.Invoke(__value46);
             }
-            else if (IsValue48)
+            else if (Value48 is { } __value47)
             {
-                value48?.Invoke(Value48!);
+                value48?.Invoke(__value47);
             }
-            else if (IsValue49)
+            else if (Value49 is { } __value48)
             {
-                value49?.Invoke(Value49!);
+                value49?.Invoke(__value48);
             }
-            else if (IsValue50)
+            else if (Value50 is { } __value49)
             {
-                value50?.Invoke(Value50!);
+                value50?.Invoke(__value49);
             }
-            else if (IsValue51)
+            else if (Value51 is { } __value50)
             {
-                value51?.Invoke(Value51!);
+                value51?.Invoke(__value50);
             }
-            else if (IsValue52)
+            else if (Value52 is { } __value51)
             {
-                value52?.Invoke(Value52!);
+                value52?.Invoke(__value51);
             }
-            else if (IsValue53)
+            else if (Value53 is { } __value52)
             {
-                value53?.Invoke(Value53!);
+                value53?.Invoke(__value52);
             }
-            else if (IsValue54)
+            else if (Value54 is { } __value53)
             {
-                value54?.Invoke(Value54!);
+                value54?.Invoke(__value53);
             }
-            else if (IsValue55)
+            else if (Value55 is { } __value54)
             {
-                value55?.Invoke(Value55!);
+                value55?.Invoke(__value54);
             }
-            else if (IsValue56)
+            else if (Value56 is { } __value55)
             {
-                value56?.Invoke(Value56!);
+                value56?.Invoke(__value55);
             }
-            else if (IsValue57)
+            else if (Value57 is { } __value56)
             {
-                value57?.Invoke(Value57!);
+                value57?.Invoke(__value56);
             }
-            else if (IsValue58)
+            else if (Value58 is { } __value57)
             {
-                value58?.Invoke(Value58!);
+                value58?.Invoke(__value57);
             }
         }
 
@@ -4481,237 +4481,237 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (Value1 is { } __value0)
             {
-                value1?.Invoke(Value1!);
+                value1?.Invoke(__value0);
             }
-            else if (IsValue2)
+            else if (Value2 is { } __value1)
             {
-                value2?.Invoke(Value2!);
+                value2?.Invoke(__value1);
             }
-            else if (IsValue3)
+            else if (Value3 is { } __value2)
             {
-                value3?.Invoke(Value3!);
+                value3?.Invoke(__value2);
             }
-            else if (IsValue4)
+            else if (Value4 is { } __value3)
             {
-                value4?.Invoke(Value4!);
+                value4?.Invoke(__value3);
             }
-            else if (IsValue5)
+            else if (Value5 is { } __value4)
             {
-                value5?.Invoke(Value5!);
+                value5?.Invoke(__value4);
             }
-            else if (IsValue6)
+            else if (Value6 is { } __value5)
             {
-                value6?.Invoke(Value6!);
+                value6?.Invoke(__value5);
             }
-            else if (IsValue7)
+            else if (Value7 is { } __value6)
             {
-                value7?.Invoke(Value7!);
+                value7?.Invoke(__value6);
             }
-            else if (IsValue8)
+            else if (Value8 is { } __value7)
             {
-                value8?.Invoke(Value8!);
+                value8?.Invoke(__value7);
             }
-            else if (IsValue9)
+            else if (Value9 is { } __value8)
             {
-                value9?.Invoke(Value9!);
+                value9?.Invoke(__value8);
             }
-            else if (IsValue10)
+            else if (Value10 is { } __value9)
             {
-                value10?.Invoke(Value10!);
+                value10?.Invoke(__value9);
             }
-            else if (IsValue11)
+            else if (Value11 is { } __value10)
             {
-                value11?.Invoke(Value11!);
+                value11?.Invoke(__value10);
             }
-            else if (IsValue12)
+            else if (Value12 is { } __value11)
             {
-                value12?.Invoke(Value12!);
+                value12?.Invoke(__value11);
             }
-            else if (IsValue13)
+            else if (Value13 is { } __value12)
             {
-                value13?.Invoke(Value13!);
+                value13?.Invoke(__value12);
             }
-            else if (IsValue14)
+            else if (Value14 is { } __value13)
             {
-                value14?.Invoke(Value14!);
+                value14?.Invoke(__value13);
             }
-            else if (IsValue15)
+            else if (Value15 is { } __value14)
             {
-                value15?.Invoke(Value15!);
+                value15?.Invoke(__value14);
             }
-            else if (IsValue16)
+            else if (Value16 is { } __value15)
             {
-                value16?.Invoke(Value16!);
+                value16?.Invoke(__value15);
             }
-            else if (IsValue17)
+            else if (Value17 is { } __value16)
             {
-                value17?.Invoke(Value17!);
+                value17?.Invoke(__value16);
             }
-            else if (IsValue18)
+            else if (Value18 is { } __value17)
             {
-                value18?.Invoke(Value18!);
+                value18?.Invoke(__value17);
             }
-            else if (IsValue19)
+            else if (Value19 is { } __value18)
             {
-                value19?.Invoke(Value19!);
+                value19?.Invoke(__value18);
             }
-            else if (IsValue20)
+            else if (Value20 is { } __value19)
             {
-                value20?.Invoke(Value20!);
+                value20?.Invoke(__value19);
             }
-            else if (IsValue21)
+            else if (Value21 is { } __value20)
             {
-                value21?.Invoke(Value21!);
+                value21?.Invoke(__value20);
             }
-            else if (IsValue22)
+            else if (Value22 is { } __value21)
             {
-                value22?.Invoke(Value22!);
+                value22?.Invoke(__value21);
             }
-            else if (IsValue23)
+            else if (Value23 is { } __value22)
             {
-                value23?.Invoke(Value23!);
+                value23?.Invoke(__value22);
             }
-            else if (IsValue24)
+            else if (Value24 is { } __value23)
             {
-                value24?.Invoke(Value24!);
+                value24?.Invoke(__value23);
             }
-            else if (IsValue25)
+            else if (Value25 is { } __value24)
             {
-                value25?.Invoke(Value25!);
+                value25?.Invoke(__value24);
             }
-            else if (IsValue26)
+            else if (Value26 is { } __value25)
             {
-                value26?.Invoke(Value26!);
+                value26?.Invoke(__value25);
             }
-            else if (IsValue27)
+            else if (Value27 is { } __value26)
             {
-                value27?.Invoke(Value27!);
+                value27?.Invoke(__value26);
             }
-            else if (IsValue28)
+            else if (Value28 is { } __value27)
             {
-                value28?.Invoke(Value28!);
+                value28?.Invoke(__value27);
             }
-            else if (IsValue29)
+            else if (Value29 is { } __value28)
             {
-                value29?.Invoke(Value29!);
+                value29?.Invoke(__value28);
             }
-            else if (IsValue30)
+            else if (Value30 is { } __value29)
             {
-                value30?.Invoke(Value30!);
+                value30?.Invoke(__value29);
             }
-            else if (IsValue31)
+            else if (Value31 is { } __value30)
             {
-                value31?.Invoke(Value31!);
+                value31?.Invoke(__value30);
             }
-            else if (IsValue32)
+            else if (Value32 is { } __value31)
             {
-                value32?.Invoke(Value32!);
+                value32?.Invoke(__value31);
             }
-            else if (IsValue33)
+            else if (Value33 is { } __value32)
             {
-                value33?.Invoke(Value33!);
+                value33?.Invoke(__value32);
             }
-            else if (IsValue34)
+            else if (Value34 is { } __value33)
             {
-                value34?.Invoke(Value34!);
+                value34?.Invoke(__value33);
             }
-            else if (IsValue35)
+            else if (Value35 is { } __value34)
             {
-                value35?.Invoke(Value35!);
+                value35?.Invoke(__value34);
             }
-            else if (IsValue36)
+            else if (Value36 is { } __value35)
             {
-                value36?.Invoke(Value36!);
+                value36?.Invoke(__value35);
             }
-            else if (IsValue37)
+            else if (Value37 is { } __value36)
             {
-                value37?.Invoke(Value37!);
+                value37?.Invoke(__value36);
             }
-            else if (IsValue38)
+            else if (Value38 is { } __value37)
             {
-                value38?.Invoke(Value38!);
+                value38?.Invoke(__value37);
             }
-            else if (IsValue39)
+            else if (Value39 is { } __value38)
             {
-                value39?.Invoke(Value39!);
+                value39?.Invoke(__value38);
             }
-            else if (IsValue40)
+            else if (Value40 is { } __value39)
             {
-                value40?.Invoke(Value40!);
+                value40?.Invoke(__value39);
             }
-            else if (IsValue41)
+            else if (Value41 is { } __value40)
             {
-                value41?.Invoke(Value41!);
+                value41?.Invoke(__value40);
             }
-            else if (IsValue42)
+            else if (Value42 is { } __value41)
             {
-                value42?.Invoke(Value42!);
+                value42?.Invoke(__value41);
             }
-            else if (IsValue43)
+            else if (Value43 is { } __value42)
             {
-                value43?.Invoke(Value43!);
+                value43?.Invoke(__value42);
             }
-            else if (IsValue44)
+            else if (Value44 is { } __value43)
             {
-                value44?.Invoke(Value44!);
+                value44?.Invoke(__value43);
             }
-            else if (IsValue45)
+            else if (Value45 is { } __value44)
             {
-                value45?.Invoke(Value45!);
+                value45?.Invoke(__value44);
             }
-            else if (IsValue46)
+            else if (Value46 is { } __value45)
             {
-                value46?.Invoke(Value46!);
+                value46?.Invoke(__value45);
             }
-            else if (IsValue47)
+            else if (Value47 is { } __value46)
             {
-                value47?.Invoke(Value47!);
+                value47?.Invoke(__value46);
             }
-            else if (IsValue48)
+            else if (Value48 is { } __value47)
             {
-                value48?.Invoke(Value48!);
+                value48?.Invoke(__value47);
             }
-            else if (IsValue49)
+            else if (Value49 is { } __value48)
             {
-                value49?.Invoke(Value49!);
+                value49?.Invoke(__value48);
             }
-            else if (IsValue50)
+            else if (Value50 is { } __value49)
             {
-                value50?.Invoke(Value50!);
+                value50?.Invoke(__value49);
             }
-            else if (IsValue51)
+            else if (Value51 is { } __value50)
             {
-                value51?.Invoke(Value51!);
+                value51?.Invoke(__value50);
             }
-            else if (IsValue52)
+            else if (Value52 is { } __value51)
             {
-                value52?.Invoke(Value52!);
+                value52?.Invoke(__value51);
             }
-            else if (IsValue53)
+            else if (Value53 is { } __value52)
             {
-                value53?.Invoke(Value53!);
+                value53?.Invoke(__value52);
             }
-            else if (IsValue54)
+            else if (Value54 is { } __value53)
             {
-                value54?.Invoke(Value54!);
+                value54?.Invoke(__value53);
             }
-            else if (IsValue55)
+            else if (Value55 is { } __value54)
             {
-                value55?.Invoke(Value55!);
+                value55?.Invoke(__value54);
             }
-            else if (IsValue56)
+            else if (Value56 is { } __value55)
             {
-                value56?.Invoke(Value56!);
+                value56?.Invoke(__value55);
             }
-            else if (IsValue57)
+            else if (Value57 is { } __value56)
             {
-                value57?.Invoke(Value57!);
+                value57?.Invoke(__value56);
             }
-            else if (IsValue58)
+            else if (Value58 is { } __value57)
             {
-                value58?.Invoke(Value58!);
+                value58?.Invoke(__value57);
             }
         }
 

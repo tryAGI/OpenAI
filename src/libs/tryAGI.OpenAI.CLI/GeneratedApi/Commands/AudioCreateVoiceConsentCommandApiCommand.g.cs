@@ -62,9 +62,11 @@ Supported MIME types:
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-voice-consent", @"Create voice consent
+        var command = new Command(commandName ?? @"create-voice-consent", @"Create voice consent
 Upload a voice consent recording.");
                         command.Arguments.Add(NameOption);
                         command.Options.Add(Recording);
@@ -97,6 +99,7 @@ Upload a voice consent recording.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

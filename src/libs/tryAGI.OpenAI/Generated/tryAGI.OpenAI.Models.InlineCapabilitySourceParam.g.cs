@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.InlineCapabilitySourceParamBase64 PickBase64() => IsBase64
-            ? Base64!
+        public global::tryAGI.OpenAI.InlineCapabilitySourceParamBase64 PickBase64() => Base64 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Base64' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -120,9 +120,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBase64 && base64 != null)
+            if (Base64 is { } __value0 && base64 != null)
             {
-                return base64(Base64!);
+                return base64(__value0);
             }
 
             return default(TResult);
@@ -140,9 +140,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
         }
 
@@ -158,9 +158,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBase64)
+            if (Base64 is { } __value0)
             {
-                base64?.Invoke(Base64!);
+                base64?.Invoke(__value0);
             }
         }
 

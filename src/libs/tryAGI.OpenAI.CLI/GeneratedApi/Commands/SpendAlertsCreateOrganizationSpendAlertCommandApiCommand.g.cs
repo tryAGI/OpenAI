@@ -47,9 +47,11 @@ internal static partial class SpendAlertsCreateOrganizationSpendAlertCommandApiC
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-organization-spend-alert", @"Create organization spend alert
+        var command = new Command(commandName ?? @"create-organization-spend-alert", @"Create organization spend alert
 Creates an organization spend alert.");
                         command.Options.Add(CreateSpendAlertBodyOptionSetOptions.ThresholdAmount);
                         command.Options.Add(CreateSpendAlertBodyOptionSetOptions.Currency);
@@ -116,6 +118,7 @@ Creates an organization spend alert.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

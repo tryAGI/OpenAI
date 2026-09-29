@@ -61,9 +61,11 @@ internal static partial class AssistantsModifyMessageCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"modify-message", @"Modify message
+        var command = new Command(commandName ?? @"modify-message", @"Modify message
 Modifies a message.");
                         command.Arguments.Add(ThreadId);
                         command.Arguments.Add(MessageId);
@@ -121,6 +123,7 @@ Modifies a message.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -61,9 +61,11 @@ session or a transcription session.
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-realtime-client-secret", @"Create client secret
+        var command = new Command(commandName ?? @"create-realtime-client-secret", @"Create client secret
 Create a Realtime client secret with an associated session configuration.
 
 Client secrets are short-lived tokens that can be passed to a client app,
@@ -123,6 +125,7 @@ Returns the created client secret and the effective session object. The client s
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -33,9 +33,11 @@ internal static partial class DeleteprojectspendlimitCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"deleteprojectspendlimit", @"Delete project spend limit
+        var command = new Command(commandName ?? @"deleteprojectspendlimit", @"Delete project spend limit
 Delete a project's hard spend limit.");
                         command.Arguments.Add(ProjectId);
 
@@ -59,6 +61,7 @@ Delete a project's hard spend limit.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

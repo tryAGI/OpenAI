@@ -53,8 +53,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreate PickConversationItemCreate() => IsConversationItemCreate
-            ? ConversationItemCreate!
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreate PickConversationItemCreate() => ConversationItemCreate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemCreate' but the value was {ToString()}.");
 
         /// <summary>
@@ -93,8 +93,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemDelete PickConversationItemDelete() => IsConversationItemDelete
-            ? ConversationItemDelete!
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemDelete PickConversationItemDelete() => ConversationItemDelete is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemDelete' but the value was {ToString()}.");
 
         /// <summary>
@@ -133,8 +133,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieve PickConversationItemRetrieve() => IsConversationItemRetrieve
-            ? ConversationItemRetrieve!
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemRetrieve PickConversationItemRetrieve() => ConversationItemRetrieve is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemRetrieve' but the value was {ToString()}.");
 
         /// <summary>
@@ -178,8 +178,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncate PickConversationItemTruncate() => IsConversationItemTruncate
-            ? ConversationItemTruncate!
+        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemTruncate PickConversationItemTruncate() => ConversationItemTruncate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ConversationItemTruncate' but the value was {ToString()}.");
 
         /// <summary>
@@ -225,8 +225,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppend PickInputAudioBufferAppend() => IsInputAudioBufferAppend
-            ? InputAudioBufferAppend!
+        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferAppend PickInputAudioBufferAppend() => InputAudioBufferAppend is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferAppend' but the value was {ToString()}.");
 
         /// <summary>
@@ -263,8 +263,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear PickInputAudioBufferClear() => IsInputAudioBufferClear
-            ? InputAudioBufferClear!
+        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferClear PickInputAudioBufferClear() => InputAudioBufferClear is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferClear' but the value was {ToString()}.");
 
         /// <summary>
@@ -304,8 +304,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear PickOutputAudioBufferClear() => IsOutputAudioBufferClear
-            ? OutputAudioBufferClear!
+        public global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear PickOutputAudioBufferClear() => OutputAudioBufferClear is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputAudioBufferClear' but the value was {ToString()}.");
 
         /// <summary>
@@ -342,8 +342,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit PickInputAudioBufferCommit() => IsInputAudioBufferCommit
-            ? InputAudioBufferCommit!
+        public global::tryAGI.OpenAI.RealtimeClientEventInputAudioBufferCommit PickInputAudioBufferCommit() => InputAudioBufferCommit is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudioBufferCommit' but the value was {ToString()}.");
 
         /// <summary>
@@ -383,8 +383,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventResponseCancel PickResponseCancel() => IsResponseCancel
-            ? ResponseCancel!
+        public global::tryAGI.OpenAI.RealtimeClientEventResponseCancel PickResponseCancel() => ResponseCancel is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCancel' but the value was {ToString()}.");
 
         /// <summary>
@@ -439,8 +439,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventResponseCreate PickResponseCreate() => IsResponseCreate
-            ? ResponseCreate!
+        public global::tryAGI.OpenAI.RealtimeClientEventResponseCreate PickResponseCreate() => ResponseCreate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCreate' but the value was {ToString()}.");
 
         /// <summary>
@@ -483,8 +483,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate PickSessionUpdate() => IsSessionUpdate
-            ? SessionUpdate!
+        public global::tryAGI.OpenAI.RealtimeClientEventSessionUpdate PickSessionUpdate() => SessionUpdate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdate' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -836,49 +836,49 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsConversationItemCreate && conversationItemCreate != null)
+            if (ConversationItemCreate is { } __value0 && conversationItemCreate != null)
             {
-                return conversationItemCreate(ConversationItemCreate!);
+                return conversationItemCreate(__value0);
             }
-            else if (IsConversationItemDelete && conversationItemDelete != null)
+            else if (ConversationItemDelete is { } __value1 && conversationItemDelete != null)
             {
-                return conversationItemDelete(ConversationItemDelete!);
+                return conversationItemDelete(__value1);
             }
-            else if (IsConversationItemRetrieve && conversationItemRetrieve != null)
+            else if (ConversationItemRetrieve is { } __value2 && conversationItemRetrieve != null)
             {
-                return conversationItemRetrieve(ConversationItemRetrieve!);
+                return conversationItemRetrieve(__value2);
             }
-            else if (IsConversationItemTruncate && conversationItemTruncate != null)
+            else if (ConversationItemTruncate is { } __value3 && conversationItemTruncate != null)
             {
-                return conversationItemTruncate(ConversationItemTruncate!);
+                return conversationItemTruncate(__value3);
             }
-            else if (IsInputAudioBufferAppend && inputAudioBufferAppend != null)
+            else if (InputAudioBufferAppend is { } __value4 && inputAudioBufferAppend != null)
             {
-                return inputAudioBufferAppend(InputAudioBufferAppend!);
+                return inputAudioBufferAppend(__value4);
             }
-            else if (IsInputAudioBufferClear && inputAudioBufferClear != null)
+            else if (InputAudioBufferClear is { } __value5 && inputAudioBufferClear != null)
             {
-                return inputAudioBufferClear(InputAudioBufferClear!);
+                return inputAudioBufferClear(__value5);
             }
-            else if (IsOutputAudioBufferClear && outputAudioBufferClear != null)
+            else if (OutputAudioBufferClear is { } __value6 && outputAudioBufferClear != null)
             {
-                return outputAudioBufferClear(OutputAudioBufferClear!);
+                return outputAudioBufferClear(__value6);
             }
-            else if (IsInputAudioBufferCommit && inputAudioBufferCommit != null)
+            else if (InputAudioBufferCommit is { } __value7 && inputAudioBufferCommit != null)
             {
-                return inputAudioBufferCommit(InputAudioBufferCommit!);
+                return inputAudioBufferCommit(__value7);
             }
-            else if (IsResponseCancel && responseCancel != null)
+            else if (ResponseCancel is { } __value8 && responseCancel != null)
             {
-                return responseCancel(ResponseCancel!);
+                return responseCancel(__value8);
             }
-            else if (IsResponseCreate && responseCreate != null)
+            else if (ResponseCreate is { } __value9 && responseCreate != null)
             {
-                return responseCreate(ResponseCreate!);
+                return responseCreate(__value9);
             }
-            else if (IsSessionUpdate && sessionUpdate != null)
+            else if (SessionUpdate is { } __value10 && sessionUpdate != null)
             {
-                return sessionUpdate(SessionUpdate!);
+                return sessionUpdate(__value10);
             }
 
             return default(TResult);
@@ -916,49 +916,49 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsConversationItemCreate)
+            if (ConversationItemCreate is { } __value0)
             {
-                conversationItemCreate?.Invoke(ConversationItemCreate!);
+                conversationItemCreate?.Invoke(__value0);
             }
-            else if (IsConversationItemDelete)
+            else if (ConversationItemDelete is { } __value1)
             {
-                conversationItemDelete?.Invoke(ConversationItemDelete!);
+                conversationItemDelete?.Invoke(__value1);
             }
-            else if (IsConversationItemRetrieve)
+            else if (ConversationItemRetrieve is { } __value2)
             {
-                conversationItemRetrieve?.Invoke(ConversationItemRetrieve!);
+                conversationItemRetrieve?.Invoke(__value2);
             }
-            else if (IsConversationItemTruncate)
+            else if (ConversationItemTruncate is { } __value3)
             {
-                conversationItemTruncate?.Invoke(ConversationItemTruncate!);
+                conversationItemTruncate?.Invoke(__value3);
             }
-            else if (IsInputAudioBufferAppend)
+            else if (InputAudioBufferAppend is { } __value4)
             {
-                inputAudioBufferAppend?.Invoke(InputAudioBufferAppend!);
+                inputAudioBufferAppend?.Invoke(__value4);
             }
-            else if (IsInputAudioBufferClear)
+            else if (InputAudioBufferClear is { } __value5)
             {
-                inputAudioBufferClear?.Invoke(InputAudioBufferClear!);
+                inputAudioBufferClear?.Invoke(__value5);
             }
-            else if (IsOutputAudioBufferClear)
+            else if (OutputAudioBufferClear is { } __value6)
             {
-                outputAudioBufferClear?.Invoke(OutputAudioBufferClear!);
+                outputAudioBufferClear?.Invoke(__value6);
             }
-            else if (IsInputAudioBufferCommit)
+            else if (InputAudioBufferCommit is { } __value7)
             {
-                inputAudioBufferCommit?.Invoke(InputAudioBufferCommit!);
+                inputAudioBufferCommit?.Invoke(__value7);
             }
-            else if (IsResponseCancel)
+            else if (ResponseCancel is { } __value8)
             {
-                responseCancel?.Invoke(ResponseCancel!);
+                responseCancel?.Invoke(__value8);
             }
-            else if (IsResponseCreate)
+            else if (ResponseCreate is { } __value9)
             {
-                responseCreate?.Invoke(ResponseCreate!);
+                responseCreate?.Invoke(__value9);
             }
-            else if (IsSessionUpdate)
+            else if (SessionUpdate is { } __value10)
             {
-                sessionUpdate?.Invoke(SessionUpdate!);
+                sessionUpdate?.Invoke(__value10);
             }
         }
 
@@ -984,49 +984,49 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsConversationItemCreate)
+            if (ConversationItemCreate is { } __value0)
             {
-                conversationItemCreate?.Invoke(ConversationItemCreate!);
+                conversationItemCreate?.Invoke(__value0);
             }
-            else if (IsConversationItemDelete)
+            else if (ConversationItemDelete is { } __value1)
             {
-                conversationItemDelete?.Invoke(ConversationItemDelete!);
+                conversationItemDelete?.Invoke(__value1);
             }
-            else if (IsConversationItemRetrieve)
+            else if (ConversationItemRetrieve is { } __value2)
             {
-                conversationItemRetrieve?.Invoke(ConversationItemRetrieve!);
+                conversationItemRetrieve?.Invoke(__value2);
             }
-            else if (IsConversationItemTruncate)
+            else if (ConversationItemTruncate is { } __value3)
             {
-                conversationItemTruncate?.Invoke(ConversationItemTruncate!);
+                conversationItemTruncate?.Invoke(__value3);
             }
-            else if (IsInputAudioBufferAppend)
+            else if (InputAudioBufferAppend is { } __value4)
             {
-                inputAudioBufferAppend?.Invoke(InputAudioBufferAppend!);
+                inputAudioBufferAppend?.Invoke(__value4);
             }
-            else if (IsInputAudioBufferClear)
+            else if (InputAudioBufferClear is { } __value5)
             {
-                inputAudioBufferClear?.Invoke(InputAudioBufferClear!);
+                inputAudioBufferClear?.Invoke(__value5);
             }
-            else if (IsOutputAudioBufferClear)
+            else if (OutputAudioBufferClear is { } __value6)
             {
-                outputAudioBufferClear?.Invoke(OutputAudioBufferClear!);
+                outputAudioBufferClear?.Invoke(__value6);
             }
-            else if (IsInputAudioBufferCommit)
+            else if (InputAudioBufferCommit is { } __value7)
             {
-                inputAudioBufferCommit?.Invoke(InputAudioBufferCommit!);
+                inputAudioBufferCommit?.Invoke(__value7);
             }
-            else if (IsResponseCancel)
+            else if (ResponseCancel is { } __value8)
             {
-                responseCancel?.Invoke(ResponseCancel!);
+                responseCancel?.Invoke(__value8);
             }
-            else if (IsResponseCreate)
+            else if (ResponseCreate is { } __value9)
             {
-                responseCreate?.Invoke(ResponseCreate!);
+                responseCreate?.Invoke(__value9);
             }
-            else if (IsSessionUpdate)
+            else if (SessionUpdate is { } __value10)
             {
-                sessionUpdate?.Invoke(SessionUpdate!);
+                sessionUpdate?.Invoke(__value10);
             }
         }
 

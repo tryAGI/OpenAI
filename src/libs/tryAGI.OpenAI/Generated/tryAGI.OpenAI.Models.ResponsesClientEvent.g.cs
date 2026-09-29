@@ -48,8 +48,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreate PickResponseCreate() => IsResponseCreate
-            ? ResponseCreate!.Value
+        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreate PickResponseCreate() => ResponseCreate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCreate' but the value was {ToString()}.");
 
         /// <summary>
@@ -108,8 +108,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseSteerEvent PickResponseSteer() => IsResponseSteer
-            ? ResponseSteer!
+        public global::tryAGI.OpenAI.ResponseSteerEvent PickResponseSteer() => ResponseSteer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseSteer' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -206,13 +206,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponseCreate && responseCreate != null)
+            if (ResponseCreate is { } __value0 && responseCreate != null)
             {
-                return responseCreate(ResponseCreate!);
+                return responseCreate(__value0);
             }
-            else if (IsResponseSteer && responseSteer != null)
+            else if (ResponseSteer is { } __value1 && responseSteer != null)
             {
-                return responseSteer(ResponseSteer!);
+                return responseSteer(__value1);
             }
 
             return default(TResult);
@@ -232,13 +232,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponseCreate)
+            if (ResponseCreate is { } __value0)
             {
-                responseCreate?.Invoke(ResponseCreate!);
+                responseCreate?.Invoke(__value0);
             }
-            else if (IsResponseSteer)
+            else if (ResponseSteer is { } __value1)
             {
-                responseSteer?.Invoke(ResponseSteer!);
+                responseSteer?.Invoke(__value1);
             }
         }
 
@@ -255,13 +255,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponseCreate)
+            if (ResponseCreate is { } __value0)
             {
-                responseCreate?.Invoke(ResponseCreate!);
+                responseCreate?.Invoke(__value0);
             }
-            else if (IsResponseSteer)
+            else if (ResponseSteer is { } __value1)
             {
-                responseSteer?.Invoke(ResponseSteer!);
+                responseSteer?.Invoke(__value1);
             }
         }
 

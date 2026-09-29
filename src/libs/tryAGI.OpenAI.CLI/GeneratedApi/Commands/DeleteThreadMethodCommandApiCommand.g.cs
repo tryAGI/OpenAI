@@ -33,9 +33,11 @@ internal static partial class DeleteThreadMethodCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-thread-method", @"Delete a ChatKit thread
+        var command = new Command(commandName ?? @"delete-thread-method", @"Delete a ChatKit thread
 Delete a ChatKit thread along with its items and stored attachments.");
                         command.Arguments.Add(ThreadId);
 
@@ -59,6 +61,7 @@ Delete a ChatKit thread along with its items and stored attachments.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

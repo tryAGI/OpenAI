@@ -40,9 +40,11 @@ internal static partial class DataRetentionUpdateProjectDataRetentionCommandApiC
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
-    public static Command Create()
+    static partial void CustomizeCommand(ref Command command);
+
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-project-data-retention", @"Update project data retention
+        var command = new Command(commandName ?? @"update-project-data-retention", @"Update project data retention
 Updates project data retention controls.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(RetentionType);
@@ -69,6 +71,7 @@ Updates project data retention controls.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

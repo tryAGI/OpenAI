@@ -16,11 +16,12 @@ namespace tryAGI.OpenAI
         public required int Index { get; set; }
 
         /// <summary>
-        /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](https://developers.openai.com/api/docs/guides/embeddings).
+        /// The embedding vector, returned as a list of floats when `encoding_format` is `float` (the default), or as a base64-encoded string when `encoding_format` is `base64`. The length of the vector depends on the model as listed in the [embedding guide](https://developers.openai.com/api/docs/guides/embeddings).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<float>, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<float> Embedding1 { get; set; }
+        public required global::tryAGI.OpenAI.AnyOf<global::System.Collections.Generic.IList<float>, string> Embedding1 { get; set; }
 
         /// <summary>
         /// The object type, which is always "embedding".
@@ -42,7 +43,7 @@ namespace tryAGI.OpenAI
         /// The index of the embedding in the list of embeddings.
         /// </param>
         /// <param name="embedding1">
-        /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](https://developers.openai.com/api/docs/guides/embeddings).
+        /// The embedding vector, returned as a list of floats when `encoding_format` is `float` (the default), or as a base64-encoded string when `encoding_format` is `base64`. The length of the vector depends on the model as listed in the [embedding guide](https://developers.openai.com/api/docs/guides/embeddings).
         /// </param>
         /// <param name="object">
         /// The object type, which is always "embedding".
@@ -52,11 +53,11 @@ namespace tryAGI.OpenAI
 #endif
         public Embedding(
             int index,
-            global::System.Collections.Generic.IList<float> embedding1,
+            global::tryAGI.OpenAI.AnyOf<global::System.Collections.Generic.IList<float>, string> embedding1,
             global::tryAGI.OpenAI.EmbeddingObject @object)
         {
             this.Index = index;
-            this.Embedding1 = embedding1 ?? throw new global::System.ArgumentNullException(nameof(embedding1));
+            this.Embedding1 = embedding1;
             this.Object = @object;
         }
 

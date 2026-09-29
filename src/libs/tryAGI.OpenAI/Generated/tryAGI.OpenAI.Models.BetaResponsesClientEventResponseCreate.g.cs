@@ -48,8 +48,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreateVariant1 PickBetaResponsesClientEventResponseCreateVariant1() => IsBetaResponsesClientEventResponseCreateVariant1
-            ? BetaResponsesClientEventResponseCreateVariant1!
+        public global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreateVariant1 PickBetaResponsesClientEventResponseCreateVariant1() => BetaResponsesClientEventResponseCreateVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaResponsesClientEventResponseCreateVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaCreateResponse PickBetaCreateResponse() => IsBetaCreateResponse
-            ? BetaCreateResponse!.Value
+        public global::tryAGI.OpenAI.BetaCreateResponse PickBetaCreateResponse() => BetaCreateResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaCreateResponse' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -183,13 +183,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaResponsesClientEventResponseCreateVariant1 && betaResponsesClientEventResponseCreateVariant1 != null)
+            if (BetaResponsesClientEventResponseCreateVariant1 is { } __value0 && betaResponsesClientEventResponseCreateVariant1 != null)
             {
-                return betaResponsesClientEventResponseCreateVariant1(BetaResponsesClientEventResponseCreateVariant1!);
+                return betaResponsesClientEventResponseCreateVariant1(__value0);
             }
-            else if (IsBetaCreateResponse && betaCreateResponse != null)
+            else if (BetaCreateResponse is { } __value1 && betaCreateResponse != null)
             {
-                return betaCreateResponse(BetaCreateResponse!);
+                return betaCreateResponse(__value1);
             }
 
             return default(TResult);
@@ -209,13 +209,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaResponsesClientEventResponseCreateVariant1)
+            if (BetaResponsesClientEventResponseCreateVariant1 is { } __value0)
             {
-                betaResponsesClientEventResponseCreateVariant1?.Invoke(BetaResponsesClientEventResponseCreateVariant1!);
+                betaResponsesClientEventResponseCreateVariant1?.Invoke(__value0);
             }
-            else if (IsBetaCreateResponse)
+            else if (BetaCreateResponse is { } __value1)
             {
-                betaCreateResponse?.Invoke(BetaCreateResponse!);
+                betaCreateResponse?.Invoke(__value1);
             }
         }
 
@@ -232,13 +232,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaResponsesClientEventResponseCreateVariant1)
+            if (BetaResponsesClientEventResponseCreateVariant1 is { } __value0)
             {
-                betaResponsesClientEventResponseCreateVariant1?.Invoke(BetaResponsesClientEventResponseCreateVariant1!);
+                betaResponsesClientEventResponseCreateVariant1?.Invoke(__value0);
             }
-            else if (IsBetaCreateResponse)
+            else if (BetaCreateResponse is { } __value1)
             {
-                betaCreateResponse?.Invoke(BetaCreateResponse!);
+                betaCreateResponse?.Invoke(__value1);
             }
         }
 

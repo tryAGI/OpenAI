@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageItemParam PickMessage() => IsMessage
-            ? Message!
+        public global::tryAGI.OpenAI.UserMessageItemParam PickMessage() => Message is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionCallOutputItemParam PickFunctionCallOutput() => IsFunctionCallOutput
-            ? FunctionCallOutput!
+        public global::tryAGI.OpenAI.FunctionCallOutputItemParam PickFunctionCallOutput() => FunctionCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutput' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMessage && message != null)
+            if (Message is { } __value0 && message != null)
             {
-                return message(Message!);
+                return message(__value0);
             }
-            else if (IsFunctionCallOutput && functionCallOutput != null)
+            else if (FunctionCallOutput is { } __value1 && functionCallOutput != null)
             {
-                return functionCallOutput(FunctionCallOutput!);
+                return functionCallOutput(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsFunctionCallOutput)
+            else if (FunctionCallOutput is { } __value1)
             {
-                functionCallOutput?.Invoke(FunctionCallOutput!);
+                functionCallOutput?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsFunctionCallOutput)
+            else if (FunctionCallOutput is { } __value1)
             {
-                functionCallOutput?.Invoke(FunctionCallOutput!);
+                functionCallOutput?.Invoke(__value1);
             }
         }
 

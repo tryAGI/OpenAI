@@ -184,7 +184,7 @@ namespace tryAGI.OpenAI
                                 path: "/organization/usage/moderations",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddRequiredParameter("start_time", startTime.ToString()!)
+                                .AddRequiredParameter("start_time", startTime.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
                                 .AddOptionalParameter("end_time", endTime?.ToString())
                                 .AddOptionalParameter("bucket_width", bucketWidth?.ToValueString())
                                 .AddOptionalParameter("project_ids", projectIds, delimiter: ",", explode: true)
@@ -235,7 +235,7 @@ namespace tryAGI.OpenAI
                 PrepareUsageModerationsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    startTime: startTime!,
+                    startTime: startTime,
                     endTime: endTime,
                     bucketWidth: bucketWidth,
                     projectIds: projectIds,
@@ -268,7 +268,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "\"/organization/usage/moderations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -302,7 +302,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "\"/organization/usage/moderations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -343,7 +343,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "\"/organization/usage/moderations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -391,7 +391,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "\"/organization/usage/moderations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -413,7 +413,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "\"/organization/usage/moderations\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
