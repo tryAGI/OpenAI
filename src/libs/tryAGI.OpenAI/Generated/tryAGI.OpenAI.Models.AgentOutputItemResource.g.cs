@@ -163,6 +163,80 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpCall' but the value was {ToString()}.");
 
         /// <summary>
+        /// One execution of the platform-provided computer-use capability.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.ComputerUseCallItemResource? ComputerUseCall { get; init; }
+#else
+        public global::tryAGI.OpenAI.ComputerUseCallItemResource? ComputerUseCall { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerUseCall))]
+#endif
+        public bool IsComputerUseCall => ComputerUseCall != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickComputerUseCall(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.ComputerUseCallItemResource? value)
+        {
+            value = ComputerUseCall;
+            return IsComputerUseCall;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.ComputerUseCallItemResource PickComputerUseCall() => ComputerUseCall is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUseCall' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A credential-free history record of the emitted login request.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource? ComputerUseApprovalRequest { get; init; }
+#else
+        public global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource? ComputerUseApprovalRequest { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ComputerUseApprovalRequest))]
+#endif
+        public bool IsComputerUseApprovalRequest => ComputerUseApprovalRequest != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickComputerUseApprovalRequest(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource? value)
+        {
+            value = ComputerUseApprovalRequest;
+            return IsComputerUseApprovalRequest;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource PickComputerUseApprovalRequest() => ComputerUseApprovalRequest is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUseApprovalRequest' but the value was {ToString()}.");
+
+        /// <summary>
         /// A web search call produced by the agent.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -552,6 +626,52 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator AgentOutputItemResource(global::tryAGI.OpenAI.ComputerUseCallItemResource value) => new AgentOutputItemResource((global::tryAGI.OpenAI.ComputerUseCallItemResource?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.ComputerUseCallItemResource?(AgentOutputItemResource @this) => @this.ComputerUseCall;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public AgentOutputItemResource(global::tryAGI.OpenAI.ComputerUseCallItemResource? value)
+        {
+            ComputerUseCall = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static AgentOutputItemResource FromComputerUseCall(global::tryAGI.OpenAI.ComputerUseCallItemResource? value) => new AgentOutputItemResource(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator AgentOutputItemResource(global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource value) => new AgentOutputItemResource((global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource?(AgentOutputItemResource @this) => @this.ComputerUseApprovalRequest;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public AgentOutputItemResource(global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource? value)
+        {
+            ComputerUseApprovalRequest = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static AgentOutputItemResource FromComputerUseApprovalRequest(global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource? value) => new AgentOutputItemResource(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator AgentOutputItemResource(global::tryAGI.OpenAI.WebSearchCallItemResource value) => new AgentOutputItemResource((global::tryAGI.OpenAI.WebSearchCallItemResource?)value);
 
         /// <summary>
@@ -742,6 +862,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ReasoningItemResource? reasoning,
             global::tryAGI.OpenAI.FunctionCallItemResource? functionCall,
             global::tryAGI.OpenAI.McpCallItemResource? mcpCall,
+            global::tryAGI.OpenAI.ComputerUseCallItemResource? computerUseCall,
+            global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource? computerUseApprovalRequest,
             global::tryAGI.OpenAI.WebSearchCallItemResource? webSearchCall,
             global::tryAGI.OpenAI.CommandExecutionItemResource? commandExecution,
             global::tryAGI.OpenAI.CreateSubagentCallItemResource? createSubagentCall,
@@ -758,6 +880,8 @@ namespace tryAGI.OpenAI
             Reasoning = reasoning;
             FunctionCall = functionCall;
             McpCall = mcpCall;
+            ComputerUseCall = computerUseCall;
+            ComputerUseApprovalRequest = computerUseApprovalRequest;
             WebSearchCall = webSearchCall;
             CommandExecution = commandExecution;
             CreateSubagentCall = createSubagentCall;
@@ -780,6 +904,8 @@ namespace tryAGI.OpenAI
             CreateSubagentCall as object ??
             CommandExecution as object ??
             WebSearchCall as object ??
+            ComputerUseApprovalRequest as object ??
+            ComputerUseCall as object ??
             McpCall as object ??
             FunctionCall as object ??
             Reasoning as object ??
@@ -794,6 +920,8 @@ namespace tryAGI.OpenAI
             Reasoning?.ToString() ??
             FunctionCall?.ToString() ??
             McpCall?.ToString() ??
+            ComputerUseCall?.ToString() ??
+            ComputerUseApprovalRequest?.ToString() ??
             WebSearchCall?.ToString() ??
             CommandExecution?.ToString() ??
             CreateSubagentCall?.ToString() ??
@@ -809,7 +937,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && IsReasoning && !IsFunctionCall && !IsMcpCall && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && IsFunctionCall && !IsMcpCall && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && IsMcpCall && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsWebSearchCall && IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsWebSearchCall && !IsCommandExecution && IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && IsCloseSubagentCall;
+            return IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsComputerUseCall && !IsComputerUseApprovalRequest && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && IsReasoning && !IsFunctionCall && !IsMcpCall && !IsComputerUseCall && !IsComputerUseApprovalRequest && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && IsFunctionCall && !IsMcpCall && !IsComputerUseCall && !IsComputerUseApprovalRequest && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && IsMcpCall && !IsComputerUseCall && !IsComputerUseApprovalRequest && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && IsComputerUseCall && !IsComputerUseApprovalRequest && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsComputerUseCall && IsComputerUseApprovalRequest && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsComputerUseCall && !IsComputerUseApprovalRequest && IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsComputerUseCall && !IsComputerUseApprovalRequest && !IsWebSearchCall && IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsComputerUseCall && !IsComputerUseApprovalRequest && !IsWebSearchCall && !IsCommandExecution && IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsComputerUseCall && !IsComputerUseApprovalRequest && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsComputerUseCall && !IsComputerUseApprovalRequest && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsComputerUseCall && !IsComputerUseApprovalRequest && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && IsWaitForSubagentsCall && !IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsComputerUseCall && !IsComputerUseApprovalRequest && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && IsInterruptSubagentCall && !IsCloseSubagentCall || !IsMessage && !IsReasoning && !IsFunctionCall && !IsMcpCall && !IsComputerUseCall && !IsComputerUseApprovalRequest && !IsWebSearchCall && !IsCommandExecution && !IsCreateSubagentCall && !IsSendSubagentInputCall && !IsResumeSubagentCall && !IsWaitForSubagentsCall && !IsInterruptSubagentCall && IsCloseSubagentCall;
         }
 
         /// <summary>
@@ -820,6 +948,8 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.ReasoningItemResource, TResult>? reasoning = null,
             global::System.Func<global::tryAGI.OpenAI.FunctionCallItemResource, TResult>? functionCall = null,
             global::System.Func<global::tryAGI.OpenAI.McpCallItemResource, TResult>? mcpCall = null,
+            global::System.Func<global::tryAGI.OpenAI.ComputerUseCallItemResource, TResult>? computerUseCall = null,
+            global::System.Func<global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource, TResult>? computerUseApprovalRequest = null,
             global::System.Func<global::tryAGI.OpenAI.WebSearchCallItemResource, TResult>? webSearchCall = null,
             global::System.Func<global::tryAGI.OpenAI.CommandExecutionItemResource, TResult>? commandExecution = null,
             global::System.Func<global::tryAGI.OpenAI.CreateSubagentCallItemResource, TResult>? createSubagentCall = null,
@@ -851,37 +981,45 @@ namespace tryAGI.OpenAI
             {
                 return mcpCall(__value3);
             }
-            else if (WebSearchCall is { } __value4 && webSearchCall != null)
+            else if (ComputerUseCall is { } __value4 && computerUseCall != null)
             {
-                return webSearchCall(__value4);
+                return computerUseCall(__value4);
             }
-            else if (CommandExecution is { } __value5 && commandExecution != null)
+            else if (ComputerUseApprovalRequest is { } __value5 && computerUseApprovalRequest != null)
             {
-                return commandExecution(__value5);
+                return computerUseApprovalRequest(__value5);
             }
-            else if (CreateSubagentCall is { } __value6 && createSubagentCall != null)
+            else if (WebSearchCall is { } __value6 && webSearchCall != null)
             {
-                return createSubagentCall(__value6);
+                return webSearchCall(__value6);
             }
-            else if (SendSubagentInputCall is { } __value7 && sendSubagentInputCall != null)
+            else if (CommandExecution is { } __value7 && commandExecution != null)
             {
-                return sendSubagentInputCall(__value7);
+                return commandExecution(__value7);
             }
-            else if (ResumeSubagentCall is { } __value8 && resumeSubagentCall != null)
+            else if (CreateSubagentCall is { } __value8 && createSubagentCall != null)
             {
-                return resumeSubagentCall(__value8);
+                return createSubagentCall(__value8);
             }
-            else if (WaitForSubagentsCall is { } __value9 && waitForSubagentsCall != null)
+            else if (SendSubagentInputCall is { } __value9 && sendSubagentInputCall != null)
             {
-                return waitForSubagentsCall(__value9);
+                return sendSubagentInputCall(__value9);
             }
-            else if (InterruptSubagentCall is { } __value10 && interruptSubagentCall != null)
+            else if (ResumeSubagentCall is { } __value10 && resumeSubagentCall != null)
             {
-                return interruptSubagentCall(__value10);
+                return resumeSubagentCall(__value10);
             }
-            else if (CloseSubagentCall is { } __value11 && closeSubagentCall != null)
+            else if (WaitForSubagentsCall is { } __value11 && waitForSubagentsCall != null)
             {
-                return closeSubagentCall(__value11);
+                return waitForSubagentsCall(__value11);
+            }
+            else if (InterruptSubagentCall is { } __value12 && interruptSubagentCall != null)
+            {
+                return interruptSubagentCall(__value12);
+            }
+            else if (CloseSubagentCall is { } __value13 && closeSubagentCall != null)
+            {
+                return closeSubagentCall(__value13);
             }
 
             return default(TResult);
@@ -899,6 +1037,10 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.McpCallItemResource>? mcpCall = null,
 
+            global::System.Action<global::tryAGI.OpenAI.ComputerUseCallItemResource>? computerUseCall = null,
+
+            global::System.Action<global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource>? computerUseApprovalRequest = null,
+
             global::System.Action<global::tryAGI.OpenAI.WebSearchCallItemResource>? webSearchCall = null,
 
             global::System.Action<global::tryAGI.OpenAI.CommandExecutionItemResource>? commandExecution = null,
@@ -937,37 +1079,45 @@ namespace tryAGI.OpenAI
             {
                 mcpCall?.Invoke(__value3);
             }
-            else if (WebSearchCall is { } __value4)
+            else if (ComputerUseCall is { } __value4)
             {
-                webSearchCall?.Invoke(__value4);
+                computerUseCall?.Invoke(__value4);
             }
-            else if (CommandExecution is { } __value5)
+            else if (ComputerUseApprovalRequest is { } __value5)
             {
-                commandExecution?.Invoke(__value5);
+                computerUseApprovalRequest?.Invoke(__value5);
             }
-            else if (CreateSubagentCall is { } __value6)
+            else if (WebSearchCall is { } __value6)
             {
-                createSubagentCall?.Invoke(__value6);
+                webSearchCall?.Invoke(__value6);
             }
-            else if (SendSubagentInputCall is { } __value7)
+            else if (CommandExecution is { } __value7)
             {
-                sendSubagentInputCall?.Invoke(__value7);
+                commandExecution?.Invoke(__value7);
             }
-            else if (ResumeSubagentCall is { } __value8)
+            else if (CreateSubagentCall is { } __value8)
             {
-                resumeSubagentCall?.Invoke(__value8);
+                createSubagentCall?.Invoke(__value8);
             }
-            else if (WaitForSubagentsCall is { } __value9)
+            else if (SendSubagentInputCall is { } __value9)
             {
-                waitForSubagentsCall?.Invoke(__value9);
+                sendSubagentInputCall?.Invoke(__value9);
             }
-            else if (InterruptSubagentCall is { } __value10)
+            else if (ResumeSubagentCall is { } __value10)
             {
-                interruptSubagentCall?.Invoke(__value10);
+                resumeSubagentCall?.Invoke(__value10);
             }
-            else if (CloseSubagentCall is { } __value11)
+            else if (WaitForSubagentsCall is { } __value11)
             {
-                closeSubagentCall?.Invoke(__value11);
+                waitForSubagentsCall?.Invoke(__value11);
+            }
+            else if (InterruptSubagentCall is { } __value12)
+            {
+                interruptSubagentCall?.Invoke(__value12);
+            }
+            else if (CloseSubagentCall is { } __value13)
+            {
+                closeSubagentCall?.Invoke(__value13);
             }
         }
 
@@ -979,6 +1129,8 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.ReasoningItemResource>? reasoning = null,
             global::System.Action<global::tryAGI.OpenAI.FunctionCallItemResource>? functionCall = null,
             global::System.Action<global::tryAGI.OpenAI.McpCallItemResource>? mcpCall = null,
+            global::System.Action<global::tryAGI.OpenAI.ComputerUseCallItemResource>? computerUseCall = null,
+            global::System.Action<global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource>? computerUseApprovalRequest = null,
             global::System.Action<global::tryAGI.OpenAI.WebSearchCallItemResource>? webSearchCall = null,
             global::System.Action<global::tryAGI.OpenAI.CommandExecutionItemResource>? commandExecution = null,
             global::System.Action<global::tryAGI.OpenAI.CreateSubagentCallItemResource>? createSubagentCall = null,
@@ -1010,37 +1162,45 @@ namespace tryAGI.OpenAI
             {
                 mcpCall?.Invoke(__value3);
             }
-            else if (WebSearchCall is { } __value4)
+            else if (ComputerUseCall is { } __value4)
             {
-                webSearchCall?.Invoke(__value4);
+                computerUseCall?.Invoke(__value4);
             }
-            else if (CommandExecution is { } __value5)
+            else if (ComputerUseApprovalRequest is { } __value5)
             {
-                commandExecution?.Invoke(__value5);
+                computerUseApprovalRequest?.Invoke(__value5);
             }
-            else if (CreateSubagentCall is { } __value6)
+            else if (WebSearchCall is { } __value6)
             {
-                createSubagentCall?.Invoke(__value6);
+                webSearchCall?.Invoke(__value6);
             }
-            else if (SendSubagentInputCall is { } __value7)
+            else if (CommandExecution is { } __value7)
             {
-                sendSubagentInputCall?.Invoke(__value7);
+                commandExecution?.Invoke(__value7);
             }
-            else if (ResumeSubagentCall is { } __value8)
+            else if (CreateSubagentCall is { } __value8)
             {
-                resumeSubagentCall?.Invoke(__value8);
+                createSubagentCall?.Invoke(__value8);
             }
-            else if (WaitForSubagentsCall is { } __value9)
+            else if (SendSubagentInputCall is { } __value9)
             {
-                waitForSubagentsCall?.Invoke(__value9);
+                sendSubagentInputCall?.Invoke(__value9);
             }
-            else if (InterruptSubagentCall is { } __value10)
+            else if (ResumeSubagentCall is { } __value10)
             {
-                interruptSubagentCall?.Invoke(__value10);
+                resumeSubagentCall?.Invoke(__value10);
             }
-            else if (CloseSubagentCall is { } __value11)
+            else if (WaitForSubagentsCall is { } __value11)
             {
-                closeSubagentCall?.Invoke(__value11);
+                waitForSubagentsCall?.Invoke(__value11);
+            }
+            else if (InterruptSubagentCall is { } __value12)
+            {
+                interruptSubagentCall?.Invoke(__value12);
+            }
+            else if (CloseSubagentCall is { } __value13)
+            {
+                closeSubagentCall?.Invoke(__value13);
             }
         }
 
@@ -1059,6 +1219,10 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.FunctionCallItemResource),
                 McpCall,
                 typeof(global::tryAGI.OpenAI.McpCallItemResource),
+                ComputerUseCall,
+                typeof(global::tryAGI.OpenAI.ComputerUseCallItemResource),
+                ComputerUseApprovalRequest,
+                typeof(global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource),
                 WebSearchCall,
                 typeof(global::tryAGI.OpenAI.WebSearchCallItemResource),
                 CommandExecution,
@@ -1095,6 +1259,8 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ReasoningItemResource?>.Default.Equals(Reasoning, other.Reasoning) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FunctionCallItemResource?>.Default.Equals(FunctionCall, other.FunctionCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.McpCallItemResource?>.Default.Equals(McpCall, other.McpCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ComputerUseCallItemResource?>.Default.Equals(ComputerUseCall, other.ComputerUseCall) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource?>.Default.Equals(ComputerUseApprovalRequest, other.ComputerUseApprovalRequest) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.WebSearchCallItemResource?>.Default.Equals(WebSearchCall, other.WebSearchCall) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CommandExecutionItemResource?>.Default.Equals(CommandExecution, other.CommandExecution) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateSubagentCallItemResource?>.Default.Equals(CreateSubagentCall, other.CreateSubagentCall) &&

@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ComputerUseApprovalRequest,
+        /// <summary>
+        ///
+        /// </summary>
         EnvironmentConnection,
         /// <summary>
         ///
@@ -30,6 +34,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                SessionRequiredActionResourceDiscriminatorType.ComputerUseApprovalRequest => "computer_use_approval_request",
                 SessionRequiredActionResourceDiscriminatorType.EnvironmentConnection => "environment_connection",
                 SessionRequiredActionResourceDiscriminatorType.FunctionCall => "function_call",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -42,6 +47,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "computer_use_approval_request" => SessionRequiredActionResourceDiscriminatorType.ComputerUseApprovalRequest,
                 "environment_connection" => SessionRequiredActionResourceDiscriminatorType.EnvironmentConnection,
                 "function_call" => SessionRequiredActionResourceDiscriminatorType.FunctionCall,
                 _ => null,

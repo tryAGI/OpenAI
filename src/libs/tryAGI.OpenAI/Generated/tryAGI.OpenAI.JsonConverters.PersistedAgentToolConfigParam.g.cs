@@ -56,6 +56,13 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.PersistedAgentToolConfigParamWebSearch)}");
                 webSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse? computerUse = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.PersistedAgentToolConfigParamDiscriminatorType.ComputerUse)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse)}");
+                computerUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::tryAGI.OpenAI.PersistedAgentToolConfigParam(
                 discriminator?.Type,
@@ -67,7 +74,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 mcp,
 
-                webSearch
+                webSearch,
+
+                computerUse
                 );
 
             return __value;
@@ -111,6 +120,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.PersistedAgentToolConfigParamWebSearch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.PersistedAgentToolConfigParamWebSearch?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.PersistedAgentToolConfigParamWebSearch).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebSearch(), typeInfo);
+            }
+            else if (value.IsComputerUse)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.PersistedAgentToolConfigParamComputerUse).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickComputerUse(), typeInfo);
             }
         }
     }

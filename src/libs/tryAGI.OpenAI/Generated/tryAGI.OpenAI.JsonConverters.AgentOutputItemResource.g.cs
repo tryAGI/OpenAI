@@ -49,6 +49,20 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.McpCallItemResource)}");
                 mcpCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.ComputerUseCallItemResource? computerUseCall = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.AgentOutputItemResourceDiscriminatorType.ComputerUseCall)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ComputerUseCallItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ComputerUseCallItemResource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ComputerUseCallItemResource)}");
+                computerUseCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource? computerUseApprovalRequest = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.AgentOutputItemResourceDiscriminatorType.ComputerUseApprovalRequest)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource)}");
+                computerUseApprovalRequest = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.WebSearchCallItemResource? webSearchCall = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.AgentOutputItemResourceDiscriminatorType.WebSearchCall)
             {
@@ -116,6 +130,10 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 mcpCall,
 
+                computerUseCall,
+
+                computerUseApprovalRequest,
+
                 webSearchCall,
 
                 commandExecution,
@@ -168,6 +186,18 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.McpCallItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.McpCallItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.McpCallItemResource).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpCall(), typeInfo);
+            }
+            else if (value.IsComputerUseCall)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ComputerUseCallItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ComputerUseCallItemResource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ComputerUseCallItemResource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickComputerUseCall(), typeInfo);
+            }
+            else if (value.IsComputerUseApprovalRequest)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BrowserAuthenticationRequestItemResource).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickComputerUseApprovalRequest(), typeInfo);
             }
             else if (value.IsWebSearchCall)
             {

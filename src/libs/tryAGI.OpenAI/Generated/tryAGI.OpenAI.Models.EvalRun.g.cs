@@ -42,15 +42,13 @@ namespace tryAGI.OpenAI
         /// The model that is evaluated, if applicable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; }
+        public string? Model { get; set; }
 
         /// <summary>
         /// The name of the evaluation run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Unix timestamp (in seconds) when the evaluation run was created.
@@ -77,15 +75,13 @@ namespace tryAGI.OpenAI
         /// Usage statistics for each model during the evaluation run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("per_model_usage")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerModelUsageItem> PerModelUsage { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerModelUsageItem>? PerModelUsage { get; set; }
 
         /// <summary>
         /// Results per testing criteria applied during the evaluation run.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("per_testing_criteria_results")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerTestingCriteriaResult> PerTestingCriteriaResults { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerTestingCriteriaResult>? PerTestingCriteriaResults { get; set; }
 
         /// <summary>
         /// Information about the run's data source.
@@ -102,11 +98,10 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
 
         /// <summary>
-        /// An object representing an error response from the Eval API.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EvalApiError Error { get; set; }
+        public global::tryAGI.OpenAI.EvalApiError? Error { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -126,12 +121,6 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// The status of the evaluation run.
         /// </param>
-        /// <param name="model">
-        /// The model that is evaluated, if applicable.
-        /// </param>
-        /// <param name="name">
-        /// The name of the evaluation run.
-        /// </param>
         /// <param name="createdAt">
         /// Unix timestamp (in seconds) when the evaluation run was created.
         /// </param>
@@ -141,19 +130,23 @@ namespace tryAGI.OpenAI
         /// <param name="resultCounts">
         /// Counters summarizing the outcomes of the evaluation run.
         /// </param>
+        /// <param name="dataSource">
+        /// Information about the run's data source.
+        /// </param>
+        /// <param name="model">
+        /// The model that is evaluated, if applicable.
+        /// </param>
+        /// <param name="name">
+        /// The name of the evaluation run.
+        /// </param>
         /// <param name="perModelUsage">
         /// Usage statistics for each model during the evaluation run.
         /// </param>
         /// <param name="perTestingCriteriaResults">
         /// Results per testing criteria applied during the evaluation run.
         /// </param>
-        /// <param name="dataSource">
-        /// Information about the run's data source.
-        /// </param>
-        /// <param name="error">
-        /// An object representing an error response from the Eval API.
-        /// </param>
         /// <param name="metadata"></param>
+        /// <param name="error"></param>
         /// <param name="object">
         /// The type of the object. Always "eval.run".<br/>
         /// Default Value: eval.run
@@ -165,32 +158,32 @@ namespace tryAGI.OpenAI
             string id,
             string evalId,
             string status,
-            string model,
-            string name,
             int createdAt,
             string reportUrl,
             global::tryAGI.OpenAI.EvalRunResultCounts resultCounts,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerModelUsageItem> perModelUsage,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerTestingCriteriaResult> perTestingCriteriaResults,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateEvalJsonlRunDataSource, global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSource, global::tryAGI.OpenAI.CreateEvalResponsesRunDataSource> dataSource,
-            global::tryAGI.OpenAI.EvalApiError error,
+            string? model,
+            string? name,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerModelUsageItem>? perModelUsage,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunPerTestingCriteriaResult>? perTestingCriteriaResults,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            global::tryAGI.OpenAI.EvalApiError? error,
             global::tryAGI.OpenAI.EvalRunObject @object = global::tryAGI.OpenAI.EvalRunObject.EvalRun)
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.EvalId = evalId ?? throw new global::System.ArgumentNullException(nameof(evalId));
             this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
-            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
-            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Model = model;
+            this.Name = name;
             this.CreatedAt = createdAt;
             this.ReportUrl = reportUrl ?? throw new global::System.ArgumentNullException(nameof(reportUrl));
             this.ResultCounts = resultCounts ?? throw new global::System.ArgumentNullException(nameof(resultCounts));
-            this.PerModelUsage = perModelUsage ?? throw new global::System.ArgumentNullException(nameof(perModelUsage));
-            this.PerTestingCriteriaResults = perTestingCriteriaResults ?? throw new global::System.ArgumentNullException(nameof(perTestingCriteriaResults));
+            this.PerModelUsage = perModelUsage;
+            this.PerTestingCriteriaResults = perTestingCriteriaResults;
             this.DataSource = dataSource;
             this.Metadata = metadata;
-            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.Error = error;
         }
 
         /// <summary>

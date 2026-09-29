@@ -61,6 +61,13 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.NetworkPolicyResource Network { get; set; }
 
         /// <summary>
+        /// Desktop configuration for each OpenAI-hosted environment.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("desktop")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.DesktopResource Desktop { get; set; }
+
+        /// <summary>
         /// Directories that expose capabilities to the agent.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("capability_directories")]
@@ -112,6 +119,9 @@ namespace tryAGI.OpenAI
         /// <param name="network">
         /// Runtime network access for each OpenAI-hosted environment.
         /// </param>
+        /// <param name="desktop">
+        /// Desktop configuration for each OpenAI-hosted environment.
+        /// </param>
         /// <param name="capabilityDirectories">
         /// Directories that expose capabilities to the agent.
         /// </param>
@@ -140,6 +150,7 @@ namespace tryAGI.OpenAI
             global::System.DateTimeOffset updatedAt,
             global::tryAGI.OpenAI.EnvironmentPackagesResource packages,
             global::tryAGI.OpenAI.NetworkPolicyResource network,
+            global::tryAGI.OpenAI.DesktopResource desktop,
             global::System.Collections.Generic.IList<string> capabilityDirectories,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.HostedTemplateSkillResource> skills,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.HostedPluginResource> plugins,
@@ -154,6 +165,7 @@ namespace tryAGI.OpenAI
             this.UpdatedAt = updatedAt;
             this.Packages = packages ?? throw new global::System.ArgumentNullException(nameof(packages));
             this.Network = network ?? throw new global::System.ArgumentNullException(nameof(network));
+            this.Desktop = desktop ?? throw new global::System.ArgumentNullException(nameof(desktop));
             this.CapabilityDirectories = capabilityDirectories ?? throw new global::System.ArgumentNullException(nameof(capabilityDirectories));
             this.Skills = skills ?? throw new global::System.ArgumentNullException(nameof(skills));
             this.Plugins = plugins ?? throw new global::System.ArgumentNullException(nameof(plugins));
