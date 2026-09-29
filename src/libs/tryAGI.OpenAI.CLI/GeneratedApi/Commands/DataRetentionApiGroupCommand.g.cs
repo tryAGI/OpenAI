@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class DataRetentionApiGroupCommand
+internal static partial class DataRetentionApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"data-retention", @"Data retention endpoint commands.");
@@ -13,6 +15,7 @@ internal static class DataRetentionApiGroupCommand
                          command.Subcommands.Add(DataRetentionRetrieveProjectDataRetentionCommandApiCommand.Create());
                          command.Subcommands.Add(DataRetentionUpdateOrganizationDataRetentionCommandApiCommand.Create());
                          command.Subcommands.Add(DataRetentionUpdateProjectDataRetentionCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

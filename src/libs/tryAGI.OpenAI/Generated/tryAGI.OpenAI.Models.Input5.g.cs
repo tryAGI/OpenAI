@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaModerationResultBody PickModerationResult() => IsModerationResult
-            ? ModerationResult!
+        public global::tryAGI.OpenAI.BetaModerationResultBody PickModerationResult() => ModerationResult is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModerationResult' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaModerationErrorBody PickError() => IsError
-            ? Error!
+        public global::tryAGI.OpenAI.BetaModerationErrorBody PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModerationResult && moderationResult != null)
+            if (ModerationResult is { } __value0 && moderationResult != null)
             {
-                return moderationResult(ModerationResult!);
+                return moderationResult(__value0);
             }
-            else if (IsError && error != null)
+            else if (Error is { } __value1 && error != null)
             {
-                return error(Error!);
+                return error(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModerationResult)
+            if (ModerationResult is { } __value0)
             {
-                moderationResult?.Invoke(ModerationResult!);
+                moderationResult?.Invoke(__value0);
             }
-            else if (IsError)
+            else if (Error is { } __value1)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModerationResult)
+            if (ModerationResult is { } __value0)
             {
-                moderationResult?.Invoke(ModerationResult!);
+                moderationResult?.Invoke(__value0);
             }
-            else if (IsError)
+            else if (Error is { } __value1)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value1);
             }
         }
 

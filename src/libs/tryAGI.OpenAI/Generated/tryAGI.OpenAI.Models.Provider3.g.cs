@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AwsExternalStorageProviderParams PickAws() => IsAws
-            ? Aws!
+        public global::tryAGI.OpenAI.AwsExternalStorageProviderParams PickAws() => Aws is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Aws' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AzureExternalStorageProviderParams PickAzure() => IsAzure
-            ? Azure!
+        public global::tryAGI.OpenAI.AzureExternalStorageProviderParams PickAzure() => Azure is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Azure' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.GcpExternalStorageProviderParams PickGcp() => IsGcp
-            ? Gcp!
+        public global::tryAGI.OpenAI.GcpExternalStorageProviderParams PickGcp() => Gcp is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Gcp' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAws && aws != null)
+            if (Aws is { } __value0 && aws != null)
             {
-                return aws(Aws!);
+                return aws(__value0);
             }
-            else if (IsAzure && azure != null)
+            else if (Azure is { } __value1 && azure != null)
             {
-                return azure(Azure!);
+                return azure(__value1);
             }
-            else if (IsGcp && gcp != null)
+            else if (Gcp is { } __value2 && gcp != null)
             {
-                return gcp(Gcp!);
+                return gcp(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAws)
+            if (Aws is { } __value0)
             {
-                aws?.Invoke(Aws!);
+                aws?.Invoke(__value0);
             }
-            else if (IsAzure)
+            else if (Azure is { } __value1)
             {
-                azure?.Invoke(Azure!);
+                azure?.Invoke(__value1);
             }
-            else if (IsGcp)
+            else if (Gcp is { } __value2)
             {
-                gcp?.Invoke(Gcp!);
+                gcp?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAws)
+            if (Aws is { } __value0)
             {
-                aws?.Invoke(Aws!);
+                aws?.Invoke(__value0);
             }
-            else if (IsAzure)
+            else if (Azure is { } __value1)
             {
-                azure?.Invoke(Azure!);
+                azure?.Invoke(__value1);
             }
-            else if (IsGcp)
+            else if (Gcp is { } __value2)
             {
-                gcp?.Invoke(Gcp!);
+                gcp?.Invoke(__value2);
             }
         }
 

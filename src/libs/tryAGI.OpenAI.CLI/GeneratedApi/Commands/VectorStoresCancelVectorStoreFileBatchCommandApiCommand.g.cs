@@ -39,6 +39,8 @@ internal static partial class VectorStoresCancelVectorStoreFileBatchCommandApiCo
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"cancel-vector-store-file-batch", @"Cancel vector store file batch
@@ -68,6 +70,7 @@ Cancel a vector store file batch. This attempts to cancel the processing of file
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

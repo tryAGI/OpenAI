@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant1 PickRunStreamEventVariant1() => IsRunStreamEventVariant1
-            ? RunStreamEventVariant1!
+        public global::tryAGI.OpenAI.RunStreamEventVariant1 PickRunStreamEventVariant1() => RunStreamEventVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant2 PickRunStreamEventVariant2() => IsRunStreamEventVariant2
-            ? RunStreamEventVariant2!
+        public global::tryAGI.OpenAI.RunStreamEventVariant2 PickRunStreamEventVariant2() => RunStreamEventVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant2' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant3 PickRunStreamEventVariant3() => IsRunStreamEventVariant3
-            ? RunStreamEventVariant3!
+        public global::tryAGI.OpenAI.RunStreamEventVariant3 PickRunStreamEventVariant3() => RunStreamEventVariant3 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant3' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant4 PickRunStreamEventVariant4() => IsRunStreamEventVariant4
-            ? RunStreamEventVariant4!
+        public global::tryAGI.OpenAI.RunStreamEventVariant4 PickRunStreamEventVariant4() => RunStreamEventVariant4 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant4' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant5 PickRunStreamEventVariant5() => IsRunStreamEventVariant5
-            ? RunStreamEventVariant5!
+        public global::tryAGI.OpenAI.RunStreamEventVariant5 PickRunStreamEventVariant5() => RunStreamEventVariant5 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant5' but the value was {ToString()}.");
 
         /// <summary>
@@ -227,8 +227,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant6 PickRunStreamEventVariant6() => IsRunStreamEventVariant6
-            ? RunStreamEventVariant6!
+        public global::tryAGI.OpenAI.RunStreamEventVariant6 PickRunStreamEventVariant6() => RunStreamEventVariant6 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant6' but the value was {ToString()}.");
 
         /// <summary>
@@ -264,8 +264,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant7 PickRunStreamEventVariant7() => IsRunStreamEventVariant7
-            ? RunStreamEventVariant7!
+        public global::tryAGI.OpenAI.RunStreamEventVariant7 PickRunStreamEventVariant7() => RunStreamEventVariant7 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant7' but the value was {ToString()}.");
 
         /// <summary>
@@ -301,8 +301,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant8 PickRunStreamEventVariant8() => IsRunStreamEventVariant8
-            ? RunStreamEventVariant8!
+        public global::tryAGI.OpenAI.RunStreamEventVariant8 PickRunStreamEventVariant8() => RunStreamEventVariant8 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant8' but the value was {ToString()}.");
 
         /// <summary>
@@ -338,8 +338,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant9 PickRunStreamEventVariant9() => IsRunStreamEventVariant9
-            ? RunStreamEventVariant9!
+        public global::tryAGI.OpenAI.RunStreamEventVariant9 PickRunStreamEventVariant9() => RunStreamEventVariant9 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant9' but the value was {ToString()}.");
 
         /// <summary>
@@ -375,8 +375,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RunStreamEventVariant10 PickRunStreamEventVariant10() => IsRunStreamEventVariant10
-            ? RunStreamEventVariant10!
+        public global::tryAGI.OpenAI.RunStreamEventVariant10 PickRunStreamEventVariant10() => RunStreamEventVariant10 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RunStreamEventVariant10' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -697,45 +697,45 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsRunStreamEventVariant1 && runStreamEventVariant1 != null)
+            if (RunStreamEventVariant1 is { } __value0 && runStreamEventVariant1 != null)
             {
-                return runStreamEventVariant1(RunStreamEventVariant1!);
+                return runStreamEventVariant1(__value0);
             }
-            else if (IsRunStreamEventVariant2 && runStreamEventVariant2 != null)
+            else if (RunStreamEventVariant2 is { } __value1 && runStreamEventVariant2 != null)
             {
-                return runStreamEventVariant2(RunStreamEventVariant2!);
+                return runStreamEventVariant2(__value1);
             }
-            else if (IsRunStreamEventVariant3 && runStreamEventVariant3 != null)
+            else if (RunStreamEventVariant3 is { } __value2 && runStreamEventVariant3 != null)
             {
-                return runStreamEventVariant3(RunStreamEventVariant3!);
+                return runStreamEventVariant3(__value2);
             }
-            else if (IsRunStreamEventVariant4 && runStreamEventVariant4 != null)
+            else if (RunStreamEventVariant4 is { } __value3 && runStreamEventVariant4 != null)
             {
-                return runStreamEventVariant4(RunStreamEventVariant4!);
+                return runStreamEventVariant4(__value3);
             }
-            else if (IsRunStreamEventVariant5 && runStreamEventVariant5 != null)
+            else if (RunStreamEventVariant5 is { } __value4 && runStreamEventVariant5 != null)
             {
-                return runStreamEventVariant5(RunStreamEventVariant5!);
+                return runStreamEventVariant5(__value4);
             }
-            else if (IsRunStreamEventVariant6 && runStreamEventVariant6 != null)
+            else if (RunStreamEventVariant6 is { } __value5 && runStreamEventVariant6 != null)
             {
-                return runStreamEventVariant6(RunStreamEventVariant6!);
+                return runStreamEventVariant6(__value5);
             }
-            else if (IsRunStreamEventVariant7 && runStreamEventVariant7 != null)
+            else if (RunStreamEventVariant7 is { } __value6 && runStreamEventVariant7 != null)
             {
-                return runStreamEventVariant7(RunStreamEventVariant7!);
+                return runStreamEventVariant7(__value6);
             }
-            else if (IsRunStreamEventVariant8 && runStreamEventVariant8 != null)
+            else if (RunStreamEventVariant8 is { } __value7 && runStreamEventVariant8 != null)
             {
-                return runStreamEventVariant8(RunStreamEventVariant8!);
+                return runStreamEventVariant8(__value7);
             }
-            else if (IsRunStreamEventVariant9 && runStreamEventVariant9 != null)
+            else if (RunStreamEventVariant9 is { } __value8 && runStreamEventVariant9 != null)
             {
-                return runStreamEventVariant9(RunStreamEventVariant9!);
+                return runStreamEventVariant9(__value8);
             }
-            else if (IsRunStreamEventVariant10 && runStreamEventVariant10 != null)
+            else if (RunStreamEventVariant10 is { } __value9 && runStreamEventVariant10 != null)
             {
-                return runStreamEventVariant10(RunStreamEventVariant10!);
+                return runStreamEventVariant10(__value9);
             }
 
             return default(TResult);
@@ -771,45 +771,45 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsRunStreamEventVariant1)
+            if (RunStreamEventVariant1 is { } __value0)
             {
-                runStreamEventVariant1?.Invoke(RunStreamEventVariant1!);
+                runStreamEventVariant1?.Invoke(__value0);
             }
-            else if (IsRunStreamEventVariant2)
+            else if (RunStreamEventVariant2 is { } __value1)
             {
-                runStreamEventVariant2?.Invoke(RunStreamEventVariant2!);
+                runStreamEventVariant2?.Invoke(__value1);
             }
-            else if (IsRunStreamEventVariant3)
+            else if (RunStreamEventVariant3 is { } __value2)
             {
-                runStreamEventVariant3?.Invoke(RunStreamEventVariant3!);
+                runStreamEventVariant3?.Invoke(__value2);
             }
-            else if (IsRunStreamEventVariant4)
+            else if (RunStreamEventVariant4 is { } __value3)
             {
-                runStreamEventVariant4?.Invoke(RunStreamEventVariant4!);
+                runStreamEventVariant4?.Invoke(__value3);
             }
-            else if (IsRunStreamEventVariant5)
+            else if (RunStreamEventVariant5 is { } __value4)
             {
-                runStreamEventVariant5?.Invoke(RunStreamEventVariant5!);
+                runStreamEventVariant5?.Invoke(__value4);
             }
-            else if (IsRunStreamEventVariant6)
+            else if (RunStreamEventVariant6 is { } __value5)
             {
-                runStreamEventVariant6?.Invoke(RunStreamEventVariant6!);
+                runStreamEventVariant6?.Invoke(__value5);
             }
-            else if (IsRunStreamEventVariant7)
+            else if (RunStreamEventVariant7 is { } __value6)
             {
-                runStreamEventVariant7?.Invoke(RunStreamEventVariant7!);
+                runStreamEventVariant7?.Invoke(__value6);
             }
-            else if (IsRunStreamEventVariant8)
+            else if (RunStreamEventVariant8 is { } __value7)
             {
-                runStreamEventVariant8?.Invoke(RunStreamEventVariant8!);
+                runStreamEventVariant8?.Invoke(__value7);
             }
-            else if (IsRunStreamEventVariant9)
+            else if (RunStreamEventVariant9 is { } __value8)
             {
-                runStreamEventVariant9?.Invoke(RunStreamEventVariant9!);
+                runStreamEventVariant9?.Invoke(__value8);
             }
-            else if (IsRunStreamEventVariant10)
+            else if (RunStreamEventVariant10 is { } __value9)
             {
-                runStreamEventVariant10?.Invoke(RunStreamEventVariant10!);
+                runStreamEventVariant10?.Invoke(__value9);
             }
         }
 
@@ -834,45 +834,45 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsRunStreamEventVariant1)
+            if (RunStreamEventVariant1 is { } __value0)
             {
-                runStreamEventVariant1?.Invoke(RunStreamEventVariant1!);
+                runStreamEventVariant1?.Invoke(__value0);
             }
-            else if (IsRunStreamEventVariant2)
+            else if (RunStreamEventVariant2 is { } __value1)
             {
-                runStreamEventVariant2?.Invoke(RunStreamEventVariant2!);
+                runStreamEventVariant2?.Invoke(__value1);
             }
-            else if (IsRunStreamEventVariant3)
+            else if (RunStreamEventVariant3 is { } __value2)
             {
-                runStreamEventVariant3?.Invoke(RunStreamEventVariant3!);
+                runStreamEventVariant3?.Invoke(__value2);
             }
-            else if (IsRunStreamEventVariant4)
+            else if (RunStreamEventVariant4 is { } __value3)
             {
-                runStreamEventVariant4?.Invoke(RunStreamEventVariant4!);
+                runStreamEventVariant4?.Invoke(__value3);
             }
-            else if (IsRunStreamEventVariant5)
+            else if (RunStreamEventVariant5 is { } __value4)
             {
-                runStreamEventVariant5?.Invoke(RunStreamEventVariant5!);
+                runStreamEventVariant5?.Invoke(__value4);
             }
-            else if (IsRunStreamEventVariant6)
+            else if (RunStreamEventVariant6 is { } __value5)
             {
-                runStreamEventVariant6?.Invoke(RunStreamEventVariant6!);
+                runStreamEventVariant6?.Invoke(__value5);
             }
-            else if (IsRunStreamEventVariant7)
+            else if (RunStreamEventVariant7 is { } __value6)
             {
-                runStreamEventVariant7?.Invoke(RunStreamEventVariant7!);
+                runStreamEventVariant7?.Invoke(__value6);
             }
-            else if (IsRunStreamEventVariant8)
+            else if (RunStreamEventVariant8 is { } __value7)
             {
-                runStreamEventVariant8?.Invoke(RunStreamEventVariant8!);
+                runStreamEventVariant8?.Invoke(__value7);
             }
-            else if (IsRunStreamEventVariant9)
+            else if (RunStreamEventVariant9 is { } __value8)
             {
-                runStreamEventVariant9?.Invoke(RunStreamEventVariant9!);
+                runStreamEventVariant9?.Invoke(__value8);
             }
-            else if (IsRunStreamEventVariant10)
+            else if (RunStreamEventVariant10 is { } __value9)
             {
-                runStreamEventVariant10?.Invoke(RunStreamEventVariant10!);
+                runStreamEventVariant10?.Invoke(__value9);
             }
         }
 

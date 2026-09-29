@@ -98,6 +98,22 @@ If a seed is not specified, one will be generated for you.
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
       };
+      private static Option<bool> Wait { get; } = new("--wait")
+      {
+          Description = "Poll the generated wait helper until the resource reaches a terminal state.",
+      };
+
+      private static Option<string> PollInterval { get; } = new("--poll-interval")
+      {
+          Description = "Polling interval, for example 250ms, 2s, 30m, or 01:00:00.",
+          DefaultValueFactory = _ => "2s",
+      };
+
+      private static Option<string> WaitTimeout { get; } = new("--wait-timeout")
+      {
+          Description = "Maximum time to wait before timing out, for example 30m or 00:30:00.",
+          DefaultValueFactory = _ => "30m",
+      };
 
                     private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.FineTuningJob value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
                     {
@@ -118,6 +134,8 @@ If a seed is not specified, one will be generated for you.
                     static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.FineTuningJob value, ref string? text);
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
+
+    static partial void CustomizeCommand(ref Command command);
 
     public static Command Create()
     {
@@ -150,7 +168,9 @@ Response includes details of the enqueued job including job status and the name 
                   result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
               }
           });
-
+          command.Options.Add(Wait);
+          command.Options.Add(PollInterval);
+          command.Options.Add(WaitTimeout);
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
@@ -168,9 +188,46 @@ Response includes details of the enqueued job including job status and the name 
                         var integrations = CliRuntime.WasSpecified(parseResult, Integrations) ? parseResult.GetValue(Integrations) : (__requestBase is { } __IntegrationsBaseValue ? __IntegrationsBaseValue.Integrations : default);
                         var seed = CliRuntime.WasSpecified(parseResult, Seed) ? parseResult.GetValue(Seed) : (__requestBase is { } __SeedBaseValue ? __SeedBaseValue.Seed : default);
                         var method = CliRuntime.WasSpecified(parseResult, Method) ? parseResult.GetValue(Method) : (__requestBase is { } __MethodBaseValue ? __MethodBaseValue.Method : default);
-                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
+                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);          var wait = parseResult.GetValue(Wait);
+          var pollInterval = wait ? CliRuntime.ParseDuration(parseResult.GetRequiredValue(PollInterval), PollInterval.Name) : default;
+          var waitTimeout = wait ? CliRuntime.ParseDuration(parseResult.GetRequiredValue(WaitTimeout), WaitTimeout.Name) : default;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+                                if (wait)
+                                {
+                                var createResponse = await client.FineTuning.CreateFineTuningJobAsync(
+                                    model: model,
+                                    trainingFile: trainingFile,
+                                    suffix: suffix,
+                                    validationFile: validationFile,
+                                    integrations: integrations,
+                                    seed: seed,
+                                    method: method,
+                                    metadata: metadata,
+                                    cancellationToken: cancellationToken).ConfigureAwait(false);
+                                    var resourceId = global::System.Convert.ToString(
+                                        createResponse.Id,
+                                        global::System.Globalization.CultureInfo.InvariantCulture);
+                                    if (string.IsNullOrWhiteSpace(resourceId))
+                                    {
+                                        throw new CliException("The create response did not contain a job id.");
+                                    }
+
+                                    var waitResponse = await CliRuntime.PollUntilTerminalAsync(
+                                        fetchAsync: token => client.FineTuning.RetrieveFineTuningJobAsync(
+                                            fineTuningJobId: resourceId,
+                                            cancellationToken: token),
+                                        pollInterval: pollInterval,
+                                        waitTimeout: waitTimeout,
+                                        context: global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        cancellationToken: cancellationToken).ConfigureAwait(false);
+                                    await CliRuntime.WriteResponseAsync(
+                                        parseResult,
+                                        waitResponse,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        cancellationToken: cancellationToken).ConfigureAwait(false);
+                                    return;
+                                }
 
                                 var response = await client.FineTuning.CreateFineTuningJobAsync(
                                     model: model,
@@ -199,6 +256,7 @@ Response includes details of the enqueued job including job status and the name 
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

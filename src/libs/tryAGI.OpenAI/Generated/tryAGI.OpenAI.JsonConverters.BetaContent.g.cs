@@ -149,13 +149,13 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaInputContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaInputContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaInputContent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputContentTypes!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputContentTypes(), typeInfo);
             }
             else if (value.IsOutputContentTypes)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaOutputContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaOutputContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaOutputContent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputContentTypes!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputContentTypes(), typeInfo);
             }
         }
     }

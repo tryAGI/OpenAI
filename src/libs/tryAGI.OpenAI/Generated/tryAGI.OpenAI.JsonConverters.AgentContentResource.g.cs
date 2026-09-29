@@ -59,13 +59,13 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.OutputTextResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.OutputTextResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.OutputTextResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OutputText!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputText(), typeInfo);
             }
             else if (value.IsEncryptedContent)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.EncryptedContentResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.EncryptedContentResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.EncryptedContentResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.EncryptedContent!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEncryptedContent(), typeInfo);
             }
         }
     }

@@ -55,6 +55,8 @@ internal static partial class ChatUpdateChatCompletionCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"update-chat-completion", @"Update chat completion
@@ -115,6 +117,7 @@ the only supported modification is to update the `metadata` field.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -39,6 +39,8 @@ internal static partial class VaultsDeleteVaultCredentialCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-vault-credential", @"Delete a vault credential
@@ -68,6 +70,7 @@ Deletes a vault credential. See [vaults](https://developers.openai.com/api/docs/
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

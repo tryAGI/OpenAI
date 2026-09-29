@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.InputContent PickInputContentTypes() => IsInputContentTypes
-            ? InputContentTypes!.Value
+        public global::tryAGI.OpenAI.InputContent PickInputContentTypes() => InputContentTypes is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputContentTypes' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.OutputContent PickOutputContentTypes() => IsOutputContentTypes
-            ? OutputContentTypes!.Value
+        public global::tryAGI.OpenAI.OutputContent PickOutputContentTypes() => OutputContentTypes is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputContentTypes' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputContentTypes && inputContentTypes != null)
+            if (InputContentTypes is { } __value0 && inputContentTypes != null)
             {
-                return inputContentTypes(InputContentTypes!);
+                return inputContentTypes(__value0);
             }
-            else if (IsOutputContentTypes && outputContentTypes != null)
+            else if (OutputContentTypes is { } __value1 && outputContentTypes != null)
             {
-                return outputContentTypes(OutputContentTypes!);
+                return outputContentTypes(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputContentTypes)
+            if (InputContentTypes is { } __value0)
             {
-                inputContentTypes?.Invoke(InputContentTypes!);
+                inputContentTypes?.Invoke(__value0);
             }
-            else if (IsOutputContentTypes)
+            else if (OutputContentTypes is { } __value1)
             {
-                outputContentTypes?.Invoke(OutputContentTypes!);
+                outputContentTypes?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputContentTypes)
+            if (InputContentTypes is { } __value0)
             {
-                inputContentTypes?.Invoke(InputContentTypes!);
+                inputContentTypes?.Invoke(__value0);
             }
-            else if (IsOutputContentTypes)
+            else if (OutputContentTypes is { } __value1)
             {
-                outputContentTypes?.Invoke(OutputContentTypes!);
+                outputContentTypes?.Invoke(__value1);
             }
         }
 

@@ -94,6 +94,8 @@ internal static partial class AgentsUpdateAgentEnvironmentTemplateCommandApiComm
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"update-agent-environment-template", @"Update an agent environment template
@@ -194,6 +196,7 @@ Updates reusable environment configuration without returning confidential values
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

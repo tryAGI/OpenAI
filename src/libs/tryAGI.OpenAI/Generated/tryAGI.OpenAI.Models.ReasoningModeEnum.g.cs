@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickReasoningModeEnumVariant1() => IsReasoningModeEnumVariant1
-            ? ReasoningModeEnumVariant1!
+        public string PickReasoningModeEnumVariant1() => ReasoningModeEnumVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningModeEnumVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ReasoningModeEnumEnum PickReasoningModeEnumEnum() => IsReasoningModeEnumEnum
-            ? ReasoningModeEnumEnum!.Value
+        public global::tryAGI.OpenAI.ReasoningModeEnumEnum PickReasoningModeEnumEnum() => ReasoningModeEnumEnum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningModeEnumEnum' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsReasoningModeEnumVariant1 && reasoningModeEnumVariant1 != null)
+            if (ReasoningModeEnumVariant1 is { } __value0 && reasoningModeEnumVariant1 != null)
             {
-                return reasoningModeEnumVariant1(ReasoningModeEnumVariant1!);
+                return reasoningModeEnumVariant1(__value0);
             }
-            else if (IsReasoningModeEnumEnum && reasoningModeEnumEnum != null)
+            else if (ReasoningModeEnumEnum is { } __value1 && reasoningModeEnumEnum != null)
             {
-                return reasoningModeEnumEnum(ReasoningModeEnumEnum!);
+                return reasoningModeEnumEnum(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsReasoningModeEnumVariant1)
+            if (ReasoningModeEnumVariant1 is { } __value0)
             {
-                reasoningModeEnumVariant1?.Invoke(ReasoningModeEnumVariant1!);
+                reasoningModeEnumVariant1?.Invoke(__value0);
             }
-            else if (IsReasoningModeEnumEnum)
+            else if (ReasoningModeEnumEnum is { } __value1)
             {
-                reasoningModeEnumEnum?.Invoke(ReasoningModeEnumEnum!);
+                reasoningModeEnumEnum?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsReasoningModeEnumVariant1)
+            if (ReasoningModeEnumVariant1 is { } __value0)
             {
-                reasoningModeEnumVariant1?.Invoke(ReasoningModeEnumVariant1!);
+                reasoningModeEnumVariant1?.Invoke(__value0);
             }
-            else if (IsReasoningModeEnumEnum)
+            else if (ReasoningModeEnumEnum is { } __value1)
             {
-                reasoningModeEnumEnum?.Invoke(ReasoningModeEnumEnum!);
+                reasoningModeEnumEnum?.Invoke(__value1);
             }
         }
 

@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam PickAuto() => IsAuto
-            ? Auto!
+        public global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam PickAuto() => Auto is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Auto' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam PickStatic() => IsStatic
-            ? Static!
+        public global::tryAGI.OpenAI.StaticChunkingStrategyRequestParam PickStatic() => Static is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Static' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAuto && auto != null)
+            if (Auto is { } __value0 && auto != null)
             {
-                return auto(Auto!);
+                return auto(__value0);
             }
-            else if (IsStatic && @static != null)
+            else if (Static is { } __value1 && @static != null)
             {
-                return @static(Static!);
+                return @static(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAuto)
+            if (Auto is { } __value0)
             {
-                auto?.Invoke(Auto!);
+                auto?.Invoke(__value0);
             }
-            else if (IsStatic)
+            else if (Static is { } __value1)
             {
-                @static?.Invoke(Static!);
+                @static?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAuto)
+            if (Auto is { } __value0)
             {
-                auto?.Invoke(Auto!);
+                auto?.Invoke(__value0);
             }
-            else if (IsStatic)
+            else if (Static is { } __value1)
             {
-                @static?.Invoke(Static!);
+                @static?.Invoke(__value1);
             }
         }
 

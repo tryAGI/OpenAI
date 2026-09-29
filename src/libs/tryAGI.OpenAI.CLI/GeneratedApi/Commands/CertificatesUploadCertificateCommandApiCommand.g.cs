@@ -56,6 +56,8 @@ internal static partial class CertificatesUploadCertificateCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"upload-certificate", @"Upload certificate
@@ -108,6 +110,7 @@ Organizations can upload up to 50 certificates.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

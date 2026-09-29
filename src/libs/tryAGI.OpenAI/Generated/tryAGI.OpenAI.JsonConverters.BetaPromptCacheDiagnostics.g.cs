@@ -77,25 +77,25 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaPromptCacheMissDiagnosticsBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaPromptCacheMissDiagnosticsBody?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaPromptCacheMissDiagnosticsBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CacheMiss!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCacheMiss(), typeInfo);
             }
             else if (value.IsCacheHit)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaPromptCacheHitDiagnosticsBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaPromptCacheHitDiagnosticsBody?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaPromptCacheHitDiagnosticsBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CacheHit!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCacheHit(), typeInfo);
             }
             else if (value.IsComparisonResponseNotFound)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaPromptCacheComparisonResponseNotFoundDiagnosticsBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaPromptCacheComparisonResponseNotFoundDiagnosticsBody?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaPromptCacheComparisonResponseNotFoundDiagnosticsBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComparisonResponseNotFound!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickComparisonResponseNotFound(), typeInfo);
             }
             else if (value.IsUnavailable)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaPromptCacheUnavailableDiagnosticsBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaPromptCacheUnavailableDiagnosticsBody?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaPromptCacheUnavailableDiagnosticsBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unavailable!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUnavailable(), typeInfo);
             }
         }
     }

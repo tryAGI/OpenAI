@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LocalEnvironmentResource PickLocal() => IsLocal
-            ? Local!
+        public global::tryAGI.OpenAI.LocalEnvironmentResource PickLocal() => Local is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerReferenceResource PickContainerReference() => IsContainerReference
-            ? ContainerReference!
+        public global::tryAGI.OpenAI.ContainerReferenceResource PickContainerReference() => ContainerReference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerReference' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsLocal && local != null)
+            if (Local is { } __value0 && local != null)
             {
-                return local(Local!);
+                return local(__value0);
             }
-            else if (IsContainerReference && containerReference != null)
+            else if (ContainerReference is { } __value1 && containerReference != null)
             {
-                return containerReference(ContainerReference!);
+                return containerReference(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsLocal)
+            if (Local is { } __value0)
             {
-                local?.Invoke(Local!);
+                local?.Invoke(__value0);
             }
-            else if (IsContainerReference)
+            else if (ContainerReference is { } __value1)
             {
-                containerReference?.Invoke(ContainerReference!);
+                containerReference?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsLocal)
+            if (Local is { } __value0)
             {
-                local?.Invoke(Local!);
+                local?.Invoke(__value0);
             }
-            else if (IsContainerReference)
+            else if (ContainerReference is { } __value1)
             {
-                containerReference?.Invoke(ContainerReference!);
+                containerReference?.Invoke(__value1);
             }
         }
 

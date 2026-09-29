@@ -39,6 +39,8 @@ internal static partial class AssistantsCancelRunCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"cancel-run", @"Cancel a run
@@ -76,6 +78,7 @@ Cancels a run that is `in_progress`.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

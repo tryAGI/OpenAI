@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CreateModelResponseProperties PickModelResponseProperties() => IsModelResponseProperties
-            ? ModelResponseProperties!.Value
+        public global::tryAGI.OpenAI.CreateModelResponseProperties PickModelResponseProperties() => ModelResponseProperties is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelResponseProperties' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2 PickCreateChatCompletionRequestVariant2() => IsCreateChatCompletionRequestVariant2
-            ? CreateChatCompletionRequestVariant2!
+        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2 PickCreateChatCompletionRequestVariant2() => CreateChatCompletionRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateChatCompletionRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelResponseProperties && modelResponseProperties != null)
+            if (ModelResponseProperties is { } __value0 && modelResponseProperties != null)
             {
-                return modelResponseProperties(ModelResponseProperties!);
+                return modelResponseProperties(__value0);
             }
-            else if (IsCreateChatCompletionRequestVariant2 && createChatCompletionRequestVariant2 != null)
+            else if (CreateChatCompletionRequestVariant2 is { } __value1 && createChatCompletionRequestVariant2 != null)
             {
-                return createChatCompletionRequestVariant2(CreateChatCompletionRequestVariant2!);
+                return createChatCompletionRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelResponseProperties)
+            if (ModelResponseProperties is { } __value0)
             {
-                modelResponseProperties?.Invoke(ModelResponseProperties!);
+                modelResponseProperties?.Invoke(__value0);
             }
-            else if (IsCreateChatCompletionRequestVariant2)
+            else if (CreateChatCompletionRequestVariant2 is { } __value1)
             {
-                createChatCompletionRequestVariant2?.Invoke(CreateChatCompletionRequestVariant2!);
+                createChatCompletionRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelResponseProperties)
+            if (ModelResponseProperties is { } __value0)
             {
-                modelResponseProperties?.Invoke(ModelResponseProperties!);
+                modelResponseProperties?.Invoke(__value0);
             }
-            else if (IsCreateChatCompletionRequestVariant2)
+            else if (CreateChatCompletionRequestVariant2 is { } __value1)
             {
-                createChatCompletionRequestVariant2?.Invoke(CreateChatCompletionRequestVariant2!);
+                createChatCompletionRequestVariant2?.Invoke(__value1);
             }
         }
 

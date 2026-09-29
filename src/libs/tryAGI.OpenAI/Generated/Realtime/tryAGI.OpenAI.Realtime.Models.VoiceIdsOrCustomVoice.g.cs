@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.VoiceIdsShared PickShared() => IsShared
-            ? Shared!.Value
+        public global::tryAGI.OpenAI.Realtime.VoiceIdsShared PickShared() => Shared is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.VoiceIdsOrCustomVoiceVariant2 PickVoiceIdsOrCustomVoiceVariant2() => IsVoiceIdsOrCustomVoiceVariant2
-            ? VoiceIdsOrCustomVoiceVariant2!
+        public global::tryAGI.OpenAI.Realtime.VoiceIdsOrCustomVoiceVariant2 PickVoiceIdsOrCustomVoiceVariant2() => VoiceIdsOrCustomVoiceVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'VoiceIdsOrCustomVoiceVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI.Realtime
                 Validate();
             }
 
-            if (IsShared && shared != null)
+            if (Shared is { } __value0 && shared != null)
             {
-                return shared(Shared!);
+                return shared(__value0);
             }
-            else if (IsVoiceIdsOrCustomVoiceVariant2 && voiceIdsOrCustomVoiceVariant2 != null)
+            else if (VoiceIdsOrCustomVoiceVariant2 is { } __value1 && voiceIdsOrCustomVoiceVariant2 != null)
             {
-                return voiceIdsOrCustomVoiceVariant2(VoiceIdsOrCustomVoiceVariant2!);
+                return voiceIdsOrCustomVoiceVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI.Realtime
                 Validate();
             }
 
-            if (IsShared)
+            if (Shared is { } __value0)
             {
-                shared?.Invoke(Shared!);
+                shared?.Invoke(__value0);
             }
-            else if (IsVoiceIdsOrCustomVoiceVariant2)
+            else if (VoiceIdsOrCustomVoiceVariant2 is { } __value1)
             {
-                voiceIdsOrCustomVoiceVariant2?.Invoke(VoiceIdsOrCustomVoiceVariant2!);
+                voiceIdsOrCustomVoiceVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI.Realtime
                 Validate();
             }
 
-            if (IsShared)
+            if (Shared is { } __value0)
             {
-                shared?.Invoke(Shared!);
+                shared?.Invoke(__value0);
             }
-            else if (IsVoiceIdsOrCustomVoiceVariant2)
+            else if (VoiceIdsOrCustomVoiceVariant2 is { } __value1)
             {
-                voiceIdsOrCustomVoiceVariant2?.Invoke(VoiceIdsOrCustomVoiceVariant2!);
+                voiceIdsOrCustomVoiceVariant2?.Invoke(__value1);
             }
         }
 

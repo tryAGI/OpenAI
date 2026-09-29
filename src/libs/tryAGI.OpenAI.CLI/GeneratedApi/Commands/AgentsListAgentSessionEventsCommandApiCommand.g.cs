@@ -13,6 +13,8 @@ internal static partial class AgentsListAgentSessionEventsCommandApiCommand
         Description = @"The ID of the session.",
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-agent-session-events", @"Stream agent session events
@@ -40,6 +42,7 @@ Streams live events for an agent session. See [session events](https://developer
                                         cancellationToken: cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

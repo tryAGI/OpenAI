@@ -45,8 +45,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2 PickRetentionRatioTruncation() => IsRetentionRatioTruncation
-            ? RetentionRatioTruncation!
+        public global::tryAGI.OpenAI.Realtime.RealtimeTruncationEnum2 PickRetentionRatioTruncation() => RetentionRatioTruncation is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'RetentionRatioTruncation' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -180,13 +180,13 @@ namespace tryAGI.OpenAI.Realtime
                 Validate();
             }
 
-            if (IsEnum && @enum != null)
+            if (Enum is { } __value0 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value0);
             }
-            else if (IsRetentionRatioTruncation && retentionRatioTruncation != null)
+            else if (RetentionRatioTruncation is { } __value1 && retentionRatioTruncation != null)
             {
-                return retentionRatioTruncation(RetentionRatioTruncation!);
+                return retentionRatioTruncation(__value1);
             }
 
             return default(TResult);
@@ -206,13 +206,13 @@ namespace tryAGI.OpenAI.Realtime
                 Validate();
             }
 
-            if (IsEnum)
+            if (Enum is { } __value0)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value0);
             }
-            else if (IsRetentionRatioTruncation)
+            else if (RetentionRatioTruncation is { } __value1)
             {
-                retentionRatioTruncation?.Invoke(RetentionRatioTruncation!);
+                retentionRatioTruncation?.Invoke(__value1);
             }
         }
 
@@ -229,13 +229,13 @@ namespace tryAGI.OpenAI.Realtime
                 Validate();
             }
 
-            if (IsEnum)
+            if (Enum is { } __value0)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value0);
             }
-            else if (IsRetentionRatioTruncation)
+            else if (RetentionRatioTruncation is { } __value1)
             {
-                retentionRatioTruncation?.Invoke(RetentionRatioTruncation!);
+                retentionRatioTruncation?.Invoke(__value1);
             }
         }
 

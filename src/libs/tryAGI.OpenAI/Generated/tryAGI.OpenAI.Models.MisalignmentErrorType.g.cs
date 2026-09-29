@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickMisalignmentErrorTypeVariant1() => IsMisalignmentErrorTypeVariant1
-            ? MisalignmentErrorTypeVariant1!
+        public string PickMisalignmentErrorTypeVariant1() => MisalignmentErrorTypeVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'MisalignmentErrorTypeVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.MisalignmentErrorTypeEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::tryAGI.OpenAI.MisalignmentErrorTypeEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMisalignmentErrorTypeVariant1 && misalignmentErrorTypeVariant1 != null)
+            if (MisalignmentErrorTypeVariant1 is { } __value0 && misalignmentErrorTypeVariant1 != null)
             {
-                return misalignmentErrorTypeVariant1(MisalignmentErrorTypeVariant1!);
+                return misalignmentErrorTypeVariant1(__value0);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value1 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMisalignmentErrorTypeVariant1)
+            if (MisalignmentErrorTypeVariant1 is { } __value0)
             {
-                misalignmentErrorTypeVariant1?.Invoke(MisalignmentErrorTypeVariant1!);
+                misalignmentErrorTypeVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMisalignmentErrorTypeVariant1)
+            if (MisalignmentErrorTypeVariant1 is { } __value0)
             {
-                misalignmentErrorTypeVariant1?.Invoke(MisalignmentErrorTypeVariant1!);
+                misalignmentErrorTypeVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 

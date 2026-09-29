@@ -49,8 +49,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate PickSessionUpdate() => IsSessionUpdate
-            ? SessionUpdate!
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionUpdate PickSessionUpdate() => SessionUpdate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdate' but the value was {ToString()}.");
 
         /// <summary>
@@ -97,8 +97,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend PickSessionInputAudioBufferAppend() => IsSessionInputAudioBufferAppend
-            ? SessionInputAudioBufferAppend!
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppend PickSessionInputAudioBufferAppend() => SessionInputAudioBufferAppend is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioBufferAppend' but the value was {ToString()}.");
 
         /// <summary>
@@ -136,8 +136,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose PickSessionClose() => IsSessionClose
-            ? SessionClose!
+        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionClose PickSessionClose() => SessionClose is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionClose' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -265,17 +265,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSessionUpdate && sessionUpdate != null)
+            if (SessionUpdate is { } __value0 && sessionUpdate != null)
             {
-                return sessionUpdate(SessionUpdate!);
+                return sessionUpdate(__value0);
             }
-            else if (IsSessionInputAudioBufferAppend && sessionInputAudioBufferAppend != null)
+            else if (SessionInputAudioBufferAppend is { } __value1 && sessionInputAudioBufferAppend != null)
             {
-                return sessionInputAudioBufferAppend(SessionInputAudioBufferAppend!);
+                return sessionInputAudioBufferAppend(__value1);
             }
-            else if (IsSessionClose && sessionClose != null)
+            else if (SessionClose is { } __value2 && sessionClose != null)
             {
-                return sessionClose(SessionClose!);
+                return sessionClose(__value2);
             }
 
             return default(TResult);
@@ -297,17 +297,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSessionUpdate)
+            if (SessionUpdate is { } __value0)
             {
-                sessionUpdate?.Invoke(SessionUpdate!);
+                sessionUpdate?.Invoke(__value0);
             }
-            else if (IsSessionInputAudioBufferAppend)
+            else if (SessionInputAudioBufferAppend is { } __value1)
             {
-                sessionInputAudioBufferAppend?.Invoke(SessionInputAudioBufferAppend!);
+                sessionInputAudioBufferAppend?.Invoke(__value1);
             }
-            else if (IsSessionClose)
+            else if (SessionClose is { } __value2)
             {
-                sessionClose?.Invoke(SessionClose!);
+                sessionClose?.Invoke(__value2);
             }
         }
 
@@ -325,17 +325,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSessionUpdate)
+            if (SessionUpdate is { } __value0)
             {
-                sessionUpdate?.Invoke(SessionUpdate!);
+                sessionUpdate?.Invoke(__value0);
             }
-            else if (IsSessionInputAudioBufferAppend)
+            else if (SessionInputAudioBufferAppend is { } __value1)
             {
-                sessionInputAudioBufferAppend?.Invoke(SessionInputAudioBufferAppend!);
+                sessionInputAudioBufferAppend?.Invoke(__value1);
             }
-            else if (IsSessionClose)
+            else if (SessionClose is { } __value2)
             {
-                sessionClose?.Invoke(SessionClose!);
+                sessionClose?.Invoke(__value2);
             }
         }
 

@@ -39,6 +39,8 @@ internal static partial class UserOrganizationRoleAssignmentsRetrieveUserRoleCom
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"retrieve-user-role", @"Retrieve user organization role
@@ -76,6 +78,7 @@ Retrieves an organization role assigned to a user.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

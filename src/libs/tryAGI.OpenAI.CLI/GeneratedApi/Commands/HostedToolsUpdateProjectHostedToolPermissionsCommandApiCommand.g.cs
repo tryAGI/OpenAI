@@ -58,6 +58,8 @@ internal static partial class HostedToolsUpdateProjectHostedToolPermissionsComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"update-project-hosted-tool-permissions", @"Modify project hosted tool permissions
@@ -164,6 +166,7 @@ Updates hosted tool permissions for a project.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

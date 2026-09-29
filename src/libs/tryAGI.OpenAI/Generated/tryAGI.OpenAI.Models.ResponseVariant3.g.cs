@@ -105,8 +105,7 @@ namespace tryAGI.OpenAI
         public string? OutputText { get; set; }
 
         /// <summary>
-        /// Represents token usage details including input tokens, output tokens,<br/>
-        /// a breakdown of output tokens, and the total tokens used.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         public global::tryAGI.OpenAI.ResponseUsage? Usage { get; set; }
@@ -194,10 +193,7 @@ namespace tryAGI.OpenAI
         /// <param name="reasoning"></param>
         /// <param name="instructions"></param>
         /// <param name="outputText"></param>
-        /// <param name="usage">
-        /// Represents token usage details including input tokens, output tokens,<br/>
-        /// a breakdown of output tokens, and the total tokens used.
-        /// </param>
+        /// <param name="usage"></param>
         /// <param name="promptCacheOptions">
         /// The prompt-caching options that were applied to the response. Supported for `gpt-5.6` and later models.
         /// </param>

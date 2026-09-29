@@ -25,6 +25,8 @@ internal static partial class ChatCreateChatCompletionAsStreamCommandApiCommand
           Hidden = true,
       };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-chat-completion-as-stream", @"Create chat completion
@@ -91,6 +93,7 @@ chunk objects if the request is streamed.
                                         cancellationToken: cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

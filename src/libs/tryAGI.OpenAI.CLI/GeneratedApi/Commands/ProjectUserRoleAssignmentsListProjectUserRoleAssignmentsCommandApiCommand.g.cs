@@ -57,6 +57,8 @@ internal static partial class ProjectUserRoleAssignmentsListProjectUserRoleAssig
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-project-user-role-assignments", @"List project user role assignments
@@ -103,6 +105,7 @@ Lists the project roles assigned to a user within a project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

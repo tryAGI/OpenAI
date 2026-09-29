@@ -88,6 +88,8 @@ internal static partial class AgentsCreateAgentEnvironmentTemplateCommandApiComm
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-agent-environment-template", @"Create an agent environment template
@@ -185,6 +187,7 @@ Creates reusable environment configuration without returning confidential setup 
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

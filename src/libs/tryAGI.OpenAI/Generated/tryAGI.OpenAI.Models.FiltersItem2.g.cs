@@ -42,46 +42,46 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaComparisonFilter PickComparisonFilter() => IsComparisonFilter
-            ? ComparisonFilter!
+        public global::tryAGI.OpenAI.BetaComparisonFilter PickComparisonFilter() => ComparisonFilter is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComparisonFilter' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// Combine multiple filters using `and` or `or`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public object? BetaCompoundFilterVariant2 { get; init; }
+        public global::tryAGI.OpenAI.BetaCompoundFilter? CompoundFilter { get; init; }
 #else
-        public object? BetaCompoundFilterVariant2 { get; }
+        public global::tryAGI.OpenAI.BetaCompoundFilter? CompoundFilter { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaCompoundFilterVariant2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CompoundFilter))]
 #endif
-        public bool IsBetaCompoundFilterVariant2 => BetaCompoundFilterVariant2 != null;
+        public bool IsCompoundFilter => CompoundFilter != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickBetaCompoundFilterVariant2(
+        public bool TryPickCompoundFilter(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out object? value)
+            out global::tryAGI.OpenAI.BetaCompoundFilter? value)
         {
-            value = BetaCompoundFilterVariant2;
-            return IsBetaCompoundFilterVariant2;
+            value = CompoundFilter;
+            return IsCompoundFilter;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public object PickBetaCompoundFilterVariant2() => IsBetaCompoundFilterVariant2
-            ? BetaCompoundFilterVariant2!
-            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaCompoundFilterVariant2' but the value was {ToString()}.");
+        public global::tryAGI.OpenAI.BetaCompoundFilter PickCompoundFilter() => CompoundFilter is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CompoundFilter' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -108,20 +108,43 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator FiltersItem2(global::tryAGI.OpenAI.BetaCompoundFilter value) => new FiltersItem2((global::tryAGI.OpenAI.BetaCompoundFilter?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.BetaCompoundFilter?(FiltersItem2 @this) => @this.CompoundFilter;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public FiltersItem2(global::tryAGI.OpenAI.BetaCompoundFilter? value)
+        {
+            CompoundFilter = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static FiltersItem2 FromCompoundFilter(global::tryAGI.OpenAI.BetaCompoundFilter? value) => new FiltersItem2(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public FiltersItem2(
             global::tryAGI.OpenAI.BetaComparisonFilter? comparisonFilter,
-            object? betaCompoundFilterVariant2
+            global::tryAGI.OpenAI.BetaCompoundFilter? compoundFilter
             )
         {
             ComparisonFilter = comparisonFilter;
-            BetaCompoundFilterVariant2 = betaCompoundFilterVariant2;
+            CompoundFilter = compoundFilter;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            BetaCompoundFilterVariant2 as object ??
+            CompoundFilter as object ??
             ComparisonFilter as object
             ;
 
@@ -130,7 +153,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             ComparisonFilter?.ToString() ??
-            BetaCompoundFilterVariant2?.ToString()
+            CompoundFilter?.ToString()
             ;
 
         /// <summary>
@@ -138,7 +161,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsComparisonFilter && !IsBetaCompoundFilterVariant2 || !IsComparisonFilter && IsBetaCompoundFilterVariant2;
+            return IsComparisonFilter && !IsCompoundFilter || !IsComparisonFilter && IsCompoundFilter;
         }
 
         /// <summary>
@@ -146,7 +169,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaComparisonFilter, TResult>? comparisonFilter = null,
-            global::System.Func<object, TResult>? betaCompoundFilterVariant2 = null,
+            global::System.Func<global::tryAGI.OpenAI.BetaCompoundFilter, TResult>? compoundFilter = null,
             bool validate = true)
         {
             if (validate)
@@ -154,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsComparisonFilter && comparisonFilter != null)
+            if (ComparisonFilter is { } __value0 && comparisonFilter != null)
             {
-                return comparisonFilter(ComparisonFilter!);
+                return comparisonFilter(__value0);
             }
-            else if (IsBetaCompoundFilterVariant2 && betaCompoundFilterVariant2 != null)
+            else if (CompoundFilter is { } __value1 && compoundFilter != null)
             {
-                return betaCompoundFilterVariant2(BetaCompoundFilterVariant2!);
+                return compoundFilter(__value1);
             }
 
             return default(TResult);
@@ -172,7 +195,7 @@ namespace tryAGI.OpenAI
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.BetaComparisonFilter>? comparisonFilter = null,
 
-            global::System.Action<object>? betaCompoundFilterVariant2 = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaCompoundFilter>? compoundFilter = null,
             bool validate = true)
         {
             if (validate)
@@ -180,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsComparisonFilter)
+            if (ComparisonFilter is { } __value0)
             {
-                comparisonFilter?.Invoke(ComparisonFilter!);
+                comparisonFilter?.Invoke(__value0);
             }
-            else if (IsBetaCompoundFilterVariant2)
+            else if (CompoundFilter is { } __value1)
             {
-                betaCompoundFilterVariant2?.Invoke(BetaCompoundFilterVariant2!);
+                compoundFilter?.Invoke(__value1);
             }
         }
 
@@ -195,7 +218,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaComparisonFilter>? comparisonFilter = null,
-            global::System.Action<object>? betaCompoundFilterVariant2 = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaCompoundFilter>? compoundFilter = null,
             bool validate = true)
         {
             if (validate)
@@ -203,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsComparisonFilter)
+            if (ComparisonFilter is { } __value0)
             {
-                comparisonFilter?.Invoke(ComparisonFilter!);
+                comparisonFilter?.Invoke(__value0);
             }
-            else if (IsBetaCompoundFilterVariant2)
+            else if (CompoundFilter is { } __value1)
             {
-                betaCompoundFilterVariant2?.Invoke(BetaCompoundFilterVariant2!);
+                compoundFilter?.Invoke(__value1);
             }
         }
 
@@ -222,8 +245,8 @@ namespace tryAGI.OpenAI
             {
                 ComparisonFilter,
                 typeof(global::tryAGI.OpenAI.BetaComparisonFilter),
-                BetaCompoundFilterVariant2,
-                typeof(object),
+                CompoundFilter,
+                typeof(global::tryAGI.OpenAI.BetaCompoundFilter),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -241,7 +264,7 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaComparisonFilter?>.Default.Equals(ComparisonFilter, other.ComparisonFilter) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(BetaCompoundFilterVariant2, other.BetaCompoundFilterVariant2)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCompoundFilter?>.Default.Equals(CompoundFilter, other.CompoundFilter)
                 ;
         }
 

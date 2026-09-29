@@ -92,6 +92,8 @@ internal static partial class ResponsesCompactconversationCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"compactconversation", @"Compact conversation
@@ -169,6 +171,7 @@ Learn when and how to compact long-running conversations in the [conversation st
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

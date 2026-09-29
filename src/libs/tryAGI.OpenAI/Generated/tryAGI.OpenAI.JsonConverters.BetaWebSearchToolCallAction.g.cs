@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaWebSearchActionSearch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaWebSearchActionSearch?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaWebSearchActionSearch).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Search!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSearch(), typeInfo);
             }
             else if (value.IsOpenPage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaWebSearchActionOpenPage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaWebSearchActionOpenPage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaWebSearchActionOpenPage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenPage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenPage(), typeInfo);
             }
             else if (value.IsFindInPage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaWebSearchActionFind), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaWebSearchActionFind?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaWebSearchActionFind).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FindInPage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFindInPage(), typeInfo);
             }
         }
     }

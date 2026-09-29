@@ -53,6 +53,22 @@ internal static partial class FilesCreateFileCommandApiCommand
           Description = "Path to a JSON request file, or '-' for stdin.",
           Hidden = true,
       };
+      private static Option<bool> Wait { get; } = new("--wait")
+      {
+          Description = "Poll the generated wait helper until the resource reaches a terminal state.",
+      };
+
+      private static Option<string> PollInterval { get; } = new("--poll-interval")
+      {
+          Description = "Polling interval, for example 250ms, 2s, 30m, or 01:00:00.",
+          DefaultValueFactory = _ => "2s",
+      };
+
+      private static Option<string> WaitTimeout { get; } = new("--wait-timeout")
+      {
+          Description = "Maximum time to wait before timing out, for example 30m or 00:30:00.",
+          DefaultValueFactory = _ => "30m",
+      };
 
                     private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.OpenAIFile value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
                     {
@@ -73,6 +89,8 @@ internal static partial class FilesCreateFileCommandApiCommand
                     static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.OpenAIFile value, ref string? text);
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
+
+    static partial void CustomizeCommand(ref Command command);
 
     public static Command Create()
     {
@@ -121,7 +139,9 @@ storage limits.
                   result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
               }
           });
-
+          command.Options.Add(Wait);
+          command.Options.Add(PollInterval);
+          command.Options.Add(WaitTimeout);
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
@@ -147,9 +167,42 @@ storage limits.
                                 Seconds = expiresAfterSeconds!,
 
                                 }
-                                : __ExpiresAfterBase;
+                                : __ExpiresAfterBase;          var wait = parseResult.GetValue(Wait);
+          var pollInterval = wait ? CliRuntime.ParseDuration(parseResult.GetRequiredValue(PollInterval), PollInterval.Name) : default;
+          var waitTimeout = wait ? CliRuntime.ParseDuration(parseResult.GetRequiredValue(WaitTimeout), WaitTimeout.Name) : default;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
+                                if (wait)
+                                {
+                                var createResponse = await client.Files.CreateFileAsync(
+                                    file: file,
+                                    filename: filename,
+                                    purpose: purpose,
+                                    expiresAfter: expiresAfter,
+                                    cancellationToken: cancellationToken).ConfigureAwait(false);
+                                    var resourceId = global::System.Convert.ToString(
+                                        createResponse.Id,
+                                        global::System.Globalization.CultureInfo.InvariantCulture);
+                                    if (string.IsNullOrWhiteSpace(resourceId))
+                                    {
+                                        throw new CliException("The create response did not contain a job id.");
+                                    }
+
+                                    var waitResponse = await CliRuntime.PollUntilTerminalAsync(
+                                        fetchAsync: token => client.Files.RetrieveFileAsync(
+                                            fileId: resourceId,
+                                            cancellationToken: token),
+                                        pollInterval: pollInterval,
+                                        waitTimeout: waitTimeout,
+                                        context: global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        cancellationToken: cancellationToken).ConfigureAwait(false);
+                                    await CliRuntime.WriteResponseAsync(
+                                        parseResult,
+                                        waitResponse,
+                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
+                                        cancellationToken: cancellationToken).ConfigureAwait(false);
+                                    return;
+                                }
 
                                 var response = await client.Files.CreateFileAsync(
                                     file: file,
@@ -166,6 +219,7 @@ storage limits.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

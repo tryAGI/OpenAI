@@ -76,9 +76,6 @@ namespace tryAGI.OpenAI
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
-        /// <param name="stream">
-        /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
-        /// </param>
         /// <param name="maxPromptTokens">
         /// The maximum number of prompt tokens that may be used over the course of the run. The run will make a best effort to use only the number of prompt tokens specified, across multiple turns of the run. If the run exceeds the number of prompt tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
         /// </param>
@@ -113,7 +110,6 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             double? temperature = default,
             double? topP = default,
-            bool? stream = default,
             int? maxPromptTokens = default,
             int? maxCompletionTokens = default,
             global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.TruncationObject, object>? truncationStrategy = default,

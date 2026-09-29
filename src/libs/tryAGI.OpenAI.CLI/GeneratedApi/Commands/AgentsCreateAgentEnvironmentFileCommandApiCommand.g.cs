@@ -49,6 +49,8 @@ internal static partial class AgentsCreateAgentEnvironmentFileCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-agent-environment-file", @"Create an agent environment file
@@ -96,6 +98,7 @@ Copies inline bytes or a Files API file into a connected execution environment. 
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -83,6 +83,8 @@ single channel (mono), and little-endian byte order.
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-realtime-transcription-session", @"Create transcription session
@@ -158,6 +160,7 @@ Returns the created Realtime transcription session object, plus an ephemeral key
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -56,6 +56,8 @@ internal static partial class ImagesCreateImageCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-image", @"Create image
@@ -145,6 +147,7 @@ Creates an image given a prompt. [Learn more](https://developers.openai.com/api/
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

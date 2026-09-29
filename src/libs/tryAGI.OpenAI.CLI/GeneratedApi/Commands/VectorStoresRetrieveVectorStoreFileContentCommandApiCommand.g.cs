@@ -39,6 +39,8 @@ internal static partial class VectorStoresRetrieveVectorStoreFileContentCommandA
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"retrieve-vector-store-file-content", @"Retrieve vector store file content
@@ -76,6 +78,7 @@ Retrieve the parsed contents of a vector store file.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

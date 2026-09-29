@@ -57,6 +57,8 @@ internal static partial class AgentsListAgentSessionSubagentItemsCommandApiComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-agent-session-subagent-items", @"List subagent items
@@ -103,6 +105,7 @@ Lists this subagent's own items across all of its turns. See [subagent workflows
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

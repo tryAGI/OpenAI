@@ -51,8 +51,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredFunctionToolCallOutput PickFunctionCallOutput() => IsFunctionCallOutput
-            ? FunctionCallOutput!
+        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredFunctionToolCallOutput PickFunctionCallOutput() => FunctionCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -89,8 +89,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredCustomToolCallOutput PickCustomToolCallOutput() => IsCustomToolCallOutput
-            ? CustomToolCallOutput!
+        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredCustomToolCallOutput PickCustomToolCallOutput() => CustomToolCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -127,8 +127,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredComputerToolCallOutput PickComputerCallOutput() => IsComputerCallOutput
-            ? ComputerCallOutput!
+        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredComputerToolCallOutput PickComputerCallOutput() => ComputerCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -165,8 +165,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredShellToolCallOutput PickShellCallOutput() => IsShellCallOutput
-            ? ShellCallOutput!
+        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredShellToolCallOutput PickShellCallOutput() => ShellCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ShellCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -203,8 +203,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredApplyPatchToolCallOutput PickApplyPatchCallOutput() => IsApplyPatchCallOutput
-            ? ApplyPatchCallOutput!
+        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredApplyPatchToolCallOutput PickApplyPatchCallOutput() => ApplyPatchCallOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatchCallOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -241,8 +241,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredToolSearchOutput PickToolSearchOutput() => IsToolSearchOutput
-            ? ToolSearchOutput!
+        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredToolSearchOutput PickToolSearchOutput() => ToolSearchOutput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearchOutput' but the value was {ToString()}.");
 
         /// <summary>
@@ -280,8 +280,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredMcpApprovalResponse PickMcpApprovalResponse() => IsMcpApprovalResponse
-            ? McpApprovalResponse!
+        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredMcpApprovalResponse PickMcpApprovalResponse() => McpApprovalResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpApprovalResponse' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -521,33 +521,33 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunctionCallOutput && functionCallOutput != null)
+            if (FunctionCallOutput is { } __value0 && functionCallOutput != null)
             {
-                return functionCallOutput(FunctionCallOutput!);
+                return functionCallOutput(__value0);
             }
-            else if (IsCustomToolCallOutput && customToolCallOutput != null)
+            else if (CustomToolCallOutput is { } __value1 && customToolCallOutput != null)
             {
-                return customToolCallOutput(CustomToolCallOutput!);
+                return customToolCallOutput(__value1);
             }
-            else if (IsComputerCallOutput && computerCallOutput != null)
+            else if (ComputerCallOutput is { } __value2 && computerCallOutput != null)
             {
-                return computerCallOutput(ComputerCallOutput!);
+                return computerCallOutput(__value2);
             }
-            else if (IsShellCallOutput && shellCallOutput != null)
+            else if (ShellCallOutput is { } __value3 && shellCallOutput != null)
             {
-                return shellCallOutput(ShellCallOutput!);
+                return shellCallOutput(__value3);
             }
-            else if (IsApplyPatchCallOutput && applyPatchCallOutput != null)
+            else if (ApplyPatchCallOutput is { } __value4 && applyPatchCallOutput != null)
             {
-                return applyPatchCallOutput(ApplyPatchCallOutput!);
+                return applyPatchCallOutput(__value4);
             }
-            else if (IsToolSearchOutput && toolSearchOutput != null)
+            else if (ToolSearchOutput is { } __value5 && toolSearchOutput != null)
             {
-                return toolSearchOutput(ToolSearchOutput!);
+                return toolSearchOutput(__value5);
             }
-            else if (IsMcpApprovalResponse && mcpApprovalResponse != null)
+            else if (McpApprovalResponse is { } __value6 && mcpApprovalResponse != null)
             {
-                return mcpApprovalResponse(McpApprovalResponse!);
+                return mcpApprovalResponse(__value6);
             }
 
             return default(TResult);
@@ -577,33 +577,33 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunctionCallOutput)
+            if (FunctionCallOutput is { } __value0)
             {
-                functionCallOutput?.Invoke(FunctionCallOutput!);
+                functionCallOutput?.Invoke(__value0);
             }
-            else if (IsCustomToolCallOutput)
+            else if (CustomToolCallOutput is { } __value1)
             {
-                customToolCallOutput?.Invoke(CustomToolCallOutput!);
+                customToolCallOutput?.Invoke(__value1);
             }
-            else if (IsComputerCallOutput)
+            else if (ComputerCallOutput is { } __value2)
             {
-                computerCallOutput?.Invoke(ComputerCallOutput!);
+                computerCallOutput?.Invoke(__value2);
             }
-            else if (IsShellCallOutput)
+            else if (ShellCallOutput is { } __value3)
             {
-                shellCallOutput?.Invoke(ShellCallOutput!);
+                shellCallOutput?.Invoke(__value3);
             }
-            else if (IsApplyPatchCallOutput)
+            else if (ApplyPatchCallOutput is { } __value4)
             {
-                applyPatchCallOutput?.Invoke(ApplyPatchCallOutput!);
+                applyPatchCallOutput?.Invoke(__value4);
             }
-            else if (IsToolSearchOutput)
+            else if (ToolSearchOutput is { } __value5)
             {
-                toolSearchOutput?.Invoke(ToolSearchOutput!);
+                toolSearchOutput?.Invoke(__value5);
             }
-            else if (IsMcpApprovalResponse)
+            else if (McpApprovalResponse is { } __value6)
             {
-                mcpApprovalResponse?.Invoke(McpApprovalResponse!);
+                mcpApprovalResponse?.Invoke(__value6);
             }
         }
 
@@ -625,33 +625,33 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunctionCallOutput)
+            if (FunctionCallOutput is { } __value0)
             {
-                functionCallOutput?.Invoke(FunctionCallOutput!);
+                functionCallOutput?.Invoke(__value0);
             }
-            else if (IsCustomToolCallOutput)
+            else if (CustomToolCallOutput is { } __value1)
             {
-                customToolCallOutput?.Invoke(CustomToolCallOutput!);
+                customToolCallOutput?.Invoke(__value1);
             }
-            else if (IsComputerCallOutput)
+            else if (ComputerCallOutput is { } __value2)
             {
-                computerCallOutput?.Invoke(ComputerCallOutput!);
+                computerCallOutput?.Invoke(__value2);
             }
-            else if (IsShellCallOutput)
+            else if (ShellCallOutput is { } __value3)
             {
-                shellCallOutput?.Invoke(ShellCallOutput!);
+                shellCallOutput?.Invoke(__value3);
             }
-            else if (IsApplyPatchCallOutput)
+            else if (ApplyPatchCallOutput is { } __value4)
             {
-                applyPatchCallOutput?.Invoke(ApplyPatchCallOutput!);
+                applyPatchCallOutput?.Invoke(__value4);
             }
-            else if (IsToolSearchOutput)
+            else if (ToolSearchOutput is { } __value5)
             {
-                toolSearchOutput?.Invoke(ToolSearchOutput!);
+                toolSearchOutput?.Invoke(__value5);
             }
-            else if (IsMcpApprovalResponse)
+            else if (McpApprovalResponse is { } __value6)
             {
-                mcpApprovalResponse?.Invoke(McpApprovalResponse!);
+                mcpApprovalResponse?.Invoke(__value6);
             }
         }
 

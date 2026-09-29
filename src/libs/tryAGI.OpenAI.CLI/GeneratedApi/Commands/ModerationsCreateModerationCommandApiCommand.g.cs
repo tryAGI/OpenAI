@@ -61,6 +61,8 @@ available models [here](https://developers.openai.com/api/docs/guides/moderation
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-moderation", @"Create moderation
@@ -120,6 +122,7 @@ more in the [moderation guide](https://developers.openai.com/api/docs/guides/mod
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

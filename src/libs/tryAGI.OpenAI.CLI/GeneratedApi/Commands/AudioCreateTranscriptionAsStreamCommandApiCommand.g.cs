@@ -47,6 +47,8 @@ The request must include enough format metadata for the file to be identified. W
           Hidden = true,
       };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-transcription-as-stream", @"Create transcription
@@ -136,6 +138,7 @@ transcript events. Supported formats depend on the model.
                                         cancellationToken: cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -51,6 +51,8 @@ internal static partial class ListexternalstorageconfigurationsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"listexternalstorageconfigurations", @"List external storage configurations
@@ -94,6 +96,7 @@ List the organization's customer-managed external storage configurations.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

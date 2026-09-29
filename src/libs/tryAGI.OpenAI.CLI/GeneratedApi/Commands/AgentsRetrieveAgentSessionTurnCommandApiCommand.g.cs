@@ -39,6 +39,8 @@ internal static partial class AgentsRetrieveAgentSessionTurnCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"retrieve-agent-session-turn", @"Retrieve an agent session turn
@@ -68,6 +70,7 @@ Retrieves a turn's current status, timestamps, usage, and error. Returns 404 if 
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

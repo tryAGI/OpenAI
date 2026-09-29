@@ -41,6 +41,8 @@ internal static partial class FineTuningDeleteFineTuningCheckpointPermissionComm
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-fine-tuning-checkpoint-permission", @"Delete checkpoint permission
@@ -73,6 +75,7 @@ Organization owners can use this endpoint to delete a permission for a fine-tune
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

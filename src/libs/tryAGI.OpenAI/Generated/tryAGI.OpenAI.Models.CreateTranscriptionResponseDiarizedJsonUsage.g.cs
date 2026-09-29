@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextUsageTokens PickTokens() => IsTokens
-            ? Tokens!
+        public global::tryAGI.OpenAI.TranscriptTextUsageTokens PickTokens() => Tokens is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tokens' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptTextUsageDuration PickDuration() => IsDuration
-            ? Duration!
+        public global::tryAGI.OpenAI.TranscriptTextUsageDuration PickDuration() => Duration is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Duration' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTokens && tokens != null)
+            if (Tokens is { } __value0 && tokens != null)
             {
-                return tokens(Tokens!);
+                return tokens(__value0);
             }
-            else if (IsDuration && duration != null)
+            else if (Duration is { } __value1 && duration != null)
             {
-                return duration(Duration!);
+                return duration(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTokens)
+            if (Tokens is { } __value0)
             {
-                tokens?.Invoke(Tokens!);
+                tokens?.Invoke(__value0);
             }
-            else if (IsDuration)
+            else if (Duration is { } __value1)
             {
-                duration?.Invoke(Duration!);
+                duration?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTokens)
+            if (Tokens is { } __value0)
             {
-                tokens?.Invoke(Tokens!);
+                tokens?.Invoke(__value0);
             }
-            else if (IsDuration)
+            else if (Duration is { } __value1)
             {
-                duration?.Invoke(Duration!);
+                duration?.Invoke(__value1);
             }
         }
 

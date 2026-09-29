@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickTextInput() => IsTextInput
-            ? TextInput!
+        public string PickTextInput() => TextInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextInput' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.InputTextContent PickInputText() => IsInputText
-            ? InputText!
+        public global::tryAGI.OpenAI.InputTextContent PickInputText() => InputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EvalItemContentOutputText PickOutputText() => IsOutputText
-            ? OutputText!
+        public global::tryAGI.OpenAI.EvalItemContentOutputText PickOutputText() => OutputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EvalItemInputImage PickInputImage() => IsInputImage
-            ? InputImage!
+        public global::tryAGI.OpenAI.EvalItemInputImage PickInputImage() => InputImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -190,8 +190,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.InputAudio PickInputAudio() => IsInputAudio
-            ? InputAudio!
+        public global::tryAGI.OpenAI.InputAudio PickInputAudio() => InputAudio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputAudio' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -372,25 +372,25 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextInput && textInput != null)
+            if (TextInput is { } __value0 && textInput != null)
             {
-                return textInput(TextInput!);
+                return textInput(__value0);
             }
-            else if (IsInputText && inputText != null)
+            else if (InputText is { } __value1 && inputText != null)
             {
-                return inputText(InputText!);
+                return inputText(__value1);
             }
-            else if (IsOutputText && outputText != null)
+            else if (OutputText is { } __value2 && outputText != null)
             {
-                return outputText(OutputText!);
+                return outputText(__value2);
             }
-            else if (IsInputImage && inputImage != null)
+            else if (InputImage is { } __value3 && inputImage != null)
             {
-                return inputImage(InputImage!);
+                return inputImage(__value3);
             }
-            else if (IsInputAudio && inputAudio != null)
+            else if (InputAudio is { } __value4 && inputAudio != null)
             {
-                return inputAudio(InputAudio!);
+                return inputAudio(__value4);
             }
 
             return default(TResult);
@@ -416,25 +416,25 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextInput)
+            if (TextInput is { } __value0)
             {
-                textInput?.Invoke(TextInput!);
+                textInput?.Invoke(__value0);
             }
-            else if (IsInputText)
+            else if (InputText is { } __value1)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value1);
             }
-            else if (IsOutputText)
+            else if (OutputText is { } __value2)
             {
-                outputText?.Invoke(OutputText!);
+                outputText?.Invoke(__value2);
             }
-            else if (IsInputImage)
+            else if (InputImage is { } __value3)
             {
-                inputImage?.Invoke(InputImage!);
+                inputImage?.Invoke(__value3);
             }
-            else if (IsInputAudio)
+            else if (InputAudio is { } __value4)
             {
-                inputAudio?.Invoke(InputAudio!);
+                inputAudio?.Invoke(__value4);
             }
         }
 
@@ -454,25 +454,25 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextInput)
+            if (TextInput is { } __value0)
             {
-                textInput?.Invoke(TextInput!);
+                textInput?.Invoke(__value0);
             }
-            else if (IsInputText)
+            else if (InputText is { } __value1)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value1);
             }
-            else if (IsOutputText)
+            else if (OutputText is { } __value2)
             {
-                outputText?.Invoke(OutputText!);
+                outputText?.Invoke(__value2);
             }
-            else if (IsInputImage)
+            else if (InputImage is { } __value3)
             {
-                inputImage?.Invoke(InputImage!);
+                inputImage?.Invoke(__value3);
             }
-            else if (IsInputAudio)
+            else if (InputAudio is { } __value4)
             {
-                inputAudio?.Invoke(InputAudio!);
+                inputAudio?.Invoke(__value4);
             }
         }
 

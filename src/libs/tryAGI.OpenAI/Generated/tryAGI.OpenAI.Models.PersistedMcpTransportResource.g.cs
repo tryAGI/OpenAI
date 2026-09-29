@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.PersistedMcpTransportResourceHttp PickHttp() => IsHttp
-            ? Http!
+        public global::tryAGI.OpenAI.PersistedMcpTransportResourceHttp PickHttp() => Http is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Http' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.PersistedMcpTransportResourceStdio PickStdio() => IsStdio
-            ? Stdio!
+        public global::tryAGI.OpenAI.PersistedMcpTransportResourceStdio PickStdio() => Stdio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Stdio' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsHttp && http != null)
+            if (Http is { } __value0 && http != null)
             {
-                return http(Http!);
+                return http(__value0);
             }
-            else if (IsStdio && stdio != null)
+            else if (Stdio is { } __value1 && stdio != null)
             {
-                return stdio(Stdio!);
+                return stdio(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsHttp)
+            if (Http is { } __value0)
             {
-                http?.Invoke(Http!);
+                http?.Invoke(__value0);
             }
-            else if (IsStdio)
+            else if (Stdio is { } __value1)
             {
-                stdio?.Invoke(Stdio!);
+                stdio?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsHttp)
+            if (Http is { } __value0)
             {
-                http?.Invoke(Http!);
+                http?.Invoke(__value0);
             }
-            else if (IsStdio)
+            else if (Stdio is { } __value1)
             {
-                stdio?.Invoke(Stdio!);
+                stdio?.Invoke(__value1);
             }
         }
 

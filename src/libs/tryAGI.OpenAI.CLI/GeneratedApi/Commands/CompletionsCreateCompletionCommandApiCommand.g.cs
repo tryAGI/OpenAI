@@ -196,6 +196,8 @@ We generally recommend altering this or `temperature` but not both.
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-completion", @"Create completion
@@ -304,6 +306,7 @@ Returns a completion object, or a sequence of completion objects if the request 
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

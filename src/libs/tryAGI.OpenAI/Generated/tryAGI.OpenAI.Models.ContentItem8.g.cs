@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaInputTextContent PickInputText() => IsInputText
-            ? InputText!
+        public global::tryAGI.OpenAI.BetaInputTextContent PickInputText() => InputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaOutputTextContent PickOutputText() => IsOutputText
-            ? OutputText!
+        public global::tryAGI.OpenAI.BetaOutputTextContent PickOutputText() => OutputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaTextContent PickText() => IsText
-            ? Text!
+        public global::tryAGI.OpenAI.BetaTextContent PickText() => Text is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaSummaryTextContent PickSummaryText() => IsSummaryText
-            ? SummaryText!
+        public global::tryAGI.OpenAI.BetaSummaryTextContent PickSummaryText() => SummaryText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SummaryText' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaReasoningTextContent PickReasoningText() => IsReasoningText
-            ? ReasoningText!
+        public global::tryAGI.OpenAI.BetaReasoningTextContent PickReasoningText() => ReasoningText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ReasoningText' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaRefusalContent PickRefusal() => IsRefusal
-            ? Refusal!
+        public global::tryAGI.OpenAI.BetaRefusalContent PickRefusal() => Refusal is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaInputImageContent PickInputImage() => IsInputImage
-            ? InputImage!
+        public global::tryAGI.OpenAI.BetaInputImageContent PickInputImage() => InputImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaComputerScreenshotContent PickComputerScreenshot() => IsComputerScreenshot
-            ? ComputerScreenshot!
+        public global::tryAGI.OpenAI.BetaComputerScreenshotContent PickComputerScreenshot() => ComputerScreenshot is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerScreenshot' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaInputFileContent PickInputFile() => IsInputFile
-            ? InputFile!
+        public global::tryAGI.OpenAI.BetaInputFileContent PickInputFile() => InputFile is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaEncryptedContent PickEncryptedContent() => IsEncryptedContent
-            ? EncryptedContent!
+        public global::tryAGI.OpenAI.BetaEncryptedContent PickEncryptedContent() => EncryptedContent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EncryptedContent' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -705,45 +705,45 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputText && inputText != null)
+            if (InputText is { } __value0 && inputText != null)
             {
-                return inputText(InputText!);
+                return inputText(__value0);
             }
-            else if (IsOutputText && outputText != null)
+            else if (OutputText is { } __value1 && outputText != null)
             {
-                return outputText(OutputText!);
+                return outputText(__value1);
             }
-            else if (IsText && text != null)
+            else if (Text is { } __value2 && text != null)
             {
-                return text(Text!);
+                return text(__value2);
             }
-            else if (IsSummaryText && summaryText != null)
+            else if (SummaryText is { } __value3 && summaryText != null)
             {
-                return summaryText(SummaryText!);
+                return summaryText(__value3);
             }
-            else if (IsReasoningText && reasoningText != null)
+            else if (ReasoningText is { } __value4 && reasoningText != null)
             {
-                return reasoningText(ReasoningText!);
+                return reasoningText(__value4);
             }
-            else if (IsRefusal && refusal != null)
+            else if (Refusal is { } __value5 && refusal != null)
             {
-                return refusal(Refusal!);
+                return refusal(__value5);
             }
-            else if (IsInputImage && inputImage != null)
+            else if (InputImage is { } __value6 && inputImage != null)
             {
-                return inputImage(InputImage!);
+                return inputImage(__value6);
             }
-            else if (IsComputerScreenshot && computerScreenshot != null)
+            else if (ComputerScreenshot is { } __value7 && computerScreenshot != null)
             {
-                return computerScreenshot(ComputerScreenshot!);
+                return computerScreenshot(__value7);
             }
-            else if (IsInputFile && inputFile != null)
+            else if (InputFile is { } __value8 && inputFile != null)
             {
-                return inputFile(InputFile!);
+                return inputFile(__value8);
             }
-            else if (IsEncryptedContent && encryptedContent != null)
+            else if (EncryptedContent is { } __value9 && encryptedContent != null)
             {
-                return encryptedContent(EncryptedContent!);
+                return encryptedContent(__value9);
             }
 
             return default(TResult);
@@ -779,45 +779,45 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsOutputText)
+            else if (OutputText is { } __value1)
             {
-                outputText?.Invoke(OutputText!);
+                outputText?.Invoke(__value1);
             }
-            else if (IsText)
+            else if (Text is { } __value2)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value2);
             }
-            else if (IsSummaryText)
+            else if (SummaryText is { } __value3)
             {
-                summaryText?.Invoke(SummaryText!);
+                summaryText?.Invoke(__value3);
             }
-            else if (IsReasoningText)
+            else if (ReasoningText is { } __value4)
             {
-                reasoningText?.Invoke(ReasoningText!);
+                reasoningText?.Invoke(__value4);
             }
-            else if (IsRefusal)
+            else if (Refusal is { } __value5)
             {
-                refusal?.Invoke(Refusal!);
+                refusal?.Invoke(__value5);
             }
-            else if (IsInputImage)
+            else if (InputImage is { } __value6)
             {
-                inputImage?.Invoke(InputImage!);
+                inputImage?.Invoke(__value6);
             }
-            else if (IsComputerScreenshot)
+            else if (ComputerScreenshot is { } __value7)
             {
-                computerScreenshot?.Invoke(ComputerScreenshot!);
+                computerScreenshot?.Invoke(__value7);
             }
-            else if (IsInputFile)
+            else if (InputFile is { } __value8)
             {
-                inputFile?.Invoke(InputFile!);
+                inputFile?.Invoke(__value8);
             }
-            else if (IsEncryptedContent)
+            else if (EncryptedContent is { } __value9)
             {
-                encryptedContent?.Invoke(EncryptedContent!);
+                encryptedContent?.Invoke(__value9);
             }
         }
 
@@ -842,45 +842,45 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsOutputText)
+            else if (OutputText is { } __value1)
             {
-                outputText?.Invoke(OutputText!);
+                outputText?.Invoke(__value1);
             }
-            else if (IsText)
+            else if (Text is { } __value2)
             {
-                text?.Invoke(Text!);
+                text?.Invoke(__value2);
             }
-            else if (IsSummaryText)
+            else if (SummaryText is { } __value3)
             {
-                summaryText?.Invoke(SummaryText!);
+                summaryText?.Invoke(__value3);
             }
-            else if (IsReasoningText)
+            else if (ReasoningText is { } __value4)
             {
-                reasoningText?.Invoke(ReasoningText!);
+                reasoningText?.Invoke(__value4);
             }
-            else if (IsRefusal)
+            else if (Refusal is { } __value5)
             {
-                refusal?.Invoke(Refusal!);
+                refusal?.Invoke(__value5);
             }
-            else if (IsInputImage)
+            else if (InputImage is { } __value6)
             {
-                inputImage?.Invoke(InputImage!);
+                inputImage?.Invoke(__value6);
             }
-            else if (IsComputerScreenshot)
+            else if (ComputerScreenshot is { } __value7)
             {
-                computerScreenshot?.Invoke(ComputerScreenshot!);
+                computerScreenshot?.Invoke(__value7);
             }
-            else if (IsInputFile)
+            else if (InputFile is { } __value8)
             {
-                inputFile?.Invoke(InputFile!);
+                inputFile?.Invoke(__value8);
             }
-            else if (IsEncryptedContent)
+            else if (EncryptedContent is { } __value9)
             {
-                encryptedContent?.Invoke(EncryptedContent!);
+                encryptedContent?.Invoke(__value9);
             }
         }
 

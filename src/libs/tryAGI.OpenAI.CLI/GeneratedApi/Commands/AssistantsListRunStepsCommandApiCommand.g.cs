@@ -76,6 +76,8 @@ See the [file search tool documentation](https://developers.openai.com/api/docs/
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-run-steps", @"List run steps
@@ -128,6 +130,7 @@ Returns a list of run steps belonging to a run.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

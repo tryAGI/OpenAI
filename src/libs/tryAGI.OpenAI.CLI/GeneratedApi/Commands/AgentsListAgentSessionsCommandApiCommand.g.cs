@@ -51,6 +51,8 @@ internal static partial class AgentsListAgentSessionsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-agent-sessions", @"List agent sessions
@@ -94,6 +96,7 @@ Lists managed agent sessions using ID-based pagination and the requested sort or
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

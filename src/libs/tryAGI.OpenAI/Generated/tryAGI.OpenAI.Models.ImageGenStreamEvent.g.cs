@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenPartialImageEvent PickImageGenerationPartialImage() => IsImageGenerationPartialImage
-            ? ImageGenerationPartialImage!
+        public global::tryAGI.OpenAI.ImageGenPartialImageEvent PickImageGenerationPartialImage() => ImageGenerationPartialImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationPartialImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ImageGenCompletedEvent PickImageGenerationCompleted() => IsImageGenerationCompleted
-            ? ImageGenerationCompleted!
+        public global::tryAGI.OpenAI.ImageGenCompletedEvent PickImageGenerationCompleted() => ImageGenerationCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGenerationCompleted' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsImageGenerationPartialImage && imageGenerationPartialImage != null)
+            if (ImageGenerationPartialImage is { } __value0 && imageGenerationPartialImage != null)
             {
-                return imageGenerationPartialImage(ImageGenerationPartialImage!);
+                return imageGenerationPartialImage(__value0);
             }
-            else if (IsImageGenerationCompleted && imageGenerationCompleted != null)
+            else if (ImageGenerationCompleted is { } __value1 && imageGenerationCompleted != null)
             {
-                return imageGenerationCompleted(ImageGenerationCompleted!);
+                return imageGenerationCompleted(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsImageGenerationPartialImage)
+            if (ImageGenerationPartialImage is { } __value0)
             {
-                imageGenerationPartialImage?.Invoke(ImageGenerationPartialImage!);
+                imageGenerationPartialImage?.Invoke(__value0);
             }
-            else if (IsImageGenerationCompleted)
+            else if (ImageGenerationCompleted is { } __value1)
             {
-                imageGenerationCompleted?.Invoke(ImageGenerationCompleted!);
+                imageGenerationCompleted?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsImageGenerationPartialImage)
+            if (ImageGenerationPartialImage is { } __value0)
             {
-                imageGenerationPartialImage?.Invoke(ImageGenerationPartialImage!);
+                imageGenerationPartialImage?.Invoke(__value0);
             }
-            else if (IsImageGenerationCompleted)
+            else if (ImageGenerationCompleted is { } __value1)
             {
-                imageGenerationCompleted?.Invoke(ImageGenerationCompleted!);
+                imageGenerationCompleted?.Invoke(__value1);
             }
         }
 

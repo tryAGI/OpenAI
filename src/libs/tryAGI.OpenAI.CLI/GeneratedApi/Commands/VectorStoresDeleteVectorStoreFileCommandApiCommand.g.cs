@@ -39,6 +39,8 @@ internal static partial class VectorStoresDeleteVectorStoreFileCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-vector-store-file", @"Delete vector store file
@@ -68,6 +70,7 @@ Delete a vector store file. This will remove the file from the vector store but 
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

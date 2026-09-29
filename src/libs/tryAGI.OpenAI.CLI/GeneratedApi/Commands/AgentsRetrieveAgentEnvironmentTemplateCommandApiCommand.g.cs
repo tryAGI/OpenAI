@@ -33,6 +33,8 @@ internal static partial class AgentsRetrieveAgentEnvironmentTemplateCommandApiCo
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"retrieve-agent-environment-template", @"Retrieve an agent environment template
@@ -59,6 +61,7 @@ Retrieves reusable environment configuration without returning confidential valu
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

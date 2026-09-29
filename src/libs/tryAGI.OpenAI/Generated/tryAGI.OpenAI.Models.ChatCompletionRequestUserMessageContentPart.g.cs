@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText PickTextContentPart() => IsTextContentPart
-            ? TextContentPart!
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText PickTextContentPart() => TextContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextContentPart' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage PickImageContentPart() => IsImageContentPart
-            ? ImageContentPart!
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartImage PickImageContentPart() => ImageContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageContentPart' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio PickAudioContentPart() => IsAudioContentPart
-            ? AudioContentPart!
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartAudio PickAudioContentPart() => AudioContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AudioContentPart' but the value was {ToString()}.");
 
         /// <summary>
@@ -153,8 +153,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile PickFileContentPart() => IsFileContentPart
-            ? FileContentPart!
+        public global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartFile PickFileContentPart() => FileContentPart is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FileContentPart' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -307,21 +307,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextContentPart && textContentPart != null)
+            if (TextContentPart is { } __value0 && textContentPart != null)
             {
-                return textContentPart(TextContentPart!);
+                return textContentPart(__value0);
             }
-            else if (IsImageContentPart && imageContentPart != null)
+            else if (ImageContentPart is { } __value1 && imageContentPart != null)
             {
-                return imageContentPart(ImageContentPart!);
+                return imageContentPart(__value1);
             }
-            else if (IsAudioContentPart && audioContentPart != null)
+            else if (AudioContentPart is { } __value2 && audioContentPart != null)
             {
-                return audioContentPart(AudioContentPart!);
+                return audioContentPart(__value2);
             }
-            else if (IsFileContentPart && fileContentPart != null)
+            else if (FileContentPart is { } __value3 && fileContentPart != null)
             {
-                return fileContentPart(FileContentPart!);
+                return fileContentPart(__value3);
             }
 
             return default(TResult);
@@ -345,21 +345,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextContentPart)
+            if (TextContentPart is { } __value0)
             {
-                textContentPart?.Invoke(TextContentPart!);
+                textContentPart?.Invoke(__value0);
             }
-            else if (IsImageContentPart)
+            else if (ImageContentPart is { } __value1)
             {
-                imageContentPart?.Invoke(ImageContentPart!);
+                imageContentPart?.Invoke(__value1);
             }
-            else if (IsAudioContentPart)
+            else if (AudioContentPart is { } __value2)
             {
-                audioContentPart?.Invoke(AudioContentPart!);
+                audioContentPart?.Invoke(__value2);
             }
-            else if (IsFileContentPart)
+            else if (FileContentPart is { } __value3)
             {
-                fileContentPart?.Invoke(FileContentPart!);
+                fileContentPart?.Invoke(__value3);
             }
         }
 
@@ -378,21 +378,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextContentPart)
+            if (TextContentPart is { } __value0)
             {
-                textContentPart?.Invoke(TextContentPart!);
+                textContentPart?.Invoke(__value0);
             }
-            else if (IsImageContentPart)
+            else if (ImageContentPart is { } __value1)
             {
-                imageContentPart?.Invoke(ImageContentPart!);
+                imageContentPart?.Invoke(__value1);
             }
-            else if (IsAudioContentPart)
+            else if (AudioContentPart is { } __value2)
             {
-                audioContentPart?.Invoke(AudioContentPart!);
+                audioContentPart?.Invoke(__value2);
             }
-            else if (IsFileContentPart)
+            else if (FileContentPart is { } __value3)
             {
-                fileContentPart?.Invoke(FileContentPart!);
+                fileContentPart?.Invoke(__value3);
             }
         }
 

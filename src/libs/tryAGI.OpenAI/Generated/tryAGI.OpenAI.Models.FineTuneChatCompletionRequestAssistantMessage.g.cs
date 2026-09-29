@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage PickAssistantMessage1() => IsAssistantMessage1
-            ? AssistantMessage1!
+        public global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessageAssistantMessage PickAssistantMessage1() => AssistantMessage1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AssistantMessage1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage PickAssistantMessage2() => IsAssistantMessage2
-            ? AssistantMessage2!
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage PickAssistantMessage2() => AssistantMessage2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AssistantMessage2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAssistantMessage1 && assistantMessage1 != null)
+            if (AssistantMessage1 is { } __value0 && assistantMessage1 != null)
             {
-                return assistantMessage1(AssistantMessage1!);
+                return assistantMessage1(__value0);
             }
-            else if (IsAssistantMessage2 && assistantMessage2 != null)
+            else if (AssistantMessage2 is { } __value1 && assistantMessage2 != null)
             {
-                return assistantMessage2(AssistantMessage2!);
+                return assistantMessage2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAssistantMessage1)
+            if (AssistantMessage1 is { } __value0)
             {
-                assistantMessage1?.Invoke(AssistantMessage1!);
+                assistantMessage1?.Invoke(__value0);
             }
-            else if (IsAssistantMessage2)
+            else if (AssistantMessage2 is { } __value1)
             {
-                assistantMessage2?.Invoke(AssistantMessage2!);
+                assistantMessage2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAssistantMessage1)
+            if (AssistantMessage1 is { } __value0)
             {
-                assistantMessage1?.Invoke(AssistantMessage1!);
+                assistantMessage1?.Invoke(__value0);
             }
-            else if (IsAssistantMessage2)
+            else if (AssistantMessage2 is { } __value1)
             {
-                assistantMessage2?.Invoke(AssistantMessage2!);
+                assistantMessage2?.Invoke(__value1);
             }
         }
 

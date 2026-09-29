@@ -61,6 +61,8 @@ internal static partial class VectorStoresUpdateVectorStoreFileAttributesCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"update-vector-store-file-attributes", @"Update vector store file attributes
@@ -113,6 +115,7 @@ Update attributes on a vector store file.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

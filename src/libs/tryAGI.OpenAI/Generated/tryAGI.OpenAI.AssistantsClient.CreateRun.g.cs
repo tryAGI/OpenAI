@@ -94,6 +94,26 @@ namespace tryAGI.OpenAI
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            request = new global::tryAGI.OpenAI.CreateRunRequest
+            {
+                AssistantId = request.AssistantId,
+                Model = request.Model,
+                ReasoningEffort = request.ReasoningEffort,
+                Instructions = request.Instructions,
+                AdditionalInstructions = request.AdditionalInstructions,
+                AdditionalMessages = request.AdditionalMessages,
+                Tools = request.Tools,
+                Metadata = request.Metadata,
+                Temperature = request.Temperature,
+                TopP = request.TopP,
+                Stream = false,
+                MaxPromptTokens = request.MaxPromptTokens,
+                MaxCompletionTokens = request.MaxCompletionTokens,
+                TruncationStrategy = request.TruncationStrategy,
+                ToolChoice = request.ToolChoice,
+                ParallelToolCalls = request.ParallelToolCalls,
+                ResponseFormat = request.ResponseFormat,
+            };
             PrepareArguments(
                 client: HttpClient);
             PrepareCreateRunArguments(
@@ -144,6 +164,10 @@ namespace tryAGI.OpenAI
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "application/json");
+
             foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
@@ -177,7 +201,7 @@ namespace tryAGI.OpenAI
                 PrepareCreateRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    threadId: threadId!,
+                    threadId: threadId,
                     include: include,
                     request: request);
 
@@ -201,7 +225,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/threads/{threadId}/runs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -235,7 +259,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/threads/{threadId}/runs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -276,7 +300,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/threads/{threadId}/runs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -324,7 +348,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/threads/{threadId}/runs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -346,7 +370,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/threads/{threadId}/runs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -529,9 +553,6 @@ namespace tryAGI.OpenAI
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
-        /// <param name="stream">
-        /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.
-        /// </param>
         /// <param name="maxPromptTokens">
         /// The maximum number of prompt tokens that may be used over the course of the run. The run will make a best effort to use only the number of prompt tokens specified, across multiple turns of the run. If the run exceeds the number of prompt tokens specified, the run will end with status `incomplete`. See `incomplete_details` for more info.
         /// </param>
@@ -566,7 +587,6 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             double? temperature = default,
             double? topP = default,
-            bool? stream = default,
             int? maxPromptTokens = default,
             int? maxCompletionTokens = default,
             global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.TruncationObject, object>? truncationStrategy = default,
@@ -588,7 +608,7 @@ namespace tryAGI.OpenAI
                 Metadata = metadata,
                 Temperature = temperature,
                 TopP = topP,
-                Stream = stream,
+                Stream = false,
                 MaxPromptTokens = maxPromptTokens,
                 MaxCompletionTokens = maxCompletionTokens,
                 TruncationStrategy = truncationStrategy,

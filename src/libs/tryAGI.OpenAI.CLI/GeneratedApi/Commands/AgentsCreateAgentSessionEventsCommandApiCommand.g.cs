@@ -26,6 +26,8 @@ internal static partial class AgentsCreateAgentSessionEventsCommandApiCommand
         Required = true,
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-agent-session-events", @"Create agent session input events
@@ -52,6 +54,7 @@ Submits message, cancellation, or tool-result events to a managed agent session.
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

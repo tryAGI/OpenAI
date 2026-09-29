@@ -68,6 +68,8 @@ internal static partial class ProjectsCreateProjectUserCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-project-user", @"Create project user
@@ -123,6 +125,7 @@ Adds a user to the project. Users must already be members of the organization to
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

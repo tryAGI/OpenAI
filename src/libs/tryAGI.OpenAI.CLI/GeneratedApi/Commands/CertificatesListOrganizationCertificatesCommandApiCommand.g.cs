@@ -48,6 +48,8 @@ internal static partial class CertificatesListOrganizationCertificatesCommandApi
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-organization-certificates", @"List organization certificates
@@ -88,6 +90,7 @@ List uploaded certificates for this organization.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

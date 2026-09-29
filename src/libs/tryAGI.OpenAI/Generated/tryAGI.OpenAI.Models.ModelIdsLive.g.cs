@@ -43,8 +43,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickModelIdsLiveVariant1() => IsModelIdsLiveVariant1
-            ? ModelIdsLiveVariant1!
+        public string PickModelIdsLiveVariant1() => ModelIdsLiveVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelIdsLiveVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ModelIdsLiveEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::tryAGI.OpenAI.ModelIdsLiveEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -178,13 +178,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelIdsLiveVariant1 && modelIdsLiveVariant1 != null)
+            if (ModelIdsLiveVariant1 is { } __value0 && modelIdsLiveVariant1 != null)
             {
-                return modelIdsLiveVariant1(ModelIdsLiveVariant1!);
+                return modelIdsLiveVariant1(__value0);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value1 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value1);
             }
 
             return default(TResult);
@@ -204,13 +204,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelIdsLiveVariant1)
+            if (ModelIdsLiveVariant1 is { } __value0)
             {
-                modelIdsLiveVariant1?.Invoke(ModelIdsLiveVariant1!);
+                modelIdsLiveVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 
@@ -227,13 +227,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsModelIdsLiveVariant1)
+            if (ModelIdsLiveVariant1 is { } __value0)
             {
-                modelIdsLiveVariant1?.Invoke(ModelIdsLiveVariant1!);
+                modelIdsLiveVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 

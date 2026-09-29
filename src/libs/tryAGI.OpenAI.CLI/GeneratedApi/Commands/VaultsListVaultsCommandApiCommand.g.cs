@@ -51,6 +51,8 @@ internal static partial class VaultsListVaultsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-vaults", @"List vaults
@@ -94,6 +96,7 @@ Lists vaults using ID-based pagination. See [vaults](https://developers.openai.c
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

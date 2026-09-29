@@ -51,6 +51,8 @@ internal static partial class SpendAlertsListOrganizationSpendAlertsCommandApiCo
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-organization-spend-alerts", @"List organization spend alerts
@@ -94,6 +96,7 @@ Lists organization spend alerts.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

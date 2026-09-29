@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.FileAnnotation PickFile() => IsFile
-            ? File!
+        public global::tryAGI.OpenAI.FileAnnotation PickFile() => File is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UrlAnnotation PickUrl() => IsUrl
-            ? Url!
+        public global::tryAGI.OpenAI.UrlAnnotation PickUrl() => Url is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFile && file != null)
+            if (File is { } __value0 && file != null)
             {
-                return file(File!);
+                return file(__value0);
             }
-            else if (IsUrl && url != null)
+            else if (Url is { } __value1 && url != null)
             {
-                return url(Url!);
+                return url(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFile)
+            if (File is { } __value0)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value0);
             }
-            else if (IsUrl)
+            else if (Url is { } __value1)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFile)
+            if (File is { } __value0)
             {
-                file?.Invoke(File!);
+                file?.Invoke(__value0);
             }
-            else if (IsUrl)
+            else if (Url is { } __value1)
             {
-                url?.Invoke(Url!);
+                url?.Invoke(__value1);
             }
         }
 

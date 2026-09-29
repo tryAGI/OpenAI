@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickFunctionCallOutputParamVariant1() => IsFunctionCallOutputParamVariant1
-            ? FunctionCallOutputParamVariant1!
+        public string PickFunctionCallOutputParamVariant1() => FunctionCallOutputParamVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutputParamVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContentParam> PickFunctionCallOutputParamVariant2() => IsFunctionCallOutputParamVariant2
-            ? FunctionCallOutputParamVariant2!
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputContentParam> PickFunctionCallOutputParamVariant2() => FunctionCallOutputParamVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCallOutputParamVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunctionCallOutputParamVariant1 && functionCallOutputParamVariant1 != null)
+            if (FunctionCallOutputParamVariant1 is { } __value0 && functionCallOutputParamVariant1 != null)
             {
-                return functionCallOutputParamVariant1(FunctionCallOutputParamVariant1!);
+                return functionCallOutputParamVariant1(__value0);
             }
-            else if (IsFunctionCallOutputParamVariant2 && functionCallOutputParamVariant2 != null)
+            else if (FunctionCallOutputParamVariant2 is { } __value1 && functionCallOutputParamVariant2 != null)
             {
-                return functionCallOutputParamVariant2(FunctionCallOutputParamVariant2!);
+                return functionCallOutputParamVariant2(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunctionCallOutputParamVariant1)
+            if (FunctionCallOutputParamVariant1 is { } __value0)
             {
-                functionCallOutputParamVariant1?.Invoke(FunctionCallOutputParamVariant1!);
+                functionCallOutputParamVariant1?.Invoke(__value0);
             }
-            else if (IsFunctionCallOutputParamVariant2)
+            else if (FunctionCallOutputParamVariant2 is { } __value1)
             {
-                functionCallOutputParamVariant2?.Invoke(FunctionCallOutputParamVariant2!);
+                functionCallOutputParamVariant2?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsFunctionCallOutputParamVariant1)
+            if (FunctionCallOutputParamVariant1 is { } __value0)
             {
-                functionCallOutputParamVariant1?.Invoke(FunctionCallOutputParamVariant1!);
+                functionCallOutputParamVariant1?.Invoke(__value0);
             }
-            else if (IsFunctionCallOutputParamVariant2)
+            else if (FunctionCallOutputParamVariant2 is { } __value1)
             {
-                functionCallOutputParamVariant2?.Invoke(FunctionCallOutputParamVariant2!);
+                functionCallOutputParamVariant2?.Invoke(__value1);
             }
         }
 

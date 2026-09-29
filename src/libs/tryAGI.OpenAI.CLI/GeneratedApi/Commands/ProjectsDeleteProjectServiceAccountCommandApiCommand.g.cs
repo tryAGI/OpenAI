@@ -39,6 +39,8 @@ internal static partial class ProjectsDeleteProjectServiceAccountCommandApiComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-project-service-account", @"Delete project service account
@@ -72,6 +74,7 @@ is archived (archived projects have no service accounts).
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

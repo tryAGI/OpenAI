@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditPartialImageEvent PickImageEditPartialImage() => IsImageEditPartialImage
-            ? ImageEditPartialImage!
+        public global::tryAGI.OpenAI.ImageEditPartialImageEvent PickImageEditPartialImage() => ImageEditPartialImage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageEditPartialImage' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ImageEditCompletedEvent PickImageEditCompleted() => IsImageEditCompleted
-            ? ImageEditCompleted!
+        public global::tryAGI.OpenAI.ImageEditCompletedEvent PickImageEditCompleted() => ImageEditCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageEditCompleted' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsImageEditPartialImage && imageEditPartialImage != null)
+            if (ImageEditPartialImage is { } __value0 && imageEditPartialImage != null)
             {
-                return imageEditPartialImage(ImageEditPartialImage!);
+                return imageEditPartialImage(__value0);
             }
-            else if (IsImageEditCompleted && imageEditCompleted != null)
+            else if (ImageEditCompleted is { } __value1 && imageEditCompleted != null)
             {
-                return imageEditCompleted(ImageEditCompleted!);
+                return imageEditCompleted(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsImageEditPartialImage)
+            if (ImageEditPartialImage is { } __value0)
             {
-                imageEditPartialImage?.Invoke(ImageEditPartialImage!);
+                imageEditPartialImage?.Invoke(__value0);
             }
-            else if (IsImageEditCompleted)
+            else if (ImageEditCompleted is { } __value1)
             {
-                imageEditCompleted?.Invoke(ImageEditCompleted!);
+                imageEditCompleted?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsImageEditPartialImage)
+            if (ImageEditPartialImage is { } __value0)
             {
-                imageEditPartialImage?.Invoke(ImageEditPartialImage!);
+                imageEditPartialImage?.Invoke(__value0);
             }
-            else if (IsImageEditCompleted)
+            else if (ImageEditCompleted is { } __value1)
             {
-                imageEditCompleted?.Invoke(ImageEditCompleted!);
+                imageEditCompleted?.Invoke(__value1);
             }
         }
 

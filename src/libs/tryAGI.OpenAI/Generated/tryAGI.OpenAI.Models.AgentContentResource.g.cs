@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.OutputTextResource PickOutputText() => IsOutputText
-            ? OutputText!
+        public global::tryAGI.OpenAI.OutputTextResource PickOutputText() => OutputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'OutputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EncryptedContentResource PickEncryptedContent() => IsEncryptedContent
-            ? EncryptedContent!
+        public global::tryAGI.OpenAI.EncryptedContentResource PickEncryptedContent() => EncryptedContent is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EncryptedContent' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsOutputText && outputText != null)
+            if (OutputText is { } __value0 && outputText != null)
             {
-                return outputText(OutputText!);
+                return outputText(__value0);
             }
-            else if (IsEncryptedContent && encryptedContent != null)
+            else if (EncryptedContent is { } __value1 && encryptedContent != null)
             {
-                return encryptedContent(EncryptedContent!);
+                return encryptedContent(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsOutputText)
+            if (OutputText is { } __value0)
             {
-                outputText?.Invoke(OutputText!);
+                outputText?.Invoke(__value0);
             }
-            else if (IsEncryptedContent)
+            else if (EncryptedContent is { } __value1)
             {
-                encryptedContent?.Invoke(EncryptedContent!);
+                encryptedContent?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsOutputText)
+            if (OutputText is { } __value0)
             {
-                outputText?.Invoke(OutputText!);
+                outputText?.Invoke(__value0);
             }
-            else if (IsEncryptedContent)
+            else if (EncryptedContent is { } __value1)
             {
-                encryptedContent?.Invoke(EncryptedContent!);
+                encryptedContent?.Invoke(__value1);
             }
         }
 

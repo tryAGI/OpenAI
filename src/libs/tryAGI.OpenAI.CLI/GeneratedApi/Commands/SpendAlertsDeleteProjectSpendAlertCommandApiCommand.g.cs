@@ -39,6 +39,8 @@ internal static partial class SpendAlertsDeleteProjectSpendAlertCommandApiComman
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-project-spend-alert", @"Delete project spend alert
@@ -68,6 +70,7 @@ Deletes a project spend alert.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

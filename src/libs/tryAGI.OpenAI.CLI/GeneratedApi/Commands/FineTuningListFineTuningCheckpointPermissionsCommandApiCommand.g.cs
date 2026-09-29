@@ -58,6 +58,8 @@ internal static partial class FineTuningListFineTuningCheckpointPermissionsComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-fine-tuning-checkpoint-permissions", @"List checkpoint permissions
@@ -107,6 +109,7 @@ Organization owners can use this endpoint to view all permissions for a fine-tun
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

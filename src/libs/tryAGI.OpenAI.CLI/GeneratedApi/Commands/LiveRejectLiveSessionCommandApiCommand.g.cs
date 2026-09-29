@@ -20,6 +20,8 @@ internal static partial class LiveRejectLiveSessionCommandApiCommand
         Required = true,
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"reject-live-session", @"Reject call
@@ -43,6 +45,7 @@ Reject an incoming SIP call. Send a required SIP rejection status_code between 3
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

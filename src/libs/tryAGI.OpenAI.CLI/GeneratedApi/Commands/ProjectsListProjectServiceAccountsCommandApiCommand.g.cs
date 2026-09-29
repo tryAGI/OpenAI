@@ -47,6 +47,8 @@ internal static partial class ProjectsListProjectServiceAccountsCommandApiComman
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-project-service-accounts", @"List project service accounts
@@ -87,6 +89,7 @@ Returns a list of service accounts in the project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -54,6 +54,8 @@ internal static partial class ProjectsListProjectApiKeysCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-project-api-keys", @"List project API keys
@@ -97,6 +99,7 @@ Returns a list of API keys in the project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -73,6 +73,8 @@ internal static partial class VectorStoresListFilesInVectorStoreBatchCommandApiC
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-files-in-vector-store-batch", @"List vector store files in a batch
@@ -125,6 +127,7 @@ Returns a list of vector store files in a batch.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

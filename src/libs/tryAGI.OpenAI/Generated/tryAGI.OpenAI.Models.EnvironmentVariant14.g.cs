@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaContainerAutoParam PickContainerAuto() => IsContainerAuto
-            ? ContainerAuto!
+        public global::tryAGI.OpenAI.BetaContainerAutoParam PickContainerAuto() => ContainerAuto is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerAuto' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaLocalEnvironmentParam PickLocal() => IsLocal
-            ? Local!
+        public global::tryAGI.OpenAI.BetaLocalEnvironmentParam PickLocal() => Local is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaContainerReferenceParam PickContainerReference() => IsContainerReference
-            ? ContainerReference!
+        public global::tryAGI.OpenAI.BetaContainerReferenceParam PickContainerReference() => ContainerReference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerReference' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsContainerAuto && containerAuto != null)
+            if (ContainerAuto is { } __value0 && containerAuto != null)
             {
-                return containerAuto(ContainerAuto!);
+                return containerAuto(__value0);
             }
-            else if (IsLocal && local != null)
+            else if (Local is { } __value1 && local != null)
             {
-                return local(Local!);
+                return local(__value1);
             }
-            else if (IsContainerReference && containerReference != null)
+            else if (ContainerReference is { } __value2 && containerReference != null)
             {
-                return containerReference(ContainerReference!);
+                return containerReference(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsContainerAuto)
+            if (ContainerAuto is { } __value0)
             {
-                containerAuto?.Invoke(ContainerAuto!);
+                containerAuto?.Invoke(__value0);
             }
-            else if (IsLocal)
+            else if (Local is { } __value1)
             {
-                local?.Invoke(Local!);
+                local?.Invoke(__value1);
             }
-            else if (IsContainerReference)
+            else if (ContainerReference is { } __value2)
             {
-                containerReference?.Invoke(ContainerReference!);
+                containerReference?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsContainerAuto)
+            if (ContainerAuto is { } __value0)
             {
-                containerAuto?.Invoke(ContainerAuto!);
+                containerAuto?.Invoke(__value0);
             }
-            else if (IsLocal)
+            else if (Local is { } __value1)
             {
-                local?.Invoke(Local!);
+                local?.Invoke(__value1);
             }
-            else if (IsContainerReference)
+            else if (ContainerReference is { } __value2)
             {
-                containerReference?.Invoke(ContainerReference!);
+                containerReference?.Invoke(__value2);
             }
         }
 

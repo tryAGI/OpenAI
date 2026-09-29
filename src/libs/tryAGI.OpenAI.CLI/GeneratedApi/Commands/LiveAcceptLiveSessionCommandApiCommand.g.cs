@@ -20,6 +20,8 @@ internal static partial class LiveAcceptLiveSessionCommandApiCommand
         Required = true,
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"accept-live-session", @"Accept call
@@ -43,6 +45,7 @@ Accept an incoming SIP call. Supply session with type live, the model, and start
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

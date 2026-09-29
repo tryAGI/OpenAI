@@ -163,9 +163,9 @@ namespace tryAGI.OpenAI
                 PrepareUnassignProjectUserRoleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    projectId: projectId!,
-                    userId: userId!,
-                    roleId: roleId!);
+                    projectId: projectId,
+                    userId: userId,
+                    roleId: roleId);
 
                 global::tryAGI.OpenAI.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
 
@@ -189,7 +189,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/projects/{projectId}/users/{userId}/roles/{roleId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -223,7 +223,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/projects/{projectId}/users/{userId}/roles/{roleId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -264,7 +264,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/projects/{projectId}/users/{userId}/roles/{roleId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -312,7 +312,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/projects/{projectId}/users/{userId}/roles/{roleId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -334,7 +334,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/projects/{projectId}/users/{userId}/roles/{roleId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

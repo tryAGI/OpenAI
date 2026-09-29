@@ -104,43 +104,43 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeServerEventError?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeServerEventError).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError(), typeInfo);
             }
             else if (value.IsSessionCreated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreated).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionCreated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionCreated(), typeInfo);
             }
             else if (value.IsSessionUpdated)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionUpdated).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionUpdated!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionUpdated(), typeInfo);
             }
             else if (value.IsSessionClosed)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosed).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionClosed!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionClosed(), typeInfo);
             }
             else if (value.IsSessionInputTranscriptDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionInputTranscriptDelta!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionInputTranscriptDelta(), typeInfo);
             }
             else if (value.IsSessionOutputTranscriptDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputTranscriptDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionOutputTranscriptDelta!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionOutputTranscriptDelta(), typeInfo);
             }
             else if (value.IsSessionOutputAudioDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDelta).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SessionOutputAudioDelta!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionOutputAudioDelta(), typeInfo);
             }
         }
     }

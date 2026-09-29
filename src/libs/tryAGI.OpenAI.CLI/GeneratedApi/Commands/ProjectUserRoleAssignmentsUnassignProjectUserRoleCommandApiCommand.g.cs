@@ -45,6 +45,8 @@ internal static partial class ProjectUserRoleAssignmentsUnassignProjectUserRoleC
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"unassign-project-user-role", @"Unassign project role from user
@@ -77,6 +79,7 @@ Unassigns a project role from a user within a project.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

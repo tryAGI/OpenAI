@@ -45,8 +45,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseSteerPendingReasonEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::tryAGI.OpenAI.ResponseSteerPendingReasonEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
 
         /// <summary>
@@ -82,8 +82,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickResponseSteerPendingReasonVariant2() => IsResponseSteerPendingReasonVariant2
-            ? ResponseSteerPendingReasonVariant2!
+        public string PickResponseSteerPendingReasonVariant2() => ResponseSteerPendingReasonVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseSteerPendingReasonVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -180,13 +180,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsEnum && @enum != null)
+            if (Enum is { } __value0 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value0);
             }
-            else if (IsResponseSteerPendingReasonVariant2 && responseSteerPendingReasonVariant2 != null)
+            else if (ResponseSteerPendingReasonVariant2 is { } __value1 && responseSteerPendingReasonVariant2 != null)
             {
-                return responseSteerPendingReasonVariant2(ResponseSteerPendingReasonVariant2!);
+                return responseSteerPendingReasonVariant2(__value1);
             }
 
             return default(TResult);
@@ -206,13 +206,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsEnum)
+            if (Enum is { } __value0)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value0);
             }
-            else if (IsResponseSteerPendingReasonVariant2)
+            else if (ResponseSteerPendingReasonVariant2 is { } __value1)
             {
-                responseSteerPendingReasonVariant2?.Invoke(ResponseSteerPendingReasonVariant2!);
+                responseSteerPendingReasonVariant2?.Invoke(__value1);
             }
         }
 
@@ -229,13 +229,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsEnum)
+            if (Enum is { } __value0)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value0);
             }
-            else if (IsResponseSteerPendingReasonVariant2)
+            else if (ResponseSteerPendingReasonVariant2 is { } __value1)
             {
-                responseSteerPendingReasonVariant2?.Invoke(ResponseSteerPendingReasonVariant2!);
+                responseSteerPendingReasonVariant2?.Invoke(__value1);
             }
         }
 

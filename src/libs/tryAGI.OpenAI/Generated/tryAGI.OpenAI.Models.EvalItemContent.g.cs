@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EvalItemContentItem PickEvalContentItem() => IsEvalContentItem
-            ? EvalContentItem!.Value
+        public global::tryAGI.OpenAI.EvalItemContentItem PickEvalContentItem() => EvalContentItem is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EvalContentItem' but the value was {ToString()}.");
 
         /// <summary>
@@ -80,8 +80,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem> PickAnArrayOfInputTextOutputTextInputImageAndInputAudio() => IsAnArrayOfInputTextOutputTextInputImageAndInputAudio
-            ? AnArrayOfInputTextOutputTextInputImageAndInputAudio!
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItemContentItem> PickAnArrayOfInputTextOutputTextInputImageAndInputAudio() => AnArrayOfInputTextOutputTextInputImageAndInputAudio is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AnArrayOfInputTextOutputTextInputImageAndInputAudio' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -155,13 +155,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsEvalContentItem && evalContentItem != null)
+            if (EvalContentItem is { } __value0 && evalContentItem != null)
             {
-                return evalContentItem(EvalContentItem!);
+                return evalContentItem(__value0);
             }
-            else if (IsAnArrayOfInputTextOutputTextInputImageAndInputAudio && anArrayOfInputTextOutputTextInputImageAndInputAudio != null)
+            else if (AnArrayOfInputTextOutputTextInputImageAndInputAudio is { } __value1 && anArrayOfInputTextOutputTextInputImageAndInputAudio != null)
             {
-                return anArrayOfInputTextOutputTextInputImageAndInputAudio(AnArrayOfInputTextOutputTextInputImageAndInputAudio!);
+                return anArrayOfInputTextOutputTextInputImageAndInputAudio(__value1);
             }
 
             return default(TResult);
@@ -181,13 +181,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsEvalContentItem)
+            if (EvalContentItem is { } __value0)
             {
-                evalContentItem?.Invoke(EvalContentItem!);
+                evalContentItem?.Invoke(__value0);
             }
-            else if (IsAnArrayOfInputTextOutputTextInputImageAndInputAudio)
+            else if (AnArrayOfInputTextOutputTextInputImageAndInputAudio is { } __value1)
             {
-                anArrayOfInputTextOutputTextInputImageAndInputAudio?.Invoke(AnArrayOfInputTextOutputTextInputImageAndInputAudio!);
+                anArrayOfInputTextOutputTextInputImageAndInputAudio?.Invoke(__value1);
             }
         }
 
@@ -204,13 +204,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsEvalContentItem)
+            if (EvalContentItem is { } __value0)
             {
-                evalContentItem?.Invoke(EvalContentItem!);
+                evalContentItem?.Invoke(__value0);
             }
-            else if (IsAnArrayOfInputTextOutputTextInputImageAndInputAudio)
+            else if (AnArrayOfInputTextOutputTextInputImageAndInputAudio is { } __value1)
             {
-                anArrayOfInputTextOutputTextInputImageAndInputAudio?.Invoke(AnArrayOfInputTextOutputTextInputImageAndInputAudio!);
+                anArrayOfInputTextOutputTextInputImageAndInputAudio?.Invoke(__value1);
             }
         }
 

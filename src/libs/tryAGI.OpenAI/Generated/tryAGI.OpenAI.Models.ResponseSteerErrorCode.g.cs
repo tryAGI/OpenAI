@@ -50,8 +50,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseSteerErrorCodeEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::tryAGI.OpenAI.ResponseSteerErrorCodeEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickResponseSteerErrorCodeVariant2() => IsResponseSteerErrorCodeVariant2
-            ? ResponseSteerErrorCodeVariant2!
+        public string PickResponseSteerErrorCodeVariant2() => ResponseSteerErrorCodeVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseSteerErrorCodeVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsEnum && @enum != null)
+            if (Enum is { } __value0 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value0);
             }
-            else if (IsResponseSteerErrorCodeVariant2 && responseSteerErrorCodeVariant2 != null)
+            else if (ResponseSteerErrorCodeVariant2 is { } __value1 && responseSteerErrorCodeVariant2 != null)
             {
-                return responseSteerErrorCodeVariant2(ResponseSteerErrorCodeVariant2!);
+                return responseSteerErrorCodeVariant2(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsEnum)
+            if (Enum is { } __value0)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value0);
             }
-            else if (IsResponseSteerErrorCodeVariant2)
+            else if (ResponseSteerErrorCodeVariant2 is { } __value1)
             {
-                responseSteerErrorCodeVariant2?.Invoke(ResponseSteerErrorCodeVariant2!);
+                responseSteerErrorCodeVariant2?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsEnum)
+            if (Enum is { } __value0)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value0);
             }
-            else if (IsResponseSteerErrorCodeVariant2)
+            else if (ResponseSteerErrorCodeVariant2 is { } __value1)
             {
-                responseSteerErrorCodeVariant2?.Invoke(ResponseSteerErrorCodeVariant2!);
+                responseSteerErrorCodeVariant2?.Invoke(__value1);
             }
         }
 

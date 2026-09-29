@@ -45,6 +45,8 @@ internal static partial class AgentsListAgentEnvironmentTemplatesCommandApiComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-agent-environment-templates", @"List agent environment templates
@@ -85,6 +87,7 @@ Lists reusable environment templates without returning confidential values. See 
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

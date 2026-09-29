@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.GraderPython PickPythonGrader() => IsPythonGrader
-            ? PythonGrader!
+        public global::tryAGI.OpenAI.GraderPython PickPythonGrader() => PythonGrader is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PythonGrader' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EvalGraderPythonVariant2 PickEvalGraderPythonVariant2() => IsEvalGraderPythonVariant2
-            ? EvalGraderPythonVariant2!
+        public global::tryAGI.OpenAI.EvalGraderPythonVariant2 PickEvalGraderPythonVariant2() => EvalGraderPythonVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EvalGraderPythonVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsPythonGrader && pythonGrader != null)
+            if (PythonGrader is { } __value0 && pythonGrader != null)
             {
-                return pythonGrader(PythonGrader!);
+                return pythonGrader(__value0);
             }
-            else if (IsEvalGraderPythonVariant2 && evalGraderPythonVariant2 != null)
+            else if (EvalGraderPythonVariant2 is { } __value1 && evalGraderPythonVariant2 != null)
             {
-                return evalGraderPythonVariant2(EvalGraderPythonVariant2!);
+                return evalGraderPythonVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsPythonGrader)
+            if (PythonGrader is { } __value0)
             {
-                pythonGrader?.Invoke(PythonGrader!);
+                pythonGrader?.Invoke(__value0);
             }
-            else if (IsEvalGraderPythonVariant2)
+            else if (EvalGraderPythonVariant2 is { } __value1)
             {
-                evalGraderPythonVariant2?.Invoke(EvalGraderPythonVariant2!);
+                evalGraderPythonVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsPythonGrader)
+            if (PythonGrader is { } __value0)
             {
-                pythonGrader?.Invoke(PythonGrader!);
+                pythonGrader?.Invoke(__value0);
             }
-            else if (IsEvalGraderPythonVariant2)
+            else if (EvalGraderPythonVariant2 is { } __value1)
             {
-                evalGraderPythonVariant2?.Invoke(EvalGraderPythonVariant2!);
+                evalGraderPythonVariant2?.Invoke(__value1);
             }
         }
 

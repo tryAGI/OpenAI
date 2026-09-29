@@ -57,6 +57,8 @@ internal static partial class SpendAlertsListProjectSpendAlertsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-project-spend-alerts", @"List project spend alerts
@@ -103,6 +105,7 @@ Lists project spend alerts.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

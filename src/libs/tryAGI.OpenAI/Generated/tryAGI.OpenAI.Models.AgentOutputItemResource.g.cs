@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AssistantMessageItemResource PickMessage() => IsMessage
-            ? Message!
+        public global::tryAGI.OpenAI.AssistantMessageItemResource PickMessage() => Message is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Message' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ReasoningItemResource PickReasoning() => IsReasoning
-            ? Reasoning!
+        public global::tryAGI.OpenAI.ReasoningItemResource PickReasoning() => Reasoning is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Reasoning' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.FunctionCallItemResource PickFunctionCall() => IsFunctionCall
-            ? FunctionCall!
+        public global::tryAGI.OpenAI.FunctionCallItemResource PickFunctionCall() => FunctionCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.McpCallItemResource PickMcpCall() => IsMcpCall
-            ? McpCall!
+        public global::tryAGI.OpenAI.McpCallItemResource PickMcpCall() => McpCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'McpCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.WebSearchCallItemResource PickWebSearchCall() => IsWebSearchCall
-            ? WebSearchCall!
+        public global::tryAGI.OpenAI.WebSearchCallItemResource PickWebSearchCall() => WebSearchCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearchCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CommandExecutionItemResource PickCommandExecution() => IsCommandExecution
-            ? CommandExecution!
+        public global::tryAGI.OpenAI.CommandExecutionItemResource PickCommandExecution() => CommandExecution is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CommandExecution' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CreateSubagentCallItemResource PickCreateSubagentCall() => IsCreateSubagentCall
-            ? CreateSubagentCall!
+        public global::tryAGI.OpenAI.CreateSubagentCallItemResource PickCreateSubagentCall() => CreateSubagentCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateSubagentCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SendSubagentInputCallItemResource PickSendSubagentInputCall() => IsSendSubagentInputCall
-            ? SendSubagentInputCall!
+        public global::tryAGI.OpenAI.SendSubagentInputCallItemResource PickSendSubagentInputCall() => SendSubagentInputCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SendSubagentInputCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResumeSubagentCallItemResource PickResumeSubagentCall() => IsResumeSubagentCall
-            ? ResumeSubagentCall!
+        public global::tryAGI.OpenAI.ResumeSubagentCallItemResource PickResumeSubagentCall() => ResumeSubagentCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResumeSubagentCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.WaitForSubagentsCallItemResource PickWaitForSubagentsCall() => IsWaitForSubagentsCall
-            ? WaitForSubagentsCall!
+        public global::tryAGI.OpenAI.WaitForSubagentsCallItemResource PickWaitForSubagentsCall() => WaitForSubagentsCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WaitForSubagentsCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.InterruptSubagentCallItemResource PickInterruptSubagentCall() => IsInterruptSubagentCall
-            ? InterruptSubagentCall!
+        public global::tryAGI.OpenAI.InterruptSubagentCallItemResource PickInterruptSubagentCall() => InterruptSubagentCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InterruptSubagentCall' but the value was {ToString()}.");
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CloseSubagentCallItemResource PickCloseSubagentCall() => IsCloseSubagentCall
-            ? CloseSubagentCall!
+        public global::tryAGI.OpenAI.CloseSubagentCallItemResource PickCloseSubagentCall() => CloseSubagentCall is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CloseSubagentCall' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -835,53 +835,53 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMessage && message != null)
+            if (Message is { } __value0 && message != null)
             {
-                return message(Message!);
+                return message(__value0);
             }
-            else if (IsReasoning && reasoning != null)
+            else if (Reasoning is { } __value1 && reasoning != null)
             {
-                return reasoning(Reasoning!);
+                return reasoning(__value1);
             }
-            else if (IsFunctionCall && functionCall != null)
+            else if (FunctionCall is { } __value2 && functionCall != null)
             {
-                return functionCall(FunctionCall!);
+                return functionCall(__value2);
             }
-            else if (IsMcpCall && mcpCall != null)
+            else if (McpCall is { } __value3 && mcpCall != null)
             {
-                return mcpCall(McpCall!);
+                return mcpCall(__value3);
             }
-            else if (IsWebSearchCall && webSearchCall != null)
+            else if (WebSearchCall is { } __value4 && webSearchCall != null)
             {
-                return webSearchCall(WebSearchCall!);
+                return webSearchCall(__value4);
             }
-            else if (IsCommandExecution && commandExecution != null)
+            else if (CommandExecution is { } __value5 && commandExecution != null)
             {
-                return commandExecution(CommandExecution!);
+                return commandExecution(__value5);
             }
-            else if (IsCreateSubagentCall && createSubagentCall != null)
+            else if (CreateSubagentCall is { } __value6 && createSubagentCall != null)
             {
-                return createSubagentCall(CreateSubagentCall!);
+                return createSubagentCall(__value6);
             }
-            else if (IsSendSubagentInputCall && sendSubagentInputCall != null)
+            else if (SendSubagentInputCall is { } __value7 && sendSubagentInputCall != null)
             {
-                return sendSubagentInputCall(SendSubagentInputCall!);
+                return sendSubagentInputCall(__value7);
             }
-            else if (IsResumeSubagentCall && resumeSubagentCall != null)
+            else if (ResumeSubagentCall is { } __value8 && resumeSubagentCall != null)
             {
-                return resumeSubagentCall(ResumeSubagentCall!);
+                return resumeSubagentCall(__value8);
             }
-            else if (IsWaitForSubagentsCall && waitForSubagentsCall != null)
+            else if (WaitForSubagentsCall is { } __value9 && waitForSubagentsCall != null)
             {
-                return waitForSubagentsCall(WaitForSubagentsCall!);
+                return waitForSubagentsCall(__value9);
             }
-            else if (IsInterruptSubagentCall && interruptSubagentCall != null)
+            else if (InterruptSubagentCall is { } __value10 && interruptSubagentCall != null)
             {
-                return interruptSubagentCall(InterruptSubagentCall!);
+                return interruptSubagentCall(__value10);
             }
-            else if (IsCloseSubagentCall && closeSubagentCall != null)
+            else if (CloseSubagentCall is { } __value11 && closeSubagentCall != null)
             {
-                return closeSubagentCall(CloseSubagentCall!);
+                return closeSubagentCall(__value11);
             }
 
             return default(TResult);
@@ -921,53 +921,53 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsReasoning)
+            else if (Reasoning is { } __value1)
             {
-                reasoning?.Invoke(Reasoning!);
+                reasoning?.Invoke(__value1);
             }
-            else if (IsFunctionCall)
+            else if (FunctionCall is { } __value2)
             {
-                functionCall?.Invoke(FunctionCall!);
+                functionCall?.Invoke(__value2);
             }
-            else if (IsMcpCall)
+            else if (McpCall is { } __value3)
             {
-                mcpCall?.Invoke(McpCall!);
+                mcpCall?.Invoke(__value3);
             }
-            else if (IsWebSearchCall)
+            else if (WebSearchCall is { } __value4)
             {
-                webSearchCall?.Invoke(WebSearchCall!);
+                webSearchCall?.Invoke(__value4);
             }
-            else if (IsCommandExecution)
+            else if (CommandExecution is { } __value5)
             {
-                commandExecution?.Invoke(CommandExecution!);
+                commandExecution?.Invoke(__value5);
             }
-            else if (IsCreateSubagentCall)
+            else if (CreateSubagentCall is { } __value6)
             {
-                createSubagentCall?.Invoke(CreateSubagentCall!);
+                createSubagentCall?.Invoke(__value6);
             }
-            else if (IsSendSubagentInputCall)
+            else if (SendSubagentInputCall is { } __value7)
             {
-                sendSubagentInputCall?.Invoke(SendSubagentInputCall!);
+                sendSubagentInputCall?.Invoke(__value7);
             }
-            else if (IsResumeSubagentCall)
+            else if (ResumeSubagentCall is { } __value8)
             {
-                resumeSubagentCall?.Invoke(ResumeSubagentCall!);
+                resumeSubagentCall?.Invoke(__value8);
             }
-            else if (IsWaitForSubagentsCall)
+            else if (WaitForSubagentsCall is { } __value9)
             {
-                waitForSubagentsCall?.Invoke(WaitForSubagentsCall!);
+                waitForSubagentsCall?.Invoke(__value9);
             }
-            else if (IsInterruptSubagentCall)
+            else if (InterruptSubagentCall is { } __value10)
             {
-                interruptSubagentCall?.Invoke(InterruptSubagentCall!);
+                interruptSubagentCall?.Invoke(__value10);
             }
-            else if (IsCloseSubagentCall)
+            else if (CloseSubagentCall is { } __value11)
             {
-                closeSubagentCall?.Invoke(CloseSubagentCall!);
+                closeSubagentCall?.Invoke(__value11);
             }
         }
 
@@ -994,53 +994,53 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsMessage)
+            if (Message is { } __value0)
             {
-                message?.Invoke(Message!);
+                message?.Invoke(__value0);
             }
-            else if (IsReasoning)
+            else if (Reasoning is { } __value1)
             {
-                reasoning?.Invoke(Reasoning!);
+                reasoning?.Invoke(__value1);
             }
-            else if (IsFunctionCall)
+            else if (FunctionCall is { } __value2)
             {
-                functionCall?.Invoke(FunctionCall!);
+                functionCall?.Invoke(__value2);
             }
-            else if (IsMcpCall)
+            else if (McpCall is { } __value3)
             {
-                mcpCall?.Invoke(McpCall!);
+                mcpCall?.Invoke(__value3);
             }
-            else if (IsWebSearchCall)
+            else if (WebSearchCall is { } __value4)
             {
-                webSearchCall?.Invoke(WebSearchCall!);
+                webSearchCall?.Invoke(__value4);
             }
-            else if (IsCommandExecution)
+            else if (CommandExecution is { } __value5)
             {
-                commandExecution?.Invoke(CommandExecution!);
+                commandExecution?.Invoke(__value5);
             }
-            else if (IsCreateSubagentCall)
+            else if (CreateSubagentCall is { } __value6)
             {
-                createSubagentCall?.Invoke(CreateSubagentCall!);
+                createSubagentCall?.Invoke(__value6);
             }
-            else if (IsSendSubagentInputCall)
+            else if (SendSubagentInputCall is { } __value7)
             {
-                sendSubagentInputCall?.Invoke(SendSubagentInputCall!);
+                sendSubagentInputCall?.Invoke(__value7);
             }
-            else if (IsResumeSubagentCall)
+            else if (ResumeSubagentCall is { } __value8)
             {
-                resumeSubagentCall?.Invoke(ResumeSubagentCall!);
+                resumeSubagentCall?.Invoke(__value8);
             }
-            else if (IsWaitForSubagentsCall)
+            else if (WaitForSubagentsCall is { } __value9)
             {
-                waitForSubagentsCall?.Invoke(WaitForSubagentsCall!);
+                waitForSubagentsCall?.Invoke(__value9);
             }
-            else if (IsInterruptSubagentCall)
+            else if (InterruptSubagentCall is { } __value10)
             {
-                interruptSubagentCall?.Invoke(InterruptSubagentCall!);
+                interruptSubagentCall?.Invoke(__value10);
             }
-            else if (IsCloseSubagentCall)
+            else if (CloseSubagentCall is { } __value11)
             {
-                closeSubagentCall?.Invoke(CloseSubagentCall!);
+                closeSubagentCall?.Invoke(__value11);
             }
         }
 

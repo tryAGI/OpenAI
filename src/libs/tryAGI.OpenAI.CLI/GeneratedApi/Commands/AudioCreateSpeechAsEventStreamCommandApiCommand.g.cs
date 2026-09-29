@@ -39,6 +39,8 @@ internal static partial class AudioCreateSpeechAsEventStreamCommandApiCommand
           Hidden = true,
       };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-speech-as-event-stream", @"Create speech
@@ -105,6 +107,7 @@ Returns the audio file content, or a stream of audio events.
                                         cancellationToken: cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

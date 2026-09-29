@@ -46,6 +46,8 @@ internal static partial class FineTuningListPaginatedFineTuningJobsCommandApiCom
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-paginated-fine-tuning-jobs", @"List fine-tuning jobs
@@ -87,6 +89,7 @@ List your organization's fine-tuning jobs
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

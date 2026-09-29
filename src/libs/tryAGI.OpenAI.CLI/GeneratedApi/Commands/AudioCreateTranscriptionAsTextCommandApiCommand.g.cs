@@ -67,6 +67,8 @@ The request must include enough format metadata for the file to be identified. W
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-transcription-as-text", @"Create transcription
@@ -155,6 +157,7 @@ transcript events. Supported formats depend on the model.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

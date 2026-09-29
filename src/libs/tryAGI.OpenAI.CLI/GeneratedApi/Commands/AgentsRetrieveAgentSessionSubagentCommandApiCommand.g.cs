@@ -39,6 +39,8 @@ internal static partial class AgentsRetrieveAgentSessionSubagentCommandApiComman
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"retrieve-agent-session-subagent", @"Retrieve a session subagent
@@ -76,6 +78,7 @@ Retrieves a subagent belonging to this session. See [subagent workflows](https:/
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -39,6 +39,8 @@ internal static partial class ConversationsDeleteConversationItemCommandApiComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-conversation-item", @"Delete an item
@@ -68,6 +70,7 @@ Delete an item from a conversation with the given IDs.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

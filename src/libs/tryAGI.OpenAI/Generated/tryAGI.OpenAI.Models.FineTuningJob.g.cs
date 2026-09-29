@@ -26,7 +26,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public global::tryAGI.OpenAI.FineTuningJobError? Error { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.FineTuningJobErrorVariant1, object, object>))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobErrorVariant1, object, object> Error { get; set; }
 
         /// <summary>
         ///
@@ -44,8 +46,7 @@ namespace tryAGI.OpenAI
         /// The hyperparameters used for the fine-tuning job. This value will only be returned when running `supervised` jobs.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hyperparameters")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.FineTuningJobHyperparameters Hyperparameters { get; set; }
+        public global::tryAGI.OpenAI.FineTuningJobHyperparameters? Hyperparameters { get; set; }
 
         /// <summary>
         /// The base model that is being fine-tuned.
@@ -76,7 +77,7 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<string> ResultFiles { get; set; }
 
         /// <summary>
-        /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
+        /// The current status of the fine-tuning job, which can be `validating_files`, `queued`, `running`, `pausing`, `paused`, `succeeded`, `failed`, or `cancelled`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FineTuningJobStatusJsonConverter))]
@@ -112,8 +113,7 @@ namespace tryAGI.OpenAI
         /// The seed used for the fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Seed { get; set; }
+        public int? Seed { get; set; }
 
         /// <summary>
         ///
@@ -122,7 +122,7 @@ namespace tryAGI.OpenAI
         public int? EstimatedFinish { get; set; }
 
         /// <summary>
-        /// The method used for fine-tuning.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("method")]
         public global::tryAGI.OpenAI.FineTuneMethod? Method { get; set; }
@@ -148,9 +148,7 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the fine-tuning job was created.
         /// </param>
-        /// <param name="hyperparameters">
-        /// The hyperparameters used for the fine-tuning job. This value will only be returned when running `supervised` jobs.
-        /// </param>
+        /// <param name="error"></param>
         /// <param name="model">
         /// The base model that is being fine-tuned.
         /// </param>
@@ -161,27 +159,27 @@ namespace tryAGI.OpenAI
         /// The compiled results file ID(s) for the fine-tuning job. You can retrieve the results with the [Files API](https://developers.openai.com/api/reference/resources/files/methods/content).
         /// </param>
         /// <param name="status">
-        /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
+        /// The current status of the fine-tuning job, which can be `validating_files`, `queued`, `running`, `pausing`, `paused`, `succeeded`, `failed`, or `cancelled`.
         /// </param>
         /// <param name="trainingFile">
         /// The file ID used for training. You can retrieve the training data with the [Files API](https://developers.openai.com/api/reference/resources/files/methods/content).
         /// </param>
-        /// <param name="seed">
-        /// The seed used for the fine-tuning job.
-        /// </param>
-        /// <param name="error"></param>
         /// <param name="fineTunedModel"></param>
         /// <param name="finishedAt"></param>
+        /// <param name="hyperparameters">
+        /// The hyperparameters used for the fine-tuning job. This value will only be returned when running `supervised` jobs.
+        /// </param>
         /// <param name="object">
         /// The object type, which is always "fine_tuning.job".
         /// </param>
         /// <param name="trainedTokens"></param>
         /// <param name="validationFile"></param>
         /// <param name="integrations"></param>
-        /// <param name="estimatedFinish"></param>
-        /// <param name="method">
-        /// The method used for fine-tuning.
+        /// <param name="seed">
+        /// The seed used for the fine-tuning job.
         /// </param>
+        /// <param name="estimatedFinish"></param>
+        /// <param name="method"></param>
         /// <param name="metadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -189,20 +187,20 @@ namespace tryAGI.OpenAI
         public FineTuningJob(
             string id,
             int createdAt,
-            global::tryAGI.OpenAI.FineTuningJobHyperparameters hyperparameters,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobErrorVariant1, object, object> error,
             string model,
             string organizationId,
             global::System.Collections.Generic.IList<string> resultFiles,
             global::tryAGI.OpenAI.FineTuningJobStatus status,
             string trainingFile,
-            int seed,
-            global::tryAGI.OpenAI.FineTuningJobError? error,
             string? fineTunedModel,
             int? finishedAt,
+            global::tryAGI.OpenAI.FineTuningJobHyperparameters? hyperparameters,
             global::tryAGI.OpenAI.FineTuningJobObject @object,
             int? trainedTokens,
             string? validationFile,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningIntegration>? integrations,
+            int? seed,
             int? estimatedFinish,
             global::tryAGI.OpenAI.FineTuneMethod? method,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
@@ -212,7 +210,7 @@ namespace tryAGI.OpenAI
             this.Error = error;
             this.FineTunedModel = fineTunedModel;
             this.FinishedAt = finishedAt;
-            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
+            this.Hyperparameters = hyperparameters;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Object = @object;
             this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));

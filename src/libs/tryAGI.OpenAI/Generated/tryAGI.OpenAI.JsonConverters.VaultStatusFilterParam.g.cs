@@ -149,13 +149,13 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VaultStatusParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VaultStatusParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VaultStatusParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VaultStatusParam!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVaultStatusParam(), typeInfo);
             }
             else if (value.IsVaultStatusFilterParamVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VaultStatusParam>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VaultStatusParam>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VaultStatusParam>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VaultStatusFilterParamVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVaultStatusFilterParamVariant2(), typeInfo);
             }
         }
     }

@@ -53,6 +53,8 @@ internal static partial class RotateWebhookEndpointSigningSecretCommandApiComman
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"rotate-webhook-endpoint-signing-secret", @"Rotate Webhook Endpoint Signing Secret
@@ -110,6 +112,7 @@ Rotates the signing secret for a webhook endpoint in the authenticated project."
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

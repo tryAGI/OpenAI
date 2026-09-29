@@ -32,13 +32,15 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("type")) __score0++;
             if (__jsonProps.Contains("value")) __score0++;
             var __score1 = 0;
+            if (__jsonProps.Contains("filters")) __score1++;
+            if (__jsonProps.Contains("type")) __score1++;
             var __bestScore = 0;
             var __bestIndex = -1;
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
             global::tryAGI.OpenAI.BetaComparisonFilter? comparisonFilter = default;
-            object? betaCompoundFilterVariant2 = default;
+            global::tryAGI.OpenAI.BetaCompoundFilter? compoundFilter = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -60,9 +62,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                        betaCompoundFilterVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaCompoundFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaCompoundFilter> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaCompoundFilter).Name}");
+                        compoundFilter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -73,7 +75,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (comparisonFilter == null && betaCompoundFilterVariant2 == null)
+            if (comparisonFilter == null && compoundFilter == null)
             {
                 try
                 {
@@ -90,14 +92,14 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (comparisonFilter == null && betaCompoundFilterVariant2 == null)
+            if (comparisonFilter == null && compoundFilter == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                    betaCompoundFilterVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaCompoundFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaCompoundFilter> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaCompoundFilter).Name}");
+                    compoundFilter = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -110,7 +112,7 @@ namespace tryAGI.OpenAI.JsonConverters
             var __value = new global::tryAGI.OpenAI.FiltersItem2(
                 comparisonFilter,
 
-                betaCompoundFilterVariant2
+                compoundFilter
                 );
 
             return __value;
@@ -129,13 +131,13 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaComparisonFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaComparisonFilter?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaComparisonFilter).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ComparisonFilter!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickComparisonFilter(), typeInfo);
             }
-            else if (value.IsBetaCompoundFilterVariant2)
+            else if (value.IsCompoundFilter)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(object), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<object?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(object).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BetaCompoundFilterVariant2!, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaCompoundFilter), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaCompoundFilter?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaCompoundFilter).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCompoundFilter(), typeInfo);
             }
         }
     }

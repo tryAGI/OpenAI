@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat PickPcmAudioFormat() => IsPcmAudioFormat
-            ? PcmAudioFormat!
+        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormat PickPcmAudioFormat() => PcmAudioFormat is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PcmAudioFormat' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat PickPcmuAudioFormat() => IsPcmuAudioFormat
-            ? PcmuAudioFormat!
+        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmuAudioFormat PickPcmuAudioFormat() => PcmuAudioFormat is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PcmuAudioFormat' but the value was {ToString()}.");
 
         /// <summary>
@@ -116,8 +116,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat PickPcmaAudioFormat() => IsPcmaAudioFormat
-            ? PcmaAudioFormat!
+        public global::tryAGI.OpenAI.RealtimeAudioFormatsPcmaAudioFormat PickPcmaAudioFormat() => PcmaAudioFormat is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PcmaAudioFormat' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -242,17 +242,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsPcmAudioFormat && pcmAudioFormat != null)
+            if (PcmAudioFormat is { } __value0 && pcmAudioFormat != null)
             {
-                return pcmAudioFormat(PcmAudioFormat!);
+                return pcmAudioFormat(__value0);
             }
-            else if (IsPcmuAudioFormat && pcmuAudioFormat != null)
+            else if (PcmuAudioFormat is { } __value1 && pcmuAudioFormat != null)
             {
-                return pcmuAudioFormat(PcmuAudioFormat!);
+                return pcmuAudioFormat(__value1);
             }
-            else if (IsPcmaAudioFormat && pcmaAudioFormat != null)
+            else if (PcmaAudioFormat is { } __value2 && pcmaAudioFormat != null)
             {
-                return pcmaAudioFormat(PcmaAudioFormat!);
+                return pcmaAudioFormat(__value2);
             }
 
             return default(TResult);
@@ -274,17 +274,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsPcmAudioFormat)
+            if (PcmAudioFormat is { } __value0)
             {
-                pcmAudioFormat?.Invoke(PcmAudioFormat!);
+                pcmAudioFormat?.Invoke(__value0);
             }
-            else if (IsPcmuAudioFormat)
+            else if (PcmuAudioFormat is { } __value1)
             {
-                pcmuAudioFormat?.Invoke(PcmuAudioFormat!);
+                pcmuAudioFormat?.Invoke(__value1);
             }
-            else if (IsPcmaAudioFormat)
+            else if (PcmaAudioFormat is { } __value2)
             {
-                pcmaAudioFormat?.Invoke(PcmaAudioFormat!);
+                pcmaAudioFormat?.Invoke(__value2);
             }
         }
 
@@ -302,17 +302,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsPcmAudioFormat)
+            if (PcmAudioFormat is { } __value0)
             {
-                pcmAudioFormat?.Invoke(PcmAudioFormat!);
+                pcmAudioFormat?.Invoke(__value0);
             }
-            else if (IsPcmuAudioFormat)
+            else if (PcmuAudioFormat is { } __value1)
             {
-                pcmuAudioFormat?.Invoke(PcmuAudioFormat!);
+                pcmuAudioFormat?.Invoke(__value1);
             }
-            else if (IsPcmaAudioFormat)
+            else if (PcmaAudioFormat is { } __value2)
             {
-                pcmaAudioFormat?.Invoke(PcmaAudioFormat!);
+                pcmaAudioFormat?.Invoke(__value2);
             }
         }
 

@@ -50,6 +50,8 @@ internal static partial class UploadsAddUploadPartCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"add-upload-part", @"Add upload part
@@ -87,6 +89,7 @@ It is possible to add multiple Parts in parallel. You can decide the intended or
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

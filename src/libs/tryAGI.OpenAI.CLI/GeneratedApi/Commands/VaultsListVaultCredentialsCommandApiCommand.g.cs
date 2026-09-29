@@ -57,6 +57,8 @@ internal static partial class VaultsListVaultCredentialsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-vault-credentials", @"List vault credentials
@@ -103,6 +105,7 @@ Lists a vault's credentials using ID-based pagination without returning secret v
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

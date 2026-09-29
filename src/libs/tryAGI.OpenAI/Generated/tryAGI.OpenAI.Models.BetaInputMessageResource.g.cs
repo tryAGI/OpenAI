@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaInputMessage PickInputMessage() => IsInputMessage
-            ? InputMessage!
+        public global::tryAGI.OpenAI.BetaInputMessage PickInputMessage() => InputMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -81,8 +81,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaInputMessageResourceVariant2 PickBetaInputMessageResourceVariant2() => IsBetaInputMessageResourceVariant2
-            ? BetaInputMessageResourceVariant2!
+        public global::tryAGI.OpenAI.BetaInputMessageResourceVariant2 PickBetaInputMessageResourceVariant2() => BetaInputMessageResourceVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaInputMessageResourceVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -179,13 +179,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputMessage && inputMessage != null)
+            if (InputMessage is { } __value0 && inputMessage != null)
             {
-                return inputMessage(InputMessage!);
+                return inputMessage(__value0);
             }
-            else if (IsBetaInputMessageResourceVariant2 && betaInputMessageResourceVariant2 != null)
+            else if (BetaInputMessageResourceVariant2 is { } __value1 && betaInputMessageResourceVariant2 != null)
             {
-                return betaInputMessageResourceVariant2(BetaInputMessageResourceVariant2!);
+                return betaInputMessageResourceVariant2(__value1);
             }
 
             return default(TResult);
@@ -205,13 +205,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputMessage)
+            if (InputMessage is { } __value0)
             {
-                inputMessage?.Invoke(InputMessage!);
+                inputMessage?.Invoke(__value0);
             }
-            else if (IsBetaInputMessageResourceVariant2)
+            else if (BetaInputMessageResourceVariant2 is { } __value1)
             {
-                betaInputMessageResourceVariant2?.Invoke(BetaInputMessageResourceVariant2!);
+                betaInputMessageResourceVariant2?.Invoke(__value1);
             }
         }
 
@@ -228,13 +228,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputMessage)
+            if (InputMessage is { } __value0)
             {
-                inputMessage?.Invoke(InputMessage!);
+                inputMessage?.Invoke(__value0);
             }
-            else if (IsBetaInputMessageResourceVariant2)
+            else if (BetaInputMessageResourceVariant2 is { } __value1)
             {
-                betaInputMessageResourceVariant2?.Invoke(BetaInputMessageResourceVariant2!);
+                betaInputMessageResourceVariant2?.Invoke(__value1);
             }
         }
 

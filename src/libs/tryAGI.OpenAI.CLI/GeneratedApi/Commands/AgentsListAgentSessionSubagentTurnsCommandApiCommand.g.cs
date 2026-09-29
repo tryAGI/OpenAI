@@ -57,6 +57,8 @@ internal static partial class AgentsListAgentSessionSubagentTurnsCommandApiComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-agent-session-subagent-turns", @"List subagent turns
@@ -103,6 +105,7 @@ Lists all turns of this subagent, including turns after a resume. See [subagent 
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

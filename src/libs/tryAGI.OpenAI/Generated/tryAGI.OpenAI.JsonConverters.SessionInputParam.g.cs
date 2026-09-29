@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputMessage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentSessionInputMessage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentSessionInputMessage(), typeInfo);
             }
             else if (value.IsAgentSessionInputCancel)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputCancel), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputCancel?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputCancel).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentSessionInputCancel!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentSessionInputCancel(), typeInfo);
             }
             else if (value.IsAgentSessionInputToolResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputToolResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionInputParamAgentSessionInputToolResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SessionInputParamAgentSessionInputToolResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentSessionInputToolResult!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentSessionInputToolResult(), typeInfo);
             }
         }
     }

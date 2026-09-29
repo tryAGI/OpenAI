@@ -13,6 +13,8 @@ internal static partial class LiveDownloadLiveRecordingCommandApiCommand
         Description = @"The ID of the stored Live session to download. Use the session ID returned when the session started with storage enabled.",
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"download-live-recording", @"Download recording
@@ -33,6 +35,7 @@ Get Live session content");
 
                                 await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

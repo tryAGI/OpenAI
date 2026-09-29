@@ -49,6 +49,8 @@ parameter for [listing Conversation items above](https://developers.openai.com/a
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-conversation-items", @"Create items
@@ -89,6 +91,7 @@ Create items in a conversation with the given ID.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

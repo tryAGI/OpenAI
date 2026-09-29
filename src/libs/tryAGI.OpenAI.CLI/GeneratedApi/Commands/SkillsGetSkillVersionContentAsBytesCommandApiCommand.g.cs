@@ -19,6 +19,8 @@ internal static partial class SkillsGetSkillVersionContentAsBytesCommandApiComma
         Description = @"The skill version number.",
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-skill-version-content-as-bytes", @"Get Skill Version Content
@@ -42,6 +44,7 @@ Download a skill version zip bundle.");
 
                                 await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

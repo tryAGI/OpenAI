@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaApplyPatchCreateFileOperationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaApplyPatchCreateFileOperationParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaApplyPatchCreateFileOperationParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateFile!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCreateFile(), typeInfo);
             }
             else if (value.IsDeleteFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaApplyPatchDeleteFileOperationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaApplyPatchDeleteFileOperationParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaApplyPatchDeleteFileOperationParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.DeleteFile!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDeleteFile(), typeInfo);
             }
             else if (value.IsUpdateFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaApplyPatchUpdateFileOperationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaApplyPatchUpdateFileOperationParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaApplyPatchUpdateFileOperationParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UpdateFile!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUpdateFile(), typeInfo);
             }
         }
     }

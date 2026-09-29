@@ -46,6 +46,8 @@ internal static partial class FineTuningListFineTuningJobCheckpointsCommandApiCo
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-fine-tuning-job-checkpoints", @"List fine-tuning checkpoints
@@ -87,6 +89,7 @@ List checkpoints for a fine-tuning job.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

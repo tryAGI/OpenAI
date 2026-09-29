@@ -48,6 +48,8 @@ internal static partial class CreateWebhookEndpointCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-webhook-endpoint", @"Create Webhook Endpoint
@@ -88,6 +90,7 @@ Creates a webhook endpoint for the authenticated project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

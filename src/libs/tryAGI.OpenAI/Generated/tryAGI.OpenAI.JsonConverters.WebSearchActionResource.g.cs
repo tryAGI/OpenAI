@@ -77,25 +77,25 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WebSearchActionResourceSearch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WebSearchActionResourceSearch?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WebSearchActionResourceSearch).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Search!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSearch(), typeInfo);
             }
             else if (value.IsOpenPage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WebSearchActionResourceOpenPage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WebSearchActionResourceOpenPage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WebSearchActionResourceOpenPage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OpenPage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOpenPage(), typeInfo);
             }
             else if (value.IsFindInPage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WebSearchActionResourceFindInPage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WebSearchActionResourceFindInPage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WebSearchActionResourceFindInPage).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FindInPage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFindInPage(), typeInfo);
             }
             else if (value.IsOther)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WebSearchActionResourceOther), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WebSearchActionResourceOther?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WebSearchActionResourceOther).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Other!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOther(), typeInfo);
             }
         }
     }

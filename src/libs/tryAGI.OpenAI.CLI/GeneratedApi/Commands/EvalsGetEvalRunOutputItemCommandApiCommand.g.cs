@@ -45,6 +45,8 @@ internal static partial class EvalsGetEvalRunOutputItemCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-eval-run-output-item", @"Get an output item of an eval run
@@ -86,6 +88,7 @@ Get an evaluation run output item by ID.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

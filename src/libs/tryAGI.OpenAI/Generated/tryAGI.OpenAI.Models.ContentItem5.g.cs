@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageInputText PickInputText() => IsInputText
-            ? InputText!
+        public global::tryAGI.OpenAI.UserMessageInputText PickInputText() => InputText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UserMessageQuotedText PickQuotedText() => IsQuotedText
-            ? QuotedText!
+        public global::tryAGI.OpenAI.UserMessageQuotedText PickQuotedText() => QuotedText is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'QuotedText' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputText && inputText != null)
+            if (InputText is { } __value0 && inputText != null)
             {
-                return inputText(InputText!);
+                return inputText(__value0);
             }
-            else if (IsQuotedText && quotedText != null)
+            else if (QuotedText is { } __value1 && quotedText != null)
             {
-                return quotedText(QuotedText!);
+                return quotedText(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsQuotedText)
+            else if (QuotedText is { } __value1)
             {
-                quotedText?.Invoke(QuotedText!);
+                quotedText?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsInputText)
+            if (InputText is { } __value0)
             {
-                inputText?.Invoke(InputText!);
+                inputText?.Invoke(__value0);
             }
-            else if (IsQuotedText)
+            else if (QuotedText is { } __value1)
             {
-                quotedText?.Invoke(QuotedText!);
+                quotedText?.Invoke(__value1);
             }
         }
 

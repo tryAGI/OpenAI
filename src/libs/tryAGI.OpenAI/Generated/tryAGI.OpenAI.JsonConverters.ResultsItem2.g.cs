@@ -59,13 +59,13 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.C2PAProvenanceResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.C2PAProvenanceResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.C2PAProvenanceResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.C2pa!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickC2pa(), typeInfo);
             }
             else if (value.IsSynthid)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SynthIDProvenanceResult), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SynthIDProvenanceResult?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SynthIDProvenanceResult).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Synthid!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSynthid(), typeInfo);
             }
         }
     }

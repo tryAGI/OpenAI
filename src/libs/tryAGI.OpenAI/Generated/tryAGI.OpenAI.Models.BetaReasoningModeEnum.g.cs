@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaReasoningModeEnumVariant1() => IsBetaReasoningModeEnumVariant1
-            ? BetaReasoningModeEnumVariant1!
+        public string PickBetaReasoningModeEnumVariant1() => BetaReasoningModeEnumVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaReasoningModeEnumVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaReasoningModeEnumEnum PickBetaReasoningModeEnumEnum() => IsBetaReasoningModeEnumEnum
-            ? BetaReasoningModeEnumEnum!.Value
+        public global::tryAGI.OpenAI.BetaReasoningModeEnumEnum PickBetaReasoningModeEnumEnum() => BetaReasoningModeEnumEnum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaReasoningModeEnumEnum' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaReasoningModeEnumVariant1 && betaReasoningModeEnumVariant1 != null)
+            if (BetaReasoningModeEnumVariant1 is { } __value0 && betaReasoningModeEnumVariant1 != null)
             {
-                return betaReasoningModeEnumVariant1(BetaReasoningModeEnumVariant1!);
+                return betaReasoningModeEnumVariant1(__value0);
             }
-            else if (IsBetaReasoningModeEnumEnum && betaReasoningModeEnumEnum != null)
+            else if (BetaReasoningModeEnumEnum is { } __value1 && betaReasoningModeEnumEnum != null)
             {
-                return betaReasoningModeEnumEnum(BetaReasoningModeEnumEnum!);
+                return betaReasoningModeEnumEnum(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaReasoningModeEnumVariant1)
+            if (BetaReasoningModeEnumVariant1 is { } __value0)
             {
-                betaReasoningModeEnumVariant1?.Invoke(BetaReasoningModeEnumVariant1!);
+                betaReasoningModeEnumVariant1?.Invoke(__value0);
             }
-            else if (IsBetaReasoningModeEnumEnum)
+            else if (BetaReasoningModeEnumEnum is { } __value1)
             {
-                betaReasoningModeEnumEnum?.Invoke(BetaReasoningModeEnumEnum!);
+                betaReasoningModeEnumEnum?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaReasoningModeEnumVariant1)
+            if (BetaReasoningModeEnumVariant1 is { } __value0)
             {
-                betaReasoningModeEnumVariant1?.Invoke(BetaReasoningModeEnumVariant1!);
+                betaReasoningModeEnumVariant1?.Invoke(__value0);
             }
-            else if (IsBetaReasoningModeEnumEnum)
+            else if (BetaReasoningModeEnumEnum is { } __value1)
             {
-                betaReasoningModeEnumEnum?.Invoke(BetaReasoningModeEnumEnum!);
+                betaReasoningModeEnumEnum?.Invoke(__value1);
             }
         }
 

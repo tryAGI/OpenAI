@@ -19,6 +19,8 @@ internal static partial class AgentsRetrieveAgentSessionArtifactContentCommandAp
         Description = @"The immutable session artifact ID.",
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"retrieve-agent-session-artifact-content", @"Retrieve agent session artifact content
@@ -42,6 +44,7 @@ Downloads immutable session artifact bytes after the execution environment expir
 
                                 await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

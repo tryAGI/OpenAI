@@ -65,6 +65,8 @@ internal static partial class UploadsCompleteUploadCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"complete-upload", @"Complete upload
@@ -125,6 +127,7 @@ Returns the Upload object with status `completed`, including an additional `file
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

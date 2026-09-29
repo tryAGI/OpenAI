@@ -73,6 +73,8 @@ internal static partial class CreateanAPIkeyforaserviceaccountCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"createan-apikeyforaserviceaccount", @"Create an API key for a service account
@@ -131,6 +133,7 @@ Creates an API key for a service account in the project.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

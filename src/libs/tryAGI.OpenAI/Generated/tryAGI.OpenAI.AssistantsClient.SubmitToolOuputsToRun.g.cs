@@ -94,6 +94,11 @@ namespace tryAGI.OpenAI
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            request = new global::tryAGI.OpenAI.SubmitToolOutputsRunRequest
+            {
+                ToolOutputs = request.ToolOutputs,
+                Stream = false,
+            };
             PrepareArguments(
                 client: HttpClient);
             PrepareSubmitToolOuputsToRunArguments(
@@ -141,6 +146,10 @@ namespace tryAGI.OpenAI
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "application/json");
+
             foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
@@ -174,8 +183,8 @@ namespace tryAGI.OpenAI
                 PrepareSubmitToolOuputsToRunRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    threadId: threadId!,
-                    runId: runId!,
+                    threadId: threadId,
+                    runId: runId,
                     request: request);
 
                 return __httpRequest;
@@ -198,7 +207,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/threads/{threadId}/runs/{runId}/submit_tool_outputs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -232,7 +241,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/threads/{threadId}/runs/{runId}/submit_tool_outputs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -273,7 +282,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/threads/{threadId}/runs/{runId}/submit_tool_outputs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -321,7 +330,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/threads/{threadId}/runs/{runId}/submit_tool_outputs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -343,7 +352,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/threads/{threadId}/runs/{runId}/submit_tool_outputs\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -497,7 +506,6 @@ namespace tryAGI.OpenAI
         /// <param name="toolOutputs">
         /// A list of tools for which the outputs are being submitted.
         /// </param>
-        /// <param name="stream"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -505,14 +513,13 @@ namespace tryAGI.OpenAI
             string threadId,
             string runId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SubmitToolOutputsRunRequestToolOutput> toolOutputs,
-            bool? stream = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.SubmitToolOutputsRunRequest
             {
                 ToolOutputs = toolOutputs,
-                Stream = stream,
+                Stream = false,
             };
 
             return await SubmitToolOuputsToRunAsync(

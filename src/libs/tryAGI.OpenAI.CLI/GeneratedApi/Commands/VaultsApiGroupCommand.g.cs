@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class VaultsApiGroupCommand
+internal static partial class VaultsApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"vaults", @"Vaults endpoint commands.");
@@ -18,6 +20,7 @@ internal static class VaultsApiGroupCommand
                          command.Subcommands.Add(VaultsRetrieveVaultCommandApiCommand.Create());
                          command.Subcommands.Add(VaultsRetrieveVaultCredentialCommandApiCommand.Create());
                          command.Subcommands.Add(VaultsRotateVaultCredentialCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

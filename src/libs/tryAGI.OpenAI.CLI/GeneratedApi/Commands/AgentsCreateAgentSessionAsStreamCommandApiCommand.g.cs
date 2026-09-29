@@ -45,6 +45,8 @@ internal static partial class AgentsCreateAgentSessionAsStreamCommandApiCommand
           Hidden = true,
       };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-agent-session-as-stream", @"Create an agent session
@@ -117,6 +119,7 @@ Creates a managed agent session, optionally submits initial input, and returns t
                                         cancellationToken: cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

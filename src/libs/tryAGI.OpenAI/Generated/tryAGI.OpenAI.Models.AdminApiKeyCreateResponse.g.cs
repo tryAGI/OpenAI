@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AdminApiKey PickAdminApiKey() => IsAdminApiKey
-            ? AdminApiKey!
+        public global::tryAGI.OpenAI.AdminApiKey PickAdminApiKey() => AdminApiKey is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AdminApiKey' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2 PickAdminApiKeyCreateResponseVariant2() => IsAdminApiKeyCreateResponseVariant2
-            ? AdminApiKeyCreateResponseVariant2!
+        public global::tryAGI.OpenAI.AdminApiKeyCreateResponseVariant2 PickAdminApiKeyCreateResponseVariant2() => AdminApiKeyCreateResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AdminApiKeyCreateResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAdminApiKey && adminApiKey != null)
+            if (AdminApiKey is { } __value0 && adminApiKey != null)
             {
-                return adminApiKey(AdminApiKey!);
+                return adminApiKey(__value0);
             }
-            else if (IsAdminApiKeyCreateResponseVariant2 && adminApiKeyCreateResponseVariant2 != null)
+            else if (AdminApiKeyCreateResponseVariant2 is { } __value1 && adminApiKeyCreateResponseVariant2 != null)
             {
-                return adminApiKeyCreateResponseVariant2(AdminApiKeyCreateResponseVariant2!);
+                return adminApiKeyCreateResponseVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAdminApiKey)
+            if (AdminApiKey is { } __value0)
             {
-                adminApiKey?.Invoke(AdminApiKey!);
+                adminApiKey?.Invoke(__value0);
             }
-            else if (IsAdminApiKeyCreateResponseVariant2)
+            else if (AdminApiKeyCreateResponseVariant2 is { } __value1)
             {
-                adminApiKeyCreateResponseVariant2?.Invoke(AdminApiKeyCreateResponseVariant2!);
+                adminApiKeyCreateResponseVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAdminApiKey)
+            if (AdminApiKey is { } __value0)
             {
-                adminApiKey?.Invoke(AdminApiKey!);
+                adminApiKey?.Invoke(__value0);
             }
-            else if (IsAdminApiKeyCreateResponseVariant2)
+            else if (AdminApiKeyCreateResponseVariant2 is { } __value1)
             {
-                adminApiKeyCreateResponseVariant2?.Invoke(AdminApiKeyCreateResponseVariant2!);
+                adminApiKeyCreateResponseVariant2?.Invoke(__value1);
             }
         }
 

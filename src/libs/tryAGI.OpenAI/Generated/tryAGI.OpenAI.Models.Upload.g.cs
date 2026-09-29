@@ -66,11 +66,10 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.UploadObject? Object { get; set; }
 
         /// <summary>
-        ///
+        /// The ready File object after the Upload is completed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AllOfJsonConverter<global::tryAGI.OpenAI.OpenAIFile, object>))]
-        public global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.OpenAIFile, object>? File { get; set; }
+        public global::tryAGI.OpenAI.OpenAIFile? File { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -105,7 +104,9 @@ namespace tryAGI.OpenAI
         /// <param name="object">
         /// The object type, which is always "upload".
         /// </param>
-        /// <param name="file"></param>
+        /// <param name="file">
+        /// The ready File object after the Upload is completed.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -118,7 +119,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.UploadStatus status,
             int expiresAt,
             global::tryAGI.OpenAI.UploadObject? @object,
-            global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.OpenAIFile, object>? file)
+            global::tryAGI.OpenAI.OpenAIFile? file)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;

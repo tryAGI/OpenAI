@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class AudioApiGroupCommand
+internal static partial class AudioApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"audio", @"Audio endpoint commands.");
@@ -22,6 +24,7 @@ internal static class AudioApiGroupCommand
                          command.Subcommands.Add(AudioGetVoiceConsentCommandApiCommand.Create());
                          command.Subcommands.Add(AudioListVoiceConsentsCommandApiCommand.Create());
                          command.Subcommands.Add(AudioUpdateVoiceConsentCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

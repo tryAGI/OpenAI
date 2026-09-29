@@ -33,6 +33,8 @@ internal static partial class ProjectsRetrieveProjectModelPermissionsCommandApiC
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"retrieve-project-model-permissions", @"Retrieve project model permissions
@@ -67,6 +69,7 @@ Returns model permissions for a project.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

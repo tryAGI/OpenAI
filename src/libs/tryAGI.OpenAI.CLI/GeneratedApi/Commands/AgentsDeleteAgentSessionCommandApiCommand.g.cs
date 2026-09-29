@@ -33,6 +33,8 @@ internal static partial class AgentsDeleteAgentSessionCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-agent-session", @"Delete an agent session
@@ -59,6 +61,7 @@ Removes a managed agent session from the public API and returns a deletion confi
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

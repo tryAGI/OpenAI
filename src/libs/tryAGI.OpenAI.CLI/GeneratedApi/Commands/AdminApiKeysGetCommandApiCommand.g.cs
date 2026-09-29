@@ -33,6 +33,8 @@ internal static partial class AdminApiKeysGetCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"admin-api-keys-get", @"Retrieve admin API key
@@ -59,6 +61,7 @@ Retrieve a single organization API key");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

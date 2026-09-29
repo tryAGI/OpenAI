@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickBetaPersonalityEnumVariant1() => IsBetaPersonalityEnumVariant1
-            ? BetaPersonalityEnumVariant1!
+        public string PickBetaPersonalityEnumVariant1() => BetaPersonalityEnumVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaPersonalityEnumVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaPersonalityEnumEnum PickBetaPersonalityEnumEnum() => IsBetaPersonalityEnumEnum
-            ? BetaPersonalityEnumEnum!.Value
+        public global::tryAGI.OpenAI.BetaPersonalityEnumEnum PickBetaPersonalityEnumEnum() => BetaPersonalityEnumEnum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaPersonalityEnumEnum' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaPersonalityEnumVariant1 && betaPersonalityEnumVariant1 != null)
+            if (BetaPersonalityEnumVariant1 is { } __value0 && betaPersonalityEnumVariant1 != null)
             {
-                return betaPersonalityEnumVariant1(BetaPersonalityEnumVariant1!);
+                return betaPersonalityEnumVariant1(__value0);
             }
-            else if (IsBetaPersonalityEnumEnum && betaPersonalityEnumEnum != null)
+            else if (BetaPersonalityEnumEnum is { } __value1 && betaPersonalityEnumEnum != null)
             {
-                return betaPersonalityEnumEnum(BetaPersonalityEnumEnum!);
+                return betaPersonalityEnumEnum(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaPersonalityEnumVariant1)
+            if (BetaPersonalityEnumVariant1 is { } __value0)
             {
-                betaPersonalityEnumVariant1?.Invoke(BetaPersonalityEnumVariant1!);
+                betaPersonalityEnumVariant1?.Invoke(__value0);
             }
-            else if (IsBetaPersonalityEnumEnum)
+            else if (BetaPersonalityEnumEnum is { } __value1)
             {
-                betaPersonalityEnumEnum?.Invoke(BetaPersonalityEnumEnum!);
+                betaPersonalityEnumEnum?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsBetaPersonalityEnumVariant1)
+            if (BetaPersonalityEnumVariant1 is { } __value0)
             {
-                betaPersonalityEnumVariant1?.Invoke(BetaPersonalityEnumVariant1!);
+                betaPersonalityEnumVariant1?.Invoke(__value0);
             }
-            else if (IsBetaPersonalityEnumEnum)
+            else if (BetaPersonalityEnumEnum is { } __value1)
             {
-                betaPersonalityEnumEnum?.Invoke(BetaPersonalityEnumEnum!);
+                betaPersonalityEnumEnum?.Invoke(__value1);
             }
         }
 

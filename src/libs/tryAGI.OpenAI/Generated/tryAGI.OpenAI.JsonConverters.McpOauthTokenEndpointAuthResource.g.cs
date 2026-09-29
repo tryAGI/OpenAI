@@ -68,19 +68,19 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.McpOauthTokenEndpointAuthResourceNone), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.McpOauthTokenEndpointAuthResourceNone?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.McpOauthTokenEndpointAuthResourceNone).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.None!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNone(), typeInfo);
             }
             else if (value.IsClientSecretBasic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.McpOauthTokenEndpointAuthResourceClientSecretBasic), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.McpOauthTokenEndpointAuthResourceClientSecretBasic?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.McpOauthTokenEndpointAuthResourceClientSecretBasic).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClientSecretBasic!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickClientSecretBasic(), typeInfo);
             }
             else if (value.IsClientSecretPost)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.McpOauthTokenEndpointAuthResourceClientSecretPost), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.McpOauthTokenEndpointAuthResourceClientSecretPost?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.McpOauthTokenEndpointAuthResourceClientSecretPost).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClientSecretPost!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickClientSecretPost(), typeInfo);
             }
         }
     }

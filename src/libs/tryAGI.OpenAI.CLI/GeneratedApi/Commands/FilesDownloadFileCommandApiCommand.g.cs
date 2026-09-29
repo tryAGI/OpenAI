@@ -13,6 +13,8 @@ internal static partial class FilesDownloadFileCommandApiCommand
         Description = @"The ID of the file to use for this request.",
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"download-file", @"Retrieve file content
@@ -33,6 +35,7 @@ Returns a response containing the contents of the specified file.");
 
                                 await CliRuntime.WriteBinaryAsync(parseResult, response, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

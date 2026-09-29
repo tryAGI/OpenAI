@@ -33,6 +33,8 @@ internal static partial class VaultsDeleteVaultCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-vault", @"Delete a vault
@@ -59,6 +61,7 @@ Deletes a vault and all its credentials. See [vaults](https://developers.openai.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

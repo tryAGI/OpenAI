@@ -39,6 +39,8 @@ internal static partial class GroupOrganizationRoleAssignmentsUnassignGroupRoleC
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"unassign-group-role", @"Unassign organization role from group
@@ -68,6 +70,7 @@ Unassigns an organization role from a group within the organization.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

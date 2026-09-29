@@ -93,6 +93,8 @@ internal static partial class AgentsCreateAgentCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-agent", @"Create an agent
@@ -183,6 +185,7 @@ Creates a reusable agent without storing credentials. See [agent configuration](
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

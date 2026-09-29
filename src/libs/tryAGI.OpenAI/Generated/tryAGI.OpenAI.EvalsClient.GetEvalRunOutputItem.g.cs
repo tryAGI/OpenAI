@@ -163,9 +163,9 @@ namespace tryAGI.OpenAI
                 PrepareGetEvalRunOutputItemRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    evalId: evalId!,
-                    runId: runId!,
-                    outputItemId: outputItemId!);
+                    evalId: evalId,
+                    runId: runId,
+                    outputItemId: outputItemId);
 
                 return __httpRequest;
             }
@@ -187,7 +187,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/evals/{evalId}/runs/{runId}/output_items/{outputItemId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -221,7 +221,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/evals/{evalId}/runs/{runId}/output_items/{outputItemId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -262,7 +262,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/evals/{evalId}/runs/{runId}/output_items/{outputItemId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -310,7 +310,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/evals/{evalId}/runs/{runId}/output_items/{outputItemId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -332,7 +332,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/evals/{evalId}/runs/{runId}/output_items/{outputItemId}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

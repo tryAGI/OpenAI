@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class ResponsesApiGroupCommand
+internal static partial class ResponsesApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"responses", @"Responses endpoint commands.");
@@ -25,6 +27,7 @@ internal static class ResponsesApiGroupCommand
                          command.Subcommands.Add(ResponsesGetResponseCommandApiCommand.Create());
                          command.Subcommands.Add(ResponsesGetinputtokencountsCommandApiCommand.Create());
                          command.Subcommands.Add(ResponsesListInputItemsCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

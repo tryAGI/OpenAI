@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterOutputLogs PickLogs() => IsLogs
-            ? Logs!
+        public global::tryAGI.OpenAI.CodeInterpreterOutputLogs PickLogs() => Logs is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Logs' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CodeInterpreterOutputImage PickImage() => IsImage
-            ? Image!
+        public global::tryAGI.OpenAI.CodeInterpreterOutputImage PickImage() => Image is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Image' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsLogs && logs != null)
+            if (Logs is { } __value0 && logs != null)
             {
-                return logs(Logs!);
+                return logs(__value0);
             }
-            else if (IsImage && image != null)
+            else if (Image is { } __value1 && image != null)
             {
-                return image(Image!);
+                return image(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsLogs)
+            if (Logs is { } __value0)
             {
-                logs?.Invoke(Logs!);
+                logs?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsLogs)
+            if (Logs is { } __value0)
             {
-                logs?.Invoke(Logs!);
+                logs?.Invoke(__value0);
             }
-            else if (IsImage)
+            else if (Image is { } __value1)
             {
-                image?.Invoke(Image!);
+                image?.Invoke(__value1);
             }
         }
 

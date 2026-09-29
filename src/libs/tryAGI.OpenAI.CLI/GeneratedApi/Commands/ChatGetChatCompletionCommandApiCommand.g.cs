@@ -33,6 +33,8 @@ internal static partial class ChatGetChatCompletionCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-chat-completion", @"Get chat completion
@@ -69,6 +71,7 @@ with the `store` parameter set to `true` will be returned.
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

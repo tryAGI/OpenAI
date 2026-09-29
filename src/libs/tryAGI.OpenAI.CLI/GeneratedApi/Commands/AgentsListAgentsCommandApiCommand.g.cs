@@ -45,6 +45,8 @@ internal static partial class AgentsListAgentsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-agents", @"List agents
@@ -85,6 +87,7 @@ Lists reusable agents in the current project. See [agent configuration](https://
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

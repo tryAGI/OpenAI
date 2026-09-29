@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventError PickError() => IsError
-            ? Error!
+        public global::tryAGI.OpenAI.SessionEventError PickError() => Error is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Error' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReady PickAgentSessionEnvironmentReady() => IsAgentSessionEnvironmentReady
-            ? AgentSessionEnvironmentReady!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReady PickAgentSessionEnvironmentReady() => AgentSessionEnvironmentReady is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionEnvironmentReady' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReset PickAgentSessionEnvironmentReset() => IsAgentSessionEnvironmentReset
-            ? AgentSessionEnvironmentReset!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReset PickAgentSessionEnvironmentReset() => AgentSessionEnvironmentReset is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionEnvironmentReset' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentOutputCommandExecutionOutputDelta PickAgentOutputCommandExecutionOutputDelta() => IsAgentOutputCommandExecutionOutputDelta
-            ? AgentOutputCommandExecutionOutputDelta!
+        public global::tryAGI.OpenAI.SessionEventAgentOutputCommandExecutionOutputDelta PickAgentOutputCommandExecutionOutputDelta() => AgentOutputCommandExecutionOutputDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentOutputCommandExecutionOutputDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionCreated PickAgentSessionCreated() => IsAgentSessionCreated
-            ? AgentSessionCreated!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionCreated PickAgentSessionCreated() => AgentSessionCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnCreated PickAgentSessionTurnCreated() => IsAgentSessionTurnCreated
-            ? AgentSessionTurnCreated!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnCreated PickAgentSessionTurnCreated() => AgentSessionTurnCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnInProgress PickAgentSessionTurnInProgress() => IsAgentSessionTurnInProgress
-            ? AgentSessionTurnInProgress!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnInProgress PickAgentSessionTurnInProgress() => AgentSessionTurnInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnCompleted PickAgentSessionTurnCompleted() => IsAgentSessionTurnCompleted
-            ? AgentSessionTurnCompleted!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnCompleted PickAgentSessionTurnCompleted() => AgentSessionTurnCompleted is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnCompleted' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnFailed PickAgentSessionTurnFailed() => IsAgentSessionTurnFailed
-            ? AgentSessionTurnFailed!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnFailed PickAgentSessionTurnFailed() => AgentSessionTurnFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -380,8 +380,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnCancelled PickAgentSessionTurnCancelled() => IsAgentSessionTurnCancelled
-            ? AgentSessionTurnCancelled!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnCancelled PickAgentSessionTurnCancelled() => AgentSessionTurnCancelled is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnCancelled' but the value was {ToString()}.");
 
         /// <summary>
@@ -417,8 +417,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnItemAdded PickAgentSessionTurnItemAdded() => IsAgentSessionTurnItemAdded
-            ? AgentSessionTurnItemAdded!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnItemAdded PickAgentSessionTurnItemAdded() => AgentSessionTurnItemAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnItemAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionIdle PickAgentSessionIdle() => IsAgentSessionIdle
-            ? AgentSessionIdle!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionIdle PickAgentSessionIdle() => AgentSessionIdle is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionIdle' but the value was {ToString()}.");
 
         /// <summary>
@@ -491,8 +491,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionInProgress PickAgentSessionInProgress() => IsAgentSessionInProgress
-            ? AgentSessionInProgress!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionInProgress PickAgentSessionInProgress() => AgentSessionInProgress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionInProgress' but the value was {ToString()}.");
 
         /// <summary>
@@ -528,8 +528,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionRequiresAction PickAgentSessionRequiresAction() => IsAgentSessionRequiresAction
-            ? AgentSessionRequiresAction!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionRequiresAction PickAgentSessionRequiresAction() => AgentSessionRequiresAction is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionRequiresAction' but the value was {ToString()}.");
 
         /// <summary>
@@ -565,8 +565,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionFailed PickAgentSessionFailed() => IsAgentSessionFailed
-            ? AgentSessionFailed!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionFailed PickAgentSessionFailed() => AgentSessionFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -602,8 +602,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentPending PickAgentSessionEnvironmentPending() => IsAgentSessionEnvironmentPending
-            ? AgentSessionEnvironmentPending!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentPending PickAgentSessionEnvironmentPending() => AgentSessionEnvironmentPending is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionEnvironmentPending' but the value was {ToString()}.");
 
         /// <summary>
@@ -639,8 +639,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentConnected PickAgentSessionEnvironmentConnected() => IsAgentSessionEnvironmentConnected
-            ? AgentSessionEnvironmentConnected!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentConnected PickAgentSessionEnvironmentConnected() => AgentSessionEnvironmentConnected is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionEnvironmentConnected' but the value was {ToString()}.");
 
         /// <summary>
@@ -676,8 +676,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentDisconnected PickAgentSessionEnvironmentDisconnected() => IsAgentSessionEnvironmentDisconnected
-            ? AgentSessionEnvironmentDisconnected!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentDisconnected PickAgentSessionEnvironmentDisconnected() => AgentSessionEnvironmentDisconnected is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionEnvironmentDisconnected' but the value was {ToString()}.");
 
         /// <summary>
@@ -713,8 +713,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentFailed PickAgentSessionEnvironmentFailed() => IsAgentSessionEnvironmentFailed
-            ? AgentSessionEnvironmentFailed!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentFailed PickAgentSessionEnvironmentFailed() => AgentSessionEnvironmentFailed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionEnvironmentFailed' but the value was {ToString()}.");
 
         /// <summary>
@@ -750,8 +750,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionSubagentCreated PickAgentSessionSubagentCreated() => IsAgentSessionSubagentCreated
-            ? AgentSessionSubagentCreated!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionSubagentCreated PickAgentSessionSubagentCreated() => AgentSessionSubagentCreated is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionSubagentCreated' but the value was {ToString()}.");
 
         /// <summary>
@@ -787,8 +787,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionSubagentActive PickAgentSessionSubagentActive() => IsAgentSessionSubagentActive
-            ? AgentSessionSubagentActive!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionSubagentActive PickAgentSessionSubagentActive() => AgentSessionSubagentActive is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionSubagentActive' but the value was {ToString()}.");
 
         /// <summary>
@@ -824,8 +824,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionSubagentClosed PickAgentSessionSubagentClosed() => IsAgentSessionSubagentClosed
-            ? AgentSessionSubagentClosed!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionSubagentClosed PickAgentSessionSubagentClosed() => AgentSessionSubagentClosed is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionSubagentClosed' but the value was {ToString()}.");
 
         /// <summary>
@@ -861,8 +861,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnItemDone PickAgentSessionTurnItemDone() => IsAgentSessionTurnItemDone
-            ? AgentSessionTurnItemDone!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnItemDone PickAgentSessionTurnItemDone() => AgentSessionTurnItemDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnItemDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -898,8 +898,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnContentPartAdded PickAgentSessionTurnContentPartAdded() => IsAgentSessionTurnContentPartAdded
-            ? AgentSessionTurnContentPartAdded!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnContentPartAdded PickAgentSessionTurnContentPartAdded() => AgentSessionTurnContentPartAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnContentPartAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -935,8 +935,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnContentPartDone PickAgentSessionTurnContentPartDone() => IsAgentSessionTurnContentPartDone
-            ? AgentSessionTurnContentPartDone!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnContentPartDone PickAgentSessionTurnContentPartDone() => AgentSessionTurnContentPartDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnContentPartDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -972,8 +972,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnOutputTextDelta PickAgentSessionTurnOutputTextDelta() => IsAgentSessionTurnOutputTextDelta
-            ? AgentSessionTurnOutputTextDelta!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnOutputTextDelta PickAgentSessionTurnOutputTextDelta() => AgentSessionTurnOutputTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnOutputTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1009,8 +1009,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnOutputTextDone PickAgentSessionTurnOutputTextDone() => IsAgentSessionTurnOutputTextDone
-            ? AgentSessionTurnOutputTextDone!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnOutputTextDone PickAgentSessionTurnOutputTextDone() => AgentSessionTurnOutputTextDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnOutputTextDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1046,8 +1046,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartAdded PickAgentSessionTurnReasoningSummaryPartAdded() => IsAgentSessionTurnReasoningSummaryPartAdded
-            ? AgentSessionTurnReasoningSummaryPartAdded!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartAdded PickAgentSessionTurnReasoningSummaryPartAdded() => AgentSessionTurnReasoningSummaryPartAdded is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnReasoningSummaryPartAdded' but the value was {ToString()}.");
 
         /// <summary>
@@ -1083,8 +1083,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDone PickAgentSessionTurnReasoningSummaryPartDone() => IsAgentSessionTurnReasoningSummaryPartDone
-            ? AgentSessionTurnReasoningSummaryPartDone!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDone PickAgentSessionTurnReasoningSummaryPartDone() => AgentSessionTurnReasoningSummaryPartDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnReasoningSummaryPartDone' but the value was {ToString()}.");
 
         /// <summary>
@@ -1120,8 +1120,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDelta PickAgentSessionTurnReasoningSummaryTextDelta() => IsAgentSessionTurnReasoningSummaryTextDelta
-            ? AgentSessionTurnReasoningSummaryTextDelta!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDelta PickAgentSessionTurnReasoningSummaryTextDelta() => AgentSessionTurnReasoningSummaryTextDelta is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnReasoningSummaryTextDelta' but the value was {ToString()}.");
 
         /// <summary>
@@ -1157,8 +1157,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDone PickAgentSessionTurnReasoningSummaryTextDone() => IsAgentSessionTurnReasoningSummaryTextDone
-            ? AgentSessionTurnReasoningSummaryTextDone!
+        public global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDone PickAgentSessionTurnReasoningSummaryTextDone() => AgentSessionTurnReasoningSummaryTextDone is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionTurnReasoningSummaryTextDone' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -2070,129 +2070,129 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsError && error != null)
+            if (Error is { } __value0 && error != null)
             {
-                return error(Error!);
+                return error(__value0);
             }
-            else if (IsAgentSessionEnvironmentReady && agentSessionEnvironmentReady != null)
+            else if (AgentSessionEnvironmentReady is { } __value1 && agentSessionEnvironmentReady != null)
             {
-                return agentSessionEnvironmentReady(AgentSessionEnvironmentReady!);
+                return agentSessionEnvironmentReady(__value1);
             }
-            else if (IsAgentSessionEnvironmentReset && agentSessionEnvironmentReset != null)
+            else if (AgentSessionEnvironmentReset is { } __value2 && agentSessionEnvironmentReset != null)
             {
-                return agentSessionEnvironmentReset(AgentSessionEnvironmentReset!);
+                return agentSessionEnvironmentReset(__value2);
             }
-            else if (IsAgentOutputCommandExecutionOutputDelta && agentOutputCommandExecutionOutputDelta != null)
+            else if (AgentOutputCommandExecutionOutputDelta is { } __value3 && agentOutputCommandExecutionOutputDelta != null)
             {
-                return agentOutputCommandExecutionOutputDelta(AgentOutputCommandExecutionOutputDelta!);
+                return agentOutputCommandExecutionOutputDelta(__value3);
             }
-            else if (IsAgentSessionCreated && agentSessionCreated != null)
+            else if (AgentSessionCreated is { } __value4 && agentSessionCreated != null)
             {
-                return agentSessionCreated(AgentSessionCreated!);
+                return agentSessionCreated(__value4);
             }
-            else if (IsAgentSessionTurnCreated && agentSessionTurnCreated != null)
+            else if (AgentSessionTurnCreated is { } __value5 && agentSessionTurnCreated != null)
             {
-                return agentSessionTurnCreated(AgentSessionTurnCreated!);
+                return agentSessionTurnCreated(__value5);
             }
-            else if (IsAgentSessionTurnInProgress && agentSessionTurnInProgress != null)
+            else if (AgentSessionTurnInProgress is { } __value6 && agentSessionTurnInProgress != null)
             {
-                return agentSessionTurnInProgress(AgentSessionTurnInProgress!);
+                return agentSessionTurnInProgress(__value6);
             }
-            else if (IsAgentSessionTurnCompleted && agentSessionTurnCompleted != null)
+            else if (AgentSessionTurnCompleted is { } __value7 && agentSessionTurnCompleted != null)
             {
-                return agentSessionTurnCompleted(AgentSessionTurnCompleted!);
+                return agentSessionTurnCompleted(__value7);
             }
-            else if (IsAgentSessionTurnFailed && agentSessionTurnFailed != null)
+            else if (AgentSessionTurnFailed is { } __value8 && agentSessionTurnFailed != null)
             {
-                return agentSessionTurnFailed(AgentSessionTurnFailed!);
+                return agentSessionTurnFailed(__value8);
             }
-            else if (IsAgentSessionTurnCancelled && agentSessionTurnCancelled != null)
+            else if (AgentSessionTurnCancelled is { } __value9 && agentSessionTurnCancelled != null)
             {
-                return agentSessionTurnCancelled(AgentSessionTurnCancelled!);
+                return agentSessionTurnCancelled(__value9);
             }
-            else if (IsAgentSessionTurnItemAdded && agentSessionTurnItemAdded != null)
+            else if (AgentSessionTurnItemAdded is { } __value10 && agentSessionTurnItemAdded != null)
             {
-                return agentSessionTurnItemAdded(AgentSessionTurnItemAdded!);
+                return agentSessionTurnItemAdded(__value10);
             }
-            else if (IsAgentSessionIdle && agentSessionIdle != null)
+            else if (AgentSessionIdle is { } __value11 && agentSessionIdle != null)
             {
-                return agentSessionIdle(AgentSessionIdle!);
+                return agentSessionIdle(__value11);
             }
-            else if (IsAgentSessionInProgress && agentSessionInProgress != null)
+            else if (AgentSessionInProgress is { } __value12 && agentSessionInProgress != null)
             {
-                return agentSessionInProgress(AgentSessionInProgress!);
+                return agentSessionInProgress(__value12);
             }
-            else if (IsAgentSessionRequiresAction && agentSessionRequiresAction != null)
+            else if (AgentSessionRequiresAction is { } __value13 && agentSessionRequiresAction != null)
             {
-                return agentSessionRequiresAction(AgentSessionRequiresAction!);
+                return agentSessionRequiresAction(__value13);
             }
-            else if (IsAgentSessionFailed && agentSessionFailed != null)
+            else if (AgentSessionFailed is { } __value14 && agentSessionFailed != null)
             {
-                return agentSessionFailed(AgentSessionFailed!);
+                return agentSessionFailed(__value14);
             }
-            else if (IsAgentSessionEnvironmentPending && agentSessionEnvironmentPending != null)
+            else if (AgentSessionEnvironmentPending is { } __value15 && agentSessionEnvironmentPending != null)
             {
-                return agentSessionEnvironmentPending(AgentSessionEnvironmentPending!);
+                return agentSessionEnvironmentPending(__value15);
             }
-            else if (IsAgentSessionEnvironmentConnected && agentSessionEnvironmentConnected != null)
+            else if (AgentSessionEnvironmentConnected is { } __value16 && agentSessionEnvironmentConnected != null)
             {
-                return agentSessionEnvironmentConnected(AgentSessionEnvironmentConnected!);
+                return agentSessionEnvironmentConnected(__value16);
             }
-            else if (IsAgentSessionEnvironmentDisconnected && agentSessionEnvironmentDisconnected != null)
+            else if (AgentSessionEnvironmentDisconnected is { } __value17 && agentSessionEnvironmentDisconnected != null)
             {
-                return agentSessionEnvironmentDisconnected(AgentSessionEnvironmentDisconnected!);
+                return agentSessionEnvironmentDisconnected(__value17);
             }
-            else if (IsAgentSessionEnvironmentFailed && agentSessionEnvironmentFailed != null)
+            else if (AgentSessionEnvironmentFailed is { } __value18 && agentSessionEnvironmentFailed != null)
             {
-                return agentSessionEnvironmentFailed(AgentSessionEnvironmentFailed!);
+                return agentSessionEnvironmentFailed(__value18);
             }
-            else if (IsAgentSessionSubagentCreated && agentSessionSubagentCreated != null)
+            else if (AgentSessionSubagentCreated is { } __value19 && agentSessionSubagentCreated != null)
             {
-                return agentSessionSubagentCreated(AgentSessionSubagentCreated!);
+                return agentSessionSubagentCreated(__value19);
             }
-            else if (IsAgentSessionSubagentActive && agentSessionSubagentActive != null)
+            else if (AgentSessionSubagentActive is { } __value20 && agentSessionSubagentActive != null)
             {
-                return agentSessionSubagentActive(AgentSessionSubagentActive!);
+                return agentSessionSubagentActive(__value20);
             }
-            else if (IsAgentSessionSubagentClosed && agentSessionSubagentClosed != null)
+            else if (AgentSessionSubagentClosed is { } __value21 && agentSessionSubagentClosed != null)
             {
-                return agentSessionSubagentClosed(AgentSessionSubagentClosed!);
+                return agentSessionSubagentClosed(__value21);
             }
-            else if (IsAgentSessionTurnItemDone && agentSessionTurnItemDone != null)
+            else if (AgentSessionTurnItemDone is { } __value22 && agentSessionTurnItemDone != null)
             {
-                return agentSessionTurnItemDone(AgentSessionTurnItemDone!);
+                return agentSessionTurnItemDone(__value22);
             }
-            else if (IsAgentSessionTurnContentPartAdded && agentSessionTurnContentPartAdded != null)
+            else if (AgentSessionTurnContentPartAdded is { } __value23 && agentSessionTurnContentPartAdded != null)
             {
-                return agentSessionTurnContentPartAdded(AgentSessionTurnContentPartAdded!);
+                return agentSessionTurnContentPartAdded(__value23);
             }
-            else if (IsAgentSessionTurnContentPartDone && agentSessionTurnContentPartDone != null)
+            else if (AgentSessionTurnContentPartDone is { } __value24 && agentSessionTurnContentPartDone != null)
             {
-                return agentSessionTurnContentPartDone(AgentSessionTurnContentPartDone!);
+                return agentSessionTurnContentPartDone(__value24);
             }
-            else if (IsAgentSessionTurnOutputTextDelta && agentSessionTurnOutputTextDelta != null)
+            else if (AgentSessionTurnOutputTextDelta is { } __value25 && agentSessionTurnOutputTextDelta != null)
             {
-                return agentSessionTurnOutputTextDelta(AgentSessionTurnOutputTextDelta!);
+                return agentSessionTurnOutputTextDelta(__value25);
             }
-            else if (IsAgentSessionTurnOutputTextDone && agentSessionTurnOutputTextDone != null)
+            else if (AgentSessionTurnOutputTextDone is { } __value26 && agentSessionTurnOutputTextDone != null)
             {
-                return agentSessionTurnOutputTextDone(AgentSessionTurnOutputTextDone!);
+                return agentSessionTurnOutputTextDone(__value26);
             }
-            else if (IsAgentSessionTurnReasoningSummaryPartAdded && agentSessionTurnReasoningSummaryPartAdded != null)
+            else if (AgentSessionTurnReasoningSummaryPartAdded is { } __value27 && agentSessionTurnReasoningSummaryPartAdded != null)
             {
-                return agentSessionTurnReasoningSummaryPartAdded(AgentSessionTurnReasoningSummaryPartAdded!);
+                return agentSessionTurnReasoningSummaryPartAdded(__value27);
             }
-            else if (IsAgentSessionTurnReasoningSummaryPartDone && agentSessionTurnReasoningSummaryPartDone != null)
+            else if (AgentSessionTurnReasoningSummaryPartDone is { } __value28 && agentSessionTurnReasoningSummaryPartDone != null)
             {
-                return agentSessionTurnReasoningSummaryPartDone(AgentSessionTurnReasoningSummaryPartDone!);
+                return agentSessionTurnReasoningSummaryPartDone(__value28);
             }
-            else if (IsAgentSessionTurnReasoningSummaryTextDelta && agentSessionTurnReasoningSummaryTextDelta != null)
+            else if (AgentSessionTurnReasoningSummaryTextDelta is { } __value29 && agentSessionTurnReasoningSummaryTextDelta != null)
             {
-                return agentSessionTurnReasoningSummaryTextDelta(AgentSessionTurnReasoningSummaryTextDelta!);
+                return agentSessionTurnReasoningSummaryTextDelta(__value29);
             }
-            else if (IsAgentSessionTurnReasoningSummaryTextDone && agentSessionTurnReasoningSummaryTextDone != null)
+            else if (AgentSessionTurnReasoningSummaryTextDone is { } __value30 && agentSessionTurnReasoningSummaryTextDone != null)
             {
-                return agentSessionTurnReasoningSummaryTextDone(AgentSessionTurnReasoningSummaryTextDone!);
+                return agentSessionTurnReasoningSummaryTextDone(__value30);
             }
 
             return default(TResult);
@@ -2270,129 +2270,129 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsError)
+            if (Error is { } __value0)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value0);
             }
-            else if (IsAgentSessionEnvironmentReady)
+            else if (AgentSessionEnvironmentReady is { } __value1)
             {
-                agentSessionEnvironmentReady?.Invoke(AgentSessionEnvironmentReady!);
+                agentSessionEnvironmentReady?.Invoke(__value1);
             }
-            else if (IsAgentSessionEnvironmentReset)
+            else if (AgentSessionEnvironmentReset is { } __value2)
             {
-                agentSessionEnvironmentReset?.Invoke(AgentSessionEnvironmentReset!);
+                agentSessionEnvironmentReset?.Invoke(__value2);
             }
-            else if (IsAgentOutputCommandExecutionOutputDelta)
+            else if (AgentOutputCommandExecutionOutputDelta is { } __value3)
             {
-                agentOutputCommandExecutionOutputDelta?.Invoke(AgentOutputCommandExecutionOutputDelta!);
+                agentOutputCommandExecutionOutputDelta?.Invoke(__value3);
             }
-            else if (IsAgentSessionCreated)
+            else if (AgentSessionCreated is { } __value4)
             {
-                agentSessionCreated?.Invoke(AgentSessionCreated!);
+                agentSessionCreated?.Invoke(__value4);
             }
-            else if (IsAgentSessionTurnCreated)
+            else if (AgentSessionTurnCreated is { } __value5)
             {
-                agentSessionTurnCreated?.Invoke(AgentSessionTurnCreated!);
+                agentSessionTurnCreated?.Invoke(__value5);
             }
-            else if (IsAgentSessionTurnInProgress)
+            else if (AgentSessionTurnInProgress is { } __value6)
             {
-                agentSessionTurnInProgress?.Invoke(AgentSessionTurnInProgress!);
+                agentSessionTurnInProgress?.Invoke(__value6);
             }
-            else if (IsAgentSessionTurnCompleted)
+            else if (AgentSessionTurnCompleted is { } __value7)
             {
-                agentSessionTurnCompleted?.Invoke(AgentSessionTurnCompleted!);
+                agentSessionTurnCompleted?.Invoke(__value7);
             }
-            else if (IsAgentSessionTurnFailed)
+            else if (AgentSessionTurnFailed is { } __value8)
             {
-                agentSessionTurnFailed?.Invoke(AgentSessionTurnFailed!);
+                agentSessionTurnFailed?.Invoke(__value8);
             }
-            else if (IsAgentSessionTurnCancelled)
+            else if (AgentSessionTurnCancelled is { } __value9)
             {
-                agentSessionTurnCancelled?.Invoke(AgentSessionTurnCancelled!);
+                agentSessionTurnCancelled?.Invoke(__value9);
             }
-            else if (IsAgentSessionTurnItemAdded)
+            else if (AgentSessionTurnItemAdded is { } __value10)
             {
-                agentSessionTurnItemAdded?.Invoke(AgentSessionTurnItemAdded!);
+                agentSessionTurnItemAdded?.Invoke(__value10);
             }
-            else if (IsAgentSessionIdle)
+            else if (AgentSessionIdle is { } __value11)
             {
-                agentSessionIdle?.Invoke(AgentSessionIdle!);
+                agentSessionIdle?.Invoke(__value11);
             }
-            else if (IsAgentSessionInProgress)
+            else if (AgentSessionInProgress is { } __value12)
             {
-                agentSessionInProgress?.Invoke(AgentSessionInProgress!);
+                agentSessionInProgress?.Invoke(__value12);
             }
-            else if (IsAgentSessionRequiresAction)
+            else if (AgentSessionRequiresAction is { } __value13)
             {
-                agentSessionRequiresAction?.Invoke(AgentSessionRequiresAction!);
+                agentSessionRequiresAction?.Invoke(__value13);
             }
-            else if (IsAgentSessionFailed)
+            else if (AgentSessionFailed is { } __value14)
             {
-                agentSessionFailed?.Invoke(AgentSessionFailed!);
+                agentSessionFailed?.Invoke(__value14);
             }
-            else if (IsAgentSessionEnvironmentPending)
+            else if (AgentSessionEnvironmentPending is { } __value15)
             {
-                agentSessionEnvironmentPending?.Invoke(AgentSessionEnvironmentPending!);
+                agentSessionEnvironmentPending?.Invoke(__value15);
             }
-            else if (IsAgentSessionEnvironmentConnected)
+            else if (AgentSessionEnvironmentConnected is { } __value16)
             {
-                agentSessionEnvironmentConnected?.Invoke(AgentSessionEnvironmentConnected!);
+                agentSessionEnvironmentConnected?.Invoke(__value16);
             }
-            else if (IsAgentSessionEnvironmentDisconnected)
+            else if (AgentSessionEnvironmentDisconnected is { } __value17)
             {
-                agentSessionEnvironmentDisconnected?.Invoke(AgentSessionEnvironmentDisconnected!);
+                agentSessionEnvironmentDisconnected?.Invoke(__value17);
             }
-            else if (IsAgentSessionEnvironmentFailed)
+            else if (AgentSessionEnvironmentFailed is { } __value18)
             {
-                agentSessionEnvironmentFailed?.Invoke(AgentSessionEnvironmentFailed!);
+                agentSessionEnvironmentFailed?.Invoke(__value18);
             }
-            else if (IsAgentSessionSubagentCreated)
+            else if (AgentSessionSubagentCreated is { } __value19)
             {
-                agentSessionSubagentCreated?.Invoke(AgentSessionSubagentCreated!);
+                agentSessionSubagentCreated?.Invoke(__value19);
             }
-            else if (IsAgentSessionSubagentActive)
+            else if (AgentSessionSubagentActive is { } __value20)
             {
-                agentSessionSubagentActive?.Invoke(AgentSessionSubagentActive!);
+                agentSessionSubagentActive?.Invoke(__value20);
             }
-            else if (IsAgentSessionSubagentClosed)
+            else if (AgentSessionSubagentClosed is { } __value21)
             {
-                agentSessionSubagentClosed?.Invoke(AgentSessionSubagentClosed!);
+                agentSessionSubagentClosed?.Invoke(__value21);
             }
-            else if (IsAgentSessionTurnItemDone)
+            else if (AgentSessionTurnItemDone is { } __value22)
             {
-                agentSessionTurnItemDone?.Invoke(AgentSessionTurnItemDone!);
+                agentSessionTurnItemDone?.Invoke(__value22);
             }
-            else if (IsAgentSessionTurnContentPartAdded)
+            else if (AgentSessionTurnContentPartAdded is { } __value23)
             {
-                agentSessionTurnContentPartAdded?.Invoke(AgentSessionTurnContentPartAdded!);
+                agentSessionTurnContentPartAdded?.Invoke(__value23);
             }
-            else if (IsAgentSessionTurnContentPartDone)
+            else if (AgentSessionTurnContentPartDone is { } __value24)
             {
-                agentSessionTurnContentPartDone?.Invoke(AgentSessionTurnContentPartDone!);
+                agentSessionTurnContentPartDone?.Invoke(__value24);
             }
-            else if (IsAgentSessionTurnOutputTextDelta)
+            else if (AgentSessionTurnOutputTextDelta is { } __value25)
             {
-                agentSessionTurnOutputTextDelta?.Invoke(AgentSessionTurnOutputTextDelta!);
+                agentSessionTurnOutputTextDelta?.Invoke(__value25);
             }
-            else if (IsAgentSessionTurnOutputTextDone)
+            else if (AgentSessionTurnOutputTextDone is { } __value26)
             {
-                agentSessionTurnOutputTextDone?.Invoke(AgentSessionTurnOutputTextDone!);
+                agentSessionTurnOutputTextDone?.Invoke(__value26);
             }
-            else if (IsAgentSessionTurnReasoningSummaryPartAdded)
+            else if (AgentSessionTurnReasoningSummaryPartAdded is { } __value27)
             {
-                agentSessionTurnReasoningSummaryPartAdded?.Invoke(AgentSessionTurnReasoningSummaryPartAdded!);
+                agentSessionTurnReasoningSummaryPartAdded?.Invoke(__value27);
             }
-            else if (IsAgentSessionTurnReasoningSummaryPartDone)
+            else if (AgentSessionTurnReasoningSummaryPartDone is { } __value28)
             {
-                agentSessionTurnReasoningSummaryPartDone?.Invoke(AgentSessionTurnReasoningSummaryPartDone!);
+                agentSessionTurnReasoningSummaryPartDone?.Invoke(__value28);
             }
-            else if (IsAgentSessionTurnReasoningSummaryTextDelta)
+            else if (AgentSessionTurnReasoningSummaryTextDelta is { } __value29)
             {
-                agentSessionTurnReasoningSummaryTextDelta?.Invoke(AgentSessionTurnReasoningSummaryTextDelta!);
+                agentSessionTurnReasoningSummaryTextDelta?.Invoke(__value29);
             }
-            else if (IsAgentSessionTurnReasoningSummaryTextDone)
+            else if (AgentSessionTurnReasoningSummaryTextDone is { } __value30)
             {
-                agentSessionTurnReasoningSummaryTextDone?.Invoke(AgentSessionTurnReasoningSummaryTextDone!);
+                agentSessionTurnReasoningSummaryTextDone?.Invoke(__value30);
             }
         }
 
@@ -2438,129 +2438,129 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsError)
+            if (Error is { } __value0)
             {
-                error?.Invoke(Error!);
+                error?.Invoke(__value0);
             }
-            else if (IsAgentSessionEnvironmentReady)
+            else if (AgentSessionEnvironmentReady is { } __value1)
             {
-                agentSessionEnvironmentReady?.Invoke(AgentSessionEnvironmentReady!);
+                agentSessionEnvironmentReady?.Invoke(__value1);
             }
-            else if (IsAgentSessionEnvironmentReset)
+            else if (AgentSessionEnvironmentReset is { } __value2)
             {
-                agentSessionEnvironmentReset?.Invoke(AgentSessionEnvironmentReset!);
+                agentSessionEnvironmentReset?.Invoke(__value2);
             }
-            else if (IsAgentOutputCommandExecutionOutputDelta)
+            else if (AgentOutputCommandExecutionOutputDelta is { } __value3)
             {
-                agentOutputCommandExecutionOutputDelta?.Invoke(AgentOutputCommandExecutionOutputDelta!);
+                agentOutputCommandExecutionOutputDelta?.Invoke(__value3);
             }
-            else if (IsAgentSessionCreated)
+            else if (AgentSessionCreated is { } __value4)
             {
-                agentSessionCreated?.Invoke(AgentSessionCreated!);
+                agentSessionCreated?.Invoke(__value4);
             }
-            else if (IsAgentSessionTurnCreated)
+            else if (AgentSessionTurnCreated is { } __value5)
             {
-                agentSessionTurnCreated?.Invoke(AgentSessionTurnCreated!);
+                agentSessionTurnCreated?.Invoke(__value5);
             }
-            else if (IsAgentSessionTurnInProgress)
+            else if (AgentSessionTurnInProgress is { } __value6)
             {
-                agentSessionTurnInProgress?.Invoke(AgentSessionTurnInProgress!);
+                agentSessionTurnInProgress?.Invoke(__value6);
             }
-            else if (IsAgentSessionTurnCompleted)
+            else if (AgentSessionTurnCompleted is { } __value7)
             {
-                agentSessionTurnCompleted?.Invoke(AgentSessionTurnCompleted!);
+                agentSessionTurnCompleted?.Invoke(__value7);
             }
-            else if (IsAgentSessionTurnFailed)
+            else if (AgentSessionTurnFailed is { } __value8)
             {
-                agentSessionTurnFailed?.Invoke(AgentSessionTurnFailed!);
+                agentSessionTurnFailed?.Invoke(__value8);
             }
-            else if (IsAgentSessionTurnCancelled)
+            else if (AgentSessionTurnCancelled is { } __value9)
             {
-                agentSessionTurnCancelled?.Invoke(AgentSessionTurnCancelled!);
+                agentSessionTurnCancelled?.Invoke(__value9);
             }
-            else if (IsAgentSessionTurnItemAdded)
+            else if (AgentSessionTurnItemAdded is { } __value10)
             {
-                agentSessionTurnItemAdded?.Invoke(AgentSessionTurnItemAdded!);
+                agentSessionTurnItemAdded?.Invoke(__value10);
             }
-            else if (IsAgentSessionIdle)
+            else if (AgentSessionIdle is { } __value11)
             {
-                agentSessionIdle?.Invoke(AgentSessionIdle!);
+                agentSessionIdle?.Invoke(__value11);
             }
-            else if (IsAgentSessionInProgress)
+            else if (AgentSessionInProgress is { } __value12)
             {
-                agentSessionInProgress?.Invoke(AgentSessionInProgress!);
+                agentSessionInProgress?.Invoke(__value12);
             }
-            else if (IsAgentSessionRequiresAction)
+            else if (AgentSessionRequiresAction is { } __value13)
             {
-                agentSessionRequiresAction?.Invoke(AgentSessionRequiresAction!);
+                agentSessionRequiresAction?.Invoke(__value13);
             }
-            else if (IsAgentSessionFailed)
+            else if (AgentSessionFailed is { } __value14)
             {
-                agentSessionFailed?.Invoke(AgentSessionFailed!);
+                agentSessionFailed?.Invoke(__value14);
             }
-            else if (IsAgentSessionEnvironmentPending)
+            else if (AgentSessionEnvironmentPending is { } __value15)
             {
-                agentSessionEnvironmentPending?.Invoke(AgentSessionEnvironmentPending!);
+                agentSessionEnvironmentPending?.Invoke(__value15);
             }
-            else if (IsAgentSessionEnvironmentConnected)
+            else if (AgentSessionEnvironmentConnected is { } __value16)
             {
-                agentSessionEnvironmentConnected?.Invoke(AgentSessionEnvironmentConnected!);
+                agentSessionEnvironmentConnected?.Invoke(__value16);
             }
-            else if (IsAgentSessionEnvironmentDisconnected)
+            else if (AgentSessionEnvironmentDisconnected is { } __value17)
             {
-                agentSessionEnvironmentDisconnected?.Invoke(AgentSessionEnvironmentDisconnected!);
+                agentSessionEnvironmentDisconnected?.Invoke(__value17);
             }
-            else if (IsAgentSessionEnvironmentFailed)
+            else if (AgentSessionEnvironmentFailed is { } __value18)
             {
-                agentSessionEnvironmentFailed?.Invoke(AgentSessionEnvironmentFailed!);
+                agentSessionEnvironmentFailed?.Invoke(__value18);
             }
-            else if (IsAgentSessionSubagentCreated)
+            else if (AgentSessionSubagentCreated is { } __value19)
             {
-                agentSessionSubagentCreated?.Invoke(AgentSessionSubagentCreated!);
+                agentSessionSubagentCreated?.Invoke(__value19);
             }
-            else if (IsAgentSessionSubagentActive)
+            else if (AgentSessionSubagentActive is { } __value20)
             {
-                agentSessionSubagentActive?.Invoke(AgentSessionSubagentActive!);
+                agentSessionSubagentActive?.Invoke(__value20);
             }
-            else if (IsAgentSessionSubagentClosed)
+            else if (AgentSessionSubagentClosed is { } __value21)
             {
-                agentSessionSubagentClosed?.Invoke(AgentSessionSubagentClosed!);
+                agentSessionSubagentClosed?.Invoke(__value21);
             }
-            else if (IsAgentSessionTurnItemDone)
+            else if (AgentSessionTurnItemDone is { } __value22)
             {
-                agentSessionTurnItemDone?.Invoke(AgentSessionTurnItemDone!);
+                agentSessionTurnItemDone?.Invoke(__value22);
             }
-            else if (IsAgentSessionTurnContentPartAdded)
+            else if (AgentSessionTurnContentPartAdded is { } __value23)
             {
-                agentSessionTurnContentPartAdded?.Invoke(AgentSessionTurnContentPartAdded!);
+                agentSessionTurnContentPartAdded?.Invoke(__value23);
             }
-            else if (IsAgentSessionTurnContentPartDone)
+            else if (AgentSessionTurnContentPartDone is { } __value24)
             {
-                agentSessionTurnContentPartDone?.Invoke(AgentSessionTurnContentPartDone!);
+                agentSessionTurnContentPartDone?.Invoke(__value24);
             }
-            else if (IsAgentSessionTurnOutputTextDelta)
+            else if (AgentSessionTurnOutputTextDelta is { } __value25)
             {
-                agentSessionTurnOutputTextDelta?.Invoke(AgentSessionTurnOutputTextDelta!);
+                agentSessionTurnOutputTextDelta?.Invoke(__value25);
             }
-            else if (IsAgentSessionTurnOutputTextDone)
+            else if (AgentSessionTurnOutputTextDone is { } __value26)
             {
-                agentSessionTurnOutputTextDone?.Invoke(AgentSessionTurnOutputTextDone!);
+                agentSessionTurnOutputTextDone?.Invoke(__value26);
             }
-            else if (IsAgentSessionTurnReasoningSummaryPartAdded)
+            else if (AgentSessionTurnReasoningSummaryPartAdded is { } __value27)
             {
-                agentSessionTurnReasoningSummaryPartAdded?.Invoke(AgentSessionTurnReasoningSummaryPartAdded!);
+                agentSessionTurnReasoningSummaryPartAdded?.Invoke(__value27);
             }
-            else if (IsAgentSessionTurnReasoningSummaryPartDone)
+            else if (AgentSessionTurnReasoningSummaryPartDone is { } __value28)
             {
-                agentSessionTurnReasoningSummaryPartDone?.Invoke(AgentSessionTurnReasoningSummaryPartDone!);
+                agentSessionTurnReasoningSummaryPartDone?.Invoke(__value28);
             }
-            else if (IsAgentSessionTurnReasoningSummaryTextDelta)
+            else if (AgentSessionTurnReasoningSummaryTextDelta is { } __value29)
             {
-                agentSessionTurnReasoningSummaryTextDelta?.Invoke(AgentSessionTurnReasoningSummaryTextDelta!);
+                agentSessionTurnReasoningSummaryTextDelta?.Invoke(__value29);
             }
-            else if (IsAgentSessionTurnReasoningSummaryTextDone)
+            else if (AgentSessionTurnReasoningSummaryTextDone is { } __value30)
             {
-                agentSessionTurnReasoningSummaryTextDone?.Invoke(AgentSessionTurnReasoningSummaryTextDone!);
+                agentSessionTurnReasoningSummaryTextDone?.Invoke(__value30);
             }
         }
 

@@ -59,13 +59,13 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretBasic), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretBasic?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretBasic).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClientSecretBasic!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickClientSecretBasic(), typeInfo);
             }
             else if (value.IsClientSecretPost)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretPost), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretPost?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretPost).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClientSecretPost!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickClientSecretPost(), typeInfo);
             }
         }
     }

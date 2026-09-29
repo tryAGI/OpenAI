@@ -39,6 +39,8 @@ internal static partial class AgentsDeleteAgentSessionArtifactCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-agent-session-artifact", @"Delete an agent session artifact
@@ -68,6 +70,7 @@ Deletes an immutable session artifact without deleting its live environment file
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

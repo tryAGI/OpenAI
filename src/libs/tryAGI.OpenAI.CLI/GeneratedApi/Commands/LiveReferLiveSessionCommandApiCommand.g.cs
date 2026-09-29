@@ -20,6 +20,8 @@ internal static partial class LiveReferLiveSessionCommandApiCommand
         Required = true,
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"refer-live-session", @"Transfer call
@@ -43,6 +45,7 @@ Transfer a SIP call to another destination. Supply a nonblank target_uri for the
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

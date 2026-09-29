@@ -55,6 +55,8 @@ internal static partial class CertificatesModifyCertificateCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"modify-certificate", @"Modify certificate
@@ -105,6 +107,7 @@ Modify a certificate. Note that only the name can be modified.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

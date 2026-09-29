@@ -59,13 +59,13 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VaultCredentialNetworkingResourceUnrestricted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VaultCredentialNetworkingResourceUnrestricted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VaultCredentialNetworkingResourceUnrestricted).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Unrestricted!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickUnrestricted(), typeInfo);
             }
             else if (value.IsLimited)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VaultCredentialNetworkingResourceLimited), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VaultCredentialNetworkingResourceLimited?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VaultCredentialNetworkingResourceLimited).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Limited!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickLimited(), typeInfo);
             }
         }
     }

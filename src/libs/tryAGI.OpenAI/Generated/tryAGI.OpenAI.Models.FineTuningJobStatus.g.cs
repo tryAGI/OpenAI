@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The current status of the fine-tuning job, which can be either `validating_files`, `queued`, `running`, `succeeded`, `failed`, or `cancelled`.
+    /// The current status of the fine-tuning job, which can be `validating_files`, `queued`, `running`, `pausing`, `paused`, `succeeded`, `failed`, or `cancelled`.
     /// </summary>
     public enum FineTuningJobStatus
     {
@@ -16,6 +16,14 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         Failed,
+        /// <summary>
+        ///
+        /// </summary>
+        Paused,
+        /// <summary>
+        ///
+        /// </summary>
+        Pausing,
         /// <summary>
         ///
         /// </summary>
@@ -48,6 +56,8 @@ namespace tryAGI.OpenAI
             {
                 FineTuningJobStatus.Cancelled => "cancelled",
                 FineTuningJobStatus.Failed => "failed",
+                FineTuningJobStatus.Paused => "paused",
+                FineTuningJobStatus.Pausing => "pausing",
                 FineTuningJobStatus.Queued => "queued",
                 FineTuningJobStatus.Running => "running",
                 FineTuningJobStatus.Succeeded => "succeeded",
@@ -64,6 +74,8 @@ namespace tryAGI.OpenAI
             {
                 "cancelled" => FineTuningJobStatus.Cancelled,
                 "failed" => FineTuningJobStatus.Failed,
+                "paused" => FineTuningJobStatus.Paused,
+                "pausing" => FineTuningJobStatus.Pausing,
                 "queued" => FineTuningJobStatus.Queued,
                 "running" => FineTuningJobStatus.Running,
                 "succeeded" => FineTuningJobStatus.Succeeded,

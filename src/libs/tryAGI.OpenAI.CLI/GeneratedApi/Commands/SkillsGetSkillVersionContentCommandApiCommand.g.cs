@@ -39,6 +39,8 @@ internal static partial class SkillsGetSkillVersionContentCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-skill-version-content", @"Get Skill Version Content
@@ -68,6 +70,7 @@ Download a skill version zip bundle.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

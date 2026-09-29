@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickSpendLimitIntervalVariant1() => IsSpendLimitIntervalVariant1
-            ? SpendLimitIntervalVariant1!
+        public string PickSpendLimitIntervalVariant1() => SpendLimitIntervalVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SpendLimitIntervalVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.SpendLimitIntervalEnum PickEnum() => IsEnum
-            ? Enum!.Value
+        public global::tryAGI.OpenAI.SpendLimitIntervalEnum PickEnum() => Enum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSpendLimitIntervalVariant1 && spendLimitIntervalVariant1 != null)
+            if (SpendLimitIntervalVariant1 is { } __value0 && spendLimitIntervalVariant1 != null)
             {
-                return spendLimitIntervalVariant1(SpendLimitIntervalVariant1!);
+                return spendLimitIntervalVariant1(__value0);
             }
-            else if (IsEnum && @enum != null)
+            else if (Enum is { } __value1 && @enum != null)
             {
-                return @enum(Enum!);
+                return @enum(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSpendLimitIntervalVariant1)
+            if (SpendLimitIntervalVariant1 is { } __value0)
             {
-                spendLimitIntervalVariant1?.Invoke(SpendLimitIntervalVariant1!);
+                spendLimitIntervalVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSpendLimitIntervalVariant1)
+            if (SpendLimitIntervalVariant1 is { } __value0)
             {
-                spendLimitIntervalVariant1?.Invoke(SpendLimitIntervalVariant1!);
+                spendLimitIntervalVariant1?.Invoke(__value0);
             }
-            else if (IsEnum)
+            else if (Enum is { } __value1)
             {
-                @enum?.Invoke(Enum!);
+                @enum?.Invoke(__value1);
             }
         }
 

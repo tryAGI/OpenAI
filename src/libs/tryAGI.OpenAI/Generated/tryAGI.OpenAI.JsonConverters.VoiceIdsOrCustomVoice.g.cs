@@ -127,13 +127,13 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VoiceIdsShared), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VoiceIdsShared> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VoiceIdsShared).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Shared!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickShared(), typeInfo);
             }
             else if (value.IsVoiceIdsOrCustomVoiceVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.VoiceIdsOrCustomVoiceVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.VoiceIdsOrCustomVoiceVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickVoiceIdsOrCustomVoiceVariant2(), typeInfo);
             }
         }
     }

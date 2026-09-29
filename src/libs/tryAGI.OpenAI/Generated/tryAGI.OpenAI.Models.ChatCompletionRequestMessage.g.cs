@@ -49,8 +49,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage PickDeveloper() => IsDeveloper
-            ? Developer!
+        public global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessage PickDeveloper() => Developer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Developer' but the value was {ToString()}.");
 
         /// <summary>
@@ -88,8 +88,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage PickSystem() => IsSystem
-            ? System!
+        public global::tryAGI.OpenAI.ChatCompletionRequestSystemMessage PickSystem() => System is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'System' but the value was {ToString()}.");
 
         /// <summary>
@@ -126,8 +126,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestUserMessage PickUser() => IsUser
-            ? User!
+        public global::tryAGI.OpenAI.ChatCompletionRequestUserMessage PickUser() => User is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
 
         /// <summary>
@@ -163,8 +163,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage PickAssistant() => IsAssistant
-            ? Assistant!
+        public global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage PickAssistant() => Assistant is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
 
         /// <summary>
@@ -200,8 +200,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestToolMessage PickTool() => IsTool
-            ? Tool!
+        public global::tryAGI.OpenAI.ChatCompletionRequestToolMessage PickTool() => Tool is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Tool' but the value was {ToString()}.");
 
         /// <summary>
@@ -237,8 +237,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage PickFunction() => IsFunction
-            ? Function!
+        public global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessage PickFunction() => Function is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -450,29 +450,29 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsDeveloper && developer != null)
+            if (Developer is { } __value0 && developer != null)
             {
-                return developer(Developer!);
+                return developer(__value0);
             }
-            else if (IsSystem && system != null)
+            else if (System is { } __value1 && system != null)
             {
-                return system(System!);
+                return system(__value1);
             }
-            else if (IsUser && user != null)
+            else if (User is { } __value2 && user != null)
             {
-                return user(User!);
+                return user(__value2);
             }
-            else if (IsAssistant && assistant != null)
+            else if (Assistant is { } __value3 && assistant != null)
             {
-                return assistant(Assistant!);
+                return assistant(__value3);
             }
-            else if (IsTool && tool != null)
+            else if (Tool is { } __value4 && tool != null)
             {
-                return tool(Tool!);
+                return tool(__value4);
             }
-            else if (IsFunction && function != null)
+            else if (Function is { } __value5 && function != null)
             {
-                return function(Function!);
+                return function(__value5);
             }
 
             return default(TResult);
@@ -500,29 +500,29 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsDeveloper)
+            if (Developer is { } __value0)
             {
-                developer?.Invoke(Developer!);
+                developer?.Invoke(__value0);
             }
-            else if (IsSystem)
+            else if (System is { } __value1)
             {
-                system?.Invoke(System!);
+                system?.Invoke(__value1);
             }
-            else if (IsUser)
+            else if (User is { } __value2)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value2);
             }
-            else if (IsAssistant)
+            else if (Assistant is { } __value3)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value3);
             }
-            else if (IsTool)
+            else if (Tool is { } __value4)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value4);
             }
-            else if (IsFunction)
+            else if (Function is { } __value5)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value5);
             }
         }
 
@@ -543,29 +543,29 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsDeveloper)
+            if (Developer is { } __value0)
             {
-                developer?.Invoke(Developer!);
+                developer?.Invoke(__value0);
             }
-            else if (IsSystem)
+            else if (System is { } __value1)
             {
-                system?.Invoke(System!);
+                system?.Invoke(__value1);
             }
-            else if (IsUser)
+            else if (User is { } __value2)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value2);
             }
-            else if (IsAssistant)
+            else if (Assistant is { } __value3)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value3);
             }
-            else if (IsTool)
+            else if (Tool is { } __value4)
             {
-                tool?.Invoke(Tool!);
+                tool?.Invoke(__value4);
             }
-            else if (IsFunction)
+            else if (Function is { } __value5)
             {
-                function?.Invoke(Function!);
+                function?.Invoke(__value5);
             }
         }
 

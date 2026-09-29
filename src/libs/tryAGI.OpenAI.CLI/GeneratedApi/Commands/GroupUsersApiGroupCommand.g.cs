@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class GroupUsersApiGroupCommand
+internal static partial class GroupUsersApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"group-users", @"Group users endpoint commands.");
@@ -13,6 +15,7 @@ internal static class GroupUsersApiGroupCommand
                          command.Subcommands.Add(GroupUsersListGroupUsersCommandApiCommand.Create());
                          command.Subcommands.Add(GroupUsersRemoveGroupUserCommandApiCommand.Create());
                          command.Subcommands.Add(GroupUsersRetrieveGroupUserCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

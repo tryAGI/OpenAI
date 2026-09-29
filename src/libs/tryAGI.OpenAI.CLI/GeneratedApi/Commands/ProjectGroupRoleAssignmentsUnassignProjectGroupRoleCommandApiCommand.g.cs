@@ -45,6 +45,8 @@ internal static partial class ProjectGroupRoleAssignmentsUnassignProjectGroupRol
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"unassign-project-group-role", @"Unassign project role from group
@@ -77,6 +79,7 @@ Unassigns a project role from a group within a project.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

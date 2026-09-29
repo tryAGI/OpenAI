@@ -66,6 +66,8 @@ internal static partial class ProjectsCreateProjectServiceAccountCommandApiComma
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-project-service-account", @"Create project service account
@@ -121,6 +123,7 @@ Creates a new service account in the project. By default, this also returns an u
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

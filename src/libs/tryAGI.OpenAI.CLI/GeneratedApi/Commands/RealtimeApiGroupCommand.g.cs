@@ -4,8 +4,10 @@ using System.CommandLine;
 
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
-internal static class RealtimeApiGroupCommand
+internal static partial class RealtimeApiGroupCommand
 {
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"realtime", @"Realtime endpoint commands.");
@@ -19,6 +21,7 @@ internal static class RealtimeApiGroupCommand
                          command.Subcommands.Add(RealtimeHangupRealtimeCallCommandApiCommand.Create());
                          command.Subcommands.Add(RealtimeReferRealtimeCallCommandApiCommand.Create());
                          command.Subcommands.Add(RealtimeRejectRealtimeCallCommandApiCommand.Create());
+        CustomizeCommand(ref command);
         return command;
     }
 }

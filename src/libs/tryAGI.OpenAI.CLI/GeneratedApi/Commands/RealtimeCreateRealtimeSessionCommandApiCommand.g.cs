@@ -176,6 +176,8 @@ Truncation can be disabled entirely, which means the server will never truncate 
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-realtime-session", @"Create session
@@ -288,6 +290,7 @@ Returns the created Realtime session object, plus an ephemeral key.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

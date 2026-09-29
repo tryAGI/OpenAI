@@ -167,85 +167,85 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.MessageItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.MessageItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.MessageItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Message!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessage(), typeInfo);
             }
             else if (value.IsReasoning)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ReasoningItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ReasoningItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ReasoningItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Reasoning!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickReasoning(), typeInfo);
             }
             else if (value.IsFunctionCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.FunctionCallItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.FunctionCallItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.FunctionCallItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFunctionCall(), typeInfo);
             }
             else if (value.IsFunctionCallOutput)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.FunctionCallOutputItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.FunctionCallOutputItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.FunctionCallOutputItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionCallOutput!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFunctionCallOutput(), typeInfo);
             }
             else if (value.IsAgentMessage)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AgentMessageItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AgentMessageItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AgentMessageItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AgentMessage!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentMessage(), typeInfo);
             }
             else if (value.IsMcpCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.McpCallItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.McpCallItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.McpCallItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpCall(), typeInfo);
             }
             else if (value.IsWebSearchCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WebSearchCallItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WebSearchCallItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WebSearchCallItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WebSearchCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebSearchCall(), typeInfo);
             }
             else if (value.IsCommandExecution)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CommandExecutionItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CommandExecutionItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CommandExecutionItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CommandExecution!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCommandExecution(), typeInfo);
             }
             else if (value.IsCreateSubagentCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CreateSubagentCallItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CreateSubagentCallItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CreateSubagentCallItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CreateSubagentCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCreateSubagentCall(), typeInfo);
             }
             else if (value.IsSendSubagentInputCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SendSubagentInputCallItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SendSubagentInputCallItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SendSubagentInputCallItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SendSubagentInputCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSendSubagentInputCall(), typeInfo);
             }
             else if (value.IsResumeSubagentCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResumeSubagentCallItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResumeSubagentCallItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResumeSubagentCallItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ResumeSubagentCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResumeSubagentCall(), typeInfo);
             }
             else if (value.IsWaitForSubagentsCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.WaitForSubagentsCallItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.WaitForSubagentsCallItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.WaitForSubagentsCallItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WaitForSubagentsCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWaitForSubagentsCall(), typeInfo);
             }
             else if (value.IsInterruptSubagentCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InterruptSubagentCallItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InterruptSubagentCallItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.InterruptSubagentCallItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.InterruptSubagentCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInterruptSubagentCall(), typeInfo);
             }
             else if (value.IsCloseSubagentCall)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CloseSubagentCallItemResource), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CloseSubagentCallItemResource?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.CloseSubagentCallItemResource).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CloseSubagentCall!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCloseSubagentCall(), typeInfo);
             }
         }
     }

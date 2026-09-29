@@ -33,6 +33,8 @@ internal static partial class VaultsRetrieveVaultCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"retrieve-vault", @"Retrieve a vault
@@ -59,6 +61,7 @@ Retrieves a vault by its ID. See [vaults](https://developers.openai.com/api/docs
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

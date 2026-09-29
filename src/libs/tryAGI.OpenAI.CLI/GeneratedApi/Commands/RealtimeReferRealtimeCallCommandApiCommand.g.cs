@@ -23,6 +23,8 @@ webhook.",
         Required = true,
     };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"refer-realtime-call", @"Refer call
@@ -46,6 +48,7 @@ Transfer an active SIP call to a new destination using the SIP REFER verb.");
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

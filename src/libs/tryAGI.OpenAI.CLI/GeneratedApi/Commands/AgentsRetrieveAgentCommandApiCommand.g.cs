@@ -33,6 +33,8 @@ internal static partial class AgentsRetrieveAgentCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"retrieve-agent", @"Retrieve an agent
@@ -67,6 +69,7 @@ Retrieves a reusable agent by ID. See [agent configuration](https://developers.o
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

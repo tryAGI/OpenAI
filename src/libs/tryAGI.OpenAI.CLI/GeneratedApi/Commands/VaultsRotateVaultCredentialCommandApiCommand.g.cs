@@ -67,6 +67,8 @@ internal static partial class VaultsRotateVaultCredentialCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"rotate-vault-credential", @"Update a vault credential
@@ -122,6 +124,7 @@ Updates credential metadata or rotates its write-only secret. See [vaults](https
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

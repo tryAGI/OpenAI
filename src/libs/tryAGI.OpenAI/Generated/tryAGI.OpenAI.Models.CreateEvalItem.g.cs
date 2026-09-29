@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage PickSimpleInputMessage() => IsSimpleInputMessage
-            ? SimpleInputMessage!
+        public global::tryAGI.OpenAI.CreateEvalItemSimpleInputMessage PickSimpleInputMessage() => SimpleInputMessage is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SimpleInputMessage' but the value was {ToString()}.");
 
         /// <summary>
@@ -83,8 +83,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.EvalItem PickEvalMessageObject() => IsEvalMessageObject
-            ? EvalMessageObject!
+        public global::tryAGI.OpenAI.EvalItem PickEvalMessageObject() => EvalMessageObject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'EvalMessageObject' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -181,13 +181,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSimpleInputMessage && simpleInputMessage != null)
+            if (SimpleInputMessage is { } __value0 && simpleInputMessage != null)
             {
-                return simpleInputMessage(SimpleInputMessage!);
+                return simpleInputMessage(__value0);
             }
-            else if (IsEvalMessageObject && evalMessageObject != null)
+            else if (EvalMessageObject is { } __value1 && evalMessageObject != null)
             {
-                return evalMessageObject(EvalMessageObject!);
+                return evalMessageObject(__value1);
             }
 
             return default(TResult);
@@ -207,13 +207,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSimpleInputMessage)
+            if (SimpleInputMessage is { } __value0)
             {
-                simpleInputMessage?.Invoke(SimpleInputMessage!);
+                simpleInputMessage?.Invoke(__value0);
             }
-            else if (IsEvalMessageObject)
+            else if (EvalMessageObject is { } __value1)
             {
-                evalMessageObject?.Invoke(EvalMessageObject!);
+                evalMessageObject?.Invoke(__value1);
             }
         }
 
@@ -230,13 +230,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSimpleInputMessage)
+            if (SimpleInputMessage is { } __value0)
             {
-                simpleInputMessage?.Invoke(SimpleInputMessage!);
+                simpleInputMessage?.Invoke(__value0);
             }
-            else if (IsEvalMessageObject)
+            else if (EvalMessageObject is { } __value1)
             {
-                evalMessageObject?.Invoke(EvalMessageObject!);
+                evalMessageObject?.Invoke(__value1);
             }
         }
 

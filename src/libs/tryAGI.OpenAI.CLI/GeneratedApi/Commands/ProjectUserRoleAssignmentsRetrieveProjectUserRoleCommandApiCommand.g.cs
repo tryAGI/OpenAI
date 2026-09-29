@@ -45,6 +45,8 @@ internal static partial class ProjectUserRoleAssignmentsRetrieveProjectUserRoleC
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"retrieve-project-user-role", @"Retrieve project user role
@@ -85,6 +87,7 @@ Retrieves a project role assigned to a user.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

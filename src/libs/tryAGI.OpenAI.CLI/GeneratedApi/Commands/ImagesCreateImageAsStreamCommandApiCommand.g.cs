@@ -36,6 +36,8 @@ internal static partial class ImagesCreateImageAsStreamCommandApiCommand
           Hidden = true,
       };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-image-as-stream", @"Create image
@@ -118,6 +120,7 @@ Creates an image given a prompt. [Learn more](https://developers.openai.com/api/
                                         cancellationToken: cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

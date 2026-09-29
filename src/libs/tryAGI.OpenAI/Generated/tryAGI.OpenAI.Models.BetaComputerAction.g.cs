@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaClickParam PickClick() => IsClick
-            ? Click!
+        public global::tryAGI.OpenAI.BetaClickParam PickClick() => Click is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Click' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaDoubleClickAction PickDoubleClick() => IsDoubleClick
-            ? DoubleClick!
+        public global::tryAGI.OpenAI.BetaDoubleClickAction PickDoubleClick() => DoubleClick is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'DoubleClick' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaDragParam PickDrag() => IsDrag
-            ? Drag!
+        public global::tryAGI.OpenAI.BetaDragParam PickDrag() => Drag is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Drag' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaKeyPressAction PickKeypress() => IsKeypress
-            ? Keypress!
+        public global::tryAGI.OpenAI.BetaKeyPressAction PickKeypress() => Keypress is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Keypress' but the value was {ToString()}.");
 
         /// <summary>
@@ -195,8 +195,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaMoveParam PickMove() => IsMove
-            ? Move!
+        public global::tryAGI.OpenAI.BetaMoveParam PickMove() => Move is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Move' but the value was {ToString()}.");
 
         /// <summary>
@@ -232,8 +232,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaScreenshotParam PickScreenshot() => IsScreenshot
-            ? Screenshot!
+        public global::tryAGI.OpenAI.BetaScreenshotParam PickScreenshot() => Screenshot is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Screenshot' but the value was {ToString()}.");
 
         /// <summary>
@@ -269,8 +269,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaScrollParam PickScroll() => IsScroll
-            ? Scroll!
+        public global::tryAGI.OpenAI.BetaScrollParam PickScroll() => Scroll is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Scroll' but the value was {ToString()}.");
 
         /// <summary>
@@ -306,8 +306,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaTypeParam PickTypeValue() => IsTypeValue
-            ? TypeValue!
+        public global::tryAGI.OpenAI.BetaTypeParam PickTypeValue() => TypeValue is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TypeValue' but the value was {ToString()}.");
 
         /// <summary>
@@ -343,8 +343,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaWaitParam PickWait() => IsWait
-            ? Wait!
+        public global::tryAGI.OpenAI.BetaWaitParam PickWait() => Wait is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Wait' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -640,41 +640,41 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsClick && click != null)
+            if (Click is { } __value0 && click != null)
             {
-                return click(Click!);
+                return click(__value0);
             }
-            else if (IsDoubleClick && doubleClick != null)
+            else if (DoubleClick is { } __value1 && doubleClick != null)
             {
-                return doubleClick(DoubleClick!);
+                return doubleClick(__value1);
             }
-            else if (IsDrag && drag != null)
+            else if (Drag is { } __value2 && drag != null)
             {
-                return drag(Drag!);
+                return drag(__value2);
             }
-            else if (IsKeypress && keypress != null)
+            else if (Keypress is { } __value3 && keypress != null)
             {
-                return keypress(Keypress!);
+                return keypress(__value3);
             }
-            else if (IsMove && move != null)
+            else if (Move is { } __value4 && move != null)
             {
-                return move(Move!);
+                return move(__value4);
             }
-            else if (IsScreenshot && screenshot != null)
+            else if (Screenshot is { } __value5 && screenshot != null)
             {
-                return screenshot(Screenshot!);
+                return screenshot(__value5);
             }
-            else if (IsScroll && scroll != null)
+            else if (Scroll is { } __value6 && scroll != null)
             {
-                return scroll(Scroll!);
+                return scroll(__value6);
             }
-            else if (IsTypeValue && typeValue != null)
+            else if (TypeValue is { } __value7 && typeValue != null)
             {
-                return typeValue(TypeValue!);
+                return typeValue(__value7);
             }
-            else if (IsWait && wait != null)
+            else if (Wait is { } __value8 && wait != null)
             {
-                return wait(Wait!);
+                return wait(__value8);
             }
 
             return default(TResult);
@@ -708,41 +708,41 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsClick)
+            if (Click is { } __value0)
             {
-                click?.Invoke(Click!);
+                click?.Invoke(__value0);
             }
-            else if (IsDoubleClick)
+            else if (DoubleClick is { } __value1)
             {
-                doubleClick?.Invoke(DoubleClick!);
+                doubleClick?.Invoke(__value1);
             }
-            else if (IsDrag)
+            else if (Drag is { } __value2)
             {
-                drag?.Invoke(Drag!);
+                drag?.Invoke(__value2);
             }
-            else if (IsKeypress)
+            else if (Keypress is { } __value3)
             {
-                keypress?.Invoke(Keypress!);
+                keypress?.Invoke(__value3);
             }
-            else if (IsMove)
+            else if (Move is { } __value4)
             {
-                move?.Invoke(Move!);
+                move?.Invoke(__value4);
             }
-            else if (IsScreenshot)
+            else if (Screenshot is { } __value5)
             {
-                screenshot?.Invoke(Screenshot!);
+                screenshot?.Invoke(__value5);
             }
-            else if (IsScroll)
+            else if (Scroll is { } __value6)
             {
-                scroll?.Invoke(Scroll!);
+                scroll?.Invoke(__value6);
             }
-            else if (IsTypeValue)
+            else if (TypeValue is { } __value7)
             {
-                typeValue?.Invoke(TypeValue!);
+                typeValue?.Invoke(__value7);
             }
-            else if (IsWait)
+            else if (Wait is { } __value8)
             {
-                wait?.Invoke(Wait!);
+                wait?.Invoke(__value8);
             }
         }
 
@@ -766,41 +766,41 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsClick)
+            if (Click is { } __value0)
             {
-                click?.Invoke(Click!);
+                click?.Invoke(__value0);
             }
-            else if (IsDoubleClick)
+            else if (DoubleClick is { } __value1)
             {
-                doubleClick?.Invoke(DoubleClick!);
+                doubleClick?.Invoke(__value1);
             }
-            else if (IsDrag)
+            else if (Drag is { } __value2)
             {
-                drag?.Invoke(Drag!);
+                drag?.Invoke(__value2);
             }
-            else if (IsKeypress)
+            else if (Keypress is { } __value3)
             {
-                keypress?.Invoke(Keypress!);
+                keypress?.Invoke(__value3);
             }
-            else if (IsMove)
+            else if (Move is { } __value4)
             {
-                move?.Invoke(Move!);
+                move?.Invoke(__value4);
             }
-            else if (IsScreenshot)
+            else if (Screenshot is { } __value5)
             {
-                screenshot?.Invoke(Screenshot!);
+                screenshot?.Invoke(__value5);
             }
-            else if (IsScroll)
+            else if (Scroll is { } __value6)
             {
-                scroll?.Invoke(Scroll!);
+                scroll?.Invoke(__value6);
             }
-            else if (IsTypeValue)
+            else if (TypeValue is { } __value7)
             {
-                typeValue?.Invoke(TypeValue!);
+                typeValue?.Invoke(__value7);
             }
-            else if (IsWait)
+            else if (Wait is { } __value8)
             {
-                wait?.Invoke(Wait!);
+                wait?.Invoke(__value8);
             }
         }
 

@@ -49,8 +49,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickTextInput() => IsTextInput
-            ? TextInput!
+        public string PickTextInput() => TextInput is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextInput' but the value was {ToString()}.");
 
         /// <summary>
@@ -87,8 +87,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputItem> PickInputItemList() => IsInputItemList
-            ? InputItemList!
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputItem> PickInputItemList() => InputItemList is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputItemList' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -162,13 +162,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextInput && textInput != null)
+            if (TextInput is { } __value0 && textInput != null)
             {
-                return textInput(TextInput!);
+                return textInput(__value0);
             }
-            else if (IsInputItemList && inputItemList != null)
+            else if (InputItemList is { } __value1 && inputItemList != null)
             {
-                return inputItemList(InputItemList!);
+                return inputItemList(__value1);
             }
 
             return default(TResult);
@@ -188,13 +188,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextInput)
+            if (TextInput is { } __value0)
             {
-                textInput?.Invoke(TextInput!);
+                textInput?.Invoke(__value0);
             }
-            else if (IsInputItemList)
+            else if (InputItemList is { } __value1)
             {
-                inputItemList?.Invoke(InputItemList!);
+                inputItemList?.Invoke(__value1);
             }
         }
 
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsTextInput)
+            if (TextInput is { } __value0)
             {
-                textInput?.Invoke(TextInput!);
+                textInput?.Invoke(__value0);
             }
-            else if (IsInputItemList)
+            else if (InputItemList is { } __value1)
             {
-                inputItemList?.Invoke(InputItemList!);
+                inputItemList?.Invoke(__value1);
             }
         }
 

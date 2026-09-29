@@ -37,8 +37,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchToolCallActionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.WebSearchToolCallAction Action { get; set; }
+        public global::tryAGI.OpenAI.WebSearchToolCallAction? Action { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,12 +54,12 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// The status of the web search tool call.
         /// </param>
+        /// <param name="type">
+        /// The type of the web search tool call. Always `web_search_call`.
+        /// </param>
         /// <param name="action">
         /// An object describing the specific action taken in this web search call.<br/>
         /// Includes details on how the model used the web (search, open_page, find_in_page).
-        /// </param>
-        /// <param name="type">
-        /// The type of the web search tool call. Always `web_search_call`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -68,8 +67,8 @@ namespace tryAGI.OpenAI
         public WebSearchToolCall(
             string id,
             global::tryAGI.OpenAI.WebSearchCallStatus status,
-            global::tryAGI.OpenAI.WebSearchToolCallAction action,
-            global::tryAGI.OpenAI.WebSearchToolCallType type)
+            global::tryAGI.OpenAI.WebSearchToolCallType type,
+            global::tryAGI.OpenAI.WebSearchToolCallAction? action)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;

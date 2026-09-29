@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveClientDelegationParam PickClient() => IsClient
-            ? Client!
+        public global::tryAGI.OpenAI.LiveClientDelegationParam PickClient() => Client is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Client' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveResponsesDelegationUpdateParam PickResponses() => IsResponses
-            ? Responses!
+        public global::tryAGI.OpenAI.LiveResponsesDelegationUpdateParam PickResponses() => Responses is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Responses' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsClient && client != null)
+            if (Client is { } __value0 && client != null)
             {
-                return client(Client!);
+                return client(__value0);
             }
-            else if (IsResponses && responses != null)
+            else if (Responses is { } __value1 && responses != null)
             {
-                return responses(Responses!);
+                return responses(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsClient)
+            if (Client is { } __value0)
             {
-                client?.Invoke(Client!);
+                client?.Invoke(__value0);
             }
-            else if (IsResponses)
+            else if (Responses is { } __value1)
             {
-                responses?.Invoke(Responses!);
+                responses?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsClient)
+            if (Client is { } __value0)
             {
-                client?.Invoke(Client!);
+                client?.Invoke(__value0);
             }
-            else if (IsResponses)
+            else if (Responses is { } __value1)
             {
-                responses?.Invoke(Responses!);
+                responses?.Invoke(__value1);
             }
         }
 

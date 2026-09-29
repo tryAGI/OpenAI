@@ -56,6 +56,8 @@ internal static partial class LiveForkLiveSessionCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"fork-live-session", @"Fork session
@@ -120,6 +122,7 @@ Fork a stored Live session onto a new WebRTC connection.");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

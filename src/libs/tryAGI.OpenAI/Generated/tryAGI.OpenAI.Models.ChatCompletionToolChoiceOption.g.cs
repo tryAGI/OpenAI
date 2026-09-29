@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum PickToolChoiceMode() => IsToolChoiceMode
-            ? ToolChoiceMode!.Value
+        public global::tryAGI.OpenAI.ChatCompletionToolChoiceOptionEnum PickToolChoiceMode() => ToolChoiceMode is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ToolChoiceMode' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice PickAllowedTools() => IsAllowedTools
-            ? AllowedTools!
+        public global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoice PickAllowedTools() => AllowedTools is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AllowedTools' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoice PickFunctionToolChoice() => IsFunctionToolChoice
-            ? FunctionToolChoice!
+        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoice PickFunctionToolChoice() => FunctionToolChoice is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'FunctionToolChoice' but the value was {ToString()}.");
 
         /// <summary>
@@ -158,8 +158,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom PickCustomToolChoice() => IsCustomToolChoice
-            ? CustomToolChoice!
+        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceCustom PickCustomToolChoice() => CustomToolChoice is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CustomToolChoice' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -312,21 +312,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsToolChoiceMode && toolChoiceMode != null)
+            if (ToolChoiceMode is { } __value0 && toolChoiceMode != null)
             {
-                return toolChoiceMode(ToolChoiceMode!);
+                return toolChoiceMode(__value0);
             }
-            else if (IsAllowedTools && allowedTools != null)
+            else if (AllowedTools is { } __value1 && allowedTools != null)
             {
-                return allowedTools(AllowedTools!);
+                return allowedTools(__value1);
             }
-            else if (IsFunctionToolChoice && functionToolChoice != null)
+            else if (FunctionToolChoice is { } __value2 && functionToolChoice != null)
             {
-                return functionToolChoice(FunctionToolChoice!);
+                return functionToolChoice(__value2);
             }
-            else if (IsCustomToolChoice && customToolChoice != null)
+            else if (CustomToolChoice is { } __value3 && customToolChoice != null)
             {
-                return customToolChoice(CustomToolChoice!);
+                return customToolChoice(__value3);
             }
 
             return default(TResult);
@@ -350,21 +350,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsToolChoiceMode)
+            if (ToolChoiceMode is { } __value0)
             {
-                toolChoiceMode?.Invoke(ToolChoiceMode!);
+                toolChoiceMode?.Invoke(__value0);
             }
-            else if (IsAllowedTools)
+            else if (AllowedTools is { } __value1)
             {
-                allowedTools?.Invoke(AllowedTools!);
+                allowedTools?.Invoke(__value1);
             }
-            else if (IsFunctionToolChoice)
+            else if (FunctionToolChoice is { } __value2)
             {
-                functionToolChoice?.Invoke(FunctionToolChoice!);
+                functionToolChoice?.Invoke(__value2);
             }
-            else if (IsCustomToolChoice)
+            else if (CustomToolChoice is { } __value3)
             {
-                customToolChoice?.Invoke(CustomToolChoice!);
+                customToolChoice?.Invoke(__value3);
             }
         }
 
@@ -383,21 +383,21 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsToolChoiceMode)
+            if (ToolChoiceMode is { } __value0)
             {
-                toolChoiceMode?.Invoke(ToolChoiceMode!);
+                toolChoiceMode?.Invoke(__value0);
             }
-            else if (IsAllowedTools)
+            else if (AllowedTools is { } __value1)
             {
-                allowedTools?.Invoke(AllowedTools!);
+                allowedTools?.Invoke(__value1);
             }
-            else if (IsFunctionToolChoice)
+            else if (FunctionToolChoice is { } __value2)
             {
-                functionToolChoice?.Invoke(FunctionToolChoice!);
+                functionToolChoice?.Invoke(__value2);
             }
-            else if (IsCustomToolChoice)
+            else if (CustomToolChoice is { } __value3)
             {
-                customToolChoice?.Invoke(CustomToolChoice!);
+                customToolChoice?.Invoke(__value3);
             }
         }
 

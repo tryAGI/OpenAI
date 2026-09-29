@@ -36,6 +36,11 @@ namespace tryAGI.OpenAI
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
+        partial void ProcessDeleteContainerResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
         /// <summary>
         /// Delete a container<br/>
         /// Delete Container
@@ -44,16 +49,18 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task DeleteContainerAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.DeleteContainerResponse> DeleteContainerAsync(
             string containerId,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            await DeleteContainerAsResponseAsync(
+            var __response = await DeleteContainerAsResponseAsync(
                 containerId: containerId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
+
+            return __response.Body;
         }
         /// <summary>
         /// Delete a container<br/>
@@ -63,7 +70,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse> DeleteContainerAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.DeleteContainerResponse>> DeleteContainerAsResponseAsync(
             string containerId,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -140,7 +147,7 @@ namespace tryAGI.OpenAI
                 PrepareDeleteContainerRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    containerId: containerId!);
+                    containerId: containerId);
 
                 return __httpRequest;
             }
@@ -162,7 +169,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/containers/{containerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -196,7 +203,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/containers/{containerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -237,7 +244,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/containers/{containerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -285,7 +292,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/containers/{containerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -307,7 +314,7 @@ namespace tryAGI.OpenAI
                                 pathTemplate: "$\"/containers/{containerId}\"",
                                 httpMethod: "DELETE",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -406,15 +413,22 @@ namespace tryAGI.OpenAI
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
+                                ProcessDeleteContainerResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
 
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                return new global::tryAGI.OpenAI.AutoSDKHttpResponse(
+                                    var __value = global::tryAGI.OpenAI.DeleteContainerResponse.FromJson(__content, JsonSerializerContext) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.DeleteContainerResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri);
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -434,10 +448,19 @@ namespace tryAGI.OpenAI
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse(
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+
+                                    var __value = await global::tryAGI.OpenAI.DeleteContainerResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.DeleteContainerResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri);
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

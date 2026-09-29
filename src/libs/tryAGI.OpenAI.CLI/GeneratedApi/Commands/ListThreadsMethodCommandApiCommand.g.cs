@@ -57,6 +57,8 @@ internal static partial class ListThreadsMethodCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-threads-method", @"List ChatKit threads
@@ -103,6 +105,7 @@ List ChatKit threads with optional pagination and user filters.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

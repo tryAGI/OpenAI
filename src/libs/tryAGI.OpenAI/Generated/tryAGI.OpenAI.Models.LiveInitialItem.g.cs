@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveInitialDeveloperMessageItemParam PickDeveloper() => IsDeveloper
-            ? Developer!
+        public global::tryAGI.OpenAI.LiveInitialDeveloperMessageItemParam PickDeveloper() => Developer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Developer' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveInitialUserMessageItemParam PickUser() => IsUser
-            ? User!
+        public global::tryAGI.OpenAI.LiveInitialUserMessageItemParam PickUser() => User is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'User' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParam PickAssistant() => IsAssistant
-            ? Assistant!
+        public global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParam PickAssistant() => Assistant is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Assistant' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsDeveloper && developer != null)
+            if (Developer is { } __value0 && developer != null)
             {
-                return developer(Developer!);
+                return developer(__value0);
             }
-            else if (IsUser && user != null)
+            else if (User is { } __value1 && user != null)
             {
-                return user(User!);
+                return user(__value1);
             }
-            else if (IsAssistant && assistant != null)
+            else if (Assistant is { } __value2 && assistant != null)
             {
-                return assistant(Assistant!);
+                return assistant(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsDeveloper)
+            if (Developer is { } __value0)
             {
-                developer?.Invoke(Developer!);
+                developer?.Invoke(__value0);
             }
-            else if (IsUser)
+            else if (User is { } __value1)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value1);
             }
-            else if (IsAssistant)
+            else if (Assistant is { } __value2)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsDeveloper)
+            if (Developer is { } __value0)
             {
-                developer?.Invoke(Developer!);
+                developer?.Invoke(__value0);
             }
-            else if (IsUser)
+            else if (User is { } __value1)
             {
-                user?.Invoke(User!);
+                user?.Invoke(__value1);
             }
-            else if (IsAssistant)
+            else if (Assistant is { } __value2)
             {
-                assistant?.Invoke(Assistant!);
+                assistant?.Invoke(__value2);
             }
         }
 

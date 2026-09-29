@@ -33,6 +33,8 @@ internal static partial class InvitesDeleteInviteCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"delete-invite", @"Delete invite
@@ -59,6 +61,7 @@ Delete an invite. If the invite has already been accepted, it cannot be deleted.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

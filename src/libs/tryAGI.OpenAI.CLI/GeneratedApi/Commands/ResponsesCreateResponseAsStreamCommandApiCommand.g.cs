@@ -25,6 +25,8 @@ internal static partial class ResponsesCreateResponseAsStreamCommandApiCommand
           Hidden = true,
       };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-response-as-stream", @"Create a model response
@@ -80,6 +82,7 @@ as input for the model's response.
                                         cancellationToken: cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

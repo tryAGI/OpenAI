@@ -61,6 +61,8 @@ internal static partial class AgentsUpdateAgentSessionCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"update-agent-session", @"Update an agent session
@@ -113,6 +115,7 @@ Updates session metadata, model, reasoning effort, or service tier. Model settin
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

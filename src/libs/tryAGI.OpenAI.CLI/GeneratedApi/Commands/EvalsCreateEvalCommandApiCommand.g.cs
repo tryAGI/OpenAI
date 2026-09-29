@@ -69,6 +69,8 @@ internal static partial class EvalsCreateEvalCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-eval", @"Create eval
@@ -135,6 +137,7 @@ For more information, see the [Evals guide](https://developers.openai.com/api/do
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

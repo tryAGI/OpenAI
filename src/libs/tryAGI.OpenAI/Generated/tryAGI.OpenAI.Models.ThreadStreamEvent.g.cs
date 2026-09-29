@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ThreadStreamEventVariant1 PickThreadStreamEventVariant1() => IsThreadStreamEventVariant1
-            ? ThreadStreamEventVariant1!
+        public global::tryAGI.OpenAI.ThreadStreamEventVariant1 PickThreadStreamEventVariant1() => ThreadStreamEventVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ThreadStreamEventVariant1' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -102,9 +102,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsThreadStreamEventVariant1 && threadStreamEventVariant1 != null)
+            if (ThreadStreamEventVariant1 is { } __value0 && threadStreamEventVariant1 != null)
             {
-                return threadStreamEventVariant1(ThreadStreamEventVariant1!);
+                return threadStreamEventVariant1(__value0);
             }
 
             return default(TResult);
@@ -122,9 +122,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsThreadStreamEventVariant1)
+            if (ThreadStreamEventVariant1 is { } __value0)
             {
-                threadStreamEventVariant1?.Invoke(ThreadStreamEventVariant1!);
+                threadStreamEventVariant1?.Invoke(__value0);
             }
         }
 
@@ -140,9 +140,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsThreadStreamEventVariant1)
+            if (ThreadStreamEventVariant1 is { } __value0)
             {
-                threadStreamEventVariant1?.Invoke(ThreadStreamEventVariant1!);
+                threadStreamEventVariant1?.Invoke(__value0);
             }
         }
 

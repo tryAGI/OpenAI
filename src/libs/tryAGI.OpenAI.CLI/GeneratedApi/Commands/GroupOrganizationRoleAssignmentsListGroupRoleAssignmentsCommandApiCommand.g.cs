@@ -51,6 +51,8 @@ internal static partial class GroupOrganizationRoleAssignmentsListGroupRoleAssig
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-group-role-assignments", @"List group organization role assignments
@@ -94,6 +96,7 @@ Lists the organization roles assigned to a group within the organization.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

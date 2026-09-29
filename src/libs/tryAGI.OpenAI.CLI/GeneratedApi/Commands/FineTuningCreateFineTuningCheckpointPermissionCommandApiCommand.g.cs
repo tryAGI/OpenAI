@@ -41,6 +41,8 @@ internal static partial class FineTuningCreateFineTuningCheckpointPermissionComm
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-fine-tuning-checkpoint-permission", @"Create checkpoint permissions
@@ -81,6 +83,7 @@ This enables organization owners to share fine-tuned models with other projects 
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

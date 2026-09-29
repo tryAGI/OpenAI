@@ -51,6 +51,8 @@ internal static partial class UserOrganizationRoleAssignmentsListUserRoleAssignm
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-user-role-assignments", @"List user organization role assignments
@@ -94,6 +96,7 @@ Lists the organization roles assigned to a user within the organization.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

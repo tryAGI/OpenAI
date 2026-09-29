@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveSessionAudioFormatPCMParam PickAudioPcm() => IsAudioPcm
-            ? AudioPcm!
+        public global::tryAGI.OpenAI.LiveSessionAudioFormatPCMParam PickAudioPcm() => AudioPcm is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AudioPcm' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveSessionAudioFormatPCMUParam PickAudioPcmu() => IsAudioPcmu
-            ? AudioPcmu!
+        public global::tryAGI.OpenAI.LiveSessionAudioFormatPCMUParam PickAudioPcmu() => AudioPcmu is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AudioPcmu' but the value was {ToString()}.");
 
         /// <summary>
@@ -121,8 +121,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveSessionAudioFormatPCMAParam PickAudioPcma() => IsAudioPcma
-            ? AudioPcma!
+        public global::tryAGI.OpenAI.LiveSessionAudioFormatPCMAParam PickAudioPcma() => AudioPcma is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AudioPcma' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -250,17 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAudioPcm && audioPcm != null)
+            if (AudioPcm is { } __value0 && audioPcm != null)
             {
-                return audioPcm(AudioPcm!);
+                return audioPcm(__value0);
             }
-            else if (IsAudioPcmu && audioPcmu != null)
+            else if (AudioPcmu is { } __value1 && audioPcmu != null)
             {
-                return audioPcmu(AudioPcmu!);
+                return audioPcmu(__value1);
             }
-            else if (IsAudioPcma && audioPcma != null)
+            else if (AudioPcma is { } __value2 && audioPcma != null)
             {
-                return audioPcma(AudioPcma!);
+                return audioPcma(__value2);
             }
 
             return default(TResult);
@@ -282,17 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAudioPcm)
+            if (AudioPcm is { } __value0)
             {
-                audioPcm?.Invoke(AudioPcm!);
+                audioPcm?.Invoke(__value0);
             }
-            else if (IsAudioPcmu)
+            else if (AudioPcmu is { } __value1)
             {
-                audioPcmu?.Invoke(AudioPcmu!);
+                audioPcmu?.Invoke(__value1);
             }
-            else if (IsAudioPcma)
+            else if (AudioPcma is { } __value2)
             {
-                audioPcma?.Invoke(AudioPcma!);
+                audioPcma?.Invoke(__value2);
             }
         }
 
@@ -310,17 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsAudioPcm)
+            if (AudioPcm is { } __value0)
             {
-                audioPcm?.Invoke(AudioPcm!);
+                audioPcm?.Invoke(__value0);
             }
-            else if (IsAudioPcmu)
+            else if (AudioPcmu is { } __value1)
             {
-                audioPcmu?.Invoke(AudioPcmu!);
+                audioPcmu?.Invoke(__value1);
             }
-            else if (IsAudioPcma)
+            else if (AudioPcma is { } __value2)
             {
-                audioPcma?.Invoke(AudioPcma!);
+                audioPcma?.Invoke(__value2);
             }
         }
 

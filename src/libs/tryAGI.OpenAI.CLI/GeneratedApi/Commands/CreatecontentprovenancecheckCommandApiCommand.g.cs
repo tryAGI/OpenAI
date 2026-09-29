@@ -41,6 +41,8 @@ internal static partial class CreatecontentprovenancecheckCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"createcontentprovenancecheck", @"Create content provenance check
@@ -80,6 +82,7 @@ If `not_detected`, it means the tool did not find supported signals in the uploa
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

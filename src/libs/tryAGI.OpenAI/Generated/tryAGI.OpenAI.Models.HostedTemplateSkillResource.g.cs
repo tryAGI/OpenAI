@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.HostedTemplateSkillResourceSkillReference PickSkillReference() => IsSkillReference
-            ? SkillReference!
+        public global::tryAGI.OpenAI.HostedTemplateSkillResourceSkillReference PickSkillReference() => SkillReference is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SkillReference' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.HostedTemplateSkillResourceInline PickInline() => IsInline
-            ? Inline!
+        public global::tryAGI.OpenAI.HostedTemplateSkillResourceInline PickInline() => Inline is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Inline' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSkillReference && skillReference != null)
+            if (SkillReference is { } __value0 && skillReference != null)
             {
-                return skillReference(SkillReference!);
+                return skillReference(__value0);
             }
-            else if (IsInline && inline != null)
+            else if (Inline is { } __value1 && inline != null)
             {
-                return inline(Inline!);
+                return inline(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSkillReference)
+            if (SkillReference is { } __value0)
             {
-                skillReference?.Invoke(SkillReference!);
+                skillReference?.Invoke(__value0);
             }
-            else if (IsInline)
+            else if (Inline is { } __value1)
             {
-                inline?.Invoke(Inline!);
+                inline?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsSkillReference)
+            if (SkillReference is { } __value0)
             {
-                skillReference?.Invoke(SkillReference!);
+                skillReference?.Invoke(__value0);
             }
-            else if (IsInline)
+            else if (Inline is { } __value1)
             {
-                inline?.Invoke(Inline!);
+                inline?.Invoke(__value1);
             }
         }
 

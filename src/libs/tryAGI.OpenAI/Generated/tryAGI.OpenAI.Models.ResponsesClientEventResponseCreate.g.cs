@@ -48,8 +48,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1 PickResponsesClientEventResponseCreateVariant1() => IsResponsesClientEventResponseCreateVariant1
-            ? ResponsesClientEventResponseCreateVariant1!
+        public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1 PickResponsesClientEventResponseCreateVariant1() => ResponsesClientEventResponseCreateVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponsesClientEventResponseCreateVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -85,8 +85,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CreateResponse PickCreateResponse() => IsCreateResponse
-            ? CreateResponse!.Value
+        public global::tryAGI.OpenAI.CreateResponse PickCreateResponse() => CreateResponse is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'CreateResponse' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -183,13 +183,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponsesClientEventResponseCreateVariant1 && responsesClientEventResponseCreateVariant1 != null)
+            if (ResponsesClientEventResponseCreateVariant1 is { } __value0 && responsesClientEventResponseCreateVariant1 != null)
             {
-                return responsesClientEventResponseCreateVariant1(ResponsesClientEventResponseCreateVariant1!);
+                return responsesClientEventResponseCreateVariant1(__value0);
             }
-            else if (IsCreateResponse && createResponse != null)
+            else if (CreateResponse is { } __value1 && createResponse != null)
             {
-                return createResponse(CreateResponse!);
+                return createResponse(__value1);
             }
 
             return default(TResult);
@@ -209,13 +209,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponsesClientEventResponseCreateVariant1)
+            if (ResponsesClientEventResponseCreateVariant1 is { } __value0)
             {
-                responsesClientEventResponseCreateVariant1?.Invoke(ResponsesClientEventResponseCreateVariant1!);
+                responsesClientEventResponseCreateVariant1?.Invoke(__value0);
             }
-            else if (IsCreateResponse)
+            else if (CreateResponse is { } __value1)
             {
-                createResponse?.Invoke(CreateResponse!);
+                createResponse?.Invoke(__value1);
             }
         }
 
@@ -232,13 +232,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponsesClientEventResponseCreateVariant1)
+            if (ResponsesClientEventResponseCreateVariant1 is { } __value0)
             {
-                responsesClientEventResponseCreateVariant1?.Invoke(ResponsesClientEventResponseCreateVariant1!);
+                responsesClientEventResponseCreateVariant1?.Invoke(__value0);
             }
-            else if (IsCreateResponse)
+            else if (CreateResponse is { } __value1)
             {
-                createResponse?.Invoke(CreateResponse!);
+                createResponse?.Invoke(__value1);
             }
         }
 

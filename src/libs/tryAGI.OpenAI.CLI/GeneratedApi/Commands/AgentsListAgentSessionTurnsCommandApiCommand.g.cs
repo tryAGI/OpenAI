@@ -51,6 +51,8 @@ internal static partial class AgentsListAgentSessionTurnsCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"list-agent-session-turns", @"List agent session turns
@@ -94,6 +96,7 @@ Lists turns by creation time and turn ID. The after cursor is exclusive in the s
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

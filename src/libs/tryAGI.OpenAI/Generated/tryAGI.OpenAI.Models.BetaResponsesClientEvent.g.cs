@@ -48,8 +48,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate PickResponseCreate() => IsResponseCreate
-            ? ResponseCreate!.Value
+        public global::tryAGI.OpenAI.BetaResponsesClientEventResponseCreate PickResponseCreate() => ResponseCreate is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseCreate' but the value was {ToString()}.");
 
         /// <summary>
@@ -108,8 +108,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponseSteerEvent PickResponseSteer() => IsResponseSteer
-            ? ResponseSteer!
+        public global::tryAGI.OpenAI.BetaResponseSteerEvent PickResponseSteer() => ResponseSteer is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseSteer' but the value was {ToString()}.");
 
         /// <summary>
@@ -147,8 +147,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaResponseInjectEvent PickResponseInject() => IsResponseInject
-            ? ResponseInject!
+        public global::tryAGI.OpenAI.BetaResponseInjectEvent PickResponseInject() => ResponseInject is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ResponseInject' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -273,17 +273,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponseCreate && responseCreate != null)
+            if (ResponseCreate is { } __value0 && responseCreate != null)
             {
-                return responseCreate(ResponseCreate!);
+                return responseCreate(__value0);
             }
-            else if (IsResponseSteer && responseSteer != null)
+            else if (ResponseSteer is { } __value1 && responseSteer != null)
             {
-                return responseSteer(ResponseSteer!);
+                return responseSteer(__value1);
             }
-            else if (IsResponseInject && responseInject != null)
+            else if (ResponseInject is { } __value2 && responseInject != null)
             {
-                return responseInject(ResponseInject!);
+                return responseInject(__value2);
             }
 
             return default(TResult);
@@ -305,17 +305,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponseCreate)
+            if (ResponseCreate is { } __value0)
             {
-                responseCreate?.Invoke(ResponseCreate!);
+                responseCreate?.Invoke(__value0);
             }
-            else if (IsResponseSteer)
+            else if (ResponseSteer is { } __value1)
             {
-                responseSteer?.Invoke(ResponseSteer!);
+                responseSteer?.Invoke(__value1);
             }
-            else if (IsResponseInject)
+            else if (ResponseInject is { } __value2)
             {
-                responseInject?.Invoke(ResponseInject!);
+                responseInject?.Invoke(__value2);
             }
         }
 
@@ -333,17 +333,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsResponseCreate)
+            if (ResponseCreate is { } __value0)
             {
-                responseCreate?.Invoke(ResponseCreate!);
+                responseCreate?.Invoke(__value0);
             }
-            else if (IsResponseSteer)
+            else if (ResponseSteer is { } __value1)
             {
-                responseSteer?.Invoke(ResponseSteer!);
+                responseSteer?.Invoke(__value1);
             }
-            else if (IsResponseInject)
+            else if (ResponseInject is { } __value2)
             {
-                responseInject?.Invoke(ResponseInject!);
+                responseInject?.Invoke(__value2);
             }
         }
 

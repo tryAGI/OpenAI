@@ -42,8 +42,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public string PickPersonalityEnumVariant1() => IsPersonalityEnumVariant1
-            ? PersonalityEnumVariant1!
+        public string PickPersonalityEnumVariant1() => PersonalityEnumVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PersonalityEnumVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.PersonalityEnumEnum PickPersonalityEnumEnum() => IsPersonalityEnumEnum
-            ? PersonalityEnumEnum!.Value
+        public global::tryAGI.OpenAI.PersonalityEnumEnum PickPersonalityEnumEnum() => PersonalityEnumEnum is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'PersonalityEnumEnum' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsPersonalityEnumVariant1 && personalityEnumVariant1 != null)
+            if (PersonalityEnumVariant1 is { } __value0 && personalityEnumVariant1 != null)
             {
-                return personalityEnumVariant1(PersonalityEnumVariant1!);
+                return personalityEnumVariant1(__value0);
             }
-            else if (IsPersonalityEnumEnum && personalityEnumEnum != null)
+            else if (PersonalityEnumEnum is { } __value1 && personalityEnumEnum != null)
             {
-                return personalityEnumEnum(PersonalityEnumEnum!);
+                return personalityEnumEnum(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsPersonalityEnumVariant1)
+            if (PersonalityEnumVariant1 is { } __value0)
             {
-                personalityEnumVariant1?.Invoke(PersonalityEnumVariant1!);
+                personalityEnumVariant1?.Invoke(__value0);
             }
-            else if (IsPersonalityEnumEnum)
+            else if (PersonalityEnumEnum is { } __value1)
             {
-                personalityEnumEnum?.Invoke(PersonalityEnumEnum!);
+                personalityEnumEnum?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (IsPersonalityEnumVariant1)
+            if (PersonalityEnumVariant1 is { } __value0)
             {
-                personalityEnumVariant1?.Invoke(PersonalityEnumVariant1!);
+                personalityEnumVariant1?.Invoke(__value0);
             }
-            else if (IsPersonalityEnumEnum)
+            else if (PersonalityEnumEnum is { } __value1)
             {
-                personalityEnumEnum?.Invoke(PersonalityEnumEnum!);
+                personalityEnumEnum?.Invoke(__value1);
             }
         }
 

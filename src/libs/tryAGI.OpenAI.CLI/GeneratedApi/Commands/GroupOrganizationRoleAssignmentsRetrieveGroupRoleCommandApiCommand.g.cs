@@ -39,6 +39,8 @@ internal static partial class GroupOrganizationRoleAssignmentsRetrieveGroupRoleC
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"retrieve-group-role", @"Retrieve group organization role
@@ -76,6 +78,7 @@ Retrieves an organization role assigned to a group.");
                                     cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

@@ -103,6 +103,8 @@ Truncation can be disabled entirely, which means the server will never truncate 
           Hidden = true,
       };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"accept-realtime-call", @"Accept call
@@ -196,6 +198,7 @@ handle it.");
 
                                 await CliRuntime.WriteSuccessAsync(parseResult, cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

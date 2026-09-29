@@ -66,6 +66,8 @@ file less than 4MB.
           Hidden = true,
       };
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-image-edit-as-stream", @"Create image edit
@@ -153,6 +155,7 @@ Creates an edited or extended image given one or more source images and a prompt
                                         cancellationToken: cancellationToken).ConfigureAwait(false);
                                 }
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

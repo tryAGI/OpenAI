@@ -69,6 +69,8 @@ internal static partial class VaultsCreateVaultCredentialCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"create-vault-credential", @"Create a vault credential
@@ -124,6 +126,7 @@ Creates a vault credential. Secret values are write-only and are never returned.
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

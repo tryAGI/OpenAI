@@ -399,55 +399,55 @@ namespace tryAGI.OpenAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolChoiceOptions), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolChoiceOptions> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolChoiceOptions).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolChoiceMode!.Value, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolChoiceMode(), typeInfo);
             }
             else if (value.IsAllowedTools)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolChoiceAllowed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolChoiceAllowed?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolChoiceAllowed).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AllowedTools!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAllowedTools(), typeInfo);
             }
             else if (value.IsHostedTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolChoiceTypes), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolChoiceTypes?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolChoiceTypes).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.HostedTool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickHostedTool(), typeInfo);
             }
             else if (value.IsFunctionTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolChoiceFunction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolChoiceFunction?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolChoiceFunction).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FunctionTool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFunctionTool(), typeInfo);
             }
             else if (value.IsMcpTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolChoiceMCP), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolChoiceMCP?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolChoiceMCP).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.McpTool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpTool(), typeInfo);
             }
             else if (value.IsCustomTool)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ToolChoiceCustom), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ToolChoiceCustom?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ToolChoiceCustom).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomTool!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCustomTool(), typeInfo);
             }
             else if (value.IsSpecificProgrammaticCalling)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpecificProgrammaticCalling!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSpecificProgrammaticCalling(), typeInfo);
             }
             else if (value.IsSpecificApplyPatchToolChoice)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SpecificApplyPatchParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SpecificApplyPatchParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SpecificApplyPatchParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpecificApplyPatchToolChoice!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSpecificApplyPatchToolChoice(), typeInfo);
             }
             else if (value.IsSpecificShellToolChoice)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SpecificFunctionShellParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SpecificFunctionShellParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SpecificFunctionShellParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SpecificShellToolChoice!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSpecificShellToolChoice(), typeInfo);
             }
         }
     }
