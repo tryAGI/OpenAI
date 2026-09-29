@@ -50,6 +50,7 @@ internal static class EmbeddingsCommand
                 Input = input,
                 Model = modelValue,
                 Dimensions = dimensions,
+                EncodingFormat = CreateEmbeddingRequestEncodingFormat.Float,
             };
             if (model is not null)
             {
@@ -65,8 +66,8 @@ internal static class EmbeddingsCommand
             var first = vectors.FirstOrDefault();
             if (first is not null)
             {
-                var vector = first.Embedding1 ?? [];
-                CliRuntime.AppendInvariant(summary, $"dimensions: {vector.Count}");
+                var vector = first.GetFloatVector();
+                CliRuntime.AppendInvariant(summary, $"dimensions: {vector.Length}");
                 CliRuntime.AppendInvariant(summary, $"model: {response.Model}");
                 summary.AppendLine("[vector]");
                 summary.AppendLine(string.Join(", ", vector.Select(x => x.ToString("G", CultureInfo.InvariantCulture))));

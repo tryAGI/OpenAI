@@ -19,9 +19,10 @@ public partial class Tests
         {
             Input = "Hello, world",
             Model = CreateEmbeddingRequestModel.TextEmbedding3Small,
+            EncodingFormat = CreateEmbeddingRequestEncodingFormat.Float,
         });
 
-        foreach (var data in response.Data.ElementAt(0).Embedding1)
+        foreach (var data in response.Data.ElementAt(0).GetFloatVector())
         {
             Console.WriteLine($"{data}");
         }
