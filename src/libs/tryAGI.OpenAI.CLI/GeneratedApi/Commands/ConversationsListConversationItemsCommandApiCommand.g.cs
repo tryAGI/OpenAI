@@ -72,9 +72,9 @@ internal static partial class ConversationsListConversationItemsCommandApiComman
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-conversation-items", @"List items
+        var command = new Command(commandName ?? @"list-conversation-items", @"List items
 List all items for a conversation with the given ID.");
                         command.Arguments.Add(ConversationId);
                         command.Options.Add(Limit);

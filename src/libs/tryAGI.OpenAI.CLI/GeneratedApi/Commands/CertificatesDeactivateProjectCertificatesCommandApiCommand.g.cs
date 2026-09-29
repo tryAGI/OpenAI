@@ -36,9 +36,9 @@ internal static partial class CertificatesDeactivateProjectCertificatesCommandAp
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"deactivate-project-certificates", @"Deactivate certificates for project
+        var command = new Command(commandName ?? @"deactivate-project-certificates", @"Deactivate certificates for project
 Deactivate certificates at the project level. You can atomically and
 idempotently deactivate up to 10 certificates at a time.
 ");

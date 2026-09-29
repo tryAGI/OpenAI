@@ -47,9 +47,9 @@ internal static partial class AdminApiKeysListCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"admin-api-keys-list", @"List all organization and project API keys.
+        var command = new Command(commandName ?? @"admin-api-keys-list", @"List all organization and project API keys.
 List organization API keys");
                         command.Options.Add(After);
                         command.Options.Add(Order);

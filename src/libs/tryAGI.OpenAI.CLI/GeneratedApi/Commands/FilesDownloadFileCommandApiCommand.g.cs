@@ -15,9 +15,9 @@ internal static partial class FilesDownloadFileCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"download-file", @"Retrieve file content
+        var command = new Command(commandName ?? @"download-file", @"Retrieve file content
 Returns a response containing the contents of the specified file.");
                         command.Arguments.Add(FileId);
 

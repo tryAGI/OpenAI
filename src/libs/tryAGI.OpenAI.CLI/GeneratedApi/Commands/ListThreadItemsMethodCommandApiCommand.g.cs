@@ -59,9 +59,9 @@ internal static partial class ListThreadItemsMethodCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-thread-items-method", @"List ChatKit thread items
+        var command = new Command(commandName ?? @"list-thread-items-method", @"List ChatKit thread items
 List items that belong to a ChatKit thread.");
                         command.Arguments.Add(ThreadId);
                         command.Options.Add(Limit);

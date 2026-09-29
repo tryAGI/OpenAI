@@ -42,9 +42,9 @@ internal static partial class GroupsUpdateGroupCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-group", @"Update group
+        var command = new Command(commandName ?? @"update-group", @"Update group
 Updates a group's information.");
                         command.Arguments.Add(GroupId);
                         command.Options.Add(NameOption);

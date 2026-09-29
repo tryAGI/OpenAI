@@ -94,9 +94,9 @@ internal static partial class UsageUsageEmbeddingsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"embeddings", @"Embeddings
+        var command = new Command(commandName ?? @"embeddings", @"Embeddings
 Get embeddings usage details for the organization.");
                         command.Options.Add(StartTime);
                         command.Options.Add(EndTime);

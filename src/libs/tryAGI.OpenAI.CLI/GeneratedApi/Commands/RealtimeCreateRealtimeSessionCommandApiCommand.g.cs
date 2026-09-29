@@ -178,9 +178,9 @@ Truncation can be disabled entirely, which means the server will never truncate 
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-realtime-session", @"Create session
+        var command = new Command(commandName ?? @"create-realtime-session", @"Create session
 Create an ephemeral API token for use in client-side applications with the
 Realtime API. Can be configured with the same session parameters as the
 `session.update` client event.

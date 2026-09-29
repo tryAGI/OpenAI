@@ -41,9 +41,9 @@ internal static partial class VectorStoresRetrieveVectorStoreFileContentCommandA
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-vector-store-file-content", @"Retrieve vector store file content
+        var command = new Command(commandName ?? @"retrieve-vector-store-file-content", @"Retrieve vector store file content
 Retrieve the parsed contents of a vector store file.");
                         command.Arguments.Add(VectorStoreId);
                         command.Arguments.Add(FileId);

@@ -96,9 +96,9 @@ internal static partial class AgentsUpdateAgentEnvironmentTemplateCommandApiComm
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-agent-environment-template", @"Update an agent environment template
+        var command = new Command(commandName ?? @"update-agent-environment-template", @"Update an agent environment template
 Updates reusable environment configuration without returning confidential values. See [reusing a hosted setup](https://developers.openai.com/api/docs/guides/agents-api/tools#reuse-a-hosted-plugin-setup).");
                         command.Arguments.Add(EnvironmentTemplateId);
                         command.Options.Add(NameOption);

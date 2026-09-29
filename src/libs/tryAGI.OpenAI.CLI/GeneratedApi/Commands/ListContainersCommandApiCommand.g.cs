@@ -56,9 +56,9 @@ internal static partial class ListContainersCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-containers", @"List containers
+        var command = new Command(commandName ?? @"list-containers", @"List containers
 List Containers");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);

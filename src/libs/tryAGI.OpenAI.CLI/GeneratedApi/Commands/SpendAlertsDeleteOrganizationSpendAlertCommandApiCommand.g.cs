@@ -35,9 +35,9 @@ internal static partial class SpendAlertsDeleteOrganizationSpendAlertCommandApiC
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-organization-spend-alert", @"Delete organization spend alert
+        var command = new Command(commandName ?? @"delete-organization-spend-alert", @"Delete organization spend alert
 Deletes an organization spend alert.");
                         command.Arguments.Add(AlertId);
 

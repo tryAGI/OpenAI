@@ -41,9 +41,9 @@ internal static partial class AssistantsGetRunCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-run", @"Retrieve run
+        var command = new Command(commandName ?? @"get-run", @"Retrieve run
 Retrieves a run.");
                         command.Arguments.Add(ThreadId);
                         command.Arguments.Add(RunId);

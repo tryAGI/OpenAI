@@ -41,9 +41,9 @@ internal static partial class AssistantsDeleteMessageCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-message", @"Delete message
+        var command = new Command(commandName ?? @"delete-message", @"Delete message
 Deletes a message.");
                         command.Arguments.Add(ThreadId);
                         command.Arguments.Add(MessageId);

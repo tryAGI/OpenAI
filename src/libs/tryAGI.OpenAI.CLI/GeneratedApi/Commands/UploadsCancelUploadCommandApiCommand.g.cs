@@ -36,9 +36,9 @@ internal static partial class UploadsCancelUploadCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"cancel-upload", @"Cancel upload
+        var command = new Command(commandName ?? @"cancel-upload", @"Cancel upload
 Cancels the Upload. No Parts may be added after an Upload is cancelled.
 
 Returns the Upload object with status `cancelled`.

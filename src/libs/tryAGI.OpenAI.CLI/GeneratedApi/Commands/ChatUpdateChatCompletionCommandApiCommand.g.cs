@@ -57,9 +57,9 @@ internal static partial class ChatUpdateChatCompletionCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-chat-completion", @"Update chat completion
+        var command = new Command(commandName ?? @"update-chat-completion", @"Update chat completion
 Modify a stored chat completion. Only Chat Completions that have been
 created with the `store` parameter set to `true` can be modified. Currently,
 the only supported modification is to update the `metadata` field.

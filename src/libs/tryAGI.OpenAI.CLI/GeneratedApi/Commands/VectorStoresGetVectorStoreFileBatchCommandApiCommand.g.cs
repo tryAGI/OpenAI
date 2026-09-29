@@ -41,9 +41,9 @@ internal static partial class VectorStoresGetVectorStoreFileBatchCommandApiComma
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-vector-store-file-batch", @"Retrieve vector store file batch
+        var command = new Command(commandName ?? @"get-vector-store-file-batch", @"Retrieve vector store file batch
 Retrieves a vector store file batch.");
                         command.Arguments.Add(VectorStoreId);
                         command.Arguments.Add(BatchId);

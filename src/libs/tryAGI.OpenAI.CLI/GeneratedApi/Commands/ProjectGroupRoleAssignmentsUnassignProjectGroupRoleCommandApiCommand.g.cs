@@ -47,9 +47,9 @@ internal static partial class ProjectGroupRoleAssignmentsUnassignProjectGroupRol
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"unassign-project-group-role", @"Unassign project role from group
+        var command = new Command(commandName ?? @"unassign-project-group-role", @"Unassign project role from group
 Unassigns a project role from a group within a project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(GroupId);

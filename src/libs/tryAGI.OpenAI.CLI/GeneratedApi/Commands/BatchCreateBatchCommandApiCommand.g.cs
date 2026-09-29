@@ -98,9 +98,9 @@ Your input file must be formatted as a [JSONL file](https://developers.openai.co
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-batch", @"Create batch
+        var command = new Command(commandName ?? @"create-batch", @"Create batch
 Creates and executes a batch from an uploaded file of requests");
                         command.Options.Add(InputFileId);
                         command.Options.Add(Endpoint);

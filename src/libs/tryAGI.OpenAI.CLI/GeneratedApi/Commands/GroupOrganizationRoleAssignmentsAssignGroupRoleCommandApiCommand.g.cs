@@ -36,9 +36,9 @@ internal static partial class GroupOrganizationRoleAssignmentsAssignGroupRoleCom
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"assign-group-role", @"Assign organization role to group
+        var command = new Command(commandName ?? @"assign-group-role", @"Assign organization role to group
 Assigns an organization role to a group within the organization.");
                         command.Arguments.Add(GroupId);                        command.Options.Add(PublicAssignOrganizationGroupRoleBodyOptionSetOptions.RoleId);
 

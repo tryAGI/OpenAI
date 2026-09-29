@@ -86,9 +86,9 @@ internal static partial class EvalsCreateEvalRunCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-eval-run", @"Create eval run
+        var command = new Command(commandName ?? @"create-eval-run", @"Create eval run
 Kicks off a new run for a given evaluation, specifying the data source, and what model configuration to use to test. The datasource will be validated against the schema specified in the config of the evaluation.
 ");
                         command.Arguments.Add(EvalId);
@@ -148,7 +148,8 @@ Kicks off a new run for a given evaluation, specifying the data source, and what
 
                                     var waitResponse = await CliRuntime.PollUntilTerminalAsync(
                                         fetchAsync: token => client.Evals.GetEvalRunAsync(
-                                            evalId: resourceId,
+                                            evalId: evalId,
+                                            runId: resourceId,
                                             cancellationToken: token),
                                         pollInterval: pollInterval,
                                         waitTimeout: waitTimeout,

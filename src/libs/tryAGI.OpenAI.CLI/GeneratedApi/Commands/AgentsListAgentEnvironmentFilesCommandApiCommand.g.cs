@@ -59,9 +59,9 @@ internal static partial class AgentsListAgentEnvironmentFilesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-agent-environment-files", @"List agent environment files
+        var command = new Command(commandName ?? @"list-agent-environment-files", @"List agent environment files
 Lists live files on a connected execution environment with optional directory filtering and opaque cursor pagination. See [environment files](https://developers.openai.com/api/docs/guides/agents-api/environments/files).");
                         command.Arguments.Add(EnvironmentId);
                         command.Options.Add(Path);

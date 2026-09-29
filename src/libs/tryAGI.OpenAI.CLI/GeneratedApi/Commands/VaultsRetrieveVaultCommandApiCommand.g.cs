@@ -35,9 +35,9 @@ internal static partial class VaultsRetrieveVaultCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-vault", @"Retrieve a vault
+        var command = new Command(commandName ?? @"retrieve-vault", @"Retrieve a vault
 Retrieves a vault by its ID. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).");
                         command.Arguments.Add(VaultId);
 

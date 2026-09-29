@@ -35,9 +35,9 @@ internal static partial class AssistantsGetThreadCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-thread", @"Retrieve thread
+        var command = new Command(commandName ?? @"get-thread", @"Retrieve thread
 Retrieves a thread.");
                         command.Arguments.Add(ThreadId);
 

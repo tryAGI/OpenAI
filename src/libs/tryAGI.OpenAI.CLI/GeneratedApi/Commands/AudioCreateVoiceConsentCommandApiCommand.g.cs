@@ -64,9 +64,9 @@ Supported MIME types:
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-voice-consent", @"Create voice consent
+        var command = new Command(commandName ?? @"create-voice-consent", @"Create voice consent
 Upload a voice consent recording.");
                         command.Arguments.Add(NameOption);
                         command.Options.Add(Recording);

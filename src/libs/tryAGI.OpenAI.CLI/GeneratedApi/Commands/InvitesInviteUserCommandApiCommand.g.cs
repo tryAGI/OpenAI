@@ -81,9 +81,9 @@ internal static partial class InvitesInviteUserCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"user", @"Create invite
+        var command = new Command(commandName ?? @"user", @"Create invite
 Create an invite for a user to the organization. The invite must be accepted by the user before they have access to the organization.");
                         command.Options.Add(Email);
                         command.Options.Add(Role);

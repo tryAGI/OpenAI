@@ -43,9 +43,9 @@ internal static partial class FineTuningDeleteFineTuningCheckpointPermissionComm
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-fine-tuning-checkpoint-permission", @"Delete checkpoint permission
+        var command = new Command(commandName ?? @"delete-fine-tuning-checkpoint-permission", @"Delete checkpoint permission
 **NOTE:** This endpoint requires an [admin API key](https://developers.openai.com/api/reference/resources/admin/subresources/organization/subresources/admin_api_keys).
 
 Organization owners can use this endpoint to delete a permission for a fine-tuned model checkpoint.

@@ -35,9 +35,9 @@ internal static partial class GetprojectsafetyalertCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"getprojectsafetyalert", @"Get project safety alert
+        var command = new Command(commandName ?? @"getprojectsafetyalert", @"Get project safety alert
 Get a safety alert belonging to the authenticated API project.");
                         command.Arguments.Add(Id);
 

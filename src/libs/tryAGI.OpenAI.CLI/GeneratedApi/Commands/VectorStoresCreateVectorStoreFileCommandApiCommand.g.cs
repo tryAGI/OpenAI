@@ -87,9 +87,9 @@ internal static partial class VectorStoresCreateVectorStoreFileCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-vector-store-file", @"Create vector store file
+        var command = new Command(commandName ?? @"create-vector-store-file", @"Create vector store file
 Create a vector store file by attaching a [File](https://developers.openai.com/api/reference/resources/files) to a [vector store](https://developers.openai.com/api/reference/resources/vector_stores).");
                         command.Arguments.Add(VectorStoreId);
                         command.Options.Add(FileId);
@@ -148,7 +148,8 @@ Create a vector store file by attaching a [File](https://developers.openai.com/a
 
                                     var waitResponse = await CliRuntime.PollUntilTerminalAsync(
                                         fetchAsync: token => client.VectorStores.GetVectorStoreFileAsync(
-                                            vectorStoreId: resourceId,
+                                            vectorStoreId: vectorStoreId,
+                                            fileId: resourceId,
                                             cancellationToken: token),
                                         pollInterval: pollInterval,
                                         waitTimeout: waitTimeout,

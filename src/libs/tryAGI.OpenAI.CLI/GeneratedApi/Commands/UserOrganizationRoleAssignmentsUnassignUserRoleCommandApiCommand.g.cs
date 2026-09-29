@@ -41,9 +41,9 @@ internal static partial class UserOrganizationRoleAssignmentsUnassignUserRoleCom
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"unassign-user-role", @"Unassign organization role from user
+        var command = new Command(commandName ?? @"unassign-user-role", @"Unassign organization role from user
 Unassigns an organization role from a user within the organization.");
                         command.Arguments.Add(UserId);
                         command.Arguments.Add(RoleId);

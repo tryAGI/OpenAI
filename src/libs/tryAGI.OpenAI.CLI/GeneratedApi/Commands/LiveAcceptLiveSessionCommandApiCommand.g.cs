@@ -22,9 +22,9 @@ internal static partial class LiveAcceptLiveSessionCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"accept-live-session", @"Accept call
+        var command = new Command(commandName ?? @"accept-live-session", @"Accept call
 Accept an incoming SIP call. Supply session with type live, the model, and startup configuration. Before accepting calls, follow the [Live prompting guide](https://developers.openai.com/api/docs/guides/live-prompting) to write frontend conversation instructions and a separate backend prompt. SIP media format is negotiated; omit audio.format.");
                         command.Arguments.Add(SessionId);
                         command.Options.Add(Session);

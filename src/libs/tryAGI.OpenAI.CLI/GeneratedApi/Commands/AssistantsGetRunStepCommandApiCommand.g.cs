@@ -56,9 +56,9 @@ See the [file search tool documentation](https://developers.openai.com/api/docs/
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-run-step", @"Retrieve run step
+        var command = new Command(commandName ?? @"get-run-step", @"Retrieve run step
 Retrieves a run step.");
                         command.Arguments.Add(ThreadId);
                         command.Arguments.Add(RunId);

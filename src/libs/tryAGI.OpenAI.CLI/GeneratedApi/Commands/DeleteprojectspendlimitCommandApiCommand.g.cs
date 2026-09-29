@@ -35,9 +35,9 @@ internal static partial class DeleteprojectspendlimitCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"deleteprojectspendlimit", @"Delete project spend limit
+        var command = new Command(commandName ?? @"deleteprojectspendlimit", @"Delete project spend limit
 Delete a project's hard spend limit.");
                         command.Arguments.Add(ProjectId);
 

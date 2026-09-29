@@ -49,9 +49,9 @@ internal static partial class ProjectsListProjectServiceAccountsCommandApiComman
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-project-service-accounts", @"List project service accounts
+        var command = new Command(commandName ?? @"list-project-service-accounts", @"List project service accounts
 Returns a list of service accounts in the project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Limit);

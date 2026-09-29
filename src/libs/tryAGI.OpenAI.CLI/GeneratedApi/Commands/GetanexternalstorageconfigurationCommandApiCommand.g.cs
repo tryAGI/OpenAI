@@ -35,9 +35,9 @@ internal static partial class GetanexternalstorageconfigurationCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"getanexternalstorageconfiguration", @"Get an external storage configuration
+        var command = new Command(commandName ?? @"getanexternalstorageconfiguration", @"Get an external storage configuration
 Get one customer-managed external storage configuration.");
                         command.Arguments.Add(ExternalStorageId);
 

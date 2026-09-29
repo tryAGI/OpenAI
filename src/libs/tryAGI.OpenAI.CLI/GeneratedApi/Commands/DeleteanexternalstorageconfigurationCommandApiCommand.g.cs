@@ -35,9 +35,9 @@ internal static partial class DeleteanexternalstorageconfigurationCommandApiComm
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"deleteanexternalstorageconfiguration", @"Delete an external storage configuration
+        var command = new Command(commandName ?? @"deleteanexternalstorageconfiguration", @"Delete an external storage configuration
 Disconnect a customer-managed external storage configuration. Removing the project's last configuration restores organization-default retention if customer-managed retention was active. Repeating a deletion also completes any interrupted retention update. Cloud storage is unchanged.");
                         command.Arguments.Add(ExternalStorageId);
 

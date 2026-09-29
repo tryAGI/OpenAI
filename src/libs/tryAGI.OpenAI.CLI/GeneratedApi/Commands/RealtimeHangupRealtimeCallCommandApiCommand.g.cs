@@ -19,9 +19,9 @@ header when creating the call with
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"hangup-realtime-call", @"Hang up call
+        var command = new Command(commandName ?? @"hangup-realtime-call", @"Hang up call
 End an active Realtime API call, whether it was initiated over SIP or
 WebRTC.");
                         command.Arguments.Add(CallId);

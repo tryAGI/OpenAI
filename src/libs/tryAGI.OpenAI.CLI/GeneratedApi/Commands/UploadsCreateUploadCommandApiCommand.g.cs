@@ -85,9 +85,9 @@ the supported MIME types for assistants and vision.
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-upload", @"Create upload
+        var command = new Command(commandName ?? @"create-upload", @"Create upload
 Creates an intermediate [Upload](https://developers.openai.com/api/reference/resources/uploads) object
 that you can add [Parts](https://developers.openai.com/api/reference/resources/uploads/subresources/parts) to.
 Currently, an Upload can accept at most 8 GB in total and expires after an

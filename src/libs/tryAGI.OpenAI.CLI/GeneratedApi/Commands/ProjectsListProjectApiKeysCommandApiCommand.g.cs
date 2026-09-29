@@ -56,9 +56,9 @@ internal static partial class ProjectsListProjectApiKeysCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-project-api-keys", @"List project API keys
+        var command = new Command(commandName ?? @"list-project-api-keys", @"List project API keys
 Returns a list of API keys in the project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Limit);

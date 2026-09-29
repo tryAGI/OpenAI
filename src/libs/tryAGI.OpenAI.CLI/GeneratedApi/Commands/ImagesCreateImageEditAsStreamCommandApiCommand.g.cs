@@ -68,9 +68,9 @@ file less than 4MB.
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-image-edit-as-stream", @"Create image edit
+        var command = new Command(commandName ?? @"create-image-edit-as-stream", @"Create image edit
 Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models and `dall-e-2`.");
                         command.Options.Add(Image);
                         command.Options.Add(Mask);

@@ -31,9 +31,9 @@ internal static partial class ListWebhookEventTypesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-webhook-event-types", @"List Webhook Event Types
+        var command = new Command(commandName ?? @"list-webhook-event-types", @"List Webhook Event Types
 Returns webhook event types visible to the authenticated project.");
 
 

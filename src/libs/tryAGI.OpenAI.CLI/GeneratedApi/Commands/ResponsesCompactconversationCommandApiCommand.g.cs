@@ -94,9 +94,9 @@ internal static partial class ResponsesCompactconversationCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"compactconversation", @"Compact conversation
+        var command = new Command(commandName ?? @"compactconversation", @"Compact conversation
 Compact a conversation. Returns a compacted response object.
 
 Learn when and how to compact long-running conversations in the [conversation state guide](https://developers.openai.com/api/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](https://developers.openai.com/api/docs/guides/conversation-state#compaction-advanced).");

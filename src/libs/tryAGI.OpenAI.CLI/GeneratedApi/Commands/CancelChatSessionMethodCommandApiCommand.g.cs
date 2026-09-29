@@ -35,9 +35,9 @@ internal static partial class CancelChatSessionMethodCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"cancel-chat-session-method", @"Cancel a ChatKit session
+        var command = new Command(commandName ?? @"cancel-chat-session-method", @"Cancel a ChatKit session
 Cancel an active ChatKit session and return its most recent metadata.
 
 Cancelling prevents new requests from using the issued client secret.");

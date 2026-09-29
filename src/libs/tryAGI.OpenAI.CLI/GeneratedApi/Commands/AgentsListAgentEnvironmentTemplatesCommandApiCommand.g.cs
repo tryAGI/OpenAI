@@ -47,9 +47,9 @@ internal static partial class AgentsListAgentEnvironmentTemplatesCommandApiComma
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-agent-environment-templates", @"List agent environment templates
+        var command = new Command(commandName ?? @"list-agent-environment-templates", @"List agent environment templates
 Lists reusable environment templates without returning confidential values. See [reusing a hosted setup](https://developers.openai.com/api/docs/guides/agents-api/tools#reuse-a-hosted-plugin-setup).");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);

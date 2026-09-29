@@ -35,9 +35,9 @@ internal static partial class ResponsesDeleteResponseCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-response", @"Delete a model response
+        var command = new Command(commandName ?? @"delete-response", @"Delete a model response
 Deletes a model response with the given ID.
 ");
                         command.Arguments.Add(ResponseId);

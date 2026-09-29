@@ -75,9 +75,9 @@ internal static partial class CreateanAPIkeyforaserviceaccountCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"createan-apikeyforaserviceaccount", @"Create an API key for a service account
+        var command = new Command(commandName ?? @"createan-apikeyforaserviceaccount", @"Create an API key for a service account
 Creates an API key for a service account in the project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(ServiceAccountId);

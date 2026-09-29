@@ -53,9 +53,9 @@ internal static partial class GroupOrganizationRoleAssignmentsListGroupRoleAssig
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-group-role-assignments", @"List group organization role assignments
+        var command = new Command(commandName ?? @"list-group-role-assignments", @"List group organization role assignments
 Lists the organization roles assigned to a group within the organization.");
                         command.Arguments.Add(GroupId);
                         command.Options.Add(Limit);

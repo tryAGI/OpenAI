@@ -58,9 +58,9 @@ internal static partial class ConversationsUpdateConversationCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-conversation", @"Update a conversation
+        var command = new Command(commandName ?? @"update-conversation", @"Update a conversation
 Update a conversation");
                         command.Arguments.Add(ConversationId);
                         command.Options.Add(Metadata);

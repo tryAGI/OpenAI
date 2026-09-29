@@ -93,9 +93,9 @@ internal static partial class ProjectsUpdateProjectRateLimitsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-project-rate-limits", @"Modify project rate limit
+        var command = new Command(commandName ?? @"update-project-rate-limits", @"Modify project rate limit
 Updates a project rate limit.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(RateLimitId);

@@ -52,9 +52,9 @@ internal static partial class RolesCreateProjectRoleCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-project-role", @"Create project role
+        var command = new Command(commandName ?? @"create-project-role", @"Create project role
 Creates a custom role for a project.");
                         command.Arguments.Add(ProjectId);                        command.Options.Add(PublicCreateOrganizationRoleBodyOptionSetOptions.RoleName);
                         command.Options.Add(PublicCreateOrganizationRoleBodyOptionSetOptions.Permissions);

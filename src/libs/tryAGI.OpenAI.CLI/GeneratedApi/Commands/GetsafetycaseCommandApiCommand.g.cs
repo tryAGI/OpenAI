@@ -35,9 +35,9 @@ internal static partial class GetsafetycaseCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"getsafetycase", @"Get safety case
+        var command = new Command(commandName ?? @"getsafetycase", @"Get safety case
 Get a safety case by ID.");
                         command.Arguments.Add(Id);
 

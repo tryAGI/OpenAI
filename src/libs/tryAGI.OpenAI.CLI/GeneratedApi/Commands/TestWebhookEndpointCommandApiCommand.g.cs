@@ -42,9 +42,9 @@ internal static partial class TestWebhookEndpointCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"test-webhook-endpoint", @"Test Webhook Endpoint
+        var command = new Command(commandName ?? @"test-webhook-endpoint", @"Test Webhook Endpoint
 Sends a sample event to a webhook endpoint for the authenticated project.");
                         command.Arguments.Add(WebhookEndpointId);
                         command.Options.Add(EventType);

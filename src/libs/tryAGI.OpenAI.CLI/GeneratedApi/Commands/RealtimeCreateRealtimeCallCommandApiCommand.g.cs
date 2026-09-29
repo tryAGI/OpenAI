@@ -33,9 +33,9 @@ internal static partial class RealtimeCreateRealtimeCallCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-realtime-call", @"Create call
+        var command = new Command(commandName ?? @"create-realtime-call", @"Create call
 Create a new Realtime API call over WebRTC and receive the SDP answer needed
 to complete the peer connection.");
                         command.Options.Add(Sdp);                        command.Options.Add(SessionOptions.Type);

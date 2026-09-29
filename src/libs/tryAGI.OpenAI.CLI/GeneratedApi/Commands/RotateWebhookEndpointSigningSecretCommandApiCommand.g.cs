@@ -55,9 +55,9 @@ internal static partial class RotateWebhookEndpointSigningSecretCommandApiComman
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"rotate-webhook-endpoint-signing-secret", @"Rotate Webhook Endpoint Signing Secret
+        var command = new Command(commandName ?? @"rotate-webhook-endpoint-signing-secret", @"Rotate Webhook Endpoint Signing Secret
 Rotates the signing secret for a webhook endpoint in the authenticated project.");
                         command.Arguments.Add(WebhookEndpointId);
                         command.Options.Add(KeepOldSecretActiveFor24Hours);

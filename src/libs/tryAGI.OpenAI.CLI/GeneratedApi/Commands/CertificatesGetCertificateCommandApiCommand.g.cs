@@ -41,9 +41,9 @@ internal static partial class CertificatesGetCertificateCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-certificate", @"Get certificate
+        var command = new Command(commandName ?? @"get-certificate", @"Get certificate
 Get a certificate that has been uploaded to the organization.
 
 You can get a certificate regardless of whether it is active or not.

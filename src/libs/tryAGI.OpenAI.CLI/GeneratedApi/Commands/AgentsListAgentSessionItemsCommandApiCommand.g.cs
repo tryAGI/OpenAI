@@ -53,9 +53,9 @@ internal static partial class AgentsListAgentSessionItemsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-agent-session-items", @"List agent session items
+        var command = new Command(commandName ?? @"list-agent-session-items", @"List agent session items
 Lists items produced by the session's root agent, including its interactions with subagents. Each subagent has its own item history. See [inspecting agent output](https://developers.openai.com/api/docs/guides/agents-api/observability).");
                         command.Arguments.Add(SessionId);
                         command.Options.Add(Limit);

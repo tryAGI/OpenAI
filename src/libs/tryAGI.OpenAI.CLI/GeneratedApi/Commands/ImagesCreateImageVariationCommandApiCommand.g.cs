@@ -90,9 +90,9 @@ internal static partial class ImagesCreateImageVariationCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-image-variation", @"Create image variation
+        var command = new Command(commandName ?? @"create-image-variation", @"Create image variation
 Creates a variation of a given image. This endpoint only supports `dall-e-2`.");
                         command.Options.Add(Image);
                         command.Options.Add(Imagename);

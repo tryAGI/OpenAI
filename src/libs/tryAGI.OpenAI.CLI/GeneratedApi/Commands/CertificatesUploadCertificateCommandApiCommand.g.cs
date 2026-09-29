@@ -58,9 +58,9 @@ internal static partial class CertificatesUploadCertificateCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"upload-certificate", @"Upload certificate
+        var command = new Command(commandName ?? @"upload-certificate", @"Upload certificate
 Upload a certificate to the organization. This does **not** automatically activate the certificate.
 
 Organizations can upload up to 50 certificates.

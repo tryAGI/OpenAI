@@ -132,9 +132,9 @@ Setting to `{ ""type"": ""json_object"" }` enables JSON mode, which ensures the 
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-run", @"Create run
+        var command = new Command(commandName ?? @"create-run", @"Create run
 Create a run.");
                         command.Arguments.Add(ThreadId);
                         command.Options.Add(Include);
@@ -233,7 +233,8 @@ Create a run.");
 
                                     var waitResponse = await CliRuntime.PollUntilTerminalAsync(
                                         fetchAsync: token => client.Assistants.GetRunAsync(
-                                            threadId: resourceId,
+                                            threadId: threadId,
+                                            runId: resourceId,
                                             cancellationToken: token),
                                         pollInterval: pollInterval,
                                         waitTimeout: waitTimeout,

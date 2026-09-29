@@ -35,9 +35,9 @@ internal static partial class EvalsGetEvalCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-eval", @"Get an eval
+        var command = new Command(commandName ?? @"get-eval", @"Get an eval
 Get an evaluation by ID.
 ");
                         command.Arguments.Add(EvalId);

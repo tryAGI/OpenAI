@@ -198,9 +198,9 @@ We generally recommend altering this or `temperature` but not both.
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-completion", @"Create completion
+        var command = new Command(commandName ?? @"create-completion", @"Create completion
 Creates a completion for the provided prompt and parameters.
 
 Returns a completion object, or a sequence of completion objects if the request is streamed.

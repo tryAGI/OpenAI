@@ -35,9 +35,9 @@ internal static partial class GetprojectspendlimitCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"getprojectspendlimit", @"Get project spend limit
+        var command = new Command(commandName ?? @"getprojectspendlimit", @"Get project spend limit
 Get a project's hard spend limit.");
                         command.Arguments.Add(ProjectId);
 

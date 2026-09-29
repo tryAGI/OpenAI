@@ -41,9 +41,9 @@ internal static partial class ProjectsRetrieveProjectUserCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-project-user", @"Retrieve project user
+        var command = new Command(commandName ?? @"retrieve-project-user", @"Retrieve project user
 Retrieves a user in the project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(UserId);

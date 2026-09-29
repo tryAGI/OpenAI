@@ -100,9 +100,9 @@ internal static partial class AgentsUpdateAgentCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-agent", @"Update an agent
+        var command = new Command(commandName ?? @"update-agent", @"Update an agent
 Updates a reusable agent. See [agent configuration](https://developers.openai.com/api/docs/guides/agents-api/configuration).");
                         command.Arguments.Add(AgentId);
                         command.Options.Add(Model);

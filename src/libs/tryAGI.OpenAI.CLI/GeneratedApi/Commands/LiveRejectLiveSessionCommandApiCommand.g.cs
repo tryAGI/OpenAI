@@ -22,9 +22,9 @@ internal static partial class LiveRejectLiveSessionCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"reject-live-session", @"Reject call
+        var command = new Command(commandName ?? @"reject-live-session", @"Reject call
 Reject an incoming SIP call. Send a required SIP rejection status_code between 300 and 699.");
                         command.Arguments.Add(SessionId);
                         command.Options.Add(StatusCode);

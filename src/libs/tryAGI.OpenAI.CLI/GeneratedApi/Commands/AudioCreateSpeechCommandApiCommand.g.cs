@@ -41,9 +41,9 @@ internal static partial class AudioCreateSpeechCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-speech", @"Create speech
+        var command = new Command(commandName ?? @"create-speech", @"Create speech
 Generates audio from the input text.
 
 Returns the audio file content, or a stream of audio events.

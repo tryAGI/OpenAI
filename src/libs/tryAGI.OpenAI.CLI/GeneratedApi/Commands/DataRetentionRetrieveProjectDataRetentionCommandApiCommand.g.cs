@@ -35,9 +35,9 @@ internal static partial class DataRetentionRetrieveProjectDataRetentionCommandAp
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-project-data-retention", @"Retrieve project data retention
+        var command = new Command(commandName ?? @"retrieve-project-data-retention", @"Retrieve project data retention
 Retrieves project data retention controls.");
                         command.Arguments.Add(ProjectId);
 

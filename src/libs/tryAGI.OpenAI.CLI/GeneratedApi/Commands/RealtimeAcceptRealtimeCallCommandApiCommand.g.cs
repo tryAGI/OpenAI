@@ -105,9 +105,9 @@ Truncation can be disabled entirely, which means the server will never truncate 
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"accept-realtime-call", @"Accept call
+        var command = new Command(commandName ?? @"accept-realtime-call", @"Accept call
 Accept an incoming SIP call and configure the realtime session that will
 handle it.");
                         command.Arguments.Add(CallId);

@@ -35,9 +35,9 @@ internal static partial class VectorStoresGetVectorStoreCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-vector-store", @"Retrieve vector store
+        var command = new Command(commandName ?? @"get-vector-store", @"Retrieve vector store
 Retrieves a vector store.");
                         command.Arguments.Add(VectorStoreId);
 

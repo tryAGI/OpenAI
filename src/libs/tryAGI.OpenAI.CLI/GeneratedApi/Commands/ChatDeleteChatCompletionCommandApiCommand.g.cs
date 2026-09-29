@@ -35,9 +35,9 @@ internal static partial class ChatDeleteChatCompletionCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-chat-completion", @"Delete chat completion
+        var command = new Command(commandName ?? @"delete-chat-completion", @"Delete chat completion
 Delete a stored chat completion. Only Chat Completions that have been
 created with the `store` parameter set to `true` can be deleted.
 ");

@@ -60,9 +60,9 @@ internal static partial class HostedToolsUpdateProjectHostedToolPermissionsComma
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-project-hosted-tool-permissions", @"Modify project hosted tool permissions
+        var command = new Command(commandName ?? @"update-project-hosted-tool-permissions", @"Modify project hosted tool permissions
 Updates hosted tool permissions for a project.");
                         command.Arguments.Add(ProjectId);                        command.Options.Add(FileSearchOptions.Enabled);                        command.Options.Add(WebSearchOptions.Enabled);                        command.Options.Add(ImageGenerationOptions.Enabled);                        command.Options.Add(McpOptions.Enabled);                        command.Options.Add(CodeInterpreterOptions.Enabled);
           command.Options.Add(Input);

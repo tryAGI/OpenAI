@@ -41,9 +41,9 @@ internal static partial class AgentsRetrieveAgentSessionArtifactCommandApiComman
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-agent-session-artifact", @"Retrieve an agent session artifact
+        var command = new Command(commandName ?? @"retrieve-agent-session-artifact", @"Retrieve an agent session artifact
 Retrieves immutable metadata for one durable session artifact. See [session artifacts](https://developers.openai.com/api/docs/guides/agents-api/environments/files#openai-hosted-artifacts).");
                         command.Arguments.Add(SessionId);
                         command.Arguments.Add(ArtifactId);

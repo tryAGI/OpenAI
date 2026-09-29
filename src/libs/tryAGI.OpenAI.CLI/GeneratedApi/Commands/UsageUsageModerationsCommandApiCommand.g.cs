@@ -94,9 +94,9 @@ internal static partial class UsageUsageModerationsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"moderations", @"Moderations
+        var command = new Command(commandName ?? @"moderations", @"Moderations
 Get moderations usage details for the organization.");
                         command.Options.Add(StartTime);
                         command.Options.Add(EndTime);

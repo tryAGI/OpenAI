@@ -48,9 +48,9 @@ internal static partial class FineTuningListFineTuningJobCheckpointsCommandApiCo
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-fine-tuning-job-checkpoints", @"List fine-tuning checkpoints
+        var command = new Command(commandName ?? @"list-fine-tuning-job-checkpoints", @"List fine-tuning checkpoints
 List checkpoints for a fine-tuning job.
 ");
                         command.Arguments.Add(FineTuningJobId);

@@ -35,9 +35,9 @@ internal static partial class FilesDeleteFileCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-file", @"Delete file
+        var command = new Command(commandName ?? @"delete-file", @"Delete file
 Delete a file and remove it from all vector stores.");
                         command.Arguments.Add(FileId);
 

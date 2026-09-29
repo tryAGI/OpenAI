@@ -69,9 +69,9 @@ the network links between your application and the OpenAI API.
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-response", @"Get a model response
+        var command = new Command(commandName ?? @"get-response", @"Get a model response
 Retrieves a model response with the given ID.
 ");
                         command.Arguments.Add(ResponseId);

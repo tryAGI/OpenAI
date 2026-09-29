@@ -35,9 +35,9 @@ internal static partial class AssistantsDeleteThreadCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-thread", @"Delete thread
+        var command = new Command(commandName ?? @"delete-thread", @"Delete thread
 Delete a thread.");
                         command.Arguments.Add(ThreadId);
 

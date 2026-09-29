@@ -49,9 +49,9 @@ internal static partial class ProjectsUpdateProjectModelPermissionsCommandApiCom
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-project-model-permissions", @"Modify project model permissions
+        var command = new Command(commandName ?? @"update-project-model-permissions", @"Modify project model permissions
 Updates model permissions for a project.");
                         command.Arguments.Add(ProjectId);
                         command.Options.Add(Mode);

@@ -38,9 +38,9 @@ internal static partial class ImagesCreateImageAsStreamCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-image-as-stream", @"Create image
+        var command = new Command(commandName ?? @"create-image-as-stream", @"Create image
 Creates an image given a prompt. [Learn more](https://developers.openai.com/api/docs/guides/images-vision).
 ");
                         command.Options.Add(Model);

@@ -75,9 +75,9 @@ internal static partial class UsersModifyUserCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"modify-user", @"Modify user
+        var command = new Command(commandName ?? @"modify-user", @"Modify user
 Modifies a user's role in the organization.");
                         command.Arguments.Add(UserId);
                         command.Options.Add(Role);

@@ -76,9 +76,9 @@ internal static partial class UsageUsageVectorStoresCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"vector-stores", @"Vector stores
+        var command = new Command(commandName ?? @"vector-stores", @"Vector stores
 Get vector stores usage details for the organization.");
                         command.Options.Add(StartTime);
                         command.Options.Add(EndTime);

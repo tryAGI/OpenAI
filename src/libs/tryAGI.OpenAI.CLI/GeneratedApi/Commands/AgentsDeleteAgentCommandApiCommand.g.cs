@@ -35,9 +35,9 @@ internal static partial class AgentsDeleteAgentCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-agent", @"Delete an agent
+        var command = new Command(commandName ?? @"delete-agent", @"Delete an agent
 Deletes a reusable agent. See [agent configuration](https://developers.openai.com/api/docs/guides/agents-api/configuration).");
                         command.Arguments.Add(AgentId);
 

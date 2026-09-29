@@ -41,9 +41,9 @@ internal static partial class GroupOrganizationRoleAssignmentsUnassignGroupRoleC
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"unassign-group-role", @"Unassign organization role from group
+        var command = new Command(commandName ?? @"unassign-group-role", @"Unassign organization role from group
 Unassigns an organization role from a group within the organization.");
                         command.Arguments.Add(GroupId);
                         command.Arguments.Add(RoleId);

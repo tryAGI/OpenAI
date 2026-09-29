@@ -41,9 +41,9 @@ internal static partial class RolesRetrieveProjectRoleCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-project-role", @"Retrieve project role
+        var command = new Command(commandName ?? @"retrieve-project-role", @"Retrieve project role
 Retrieves a project role.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(RoleId);

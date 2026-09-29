@@ -43,9 +43,9 @@ internal static partial class BatchListBatchesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-batches", @"List batches
+        var command = new Command(commandName ?? @"list-batches", @"List batches
 List your organization's batches.");
                         command.Options.Add(After);
                         command.Options.Add(Limit);

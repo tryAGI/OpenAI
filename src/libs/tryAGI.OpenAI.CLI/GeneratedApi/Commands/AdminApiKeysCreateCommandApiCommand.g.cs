@@ -57,9 +57,9 @@ internal static partial class AdminApiKeysCreateCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"admin-api-keys-create", @"Create admin API key
+        var command = new Command(commandName ?? @"admin-api-keys-create", @"Create admin API key
 Create an organization admin API key");
                         command.Arguments.Add(NameOption);
                         command.Options.Add(ExpiresInSeconds);

@@ -79,9 +79,9 @@ internal static partial class ProjectsCreateProjectCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-project", @"Create project
+        var command = new Command(commandName ?? @"create-project", @"Create project
 Create a new project in the organization. Projects can be created and archived, but cannot be deleted.");
                         command.Arguments.Add(NameOption);
                         command.Options.Add(Residency);

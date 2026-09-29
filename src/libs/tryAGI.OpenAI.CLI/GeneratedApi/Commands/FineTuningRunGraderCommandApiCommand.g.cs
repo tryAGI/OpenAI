@@ -71,9 +71,9 @@ valid JSON string.
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"run-grader", @"Run grader
+        var command = new Command(commandName ?? @"run-grader", @"Run grader
 Run a grader.
 ");
                         command.Options.Add(Grader);

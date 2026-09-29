@@ -35,9 +35,9 @@ internal static partial class ValidateanexternalstorageconfigurationCommandApiCo
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"validateanexternalstorageconfiguration", @"Validate an external storage configuration
+        var command = new Command(commandName ?? @"validateanexternalstorageconfiguration", @"Validate an external storage configuration
 Validate one customer-managed external storage configuration.");
                         command.Arguments.Add(ExternalStorageId);
 

@@ -48,9 +48,9 @@ internal static partial class FineTuningListFineTuningEventsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-fine-tuning-events", @"List fine-tuning events
+        var command = new Command(commandName ?? @"list-fine-tuning-events", @"List fine-tuning events
 Get status updates for a fine-tuning job.
 ");
                         command.Arguments.Add(FineTuningJobId);

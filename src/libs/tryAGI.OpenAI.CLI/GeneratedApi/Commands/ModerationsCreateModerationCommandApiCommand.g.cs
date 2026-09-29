@@ -63,9 +63,9 @@ available models [here](https://developers.openai.com/api/docs/guides/moderation
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-moderation", @"Create moderation
+        var command = new Command(commandName ?? @"create-moderation", @"Create moderation
 Classifies if text and/or image inputs are potentially harmful. Learn
 more in the [moderation guide](https://developers.openai.com/api/docs/guides/moderation).
 ");

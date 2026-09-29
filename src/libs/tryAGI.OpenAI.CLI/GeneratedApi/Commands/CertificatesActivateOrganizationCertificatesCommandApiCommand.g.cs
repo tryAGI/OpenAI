@@ -31,9 +31,9 @@ internal static partial class CertificatesActivateOrganizationCertificatesComman
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"activate-organization-certificates", @"Activate certificates for organization
+        var command = new Command(commandName ?? @"activate-organization-certificates", @"Activate certificates for organization
 Activate certificates at the organization level.
 
 You can atomically and idempotently activate up to 10 certificates at a time.

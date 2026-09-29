@@ -35,9 +35,9 @@ internal static partial class AgentsRetrieveAgentSessionCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-agent-session", @"Retrieve an agent session
+        var command = new Command(commandName ?? @"retrieve-agent-session", @"Retrieve an agent session
 Retrieves the current state of a managed agent session. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).");
                         command.Arguments.Add(SessionId);
 

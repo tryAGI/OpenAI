@@ -31,9 +31,9 @@ internal static partial class DeleteorganizationspendlimitCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"deleteorganizationspendlimit", @"Delete organization spend limit
+        var command = new Command(commandName ?? @"deleteorganizationspendlimit", @"Delete organization spend limit
 Delete the organization's hard spend limit.");
 
 

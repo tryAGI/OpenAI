@@ -59,9 +59,9 @@ internal static partial class AgentsListAgentSessionArtifactsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-agent-session-artifacts", @"List agent session artifacts
+        var command = new Command(commandName ?? @"list-agent-session-artifacts", @"List agent session artifacts
 Lists immutable artifacts published by completed hosted session turns. See [session artifacts](https://developers.openai.com/api/docs/guides/agents-api/environments/files#openai-hosted-artifacts).");
                         command.Arguments.Add(SessionId);
                         command.Options.Add(Order);

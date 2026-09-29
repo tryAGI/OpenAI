@@ -97,9 +97,9 @@ internal static partial class VectorStoresCreateVectorStoreCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-vector-store", @"Create vector store
+        var command = new Command(commandName ?? @"create-vector-store", @"Create vector store
 Create a vector store.");
                         command.Options.Add(FileIds);
                         command.Options.Add(NameOption);

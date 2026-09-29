@@ -35,9 +35,9 @@ internal static partial class RetrieveWebhookEndpointCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-webhook-endpoint", @"Retrieve Webhook Endpoint
+        var command = new Command(commandName ?? @"retrieve-webhook-endpoint", @"Retrieve Webhook Endpoint
 Retrieves a webhook endpoint for the authenticated project.");
                         command.Arguments.Add(WebhookEndpointId);
 

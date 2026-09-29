@@ -35,9 +35,9 @@ internal static partial class AudioDeleteVoiceConsentCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-voice-consent", @"Delete voice consent
+        var command = new Command(commandName ?? @"delete-voice-consent", @"Delete voice consent
 Deletes a voice consent recording.");
                         command.Arguments.Add(ConsentId);
 

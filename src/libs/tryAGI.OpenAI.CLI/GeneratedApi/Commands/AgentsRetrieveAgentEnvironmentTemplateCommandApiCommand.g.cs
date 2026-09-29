@@ -35,9 +35,9 @@ internal static partial class AgentsRetrieveAgentEnvironmentTemplateCommandApiCo
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-agent-environment-template", @"Retrieve an agent environment template
+        var command = new Command(commandName ?? @"retrieve-agent-environment-template", @"Retrieve an agent environment template
 Retrieves reusable environment configuration without returning confidential values. See [reusing a hosted setup](https://developers.openai.com/api/docs/guides/agents-api/tools#reuse-a-hosted-plugin-setup).");
                         command.Arguments.Add(EnvironmentTemplateId);
 

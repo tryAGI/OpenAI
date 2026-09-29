@@ -35,9 +35,9 @@ internal static partial class DeleteThreadMethodCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-thread-method", @"Delete a ChatKit thread
+        var command = new Command(commandName ?? @"delete-thread-method", @"Delete a ChatKit thread
 Delete a ChatKit thread along with its items and stored attachments.");
                         command.Arguments.Add(ThreadId);
 

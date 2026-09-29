@@ -35,9 +35,9 @@ internal static partial class InvitesDeleteInviteCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-invite", @"Delete invite
+        var command = new Command(commandName ?? @"delete-invite", @"Delete invite
 Delete an invite. If the invite has already been accepted, it cannot be deleted.");
                         command.Arguments.Add(InviteId);
 

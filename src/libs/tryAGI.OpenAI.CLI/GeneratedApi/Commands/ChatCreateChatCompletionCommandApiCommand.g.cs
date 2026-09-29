@@ -47,9 +47,9 @@ internal static partial class ChatCreateChatCompletionCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-chat-completion", @"Create chat completion
+        var command = new Command(commandName ?? @"create-chat-completion", @"Create chat completion
 **Starting a new project?** We recommend trying [Responses](https://developers.openai.com/api/reference/resources/responses)
 to take advantage of the latest OpenAI platform features. Compare
 [Chat Completions with Responses](https://developers.openai.com/api/docs/guides/migrate-to-responses?api-mode=responses).

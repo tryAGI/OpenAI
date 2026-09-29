@@ -41,9 +41,9 @@ internal static partial class SpendAlertsRetrieveProjectSpendAlertCommandApiComm
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-project-spend-alert", @"Retrieve project spend alert
+        var command = new Command(commandName ?? @"retrieve-project-spend-alert", @"Retrieve project spend alert
 Retrieves a project spend alert.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(AlertId);

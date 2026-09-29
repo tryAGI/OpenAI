@@ -53,9 +53,9 @@ internal static partial class AgentsListAgentSessionSubagentsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-agent-session-subagents", @"List session subagents
+        var command = new Command(commandName ?? @"list-agent-session-subagents", @"List session subagents
 Lists subagents in a session, including nested and closed subagents. See [subagent workflows](https://developers.openai.com/api/docs/guides/agents-api/multi-agent).");
                         command.Arguments.Add(SessionId);
                         command.Options.Add(Limit);

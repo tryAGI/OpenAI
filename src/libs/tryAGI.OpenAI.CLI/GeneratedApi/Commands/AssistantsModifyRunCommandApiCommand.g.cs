@@ -63,9 +63,9 @@ internal static partial class AssistantsModifyRunCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"modify-run", @"Modify run
+        var command = new Command(commandName ?? @"modify-run", @"Modify run
 Modifies a run.");
                         command.Arguments.Add(ThreadId);
                         command.Arguments.Add(RunId);

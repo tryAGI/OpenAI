@@ -15,9 +15,9 @@ internal static partial class LiveDownloadLiveRecordingCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"download-live-recording", @"Download recording
+        var command = new Command(commandName ?? @"download-live-recording", @"Download recording
 Get Live session content");
                         command.Arguments.Add(SessionId);
 

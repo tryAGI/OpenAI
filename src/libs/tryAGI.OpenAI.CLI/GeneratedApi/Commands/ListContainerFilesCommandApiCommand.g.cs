@@ -56,9 +56,9 @@ internal static partial class ListContainerFilesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-container-files", @"List container files
+        var command = new Command(commandName ?? @"list-container-files", @"List container files
 List Container files");
                         command.Arguments.Add(ContainerId);
                         command.Options.Add(Limit);

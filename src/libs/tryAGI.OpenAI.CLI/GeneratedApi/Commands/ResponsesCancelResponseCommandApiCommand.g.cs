@@ -35,9 +35,9 @@ internal static partial class ResponsesCancelResponseCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"cancel-response", @"Cancel a response
+        var command = new Command(commandName ?? @"cancel-response", @"Cancel a response
 Cancels a model response with the given ID. Only responses created with
 the `background` parameter set to `true` can be cancelled.
 [Learn more](https://developers.openai.com/api/docs/guides/background).

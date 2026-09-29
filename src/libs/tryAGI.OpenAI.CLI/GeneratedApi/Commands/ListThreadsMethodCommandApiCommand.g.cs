@@ -59,9 +59,9 @@ internal static partial class ListThreadsMethodCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-threads-method", @"List ChatKit threads
+        var command = new Command(commandName ?? @"list-threads-method", @"List ChatKit threads
 List ChatKit threads with optional pagination and user filters.");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);

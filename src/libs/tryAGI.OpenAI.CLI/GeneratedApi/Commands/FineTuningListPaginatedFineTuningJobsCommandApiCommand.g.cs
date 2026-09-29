@@ -48,9 +48,9 @@ internal static partial class FineTuningListPaginatedFineTuningJobsCommandApiCom
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-paginated-fine-tuning-jobs", @"List fine-tuning jobs
+        var command = new Command(commandName ?? @"list-paginated-fine-tuning-jobs", @"List fine-tuning jobs
 List your organization's fine-tuning jobs
 ");
                         command.Options.Add(After);

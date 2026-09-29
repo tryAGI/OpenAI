@@ -76,9 +76,9 @@ internal static partial class UsageUsageCodeInterpreterSessionsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"code-interpreter-sessions", @"Code interpreter sessions
+        var command = new Command(commandName ?? @"code-interpreter-sessions", @"Code interpreter sessions
 Get code interpreter sessions usage details for the organization.");
                         command.Options.Add(StartTime);
                         command.Options.Add(EndTime);

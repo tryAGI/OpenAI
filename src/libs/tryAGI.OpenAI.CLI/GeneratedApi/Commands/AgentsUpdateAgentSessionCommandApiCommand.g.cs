@@ -63,9 +63,9 @@ internal static partial class AgentsUpdateAgentSessionCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-agent-session", @"Update an agent session
+        var command = new Command(commandName ?? @"update-agent-session", @"Update an agent session
 Updates session metadata, model, reasoning effort, or service tier. Model settings apply to subsequent turns. Omitted fields are unchanged. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).");
                         command.Arguments.Add(SessionId);
                         command.Options.Add(Agent);

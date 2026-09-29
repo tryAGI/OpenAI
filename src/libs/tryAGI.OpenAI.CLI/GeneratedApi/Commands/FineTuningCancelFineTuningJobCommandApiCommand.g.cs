@@ -36,9 +36,9 @@ internal static partial class FineTuningCancelFineTuningJobCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"cancel-fine-tuning-job", @"Cancel fine-tuning
+        var command = new Command(commandName ?? @"cancel-fine-tuning-job", @"Cancel fine-tuning
 Immediately cancel a fine-tune job.
 ");
                         command.Arguments.Add(FineTuningJobId);

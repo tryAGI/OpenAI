@@ -94,9 +94,9 @@ internal static partial class UsageUsageAudioSpeechesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"audio-speeches", @"Audio speeches
+        var command = new Command(commandName ?? @"audio-speeches", @"Audio speeches
 Get audio speeches usage details for the organization.");
                         command.Options.Add(StartTime);
                         command.Options.Add(EndTime);

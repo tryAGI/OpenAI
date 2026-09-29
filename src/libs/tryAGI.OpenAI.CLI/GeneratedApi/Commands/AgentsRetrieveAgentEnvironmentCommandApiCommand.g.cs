@@ -35,9 +35,9 @@ internal static partial class AgentsRetrieveAgentEnvironmentCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-agent-environment", @"Retrieve an agent environment
+        var command = new Command(commandName ?? @"retrieve-agent-environment", @"Retrieve an agent environment
 Retrieves an execution environment's connection status and safe installed metadata. See [environment lifecycle](https://developers.openai.com/api/docs/guides/agents-api/environments/lifecycle).");
                         command.Arguments.Add(EnvironmentId);
 

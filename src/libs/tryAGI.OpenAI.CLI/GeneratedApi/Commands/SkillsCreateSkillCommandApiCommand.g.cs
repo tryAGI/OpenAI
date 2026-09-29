@@ -36,9 +36,9 @@ internal static partial class SkillsCreateSkillCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-skill", @"Create Skill
+        var command = new Command(commandName ?? @"create-skill", @"Create Skill
 Create a new skill.");
                         command.Options.Add(Files);
 

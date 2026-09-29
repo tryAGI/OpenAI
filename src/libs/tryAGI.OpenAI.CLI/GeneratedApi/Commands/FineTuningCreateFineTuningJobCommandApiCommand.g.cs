@@ -137,9 +137,9 @@ If a seed is not specified, one will be generated for you.
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-fine-tuning-job", @"Create fine-tuning job
+        var command = new Command(commandName ?? @"create-fine-tuning-job", @"Create fine-tuning job
 Creates a fine-tuning job which begins the process of creating a new model from a given dataset.
 
 Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.

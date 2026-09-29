@@ -35,9 +35,9 @@ internal static partial class ConversationsGetConversationCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-conversation", @"Retrieve a conversation
+        var command = new Command(commandName ?? @"get-conversation", @"Retrieve a conversation
 Get a conversation");
                         command.Arguments.Add(ConversationId);
 

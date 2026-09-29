@@ -41,9 +41,9 @@ internal static partial class ProjectGroupsRemoveProjectGroupCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"remove-project-group", @"Remove project group
+        var command = new Command(commandName ?? @"remove-project-group", @"Remove project group
 Revokes a group's access to a project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(GroupId);

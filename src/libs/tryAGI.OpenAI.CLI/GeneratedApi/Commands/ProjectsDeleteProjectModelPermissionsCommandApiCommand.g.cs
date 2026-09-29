@@ -35,9 +35,9 @@ internal static partial class ProjectsDeleteProjectModelPermissionsCommandApiCom
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-project-model-permissions", @"Delete project model permissions
+        var command = new Command(commandName ?? @"delete-project-model-permissions", @"Delete project model permissions
 Deletes model permissions for a project.");
                         command.Arguments.Add(ProjectId);
 

@@ -35,9 +35,9 @@ internal static partial class AgentsDeleteAgentEnvironmentTemplateCommandApiComm
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-agent-environment-template", @"Delete an agent environment template
+        var command = new Command(commandName ?? @"delete-agent-environment-template", @"Delete an agent environment template
 Deletes reusable environment configuration and all confidential template inputs. See [reusing a hosted setup](https://developers.openai.com/api/docs/guides/agents-api/tools#reuse-a-hosted-plugin-setup).");
                         command.Arguments.Add(EnvironmentTemplateId);
 

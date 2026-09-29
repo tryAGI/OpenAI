@@ -69,9 +69,9 @@ The request must include enough format metadata for the file to be identified. W
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-transcription", @"Create transcription
+        var command = new Command(commandName ?? @"create-transcription", @"Create transcription
 Transcribes audio into the input language.
 
 Returns a transcription object in `json`, `diarized_json`, or `verbose_json`

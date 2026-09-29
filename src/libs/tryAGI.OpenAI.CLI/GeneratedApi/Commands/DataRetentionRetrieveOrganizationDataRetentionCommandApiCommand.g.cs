@@ -31,9 +31,9 @@ internal static partial class DataRetentionRetrieveOrganizationDataRetentionComm
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-organization-data-retention", @"Retrieve organization data retention
+        var command = new Command(commandName ?? @"retrieve-organization-data-retention", @"Retrieve organization data retention
 Retrieves organization data retention controls.");
 
 

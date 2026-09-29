@@ -96,9 +96,9 @@ internal static partial class AssistantsCreateMessageCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-message", @"Create message
+        var command = new Command(commandName ?? @"create-message", @"Create message
 Create a message.");
                         command.Arguments.Add(ThreadId);
                         command.Options.Add(Role);
@@ -160,7 +160,8 @@ Create a message.");
 
                                     var waitResponse = await CliRuntime.PollUntilTerminalAsync(
                                         fetchAsync: token => client.Assistants.GetMessageAsync(
-                                            threadId: resourceId,
+                                            threadId: threadId,
+                                            messageId: resourceId,
                                             cancellationToken: token),
                                         pollInterval: pollInterval,
                                         waitTimeout: waitTimeout,

@@ -22,9 +22,9 @@ internal static partial class LiveReferLiveSessionCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"refer-live-session", @"Transfer call
+        var command = new Command(commandName ?? @"refer-live-session", @"Transfer call
 Transfer a SIP call to another destination. Supply a nonblank target_uri for the SIP Refer-To header.");
                         command.Arguments.Add(SessionId);
                         command.Options.Add(TargetUri);

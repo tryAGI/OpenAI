@@ -57,9 +57,9 @@ internal static partial class ConversationsCreateConversationCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-conversation", @"Create a conversation
+        var command = new Command(commandName ?? @"create-conversation", @"Create a conversation
 Create a conversation.");
                         command.Options.Add(Metadata);
                         command.Options.Add(Items);

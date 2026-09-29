@@ -92,9 +92,9 @@ internal static partial class VectorStoresCreateVectorStoreFileBatchCommandApiCo
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-vector-store-file-batch", @"Create vector store file batch
+        var command = new Command(commandName ?? @"create-vector-store-file-batch", @"Create vector store file batch
 Create a vector store file batch.");
                         command.Arguments.Add(VectorStoreId);
                         command.Options.Add(FileIds);
@@ -156,7 +156,8 @@ Create a vector store file batch.");
 
                                     var waitResponse = await CliRuntime.PollUntilTerminalAsync(
                                         fetchAsync: token => client.VectorStores.GetVectorStoreFileBatchAsync(
-                                            vectorStoreId: resourceId,
+                                            vectorStoreId: vectorStoreId,
+                                            batchId: resourceId,
                                             cancellationToken: token),
                                         pollInterval: pollInterval,
                                         waitTimeout: waitTimeout,

@@ -42,9 +42,9 @@ internal static partial class ProjectUserRoleAssignmentsAssignProjectUserRoleCom
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"assign-project-user-role", @"Assign project role to user
+        var command = new Command(commandName ?? @"assign-project-user-role", @"Assign project role to user
 Assigns a project role to a user within a project.");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(UserId);                        command.Options.Add(PublicAssignOrganizationGroupRoleBodyOptionSetOptions.RoleId);

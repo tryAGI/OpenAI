@@ -35,9 +35,9 @@ internal static partial class SkillsGetSkillCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-skill", @"Get Skill
+        var command = new Command(commandName ?? @"get-skill", @"Get Skill
 Get a skill by its ID.");
                         command.Arguments.Add(SkillId);
 

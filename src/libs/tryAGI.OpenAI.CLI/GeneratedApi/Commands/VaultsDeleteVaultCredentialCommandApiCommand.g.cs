@@ -41,9 +41,9 @@ internal static partial class VaultsDeleteVaultCredentialCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-vault-credential", @"Delete a vault credential
+        var command = new Command(commandName ?? @"delete-vault-credential", @"Delete a vault credential
 Deletes a vault credential. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).");
                         command.Arguments.Add(VaultId);
                         command.Arguments.Add(CredentialId);

@@ -64,9 +64,9 @@ internal static partial class UpdateorganizationspendlimitCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"updateorganizationspendlimit", @"Update organization spend limit
+        var command = new Command(commandName ?? @"updateorganizationspendlimit", @"Update organization spend limit
 Create or replace the organization's hard spend limit.");
                         command.Options.Add(ThresholdAmount);
                         command.Options.Add(Currency);

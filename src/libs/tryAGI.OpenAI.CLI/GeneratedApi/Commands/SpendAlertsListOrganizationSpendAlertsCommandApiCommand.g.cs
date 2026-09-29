@@ -53,9 +53,9 @@ internal static partial class SpendAlertsListOrganizationSpendAlertsCommandApiCo
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-organization-spend-alerts", @"List organization spend alerts
+        var command = new Command(commandName ?? @"list-organization-spend-alerts", @"List organization spend alerts
 Lists organization spend alerts.");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);

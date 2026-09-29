@@ -28,9 +28,9 @@ internal static partial class AgentsCreateAgentSessionEventsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-agent-session-events", @"Create agent session input events
+        var command = new Command(commandName ?? @"create-agent-session-events", @"Create agent session input events
 Submits message, cancellation, or tool-result events to a managed agent session. Cancellation can recover a still-open turn whose backend execution has ended by marking it cancelled and abandoning unpublished outputs. Saved results, published files, and existing terminal outcomes are preserved. HTTP 202 confirms acceptance, not durable completion. See [session events](https://developers.openai.com/api/docs/guides/agents-api/sessions/events).");
                         command.Arguments.Add(SessionId);
                         command.Options.Add(IdempotencyKey);

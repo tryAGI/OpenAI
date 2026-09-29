@@ -71,9 +71,9 @@ internal static partial class CreateContainerFileCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-container-file", @"Create container file
+        var command = new Command(commandName ?? @"create-container-file", @"Create container file
 Create a Container File
 
 You can send either a multipart/form-data request with the raw file content, or a JSON request with a file ID.

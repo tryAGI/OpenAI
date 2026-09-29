@@ -42,9 +42,9 @@ internal static partial class GroupUsersAddGroupUserCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"add-group-user", @"Add group user
+        var command = new Command(commandName ?? @"add-group-user", @"Add group user
 Adds a user to a group.");
                         command.Arguments.Add(GroupId);
                         command.Options.Add(UserId);

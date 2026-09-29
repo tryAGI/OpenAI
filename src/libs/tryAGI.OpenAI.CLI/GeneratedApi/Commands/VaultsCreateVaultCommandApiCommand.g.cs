@@ -57,9 +57,9 @@ internal static partial class VaultsCreateVaultCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-vault", @"Create a vault
+        var command = new Command(commandName ?? @"create-vault", @"Create a vault
 Creates a vault for the current project. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).");
                         command.Options.Add(NameOption);
                         command.Options.Add(Metadata);

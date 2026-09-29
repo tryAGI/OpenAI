@@ -41,9 +41,9 @@ internal static partial class VaultsRetrieveVaultCredentialCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-vault-credential", @"Retrieve a vault credential
+        var command = new Command(commandName ?? @"retrieve-vault-credential", @"Retrieve a vault credential
 Retrieves vault credential metadata without returning secret values. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).");
                         command.Arguments.Add(VaultId);
                         command.Arguments.Add(CredentialId);

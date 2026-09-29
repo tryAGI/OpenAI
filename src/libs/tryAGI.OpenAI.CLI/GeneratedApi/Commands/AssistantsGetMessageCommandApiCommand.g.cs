@@ -41,9 +41,9 @@ internal static partial class AssistantsGetMessageCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-message", @"Retrieve message
+        var command = new Command(commandName ?? @"get-message", @"Retrieve message
 Retrieve a message.");
                         command.Arguments.Add(ThreadId);
                         command.Arguments.Add(MessageId);

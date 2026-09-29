@@ -80,9 +80,9 @@ internal static partial class VectorStoresSearchVectorStoreCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"search-vector-store", @"Search vector store
+        var command = new Command(commandName ?? @"search-vector-store", @"Search vector store
 Search a vector store for relevant chunks based on a query and file attributes filter.");
                         command.Arguments.Add(VectorStoreId);
                         command.Options.Add(Query);

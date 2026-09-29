@@ -63,9 +63,9 @@ internal static partial class AssistantsListRunsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-runs", @"List runs
+        var command = new Command(commandName ?? @"list-runs", @"List runs
 Returns a list of runs belonging to a thread.");
                         command.Arguments.Add(ThreadId);
                         command.Options.Add(Limit);

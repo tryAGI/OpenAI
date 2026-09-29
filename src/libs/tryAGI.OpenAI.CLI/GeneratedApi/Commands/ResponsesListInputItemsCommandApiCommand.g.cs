@@ -67,9 +67,9 @@ parameter for Response creation above for more information.
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-input-items", @"List input items
+        var command = new Command(commandName ?? @"list-input-items", @"List input items
 Returns a list of input items for a given response.");
                         command.Arguments.Add(ResponseId);
                         command.Options.Add(Limit);

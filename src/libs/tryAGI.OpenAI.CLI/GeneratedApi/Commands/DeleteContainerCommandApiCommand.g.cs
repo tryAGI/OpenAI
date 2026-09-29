@@ -35,9 +35,9 @@ internal static partial class DeleteContainerCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-container", @"Delete a container
+        var command = new Command(commandName ?? @"delete-container", @"Delete a container
 Delete Container");
                         command.Arguments.Add(ContainerId);
 

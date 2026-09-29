@@ -15,9 +15,9 @@ internal static partial class LiveHangupLiveSessionCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"hangup-live-session", @"Hang up session
+        var command = new Command(commandName ?? @"hangup-live-session", @"Hang up session
 End a SIP call identified by session_id.");
                         command.Arguments.Add(SessionId);
 

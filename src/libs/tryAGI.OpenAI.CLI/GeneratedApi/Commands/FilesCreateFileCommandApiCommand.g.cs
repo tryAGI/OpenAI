@@ -92,9 +92,9 @@ internal static partial class FilesCreateFileCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-file", @"Upload file
+        var command = new Command(commandName ?? @"create-file", @"Upload file
 Upload a file that can be used across various endpoints. Individual files
 can be up to 512 MB, and each project can store up to 2.5 TB of files in
 total. There is no organization-wide storage limit. Uploads to this

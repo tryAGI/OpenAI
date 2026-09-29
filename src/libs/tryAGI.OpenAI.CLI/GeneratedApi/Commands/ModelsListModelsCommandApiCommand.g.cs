@@ -31,9 +31,9 @@ internal static partial class ModelsListModelsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-models", @"List models
+        var command = new Command(commandName ?? @"list-models", @"List models
 Lists the currently available models, and provides basic information about each one such as the owner and availability.");
 
 

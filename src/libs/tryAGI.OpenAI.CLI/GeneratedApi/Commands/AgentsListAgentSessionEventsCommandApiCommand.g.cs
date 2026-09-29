@@ -15,9 +15,9 @@ internal static partial class AgentsListAgentSessionEventsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-agent-session-events", @"Stream agent session events
+        var command = new Command(commandName ?? @"list-agent-session-events", @"Stream agent session events
 Streams live events for an agent session. See [session events](https://developers.openai.com/api/docs/guides/agents-api/sessions/events).");
                         command.Arguments.Add(SessionId);
 

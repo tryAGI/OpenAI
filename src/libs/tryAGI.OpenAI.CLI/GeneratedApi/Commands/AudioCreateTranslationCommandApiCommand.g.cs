@@ -62,9 +62,9 @@ internal static partial class AudioCreateTranslationCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-translation", @"Create translation
+        var command = new Command(commandName ?? @"create-translation", @"Create translation
 Translates audio into English.");
                         command.Options.Add(File);
                         command.Options.Add(Model);                        command.Options.Add(CreateTranslationRequestOptionSetOptions.Filename);

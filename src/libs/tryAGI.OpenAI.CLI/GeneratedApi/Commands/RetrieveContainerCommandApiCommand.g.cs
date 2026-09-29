@@ -35,9 +35,9 @@ internal static partial class RetrieveContainerCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-container", @"Retrieve container
+        var command = new Command(commandName ?? @"retrieve-container", @"Retrieve container
 Retrieve Container");
                         command.Arguments.Add(ContainerId);
 

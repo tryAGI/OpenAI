@@ -31,9 +31,9 @@ internal static partial class CertificatesDeactivateOrganizationCertificatesComm
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"deactivate-organization-certificates", @"Deactivate certificates for organization
+        var command = new Command(commandName ?? @"deactivate-organization-certificates", @"Deactivate certificates for organization
 Deactivate certificates at the organization level.
 
 You can atomically and idempotently deactivate up to 10 certificates at a time.

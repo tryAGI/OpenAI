@@ -51,9 +51,9 @@ parameter for [listing Conversation items above](https://developers.openai.com/a
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-conversation-items", @"Create items
+        var command = new Command(commandName ?? @"create-conversation-items", @"Create items
 Create items in a conversation with the given ID.");
                         command.Arguments.Add(ConversationId);
                         command.Options.Add(Include);

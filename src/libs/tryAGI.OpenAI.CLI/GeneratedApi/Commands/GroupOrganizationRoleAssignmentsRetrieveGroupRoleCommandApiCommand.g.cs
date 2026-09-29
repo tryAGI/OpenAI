@@ -41,9 +41,9 @@ internal static partial class GroupOrganizationRoleAssignmentsRetrieveGroupRoleC
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-group-role", @"Retrieve group organization role
+        var command = new Command(commandName ?? @"retrieve-group-role", @"Retrieve group organization role
 Retrieves an organization role assigned to a group.");
                         command.Arguments.Add(GroupId);
                         command.Arguments.Add(RoleId);

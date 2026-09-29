@@ -69,9 +69,9 @@ internal static partial class UpdateWebhookEndpointCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"update-webhook-endpoint", @"Update Webhook Endpoint
+        var command = new Command(commandName ?? @"update-webhook-endpoint", @"Update Webhook Endpoint
 Updates a webhook endpoint for the authenticated project.");
                         command.Arguments.Add(WebhookEndpointId);
                         command.Options.Add(NameOption);

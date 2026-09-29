@@ -41,9 +41,9 @@ internal static partial class AgentsDeleteAgentSessionArtifactCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-agent-session-artifact", @"Delete an agent session artifact
+        var command = new Command(commandName ?? @"delete-agent-session-artifact", @"Delete an agent session artifact
 Deletes an immutable session artifact without deleting its live environment file or original Files API object. See [session artifacts](https://developers.openai.com/api/docs/guides/agents-api/environments/files#openai-hosted-artifacts).");
                         command.Arguments.Add(SessionId);
                         command.Arguments.Add(ArtifactId);

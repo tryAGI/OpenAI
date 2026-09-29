@@ -97,9 +97,9 @@ internal static partial class CreateContainerCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-container", @"Create container
+        var command = new Command(commandName ?? @"create-container", @"Create container
 Create Container");
                         command.Arguments.Add(NameOption);
                         command.Options.Add(FileIds);

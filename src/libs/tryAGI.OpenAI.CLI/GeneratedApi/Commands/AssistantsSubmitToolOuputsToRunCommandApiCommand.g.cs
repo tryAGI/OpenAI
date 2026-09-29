@@ -48,9 +48,9 @@ internal static partial class AssistantsSubmitToolOuputsToRunCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"submit-tool-ouputs-to-run", @"Submit tool outputs to run
+        var command = new Command(commandName ?? @"submit-tool-ouputs-to-run", @"Submit tool outputs to run
 When a run has the `status: ""requires_action""` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.
 ");
                         command.Arguments.Add(ThreadId);

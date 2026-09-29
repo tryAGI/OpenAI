@@ -35,9 +35,9 @@ internal static partial class AgentsRetrieveAgentCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-agent", @"Retrieve an agent
+        var command = new Command(commandName ?? @"retrieve-agent", @"Retrieve an agent
 Retrieves a reusable agent by ID. See [agent configuration](https://developers.openai.com/api/docs/guides/agents-api/configuration).");
                         command.Arguments.Add(AgentId);
 

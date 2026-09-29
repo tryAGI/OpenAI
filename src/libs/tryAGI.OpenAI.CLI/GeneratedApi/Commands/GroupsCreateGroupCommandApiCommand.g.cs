@@ -35,9 +35,9 @@ internal static partial class GroupsCreateGroupCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-group", @"Create group
+        var command = new Command(commandName ?? @"create-group", @"Create group
 Creates a new group in the organization.");
                         command.Arguments.Add(NameOption);
 

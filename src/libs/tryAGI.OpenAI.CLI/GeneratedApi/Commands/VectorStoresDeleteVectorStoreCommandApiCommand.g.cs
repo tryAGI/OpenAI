@@ -35,9 +35,9 @@ internal static partial class VectorStoresDeleteVectorStoreCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"delete-vector-store", @"Delete vector store
+        var command = new Command(commandName ?? @"delete-vector-store", @"Delete vector store
 Delete a vector store.");
                         command.Arguments.Add(VectorStoreId);
 

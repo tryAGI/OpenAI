@@ -90,9 +90,9 @@ internal static partial class AuditLogsListAuditLogsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-audit-logs", @"List audit logs
+        var command = new Command(commandName ?? @"list-audit-logs", @"List audit logs
 List user actions and configuration changes within this organization.");
                         command.Options.Add(EffectiveAt);
                         command.Options.Add(ProjectIds);

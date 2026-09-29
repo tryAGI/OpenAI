@@ -53,9 +53,9 @@ internal static partial class AgentsListAgentSessionsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-agent-sessions", @"List agent sessions
+        var command = new Command(commandName ?? @"list-agent-sessions", @"List agent sessions
 Lists managed agent sessions using ID-based pagination and the requested sort order. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);

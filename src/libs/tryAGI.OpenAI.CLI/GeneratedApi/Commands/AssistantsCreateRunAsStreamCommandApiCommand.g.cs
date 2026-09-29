@@ -96,9 +96,9 @@ Setting to `{ ""type"": ""json_object"" }` enables JSON mode, which ensures the 
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-run-as-stream", @"Create run
+        var command = new Command(commandName ?? @"create-run-as-stream", @"Create run
 Create a run.");
                         command.Arguments.Add(ThreadId);
                         command.Options.Add(Include);

@@ -47,9 +47,9 @@ internal static partial class ResponsesCreateResponseCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-response", @"Create a model response
+        var command = new Command(commandName ?? @"create-response", @"Create a model response
 Creates a model response. Provide [text](https://developers.openai.com/api/docs/guides/text) or
 [image](https://developers.openai.com/api/docs/guides/images-vision) inputs to generate [text](https://developers.openai.com/api/docs/guides/text)
 or [JSON](https://developers.openai.com/api/docs/guides/structured-outputs) outputs. Have the model call

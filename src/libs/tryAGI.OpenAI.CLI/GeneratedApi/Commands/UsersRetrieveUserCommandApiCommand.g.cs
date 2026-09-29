@@ -35,9 +35,9 @@ internal static partial class UsersRetrieveUserCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-user", @"Retrieve user
+        var command = new Command(commandName ?? @"retrieve-user", @"Retrieve user
 Retrieves a user by their identifier.");
                         command.Arguments.Add(UserId);
 

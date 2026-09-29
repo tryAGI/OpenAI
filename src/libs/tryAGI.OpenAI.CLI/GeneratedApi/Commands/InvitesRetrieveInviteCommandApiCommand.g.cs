@@ -35,9 +35,9 @@ internal static partial class InvitesRetrieveInviteCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"retrieve-invite", @"Retrieve invite
+        var command = new Command(commandName ?? @"retrieve-invite", @"Retrieve invite
 Retrieves an invite.");
                         command.Arguments.Add(InviteId);
 

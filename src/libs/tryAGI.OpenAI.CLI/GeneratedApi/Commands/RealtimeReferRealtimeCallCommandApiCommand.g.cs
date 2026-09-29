@@ -25,9 +25,9 @@ webhook.",
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"refer-realtime-call", @"Refer call
+        var command = new Command(commandName ?? @"refer-realtime-call", @"Refer call
 Transfer an active SIP call to a new destination using the SIP REFER verb.");
                         command.Arguments.Add(CallId);
                         command.Options.Add(TargetUri);

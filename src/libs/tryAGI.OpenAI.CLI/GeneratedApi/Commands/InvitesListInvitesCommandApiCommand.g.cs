@@ -43,9 +43,9 @@ internal static partial class InvitesListInvitesCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-invites", @"List invites
+        var command = new Command(commandName ?? @"list-invites", @"List invites
 Returns a list of invites in the organization.");
                         command.Options.Add(Limit);
                         command.Options.Add(After);
