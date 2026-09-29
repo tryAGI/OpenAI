@@ -24,11 +24,9 @@ public partial class Tests
     [TestMethod]
     public void EmbeddingFloatVector()
     {
-        var embedding = new Embedding
-        {
-            Index = 0,
-            Embedding1 = (IList<float>)new List<float> { 0.25f, 0.5f },
-        };
+        var embedding = System.Text.Json.JsonSerializer.Deserialize<Embedding>(
+            """{"index":0,"embedding":[0.25,0.5],"object":"embedding"}""",
+            SourceGenerationContext.Default.Options)!;
 
         embedding.GetFloatVector().Should().Equal(0.25f, 0.5f);
     }
