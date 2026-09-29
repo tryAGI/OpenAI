@@ -39,6 +39,7 @@ public sealed partial class OpenAiClient : Meai.IEmbeddingGenerator<string, Meai
                 : new OneOf<string, IList<string>, IList<int>, IList<IList<int>>>(
                     (IList<string>)inputList),
             Model = modelId,
+            EncodingFormat = CreateEmbeddingRequestEncodingFormat.Float,
         };
 
         if (knownModel is not null)
@@ -56,7 +57,7 @@ public sealed partial class OpenAiClient : Meai.IEmbeddingGenerator<string, Meai
             cancellationToken: cancellationToken).ConfigureAwait(false);
 
         var embeddings = new Meai.GeneratedEmbeddings<Meai.Embedding<float>>(
-            response.Data.Select(e => new Meai.Embedding<float>(e.Embedding1.ToArray())
+            response.Data.Select(e => new Meai.Embedding<float>(ToFloatEmbedding(e.Embedding1))
             {
                 ModelId = response.Model,
             }).ToList());
@@ -72,4 +73,11 @@ public sealed partial class OpenAiClient : Meai.IEmbeddingGenerator<string, Meai
 
         return embeddings;
     }
+
+    private static float[] ToFloatEmbedding(object? value) => value switch
+    {
+        IList<float> floats => floats.ToArray(),
+        AnyOf<IList<float>, string> { Value1: { } floats } => floats.ToArray(),
+        _ => throw new InvalidOperationException("The embeddings response did not contain a float vector."),
+    };
 }
