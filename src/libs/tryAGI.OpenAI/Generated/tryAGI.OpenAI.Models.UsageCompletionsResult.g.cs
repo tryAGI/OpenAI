@@ -29,10 +29,16 @@ namespace tryAGI.OpenAI
         public int? InputCachedTokens { get; set; }
 
         /// <summary>
-        /// The aggregated number of input tokens written to the cache.
+        /// The aggregated number of input tokens written to the cache with a 30-minute retention period.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_cache_write_tokens")]
         public int? InputCacheWriteTokens { get; set; }
+
+        /// <summary>
+        /// The aggregated number of input tokens written to the cache with a 12-hour retention period.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_cache_write_12h_tokens")]
+        public int? InputCacheWrite12hTokens { get; set; }
 
         /// <summary>
         /// The aggregated number of uncached input tokens used across text, audio, and image inputs, excluding cache-write tokens.
@@ -167,7 +173,10 @@ namespace tryAGI.OpenAI
         /// The aggregated number of cached input tokens used across text, audio, and image inputs. For customers subscribed to Scale Tier, this includes Scale Tier tokens.
         /// </param>
         /// <param name="inputCacheWriteTokens">
-        /// The aggregated number of input tokens written to the cache.
+        /// The aggregated number of input tokens written to the cache with a 30-minute retention period.
+        /// </param>
+        /// <param name="inputCacheWrite12hTokens">
+        /// The aggregated number of input tokens written to the cache with a 12-hour retention period.
         /// </param>
         /// <param name="inputUncachedTokens">
         /// The aggregated number of uncached input tokens used across text, audio, and image inputs, excluding cache-write tokens.
@@ -215,6 +224,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.UsageCompletionsResultObject @object,
             int? inputCachedTokens,
             int? inputCacheWriteTokens,
+            int? inputCacheWrite12hTokens,
             int? inputUncachedTokens,
             int? inputTextTokens,
             int? outputTextTokens,
@@ -236,6 +246,7 @@ namespace tryAGI.OpenAI
             this.InputTokens = inputTokens;
             this.InputCachedTokens = inputCachedTokens;
             this.InputCacheWriteTokens = inputCacheWriteTokens;
+            this.InputCacheWrite12hTokens = inputCacheWrite12hTokens;
             this.InputUncachedTokens = inputUncachedTokens;
             this.OutputTokens = outputTokens;
             this.InputTextTokens = inputTextTokens;

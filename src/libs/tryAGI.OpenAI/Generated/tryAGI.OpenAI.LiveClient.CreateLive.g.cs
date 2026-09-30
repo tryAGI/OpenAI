@@ -27,11 +27,11 @@ namespace tryAGI.OpenAI
             };
         partial void PrepareCreateLiveArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::tryAGI.OpenAI.LiveCreateRequest request);
+            global::tryAGI.OpenAI.LiveSessionCreateRequest request);
         partial void PrepareCreateLiveRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::tryAGI.OpenAI.LiveCreateRequest request);
+            global::tryAGI.OpenAI.LiveSessionCreateRequest request);
         partial void ProcessCreateLiveResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,15 +43,29 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Create session<br/>
-        /// Create a Live WebRTC session. Start with the [Live prompting guide](https://developers.openai.com/api/docs/guides/live-prompting).
+        /// Create a Live WebRTC session or place an outbound SIP call. Start with the<br/>
+        /// [Live prompting guide](https://developers.openai.com/api/docs/guides/live-prompting) for session configuration<br/>
+        /// and [Telephony and SIP](https://developers.openai.com/api/docs/guides/voice-sip?api=live#place-an-outbound-call)<br/>
+        /// for trunk setup and call monitoring.<br/>
+        /// Set transport.type to `webrtc` and supply an SDP offer, or set it to `sip`<br/>
+        /// and supply an E.164 destination and trunk credentials. Outbound SIP calling<br/>
+        /// must be enabled for your organization.<br/>
+        /// Ringing is limited to 3 minutes and connected calls to 2 hours; these limits<br/>
+        /// are not configurable in the request.<br/>
+        /// Returns `201 Created` after session initialization. WebRTC responses include an<br/>
+        /// SDP answer. SIP responses do not wait for the callee to answer. Attach a<br/>
+        /// sideband connection using session.id to monitor SIP call progress.<br/>
+        /// Each SIP request creates a new call. If a request times out or the connection<br/>
+        /// fails, retry with caution: the original request may have succeeded, and a<br/>
+        /// retry can place another call.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.LiveCreateResponse> CreateLiveAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.LiveSessionCreateResponse> CreateLiveAsync(
 
-            global::tryAGI.OpenAI.LiveCreateRequest request,
+            global::tryAGI.OpenAI.LiveSessionCreateRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -66,15 +80,29 @@ namespace tryAGI.OpenAI
         }
         /// <summary>
         /// Create session<br/>
-        /// Create a Live WebRTC session. Start with the [Live prompting guide](https://developers.openai.com/api/docs/guides/live-prompting).
+        /// Create a Live WebRTC session or place an outbound SIP call. Start with the<br/>
+        /// [Live prompting guide](https://developers.openai.com/api/docs/guides/live-prompting) for session configuration<br/>
+        /// and [Telephony and SIP](https://developers.openai.com/api/docs/guides/voice-sip?api=live#place-an-outbound-call)<br/>
+        /// for trunk setup and call monitoring.<br/>
+        /// Set transport.type to `webrtc` and supply an SDP offer, or set it to `sip`<br/>
+        /// and supply an E.164 destination and trunk credentials. Outbound SIP calling<br/>
+        /// must be enabled for your organization.<br/>
+        /// Ringing is limited to 3 minutes and connected calls to 2 hours; these limits<br/>
+        /// are not configurable in the request.<br/>
+        /// Returns `201 Created` after session initialization. WebRTC responses include an<br/>
+        /// SDP answer. SIP responses do not wait for the callee to answer. Attach a<br/>
+        /// sideband connection using session.id to monitor SIP call progress.<br/>
+        /// Each SIP request creates a new call. If a request times out or the connection<br/>
+        /// fails, retry with caution: the original request may have succeeded, and a<br/>
+        /// retry can place another call.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.LiveCreateResponse>> CreateLiveAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.LiveSessionCreateResponse>> CreateLiveAsResponseAsync(
 
-            global::tryAGI.OpenAI.LiveCreateRequest request,
+            global::tryAGI.OpenAI.LiveSessionCreateRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -485,6 +513,43 @@ namespace tryAGI.OpenAI
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // The SIP gateway could not initialize the outbound call.
+                            if ((int)__response.StatusCode == 502)
+                            {
+                                string? __content_502 = null;
+                                global::System.Exception? __exception_502 = null;
+                                string? __value_502 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_502 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_502 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_502, typeof(string), JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_502 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_502 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_502, typeof(string), JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_502 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<string>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_502 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_502,
+                                    responseBody: __content_502,
+                                    responseObject: __value_502,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
                             // The session is temporarily unavailable.
                             if ((int)__response.StatusCode == 503)
                             {
@@ -522,6 +587,43 @@ namespace tryAGI.OpenAI
                                         h => h.Key,
                                         h => h.Value));
                             }
+                            // SIP session initialization timed out. The error code is sip_setup_timeout.
+                            if ((int)__response.StatusCode == 504)
+                            {
+                                string? __content_504 = null;
+                                global::System.Exception? __exception_504 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_504 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_504 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_504, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_504 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_504 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_504, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_504 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_504,
+                                    responseBody: __content_504,
+                                    responseObject: __value_504,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             if (__effectiveReadResponseAsString)
                             {
@@ -544,9 +646,9 @@ namespace tryAGI.OpenAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::tryAGI.OpenAI.LiveCreateResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::tryAGI.OpenAI.LiveSessionCreateResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.LiveCreateResponse>(
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.LiveSessionCreateResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -576,9 +678,9 @@ namespace tryAGI.OpenAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::tryAGI.OpenAI.LiveCreateResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::tryAGI.OpenAI.LiveSessionCreateResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.LiveCreateResponse>(
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.LiveSessionCreateResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -620,24 +722,38 @@ namespace tryAGI.OpenAI
         }
         /// <summary>
         /// Create session<br/>
-        /// Create a Live WebRTC session. Start with the [Live prompting guide](https://developers.openai.com/api/docs/guides/live-prompting).
+        /// Create a Live WebRTC session or place an outbound SIP call. Start with the<br/>
+        /// [Live prompting guide](https://developers.openai.com/api/docs/guides/live-prompting) for session configuration<br/>
+        /// and [Telephony and SIP](https://developers.openai.com/api/docs/guides/voice-sip?api=live#place-an-outbound-call)<br/>
+        /// for trunk setup and call monitoring.<br/>
+        /// Set transport.type to `webrtc` and supply an SDP offer, or set it to `sip`<br/>
+        /// and supply an E.164 destination and trunk credentials. Outbound SIP calling<br/>
+        /// must be enabled for your organization.<br/>
+        /// Ringing is limited to 3 minutes and connected calls to 2 hours; these limits<br/>
+        /// are not configurable in the request.<br/>
+        /// Returns `201 Created` after session initialization. WebRTC responses include an<br/>
+        /// SDP answer. SIP responses do not wait for the callee to answer. Attach a<br/>
+        /// sideband connection using session.id to monitor SIP call progress.<br/>
+        /// Each SIP request creates a new call. If a request times out or the connection<br/>
+        /// fails, retry with caution: the original request may have succeeded, and a<br/>
+        /// retry can place another call.
         /// </summary>
         /// <param name="session">
         /// Startup configuration for the Live session.
         /// </param>
         /// <param name="transport">
-        /// WebRTC transport with the browser's SDP offer.
+        /// WebRTC transport with an SDP offer, or SIP transport with a destination and per-call trunk credentials.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.LiveCreateResponse> CreateLiveAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.LiveSessionCreateResponse> CreateLiveAsync(
             global::tryAGI.OpenAI.LiveMediaSessionCreateParams session,
-            global::tryAGI.OpenAI.LiveWebRTCTransport transport,
+            global::tryAGI.OpenAI.Transport transport,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::tryAGI.OpenAI.LiveCreateRequest
+            var __request = new global::tryAGI.OpenAI.LiveSessionCreateRequest
             {
                 Session = session,
                 Transport = transport,

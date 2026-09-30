@@ -18,7 +18,13 @@ internal static partial class LiveForkLiveSessionCommandApiCommand
     {
         Description = @"Optional configuration overrides for the new Live session. Omit this object or send an empty object to inherit the stored session's settings.",
     };
-    private static readonly LiveWebRTCTransportOptionSet TransportOptions = LiveWebRTCTransportOptionSet.Create(@"transport");
+
+    private static Option<global::tryAGI.OpenAI.LiveWebRTCTransport> Transport { get; } = new(
+        name: @"--transport")
+    {
+        Description = @"WebRTC transport with an SDP offer for the new connection to the forked session.",
+        Required = true,
+    };
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -63,8 +69,8 @@ internal static partial class LiveForkLiveSessionCommandApiCommand
         var command = new Command(commandName ?? @"fork-live-session", @"Fork session
 Fork a stored Live session onto a new WebRTC connection.");
                         command.Arguments.Add(SessionId);
-                        command.Options.Add(Session);                        command.Options.Add(TransportOptions.Type);
-                        command.Options.Add(TransportOptions.Sdp);
+                        command.Options.Add(Session);
+                        command.Options.Add(Transport);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -92,26 +98,14 @@ Fork a stored Live session onto a new WebRTC connection.");
                             cancellationToken).ConfigureAwait(false);
                         var sessionId = parseResult.GetRequiredValue(SessionId);
                         var session = CliRuntime.WasSpecified(parseResult, Session) ? parseResult.GetValue(Session) : (__requestBase is { } __SessionBaseValue ? __SessionBaseValue.Session : default);
-
-                        var __TransportBase = __requestBase is { } __TransportBaseValue ? __TransportBaseValue.Transport : default;                        var transportType = CliRuntime.WasSpecified(parseResult, TransportOptions.Type) ? parseResult.GetValue(TransportOptions.Type) : (__TransportBase is { } __TransporttypeBaseValue ? __TransporttypeBaseValue.Type : default);
-                        var transportSdp = parseResult.GetValue(TransportOptions.Sdp);
-                        var __TransportSpecified = CliRuntime.WasSpecified(parseResult, TransportOptions.Type) || CliRuntime.WasSpecified(parseResult, TransportOptions.Sdp);
-                        var transport =
-                            __TransportSpecified || __TransportBase is not null
-                                ? new global::tryAGI.OpenAI.LiveWebRTCTransport
-                                {
-	                                Type = transportType,
-                                Sdp = transportSdp!,
-
-                                }
-                                : __TransportBase;
+                        var transport = parseResult.GetRequiredValue(Transport);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 var response = await client.Live.ForkLiveSessionAsync(
                                     sessionId: sessionId,
                                     session: session,
-                                    transport: transport!,
+                                    transport: transport,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 
