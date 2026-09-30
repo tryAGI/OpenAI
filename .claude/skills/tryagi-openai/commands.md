@@ -175,7 +175,7 @@ Manage and run evals in the OpenAI platform.
 
 | Command | Route | Description |
 |---------|-------|-------------|
-| `cancel-eval-run` | `POST /evals/{eval_id}/runs/{run_id}` | Cancel eval run |
+| `cancel-eval-run` | `POST /evals/{eval_id}/runs/{run_id}/cancel` | Cancel eval run |
 | `create-eval` | `POST /evals` | Create eval |
 | `create-eval-run` | `POST /evals/{eval_id}/runs` | Create eval run |
 | `delete-eval` | `DELETE /evals/{eval_id}` | Delete an eval |

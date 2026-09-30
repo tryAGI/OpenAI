@@ -68,6 +68,18 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         SessionUsageUpdated,
+        /// <summary>
+        ///
+        /// </summary>
+        TransportAnswered,
+        /// <summary>
+        ///
+        /// </summary>
+        TransportFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        TransportRinging,
     }
 
     /// <summary>
@@ -97,6 +109,9 @@ namespace tryAGI.OpenAI
                 LiveSidebandServerEventDiscriminatorType.SessionThinkingAppended => "session.thinking.appended",
                 LiveSidebandServerEventDiscriminatorType.SessionUpdated => "session.updated",
                 LiveSidebandServerEventDiscriminatorType.SessionUsageUpdated => "session.usage.updated",
+                LiveSidebandServerEventDiscriminatorType.TransportAnswered => "transport.answered",
+                LiveSidebandServerEventDiscriminatorType.TransportFailed => "transport.failed",
+                LiveSidebandServerEventDiscriminatorType.TransportRinging => "transport.ringing",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -122,6 +137,9 @@ namespace tryAGI.OpenAI
                 "session.thinking.appended" => LiveSidebandServerEventDiscriminatorType.SessionThinkingAppended,
                 "session.updated" => LiveSidebandServerEventDiscriminatorType.SessionUpdated,
                 "session.usage.updated" => LiveSidebandServerEventDiscriminatorType.SessionUsageUpdated,
+                "transport.answered" => LiveSidebandServerEventDiscriminatorType.TransportAnswered,
+                "transport.failed" => LiveSidebandServerEventDiscriminatorType.TransportFailed,
+                "transport.ringing" => LiveSidebandServerEventDiscriminatorType.TransportRinging,
                 _ => null,
             };
         }

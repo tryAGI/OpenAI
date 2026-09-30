@@ -113,7 +113,7 @@ namespace tryAGI.OpenAI
             {
 
                             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
-                                path: $"/evals/{evalId}/runs/{runId}",
+                                path: $"/evals/{evalId}/runs/{runId}/cancel",
                                 baseUri: HttpClient.BaseAddress);
                             var __path = __pathBuilder.ToString();
                 __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -175,7 +175,7 @@ namespace tryAGI.OpenAI
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CancelEvalRun",
                                 methodName: "CancelEvalRunAsync",
-                                pathTemplate: "$\"/evals/{evalId}/runs/{runId}\"",
+                                pathTemplate: "$\"/evals/{evalId}/runs/{runId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -209,7 +209,7 @@ namespace tryAGI.OpenAI
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CancelEvalRun",
                                 methodName: "CancelEvalRunAsync",
-                                pathTemplate: "$\"/evals/{evalId}/runs/{runId}\"",
+                                pathTemplate: "$\"/evals/{evalId}/runs/{runId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -250,7 +250,7 @@ namespace tryAGI.OpenAI
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CancelEvalRun",
                                 methodName: "CancelEvalRunAsync",
-                                pathTemplate: "$\"/evals/{evalId}/runs/{runId}\"",
+                                pathTemplate: "$\"/evals/{evalId}/runs/{runId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -298,7 +298,7 @@ namespace tryAGI.OpenAI
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CancelEvalRun",
                                 methodName: "CancelEvalRunAsync",
-                                pathTemplate: "$\"/evals/{evalId}/runs/{runId}\"",
+                                pathTemplate: "$\"/evals/{evalId}/runs/{runId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
@@ -320,7 +320,7 @@ namespace tryAGI.OpenAI
                             context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
                                 operationId: "CancelEvalRun",
                                 methodName: "CancelEvalRunAsync",
-                                pathTemplate: "$\"/evals/{evalId}/runs/{runId}\"",
+                                pathTemplate: "$\"/evals/{evalId}/runs/{runId}/cancel\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),

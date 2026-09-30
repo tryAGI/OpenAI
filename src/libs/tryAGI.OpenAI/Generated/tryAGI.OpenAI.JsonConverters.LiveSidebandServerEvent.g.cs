@@ -21,6 +21,27 @@ namespace tryAGI.OpenAI.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveSidebandServerEventDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
+            global::tryAGI.OpenAI.LiveTransportRinging? transportRinging = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandServerEventDiscriminatorType.TransportRinging)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportRinging), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportRinging> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveTransportRinging)}");
+                transportRinging = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.LiveTransportAnswered? transportAnswered = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandServerEventDiscriminatorType.TransportAnswered)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportAnswered), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportAnswered> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveTransportAnswered)}");
+                transportAnswered = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.LiveTransportFailed? transportFailed = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandServerEventDiscriminatorType.TransportFailed)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportFailed> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveTransportFailed)}");
+                transportFailed = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.LiveSessionStarted? sessionStarted = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandServerEventDiscriminatorType.SessionStarted)
             {
@@ -129,6 +150,12 @@ namespace tryAGI.OpenAI.JsonConverters
 
             var __value = new global::tryAGI.OpenAI.LiveSidebandServerEvent(
                 discriminator?.Type,
+                transportRinging,
+
+                transportAnswered,
+
+                transportFailed,
+
                 sessionStarted,
 
                 sessionUpdated,
@@ -172,7 +199,25 @@ namespace tryAGI.OpenAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsSessionStarted)
+            if (value.IsTransportRinging)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportRinging), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportRinging?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveTransportRinging).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTransportRinging(), typeInfo);
+            }
+            else if (value.IsTransportAnswered)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportAnswered), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportAnswered?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveTransportAnswered).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTransportAnswered(), typeInfo);
+            }
+            else if (value.IsTransportFailed)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportFailed?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveTransportFailed).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTransportFailed(), typeInfo);
+            }
+            else if (value.IsSessionStarted)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSessionStarted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSessionStarted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSessionStarted).Name}");
