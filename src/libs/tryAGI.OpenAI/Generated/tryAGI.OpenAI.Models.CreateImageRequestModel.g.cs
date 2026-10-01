@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ChatgptImageLatest,
+        /// <summary>
+        ///
+        /// </summary>
         DallE2,
         /// <summary>
         ///
@@ -66,6 +70,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                CreateImageRequestModel.ChatgptImageLatest => "chatgpt-image-latest",
                 CreateImageRequestModel.DallE2 => "dall-e-2",
                 CreateImageRequestModel.DallE3 => "dall-e-3",
                 CreateImageRequestModel.GptImage1 => "gpt-image-1",
@@ -87,6 +92,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "chatgpt-image-latest" => CreateImageRequestModel.ChatgptImageLatest,
                 "dall-e-2" => CreateImageRequestModel.DallE2,
                 "dall-e-3" => CreateImageRequestModel.DallE3,
                 "gpt-image-1" => CreateImageRequestModel.GptImage1,

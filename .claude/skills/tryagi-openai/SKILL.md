@@ -43,7 +43,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `group-organization-role-assignment` | 4 |  |
 | `group-user` | 4 |  |
 | `hosted-tool` | 2 |  |
-| `image` | 3 | Given a prompt and/or an input image, the model will generate a new image. |
+| `image` | 2 | Given a prompt and/or an input image, the model will generate a new image. |
 | `invite` | 4 |  |
 | `live` | 7 |  |
 | `model` | 3 | List and describe the various models available in the API. |

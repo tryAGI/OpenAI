@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The style of the generated images. This parameter is only supported for `dall-e-3`. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images.<br/>
+    /// Legacy style parameter for retired image models. Unsupported for GPT image models; describe the desired style in the prompt instead.<br/>
     /// Default Value: vivid<br/>
     /// Example: vivid
     /// </summary>

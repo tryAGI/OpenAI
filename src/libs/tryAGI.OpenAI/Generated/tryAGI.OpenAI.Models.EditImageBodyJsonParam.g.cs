@@ -7,16 +7,16 @@ namespace tryAGI.OpenAI
     /// JSON request body for image edits.<br/>
     /// Use `images` (array of `ImageRefParam`) instead of multipart `image` uploads.<br/>
     /// You can reference images via external URLs, data URLs, or uploaded file IDs.<br/>
-    /// JSON edits support GPT image models only; DALL-E edits require multipart (`dall-e-2` only).
+    /// JSON edits support GPT image models.
     /// </summary>
     public sealed partial class EditImageBodyJsonParam
     {
         /// <summary>
-        /// The GPT image model to use for image editing, including `gpt-image-2`, its dated snapshot `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`.<br/>
-        /// Default Value: gpt-image-1.5<br/>
-        /// Example: gpt-image-1.5
+        /// The GPT image model to use for image editing, including `gpt-image-2`, its dated snapshot `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`. Defaults to `gpt-image-2.5-sunburst`.<br/>
+        /// Default Value: gpt-image-2.5-sunburst<br/>
+        /// Example: gpt-image-2.5-sunburst
         /// </summary>
-        /// <example>gpt-image-1.5</example>
+        /// <example>gpt-image-2.5-sunburst</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.EditImageBodyJsonParamModel?, object>))]
         public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamModel?, object>? Model { get; set; }
@@ -158,9 +158,9 @@ namespace tryAGI.OpenAI
         /// Example: Add a watercolor effect and keep the subject centered
         /// </param>
         /// <param name="model">
-        /// The GPT image model to use for image editing, including `gpt-image-2`, its dated snapshot `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`.<br/>
-        /// Default Value: gpt-image-1.5<br/>
-        /// Example: gpt-image-1.5
+        /// The GPT image model to use for image editing, including `gpt-image-2`, its dated snapshot `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`. Defaults to `gpt-image-2.5-sunburst`.<br/>
+        /// Default Value: gpt-image-2.5-sunburst<br/>
+        /// Example: gpt-image-2.5-sunburst
         /// </param>
         /// <param name="mask">
         /// Reference an input image by either URL or uploaded file ID.<br/>

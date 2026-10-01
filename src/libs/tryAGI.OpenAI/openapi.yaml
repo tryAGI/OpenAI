@@ -9370,7 +9370,7 @@ paths:
         - Images
       summary: Create image edit
       description: Creates an edited or extended image given one or more source images
-        and a prompt. This endpoint supports GPT Image models and `dall-e-2`.
+        and a prompt. This endpoint supports GPT Image models.
       requestBody:
         required: true
         content:
@@ -9421,7 +9421,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/ImageEditStreamEvent"
         "400":
-          description: Invalid image request, including invalid DALL-E parameters or input.
+          description: Invalid image request, including invalid parameters or input.
           content:
             application/json:
               schema:
@@ -9644,7 +9644,7 @@ paths:
         - Images
       summary: Create image
       description: >
-        Creates an image given a prompt. [Learn
+        Creates an image given a prompt using a GPT Image model. [Learn
         more](https://developers.openai.com/api/docs/guides/images-vision).
       requestBody:
         required: true
@@ -9663,7 +9663,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/ImageGenStreamEvent"
         "400":
-          description: Invalid image request, including invalid DALL-E parameters or input.
+          description: Invalid image request, including invalid parameters or input.
           content:
             application/json:
               schema:
@@ -9811,8 +9811,11 @@ paths:
       tags:
         - Images
       summary: Create image variation
-      description: Creates a variation of a given image. This endpoint only supports
-        `dall-e-2`.
+      deprecated: true
+      description: This endpoint is retired and no longer available. Use the image
+        edits endpoint with a GPT Image model and a prompt to create a variation
+        of an image. The request and response schemas below describe the legacy
+        contract.
       requestBody:
         required: true
         content:
@@ -33245,6 +33248,200 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ErrorResponse-2"
+      x-oaiMeta:
+        examples:
+          request:
+            curl: >
+              # 1. Omit reasoning: keep its current settings while renaming the
+              agent.
+
+              curl "https://api.openai.com/v1/agents/$AGENT_ID" \
+                -H "Authorization: Bearer $OPENAI_API_KEY" \
+                -H "Content-Type: application/json" \
+                -H "OpenAI-Beta: agents=v1" \
+                -d '{"name": "Renamed"}'
+
+              # 2. Send null: reset reasoning to the model's defaults.
+
+              curl "https://api.openai.com/v1/agents/$AGENT_ID" \
+                -H "Authorization: Bearer $OPENAI_API_KEY" \
+                -H "Content-Type: application/json" \
+                -H "OpenAI-Beta: agents=v1" \
+                -d '{"reasoning": null}'
+
+              # 3. Send an object: replace the entire reasoning configuration,
+              without merging.
+
+              # The agent's model must support the "low" reasoning effort.
+
+              curl "https://api.openai.com/v1/agents/$AGENT_ID" \
+                -H "Authorization: Bearer $OPENAI_API_KEY" \
+                -H "Content-Type: application/json" \
+                -H "OpenAI-Beta: agents=v1" \
+                -d '{"reasoning": {"effort": "low"}}'
+            python: >
+              from openai import OpenAI
+
+
+              client = OpenAI()
+
+              agent_id = "your-agent-id"
+
+
+              # 1. Omit reasoning: keep its current settings while renaming the
+              agent.
+
+              client.beta.agents.update(agent_id, name="Renamed")
+
+
+              # 2. Python's None sends JSON null: reset reasoning to the model's
+              defaults.
+
+              client.beta.agents.update(agent_id, reasoning=None)
+
+
+              # 3. Send an object: replace the entire reasoning configuration,
+              without merging.
+
+              # The agent's model must support the "low" reasoning effort.
+
+              client.beta.agents.update(agent_id, reasoning={"effort": "low"})
+            javascript: >
+              import OpenAI from "openai";
+
+
+              const client = new OpenAI();
+
+              const agentId = "your-agent-id";
+
+
+              // 1. Omit reasoning: keep its current settings while renaming the
+              agent.
+
+              await client.beta.agents.update(agentId, { name: "Renamed" });
+
+
+              // 2. Send null: reset reasoning to the model's defaults.
+
+              await client.beta.agents.update(agentId, { reasoning: null });
+
+
+              // 3. Send an object: replace the entire reasoning configuration,
+              without merging.
+
+              // The agent's model must support the "low" reasoning effort.
+
+              await client.beta.agents.update(agentId, { reasoning: { effort:
+              "low" } });
+            go: >
+              package main
+
+
+              import (
+                  "context"
+                  "log"
+
+                  "github.com/openai/openai-go/v3"
+                  "github.com/openai/openai-go/v3/packages/param"
+              )
+
+
+              func main() {
+                  client := openai.NewClient()
+                  ctx := context.Background()
+                  agentID := "your-agent-id"
+
+                  // 1. Omit reasoning: keep its current settings while renaming the agent.
+                  _, err := client.Beta.Agents.Update(ctx, agentID, openai.BetaAgentUpdateParams{
+                      Name: openai.String("Renamed"),
+                  })
+                  if err != nil {
+                      log.Fatal(err)
+                  }
+
+                  // 2. Send null: reset reasoning to the model's defaults.
+                  _, err = client.Beta.Agents.Update(ctx, agentID, openai.BetaAgentUpdateParams{
+                      Reasoning: param.NullStruct[openai.AgentReasoningParam](),
+                  })
+                  if err != nil {
+                      log.Fatal(err)
+                  }
+
+                  // 3. Send an object: replace the entire reasoning configuration, without merging.
+                  // The agent's model must support the "low" reasoning effort.
+                  _, err = client.Beta.Agents.Update(ctx, agentID, openai.BetaAgentUpdateParams{
+                      Reasoning: openai.AgentReasoningParam{Effort: openai.AgentReasoningParamEffortLow},
+                  })
+                  if err != nil {
+                      log.Fatal(err)
+                  }
+              }
+            java: >
+              import com.openai.client.OpenAIClient;
+
+              import com.openai.client.okhttp.OpenAIOkHttpClient;
+
+              import com.openai.core.JsonValue;
+
+              import com.openai.models.beta.agents.AgentReasoningParam;
+
+              import com.openai.models.beta.agents.AgentUpdateParams;
+
+
+              public class AgentUpdateExample {
+                  public static void main(String[] args) {
+                      OpenAIClient client = OpenAIOkHttpClient.fromEnv();
+                      String agentId = "your-agent-id";
+
+                      // 1. Omit reasoning: keep its current settings while renaming the agent.
+                      client.beta().agents().update(AgentUpdateParams.builder()
+                          .agentId(agentId)
+                          .name("Renamed")
+                          .build());
+
+                      // 2. Send null: reset reasoning to the model's defaults.
+                      client.beta().agents().update(AgentUpdateParams.builder()
+                          .agentId(agentId)
+                          .reasoning(JsonValue.from(null))
+                          .build());
+
+                      // 3. Send an object: replace the entire reasoning configuration, without merging.
+                      // The agent's model must support the "low" reasoning effort.
+                      client.beta().agents().update(AgentUpdateParams.builder()
+                          .agentId(agentId)
+                          .reasoning(AgentReasoningParam.builder()
+                              .effort(AgentReasoningParam.Effort.LOW)
+                              .build())
+                          .build());
+                  }
+              }
+            ruby: >
+              require "openai"
+
+
+              client = OpenAI::Client.new
+
+              agent_id = "your-agent-id"
+
+
+              # 1. Omit reasoning: keep its current settings while renaming the
+              agent.
+
+              client.beta.agents.update(agent_id, name: "Renamed")
+
+
+              # 2. Ruby's nil sends JSON null: reset reasoning to the model's
+              defaults.
+
+              client.beta.agents.update(agent_id, reasoning: nil)
+
+
+              # 3. Send an object: replace the entire reasoning configuration,
+              without merging.
+
+              # The agent's model must support the "low" reasoning effort.
+
+              client.beta.agents.update(agent_id, reasoning: {effort: :low})
     delete:
       operationId: deleteAgent
       summary: Delete an agent
@@ -41450,6 +41647,7 @@ components:
                 - auto
                 - low
                 - high
+                - original
               default: auto
           required:
             - url
@@ -45173,16 +45371,9 @@ components:
             `chatgpt-image-latest`
 
             follows the same input constraints as GPT image models.
-
-
-            For `dall-e-2`, you can only provide one image, and it should be a
-            square `png`
-
-            file less than 4MB.
         prompt:
           description: A text description of the desired image(s). The maximum length is
-            1000 characters for `dall-e-2`, and 32000 characters for the GPT
-            image models.
+            32000 characters for the GPT image models.
           type: string
           example: A cute baby sea otter wearing a beret
         mask:
@@ -45239,21 +45430,21 @@ components:
                 - gpt-image-2.5-sunburst-2026-09-08
                 - gpt-image-2.5-flare
                 - gpt-image-2.5-flare-2026-09-08
-                - dall-e-2
                 - gpt-image-1
                 - gpt-image-1-mini
                 - chatgpt-image-latest
+                - dall-e-2
+              x-openai-enum-deprecations:
+                dall-e-2:
+                  message: This model was retired on May 12, 2026. Use a GPT image model instead.
               x-stainless-const: true
           x-oaiTypeLabel: string
-          default: gpt-image-1.5
           example: gpt-image-1.5
-          nullable: true
-          description: The model to use for image generation. One of `dall-e-2` or a GPT
-            image model (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`,
-            `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,
+          description: The GPT image model to use for image editing (`gpt-image-1`,
+            `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`,
+            `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,
             `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`,
             `gpt-image-2.5-flare-2026-09-08`, or `chatgpt-image-latest`).
-            Defaults to `gpt-image-1.5`.
         n:
           type: integer
           minimum: 1
@@ -45267,17 +45458,24 @@ components:
             - type: string
             - type: string
               enum:
-                - 256x256
-                - 512x512
                 - 1024x1024
                 - 1536x1024
                 - 1024x1536
                 - auto
-          default: 1024x1024
+                - 256x256
+                - 512x512
+              x-openai-enum-deprecations:
+                256x256:
+                  message: This legacy size suggestion is retained for SDK compatibility. Check
+                    the selected GPT image model's supported sizes.
+                512x512:
+                  message: This legacy size suggestion is retained for SDK compatibility. Check
+                    the selected GPT image model's supported sizes.
+          default: auto
           example: 1024x1024
           nullable: true
-          description: The size of the generated images. For `gpt-image-2`,
-            `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,
+          description: The size of the generated images. Defaults to `auto`. For
+            `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,
             `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and
             `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are
             supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width
@@ -45287,21 +45485,17 @@ components:
             The requested size must also satisfy the model's current pixel and
             edge limits. The standard sizes `1024x1024`, `1536x1024`, and
             `1024x1536` are supported by the GPT image models; `auto` is
-            supported for models that allow automatic sizing. For `dall-e-2`,
-            use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use
-            one of `1024x1024`, `1792x1024`, or `1024x1792`.
+            supported for models that allow automatic sizing.
         response_format:
           type: string
           enum:
             - url
             - b64_json
-          example: url
           nullable: true
-          description: The format in which the generated images are returned. Must be one
-            of `url` or `b64_json`. URLs are only valid for 60 minutes after the
-            image has been generated. This parameter is only supported for
-            `dall-e-2` (default is `url` for `dall-e-2`), as GPT image models
-            always return base64-encoded images.
+          deprecated: true
+          description: Legacy response format parameter for retired image models.
+            Unsupported for GPT image models, which always return base64-encoded
+            images.
         output_format:
           type: string
           enum:
@@ -45354,13 +45548,17 @@ components:
         quality:
           type: string
           enum:
-            - standard
             - low
             - medium
             - high
             - xhigh
             - max
             - auto
+            - standard
+          x-openai-enum-deprecations:
+            standard:
+              message: This quality was only supported by retired DALL·E models. Use a GPT
+                image quality instead.
           default: auto
           example: high
           nullable: true
@@ -45371,6 +45569,7 @@ components:
             `2026-09-08` snapshots, also support `xhigh` and `max`. Defaults to
             `auto`.
       required:
+        - model
         - prompt
         - image
     CreateImageRequest:
@@ -45378,8 +45577,7 @@ components:
       properties:
         prompt:
           description: A text description of the desired image(s). The maximum length is
-            32000 characters for the GPT image models, 1000 characters for
-            `dall-e-2` and 4000 characters for `dall-e-3`.
+            32000 characters.
           type: string
           example: A cute baby sea otter
         model:
@@ -45394,21 +45592,24 @@ components:
                 - gpt-image-2.5-sunburst-2026-09-08
                 - gpt-image-2.5-flare
                 - gpt-image-2.5-flare-2026-09-08
-                - dall-e-2
-                - dall-e-3
                 - gpt-image-1
                 - gpt-image-1-mini
+                - chatgpt-image-latest
+                - dall-e-2
+                - dall-e-3
+              x-openai-enum-deprecations:
+                dall-e-2:
+                  message: This model was retired on May 12, 2026. Use a GPT image model instead.
+                dall-e-3:
+                  message: This model was retired on May 12, 2026. Use a GPT image model instead.
           x-oaiTypeLabel: string
-          default: dall-e-2
           example: gpt-image-2.5-flare
-          nullable: true
-          description: The model to use for image generation. One of `dall-e-2`,
-            `dall-e-3`, or a GPT image model (`gpt-image-1`, `gpt-image-1-mini`,
-            `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`,
-            `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`,
-            `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`). Defaults
-            to `dall-e-2` unless a parameter specific to the GPT image models is
-            used.
+          description: The GPT image model to use for image generation. Specify a model
+            explicitly. Supported models include `gpt-image-1`,
+            `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`,
+            `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,
+            `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`,
+            `gpt-image-2.5-flare-2026-09-08`, and `chatgpt-image-latest`.
         n:
           type: integer
           minimum: 1
@@ -45416,19 +45617,25 @@ components:
           default: 1
           example: 1
           nullable: true
-          description: The number of images to generate. Must be between 1 and 10. For
-            `dall-e-3`, only `n=1` is supported.
+          description: The number of images to generate. Must be between 1 and 10.
         quality:
           type: string
           enum:
-            - standard
-            - hd
             - low
             - medium
             - high
             - xhigh
             - max
             - auto
+            - standard
+            - hd
+          x-openai-enum-deprecations:
+            standard:
+              message: This quality was only supported by retired DALL·E models. Use a GPT
+                image quality instead.
+            hd:
+              message: This quality was only supported by retired DALL·E models. Use a GPT
+                image quality instead.
           default: auto
           example: medium
           nullable: true
@@ -45444,22 +45651,16 @@ components:
             - `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including
             their `2026-09-08`
               snapshots, also support `xhigh` and `max`.
-            - `hd` and `standard` are supported for `dall-e-3`.
-
-            - `standard` is the only option for `dall-e-2`.
         response_format:
           type: string
           enum:
             - url
             - b64_json
-          default: url
-          example: url
           nullable: true
-          description: The format in which generated images with `dall-e-2` and `dall-e-3`
-            are returned. Must be one of `url` or `b64_json`. URLs are only
-            valid for 60 minutes after the image has been generated. This
-            parameter isn't supported for the GPT image models, which always
-            return base64-encoded images.
+          deprecated: true
+          description: Legacy response format parameter for retired image models.
+            Unsupported for GPT image models, which always return base64-encoded
+            images.
         output_format:
           type: string
           enum:
@@ -45504,6 +45705,19 @@ components:
                 - 512x512
                 - 1792x1024
                 - 1024x1792
+              x-openai-enum-deprecations:
+                256x256:
+                  message: This legacy size suggestion is retained for SDK compatibility. Check
+                    the selected GPT image model's supported sizes.
+                512x512:
+                  message: This legacy size suggestion is retained for SDK compatibility. Check
+                    the selected GPT image model's supported sizes.
+                1792x1024:
+                  message: This legacy size suggestion is retained for SDK compatibility. Check
+                    the selected GPT image model's supported sizes.
+                1024x1792:
+                  message: This legacy size suggestion is retained for SDK compatibility. Check
+                    the selected GPT image model's supported sizes.
           default: auto
           example: 1024x1024
           nullable: true
@@ -45518,9 +45732,7 @@ components:
             The requested size must also satisfy the model's current pixel and
             edge limits. The standard sizes `1024x1024`, `1536x1024`, and
             `1024x1536` are supported by the GPT image models; `auto` is
-            supported for models that allow automatic sizing. For `dall-e-2`,
-            use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use
-            one of `1024x1024`, `1792x1024`, or `1024x1792`.
+            supported for models that allow automatic sizing.
         moderation:
           type: string
           enum:
@@ -45574,20 +45786,21 @@ components:
           default: vivid
           example: vivid
           nullable: true
-          description: The style of the generated images. This parameter is only supported
-            for `dall-e-3`. Must be one of `vivid` or `natural`. Vivid causes
-            the model to lean towards generating hyper-real and dramatic images.
-            Natural causes the model to produce more natural, less hyper-real
-            looking images.
+          deprecated: true
+          description: Legacy style parameter for retired image models. Unsupported for
+            GPT image models; describe the desired style in the prompt instead.
         user:
           type: string
           example: user-1234
           description: |
             A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).
       required:
+        - model
         - prompt
     CreateImageVariationRequest:
       type: object
+      deprecated: true
+      description: Legacy request for the retired image variations endpoint.
       properties:
         image:
           description: The image to use as the basis for the variation(s). Must be a valid
@@ -45605,8 +45818,8 @@ components:
           default: dall-e-2
           example: dall-e-2
           nullable: true
-          description: The model to use for image generation. Only `dall-e-2` is supported
-            at this time.
+          description: The legacy model used by the retired image variations endpoint.
+            This endpoint no longer accepts requests.
         n:
           type: integer
           minimum: 1
@@ -48007,8 +48220,7 @@ components:
         You can reference images via external URLs, data URLs, or uploaded file
         IDs.
 
-        JSON edits support GPT image models only; DALL-E edits require multipart
-        (`dall-e-2` only).
+        JSON edits support GPT image models.
       properties:
         model:
           anyOf:
@@ -48027,12 +48239,13 @@ components:
                 - chatgpt-image-latest
             - type: "null"
           x-oaiTypeLabel: string
-          default: gpt-image-1.5
-          example: gpt-image-1.5
+          default: gpt-image-2.5-sunburst
+          example: gpt-image-2.5-sunburst
           description: The GPT image model to use for image editing, including
             `gpt-image-2`, its dated snapshot `gpt-image-2-2026-04-21`,
             `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`,
             `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`.
+            Defaults to `gpt-image-2.5-sunburst`.
         images:
           type: array
           minItems: 1
@@ -50682,6 +50895,7 @@ components:
       discriminator:
         propertyName: type
     FunctionObject:
+      x-openai-structured-output: function
       type: object
       properties:
         description:
@@ -51660,18 +51874,18 @@ components:
         b64_json:
           type: string
           description: The base64-encoded JSON of the generated image. Returned by default
-            for the GPT image models, and only present if `response_format` is
-            set to `b64_json` for `dall-e-2` and `dall-e-3`.
+            for GPT image models, or when `response_format` is set to `b64_json`
+            for models that support that parameter.
         url:
           type: string
           format: uri
-          description: When using `dall-e-2` or `dall-e-3`, the URL of the generated image
-            if `response_format` is set to `url` (default value). Unsupported
-            for the GPT image models.
+          description: The URL of the generated image when `response_format` is set to
+            `url` for models that support that parameter. Unsupported for GPT
+            image models.
         revised_prompt:
           type: string
-          description: For `dall-e-3` only, the revised prompt that was used to generate
-            the image.
+          description: The revised prompt used to generate the image, for models that
+            support prompt revision. Not returned by GPT image models.
     ImageEditCompletedEvent:
       type: object
       description: >
@@ -52128,9 +52342,7 @@ components:
             The requested size must also satisfy the model's current pixel and
             edge limits. The standard sizes `1024x1024`, `1536x1024`, and
             `1024x1536` are supported by the GPT image models; `auto` is
-            supported for models that allow automatic sizing. For `dall-e-2`,
-            use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use
-            one of `1024x1024`, `1792x1024`, or `1024x1792`.
+            supported for models that allow automatic sizing.
           default: auto
         output_format:
           type: string
@@ -69478,6 +69690,7 @@ components:
             - json_schema
           x-stainless-const: true
         json_schema:
+          x-openai-structured-output: json_schema
           type: object
           title: JSON schema
           description: |
@@ -75118,6 +75331,7 @@ components:
         - $ref: "#/components/schemas/TextResponseFormatJsonSchema"
         - $ref: "#/components/schemas/ResponseFormatJsonObject"
     TextResponseFormatJsonSchema:
+      x-openai-structured-output: json_schema_default_strict
       type: object
       title: JSON schema
       description: |
@@ -80961,6 +81175,7 @@ components:
       description: Defines a function in your own code the model can choose to call.
         Learn more about [function
         calling](https://developers.openai.com/api/docs/guides/function-calling).
+      x-openai-structured-output: function
     RankerVersionType:
       type: string
       enum:
@@ -81434,6 +81649,7 @@ components:
       required:
         - name
         - type
+      x-openai-structured-output: function
     NamespaceToolParam:
       properties:
         type:
@@ -86028,12 +86244,16 @@ components:
         id: resp_001
         object: response.compaction
         output:
-          - type: message
+          - id: msg_001
+            status: completed
+            type: message
             role: user
             content:
               - type: input_text
                 text: Summarize our launch checklist from last week.
-          - type: message
+          - id: msg_002
+            status: completed
+            type: message
             role: user
             content:
               - type: input_text
@@ -86044,8 +86264,13 @@ components:
         created_at: 1731459200
         usage:
           input_tokens: 42897
+          input_tokens_details:
+            cached_tokens: 0
+            cache_write_tokens: 0
           output_tokens: 12000
-          total_tokens: 54912
+          output_tokens_details:
+            reasoning_tokens: 0
+          total_tokens: 54897
     SkillResource:
       properties:
         id:
@@ -99247,6 +99472,7 @@ components:
       required:
         - type
     BetaTextResponseFormatJsonSchema:
+      x-openai-structured-output: json_schema_default_strict
       type: object
       title: JSON schema
       description: |
@@ -99657,6 +99883,7 @@ components:
       required:
         - name
         - type
+      x-openai-structured-output: function
     BetaFunctionShellToolParam:
       properties:
         type:
@@ -100016,9 +100243,7 @@ components:
             The requested size must also satisfy the model's current pixel and
             edge limits. The standard sizes `1024x1024`, `1536x1024`, and
             `1024x1536` are supported by the GPT image models; `auto` is
-            supported for models that allow automatic sizing. For `dall-e-2`,
-            use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use
-            one of `1024x1024`, `1792x1024`, or `1024x1792`.
+            supported for models that allow automatic sizing.
           default: auto
         output_format:
           type: string
@@ -100755,6 +100980,7 @@ components:
       description: Defines a function in your own code the model can choose to call.
         Learn more about [function
         calling](https://developers.openai.com/api/docs/guides/function-calling).
+      x-openai-structured-output: function
     BetaInputItem:
       oneOf:
         - $ref: "#/components/schemas/BetaEasyInputMessage"
@@ -106123,12 +106349,16 @@ components:
         id: resp_001
         object: response.compaction
         output:
-          - type: message
+          - id: msg_001
+            status: completed
+            type: message
             role: user
             content:
               - type: input_text
                 text: Summarize our launch checklist from last week.
-          - type: message
+          - id: msg_002
+            status: completed
+            type: message
             role: user
             content:
               - type: input_text
@@ -106139,8 +106369,13 @@ components:
         created_at: 1731459200
         usage:
           input_tokens: 42897
+          input_tokens_details:
+            cached_tokens: 0
+            cache_write_tokens: 0
           output_tokens: 12000
-          total_tokens: 54912
+          output_tokens_details:
+            reasoning_tokens: 0
+          total_tokens: 54897
     BetaResponseUsage:
       type: object
       description: |
@@ -113809,3 +114044,15 @@ x-oaiMeta:
         - type: object
           key: LiveInfoEvent
           path: <auto>
+x-openai-structured-output-limits:
+  version: 1
+  max_object_properties: 5000
+  max_nesting_depth: 10
+  max_enum_values: 1000
+  max_string_characters: 120000
+  large_enum_threshold: 250
+  max_large_enum_string_characters: 15000
+  string_length_unit: unicode_code_points
+  non_string_enum_characters: false
+  property_count_scope: root_or_definition
+  references: count_definition_once

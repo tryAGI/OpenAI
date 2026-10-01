@@ -10,8 +10,6 @@ namespace tryAGI.OpenAI
     /// - `high`, `medium` and `low` are supported for the GPT image models.<br/>
     /// - `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08`<br/>
     ///   snapshots, also support `xhigh` and `max`.<br/>
-    /// - `hd` and `standard` are supported for `dall-e-3`.<br/>
-    /// - `standard` is the only option for `dall-e-2`.<br/>
     /// Default Value: auto<br/>
     /// Example: medium
     /// </summary>
