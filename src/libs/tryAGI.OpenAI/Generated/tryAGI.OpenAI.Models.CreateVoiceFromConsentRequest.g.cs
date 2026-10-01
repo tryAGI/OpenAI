@@ -9,8 +9,8 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateVoiceFromConsentRequest
     {
         /// <summary>
-        /// The voice creation method. Defaults to `consent` when omitted.<br/>
-        /// Default Value: consent
+        /// The voice creation method. Defaults to `audio_sample` when omitted.<br/>
+        /// Default Value: audio_sample
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateVoiceFromConsentRequestTypeJsonConverter))]
@@ -74,8 +74,8 @@ namespace tryAGI.OpenAI
         /// The consent recording ID (for example, `cons_1234`).
         /// </param>
         /// <param name="type">
-        /// The voice creation method. Defaults to `consent` when omitted.<br/>
-        /// Default Value: consent
+        /// The voice creation method. Defaults to `audio_sample` when omitted.<br/>
+        /// Default Value: audio_sample
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Create voice<br/>
         /// Creates a voice from a text prompt or from a consent recording and an audio sample.<br/>
-        /// For prompt-based creation, send `type: "prompt"` with a `name` and `prompt` as JSON or multipart form data. Consent-based creation requires multipart form data and is the default when `type` is omitted.<br/>
-        /// Returns the saved voice's metadata. Use the voice ID in supported audio output endpoints. The response does not include preview audio.
+        /// For prompt-based creation, send `type: "prompt"` with a `name` and `prompt` as JSON or multipart form data. For creation from an audio sample, send `type: "audio_sample"` with a `name`, `audio_sample`, and `consent` recording ID as multipart form data. The type defaults to `audio_sample` when omitted.<br/>
+        /// Returns the saved voice's metadata. Voices created from text prompts are supported only in Live, not in Realtime or the speech endpoint. The response does not include preview audio.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -69,8 +69,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Create voice<br/>
         /// Creates a voice from a text prompt or from a consent recording and an audio sample.<br/>
-        /// For prompt-based creation, send `type: "prompt"` with a `name` and `prompt` as JSON or multipart form data. Consent-based creation requires multipart form data and is the default when `type` is omitted.<br/>
-        /// Returns the saved voice's metadata. Use the voice ID in supported audio output endpoints. The response does not include preview audio.
+        /// For prompt-based creation, send `type: "prompt"` with a `name` and `prompt` as JSON or multipart form data. For creation from an audio sample, send `type: "audio_sample"` with a `name`, `audio_sample`, and `consent` recording ID as multipart form data. The type defaults to `audio_sample` when omitted.<br/>
+        /// Returns the saved voice's metadata. Voices created from text prompts are supported only in Live, not in Realtime or the speech endpoint. The response does not include preview audio.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -551,8 +551,8 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Create voice<br/>
         /// Creates a voice from a text prompt or from a consent recording and an audio sample.<br/>
-        /// For prompt-based creation, send `type: "prompt"` with a `name` and `prompt` as JSON or multipart form data. Consent-based creation requires multipart form data and is the default when `type` is omitted.<br/>
-        /// Returns the saved voice's metadata. Use the voice ID in supported audio output endpoints. The response does not include preview audio.
+        /// For prompt-based creation, send `type: "prompt"` with a `name` and `prompt` as JSON or multipart form data. For creation from an audio sample, send `type: "audio_sample"` with a `name`, `audio_sample`, and `consent` recording ID as multipart form data. The type defaults to `audio_sample` when omitted.<br/>
+        /// Returns the saved voice's metadata. Voices created from text prompts are supported only in Live, not in Realtime or the speech endpoint. The response does not include preview audio.
         /// </summary>
         /// <param name="type">
         /// Set to `prompt` to create a voice from a text description.

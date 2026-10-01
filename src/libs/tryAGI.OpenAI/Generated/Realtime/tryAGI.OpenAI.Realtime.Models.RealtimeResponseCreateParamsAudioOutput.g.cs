@@ -21,6 +21,7 @@ namespace tryAGI.OpenAI.Realtime
         /// `marin`, and `cedar`. You may also provide a custom voice object with<br/>
         /// an `id`, for example `{ "id": "voice_1234" }`. Voice cannot be changed<br/>
         /// during the session once the model has responded with audio at least once.<br/>
+        /// Custom voices must be created from audio samples. Voices created from text prompts are supported only in Live.<br/>
         /// We recommend `marin` and `cedar` for best quality.<br/>
         /// Default Value: alloy
         /// </summary>
@@ -46,6 +47,7 @@ namespace tryAGI.OpenAI.Realtime
         /// `marin`, and `cedar`. You may also provide a custom voice object with<br/>
         /// an `id`, for example `{ "id": "voice_1234" }`. Voice cannot be changed<br/>
         /// during the session once the model has responded with audio at least once.<br/>
+        /// Custom voices must be created from audio samples. Voices created from text prompts are supported only in Live.<br/>
         /// We recommend `marin` and `cedar` for best quality.<br/>
         /// Default Value: alloy
         /// </param>

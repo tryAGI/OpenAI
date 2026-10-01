@@ -28,15 +28,13 @@ namespace tryAGI.OpenAI
         /// The identifier of the first chat completion in the data array.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string FirstId { get; set; }
+        public string? FirstId { get; set; }
 
         /// <summary>
         /// The identifier of the last chat completion in the data array.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string LastId { get; set; }
+        public string? LastId { get; set; }
 
         /// <summary>
         /// Indicates whether there are more Chat Completions available.
@@ -57,14 +55,14 @@ namespace tryAGI.OpenAI
         /// <param name="data">
         /// An array of chat completion objects.
         /// </param>
+        /// <param name="hasMore">
+        /// Indicates whether there are more Chat Completions available.
+        /// </param>
         /// <param name="firstId">
         /// The identifier of the first chat completion in the data array.
         /// </param>
         /// <param name="lastId">
         /// The identifier of the last chat completion in the data array.
-        /// </param>
-        /// <param name="hasMore">
-        /// Indicates whether there are more Chat Completions available.
         /// </param>
         /// <param name="object">
         /// The type of this object. It is always set to "list".<br/>
@@ -75,15 +73,15 @@ namespace tryAGI.OpenAI
 #endif
         public ChatCompletionList(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateChatCompletionResponse> data,
-            string firstId,
-            string lastId,
             bool hasMore,
+            string? firstId,
+            string? lastId,
             global::tryAGI.OpenAI.ChatCompletionListObject @object = global::tryAGI.OpenAI.ChatCompletionListObject.List)
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
-            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
+            this.FirstId = firstId;
+            this.LastId = lastId;
             this.HasMore = hasMore;
         }
 
