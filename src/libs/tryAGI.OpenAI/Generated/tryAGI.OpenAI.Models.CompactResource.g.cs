@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Example: {"id":"resp_001","object":"response.compaction","output":[{"type":"message","role":"user","content":[{"type":"input_text","text":"Summarize our launch checklist from last week."}]},{"type":"message","role":"user","content":[{"type":"input_text","text":"You are performing a CONTEXT CHECKPOINT COMPACTION..."}]},{"type":"compaction","id":"cmp_001","encrypted_content":"encrypted-summary"}],"created_at":1731459200,"usage":{"input_tokens":42897,"output_tokens":12000,"total_tokens":54912}}
+    /// Example: {"id":"resp_001","object":"response.compaction","output":[{"id":"msg_001","status":"completed","type":"message","role":"user","content":[{"type":"input_text","text":"Summarize our launch checklist from last week."}]},{"id":"msg_002","status":"completed","type":"message","role":"user","content":[{"type":"input_text","text":"You are performing a CONTEXT CHECKPOINT COMPACTION..."}]},{"type":"compaction","id":"cmp_001","encrypted_content":"encrypted-summary"}],"created_at":1731459200,"usage":{"input_tokens":42897,"input_tokens_details":{"cached_tokens":0,"cache_write_tokens":0},"output_tokens":12000,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":54897}}
     /// </summary>
     public sealed partial class CompactResource
     {

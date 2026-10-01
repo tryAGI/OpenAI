@@ -25,7 +25,7 @@ internal sealed record CreateImageEditRequestOptionSet(
         return new CreateImageEditRequestOptionSet(
                         Prompt: new Option<string>($"--{normalizedPrefix}prompt")
                 {
-                    Description = @"A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2`, and 32000 characters for the GPT image models.",
+                    Description = @"A text description of the desired image(s). The maximum length is 32000 characters for the GPT image models.",
                     Required = true,
                 },
                 Maskname: new Option<string?>($"--{normalizedPrefix}maskname")
@@ -52,7 +52,7 @@ set the output format to `png` or `webp`.
                 },
                 ResponseFormat: new Option<global::tryAGI.OpenAI.CreateImageEditRequestResponseFormat?>($"--{normalizedPrefix}response-format")
                 {
-                    Description = @"The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter is only supported for `dall-e-2` (default is `url` for `dall-e-2`), as GPT image models always return base64-encoded images.",
+                    Description = @"Legacy response format parameter for retired image models. Unsupported for GPT image models, which always return base64-encoded images.",
                 },
                 OutputFormat: new Option<global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat?>($"--{normalizedPrefix}output-format")
                 {

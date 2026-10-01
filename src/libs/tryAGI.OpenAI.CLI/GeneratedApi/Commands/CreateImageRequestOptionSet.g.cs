@@ -26,12 +26,12 @@ internal sealed record CreateImageRequestOptionSet(
         return new CreateImageRequestOptionSet(
                         Prompt: new Option<string>($"--{normalizedPrefix}prompt")
                 {
-                    Description = @"A text description of the desired image(s). The maximum length is 32000 characters for the GPT image models, 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.",
+                    Description = @"A text description of the desired image(s). The maximum length is 32000 characters.",
                     Required = true,
                 },
                 N: new Option<int?>($"--{normalizedPrefix}n")
                 {
-                    Description = @"The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.",
+                    Description = @"The number of images to generate. Must be between 1 and 10.",
                 },
                 Quality: new Option<global::tryAGI.OpenAI.CreateImageRequestQuality?>($"--{normalizedPrefix}quality")
                 {
@@ -42,13 +42,11 @@ internal sealed record CreateImageRequestOptionSet(
 - `high`, `medium` and `low` are supported for the GPT image models.
 - `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08`
   snapshots, also support `xhigh` and `max`.
-- `hd` and `standard` are supported for `dall-e-3`.
-- `standard` is the only option for `dall-e-2`.
 ",
                 },
                 ResponseFormat: new Option<global::tryAGI.OpenAI.CreateImageRequestResponseFormat?>($"--{normalizedPrefix}response-format")
                 {
-                    Description = @"The format in which generated images with `dall-e-2` and `dall-e-3` are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter isn't supported for the GPT image models, which always return base64-encoded images.",
+                    Description = @"Legacy response format parameter for retired image models. Unsupported for GPT image models, which always return base64-encoded images.",
                 },
                 OutputFormat: new Option<global::tryAGI.OpenAI.CreateImageRequestOutputFormat?>($"--{normalizedPrefix}output-format")
                 {
@@ -86,7 +84,7 @@ set the output format to `png` or `webp`.
                 },
                 Style: new Option<global::tryAGI.OpenAI.CreateImageRequestStyle?>($"--{normalizedPrefix}style")
                 {
-                    Description = @"The style of the generated images. This parameter is only supported for `dall-e-3`. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images.",
+                    Description = @"Legacy style parameter for retired image models. Unsupported for GPT image models; describe the desired style in the prompt instead.",
                 },
                 User: new Option<string?>($"--{normalizedPrefix}user")
                 {

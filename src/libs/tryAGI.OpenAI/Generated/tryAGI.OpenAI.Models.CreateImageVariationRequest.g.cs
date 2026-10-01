@@ -4,8 +4,9 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    ///
+    /// Legacy request for the retired image variations endpoint.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class CreateImageVariationRequest
     {
         /// <summary>
@@ -13,6 +14,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required byte[] Image { get; set; }
 
         /// <summary>
@@ -20,16 +22,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("imagename")]
         [global::System.Text.Json.Serialization.JsonRequired]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public required string Imagename { get; set; }
 
         /// <summary>
-        /// The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>
+        /// The legacy model used by the retired image variations endpoint. This endpoint no longer accepts requests.<br/>
         /// Default Value: dall-e-2<br/>
         /// Example: dall-e-2
         /// </summary>
         /// <example>dall-e-2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateImageVariationRequestModel?>))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageVariationRequestModel?>? Model { get; set; }
 
         /// <summary>
@@ -39,6 +43,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("n")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? N { get; set; }
 
         /// <summary>
@@ -49,6 +54,7 @@ namespace tryAGI.OpenAI
         /// <example>url</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateImageVariationRequestResponseFormatJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::tryAGI.OpenAI.CreateImageVariationRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
@@ -59,6 +65,7 @@ namespace tryAGI.OpenAI
         /// <example>1024x1024</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateImageVariationRequestSizeJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::tryAGI.OpenAI.CreateImageVariationRequestSize? Size { get; set; }
 
         /// <summary>
@@ -67,6 +74,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>user-1234</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? User { get; set; }
 
         /// <summary>
@@ -85,7 +93,7 @@ namespace tryAGI.OpenAI
         /// The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.
         /// </param>
         /// <param name="model">
-        /// The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>
+        /// The legacy model used by the retired image variations endpoint. This endpoint no longer accepts requests.<br/>
         /// Default Value: dall-e-2<br/>
         /// Example: dall-e-2
         /// </param>

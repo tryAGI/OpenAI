@@ -18,9 +18,6 @@ For the GPT image models (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`,
 `gpt-image-2.5-flare-2026-09-08`), each image should be a `png`, `webp`, or `jpg`
 file less than 50MB. You can provide up to 16 images. `chatgpt-image-latest`
 follows the same input constraints as GPT image models.
-
-For `dall-e-2`, you can only provide one image, and it should be a square `png`
-file less than 4MB.
 ",
         Required = true,
     };
@@ -31,16 +28,17 @@ file less than 4MB.
         Description = @"An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.",
     };
 
-    private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?>?> Model { get; } = new(
+    private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?>> Model { get; } = new(
         name: @"--model")
     {
-        Description = @"The model to use for image generation. One of `dall-e-2` or a GPT image model (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`, or `chatgpt-image-latest`). Defaults to `gpt-image-1.5`.",
+        Description = @"The GPT image model to use for image editing (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`, or `chatgpt-image-latest`).",
+        Required = true,
     };
 
     private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestSize?>?> Size { get; } = new(
         name: @"--size")
     {
-        Description = @"The size of the generated images. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.",
+        Description = @"The size of the generated images. Defaults to `auto`. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing.",
     };
 
     private static Option<global::tryAGI.OpenAI.InputFidelity?> InputFidelity { get; } = new(
@@ -91,7 +89,7 @@ file less than 4MB.
     public static Command Create(string? commandName = null)
     {
         var command = new Command(commandName ?? @"create-image-edit", @"Create image edit
-Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models and `dall-e-2`.");
+Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models.");
                         command.Options.Add(Image);
                         command.Options.Add(Mask);
                         command.Options.Add(Model);
@@ -100,7 +98,6 @@ Creates an edited or extended image given one or more source images and a prompt
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.Maskname);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.Background);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.N);
-                        command.Options.Add(CreateImageEditRequestOptionSetOptions.ResponseFormat);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.OutputFormat);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.OutputCompression);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.User);
@@ -133,13 +130,12 @@ Creates an edited or extended image given one or more source images and a prompt
                             cancellationToken).ConfigureAwait(false);
                         var image = parseResult.GetRequiredValue(Image);
                         var mask = CliRuntime.WasSpecified(parseResult, Mask) ? parseResult.GetValue(Mask) : (__requestBase is { } __MaskBaseValue ? __MaskBaseValue.Mask : default);
-                        var model = CliRuntime.WasSpecified(parseResult, Model) ? parseResult.GetValue(Model) : (__requestBase is { } __ModelBaseValue ? __ModelBaseValue.Model : default);
+                        var model = parseResult.GetRequiredValue(Model);
                         var size = CliRuntime.WasSpecified(parseResult, Size) ? parseResult.GetValue(Size) : (__requestBase is { } __SizeBaseValue ? __SizeBaseValue.Size : default);
                         var inputFidelity = CliRuntime.WasSpecified(parseResult, InputFidelity) ? parseResult.GetValue(InputFidelity) : (__requestBase is { } __InputFidelityBaseValue ? __InputFidelityBaseValue.InputFidelity : default);                        var prompt = parseResult.GetRequiredValue(CreateImageEditRequestOptionSetOptions.Prompt);
                         var maskname = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.Maskname) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Maskname) : (__requestBase is { } __MasknameBaseValue ? __MasknameBaseValue.Maskname : default);
                         var background = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.Background) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Background) : (__requestBase is { } __BackgroundBaseValue ? __BackgroundBaseValue.Background : default);
                         var n = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.N) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.N) : (__requestBase is { } __NBaseValue ? __NBaseValue.N : default);
-                        var responseFormat = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.ResponseFormat) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.ResponseFormat) : (__requestBase is { } __ResponseFormatBaseValue ? __ResponseFormatBaseValue.ResponseFormat : default);
                         var outputFormat = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.OutputFormat) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.OutputFormat) : (__requestBase is { } __OutputFormatBaseValue ? __OutputFormatBaseValue.OutputFormat : default);
                         var outputCompression = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.OutputCompression) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.OutputCompression) : (__requestBase is { } __OutputCompressionBaseValue ? __OutputCompressionBaseValue.OutputCompression : default);
                         var user = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.User) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
@@ -158,7 +154,6 @@ Creates an edited or extended image given one or more source images and a prompt
                                     maskname: maskname,
                                     background: background,
                                     n: n,
-                                    responseFormat: responseFormat,
                                     outputFormat: outputFormat,
                                     outputCompression: outputCompression,
                                     user: user,

@@ -1,4 +1,6 @@
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace tryAGI.OpenAI
@@ -9,7 +11,7 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateImageRequest
     {
         /// <summary>
-        /// A text description of the desired image(s). The maximum length is 32000 characters for the GPT image models, 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.<br/>
+        /// A text description of the desired image(s). The maximum length is 32000 characters.<br/>
         /// Example: A cute baby sea otter
         /// </summary>
         /// <example>A cute baby sea otter</example>
@@ -18,17 +20,17 @@ namespace tryAGI.OpenAI
         public required string Prompt { get; set; }
 
         /// <summary>
-        /// The model to use for image generation. One of `dall-e-2`, `dall-e-3`, or a GPT image model (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`). Defaults to `dall-e-2` unless a parameter specific to the GPT image models is used.<br/>
-        /// Default Value: dall-e-2<br/>
+        /// The GPT image model to use for image generation. Specify a model explicitly. Supported models include `gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`, and `chatgpt-image-latest`.<br/>
         /// Example: gpt-image-2.5-flare
         /// </summary>
         /// <example>gpt-image-2.5-flare</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateImageRequestModel?>))]
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestModel?>? Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestModel?> Model { get; set; }
 
         /// <summary>
-        /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>
+        /// The number of images to generate. Must be between 1 and 10.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
@@ -43,8 +45,6 @@ namespace tryAGI.OpenAI
         /// - `high`, `medium` and `low` are supported for the GPT image models.<br/>
         /// - `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08`<br/>
         ///   snapshots, also support `xhigh` and `max`.<br/>
-        /// - `hd` and `standard` are supported for `dall-e-3`.<br/>
-        /// - `standard` is the only option for `dall-e-2`.<br/>
         /// Default Value: auto<br/>
         /// Example: medium
         /// </summary>
@@ -54,13 +54,11 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateImageRequestQuality? Quality { get; set; }
 
         /// <summary>
-        /// The format in which generated images with `dall-e-2` and `dall-e-3` are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter isn't supported for the GPT image models, which always return base64-encoded images.<br/>
-        /// Default Value: url<br/>
-        /// Example: url
+        /// Legacy response format parameter for retired image models. Unsupported for GPT image models, which always return base64-encoded images.
         /// </summary>
-        /// <example>url</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateImageRequestResponseFormatJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::tryAGI.OpenAI.CreateImageRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
@@ -100,7 +98,7 @@ namespace tryAGI.OpenAI
         public int? PartialImages { get; set; }
 
         /// <summary>
-        /// The size of the generated images. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.<br/>
+        /// The size of the generated images. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing.<br/>
         /// Default Value: auto<br/>
         /// Example: 1024x1024
         /// </summary>
@@ -138,13 +136,14 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateImageRequestBackground? Background { get; set; }
 
         /// <summary>
-        /// The style of the generated images. This parameter is only supported for `dall-e-3`. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images.<br/>
+        /// Legacy style parameter for retired image models. Unsupported for GPT image models; describe the desired style in the prompt instead.<br/>
         /// Default Value: vivid<br/>
         /// Example: vivid
         /// </summary>
         /// <example>vivid</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("style")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateImageRequestStyleJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::tryAGI.OpenAI.CreateImageRequestStyle? Style { get; set; }
 
         /// <summary>
@@ -165,16 +164,15 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateImageRequest" /> class.
         /// </summary>
         /// <param name="prompt">
-        /// A text description of the desired image(s). The maximum length is 32000 characters for the GPT image models, 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.<br/>
+        /// A text description of the desired image(s). The maximum length is 32000 characters.<br/>
         /// Example: A cute baby sea otter
         /// </param>
         /// <param name="model">
-        /// The model to use for image generation. One of `dall-e-2`, `dall-e-3`, or a GPT image model (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`). Defaults to `dall-e-2` unless a parameter specific to the GPT image models is used.<br/>
-        /// Default Value: dall-e-2<br/>
+        /// The GPT image model to use for image generation. Specify a model explicitly. Supported models include `gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`, and `chatgpt-image-latest`.<br/>
         /// Example: gpt-image-2.5-flare
         /// </param>
         /// <param name="n">
-        /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>
+        /// The number of images to generate. Must be between 1 and 10.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
@@ -185,15 +183,8 @@ namespace tryAGI.OpenAI
         /// - `high`, `medium` and `low` are supported for the GPT image models.<br/>
         /// - `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08`<br/>
         ///   snapshots, also support `xhigh` and `max`.<br/>
-        /// - `hd` and `standard` are supported for `dall-e-3`.<br/>
-        /// - `standard` is the only option for `dall-e-2`.<br/>
         /// Default Value: auto<br/>
         /// Example: medium
-        /// </param>
-        /// <param name="responseFormat">
-        /// The format in which generated images with `dall-e-2` and `dall-e-3` are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated. This parameter isn't supported for the GPT image models, which always return base64-encoded images.<br/>
-        /// Default Value: url<br/>
-        /// Example: url
         /// </param>
         /// <param name="outputFormat">
         /// The format in which the generated images are returned. This parameter is only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.<br/>
@@ -214,7 +205,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="partialImages"></param>
         /// <param name="size">
-        /// The size of the generated images. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing. For `dall-e-2`, use one of `256x256`, `512x512`, or `1024x1024`. For `dall-e-3`, use one of `1024x1024`, `1792x1024`, or `1024x1792`.<br/>
+        /// The size of the generated images. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing.<br/>
         /// Default Value: auto<br/>
         /// Example: 1024x1024
         /// </param>
@@ -236,11 +227,6 @@ namespace tryAGI.OpenAI
         /// Default Value: auto<br/>
         /// Example: transparent
         /// </param>
-        /// <param name="style">
-        /// The style of the generated images. This parameter is only supported for `dall-e-3`. Must be one of `vivid` or `natural`. Vivid causes the model to lean towards generating hyper-real and dramatic images. Natural causes the model to produce more natural, less hyper-real looking images.<br/>
-        /// Default Value: vivid<br/>
-        /// Example: vivid
-        /// </param>
         /// <param name="user">
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
         /// Example: user-1234
@@ -250,10 +236,9 @@ namespace tryAGI.OpenAI
 #endif
         public CreateImageRequest(
             string prompt,
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestModel?>? model,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestModel?> model,
             int? n,
             global::tryAGI.OpenAI.CreateImageRequestQuality? quality,
-            global::tryAGI.OpenAI.CreateImageRequestResponseFormat? responseFormat,
             global::tryAGI.OpenAI.CreateImageRequestOutputFormat? outputFormat,
             int? outputCompression,
             bool? stream,
@@ -261,14 +246,12 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestSize?>? size,
             global::tryAGI.OpenAI.CreateImageRequestModeration? moderation,
             global::tryAGI.OpenAI.CreateImageRequestBackground? background,
-            global::tryAGI.OpenAI.CreateImageRequestStyle? style,
             string? user)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Model = model;
             this.N = n;
             this.Quality = quality;
-            this.ResponseFormat = responseFormat;
             this.OutputFormat = outputFormat;
             this.OutputCompression = outputCompression;
             this.Stream = stream;
@@ -276,7 +259,6 @@ namespace tryAGI.OpenAI
             this.Size = size;
             this.Moderation = moderation;
             this.Background = background;
-            this.Style = style;
             this.User = user;
         }
 

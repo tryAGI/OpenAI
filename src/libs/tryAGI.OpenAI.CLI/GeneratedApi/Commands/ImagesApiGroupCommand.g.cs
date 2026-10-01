@@ -15,7 +15,6 @@ internal static partial class ImagesApiGroupCommand
                          command.Subcommands.Add(ImagesCreateImageAsStreamCommandApiCommand.Create());
                          command.Subcommands.Add(ImagesCreateImageEditCommandApiCommand.Create());
                          command.Subcommands.Add(ImagesCreateImageEditAsStreamCommandApiCommand.Create());
-                         command.Subcommands.Add(ImagesCreateImageVariationCommandApiCommand.Create());
         CustomizeCommand(ref command);
         return command;
     }

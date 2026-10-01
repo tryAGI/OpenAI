@@ -21,6 +21,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         Low,
+        /// <summary>
+        ///
+        /// </summary>
+        Original,
     }
 
     /// <summary>
@@ -38,6 +42,7 @@ namespace tryAGI.OpenAI
                 ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto => "auto",
                 ChatCompletionRequestMessageContentPartImageImageUrlDetail.High => "high",
                 ChatCompletionRequestMessageContentPartImageImageUrlDetail.Low => "low",
+                ChatCompletionRequestMessageContentPartImageImageUrlDetail.Original => "original",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,6 +56,7 @@ namespace tryAGI.OpenAI
                 "auto" => ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto,
                 "high" => ChatCompletionRequestMessageContentPartImageImageUrlDetail.High,
                 "low" => ChatCompletionRequestMessageContentPartImageImageUrlDetail.Low,
+                "original" => ChatCompletionRequestMessageContentPartImageImageUrlDetail.Original,
                 _ => null,
             };
         }

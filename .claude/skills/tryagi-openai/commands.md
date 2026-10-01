@@ -263,7 +263,6 @@ Given a prompt and/or an input image, the model will generate a new image.
 |---------|-------|-------------|
 | `create-image` | `POST /images/generations` | Create image |
 | `create-image-edit` | `POST /images/edits` | Create image edit |
-| `create-image-variation` | `POST /images/variations` | Create image variation |
 
 ## `invite`
 
