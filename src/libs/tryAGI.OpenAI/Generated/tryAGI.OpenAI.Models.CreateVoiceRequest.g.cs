@@ -18,38 +18,38 @@ namespace tryAGI.OpenAI
         /// Creates a voice from a consent recording and an audio sample. Requires multipart/form-data.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.CreateVoiceFromConsentRequest? Consent { get; init; }
+        public global::tryAGI.OpenAI.CreateVoiceFromConsentRequest? AudioSample { get; init; }
 #else
-        public global::tryAGI.OpenAI.CreateVoiceFromConsentRequest? Consent { get; }
+        public global::tryAGI.OpenAI.CreateVoiceFromConsentRequest? AudioSample { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Consent))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioSample))]
 #endif
-        public bool IsConsent => Consent != null;
+        public bool IsAudioSample => AudioSample != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickConsent(
+        public bool TryPickAudioSample(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
             out global::tryAGI.OpenAI.CreateVoiceFromConsentRequest? value)
         {
-            value = Consent;
-            return IsConsent;
+            value = AudioSample;
+            return IsAudioSample;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.CreateVoiceFromConsentRequest PickConsent() => Consent is { } value
+        public global::tryAGI.OpenAI.CreateVoiceFromConsentRequest PickAudioSample() => AudioSample is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Consent' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AudioSample' but the value was {ToString()}.");
 
         /// <summary>
         /// Creates a synthetic voice from a text description. Supports application/json or multipart/form-data.
@@ -95,20 +95,20 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.CreateVoiceFromConsentRequest?(CreateVoiceRequest @this) => @this.Consent;
+        public static implicit operator global::tryAGI.OpenAI.CreateVoiceFromConsentRequest?(CreateVoiceRequest @this) => @this.AudioSample;
 
         /// <summary>
         ///
         /// </summary>
         public CreateVoiceRequest(global::tryAGI.OpenAI.CreateVoiceFromConsentRequest? value)
         {
-            Consent = value;
+            AudioSample = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static CreateVoiceRequest FromConsent(global::tryAGI.OpenAI.CreateVoiceFromConsentRequest? value) => new CreateVoiceRequest(value);
+        public static CreateVoiceRequest FromAudioSample(global::tryAGI.OpenAI.CreateVoiceFromConsentRequest? value) => new CreateVoiceRequest(value);
 
         /// <summary>
         ///
@@ -138,13 +138,13 @@ namespace tryAGI.OpenAI
         /// </summary>
         public CreateVoiceRequest(
             global::tryAGI.OpenAI.CreateVoiceRequestDiscriminatorType? type,
-            global::tryAGI.OpenAI.CreateVoiceFromConsentRequest? consent,
+            global::tryAGI.OpenAI.CreateVoiceFromConsentRequest? audioSample,
             global::tryAGI.OpenAI.CreateVoicePromptRequest? prompt
             )
         {
             Type = type;
 
-            Consent = consent;
+            AudioSample = audioSample;
             Prompt = prompt;
         }
 
@@ -153,14 +153,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             Prompt as object ??
-            Consent as object
+            AudioSample as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            Consent?.ToString() ??
+            AudioSample?.ToString() ??
             Prompt?.ToString()
             ;
 
@@ -169,14 +169,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsConsent && !IsPrompt || !IsConsent && IsPrompt;
+            return IsAudioSample && !IsPrompt || !IsAudioSample && IsPrompt;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.CreateVoiceFromConsentRequest, TResult>? consent = null,
+            global::System.Func<global::tryAGI.OpenAI.CreateVoiceFromConsentRequest, TResult>? audioSample = null,
             global::System.Func<global::tryAGI.OpenAI.CreateVoicePromptRequest, TResult>? prompt = null,
             bool validate = true)
         {
@@ -185,9 +185,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (Consent is { } __value0 && consent != null)
+            if (AudioSample is { } __value0 && audioSample != null)
             {
-                return consent(__value0);
+                return audioSample(__value0);
             }
             else if (Prompt is { } __value1 && prompt != null)
             {
@@ -201,7 +201,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.CreateVoiceFromConsentRequest>? consent = null,
+            global::System.Action<global::tryAGI.OpenAI.CreateVoiceFromConsentRequest>? audioSample = null,
 
             global::System.Action<global::tryAGI.OpenAI.CreateVoicePromptRequest>? prompt = null,
             bool validate = true)
@@ -211,9 +211,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (Consent is { } __value0)
+            if (AudioSample is { } __value0)
             {
-                consent?.Invoke(__value0);
+                audioSample?.Invoke(__value0);
             }
             else if (Prompt is { } __value1)
             {
@@ -225,7 +225,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.CreateVoiceFromConsentRequest>? consent = null,
+            global::System.Action<global::tryAGI.OpenAI.CreateVoiceFromConsentRequest>? audioSample = null,
             global::System.Action<global::tryAGI.OpenAI.CreateVoicePromptRequest>? prompt = null,
             bool validate = true)
         {
@@ -234,9 +234,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (Consent is { } __value0)
+            if (AudioSample is { } __value0)
             {
-                consent?.Invoke(__value0);
+                audioSample?.Invoke(__value0);
             }
             else if (Prompt is { } __value1)
             {
@@ -251,7 +251,7 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Consent,
+                AudioSample,
                 typeof(global::tryAGI.OpenAI.CreateVoiceFromConsentRequest),
                 Prompt,
                 typeof(global::tryAGI.OpenAI.CreateVoicePromptRequest),
@@ -271,7 +271,7 @@ namespace tryAGI.OpenAI
         public bool Equals(CreateVoiceRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateVoiceFromConsentRequest?>.Default.Equals(Consent, other.Consent) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateVoiceFromConsentRequest?>.Default.Equals(AudioSample, other.AudioSample) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateVoicePromptRequest?>.Default.Equals(Prompt, other.Prompt)
                 ;
         }

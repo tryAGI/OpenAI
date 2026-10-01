@@ -4,15 +4,15 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The voice creation method. Defaults to `consent` when omitted.<br/>
-    /// Default Value: consent
+    /// The voice creation method. Defaults to `audio_sample` when omitted.<br/>
+    /// Default Value: audio_sample
     /// </summary>
     public enum CreateVoiceFromConsentRequestType
     {
         /// <summary>
         ///
         /// </summary>
-        Consent,
+        AudioSample,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateVoiceFromConsentRequestType.Consent => "consent",
+                CreateVoiceFromConsentRequestType.AudioSample => "audio_sample",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "consent" => CreateVoiceFromConsentRequestType.Consent,
+                "audio_sample" => CreateVoiceFromConsentRequestType.AudioSample,
                 _ => null,
             };
         }

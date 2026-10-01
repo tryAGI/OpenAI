@@ -36,7 +36,8 @@ namespace tryAGI.OpenAI
         /// `alloy`, `ash`, `ballad`, `coral`, `echo`, `sage`, `shimmer`, `verse`,<br/>
         /// `marin`, and `cedar`. You may also provide a custom voice object with an<br/>
         /// `id`, for example `{ "id": "voice_1234" }`. Voice cannot be changed during<br/>
-        /// the session once the model has responded with audio at least once.
+        /// the session once the model has responded with audio at least once.<br/>
+        /// Custom voices must be created from audio samples. Voices created from text prompts are supported only in Live.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceIdsOrCustomVoiceJsonConverter))]
@@ -143,7 +144,8 @@ namespace tryAGI.OpenAI
         /// `alloy`, `ash`, `ballad`, `coral`, `echo`, `sage`, `shimmer`, `verse`,<br/>
         /// `marin`, and `cedar`. You may also provide a custom voice object with an<br/>
         /// `id`, for example `{ "id": "voice_1234" }`. Voice cannot be changed during<br/>
-        /// the session once the model has responded with audio at least once.
+        /// the session once the model has responded with audio at least once.<br/>
+        /// Custom voices must be created from audio samples. Voices created from text prompts are supported only in Live.
         /// </param>
         /// <param name="outputAudioFormat">
         /// The format of output audio. Options are `pcm16`, `g711_ulaw`, or `g711_alaw`.

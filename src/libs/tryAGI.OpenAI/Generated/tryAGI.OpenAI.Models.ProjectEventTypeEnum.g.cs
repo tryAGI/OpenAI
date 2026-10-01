@@ -11,6 +11,26 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        AgentSessionActionRequired,
+        /// <summary>
+        ///
+        /// </summary>
+        AgentSessionCreated,
+        /// <summary>
+        ///
+        /// </summary>
+        AgentSessionFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        AgentSessionIdle,
+        /// <summary>
+        ///
+        /// </summary>
+        AgentSessionInProgress,
+        /// <summary>
+        ///
+        /// </summary>
         BatchCancelled,
         /// <summary>
         ///
@@ -94,6 +114,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ProjectEventTypeEnum.AgentSessionActionRequired => "agent.session.action_required",
+                ProjectEventTypeEnum.AgentSessionCreated => "agent.session.created",
+                ProjectEventTypeEnum.AgentSessionFailed => "agent.session.failed",
+                ProjectEventTypeEnum.AgentSessionIdle => "agent.session.idle",
+                ProjectEventTypeEnum.AgentSessionInProgress => "agent.session.in_progress",
                 ProjectEventTypeEnum.BatchCancelled => "batch.cancelled",
                 ProjectEventTypeEnum.BatchCompleted => "batch.completed",
                 ProjectEventTypeEnum.BatchExpired => "batch.expired",
@@ -122,6 +147,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "agent.session.action_required" => ProjectEventTypeEnum.AgentSessionActionRequired,
+                "agent.session.created" => ProjectEventTypeEnum.AgentSessionCreated,
+                "agent.session.failed" => ProjectEventTypeEnum.AgentSessionFailed,
+                "agent.session.idle" => ProjectEventTypeEnum.AgentSessionIdle,
+                "agent.session.in_progress" => ProjectEventTypeEnum.AgentSessionInProgress,
                 "batch.cancelled" => ProjectEventTypeEnum.BatchCancelled,
                 "batch.completed" => ProjectEventTypeEnum.BatchCompleted,
                 "batch.expired" => ProjectEventTypeEnum.BatchExpired,

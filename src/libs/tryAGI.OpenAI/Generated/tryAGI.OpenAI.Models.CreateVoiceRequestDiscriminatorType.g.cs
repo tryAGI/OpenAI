@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        Consent,
+        AudioSample,
         /// <summary>
         ///
         /// </summary>
@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                CreateVoiceRequestDiscriminatorType.Consent => "consent",
+                CreateVoiceRequestDiscriminatorType.AudioSample => "audio_sample",
                 CreateVoiceRequestDiscriminatorType.Prompt => "prompt",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
-                "consent" => CreateVoiceRequestDiscriminatorType.Consent,
+                "audio_sample" => CreateVoiceRequestDiscriminatorType.AudioSample,
                 "prompt" => CreateVoiceRequestDiscriminatorType.Prompt,
                 _ => null,
             };

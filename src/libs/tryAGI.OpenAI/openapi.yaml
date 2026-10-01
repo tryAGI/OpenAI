@@ -1806,12 +1806,15 @@ paths:
 
 
         For prompt-based creation, send `type: "prompt"` with a `name` and
-        `prompt` as JSON or multipart form data. Consent-based creation requires
-        multipart form data and is the default when `type` is omitted.
+        `prompt` as JSON or multipart form data. For creation from an audio
+        sample, send `type: "audio_sample"` with a `name`, `audio_sample`, and
+        `consent` recording ID as multipart form data. The type defaults to
+        `audio_sample` when omitted.
 
 
-        Returns the saved voice's metadata. Use the voice ID in supported audio
-        output endpoints. The response does not include preview audio.
+        Returns the saved voice's metadata. Voices created from text prompts are
+        supported only in Live, not in Realtime or the speech endpoint. The
+        response does not include preview audio.
       requestBody:
         required: true
         content:
@@ -31218,6 +31221,35 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ChatSessionResource"
+              examples:
+                Example:
+                  value:
+                    id: cksess_123
+                    object: chatkit.session
+                    client_secret: ""
+                    expires_at: 1712349876
+                    workflow:
+                      id: workflow_alpha
+                      version: 2024-10-01
+                      state_variables:
+                        message: hello
+                      tracing:
+                        enabled: true
+                    user: user_789
+                    rate_limits:
+                      max_requests_per_1_minute: 60
+                    max_requests_per_1_minute: 60
+                    status: cancelled
+                    chatkit_configuration:
+                      automatic_thread_titling:
+                        enabled: true
+                      file_upload:
+                        enabled: true
+                        max_file_size: 16
+                        max_files: 20
+                      history:
+                        enabled: true
+                        recent_threads: 10
         "400":
           description: The request is invalid or the required ChatKit beta header is
             missing or invalid.
@@ -31324,17 +31356,36 @@ paths:
             {
               "id": "cksess_123",
               "object": "chatkit.session",
+              "client_secret": "",
+              "expires_at": 1735689600,
               "workflow": {
                 "id": "workflow_alpha",
-                "version": "1"
+                "version": null,
+                "state_variables": null,
+                "tracing": {
+                  "enabled": true
+                }
               },
-              "scope": {
-                "customer_id": "cust_456"
+              "user": "user_123",
+              "rate_limits": {
+                "max_requests_per_1_minute": 10
               },
-              "max_requests_per_1_minute": 30,
-              "ttl_seconds": 900,
+              "max_requests_per_1_minute": 10,
               "status": "cancelled",
-              "cancelled_at": 1712345678
+              "chatkit_configuration": {
+                "automatic_thread_titling": {
+                  "enabled": true
+                },
+                "file_upload": {
+                  "enabled": false,
+                  "max_file_size": 512,
+                  "max_files": 10
+                },
+                "history": {
+                  "enabled": true,
+                  "recent_threads": null
+                }
+              }
             }
   /chatkit/sessions:
     post:
@@ -31386,17 +31437,8 @@ paths:
                 -H "Authorization: Bearer $OPENAI_API_KEY" \
                 -H "OpenAI-Beta: chatkit_beta=v1" \
                 -d '{
-                  "workflow": {
-                    "id": "workflow_alpha",
-                    "version": "2024-10-01"
-                  },
-                  "scope": {
-                    "project": "alpha",
-                    "environment": "staging"
-                  },
-                  "expires_after": 1800,
-                  "max_requests_per_1_minute": 60,
-                  "max_requests_per_session": 500
+                  "user": "user_123",
+                  "workflow": {"id": "workflow_alpha"}
                 }'
             javascript: >
               import OpenAI from 'openai';
@@ -31406,7 +31448,7 @@ paths:
 
 
               const chatSession = await client.beta.chatkit.sessions.create({
-              user: 'user', workflow: { id: 'id' } });
+              user: 'user_123', workflow: { id: 'workflow_alpha' } });
 
 
               console.log(chatSession.id);
@@ -31415,9 +31457,9 @@ paths:
 
               client = OpenAI()
               chat_session = client.beta.chatkit.sessions.create(
-                  user="user",
+                  user="user_123",
                   workflow={
-                      "id": "id"
+                      "id": "workflow_alpha"
                   },
               )
               print(chat_session.id)
@@ -31437,9 +31479,9 @@ paths:
               func main() {
                 client := openai.NewClient()
                 chatSession, err := client.Beta.ChatKit.Sessions.New(context.TODO(), openai.BetaChatKitSessionNewParams{
-                  User: "user",
+                  User: "user_123",
                   Workflow: openai.ChatSessionWorkflowParam{
-                    ID: "id",
+                    ID: "workflow_alpha",
                   },
                 })
                 if err != nil {
@@ -31454,8 +31496,8 @@ paths:
               openai = OpenAI::Client.new
 
 
-              chat_session = openai.beta.chatkit.sessions.create(user: "user",
-              workflow: {id: "id"})
+              chat_session = openai.beta.chatkit.sessions.create(user:
+              "user_123", workflow: {id: "workflow_alpha"})
 
 
               puts(chat_session)
@@ -31483,29 +31525,48 @@ paths:
                       OpenAIClient client = OpenAIOkHttpClient.fromEnv();
 
                       SessionCreateParams params = SessionCreateParams.builder()
-                          .user("user")
+                          .user("user_123")
                           .workflow(ChatSessionWorkflowParam.builder()
-                              .id("id")
+                              .id("workflow_alpha")
                               .build())
                           .build();
                       ChatSession chatSession = client.beta().chatkit().sessions().create(params);
                   }
               }
-          response: |
+          response: >
             {
-              "client_secret": "chatkit_token_123",
+              "id": "cksess_123",
+              "object": "chatkit.session",
+              "client_secret": "ek_example_00eyJleHBpcmVzX2F0IjogMTczNTY4OTYwMH0=",
               "expires_at": 1735689600,
               "workflow": {
                 "id": "workflow_alpha",
-                "version": "2024-10-01"
+                "version": null,
+                "state_variables": null,
+                "tracing": {
+                  "enabled": true
+                }
               },
-              "scope": {
-                "project": "alpha",
-                "environment": "staging"
+              "user": "user_123",
+              "rate_limits": {
+                "max_requests_per_1_minute": 10
               },
-              "max_requests_per_1_minute": 60,
-              "max_requests_per_session": 500,
-              "status": "active"
+              "max_requests_per_1_minute": 10,
+              "status": "active",
+              "chatkit_configuration": {
+                "automatic_thread_titling": {
+                  "enabled": true
+                },
+                "file_upload": {
+                  "enabled": false,
+                  "max_file_size": 512,
+                  "max_files": 10
+                },
+                "history": {
+                  "enabled": true,
+                  "recent_threads": null
+                }
+              }
             }
   /chatkit/threads/{thread_id}/items:
     get:
@@ -38241,6 +38302,92 @@ paths:
               "input_tokens": 11
             }
 webhooks:
+  agent_session_action_required:
+    post:
+      description: >
+        Sent when an agent session requires an action. Retrieve the session for
+        action details.
+      requestBody:
+        description: The event payload sent by the API.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WebhookAgentSessionActionRequired"
+      responses:
+        "200":
+          description: >
+            Return a 200 status code to acknowledge receipt of the event.
+            Non-200
+
+            status codes will be retried.
+  agent_session_created:
+    post:
+      description: |
+        Sent when an agent session is created.
+      requestBody:
+        description: The event payload sent by the API.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WebhookAgentSessionCreated"
+      responses:
+        "200":
+          description: >
+            Return a 200 status code to acknowledge receipt of the event.
+            Non-200
+
+            status codes will be retried.
+  agent_session_failed:
+    post:
+      description: |
+        Sent when an agent session fails.
+      requestBody:
+        description: The event payload sent by the API.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WebhookAgentSessionFailed"
+      responses:
+        "200":
+          description: >
+            Return a 200 status code to acknowledge receipt of the event.
+            Non-200
+
+            status codes will be retried.
+  agent_session_idle:
+    post:
+      description: |
+        Sent when an agent session becomes idle.
+      requestBody:
+        description: The event payload sent by the API.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WebhookAgentSessionIdle"
+      responses:
+        "200":
+          description: >
+            Return a 200 status code to acknowledge receipt of the event.
+            Non-200
+
+            status codes will be retried.
+  agent_session_in_progress:
+    post:
+      description: |
+        Sent when an agent session enters the in-progress state.
+      requestBody:
+        description: The event payload sent by the API.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/WebhookAgentSessionInProgress"
+      responses:
+        "200":
+          description: >
+            Return a 200 status code to acknowledge receipt of the event.
+            Non-200
+
+            status codes will be retried.
   batch_cancelled:
     post:
       description: |
@@ -40954,10 +41101,14 @@ components:
           items:
             $ref: "#/components/schemas/CreateChatCompletionResponse"
         first_id:
-          type: string
+          type:
+            - string
+            - "null"
           description: The identifier of the first chat completion in the data array.
         last_id:
-          type: string
+          type:
+            - string
+            - "null"
           description: The identifier of the last chat completion in the data array.
         has_more:
           type: boolean
@@ -41844,7 +41995,9 @@ components:
               description: The refusal message generated by the model.
             - type: "null"
         tool_calls:
-          $ref: "#/components/schemas/ChatCompletionMessageToolCalls"
+          anyOf:
+            - $ref: "#/components/schemas/ChatCompletionMessageToolCalls"
+            - type: "null"
         annotations:
           type: array
           description: |
@@ -41894,7 +42047,9 @@ components:
           description: The role of the author of this message.
           x-stainless-const: true
         function_call:
-          type: object
+          type:
+            - object
+            - "null"
           deprecated: true
           description: Deprecated and replaced by `tool_calls`. The name and arguments of
             a function that should be called, as generated by the model.
@@ -41954,7 +42109,6 @@ components:
       required:
         - role
         - content
-        - refusal
     ChatCompletionRole:
       type: string
       description: The role of the author of a message
@@ -43438,6 +43592,11 @@ components:
 
                     custom voice object with an `id`, for example `{ "id":
                     "voice_1234" }`.
+
+                    Custom voices must be created from audio samples. Voices
+                    created from text
+
+                    prompts are supported only in Live.
                 format:
                   type: string
                   enum:
@@ -46738,7 +46897,9 @@ components:
             You may also provide a custom voice object with an `id`, for example
             `{ "id": "voice_1234" }`. Previews of the voices are available in
             the [Text to speech
-            guide](https://developers.openai.com/api/docs/guides/text-to-speech#voice-options).'
+            guide](https://developers.openai.com/api/docs/guides/text-to-speech#voice-options).
+            Custom voices must be created from audio samples. Voices created
+            from text prompts are supported only in Live.'
           title: Voice
           anyOf:
             - anyOf:
@@ -47746,9 +47907,9 @@ components:
         type:
           type: string
           enum:
-            - consent
-          default: consent
-          description: The voice creation method. Defaults to `consent` when omitted.
+            - audio_sample
+          default: audio_sample
+          description: The voice creation method. Defaults to `audio_sample` when omitted.
         name:
           type: string
           minLength: 1
@@ -47819,11 +47980,11 @@ components:
       oneOf:
         - $ref: "#/components/schemas/CreateVoiceFromConsentRequest"
         - $ref: "#/components/schemas/CreateVoicePromptRequest"
-      x-oai-default-discriminator-value: consent
+      x-oai-default-discriminator-value: audio_sample
       discriminator:
         propertyName: type
         mapping:
-          consent: "#/components/schemas/CreateVoiceFromConsentRequest"
+          audio_sample: "#/components/schemas/CreateVoiceFromConsentRequest"
           prompt: "#/components/schemas/CreateVoicePromptRequest"
     CustomToolCall:
       type: object
@@ -58801,6 +58962,9 @@ components:
             during
 
             the session once the model has responded with audio at least once.
+
+            Custom voices must be created from audio samples. Voices created
+            from text prompts are supported only in Live.
         output_audio_format:
           type: string
           enum:
@@ -62836,6 +63000,9 @@ components:
                     during the session once the model has responded with audio
                     at least once.
 
+                    Custom voices must be created from audio samples. Voices
+                    created from text prompts are supported only in Live.
+
                     We recommend `marin` and `cedar` for best quality.
         tools:
           type: array
@@ -65823,6 +65990,9 @@ components:
             during
 
             the session once the model has responded with audio at least once.
+
+            Custom voices must be created from audio samples. Voices created
+            from text prompts are supported only in Live.
         input_audio_format:
           type: string
           description: >
@@ -66168,6 +66338,9 @@ components:
 
                     during the session once the model has responded with audio
                     at least once.
+
+                    Custom voices must be created from audio samples. Voices
+                    created from text prompts are supported only in Live.
 
                     We recommend `marin` and `cedar` for best quality.
                 speed:
@@ -78126,7 +78299,8 @@ components:
     VoiceResource:
       type: object
       title: Voice
-      description: A custom voice that can be used for audio output.
+      description: A custom voice that can be used for audio output. Voices created
+        from text prompts are supported only in Live.
       additionalProperties: false
       properties:
         object:
@@ -78138,6 +78312,13 @@ components:
         id:
           type: string
           description: The voice identifier, which can be referenced in API endpoints.
+        type:
+          type: string
+          description: How the voice was created. Voices created from text prompts are
+            supported only in Live.
+          enum:
+            - audio_sample
+            - prompt
         name:
           type: string
           description: The name of the voice.
@@ -78149,6 +78330,7 @@ components:
         - object
         - id
         - name
+        - type
         - created_at
       x-oaiMeta:
         name: The voice object
@@ -78157,6 +78339,7 @@ components:
             "object": "audio.voice",
             "id": "voice_123abc",
             "name": "My new voice",
+            "type": "audio_sample",
             "created_at": 1734220800
           }
     WebSearchActionFind:
@@ -78456,6 +78639,182 @@ components:
         - id
         - type
         - status
+    WebhookAgentSessionActionRequired:
+      type: object
+      title: agent.session.action_required
+      description: >
+        Sent when an agent session requires an action. Retrieve the session for
+        action details.
+      allOf:
+        - $ref: "#/components/schemas/WebhookAgentSessionEnvelope"
+        - type: object
+          required:
+            - type
+            - data
+          properties:
+            type:
+              type: string
+              description: The event type. Always `agent.session.action_required`.
+              enum:
+                - agent.session.action_required
+              x-stainless-const: true
+            data:
+              $ref: "#/components/schemas/AgentSessionActionRequiredPayloadResource"
+      x-oaiMeta:
+        name: agent.session.action_required
+        group: webhook-events
+        example: >
+          {
+            "id": "evt_123",
+            "object": "event",
+            "created_at": 1719168000,
+            "type": "agent.session.action_required",
+            "data": {"id": "sess_123", "required_action": {"type": "function_call"}}
+          }
+    WebhookAgentSessionCreated:
+      type: object
+      title: agent.session.created
+      description: |
+        Sent when an agent session is created.
+      allOf:
+        - $ref: "#/components/schemas/WebhookAgentSessionEnvelope"
+        - type: object
+          required:
+            - type
+            - data
+          properties:
+            type:
+              type: string
+              description: The event type. Always `agent.session.created`.
+              enum:
+                - agent.session.created
+              x-stainless-const: true
+            data:
+              $ref: "#/components/schemas/AgentSessionCreatedPayloadResource"
+      x-oaiMeta:
+        name: agent.session.created
+        group: webhook-events
+        example: >
+          {
+            "id": "evt_123",
+            "object": "event",
+            "created_at": 1719168000,
+            "type": "agent.session.created",
+            "data": {"id": "sess_123", "environment_id": "ccarenv_123", "environment_type": "self_hosted", "connect": {"remote_url": "https://api.openai.com/v1/agents/api/connect/example"}}
+          }
+    WebhookAgentSessionEnvelope:
+      type: object
+      required:
+        - id
+        - object
+        - created_at
+      properties:
+        id:
+          type: string
+          description: The unique ID of the event.
+        object:
+          type: string
+          description: The object type. Always `event`.
+          enum:
+            - event
+          x-stainless-const: true
+        created_at:
+          type: integer
+          format: unixtime
+          description: The Unix timestamp, in seconds, when the event was created.
+    WebhookAgentSessionFailed:
+      type: object
+      title: agent.session.failed
+      description: |
+        Sent when an agent session fails.
+      allOf:
+        - $ref: "#/components/schemas/WebhookAgentSessionEnvelope"
+        - type: object
+          required:
+            - type
+            - data
+          properties:
+            type:
+              type: string
+              description: The event type. Always `agent.session.failed`.
+              enum:
+                - agent.session.failed
+              x-stainless-const: true
+            data:
+              $ref: "#/components/schemas/AgentSessionEnvironmentPayloadResource"
+      x-oaiMeta:
+        name: agent.session.failed
+        group: webhook-events
+        example: |
+          {
+            "id": "evt_123",
+            "object": "event",
+            "created_at": 1719168000,
+            "type": "agent.session.failed",
+            "data": {"id": "sess_123", "environment_type": "none"}
+          }
+    WebhookAgentSessionIdle:
+      type: object
+      title: agent.session.idle
+      description: |
+        Sent when an agent session becomes idle.
+      allOf:
+        - $ref: "#/components/schemas/WebhookAgentSessionEnvelope"
+        - type: object
+          required:
+            - type
+            - data
+          properties:
+            type:
+              type: string
+              description: The event type. Always `agent.session.idle`.
+              enum:
+                - agent.session.idle
+              x-stainless-const: true
+            data:
+              $ref: "#/components/schemas/AgentSessionEnvironmentPayloadResource"
+      x-oaiMeta:
+        name: agent.session.idle
+        group: webhook-events
+        example: |
+          {
+            "id": "evt_123",
+            "object": "event",
+            "created_at": 1719168000,
+            "type": "agent.session.idle",
+            "data": {"id": "sess_123", "environment_type": "none"}
+          }
+    WebhookAgentSessionInProgress:
+      type: object
+      title: agent.session.in_progress
+      description: |
+        Sent when an agent session enters the in-progress state.
+      allOf:
+        - $ref: "#/components/schemas/WebhookAgentSessionEnvelope"
+        - type: object
+          required:
+            - type
+            - data
+          properties:
+            type:
+              type: string
+              description: The event type. Always `agent.session.in_progress`.
+              enum:
+                - agent.session.in_progress
+              x-stainless-const: true
+            data:
+              $ref: "#/components/schemas/AgentSessionEnvironmentPayloadResource"
+      x-oaiMeta:
+        name: agent.session.in_progress
+        group: webhook-events
+        example: >
+          {
+            "id": "evt_123",
+            "object": "event",
+            "created_at": 1719168000,
+            "type": "agent.session.in_progress",
+            "data": {"id": "sess_123", "environment_id": "ccarenv_123", "environment_type": "openai_hosted"}
+          }
     WebhookBatchCancelled:
       type: object
       title: batch.cancelled
@@ -86607,11 +86966,12 @@ components:
         state_variables:
           anyOf:
             - additionalProperties:
-                oneOf:
+                anyOf:
                   - type: string
                   - type: integer
                   - type: boolean
                   - type: number
+                  - type: "null"
               type: object
               description: State variable key-value pairs applied when invoking the workflow.
                 Defaults to null when no overrides were provided.
@@ -86770,11 +87130,15 @@ components:
         workflow:
           id: workflow_alpha
           version: 2024-10-01
+          state_variables:
+            message: hello
+          tracing:
+            enabled: true
         user: user_789
         rate_limits:
           max_requests_per_1_minute: 60
         max_requests_per_1_minute: 60
-        status: cancelled
+        status: active
         chatkit_configuration:
           automatic_thread_titling:
             enabled: true
@@ -96759,6 +97123,11 @@ components:
         - realtime.call.incoming
         - video.completed
         - video.failed
+        - agent.session.created
+        - agent.session.action_required
+        - agent.session.in_progress
+        - agent.session.idle
+        - agent.session.failed
         - safety.alert.created
     PublicCreateEndpointBody:
       properties:
@@ -96943,6 +97312,84 @@ components:
       required:
         - object
         - data
+    AgentSessionRequiredActionTypeResource:
+      type: string
+      enum:
+        - computer_use_approval_request
+        - function_call
+        - environment_connection
+    AgentSessionRequiredActionPayloadResource:
+      type: object
+      properties:
+        type:
+          $ref: "#/components/schemas/AgentSessionRequiredActionTypeResource"
+      required:
+        - type
+      additionalProperties: false
+    AgentSessionActionRequiredPayloadResource:
+      type: object
+      properties:
+        id:
+          type: string
+          minLength: 0
+          description: The ID of the session.
+        required_action:
+          $ref: "#/components/schemas/AgentSessionRequiredActionPayloadResource"
+          description: The action type. Retrieve the session for action details.
+      required:
+        - id
+        - required_action
+      additionalProperties: false
+    AgentSessionConnectPayloadResource:
+      type: object
+      properties:
+        remote_url:
+          type: string
+          minLength: 0
+          description: The URL used to connect the self-hosted environment.
+      required:
+        - remote_url
+      additionalProperties: false
+    AgentSessionCreatedPayloadResource:
+      type: object
+      properties:
+        id:
+          type: string
+          minLength: 0
+          description: The ID of the session.
+        environment_id:
+          type: string
+          minLength: 0
+          description: The ID of the environment, when one exists.
+        environment_type:
+          type: string
+          minLength: 0
+          description: "The environment type: `none`, `openai_hosted`, or `self_hosted`."
+        connect:
+          $ref: "#/components/schemas/AgentSessionConnectPayloadResource"
+      required:
+        - id
+        - environment_type
+      additionalProperties: false
+    AgentSessionEnvironmentPayloadResource:
+      type: object
+      properties:
+        id:
+          type: string
+          minLength: 0
+          description: The ID of the session.
+        environment_id:
+          type: string
+          minLength: 0
+          description: The ID of the environment, when one exists.
+        environment_type:
+          type: string
+          minLength: 0
+          description: "The environment type: `none`, `openai_hosted`, or `self_hosted`."
+      required:
+        - id
+        - environment_type
+      additionalProperties: false
     DragPoint:
       properties:
         x:

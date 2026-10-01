@@ -13,7 +13,9 @@ namespace tryAGI.OpenAI
         /// The voice the model uses to respond. Supported built-in voices are<br/>
         /// `alloy`, `ash`, `ballad`, `coral`, `echo`, `fable`, `nova`, `onyx`,<br/>
         /// `sage`, `shimmer`, `marin`, and `cedar`. You may also provide a<br/>
-        /// custom voice object with an `id`, for example `{ "id": "voice_1234" }`.
+        /// custom voice object with an `id`, for example `{ "id": "voice_1234" }`.<br/>
+        /// Custom voices must be created from audio samples. Voices created from text<br/>
+        /// prompts are supported only in Live.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceIdsOrCustomVoiceJsonConverter))]
@@ -42,7 +44,9 @@ namespace tryAGI.OpenAI
         /// The voice the model uses to respond. Supported built-in voices are<br/>
         /// `alloy`, `ash`, `ballad`, `coral`, `echo`, `fable`, `nova`, `onyx`,<br/>
         /// `sage`, `shimmer`, `marin`, and `cedar`. You may also provide a<br/>
-        /// custom voice object with an `id`, for example `{ "id": "voice_1234" }`.
+        /// custom voice object with an `id`, for example `{ "id": "voice_1234" }`.<br/>
+        /// Custom voices must be created from audio samples. Voices created from text<br/>
+        /// prompts are supported only in Live.
         /// </param>
         /// <param name="format">
         /// Specifies the output audio format. Must be one of `wav`, `mp3`, `flac`,<br/>
