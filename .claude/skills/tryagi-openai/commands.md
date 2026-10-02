@@ -25,6 +25,7 @@ Full per-command reference derived from the OpenAPI spec. For the short overview
 | `list-agent-session-subagent-turns` | `GET /agents/sessions/{session_id}/subagents/{subagent_id}/turns` | List subagent turns |
 | `list-agent-session-subagents` | `GET /agents/sessions/{session_id}/subagents` | List session subagents |
 | `list-agent-session-traces` | `GET /agents/sessions/{session_id}/traces` | List agent session traces |
+| `list-agent-session-turn-items` | `GET /agents/sessions/{session_id}/turns/{turn_id}/items` | List agent session turn items |
 | `list-agent-session-turns` | `GET /agents/sessions/{session_id}/turns` | List agent session turns |
 | `list-agent-sessions` | `GET /agents/sessions` | List agent sessions |
 | `list-agents` | `GET /agents` | List agents |
