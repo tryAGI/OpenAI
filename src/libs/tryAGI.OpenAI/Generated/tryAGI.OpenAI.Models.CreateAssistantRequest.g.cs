@@ -10,9 +10,9 @@ namespace tryAGI.OpenAI
     {
         /// <summary>
         /// ID of the model to use. You can use the [List models](https://developers.openai.com/api/reference/resources/models/methods/list) API to see all of your available models, or see our [Model overview](https://developers.openai.com/api/docs/models) for descriptions of them.<br/>
-        /// Example: gpt-5
+        /// Example: gpt-4.1
         /// </summary>
-        /// <example>gpt-5</example>
+        /// <example>gpt-4.1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.AssistantSupportedModels?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -90,7 +90,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="model">
         /// ID of the model to use. You can use the [List models](https://developers.openai.com/api/reference/resources/models/methods/list) API to see all of your available models, or see our [Model overview](https://developers.openai.com/api/docs/models) for descriptions of them.<br/>
-        /// Example: gpt-5
+        /// Example: gpt-4.1
         /// </param>
         /// <param name="name"></param>
         /// <param name="description"></param>

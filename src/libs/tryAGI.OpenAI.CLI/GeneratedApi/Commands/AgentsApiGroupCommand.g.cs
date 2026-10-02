@@ -31,6 +31,7 @@ internal static partial class AgentsApiGroupCommand
                          command.Subcommands.Add(AgentsListAgentSessionSubagentTurnsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentSessionSubagentsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentSessionTracesCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentsListAgentSessionTurnItemsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentSessionTurnsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentSessionsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentsCommandApiCommand.Create());

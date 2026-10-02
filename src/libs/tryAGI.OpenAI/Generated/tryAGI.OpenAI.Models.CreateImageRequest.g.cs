@@ -137,7 +137,6 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Legacy style parameter for retired image models. Unsupported for GPT image models; describe the desired style in the prompt instead.<br/>
-        /// Default Value: vivid<br/>
         /// Example: vivid
         /// </summary>
         /// <example>vivid</example>

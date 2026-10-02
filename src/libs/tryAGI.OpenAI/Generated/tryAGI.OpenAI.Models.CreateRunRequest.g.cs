@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// The ID of the [Model](https://developers.openai.com/api/reference/resources/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.<br/>
-        /// Example: gpt-5
+        /// Example: gpt-4.1
         /// </summary>
-        /// <example>gpt-5</example>
+        /// <example>gpt-4.1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.AssistantSupportedModels?>))]
         public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AssistantSupportedModels?>? Model { get; set; }
@@ -142,7 +142,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="model">
         /// The ID of the [Model](https://developers.openai.com/api/reference/resources/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.<br/>
-        /// Example: gpt-5
+        /// Example: gpt-4.1
         /// </param>
         /// <param name="reasoningEffort"></param>
         /// <param name="instructions">
