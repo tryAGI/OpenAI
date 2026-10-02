@@ -58,7 +58,7 @@ internal static partial class UsageUsageCompletionsCommandApiCommand
     private static Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCompletionsGroupByItem>?> GroupBy { get; } = new(
         name: @"--group-by")
     {
-        Description = @"Group the usage data by the specified fields. Support fields include `project_id`, `user_id`, `api_key_id`, `model`, `batch`, `service_tier` or any combination of them.",
+        Description = @"Group the usage data by the specified fields. Support fields include `project_id`, `user_id`, `api_key_id`, `model`, `batch`, `service_tier`, `api_source` or any combination of them. When grouped by `api_source`, results use `agents_api` for attributed Agents API activity and `unlabeled` for all other activity. Without source grouping, `api_source` is null.",
     };
 
     private static Option<int?> Limit { get; } = new(

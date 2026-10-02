@@ -15,6 +15,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ApiSource,
+        /// <summary>
+        ///
+        /// </summary>
         ContextLevel,
         /// <summary>
         ///
@@ -43,6 +47,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 UsageWebSearchCallsGroupByItem.ApiKeyId => "api_key_id",
+                UsageWebSearchCallsGroupByItem.ApiSource => "api_source",
                 UsageWebSearchCallsGroupByItem.ContextLevel => "context_level",
                 UsageWebSearchCallsGroupByItem.Model => "model",
                 UsageWebSearchCallsGroupByItem.ProjectId => "project_id",
@@ -58,6 +63,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "api_key_id" => UsageWebSearchCallsGroupByItem.ApiKeyId,
+                "api_source" => UsageWebSearchCallsGroupByItem.ApiSource,
                 "context_level" => UsageWebSearchCallsGroupByItem.ContextLevel,
                 "model" => UsageWebSearchCallsGroupByItem.Model,
                 "project_id" => UsageWebSearchCallsGroupByItem.ProjectId,

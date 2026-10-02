@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class UsageCompletionsResult
     {
         /// <summary>
+        /// When grouped by `api_source`, `agents_api` identifies attributed Agents API activity and `unlabeled` includes all records without published source attribution, including historical and unknown origins. Unlabeled does not imply direct API usage. Without source grouping, this field is null.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("api_source")]
+        public global::tryAGI.OpenAI.UsageCompletionsResultApiSource? ApiSource { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
@@ -168,6 +174,9 @@ namespace tryAGI.OpenAI
         /// <param name="numModelRequests">
         /// The count of requests made to the model.
         /// </param>
+        /// <param name="apiSource">
+        /// When grouped by `api_source`, `agents_api` identifies attributed Agents API activity and `unlabeled` includes all records without published source attribution, including historical and unknown origins. Unlabeled does not imply direct API usage. Without source grouping, this field is null.
+        /// </param>
         /// <param name="object"></param>
         /// <param name="inputCachedTokens">
         /// The aggregated number of cached input tokens used across text, audio, and image inputs. For customers subscribed to Scale Tier, this includes Scale Tier tokens.
@@ -221,6 +230,7 @@ namespace tryAGI.OpenAI
             int inputTokens,
             int outputTokens,
             int numModelRequests,
+            global::tryAGI.OpenAI.UsageCompletionsResultApiSource? apiSource,
             global::tryAGI.OpenAI.UsageCompletionsResultObject @object,
             int? inputCachedTokens,
             int? inputCacheWriteTokens,
@@ -242,6 +252,7 @@ namespace tryAGI.OpenAI
             bool? batch,
             string? serviceTier)
         {
+            this.ApiSource = apiSource;
             this.Object = @object;
             this.InputTokens = inputTokens;
             this.InputCachedTokens = inputCachedTokens;

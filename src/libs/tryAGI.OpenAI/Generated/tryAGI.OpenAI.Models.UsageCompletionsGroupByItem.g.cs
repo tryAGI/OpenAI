@@ -15,6 +15,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ApiSource,
+        /// <summary>
+        ///
+        /// </summary>
         Batch,
         /// <summary>
         ///
@@ -47,6 +51,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 UsageCompletionsGroupByItem.ApiKeyId => "api_key_id",
+                UsageCompletionsGroupByItem.ApiSource => "api_source",
                 UsageCompletionsGroupByItem.Batch => "batch",
                 UsageCompletionsGroupByItem.Model => "model",
                 UsageCompletionsGroupByItem.ProjectId => "project_id",
@@ -63,6 +68,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "api_key_id" => UsageCompletionsGroupByItem.ApiKeyId,
+                "api_source" => UsageCompletionsGroupByItem.ApiSource,
                 "batch" => UsageCompletionsGroupByItem.Batch,
                 "model" => UsageCompletionsGroupByItem.Model,
                 "project_id" => UsageCompletionsGroupByItem.ProjectId,

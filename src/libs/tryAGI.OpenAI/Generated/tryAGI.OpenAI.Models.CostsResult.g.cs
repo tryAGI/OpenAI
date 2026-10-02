@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class CostsResult
     {
         /// <summary>
+        /// When grouped by `api_source`, `agents_api` identifies attributed Agents API activity and `unlabeled` includes all records without published source attribution, including historical and unknown origins. Unlabeled does not imply direct API usage. Without source grouping, this field is null.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("api_source")]
+        public global::tryAGI.OpenAI.CostsResultApiSource? ApiSource { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
@@ -61,6 +67,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CostsResult" /> class.
         /// </summary>
+        /// <param name="apiSource">
+        /// When grouped by `api_source`, `agents_api` identifies attributed Agents API activity and `unlabeled` includes all records without published source attribution, including historical and unknown origins. Unlabeled does not imply direct API usage. Without source grouping, this field is null.
+        /// </param>
         /// <param name="object"></param>
         /// <param name="amount">
         /// The monetary value in its associated currency.
@@ -76,6 +85,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CostsResult(
+            global::tryAGI.OpenAI.CostsResultApiSource? apiSource,
             global::tryAGI.OpenAI.CostsResultObject @object,
             global::tryAGI.OpenAI.CostsResultAmount? amount,
             string? lineItem,
@@ -84,6 +94,7 @@ namespace tryAGI.OpenAI
             double? quantity,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CostsResultQuantityUnit?, object>? quantityUnit)
         {
+            this.ApiSource = apiSource;
             this.Object = @object;
             this.Amount = amount;
             this.LineItem = lineItem;

@@ -47,7 +47,7 @@ internal static partial class UsageUsageCostsCommandApiCommand
     private static Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCostsGroupByItem>?> GroupBy { get; } = new(
         name: @"--group-by")
     {
-        Description = @"Group the costs by the specified fields. Support fields include `project_id`, `line_item`, `api_key_id` and any combination of them.",
+        Description = @"Group the costs by the specified fields. Support fields include `project_id`, `line_item`, `api_key_id`, `api_source` and any combination of them. When grouped by `api_source`, results use `agents_api` for attributed Agents API activity and `unlabeled` for all other activity. Without source grouping, `api_source` is null.",
     };
 
     private static Option<int?> Limit { get; } = new(

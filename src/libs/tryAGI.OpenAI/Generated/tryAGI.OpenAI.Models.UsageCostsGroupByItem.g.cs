@@ -15,6 +15,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ApiSource,
+        /// <summary>
+        ///
+        /// </summary>
         LineItem,
         /// <summary>
         ///
@@ -35,6 +39,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 UsageCostsGroupByItem.ApiKeyId => "api_key_id",
+                UsageCostsGroupByItem.ApiSource => "api_source",
                 UsageCostsGroupByItem.LineItem => "line_item",
                 UsageCostsGroupByItem.ProjectId => "project_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -48,6 +53,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "api_key_id" => UsageCostsGroupByItem.ApiKeyId,
+                "api_source" => UsageCostsGroupByItem.ApiSource,
                 "line_item" => UsageCostsGroupByItem.LineItem,
                 "project_id" => UsageCostsGroupByItem.ProjectId,
                 _ => null,
