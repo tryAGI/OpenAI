@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class UsageWebSearchCallsResult
     {
         /// <summary>
+        /// When grouped by `api_source`, `agents_api` identifies attributed Agents API activity and `unlabeled` includes all records without published source attribution, including historical and unknown origins. Unlabeled does not imply direct API usage. Without source grouping, this field is null.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("api_source")]
+        public global::tryAGI.OpenAI.UsageWebSearchCallsResultApiSource? ApiSource { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
@@ -74,6 +80,9 @@ namespace tryAGI.OpenAI
         /// <param name="numRequests">
         /// The count of web search calls.
         /// </param>
+        /// <param name="apiSource">
+        /// When grouped by `api_source`, `agents_api` identifies attributed Agents API activity and `unlabeled` includes all records without published source attribution, including historical and unknown origins. Unlabeled does not imply direct API usage. Without source grouping, this field is null.
+        /// </param>
         /// <param name="object"></param>
         /// <param name="projectId"></param>
         /// <param name="userId"></param>
@@ -86,6 +95,7 @@ namespace tryAGI.OpenAI
         public UsageWebSearchCallsResult(
             int numModelRequests,
             int numRequests,
+            global::tryAGI.OpenAI.UsageWebSearchCallsResultApiSource? apiSource,
             global::tryAGI.OpenAI.UsageWebSearchCallsResultObject @object,
             string? projectId,
             string? userId,
@@ -93,6 +103,7 @@ namespace tryAGI.OpenAI
             string? model,
             string? contextLevel)
         {
+            this.ApiSource = apiSource;
             this.Object = @object;
             this.NumModelRequests = numModelRequests;
             this.NumRequests = numRequests;

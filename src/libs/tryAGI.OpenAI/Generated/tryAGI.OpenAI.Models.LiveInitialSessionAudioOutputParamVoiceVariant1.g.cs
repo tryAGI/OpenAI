@@ -31,6 +31,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Brise,
+        /// <summary>
+        ///
+        /// </summary>
         Cedar,
         /// <summary>
         ///
@@ -51,7 +55,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Flitz,
+        /// <summary>
+        ///
+        /// </summary>
         Gleam,
+        /// <summary>
+        ///
+        /// </summary>
+        Harema,
+        /// <summary>
+        ///
+        /// </summary>
+        Juni,
         /// <summary>
         ///
         /// </summary>
@@ -60,6 +76,18 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         Meridian,
+        /// <summary>
+        ///
+        /// </summary>
+        Nira,
+        /// <summary>
+        ///
+        /// </summary>
+        Noeul,
+        /// <summary>
+        ///
+        /// </summary>
+        Nuri,
         /// <summary>
         ///
         /// </summary>
@@ -76,6 +104,14 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         Shimmer,
+        /// <summary>
+        ///
+        /// </summary>
+        Shitan,
+        /// <summary>
+        ///
+        /// </summary>
+        Sillage,
         /// <summary>
         ///
         /// </summary>
@@ -115,18 +151,27 @@ namespace tryAGI.OpenAI
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Ballad => "ballad",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Beacon => "beacon",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Bossa => "bossa",
+                LiveInitialSessionAudioOutputParamVoiceVariant1.Brise => "brise",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Cedar => "cedar",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Cinder => "cinder",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Coral => "coral",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Delta => "delta",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Echo => "echo",
+                LiveInitialSessionAudioOutputParamVoiceVariant1.Flitz => "flitz",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Gleam => "gleam",
+                LiveInitialSessionAudioOutputParamVoiceVariant1.Harema => "harema",
+                LiveInitialSessionAudioOutputParamVoiceVariant1.Juni => "juni",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Marin => "marin",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Meridian => "meridian",
+                LiveInitialSessionAudioOutputParamVoiceVariant1.Nira => "nira",
+                LiveInitialSessionAudioOutputParamVoiceVariant1.Noeul => "noeul",
+                LiveInitialSessionAudioOutputParamVoiceVariant1.Nuri => "nuri",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Quartz => "quartz",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Ripple => "ripple",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Sage => "sage",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Shimmer => "shimmer",
+                LiveInitialSessionAudioOutputParamVoiceVariant1.Shitan => "shitan",
+                LiveInitialSessionAudioOutputParamVoiceVariant1.Sillage => "sillage",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Stone => "stone",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Tempo => "tempo",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Verse => "verse",
@@ -147,18 +192,27 @@ namespace tryAGI.OpenAI
                 "ballad" => LiveInitialSessionAudioOutputParamVoiceVariant1.Ballad,
                 "beacon" => LiveInitialSessionAudioOutputParamVoiceVariant1.Beacon,
                 "bossa" => LiveInitialSessionAudioOutputParamVoiceVariant1.Bossa,
+                "brise" => LiveInitialSessionAudioOutputParamVoiceVariant1.Brise,
                 "cedar" => LiveInitialSessionAudioOutputParamVoiceVariant1.Cedar,
                 "cinder" => LiveInitialSessionAudioOutputParamVoiceVariant1.Cinder,
                 "coral" => LiveInitialSessionAudioOutputParamVoiceVariant1.Coral,
                 "delta" => LiveInitialSessionAudioOutputParamVoiceVariant1.Delta,
                 "echo" => LiveInitialSessionAudioOutputParamVoiceVariant1.Echo,
+                "flitz" => LiveInitialSessionAudioOutputParamVoiceVariant1.Flitz,
                 "gleam" => LiveInitialSessionAudioOutputParamVoiceVariant1.Gleam,
+                "harema" => LiveInitialSessionAudioOutputParamVoiceVariant1.Harema,
+                "juni" => LiveInitialSessionAudioOutputParamVoiceVariant1.Juni,
                 "marin" => LiveInitialSessionAudioOutputParamVoiceVariant1.Marin,
                 "meridian" => LiveInitialSessionAudioOutputParamVoiceVariant1.Meridian,
+                "nira" => LiveInitialSessionAudioOutputParamVoiceVariant1.Nira,
+                "noeul" => LiveInitialSessionAudioOutputParamVoiceVariant1.Noeul,
+                "nuri" => LiveInitialSessionAudioOutputParamVoiceVariant1.Nuri,
                 "quartz" => LiveInitialSessionAudioOutputParamVoiceVariant1.Quartz,
                 "ripple" => LiveInitialSessionAudioOutputParamVoiceVariant1.Ripple,
                 "sage" => LiveInitialSessionAudioOutputParamVoiceVariant1.Sage,
                 "shimmer" => LiveInitialSessionAudioOutputParamVoiceVariant1.Shimmer,
+                "shitan" => LiveInitialSessionAudioOutputParamVoiceVariant1.Shitan,
+                "sillage" => LiveInitialSessionAudioOutputParamVoiceVariant1.Sillage,
                 "stone" => LiveInitialSessionAudioOutputParamVoiceVariant1.Stone,
                 "tempo" => LiveInitialSessionAudioOutputParamVoiceVariant1.Tempo,
                 "verse" => LiveInitialSessionAudioOutputParamVoiceVariant1.Verse,
