@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Metadata { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, string> Metadata { get; set; }
 
         /// <summary>
         /// The time at which the conversation was created, measured in seconds since the Unix epoch.
@@ -67,7 +67,7 @@ namespace tryAGI.OpenAI
 #endif
         public ConversationResource(
             string id,
-            object metadata,
+            global::System.Collections.Generic.Dictionary<string, string> metadata,
             int createdAt,
             global::tryAGI.OpenAI.ConversationResourceObject @object = global::tryAGI.OpenAI.ConversationResourceObject.Conversation)
         {

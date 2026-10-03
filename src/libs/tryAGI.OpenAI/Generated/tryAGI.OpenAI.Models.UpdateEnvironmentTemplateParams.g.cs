@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SetupCommandParam>? SetupCommands { get; set; }
 
         /// <summary>
-        /// Network access available after setup completes. Omit to preserve the current policy, or pass `null` to reset to disabled for GA requests or enabled for beta requests.
+        /// Network access available after setup completes. Omit to preserve the current policy, or pass `null` to reset to the default policy.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("network")]
         public global::tryAGI.OpenAI.NetworkPolicyParam? Network { get; set; }
@@ -87,7 +87,7 @@ namespace tryAGI.OpenAI
         /// Replacement confidential setup commands, never included in returned resources.
         /// </param>
         /// <param name="network">
-        /// Network access available after setup completes. Omit to preserve the current policy, or pass `null` to reset to disabled for GA requests or enabled for beta requests.
+        /// Network access available after setup completes. Omit to preserve the current policy, or pass `null` to reset to the default policy.
         /// </param>
         /// <param name="desktop">
         /// Replacement desktop configuration, or null to disable the desktop.

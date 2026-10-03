@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SetupCommandParam>? SetupCommands { get; set; }
 
         /// <summary>
-        /// Network access policy for the environment. Defaults to disabled for GA requests and enabled for beta requests.
+        /// Network access policy for the environment. If omitted, the API version determines whether network access is enabled or disabled.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("network")]
         public global::tryAGI.OpenAI.NetworkPolicyParam? Network { get; set; }
@@ -100,7 +100,7 @@ namespace tryAGI.OpenAI
         /// Ordered, confidential setup commands. Command bodies are never returned.
         /// </param>
         /// <param name="network">
-        /// Network access policy for the environment. Defaults to disabled for GA requests and enabled for beta requests.
+        /// Network access policy for the environment. If omitted, the API version determines whether network access is enabled or disabled.
         /// </param>
         /// <param name="desktop">
         /// Desktop provisioning. Omission or null inherits the template setting, or defaults to disabled.

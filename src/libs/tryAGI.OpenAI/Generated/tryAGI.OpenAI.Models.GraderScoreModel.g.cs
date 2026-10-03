@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItem> Input { get; set; }
 
         /// <summary>
-        /// The range of the score. Defaults to `[0, 1]`.
+        /// The service requires two numbers for the score range. Defaults to `[0, 1]`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("range")]
         public global::System.Collections.Generic.IList<double>? Range { get; set; }
@@ -73,7 +73,7 @@ namespace tryAGI.OpenAI
         /// The sampling parameters for the model.
         /// </param>
         /// <param name="range">
-        /// The range of the score. Defaults to `[0, 1]`.
+        /// The service requires two numbers for the score range. Defaults to `[0, 1]`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
