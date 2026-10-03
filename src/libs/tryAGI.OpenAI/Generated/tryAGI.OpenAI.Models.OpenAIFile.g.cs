@@ -18,7 +18,8 @@ namespace tryAGI.OpenAI
         public required string Id { get; set; }
 
         /// <summary>
-        /// The size of the file, in bytes.
+        /// The size of the file, in bytes. In a completed file upload response, this can<br/>
+        /// be null when the file size is not yet available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,7 +33,8 @@ namespace tryAGI.OpenAI
         public required int CreatedAt { get; set; }
 
         /// <summary>
-        /// The Unix timestamp (in seconds) for when the file will expire.
+        /// The Unix timestamp (in seconds) for when the file will expire. In a<br/>
+        /// completed file upload response, this can be null when no expiry is set.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expires_at")]
         public int? ExpiresAt { get; set; }
@@ -68,7 +70,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.OpenAIFileStatus Status { get; set; }
 
         /// <summary>
-        /// Deprecated. For details on why a fine-tuning training file failed validation, see the `error` field on `fine_tuning.job`.
+        /// Deprecated. For details on why a fine-tuning training file failed validation, see the `error` field on `fine_tuning.job`. Completed file upload responses can return null when these details are unset.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status_details")]
         [global::System.Obsolete("This property marked as deprecated.")]
@@ -87,7 +89,8 @@ namespace tryAGI.OpenAI
         /// The file identifier, which can be referenced in the API endpoints.
         /// </param>
         /// <param name="bytes">
-        /// The size of the file, in bytes.
+        /// The size of the file, in bytes. In a completed file upload response, this can<br/>
+        /// be null when the file size is not yet available.
         /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the file was created.
@@ -102,7 +105,8 @@ namespace tryAGI.OpenAI
         /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
         /// </param>
         /// <param name="expiresAt">
-        /// The Unix timestamp (in seconds) for when the file will expire.
+        /// The Unix timestamp (in seconds) for when the file will expire. In a<br/>
+        /// completed file upload response, this can be null when no expiry is set.
         /// </param>
         /// <param name="object">
         /// The object type, which is always `file`.
