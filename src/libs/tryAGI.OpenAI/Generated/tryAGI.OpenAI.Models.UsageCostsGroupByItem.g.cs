@@ -24,6 +24,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         ProjectId,
+        /// <summary>
+        ///
+        /// </summary>
+        UserId,
     }
 
     /// <summary>
@@ -42,6 +46,7 @@ namespace tryAGI.OpenAI
                 UsageCostsGroupByItem.ApiSource => "api_source",
                 UsageCostsGroupByItem.LineItem => "line_item",
                 UsageCostsGroupByItem.ProjectId => "project_id",
+                UsageCostsGroupByItem.UserId => "user_id",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -56,6 +61,7 @@ namespace tryAGI.OpenAI
                 "api_source" => UsageCostsGroupByItem.ApiSource,
                 "line_item" => UsageCostsGroupByItem.LineItem,
                 "project_id" => UsageCostsGroupByItem.ProjectId,
+                "user_id" => UsageCostsGroupByItem.UserId,
                 _ => null,
             };
         }

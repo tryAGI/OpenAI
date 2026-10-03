@@ -42,6 +42,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("user_id")]
+        public string? UserId { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key_id")]
         public string? ApiKeyId { get; set; }
 
@@ -76,6 +82,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="lineItem"></param>
         /// <param name="projectId"></param>
+        /// <param name="userId"></param>
         /// <param name="apiKeyId"></param>
         /// <param name="quantity"></param>
         /// <param name="quantityUnit">
@@ -90,6 +97,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CostsResultAmount? amount,
             string? lineItem,
             string? projectId,
+            string? userId,
             string? apiKeyId,
             double? quantity,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CostsResultQuantityUnit?, object>? quantityUnit)
@@ -99,6 +107,7 @@ namespace tryAGI.OpenAI
             this.Amount = amount;
             this.LineItem = lineItem;
             this.ProjectId = projectId;
+            this.UserId = userId;
             this.ApiKeyId = apiKeyId;
             this.Quantity = quantity;
             this.QuantityUnit = quantityUnit;
