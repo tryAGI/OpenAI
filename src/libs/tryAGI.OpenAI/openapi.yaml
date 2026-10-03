@@ -12117,11 +12117,14 @@ paths:
               type: string
         - name: group_by
           in: query
-          description: Group the costs by the specified fields. Support fields include
-            `project_id`, `line_item`, `api_key_id`, `api_source` and any
-            combination of them. When grouped by `api_source`, results use
-            `agents_api` for attributed Agents API activity and `unlabeled` for
-            all other activity. Without source grouping, `api_source` is null.
+          description: Group the costs by the specified fields. Supported fields include
+            `project_id`, `user_id`, `line_item`, `api_key_id`, and
+            `api_source`. Support for combining `user_id` with `project_id`
+            grouping or the `project_ids` filter depends on the organization and
+            requested time range. Unsupported combinations return HTTP 400. When
+            grouped by `api_source`, results use `agents_api` for attributed
+            Agents API activity and `unlabeled` for all other activity. Without
+            source grouping, `api_source` is null.
           required: false
           schema:
             type: array
@@ -12129,6 +12132,7 @@ paths:
               type: string
               enum:
                 - project_id
+                - user_id
                 - line_item
                 - api_key_id
                 - api_source
@@ -43277,6 +43281,12 @@ components:
             - type: string
               description: When `group_by=project_id`, this field provides the project ID of
                 the grouped costs result.
+            - type: "null"
+        user_id:
+          anyOf:
+            - type: string
+              description: When `group_by=user_id`, this field provides the user ID of the
+                grouped costs result.
             - type: "null"
         api_key_id:
           anyOf:
@@ -84163,6 +84173,7 @@ components:
                   enum:
                     - alloy
                     - ash
+                    - aube
                     - ballad
                     - beacon
                     - bossa
@@ -84319,6 +84330,56 @@ components:
             - web_search
       required:
         - type
+    LiveFileSearchToolInputParam:
+      type: object
+      properties:
+        type:
+          default: file_search
+          x-stainless-const: true
+          type: string
+          enum:
+            - file_search
+      required:
+        - type
+    LiveCodeInterpreterToolInputParam:
+      type: object
+      properties:
+        type:
+          default: code_interpreter
+          x-stainless-const: true
+          type: string
+          enum:
+            - code_interpreter
+      required:
+        - type
+    LiveHostedShellToolInputParam:
+      description: A Responses shell tool with a container_auto or container_reference
+        environment. Local execution and domain secrets are not supported.
+      type: object
+      properties:
+        type:
+          default: shell
+          x-stainless-const: true
+          type: string
+          enum:
+            - shell
+        environment:
+          type: object
+          additionalProperties: {}
+      required:
+        - type
+        - environment
+    LiveImageGenerationToolInputParam:
+      type: object
+      properties:
+        type:
+          default: image_generation
+          x-stainless-const: true
+          type: string
+          enum:
+            - image_generation
+      required:
+        - type
     LiveToolChoiceEnum:
       type: string
       enum:
@@ -84412,6 +84473,10 @@ components:
             oneOf:
               - $ref: "#/components/schemas/LiveFunctionToolInputParam"
               - $ref: "#/components/schemas/LiveWebSearchToolInputParam"
+              - $ref: "#/components/schemas/LiveFileSearchToolInputParam"
+              - $ref: "#/components/schemas/LiveCodeInterpreterToolInputParam"
+              - $ref: "#/components/schemas/LiveHostedShellToolInputParam"
+              - $ref: "#/components/schemas/LiveImageGenerationToolInputParam"
         tool_choice:
           description: Controls which tool the Responses backend uses when handling a task
             delegated by the Live model.
@@ -84808,6 +84873,10 @@ components:
             oneOf:
               - $ref: "#/components/schemas/LiveFunctionToolInputParam"
               - $ref: "#/components/schemas/LiveWebSearchToolInputParam"
+              - $ref: "#/components/schemas/LiveFileSearchToolInputParam"
+              - $ref: "#/components/schemas/LiveCodeInterpreterToolInputParam"
+              - $ref: "#/components/schemas/LiveHostedShellToolInputParam"
+              - $ref: "#/components/schemas/LiveImageGenerationToolInputParam"
         tool_choice:
           description: Controls which tool the Responses backend uses when handling a task
             delegated by the Live model.
@@ -90146,6 +90215,9 @@ components:
         - context_length_exceeded
         - session_budget_exceeded
         - usage_limit_exceeded
+        - project_spend_limit_exceeded
+        - organization_spend_limit_exceeded
+        - organization_usage_limit_exceeded
         - credit_balance_exhausted
         - rate_limit_exceeded
         - flex_unavailable
@@ -90166,6 +90238,9 @@ components:
         - The request exceeds the model's context window.
         - The session has reached its usage budget.
         - The organization has reached a usage, plan, or billing limit.
+        - The project has reached its enforced spend limit.
+        - The organization has reached its enforced spend limit.
+        - The organization has reached its OpenAI-assigned usage limit.
         - The organization has no API credits remaining.
         - The request exceeds the available rate limit.
         - Flex processing is temporarily unavailable.

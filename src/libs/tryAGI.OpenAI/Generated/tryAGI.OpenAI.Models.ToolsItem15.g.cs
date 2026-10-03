@@ -87,6 +87,154 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.LiveWebSearchToolInputParam PickWebSearch() => WebSearch is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebSearch' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveFileSearchToolInputParam? FileSearch { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveFileSearchToolInputParam? FileSearch { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearch))]
+#endif
+        public bool IsFileSearch => FileSearch != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickFileSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveFileSearchToolInputParam? value)
+        {
+            value = FileSearch;
+            return IsFileSearch;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveFileSearchToolInputParam PickFileSearch() => FileSearch is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileSearch' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam? CodeInterpreter { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam? CodeInterpreter { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreter))]
+#endif
+        public bool IsCodeInterpreter => CodeInterpreter != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickCodeInterpreter(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam? value)
+        {
+            value = CodeInterpreter;
+            return IsCodeInterpreter;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam PickCodeInterpreter() => CodeInterpreter is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreter' but the value was {ToString()}.");
+
+        /// <summary>
+        /// A Responses shell tool with a container_auto or container_reference environment. Local execution and domain secrets are not supported.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveHostedShellToolInputParam? Shell { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveHostedShellToolInputParam? Shell { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Shell))]
+#endif
+        public bool IsShell => Shell != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickShell(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveHostedShellToolInputParam? value)
+        {
+            value = Shell;
+            return IsShell;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveHostedShellToolInputParam PickShell() => Shell is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Shell' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveImageGenerationToolInputParam? ImageGeneration { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveImageGenerationToolInputParam? ImageGeneration { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageGeneration))]
+#endif
+        public bool IsImageGeneration => ImageGeneration != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickImageGeneration(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveImageGenerationToolInputParam? value)
+        {
+            value = ImageGeneration;
+            return IsImageGeneration;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveImageGenerationToolInputParam PickImageGeneration() => ImageGeneration is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGeneration' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -136,22 +284,126 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator ToolsItem15(global::tryAGI.OpenAI.LiveFileSearchToolInputParam value) => new ToolsItem15((global::tryAGI.OpenAI.LiveFileSearchToolInputParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveFileSearchToolInputParam?(ToolsItem15 @this) => @this.FileSearch;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ToolsItem15(global::tryAGI.OpenAI.LiveFileSearchToolInputParam? value)
+        {
+            FileSearch = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ToolsItem15 FromFileSearch(global::tryAGI.OpenAI.LiveFileSearchToolInputParam? value) => new ToolsItem15(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ToolsItem15(global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam value) => new ToolsItem15((global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam?(ToolsItem15 @this) => @this.CodeInterpreter;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ToolsItem15(global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam? value)
+        {
+            CodeInterpreter = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ToolsItem15 FromCodeInterpreter(global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam? value) => new ToolsItem15(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ToolsItem15(global::tryAGI.OpenAI.LiveHostedShellToolInputParam value) => new ToolsItem15((global::tryAGI.OpenAI.LiveHostedShellToolInputParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveHostedShellToolInputParam?(ToolsItem15 @this) => @this.Shell;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ToolsItem15(global::tryAGI.OpenAI.LiveHostedShellToolInputParam? value)
+        {
+            Shell = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ToolsItem15 FromShell(global::tryAGI.OpenAI.LiveHostedShellToolInputParam? value) => new ToolsItem15(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ToolsItem15(global::tryAGI.OpenAI.LiveImageGenerationToolInputParam value) => new ToolsItem15((global::tryAGI.OpenAI.LiveImageGenerationToolInputParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveImageGenerationToolInputParam?(ToolsItem15 @this) => @this.ImageGeneration;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ToolsItem15(global::tryAGI.OpenAI.LiveImageGenerationToolInputParam? value)
+        {
+            ImageGeneration = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ToolsItem15 FromImageGeneration(global::tryAGI.OpenAI.LiveImageGenerationToolInputParam? value) => new ToolsItem15(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public ToolsItem15(
             global::tryAGI.OpenAI.LiveResponsesDelegationSettingsUpdateInputParamToolDiscriminatorType? type,
             global::tryAGI.OpenAI.LiveFunctionToolInputParam? function,
-            global::tryAGI.OpenAI.LiveWebSearchToolInputParam? webSearch
+            global::tryAGI.OpenAI.LiveWebSearchToolInputParam? webSearch,
+            global::tryAGI.OpenAI.LiveFileSearchToolInputParam? fileSearch,
+            global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam? codeInterpreter,
+            global::tryAGI.OpenAI.LiveHostedShellToolInputParam? shell,
+            global::tryAGI.OpenAI.LiveImageGenerationToolInputParam? imageGeneration
             )
         {
             Type = type;
 
             Function = function;
             WebSearch = webSearch;
+            FileSearch = fileSearch;
+            CodeInterpreter = codeInterpreter;
+            Shell = shell;
+            ImageGeneration = imageGeneration;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            ImageGeneration as object ??
+            Shell as object ??
+            CodeInterpreter as object ??
+            FileSearch as object ??
             WebSearch as object ??
             Function as object
             ;
@@ -161,7 +413,11 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             Function?.ToString() ??
-            WebSearch?.ToString()
+            WebSearch?.ToString() ??
+            FileSearch?.ToString() ??
+            CodeInterpreter?.ToString() ??
+            Shell?.ToString() ??
+            ImageGeneration?.ToString()
             ;
 
         /// <summary>
@@ -169,7 +425,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsFunction && !IsWebSearch || !IsFunction && IsWebSearch;
+            return IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration || !IsFunction && IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration || !IsFunction && !IsWebSearch && IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration || !IsFunction && !IsWebSearch && !IsFileSearch && IsCodeInterpreter && !IsShell && !IsImageGeneration || !IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && IsShell && !IsImageGeneration || !IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && IsImageGeneration;
         }
 
         /// <summary>
@@ -178,6 +434,10 @@ namespace tryAGI.OpenAI
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.LiveFunctionToolInputParam, TResult>? function = null,
             global::System.Func<global::tryAGI.OpenAI.LiveWebSearchToolInputParam, TResult>? webSearch = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveFileSearchToolInputParam, TResult>? fileSearch = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam, TResult>? codeInterpreter = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveHostedShellToolInputParam, TResult>? shell = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveImageGenerationToolInputParam, TResult>? imageGeneration = null,
             bool validate = true)
         {
             if (validate)
@@ -193,6 +453,22 @@ namespace tryAGI.OpenAI
             {
                 return webSearch(__value1);
             }
+            else if (FileSearch is { } __value2 && fileSearch != null)
+            {
+                return fileSearch(__value2);
+            }
+            else if (CodeInterpreter is { } __value3 && codeInterpreter != null)
+            {
+                return codeInterpreter(__value3);
+            }
+            else if (Shell is { } __value4 && shell != null)
+            {
+                return shell(__value4);
+            }
+            else if (ImageGeneration is { } __value5 && imageGeneration != null)
+            {
+                return imageGeneration(__value5);
+            }
 
             return default(TResult);
         }
@@ -204,6 +480,14 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.LiveFunctionToolInputParam>? function = null,
 
             global::System.Action<global::tryAGI.OpenAI.LiveWebSearchToolInputParam>? webSearch = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveFileSearchToolInputParam>? fileSearch = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam>? codeInterpreter = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveHostedShellToolInputParam>? shell = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveImageGenerationToolInputParam>? imageGeneration = null,
             bool validate = true)
         {
             if (validate)
@@ -218,6 +502,22 @@ namespace tryAGI.OpenAI
             else if (WebSearch is { } __value1)
             {
                 webSearch?.Invoke(__value1);
+            }
+            else if (FileSearch is { } __value2)
+            {
+                fileSearch?.Invoke(__value2);
+            }
+            else if (CodeInterpreter is { } __value3)
+            {
+                codeInterpreter?.Invoke(__value3);
+            }
+            else if (Shell is { } __value4)
+            {
+                shell?.Invoke(__value4);
+            }
+            else if (ImageGeneration is { } __value5)
+            {
+                imageGeneration?.Invoke(__value5);
             }
         }
 
@@ -227,6 +527,10 @@ namespace tryAGI.OpenAI
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.LiveFunctionToolInputParam>? function = null,
             global::System.Action<global::tryAGI.OpenAI.LiveWebSearchToolInputParam>? webSearch = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveFileSearchToolInputParam>? fileSearch = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam>? codeInterpreter = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveHostedShellToolInputParam>? shell = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveImageGenerationToolInputParam>? imageGeneration = null,
             bool validate = true)
         {
             if (validate)
@@ -241,6 +545,22 @@ namespace tryAGI.OpenAI
             else if (WebSearch is { } __value1)
             {
                 webSearch?.Invoke(__value1);
+            }
+            else if (FileSearch is { } __value2)
+            {
+                fileSearch?.Invoke(__value2);
+            }
+            else if (CodeInterpreter is { } __value3)
+            {
+                codeInterpreter?.Invoke(__value3);
+            }
+            else if (Shell is { } __value4)
+            {
+                shell?.Invoke(__value4);
+            }
+            else if (ImageGeneration is { } __value5)
+            {
+                imageGeneration?.Invoke(__value5);
             }
         }
 
@@ -255,6 +575,14 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.LiveFunctionToolInputParam),
                 WebSearch,
                 typeof(global::tryAGI.OpenAI.LiveWebSearchToolInputParam),
+                FileSearch,
+                typeof(global::tryAGI.OpenAI.LiveFileSearchToolInputParam),
+                CodeInterpreter,
+                typeof(global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam),
+                Shell,
+                typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParam),
+                ImageGeneration,
+                typeof(global::tryAGI.OpenAI.LiveImageGenerationToolInputParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -272,7 +600,11 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveFunctionToolInputParam?>.Default.Equals(Function, other.Function) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveWebSearchToolInputParam?>.Default.Equals(WebSearch, other.WebSearch)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveWebSearchToolInputParam?>.Default.Equals(WebSearch, other.WebSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveFileSearchToolInputParam?>.Default.Equals(FileSearch, other.FileSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveHostedShellToolInputParam?>.Default.Equals(Shell, other.Shell) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveImageGenerationToolInputParam?>.Default.Equals(ImageGeneration, other.ImageGeneration)
                 ;
         }
 

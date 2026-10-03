@@ -11,7 +11,23 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        CodeInterpreter,
+        /// <summary>
+        ///
+        /// </summary>
+        FileSearch,
+        /// <summary>
+        ///
+        /// </summary>
         Function,
+        /// <summary>
+        ///
+        /// </summary>
+        ImageGeneration,
+        /// <summary>
+        ///
+        /// </summary>
+        Shell,
         /// <summary>
         ///
         /// </summary>
@@ -30,7 +46,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.CodeInterpreter => "code_interpreter",
+                LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.FileSearch => "file_search",
                 LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.Function => "function",
+                LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.ImageGeneration => "image_generation",
+                LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.Shell => "shell",
                 LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.WebSearch => "web_search",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -42,7 +62,11 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "code_interpreter" => LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.CodeInterpreter,
+                "file_search" => LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.FileSearch,
                 "function" => LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.Function,
+                "image_generation" => LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.ImageGeneration,
+                "shell" => LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.Shell,
                 "web_search" => LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.WebSearch,
                 _ => null,
             };

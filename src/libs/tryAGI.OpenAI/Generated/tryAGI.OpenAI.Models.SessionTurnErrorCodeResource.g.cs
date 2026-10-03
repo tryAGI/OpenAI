@@ -55,6 +55,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        OrganizationSpendLimitExceeded,
+        /// <summary>
+        ///
+        /// </summary>
+        OrganizationUsageLimitExceeded,
+        /// <summary>
+        ///
+        /// </summary>
+        ProjectSpendLimitExceeded,
+        /// <summary>
+        ///
+        /// </summary>
         RateLimitExceeded,
         /// <summary>
         ///
@@ -109,6 +121,9 @@ namespace tryAGI.OpenAI
                 SessionTurnErrorCodeResource.InternalError => "internal_error",
                 SessionTurnErrorCodeResource.InvalidRequest => "invalid_request",
                 SessionTurnErrorCodeResource.MisalignmentPolicyViolation => "misalignment_policy_violation",
+                SessionTurnErrorCodeResource.OrganizationSpendLimitExceeded => "organization_spend_limit_exceeded",
+                SessionTurnErrorCodeResource.OrganizationUsageLimitExceeded => "organization_usage_limit_exceeded",
+                SessionTurnErrorCodeResource.ProjectSpendLimitExceeded => "project_spend_limit_exceeded",
                 SessionTurnErrorCodeResource.RateLimitExceeded => "rate_limit_exceeded",
                 SessionTurnErrorCodeResource.RequestTimeout => "request_timeout",
                 SessionTurnErrorCodeResource.ResourceNotFound => "resource_not_found",
@@ -138,6 +153,9 @@ namespace tryAGI.OpenAI
                 "internal_error" => SessionTurnErrorCodeResource.InternalError,
                 "invalid_request" => SessionTurnErrorCodeResource.InvalidRequest,
                 "misalignment_policy_violation" => SessionTurnErrorCodeResource.MisalignmentPolicyViolation,
+                "organization_spend_limit_exceeded" => SessionTurnErrorCodeResource.OrganizationSpendLimitExceeded,
+                "organization_usage_limit_exceeded" => SessionTurnErrorCodeResource.OrganizationUsageLimitExceeded,
+                "project_spend_limit_exceeded" => SessionTurnErrorCodeResource.ProjectSpendLimitExceeded,
                 "rate_limit_exceeded" => SessionTurnErrorCodeResource.RateLimitExceeded,
                 "request_timeout" => SessionTurnErrorCodeResource.RequestTimeout,
                 "resource_not_found" => SessionTurnErrorCodeResource.ResourceNotFound,
