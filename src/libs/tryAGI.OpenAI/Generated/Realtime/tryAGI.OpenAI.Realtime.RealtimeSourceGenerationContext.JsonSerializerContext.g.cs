@@ -663,7 +663,7 @@ namespace tryAGI.OpenAI.Realtime
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGAModel?>),
 
-            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGATracingEnum?, global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGATracingEnum2>),
+            typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGATracingEnum?, global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGATracingEnum2, object>),
 
             typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.Realtime.RealtimeFunctionTool, global::tryAGI.OpenAI.Realtime.MCPTool>),
 
@@ -980,7 +980,7 @@ namespace tryAGI.OpenAI.Realtime
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGAAudioOutput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGAIncludeItem>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGAIncludeItem), TypeInfoPropertyName = "RealtimeSessionCreateRequestGAIncludeItem2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.OneOf<global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGATracingEnum?, global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGATracingEnum2>), TypeInfoPropertyName = "OneOfRealtimeSessionCreateRequestGATracingEnumRealtimeSessionCreateRequestGATracingEnum22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.OneOf<global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGATracingEnum?, global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGATracingEnum2, object>), TypeInfoPropertyName = "OneOfRealtimeSessionCreateRequestGATracingEnumRealtimeSessionCreateRequestGATracingEnum2Object2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGATracingEnum), TypeInfoPropertyName = "RealtimeSessionCreateRequestGATracingEnum2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGATracingEnum2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Realtime.OneOf<int?, global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGAMaxOutputTokens?>), TypeInfoPropertyName = "OneOfInt32RealtimeSessionCreateRequestGAMaxOutputTokens2")]
