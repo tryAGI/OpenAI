@@ -10991,8 +10991,9 @@ paths:
           name: after
           required: false
           schema:
-            type: string
-            nullable: true
+            type:
+              - string
+              - "null"
             description: Return keys with IDs that come after this ID in the pagination
               order.
         - in: query
@@ -43711,10 +43712,11 @@ components:
                 requested.
 
                 `logprobs` must be set to `true` if this parameter is used.
-              type: integer
+              type:
+                - integer
+                - "null"
               minimum: 0
               maximum: 20
-              nullable: true
             response_format:
               description: |
                 An object specifying the format that the model must output.
@@ -43872,14 +43874,14 @@ components:
                 generated tokens across all of the choices. Keep `n` as `1` to
                 minimize costs.
             prediction:
-              nullable: true
               description: |
                 Configuration for a [Predicted Output](https://developers.openai.com/api/docs/guides/predicted-outputs),
                 which can greatly improve response times when large parts of the model
                 response are known ahead of time. This is most common when you are
                 regenerating a file with only minor changes to most of the content.
-              oneOf:
+              anyOf:
                 - $ref: "#/components/schemas/PredictionContent"
+                - type: "null"
             seed:
               type: integer
               format: int64
@@ -66572,7 +66574,6 @@ components:
             the
 
             workflow name, group id, and metadata.
-          nullable: true
           oneOf:
             - type: string
               title: auto
@@ -66605,6 +66606,7 @@ components:
                   description: |
                     The arbitrary metadata to attach to this trace to enable
                     filtering in the Traces Dashboard.
+            - type: "null"
         tools:
           type: array
           description: Tools available to the model.
