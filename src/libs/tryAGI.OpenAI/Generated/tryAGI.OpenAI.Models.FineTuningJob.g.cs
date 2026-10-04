@@ -26,9 +26,8 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.FineTuningJobErrorVariant1, object, object>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobErrorVariant1, object, object> Error { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<global::tryAGI.OpenAI.FineTuningJobErrorVariant1, object>))]
+        public global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobErrorVariant1, object>? Error { get; set; }
 
         /// <summary>
         ///
@@ -148,7 +147,6 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the fine-tuning job was created.
         /// </param>
-        /// <param name="error"></param>
         /// <param name="model">
         /// The base model that is being fine-tuned.
         /// </param>
@@ -164,6 +162,7 @@ namespace tryAGI.OpenAI
         /// <param name="trainingFile">
         /// The file ID used for training. You can retrieve the training data with the [Files API](https://developers.openai.com/api/reference/resources/files/methods/content).
         /// </param>
+        /// <param name="error"></param>
         /// <param name="fineTunedModel"></param>
         /// <param name="finishedAt"></param>
         /// <param name="hyperparameters">
@@ -187,12 +186,12 @@ namespace tryAGI.OpenAI
         public FineTuningJob(
             string id,
             int createdAt,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobErrorVariant1, object, object> error,
             string model,
             string organizationId,
             global::System.Collections.Generic.IList<string> resultFiles,
             global::tryAGI.OpenAI.FineTuningJobStatus status,
             string trainingFile,
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.FineTuningJobErrorVariant1, object>? error,
             string? fineTunedModel,
             int? finishedAt,
             global::tryAGI.OpenAI.FineTuningJobHyperparameters? hyperparameters,

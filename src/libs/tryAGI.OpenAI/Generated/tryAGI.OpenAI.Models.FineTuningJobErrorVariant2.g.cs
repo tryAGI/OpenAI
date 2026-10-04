@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
     /// <summary>
     ///
     /// </summary>
-    public sealed partial class FineTuningJobErrorVariant3
+    public sealed partial class FineTuningJobErrorVariant2
     {
 
         /// <summary>

@@ -13,11 +13,10 @@ internal static partial class ResponsesBetaCompactconversationCommandApiCommand
         Description = @"Optional beta features to enable for this request.",
     };
 
-    private static Option<global::tryAGI.OpenAI.BetaModelIdsCompaction> Model { get; } = new(
+    private static Option<global::tryAGI.OpenAI.BetaModelIdsCompaction?> Model { get; } = new(
         name: @"--model")
     {
         Description = @"Model ID used to generate the response, like `gpt-6-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.",
-        Required = true,
     };
 
     private static Option<global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputItem>>?> InputOption { get; } = new(
@@ -141,7 +140,7 @@ Learn when and how to compact long-running conversations in the [conversation st
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var openaiBeta = parseResult.GetValue(OpenaiBeta);
-                        var model = parseResult.GetRequiredValue(Model);
+                        var model = CliRuntime.WasSpecified(parseResult, Model) ? parseResult.GetValue(Model) : (__requestBase is { } __ModelBaseValue ? __ModelBaseValue.Model : default);
                         var input = CliRuntime.WasSpecified(parseResult, InputOption) ? parseResult.GetValue(InputOption) : (__requestBase is { } __InputBaseValue ? __InputBaseValue.Input : default);
                         var previousResponseId = CliRuntime.WasSpecified(parseResult, PreviousResponseId) ? parseResult.GetValue(PreviousResponseId) : (__requestBase is { } __PreviousResponseIdBaseValue ? __PreviousResponseIdBaseValue.PreviousResponseId : default);
                         var instructions = CliRuntime.WasSpecified(parseResult, Instructions) ? parseResult.GetValue(Instructions) : (__requestBase is { } __InstructionsBaseValue ? __InstructionsBaseValue.Instructions : default);

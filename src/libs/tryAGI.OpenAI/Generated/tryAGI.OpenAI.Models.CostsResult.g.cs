@@ -61,8 +61,8 @@ namespace tryAGI.OpenAI
         /// The unit of the `quantity` value. If no single supported unit applies to the result, this field is `null`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("quantity_unit")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CostsResultQuantityUnit?, object>))]
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CostsResultQuantityUnit?, object>? QuantityUnit { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CostsResultQuantityUnit?>))]
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CostsResultQuantityUnit?>? QuantityUnit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -100,7 +100,7 @@ namespace tryAGI.OpenAI
             string? userId,
             string? apiKeyId,
             double? quantity,
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CostsResultQuantityUnit?, object>? quantityUnit)
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CostsResultQuantityUnit?>? quantityUnit)
         {
             this.ApiSource = apiSource;
             this.Object = @object;

@@ -581,8 +581,8 @@ namespace tryAGI.OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.BetaCompactResource> BetaCompactconversationAsync(
-            global::tryAGI.OpenAI.BetaModelIdsCompaction model,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaCompactconversationOpenaiBetaItem>? openaiBeta = default,
+            global::tryAGI.OpenAI.BetaModelIdsCompaction? model = default,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputItem>>? input = default,
             string? previousResponseId = default,
             string? instructions = default,

@@ -565,7 +565,7 @@ namespace tryAGI.OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.CompactResource> CompactconversationAsync(
-            global::tryAGI.OpenAI.ModelIdsCompaction model,
+            global::tryAGI.OpenAI.ModelIdsCompaction? model = default,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? input = default,
             string? previousResponseId = default,
             string? instructions = default,

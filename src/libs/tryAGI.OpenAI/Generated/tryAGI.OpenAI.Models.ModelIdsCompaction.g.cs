@@ -82,43 +82,6 @@ namespace tryAGI.OpenAI
         public string PickModelIdsCompactionVariant2() => ModelIdsCompactionVariant2 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ModelIdsCompactionVariant2' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? ModelIdsCompactionVariant3 { get; init; }
-#else
-        public object? ModelIdsCompactionVariant3 { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ModelIdsCompactionVariant3))]
-#endif
-        public bool IsModelIdsCompactionVariant3 => ModelIdsCompactionVariant3 != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickModelIdsCompactionVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = ModelIdsCompactionVariant3;
-            return IsModelIdsCompactionVariant3;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public object PickModelIdsCompactionVariant3() => ModelIdsCompactionVariant3 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'ModelIdsCompactionVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -170,20 +133,17 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ModelIdsCompaction(
             global::tryAGI.OpenAI.ModelIdsResponses? responses,
-            string? modelIdsCompactionVariant2,
-            object? modelIdsCompactionVariant3
+            string? modelIdsCompactionVariant2
             )
         {
             Responses = responses;
             ModelIdsCompactionVariant2 = modelIdsCompactionVariant2;
-            ModelIdsCompactionVariant3 = modelIdsCompactionVariant3;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            ModelIdsCompactionVariant3 as object ??
             ModelIdsCompactionVariant2 as object ??
             Responses as object
             ;
@@ -193,8 +153,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             Responses?.ToString() ??
-            ModelIdsCompactionVariant2?.ToString() ??
-            ModelIdsCompactionVariant3?.ToString()
+            ModelIdsCompactionVariant2?.ToString()
             ;
 
         /// <summary>
@@ -202,7 +161,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsResponses || IsModelIdsCompactionVariant2 || IsModelIdsCompactionVariant3;
+            return IsResponses || IsModelIdsCompactionVariant2;
         }
 
         /// <summary>
@@ -211,7 +170,6 @@ namespace tryAGI.OpenAI
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.ModelIdsResponses?, TResult>? responses = null,
             global::System.Func<string, TResult>? modelIdsCompactionVariant2 = null,
-            global::System.Func<object, TResult>? modelIdsCompactionVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -227,10 +185,6 @@ namespace tryAGI.OpenAI
             {
                 return modelIdsCompactionVariant2(__value1);
             }
-            else if (ModelIdsCompactionVariant3 is { } __value2 && modelIdsCompactionVariant3 != null)
-            {
-                return modelIdsCompactionVariant3(__value2);
-            }
 
             return default(TResult);
         }
@@ -242,8 +196,6 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.ModelIdsResponses?>? responses = null,
 
             global::System.Action<string>? modelIdsCompactionVariant2 = null,
-
-            global::System.Action<object>? modelIdsCompactionVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -258,10 +210,6 @@ namespace tryAGI.OpenAI
             else if (ModelIdsCompactionVariant2 is { } __value1)
             {
                 modelIdsCompactionVariant2?.Invoke(__value1);
-            }
-            else if (ModelIdsCompactionVariant3 is { } __value2)
-            {
-                modelIdsCompactionVariant3?.Invoke(__value2);
             }
         }
 
@@ -271,7 +219,6 @@ namespace tryAGI.OpenAI
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.ModelIdsResponses?>? responses = null,
             global::System.Action<string>? modelIdsCompactionVariant2 = null,
-            global::System.Action<object>? modelIdsCompactionVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -286,10 +233,6 @@ namespace tryAGI.OpenAI
             else if (ModelIdsCompactionVariant2 is { } __value1)
             {
                 modelIdsCompactionVariant2?.Invoke(__value1);
-            }
-            else if (ModelIdsCompactionVariant3 is { } __value2)
-            {
-                modelIdsCompactionVariant3?.Invoke(__value2);
             }
         }
 
@@ -304,8 +247,6 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.ModelIdsResponses),
                 ModelIdsCompactionVariant2,
                 typeof(string),
-                ModelIdsCompactionVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -323,8 +264,7 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ModelIdsResponses?>.Default.Equals(Responses, other.Responses) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelIdsCompactionVariant2, other.ModelIdsCompactionVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(ModelIdsCompactionVariant3, other.ModelIdsCompactionVariant3)
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(ModelIdsCompactionVariant2, other.ModelIdsCompactionVariant2)
                 ;
         }
 

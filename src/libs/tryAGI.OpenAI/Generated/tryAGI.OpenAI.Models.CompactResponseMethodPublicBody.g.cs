@@ -13,8 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsCompactionJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.ModelIdsCompaction Model { get; set; }
+        public global::tryAGI.OpenAI.ModelIdsCompaction? Model { get; set; }
 
         /// <summary>
         ///
@@ -81,7 +80,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CompactResponseMethodPublicBody(
-            global::tryAGI.OpenAI.ModelIdsCompaction model,
+            global::tryAGI.OpenAI.ModelIdsCompaction? model,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? input,
             string? previousResponseId,
             string? instructions,

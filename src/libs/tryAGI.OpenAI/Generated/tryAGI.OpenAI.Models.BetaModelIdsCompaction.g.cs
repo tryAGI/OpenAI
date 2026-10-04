@@ -82,43 +82,6 @@ namespace tryAGI.OpenAI
         public string PickBetaModelIdsCompactionVariant2() => BetaModelIdsCompactionVariant2 is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'BetaModelIdsCompactionVariant2' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public object? BetaModelIdsCompactionVariant3 { get; init; }
-#else
-        public object? BetaModelIdsCompactionVariant3 { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BetaModelIdsCompactionVariant3))]
-#endif
-        public bool IsBetaModelIdsCompactionVariant3 => BetaModelIdsCompactionVariant3 != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickBetaModelIdsCompactionVariant3(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out object? value)
-        {
-            value = BetaModelIdsCompactionVariant3;
-            return IsBetaModelIdsCompactionVariant3;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public object PickBetaModelIdsCompactionVariant3() => BetaModelIdsCompactionVariant3 is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'BetaModelIdsCompactionVariant3' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -170,20 +133,17 @@ namespace tryAGI.OpenAI
         /// </summary>
         public BetaModelIdsCompaction(
             global::tryAGI.OpenAI.BetaModelIdsResponses? responses,
-            string? betaModelIdsCompactionVariant2,
-            object? betaModelIdsCompactionVariant3
+            string? betaModelIdsCompactionVariant2
             )
         {
             Responses = responses;
             BetaModelIdsCompactionVariant2 = betaModelIdsCompactionVariant2;
-            BetaModelIdsCompactionVariant3 = betaModelIdsCompactionVariant3;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            BetaModelIdsCompactionVariant3 as object ??
             BetaModelIdsCompactionVariant2 as object ??
             Responses as object
             ;
@@ -193,8 +153,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             Responses?.ToString() ??
-            BetaModelIdsCompactionVariant2?.ToString() ??
-            BetaModelIdsCompactionVariant3?.ToString()
+            BetaModelIdsCompactionVariant2?.ToString()
             ;
 
         /// <summary>
@@ -202,7 +161,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsResponses || IsBetaModelIdsCompactionVariant2 || IsBetaModelIdsCompactionVariant3;
+            return IsResponses || IsBetaModelIdsCompactionVariant2;
         }
 
         /// <summary>
@@ -211,7 +170,6 @@ namespace tryAGI.OpenAI
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.BetaModelIdsResponses?, TResult>? responses = null,
             global::System.Func<string, TResult>? betaModelIdsCompactionVariant2 = null,
-            global::System.Func<object, TResult>? betaModelIdsCompactionVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -227,10 +185,6 @@ namespace tryAGI.OpenAI
             {
                 return betaModelIdsCompactionVariant2(__value1);
             }
-            else if (BetaModelIdsCompactionVariant3 is { } __value2 && betaModelIdsCompactionVariant3 != null)
-            {
-                return betaModelIdsCompactionVariant3(__value2);
-            }
 
             return default(TResult);
         }
@@ -242,8 +196,6 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.BetaModelIdsResponses?>? responses = null,
 
             global::System.Action<string>? betaModelIdsCompactionVariant2 = null,
-
-            global::System.Action<object>? betaModelIdsCompactionVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -258,10 +210,6 @@ namespace tryAGI.OpenAI
             else if (BetaModelIdsCompactionVariant2 is { } __value1)
             {
                 betaModelIdsCompactionVariant2?.Invoke(__value1);
-            }
-            else if (BetaModelIdsCompactionVariant3 is { } __value2)
-            {
-                betaModelIdsCompactionVariant3?.Invoke(__value2);
             }
         }
 
@@ -271,7 +219,6 @@ namespace tryAGI.OpenAI
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.BetaModelIdsResponses?>? responses = null,
             global::System.Action<string>? betaModelIdsCompactionVariant2 = null,
-            global::System.Action<object>? betaModelIdsCompactionVariant3 = null,
             bool validate = true)
         {
             if (validate)
@@ -286,10 +233,6 @@ namespace tryAGI.OpenAI
             else if (BetaModelIdsCompactionVariant2 is { } __value1)
             {
                 betaModelIdsCompactionVariant2?.Invoke(__value1);
-            }
-            else if (BetaModelIdsCompactionVariant3 is { } __value2)
-            {
-                betaModelIdsCompactionVariant3?.Invoke(__value2);
             }
         }
 
@@ -304,8 +247,6 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.BetaModelIdsResponses),
                 BetaModelIdsCompactionVariant2,
                 typeof(string),
-                BetaModelIdsCompactionVariant3,
-                typeof(object),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -323,8 +264,7 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaModelIdsResponses?>.Default.Equals(Responses, other.Responses) &&
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaModelIdsCompactionVariant2, other.BetaModelIdsCompactionVariant2) &&
-                global::System.Collections.Generic.EqualityComparer<object?>.Default.Equals(BetaModelIdsCompactionVariant3, other.BetaModelIdsCompactionVariant3)
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(BetaModelIdsCompactionVariant2, other.BetaModelIdsCompactionVariant2)
                 ;
         }
 

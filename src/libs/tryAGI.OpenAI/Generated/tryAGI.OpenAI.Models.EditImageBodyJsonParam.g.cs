@@ -18,8 +18,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>gpt-image-2.5-sunburst</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.EditImageBodyJsonParamModel?, object>))]
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamModel?, object>? Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.EditImageBodyJsonParamModel?>))]
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamModel?>? Model { get; set; }
 
         /// <summary>
         /// Input image references to edit.<br/>
@@ -78,8 +78,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>1024x1024</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.EditImageBodyJsonParamSize?, object>))]
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamSize?, object>? Size { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.EditImageBodyJsonParamSize?>))]
+        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamSize?>? Size { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI<br/>
@@ -222,12 +222,12 @@ namespace tryAGI.OpenAI
         public EditImageBodyJsonParam(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ImageRefParam> images,
             string prompt,
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamModel?, object>? model,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamModel?>? model,
             global::tryAGI.OpenAI.ImageRefParam? mask,
             int? n,
             global::tryAGI.OpenAI.EditImageBodyJsonParamQuality? quality,
             global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity? inputFidelity,
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamSize?, object>? size,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamSize?>? size,
             string? user,
             global::tryAGI.OpenAI.EditImageBodyJsonParamOutputFormat? outputFormat,
             int? outputCompression,
