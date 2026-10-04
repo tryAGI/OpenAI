@@ -50,7 +50,6 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>medium</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateImageRequestQualityJsonConverter))]
         public global::tryAGI.OpenAI.CreateImageRequestQuality? Quality { get; set; }
 
         /// <summary>
@@ -68,7 +67,6 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>png</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateImageRequestOutputFormatJsonConverter))]
         public global::tryAGI.OpenAI.CreateImageRequestOutputFormat? OutputFormat { get; set; }
 
         /// <summary>
@@ -114,7 +112,6 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>low</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("moderation")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateImageRequestModerationJsonConverter))]
         public global::tryAGI.OpenAI.CreateImageRequestModeration? Moderation { get; set; }
 
         /// <summary>
@@ -132,7 +129,6 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>transparent</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("background")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateImageRequestBackgroundJsonConverter))]
         public global::tryAGI.OpenAI.CreateImageRequestBackground? Background { get; set; }
 
         /// <summary>

@@ -306,7 +306,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.Background).HasValue ? (request.Background).GetValueOrDefault().ToValueString() : string.Empty),
+                                    content: new global::System.Net.Http.StringContent(request.Background.ToString() ?? string.Empty),
                                     name: "\"background\"");
 
                             }
@@ -342,7 +342,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.OutputFormat).HasValue ? (request.OutputFormat).GetValueOrDefault().ToValueString() : string.Empty),
+                                    content: new global::System.Net.Http.StringContent(request.OutputFormat.ToString() ?? string.Empty),
                                     name: "\"output_format\"");
 
                             }
@@ -390,7 +390,7 @@ namespace tryAGI.OpenAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((request.Quality).HasValue ? (request.Quality).GetValueOrDefault().ToValueString() : string.Empty),
+                                    content: new global::System.Net.Http.StringContent(request.Quality.ToString() ?? string.Empty),
                                     name: "\"quality\"");
 
                             }
