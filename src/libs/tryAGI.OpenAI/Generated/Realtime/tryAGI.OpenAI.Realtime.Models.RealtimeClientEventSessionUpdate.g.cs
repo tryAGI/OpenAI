@@ -11,7 +11,13 @@ namespace tryAGI.OpenAI.Realtime
     /// with a `session.updated` event showing the full, effective configuration.<br/>
     /// Only the fields that are present in the `session.update` are updated. To clear a field like<br/>
     /// `instructions`, pass an empty string. To clear a field like `tools`, pass an empty array.<br/>
-    /// To clear a field like `turn_detection`, pass `null`.
+    /// To clear a field like `turn_detection`, pass `null`.<br/>
+    /// To turn off input audio noise reduction, send this Realtime event:<br/>
+    /// ```json<br/>
+    /// {"type":"session.update","session":{"type":"realtime","audio":{"input":{"noise_reduction":null}}}}<br/>
+    /// ```<br/>
+    /// For a transcription session, use `"type":"transcription"` inside `session`.<br/>
+    /// Omitting `audio.input.noise_reduction` from an update leaves its current setting unchanged.
     /// </summary>
     public sealed partial class RealtimeClientEventSessionUpdate
     {
