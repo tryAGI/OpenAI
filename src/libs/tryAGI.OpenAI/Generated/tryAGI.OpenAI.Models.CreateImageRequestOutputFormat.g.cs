@@ -4,9 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The format in which the generated images are returned. This parameter is only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.<br/>
-    /// Default Value: png<br/>
-    /// Example: png
+    ///
     /// </summary>
     public enum CreateImageRequestOutputFormat
     {

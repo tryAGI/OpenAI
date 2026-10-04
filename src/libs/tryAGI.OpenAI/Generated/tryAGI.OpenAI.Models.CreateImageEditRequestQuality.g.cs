@@ -4,9 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The quality of the image that will be generated for GPT image models. The GPT image models support `low`, `medium`, and `high`. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08` snapshots, also support `xhigh` and `max`. Defaults to `auto`.<br/>
-    /// Default Value: auto<br/>
-    /// Example: high
+    ///
     /// </summary>
     public enum CreateImageEditRequestQuality
     {

@@ -7,15 +7,12 @@ namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 internal sealed record CreateImageEditRequestOptionSet(
     Option<string> Prompt,
                      Option<string?> Maskname,
-                     Option<global::tryAGI.OpenAI.CreateImageEditRequestBackground?> Background,
                      Option<int?> N,
                      Option<global::tryAGI.OpenAI.CreateImageEditRequestResponseFormat?> ResponseFormat,
-                     Option<global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat?> OutputFormat,
                      Option<int?> OutputCompression,
                      Option<string?> User,
                      Option<bool?> Stream,
-                     Option<int?> PartialImages,
-                     Option<global::tryAGI.OpenAI.CreateImageEditRequestQuality?> Quality)
+                     Option<int?> PartialImages)
 {
     public static CreateImageEditRequestOptionSet Create(string? prefix = null)
     {
@@ -32,20 +29,6 @@ internal sealed record CreateImageEditRequestOptionSet(
                 {
                     Description = @"An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.",
                 },
-                Background: new Option<global::tryAGI.OpenAI.CreateImageEditRequestBackground?>($"--{normalizedPrefix}background")
-                {
-                    Description = @"Set the background of the generated image(s). This parameter is only supported for
-the GPT image models. Must be one of `transparent`, `opaque`, or `auto` (default
-value). When `auto` is used, the model will automatically determine the best
-background for the image.
-
-`gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08`
-snapshots, support `opaque` and `transparent` backgrounds. Transparent backgrounds
-are available for supported GPT Image models. For `gpt-image-2` and
-`gpt-image-2-2026-04-21`, this support is in preview. When using `transparent`,
-set the output format to `png` or `webp`.
-",
-                },
                 N: new Option<int?>($"--{normalizedPrefix}n")
                 {
                     Description = @"The number of images to generate. Must be between 1 and 10.",
@@ -53,13 +36,6 @@ set the output format to `png` or `webp`.
                 ResponseFormat: new Option<global::tryAGI.OpenAI.CreateImageEditRequestResponseFormat?>($"--{normalizedPrefix}response-format")
                 {
                     Description = @"Legacy response format parameter for retired image models. Unsupported for GPT image models, which always return base64-encoded images.",
-                },
-                OutputFormat: new Option<global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat?>($"--{normalizedPrefix}output-format")
-                {
-                    Description = @"The format in which the generated images are returned. This parameter is
-only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.
-The default value is `png`.
-",
                 },
                 OutputCompression: new Option<int?>($"--{normalizedPrefix}output-compression")
                 {
@@ -79,11 +55,6 @@ formats, and defaults to 100.
                 PartialImages: new Option<int?>($"--{normalizedPrefix}partial-images")
                 {
                     Description = @"",
-                },
-                Quality: new Option<global::tryAGI.OpenAI.CreateImageEditRequestQuality?>($"--{normalizedPrefix}quality")
-                {
-                    Description = @"The quality of the image that will be generated for GPT image models. The GPT image models support `low`, `medium`, and `high`. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08` snapshots, also support `xhigh` and `max`. Defaults to `auto`.
-",
                 }
         );
     }

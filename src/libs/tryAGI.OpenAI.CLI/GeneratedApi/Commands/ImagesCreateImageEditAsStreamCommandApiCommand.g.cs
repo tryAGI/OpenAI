@@ -28,6 +28,22 @@ follows the same input constraints as GPT image models.
         Description = @"An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.",
     };
 
+    private static Option<global::tryAGI.OpenAI.CreateImageEditRequestBackground?> Background { get; } = new(
+        name: @"--background")
+    {
+        Description = @"Set the background of the generated image(s). This parameter is only supported for
+the GPT image models. Must be one of `transparent`, `opaque`, or `auto` (default
+value). When `auto` is used, the model will automatically determine the best
+background for the image.
+
+`gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08`
+snapshots, support `opaque` and `transparent` backgrounds. Transparent backgrounds
+are available for supported GPT Image models. For `gpt-image-2` and
+`gpt-image-2-2026-04-21`, this support is in preview. When using `transparent`,
+set the output format to `png` or `webp`.
+",
+    };
+
     private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?>> Model { get; } = new(
         name: @"--model")
     {
@@ -41,10 +57,26 @@ follows the same input constraints as GPT image models.
         Description = @"The size of the generated images. Defaults to `auto`. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing.",
     };
 
+    private static Option<global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat?> OutputFormat { get; } = new(
+        name: @"--output-format")
+    {
+        Description = @"The format in which the generated images are returned. This parameter is
+only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.
+The default value is `png`.
+",
+    };
+
     private static Option<global::tryAGI.OpenAI.InputFidelity?> InputFidelity { get; } = new(
         name: @"--input-fidelity")
     {
         Description = @"",
+    };
+
+    private static Option<global::tryAGI.OpenAI.CreateImageEditRequestQuality?> Quality { get; } = new(
+        name: @"--quality")
+    {
+        Description = @"The quality of the image that will be generated for GPT image models. The GPT image models support `low`, `medium`, and `high`. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`, including their `2026-09-08` snapshots, also support `xhigh` and `max`. Defaults to `auto`.
+",
     };
     private static readonly CreateImageEditRequestOptionSet CreateImageEditRequestOptionSetOptions = CreateImageEditRequestOptionSet.Create();
       private static Option<string?> Input { get; } = new(@"--input")
@@ -72,17 +104,17 @@ follows the same input constraints as GPT image models.
 Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models.");
                         command.Options.Add(Image);
                         command.Options.Add(Mask);
+                        command.Options.Add(Background);
                         command.Options.Add(Model);
                         command.Options.Add(Size);
-                        command.Options.Add(InputFidelity);                        command.Options.Add(CreateImageEditRequestOptionSetOptions.Prompt);
+                        command.Options.Add(OutputFormat);
+                        command.Options.Add(InputFidelity);
+                        command.Options.Add(Quality);                        command.Options.Add(CreateImageEditRequestOptionSetOptions.Prompt);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.Maskname);
-                        command.Options.Add(CreateImageEditRequestOptionSetOptions.Background);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.N);
-                        command.Options.Add(CreateImageEditRequestOptionSetOptions.OutputFormat);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.OutputCompression);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.User);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.PartialImages);
-                        command.Options.Add(CreateImageEditRequestOptionSetOptions.Quality);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -110,35 +142,35 @@ Creates an edited or extended image given one or more source images and a prompt
                             cancellationToken).ConfigureAwait(false);
                         var image = parseResult.GetRequiredValue(Image);
                         var mask = CliRuntime.WasSpecified(parseResult, Mask) ? parseResult.GetValue(Mask) : (__requestBase is { } __MaskBaseValue ? __MaskBaseValue.Mask : default);
+                        var background = CliRuntime.WasSpecified(parseResult, Background) ? parseResult.GetValue(Background) : (__requestBase is { } __BackgroundBaseValue ? __BackgroundBaseValue.Background : default);
                         var model = parseResult.GetRequiredValue(Model);
                         var size = CliRuntime.WasSpecified(parseResult, Size) ? parseResult.GetValue(Size) : (__requestBase is { } __SizeBaseValue ? __SizeBaseValue.Size : default);
-                        var inputFidelity = CliRuntime.WasSpecified(parseResult, InputFidelity) ? parseResult.GetValue(InputFidelity) : (__requestBase is { } __InputFidelityBaseValue ? __InputFidelityBaseValue.InputFidelity : default);                        var prompt = parseResult.GetRequiredValue(CreateImageEditRequestOptionSetOptions.Prompt);
+                        var outputFormat = CliRuntime.WasSpecified(parseResult, OutputFormat) ? parseResult.GetValue(OutputFormat) : (__requestBase is { } __OutputFormatBaseValue ? __OutputFormatBaseValue.OutputFormat : default);
+                        var inputFidelity = CliRuntime.WasSpecified(parseResult, InputFidelity) ? parseResult.GetValue(InputFidelity) : (__requestBase is { } __InputFidelityBaseValue ? __InputFidelityBaseValue.InputFidelity : default);
+                        var quality = CliRuntime.WasSpecified(parseResult, Quality) ? parseResult.GetValue(Quality) : (__requestBase is { } __QualityBaseValue ? __QualityBaseValue.Quality : default);                        var prompt = parseResult.GetRequiredValue(CreateImageEditRequestOptionSetOptions.Prompt);
                         var maskname = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.Maskname) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Maskname) : (__requestBase is { } __MasknameBaseValue ? __MasknameBaseValue.Maskname : default);
-                        var background = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.Background) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Background) : (__requestBase is { } __BackgroundBaseValue ? __BackgroundBaseValue.Background : default);
                         var n = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.N) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.N) : (__requestBase is { } __NBaseValue ? __NBaseValue.N : default);
-                        var outputFormat = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.OutputFormat) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.OutputFormat) : (__requestBase is { } __OutputFormatBaseValue ? __OutputFormatBaseValue.OutputFormat : default);
                         var outputCompression = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.OutputCompression) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.OutputCompression) : (__requestBase is { } __OutputCompressionBaseValue ? __OutputCompressionBaseValue.OutputCompression : default);
                         var user = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.User) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
                         var partialImages = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.PartialImages) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.PartialImages) : (__requestBase is { } __PartialImagesBaseValue ? __PartialImagesBaseValue.PartialImages : default);
-                        var quality = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.Quality) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Quality) : (__requestBase is { } __QualityBaseValue ? __QualityBaseValue.Quality : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 var response = client.Images.CreateImageEditAsStreamAsync(
                                     image: image,
                                     mask: mask,
+                                    background: background,
                                     model: model,
                                     size: size,
+                                    outputFormat: outputFormat,
                                     inputFidelity: inputFidelity,
+                                    quality: quality,
                                     prompt: prompt,
                                     maskname: maskname,
-                                    background: background,
                                     n: n,
-                                    outputFormat: outputFormat,
                                     outputCompression: outputCompression,
                                     user: user,
                                     partialImages: partialImages,
-                                    quality: quality,
                                     cancellationToken: cancellationToken);
 
                                 await foreach (var item in response.WithCancellation(cancellationToken).ConfigureAwait(false))
