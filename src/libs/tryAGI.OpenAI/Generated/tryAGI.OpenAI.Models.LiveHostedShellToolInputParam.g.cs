@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A Responses shell tool with a container_auto or container_reference environment. Local execution and domain secrets are not supported.
+    /// A Responses shell tool. Use a hosted container or return local shell results with response.item.create. Domain secrets are not supported.
     /// </summary>
     public sealed partial class LiveHostedShellToolInputParam
     {
@@ -20,8 +20,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required object Environment { get; set; }
+        public object? Environment { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,11 +39,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LiveHostedShellToolInputParam(
-            object environment,
+            object? environment,
             global::tryAGI.OpenAI.LiveHostedShellToolInputParamType type = global::tryAGI.OpenAI.LiveHostedShellToolInputParamType.Shell)
         {
             this.Type = type;
-            this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
+            this.Environment = environment;
         }
 
         /// <summary>
@@ -52,18 +51,6 @@ namespace tryAGI.OpenAI
         /// </summary>
         public LiveHostedShellToolInputParam()
         {
-        }
-
-        /// <summary>
-        /// Creates a new <see cref="LiveHostedShellToolInputParam"/> from its single non-const required field,
-        /// hardcoding any const discriminator fields.
-        /// </summary>
-        public static LiveHostedShellToolInputParam FromEnvironment(object environment)
-        {
-            return new LiveHostedShellToolInputParam
-            {
-                Environment = environment,
-            };
         }
 
     }

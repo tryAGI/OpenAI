@@ -22,6 +22,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         x512x512,
+        /// <summary>
+        ///
+        /// </summary>
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
     }
 
     /// <summary>
@@ -39,6 +43,7 @@ namespace tryAGI.OpenAI
                 CreateImageVariationRequestSize.x1024x1024 => "1024x1024",
                 CreateImageVariationRequestSize.x256x256 => "256x256",
                 CreateImageVariationRequestSize.x512x512 => "512x512",
+                CreateImageVariationRequestSize.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -52,6 +57,7 @@ namespace tryAGI.OpenAI
                 "1024x1024" => CreateImageVariationRequestSize.x1024x1024,
                 "256x256" => CreateImageVariationRequestSize.x256x256,
                 "512x512" => CreateImageVariationRequestSize.x512x512,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => CreateImageVariationRequestSize.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
                 _ => null,
             };
         }

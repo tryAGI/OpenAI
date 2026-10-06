@@ -163,7 +163,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'CodeInterpreter' but the value was {ToString()}.");
 
         /// <summary>
-        /// A Responses shell tool with a container_auto or container_reference environment. Local execution and domain secrets are not supported.
+        /// A Responses shell tool. Use a hosted container or return local shell results with response.item.create. Domain secrets are not supported.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.LiveHostedShellToolInputParam? Shell { get; init; }
@@ -235,6 +235,265 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.LiveImageGenerationToolInputParam PickImageGeneration() => ImageGeneration is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ImageGeneration' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveMCPToolInputParam? Mcp { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveMCPToolInputParam? Mcp { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mcp))]
+#endif
+        public bool IsMcp => Mcp != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickMcp(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveMCPToolInputParam? value)
+        {
+            value = Mcp;
+            return IsMcp;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveMCPToolInputParam PickMcp() => Mcp is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mcp' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveCustomToolInputParam? Custom { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveCustomToolInputParam? Custom { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Custom))]
+#endif
+        public bool IsCustom => Custom != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickCustom(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveCustomToolInputParam? value)
+        {
+            value = Custom;
+            return IsCustom;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveCustomToolInputParam PickCustom() => Custom is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Custom' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveNamespaceToolInputParam? Namespace { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveNamespaceToolInputParam? Namespace { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Namespace))]
+#endif
+        public bool IsNamespace => Namespace != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickNamespace(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveNamespaceToolInputParam? value)
+        {
+            value = Namespace;
+            return IsNamespace;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveNamespaceToolInputParam PickNamespace() => Namespace is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Namespace' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveToolSearchToolInputParam? ToolSearch { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveToolSearchToolInputParam? ToolSearch { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolSearch))]
+#endif
+        public bool IsToolSearch => ToolSearch != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickToolSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveToolSearchToolInputParam? value)
+        {
+            value = ToolSearch;
+            return IsToolSearch;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveToolSearchToolInputParam PickToolSearch() => ToolSearch is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ToolSearch' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveProgrammaticToolInputParam? ProgrammaticToolCalling { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveProgrammaticToolInputParam? ProgrammaticToolCalling { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ProgrammaticToolCalling))]
+#endif
+        public bool IsProgrammaticToolCalling => ProgrammaticToolCalling != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickProgrammaticToolCalling(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveProgrammaticToolInputParam? value)
+        {
+            value = ProgrammaticToolCalling;
+            return IsProgrammaticToolCalling;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveProgrammaticToolInputParam PickProgrammaticToolCalling() => ProgrammaticToolCalling is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ProgrammaticToolCalling' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveComputerToolInputParam? Computer { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveComputerToolInputParam? Computer { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Computer))]
+#endif
+        public bool IsComputer => Computer != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickComputer(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveComputerToolInputParam? value)
+        {
+            value = Computer;
+            return IsComputer;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveComputerToolInputParam PickComputer() => Computer is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Computer' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveApplyPatchToolInputParam? ApplyPatch { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveApplyPatchToolInputParam? ApplyPatch { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ApplyPatch))]
+#endif
+        public bool IsApplyPatch => ApplyPatch != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickApplyPatch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveApplyPatchToolInputParam? value)
+        {
+            value = ApplyPatch;
+            return IsApplyPatch;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveApplyPatchToolInputParam PickApplyPatch() => ApplyPatch is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ApplyPatch' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -376,6 +635,167 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator ToolsItem15(global::tryAGI.OpenAI.LiveMCPToolInputParam value) => new ToolsItem15((global::tryAGI.OpenAI.LiveMCPToolInputParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveMCPToolInputParam?(ToolsItem15 @this) => @this.Mcp;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ToolsItem15(global::tryAGI.OpenAI.LiveMCPToolInputParam? value)
+        {
+            Mcp = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ToolsItem15 FromMcp(global::tryAGI.OpenAI.LiveMCPToolInputParam? value) => new ToolsItem15(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ToolsItem15(global::tryAGI.OpenAI.LiveCustomToolInputParam value) => new ToolsItem15((global::tryAGI.OpenAI.LiveCustomToolInputParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveCustomToolInputParam?(ToolsItem15 @this) => @this.Custom;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ToolsItem15(global::tryAGI.OpenAI.LiveCustomToolInputParam? value)
+        {
+            Custom = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ToolsItem15 FromCustom(global::tryAGI.OpenAI.LiveCustomToolInputParam? value) => new ToolsItem15(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ToolsItem15(global::tryAGI.OpenAI.LiveNamespaceToolInputParam value) => new ToolsItem15((global::tryAGI.OpenAI.LiveNamespaceToolInputParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveNamespaceToolInputParam?(ToolsItem15 @this) => @this.Namespace;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ToolsItem15(global::tryAGI.OpenAI.LiveNamespaceToolInputParam? value)
+        {
+            Namespace = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ToolsItem15 FromNamespace(global::tryAGI.OpenAI.LiveNamespaceToolInputParam? value) => new ToolsItem15(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ToolsItem15(global::tryAGI.OpenAI.LiveToolSearchToolInputParam value) => new ToolsItem15((global::tryAGI.OpenAI.LiveToolSearchToolInputParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveToolSearchToolInputParam?(ToolsItem15 @this) => @this.ToolSearch;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ToolsItem15(global::tryAGI.OpenAI.LiveToolSearchToolInputParam? value)
+        {
+            ToolSearch = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ToolsItem15 FromToolSearch(global::tryAGI.OpenAI.LiveToolSearchToolInputParam? value) => new ToolsItem15(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ToolsItem15(global::tryAGI.OpenAI.LiveProgrammaticToolInputParam value) => new ToolsItem15((global::tryAGI.OpenAI.LiveProgrammaticToolInputParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveProgrammaticToolInputParam?(ToolsItem15 @this) => @this.ProgrammaticToolCalling;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ToolsItem15(global::tryAGI.OpenAI.LiveProgrammaticToolInputParam? value)
+        {
+            ProgrammaticToolCalling = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ToolsItem15 FromProgrammaticToolCalling(global::tryAGI.OpenAI.LiveProgrammaticToolInputParam? value) => new ToolsItem15(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ToolsItem15(global::tryAGI.OpenAI.LiveComputerToolInputParam value) => new ToolsItem15((global::tryAGI.OpenAI.LiveComputerToolInputParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveComputerToolInputParam?(ToolsItem15 @this) => @this.Computer;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ToolsItem15(global::tryAGI.OpenAI.LiveComputerToolInputParam? value)
+        {
+            Computer = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ToolsItem15 FromComputer(global::tryAGI.OpenAI.LiveComputerToolInputParam? value) => new ToolsItem15(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ToolsItem15(global::tryAGI.OpenAI.LiveApplyPatchToolInputParam value) => new ToolsItem15((global::tryAGI.OpenAI.LiveApplyPatchToolInputParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveApplyPatchToolInputParam?(ToolsItem15 @this) => @this.ApplyPatch;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ToolsItem15(global::tryAGI.OpenAI.LiveApplyPatchToolInputParam? value)
+        {
+            ApplyPatch = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ToolsItem15 FromApplyPatch(global::tryAGI.OpenAI.LiveApplyPatchToolInputParam? value) => new ToolsItem15(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public ToolsItem15(
             global::tryAGI.OpenAI.LiveResponsesDelegationSettingsUpdateInputParamToolDiscriminatorType? type,
             global::tryAGI.OpenAI.LiveFunctionToolInputParam? function,
@@ -383,7 +803,14 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.LiveFileSearchToolInputParam? fileSearch,
             global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam? codeInterpreter,
             global::tryAGI.OpenAI.LiveHostedShellToolInputParam? shell,
-            global::tryAGI.OpenAI.LiveImageGenerationToolInputParam? imageGeneration
+            global::tryAGI.OpenAI.LiveImageGenerationToolInputParam? imageGeneration,
+            global::tryAGI.OpenAI.LiveMCPToolInputParam? mcp,
+            global::tryAGI.OpenAI.LiveCustomToolInputParam? custom,
+            global::tryAGI.OpenAI.LiveNamespaceToolInputParam? @namespace,
+            global::tryAGI.OpenAI.LiveToolSearchToolInputParam? toolSearch,
+            global::tryAGI.OpenAI.LiveProgrammaticToolInputParam? programmaticToolCalling,
+            global::tryAGI.OpenAI.LiveComputerToolInputParam? computer,
+            global::tryAGI.OpenAI.LiveApplyPatchToolInputParam? applyPatch
             )
         {
             Type = type;
@@ -394,12 +821,26 @@ namespace tryAGI.OpenAI
             CodeInterpreter = codeInterpreter;
             Shell = shell;
             ImageGeneration = imageGeneration;
+            Mcp = mcp;
+            Custom = custom;
+            Namespace = @namespace;
+            ToolSearch = toolSearch;
+            ProgrammaticToolCalling = programmaticToolCalling;
+            Computer = computer;
+            ApplyPatch = applyPatch;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            ApplyPatch as object ??
+            Computer as object ??
+            ProgrammaticToolCalling as object ??
+            ToolSearch as object ??
+            Namespace as object ??
+            Custom as object ??
+            Mcp as object ??
             ImageGeneration as object ??
             Shell as object ??
             CodeInterpreter as object ??
@@ -417,7 +858,14 @@ namespace tryAGI.OpenAI
             FileSearch?.ToString() ??
             CodeInterpreter?.ToString() ??
             Shell?.ToString() ??
-            ImageGeneration?.ToString()
+            ImageGeneration?.ToString() ??
+            Mcp?.ToString() ??
+            Custom?.ToString() ??
+            Namespace?.ToString() ??
+            ToolSearch?.ToString() ??
+            ProgrammaticToolCalling?.ToString() ??
+            Computer?.ToString() ??
+            ApplyPatch?.ToString()
             ;
 
         /// <summary>
@@ -425,7 +873,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration || !IsFunction && IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration || !IsFunction && !IsWebSearch && IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration || !IsFunction && !IsWebSearch && !IsFileSearch && IsCodeInterpreter && !IsShell && !IsImageGeneration || !IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && IsShell && !IsImageGeneration || !IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && IsImageGeneration;
+            return IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration && !IsMcp && !IsCustom && !IsNamespace && !IsToolSearch && !IsProgrammaticToolCalling && !IsComputer && !IsApplyPatch || !IsFunction && IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration && !IsMcp && !IsCustom && !IsNamespace && !IsToolSearch && !IsProgrammaticToolCalling && !IsComputer && !IsApplyPatch || !IsFunction && !IsWebSearch && IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration && !IsMcp && !IsCustom && !IsNamespace && !IsToolSearch && !IsProgrammaticToolCalling && !IsComputer && !IsApplyPatch || !IsFunction && !IsWebSearch && !IsFileSearch && IsCodeInterpreter && !IsShell && !IsImageGeneration && !IsMcp && !IsCustom && !IsNamespace && !IsToolSearch && !IsProgrammaticToolCalling && !IsComputer && !IsApplyPatch || !IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && IsShell && !IsImageGeneration && !IsMcp && !IsCustom && !IsNamespace && !IsToolSearch && !IsProgrammaticToolCalling && !IsComputer && !IsApplyPatch || !IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && IsImageGeneration && !IsMcp && !IsCustom && !IsNamespace && !IsToolSearch && !IsProgrammaticToolCalling && !IsComputer && !IsApplyPatch || !IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration && IsMcp && !IsCustom && !IsNamespace && !IsToolSearch && !IsProgrammaticToolCalling && !IsComputer && !IsApplyPatch || !IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration && !IsMcp && IsCustom && !IsNamespace && !IsToolSearch && !IsProgrammaticToolCalling && !IsComputer && !IsApplyPatch || !IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration && !IsMcp && !IsCustom && IsNamespace && !IsToolSearch && !IsProgrammaticToolCalling && !IsComputer && !IsApplyPatch || !IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration && !IsMcp && !IsCustom && !IsNamespace && IsToolSearch && !IsProgrammaticToolCalling && !IsComputer && !IsApplyPatch || !IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration && !IsMcp && !IsCustom && !IsNamespace && !IsToolSearch && IsProgrammaticToolCalling && !IsComputer && !IsApplyPatch || !IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration && !IsMcp && !IsCustom && !IsNamespace && !IsToolSearch && !IsProgrammaticToolCalling && IsComputer && !IsApplyPatch || !IsFunction && !IsWebSearch && !IsFileSearch && !IsCodeInterpreter && !IsShell && !IsImageGeneration && !IsMcp && !IsCustom && !IsNamespace && !IsToolSearch && !IsProgrammaticToolCalling && !IsComputer && IsApplyPatch;
         }
 
         /// <summary>
@@ -438,6 +886,13 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam, TResult>? codeInterpreter = null,
             global::System.Func<global::tryAGI.OpenAI.LiveHostedShellToolInputParam, TResult>? shell = null,
             global::System.Func<global::tryAGI.OpenAI.LiveImageGenerationToolInputParam, TResult>? imageGeneration = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveMCPToolInputParam, TResult>? mcp = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveCustomToolInputParam, TResult>? custom = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveNamespaceToolInputParam, TResult>? @namespace = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveToolSearchToolInputParam, TResult>? toolSearch = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveProgrammaticToolInputParam, TResult>? programmaticToolCalling = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveComputerToolInputParam, TResult>? computer = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveApplyPatchToolInputParam, TResult>? applyPatch = null,
             bool validate = true)
         {
             if (validate)
@@ -469,6 +924,34 @@ namespace tryAGI.OpenAI
             {
                 return imageGeneration(__value5);
             }
+            else if (Mcp is { } __value6 && mcp != null)
+            {
+                return mcp(__value6);
+            }
+            else if (Custom is { } __value7 && custom != null)
+            {
+                return custom(__value7);
+            }
+            else if (Namespace is { } __value8 && @namespace != null)
+            {
+                return @namespace(__value8);
+            }
+            else if (ToolSearch is { } __value9 && toolSearch != null)
+            {
+                return toolSearch(__value9);
+            }
+            else if (ProgrammaticToolCalling is { } __value10 && programmaticToolCalling != null)
+            {
+                return programmaticToolCalling(__value10);
+            }
+            else if (Computer is { } __value11 && computer != null)
+            {
+                return computer(__value11);
+            }
+            else if (ApplyPatch is { } __value12 && applyPatch != null)
+            {
+                return applyPatch(__value12);
+            }
 
             return default(TResult);
         }
@@ -488,6 +971,20 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.LiveHostedShellToolInputParam>? shell = null,
 
             global::System.Action<global::tryAGI.OpenAI.LiveImageGenerationToolInputParam>? imageGeneration = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveMCPToolInputParam>? mcp = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveCustomToolInputParam>? custom = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveNamespaceToolInputParam>? @namespace = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveToolSearchToolInputParam>? toolSearch = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveProgrammaticToolInputParam>? programmaticToolCalling = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveComputerToolInputParam>? computer = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveApplyPatchToolInputParam>? applyPatch = null,
             bool validate = true)
         {
             if (validate)
@@ -518,6 +1015,34 @@ namespace tryAGI.OpenAI
             else if (ImageGeneration is { } __value5)
             {
                 imageGeneration?.Invoke(__value5);
+            }
+            else if (Mcp is { } __value6)
+            {
+                mcp?.Invoke(__value6);
+            }
+            else if (Custom is { } __value7)
+            {
+                custom?.Invoke(__value7);
+            }
+            else if (Namespace is { } __value8)
+            {
+                @namespace?.Invoke(__value8);
+            }
+            else if (ToolSearch is { } __value9)
+            {
+                toolSearch?.Invoke(__value9);
+            }
+            else if (ProgrammaticToolCalling is { } __value10)
+            {
+                programmaticToolCalling?.Invoke(__value10);
+            }
+            else if (Computer is { } __value11)
+            {
+                computer?.Invoke(__value11);
+            }
+            else if (ApplyPatch is { } __value12)
+            {
+                applyPatch?.Invoke(__value12);
             }
         }
 
@@ -531,6 +1056,13 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam>? codeInterpreter = null,
             global::System.Action<global::tryAGI.OpenAI.LiveHostedShellToolInputParam>? shell = null,
             global::System.Action<global::tryAGI.OpenAI.LiveImageGenerationToolInputParam>? imageGeneration = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveMCPToolInputParam>? mcp = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveCustomToolInputParam>? custom = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveNamespaceToolInputParam>? @namespace = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveToolSearchToolInputParam>? toolSearch = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveProgrammaticToolInputParam>? programmaticToolCalling = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveComputerToolInputParam>? computer = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveApplyPatchToolInputParam>? applyPatch = null,
             bool validate = true)
         {
             if (validate)
@@ -561,6 +1093,34 @@ namespace tryAGI.OpenAI
             else if (ImageGeneration is { } __value5)
             {
                 imageGeneration?.Invoke(__value5);
+            }
+            else if (Mcp is { } __value6)
+            {
+                mcp?.Invoke(__value6);
+            }
+            else if (Custom is { } __value7)
+            {
+                custom?.Invoke(__value7);
+            }
+            else if (Namespace is { } __value8)
+            {
+                @namespace?.Invoke(__value8);
+            }
+            else if (ToolSearch is { } __value9)
+            {
+                toolSearch?.Invoke(__value9);
+            }
+            else if (ProgrammaticToolCalling is { } __value10)
+            {
+                programmaticToolCalling?.Invoke(__value10);
+            }
+            else if (Computer is { } __value11)
+            {
+                computer?.Invoke(__value11);
+            }
+            else if (ApplyPatch is { } __value12)
+            {
+                applyPatch?.Invoke(__value12);
             }
         }
 
@@ -583,6 +1143,20 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParam),
                 ImageGeneration,
                 typeof(global::tryAGI.OpenAI.LiveImageGenerationToolInputParam),
+                Mcp,
+                typeof(global::tryAGI.OpenAI.LiveMCPToolInputParam),
+                Custom,
+                typeof(global::tryAGI.OpenAI.LiveCustomToolInputParam),
+                Namespace,
+                typeof(global::tryAGI.OpenAI.LiveNamespaceToolInputParam),
+                ToolSearch,
+                typeof(global::tryAGI.OpenAI.LiveToolSearchToolInputParam),
+                ProgrammaticToolCalling,
+                typeof(global::tryAGI.OpenAI.LiveProgrammaticToolInputParam),
+                Computer,
+                typeof(global::tryAGI.OpenAI.LiveComputerToolInputParam),
+                ApplyPatch,
+                typeof(global::tryAGI.OpenAI.LiveApplyPatchToolInputParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -604,7 +1178,14 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveFileSearchToolInputParam?>.Default.Equals(FileSearch, other.FileSearch) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveHostedShellToolInputParam?>.Default.Equals(Shell, other.Shell) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveImageGenerationToolInputParam?>.Default.Equals(ImageGeneration, other.ImageGeneration)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveImageGenerationToolInputParam?>.Default.Equals(ImageGeneration, other.ImageGeneration) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveMCPToolInputParam?>.Default.Equals(Mcp, other.Mcp) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveCustomToolInputParam?>.Default.Equals(Custom, other.Custom) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveNamespaceToolInputParam?>.Default.Equals(Namespace, other.Namespace) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveToolSearchToolInputParam?>.Default.Equals(ToolSearch, other.ToolSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveProgrammaticToolInputParam?>.Default.Equals(ProgrammaticToolCalling, other.ProgrammaticToolCalling) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveComputerToolInputParam?>.Default.Equals(Computer, other.Computer) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveApplyPatchToolInputParam?>.Default.Equals(ApplyPatch, other.ApplyPatch)
                 ;
         }
 

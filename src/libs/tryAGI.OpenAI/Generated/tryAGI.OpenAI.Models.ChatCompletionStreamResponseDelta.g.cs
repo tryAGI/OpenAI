@@ -13,6 +13,13 @@ namespace tryAGI.OpenAI
     public sealed partial class ChatCompletionStreamResponseDelta
     {
         /// <summary>
+        /// A partial audio response. Audio chunks may carry an ID, base64 data, or<br/>
+        /// transcript text; the final audio update contains only its expiry timestamp.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
+        public global::tryAGI.OpenAI.ChatCompletionStreamResponseDeltaAudio? Audio { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
@@ -53,6 +60,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionStreamResponseDelta" /> class.
         /// </summary>
+        /// <param name="audio">
+        /// A partial audio response. Audio chunks may carry an ID, base64 data, or<br/>
+        /// transcript text; the final audio update contains only its expiry timestamp.
+        /// </param>
         /// <param name="content"></param>
         /// <param name="toolCalls"></param>
         /// <param name="role">
@@ -63,11 +74,13 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionStreamResponseDelta(
+            global::tryAGI.OpenAI.ChatCompletionStreamResponseDeltaAudio? audio,
             string? content,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionMessageToolCallChunk>? toolCalls,
             global::tryAGI.OpenAI.ChatCompletionStreamResponseDeltaRole? role,
             string? refusal)
         {
+            this.Audio = audio;
             this.Content = content;
             this.ToolCalls = toolCalls;
             this.Role = role;

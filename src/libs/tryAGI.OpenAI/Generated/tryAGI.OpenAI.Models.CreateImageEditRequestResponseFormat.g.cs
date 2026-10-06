@@ -15,6 +15,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
+        /// <summary>
+        ///
+        /// </summary>
         Url,
     }
 
@@ -31,6 +35,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 CreateImageEditRequestResponseFormat.B64Json => "b64_json",
+                CreateImageEditRequestResponseFormat.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464 => "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464",
                 CreateImageEditRequestResponseFormat.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "b64_json" => CreateImageEditRequestResponseFormat.B64Json,
+                "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464" => CreateImageEditRequestResponseFormat.OpenapiJsonNullSentinelValue2bf936000fe44250987aE5ddb203e464,
                 "url" => CreateImageEditRequestResponseFormat.Url,
                 _ => null,
             };

@@ -55,8 +55,8 @@ namespace tryAGI.OpenAI
         /// Controls which tool the Responses backend uses when handling a task delegated by the Live model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.LiveToolChoiceEnum?, global::tryAGI.OpenAI.LiveFunctionToolChoiceParam, global::tryAGI.OpenAI.LiveMCPToolChoiceParam>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.LiveToolChoiceEnum?, global::tryAGI.OpenAI.LiveFunctionToolChoiceParam, global::tryAGI.OpenAI.LiveMCPToolChoiceParam>? ToolChoice { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.LiveToolChoiceEnum?, object>))]
+        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.LiveToolChoiceEnum?, object>? ToolChoice { get; set; }
 
         /// <summary>
         ///
@@ -99,7 +99,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.LiveDelegationReasoningInputParam? reasoning,
             global::tryAGI.OpenAI.LiveDelegationTextInputParam? text,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem14>? tools,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.LiveToolChoiceEnum?, global::tryAGI.OpenAI.LiveFunctionToolChoiceParam, global::tryAGI.OpenAI.LiveMCPToolChoiceParam>? toolChoice,
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.LiveToolChoiceEnum?, object>? toolChoice,
             bool? parallelToolCalls)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));

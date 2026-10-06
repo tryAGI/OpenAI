@@ -19,10 +19,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        Aube,
-        /// <summary>
-        ///
-        /// </summary>
         Ballad,
         /// <summary>
         ///
@@ -152,7 +148,6 @@ namespace tryAGI.OpenAI
             {
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Alloy => "alloy",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Ash => "ash",
-                LiveInitialSessionAudioOutputParamVoiceVariant1.Aube => "aube",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Ballad => "ballad",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Beacon => "beacon",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Bossa => "bossa",
@@ -194,7 +189,6 @@ namespace tryAGI.OpenAI
             {
                 "alloy" => LiveInitialSessionAudioOutputParamVoiceVariant1.Alloy,
                 "ash" => LiveInitialSessionAudioOutputParamVoiceVariant1.Ash,
-                "aube" => LiveInitialSessionAudioOutputParamVoiceVariant1.Aube,
                 "ballad" => LiveInitialSessionAudioOutputParamVoiceVariant1.Ballad,
                 "beacon" => LiveInitialSessionAudioOutputParamVoiceVariant1.Beacon,
                 "bossa" => LiveInitialSessionAudioOutputParamVoiceVariant1.Bossa,

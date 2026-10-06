@@ -4,40 +4,40 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Default Value: mcp
+    /// Default Value: namespace
     /// </summary>
-    public enum LiveMCPToolChoiceParamType
+    public enum LiveNamespaceToolInputParamType
     {
         /// <summary>
         ///
         /// </summary>
-        Mcp,
+        Namespace,
     }
 
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class LiveMCPToolChoiceParamTypeExtensions
+    public static class LiveNamespaceToolInputParamTypeExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this LiveMCPToolChoiceParamType value)
+        public static string ToValueString(this LiveNamespaceToolInputParamType value)
         {
             return value switch
             {
-                LiveMCPToolChoiceParamType.Mcp => "mcp",
+                LiveNamespaceToolInputParamType.Namespace => "namespace",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static LiveMCPToolChoiceParamType? ToEnum(string value)
+        public static LiveNamespaceToolInputParamType? ToEnum(string value)
         {
             return value switch
             {
-                "mcp" => LiveMCPToolChoiceParamType.Mcp,
+                "namespace" => LiveNamespaceToolInputParamType.Namespace,
                 _ => null,
             };
         }

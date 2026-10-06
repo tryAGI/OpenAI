@@ -22,8 +22,7 @@ namespace tryAGI.OpenAI
         /// be null when the file size is not yet available.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required long Bytes { get; set; }
+        public long? Bytes { get; set; }
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the file was created.
@@ -88,10 +87,6 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The file identifier, which can be referenced in the API endpoints.
         /// </param>
-        /// <param name="bytes">
-        /// The size of the file, in bytes. In a completed file upload response, this can<br/>
-        /// be null when the file size is not yet available.
-        /// </param>
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the file was created.
         /// </param>
@@ -103,6 +98,10 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="status">
         /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
+        /// </param>
+        /// <param name="bytes">
+        /// The size of the file, in bytes. In a completed file upload response, this can<br/>
+        /// be null when the file size is not yet available.
         /// </param>
         /// <param name="expiresAt">
         /// The Unix timestamp (in seconds) for when the file will expire. In a<br/>
@@ -116,11 +115,11 @@ namespace tryAGI.OpenAI
 #endif
         public OpenAIFile(
             string id,
-            long bytes,
             int createdAt,
             string filename,
             global::tryAGI.OpenAI.OpenAIFilePurpose purpose,
             global::tryAGI.OpenAI.OpenAIFileStatus status,
+            long? bytes,
             int? expiresAt,
             global::tryAGI.OpenAI.OpenAIFileObject @object)
         {

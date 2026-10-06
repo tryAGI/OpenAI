@@ -9,13 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class ComputerToolCallOutputResourceVariant2
     {
         /// <summary>
-        /// The unique ID of the computer call tool output.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
         /// The status of the message input. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when input items are returned via API.
         /// </summary>
@@ -39,9 +32,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ComputerToolCallOutputResourceVariant2" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The unique ID of the computer call tool output.
-        /// </param>
         /// <param name="status">
         /// The status of the message input. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when input items are returned via API.
@@ -53,11 +43,9 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ComputerToolCallOutputResourceVariant2(
-            string id,
             global::tryAGI.OpenAI.ComputerCallOutputStatus status,
             string? createdBy)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
             this.CreatedBy = createdBy;
         }
