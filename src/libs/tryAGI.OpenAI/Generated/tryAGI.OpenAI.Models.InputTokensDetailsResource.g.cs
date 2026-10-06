@@ -4,16 +4,23 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A breakdown of input token usage for a session or turn.
+    ///
     /// </summary>
     public sealed partial class InputTokensDetailsResource
     {
         /// <summary>
-        /// The number of input tokens retrieved from the prompt cache.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long CachedTokens { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_write_tokens")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required long CacheWriteTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -24,16 +31,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="InputTokensDetailsResource" /> class.
         /// </summary>
-        /// <param name="cachedTokens">
-        /// The number of input tokens retrieved from the prompt cache.
-        /// </param>
+        /// <param name="cachedTokens"></param>
+        /// <param name="cacheWriteTokens"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InputTokensDetailsResource(
-            long cachedTokens)
+            long cachedTokens,
+            long cacheWriteTokens)
         {
             this.CachedTokens = cachedTokens;
+            this.CacheWriteTokens = cacheWriteTokens;
         }
 
         /// <summary>

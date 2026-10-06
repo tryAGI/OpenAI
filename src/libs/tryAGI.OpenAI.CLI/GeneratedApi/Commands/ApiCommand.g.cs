@@ -26,6 +26,7 @@ internal static partial class ApiCommand
                          command.Subcommands.Add(CompletionsApiGroupCommand.Create());
                          command.Subcommands.Add(ConversationsApiGroupCommand.Create());
                          command.Subcommands.Add(DataRetentionApiGroupCommand.Create());
+                         command.Subcommands.Add(DecisionsApiGroupCommand.Create());
                          command.Subcommands.Add(DefaultApiGroupCommand.Create());
                          command.Subcommands.Add(EmbeddingsApiGroupCommand.Create());
                          command.Subcommands.Add(EvalsApiGroupCommand.Create());

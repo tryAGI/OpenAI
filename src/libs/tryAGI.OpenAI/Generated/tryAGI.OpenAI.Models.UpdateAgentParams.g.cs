@@ -57,7 +57,7 @@ namespace tryAGI.OpenAI
         public string? Name { get; set; }
 
         /// <summary>
-        /// Tools available to the agent.
+        /// Replaces the tool list. Omit to leave it unchanged, or pass null to clear it. The replacement must fit within 3 MiB (3,145,728 bytes) of compact UTF-8 JSON.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.PersistedAgentToolConfigParam>? Tools { get; set; }
@@ -96,7 +96,7 @@ namespace tryAGI.OpenAI
         /// A replacement name. Omit to leave unchanged, or pass null to clear it.
         /// </param>
         /// <param name="tools">
-        /// Tools available to the agent.
+        /// Replaces the tool list. Omit to leave it unchanged, or pass null to clear it. The replacement must fit within 3 MiB (3,145,728 bytes) of compact UTF-8 JSON.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

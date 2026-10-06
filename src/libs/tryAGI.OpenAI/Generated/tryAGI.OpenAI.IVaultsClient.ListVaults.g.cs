@@ -8,6 +8,7 @@ namespace tryAGI.OpenAI
         /// List vaults<br/>
         /// Lists vaults using ID-based pagination. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).
         /// </summary>
+        /// <param name="metadata"></param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
@@ -21,6 +22,7 @@ namespace tryAGI.OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VaultListResource> ListVaultsAsync(
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.ListOrderParam? order = default,
             long? limit = default,
             global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
@@ -31,6 +33,7 @@ namespace tryAGI.OpenAI
         /// List vaults<br/>
         /// Lists vaults using ID-based pagination. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).
         /// </summary>
+        /// <param name="metadata"></param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
@@ -44,6 +47,7 @@ namespace tryAGI.OpenAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.VaultListResource>> ListVaultsAsResponseAsync(
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.ListOrderParam? order = default,
             long? limit = default,
             global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
@@ -54,6 +58,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Wraps ListVaultsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.VaultResource&gt; that auto-pages over the response.
         /// </summary>
+        /// <param name="metadata"></param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
@@ -65,7 +70,8 @@ namespace tryAGI.OpenAI
         /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.VaultResource> ListVaultsAutoPagingAsync(
-              global::tryAGI.OpenAI.ListOrderParam? order = default,
+              global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::tryAGI.OpenAI.ListOrderParam? order = default,
             long? limit = default,
             global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
             string? after = null,

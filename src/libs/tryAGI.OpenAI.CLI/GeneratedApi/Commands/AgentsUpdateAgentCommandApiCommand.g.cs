@@ -58,7 +58,7 @@ internal static partial class AgentsUpdateAgentCommandApiCommand
     private static Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.PersistedAgentToolConfigParam>?> Tools { get; } = new(
         name: @"--tools")
     {
-        Description = @"Tools available to the agent.",
+        Description = @"Replaces the tool list. Omit to leave it unchanged, or pass null to clear it. The replacement must fit within 3 MiB (3,145,728 bytes) of compact UTF-8 JSON.",
     };
     private static readonly MultiAgentConfigCurrentParamOptionSet MultiAgentOptions = MultiAgentConfigCurrentParamOptionSet.Create(@"multi-agent");
       private static Option<string?> Input { get; } = new(@"--input")
