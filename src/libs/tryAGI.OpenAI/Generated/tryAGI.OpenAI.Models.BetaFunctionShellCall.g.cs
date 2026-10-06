@@ -62,7 +62,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
-        public global::tryAGI.OpenAI.EnvironmentVariant16? Environment { get; set; }
+        public global::tryAGI.OpenAI.EnvironmentVariant17? Environment { get; set; }
 
         /// <summary>
         /// The ID of the entity that created this tool call.
@@ -113,7 +113,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaFunctionShellCallStatus status,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
             global::tryAGI.OpenAI.BetaToolCallCaller? caller,
-            global::tryAGI.OpenAI.EnvironmentVariant16? environment,
+            global::tryAGI.OpenAI.EnvironmentVariant17? environment,
             string? createdBy,
             global::tryAGI.OpenAI.BetaFunctionShellCallType type = global::tryAGI.OpenAI.BetaFunctionShellCallType.ShellCall)
         {

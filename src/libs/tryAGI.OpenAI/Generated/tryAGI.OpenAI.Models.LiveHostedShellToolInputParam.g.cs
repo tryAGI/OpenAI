@@ -20,7 +20,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
-        public object? Environment { get; set; }
+        public global::tryAGI.OpenAI.EnvironmentVariant14? Environment { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LiveHostedShellToolInputParam(
-            object? environment,
+            global::tryAGI.OpenAI.EnvironmentVariant14? environment,
             global::tryAGI.OpenAI.LiveHostedShellToolInputParamType type = global::tryAGI.OpenAI.LiveHostedShellToolInputParamType.Shell)
         {
             this.Type = type;

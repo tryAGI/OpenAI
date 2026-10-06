@@ -3615,8 +3615,38 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveFileSearchToolInputParamType), TypeInfoPropertyName = "LiveFileSearchToolInputParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParamType), TypeInfoPropertyName = "LiveCodeInterpreterToolInputParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveContainerMemoryLimit), TypeInfoPropertyName = "LiveContainerMemoryLimit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveContainerNetworkPolicyDisabledParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveContainerNetworkPolicyDisabledParamType), TypeInfoPropertyName = "LiveContainerNetworkPolicyDisabledParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellNetworkPolicyAllowlistParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellNetworkPolicyAllowlistParamType), TypeInfoPropertyName = "LiveHostedShellNetworkPolicyAllowlistParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSkillReferenceParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSkillReferenceParamType), TypeInfoPropertyName = "LiveSkillReferenceParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamType), TypeInfoPropertyName = "LiveInlineSkillSourceParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamMediaType), TypeInfoPropertyName = "LiveInlineSkillSourceParamMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInlineSkillParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInlineSkillParamType), TypeInfoPropertyName = "LiveInlineSkillParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamType), TypeInfoPropertyName = "LiveHostedShellContainerAutoParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.NetworkPolicyVariant1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamNetworkPolicyVariant1Discriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamNetworkPolicyVariant1DiscriminatorType), TypeInfoPropertyName = "LiveHostedShellContainerAutoParamNetworkPolicyVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SkillsVariant1Item), TypeInfoPropertyName = "SkillsVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamSkillsVariant1ItemDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamSkillsVariant1ItemDiscriminatorType), TypeInfoPropertyName = "LiveHostedShellContainerAutoParamSkillsVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveContainerReferenceParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveContainerReferenceParamType), TypeInfoPropertyName = "LiveContainerReferenceParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveLocalSkillParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveLocalEnvironmentParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveLocalEnvironmentParamType), TypeInfoPropertyName = "LiveLocalEnvironmentParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveLocalSkillParam>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParam))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParamType), TypeInfoPropertyName = "LiveHostedShellToolInputParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.EnvironmentVariant14))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParamEnvironmentVariant1Discriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParamEnvironmentVariant1DiscriminatorType), TypeInfoPropertyName = "LiveHostedShellToolInputParamEnvironmentVariant1DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveImageGenerationToolInputParam))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveImageGenerationToolInputParamType), TypeInfoPropertyName = "LiveImageGenerationToolInputParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveMCPToolInputParam))]
@@ -3640,36 +3670,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType), TypeInfoPropertyName = "LiveResponsesDelegationSettingsInputParamToolDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.LiveToolChoiceEnum?, object>), TypeInfoPropertyName = "OneOfLiveToolChoiceEnumObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveResponsesDelegationParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveResponsesDelegationParamType), TypeInfoPropertyName = "LiveResponsesDelegationParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DelegationVariant1Discriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DelegationVariant1DiscriminatorType), TypeInfoPropertyName = "DelegationVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialMessageStatus), TypeInfoPropertyName = "LiveInitialMessageStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialInputTextContentPartParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialInputTextContentPartParamType), TypeInfoPropertyName = "LiveInitialInputTextContentPartParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialDeveloperMessageItemParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialDeveloperMessageItemParamType), TypeInfoPropertyName = "LiveInitialDeveloperMessageItemParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialDeveloperMessageItemParamRole), TypeInfoPropertyName = "LiveInitialDeveloperMessageItemParamRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveInitialInputTextContentPartParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialUserMessageItemParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialUserMessageItemParamType), TypeInfoPropertyName = "LiveInitialUserMessageItemParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialUserMessageItemParamRole), TypeInfoPropertyName = "LiveInitialUserMessageItemParamRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialTextContentPartParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialTextContentPartParamType), TypeInfoPropertyName = "LiveInitialTextContentPartParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParamType), TypeInfoPropertyName = "LiveInitialOutputTextContentPartParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParamType), TypeInfoPropertyName = "LiveInitialAssistantMessageItemParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParamRole), TypeInfoPropertyName = "LiveInitialAssistantMessageItemParamRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem4>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ContentItem4), TypeInfoPropertyName = "ContentItem42")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParamContentItemDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParamContentItemDiscriminatorType), TypeInfoPropertyName = "LiveInitialAssistantMessageItemParamContentItemDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialItem), TypeInfoPropertyName = "LiveInitialItem2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialItemDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialItemDiscriminatorRole), TypeInfoPropertyName = "LiveInitialItemDiscriminatorRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveAllowedServerEventParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveDataChannelConfigParam))]
     internal sealed partial class SourceGenerationContextChunk6 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -3721,6 +3721,36 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>), TypeInfoPropertyName = "CreateModerationRequestInputVariant3ItemVariant2_82fca1e83967e178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>), TypeInfoPropertyName = "MessageDeltaContentImageUrlObject_9c7d436e0b6fe539")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>), TypeInfoPropertyName = "RunStepDeltaStepDetailsToolCallsFunctionObject_5640d9ed7ecfcd45")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveResponsesDelegationParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveResponsesDelegationParamType), TypeInfoPropertyName = "LiveResponsesDelegationParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DelegationVariant1Discriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DelegationVariant1DiscriminatorType), TypeInfoPropertyName = "DelegationVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialMessageStatus), TypeInfoPropertyName = "LiveInitialMessageStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialInputTextContentPartParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialInputTextContentPartParamType), TypeInfoPropertyName = "LiveInitialInputTextContentPartParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialDeveloperMessageItemParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialDeveloperMessageItemParamType), TypeInfoPropertyName = "LiveInitialDeveloperMessageItemParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialDeveloperMessageItemParamRole), TypeInfoPropertyName = "LiveInitialDeveloperMessageItemParamRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveInitialInputTextContentPartParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialUserMessageItemParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialUserMessageItemParamType), TypeInfoPropertyName = "LiveInitialUserMessageItemParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialUserMessageItemParamRole), TypeInfoPropertyName = "LiveInitialUserMessageItemParamRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialTextContentPartParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialTextContentPartParamType), TypeInfoPropertyName = "LiveInitialTextContentPartParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParamType), TypeInfoPropertyName = "LiveInitialOutputTextContentPartParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParamType), TypeInfoPropertyName = "LiveInitialAssistantMessageItemParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParamRole), TypeInfoPropertyName = "LiveInitialAssistantMessageItemParamRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem4>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ContentItem4), TypeInfoPropertyName = "ContentItem42")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParamContentItemDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParamContentItemDiscriminatorType), TypeInfoPropertyName = "LiveInitialAssistantMessageItemParamContentItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialItem), TypeInfoPropertyName = "LiveInitialItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialItemDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInitialItemDiscriminatorRole), TypeInfoPropertyName = "LiveInitialItemDiscriminatorRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveAllowedServerEventParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveDataChannelConfigParam))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.LiveDataChannelConfigParamAllowedClientEvents?, global::System.Collections.Generic.IList<string>>), TypeInfoPropertyName = "OneOfLiveDataChannelConfigParamAllowedClientEventsIListString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveDataChannelConfigParamAllowedClientEvents), TypeInfoPropertyName = "LiveDataChannelConfigParamAllowedClientEvents2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.LiveDataChannelConfigParamAllowedServerEvents?, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveAllowedServerEventParam>>), TypeInfoPropertyName = "OneOfLiveDataChannelConfigParamAllowedServerEventsIListLiveAllowedServerEventParam2")]
@@ -4151,36 +4181,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionTurnErrorResource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.InputTokensDetailsResource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputTokensDetailsResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TokenUsageResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TurnResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionTurnListResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionTurnListResourceObject), TypeInfoPropertyName = "SessionTurnListResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TurnResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ReasoningEffortResource), TypeInfoPropertyName = "ReasoningEffortResource2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ReasoningSummaryResource), TypeInfoPropertyName = "ReasoningSummaryResource2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ReasoningResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResourceText))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResourceTextType), TypeInfoPropertyName = "TextFormatResourceTextType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResourceJsonSchema))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResourceJsonSchemaType), TypeInfoPropertyName = "TextFormatResourceJsonSchemaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResource), TypeInfoPropertyName = "TextFormatResource2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResourceDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResourceDiscriminatorType), TypeInfoPropertyName = "TextFormatResourceDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.VerbosityResource), TypeInfoPropertyName = "VerbosityResource2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ServiceTierResource), TypeInfoPropertyName = "ServiceTierResource2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceFunction))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceFunctionType), TypeInfoPropertyName = "PersistedAgentToolResourceFunctionType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceToolSearch))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceToolSearchType), TypeInfoPropertyName = "PersistedAgentToolResourceToolSearchType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceProgrammaticToolCalling))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceProgrammaticToolCallingType), TypeInfoPropertyName = "PersistedAgentToolResourceProgrammaticToolCallingType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedMcpTransportResourceHttp))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedMcpTransportResourceHttpType), TypeInfoPropertyName = "PersistedMcpTransportResourceHttpType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedMcpTransportResourceStdio))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedMcpTransportResourceStdioType), TypeInfoPropertyName = "PersistedMcpTransportResourceStdioType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedMcpTransportResource), TypeInfoPropertyName = "PersistedMcpTransportResource2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedMcpTransportResourceDiscriminator))]
     internal sealed partial class SourceGenerationContextChunk7 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -4232,6 +4232,36 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>), TypeInfoPropertyName = "CreateModerationRequestInputVariant3ItemVariant2_82fca1e83967e178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>), TypeInfoPropertyName = "MessageDeltaContentImageUrlObject_9c7d436e0b6fe539")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>), TypeInfoPropertyName = "RunStepDeltaStepDetailsToolCallsFunctionObject_5640d9ed7ecfcd45")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TokenUsageResource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TurnResource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionTurnListResource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionTurnListResourceObject), TypeInfoPropertyName = "SessionTurnListResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TurnResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ReasoningEffortResource), TypeInfoPropertyName = "ReasoningEffortResource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ReasoningSummaryResource), TypeInfoPropertyName = "ReasoningSummaryResource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ReasoningResource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResourceText))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResourceTextType), TypeInfoPropertyName = "TextFormatResourceTextType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResourceJsonSchema))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResourceJsonSchemaType), TypeInfoPropertyName = "TextFormatResourceJsonSchemaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResource), TypeInfoPropertyName = "TextFormatResource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResourceDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextFormatResourceDiscriminatorType), TypeInfoPropertyName = "TextFormatResourceDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.VerbosityResource), TypeInfoPropertyName = "VerbosityResource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.TextResource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ServiceTierResource), TypeInfoPropertyName = "ServiceTierResource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceFunction))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceFunctionType), TypeInfoPropertyName = "PersistedAgentToolResourceFunctionType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceToolSearch))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceToolSearchType), TypeInfoPropertyName = "PersistedAgentToolResourceToolSearchType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceProgrammaticToolCalling))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceProgrammaticToolCallingType), TypeInfoPropertyName = "PersistedAgentToolResourceProgrammaticToolCallingType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedMcpTransportResourceHttp))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedMcpTransportResourceHttpType), TypeInfoPropertyName = "PersistedMcpTransportResourceHttpType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedMcpTransportResourceStdio))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedMcpTransportResourceStdioType), TypeInfoPropertyName = "PersistedMcpTransportResourceStdioType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedMcpTransportResource), TypeInfoPropertyName = "PersistedMcpTransportResource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedMcpTransportResourceDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedMcpTransportResourceDiscriminatorType), TypeInfoPropertyName = "PersistedMcpTransportResourceDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.McpConnectionOriginResource), TypeInfoPropertyName = "McpConnectionOriginResource2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceMcp))]
@@ -4662,36 +4692,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateMcpOauthRefreshParam))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamMcpOauth))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamMcpOauthType), TypeInfoPropertyName = "RotateVaultCredentialAuthParamMcpOauthType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamStaticBearer))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamStaticBearerType), TypeInfoPropertyName = "RotateVaultCredentialAuthParamStaticBearerType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamEnvironmentVariable))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamEnvironmentVariableType), TypeInfoPropertyName = "RotateVaultCredentialAuthParamEnvironmentVariableType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParam), TypeInfoPropertyName = "RotateVaultCredentialAuthParam2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamDiscriminatorType), TypeInfoPropertyName = "RotateVaultCredentialAuthParamDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialParams))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DeletedVaultCredentialResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DeletedVaultCredentialResourceObject), TypeInfoPropertyName = "DeletedVaultCredentialResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointBody))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointBodyObject), TypeInfoPropertyName = "WebhookEndpointBodyObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointListResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointListResourceObject), TypeInfoPropertyName = "WebhookEndpointListResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebhookEndpointBody>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectEventTypeEnum), TypeInfoPropertyName = "ProjectEventTypeEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PublicCreateEndpointBody))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectEventTypeEnum>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointWithSecretResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointWithSecretResourceObject), TypeInfoPropertyName = "WebhookEndpointWithSecretResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PublicUpdateEndpointBody))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DeletedWebhookEndpointResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DeletedWebhookEndpointResourceObject), TypeInfoPropertyName = "DeletedWebhookEndpointResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PublicRotateSecretBody))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PublicTestEndpointBody))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointTestResultResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointTestResultResourceObject), TypeInfoPropertyName = "WebhookEndpointTestResultResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEventTypeListResource))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEventTypeListResourceObject), TypeInfoPropertyName = "WebhookEventTypeListResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AgentSessionRequiredActionTypeResource), TypeInfoPropertyName = "AgentSessionRequiredActionTypeResource2")]
     internal sealed partial class SourceGenerationContextChunk8 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -4743,6 +4743,36 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>), TypeInfoPropertyName = "CreateModerationRequestInputVariant3ItemVariant2_82fca1e83967e178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>), TypeInfoPropertyName = "MessageDeltaContentImageUrlObject_9c7d436e0b6fe539")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>), TypeInfoPropertyName = "RunStepDeltaStepDetailsToolCallsFunctionObject_5640d9ed7ecfcd45")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamStaticBearer))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamStaticBearerType), TypeInfoPropertyName = "RotateVaultCredentialAuthParamStaticBearerType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamEnvironmentVariable))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamEnvironmentVariableType), TypeInfoPropertyName = "RotateVaultCredentialAuthParamEnvironmentVariableType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParam), TypeInfoPropertyName = "RotateVaultCredentialAuthParam2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamDiscriminatorType), TypeInfoPropertyName = "RotateVaultCredentialAuthParamDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RotateVaultCredentialParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DeletedVaultCredentialResource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DeletedVaultCredentialResourceObject), TypeInfoPropertyName = "DeletedVaultCredentialResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointBodyObject), TypeInfoPropertyName = "WebhookEndpointBodyObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointListResource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointListResourceObject), TypeInfoPropertyName = "WebhookEndpointListResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebhookEndpointBody>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectEventTypeEnum), TypeInfoPropertyName = "ProjectEventTypeEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PublicCreateEndpointBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectEventTypeEnum>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointWithSecretResource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointWithSecretResourceObject), TypeInfoPropertyName = "WebhookEndpointWithSecretResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PublicUpdateEndpointBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DeletedWebhookEndpointResource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DeletedWebhookEndpointResourceObject), TypeInfoPropertyName = "DeletedWebhookEndpointResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PublicRotateSecretBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PublicTestEndpointBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointTestResultResource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEndpointTestResultResourceObject), TypeInfoPropertyName = "WebhookEndpointTestResultResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEventTypeListResource))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebhookEventTypeListResourceObject), TypeInfoPropertyName = "WebhookEventTypeListResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AgentSessionRequiredActionTypeResource), TypeInfoPropertyName = "AgentSessionRequiredActionTypeResource2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AgentSessionRequiredActionPayloadResource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AgentSessionConnectPayloadResource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DragPoint))]
@@ -4929,7 +4959,7 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaCustomTextFormatParamType), TypeInfoPropertyName = "BetaCustomTextFormatParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFunctionToolParamType), TypeInfoPropertyName = "BetaFunctionToolParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFunctionShellToolParamType), TypeInfoPropertyName = "BetaFunctionShellToolParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.EnvironmentVariant14))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.EnvironmentVariant15))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaContainerAutoParam))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaLocalEnvironmentParam))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaContainerReferenceParam))]
@@ -5133,7 +5163,7 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFunctionShellCallOutputTimeoutOutcomeParamType), TypeInfoPropertyName = "BetaFunctionShellCallOutputTimeoutOutcomeParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFunctionShellCallItemParamType), TypeInfoPropertyName = "BetaFunctionShellCallItemParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFunctionShellActionParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.EnvironmentVariant15))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.EnvironmentVariant16))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFunctionShellCallItemParamEnvironmentVariant1Discriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFunctionShellCallItemParamEnvironmentVariant1DiscriminatorType), TypeInfoPropertyName = "BetaFunctionShellCallItemParamEnvironmentVariant1DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaLocalShellToolCallOutputType), TypeInfoPropertyName = "BetaLocalShellToolCallOutputType2")]
@@ -5175,36 +5205,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaToolSearchOutputItemParamType), TypeInfoPropertyName = "BetaToolSearchOutputItemParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFunctionCallItemStatus), TypeInfoPropertyName = "BetaFunctionCallItemStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaToolSearchCallItemParamType), TypeInfoPropertyName = "BetaToolSearchCallItemParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaMultiAgentCallOutputItemParamType), TypeInfoPropertyName = "BetaMultiAgentCallOutputItemParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaMultiAgentAction1), TypeInfoPropertyName = "BetaMultiAgentAction12")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaOutputTextContentParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaOutputTextContentParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaOutputTextContentParamType), TypeInfoPropertyName = "BetaOutputTextContentParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem4>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnnotationsItem4), TypeInfoPropertyName = "AnnotationsItem42")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFileCitationParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUrlCitationParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaContainerFileCitationParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaOutputTextContentParamAnnotationDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaOutputTextContentParamAnnotationDiscriminatorType), TypeInfoPropertyName = "BetaOutputTextContentParamAnnotationDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaContainerFileCitationParamType), TypeInfoPropertyName = "BetaContainerFileCitationParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUrlCitationParamType), TypeInfoPropertyName = "BetaUrlCitationParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFileCitationParamType), TypeInfoPropertyName = "BetaFileCitationParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaMultiAgentCallItemParamType), TypeInfoPropertyName = "BetaMultiAgentCallItemParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaAgentMessageItemParamType), TypeInfoPropertyName = "BetaAgentMessageItemParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem6>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ContentItem6), TypeInfoPropertyName = "ContentItem62")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputTextContentParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaEncryptedContentParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaAgentMessageItemParamContentItemDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaAgentMessageItemParamContentItemDiscriminatorType), TypeInfoPropertyName = "BetaAgentMessageItemParamContentItemDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaEncryptedContentParamType), TypeInfoPropertyName = "BetaEncryptedContentParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParamType), TypeInfoPropertyName = "BetaInputImageContentParamAutoParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaDetailEnum), TypeInfoPropertyName = "BetaDetailEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaPromptCacheBreakpointParam))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaPromptCacheBreakpointParamMode), TypeInfoPropertyName = "BetaPromptCacheBreakpointParamMode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputTextContentParamType), TypeInfoPropertyName = "BetaInputTextContentParamType2")]
     internal sealed partial class SourceGenerationContextChunk9 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -5256,6 +5256,36 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>), TypeInfoPropertyName = "CreateModerationRequestInputVariant3ItemVariant2_82fca1e83967e178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>), TypeInfoPropertyName = "MessageDeltaContentImageUrlObject_9c7d436e0b6fe539")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>), TypeInfoPropertyName = "RunStepDeltaStepDetailsToolCallsFunctionObject_5640d9ed7ecfcd45")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaMultiAgentCallOutputItemParamType), TypeInfoPropertyName = "BetaMultiAgentCallOutputItemParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaMultiAgentAction1), TypeInfoPropertyName = "BetaMultiAgentAction12")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaOutputTextContentParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaOutputTextContentParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaOutputTextContentParamType), TypeInfoPropertyName = "BetaOutputTextContentParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem4>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnnotationsItem4), TypeInfoPropertyName = "AnnotationsItem42")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFileCitationParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUrlCitationParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaContainerFileCitationParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaOutputTextContentParamAnnotationDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaOutputTextContentParamAnnotationDiscriminatorType), TypeInfoPropertyName = "BetaOutputTextContentParamAnnotationDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaContainerFileCitationParamType), TypeInfoPropertyName = "BetaContainerFileCitationParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUrlCitationParamType), TypeInfoPropertyName = "BetaUrlCitationParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFileCitationParamType), TypeInfoPropertyName = "BetaFileCitationParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaMultiAgentCallItemParamType), TypeInfoPropertyName = "BetaMultiAgentCallItemParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaAgentMessageItemParamType), TypeInfoPropertyName = "BetaAgentMessageItemParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentItem6>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ContentItem6), TypeInfoPropertyName = "ContentItem62")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputTextContentParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaEncryptedContentParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaAgentMessageItemParamContentItemDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaAgentMessageItemParamContentItemDiscriminatorType), TypeInfoPropertyName = "BetaAgentMessageItemParamContentItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaEncryptedContentParamType), TypeInfoPropertyName = "BetaEncryptedContentParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParamType), TypeInfoPropertyName = "BetaInputImageContentParamAutoParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaDetailEnum), TypeInfoPropertyName = "BetaDetailEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaPromptCacheBreakpointParam))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaPromptCacheBreakpointParamMode), TypeInfoPropertyName = "BetaPromptCacheBreakpointParamMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputTextContentParamType), TypeInfoPropertyName = "BetaInputTextContentParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFunctionCallOutputItemParamType), TypeInfoPropertyName = "BetaFunctionCallOutputItemParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item2>>), TypeInfoPropertyName = "OneOfStringIListOutputVariant2Item22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item2>))]
@@ -5431,7 +5461,7 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFunctionShellCallType), TypeInfoPropertyName = "BetaFunctionShellCallType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFunctionShellAction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFunctionShellCallStatus), TypeInfoPropertyName = "BetaFunctionShellCallStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.EnvironmentVariant16))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.EnvironmentVariant17))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaLocalEnvironmentResource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaContainerReferenceResource))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaFunctionShellCallEnvironmentVariant1Discriminator))]
@@ -5688,36 +5718,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerInputItemDiscriminatorType), TypeInfoPropertyName = "BetaResponseSteerInputItemDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUserMessageItemParamType), TypeInfoPropertyName = "BetaUserMessageItemParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUserMessageItemParamRole), TypeInfoPropertyName = "BetaUserMessageItemParamRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentVariant1Item2>, string>), TypeInfoPropertyName = "OneOfIListContentVariant1Item2String2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentVariant1Item2>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ContentVariant1Item2), TypeInfoPropertyName = "ContentVariant1Item22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUserMessageItemParamContentVariant1ItemDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUserMessageItemParamContentVariant1ItemDiscriminatorType), TypeInfoPropertyName = "BetaUserMessageItemParamContentVariant1ItemDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingEvent))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingEventType), TypeInfoPropertyName = "BetaResponseSteerPendingEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingEventSteer))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingReason), TypeInfoPropertyName = "BetaResponseSteerPendingReason2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaResponseSteerRequiredInput>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInput), TypeInfoPropertyName = "BetaResponseSteerRequiredInput2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredFunctionToolCallOutput))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredFunctionToolCallOutputType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredFunctionToolCallOutputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredCustomToolCallOutput))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredCustomToolCallOutputType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredCustomToolCallOutputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredComputerToolCallOutput))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredComputerToolCallOutputType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredComputerToolCallOutputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredShellToolCallOutput))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredShellToolCallOutputType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredShellToolCallOutputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutput))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutputType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredToolSearchOutput))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredToolSearchOutputType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredToolSearchOutputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredToolSearchOutputExecution), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredToolSearchOutputExecution2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredMcpApprovalResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredMcpApprovalResponseType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredMcpApprovalResponseType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputDiscriminator))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputDiscriminatorType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingReasonEnum), TypeInfoPropertyName = "BetaResponseSteerPendingReasonEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerAcceptedEvent))]
     internal sealed partial class SourceGenerationContextChunk10 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -5769,6 +5769,36 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>), TypeInfoPropertyName = "CreateModerationRequestInputVariant3ItemVariant2_82fca1e83967e178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>), TypeInfoPropertyName = "MessageDeltaContentImageUrlObject_9c7d436e0b6fe539")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>), TypeInfoPropertyName = "RunStepDeltaStepDetailsToolCallsFunctionObject_5640d9ed7ecfcd45")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentVariant1Item2>, string>), TypeInfoPropertyName = "OneOfIListContentVariant1Item2String2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentVariant1Item2>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ContentVariant1Item2), TypeInfoPropertyName = "ContentVariant1Item22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUserMessageItemParamContentVariant1ItemDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUserMessageItemParamContentVariant1ItemDiscriminatorType), TypeInfoPropertyName = "BetaUserMessageItemParamContentVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingEvent))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingEventType), TypeInfoPropertyName = "BetaResponseSteerPendingEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingEventSteer))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingReason), TypeInfoPropertyName = "BetaResponseSteerPendingReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaResponseSteerRequiredInput>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInput), TypeInfoPropertyName = "BetaResponseSteerRequiredInput2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredFunctionToolCallOutput))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredFunctionToolCallOutputType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredFunctionToolCallOutputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredCustomToolCallOutput))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredCustomToolCallOutputType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredCustomToolCallOutputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredComputerToolCallOutput))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredComputerToolCallOutputType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredComputerToolCallOutputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredShellToolCallOutput))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredShellToolCallOutputType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredShellToolCallOutputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutput))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutputType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredToolSearchOutput))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredToolSearchOutputType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredToolSearchOutputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredToolSearchOutputExecution), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredToolSearchOutputExecution2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredMcpApprovalResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredMcpApprovalResponseType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputRequiredMcpApprovalResponseType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputDiscriminatorType), TypeInfoPropertyName = "BetaResponseSteerRequiredInputDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingReasonEnum), TypeInfoPropertyName = "BetaResponseSteerPendingReasonEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerAcceptedEvent))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerAcceptedEventType), TypeInfoPropertyName = "BetaResponseSteerAcceptedEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerAcceptedEventSteer))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerEvent))]
@@ -6205,38 +6235,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategyType?), TypeInfoPropertyName = "NullableCreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyAutoChunkingStrategyType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategyType?), TypeInfoPropertyName = "NullableCreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyStaticChunkingStrategyType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateBatchRequestEndpoint?), TypeInfoPropertyName = "NullableCreateBatchRequestEndpoint2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateBatchRequestCompletionWindow?), TypeInfoPropertyName = "NullableCreateBatchRequestCompletionWindow2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionRequest?), TypeInfoPropertyName = "NullableCreateChatCompletionRequest2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateModelResponseProperties?), TypeInfoPropertyName = "NullableCreateModelResponseProperties2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ModelIdsShared?), TypeInfoPropertyName = "NullableModelIdsShared2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ServiceTierEnum?), TypeInfoPropertyName = "NullableServiceTierEnum2_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.VerbosityEnum?), TypeInfoPropertyName = "NullableVerbosityEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocationType?), TypeInfoPropertyName = "NullableCreateChatCompletionRequestVariant2WebSearchOptionsUserLocationType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebSearchContextSize?), TypeInfoPropertyName = "NullableWebSearchContextSize2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseFormat?), TypeInfoPropertyName = "NullableResponseFormat2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2ResponseFormatDiscriminatorType?), TypeInfoPropertyName = "NullableCreateChatCompletionRequestVariant2ResponseFormatDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.VoiceIdsOrCustomVoice?), TypeInfoPropertyName = "NullableVoiceIdsOrCustomVoice2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2AudioFormat?), TypeInfoPropertyName = "NullableCreateChatCompletionRequestVariant2AudioFormat2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.StopConfiguration?), TypeInfoPropertyName = "NullableStopConfiguration2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionTool, global::tryAGI.OpenAI.CustomToolChatCompletions>?), TypeInfoPropertyName = "NullableOneOfChatCompletionToolCustomToolChatCompletions2")]
-    #pragma warning disable CS0618 // This registration names a deprecated API model.
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?, global::tryAGI.OpenAI.ChatCompletionFunctionCallOption>?), TypeInfoPropertyName = "NullableOneOfCreateChatCompletionRequestVariant2FunctionCallChatCompletionFunctionCallOption2")]
-    #pragma warning restore CS0618
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?), TypeInfoPropertyName = "NullableCreateChatCompletionRequestVariant2FunctionCall2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceFinishReason?), TypeInfoPropertyName = "NullableCreateChatCompletionResponseChoiceFinishReason2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionResponseObject?), TypeInfoPropertyName = "NullableCreateChatCompletionResponseObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoiceFinishReason?), TypeInfoPropertyName = "NullableCreateChatCompletionStreamResponseChoiceFinishReason2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject?), TypeInfoPropertyName = "NullableCreateChatCompletionStreamResponseObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateCompletionRequestModel?>?), TypeInfoPropertyName = "NullableAnyOfStringCreateCompletionRequestModel2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateCompletionRequestModel?), TypeInfoPropertyName = "NullableCreateCompletionRequestModel2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>?), TypeInfoPropertyName = "NullableOneOfStringIListStringIListInt32IListIListInt322")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateCompletionResponseChoiceFinishReason?), TypeInfoPropertyName = "NullableCreateCompletionResponseChoiceFinishReason2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateCompletionResponseObject?), TypeInfoPropertyName = "NullableCreateCompletionResponseObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateContainerBodyExpiresAfterAnchor?), TypeInfoPropertyName = "NullableCreateContainerBodyExpiresAfterAnchor2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SkillsItem?), TypeInfoPropertyName = "NullableSkillsItem2_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminatorType?), TypeInfoPropertyName = "NullableCreateContainerBodySkillDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateContainerBodyMemoryLimit?), TypeInfoPropertyName = "NullableCreateContainerBodyMemoryLimit2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.NetworkPolicy?), TypeInfoPropertyName = "NullableNetworkPolicy2_3")]
     internal sealed partial class SourceGenerationContextChunk11 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -6288,6 +6286,38 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>), TypeInfoPropertyName = "CreateModerationRequestInputVariant3ItemVariant2_82fca1e83967e178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>), TypeInfoPropertyName = "MessageDeltaContentImageUrlObject_9c7d436e0b6fe539")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>), TypeInfoPropertyName = "RunStepDeltaStepDetailsToolCallsFunctionObject_5640d9ed7ecfcd45")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateBatchRequestCompletionWindow?), TypeInfoPropertyName = "NullableCreateBatchRequestCompletionWindow2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionRequest?), TypeInfoPropertyName = "NullableCreateChatCompletionRequest2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateModelResponseProperties?), TypeInfoPropertyName = "NullableCreateModelResponseProperties2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ModelIdsShared?), TypeInfoPropertyName = "NullableModelIdsShared2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ServiceTierEnum?), TypeInfoPropertyName = "NullableServiceTierEnum2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.VerbosityEnum?), TypeInfoPropertyName = "NullableVerbosityEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocationType?), TypeInfoPropertyName = "NullableCreateChatCompletionRequestVariant2WebSearchOptionsUserLocationType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.WebSearchContextSize?), TypeInfoPropertyName = "NullableWebSearchContextSize2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseFormat?), TypeInfoPropertyName = "NullableResponseFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2ResponseFormatDiscriminatorType?), TypeInfoPropertyName = "NullableCreateChatCompletionRequestVariant2ResponseFormatDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.VoiceIdsOrCustomVoice?), TypeInfoPropertyName = "NullableVoiceIdsOrCustomVoice2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2AudioFormat?), TypeInfoPropertyName = "NullableCreateChatCompletionRequestVariant2AudioFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.StopConfiguration?), TypeInfoPropertyName = "NullableStopConfiguration2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ChatCompletionTool, global::tryAGI.OpenAI.CustomToolChatCompletions>?), TypeInfoPropertyName = "NullableOneOfChatCompletionToolCustomToolChatCompletions2")]
+    #pragma warning disable CS0618 // This registration names a deprecated API model.
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?, global::tryAGI.OpenAI.ChatCompletionFunctionCallOption>?), TypeInfoPropertyName = "NullableOneOfCreateChatCompletionRequestVariant2FunctionCallChatCompletionFunctionCallOption2")]
+    #pragma warning restore CS0618
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2FunctionCall?), TypeInfoPropertyName = "NullableCreateChatCompletionRequestVariant2FunctionCall2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionResponseChoiceFinishReason?), TypeInfoPropertyName = "NullableCreateChatCompletionResponseChoiceFinishReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionResponseObject?), TypeInfoPropertyName = "NullableCreateChatCompletionResponseObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionStreamResponseChoiceFinishReason?), TypeInfoPropertyName = "NullableCreateChatCompletionStreamResponseChoiceFinishReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject?), TypeInfoPropertyName = "NullableCreateChatCompletionStreamResponseObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateCompletionRequestModel?>?), TypeInfoPropertyName = "NullableAnyOfStringCreateCompletionRequestModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateCompletionRequestModel?), TypeInfoPropertyName = "NullableCreateCompletionRequestModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>?), TypeInfoPropertyName = "NullableOneOfStringIListStringIListInt32IListIListInt322")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateCompletionResponseChoiceFinishReason?), TypeInfoPropertyName = "NullableCreateCompletionResponseChoiceFinishReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateCompletionResponseObject?), TypeInfoPropertyName = "NullableCreateCompletionResponseObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateContainerBodyExpiresAfterAnchor?), TypeInfoPropertyName = "NullableCreateContainerBodyExpiresAfterAnchor2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SkillsItem?), TypeInfoPropertyName = "NullableSkillsItem2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminatorType?), TypeInfoPropertyName = "NullableCreateContainerBodySkillDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateContainerBodyMemoryLimit?), TypeInfoPropertyName = "NullableCreateContainerBodyMemoryLimit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.NetworkPolicy?), TypeInfoPropertyName = "NullableNetworkPolicy2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateContainerBodyNetworkPolicyDiscriminatorType?), TypeInfoPropertyName = "NullableCreateContainerBodyNetworkPolicyDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateEmbeddingRequestModel?>?), TypeInfoPropertyName = "NullableAnyOfStringCreateEmbeddingRequestModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateEmbeddingRequestModel?), TypeInfoPropertyName = "NullableCreateEmbeddingRequestModel2")]
@@ -6760,36 +6790,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OrganizationSpendAlertInterval?), TypeInfoPropertyName = "NullableOrganizationSpendAlertInterval2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OrganizationSpendAlertDeletedResourceObject?), TypeInfoPropertyName = "NullableOrganizationSpendAlertDeletedResourceObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OrganizationSpendAlertListResourceObject?), TypeInfoPropertyName = "NullableOrganizationSpendAlertListResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OtherChunkingStrategyResponseParamType?), TypeInfoPropertyName = "NullableOtherChunkingStrategyResponseParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputAudioType?), TypeInfoPropertyName = "NullableOutputAudioType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputContentDiscriminatorType?), TypeInfoPropertyName = "NullableOutputContentDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputItem?), TypeInfoPropertyName = "NullableOutputItem2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputItemDiscriminatorType?), TypeInfoPropertyName = "NullableOutputItemDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputMessageType?), TypeInfoPropertyName = "NullableOutputMessageType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputMessageRole?), TypeInfoPropertyName = "NullableOutputMessageRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputMessageContent?), TypeInfoPropertyName = "NullableOutputMessageContent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputMessageStatus?), TypeInfoPropertyName = "NullableOutputMessageStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputMessageContentDiscriminatorType?), TypeInfoPropertyName = "NullableOutputMessageContentDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.Error, string>?), TypeInfoPropertyName = "NullableAnyOfErrorString2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PredictionContentType?), TypeInfoPropertyName = "NullablePredictionContentType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectObject?), TypeInfoPropertyName = "NullableProjectObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PublicProjectResidency?), TypeInfoPropertyName = "NullablePublicProjectResidency2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectApiKeyObject?), TypeInfoPropertyName = "NullableProjectApiKeyObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectApiKeyOwnerProjectAccess?), TypeInfoPropertyName = "NullableProjectApiKeyOwnerProjectAccess2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectApiKeyOwnerType?), TypeInfoPropertyName = "NullableProjectApiKeyOwnerType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectApiKeyDeleteResponseObject?), TypeInfoPropertyName = "NullableProjectApiKeyDeleteResponseObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectApiKeyListResponseObject?), TypeInfoPropertyName = "NullableProjectApiKeyListResponseObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectDataRetentionObject?), TypeInfoPropertyName = "NullableProjectDataRetentionObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectDataRetentionType?), TypeInfoPropertyName = "NullableProjectDataRetentionType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectGroupObject?), TypeInfoPropertyName = "NullableProjectGroupObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectGroupGroupType?), TypeInfoPropertyName = "NullableProjectGroupGroupType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectGroupDeletedResourceObject?), TypeInfoPropertyName = "NullableProjectGroupDeletedResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectGroupListResourceObject?), TypeInfoPropertyName = "NullableProjectGroupListResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectListResponseObject?), TypeInfoPropertyName = "NullableProjectListResponseObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectModelPermissionsObject?), TypeInfoPropertyName = "NullableProjectModelPermissionsObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectModelPermissionsMode?), TypeInfoPropertyName = "NullableProjectModelPermissionsMode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectModelPermissionsDeleteResponseObject?), TypeInfoPropertyName = "NullableProjectModelPermissionsDeleteResponseObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectModelPermissionsUpdateRequestMode?), TypeInfoPropertyName = "NullableProjectModelPermissionsUpdateRequestMode2")]
     internal sealed partial class SourceGenerationContextChunk12 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -6841,6 +6841,36 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>), TypeInfoPropertyName = "CreateModerationRequestInputVariant3ItemVariant2_82fca1e83967e178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>), TypeInfoPropertyName = "MessageDeltaContentImageUrlObject_9c7d436e0b6fe539")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>), TypeInfoPropertyName = "RunStepDeltaStepDetailsToolCallsFunctionObject_5640d9ed7ecfcd45")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OtherChunkingStrategyResponseParamType?), TypeInfoPropertyName = "NullableOtherChunkingStrategyResponseParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputAudioType?), TypeInfoPropertyName = "NullableOutputAudioType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputContentDiscriminatorType?), TypeInfoPropertyName = "NullableOutputContentDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputItem?), TypeInfoPropertyName = "NullableOutputItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputItemDiscriminatorType?), TypeInfoPropertyName = "NullableOutputItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputMessageType?), TypeInfoPropertyName = "NullableOutputMessageType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputMessageRole?), TypeInfoPropertyName = "NullableOutputMessageRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputMessageContent?), TypeInfoPropertyName = "NullableOutputMessageContent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputMessageStatus?), TypeInfoPropertyName = "NullableOutputMessageStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OutputMessageContentDiscriminatorType?), TypeInfoPropertyName = "NullableOutputMessageContentDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.Error, string>?), TypeInfoPropertyName = "NullableAnyOfErrorString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PredictionContentType?), TypeInfoPropertyName = "NullablePredictionContentType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectObject?), TypeInfoPropertyName = "NullableProjectObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PublicProjectResidency?), TypeInfoPropertyName = "NullablePublicProjectResidency2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectApiKeyObject?), TypeInfoPropertyName = "NullableProjectApiKeyObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectApiKeyOwnerProjectAccess?), TypeInfoPropertyName = "NullableProjectApiKeyOwnerProjectAccess2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectApiKeyOwnerType?), TypeInfoPropertyName = "NullableProjectApiKeyOwnerType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectApiKeyDeleteResponseObject?), TypeInfoPropertyName = "NullableProjectApiKeyDeleteResponseObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectApiKeyListResponseObject?), TypeInfoPropertyName = "NullableProjectApiKeyListResponseObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectDataRetentionObject?), TypeInfoPropertyName = "NullableProjectDataRetentionObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectDataRetentionType?), TypeInfoPropertyName = "NullableProjectDataRetentionType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectGroupObject?), TypeInfoPropertyName = "NullableProjectGroupObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectGroupGroupType?), TypeInfoPropertyName = "NullableProjectGroupGroupType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectGroupDeletedResourceObject?), TypeInfoPropertyName = "NullableProjectGroupDeletedResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectGroupListResourceObject?), TypeInfoPropertyName = "NullableProjectGroupListResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectListResponseObject?), TypeInfoPropertyName = "NullableProjectListResponseObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectModelPermissionsObject?), TypeInfoPropertyName = "NullableProjectModelPermissionsObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectModelPermissionsMode?), TypeInfoPropertyName = "NullableProjectModelPermissionsMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectModelPermissionsDeleteResponseObject?), TypeInfoPropertyName = "NullableProjectModelPermissionsDeleteResponseObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectModelPermissionsUpdateRequestMode?), TypeInfoPropertyName = "NullableProjectModelPermissionsUpdateRequestMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectRateLimitObject?), TypeInfoPropertyName = "NullableProjectRateLimitObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectRateLimitListResponseObject?), TypeInfoPropertyName = "NullableProjectRateLimitListResponseObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProjectServiceAccountObject?), TypeInfoPropertyName = "NullableProjectServiceAccountObject2")]
@@ -7271,36 +7301,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseReasoningSummaryTextDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseReasoningSummaryTextWsDone2>?), TypeInfoPropertyName = "NullableAllOfResponseReasoningSummaryTextDoneEventResponsesServerEventResponseReasoningSummaryTextWsDone22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseReasoningTextDeltaEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseReasoningTextWsDelta2>?), TypeInfoPropertyName = "NullableAllOfResponseReasoningTextDeltaEventResponsesServerEventResponseReasoningTextWsDelta22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseReasoningTextDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseReasoningTextWsDone2>?), TypeInfoPropertyName = "NullableAllOfResponseReasoningTextDoneEventResponsesServerEventResponseReasoningTextWsDone22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseRefusalDeltaEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseRefusalWsDelta2>?), TypeInfoPropertyName = "NullableAllOfResponseRefusalDeltaEventResponsesServerEventResponseRefusalWsDelta22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseRefusalDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseRefusalWsDone2>?), TypeInfoPropertyName = "NullableAllOfResponseRefusalDoneEventResponsesServerEventResponseRefusalWsDone22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseTextDeltaEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseTextWsDelta2>?), TypeInfoPropertyName = "NullableAllOfResponseTextDeltaEventResponsesServerEventResponseTextWsDelta22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseTextDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseTextWsDone2>?), TypeInfoPropertyName = "NullableAllOfResponseTextDoneEventResponsesServerEventResponseTextWsDone22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseWebSearchCallWsCompleted2>?), TypeInfoPropertyName = "NullableAllOfResponseWebSearchCallCompletedEventResponsesServerEventResponseWebSearchCallWsCompleted22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseWebSearchCallInWsProgress2>?), TypeInfoPropertyName = "NullableAllOfResponseWebSearchCallInProgressEventResponsesServerEventResponseWebSearchCallInWsProgress22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseWebSearchCallWsSearching2>?), TypeInfoPropertyName = "NullableAllOfResponseWebSearchCallSearchingEventResponsesServerEventResponseWebSearchCallWsSearching22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseImageGenCallWsCompleted2>?), TypeInfoPropertyName = "NullableAllOfResponseImageGenCallCompletedEventResponsesServerEventResponseImageGenCallWsCompleted22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseImageGenCallWsGenerating2>?), TypeInfoPropertyName = "NullableAllOfResponseImageGenCallGeneratingEventResponsesServerEventResponseImageGenCallWsGenerating22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseImageGenCallInWsProgress2>?), TypeInfoPropertyName = "NullableAllOfResponseImageGenCallInProgressEventResponsesServerEventResponseImageGenCallInWsProgress22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseImageGenCallPartialWsImage2>?), TypeInfoPropertyName = "NullableAllOfResponseImageGenCallPartialImageEventResponsesServerEventResponseImageGenCallPartialWsImage22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpCallArgumentsWsDelta2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPCallArgumentsDeltaEventResponsesServerEventResponseMcpCallArgumentsWsDelta22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpCallArgumentsWsDone2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPCallArgumentsDoneEventResponsesServerEventResponseMcpCallArgumentsWsDone22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpCallWsCompleted2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPCallCompletedEventResponsesServerEventResponseMcpCallWsCompleted22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPCallFailedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpCallWsFailed2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPCallFailedEventResponsesServerEventResponseMcpCallWsFailed22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpCallInWsProgress2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPCallInProgressEventResponsesServerEventResponseMcpCallInWsProgress22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpListToolsWsCompleted2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPListToolsCompletedEventResponsesServerEventResponseMcpListToolsWsCompleted22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpListToolsWsFailed2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPListToolsFailedEventResponsesServerEventResponseMcpListToolsWsFailed22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpListToolsInWsProgress2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPListToolsInProgressEventResponsesServerEventResponseMcpListToolsInWsProgress22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseOutputTextAnnotationWsAdded2>?), TypeInfoPropertyName = "NullableAllOfResponseOutputTextAnnotationAddedEventResponsesServerEventResponseOutputTextAnnotationWsAdded22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseQueuedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseWsQueued2>?), TypeInfoPropertyName = "NullableAllOfResponseQueuedEventResponsesServerEventResponseWsQueued22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseCustomToolCallInputWsDelta2>?), TypeInfoPropertyName = "NullableAllOfResponseCustomToolCallInputDeltaEventResponsesServerEventResponseCustomToolCallInputWsDelta22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseCustomToolCallInputWsDone2>?), TypeInfoPropertyName = "NullableAllOfResponseCustomToolCallInputDoneEventResponsesServerEventResponseCustomToolCallInputWsDone22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponsesServerEventDiscriminatorType?), TypeInfoPropertyName = "NullableResponsesServerEventDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponsesWebSocketStreamEvent?), TypeInfoPropertyName = "NullableResponsesWebSocketStreamEvent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RoleObject?), TypeInfoPropertyName = "NullableRoleObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RoleDeletedResourceObject?), TypeInfoPropertyName = "NullableRoleDeletedResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RoleListResourceObject?), TypeInfoPropertyName = "NullableRoleListResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RunObjectObject?), TypeInfoPropertyName = "NullableRunObjectObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RunObjectStatus?), TypeInfoPropertyName = "NullableRunObjectStatus2")]
     internal sealed partial class SourceGenerationContextChunk13 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -7352,6 +7352,36 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>), TypeInfoPropertyName = "CreateModerationRequestInputVariant3ItemVariant2_82fca1e83967e178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>), TypeInfoPropertyName = "MessageDeltaContentImageUrlObject_9c7d436e0b6fe539")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>), TypeInfoPropertyName = "RunStepDeltaStepDetailsToolCallsFunctionObject_5640d9ed7ecfcd45")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseRefusalDeltaEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseRefusalWsDelta2>?), TypeInfoPropertyName = "NullableAllOfResponseRefusalDeltaEventResponsesServerEventResponseRefusalWsDelta22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseRefusalDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseRefusalWsDone2>?), TypeInfoPropertyName = "NullableAllOfResponseRefusalDoneEventResponsesServerEventResponseRefusalWsDone22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseTextDeltaEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseTextWsDelta2>?), TypeInfoPropertyName = "NullableAllOfResponseTextDeltaEventResponsesServerEventResponseTextWsDelta22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseTextDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseTextWsDone2>?), TypeInfoPropertyName = "NullableAllOfResponseTextDoneEventResponsesServerEventResponseTextWsDone22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseWebSearchCallCompletedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseWebSearchCallWsCompleted2>?), TypeInfoPropertyName = "NullableAllOfResponseWebSearchCallCompletedEventResponsesServerEventResponseWebSearchCallWsCompleted22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseWebSearchCallInProgressEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseWebSearchCallInWsProgress2>?), TypeInfoPropertyName = "NullableAllOfResponseWebSearchCallInProgressEventResponsesServerEventResponseWebSearchCallInWsProgress22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseWebSearchCallSearchingEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseWebSearchCallWsSearching2>?), TypeInfoPropertyName = "NullableAllOfResponseWebSearchCallSearchingEventResponsesServerEventResponseWebSearchCallWsSearching22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseImageGenCallCompletedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseImageGenCallWsCompleted2>?), TypeInfoPropertyName = "NullableAllOfResponseImageGenCallCompletedEventResponsesServerEventResponseImageGenCallWsCompleted22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseImageGenCallWsGenerating2>?), TypeInfoPropertyName = "NullableAllOfResponseImageGenCallGeneratingEventResponsesServerEventResponseImageGenCallWsGenerating22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseImageGenCallInProgressEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseImageGenCallInWsProgress2>?), TypeInfoPropertyName = "NullableAllOfResponseImageGenCallInProgressEventResponsesServerEventResponseImageGenCallInWsProgress22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseImageGenCallPartialImageEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseImageGenCallPartialWsImage2>?), TypeInfoPropertyName = "NullableAllOfResponseImageGenCallPartialImageEventResponsesServerEventResponseImageGenCallPartialWsImage22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpCallArgumentsWsDelta2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPCallArgumentsDeltaEventResponsesServerEventResponseMcpCallArgumentsWsDelta22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPCallArgumentsDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpCallArgumentsWsDone2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPCallArgumentsDoneEventResponsesServerEventResponseMcpCallArgumentsWsDone22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPCallCompletedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpCallWsCompleted2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPCallCompletedEventResponsesServerEventResponseMcpCallWsCompleted22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPCallFailedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpCallWsFailed2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPCallFailedEventResponsesServerEventResponseMcpCallWsFailed22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPCallInProgressEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpCallInWsProgress2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPCallInProgressEventResponsesServerEventResponseMcpCallInWsProgress22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPListToolsCompletedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpListToolsWsCompleted2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPListToolsCompletedEventResponsesServerEventResponseMcpListToolsWsCompleted22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPListToolsFailedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpListToolsWsFailed2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPListToolsFailedEventResponsesServerEventResponseMcpListToolsWsFailed22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseMCPListToolsInProgressEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseMcpListToolsInWsProgress2>?), TypeInfoPropertyName = "NullableAllOfResponseMCPListToolsInProgressEventResponsesServerEventResponseMcpListToolsInWsProgress22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseOutputTextAnnotationWsAdded2>?), TypeInfoPropertyName = "NullableAllOfResponseOutputTextAnnotationAddedEventResponsesServerEventResponseOutputTextAnnotationWsAdded22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseQueuedEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseWsQueued2>?), TypeInfoPropertyName = "NullableAllOfResponseQueuedEventResponsesServerEventResponseWsQueued22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseCustomToolCallInputWsDelta2>?), TypeInfoPropertyName = "NullableAllOfResponseCustomToolCallInputDeltaEventResponsesServerEventResponseCustomToolCallInputWsDelta22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseCustomToolCallInputWsDone2>?), TypeInfoPropertyName = "NullableAllOfResponseCustomToolCallInputDoneEventResponsesServerEventResponseCustomToolCallInputWsDone22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponsesServerEventDiscriminatorType?), TypeInfoPropertyName = "NullableResponsesServerEventDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponsesWebSocketStreamEvent?), TypeInfoPropertyName = "NullableResponsesWebSocketStreamEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RoleObject?), TypeInfoPropertyName = "NullableRoleObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RoleDeletedResourceObject?), TypeInfoPropertyName = "NullableRoleDeletedResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RoleListResourceObject?), TypeInfoPropertyName = "NullableRoleListResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RunObjectObject?), TypeInfoPropertyName = "NullableRunObjectObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RunObjectStatus?), TypeInfoPropertyName = "NullableRunObjectStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RunObjectRequiredActionType?), TypeInfoPropertyName = "NullableRunObjectRequiredActionType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RunObjectLastErrorCode?), TypeInfoPropertyName = "NullableRunObjectLastErrorCode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.RunObjectIncompleteDetailsReason?), TypeInfoPropertyName = "NullableRunObjectIncompleteDetailsReason2")]
@@ -7737,7 +7767,21 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveWebSearchToolInputParamType?), TypeInfoPropertyName = "NullableLiveWebSearchToolInputParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveFileSearchToolInputParamType?), TypeInfoPropertyName = "NullableLiveFileSearchToolInputParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParamType?), TypeInfoPropertyName = "NullableLiveCodeInterpreterToolInputParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveContainerMemoryLimit?), TypeInfoPropertyName = "NullableLiveContainerMemoryLimit2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveContainerNetworkPolicyDisabledParamType?), TypeInfoPropertyName = "NullableLiveContainerNetworkPolicyDisabledParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellNetworkPolicyAllowlistParamType?), TypeInfoPropertyName = "NullableLiveHostedShellNetworkPolicyAllowlistParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSkillReferenceParamType?), TypeInfoPropertyName = "NullableLiveSkillReferenceParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamType?), TypeInfoPropertyName = "NullableLiveInlineSkillSourceParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamMediaType?), TypeInfoPropertyName = "NullableLiveInlineSkillSourceParamMediaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInlineSkillParamType?), TypeInfoPropertyName = "NullableLiveInlineSkillParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamType?), TypeInfoPropertyName = "NullableLiveHostedShellContainerAutoParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamNetworkPolicyVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableLiveHostedShellContainerAutoParamNetworkPolicyVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SkillsVariant1Item?), TypeInfoPropertyName = "NullableSkillsVariant1Item2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamSkillsVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableLiveHostedShellContainerAutoParamSkillsVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveContainerReferenceParamType?), TypeInfoPropertyName = "NullableLiveContainerReferenceParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveLocalEnvironmentParamType?), TypeInfoPropertyName = "NullableLiveLocalEnvironmentParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParamType?), TypeInfoPropertyName = "NullableLiveHostedShellToolInputParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParamEnvironmentVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableLiveHostedShellToolInputParamEnvironmentVariant1DiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveImageGenerationToolInputParamType?), TypeInfoPropertyName = "NullableLiveImageGenerationToolInputParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveMCPToolInputParamType?), TypeInfoPropertyName = "NullableLiveMCPToolInputParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveCustomToolInputParamType?), TypeInfoPropertyName = "NullableLiveCustomToolInputParamType2")]
@@ -7776,50 +7820,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AwsExternalStorageProviderResponseType?), TypeInfoPropertyName = "NullableAwsExternalStorageProviderResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AzureExternalStorageProviderResponseType?), TypeInfoPropertyName = "NullableAzureExternalStorageProviderResponseType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.GcpExternalStorageProviderResponseType?), TypeInfoPropertyName = "NullableGcpExternalStorageProviderResponseType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProviderDiscriminatorType?), TypeInfoPropertyName = "NullableProviderDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParamType?), TypeInfoPropertyName = "NullableSpecificProgrammaticToolCallingParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpecificApplyPatchParamType?), TypeInfoPropertyName = "NullableSpecificApplyPatchParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpecificFunctionShellParamType?), TypeInfoPropertyName = "NullableSpecificFunctionShellParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CyberAccessProgramEnum?), TypeInfoPropertyName = "NullableCyberAccessProgramEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ReasoningModeEnumEnum?), TypeInfoPropertyName = "NullableReasoningModeEnumEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CacheMissReasonTypeEnum?), TypeInfoPropertyName = "NullableCacheMissReasonTypeEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PromptCacheMissDiagnosticsBodyType?), TypeInfoPropertyName = "NullablePromptCacheMissDiagnosticsBodyType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PromptCacheHitDiagnosticsBodyType?), TypeInfoPropertyName = "NullablePromptCacheHitDiagnosticsBodyType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PromptCacheComparisonResponseNotFoundDiagnosticsBodyType?), TypeInfoPropertyName = "NullablePromptCacheComparisonResponseNotFoundDiagnosticsBodyType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PromptCacheUnavailableDiagnosticsBodyType?), TypeInfoPropertyName = "NullablePromptCacheUnavailableDiagnosticsBodyType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PromptCacheDiagnosticsDiscriminatorType?), TypeInfoPropertyName = "NullablePromptCacheDiagnosticsDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ModerationErrorBodyType?), TypeInfoPropertyName = "NullableModerationErrorBodyType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Input4?), TypeInfoPropertyName = "NullableInput42")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ModerationInputDiscriminatorType?), TypeInfoPropertyName = "NullableModerationInputDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Output5?), TypeInfoPropertyName = "NullableOutput52")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ModerationOutputDiscriminatorType?), TypeInfoPropertyName = "NullableModerationOutputDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseCompactionCompactingStreamingEventType?), TypeInfoPropertyName = "NullableResponseCompactionCompactingStreamingEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseShellCallCommandAddedStreamingEventType?), TypeInfoPropertyName = "NullableResponseShellCallCommandAddedStreamingEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseShellCallCommandDeltaStreamingEventType?), TypeInfoPropertyName = "NullableResponseShellCallCommandDeltaStreamingEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseShellCallCommandDoneStreamingEventType?), TypeInfoPropertyName = "NullableResponseShellCallCommandDoneStreamingEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseShellCallOutputContentDeltaStreamingEventType?), TypeInfoPropertyName = "NullableResponseShellCallOutputContentDeltaStreamingEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseShellCallOutputContentDoneStreamingEventType?), TypeInfoPropertyName = "NullableResponseShellCallOutputContentDoneStreamingEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DeletedConversationResourceObject?), TypeInfoPropertyName = "NullableDeletedConversationResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SafetyCaseNoticeType?), TypeInfoPropertyName = "NullableSafetyCaseNoticeType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SafetyCaseResourceObject?), TypeInfoPropertyName = "NullableSafetyCaseResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SafetyAlertErrorType?), TypeInfoPropertyName = "NullableSafetyAlertErrorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SafetyAlertResourceObject?), TypeInfoPropertyName = "NullableSafetyAlertResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ExternalStorageOrder?), TypeInfoPropertyName = "NullableExternalStorageOrder2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ExternalStorageStatus?), TypeInfoPropertyName = "NullableExternalStorageStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ExternalStorageResponseObject?), TypeInfoPropertyName = "NullableExternalStorageResponseObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Provider2?), TypeInfoPropertyName = "NullableProvider22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ExternalStorageResponseProviderDiscriminatorType?), TypeInfoPropertyName = "NullableExternalStorageResponseProviderDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ExternalStorageListResourceObject?), TypeInfoPropertyName = "NullableExternalStorageListResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AwsExternalStorageProviderParamsType?), TypeInfoPropertyName = "NullableAwsExternalStorageProviderParamsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AzureExternalStorageProviderParamsType?), TypeInfoPropertyName = "NullableAzureExternalStorageProviderParamsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.GcpExternalStorageProviderParamsType?), TypeInfoPropertyName = "NullableGcpExternalStorageProviderParamsType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Provider3?), TypeInfoPropertyName = "NullableProvider32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateExternalStorageBodyProviderDiscriminatorType?), TypeInfoPropertyName = "NullableCreateExternalStorageBodyProviderDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ExternalStorageDeletedResourceObject?), TypeInfoPropertyName = "NullableExternalStorageDeletedResourceObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpendLimitCurrency?), TypeInfoPropertyName = "NullableSpendLimitCurrency2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpendLimitCurrencyEnum?), TypeInfoPropertyName = "NullableSpendLimitCurrencyEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpendLimitInterval?), TypeInfoPropertyName = "NullableSpendLimitInterval2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpendLimitIntervalEnum?), TypeInfoPropertyName = "NullableSpendLimitIntervalEnum2")]
     internal sealed partial class SourceGenerationContextChunk14 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -7871,6 +7871,50 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>), TypeInfoPropertyName = "CreateModerationRequestInputVariant3ItemVariant2_82fca1e83967e178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>), TypeInfoPropertyName = "MessageDeltaContentImageUrlObject_9c7d436e0b6fe539")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>), TypeInfoPropertyName = "RunStepDeltaStepDetailsToolCallsFunctionObject_5640d9ed7ecfcd45")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ProviderDiscriminatorType?), TypeInfoPropertyName = "NullableProviderDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParamType?), TypeInfoPropertyName = "NullableSpecificProgrammaticToolCallingParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpecificApplyPatchParamType?), TypeInfoPropertyName = "NullableSpecificApplyPatchParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpecificFunctionShellParamType?), TypeInfoPropertyName = "NullableSpecificFunctionShellParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CyberAccessProgramEnum?), TypeInfoPropertyName = "NullableCyberAccessProgramEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ReasoningModeEnumEnum?), TypeInfoPropertyName = "NullableReasoningModeEnumEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CacheMissReasonTypeEnum?), TypeInfoPropertyName = "NullableCacheMissReasonTypeEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PromptCacheMissDiagnosticsBodyType?), TypeInfoPropertyName = "NullablePromptCacheMissDiagnosticsBodyType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PromptCacheHitDiagnosticsBodyType?), TypeInfoPropertyName = "NullablePromptCacheHitDiagnosticsBodyType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PromptCacheComparisonResponseNotFoundDiagnosticsBodyType?), TypeInfoPropertyName = "NullablePromptCacheComparisonResponseNotFoundDiagnosticsBodyType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PromptCacheUnavailableDiagnosticsBodyType?), TypeInfoPropertyName = "NullablePromptCacheUnavailableDiagnosticsBodyType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.PromptCacheDiagnosticsDiscriminatorType?), TypeInfoPropertyName = "NullablePromptCacheDiagnosticsDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ModerationErrorBodyType?), TypeInfoPropertyName = "NullableModerationErrorBodyType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Input4?), TypeInfoPropertyName = "NullableInput42")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ModerationInputDiscriminatorType?), TypeInfoPropertyName = "NullableModerationInputDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Output5?), TypeInfoPropertyName = "NullableOutput52")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ModerationOutputDiscriminatorType?), TypeInfoPropertyName = "NullableModerationOutputDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseCompactionCompactingStreamingEventType?), TypeInfoPropertyName = "NullableResponseCompactionCompactingStreamingEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseShellCallCommandAddedStreamingEventType?), TypeInfoPropertyName = "NullableResponseShellCallCommandAddedStreamingEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseShellCallCommandDeltaStreamingEventType?), TypeInfoPropertyName = "NullableResponseShellCallCommandDeltaStreamingEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseShellCallCommandDoneStreamingEventType?), TypeInfoPropertyName = "NullableResponseShellCallCommandDoneStreamingEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseShellCallOutputContentDeltaStreamingEventType?), TypeInfoPropertyName = "NullableResponseShellCallOutputContentDeltaStreamingEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ResponseShellCallOutputContentDoneStreamingEventType?), TypeInfoPropertyName = "NullableResponseShellCallOutputContentDoneStreamingEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DeletedConversationResourceObject?), TypeInfoPropertyName = "NullableDeletedConversationResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SafetyCaseNoticeType?), TypeInfoPropertyName = "NullableSafetyCaseNoticeType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SafetyCaseResourceObject?), TypeInfoPropertyName = "NullableSafetyCaseResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SafetyAlertErrorType?), TypeInfoPropertyName = "NullableSafetyAlertErrorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SafetyAlertResourceObject?), TypeInfoPropertyName = "NullableSafetyAlertResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ExternalStorageOrder?), TypeInfoPropertyName = "NullableExternalStorageOrder2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ExternalStorageStatus?), TypeInfoPropertyName = "NullableExternalStorageStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ExternalStorageResponseObject?), TypeInfoPropertyName = "NullableExternalStorageResponseObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Provider2?), TypeInfoPropertyName = "NullableProvider22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ExternalStorageResponseProviderDiscriminatorType?), TypeInfoPropertyName = "NullableExternalStorageResponseProviderDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ExternalStorageListResourceObject?), TypeInfoPropertyName = "NullableExternalStorageListResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AwsExternalStorageProviderParamsType?), TypeInfoPropertyName = "NullableAwsExternalStorageProviderParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AzureExternalStorageProviderParamsType?), TypeInfoPropertyName = "NullableAzureExternalStorageProviderParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.GcpExternalStorageProviderParamsType?), TypeInfoPropertyName = "NullableGcpExternalStorageProviderParamsType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.Provider3?), TypeInfoPropertyName = "NullableProvider32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateExternalStorageBodyProviderDiscriminatorType?), TypeInfoPropertyName = "NullableCreateExternalStorageBodyProviderDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ExternalStorageDeletedResourceObject?), TypeInfoPropertyName = "NullableExternalStorageDeletedResourceObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpendLimitCurrency?), TypeInfoPropertyName = "NullableSpendLimitCurrency2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpendLimitCurrencyEnum?), TypeInfoPropertyName = "NullableSpendLimitCurrencyEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpendLimitInterval?), TypeInfoPropertyName = "NullableSpendLimitInterval2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpendLimitIntervalEnum?), TypeInfoPropertyName = "NullableSpendLimitIntervalEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpendLimitEnforcementStatus?), TypeInfoPropertyName = "NullableSpendLimitEnforcementStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SpendLimitEnforcementStatusEnum?), TypeInfoPropertyName = "NullableSpendLimitEnforcementStatusEnum2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OrganizationSpendLimitResourceObject?), TypeInfoPropertyName = "NullableOrganizationSpendLimitResourceObject2")]
@@ -8287,50 +8331,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionAudioFormatPCMParamType?), TypeInfoPropertyName = "NullableLiveSessionAudioFormatPCMParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionAudioFormatPCMUParamType?), TypeInfoPropertyName = "NullableLiveSessionAudioFormatPCMUParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionAudioFormatPCMAParamType?), TypeInfoPropertyName = "NullableLiveSessionAudioFormatPCMAParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveAudioFormat?), TypeInfoPropertyName = "NullableLiveAudioFormat2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveAudioFormatDiscriminatorType?), TypeInfoPropertyName = "NullableLiveAudioFormatDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionCreateParamsDelegationVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableLiveSessionCreateParamsDelegationVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionStartEventType?), TypeInfoPropertyName = "NullableLiveSessionStartEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionUpdateParamsDelegationVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableLiveSessionUpdateParamsDelegationVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionUpdateParamType?), TypeInfoPropertyName = "NullableLiveSessionUpdateParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputAudioAppendEventType?), TypeInfoPropertyName = "NullableLiveInputAudioAppendEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputAudioMuteParamType?), TypeInfoPropertyName = "NullableLiveInputAudioMuteParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputAudioUnmuteParamType?), TypeInfoPropertyName = "NullableLiveInputAudioUnmuteParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInstructionsAppendParamType?), TypeInfoPropertyName = "NullableLiveInstructionsAppendParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveThinkingAppendParamType?), TypeInfoPropertyName = "NullableLiveThinkingAppendParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveCommentaryAppendParamType?), TypeInfoPropertyName = "NullableLiveCommentaryAppendParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveResponseItemCreateParamType?), TypeInfoPropertyName = "NullableLiveResponseItemCreateParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveResponseCreateParamType?), TypeInfoPropertyName = "NullableLiveResponseCreateParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionCloseParamType?), TypeInfoPropertyName = "NullableLiveSessionCloseParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveForkSessionStartEventType?), TypeInfoPropertyName = "NullableLiveForkSessionStartEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionResourceParamDelegationVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableLiveSessionResourceParamDelegationVariant1DiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionResourceParamStatus?), TypeInfoPropertyName = "NullableLiveSessionResourceParamStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionStartedType?), TypeInfoPropertyName = "NullableLiveSessionStartedType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionUpdatedType?), TypeInfoPropertyName = "NullableLiveSessionUpdatedType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputAudioMutedType?), TypeInfoPropertyName = "NullableLiveInputAudioMutedType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputAudioUnmutedType?), TypeInfoPropertyName = "NullableLiveInputAudioUnmutedType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInstructionsAppendedType?), TypeInfoPropertyName = "NullableLiveInstructionsAppendedType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveThinkingAppendedType?), TypeInfoPropertyName = "NullableLiveThinkingAppendedType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveCommentaryAppendedType?), TypeInfoPropertyName = "NullableLiveCommentaryAppendedType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputAudioAppendType?), TypeInfoPropertyName = "NullableLiveInputAudioAppendType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveOutputAudioDeltaType?), TypeInfoPropertyName = "NullableLiveOutputAudioDeltaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputTranscriptDeltaType?), TypeInfoPropertyName = "NullableLiveInputTranscriptDeltaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveOutputTranscriptDeltaType?), TypeInfoPropertyName = "NullableLiveOutputTranscriptDeltaType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveDelegationItemType?), TypeInfoPropertyName = "NullableLiveDelegationItemType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.LiveDelegationItemTargetVariant1?, global::tryAGI.OpenAI.LiveDelegationItemTargetVariant2?>?), TypeInfoPropertyName = "NullableOneOfLiveDelegationItemTargetVariant1LiveDelegationItemTargetVariant22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveDelegationItemTargetVariant1?), TypeInfoPropertyName = "NullableLiveDelegationItemTargetVariant12")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveDelegationItemTargetVariant2?), TypeInfoPropertyName = "NullableLiveDelegationItemTargetVariant22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveDelegationCreatedType?), TypeInfoPropertyName = "NullableLiveDelegationCreatedType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveResponseEventType?), TypeInfoPropertyName = "NullableLiveResponseEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionUsageUpdatedType?), TypeInfoPropertyName = "NullableLiveSessionUsageUpdatedType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionClosedType?), TypeInfoPropertyName = "NullableLiveSessionClosedType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionClosedReasonVariant1?), TypeInfoPropertyName = "NullableLiveSessionClosedReasonVariant12")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionClosedReasonVariant2?), TypeInfoPropertyName = "NullableLiveSessionClosedReasonVariant22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionClosedReasonVariant3?), TypeInfoPropertyName = "NullableLiveSessionClosedReasonVariant32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionClosedReasonVariant4?), TypeInfoPropertyName = "NullableLiveSessionClosedReasonVariant42")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionClosedReasonVariant5?), TypeInfoPropertyName = "NullableLiveSessionClosedReasonVariant52")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveErrorEventType?), TypeInfoPropertyName = "NullableLiveErrorEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInfoEventType?), TypeInfoPropertyName = "NullableLiveInfoEventType2")]
     internal sealed partial class SourceGenerationContextChunk15 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -8382,6 +8382,50 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>), TypeInfoPropertyName = "CreateModerationRequestInputVariant3ItemVariant2_82fca1e83967e178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>), TypeInfoPropertyName = "MessageDeltaContentImageUrlObject_9c7d436e0b6fe539")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>), TypeInfoPropertyName = "RunStepDeltaStepDetailsToolCallsFunctionObject_5640d9ed7ecfcd45")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveAudioFormat?), TypeInfoPropertyName = "NullableLiveAudioFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveAudioFormatDiscriminatorType?), TypeInfoPropertyName = "NullableLiveAudioFormatDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionCreateParamsDelegationVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableLiveSessionCreateParamsDelegationVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionStartEventType?), TypeInfoPropertyName = "NullableLiveSessionStartEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionUpdateParamsDelegationVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableLiveSessionUpdateParamsDelegationVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionUpdateParamType?), TypeInfoPropertyName = "NullableLiveSessionUpdateParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputAudioAppendEventType?), TypeInfoPropertyName = "NullableLiveInputAudioAppendEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputAudioMuteParamType?), TypeInfoPropertyName = "NullableLiveInputAudioMuteParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputAudioUnmuteParamType?), TypeInfoPropertyName = "NullableLiveInputAudioUnmuteParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInstructionsAppendParamType?), TypeInfoPropertyName = "NullableLiveInstructionsAppendParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveThinkingAppendParamType?), TypeInfoPropertyName = "NullableLiveThinkingAppendParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveCommentaryAppendParamType?), TypeInfoPropertyName = "NullableLiveCommentaryAppendParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveResponseItemCreateParamType?), TypeInfoPropertyName = "NullableLiveResponseItemCreateParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveResponseCreateParamType?), TypeInfoPropertyName = "NullableLiveResponseCreateParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionCloseParamType?), TypeInfoPropertyName = "NullableLiveSessionCloseParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveForkSessionStartEventType?), TypeInfoPropertyName = "NullableLiveForkSessionStartEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionResourceParamDelegationVariant1DiscriminatorType?), TypeInfoPropertyName = "NullableLiveSessionResourceParamDelegationVariant1DiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionResourceParamStatus?), TypeInfoPropertyName = "NullableLiveSessionResourceParamStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionStartedType?), TypeInfoPropertyName = "NullableLiveSessionStartedType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionUpdatedType?), TypeInfoPropertyName = "NullableLiveSessionUpdatedType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputAudioMutedType?), TypeInfoPropertyName = "NullableLiveInputAudioMutedType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputAudioUnmutedType?), TypeInfoPropertyName = "NullableLiveInputAudioUnmutedType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInstructionsAppendedType?), TypeInfoPropertyName = "NullableLiveInstructionsAppendedType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveThinkingAppendedType?), TypeInfoPropertyName = "NullableLiveThinkingAppendedType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveCommentaryAppendedType?), TypeInfoPropertyName = "NullableLiveCommentaryAppendedType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputAudioAppendType?), TypeInfoPropertyName = "NullableLiveInputAudioAppendType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveOutputAudioDeltaType?), TypeInfoPropertyName = "NullableLiveOutputAudioDeltaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInputTranscriptDeltaType?), TypeInfoPropertyName = "NullableLiveInputTranscriptDeltaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveOutputTranscriptDeltaType?), TypeInfoPropertyName = "NullableLiveOutputTranscriptDeltaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveDelegationItemType?), TypeInfoPropertyName = "NullableLiveDelegationItemType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.LiveDelegationItemTargetVariant1?, global::tryAGI.OpenAI.LiveDelegationItemTargetVariant2?>?), TypeInfoPropertyName = "NullableOneOfLiveDelegationItemTargetVariant1LiveDelegationItemTargetVariant22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveDelegationItemTargetVariant1?), TypeInfoPropertyName = "NullableLiveDelegationItemTargetVariant12")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveDelegationItemTargetVariant2?), TypeInfoPropertyName = "NullableLiveDelegationItemTargetVariant22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveDelegationCreatedType?), TypeInfoPropertyName = "NullableLiveDelegationCreatedType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveResponseEventType?), TypeInfoPropertyName = "NullableLiveResponseEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionUsageUpdatedType?), TypeInfoPropertyName = "NullableLiveSessionUsageUpdatedType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionClosedType?), TypeInfoPropertyName = "NullableLiveSessionClosedType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionClosedReasonVariant1?), TypeInfoPropertyName = "NullableLiveSessionClosedReasonVariant12")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionClosedReasonVariant2?), TypeInfoPropertyName = "NullableLiveSessionClosedReasonVariant22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionClosedReasonVariant3?), TypeInfoPropertyName = "NullableLiveSessionClosedReasonVariant32")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionClosedReasonVariant4?), TypeInfoPropertyName = "NullableLiveSessionClosedReasonVariant42")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveSessionClosedReasonVariant5?), TypeInfoPropertyName = "NullableLiveSessionClosedReasonVariant52")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveErrorEventType?), TypeInfoPropertyName = "NullableLiveErrorEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveInfoEventType?), TypeInfoPropertyName = "NullableLiveInfoEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveTransportDTMFReceivedType?), TypeInfoPropertyName = "NullableLiveTransportDTMFReceivedType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveTransportDTMFSendType?), TypeInfoPropertyName = "NullableLiveTransportDTMFSendType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.LiveTransportRingingType?), TypeInfoPropertyName = "NullableLiveTransportRingingType2")]
@@ -8802,50 +8846,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCodeDeltaEventType?), TypeInfoPropertyName = "NullableBetaResponseCodeInterpreterCallCodeDeltaEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseAudioTranscriptDoneEventType?), TypeInfoPropertyName = "NullableBetaResponseAudioTranscriptDoneEventType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseAudioTranscriptDeltaEventType?), TypeInfoPropertyName = "NullableBetaResponseAudioTranscriptDeltaEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseAudioDoneEventType?), TypeInfoPropertyName = "NullableBetaResponseAudioDoneEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseAudioDeltaEventType?), TypeInfoPropertyName = "NullableBetaResponseAudioDeltaEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseIncompleteEventType?), TypeInfoPropertyName = "NullableBetaResponseIncompleteEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseFailedEventType?), TypeInfoPropertyName = "NullableBetaResponseFailedEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseWebSearchCallCompletedEventType?), TypeInfoPropertyName = "NullableBetaResponseWebSearchCallCompletedEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseWebSearchCallSearchingEventType?), TypeInfoPropertyName = "NullableBetaResponseWebSearchCallSearchingEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseWebSearchCallInProgressEventType?), TypeInfoPropertyName = "NullableBetaResponseWebSearchCallInProgressEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerFailedEventType?), TypeInfoPropertyName = "NullableBetaResponseSteerFailedEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerInput?), TypeInfoPropertyName = "NullableBetaResponseSteerInput2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerFailedEventErrorType?), TypeInfoPropertyName = "NullableBetaResponseSteerFailedEventErrorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerErrorCode?), TypeInfoPropertyName = "NullableBetaResponseSteerErrorCode2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerErrorCodeEnum?), TypeInfoPropertyName = "NullableBetaResponseSteerErrorCodeEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerInputItem?), TypeInfoPropertyName = "NullableBetaResponseSteerInputItem2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerInputItemDiscriminatorType?), TypeInfoPropertyName = "NullableBetaResponseSteerInputItemDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUserMessageItemParamType?), TypeInfoPropertyName = "NullableBetaUserMessageItemParamType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUserMessageItemParamRole?), TypeInfoPropertyName = "NullableBetaUserMessageItemParamRole2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentVariant1Item2>, string>?), TypeInfoPropertyName = "NullableOneOfIListContentVariant1Item2String2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ContentVariant1Item2?), TypeInfoPropertyName = "NullableContentVariant1Item22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUserMessageItemParamContentVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableBetaUserMessageItemParamContentVariant1ItemDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingEventType?), TypeInfoPropertyName = "NullableBetaResponseSteerPendingEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingReason?), TypeInfoPropertyName = "NullableBetaResponseSteerPendingReason2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInput?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInput2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredFunctionToolCallOutputType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredFunctionToolCallOutputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredCustomToolCallOutputType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredCustomToolCallOutputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredComputerToolCallOutputType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredComputerToolCallOutputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredShellToolCallOutputType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredShellToolCallOutputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutputType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredToolSearchOutputType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredToolSearchOutputType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredToolSearchOutputExecution?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredToolSearchOutputExecution2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredMcpApprovalResponseType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredMcpApprovalResponseType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputDiscriminatorType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputDiscriminatorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingReasonEnum?), TypeInfoPropertyName = "NullableBetaResponseSteerPendingReasonEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerAcceptedEventType?), TypeInfoPropertyName = "NullableBetaResponseSteerAcceptedEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerEventType?), TypeInfoPropertyName = "NullableBetaResponseSteerEventType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaOutputAudioType?), TypeInfoPropertyName = "NullableBetaOutputAudioType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputAudioType?), TypeInfoPropertyName = "NullableBetaInputAudioType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputAudioInputAudioFormat?), TypeInfoPropertyName = "NullableBetaInputAudioInputAudioFormat2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputParam?), TypeInfoPropertyName = "NullableBetaInputParam2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaContent?), TypeInfoPropertyName = "NullableBetaContent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaIncludeEnum?), TypeInfoPropertyName = "NullableBetaIncludeEnum2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponsesServerEvent?), TypeInfoPropertyName = "NullableBetaResponsesServerEvent2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioWsDelta2>?), TypeInfoPropertyName = "NullableAllOfBetaResponseAudioDeltaEventBetaResponsesServerEventBetaResponseAudioWsDelta22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioWsDone2>?), TypeInfoPropertyName = "NullableAllOfBetaResponseAudioDoneEventBetaResponsesServerEventBetaResponseAudioWsDone22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioTranscriptDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioTranscriptWsDelta2>?), TypeInfoPropertyName = "NullableAllOfBetaResponseAudioTranscriptDeltaEventBetaResponsesServerEventBetaResponseAudioTranscriptWsDelta22")]
     internal sealed partial class SourceGenerationContextChunk16 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -8897,6 +8897,50 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>), TypeInfoPropertyName = "CreateModerationRequestInputVariant3ItemVariant2_82fca1e83967e178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>), TypeInfoPropertyName = "MessageDeltaContentImageUrlObject_9c7d436e0b6fe539")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>), TypeInfoPropertyName = "RunStepDeltaStepDetailsToolCallsFunctionObject_5640d9ed7ecfcd45")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseAudioDoneEventType?), TypeInfoPropertyName = "NullableBetaResponseAudioDoneEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseAudioDeltaEventType?), TypeInfoPropertyName = "NullableBetaResponseAudioDeltaEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseIncompleteEventType?), TypeInfoPropertyName = "NullableBetaResponseIncompleteEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseFailedEventType?), TypeInfoPropertyName = "NullableBetaResponseFailedEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseWebSearchCallCompletedEventType?), TypeInfoPropertyName = "NullableBetaResponseWebSearchCallCompletedEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseWebSearchCallSearchingEventType?), TypeInfoPropertyName = "NullableBetaResponseWebSearchCallSearchingEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseWebSearchCallInProgressEventType?), TypeInfoPropertyName = "NullableBetaResponseWebSearchCallInProgressEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerFailedEventType?), TypeInfoPropertyName = "NullableBetaResponseSteerFailedEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerInput?), TypeInfoPropertyName = "NullableBetaResponseSteerInput2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerFailedEventErrorType?), TypeInfoPropertyName = "NullableBetaResponseSteerFailedEventErrorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerErrorCode?), TypeInfoPropertyName = "NullableBetaResponseSteerErrorCode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerErrorCodeEnum?), TypeInfoPropertyName = "NullableBetaResponseSteerErrorCodeEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerInputItem?), TypeInfoPropertyName = "NullableBetaResponseSteerInputItem2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerInputItemDiscriminatorType?), TypeInfoPropertyName = "NullableBetaResponseSteerInputItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUserMessageItemParamType?), TypeInfoPropertyName = "NullableBetaUserMessageItemParamType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUserMessageItemParamRole?), TypeInfoPropertyName = "NullableBetaUserMessageItemParamRole2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ContentVariant1Item2>, string>?), TypeInfoPropertyName = "NullableOneOfIListContentVariant1Item2String2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.ContentVariant1Item2?), TypeInfoPropertyName = "NullableContentVariant1Item22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaUserMessageItemParamContentVariant1ItemDiscriminatorType?), TypeInfoPropertyName = "NullableBetaUserMessageItemParamContentVariant1ItemDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingEventType?), TypeInfoPropertyName = "NullableBetaResponseSteerPendingEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingReason?), TypeInfoPropertyName = "NullableBetaResponseSteerPendingReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInput?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInput2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredFunctionToolCallOutputType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredFunctionToolCallOutputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredCustomToolCallOutputType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredCustomToolCallOutputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredComputerToolCallOutputType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredComputerToolCallOutputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredShellToolCallOutputType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredShellToolCallOutputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutputType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredToolSearchOutputType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredToolSearchOutputType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredToolSearchOutputExecution?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredToolSearchOutputExecution2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredMcpApprovalResponseType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputRequiredMcpApprovalResponseType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputDiscriminatorType?), TypeInfoPropertyName = "NullableBetaResponseSteerRequiredInputDiscriminatorType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerPendingReasonEnum?), TypeInfoPropertyName = "NullableBetaResponseSteerPendingReasonEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerAcceptedEventType?), TypeInfoPropertyName = "NullableBetaResponseSteerAcceptedEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponseSteerEventType?), TypeInfoPropertyName = "NullableBetaResponseSteerEventType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaOutputAudioType?), TypeInfoPropertyName = "NullableBetaOutputAudioType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputAudioType?), TypeInfoPropertyName = "NullableBetaInputAudioType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputAudioInputAudioFormat?), TypeInfoPropertyName = "NullableBetaInputAudioInputAudioFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaInputParam?), TypeInfoPropertyName = "NullableBetaInputParam2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaContent?), TypeInfoPropertyName = "NullableBetaContent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaIncludeEnum?), TypeInfoPropertyName = "NullableBetaIncludeEnum2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.BetaResponsesServerEvent?), TypeInfoPropertyName = "NullableBetaResponsesServerEvent2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioWsDelta2>?), TypeInfoPropertyName = "NullableAllOfBetaResponseAudioDeltaEventBetaResponsesServerEventBetaResponseAudioWsDelta22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioWsDone2>?), TypeInfoPropertyName = "NullableAllOfBetaResponseAudioDoneEventBetaResponsesServerEventBetaResponseAudioWsDone22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioTranscriptDeltaEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioTranscriptWsDelta2>?), TypeInfoPropertyName = "NullableAllOfBetaResponseAudioTranscriptDeltaEventBetaResponsesServerEventBetaResponseAudioTranscriptWsDelta22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseAudioTranscriptDoneEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseAudioTranscriptWsDone2>?), TypeInfoPropertyName = "NullableAllOfBetaResponseAudioTranscriptDoneEventBetaResponsesServerEventBetaResponseAudioTranscriptWsDone22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseCompactionWsCompacting2>?), TypeInfoPropertyName = "NullableAllOfBetaResponseCompactionCompactingStreamingEventBetaResponsesServerEventBetaResponseCompactionWsCompacting22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseCompletedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseWsCompleted2>?), TypeInfoPropertyName = "NullableAllOfBetaResponseCompletedEventBetaResponsesServerEventBetaResponseWsCompleted22")]
@@ -9286,6 +9330,8 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OutputVariant2Item>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OutputVariant2Item>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.FunctionShellCallOutputContentParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SkillsVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.LiveLocalSkillParam>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.ToolsItem14>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.LiveInitialInputTextContentPartParam>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.ContentItem4>))]
@@ -9319,52 +9365,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BrowserAuthenticationOptionResource>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SessionTurnItemResource>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.TurnResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.PersistedAgentToolResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AgentResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.PersistedAgentToolConfigParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.HostedTemplateSkillResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.HostedTemplateFileResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.EnvironmentTemplateResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SetupCommandParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.HostedSkillParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.HostedPluginParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.HostedEnvironmentFileParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AgentToolResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SessionRequiredActionResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SessionResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AgentToolConfigParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.InputContentParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.InputMessageParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OutputTextResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SessionArtifactResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BrowserAuthenticationFieldValueParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SessionInputParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SessionTurnTraceResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.VaultStatusParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.VaultResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.VaultCredentialResource>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.WebhookEndpointBody>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.ProjectEventTypeEnum>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.List<global::tryAGI.OpenAI.ContentVariant1Item>, string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.ContentVariant1Item>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaInputItem>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaInputItem>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaTool>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaCallableToolAllowedCaller>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaSearchContentType>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.ToolsItem16>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaLocalSkillParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SkillsItem3>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaContainerNetworkPolicyDomainSecretParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.List<string>, global::tryAGI.OpenAI.BetaMCPToolFilter>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.FiltersItem2>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaFunctionAndCustomToolCallOutput>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaFunctionAndCustomToolCallOutput>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaMCPListToolsTool>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaFunctionShellCallOutputContentParam>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OutputsVariant1Item2>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaSummaryTextContent>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaReasoningTextContent>))]
     internal sealed partial class SourceGenerationContextChunk17 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
     }
@@ -9416,6 +9416,52 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<string>, global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>>), TypeInfoPropertyName = "CreateModerationRequestInputVariant3ItemVariant2_82fca1e83967e178")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageDeltaContentImageFileObject, global::tryAGI.OpenAI.MessageDeltaContentTextObject, global::tryAGI.OpenAI.MessageDeltaContentRefusalObject, global::tryAGI.OpenAI.MessageDeltaContentImageUrlObject>>), TypeInfoPropertyName = "MessageDeltaContentImageUrlObject_9c7d436e0b6fe539")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObject>>), TypeInfoPropertyName = "RunStepDeltaStepDetailsToolCallsFunctionObject_5640d9ed7ecfcd45")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.PersistedAgentToolResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AgentResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.PersistedAgentToolConfigParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.HostedTemplateSkillResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.HostedTemplateFileResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.EnvironmentTemplateResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SetupCommandParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.HostedSkillParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.HostedPluginParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.HostedEnvironmentFileParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AgentToolResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SessionRequiredActionResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SessionResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AgentToolConfigParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.InputContentParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.InputMessageParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OutputTextResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SessionArtifactResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BrowserAuthenticationFieldValueParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SessionInputParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SessionTurnTraceResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.VaultStatusParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.VaultResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.VaultCredentialResource>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.WebhookEndpointBody>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.ProjectEventTypeEnum>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.List<global::tryAGI.OpenAI.ContentVariant1Item>, string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.ContentVariant1Item>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaInputItem>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaInputItem>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaTool>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaCallableToolAllowedCaller>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaSearchContentType>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.ToolsItem16>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaLocalSkillParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.SkillsItem3>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaContainerNetworkPolicyDomainSecretParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.List<string>, global::tryAGI.OpenAI.BetaMCPToolFilter>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.FiltersItem2>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaFunctionAndCustomToolCallOutput>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaFunctionAndCustomToolCallOutput>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaMCPListToolsTool>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaFunctionShellCallOutputContentParam>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.OutputsVariant1Item2>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaSummaryTextContent>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaReasoningTextContent>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.BetaOutputTextContentParam>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AnnotationsItem4>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.ContentItem6>))]
@@ -9642,6 +9688,9 @@ namespace tryAGI.OpenAI
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.EnvironmentVariant13JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.FunctionShellCallOutputOutcomeParamJsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.ApplyPatchOperationParamJsonConverter());
+            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.NetworkPolicyVariant1JsonConverter());
+            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.SkillsVariant1ItemJsonConverter());
+            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.EnvironmentVariant14JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.ToolsItem14JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.DelegationVariant1JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.ContentItem4JsonConverter());
@@ -9726,7 +9775,7 @@ namespace tryAGI.OpenAI
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.BetaToolJsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.ToolsItem16JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.Format3JsonConverter());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.EnvironmentVariant14JsonConverter());
+            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.EnvironmentVariant15JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.NetworkPolicy4JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.SkillsItem3JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.NetworkPolicy5JsonConverter());
@@ -9740,7 +9789,7 @@ namespace tryAGI.OpenAI
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.BetaMCPToolCallErrorJsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.BetaApplyPatchOperationParamJsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.BetaFunctionShellCallOutputOutcomeParamJsonConverter());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.EnvironmentVariant15JsonConverter());
+            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.EnvironmentVariant16JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.OutputsVariant1Item2JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.AnnotationsItem4JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.ContentItem6JsonConverter());
@@ -9759,7 +9808,7 @@ namespace tryAGI.OpenAI
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.BetaCustomToolCallResourceJsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.Operation2JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.Outcome2JsonConverter());
-            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.EnvironmentVariant16JsonConverter());
+            options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.EnvironmentVariant17JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.ContentItem7JsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.BetaFunctionToolCallOutputResourceJsonConverter());
             options.Converters.Add(new global::tryAGI.OpenAI.JsonConverters.BetaFunctionToolCallResourceJsonConverter());
@@ -14767,9 +14816,61 @@ namespace tryAGI.OpenAI
 
                     || typeToConvert == typeof(global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParamType?)
 
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveContainerMemoryLimit)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveContainerMemoryLimit?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveContainerNetworkPolicyDisabledParamType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveContainerNetworkPolicyDisabledParamType?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellNetworkPolicyAllowlistParamType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellNetworkPolicyAllowlistParamType?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveSkillReferenceParamType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveSkillReferenceParamType?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamType?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamMediaType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamMediaType?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveInlineSkillParamType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveInlineSkillParamType?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamType?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamNetworkPolicyVariant1DiscriminatorType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamNetworkPolicyVariant1DiscriminatorType?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamSkillsVariant1ItemDiscriminatorType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamSkillsVariant1ItemDiscriminatorType?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveContainerReferenceParamType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveContainerReferenceParamType?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveLocalEnvironmentParamType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveLocalEnvironmentParamType?)
+
                     || typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParamType)
 
                     || typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParamType?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParamEnvironmentVariant1DiscriminatorType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParamEnvironmentVariant1DiscriminatorType?)
 
                     || typeToConvert == typeof(global::tryAGI.OpenAI.LiveImageGenerationToolInputParamType)
 
@@ -30130,6 +30231,126 @@ namespace tryAGI.OpenAI
                     return new global::tryAGI.OpenAI.JsonConverters.LiveCodeInterpreterToolInputParamTypeNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveContainerMemoryLimit))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveContainerMemoryLimitJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveContainerMemoryLimit?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveContainerMemoryLimitNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveContainerNetworkPolicyDisabledParamType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveContainerNetworkPolicyDisabledParamTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveContainerNetworkPolicyDisabledParamType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveContainerNetworkPolicyDisabledParamTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellNetworkPolicyAllowlistParamType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveHostedShellNetworkPolicyAllowlistParamTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellNetworkPolicyAllowlistParamType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveHostedShellNetworkPolicyAllowlistParamTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveSkillReferenceParamType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveSkillReferenceParamTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveSkillReferenceParamType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveSkillReferenceParamTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveInlineSkillSourceParamTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveInlineSkillSourceParamTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamMediaType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveInlineSkillSourceParamMediaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamMediaType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveInlineSkillSourceParamMediaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveInlineSkillParamType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveInlineSkillParamTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveInlineSkillParamType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveInlineSkillParamTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveHostedShellContainerAutoParamTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveHostedShellContainerAutoParamTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamNetworkPolicyVariant1DiscriminatorType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveHostedShellContainerAutoParamNetworkPolicyVariant1DiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamNetworkPolicyVariant1DiscriminatorType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveHostedShellContainerAutoParamNetworkPolicyVariant1DiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamSkillsVariant1ItemDiscriminatorType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveHostedShellContainerAutoParamSkillsVariant1ItemDiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParamSkillsVariant1ItemDiscriminatorType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveHostedShellContainerAutoParamSkillsVariant1ItemDiscriminatorTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveContainerReferenceParamType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveContainerReferenceParamTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveContainerReferenceParamType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveContainerReferenceParamTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveLocalEnvironmentParamType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveLocalEnvironmentParamTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveLocalEnvironmentParamType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveLocalEnvironmentParamTypeNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParamType))
                 {
                     return new global::tryAGI.OpenAI.JsonConverters.LiveHostedShellToolInputParamTypeJsonConverter();
@@ -30138,6 +30359,16 @@ namespace tryAGI.OpenAI
                 if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParamType?))
                 {
                     return new global::tryAGI.OpenAI.JsonConverters.LiveHostedShellToolInputParamTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParamEnvironmentVariant1DiscriminatorType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveHostedShellToolInputParamEnvironmentVariant1DiscriminatorTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParamEnvironmentVariant1DiscriminatorType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.LiveHostedShellToolInputParamEnvironmentVariant1DiscriminatorTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::tryAGI.OpenAI.LiveImageGenerationToolInputParamType))
