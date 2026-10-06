@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class BetaMisalignmentErrorDetailsResource
     {
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("review_target")]
+        public string? ReviewTarget { get; set; }
+
+        /// <summary>
         /// An optional classification; clients must accept additional values.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error_type")]
@@ -36,6 +42,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaMisalignmentErrorDetailsResource" /> class.
         /// </summary>
+        /// <param name="reviewTarget"></param>
         /// <param name="errorType">
         /// An optional classification; clients must accept additional values.
         /// </param>
@@ -49,10 +56,12 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaMisalignmentErrorDetailsResource(
+            string? reviewTarget,
             global::tryAGI.OpenAI.BetaMisalignmentErrorType? errorType,
             string? detailedExplanation,
             global::tryAGI.OpenAI.BetaMisalignmentSteer? steer)
         {
+            this.ReviewTarget = reviewTarget;
             this.ErrorType = errorType;
             this.DetailedExplanation = detailedExplanation;
             this.Steer = steer;
