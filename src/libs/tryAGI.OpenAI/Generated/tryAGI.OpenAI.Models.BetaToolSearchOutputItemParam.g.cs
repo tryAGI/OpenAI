@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaTool> Tools { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaToolSearchOutputTool> Tools { get; set; }
 
         /// <summary>
         ///
@@ -82,7 +82,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaToolSearchOutputItemParam(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaTool> tools,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaToolSearchOutputTool> tools,
             global::tryAGI.OpenAI.BetaAgentTagParam? agent,
             string? id,
             string? callId,

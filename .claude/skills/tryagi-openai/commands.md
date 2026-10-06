@@ -162,6 +162,12 @@ Manage conversations and conversation items.
 | `update-organization-data-retention` | `POST /organization/data_retention` | Update organization data retention |
 | `update-project-data-retention` | `POST /organization/projects/{project_id}/data_retention` | Update project data retention |
 
+## `decision`
+
+| Command | Route | Description |
+|---------|-------|-------------|
+| `create-decision` | `POST /decisions` | Create a decision |
+
 ## `embedding`
 
 Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.
@@ -498,6 +504,7 @@ Use Uploads to upload large files in multiple parts.
 | `retrieve-vault` | `GET /vaults/{vault_id}` | Retrieve a vault |
 | `retrieve-vault-credential` | `GET /vaults/{vault_id}/credentials/{credential_id}` | Retrieve a vault credential |
 | `rotate-vault-credential` | `POST /vaults/{vault_id}/credentials/{credential_id}` | Update a vault credential |
+| `update-vault` | `POST /vaults/{vault_id}` | Update a vault |
 
 ## `vector-store`
 

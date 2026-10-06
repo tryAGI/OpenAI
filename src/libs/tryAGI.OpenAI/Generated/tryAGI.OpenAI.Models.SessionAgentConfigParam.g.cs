@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.MultiAgentConfigCurrentParam? MultiAgent { get; set; }
 
         /// <summary>
-        /// Tools available to the agent. Omit to inherit, or pass null to clear them.
+        /// Tools available to the agent. Omit to inherit, or pass null to clear them. The resolved tool list must fit within 3 MiB (3,145,728 bytes) of compact UTF-8 JSON.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AgentToolConfigParam>? Tools { get; set; }
@@ -78,7 +78,7 @@ namespace tryAGI.OpenAI
         /// Configuration for creating and coordinating subagents.
         /// </param>
         /// <param name="tools">
-        /// Tools available to the agent. Omit to inherit, or pass null to clear them.
+        /// Tools available to the agent. Omit to inherit, or pass null to clear them. The resolved tool list must fit within 3 MiB (3,145,728 bytes) of compact UTF-8 JSON.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

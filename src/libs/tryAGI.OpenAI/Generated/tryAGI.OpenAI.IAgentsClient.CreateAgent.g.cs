@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
         /// Additional instructions appended to the agent's default base instructions. Omit or set to null to add no custom instructions.
         /// </param>
         /// <param name="tools">
-        /// Tools available to the agent. Defaults to an empty list.
+        /// Tools available to the agent. Defaults to an empty list. The tool list must fit within 3 MiB (3,145,728 bytes) of compact UTF-8 JSON.
         /// </param>
         /// <param name="multiAgent">
         /// Configuration for creating and coordinating subagents. Subagent tools are disabled by default.

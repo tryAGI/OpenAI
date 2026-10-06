@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A breakdown of output token usage for a session or turn.
+    ///
     /// </summary>
     public sealed partial class OutputTokensDetailsResource
     {
         /// <summary>
-        /// The number of output tokens used for reasoning.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,9 +24,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="OutputTokensDetailsResource" /> class.
         /// </summary>
-        /// <param name="reasoningTokens">
-        /// The number of output tokens used for reasoning.
-        /// </param>
+        /// <param name="reasoningTokens"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

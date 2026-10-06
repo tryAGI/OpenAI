@@ -100,6 +100,11 @@ namespace tryAGI.OpenAI
         public DataRetentionClient DataRetention { get; }
 
         /// <summary>
+        ///
+        /// </summary>
+        public DecisionsClient Decisions { get; }
+
+        /// <summary>
         /// Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.
         /// </summary>
         public EmbeddingsClient Embeddings { get; }

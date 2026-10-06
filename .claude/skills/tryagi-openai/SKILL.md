@@ -35,6 +35,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `completion` | 1 | Given a prompt, the model will return one or more predicted completions, and can also return the probabilities of alternative tokens at each position. |
 | `conversation` | 8 | Manage conversations and conversation items. |
 | `data-retention` | 4 |  |
+| `decision` | 1 |  |
 | `embedding` | 1 | Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms. |
 | `eval` | 12 | Manage and run evals in the OpenAI platform. |
 | `file` | 5 | Files are used to upload documents that can be used with features like Assistants and Fine-tuning. |
@@ -61,7 +62,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `usage` | 11 |  |
 | `user` | 4 |  |
 | `user-organization-role-assignment` | 4 |  |
-| `vault` | 9 |  |
+| `vault` | 10 |  |
 | `vector-store` | 16 |  |
 | `default` | 42 |  |
 

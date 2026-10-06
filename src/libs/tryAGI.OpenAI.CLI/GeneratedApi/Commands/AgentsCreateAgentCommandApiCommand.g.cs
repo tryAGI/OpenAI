@@ -53,7 +53,7 @@ internal static partial class AgentsCreateAgentCommandApiCommand
     private static Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.PersistedAgentToolConfigParam>?> Tools { get; } = new(
         name: @"--tools")
     {
-        Description = @"Tools available to the agent. Defaults to an empty list.",
+        Description = @"Tools available to the agent. Defaults to an empty list. The tool list must fit within 3 MiB (3,145,728 bytes) of compact UTF-8 JSON.",
     };
     private static readonly MultiAgentConfigCurrentParamOptionSet MultiAgentOptions = MultiAgentConfigCurrentParamOptionSet.Create(@"multi-agent");
       private static Option<string?> Input { get; } = new(@"--input")

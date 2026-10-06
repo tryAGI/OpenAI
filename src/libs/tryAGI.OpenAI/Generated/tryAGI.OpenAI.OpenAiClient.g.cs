@@ -152,6 +152,16 @@ namespace tryAGI.OpenAI
         };
 
         /// <summary>
+        ///
+        /// </summary>
+        public DecisionsClient Decisions => new DecisionsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            CreateIdempotencyKey = CreateIdempotencyKey,
+            JsonSerializerContextProvider = JsonSerializerContextProvider,
+        };
+
+        /// <summary>
         /// Get a vector representation of a given input that can be easily consumed by machine learning models and algorithms.
         /// </summary>
         public EmbeddingsClient Embeddings => new EmbeddingsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)

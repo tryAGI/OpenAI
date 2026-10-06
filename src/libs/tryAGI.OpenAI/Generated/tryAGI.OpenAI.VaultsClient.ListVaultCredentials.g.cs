@@ -28,6 +28,7 @@ namespace tryAGI.OpenAI
         partial void PrepareListVaultCredentialsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string vaultId,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             ref global::tryAGI.OpenAI.ListOrderParam? order,
             ref long? limit,
             ref global::tryAGI.OpenAI.VaultStatusFilterParam? status,
@@ -36,6 +37,7 @@ namespace tryAGI.OpenAI
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string vaultId,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.ListOrderParam? order,
             long? limit,
             global::tryAGI.OpenAI.VaultStatusFilterParam? status,
@@ -54,6 +56,7 @@ namespace tryAGI.OpenAI
         /// Lists a vault's credentials using ID-based pagination without returning secret values. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).
         /// </summary>
         /// <param name="vaultId"></param>
+        /// <param name="metadata"></param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
@@ -68,6 +71,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VaultCredentialListResource> ListVaultCredentialsAsync(
             string vaultId,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.ListOrderParam? order = default,
             long? limit = default,
             global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
@@ -77,6 +81,7 @@ namespace tryAGI.OpenAI
         {
             var __response = await ListVaultCredentialsAsResponseAsync(
                 vaultId: vaultId,
+                metadata: metadata,
                 order: order,
                 limit: limit,
                 status: status,
@@ -92,6 +97,7 @@ namespace tryAGI.OpenAI
         /// Lists a vault's credentials using ID-based pagination without returning secret values. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).
         /// </summary>
         /// <param name="vaultId"></param>
+        /// <param name="metadata"></param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
@@ -106,6 +112,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.VaultCredentialListResource>> ListVaultCredentialsAsResponseAsync(
             string vaultId,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.ListOrderParam? order = default,
             long? limit = default,
             global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
@@ -118,6 +125,7 @@ namespace tryAGI.OpenAI
             PrepareListVaultCredentialsArguments(
                 httpClient: HttpClient,
                 vaultId: ref vaultId,
+                metadata: metadata,
                 order: ref order,
                 limit: ref limit,
                 status: ref status,
@@ -150,6 +158,7 @@ namespace tryAGI.OpenAI
                                 path: $"/vaults/{vaultId}/credentials",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
+                                .AddOptionalParameter("metadata", metadata?.ToString())
                                 .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("status", status?.Match(
@@ -199,6 +208,7 @@ namespace tryAGI.OpenAI
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     vaultId: vaultId,
+                    metadata: metadata,
                     order: order,
                     limit: limit,
                     status: status,
@@ -741,6 +751,7 @@ namespace tryAGI.OpenAI
         /// Wraps ListVaultCredentialsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.VaultCredentialResource&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="vaultId"></param>
+        /// <param name="metadata"></param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
@@ -752,7 +763,8 @@ namespace tryAGI.OpenAI
         /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.VaultCredentialResource> ListVaultCredentialsAutoPagingAsync(
-            string vaultId,             global::tryAGI.OpenAI.ListOrderParam? order = default,
+            string vaultId,             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::tryAGI.OpenAI.ListOrderParam? order = default,
             long? limit = default,
             global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
             string? after = null,
@@ -761,6 +773,7 @@ namespace tryAGI.OpenAI
             return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.VaultCredentialListResource, global::tryAGI.OpenAI.VaultCredentialResource>(
                 fetchPage: (__cursor, __ct) => ListVaultCredentialsAsync(
                     vaultId: vaultId,
+                    metadata: metadata,
                     order: order,
                     limit: limit,
                     status: status,

@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool> Tools { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolSearchOutputTool> Tools { get; set; }
 
         /// <summary>
         ///
@@ -75,7 +75,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolSearchOutputItemParam(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Tool> tools,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolSearchOutputTool> tools,
             string? id,
             string? callId,
             global::tryAGI.OpenAI.ToolSearchExecutionType? execution,

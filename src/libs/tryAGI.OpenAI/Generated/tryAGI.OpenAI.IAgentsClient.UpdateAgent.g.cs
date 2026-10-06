@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// A replacement name. Omit to leave unchanged, or pass null to clear it.
         /// </param>
         /// <param name="tools">
-        /// Tools available to the agent.
+        /// Replaces the tool list. Omit to leave it unchanged, or pass null to clear it. The replacement must fit within 3 MiB (3,145,728 bytes) of compact UTF-8 JSON.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

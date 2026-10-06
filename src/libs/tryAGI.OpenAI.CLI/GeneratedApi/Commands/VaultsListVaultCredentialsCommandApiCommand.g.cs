@@ -13,6 +13,12 @@ internal static partial class VaultsListVaultCredentialsCommandApiCommand
         Description = @"The ID of the vault.",
     };
 
+    private static Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
+        name: @"--metadata")
+    {
+        Description = @"Exact string matches supplied as `metadata[key]=value`. All supplied pairs must match. Up to 16 pairs, with keys from 1 to 64 characters and values up to 512 characters. Filtering is eventually consistent; metadata changes may take time to appear.",
+    };
+
     private static Option<global::tryAGI.OpenAI.ListOrderParam?> Order { get; } = new(
         name: @"--order")
     {
@@ -64,6 +70,7 @@ internal static partial class VaultsListVaultCredentialsCommandApiCommand
         var command = new Command(commandName ?? @"list-vault-credentials", @"List vault credentials
 Lists a vault's credentials using ID-based pagination without returning secret values. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).");
                         command.Arguments.Add(VaultId);
+                        command.Options.Add(Metadata);
                         command.Options.Add(Order);
                         command.Options.Add(Limit);
                         command.Options.Add(Status);
@@ -74,6 +81,7 @@ Lists a vault's credentials using ID-based pagination without returning secret v
             await CliRuntime.RunAsync(async () =>
             {
                         var vaultId = parseResult.GetRequiredValue(VaultId);
+                        var metadata = parseResult.GetValue(Metadata);
                         var order = parseResult.GetValue(Order);
                         var limit = parseResult.GetValue(Limit);
                         var status = parseResult.GetValue(Status);
@@ -83,6 +91,7 @@ Lists a vault's credentials using ID-based pagination without returning secret v
 
                                 var response = await client.Vaults.ListVaultCredentialsAsync(
                                     vaultId: vaultId,
+                                    metadata: metadata,
                                     order: order,
                                     limit: limit,
                                     status: status,

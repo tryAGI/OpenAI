@@ -20,6 +20,7 @@ internal static partial class VaultsApiGroupCommand
                          command.Subcommands.Add(VaultsRetrieveVaultCommandApiCommand.Create());
                          command.Subcommands.Add(VaultsRetrieveVaultCredentialCommandApiCommand.Create());
                          command.Subcommands.Add(VaultsRotateVaultCredentialCommandApiCommand.Create());
+                         command.Subcommands.Add(VaultsUpdateVaultCommandApiCommand.Create());
         CustomizeCommand(ref command);
         return command;
     }
