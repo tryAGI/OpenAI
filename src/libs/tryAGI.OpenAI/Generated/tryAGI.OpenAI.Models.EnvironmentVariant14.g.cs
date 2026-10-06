@@ -12,15 +12,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaFunctionShellToolParamEnvironmentVariant1DiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.LiveHostedShellToolInputParamEnvironmentVariant1DiscriminatorType? Type { get; }
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaContainerAutoParam? ContainerAuto { get; init; }
+        public global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam? ContainerAuto { get; init; }
 #else
-        public global::tryAGI.OpenAI.BetaContainerAutoParam? ContainerAuto { get; }
+        public global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam? ContainerAuto { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.BetaContainerAutoParam? value)
+            out global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam? value)
         {
             value = ContainerAuto;
             return IsContainerAuto;
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaContainerAutoParam PickContainerAuto() => ContainerAuto is { } value
+        public global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam PickContainerAuto() => ContainerAuto is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerAuto' but the value was {ToString()}.");
 
@@ -55,46 +55,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaLocalEnvironmentParam? Local { get; init; }
+        public global::tryAGI.OpenAI.LiveContainerReferenceParam? ContainerReference { get; init; }
 #else
-        public global::tryAGI.OpenAI.BetaLocalEnvironmentParam? Local { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Local))]
-#endif
-        public bool IsLocal => Local != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickLocal(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::tryAGI.OpenAI.BetaLocalEnvironmentParam? value)
-        {
-            value = Local;
-            return IsLocal;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::tryAGI.OpenAI.BetaLocalEnvironmentParam PickLocal() => Local is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaContainerReferenceParam? ContainerReference { get; init; }
-#else
-        public global::tryAGI.OpenAI.BetaContainerReferenceParam? ContainerReference { get; }
+        public global::tryAGI.OpenAI.LiveContainerReferenceParam? ContainerReference { get; }
 #endif
 
         /// <summary>
@@ -112,7 +75,7 @@ namespace tryAGI.OpenAI
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.BetaContainerReferenceParam? value)
+            out global::tryAGI.OpenAI.LiveContainerReferenceParam? value)
         {
             value = ContainerReference;
             return IsContainerReference;
@@ -121,23 +84,60 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaContainerReferenceParam PickContainerReference() => ContainerReference is { } value
+        public global::tryAGI.OpenAI.LiveContainerReferenceParam PickContainerReference() => ContainerReference is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerReference' but the value was {ToString()}.");
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator EnvironmentVariant14(global::tryAGI.OpenAI.BetaContainerAutoParam value) => new EnvironmentVariant14((global::tryAGI.OpenAI.BetaContainerAutoParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaContainerAutoParam?(EnvironmentVariant14 @this) => @this.ContainerAuto;
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveLocalEnvironmentParam? Local { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveLocalEnvironmentParam? Local { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public EnvironmentVariant14(global::tryAGI.OpenAI.BetaContainerAutoParam? value)
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Local))]
+#endif
+        public bool IsLocal => Local != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickLocal(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveLocalEnvironmentParam? value)
+        {
+            value = Local;
+            return IsLocal;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveLocalEnvironmentParam PickLocal() => Local is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Local' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator EnvironmentVariant14(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam value) => new EnvironmentVariant14((global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam?(EnvironmentVariant14 @this) => @this.ContainerAuto;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public EnvironmentVariant14(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam? value)
         {
             ContainerAuto = value;
         }
@@ -145,45 +145,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static EnvironmentVariant14 FromContainerAuto(global::tryAGI.OpenAI.BetaContainerAutoParam? value) => new EnvironmentVariant14(value);
+        public static EnvironmentVariant14 FromContainerAuto(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam? value) => new EnvironmentVariant14(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator EnvironmentVariant14(global::tryAGI.OpenAI.BetaLocalEnvironmentParam value) => new EnvironmentVariant14((global::tryAGI.OpenAI.BetaLocalEnvironmentParam?)value);
+        public static implicit operator EnvironmentVariant14(global::tryAGI.OpenAI.LiveContainerReferenceParam value) => new EnvironmentVariant14((global::tryAGI.OpenAI.LiveContainerReferenceParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaLocalEnvironmentParam?(EnvironmentVariant14 @this) => @this.Local;
+        public static implicit operator global::tryAGI.OpenAI.LiveContainerReferenceParam?(EnvironmentVariant14 @this) => @this.ContainerReference;
 
         /// <summary>
         ///
         /// </summary>
-        public EnvironmentVariant14(global::tryAGI.OpenAI.BetaLocalEnvironmentParam? value)
-        {
-            Local = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static EnvironmentVariant14 FromLocal(global::tryAGI.OpenAI.BetaLocalEnvironmentParam? value) => new EnvironmentVariant14(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator EnvironmentVariant14(global::tryAGI.OpenAI.BetaContainerReferenceParam value) => new EnvironmentVariant14((global::tryAGI.OpenAI.BetaContainerReferenceParam?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaContainerReferenceParam?(EnvironmentVariant14 @this) => @this.ContainerReference;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public EnvironmentVariant14(global::tryAGI.OpenAI.BetaContainerReferenceParam? value)
+        public EnvironmentVariant14(global::tryAGI.OpenAI.LiveContainerReferenceParam? value)
         {
             ContainerReference = value;
         }
@@ -191,31 +168,54 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static EnvironmentVariant14 FromContainerReference(global::tryAGI.OpenAI.BetaContainerReferenceParam? value) => new EnvironmentVariant14(value);
+        public static EnvironmentVariant14 FromContainerReference(global::tryAGI.OpenAI.LiveContainerReferenceParam? value) => new EnvironmentVariant14(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator EnvironmentVariant14(global::tryAGI.OpenAI.LiveLocalEnvironmentParam value) => new EnvironmentVariant14((global::tryAGI.OpenAI.LiveLocalEnvironmentParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveLocalEnvironmentParam?(EnvironmentVariant14 @this) => @this.Local;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public EnvironmentVariant14(global::tryAGI.OpenAI.LiveLocalEnvironmentParam? value)
+        {
+            Local = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static EnvironmentVariant14 FromLocal(global::tryAGI.OpenAI.LiveLocalEnvironmentParam? value) => new EnvironmentVariant14(value);
 
         /// <summary>
         ///
         /// </summary>
         public EnvironmentVariant14(
-            global::tryAGI.OpenAI.BetaFunctionShellToolParamEnvironmentVariant1DiscriminatorType? type,
-            global::tryAGI.OpenAI.BetaContainerAutoParam? containerAuto,
-            global::tryAGI.OpenAI.BetaLocalEnvironmentParam? local,
-            global::tryAGI.OpenAI.BetaContainerReferenceParam? containerReference
+            global::tryAGI.OpenAI.LiveHostedShellToolInputParamEnvironmentVariant1DiscriminatorType? type,
+            global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam? containerAuto,
+            global::tryAGI.OpenAI.LiveContainerReferenceParam? containerReference,
+            global::tryAGI.OpenAI.LiveLocalEnvironmentParam? local
             )
         {
             Type = type;
 
             ContainerAuto = containerAuto;
-            Local = local;
             ContainerReference = containerReference;
+            Local = local;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            ContainerReference as object ??
             Local as object ??
+            ContainerReference as object ??
             ContainerAuto as object
             ;
 
@@ -224,8 +224,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             ContainerAuto?.ToString() ??
-            Local?.ToString() ??
-            ContainerReference?.ToString()
+            ContainerReference?.ToString() ??
+            Local?.ToString()
             ;
 
         /// <summary>
@@ -233,16 +233,16 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsContainerAuto && !IsLocal && !IsContainerReference || !IsContainerAuto && IsLocal && !IsContainerReference || !IsContainerAuto && !IsLocal && IsContainerReference;
+            return IsContainerAuto && !IsContainerReference && !IsLocal || !IsContainerAuto && IsContainerReference && !IsLocal || !IsContainerAuto && !IsContainerReference && IsLocal;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.BetaContainerAutoParam, TResult>? containerAuto = null,
-            global::System.Func<global::tryAGI.OpenAI.BetaLocalEnvironmentParam, TResult>? local = null,
-            global::System.Func<global::tryAGI.OpenAI.BetaContainerReferenceParam, TResult>? containerReference = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam, TResult>? containerAuto = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveContainerReferenceParam, TResult>? containerReference = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveLocalEnvironmentParam, TResult>? local = null,
             bool validate = true)
         {
             if (validate)
@@ -254,13 +254,13 @@ namespace tryAGI.OpenAI
             {
                 return containerAuto(__value0);
             }
-            else if (Local is { } __value1 && local != null)
+            else if (ContainerReference is { } __value1 && containerReference != null)
             {
-                return local(__value1);
+                return containerReference(__value1);
             }
-            else if (ContainerReference is { } __value2 && containerReference != null)
+            else if (Local is { } __value2 && local != null)
             {
-                return containerReference(__value2);
+                return local(__value2);
             }
 
             return default(TResult);
@@ -270,11 +270,11 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.BetaContainerAutoParam>? containerAuto = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam>? containerAuto = null,
 
-            global::System.Action<global::tryAGI.OpenAI.BetaLocalEnvironmentParam>? local = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveContainerReferenceParam>? containerReference = null,
 
-            global::System.Action<global::tryAGI.OpenAI.BetaContainerReferenceParam>? containerReference = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveLocalEnvironmentParam>? local = null,
             bool validate = true)
         {
             if (validate)
@@ -286,13 +286,13 @@ namespace tryAGI.OpenAI
             {
                 containerAuto?.Invoke(__value0);
             }
-            else if (Local is { } __value1)
+            else if (ContainerReference is { } __value1)
             {
-                local?.Invoke(__value1);
+                containerReference?.Invoke(__value1);
             }
-            else if (ContainerReference is { } __value2)
+            else if (Local is { } __value2)
             {
-                containerReference?.Invoke(__value2);
+                local?.Invoke(__value2);
             }
         }
 
@@ -300,9 +300,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.BetaContainerAutoParam>? containerAuto = null,
-            global::System.Action<global::tryAGI.OpenAI.BetaLocalEnvironmentParam>? local = null,
-            global::System.Action<global::tryAGI.OpenAI.BetaContainerReferenceParam>? containerReference = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam>? containerAuto = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveContainerReferenceParam>? containerReference = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveLocalEnvironmentParam>? local = null,
             bool validate = true)
         {
             if (validate)
@@ -314,13 +314,13 @@ namespace tryAGI.OpenAI
             {
                 containerAuto?.Invoke(__value0);
             }
-            else if (Local is { } __value1)
+            else if (ContainerReference is { } __value1)
             {
-                local?.Invoke(__value1);
+                containerReference?.Invoke(__value1);
             }
-            else if (ContainerReference is { } __value2)
+            else if (Local is { } __value2)
             {
-                containerReference?.Invoke(__value2);
+                local?.Invoke(__value2);
             }
         }
 
@@ -332,11 +332,11 @@ namespace tryAGI.OpenAI
             var fields = new object?[]
             {
                 ContainerAuto,
-                typeof(global::tryAGI.OpenAI.BetaContainerAutoParam),
-                Local,
-                typeof(global::tryAGI.OpenAI.BetaLocalEnvironmentParam),
+                typeof(global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam),
                 ContainerReference,
-                typeof(global::tryAGI.OpenAI.BetaContainerReferenceParam),
+                typeof(global::tryAGI.OpenAI.LiveContainerReferenceParam),
+                Local,
+                typeof(global::tryAGI.OpenAI.LiveLocalEnvironmentParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -353,9 +353,9 @@ namespace tryAGI.OpenAI
         public bool Equals(EnvironmentVariant14 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaContainerAutoParam?>.Default.Equals(ContainerAuto, other.ContainerAuto) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaLocalEnvironmentParam?>.Default.Equals(Local, other.Local) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaContainerReferenceParam?>.Default.Equals(ContainerReference, other.ContainerReference)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveHostedShellContainerAutoParam?>.Default.Equals(ContainerAuto, other.ContainerAuto) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveContainerReferenceParam?>.Default.Equals(ContainerReference, other.ContainerReference) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveLocalEnvironmentParam?>.Default.Equals(Local, other.Local)
                 ;
         }
 

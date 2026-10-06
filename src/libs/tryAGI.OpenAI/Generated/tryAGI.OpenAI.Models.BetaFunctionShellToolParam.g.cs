@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
-        public global::tryAGI.OpenAI.EnvironmentVariant14? Environment { get; set; }
+        public global::tryAGI.OpenAI.EnvironmentVariant15? Environment { get; set; }
 
         /// <summary>
         ///
@@ -48,7 +48,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaFunctionShellToolParam(
-            global::tryAGI.OpenAI.EnvironmentVariant14? environment,
+            global::tryAGI.OpenAI.EnvironmentVariant15? environment,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaCallableToolAllowedCaller>? allowedCallers,
             global::tryAGI.OpenAI.BetaFunctionShellToolParamType type = global::tryAGI.OpenAI.BetaFunctionShellToolParamType.Shell)
         {
