@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    ///
+    /// Choose from the supplied options based on the input.
     /// </summary>
     public sealed partial class QuestionParamChoice
     {

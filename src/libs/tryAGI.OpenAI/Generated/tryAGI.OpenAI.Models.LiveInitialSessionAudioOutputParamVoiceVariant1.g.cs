@@ -103,11 +103,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        Shimmer,
+        Shida,
         /// <summary>
         ///
         /// </summary>
-        Shitan,
+        Shimmer,
         /// <summary>
         ///
         /// </summary>
@@ -169,8 +169,8 @@ namespace tryAGI.OpenAI
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Quartz => "quartz",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Ripple => "ripple",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Sage => "sage",
+                LiveInitialSessionAudioOutputParamVoiceVariant1.Shida => "shida",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Shimmer => "shimmer",
-                LiveInitialSessionAudioOutputParamVoiceVariant1.Shitan => "shitan",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Sillage => "sillage",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Stone => "stone",
                 LiveInitialSessionAudioOutputParamVoiceVariant1.Tempo => "tempo",
@@ -210,8 +210,8 @@ namespace tryAGI.OpenAI
                 "quartz" => LiveInitialSessionAudioOutputParamVoiceVariant1.Quartz,
                 "ripple" => LiveInitialSessionAudioOutputParamVoiceVariant1.Ripple,
                 "sage" => LiveInitialSessionAudioOutputParamVoiceVariant1.Sage,
+                "shida" => LiveInitialSessionAudioOutputParamVoiceVariant1.Shida,
                 "shimmer" => LiveInitialSessionAudioOutputParamVoiceVariant1.Shimmer,
-                "shitan" => LiveInitialSessionAudioOutputParamVoiceVariant1.Shitan,
                 "sillage" => LiveInitialSessionAudioOutputParamVoiceVariant1.Sillage,
                 "stone" => LiveInitialSessionAudioOutputParamVoiceVariant1.Stone,
                 "tempo" => LiveInitialSessionAudioOutputParamVoiceVariant1.Tempo,

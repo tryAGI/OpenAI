@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    ///
+    /// Rate the input against the supplied ordered levels.
     /// </summary>
     public sealed partial class QuestionParamScore
     {
