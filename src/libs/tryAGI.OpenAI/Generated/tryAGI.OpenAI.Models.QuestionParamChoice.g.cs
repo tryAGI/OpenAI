@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         public required string Instructions { get; set; }
 
         /// <summary>
-        ///
+        /// Provide between 2 and 255 choices. Each choice must be unique.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -47,7 +47,9 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="QuestionParamChoice" /> class.
         /// </summary>
         /// <param name="instructions"></param>
-        /// <param name="choices"></param>
+        /// <param name="choices">
+        /// Provide between 2 and 255 choices. Each choice must be unique.
+        /// </param>
         /// <param name="name"></param>
         /// <param name="type">
         /// The type of the object. Always `choice`.<br/>
