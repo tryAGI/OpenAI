@@ -126,7 +126,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'Score' but the value was {ToString()}.");
 
         /// <summary>
-        /// The host may decline one question without disclosing its refusal score.
+        /// The model declined to answer this question. Other questions in the same request can still receive answers.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.AnswerResourceRefusal? Refusal { get; init; }

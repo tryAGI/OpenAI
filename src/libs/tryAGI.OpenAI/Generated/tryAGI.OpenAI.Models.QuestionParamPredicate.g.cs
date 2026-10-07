@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    ///
+    /// Estimate how likely it is that a statement about the input is true.
     /// </summary>
     public sealed partial class QuestionParamPredicate
     {

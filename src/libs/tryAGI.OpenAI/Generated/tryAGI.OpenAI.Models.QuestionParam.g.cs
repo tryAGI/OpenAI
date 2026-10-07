@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.QuestionParamDiscriminatorType? Type { get; }
 
         /// <summary>
-        ///
+        /// Estimate how likely it is that a statement about the input is true.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.QuestionParamPredicate? Predicate { get; init; }
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'Predicate' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// Choose from the supplied options based on the input.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.QuestionParamChoice? Choice { get; init; }
@@ -89,7 +89,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'Choice' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// Rate the input against the supplied ordered levels.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.QuestionParamScore? Score { get; init; }

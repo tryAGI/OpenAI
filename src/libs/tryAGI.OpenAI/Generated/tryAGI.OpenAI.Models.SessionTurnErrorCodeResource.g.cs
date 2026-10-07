@@ -19,6 +19,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        BillingNotActive,
+        /// <summary>
+        ///
+        /// </summary>
         ConnectionFailed,
         /// <summary>
         ///
@@ -112,6 +116,7 @@ namespace tryAGI.OpenAI
             {
                 SessionTurnErrorCodeResource.ActiveTurnNotSteerable => "active_turn_not_steerable",
                 SessionTurnErrorCodeResource.AuthenticationError => "authentication_error",
+                SessionTurnErrorCodeResource.BillingNotActive => "billing_not_active",
                 SessionTurnErrorCodeResource.ConnectionFailed => "connection_failed",
                 SessionTurnErrorCodeResource.ContextLengthExceeded => "context_length_exceeded",
                 SessionTurnErrorCodeResource.CreditBalanceExhausted => "credit_balance_exhausted",
@@ -144,6 +149,7 @@ namespace tryAGI.OpenAI
             {
                 "active_turn_not_steerable" => SessionTurnErrorCodeResource.ActiveTurnNotSteerable,
                 "authentication_error" => SessionTurnErrorCodeResource.AuthenticationError,
+                "billing_not_active" => SessionTurnErrorCodeResource.BillingNotActive,
                 "connection_failed" => SessionTurnErrorCodeResource.ConnectionFailed,
                 "context_length_exceeded" => SessionTurnErrorCodeResource.ContextLengthExceeded,
                 "credit_balance_exhausted" => SessionTurnErrorCodeResource.CreditBalanceExhausted,

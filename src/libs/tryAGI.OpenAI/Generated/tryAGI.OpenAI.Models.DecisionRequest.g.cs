@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
         public required string Model { get; set; }
 
         /// <summary>
-        /// Shared evidence, as a string or an array of user messages containing text and inline images. Non-user roles, function calls, function-call outputs, files, audio, and item references are not supported. At most 128 image parts are allowed across all messages in one request.
+        /// The text or images to evaluate for every question. Provide a text string or user messages containing text and inline images. Images must be inline data URLs; at most 128 images are allowed across all messages in one request. External URLs, files, audio, tools, and item references are not supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DecisionInputJsonConverter))]
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="model"></param>
         /// <param name="input">
-        /// Shared evidence, as a string or an array of user messages containing text and inline images. Non-user roles, function calls, function-call outputs, files, audio, and item references are not supported. At most 128 image parts are allowed across all messages in one request.
+        /// The text or images to evaluate for every question. Provide a text string or user messages containing text and inline images. Images must be inline data URLs; at most 128 images are allowed across all messages in one request. External URLs, files, audio, tools, and item references are not supported.
         /// </param>
         /// <param name="questions"></param>
         /// <param name="safetyIdentifier">
