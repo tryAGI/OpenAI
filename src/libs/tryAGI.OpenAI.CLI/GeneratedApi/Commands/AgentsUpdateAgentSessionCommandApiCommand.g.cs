@@ -24,6 +24,7 @@ internal static partial class AgentsUpdateAgentSessionCommandApiCommand
     {
         Description = @"Replaces all metadata. Omit to leave unchanged, or pass null or {} to clear it. Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters.",
     };
+    private static readonly SessionSpendControlParamOptionSet SpendControlOptions = SessionSpendControlParamOptionSet.Create(@"spend-control");
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -69,7 +70,7 @@ internal static partial class AgentsUpdateAgentSessionCommandApiCommand
 Updates session metadata, model, reasoning effort, or service tier. Model settings apply to subsequent turns. Omitted fields are unchanged. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).");
                         command.Arguments.Add(SessionId);
                         command.Options.Add(Agent);
-                        command.Options.Add(Metadata);
+                        command.Options.Add(Metadata);                        command.Options.Add(SpendControlOptions.Limit);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -98,6 +99,17 @@ Updates session metadata, model, reasoning effort, or service tier. Model settin
                         var sessionId = parseResult.GetRequiredValue(SessionId);
                         var agent = CliRuntime.WasSpecified(parseResult, Agent) ? parseResult.GetValue(Agent) : (__requestBase is { } __AgentBaseValue ? __AgentBaseValue.Agent : default);
                         var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
+
+                        var __SpendControlBase = __requestBase is { } __SpendControlBaseValue ? __SpendControlBaseValue.SpendControl : default;                        var spendControlLimit = CliRuntime.WasSpecified(parseResult, SpendControlOptions.Limit) ? parseResult.GetValue(SpendControlOptions.Limit) : (__SpendControlBase is { } __SpendControllimitBaseValue ? __SpendControllimitBaseValue.Limit : default);
+                        var __SpendControlSpecified = CliRuntime.WasSpecified(parseResult, SpendControlOptions.Limit);
+                        var spendControl =
+                            __SpendControlSpecified || __SpendControlBase is not null
+                                ? new global::tryAGI.OpenAI.SessionSpendControlParam
+                                {
+	                                Limit = spendControlLimit,
+
+                                }
+                                : __SpendControlBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -105,6 +117,7 @@ Updates session metadata, model, reasoning effort, or service tier. Model settin
                                     sessionId: sessionId,
                                     agent: agent,
                                     metadata: metadata,
+                                    spendControl: spendControl,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

@@ -26,9 +26,8 @@ namespace tryAGI.OpenAI
         /// How the voice was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.VoiceResourceType?>))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.VoiceResourceType?> Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceResourceTypeJsonConverter))]
+        public global::tryAGI.OpenAI.VoiceResourceType Type { get; set; }
 
         /// <summary>
         /// The name of the voice.
@@ -56,9 +55,6 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The voice identifier, which can be referenced in API endpoints.
         /// </param>
-        /// <param name="type">
-        /// How the voice was created.
-        /// </param>
         /// <param name="name">
         /// The name of the voice.
         /// </param>
@@ -68,15 +64,18 @@ namespace tryAGI.OpenAI
         /// <param name="object">
         /// The object type, which is always `audio.voice`.
         /// </param>
+        /// <param name="type">
+        /// How the voice was created.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VoiceResource(
             string id,
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.VoiceResourceType?> type,
             string name,
             int createdAt,
-            global::tryAGI.OpenAI.VoiceResourceObject @object)
+            global::tryAGI.OpenAI.VoiceResourceObject @object,
+            global::tryAGI.OpenAI.VoiceResourceType type)
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

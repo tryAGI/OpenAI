@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class SessionResource
     {
         /// <summary>
+        /// Configured spending limit and best-effort consumption, in USD cents. Unlimited sessions omit this object.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spend_control")]
+        public global::tryAGI.OpenAI.SessionSpendControlResource? SpendControl { get; set; }
+
+        /// <summary>
         /// Custom string key-value pairs attached to the session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
@@ -132,6 +138,9 @@ namespace tryAGI.OpenAI
         /// <param name="vaultIds">
         /// The IDs of vaults made available to the session.
         /// </param>
+        /// <param name="spendControl">
+        /// Configured spending limit and best-effort consumption, in USD cents. Unlimited sessions omit this object.
+        /// </param>
         /// <param name="error">
         /// The error that caused the session to fail, if any.
         /// </param>
@@ -155,10 +164,12 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.SessionAgentResource agent,
             global::tryAGI.OpenAI.EnvironmentResource environment,
             global::System.Collections.Generic.IList<string> vaultIds,
+            global::tryAGI.OpenAI.SessionSpendControlResource? spendControl,
             string? error,
             global::tryAGI.OpenAI.TokenUsageResource? usage,
             global::tryAGI.OpenAI.SessionResourceObject @object = global::tryAGI.OpenAI.SessionResourceObject.AgentSession)
         {
+            this.SpendControl = spendControl;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class UpdateAgentSessionParams
     {
         /// <summary>
+        /// Omit to retain the limit; null or a null limit removes it without resetting spend.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spend_control")]
+        public global::tryAGI.OpenAI.SessionSpendControlParam? SpendControl { get; set; }
+
+        /// <summary>
         /// Model settings for subsequent turns. Omitted fields stay unchanged.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("agent")]
@@ -29,6 +35,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateAgentSessionParams" /> class.
         /// </summary>
+        /// <param name="spendControl">
+        /// Omit to retain the limit; null or a null limit removes it without resetting spend.
+        /// </param>
         /// <param name="agent">
         /// Model settings for subsequent turns. Omitted fields stay unchanged.
         /// </param>
@@ -39,9 +48,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateAgentSessionParams(
+            global::tryAGI.OpenAI.SessionSpendControlParam? spendControl,
             global::tryAGI.OpenAI.UpdateSessionAgentParam? agent,
             global::System.Collections.Generic.Dictionary<string, string>? metadata)
         {
+            this.SpendControl = spendControl;
             this.Agent = agent;
             this.Metadata = metadata;
         }

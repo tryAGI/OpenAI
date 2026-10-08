@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateAgentSessionParams
     {
         /// <summary>
+        /// Optional spending limit in USD cents. Omission or null creates an unlimited session.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spend_control")]
+        public global::tryAGI.OpenAI.SessionSpendControlParam? SpendControl { get; set; }
+
+        /// <summary>
         /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Omission or null defaults to an empty map.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
@@ -65,6 +71,9 @@ namespace tryAGI.OpenAI
         /// <param name="environment">
         /// An inline execution environment or a reference to an environment template.
         /// </param>
+        /// <param name="spendControl">
+        /// Optional spending limit in USD cents. Omission or null creates an unlimited session.
+        /// </param>
         /// <param name="metadata">
         /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Omission or null defaults to an empty map.
         /// </param>
@@ -89,6 +98,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateAgentSessionParams(
             global::tryAGI.OpenAI.EnvironmentParam environment,
+            global::tryAGI.OpenAI.SessionSpendControlParam? spendControl,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.SessionAgentConfigParam? agent,
             string? agentId,
@@ -96,6 +106,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateSessionInputParam? input,
             bool? stream)
         {
+            this.SpendControl = spendControl;
             this.Metadata = metadata;
             this.Agent = agent;
             this.AgentId = agentId;

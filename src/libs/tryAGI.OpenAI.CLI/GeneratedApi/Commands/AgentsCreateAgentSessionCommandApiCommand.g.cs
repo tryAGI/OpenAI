@@ -27,6 +27,8 @@ internal static partial class AgentsCreateAgentSessionCommandApiCommand
     };
     private static readonly CreateAgentSessionParamsOptionSet CreateAgentSessionParamsOptionSetOptions = CreateAgentSessionParamsOptionSet.Create();
 
+    private static readonly SessionSpendControlParamOptionSet SpendControlOptions = SessionSpendControlParamOptionSet.Create(@"spend-control");
+
     private static readonly SessionAgentConfigParamOptionSet AgentOptions = SessionAgentConfigParamOptionSet.Create(@"agent");
       private static Option<string?> RequestInput { get; } = new(@"--request-input")
       {
@@ -90,7 +92,7 @@ Creates a managed agent session, optionally submits initial input, and returns t
                         command.Options.Add(Metadata);
                         command.Options.Add(Environment);
                         command.Options.Add(InputOption);                        command.Options.Add(CreateAgentSessionParamsOptionSetOptions.AgentId);
-                        command.Options.Add(CreateAgentSessionParamsOptionSetOptions.VaultIds);                        command.Options.Add(AgentOptions.Model);
+                        command.Options.Add(CreateAgentSessionParamsOptionSetOptions.VaultIds);                        command.Options.Add(SpendControlOptions.Limit);                        command.Options.Add(AgentOptions.Model);
                         command.Options.Add(AgentOptions.Instructions);
           command.Options.Add(RequestInput);
           command.Options.Add(RequestJson);
@@ -124,6 +126,17 @@ Creates a managed agent session, optionally submits initial input, and returns t
                         var input = CliRuntime.WasSpecified(parseResult, InputOption) ? parseResult.GetValue(InputOption) : (__requestBase is { } __InputBaseValue ? __InputBaseValue.Input : default);                        var agentId = CliRuntime.WasSpecified(parseResult, CreateAgentSessionParamsOptionSetOptions.AgentId) ? parseResult.GetValue(CreateAgentSessionParamsOptionSetOptions.AgentId) : (__requestBase is { } __AgentIdBaseValue ? __AgentIdBaseValue.AgentId : default);
                         var vaultIds = CliRuntime.WasSpecified(parseResult, CreateAgentSessionParamsOptionSetOptions.VaultIds) ? parseResult.GetValue(CreateAgentSessionParamsOptionSetOptions.VaultIds) : (__requestBase is { } __VaultIdsBaseValue ? __VaultIdsBaseValue.VaultIds : default);
 
+                        var __SpendControlBase = __requestBase is { } __SpendControlBaseValue ? __SpendControlBaseValue.SpendControl : default;                        var spendControlLimit = CliRuntime.WasSpecified(parseResult, SpendControlOptions.Limit) ? parseResult.GetValue(SpendControlOptions.Limit) : (__SpendControlBase is { } __SpendControllimitBaseValue ? __SpendControllimitBaseValue.Limit : default);
+                        var __SpendControlSpecified = CliRuntime.WasSpecified(parseResult, SpendControlOptions.Limit);
+                        var spendControl =
+                            __SpendControlSpecified || __SpendControlBase is not null
+                                ? new global::tryAGI.OpenAI.SessionSpendControlParam
+                                {
+	                                Limit = spendControlLimit,
+
+                                }
+                                : __SpendControlBase;
+
                         var __AgentBase = __requestBase is { } __AgentBaseValue ? __AgentBaseValue.Agent : default;                        var agentModel = CliRuntime.WasSpecified(parseResult, AgentOptions.Model) ? parseResult.GetValue(AgentOptions.Model) : (__AgentBase is { } __AgentmodelBaseValue ? __AgentmodelBaseValue.Model : default);
                         var agentInstructions = CliRuntime.WasSpecified(parseResult, AgentOptions.Instructions) ? parseResult.GetValue(AgentOptions.Instructions) : (__AgentBase is { } __AgentinstructionsBaseValue ? __AgentinstructionsBaseValue.Instructions : default);
                         var __AgentSpecified = CliRuntime.WasSpecified(parseResult, AgentOptions.Model) || CliRuntime.WasSpecified(parseResult, AgentOptions.Instructions);
@@ -148,6 +161,7 @@ Creates a managed agent session, optionally submits initial input, and returns t
                                     input: input,
                                     agentId: agentId,
                                     vaultIds: vaultIds,
+                                    spendControl: spendControl,
                                     agent: agent,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
                                     var resourceId = global::System.Convert.ToString(
@@ -180,6 +194,7 @@ Creates a managed agent session, optionally submits initial input, and returns t
                                     input: input,
                                     agentId: agentId,
                                     vaultIds: vaultIds,
+                                    spendControl: spendControl,
                                     agent: agent,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
