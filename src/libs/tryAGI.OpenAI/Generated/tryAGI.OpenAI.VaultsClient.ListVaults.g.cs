@@ -27,19 +27,19 @@ namespace tryAGI.OpenAI
             };
         partial void PrepareListVaultsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            ref global::tryAGI.OpenAI.ListOrderParam? order,
             ref long? limit,
-            ref global::tryAGI.OpenAI.VaultStatusFilterParam? status,
-            ref string? after);
+            ref global::tryAGI.OpenAI.ListOrderParam? order,
+            ref string? after,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            ref global::tryAGI.OpenAI.VaultStatusFilterParam? status);
         partial void PrepareListVaultsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            global::tryAGI.OpenAI.ListOrderParam? order,
             long? limit,
-            global::tryAGI.OpenAI.VaultStatusFilterParam? status,
-            string? after);
+            global::tryAGI.OpenAI.ListOrderParam? order,
+            string? after,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            global::tryAGI.OpenAI.VaultStatusFilterParam? status);
         partial void ProcessListVaultsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -53,34 +53,36 @@ namespace tryAGI.OpenAI
         /// List vaults<br/>
         /// Lists vaults using ID-based pagination. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).
         /// </summary>
-        /// <param name="metadata"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
         /// </param>
-        /// <param name="limit"></param>
+        /// <param name="after"></param>
+        /// <param name="metadata"></param>
         /// <param name="status">
         /// One or more lifecycle statuses to include when listing vaults or credentials.
         /// </param>
-        /// <param name="after"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VaultListResource> ListVaultsAsync(
-            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
-            global::tryAGI.OpenAI.ListOrderParam? order = default,
             long? limit = default,
-            global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
+            global::tryAGI.OpenAI.ListOrderParam? order = default,
             string? after = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListVaultsAsResponseAsync(
-                metadata: metadata,
-                order: order,
                 limit: limit,
-                status: status,
+                order: order,
                 after: after,
+                metadata: metadata,
+                status: status,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -91,25 +93,27 @@ namespace tryAGI.OpenAI
         /// List vaults<br/>
         /// Lists vaults using ID-based pagination. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).
         /// </summary>
-        /// <param name="metadata"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
         /// </param>
-        /// <param name="limit"></param>
+        /// <param name="after"></param>
+        /// <param name="metadata"></param>
         /// <param name="status">
         /// One or more lifecycle statuses to include when listing vaults or credentials.
         /// </param>
-        /// <param name="after"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.VaultListResource>> ListVaultsAsResponseAsync(
-            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
-            global::tryAGI.OpenAI.ListOrderParam? order = default,
             long? limit = default,
-            global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
+            global::tryAGI.OpenAI.ListOrderParam? order = default,
             string? after = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -117,11 +121,11 @@ namespace tryAGI.OpenAI
                 client: HttpClient);
             PrepareListVaultsArguments(
                 httpClient: HttpClient,
-                metadata: metadata,
-                order: ref order,
                 limit: ref limit,
-                status: ref status,
-                after: ref after);
+                order: ref order,
+                after: ref after,
+                metadata: metadata,
+                status: ref status);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
@@ -150,14 +154,14 @@ namespace tryAGI.OpenAI
                                 path: "/vaults",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("metadata", metadata?.ToString())
-                                .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("order", order?.ToValueString())
+                                .AddOptionalParameter("after", after)
+                                .AddOptionalParameter("metadata", metadata?.ToString())
                                 .AddOptionalParameter("status", status?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToValueString() },
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToValueString()),
                 validate: false), delimiter: ",", explode: true)
-                                .AddOptionalParameter("after", after)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -199,11 +203,11 @@ namespace tryAGI.OpenAI
                 PrepareListVaultsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    metadata: metadata,
-                    order: order,
                     limit: limit,
-                    status: status,
-                    after: after);
+                    order: order,
+                    after: after,
+                    metadata: metadata,
+                    status: status);
 
                 return __httpRequest;
             }
@@ -741,32 +745,34 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Wraps ListVaultsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.VaultResource&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="metadata"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
         /// </param>
-        /// <param name="limit"></param>
+        /// <param name="metadata"></param>
         /// <param name="status">
         /// One or more lifecycle statuses to include when listing vaults or credentials.
         /// </param>
         /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.VaultResource> ListVaultsAutoPagingAsync(
-              global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+              long? limit = default,
             global::tryAGI.OpenAI.ListOrderParam? order = default,
-            long? limit = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
             string? after = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.VaultListResource, global::tryAGI.OpenAI.VaultResource>(
                 fetchPage: (__cursor, __ct) => ListVaultsAsync(
-                    metadata: metadata,
-                    order: order,
                     limit: limit,
-                    status: status,
+                    order: order,
                     after: __cursor,
+                    metadata: metadata,
+                    status: status,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

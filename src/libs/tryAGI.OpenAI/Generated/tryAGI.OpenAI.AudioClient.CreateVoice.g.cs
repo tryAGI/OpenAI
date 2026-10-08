@@ -27,11 +27,11 @@ namespace tryAGI.OpenAI
             };
         partial void PrepareCreateVoiceArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::tryAGI.OpenAI.CreateVoicePromptRequest request);
+            global::tryAGI.OpenAI.CreateVoiceRequest request);
         partial void PrepareCreateVoiceRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::tryAGI.OpenAI.CreateVoicePromptRequest request);
+            global::tryAGI.OpenAI.CreateVoiceRequest request);
         partial void ProcessCreateVoiceResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,9 +43,9 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Create voice<br/>
-        /// Creates a voice from a text prompt or from a consent recording and an audio sample.<br/>
-        /// For prompt-based creation, send `type: "prompt"` with a `name` and `prompt` as JSON or multipart form data. For creation from an audio sample, send `type: "audio_sample"` with a `name`, `audio_sample`, and `consent` recording ID as multipart form data. The type defaults to `audio_sample` when omitted.<br/>
-        /// Returns the saved voice's metadata. Voices created from text prompts are supported only in Live, not in Realtime or the speech endpoint. The response does not include preview audio.
+        /// Create a custom voice you can use for audio output (for example, in Text-to-Speech and the Realtime API). This requires an audio sample and a previously uploaded consent recording.<br/>
+        /// Send `name`, `audio_sample`, and the `consent` recording ID as multipart form data. The optional `type` defaults to `audio_sample`.<br/>
+        /// Returns the saved voice's metadata. See the [custom voices guide](https://developers.openai.com/api/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VoiceResource> CreateVoiceAsync(
 
-            global::tryAGI.OpenAI.CreateVoicePromptRequest request,
+            global::tryAGI.OpenAI.CreateVoiceRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -68,9 +68,9 @@ namespace tryAGI.OpenAI
         }
         /// <summary>
         /// Create voice<br/>
-        /// Creates a voice from a text prompt or from a consent recording and an audio sample.<br/>
-        /// For prompt-based creation, send `type: "prompt"` with a `name` and `prompt` as JSON or multipart form data. For creation from an audio sample, send `type: "audio_sample"` with a `name`, `audio_sample`, and `consent` recording ID as multipart form data. The type defaults to `audio_sample` when omitted.<br/>
-        /// Returns the saved voice's metadata. Voices created from text prompts are supported only in Live, not in Realtime or the speech endpoint. The response does not include preview audio.
+        /// Create a custom voice you can use for audio output (for example, in Text-to-Speech and the Realtime API). This requires an audio sample and a previously uploaded consent recording.<br/>
+        /// Send `name`, `audio_sample`, and the `consent` recording ID as multipart form data. The optional `type` defaults to `audio_sample`.<br/>
+        /// Returns the saved voice's metadata. See the [custom voices guide](https://developers.openai.com/api/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -78,12 +78,10 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.VoiceResource>> CreateVoiceAsResponseAsync(
 
-            global::tryAGI.OpenAI.CreateVoicePromptRequest request,
+            global::tryAGI.OpenAI.CreateVoiceRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
-
             PrepareArguments(
                 client: HttpClient);
             PrepareCreateVoiceArguments(
@@ -108,7 +106,7 @@ namespace tryAGI.OpenAI
             var __maxAttempts = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: false);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
@@ -145,12 +143,11 @@ namespace tryAGI.OpenAI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
-                            var __httpRequestContent = new global::System.Net.Http.StringContent(
-                                content: __httpRequestContentBody,
-                                encoding: global::System.Text.Encoding.UTF8,
-                                mediaType: "application/json");
+
+                            var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+
                             __httpRequest.Content = __httpRequestContent;
+
                 global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -341,7 +338,7 @@ namespace tryAGI.OpenAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // Invalid voice request, prompt, script hint, model, consent recording, or audio sample.
+                            // Invalid voice request, consent recording, or audio sample.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -547,54 +544,6 @@ namespace tryAGI.OpenAI
             {
                 __httpRequest?.Dispose();
             }
-        }
-        /// <summary>
-        /// Create voice<br/>
-        /// Creates a voice from a text prompt or from a consent recording and an audio sample.<br/>
-        /// For prompt-based creation, send `type: "prompt"` with a `name` and `prompt` as JSON or multipart form data. For creation from an audio sample, send `type: "audio_sample"` with a `name`, `audio_sample`, and `consent` recording ID as multipart form data. The type defaults to `audio_sample` when omitted.<br/>
-        /// Returns the saved voice's metadata. Voices created from text prompts are supported only in Live, not in Realtime or the speech endpoint. The response does not include preview audio.
-        /// </summary>
-        /// <param name="type">
-        /// Set to `prompt` to create a voice from a text description.
-        /// </param>
-        /// <param name="name">
-        /// The name of the new voice.
-        /// </param>
-        /// <param name="prompt">
-        /// A description of the desired voice. Must not contain only whitespace.
-        /// </param>
-        /// <param name="scriptHint">
-        /// Optional text for the voice to speak during creation. If omitted, a script is generated from the prompt. Must not be blank after trimming whitespace; scripts that are too short are rejected.
-        /// </param>
-        /// <param name="model">
-        /// The voice creation model to use. Defaults to `auto`.<br/>
-        /// Default Value: auto
-        /// </param>
-        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
-        /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VoiceResource> CreateVoiceAsync(
-            string name,
-            string prompt,
-            global::tryAGI.OpenAI.CreateVoicePromptRequestType type = default,
-            string? scriptHint = default,
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateVoicePromptRequestModel?>? model = default,
-            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
-            global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var __request = new global::tryAGI.OpenAI.CreateVoicePromptRequest
-            {
-                Type = type,
-                Name = name,
-                Prompt = prompt,
-                ScriptHint = scriptHint,
-                Model = model,
-            };
-
-            return await CreateVoiceAsync(
-                request: __request,
-                requestOptions: requestOptions,
-                cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

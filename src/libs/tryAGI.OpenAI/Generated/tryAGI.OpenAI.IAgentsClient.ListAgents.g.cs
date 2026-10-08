@@ -8,7 +8,9 @@ namespace tryAGI.OpenAI
         /// List agents<br/>
         /// Lists reusable agents in the current project. See [agent configuration](https://developers.openai.com/api/docs/guides/agents-api/configuration).
         /// </summary>
-        /// <param name="limit"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
@@ -27,7 +29,9 @@ namespace tryAGI.OpenAI
         /// List agents<br/>
         /// Lists reusable agents in the current project. See [agent configuration](https://developers.openai.com/api/docs/guides/agents-api/configuration).
         /// </summary>
-        /// <param name="limit"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
@@ -46,7 +50,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Wraps ListAgentsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.AgentResource&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="limit"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc

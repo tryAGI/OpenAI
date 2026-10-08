@@ -18,17 +18,17 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.EnvironmentParamSelfHostedType Type { get; set; } = global::tryAGI.OpenAI.EnvironmentParamSelfHostedType.SelfHosted;
 
         /// <summary>
+        /// Directories that contain capabilities exposed to the agent. Defaults to an empty list.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("capability_directories")]
+        public global::System.Collections.Generic.IList<string>? CapabilityDirectories { get; set; }
+
+        /// <summary>
         /// Absolute project directory inside the self-hosted environment.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_directory")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string WorkspaceDirectory { get; set; }
-
-        /// <summary>
-        /// Directories that contain capabilities exposed to the agent. Defaults to an empty list.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("capability_directories")]
-        public global::System.Collections.Generic.IList<string>? CapabilityDirectories { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,8 +58,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.EnvironmentParamSelfHostedType type = global::tryAGI.OpenAI.EnvironmentParamSelfHostedType.SelfHosted)
         {
             this.Type = type;
-            this.WorkspaceDirectory = workspaceDirectory ?? throw new global::System.ArgumentNullException(nameof(workspaceDirectory));
             this.CapabilityDirectories = capabilityDirectories;
+            this.WorkspaceDirectory = workspaceDirectory ?? throw new global::System.ArgumentNullException(nameof(workspaceDirectory));
         }
 
         /// <summary>

@@ -10,25 +10,25 @@ internal static partial class AgentsListAgentSessionsCommandApiCommand
     private static Option<long?> Limit { get; } = new(
         name: @"--limit")
     {
-        Description = @"The maximum number of resources to return.",
+        Description = @"The maximum number of resources to return, between 1 and 100. Defaults to 20.",
     };
 
     private static Option<global::tryAGI.OpenAI.ListOrderParam?> Order { get; } = new(
         name: @"--order")
     {
-        Description = @"Sort order by the `created_at` timestamp. Use `asc` for ascending order or `desc` for descending order. Defaults to `desc`.",
-    };
-
-    private static Option<string?> AgentId { get; } = new(
-        name: @"--agent-id")
-    {
-        Description = @"Only return sessions whose root agent has this ID. Omit to return sessions for all agents.",
+        Description = @"The order in which resources are returned. Defaults to `desc`.",
     };
 
     private static Option<string?> After { get; } = new(
         name: @"--after")
     {
         Description = @"Return resources after this resource ID in the selected order.",
+    };
+
+    private static Option<string?> AgentId { get; } = new(
+        name: @"--agent-id")
+    {
+        Description = @"Only return sessions whose root agent has this ID. Omit to return sessions for all agents.",
     };
 
                     private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.SessionListResource value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
@@ -59,8 +59,8 @@ internal static partial class AgentsListAgentSessionsCommandApiCommand
 Lists managed agent sessions using ID-based pagination and the requested sort order. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).");
                         command.Options.Add(Limit);
                         command.Options.Add(Order);
-                        command.Options.Add(AgentId);
                         command.Options.Add(After);
+                        command.Options.Add(AgentId);
 
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
@@ -68,16 +68,16 @@ Lists managed agent sessions using ID-based pagination and the requested sort or
             {
                         var limit = parseResult.GetValue(Limit);
                         var order = parseResult.GetValue(Order);
-                        var agentId = parseResult.GetValue(AgentId);
                         var after = parseResult.GetValue(After);
+                        var agentId = parseResult.GetValue(AgentId);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 var response = await client.Agents.ListAgentSessionsAsync(
                                     limit: limit,
                                     order: order,
-                                    agentId: agentId,
                                     after: after,
+                                    agentId: agentId,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 
