@@ -7,36 +7,7 @@ namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
 internal static partial class AudioCreateVoiceCommandApiCommand
 {
-    private static Argument<string> NameOption { get; } = new(
-        name: @"name")
-    {
-        Description = @"The name of the new voice.",
-    };
 
-    private static Option<global::tryAGI.OpenAI.CreateVoicePromptRequestType> Type { get; } = new(
-        name: @"--type")
-    {
-        Description = @"Set to `prompt` to create a voice from a text description.",
-    };
-
-    private static Option<string> Prompt { get; } = new(
-        name: @"--prompt")
-    {
-        Description = @"A description of the desired voice. Must not contain only whitespace.",
-        Required = true,
-    };
-
-    private static Option<string?> ScriptHint { get; } = new(
-        name: @"--script-hint")
-    {
-        Description = @"Optional text for the voice to speak during creation. If omitted, a script is generated from the prompt. Must not be blank after trimming whitespace; scripts that are too short are rejected.",
-    };
-
-    private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateVoicePromptRequestModel?>?> Model { get; } = new(
-        name: @"--model")
-    {
-        Description = @"The voice creation model to use. Defaults to `auto`.",
-    };
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -79,17 +50,13 @@ internal static partial class AudioCreateVoiceCommandApiCommand
     public static Command Create(string? commandName = null)
     {
         var command = new Command(commandName ?? @"create-voice", @"Create voice
-Creates a voice from a text prompt or from a consent recording and an audio sample.
+Create a custom voice you can use for audio output (for example, in Text-to-Speech and the Realtime API). This requires an audio sample and a previously uploaded consent recording.
 
-For prompt-based creation, send `type: ""prompt""` with a `name` and `prompt` as JSON or multipart form data. For creation from an audio sample, send `type: ""audio_sample""` with a `name`, `audio_sample`, and `consent` recording ID as multipart form data. The type defaults to `audio_sample` when omitted.
+Send `name`, `audio_sample`, and the `consent` recording ID as multipart form data. The optional `type` defaults to `audio_sample`.
 
-Returns the saved voice's metadata. Voices created from text prompts are supported only in Live, not in Realtime or the speech endpoint. The response does not include preview audio.
+Returns the saved voice's metadata. See the [custom voices guide](https://developers.openai.com/api/docs/guides/text-to-speech#custom-voices) for requirements and best practices. Custom voices are limited to eligible customers.
 ");
-                        command.Arguments.Add(NameOption);
-                        command.Options.Add(Type);
-                        command.Options.Add(Prompt);
-                        command.Options.Add(ScriptHint);
-                        command.Options.Add(Model);
+
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -99,36 +66,29 @@ Returns the saved voice's metadata. Voices created from text prompts are support
               var hasRequestJson = result.GetResult(RequestJson) is not null;
               var hasRequestFile = result.GetResult(RequestFile) is not null;
               var specifiedCount = (hasInput ? 1 : 0) + (hasRequestJson ? 1 : 0) + (hasRequestFile ? 1 : 0);
-              if (specifiedCount > 1)
+              if (specifiedCount != 1)
               {
-                  result.AddError(@"Specify at most one of --input, --request-json, or --request-file.");
+                  result.AddError(@"Specify exactly one of --input, --request-json, or --request-file.");
               }
           });
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
-                        var __requestBase = await CliRuntime.ReadRequestOrDefaultAsync<global::tryAGI.OpenAI.CreateVoicePromptRequest>(
+
+                        var request = await CliRuntime.ReadRequestAsync<global::tryAGI.OpenAI.CreateVoiceRequest>(
                             parseResult,
                             Input,
                             RequestJson,
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var name = parseResult.GetRequiredValue(NameOption);
-                        var type = CliRuntime.WasSpecified(parseResult, Type) ? parseResult.GetValue(Type) : (__requestBase is { } __TypeBaseValue ? __TypeBaseValue.Type : default);
-                        var prompt = parseResult.GetRequiredValue(Prompt);
-                        var scriptHint = CliRuntime.WasSpecified(parseResult, ScriptHint) ? parseResult.GetValue(ScriptHint) : (__requestBase is { } __ScriptHintBaseValue ? __ScriptHintBaseValue.ScriptHint : default);
-                        var model = CliRuntime.WasSpecified(parseResult, Model) ? parseResult.GetValue(Model) : (__requestBase is { } __ModelBaseValue ? __ModelBaseValue.Model : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 var response = await client.Audio.CreateVoiceAsync(
-                                    name: name,
-                                    type: type,
-                                    prompt: prompt,
-                                    scriptHint: scriptHint,
-                                    model: model,
+
+                                    request: request,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

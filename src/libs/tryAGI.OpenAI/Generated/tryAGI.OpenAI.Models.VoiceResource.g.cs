@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A custom voice that can be used for audio output. Voices created from text prompts are supported only in Live.
+    /// A custom voice that can be used for audio output.
     /// </summary>
     public sealed partial class VoiceResource
     {
@@ -23,12 +23,12 @@ namespace tryAGI.OpenAI
         public required string Id { get; set; }
 
         /// <summary>
-        /// How the voice was created. Voices created from text prompts are supported only in Live.
+        /// How the voice was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceResourceTypeJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.VoiceResourceType?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.VoiceResourceType Type { get; set; }
+        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.VoiceResourceType?> Type { get; set; }
 
         /// <summary>
         /// The name of the voice.
@@ -57,7 +57,7 @@ namespace tryAGI.OpenAI
         /// The voice identifier, which can be referenced in API endpoints.
         /// </param>
         /// <param name="type">
-        /// How the voice was created. Voices created from text prompts are supported only in Live.
+        /// How the voice was created.
         /// </param>
         /// <param name="name">
         /// The name of the voice.
@@ -73,7 +73,7 @@ namespace tryAGI.OpenAI
 #endif
         public VoiceResource(
             string id,
-            global::tryAGI.OpenAI.VoiceResourceType type,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.VoiceResourceType?> type,
             string name,
             int createdAt,
             global::tryAGI.OpenAI.VoiceResourceObject @object)

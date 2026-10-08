@@ -29,15 +29,15 @@ namespace tryAGI.OpenAI
             global::System.Net.Http.HttpClient httpClient,
             ref long? limit,
             ref global::tryAGI.OpenAI.ListOrderParam? order,
-            ref string? agentId,
-            ref string? after);
+            ref string? after,
+            ref string? agentId);
         partial void PrepareListAgentSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             long? limit,
             global::tryAGI.OpenAI.ListOrderParam? order,
-            string? agentId,
-            string? after);
+            string? after,
+            string? agentId);
         partial void ProcessListAgentSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -51,29 +51,31 @@ namespace tryAGI.OpenAI
         /// List agent sessions<br/>
         /// Lists managed agent sessions using ID-based pagination and the requested sort order. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).
         /// </summary>
-        /// <param name="limit"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
         /// </param>
-        /// <param name="agentId"></param>
         /// <param name="after"></param>
+        /// <param name="agentId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.SessionListResource> ListAgentSessionsAsync(
             long? limit = default,
             global::tryAGI.OpenAI.ListOrderParam? order = default,
-            string? agentId = default,
             string? after = default,
+            string? agentId = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListAgentSessionsAsResponseAsync(
                 limit: limit,
                 order: order,
-                agentId: agentId,
                 after: after,
+                agentId: agentId,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -84,21 +86,23 @@ namespace tryAGI.OpenAI
         /// List agent sessions<br/>
         /// Lists managed agent sessions using ID-based pagination and the requested sort order. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).
         /// </summary>
-        /// <param name="limit"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
         /// </param>
-        /// <param name="agentId"></param>
         /// <param name="after"></param>
+        /// <param name="agentId"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.SessionListResource>> ListAgentSessionsAsResponseAsync(
             long? limit = default,
             global::tryAGI.OpenAI.ListOrderParam? order = default,
-            string? agentId = default,
             string? after = default,
+            string? agentId = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -108,8 +112,8 @@ namespace tryAGI.OpenAI
                 httpClient: HttpClient,
                 limit: ref limit,
                 order: ref order,
-                agentId: ref agentId,
-                after: ref after);
+                after: ref after,
+                agentId: ref agentId);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
@@ -140,8 +144,8 @@ namespace tryAGI.OpenAI
                             __pathBuilder
                                 .AddOptionalParameter("limit", limit?.ToString())
                                 .AddOptionalParameter("order", order?.ToValueString())
-                                .AddOptionalParameter("agent_id", agentId)
                                 .AddOptionalParameter("after", after)
+                                .AddOptionalParameter("agent_id", agentId)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -185,8 +189,8 @@ namespace tryAGI.OpenAI
                     httpRequestMessage: __httpRequest,
                     limit: limit,
                     order: order,
-                    agentId: agentId,
-                    after: after);
+                    after: after,
+                    agentId: agentId);
 
                 return __httpRequest;
             }
@@ -724,7 +728,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Wraps ListAgentSessionsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.SessionResource&gt; that auto-pages over the response.
         /// </summary>
-        /// <param name="limit"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
@@ -743,8 +749,8 @@ namespace tryAGI.OpenAI
                 fetchPage: (__cursor, __ct) => ListAgentSessionsAsync(
                     limit: limit,
                     order: order,
-                    agentId: agentId,
                     after: __cursor,
+                    agentId: agentId,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

@@ -10,7 +10,7 @@ internal static partial class AgentsListAgentsCommandApiCommand
     private static Option<long?> Limit { get; } = new(
         name: @"--limit")
     {
-        Description = @"The maximum number of resources to return.",
+        Description = @"The maximum number of resources to return, between 1 and 100. Defaults to 20.",
     };
 
     private static Option<global::tryAGI.OpenAI.ListOrderParam?> Order { get; } = new(

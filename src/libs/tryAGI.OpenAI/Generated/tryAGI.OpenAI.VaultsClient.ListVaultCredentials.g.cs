@@ -28,20 +28,20 @@ namespace tryAGI.OpenAI
         partial void PrepareListVaultCredentialsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string vaultId,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            ref global::tryAGI.OpenAI.ListOrderParam? order,
             ref long? limit,
-            ref global::tryAGI.OpenAI.VaultStatusFilterParam? status,
-            ref string? after);
+            ref global::tryAGI.OpenAI.ListOrderParam? order,
+            ref string? after,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            ref global::tryAGI.OpenAI.VaultStatusFilterParam? status);
         partial void PrepareListVaultCredentialsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string vaultId,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            global::tryAGI.OpenAI.ListOrderParam? order,
             long? limit,
-            global::tryAGI.OpenAI.VaultStatusFilterParam? status,
-            string? after);
+            global::tryAGI.OpenAI.ListOrderParam? order,
+            string? after,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            global::tryAGI.OpenAI.VaultStatusFilterParam? status);
         partial void ProcessListVaultCredentialsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -56,36 +56,38 @@ namespace tryAGI.OpenAI
         /// Lists a vault's credentials using ID-based pagination without returning secret values. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).
         /// </summary>
         /// <param name="vaultId"></param>
-        /// <param name="metadata"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
         /// </param>
-        /// <param name="limit"></param>
+        /// <param name="after"></param>
+        /// <param name="metadata"></param>
         /// <param name="status">
         /// One or more lifecycle statuses to include when listing vaults or credentials.
         /// </param>
-        /// <param name="after"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.VaultCredentialListResource> ListVaultCredentialsAsync(
             string vaultId,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
-            global::tryAGI.OpenAI.ListOrderParam? order = default,
             long? limit = default,
-            global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
+            global::tryAGI.OpenAI.ListOrderParam? order = default,
             string? after = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await ListVaultCredentialsAsResponseAsync(
                 vaultId: vaultId,
-                metadata: metadata,
-                order: order,
                 limit: limit,
-                status: status,
+                order: order,
                 after: after,
+                metadata: metadata,
+                status: status,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -97,26 +99,28 @@ namespace tryAGI.OpenAI
         /// Lists a vault's credentials using ID-based pagination without returning secret values. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).
         /// </summary>
         /// <param name="vaultId"></param>
-        /// <param name="metadata"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
         /// </param>
-        /// <param name="limit"></param>
+        /// <param name="after"></param>
+        /// <param name="metadata"></param>
         /// <param name="status">
         /// One or more lifecycle statuses to include when listing vaults or credentials.
         /// </param>
-        /// <param name="after"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.VaultCredentialListResource>> ListVaultCredentialsAsResponseAsync(
             string vaultId,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
-            global::tryAGI.OpenAI.ListOrderParam? order = default,
             long? limit = default,
-            global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
+            global::tryAGI.OpenAI.ListOrderParam? order = default,
             string? after = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -125,11 +129,11 @@ namespace tryAGI.OpenAI
             PrepareListVaultCredentialsArguments(
                 httpClient: HttpClient,
                 vaultId: ref vaultId,
-                metadata: metadata,
-                order: ref order,
                 limit: ref limit,
-                status: ref status,
-                after: ref after);
+                order: ref order,
+                after: ref after,
+                metadata: metadata,
+                status: ref status);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
@@ -158,14 +162,14 @@ namespace tryAGI.OpenAI
                                 path: $"/vaults/{vaultId}/credentials",
                                 baseUri: HttpClient.BaseAddress);
                             __pathBuilder
-                                .AddOptionalParameter("metadata", metadata?.ToString())
-                                .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("order", order?.ToValueString())
+                                .AddOptionalParameter("after", after)
+                                .AddOptionalParameter("metadata", metadata?.ToString())
                                 .AddOptionalParameter("status", status?.Match(
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)new string?[] { x?.ToValueString() },
                 static x => (global::System.Collections.Generic.IEnumerable<string?>)global::System.Linq.Enumerable.Select(x, static item => item.ToValueString()),
                 validate: false), delimiter: ",", explode: true)
-                                .AddOptionalParameter("after", after)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -208,11 +212,11 @@ namespace tryAGI.OpenAI
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
                     vaultId: vaultId,
-                    metadata: metadata,
-                    order: order,
                     limit: limit,
-                    status: status,
-                    after: after);
+                    order: order,
+                    after: after,
+                    metadata: metadata,
+                    status: status);
 
                 return __httpRequest;
             }
@@ -751,21 +755,23 @@ namespace tryAGI.OpenAI
         /// Wraps ListVaultCredentialsAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.VaultCredentialResource&gt; that auto-pages over the response.
         /// </summary>
         /// <param name="vaultId"></param>
-        /// <param name="metadata"></param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
         /// <param name="order">
         /// The order in which paginated resources are returned.<br/>
         /// Default Value: desc
         /// </param>
-        /// <param name="limit"></param>
+        /// <param name="metadata"></param>
         /// <param name="status">
         /// One or more lifecycle statuses to include when listing vaults or credentials.
         /// </param>
         /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.VaultCredentialResource> ListVaultCredentialsAutoPagingAsync(
-            string vaultId,             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
+            string vaultId,             long? limit = default,
             global::tryAGI.OpenAI.ListOrderParam? order = default,
-            long? limit = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.VaultStatusFilterParam? status = default,
             string? after = null,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -773,11 +779,11 @@ namespace tryAGI.OpenAI
             return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.VaultCredentialListResource, global::tryAGI.OpenAI.VaultCredentialResource>(
                 fetchPage: (__cursor, __ct) => ListVaultCredentialsAsync(
                     vaultId: vaultId,
-                    metadata: metadata,
-                    order: order,
                     limit: limit,
-                    status: status,
+                    order: order,
                     after: __cursor,
+                    metadata: metadata,
+                    status: status,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null

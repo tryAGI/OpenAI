@@ -7,34 +7,34 @@ namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
 internal static partial class VaultsListVaultsCommandApiCommand
 {
-    private static Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
-        name: @"--metadata")
+    private static Option<long?> Limit { get; } = new(
+        name: @"--limit")
     {
-        Description = @"Exact string matches supplied as `metadata[key]=value`. All supplied pairs must match. Up to 16 pairs, with keys from 1 to 64 characters and values up to 512 characters. Filtering is eventually consistent; metadata changes may take time to appear.",
+        Description = @"The maximum number of resources to return, between 1 and 100. Defaults to 20.",
     };
 
     private static Option<global::tryAGI.OpenAI.ListOrderParam?> Order { get; } = new(
         name: @"--order")
     {
-        Description = @"Sort order by the `created_at` timestamp. Use `asc` for ascending order or `desc` for descending order. Defaults to `desc`.",
-    };
-
-    private static Option<long?> Limit { get; } = new(
-        name: @"--limit")
-    {
-        Description = @"The maximum number of resources to return. Defaults to 20. Values are clamped between 1 and 100.",
-    };
-
-    private static Option<global::tryAGI.OpenAI.VaultStatusFilterParam?> Status { get; } = new(
-        name: @"--status")
-    {
-        Description = @"Filter by one status or a list, such as `status=active` or `status[]=active&status[]=archived`. Both statuses are included by default.",
+        Description = @"The order in which resources are returned. Defaults to `desc`.",
     };
 
     private static Option<string?> After { get; } = new(
         name: @"--after")
     {
         Description = @"Return resources after this resource ID in the selected order.",
+    };
+
+    private static Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
+        name: @"--metadata")
+    {
+        Description = @"Exact string matches supplied as `metadata[key]=value`. All supplied pairs must match. Up to 16 pairs, with keys from 1 to 64 characters and values up to 512 characters. Filtering is eventually consistent; metadata changes may take time to appear.",
+    };
+
+    private static Option<global::tryAGI.OpenAI.VaultStatusFilterParam?> Status { get; } = new(
+        name: @"--status")
+    {
+        Description = @"Filter by one status or a list, such as `status=active` or `status[]=active&status[]=archived`. Both statuses are included by default.",
     };
 
                     private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.VaultListResource value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
@@ -63,30 +63,30 @@ internal static partial class VaultsListVaultsCommandApiCommand
     {
         var command = new Command(commandName ?? @"list-vaults", @"List vaults
 Lists vaults using ID-based pagination. See [vaults](https://developers.openai.com/api/docs/guides/agents-api/tools/vaults).");
-                        command.Options.Add(Metadata);
-                        command.Options.Add(Order);
                         command.Options.Add(Limit);
-                        command.Options.Add(Status);
+                        command.Options.Add(Order);
                         command.Options.Add(After);
+                        command.Options.Add(Metadata);
+                        command.Options.Add(Status);
 
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
-                        var metadata = parseResult.GetValue(Metadata);
-                        var order = parseResult.GetValue(Order);
                         var limit = parseResult.GetValue(Limit);
-                        var status = parseResult.GetValue(Status);
+                        var order = parseResult.GetValue(Order);
                         var after = parseResult.GetValue(After);
+                        var metadata = parseResult.GetValue(Metadata);
+                        var status = parseResult.GetValue(Status);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 var response = await client.Vaults.ListVaultsAsync(
-                                    metadata: metadata,
-                                    order: order,
                                     limit: limit,
-                                    status: status,
+                                    order: order,
                                     after: after,
+                                    metadata: metadata,
+                                    status: status,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// How the voice was created. Voices created from text prompts are supported only in Live.
+    ///
     /// </summary>
     public enum VoiceResourceType
     {
@@ -12,10 +12,6 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         AudioSample,
-        /// <summary>
-        ///
-        /// </summary>
-        Prompt,
     }
 
     /// <summary>
@@ -31,7 +27,6 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 VoiceResourceType.AudioSample => "audio_sample",
-                VoiceResourceType.Prompt => "prompt",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -43,7 +38,6 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "audio_sample" => VoiceResourceType.AudioSample,
-                "prompt" => VoiceResourceType.Prompt,
                 _ => null,
             };
         }
