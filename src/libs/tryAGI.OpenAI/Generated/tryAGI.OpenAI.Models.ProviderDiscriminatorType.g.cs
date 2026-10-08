@@ -20,6 +20,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         Gcp,
+        /// <summary>
+        ///
+        /// </summary>
+        Oci,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace tryAGI.OpenAI
                 ProviderDiscriminatorType.Aws => "aws",
                 ProviderDiscriminatorType.Azure => "azure",
                 ProviderDiscriminatorType.Gcp => "gcp",
+                ProviderDiscriminatorType.Oci => "oci",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace tryAGI.OpenAI
                 "aws" => ProviderDiscriminatorType.Aws,
                 "azure" => ProviderDiscriminatorType.Azure,
                 "gcp" => ProviderDiscriminatorType.Gcp,
+                "oci" => ProviderDiscriminatorType.Oci,
                 _ => null,
             };
         }

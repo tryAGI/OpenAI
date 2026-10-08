@@ -706,6 +706,9 @@ namespace tryAGI.OpenAI
         /// Updates session metadata, model, reasoning effort, or service tier. Model settings apply to subsequent turns. Omitted fields are unchanged. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).
         /// </summary>
         /// <param name="sessionId"></param>
+        /// <param name="spendControl">
+        /// Omit to retain the limit; null or a null limit removes it without resetting spend.
+        /// </param>
         /// <param name="agent">
         /// Model settings for subsequent turns. Omitted fields stay unchanged.
         /// </param>
@@ -717,6 +720,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.SessionResource> UpdateAgentSessionAsync(
             string sessionId,
+            global::tryAGI.OpenAI.SessionSpendControlParam? spendControl = default,
             global::tryAGI.OpenAI.UpdateSessionAgentParam? agent = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
@@ -724,6 +728,7 @@ namespace tryAGI.OpenAI
         {
             var __request = new global::tryAGI.OpenAI.UpdateAgentSessionParams
             {
+                SpendControl = spendControl,
                 Agent = agent,
                 Metadata = metadata,
             };

@@ -20,6 +20,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         Gcp,
+        /// <summary>
+        ///
+        /// </summary>
+        Oci,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace tryAGI.OpenAI
                 CreateExternalStorageBodyProviderDiscriminatorType.Aws => "aws",
                 CreateExternalStorageBodyProviderDiscriminatorType.Azure => "azure",
                 CreateExternalStorageBodyProviderDiscriminatorType.Gcp => "gcp",
+                CreateExternalStorageBodyProviderDiscriminatorType.Oci => "oci",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace tryAGI.OpenAI
                 "aws" => CreateExternalStorageBodyProviderDiscriminatorType.Aws,
                 "azure" => CreateExternalStorageBodyProviderDiscriminatorType.Azure,
                 "gcp" => CreateExternalStorageBodyProviderDiscriminatorType.Gcp,
+                "oci" => CreateExternalStorageBodyProviderDiscriminatorType.Oci,
                 _ => null,
             };
         }

@@ -42,6 +42,13 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.GcpExternalStorageProviderParams)}");
                 gcp = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.OciExternalStorageProviderParams? oci = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.CreateExternalStorageBodyProviderDiscriminatorType.Oci)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.OciExternalStorageProviderParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.OciExternalStorageProviderParams> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.OciExternalStorageProviderParams)}");
+                oci = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::tryAGI.OpenAI.Provider3(
                 discriminator?.Type,
@@ -49,7 +56,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 azure,
 
-                gcp
+                gcp,
+
+                oci
                 );
 
             return __value;
@@ -81,6 +90,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.GcpExternalStorageProviderParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.GcpExternalStorageProviderParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.GcpExternalStorageProviderParams).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGcp(), typeInfo);
+            }
+            else if (value.IsOci)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.OciExternalStorageProviderParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.OciExternalStorageProviderParams?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.OciExternalStorageProviderParams).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOci(), typeInfo);
             }
         }
     }
