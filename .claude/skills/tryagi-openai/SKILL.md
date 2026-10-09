@@ -64,7 +64,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `user-organization-role-assignment` | 4 |  |
 | `vault` | 10 |  |
 | `vector-store` | 16 |  |
-| `default` | 42 |  |
+| `default` | 43 |  |
 
 ## References
 

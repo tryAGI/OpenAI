@@ -565,6 +565,7 @@ Use Uploads to upload large files in multiple parts.
 | `list-webhook-endpoints` | `GET /webhook_endpoints` | List Webhook Endpoints |
 | `list-webhook-event-types` | `GET /webhook_event_types` | List Webhook Event Types |
 | `listexternalstorageconfigurations` | `GET /organization/external_storage` | List external storage configurations |
+| `organization-decisionsusage` | `GET /organization/usage/decisions` | Decisions |
 | `retrieve-container` | `GET /containers/{container_id}` | Retrieve container |
 | `retrieve-container-file` | `GET /containers/{container_id}/files/{file_id}` | Retrieve container file |
 | `retrieve-container-file-content` | `GET /containers/{container_id}/files/{file_id}/content` | Retrieve container file content |

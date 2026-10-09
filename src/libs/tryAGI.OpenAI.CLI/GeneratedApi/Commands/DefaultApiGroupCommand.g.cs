@@ -43,6 +43,7 @@ internal static partial class DefaultApiGroupCommand
                          command.Subcommands.Add(ListWebhookEndpointsCommandApiCommand.Create());
                          command.Subcommands.Add(ListWebhookEventTypesCommandApiCommand.Create());
                          command.Subcommands.Add(ListexternalstorageconfigurationsCommandApiCommand.Create());
+                         command.Subcommands.Add(OrganizationDecisionsusageCommandApiCommand.Create());
                          command.Subcommands.Add(RetrieveContainerCommandApiCommand.Create());
                          command.Subcommands.Add(RetrieveContainerFileCommandApiCommand.Create());
                          command.Subcommands.Add(RetrieveContainerFileContentCommandApiCommand.Create());
