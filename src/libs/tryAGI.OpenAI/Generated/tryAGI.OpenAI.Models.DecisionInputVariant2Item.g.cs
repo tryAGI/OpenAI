@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.DecisionInputVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// A user message containing text or inline images.
+        /// A user message containing text or images.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.DecisionInputMessage? Message { get; init; }

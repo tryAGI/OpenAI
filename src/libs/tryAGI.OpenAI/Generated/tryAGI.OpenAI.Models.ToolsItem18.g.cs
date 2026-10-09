@@ -5,22 +5,22 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A function or custom tool loaded into a namespace by tool search.
+    /// A function or custom tool that belongs to a namespace.
     /// </summary>
     public readonly partial struct ToolsItem18 : global::System.IEquatable<ToolsItem18>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaToolSearchOutputNamespaceToolParamToolDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.BetaNamespaceToolParamToolDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam? Function { get; init; }
+        public global::tryAGI.OpenAI.BetaFunctionToolParam? Function { get; init; }
 #else
-        public global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam? Function { get; }
+        public global::tryAGI.OpenAI.BetaFunctionToolParam? Function { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam? value)
+            out global::tryAGI.OpenAI.BetaFunctionToolParam? value)
         {
             value = Function;
             return IsFunction;
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam PickFunction() => Function is { } value
+        public global::tryAGI.OpenAI.BetaFunctionToolParam PickFunction() => Function is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Function' but the value was {ToString()}.");
 
@@ -90,17 +90,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ToolsItem18(global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam value) => new ToolsItem18((global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam?)value);
+        public static implicit operator ToolsItem18(global::tryAGI.OpenAI.BetaFunctionToolParam value) => new ToolsItem18((global::tryAGI.OpenAI.BetaFunctionToolParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam?(ToolsItem18 @this) => @this.Function;
+        public static implicit operator global::tryAGI.OpenAI.BetaFunctionToolParam?(ToolsItem18 @this) => @this.Function;
 
         /// <summary>
         ///
         /// </summary>
-        public ToolsItem18(global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam? value)
+        public ToolsItem18(global::tryAGI.OpenAI.BetaFunctionToolParam? value)
         {
             Function = value;
         }
@@ -108,7 +108,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static ToolsItem18 FromFunction(global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam? value) => new ToolsItem18(value);
+        public static ToolsItem18 FromFunction(global::tryAGI.OpenAI.BetaFunctionToolParam? value) => new ToolsItem18(value);
 
         /// <summary>
         ///
@@ -137,8 +137,8 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public ToolsItem18(
-            global::tryAGI.OpenAI.BetaToolSearchOutputNamespaceToolParamToolDiscriminatorType? type,
-            global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam? function,
+            global::tryAGI.OpenAI.BetaNamespaceToolParamToolDiscriminatorType? type,
+            global::tryAGI.OpenAI.BetaFunctionToolParam? function,
             global::tryAGI.OpenAI.BetaCustomToolParam? custom
             )
         {
@@ -176,7 +176,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam, TResult>? function = null,
+            global::System.Func<global::tryAGI.OpenAI.BetaFunctionToolParam, TResult>? function = null,
             global::System.Func<global::tryAGI.OpenAI.BetaCustomToolParam, TResult>? custom = null,
             bool validate = true)
         {
@@ -201,7 +201,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam>? function = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaFunctionToolParam>? function = null,
 
             global::System.Action<global::tryAGI.OpenAI.BetaCustomToolParam>? custom = null,
             bool validate = true)
@@ -225,7 +225,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam>? function = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaFunctionToolParam>? function = null,
             global::System.Action<global::tryAGI.OpenAI.BetaCustomToolParam>? custom = null,
             bool validate = true)
         {
@@ -252,7 +252,7 @@ namespace tryAGI.OpenAI
             var fields = new object?[]
             {
                 Function,
-                typeof(global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam),
+                typeof(global::tryAGI.OpenAI.BetaFunctionToolParam),
                 Custom,
                 typeof(global::tryAGI.OpenAI.BetaCustomToolParam),
             };
@@ -271,7 +271,7 @@ namespace tryAGI.OpenAI
         public bool Equals(ToolsItem18 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaToolSearchOutputFunctionToolParam?>.Default.Equals(Function, other.Function) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaFunctionToolParam?>.Default.Equals(Function, other.Function) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCustomToolParam?>.Default.Equals(Custom, other.Custom)
                 ;
         }

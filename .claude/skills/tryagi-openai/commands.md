@@ -7,6 +7,7 @@ Full per-command reference derived from the OpenAPI spec. For the short overview
 | Command | Route | Description |
 |---------|-------|-------------|
 | `create-agent` | `POST /agents` | Create an agent |
+| `create-agent-environment` | `POST /agents/environments` | Create an agent environment |
 | `create-agent-environment-file` | `POST /agents/environments/{environment_id}/files` | Create an agent environment file |
 | `create-agent-environment-template` | `POST /agents/environments/templates` | Create an agent environment template |
 | `create-agent-session` | `POST /agents/sessions` | Create an agent session |
@@ -17,6 +18,7 @@ Full per-command reference derived from the OpenAPI spec. For the short overview
 | `delete-agent-session-artifact` | `DELETE /agents/sessions/{session_id}/artifacts/{artifact_id}` | Delete an agent session artifact |
 | `list-agent-environment-files` | `GET /agents/environments/{environment_id}/files` | List agent environment files |
 | `list-agent-environment-templates` | `GET /agents/environments/templates` | List agent environment templates |
+| `list-agent-environments` | `GET /agents/environments` | List agent environments |
 | `list-agent-session-artifacts` | `GET /agents/sessions/{session_id}/artifacts` | List agent session artifacts |
 | `list-agent-session-events` | `GET /agents/sessions/{session_id}/events` | Stream agent session events |
 | `list-agent-session-items` | `GET /agents/sessions/{session_id}/items` | List agent session items |

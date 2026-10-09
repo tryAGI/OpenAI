@@ -19,6 +19,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Expired,
+        /// <summary>
+        ///
+        /// </summary>
         Failed,
         /// <summary>
         ///
@@ -28,6 +32,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         Ready,
+        /// <summary>
+        ///
+        /// </summary>
+        Suspended,
     }
 
     /// <summary>
@@ -44,9 +52,11 @@ namespace tryAGI.OpenAI
             {
                 SessionEnvironmentStatusResource.Connected => "connected",
                 SessionEnvironmentStatusResource.Disconnected => "disconnected",
+                SessionEnvironmentStatusResource.Expired => "expired",
                 SessionEnvironmentStatusResource.Failed => "failed",
                 SessionEnvironmentStatusResource.Pending => "pending",
                 SessionEnvironmentStatusResource.Ready => "ready",
+                SessionEnvironmentStatusResource.Suspended => "suspended",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -59,9 +69,11 @@ namespace tryAGI.OpenAI
             {
                 "connected" => SessionEnvironmentStatusResource.Connected,
                 "disconnected" => SessionEnvironmentStatusResource.Disconnected,
+                "expired" => SessionEnvironmentStatusResource.Expired,
                 "failed" => SessionEnvironmentStatusResource.Failed,
                 "pending" => SessionEnvironmentStatusResource.Pending,
                 "ready" => SessionEnvironmentStatusResource.Ready,
+                "suspended" => SessionEnvironmentStatusResource.Suspended,
                 _ => null,
             };
         }

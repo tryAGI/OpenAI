@@ -17,99 +17,92 @@ namespace tryAGI.OpenAI.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::tryAGI.OpenAI.LiveFunctionToolInputParam? function = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.Function)
+            global::tryAGI.OpenAI.LiveFunctionToolChoiceParam? function = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminatorType.Function)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveFunctionToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveFunctionToolInputParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveFunctionToolInputParam)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveFunctionToolChoiceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveFunctionToolChoiceParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveFunctionToolChoiceParam)}");
                 function = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::tryAGI.OpenAI.LiveWebSearchToolInputParam? webSearch = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.WebSearch)
+            global::tryAGI.OpenAI.LiveMCPToolChoiceParam? mcp = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminatorType.Mcp)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveWebSearchToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveWebSearchToolInputParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveWebSearchToolInputParam)}");
-                webSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::tryAGI.OpenAI.LiveFileSearchToolInputParam? fileSearch = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.FileSearch)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveFileSearchToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveFileSearchToolInputParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveFileSearchToolInputParam)}");
-                fileSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam? codeInterpreter = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.CodeInterpreter)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam)}");
-                codeInterpreter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::tryAGI.OpenAI.LiveHostedShellToolInputParam? shell = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.Shell)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveHostedShellToolInputParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveHostedShellToolInputParam)}");
-                shell = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::tryAGI.OpenAI.LiveImageGenerationToolInputParam? imageGeneration = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.ImageGeneration)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveImageGenerationToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveImageGenerationToolInputParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveImageGenerationToolInputParam)}");
-                imageGeneration = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::tryAGI.OpenAI.LiveMCPToolInputParam? mcp = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.Mcp)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveMCPToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveMCPToolInputParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveMCPToolInputParam)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveMCPToolChoiceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveMCPToolChoiceParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveMCPToolChoiceParam)}");
                 mcp = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::tryAGI.OpenAI.LiveCustomToolInputParam? custom = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.Custom)
+            global::tryAGI.OpenAI.LiveSpecificFileSearchParam? fileSearch = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminatorType.FileSearch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveCustomToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveCustomToolInputParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveCustomToolInputParam)}");
-                custom = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificFileSearchParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificFileSearchParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveSpecificFileSearchParam)}");
+                fileSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::tryAGI.OpenAI.LiveNamespaceToolInputParam? @namespace = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.Namespace)
+            global::tryAGI.OpenAI.LiveSpecificWebSearchParam? webSearch = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminatorType.WebSearch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveNamespaceToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveNamespaceToolInputParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveNamespaceToolInputParam)}");
-                @namespace = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificWebSearchParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificWebSearchParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveSpecificWebSearchParam)}");
+                webSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::tryAGI.OpenAI.LiveToolSearchToolInputParam? toolSearch = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.ToolSearch)
+            global::tryAGI.OpenAI.LiveSpecificWebSearchPreviewParam? webSearchPreview = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminatorType.WebSearchPreview)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveToolSearchToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveToolSearchToolInputParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveToolSearchToolInputParam)}");
-                toolSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificWebSearchPreviewParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificWebSearchPreviewParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveSpecificWebSearchPreviewParam)}");
+                webSearchPreview = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::tryAGI.OpenAI.LiveProgrammaticToolInputParam? programmaticToolCalling = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.ProgrammaticToolCalling)
+            global::tryAGI.OpenAI.LiveSpecificImageGenParam? imageGeneration = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminatorType.ImageGeneration)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveProgrammaticToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveProgrammaticToolInputParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveProgrammaticToolInputParam)}");
-                programmaticToolCalling = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificImageGenParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificImageGenParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveSpecificImageGenParam)}");
+                imageGeneration = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::tryAGI.OpenAI.LiveComputerToolInputParam? computer = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.Computer)
+            global::tryAGI.OpenAI.LiveSpecificComputerParam? computer = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminatorType.Computer)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveComputerToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveComputerToolInputParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveComputerToolInputParam)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificComputerParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificComputerParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveSpecificComputerParam)}");
                 computer = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::tryAGI.OpenAI.LiveApplyPatchToolInputParam? applyPatch = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType.ApplyPatch)
+            global::tryAGI.OpenAI.LiveSpecificCodeInterpreterParam? codeInterpreter = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminatorType.CodeInterpreter)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveApplyPatchToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveApplyPatchToolInputParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveApplyPatchToolInputParam)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificCodeInterpreterParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificCodeInterpreterParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveSpecificCodeInterpreterParam)}");
+                codeInterpreter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.LiveSpecificProgrammaticToolCallingParam? programmaticToolCalling = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminatorType.ProgrammaticToolCalling)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificProgrammaticToolCallingParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificProgrammaticToolCallingParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveSpecificProgrammaticToolCallingParam)}");
+                programmaticToolCalling = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.LiveSpecificFunctionShellParam? shell = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminatorType.Shell)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificFunctionShellParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificFunctionShellParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveSpecificFunctionShellParam)}");
+                shell = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.LiveSpecificCustomToolParam? custom = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminatorType.Custom)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificCustomToolParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificCustomToolParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveSpecificCustomToolParam)}");
+                custom = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.LiveSpecificApplyPatchParam? applyPatch = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamToolDiscriminatorType.ApplyPatch)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificApplyPatchParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificApplyPatchParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveSpecificApplyPatchParam)}");
                 applyPatch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
@@ -117,27 +110,25 @@ namespace tryAGI.OpenAI.JsonConverters
                 discriminator?.Type,
                 function,
 
-                webSearch,
+                mcp,
 
                 fileSearch,
 
-                codeInterpreter,
+                webSearch,
 
-                shell,
+                webSearchPreview,
 
                 imageGeneration,
 
-                mcp,
+                computer,
 
-                custom,
-
-                @namespace,
-
-                toolSearch,
+                codeInterpreter,
 
                 programmaticToolCalling,
 
-                computer,
+                shell,
+
+                custom,
 
                 applyPatch
                 );
@@ -156,80 +147,74 @@ namespace tryAGI.OpenAI.JsonConverters
 
             if (value.IsFunction)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveFunctionToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveFunctionToolInputParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveFunctionToolInputParam).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveFunctionToolChoiceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveFunctionToolChoiceParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveFunctionToolChoiceParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFunction(), typeInfo);
-            }
-            else if (value.IsWebSearch)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveWebSearchToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveWebSearchToolInputParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveWebSearchToolInputParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebSearch(), typeInfo);
-            }
-            else if (value.IsFileSearch)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveFileSearchToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveFileSearchToolInputParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveFileSearchToolInputParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFileSearch(), typeInfo);
-            }
-            else if (value.IsCodeInterpreter)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveCodeInterpreterToolInputParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCodeInterpreter(), typeInfo);
-            }
-            else if (value.IsShell)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveHostedShellToolInputParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveHostedShellToolInputParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickShell(), typeInfo);
-            }
-            else if (value.IsImageGeneration)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveImageGenerationToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveImageGenerationToolInputParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveImageGenerationToolInputParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickImageGeneration(), typeInfo);
             }
             else if (value.IsMcp)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveMCPToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveMCPToolInputParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveMCPToolInputParam).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveMCPToolChoiceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveMCPToolChoiceParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveMCPToolChoiceParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcp(), typeInfo);
             }
-            else if (value.IsCustom)
+            else if (value.IsFileSearch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveCustomToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveCustomToolInputParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveCustomToolInputParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCustom(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificFileSearchParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificFileSearchParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSpecificFileSearchParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFileSearch(), typeInfo);
             }
-            else if (value.IsNamespace)
+            else if (value.IsWebSearch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveNamespaceToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveNamespaceToolInputParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveNamespaceToolInputParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickNamespace(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificWebSearchParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificWebSearchParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSpecificWebSearchParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebSearch(), typeInfo);
             }
-            else if (value.IsToolSearch)
+            else if (value.IsWebSearchPreview)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveToolSearchToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveToolSearchToolInputParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveToolSearchToolInputParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickToolSearch(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificWebSearchPreviewParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificWebSearchPreviewParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSpecificWebSearchPreviewParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickWebSearchPreview(), typeInfo);
             }
-            else if (value.IsProgrammaticToolCalling)
+            else if (value.IsImageGeneration)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveProgrammaticToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveProgrammaticToolInputParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveProgrammaticToolInputParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProgrammaticToolCalling(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificImageGenParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificImageGenParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSpecificImageGenParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickImageGeneration(), typeInfo);
             }
             else if (value.IsComputer)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveComputerToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveComputerToolInputParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveComputerToolInputParam).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificComputerParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificComputerParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSpecificComputerParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickComputer(), typeInfo);
+            }
+            else if (value.IsCodeInterpreter)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificCodeInterpreterParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificCodeInterpreterParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSpecificCodeInterpreterParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCodeInterpreter(), typeInfo);
+            }
+            else if (value.IsProgrammaticToolCalling)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificProgrammaticToolCallingParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificProgrammaticToolCallingParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSpecificProgrammaticToolCallingParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickProgrammaticToolCalling(), typeInfo);
+            }
+            else if (value.IsShell)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificFunctionShellParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificFunctionShellParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSpecificFunctionShellParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickShell(), typeInfo);
+            }
+            else if (value.IsCustom)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificCustomToolParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificCustomToolParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSpecificCustomToolParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCustom(), typeInfo);
             }
             else if (value.IsApplyPatch)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveApplyPatchToolInputParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveApplyPatchToolInputParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveApplyPatchToolInputParam).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveSpecificApplyPatchParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveSpecificApplyPatchParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveSpecificApplyPatchParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickApplyPatch(), typeInfo);
             }
         }

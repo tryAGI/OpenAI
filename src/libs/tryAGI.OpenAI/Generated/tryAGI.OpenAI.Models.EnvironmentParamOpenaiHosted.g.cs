@@ -72,17 +72,23 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.HostedEnvironmentFileParam>? Files { get; set; }
 
         /// <summary>
-        /// The hosted container size. Omission selects the medium tier.
+        /// An existing prewarmed environment. Cannot be combined with a template or inline configuration.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("container_size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ContainerSizeParamJsonConverter))]
-        public global::tryAGI.OpenAI.ContainerSizeParam? ContainerSize { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("environment_id")]
+        public string? EnvironmentId { get; set; }
 
         /// <summary>
         /// A reusable hosted template applied before inline session configuration. Omitted fields inherit the template; network overrides cannot broaden its policy.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment_template_id")]
         public string? EnvironmentTemplateId { get; set; }
+
+        /// <summary>
+        /// The hosted container size. Omission selects the medium tier.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("container_size")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ContainerSizeParamJsonConverter))]
+        public global::tryAGI.OpenAI.ContainerSizeParam? ContainerSize { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -120,11 +126,14 @@ namespace tryAGI.OpenAI
         /// <param name="files">
         /// Files available before the agent starts. Defaults to an empty list.
         /// </param>
-        /// <param name="containerSize">
-        /// The hosted container size. Omission selects the medium tier.
+        /// <param name="environmentId">
+        /// An existing prewarmed environment. Cannot be combined with a template or inline configuration.
         /// </param>
         /// <param name="environmentTemplateId">
         /// A reusable hosted template applied before inline session configuration. Omitted fields inherit the template; network overrides cannot broaden its policy.
+        /// </param>
+        /// <param name="containerSize">
+        /// The hosted container size. Omission selects the medium tier.
         /// </param>
         /// <param name="type">
         /// The type of the object. Always `openai_hosted`.<br/>
@@ -143,8 +152,9 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.HostedSkillParam>? skills,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.HostedPluginParam>? plugins,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.HostedEnvironmentFileParam>? files,
-            global::tryAGI.OpenAI.ContainerSizeParam? containerSize,
+            string? environmentId,
             string? environmentTemplateId,
+            global::tryAGI.OpenAI.ContainerSizeParam? containerSize,
             global::tryAGI.OpenAI.EnvironmentParamOpenaiHostedType type = global::tryAGI.OpenAI.EnvironmentParamOpenaiHostedType.OpenaiHosted)
         {
             this.Type = type;
@@ -157,8 +167,9 @@ namespace tryAGI.OpenAI
             this.Skills = skills;
             this.Plugins = plugins;
             this.Files = files;
-            this.ContainerSize = containerSize;
+            this.EnvironmentId = environmentId;
             this.EnvironmentTemplateId = environmentTemplateId;
+            this.ContainerSize = containerSize;
         }
 
         /// <summary>

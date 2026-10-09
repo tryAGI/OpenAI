@@ -73,6 +73,12 @@ namespace tryAGI.OpenAI
         public string? Reason { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("detailed_explanation")]
+        public string? DetailedExplanation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -91,6 +97,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="errorType"></param>
         /// <param name="reason"></param>
+        /// <param name="detailedExplanation"></param>
         /// <param name="object">
         /// Default Value: safety.alert
         /// </param>
@@ -106,6 +113,7 @@ namespace tryAGI.OpenAI
             bool requestPaused,
             global::tryAGI.OpenAI.SafetyAlertErrorType errorType,
             string? reason,
+            string? detailedExplanation,
             global::tryAGI.OpenAI.SafetyAlertResourceObject @object = global::tryAGI.OpenAI.SafetyAlertResourceObject.SafetyAlert)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -117,6 +125,7 @@ namespace tryAGI.OpenAI
             this.RequestPaused = requestPaused;
             this.ErrorType = errorType;
             this.Reason = reason;
+            this.DetailedExplanation = detailedExplanation;
         }
 
         /// <summary>
