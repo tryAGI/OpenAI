@@ -12,6 +12,7 @@ internal static partial class AgentsApiGroupCommand
     {
         var command = new Command(@"agents", @"Agents endpoint commands.");
                          command.Subcommands.Add(AgentsCreateAgentCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentsCreateAgentEnvironmentCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsCreateAgentEnvironmentFileCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsCreateAgentEnvironmentTemplateCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsCreateAgentSessionCommandApiCommand.Create());
@@ -23,6 +24,7 @@ internal static partial class AgentsApiGroupCommand
                          command.Subcommands.Add(AgentsDeleteAgentSessionArtifactCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentEnvironmentFilesCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentEnvironmentTemplatesCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentsListAgentEnvironmentsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentSessionArtifactsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentSessionEventsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentSessionItemsCommandApiCommand.Create());

@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A user message containing text or inline images.
+    /// A user message containing text or images.
     /// </summary>
     public sealed partial class DecisionInputMessage
     {
@@ -17,7 +17,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.DecisionInputMessageRole Role { get; set; } = global::tryAGI.OpenAI.DecisionInputMessageRole.User;
 
         /// <summary>
-        /// Text evidence or an ordered list of text and inline image parts.
+        /// Text evidence or an ordered list of text and image parts.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DecisionInputContentJsonConverter))]
@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="DecisionInputMessage" /> class.
         /// </summary>
         /// <param name="content">
-        /// Text evidence or an ordered list of text and inline image parts.
+        /// Text evidence or an ordered list of text and image parts.
         /// </param>
         /// <param name="type">
         /// Default Value: message

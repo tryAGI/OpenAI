@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveResponsesDelegationSettingsUpdateInputParamToolDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType? Type { get; }
 
         /// <summary>
         /// A function tool available to the Responses backend when the Live model delegates a task.
@@ -797,7 +797,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public ToolsItem16(
-            global::tryAGI.OpenAI.LiveResponsesDelegationSettingsUpdateInputParamToolDiscriminatorType? type,
+            global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParamToolDiscriminatorType? type,
             global::tryAGI.OpenAI.LiveFunctionToolInputParam? function,
             global::tryAGI.OpenAI.LiveWebSearchToolInputParam? webSearch,
             global::tryAGI.OpenAI.LiveFileSearchToolInputParam? fileSearch,

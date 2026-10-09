@@ -89,6 +89,80 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionEnvironmentReady' but the value was {ToString()}.");
 
         /// <summary>
+        /// Emitted after an idle hosted session environment is checkpointed and stopped.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended? AgentSessionEnvironmentSuspended { get; init; }
+#else
+        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended? AgentSessionEnvironmentSuspended { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentSessionEnvironmentSuspended))]
+#endif
+        public bool IsAgentSessionEnvironmentSuspended => AgentSessionEnvironmentSuspended != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickAgentSessionEnvironmentSuspended(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended? value)
+        {
+            value = AgentSessionEnvironmentSuspended;
+            return IsAgentSessionEnvironmentSuspended;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended PickAgentSessionEnvironmentSuspended() => AgentSessionEnvironmentSuspended is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionEnvironmentSuspended' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Emitted after a suspended hosted session environment and its checkpoint expire.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired? AgentSessionEnvironmentExpired { get; init; }
+#else
+        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired? AgentSessionEnvironmentExpired { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AgentSessionEnvironmentExpired))]
+#endif
+        public bool IsAgentSessionEnvironmentExpired => AgentSessionEnvironmentExpired != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickAgentSessionEnvironmentExpired(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired? value)
+        {
+            value = AgentSessionEnvironmentExpired;
+            return IsAgentSessionEnvironmentExpired;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired PickAgentSessionEnvironmentExpired() => AgentSessionEnvironmentExpired is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AgentSessionEnvironmentExpired' but the value was {ToString()}.");
+
+        /// <summary>
         /// Emitted after a hosted sandbox is replaced. Conversation history survives; changes to the previous sandbox's files and processes do not.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -1209,6 +1283,52 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator SessionEvent(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended value) => new SessionEvent((global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended?(SessionEvent @this) => @this.AgentSessionEnvironmentSuspended;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public SessionEvent(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended? value)
+        {
+            AgentSessionEnvironmentSuspended = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static SessionEvent FromAgentSessionEnvironmentSuspended(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended? value) => new SessionEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator SessionEvent(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired value) => new SessionEvent((global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired?(SessionEvent @this) => @this.AgentSessionEnvironmentExpired;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public SessionEvent(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired? value)
+        {
+            AgentSessionEnvironmentExpired = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static SessionEvent FromAgentSessionEnvironmentExpired(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired? value) => new SessionEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator SessionEvent(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReset value) => new SessionEvent((global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReset?)value);
 
         /// <summary>
@@ -1880,6 +2000,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.SessionEventDiscriminatorType? type,
             global::tryAGI.OpenAI.SessionEventError? error,
             global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReady? agentSessionEnvironmentReady,
+            global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended? agentSessionEnvironmentSuspended,
+            global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired? agentSessionEnvironmentExpired,
             global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReset? agentSessionEnvironmentReset,
             global::tryAGI.OpenAI.SessionEventAgentOutputCommandExecutionOutputDelta? agentOutputCommandExecutionOutputDelta,
             global::tryAGI.OpenAI.SessionEventAgentSessionCreated? agentSessionCreated,
@@ -1915,6 +2037,8 @@ namespace tryAGI.OpenAI
 
             Error = error;
             AgentSessionEnvironmentReady = agentSessionEnvironmentReady;
+            AgentSessionEnvironmentSuspended = agentSessionEnvironmentSuspended;
+            AgentSessionEnvironmentExpired = agentSessionEnvironmentExpired;
             AgentSessionEnvironmentReset = agentSessionEnvironmentReset;
             AgentOutputCommandExecutionOutputDelta = agentOutputCommandExecutionOutputDelta;
             AgentSessionCreated = agentSessionCreated;
@@ -1979,6 +2103,8 @@ namespace tryAGI.OpenAI
             AgentSessionCreated as object ??
             AgentOutputCommandExecutionOutputDelta as object ??
             AgentSessionEnvironmentReset as object ??
+            AgentSessionEnvironmentExpired as object ??
+            AgentSessionEnvironmentSuspended as object ??
             AgentSessionEnvironmentReady as object ??
             Error as object
             ;
@@ -1989,6 +2115,8 @@ namespace tryAGI.OpenAI
         public override string? ToString() =>
             Error?.ToString() ??
             AgentSessionEnvironmentReady?.ToString() ??
+            AgentSessionEnvironmentSuspended?.ToString() ??
+            AgentSessionEnvironmentExpired?.ToString() ??
             AgentSessionEnvironmentReset?.ToString() ??
             AgentOutputCommandExecutionOutputDelta?.ToString() ??
             AgentSessionCreated?.ToString() ??
@@ -2025,7 +2153,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && IsAgentSessionTurnReasoningSummaryTextDone;
+            return IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && IsAgentSessionTurnReasoningSummaryTextDelta && !IsAgentSessionTurnReasoningSummaryTextDone || !IsError && !IsAgentSessionEnvironmentReady && !IsAgentSessionEnvironmentSuspended && !IsAgentSessionEnvironmentExpired && !IsAgentSessionEnvironmentReset && !IsAgentOutputCommandExecutionOutputDelta && !IsAgentSessionCreated && !IsAgentSessionTurnCreated && !IsAgentSessionTurnInProgress && !IsAgentSessionTurnCompleted && !IsAgentSessionTurnFailed && !IsAgentSessionTurnCancelled && !IsAgentSessionTurnItemAdded && !IsAgentSessionIdle && !IsAgentSessionInProgress && !IsAgentSessionRequiresAction && !IsAgentSessionFailed && !IsAgentSessionEnvironmentPending && !IsAgentSessionEnvironmentConnected && !IsAgentSessionEnvironmentDisconnected && !IsAgentSessionEnvironmentFailed && !IsAgentSessionSubagentCreated && !IsAgentSessionSubagentActive && !IsAgentSessionSubagentClosed && !IsAgentSessionTurnItemDone && !IsAgentSessionTurnContentPartAdded && !IsAgentSessionTurnContentPartDone && !IsAgentSessionTurnOutputTextDelta && !IsAgentSessionTurnOutputTextDone && !IsAgentSessionTurnReasoningSummaryPartAdded && !IsAgentSessionTurnReasoningSummaryPartDone && !IsAgentSessionTurnReasoningSummaryTextDelta && IsAgentSessionTurnReasoningSummaryTextDone;
         }
 
         /// <summary>
@@ -2034,6 +2162,8 @@ namespace tryAGI.OpenAI
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.SessionEventError, TResult>? error = null,
             global::System.Func<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReady, TResult>? agentSessionEnvironmentReady = null,
+            global::System.Func<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended, TResult>? agentSessionEnvironmentSuspended = null,
+            global::System.Func<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired, TResult>? agentSessionEnvironmentExpired = null,
             global::System.Func<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReset, TResult>? agentSessionEnvironmentReset = null,
             global::System.Func<global::tryAGI.OpenAI.SessionEventAgentOutputCommandExecutionOutputDelta, TResult>? agentOutputCommandExecutionOutputDelta = null,
             global::System.Func<global::tryAGI.OpenAI.SessionEventAgentSessionCreated, TResult>? agentSessionCreated = null,
@@ -2078,121 +2208,129 @@ namespace tryAGI.OpenAI
             {
                 return agentSessionEnvironmentReady(__value1);
             }
-            else if (AgentSessionEnvironmentReset is { } __value2 && agentSessionEnvironmentReset != null)
+            else if (AgentSessionEnvironmentSuspended is { } __value2 && agentSessionEnvironmentSuspended != null)
             {
-                return agentSessionEnvironmentReset(__value2);
+                return agentSessionEnvironmentSuspended(__value2);
             }
-            else if (AgentOutputCommandExecutionOutputDelta is { } __value3 && agentOutputCommandExecutionOutputDelta != null)
+            else if (AgentSessionEnvironmentExpired is { } __value3 && agentSessionEnvironmentExpired != null)
             {
-                return agentOutputCommandExecutionOutputDelta(__value3);
+                return agentSessionEnvironmentExpired(__value3);
             }
-            else if (AgentSessionCreated is { } __value4 && agentSessionCreated != null)
+            else if (AgentSessionEnvironmentReset is { } __value4 && agentSessionEnvironmentReset != null)
             {
-                return agentSessionCreated(__value4);
+                return agentSessionEnvironmentReset(__value4);
             }
-            else if (AgentSessionTurnCreated is { } __value5 && agentSessionTurnCreated != null)
+            else if (AgentOutputCommandExecutionOutputDelta is { } __value5 && agentOutputCommandExecutionOutputDelta != null)
             {
-                return agentSessionTurnCreated(__value5);
+                return agentOutputCommandExecutionOutputDelta(__value5);
             }
-            else if (AgentSessionTurnInProgress is { } __value6 && agentSessionTurnInProgress != null)
+            else if (AgentSessionCreated is { } __value6 && agentSessionCreated != null)
             {
-                return agentSessionTurnInProgress(__value6);
+                return agentSessionCreated(__value6);
             }
-            else if (AgentSessionTurnCompleted is { } __value7 && agentSessionTurnCompleted != null)
+            else if (AgentSessionTurnCreated is { } __value7 && agentSessionTurnCreated != null)
             {
-                return agentSessionTurnCompleted(__value7);
+                return agentSessionTurnCreated(__value7);
             }
-            else if (AgentSessionTurnFailed is { } __value8 && agentSessionTurnFailed != null)
+            else if (AgentSessionTurnInProgress is { } __value8 && agentSessionTurnInProgress != null)
             {
-                return agentSessionTurnFailed(__value8);
+                return agentSessionTurnInProgress(__value8);
             }
-            else if (AgentSessionTurnCancelled is { } __value9 && agentSessionTurnCancelled != null)
+            else if (AgentSessionTurnCompleted is { } __value9 && agentSessionTurnCompleted != null)
             {
-                return agentSessionTurnCancelled(__value9);
+                return agentSessionTurnCompleted(__value9);
             }
-            else if (AgentSessionTurnItemAdded is { } __value10 && agentSessionTurnItemAdded != null)
+            else if (AgentSessionTurnFailed is { } __value10 && agentSessionTurnFailed != null)
             {
-                return agentSessionTurnItemAdded(__value10);
+                return agentSessionTurnFailed(__value10);
             }
-            else if (AgentSessionIdle is { } __value11 && agentSessionIdle != null)
+            else if (AgentSessionTurnCancelled is { } __value11 && agentSessionTurnCancelled != null)
             {
-                return agentSessionIdle(__value11);
+                return agentSessionTurnCancelled(__value11);
             }
-            else if (AgentSessionInProgress is { } __value12 && agentSessionInProgress != null)
+            else if (AgentSessionTurnItemAdded is { } __value12 && agentSessionTurnItemAdded != null)
             {
-                return agentSessionInProgress(__value12);
+                return agentSessionTurnItemAdded(__value12);
             }
-            else if (AgentSessionRequiresAction is { } __value13 && agentSessionRequiresAction != null)
+            else if (AgentSessionIdle is { } __value13 && agentSessionIdle != null)
             {
-                return agentSessionRequiresAction(__value13);
+                return agentSessionIdle(__value13);
             }
-            else if (AgentSessionFailed is { } __value14 && agentSessionFailed != null)
+            else if (AgentSessionInProgress is { } __value14 && agentSessionInProgress != null)
             {
-                return agentSessionFailed(__value14);
+                return agentSessionInProgress(__value14);
             }
-            else if (AgentSessionEnvironmentPending is { } __value15 && agentSessionEnvironmentPending != null)
+            else if (AgentSessionRequiresAction is { } __value15 && agentSessionRequiresAction != null)
             {
-                return agentSessionEnvironmentPending(__value15);
+                return agentSessionRequiresAction(__value15);
             }
-            else if (AgentSessionEnvironmentConnected is { } __value16 && agentSessionEnvironmentConnected != null)
+            else if (AgentSessionFailed is { } __value16 && agentSessionFailed != null)
             {
-                return agentSessionEnvironmentConnected(__value16);
+                return agentSessionFailed(__value16);
             }
-            else if (AgentSessionEnvironmentDisconnected is { } __value17 && agentSessionEnvironmentDisconnected != null)
+            else if (AgentSessionEnvironmentPending is { } __value17 && agentSessionEnvironmentPending != null)
             {
-                return agentSessionEnvironmentDisconnected(__value17);
+                return agentSessionEnvironmentPending(__value17);
             }
-            else if (AgentSessionEnvironmentFailed is { } __value18 && agentSessionEnvironmentFailed != null)
+            else if (AgentSessionEnvironmentConnected is { } __value18 && agentSessionEnvironmentConnected != null)
             {
-                return agentSessionEnvironmentFailed(__value18);
+                return agentSessionEnvironmentConnected(__value18);
             }
-            else if (AgentSessionSubagentCreated is { } __value19 && agentSessionSubagentCreated != null)
+            else if (AgentSessionEnvironmentDisconnected is { } __value19 && agentSessionEnvironmentDisconnected != null)
             {
-                return agentSessionSubagentCreated(__value19);
+                return agentSessionEnvironmentDisconnected(__value19);
             }
-            else if (AgentSessionSubagentActive is { } __value20 && agentSessionSubagentActive != null)
+            else if (AgentSessionEnvironmentFailed is { } __value20 && agentSessionEnvironmentFailed != null)
             {
-                return agentSessionSubagentActive(__value20);
+                return agentSessionEnvironmentFailed(__value20);
             }
-            else if (AgentSessionSubagentClosed is { } __value21 && agentSessionSubagentClosed != null)
+            else if (AgentSessionSubagentCreated is { } __value21 && agentSessionSubagentCreated != null)
             {
-                return agentSessionSubagentClosed(__value21);
+                return agentSessionSubagentCreated(__value21);
             }
-            else if (AgentSessionTurnItemDone is { } __value22 && agentSessionTurnItemDone != null)
+            else if (AgentSessionSubagentActive is { } __value22 && agentSessionSubagentActive != null)
             {
-                return agentSessionTurnItemDone(__value22);
+                return agentSessionSubagentActive(__value22);
             }
-            else if (AgentSessionTurnContentPartAdded is { } __value23 && agentSessionTurnContentPartAdded != null)
+            else if (AgentSessionSubagentClosed is { } __value23 && agentSessionSubagentClosed != null)
             {
-                return agentSessionTurnContentPartAdded(__value23);
+                return agentSessionSubagentClosed(__value23);
             }
-            else if (AgentSessionTurnContentPartDone is { } __value24 && agentSessionTurnContentPartDone != null)
+            else if (AgentSessionTurnItemDone is { } __value24 && agentSessionTurnItemDone != null)
             {
-                return agentSessionTurnContentPartDone(__value24);
+                return agentSessionTurnItemDone(__value24);
             }
-            else if (AgentSessionTurnOutputTextDelta is { } __value25 && agentSessionTurnOutputTextDelta != null)
+            else if (AgentSessionTurnContentPartAdded is { } __value25 && agentSessionTurnContentPartAdded != null)
             {
-                return agentSessionTurnOutputTextDelta(__value25);
+                return agentSessionTurnContentPartAdded(__value25);
             }
-            else if (AgentSessionTurnOutputTextDone is { } __value26 && agentSessionTurnOutputTextDone != null)
+            else if (AgentSessionTurnContentPartDone is { } __value26 && agentSessionTurnContentPartDone != null)
             {
-                return agentSessionTurnOutputTextDone(__value26);
+                return agentSessionTurnContentPartDone(__value26);
             }
-            else if (AgentSessionTurnReasoningSummaryPartAdded is { } __value27 && agentSessionTurnReasoningSummaryPartAdded != null)
+            else if (AgentSessionTurnOutputTextDelta is { } __value27 && agentSessionTurnOutputTextDelta != null)
             {
-                return agentSessionTurnReasoningSummaryPartAdded(__value27);
+                return agentSessionTurnOutputTextDelta(__value27);
             }
-            else if (AgentSessionTurnReasoningSummaryPartDone is { } __value28 && agentSessionTurnReasoningSummaryPartDone != null)
+            else if (AgentSessionTurnOutputTextDone is { } __value28 && agentSessionTurnOutputTextDone != null)
             {
-                return agentSessionTurnReasoningSummaryPartDone(__value28);
+                return agentSessionTurnOutputTextDone(__value28);
             }
-            else if (AgentSessionTurnReasoningSummaryTextDelta is { } __value29 && agentSessionTurnReasoningSummaryTextDelta != null)
+            else if (AgentSessionTurnReasoningSummaryPartAdded is { } __value29 && agentSessionTurnReasoningSummaryPartAdded != null)
             {
-                return agentSessionTurnReasoningSummaryTextDelta(__value29);
+                return agentSessionTurnReasoningSummaryPartAdded(__value29);
             }
-            else if (AgentSessionTurnReasoningSummaryTextDone is { } __value30 && agentSessionTurnReasoningSummaryTextDone != null)
+            else if (AgentSessionTurnReasoningSummaryPartDone is { } __value30 && agentSessionTurnReasoningSummaryPartDone != null)
             {
-                return agentSessionTurnReasoningSummaryTextDone(__value30);
+                return agentSessionTurnReasoningSummaryPartDone(__value30);
+            }
+            else if (AgentSessionTurnReasoningSummaryTextDelta is { } __value31 && agentSessionTurnReasoningSummaryTextDelta != null)
+            {
+                return agentSessionTurnReasoningSummaryTextDelta(__value31);
+            }
+            else if (AgentSessionTurnReasoningSummaryTextDone is { } __value32 && agentSessionTurnReasoningSummaryTextDone != null)
+            {
+                return agentSessionTurnReasoningSummaryTextDone(__value32);
             }
 
             return default(TResult);
@@ -2206,6 +2344,10 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReady>? agentSessionEnvironmentReady = null,
 
+            global::System.Action<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended>? agentSessionEnvironmentSuspended = null,
+
+            global::System.Action<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired>? agentSessionEnvironmentExpired = null,
+
             global::System.Action<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReset>? agentSessionEnvironmentReset = null,
 
             global::System.Action<global::tryAGI.OpenAI.SessionEventAgentOutputCommandExecutionOutputDelta>? agentOutputCommandExecutionOutputDelta = null,
@@ -2278,121 +2420,129 @@ namespace tryAGI.OpenAI
             {
                 agentSessionEnvironmentReady?.Invoke(__value1);
             }
-            else if (AgentSessionEnvironmentReset is { } __value2)
+            else if (AgentSessionEnvironmentSuspended is { } __value2)
             {
-                agentSessionEnvironmentReset?.Invoke(__value2);
+                agentSessionEnvironmentSuspended?.Invoke(__value2);
             }
-            else if (AgentOutputCommandExecutionOutputDelta is { } __value3)
+            else if (AgentSessionEnvironmentExpired is { } __value3)
             {
-                agentOutputCommandExecutionOutputDelta?.Invoke(__value3);
+                agentSessionEnvironmentExpired?.Invoke(__value3);
             }
-            else if (AgentSessionCreated is { } __value4)
+            else if (AgentSessionEnvironmentReset is { } __value4)
             {
-                agentSessionCreated?.Invoke(__value4);
+                agentSessionEnvironmentReset?.Invoke(__value4);
             }
-            else if (AgentSessionTurnCreated is { } __value5)
+            else if (AgentOutputCommandExecutionOutputDelta is { } __value5)
             {
-                agentSessionTurnCreated?.Invoke(__value5);
+                agentOutputCommandExecutionOutputDelta?.Invoke(__value5);
             }
-            else if (AgentSessionTurnInProgress is { } __value6)
+            else if (AgentSessionCreated is { } __value6)
             {
-                agentSessionTurnInProgress?.Invoke(__value6);
+                agentSessionCreated?.Invoke(__value6);
             }
-            else if (AgentSessionTurnCompleted is { } __value7)
+            else if (AgentSessionTurnCreated is { } __value7)
             {
-                agentSessionTurnCompleted?.Invoke(__value7);
+                agentSessionTurnCreated?.Invoke(__value7);
             }
-            else if (AgentSessionTurnFailed is { } __value8)
+            else if (AgentSessionTurnInProgress is { } __value8)
             {
-                agentSessionTurnFailed?.Invoke(__value8);
+                agentSessionTurnInProgress?.Invoke(__value8);
             }
-            else if (AgentSessionTurnCancelled is { } __value9)
+            else if (AgentSessionTurnCompleted is { } __value9)
             {
-                agentSessionTurnCancelled?.Invoke(__value9);
+                agentSessionTurnCompleted?.Invoke(__value9);
             }
-            else if (AgentSessionTurnItemAdded is { } __value10)
+            else if (AgentSessionTurnFailed is { } __value10)
             {
-                agentSessionTurnItemAdded?.Invoke(__value10);
+                agentSessionTurnFailed?.Invoke(__value10);
             }
-            else if (AgentSessionIdle is { } __value11)
+            else if (AgentSessionTurnCancelled is { } __value11)
             {
-                agentSessionIdle?.Invoke(__value11);
+                agentSessionTurnCancelled?.Invoke(__value11);
             }
-            else if (AgentSessionInProgress is { } __value12)
+            else if (AgentSessionTurnItemAdded is { } __value12)
             {
-                agentSessionInProgress?.Invoke(__value12);
+                agentSessionTurnItemAdded?.Invoke(__value12);
             }
-            else if (AgentSessionRequiresAction is { } __value13)
+            else if (AgentSessionIdle is { } __value13)
             {
-                agentSessionRequiresAction?.Invoke(__value13);
+                agentSessionIdle?.Invoke(__value13);
             }
-            else if (AgentSessionFailed is { } __value14)
+            else if (AgentSessionInProgress is { } __value14)
             {
-                agentSessionFailed?.Invoke(__value14);
+                agentSessionInProgress?.Invoke(__value14);
             }
-            else if (AgentSessionEnvironmentPending is { } __value15)
+            else if (AgentSessionRequiresAction is { } __value15)
             {
-                agentSessionEnvironmentPending?.Invoke(__value15);
+                agentSessionRequiresAction?.Invoke(__value15);
             }
-            else if (AgentSessionEnvironmentConnected is { } __value16)
+            else if (AgentSessionFailed is { } __value16)
             {
-                agentSessionEnvironmentConnected?.Invoke(__value16);
+                agentSessionFailed?.Invoke(__value16);
             }
-            else if (AgentSessionEnvironmentDisconnected is { } __value17)
+            else if (AgentSessionEnvironmentPending is { } __value17)
             {
-                agentSessionEnvironmentDisconnected?.Invoke(__value17);
+                agentSessionEnvironmentPending?.Invoke(__value17);
             }
-            else if (AgentSessionEnvironmentFailed is { } __value18)
+            else if (AgentSessionEnvironmentConnected is { } __value18)
             {
-                agentSessionEnvironmentFailed?.Invoke(__value18);
+                agentSessionEnvironmentConnected?.Invoke(__value18);
             }
-            else if (AgentSessionSubagentCreated is { } __value19)
+            else if (AgentSessionEnvironmentDisconnected is { } __value19)
             {
-                agentSessionSubagentCreated?.Invoke(__value19);
+                agentSessionEnvironmentDisconnected?.Invoke(__value19);
             }
-            else if (AgentSessionSubagentActive is { } __value20)
+            else if (AgentSessionEnvironmentFailed is { } __value20)
             {
-                agentSessionSubagentActive?.Invoke(__value20);
+                agentSessionEnvironmentFailed?.Invoke(__value20);
             }
-            else if (AgentSessionSubagentClosed is { } __value21)
+            else if (AgentSessionSubagentCreated is { } __value21)
             {
-                agentSessionSubagentClosed?.Invoke(__value21);
+                agentSessionSubagentCreated?.Invoke(__value21);
             }
-            else if (AgentSessionTurnItemDone is { } __value22)
+            else if (AgentSessionSubagentActive is { } __value22)
             {
-                agentSessionTurnItemDone?.Invoke(__value22);
+                agentSessionSubagentActive?.Invoke(__value22);
             }
-            else if (AgentSessionTurnContentPartAdded is { } __value23)
+            else if (AgentSessionSubagentClosed is { } __value23)
             {
-                agentSessionTurnContentPartAdded?.Invoke(__value23);
+                agentSessionSubagentClosed?.Invoke(__value23);
             }
-            else if (AgentSessionTurnContentPartDone is { } __value24)
+            else if (AgentSessionTurnItemDone is { } __value24)
             {
-                agentSessionTurnContentPartDone?.Invoke(__value24);
+                agentSessionTurnItemDone?.Invoke(__value24);
             }
-            else if (AgentSessionTurnOutputTextDelta is { } __value25)
+            else if (AgentSessionTurnContentPartAdded is { } __value25)
             {
-                agentSessionTurnOutputTextDelta?.Invoke(__value25);
+                agentSessionTurnContentPartAdded?.Invoke(__value25);
             }
-            else if (AgentSessionTurnOutputTextDone is { } __value26)
+            else if (AgentSessionTurnContentPartDone is { } __value26)
             {
-                agentSessionTurnOutputTextDone?.Invoke(__value26);
+                agentSessionTurnContentPartDone?.Invoke(__value26);
             }
-            else if (AgentSessionTurnReasoningSummaryPartAdded is { } __value27)
+            else if (AgentSessionTurnOutputTextDelta is { } __value27)
             {
-                agentSessionTurnReasoningSummaryPartAdded?.Invoke(__value27);
+                agentSessionTurnOutputTextDelta?.Invoke(__value27);
             }
-            else if (AgentSessionTurnReasoningSummaryPartDone is { } __value28)
+            else if (AgentSessionTurnOutputTextDone is { } __value28)
             {
-                agentSessionTurnReasoningSummaryPartDone?.Invoke(__value28);
+                agentSessionTurnOutputTextDone?.Invoke(__value28);
             }
-            else if (AgentSessionTurnReasoningSummaryTextDelta is { } __value29)
+            else if (AgentSessionTurnReasoningSummaryPartAdded is { } __value29)
             {
-                agentSessionTurnReasoningSummaryTextDelta?.Invoke(__value29);
+                agentSessionTurnReasoningSummaryPartAdded?.Invoke(__value29);
             }
-            else if (AgentSessionTurnReasoningSummaryTextDone is { } __value30)
+            else if (AgentSessionTurnReasoningSummaryPartDone is { } __value30)
             {
-                agentSessionTurnReasoningSummaryTextDone?.Invoke(__value30);
+                agentSessionTurnReasoningSummaryPartDone?.Invoke(__value30);
+            }
+            else if (AgentSessionTurnReasoningSummaryTextDelta is { } __value31)
+            {
+                agentSessionTurnReasoningSummaryTextDelta?.Invoke(__value31);
+            }
+            else if (AgentSessionTurnReasoningSummaryTextDone is { } __value32)
+            {
+                agentSessionTurnReasoningSummaryTextDone?.Invoke(__value32);
             }
         }
 
@@ -2402,6 +2552,8 @@ namespace tryAGI.OpenAI
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.SessionEventError>? error = null,
             global::System.Action<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReady>? agentSessionEnvironmentReady = null,
+            global::System.Action<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended>? agentSessionEnvironmentSuspended = null,
+            global::System.Action<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired>? agentSessionEnvironmentExpired = null,
             global::System.Action<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReset>? agentSessionEnvironmentReset = null,
             global::System.Action<global::tryAGI.OpenAI.SessionEventAgentOutputCommandExecutionOutputDelta>? agentOutputCommandExecutionOutputDelta = null,
             global::System.Action<global::tryAGI.OpenAI.SessionEventAgentSessionCreated>? agentSessionCreated = null,
@@ -2446,121 +2598,129 @@ namespace tryAGI.OpenAI
             {
                 agentSessionEnvironmentReady?.Invoke(__value1);
             }
-            else if (AgentSessionEnvironmentReset is { } __value2)
+            else if (AgentSessionEnvironmentSuspended is { } __value2)
             {
-                agentSessionEnvironmentReset?.Invoke(__value2);
+                agentSessionEnvironmentSuspended?.Invoke(__value2);
             }
-            else if (AgentOutputCommandExecutionOutputDelta is { } __value3)
+            else if (AgentSessionEnvironmentExpired is { } __value3)
             {
-                agentOutputCommandExecutionOutputDelta?.Invoke(__value3);
+                agentSessionEnvironmentExpired?.Invoke(__value3);
             }
-            else if (AgentSessionCreated is { } __value4)
+            else if (AgentSessionEnvironmentReset is { } __value4)
             {
-                agentSessionCreated?.Invoke(__value4);
+                agentSessionEnvironmentReset?.Invoke(__value4);
             }
-            else if (AgentSessionTurnCreated is { } __value5)
+            else if (AgentOutputCommandExecutionOutputDelta is { } __value5)
             {
-                agentSessionTurnCreated?.Invoke(__value5);
+                agentOutputCommandExecutionOutputDelta?.Invoke(__value5);
             }
-            else if (AgentSessionTurnInProgress is { } __value6)
+            else if (AgentSessionCreated is { } __value6)
             {
-                agentSessionTurnInProgress?.Invoke(__value6);
+                agentSessionCreated?.Invoke(__value6);
             }
-            else if (AgentSessionTurnCompleted is { } __value7)
+            else if (AgentSessionTurnCreated is { } __value7)
             {
-                agentSessionTurnCompleted?.Invoke(__value7);
+                agentSessionTurnCreated?.Invoke(__value7);
             }
-            else if (AgentSessionTurnFailed is { } __value8)
+            else if (AgentSessionTurnInProgress is { } __value8)
             {
-                agentSessionTurnFailed?.Invoke(__value8);
+                agentSessionTurnInProgress?.Invoke(__value8);
             }
-            else if (AgentSessionTurnCancelled is { } __value9)
+            else if (AgentSessionTurnCompleted is { } __value9)
             {
-                agentSessionTurnCancelled?.Invoke(__value9);
+                agentSessionTurnCompleted?.Invoke(__value9);
             }
-            else if (AgentSessionTurnItemAdded is { } __value10)
+            else if (AgentSessionTurnFailed is { } __value10)
             {
-                agentSessionTurnItemAdded?.Invoke(__value10);
+                agentSessionTurnFailed?.Invoke(__value10);
             }
-            else if (AgentSessionIdle is { } __value11)
+            else if (AgentSessionTurnCancelled is { } __value11)
             {
-                agentSessionIdle?.Invoke(__value11);
+                agentSessionTurnCancelled?.Invoke(__value11);
             }
-            else if (AgentSessionInProgress is { } __value12)
+            else if (AgentSessionTurnItemAdded is { } __value12)
             {
-                agentSessionInProgress?.Invoke(__value12);
+                agentSessionTurnItemAdded?.Invoke(__value12);
             }
-            else if (AgentSessionRequiresAction is { } __value13)
+            else if (AgentSessionIdle is { } __value13)
             {
-                agentSessionRequiresAction?.Invoke(__value13);
+                agentSessionIdle?.Invoke(__value13);
             }
-            else if (AgentSessionFailed is { } __value14)
+            else if (AgentSessionInProgress is { } __value14)
             {
-                agentSessionFailed?.Invoke(__value14);
+                agentSessionInProgress?.Invoke(__value14);
             }
-            else if (AgentSessionEnvironmentPending is { } __value15)
+            else if (AgentSessionRequiresAction is { } __value15)
             {
-                agentSessionEnvironmentPending?.Invoke(__value15);
+                agentSessionRequiresAction?.Invoke(__value15);
             }
-            else if (AgentSessionEnvironmentConnected is { } __value16)
+            else if (AgentSessionFailed is { } __value16)
             {
-                agentSessionEnvironmentConnected?.Invoke(__value16);
+                agentSessionFailed?.Invoke(__value16);
             }
-            else if (AgentSessionEnvironmentDisconnected is { } __value17)
+            else if (AgentSessionEnvironmentPending is { } __value17)
             {
-                agentSessionEnvironmentDisconnected?.Invoke(__value17);
+                agentSessionEnvironmentPending?.Invoke(__value17);
             }
-            else if (AgentSessionEnvironmentFailed is { } __value18)
+            else if (AgentSessionEnvironmentConnected is { } __value18)
             {
-                agentSessionEnvironmentFailed?.Invoke(__value18);
+                agentSessionEnvironmentConnected?.Invoke(__value18);
             }
-            else if (AgentSessionSubagentCreated is { } __value19)
+            else if (AgentSessionEnvironmentDisconnected is { } __value19)
             {
-                agentSessionSubagentCreated?.Invoke(__value19);
+                agentSessionEnvironmentDisconnected?.Invoke(__value19);
             }
-            else if (AgentSessionSubagentActive is { } __value20)
+            else if (AgentSessionEnvironmentFailed is { } __value20)
             {
-                agentSessionSubagentActive?.Invoke(__value20);
+                agentSessionEnvironmentFailed?.Invoke(__value20);
             }
-            else if (AgentSessionSubagentClosed is { } __value21)
+            else if (AgentSessionSubagentCreated is { } __value21)
             {
-                agentSessionSubagentClosed?.Invoke(__value21);
+                agentSessionSubagentCreated?.Invoke(__value21);
             }
-            else if (AgentSessionTurnItemDone is { } __value22)
+            else if (AgentSessionSubagentActive is { } __value22)
             {
-                agentSessionTurnItemDone?.Invoke(__value22);
+                agentSessionSubagentActive?.Invoke(__value22);
             }
-            else if (AgentSessionTurnContentPartAdded is { } __value23)
+            else if (AgentSessionSubagentClosed is { } __value23)
             {
-                agentSessionTurnContentPartAdded?.Invoke(__value23);
+                agentSessionSubagentClosed?.Invoke(__value23);
             }
-            else if (AgentSessionTurnContentPartDone is { } __value24)
+            else if (AgentSessionTurnItemDone is { } __value24)
             {
-                agentSessionTurnContentPartDone?.Invoke(__value24);
+                agentSessionTurnItemDone?.Invoke(__value24);
             }
-            else if (AgentSessionTurnOutputTextDelta is { } __value25)
+            else if (AgentSessionTurnContentPartAdded is { } __value25)
             {
-                agentSessionTurnOutputTextDelta?.Invoke(__value25);
+                agentSessionTurnContentPartAdded?.Invoke(__value25);
             }
-            else if (AgentSessionTurnOutputTextDone is { } __value26)
+            else if (AgentSessionTurnContentPartDone is { } __value26)
             {
-                agentSessionTurnOutputTextDone?.Invoke(__value26);
+                agentSessionTurnContentPartDone?.Invoke(__value26);
             }
-            else if (AgentSessionTurnReasoningSummaryPartAdded is { } __value27)
+            else if (AgentSessionTurnOutputTextDelta is { } __value27)
             {
-                agentSessionTurnReasoningSummaryPartAdded?.Invoke(__value27);
+                agentSessionTurnOutputTextDelta?.Invoke(__value27);
             }
-            else if (AgentSessionTurnReasoningSummaryPartDone is { } __value28)
+            else if (AgentSessionTurnOutputTextDone is { } __value28)
             {
-                agentSessionTurnReasoningSummaryPartDone?.Invoke(__value28);
+                agentSessionTurnOutputTextDone?.Invoke(__value28);
             }
-            else if (AgentSessionTurnReasoningSummaryTextDelta is { } __value29)
+            else if (AgentSessionTurnReasoningSummaryPartAdded is { } __value29)
             {
-                agentSessionTurnReasoningSummaryTextDelta?.Invoke(__value29);
+                agentSessionTurnReasoningSummaryPartAdded?.Invoke(__value29);
             }
-            else if (AgentSessionTurnReasoningSummaryTextDone is { } __value30)
+            else if (AgentSessionTurnReasoningSummaryPartDone is { } __value30)
             {
-                agentSessionTurnReasoningSummaryTextDone?.Invoke(__value30);
+                agentSessionTurnReasoningSummaryPartDone?.Invoke(__value30);
+            }
+            else if (AgentSessionTurnReasoningSummaryTextDelta is { } __value31)
+            {
+                agentSessionTurnReasoningSummaryTextDelta?.Invoke(__value31);
+            }
+            else if (AgentSessionTurnReasoningSummaryTextDone is { } __value32)
+            {
+                agentSessionTurnReasoningSummaryTextDone?.Invoke(__value32);
             }
         }
 
@@ -2575,6 +2735,10 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.SessionEventError),
                 AgentSessionEnvironmentReady,
                 typeof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReady),
+                AgentSessionEnvironmentSuspended,
+                typeof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended),
+                AgentSessionEnvironmentExpired,
+                typeof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired),
                 AgentSessionEnvironmentReset,
                 typeof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReset),
                 AgentOutputCommandExecutionOutputDelta,
@@ -2651,6 +2815,8 @@ namespace tryAGI.OpenAI
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionEventError?>.Default.Equals(Error, other.Error) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReady?>.Default.Equals(AgentSessionEnvironmentReady, other.AgentSessionEnvironmentReady) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended?>.Default.Equals(AgentSessionEnvironmentSuspended, other.AgentSessionEnvironmentSuspended) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired?>.Default.Equals(AgentSessionEnvironmentExpired, other.AgentSessionEnvironmentExpired) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReset?>.Default.Equals(AgentSessionEnvironmentReset, other.AgentSessionEnvironmentReset) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionEventAgentOutputCommandExecutionOutputDelta?>.Default.Equals(AgentOutputCommandExecutionOutputDelta, other.AgentOutputCommandExecutionOutputDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.SessionEventAgentSessionCreated?>.Default.Equals(AgentSessionCreated, other.AgentSessionCreated) &&

@@ -4,12 +4,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// An inline image. External URLs and file IDs are not supported.
+    /// An image provided as a base64 data URL or a publicly accessible HTTP(S) URL. File IDs are not supported.
     /// </summary>
     public sealed partial class DecisionInputImage
     {
         /// <summary>
-        /// A base64-encoded image in a data URL.
+        /// A base64-encoded image in a data URL or a publicly accessible HTTP(S) image URL.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="DecisionInputImage" /> class.
         /// </summary>
         /// <param name="imageUrl">
-        /// A base64-encoded image in a data URL.
+        /// A base64-encoded image in a data URL or a publicly accessible HTTP(S) image URL.
         /// </param>
         /// <param name="detail">
         /// The image detail level, using the selected model's image profile. Defaults to auto.<br/>

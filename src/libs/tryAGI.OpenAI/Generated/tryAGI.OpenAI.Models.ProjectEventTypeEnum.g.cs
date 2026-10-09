@@ -11,6 +11,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        AgentEnvironmentExpired,
+        /// <summary>
+        ///
+        /// </summary>
+        AgentEnvironmentFailed,
+        /// <summary>
+        ///
+        /// </summary>
+        AgentEnvironmentReady,
+        /// <summary>
+        ///
+        /// </summary>
+        AgentEnvironmentSuspended,
+        /// <summary>
+        ///
+        /// </summary>
         AgentSessionActionRequired,
         /// <summary>
         ///
@@ -114,6 +130,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ProjectEventTypeEnum.AgentEnvironmentExpired => "agent.environment.expired",
+                ProjectEventTypeEnum.AgentEnvironmentFailed => "agent.environment.failed",
+                ProjectEventTypeEnum.AgentEnvironmentReady => "agent.environment.ready",
+                ProjectEventTypeEnum.AgentEnvironmentSuspended => "agent.environment.suspended",
                 ProjectEventTypeEnum.AgentSessionActionRequired => "agent.session.action_required",
                 ProjectEventTypeEnum.AgentSessionCreated => "agent.session.created",
                 ProjectEventTypeEnum.AgentSessionFailed => "agent.session.failed",
@@ -147,6 +167,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "agent.environment.expired" => ProjectEventTypeEnum.AgentEnvironmentExpired,
+                "agent.environment.failed" => ProjectEventTypeEnum.AgentEnvironmentFailed,
+                "agent.environment.ready" => ProjectEventTypeEnum.AgentEnvironmentReady,
+                "agent.environment.suspended" => ProjectEventTypeEnum.AgentEnvironmentSuspended,
                 "agent.session.action_required" => ProjectEventTypeEnum.AgentSessionActionRequired,
                 "agent.session.created" => ProjectEventTypeEnum.AgentSessionCreated,
                 "agent.session.failed" => ProjectEventTypeEnum.AgentSessionFailed,

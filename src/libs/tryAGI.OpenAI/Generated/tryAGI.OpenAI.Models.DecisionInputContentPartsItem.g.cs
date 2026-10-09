@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
-        /// An inline image. External URLs and file IDs are not supported.
+        /// An image provided as a base64 data URL or a publicly accessible HTTP(S) URL. File IDs are not supported.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.DecisionInputImage? InputImage { get; init; }

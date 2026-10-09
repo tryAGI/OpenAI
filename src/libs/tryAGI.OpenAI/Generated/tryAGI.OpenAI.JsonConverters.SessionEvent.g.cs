@@ -35,6 +35,20 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReady)}");
                 agentSessionEnvironmentReady = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended? agentSessionEnvironmentSuspended = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.SessionEventDiscriminatorType.AgentSessionEnvironmentSuspended)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended)}");
+                agentSessionEnvironmentSuspended = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired? agentSessionEnvironmentExpired = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.SessionEventDiscriminatorType.AgentSessionEnvironmentExpired)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired)}");
+                agentSessionEnvironmentExpired = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReset? agentSessionEnvironmentReset = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.SessionEventDiscriminatorType.AgentSessionEnvironmentReset)
             {
@@ -245,6 +259,10 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 agentSessionEnvironmentReady,
 
+                agentSessionEnvironmentSuspended,
+
+                agentSessionEnvironmentExpired,
+
                 agentSessionEnvironmentReset,
 
                 agentOutputCommandExecutionOutputDelta,
@@ -327,6 +345,18 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReady), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReady?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentReady).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentSessionEnvironmentReady(), typeInfo);
+            }
+            else if (value.IsAgentSessionEnvironmentSuspended)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentSuspended).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentSessionEnvironmentSuspended(), typeInfo);
+            }
+            else if (value.IsAgentSessionEnvironmentExpired)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentExpired).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentSessionEnvironmentExpired(), typeInfo);
             }
             else if (value.IsAgentSessionEnvironmentReset)
             {

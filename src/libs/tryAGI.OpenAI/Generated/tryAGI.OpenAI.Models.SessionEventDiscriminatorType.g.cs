@@ -27,6 +27,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        AgentSessionEnvironmentExpired,
+        /// <summary>
+        ///
+        /// </summary>
         AgentSessionEnvironmentFailed,
         /// <summary>
         ///
@@ -40,6 +44,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         AgentSessionEnvironmentReset,
+        /// <summary>
+        ///
+        /// </summary>
+        AgentSessionEnvironmentSuspended,
         /// <summary>
         ///
         /// </summary>
@@ -150,10 +158,12 @@ namespace tryAGI.OpenAI
                 SessionEventDiscriminatorType.AgentSessionCreated => "agent.session.created",
                 SessionEventDiscriminatorType.AgentSessionEnvironmentConnected => "agent.session.environment.connected",
                 SessionEventDiscriminatorType.AgentSessionEnvironmentDisconnected => "agent.session.environment.disconnected",
+                SessionEventDiscriminatorType.AgentSessionEnvironmentExpired => "agent.session.environment.expired",
                 SessionEventDiscriminatorType.AgentSessionEnvironmentFailed => "agent.session.environment.failed",
                 SessionEventDiscriminatorType.AgentSessionEnvironmentPending => "agent.session.environment.pending",
                 SessionEventDiscriminatorType.AgentSessionEnvironmentReady => "agent.session.environment.ready",
                 SessionEventDiscriminatorType.AgentSessionEnvironmentReset => "agent.session.environment.reset",
+                SessionEventDiscriminatorType.AgentSessionEnvironmentSuspended => "agent.session.environment.suspended",
                 SessionEventDiscriminatorType.AgentSessionFailed => "agent.session.failed",
                 SessionEventDiscriminatorType.AgentSessionIdle => "agent.session.idle",
                 SessionEventDiscriminatorType.AgentSessionInProgress => "agent.session.in_progress",
@@ -191,10 +201,12 @@ namespace tryAGI.OpenAI
                 "agent.session.created" => SessionEventDiscriminatorType.AgentSessionCreated,
                 "agent.session.environment.connected" => SessionEventDiscriminatorType.AgentSessionEnvironmentConnected,
                 "agent.session.environment.disconnected" => SessionEventDiscriminatorType.AgentSessionEnvironmentDisconnected,
+                "agent.session.environment.expired" => SessionEventDiscriminatorType.AgentSessionEnvironmentExpired,
                 "agent.session.environment.failed" => SessionEventDiscriminatorType.AgentSessionEnvironmentFailed,
                 "agent.session.environment.pending" => SessionEventDiscriminatorType.AgentSessionEnvironmentPending,
                 "agent.session.environment.ready" => SessionEventDiscriminatorType.AgentSessionEnvironmentReady,
                 "agent.session.environment.reset" => SessionEventDiscriminatorType.AgentSessionEnvironmentReset,
+                "agent.session.environment.suspended" => SessionEventDiscriminatorType.AgentSessionEnvironmentSuspended,
                 "agent.session.failed" => SessionEventDiscriminatorType.AgentSessionFailed,
                 "agent.session.idle" => SessionEventDiscriminatorType.AgentSessionIdle,
                 "agent.session.in_progress" => SessionEventDiscriminatorType.AgentSessionInProgress,
