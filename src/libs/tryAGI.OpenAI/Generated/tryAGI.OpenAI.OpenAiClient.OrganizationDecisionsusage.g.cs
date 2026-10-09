@@ -1,0 +1,693 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    public partial class OpenAiClient
+    {
+
+
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_OrganizationDecisionsusageSecurityRequirement0 =
+            new global::tryAGI.OpenAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::tryAGI.OpenAI.EndPointAuthorizationRequirement[]
+                {                    new global::tryAGI.OpenAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        SchemeId = "ApiKeyAuth",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_OrganizationDecisionsusageSecurityRequirements =
+            new global::tryAGI.OpenAI.EndPointSecurityRequirement[]
+            {                s_OrganizationDecisionsusageSecurityRequirement0,
+            };
+        partial void PrepareOrganizationDecisionsusageArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            ref int startTime,
+            int? endTime,
+            global::tryAGI.OpenAI.DecisionsUsageBucketWidth? bucketWidth,
+            int? limit,
+            ref string? page,
+            global::System.Collections.Generic.IList<string>? projectIds,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.DecisionsUsageGroupBy>? groupBy,
+            global::System.Collections.Generic.IList<string>? userIds,
+            global::System.Collections.Generic.IList<string>? apiKeyIds,
+            global::System.Collections.Generic.IList<string>? models,
+            bool? batch);
+        partial void PrepareOrganizationDecisionsusageRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int startTime,
+            int? endTime,
+            global::tryAGI.OpenAI.DecisionsUsageBucketWidth? bucketWidth,
+            int? limit,
+            string? page,
+            global::System.Collections.Generic.IList<string>? projectIds,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.DecisionsUsageGroupBy>? groupBy,
+            global::System.Collections.Generic.IList<string>? userIds,
+            global::System.Collections.Generic.IList<string>? apiKeyIds,
+            global::System.Collections.Generic.IList<string>? models,
+            bool? batch);
+        partial void ProcessOrganizationDecisionsusageResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        partial void ProcessOrganizationDecisionsusageResponseContent(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
+            ref string content);
+
+        /// <summary>
+        /// Decisions<br/>
+        /// Get Decisions API usage details for the organization.
+        /// </summary>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="bucketWidth"></param>
+        /// <param name="limit"></param>
+        /// <param name="page"></param>
+        /// <param name="projectIds"></param>
+        /// <param name="groupBy"></param>
+        /// <param name="userIds"></param>
+        /// <param name="apiKeyIds"></param>
+        /// <param name="models"></param>
+        /// <param name="batch"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.PublicDecisionsUsageResponseResource> OrganizationDecisionsusageAsync(
+            int startTime,
+            int? endTime = default,
+            global::tryAGI.OpenAI.DecisionsUsageBucketWidth? bucketWidth = default,
+            int? limit = default,
+            string? page = default,
+            global::System.Collections.Generic.IList<string>? projectIds = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.DecisionsUsageGroupBy>? groupBy = default,
+            global::System.Collections.Generic.IList<string>? userIds = default,
+            global::System.Collections.Generic.IList<string>? apiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? models = default,
+            bool? batch = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __response = await OrganizationDecisionsusageAsResponseAsync(
+                startTime: startTime,
+                endTime: endTime,
+                bucketWidth: bucketWidth,
+                limit: limit,
+                page: page,
+                projectIds: projectIds,
+                groupBy: groupBy,
+                userIds: userIds,
+                apiKeyIds: apiKeyIds,
+                models: models,
+                batch: batch,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Decisions<br/>
+        /// Get Decisions API usage details for the organization.
+        /// </summary>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="bucketWidth"></param>
+        /// <param name="limit"></param>
+        /// <param name="page"></param>
+        /// <param name="projectIds"></param>
+        /// <param name="groupBy"></param>
+        /// <param name="userIds"></param>
+        /// <param name="apiKeyIds"></param>
+        /// <param name="models"></param>
+        /// <param name="batch"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.PublicDecisionsUsageResponseResource>> OrganizationDecisionsusageAsResponseAsync(
+            int startTime,
+            int? endTime = default,
+            global::tryAGI.OpenAI.DecisionsUsageBucketWidth? bucketWidth = default,
+            int? limit = default,
+            string? page = default,
+            global::System.Collections.Generic.IList<string>? projectIds = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.DecisionsUsageGroupBy>? groupBy = default,
+            global::System.Collections.Generic.IList<string>? userIds = default,
+            global::System.Collections.Generic.IList<string>? apiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? models = default,
+            bool? batch = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            PrepareArguments(
+                client: HttpClient);
+            PrepareOrganizationDecisionsusageArguments(
+                httpClient: HttpClient,
+                startTime: ref startTime,
+                endTime: endTime,
+                bucketWidth: bucketWidth,
+                limit: limit,
+                page: ref page,
+                projectIds: projectIds,
+                groupBy: groupBy,
+                userIds: userIds,
+                apiKeyIds: apiKeyIds,
+                models: models,
+                batch: batch);
+
+
+            var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_OrganizationDecisionsusageSecurityRequirements,
+                operationName: "OrganizationDecisionsusageAsync");
+
+            using var __timeoutCancellationTokenSource = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: true);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+
+                            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
+                                path: "/organization/usage/decisions",
+                                baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddRequiredParameter("start_time", startTime.ToString() ?? throw new global::System.InvalidOperationException("A required query parameter returned null from ToString()."))
+                                .AddOptionalParameter("end_time", endTime?.ToString())
+                                .AddOptionalParameter("bucket_width", bucketWidth?.ToString())
+                                .AddOptionalParameter("limit", limit?.ToString())
+                                .AddOptionalParameter("page", page)
+                                .AddOptionalParameter("project_ids", projectIds?.ToString())
+                                .AddOptionalParameter("group_by", groupBy?.ToString())
+                                .AddOptionalParameter("user_ids", userIds?.ToString())
+                                .AddOptionalParameter("api_key_ids", apiKeyIds?.ToString())
+                                .AddOptionalParameter("models", models?.ToString())
+                                .AddOptionalParameter("batch", batch?.ToString().ToLowerInvariant())
+                                ;
+                            var __path = __pathBuilder.ToString();
+                __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Get,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+            foreach (var __authorization in __authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2" ||
+                    __authorization.Type == "OpenIdConnect")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
+                global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
+
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PrepareOrganizationDecisionsusageRequest(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest,
+                    startTime: startTime,
+                    endTime: endTime,
+                    bucketWidth: bucketWidth,
+                    limit: limit,
+                    page: page,
+                    projectIds: projectIds,
+                    groupBy: groupBy,
+                    userIds: userIds,
+                    apiKeyIds: apiKeyIds,
+                    models: models,
+                    batch: batch);
+
+                global::tryAGI.OpenAI.AutoSDKHttpRequestOptions.StampAuthorizationOverride(__httpRequest);
+
+                return __httpRequest;
+            }
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "OrganizationDecisionsusage",
+                                methodName: "OrganizationDecisionsusageAsync",
+                                pathTemplate: "\"/organization/usage/decisions\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                    try
+                    {
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                    }
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {
+                        var __retryDelay = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "OrganizationDecisionsusage",
+                                methodName: "OrganizationDecisionsusageAsync",
+                                pathTemplate: "\"/organization/usage/decisions\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {
+                        var __retryDelay = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
+                        await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "OrganizationDecisionsusage",
+                                methodName: "OrganizationDecisionsusageAsync",
+                                pathTemplate: "\"/organization/usage/decisions\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
+                }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                using (__response)
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessOrganizationDecisionsusageResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "OrganizationDecisionsusage",
+                                methodName: "OrganizationDecisionsusageAsync",
+                                pathTemplate: "\"/organization/usage/decisions\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "OrganizationDecisionsusage",
+                                methodName: "OrganizationDecisionsusageAsync",
+                                pathTemplate: "\"/organization/usage/decisions\"",
+                                httpMethod: "GET",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                            // The request parameters are invalid or the requested operation cannot be performed.
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::tryAGI.OpenAI.DecisionsUsageErrorResponse? __value_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::tryAGI.OpenAI.DecisionsUsageErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_400 = global::tryAGI.OpenAI.DecisionsUsageErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.DecisionsUsageErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The caller does not have permission to perform this operation.
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::tryAGI.OpenAI.DecisionsUsagePermissionErrorResponse? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::tryAGI.OpenAI.DecisionsUsagePermissionErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::tryAGI.OpenAI.DecisionsUsagePermissionErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.DecisionsUsagePermissionErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The request was rejected because a rate limit was exceeded.
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+
+                            if (__effectiveReadResponseAsString)
+                            {
+                                var __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+
+                                ProcessResponseContent(
+                                    client: HttpClient,
+                                    response: __response,
+                                    content: ref __content);
+                                ProcessOrganizationDecisionsusageResponseContent(
+                                    httpClient: HttpClient,
+                                    httpResponseMessage: __response,
+                                    content: ref __content);
+
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+
+                                    var __value = global::tryAGI.OpenAI.PublicDecisionsUsageResponseResource.FromJson(__content, JsonSerializerContext) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.PublicDecisionsUsageResponseResource>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    throw global::tryAGI.OpenAI.ApiException.Create(
+                                        statusCode: __response.StatusCode,
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value));
+                                }
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    __response.EnsureSuccessStatusCode();
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+
+                                    var __value = await global::tryAGI.OpenAI.PublicDecisionsUsageResponseResource.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.PublicDecisionsUsageResponseResource>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    string? __content = null;
+                                    try
+                                    {
+                                        __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                            __effectiveCancellationToken
+                #endif
+                                        ).ConfigureAwait(false);
+                                    }
+                                    catch (global::System.Exception)
+                                    {
+                                    }
+
+                                    throw global::tryAGI.OpenAI.ApiException.Create(
+                                        statusCode: __response.StatusCode,
+                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        innerException: __ex,
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                            __response.Headers,
+                                            h => h.Key,
+                                            h => h.Value));
+                                }
+                            }
+
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
+            }
+        }
+
+        /// <summary>
+        /// Wraps OrganizationDecisionsusageAsync as an IAsyncEnumerable&lt;global::tryAGI.OpenAI.DecisionsUsageBucket&gt; that auto-pages over the response.
+        /// </summary>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="bucketWidth"></param>
+        /// <param name="limit"></param>
+        /// <param name="projectIds"></param>
+        /// <param name="groupBy"></param>
+        /// <param name="userIds"></param>
+        /// <param name="apiKeyIds"></param>
+        /// <param name="models"></param>
+        /// <param name="batch"></param>
+        /// <param name="page">Initial cursor to start enumerating from. Defaults to null (first page).</param>
+        /// <param name="cancellationToken"></param>
+        public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.DecisionsUsageBucket> OrganizationDecisionsusageAutoPagingAsync(
+            int startTime,             int? endTime = default,
+            global::tryAGI.OpenAI.DecisionsUsageBucketWidth? bucketWidth = default,
+            int? limit = default,
+            global::System.Collections.Generic.IList<string>? projectIds = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.DecisionsUsageGroupBy>? groupBy = default,
+            global::System.Collections.Generic.IList<string>? userIds = default,
+            global::System.Collections.Generic.IList<string>? apiKeyIds = default,
+            global::System.Collections.Generic.IList<string>? models = default,
+            bool? batch = default,
+            string? page = null,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            return global::tryAGI.OpenAI.AutoSDKPager.CursorAsync<global::tryAGI.OpenAI.PublicDecisionsUsageResponseResource, global::tryAGI.OpenAI.DecisionsUsageBucket>(
+                fetchPage: (__cursor, __ct) => OrganizationDecisionsusageAsync(
+                    startTime: startTime,
+                    endTime: endTime,
+                    bucketWidth: bucketWidth,
+                    limit: limit,
+                    page: __cursor,
+                    projectIds: projectIds,
+                    groupBy: groupBy,
+                    userIds: userIds,
+                    apiKeyIds: apiKeyIds,
+                    models: models,
+                    batch: batch,
+                    cancellationToken: __ct),
+                extractItems: static __response => __response is null
+                    ? null
+                    : (global::System.Collections.Generic.IEnumerable<global::tryAGI.OpenAI.DecisionsUsageBucket>?)__response.Data,
+                extractNextCursor: static __response => __response is null ? null : __response.NextPage,
+                initialCursor: page,
+                cancellationToken: cancellationToken);
+        }
+
+    }
+}
