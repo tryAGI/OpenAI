@@ -97,6 +97,16 @@ public static class CustomProviders
     public const string CerebrasBaseUrl = "https://api.cerebras.ai/v1";
 
     /// <summary>
+    /// https://docs.celeris.ai/making-requests
+    /// </summary>
+    public const string CelerisBaseUrl = "https://inference.celeris.ai/celeris-1/v1";
+
+    /// <summary>
+    /// https://docs.celeris.ai/decisions
+    /// </summary>
+    public const string CelerisDecisionBaseUrl = "https://inference.celeris.ai/celeris-1-decision/v1";
+
+    /// <summary>
     /// https://docs.nebius.com/studio/inference/api
     /// </summary>
     public const string NebiusBaseUrl = "https://api.studio.nebius.ai/v1/";
@@ -449,6 +459,30 @@ public static class CustomProviders
     public static OpenAiClient Cerebras(string apiKey)
     {
         return new OpenAiClient(apiKey, baseUri: new Uri(CerebrasBaseUrl));
+    }
+
+    /// <summary>
+    /// Create a client for Celeris-1 chat completions and Responses.
+    /// Use model <c>celeris-1</c> and set an explicit output budget for production requests.
+    /// </summary>
+    /// <param name="apiKey">The Celeris API key.</param>
+    /// <param name="httpClient">An optional caller-owned HTTP client.</param>
+    public static OpenAiClient Celeris(string apiKey, HttpClient? httpClient = null)
+    {
+        return new OpenAiClient(apiKey, httpClient: httpClient, baseUri: new Uri(CelerisBaseUrl),
+            disposeHttpClient: httpClient is null);
+    }
+
+    /// <summary>
+    /// Create a client for Celeris-1 Decision through <c>Decisions.CreateDecisionAsync</c>.
+    /// Use model <c>celeris-1-decision</c>. This endpoint does not support chat or streaming.
+    /// </summary>
+    /// <param name="apiKey">The Celeris API key.</param>
+    /// <param name="httpClient">An optional caller-owned HTTP client.</param>
+    public static OpenAiClient CelerisDecision(string apiKey, HttpClient? httpClient = null)
+    {
+        return new OpenAiClient(apiKey, httpClient: httpClient, baseUri: new Uri(CelerisDecisionBaseUrl),
+            disposeHttpClient: httpClient is null);
     }
 
     /// <summary>

@@ -14,6 +14,7 @@
 - All modern .NET features - nullability, trimming, NativeAOT, etc.
 - Support .Net Framework/.Net Standard 2.0
 - Support all OpenAI API endpoints including completions, chat, embeddings, images, assistants and more.
+- Typed Decisions API support for OpenAI and Celeris-1 Decision, including text and image inputs.
 - Regularly tested for compatibility with popular custom providers like OpenRouter/DeepSeek/Ollama/LM Studio and many others
 - Microsoft.Extensions.AI `IChatClient` and `IEmbeddingGenerator` support for OpenAI and all CustomProviders
 - Alias-aware routed `IChatClient` builder with provider fallback and manual 429 cooldown tracking
@@ -21,6 +22,9 @@
 
 ## Documentation
 Examples and documentation can be found here: https://tryagi.github.io/OpenAI/
+
+See the [Decisions and Celeris guide](https://tryagi.github.io/OpenAI/guides/decisions/)
+for predicate, choice, and score questions, image input, and Celeris explanations.
 
 ## Usage
 ```csharp
@@ -193,6 +197,8 @@ using var api = CustomProviders.SambaNova("API_KEY");
 using var api = CustomProviders.Mistral("API_KEY");
 using var api = CustomProviders.Codestral("API_KEY");
 using var api = CustomProviders.Cerebras("API_KEY");
+using var api = CustomProviders.Celeris("CELERIS_API_KEY"); // Celeris-1 chat and Responses
+using var api = CustomProviders.CelerisDecision("CELERIS_API_KEY"); // Decisions only
 using var api = CustomProviders.Cohere("API_KEY");
 using var api = CustomProviders.Hyperbolic("API_KEY");
 using var api = CustomProviders.Nebius("API_KEY");
