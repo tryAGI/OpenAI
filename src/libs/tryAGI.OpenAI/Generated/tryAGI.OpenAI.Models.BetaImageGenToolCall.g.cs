@@ -43,6 +43,12 @@ namespace tryAGI.OpenAI
         public string? Result { get; set; }
 
         /// <summary>
+        /// Details of a moderation failure, when available.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public global::tryAGI.OpenAI.BetaImageGenToolCallError? Error { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
@@ -98,6 +104,9 @@ namespace tryAGI.OpenAI
         /// The type of the image generation call. Always `image_generation_call`.
         /// </param>
         /// <param name="result"></param>
+        /// <param name="error">
+        /// Details of a moderation failure, when available.
+        /// </param>
         /// <param name="size"></param>
         /// <param name="quality"></param>
         /// <param name="action"></param>
@@ -113,6 +122,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaAgentTag? agent,
             global::tryAGI.OpenAI.BetaImageGenToolCallType type,
             string? result,
+            global::tryAGI.OpenAI.BetaImageGenToolCallError? error,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.BetaImageGenToolCallSizeVariant1?>? size,
             global::tryAGI.OpenAI.BetaImageGenToolCallQuality? quality,
             global::tryAGI.OpenAI.BetaImageGenActionEnum? action,
@@ -125,6 +135,7 @@ namespace tryAGI.OpenAI
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Status = status;
             this.Result = result;
+            this.Error = error;
             this.Size = size;
             this.Quality = quality;
             this.Action = action;
