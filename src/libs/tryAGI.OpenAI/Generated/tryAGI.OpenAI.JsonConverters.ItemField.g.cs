@@ -107,6 +107,12 @@ namespace tryAGI.OpenAI.JsonConverters
             var __score10 = 0;
             if (__jsonProps.Contains("action")) __score10++;
             if (__jsonProps.Contains("background")) __score10++;
+            if (__jsonProps.Contains("error")) __score10++;
+            if (__jsonProps.Contains("error.code")) __score10++;
+            if (__jsonProps.Contains("error.message")) __score10++;
+            if (__jsonProps.Contains("error.moderation_details")) __score10++;
+            if (__jsonProps.Contains("error.param")) __score10++;
+            if (__jsonProps.Contains("error.type")) __score10++;
             if (__jsonProps.Contains("id")) __score10++;
             if (__jsonProps.Contains("output_format")) __score10++;
             if (__jsonProps.Contains("quality")) __score10++;
