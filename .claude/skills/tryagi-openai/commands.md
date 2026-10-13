@@ -336,6 +336,7 @@ Given text and/or image inputs, classifies if those inputs are potentially harmf
 | `retrieve-project-model-permissions` | `GET /organization/projects/{project_id}/model_permissions` | Retrieve project model permissions |
 | `retrieve-project-service-account` | `GET /organization/projects/{project_id}/service_accounts/{service_account_id}` | Retrieve project service account |
 | `retrieve-project-user` | `GET /organization/projects/{project_id}/users/{user_id}` | Retrieve project user |
+| `update-project-api-key` | `POST /organization/projects/{project_id}/api_keys/{api_key_id}` | Update project API key |
 | `update-project-model-permissions` | `POST /organization/projects/{project_id}/model_permissions` | Modify project model permissions |
 | `update-project-rate-limits` | `POST /organization/projects/{project_id}/rate_limits/{rate_limit_id}` | Modify project rate limit |
 | `update-project-service-account` | `POST /organization/projects/{project_id}/service_accounts/{service_account_id}` | Update project service account |

@@ -31,6 +31,7 @@ internal static partial class ProjectsApiGroupCommand
                          command.Subcommands.Add(ProjectsRetrieveProjectModelPermissionsCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsRetrieveProjectServiceAccountCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsRetrieveProjectUserCommandApiCommand.Create());
+                         command.Subcommands.Add(ProjectsUpdateProjectApiKeyCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsUpdateProjectModelPermissionsCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsUpdateProjectRateLimitsCommandApiCommand.Create());
                          command.Subcommands.Add(ProjectsUpdateProjectServiceAccountCommandApiCommand.Create());

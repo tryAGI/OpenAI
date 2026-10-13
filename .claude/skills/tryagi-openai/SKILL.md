@@ -49,7 +49,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `live` | 7 |  |
 | `model` | 3 | List and describe the various models available in the API. |
 | `moderation` | 1 | Given text and/or image inputs, classifies if those inputs are potentially harmful. |
-| `project` | 23 |  |
+| `project` | 24 |  |
 | `project-group` | 4 |  |
 | `project-group-role-assignment` | 4 |  |
 | `project-user-role-assignment` | 4 |  |
