@@ -156,6 +156,17 @@
     },
     {
       "Order": 15,
+      "Title": "Update project API key",
+      "Slug": "update-project-api-key",
+      "Description": "Updates the scopes and/or expiration of an existing API key in the project, including a\nservice-account-owned key. Requires permission to write project API keys.\n\nProvide at least one of \u0060scopes\u0060 or \u0060expires_in_seconds\u0060. Omitted fields stay\nunchanged; neither field accepts \u0060null\u0060. Both changes are saved together.\n\n\u0060scopes\u0060 replaces the key\u0027s scope restrictions using the same scope identifiers\nas the dashboard. An empty array means All permissions, subject to the owner\u0027s\neffective access; it does not mean no access. Use \u0060[\u0022api.all.read\u0022]\u0060 for read-only\naccess or specific scopes such as \u0060[\u0022api.files.read\u0022]\u0060 for restricted access.\nThis does not change user or service-account roles or grant admin permissions.\nScope changes follow the same authentication-cache propagation as dashboard edits.\n\nProvide \u0060expires_in_seconds\u0060 to set the expiration relative to this request.\nThe value must satisfy the organization\u0027s and project\u0027s expiry policies.\nExpired keys cannot be updated. Retrying resets the expiration relative to\nthe new request. The response contains only the redacted key, not its secret.",
+      "Language": "http",
+      "Code": "### Update project API key\n# @name update-project-api-key\nPOST {{host}}/organization/projects/{{project_id}}/api_keys/{{api_key_id}}\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json\n\n{\n  \u0022scopes\u0022: [\n    \u0022api.all.read\u0022\n  ]\n}\n\n## Responses\n# 200\n# Description: Project API key updated successfully.\n# Content-Type: application/json\n# 400\n# Description: The project is archived, the key is expired, or the requested scopes or expiration are invalid.\n# Content-Type: application/json\n# 403\n# Description: The caller does not have permission to update this API key.\n# Content-Type: application/json\n# 404\n# Description: The project or API key was not found.\n# Content-Type: application/json\n# 429\n# Description: Too many management requests. Reduce the request rate and try again later.\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "update-project-api-key",
+      "Setup": null
+    },
+    {
+      "Order": 16,
       "Title": "Modify project rate limit",
       "Slug": "update-project-rate-limits",
       "Description": "Updates a project rate limit.",
@@ -166,7 +177,7 @@
       "Setup": null
     },
     {
-      "Order": 16,
+      "Order": 17,
       "Title": "Cancel a response",
       "Slug": "beta-cancelresponse",
       "Description": "Cancels a model response with the given ID. Only responses created with\nthe \u0060background\u0060 parameter set to \u0060true\u0060 can be cancelled.\n[Learn more](https://developers.openai.com/api/docs/guides/background).",
@@ -177,7 +188,7 @@
       "Setup": null
     },
     {
-      "Order": 17,
+      "Order": 18,
       "Title": "Compact conversation",
       "Slug": "beta-compactconversation",
       "Description": "Compact a conversation. Returns a compacted response object.\n\nLearn when and how to compact long-running conversations in the [conversation state guide](https://developers.openai.com/api/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](https://developers.openai.com/api/docs/guides/conversation-state#compaction-advanced).",
@@ -188,7 +199,7 @@
       "Setup": null
     },
     {
-      "Order": 18,
+      "Order": 19,
       "Title": "Create a model response",
       "Slug": "beta-createresponse",
       "Description": "Creates a model response. Provide [text](https://developers.openai.com/api/docs/guides/text) or\n[image](https://developers.openai.com/api/docs/guides/images-vision) inputs to generate [text](https://developers.openai.com/api/docs/guides/text)\nor [JSON](https://developers.openai.com/api/docs/guides/structured-outputs) outputs. Have the model call\nyour own [custom code](https://developers.openai.com/api/docs/guides/function-calling) or use built-in\n[tools](https://developers.openai.com/api/docs/guides/tools) like [web search](https://developers.openai.com/api/docs/guides/tools-web-search)\nor [file search](https://developers.openai.com/api/docs/guides/tools-file-search) to use your own data\nas input for the model\u0027s response.",
@@ -199,7 +210,7 @@
       "Setup": null
     },
     {
-      "Order": 19,
+      "Order": 20,
       "Title": "Get a model response",
       "Slug": "beta-getresponse",
       "Description": "Retrieves a model response with the given ID.",
@@ -210,7 +221,7 @@
       "Setup": null
     },
     {
-      "Order": 20,
+      "Order": 21,
       "Title": "Get input token counts",
       "Slug": "beta-getinputtokencounts",
       "Description": "Returns input token counts of the request.\n\nReturns an object with \u0060object\u0060 set to \u0060response.input_tokens\u0060 and an \u0060input_tokens\u0060 count.",
@@ -221,7 +232,7 @@
       "Setup": null
     },
     {
-      "Order": 21,
+      "Order": 22,
       "Title": "Cancel a response",
       "Slug": "cancelresponse",
       "Description": "Cancels a model response with the given ID. Only responses created with\nthe \u0060background\u0060 parameter set to \u0060true\u0060 can be cancelled.\n[Learn more](https://developers.openai.com/api/docs/guides/background).",
@@ -232,7 +243,7 @@
       "Setup": null
     },
     {
-      "Order": 22,
+      "Order": 23,
       "Title": "Compact conversation",
       "Slug": "compactconversation",
       "Description": "Compact a conversation. Returns a compacted response object.\n\nLearn when and how to compact long-running conversations in the [conversation state guide](https://developers.openai.com/api/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](https://developers.openai.com/api/docs/guides/conversation-state#compaction-advanced).",
@@ -243,7 +254,7 @@
       "Setup": null
     },
     {
-      "Order": 23,
+      "Order": 24,
       "Title": "Create a model response",
       "Slug": "createresponse",
       "Description": "Creates a model response. Provide [text](https://developers.openai.com/api/docs/guides/text) or\n[image](https://developers.openai.com/api/docs/guides/images-vision) inputs to generate [text](https://developers.openai.com/api/docs/guides/text)\nor [JSON](https://developers.openai.com/api/docs/guides/structured-outputs) outputs. Have the model call\nyour own [custom code](https://developers.openai.com/api/docs/guides/function-calling) or use built-in\n[tools](https://developers.openai.com/api/docs/guides/tools) like [web search](https://developers.openai.com/api/docs/guides/tools-web-search)\nor [file search](https://developers.openai.com/api/docs/guides/tools-file-search) to use your own data\nas input for the model\u0027s response.",
@@ -254,7 +265,7 @@
       "Setup": null
     },
     {
-      "Order": 24,
+      "Order": 25,
       "Title": "Get a model response",
       "Slug": "getresponse",
       "Description": "Retrieves a model response with the given ID.",
@@ -265,7 +276,7 @@
       "Setup": null
     },
     {
-      "Order": 25,
+      "Order": 26,
       "Title": "Get input token counts",
       "Slug": "getinputtokencounts",
       "Description": "Returns input token counts of the request.\n\nReturns an object with \u0060object\u0060 set to \u0060response.input_tokens\u0060 and an \u0060input_tokens\u0060 count.",

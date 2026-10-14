@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Resume audio input to a Live model after muting it. The server acknowledges with `session.input_audio.unmuted`.<br/>
+    /// Resume audio input to a Live model after muting it. The server acknowledges with `session.input_audio.unmuted`. An active audio fixture still pauses inference until playback finishes.<br/>
     /// Example: {"type":"session.input_audio.unmute","event_id":"evt_unmute_001"}
     /// </summary>
     public sealed partial class LiveInputAudioUnmuteParam

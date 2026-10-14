@@ -22,6 +22,12 @@ namespace tryAGI.OpenAI
         public string? Code { get; set; }
 
         /// <summary>
+        /// A human-readable error message.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        public string? Message { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -36,15 +42,20 @@ namespace tryAGI.OpenAI
         /// <param name="code">
         /// Error code, if any.
         /// </param>
+        /// <param name="message">
+        /// A human-readable error message.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeBetaResponseStatusDetailsError(
             string? type,
-            string? code)
+            string? code,
+            string? message)
         {
             this.Type = type;
             this.Code = code;
+            this.Message = message;
         }
 
         /// <summary>

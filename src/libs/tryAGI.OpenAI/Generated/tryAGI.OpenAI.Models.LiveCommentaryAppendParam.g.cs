@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Provide context the Live model can communicate to the user, optionally for an existing client delegation.<br/>
+    /// Provide context the Live model can communicate to the user, optionally for an existing client delegation. Rejected while an audio fixture is active.<br/>
     /// Example: {"type":"session.commentary.append","event_id":"evt_commentary_001","delegation_id":"del_abc123","content":"There is an outdoor table for two at 7 PM. Ask whether to reserve it."}
     /// </summary>
     public sealed partial class LiveCommentaryAppendParam

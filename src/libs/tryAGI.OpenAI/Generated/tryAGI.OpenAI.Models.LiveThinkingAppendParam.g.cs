@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Provide silent reasoning or progress context to the Live model, optionally for an existing client delegation.<br/>
+    /// Provide silent reasoning or progress context to the Live model, optionally for an existing client delegation. Rejected while an audio fixture is active.<br/>
     /// Example: {"type":"session.thinking.append","event_id":"evt_thinking_001","delegation_id":"del_abc123","content":"Checking availability for two guests at 7 PM."}
     /// </summary>
     public sealed partial class LiveThinkingAppendParam

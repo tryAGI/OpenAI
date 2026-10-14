@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
             ref string content);
 
         /// <summary>
-        /// Create an agent environment file<br/>
-        /// Copies inline bytes or a Files API file into a connected execution environment. See [environment files](https://developers.openai.com/api/docs/guides/agents-api/environments/files).
+        /// Write an agent environment file<br/>
+        /// Copies inline bytes or a Files API file into a connected execution environment, replacing an existing regular file at the same path. Upload between turns and wait for success before starting the next turn. See [environment files](https://developers.openai.com/api/docs/guides/agents-api/environments/files).
         /// </summary>
         /// <param name="environmentId"></param>
         /// <param name="request"></param>
@@ -70,8 +70,8 @@ namespace tryAGI.OpenAI
             return __response.Body;
         }
         /// <summary>
-        /// Create an agent environment file<br/>
-        /// Copies inline bytes or a Files API file into a connected execution environment. See [environment files](https://developers.openai.com/api/docs/guides/agents-api/environments/files).
+        /// Write an agent environment file<br/>
+        /// Copies inline bytes or a Files API file into a connected execution environment, replacing an existing regular file at the same path. Upload between turns and wait for success before starting the next turn. See [environment files](https://developers.openai.com/api/docs/guides/agents-api/environments/files).
         /// </summary>
         /// <param name="environmentId"></param>
         /// <param name="request"></param>

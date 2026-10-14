@@ -91,7 +91,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioMute' but the value was {ToString()}.");
 
         /// <summary>
-        /// Resume audio input to a Live model after muting it. The server acknowledges with `session.input_audio.unmuted`.<br/>
+        /// Resume audio input to a Live model after muting it. The server acknowledges with `session.input_audio.unmuted`. An active audio fixture still pauses inference until playback finishes.<br/>
         /// Example: {"type":"session.input_audio.unmute","event_id":"evt_unmute_001"}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,7 +129,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioUnmute' but the value was {ToString()}.");
 
         /// <summary>
-        /// Append instructions to the Live conversation while it is running, optionally associating them with an existing client delegation.<br/>
+        /// Append developer instructions to the Live conversation while it is running, optionally associating them with an existing client delegation. Rejected while an audio fixture is active. These instructions remain in conversation history through compaction and are included in future backend delegations. For external audio, describe content already delivered so the assistant does not repeat it.<br/>
         /// Example: {"type":"session.instructions.append","event_id":"evt_instructions_001","delegation_id":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","content":"The caller prefers outdoor seating."}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -167,7 +167,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInstructionsAppend' but the value was {ToString()}.");
 
         /// <summary>
-        /// Provide silent reasoning or progress context to the Live model, optionally for an existing client delegation.<br/>
+        /// Provide silent reasoning or progress context to the Live model, optionally for an existing client delegation. Rejected while an audio fixture is active.<br/>
         /// Example: {"type":"session.thinking.append","event_id":"evt_thinking_001","delegation_id":"del_abc123","content":"Checking availability for two guests at 7 PM."}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -205,7 +205,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionThinkingAppend' but the value was {ToString()}.");
 
         /// <summary>
-        /// Provide context the Live model can communicate to the user, optionally for an existing client delegation.<br/>
+        /// Provide context the Live model can communicate to the user, optionally for an existing client delegation. Rejected while an audio fixture is active.<br/>
         /// Example: {"type":"session.commentary.append","event_id":"evt_commentary_001","delegation_id":"del_abc123","content":"There is an outdoor table for two at 7 PM. Ask whether to reserve it."}
         /// </summary>
 #if NET6_0_OR_GREATER

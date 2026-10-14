@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class DecisionRequest
     {
         /// <summary>
-        ///
+        /// The model to use. Only `gpt-6-luna` is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.DecisionInput Input { get; set; }
 
         /// <summary>
-        ///
+        /// Ask 1–200 questions about the input. Each question can be a predicate, choice, or score. Answers come back in the same order.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("questions")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -45,11 +45,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="DecisionRequest" /> class.
         /// </summary>
-        /// <param name="model"></param>
+        /// <param name="model">
+        /// The model to use. Only `gpt-6-luna` is supported.
+        /// </param>
         /// <param name="input">
         /// The text or images to evaluate for every question. Provide a text string or user messages containing text and images. Images can be base64 data URLs or publicly accessible HTTP(S) URLs; at most 128 images are allowed across all messages in one request. Files, audio, tools, and item references are not supported.
         /// </param>
-        /// <param name="questions"></param>
+        /// <param name="questions">
+        /// Ask 1–200 questions about the input. Each question can be a predicate, choice, or score. Answers come back in the same order.
+        /// </param>
         /// <param name="safetyIdentifier">
         /// Opaque caller-provided end-user identifier, scoped by the verified org. Match Responses' limit; this is never the authenticated user identity.
         /// </param>

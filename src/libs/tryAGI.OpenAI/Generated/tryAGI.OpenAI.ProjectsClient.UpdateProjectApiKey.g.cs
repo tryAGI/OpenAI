@@ -47,8 +47,16 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Update project API key<br/>
-        /// Updates the expiration of an existing API key in the project, including a<br/>
+        /// Updates the scopes and/or expiration of an existing API key in the project, including a<br/>
         /// service-account-owned key. Requires permission to write project API keys.<br/>
+        /// Provide at least one of `scopes` or `expires_in_seconds`. Omitted fields stay<br/>
+        /// unchanged; neither field accepts `null`. Both changes are saved together.<br/>
+        /// `scopes` replaces the key's scope restrictions using the same scope identifiers<br/>
+        /// as the dashboard. An empty array means All permissions, subject to the owner's<br/>
+        /// effective access; it does not mean no access. Use `["api.all.read"]` for read-only<br/>
+        /// access or specific scopes such as `["api.files.read"]` for restricted access.<br/>
+        /// This does not change user or service-account roles or grant admin permissions.<br/>
+        /// Scope changes follow the same authentication-cache propagation as dashboard edits.<br/>
         /// Provide `expires_in_seconds` to set the expiration relative to this request.<br/>
         /// The value must satisfy the organization's and project's expiry policies.<br/>
         /// Expired keys cannot be updated. Retrying resets the expiration relative to<br/>
@@ -81,8 +89,16 @@ namespace tryAGI.OpenAI
         }
         /// <summary>
         /// Update project API key<br/>
-        /// Updates the expiration of an existing API key in the project, including a<br/>
+        /// Updates the scopes and/or expiration of an existing API key in the project, including a<br/>
         /// service-account-owned key. Requires permission to write project API keys.<br/>
+        /// Provide at least one of `scopes` or `expires_in_seconds`. Omitted fields stay<br/>
+        /// unchanged; neither field accepts `null`. Both changes are saved together.<br/>
+        /// `scopes` replaces the key's scope restrictions using the same scope identifiers<br/>
+        /// as the dashboard. An empty array means All permissions, subject to the owner's<br/>
+        /// effective access; it does not mean no access. Use `["api.all.read"]` for read-only<br/>
+        /// access or specific scopes such as `["api.files.read"]` for restricted access.<br/>
+        /// This does not change user or service-account roles or grant admin permissions.<br/>
+        /// Scope changes follow the same authentication-cache propagation as dashboard edits.<br/>
         /// Provide `expires_in_seconds` to set the expiration relative to this request.<br/>
         /// The value must satisfy the organization's and project's expiry policies.<br/>
         /// Expired keys cannot be updated. Retrying resets the expiration relative to<br/>
@@ -367,7 +383,7 @@ namespace tryAGI.OpenAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
-                            // The project is archived, the key is expired, or the requested expiration is invalid.
+                            // The project is archived, the key is expired, or the requested scopes or expiration are invalid.
                             if ((int)__response.StatusCode == 400)
                             {
                                 string? __content_400 = null;
@@ -613,8 +629,16 @@ namespace tryAGI.OpenAI
         }
         /// <summary>
         /// Update project API key<br/>
-        /// Updates the expiration of an existing API key in the project, including a<br/>
+        /// Updates the scopes and/or expiration of an existing API key in the project, including a<br/>
         /// service-account-owned key. Requires permission to write project API keys.<br/>
+        /// Provide at least one of `scopes` or `expires_in_seconds`. Omitted fields stay<br/>
+        /// unchanged; neither field accepts `null`. Both changes are saved together.<br/>
+        /// `scopes` replaces the key's scope restrictions using the same scope identifiers<br/>
+        /// as the dashboard. An empty array means All permissions, subject to the owner's<br/>
+        /// effective access; it does not mean no access. Use `["api.all.read"]` for read-only<br/>
+        /// access or specific scopes such as `["api.files.read"]` for restricted access.<br/>
+        /// This does not change user or service-account roles or grant admin permissions.<br/>
+        /// Scope changes follow the same authentication-cache propagation as dashboard edits.<br/>
         /// Provide `expires_in_seconds` to set the expiration relative to this request.<br/>
         /// The value must satisfy the organization's and project's expiry policies.<br/>
         /// Expired keys cannot be updated. Retrying resets the expiration relative to<br/>
@@ -623,7 +647,10 @@ namespace tryAGI.OpenAI
         /// <param name="projectId"></param>
         /// <param name="apiKeyId"></param>
         /// <param name="expiresInSeconds">
-        /// Number of seconds from this request until the API key expires. Must comply with the organization and project expiry policies. Expired keys cannot be updated. Retrying resets the expiry relative to the new request.
+        /// Number of seconds from this request until the API key expires. Must comply with the organization and project expiry policies. Expired keys cannot be updated. Retrying resets the expiry relative to the new request. Omit to keep the current expiration.
+        /// </param>
+        /// <param name="scopes">
+        /// Replace the API key scope restrictions. Omit to leave scopes unchanged. An empty array removes key restrictions (All permissions), subject to the owner's effective permissions. Use ["api.all.read"] for read-only access. Scopes do not change the owner's roles or grant administrative permissions.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -631,13 +658,15 @@ namespace tryAGI.OpenAI
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ProjectApiKey> UpdateProjectApiKeyAsync(
             string projectId,
             string apiKeyId,
-            int expiresInSeconds,
+            int? expiresInSeconds = default,
+            global::System.Collections.Generic.IList<string>? scopes = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.UpdateProjectApiKeyBody
             {
                 ExpiresInSeconds = expiresInSeconds,
+                Scopes = scopes,
             };
 
             return await UpdateProjectApiKeyAsync(

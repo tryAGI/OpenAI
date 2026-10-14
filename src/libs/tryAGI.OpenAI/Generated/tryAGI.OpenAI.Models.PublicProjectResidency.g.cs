@@ -23,6 +23,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        AuStorageProcessing,
+        /// <summary>
+        ///
+        /// </summary>
         CaStorage,
         /// <summary>
         ///
@@ -43,7 +47,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        InStorageProcessing,
+        /// <summary>
+        ///
+        /// </summary>
         JpStorage,
+        /// <summary>
+        ///
+        /// </summary>
+        JpStorageProcessing,
         /// <summary>
         ///
         /// </summary>
@@ -73,12 +85,15 @@ namespace tryAGI.OpenAI
                 PublicProjectResidency.AeStorage => "AE_STORAGE",
                 PublicProjectResidency.AeStorageProcessing => "AE_STORAGE_PROCESSING",
                 PublicProjectResidency.AuStorage => "AU_STORAGE",
+                PublicProjectResidency.AuStorageProcessing => "AU_STORAGE_PROCESSING",
                 PublicProjectResidency.CaStorage => "CA_STORAGE",
                 PublicProjectResidency.EuStorageProcessing => "EU_STORAGE_PROCESSING",
                 PublicProjectResidency.GbStorage => "GB_STORAGE",
                 PublicProjectResidency.Global => "GLOBAL",
                 PublicProjectResidency.InStorage => "IN_STORAGE",
+                PublicProjectResidency.InStorageProcessing => "IN_STORAGE_PROCESSING",
                 PublicProjectResidency.JpStorage => "JP_STORAGE",
+                PublicProjectResidency.JpStorageProcessing => "JP_STORAGE_PROCESSING",
                 PublicProjectResidency.KrStorage => "KR_STORAGE",
                 PublicProjectResidency.SgStorage => "SG_STORAGE",
                 PublicProjectResidency.UsStorageProcessing => "US_STORAGE_PROCESSING",
@@ -95,12 +110,15 @@ namespace tryAGI.OpenAI
                 "AE_STORAGE" => PublicProjectResidency.AeStorage,
                 "AE_STORAGE_PROCESSING" => PublicProjectResidency.AeStorageProcessing,
                 "AU_STORAGE" => PublicProjectResidency.AuStorage,
+                "AU_STORAGE_PROCESSING" => PublicProjectResidency.AuStorageProcessing,
                 "CA_STORAGE" => PublicProjectResidency.CaStorage,
                 "EU_STORAGE_PROCESSING" => PublicProjectResidency.EuStorageProcessing,
                 "GB_STORAGE" => PublicProjectResidency.GbStorage,
                 "GLOBAL" => PublicProjectResidency.Global,
                 "IN_STORAGE" => PublicProjectResidency.InStorage,
+                "IN_STORAGE_PROCESSING" => PublicProjectResidency.InStorageProcessing,
                 "JP_STORAGE" => PublicProjectResidency.JpStorage,
+                "JP_STORAGE_PROCESSING" => PublicProjectResidency.JpStorageProcessing,
                 "KR_STORAGE" => PublicProjectResidency.KrStorage,
                 "SG_STORAGE" => PublicProjectResidency.SgStorage,
                 "US_STORAGE_PROCESSING" => PublicProjectResidency.UsStorageProcessing,

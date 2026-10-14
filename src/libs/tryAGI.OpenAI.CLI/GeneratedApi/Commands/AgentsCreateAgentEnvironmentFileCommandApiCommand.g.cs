@@ -53,8 +53,8 @@ internal static partial class AgentsCreateAgentEnvironmentFileCommandApiCommand
 
     public static Command Create(string? commandName = null)
     {
-        var command = new Command(commandName ?? @"create-agent-environment-file", @"Create an agent environment file
-Copies inline bytes or a Files API file into a connected execution environment. See [environment files](https://developers.openai.com/api/docs/guides/agents-api/environments/files).");
+        var command = new Command(commandName ?? @"create-agent-environment-file", @"Write an agent environment file
+Copies inline bytes or a Files API file into a connected execution environment, replacing an existing regular file at the same path. Upload between turns and wait for success before starting the next turn. See [environment files](https://developers.openai.com/api/docs/guides/agents-api/environments/files).");
                         command.Arguments.Add(EnvironmentId);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);

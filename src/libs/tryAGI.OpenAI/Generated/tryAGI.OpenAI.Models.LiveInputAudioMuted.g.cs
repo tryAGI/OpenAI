@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when a session.input_audio.mute command is accepted. Input audio is no longer sent to the model; sideband audio reflection continues.<br/>
+    /// Acknowledges a session.input_audio.mute command. An independent input mute sends silence to the model and preserves sideband audio reflection. Fixture playback does not emit this event.<br/>
     /// Example: {"type":"session.input_audio.muted","event_id":"evt_muted_001","client_event_id":"evt_mute_001"}
     /// </summary>
     public sealed partial class LiveInputAudioMuted

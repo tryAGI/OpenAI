@@ -8,7 +8,7 @@ Full per-command reference derived from the OpenAPI spec. For the short overview
 |---------|-------|-------------|
 | `create-agent` | `POST /agents` | Create an agent |
 | `create-agent-environment` | `POST /agents/environments` | Create an agent environment |
-| `create-agent-environment-file` | `POST /agents/environments/{environment_id}/files` | Create an agent environment file |
+| `create-agent-environment-file` | `POST /agents/environments/{environment_id}/files` | Write an agent environment file |
 | `create-agent-environment-template` | `POST /agents/environments/templates` | Create an agent environment template |
 | `create-agent-session` | `POST /agents/sessions` | Create an agent session |
 | `create-agent-session-events` | `POST /agents/sessions/{session_id}/events` | Create agent session input events |
