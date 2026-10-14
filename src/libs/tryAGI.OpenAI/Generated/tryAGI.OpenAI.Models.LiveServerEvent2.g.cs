@@ -91,7 +91,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
 
         /// <summary>
-        /// Returned when a session.input_audio.mute command is accepted. Input audio is no longer sent to the model; sideband audio reflection continues.<br/>
+        /// Acknowledges a session.input_audio.mute command. An independent input mute sends silence to the model and preserves sideband audio reflection. Fixture playback does not emit this event.<br/>
         /// Example: {"type":"session.input_audio.muted","event_id":"evt_muted_001","client_event_id":"evt_mute_001"}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -129,7 +129,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioMuted' but the value was {ToString()}.");
 
         /// <summary>
-        /// Returned when a session.input_audio.unmute command is accepted. Input audio is sent to the model again.<br/>
+        /// Acknowledges a session.input_audio.unmute command, removing the independent input mute. An active audio fixture still pauses inference until playback finishes. Fixture playback does not emit this event.<br/>
         /// Example: {"type":"session.input_audio.unmuted","event_id":"evt_unmuted_001","client_event_id":"evt_unmute_001"}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -165,6 +165,82 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.LiveInputAudioUnmuted PickSessionInputAudioUnmuted() => SessionInputAudioUnmuted is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioUnmuted' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The existing playback path has accepted the validated audio fixture. This acknowledgment does not identify when the listener receives the first sample. The optional client_event_id echoes the play command.<br/>
+        /// Example: {"type":"session.output_audio.fixture.playing","event_id":"evt_play_started_001","client_event_id":"evt_play_001"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying? SessionOutputAudioFixturePlaying { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying? SessionOutputAudioFixturePlaying { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionOutputAudioFixturePlaying))]
+#endif
+        public bool IsSessionOutputAudioFixturePlaying => SessionOutputAudioFixturePlaying != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickSessionOutputAudioFixturePlaying(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying? value)
+        {
+            value = SessionOutputAudioFixturePlaying;
+            return IsSessionOutputAudioFixturePlaying;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying PickSessionOutputAudioFixturePlaying() => SessionOutputAudioFixturePlaying is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutputAudioFixturePlaying' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The complete audio fixture has drained from the server mixer and normal inference has resumed. Transport buffers may still contain audio; this event does not prove listener-side completion. The optional client_event_id echoes the play command. This event is not emitted for canceled or failed playback.<br/>
+        /// Example: {"type":"session.output_audio.fixture.played","event_id":"evt_played_001","client_event_id":"evt_play_001"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed? SessionOutputAudioFixturePlayed { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed? SessionOutputAudioFixturePlayed { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionOutputAudioFixturePlayed))]
+#endif
+        public bool IsSessionOutputAudioFixturePlayed => SessionOutputAudioFixturePlayed != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickSessionOutputAudioFixturePlayed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed? value)
+        {
+            value = SessionOutputAudioFixturePlayed;
+            return IsSessionOutputAudioFixturePlayed;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed PickSessionOutputAudioFixturePlayed() => SessionOutputAudioFixturePlayed is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutputAudioFixturePlayed' but the value was {ToString()}.");
 
         /// <summary>
         /// Returned when a session.instructions.append command is accepted into the Live session timeline. Acknowledges the appended instructions without guaranteeing that the model has acted on them.<br/>
@@ -944,6 +1020,52 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator LiveServerEvent2(global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying value) => new LiveServerEvent2((global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying?(LiveServerEvent2 @this) => @this.SessionOutputAudioFixturePlaying;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public LiveServerEvent2(global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying? value)
+        {
+            SessionOutputAudioFixturePlaying = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static LiveServerEvent2 FromSessionOutputAudioFixturePlaying(global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying? value) => new LiveServerEvent2(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator LiveServerEvent2(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed value) => new LiveServerEvent2((global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed?(LiveServerEvent2 @this) => @this.SessionOutputAudioFixturePlayed;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public LiveServerEvent2(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed? value)
+        {
+            SessionOutputAudioFixturePlayed = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static LiveServerEvent2 FromSessionOutputAudioFixturePlayed(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed? value) => new LiveServerEvent2(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator LiveServerEvent2(global::tryAGI.OpenAI.LiveInstructionsAppended value) => new LiveServerEvent2((global::tryAGI.OpenAI.LiveInstructionsAppended?)value);
 
         /// <summary>
@@ -1364,6 +1486,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.LiveSessionUpdated? sessionUpdated,
             global::tryAGI.OpenAI.LiveInputAudioMuted? sessionInputAudioMuted,
             global::tryAGI.OpenAI.LiveInputAudioUnmuted? sessionInputAudioUnmuted,
+            global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying? sessionOutputAudioFixturePlaying,
+            global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed? sessionOutputAudioFixturePlayed,
             global::tryAGI.OpenAI.LiveInstructionsAppended? sessionInstructionsAppended,
             global::tryAGI.OpenAI.LiveThinkingAppended? sessionThinkingAppended,
             global::tryAGI.OpenAI.LiveCommentaryAppended? sessionCommentaryAppended,
@@ -1390,6 +1514,8 @@ namespace tryAGI.OpenAI
             SessionUpdated = sessionUpdated;
             SessionInputAudioMuted = sessionInputAudioMuted;
             SessionInputAudioUnmuted = sessionInputAudioUnmuted;
+            SessionOutputAudioFixturePlaying = sessionOutputAudioFixturePlaying;
+            SessionOutputAudioFixturePlayed = sessionOutputAudioFixturePlayed;
             SessionInstructionsAppended = sessionInstructionsAppended;
             SessionThinkingAppended = sessionThinkingAppended;
             SessionCommentaryAppended = sessionCommentaryAppended;
@@ -1432,6 +1558,8 @@ namespace tryAGI.OpenAI
             SessionCommentaryAppended as object ??
             SessionThinkingAppended as object ??
             SessionInstructionsAppended as object ??
+            SessionOutputAudioFixturePlayed as object ??
+            SessionOutputAudioFixturePlaying as object ??
             SessionInputAudioUnmuted as object ??
             SessionInputAudioMuted as object ??
             SessionUpdated as object ??
@@ -1446,6 +1574,8 @@ namespace tryAGI.OpenAI
             SessionUpdated?.ToString() ??
             SessionInputAudioMuted?.ToString() ??
             SessionInputAudioUnmuted?.ToString() ??
+            SessionOutputAudioFixturePlaying?.ToString() ??
+            SessionOutputAudioFixturePlayed?.ToString() ??
             SessionInstructionsAppended?.ToString() ??
             SessionThinkingAppended?.ToString() ??
             SessionCommentaryAppended?.ToString() ??
@@ -1471,7 +1601,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && IsTransportFailed;
+            return IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && IsTransportRinging && !IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && IsTransportAnswered && !IsTransportFailed || !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputAudioAppend && !IsSessionOutputAudioDelta && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo && !IsTransportDtmfReceived && !IsTransportDtmfSend && !IsTransportRinging && !IsTransportAnswered && IsTransportFailed;
         }
 
         /// <summary>
@@ -1482,6 +1612,8 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.LiveSessionUpdated, TResult>? sessionUpdated = null,
             global::System.Func<global::tryAGI.OpenAI.LiveInputAudioMuted, TResult>? sessionInputAudioMuted = null,
             global::System.Func<global::tryAGI.OpenAI.LiveInputAudioUnmuted, TResult>? sessionInputAudioUnmuted = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying, TResult>? sessionOutputAudioFixturePlaying = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed, TResult>? sessionOutputAudioFixturePlayed = null,
             global::System.Func<global::tryAGI.OpenAI.LiveInstructionsAppended, TResult>? sessionInstructionsAppended = null,
             global::System.Func<global::tryAGI.OpenAI.LiveThinkingAppended, TResult>? sessionThinkingAppended = null,
             global::System.Func<global::tryAGI.OpenAI.LiveCommentaryAppended, TResult>? sessionCommentaryAppended = null,
@@ -1523,77 +1655,85 @@ namespace tryAGI.OpenAI
             {
                 return sessionInputAudioUnmuted(__value3);
             }
-            else if (SessionInstructionsAppended is { } __value4 && sessionInstructionsAppended != null)
+            else if (SessionOutputAudioFixturePlaying is { } __value4 && sessionOutputAudioFixturePlaying != null)
             {
-                return sessionInstructionsAppended(__value4);
+                return sessionOutputAudioFixturePlaying(__value4);
             }
-            else if (SessionThinkingAppended is { } __value5 && sessionThinkingAppended != null)
+            else if (SessionOutputAudioFixturePlayed is { } __value5 && sessionOutputAudioFixturePlayed != null)
             {
-                return sessionThinkingAppended(__value5);
+                return sessionOutputAudioFixturePlayed(__value5);
             }
-            else if (SessionCommentaryAppended is { } __value6 && sessionCommentaryAppended != null)
+            else if (SessionInstructionsAppended is { } __value6 && sessionInstructionsAppended != null)
             {
-                return sessionCommentaryAppended(__value6);
+                return sessionInstructionsAppended(__value6);
             }
-            else if (SessionInputAudioAppend is { } __value7 && sessionInputAudioAppend != null)
+            else if (SessionThinkingAppended is { } __value7 && sessionThinkingAppended != null)
             {
-                return sessionInputAudioAppend(__value7);
+                return sessionThinkingAppended(__value7);
             }
-            else if (SessionOutputAudioDelta is { } __value8 && sessionOutputAudioDelta != null)
+            else if (SessionCommentaryAppended is { } __value8 && sessionCommentaryAppended != null)
             {
-                return sessionOutputAudioDelta(__value8);
+                return sessionCommentaryAppended(__value8);
             }
-            else if (SessionInputTranscriptDelta is { } __value9 && sessionInputTranscriptDelta != null)
+            else if (SessionInputAudioAppend is { } __value9 && sessionInputAudioAppend != null)
             {
-                return sessionInputTranscriptDelta(__value9);
+                return sessionInputAudioAppend(__value9);
             }
-            else if (SessionOutputTranscriptDelta is { } __value10 && sessionOutputTranscriptDelta != null)
+            else if (SessionOutputAudioDelta is { } __value10 && sessionOutputAudioDelta != null)
             {
-                return sessionOutputTranscriptDelta(__value10);
+                return sessionOutputAudioDelta(__value10);
             }
-            else if (SessionDelegationCreated is { } __value11 && sessionDelegationCreated != null)
+            else if (SessionInputTranscriptDelta is { } __value11 && sessionInputTranscriptDelta != null)
             {
-                return sessionDelegationCreated(__value11);
+                return sessionInputTranscriptDelta(__value11);
             }
-            else if (ResponseEvent is { } __value12 && responseEvent != null)
+            else if (SessionOutputTranscriptDelta is { } __value12 && sessionOutputTranscriptDelta != null)
             {
-                return responseEvent(__value12);
+                return sessionOutputTranscriptDelta(__value12);
             }
-            else if (SessionUsageUpdated is { } __value13 && sessionUsageUpdated != null)
+            else if (SessionDelegationCreated is { } __value13 && sessionDelegationCreated != null)
             {
-                return sessionUsageUpdated(__value13);
+                return sessionDelegationCreated(__value13);
             }
-            else if (SessionClosed is { } __value14 && sessionClosed != null)
+            else if (ResponseEvent is { } __value14 && responseEvent != null)
             {
-                return sessionClosed(__value14);
+                return responseEvent(__value14);
             }
-            else if (Error is { } __value15 && error != null)
+            else if (SessionUsageUpdated is { } __value15 && sessionUsageUpdated != null)
             {
-                return error(__value15);
+                return sessionUsageUpdated(__value15);
             }
-            else if (Info is { } __value16 && info != null)
+            else if (SessionClosed is { } __value16 && sessionClosed != null)
             {
-                return info(__value16);
+                return sessionClosed(__value16);
             }
-            else if (TransportDtmfReceived is { } __value17 && transportDtmfReceived != null)
+            else if (Error is { } __value17 && error != null)
             {
-                return transportDtmfReceived(__value17);
+                return error(__value17);
             }
-            else if (TransportDtmfSend is { } __value18 && transportDtmfSend != null)
+            else if (Info is { } __value18 && info != null)
             {
-                return transportDtmfSend(__value18);
+                return info(__value18);
             }
-            else if (TransportRinging is { } __value19 && transportRinging != null)
+            else if (TransportDtmfReceived is { } __value19 && transportDtmfReceived != null)
             {
-                return transportRinging(__value19);
+                return transportDtmfReceived(__value19);
             }
-            else if (TransportAnswered is { } __value20 && transportAnswered != null)
+            else if (TransportDtmfSend is { } __value20 && transportDtmfSend != null)
             {
-                return transportAnswered(__value20);
+                return transportDtmfSend(__value20);
             }
-            else if (TransportFailed is { } __value21 && transportFailed != null)
+            else if (TransportRinging is { } __value21 && transportRinging != null)
             {
-                return transportFailed(__value21);
+                return transportRinging(__value21);
+            }
+            else if (TransportAnswered is { } __value22 && transportAnswered != null)
+            {
+                return transportAnswered(__value22);
+            }
+            else if (TransportFailed is { } __value23 && transportFailed != null)
+            {
+                return transportFailed(__value23);
             }
 
             return default(TResult);
@@ -1611,6 +1751,10 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.LiveInputAudioUnmuted>? sessionInputAudioUnmuted = null,
 
+            global::System.Action<global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying>? sessionOutputAudioFixturePlaying = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed>? sessionOutputAudioFixturePlayed = null,
+
             global::System.Action<global::tryAGI.OpenAI.LiveInstructionsAppended>? sessionInstructionsAppended = null,
 
             global::System.Action<global::tryAGI.OpenAI.LiveThinkingAppended>? sessionThinkingAppended = null,
@@ -1669,77 +1813,85 @@ namespace tryAGI.OpenAI
             {
                 sessionInputAudioUnmuted?.Invoke(__value3);
             }
-            else if (SessionInstructionsAppended is { } __value4)
+            else if (SessionOutputAudioFixturePlaying is { } __value4)
             {
-                sessionInstructionsAppended?.Invoke(__value4);
+                sessionOutputAudioFixturePlaying?.Invoke(__value4);
             }
-            else if (SessionThinkingAppended is { } __value5)
+            else if (SessionOutputAudioFixturePlayed is { } __value5)
             {
-                sessionThinkingAppended?.Invoke(__value5);
+                sessionOutputAudioFixturePlayed?.Invoke(__value5);
             }
-            else if (SessionCommentaryAppended is { } __value6)
+            else if (SessionInstructionsAppended is { } __value6)
             {
-                sessionCommentaryAppended?.Invoke(__value6);
+                sessionInstructionsAppended?.Invoke(__value6);
             }
-            else if (SessionInputAudioAppend is { } __value7)
+            else if (SessionThinkingAppended is { } __value7)
             {
-                sessionInputAudioAppend?.Invoke(__value7);
+                sessionThinkingAppended?.Invoke(__value7);
             }
-            else if (SessionOutputAudioDelta is { } __value8)
+            else if (SessionCommentaryAppended is { } __value8)
             {
-                sessionOutputAudioDelta?.Invoke(__value8);
+                sessionCommentaryAppended?.Invoke(__value8);
             }
-            else if (SessionInputTranscriptDelta is { } __value9)
+            else if (SessionInputAudioAppend is { } __value9)
             {
-                sessionInputTranscriptDelta?.Invoke(__value9);
+                sessionInputAudioAppend?.Invoke(__value9);
             }
-            else if (SessionOutputTranscriptDelta is { } __value10)
+            else if (SessionOutputAudioDelta is { } __value10)
             {
-                sessionOutputTranscriptDelta?.Invoke(__value10);
+                sessionOutputAudioDelta?.Invoke(__value10);
             }
-            else if (SessionDelegationCreated is { } __value11)
+            else if (SessionInputTranscriptDelta is { } __value11)
             {
-                sessionDelegationCreated?.Invoke(__value11);
+                sessionInputTranscriptDelta?.Invoke(__value11);
             }
-            else if (ResponseEvent is { } __value12)
+            else if (SessionOutputTranscriptDelta is { } __value12)
             {
-                responseEvent?.Invoke(__value12);
+                sessionOutputTranscriptDelta?.Invoke(__value12);
             }
-            else if (SessionUsageUpdated is { } __value13)
+            else if (SessionDelegationCreated is { } __value13)
             {
-                sessionUsageUpdated?.Invoke(__value13);
+                sessionDelegationCreated?.Invoke(__value13);
             }
-            else if (SessionClosed is { } __value14)
+            else if (ResponseEvent is { } __value14)
             {
-                sessionClosed?.Invoke(__value14);
+                responseEvent?.Invoke(__value14);
             }
-            else if (Error is { } __value15)
+            else if (SessionUsageUpdated is { } __value15)
             {
-                error?.Invoke(__value15);
+                sessionUsageUpdated?.Invoke(__value15);
             }
-            else if (Info is { } __value16)
+            else if (SessionClosed is { } __value16)
             {
-                info?.Invoke(__value16);
+                sessionClosed?.Invoke(__value16);
             }
-            else if (TransportDtmfReceived is { } __value17)
+            else if (Error is { } __value17)
             {
-                transportDtmfReceived?.Invoke(__value17);
+                error?.Invoke(__value17);
             }
-            else if (TransportDtmfSend is { } __value18)
+            else if (Info is { } __value18)
             {
-                transportDtmfSend?.Invoke(__value18);
+                info?.Invoke(__value18);
             }
-            else if (TransportRinging is { } __value19)
+            else if (TransportDtmfReceived is { } __value19)
             {
-                transportRinging?.Invoke(__value19);
+                transportDtmfReceived?.Invoke(__value19);
             }
-            else if (TransportAnswered is { } __value20)
+            else if (TransportDtmfSend is { } __value20)
             {
-                transportAnswered?.Invoke(__value20);
+                transportDtmfSend?.Invoke(__value20);
             }
-            else if (TransportFailed is { } __value21)
+            else if (TransportRinging is { } __value21)
             {
-                transportFailed?.Invoke(__value21);
+                transportRinging?.Invoke(__value21);
+            }
+            else if (TransportAnswered is { } __value22)
+            {
+                transportAnswered?.Invoke(__value22);
+            }
+            else if (TransportFailed is { } __value23)
+            {
+                transportFailed?.Invoke(__value23);
             }
         }
 
@@ -1751,6 +1903,8 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.LiveSessionUpdated>? sessionUpdated = null,
             global::System.Action<global::tryAGI.OpenAI.LiveInputAudioMuted>? sessionInputAudioMuted = null,
             global::System.Action<global::tryAGI.OpenAI.LiveInputAudioUnmuted>? sessionInputAudioUnmuted = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying>? sessionOutputAudioFixturePlaying = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed>? sessionOutputAudioFixturePlayed = null,
             global::System.Action<global::tryAGI.OpenAI.LiveInstructionsAppended>? sessionInstructionsAppended = null,
             global::System.Action<global::tryAGI.OpenAI.LiveThinkingAppended>? sessionThinkingAppended = null,
             global::System.Action<global::tryAGI.OpenAI.LiveCommentaryAppended>? sessionCommentaryAppended = null,
@@ -1792,77 +1946,85 @@ namespace tryAGI.OpenAI
             {
                 sessionInputAudioUnmuted?.Invoke(__value3);
             }
-            else if (SessionInstructionsAppended is { } __value4)
+            else if (SessionOutputAudioFixturePlaying is { } __value4)
             {
-                sessionInstructionsAppended?.Invoke(__value4);
+                sessionOutputAudioFixturePlaying?.Invoke(__value4);
             }
-            else if (SessionThinkingAppended is { } __value5)
+            else if (SessionOutputAudioFixturePlayed is { } __value5)
             {
-                sessionThinkingAppended?.Invoke(__value5);
+                sessionOutputAudioFixturePlayed?.Invoke(__value5);
             }
-            else if (SessionCommentaryAppended is { } __value6)
+            else if (SessionInstructionsAppended is { } __value6)
             {
-                sessionCommentaryAppended?.Invoke(__value6);
+                sessionInstructionsAppended?.Invoke(__value6);
             }
-            else if (SessionInputAudioAppend is { } __value7)
+            else if (SessionThinkingAppended is { } __value7)
             {
-                sessionInputAudioAppend?.Invoke(__value7);
+                sessionThinkingAppended?.Invoke(__value7);
             }
-            else if (SessionOutputAudioDelta is { } __value8)
+            else if (SessionCommentaryAppended is { } __value8)
             {
-                sessionOutputAudioDelta?.Invoke(__value8);
+                sessionCommentaryAppended?.Invoke(__value8);
             }
-            else if (SessionInputTranscriptDelta is { } __value9)
+            else if (SessionInputAudioAppend is { } __value9)
             {
-                sessionInputTranscriptDelta?.Invoke(__value9);
+                sessionInputAudioAppend?.Invoke(__value9);
             }
-            else if (SessionOutputTranscriptDelta is { } __value10)
+            else if (SessionOutputAudioDelta is { } __value10)
             {
-                sessionOutputTranscriptDelta?.Invoke(__value10);
+                sessionOutputAudioDelta?.Invoke(__value10);
             }
-            else if (SessionDelegationCreated is { } __value11)
+            else if (SessionInputTranscriptDelta is { } __value11)
             {
-                sessionDelegationCreated?.Invoke(__value11);
+                sessionInputTranscriptDelta?.Invoke(__value11);
             }
-            else if (ResponseEvent is { } __value12)
+            else if (SessionOutputTranscriptDelta is { } __value12)
             {
-                responseEvent?.Invoke(__value12);
+                sessionOutputTranscriptDelta?.Invoke(__value12);
             }
-            else if (SessionUsageUpdated is { } __value13)
+            else if (SessionDelegationCreated is { } __value13)
             {
-                sessionUsageUpdated?.Invoke(__value13);
+                sessionDelegationCreated?.Invoke(__value13);
             }
-            else if (SessionClosed is { } __value14)
+            else if (ResponseEvent is { } __value14)
             {
-                sessionClosed?.Invoke(__value14);
+                responseEvent?.Invoke(__value14);
             }
-            else if (Error is { } __value15)
+            else if (SessionUsageUpdated is { } __value15)
             {
-                error?.Invoke(__value15);
+                sessionUsageUpdated?.Invoke(__value15);
             }
-            else if (Info is { } __value16)
+            else if (SessionClosed is { } __value16)
             {
-                info?.Invoke(__value16);
+                sessionClosed?.Invoke(__value16);
             }
-            else if (TransportDtmfReceived is { } __value17)
+            else if (Error is { } __value17)
             {
-                transportDtmfReceived?.Invoke(__value17);
+                error?.Invoke(__value17);
             }
-            else if (TransportDtmfSend is { } __value18)
+            else if (Info is { } __value18)
             {
-                transportDtmfSend?.Invoke(__value18);
+                info?.Invoke(__value18);
             }
-            else if (TransportRinging is { } __value19)
+            else if (TransportDtmfReceived is { } __value19)
             {
-                transportRinging?.Invoke(__value19);
+                transportDtmfReceived?.Invoke(__value19);
             }
-            else if (TransportAnswered is { } __value20)
+            else if (TransportDtmfSend is { } __value20)
             {
-                transportAnswered?.Invoke(__value20);
+                transportDtmfSend?.Invoke(__value20);
             }
-            else if (TransportFailed is { } __value21)
+            else if (TransportRinging is { } __value21)
             {
-                transportFailed?.Invoke(__value21);
+                transportRinging?.Invoke(__value21);
+            }
+            else if (TransportAnswered is { } __value22)
+            {
+                transportAnswered?.Invoke(__value22);
+            }
+            else if (TransportFailed is { } __value23)
+            {
+                transportFailed?.Invoke(__value23);
             }
         }
 
@@ -1881,6 +2043,10 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.LiveInputAudioMuted),
                 SessionInputAudioUnmuted,
                 typeof(global::tryAGI.OpenAI.LiveInputAudioUnmuted),
+                SessionOutputAudioFixturePlaying,
+                typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying),
+                SessionOutputAudioFixturePlayed,
+                typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed),
                 SessionInstructionsAppended,
                 typeof(global::tryAGI.OpenAI.LiveInstructionsAppended),
                 SessionThinkingAppended,
@@ -1937,6 +2103,8 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveSessionUpdated?>.Default.Equals(SessionUpdated, other.SessionUpdated) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInputAudioMuted?>.Default.Equals(SessionInputAudioMuted, other.SessionInputAudioMuted) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInputAudioUnmuted?>.Default.Equals(SessionInputAudioUnmuted, other.SessionInputAudioUnmuted) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying?>.Default.Equals(SessionOutputAudioFixturePlaying, other.SessionOutputAudioFixturePlaying) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed?>.Default.Equals(SessionOutputAudioFixturePlayed, other.SessionOutputAudioFixturePlayed) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInstructionsAppended?>.Default.Equals(SessionInstructionsAppended, other.SessionInstructionsAppended) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveThinkingAppended?>.Default.Equals(SessionThinkingAppended, other.SessionThinkingAppended) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveCommentaryAppended?>.Default.Equals(SessionCommentaryAppended, other.SessionCommentaryAppended) &&

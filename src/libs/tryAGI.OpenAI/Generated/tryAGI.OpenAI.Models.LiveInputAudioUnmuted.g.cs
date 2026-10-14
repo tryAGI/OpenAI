@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when a session.input_audio.unmute command is accepted. Input audio is sent to the model again.<br/>
+    /// Acknowledges a session.input_audio.unmute command, removing the independent input mute. An active audio fixture still pauses inference until playback finishes. Fixture playback does not emit this event.<br/>
     /// Example: {"type":"session.input_audio.unmuted","event_id":"evt_unmuted_001","client_event_id":"evt_unmute_001"}
     /// </summary>
     public sealed partial class LiveInputAudioUnmuted

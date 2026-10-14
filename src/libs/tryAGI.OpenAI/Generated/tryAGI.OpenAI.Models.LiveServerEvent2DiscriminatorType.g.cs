@@ -59,6 +59,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        SessionOutputAudioFixturePlayed,
+        /// <summary>
+        ///
+        /// </summary>
+        SessionOutputAudioFixturePlaying,
+        /// <summary>
+        ///
+        /// </summary>
         SessionOutputTranscriptDelta,
         /// <summary>
         ///
@@ -122,6 +130,8 @@ namespace tryAGI.OpenAI
                 LiveServerEvent2DiscriminatorType.SessionInputTranscriptDelta => "session.input_transcript.delta",
                 LiveServerEvent2DiscriminatorType.SessionInstructionsAppended => "session.instructions.appended",
                 LiveServerEvent2DiscriminatorType.SessionOutputAudioDelta => "session.output_audio.delta",
+                LiveServerEvent2DiscriminatorType.SessionOutputAudioFixturePlayed => "session.output_audio.fixture.played",
+                LiveServerEvent2DiscriminatorType.SessionOutputAudioFixturePlaying => "session.output_audio.fixture.playing",
                 LiveServerEvent2DiscriminatorType.SessionOutputTranscriptDelta => "session.output_transcript.delta",
                 LiveServerEvent2DiscriminatorType.SessionStarted => "session.started",
                 LiveServerEvent2DiscriminatorType.SessionThinkingAppended => "session.thinking.appended",
@@ -154,6 +164,8 @@ namespace tryAGI.OpenAI
                 "session.input_transcript.delta" => LiveServerEvent2DiscriminatorType.SessionInputTranscriptDelta,
                 "session.instructions.appended" => LiveServerEvent2DiscriminatorType.SessionInstructionsAppended,
                 "session.output_audio.delta" => LiveServerEvent2DiscriminatorType.SessionOutputAudioDelta,
+                "session.output_audio.fixture.played" => LiveServerEvent2DiscriminatorType.SessionOutputAudioFixturePlayed,
+                "session.output_audio.fixture.playing" => LiveServerEvent2DiscriminatorType.SessionOutputAudioFixturePlaying,
                 "session.output_transcript.delta" => LiveServerEvent2DiscriminatorType.SessionOutputTranscriptDelta,
                 "session.started" => LiveServerEvent2DiscriminatorType.SessionStarted,
                 "session.thinking.appended" => LiveServerEvent2DiscriminatorType.SessionThinkingAppended,

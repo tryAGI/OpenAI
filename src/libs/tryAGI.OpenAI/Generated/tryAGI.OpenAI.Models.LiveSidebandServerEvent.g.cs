@@ -205,7 +205,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionUpdated' but the value was {ToString()}.");
 
         /// <summary>
-        /// Returned when a session.input_audio.mute command is accepted. Input audio is no longer sent to the model; sideband audio reflection continues.<br/>
+        /// Acknowledges a session.input_audio.mute command. An independent input mute sends silence to the model and preserves sideband audio reflection. Fixture playback does not emit this event.<br/>
         /// Example: {"type":"session.input_audio.muted","event_id":"evt_muted_001","client_event_id":"evt_mute_001"}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -243,7 +243,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioMuted' but the value was {ToString()}.");
 
         /// <summary>
-        /// Returned when a session.input_audio.unmute command is accepted. Input audio is sent to the model again.<br/>
+        /// Acknowledges a session.input_audio.unmute command, removing the independent input mute. An active audio fixture still pauses inference until playback finishes. Fixture playback does not emit this event.<br/>
         /// Example: {"type":"session.input_audio.unmuted","event_id":"evt_unmuted_001","client_event_id":"evt_unmute_001"}
         /// </summary>
 #if NET6_0_OR_GREATER

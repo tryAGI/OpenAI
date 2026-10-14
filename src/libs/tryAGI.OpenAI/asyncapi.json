@@ -3056,6 +3056,10 @@
                   "code": {
                     "type": "string",
                     "description": "Error code, if any."
+                  },
+                  "message": {
+                    "type": "string",
+                    "description": "A human-readable error message."
                   }
                 }
               }
