@@ -23,6 +23,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ImageDetailParam? Detail { get; set; }
 
         /// <summary>
+        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
+        public global::tryAGI.OpenAI.DecisionInputImagePromptCacheBreakpoint? PromptCacheBreakpoint { get; set; }
+
+        /// <summary>
         /// Default Value: input_image
         /// </summary>
         /// <default>global::tryAGI.OpenAI.DecisionInputImageType.InputImage</default>
@@ -46,6 +52,9 @@ namespace tryAGI.OpenAI
         /// The image detail level, using the selected model's image profile. Defaults to auto.<br/>
         /// Default Value: auto
         /// </param>
+        /// <param name="promptCacheBreakpoint">
+        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// </param>
         /// <param name="type">
         /// Default Value: input_image
         /// </param>
@@ -55,10 +64,12 @@ namespace tryAGI.OpenAI
         public DecisionInputImage(
             string imageUrl,
             global::tryAGI.OpenAI.ImageDetailParam? detail,
+            global::tryAGI.OpenAI.DecisionInputImagePromptCacheBreakpoint? promptCacheBreakpoint,
             global::tryAGI.OpenAI.DecisionInputImageType type = global::tryAGI.OpenAI.DecisionInputImageType.InputImage)
         {
             this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
             this.Detail = detail;
+            this.PromptCacheBreakpoint = promptCacheBreakpoint;
             this.Type = type;
         }
 

@@ -151,6 +151,7 @@ public sealed class Tests_Decisions
             [
                 new DecisionInputMessage
                 {
+                    Role = DecisionInputMessageRole.User,
                     Content = new DecisionInputContent(null,
                     [new DecisionInputText { Text = "Inspect this receipt." }, new DecisionInputImage { ImageUrl = image }]),
                 },

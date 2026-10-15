@@ -4,10 +4,22 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Default Value: user
+    ///
     /// </summary>
     public enum DecisionInputMessageRole
     {
+        /// <summary>
+        ///
+        /// </summary>
+        Assistant,
+        /// <summary>
+        ///
+        /// </summary>
+        Developer,
+        /// <summary>
+        ///
+        /// </summary>
+        System,
         /// <summary>
         ///
         /// </summary>
@@ -26,6 +38,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                DecisionInputMessageRole.Assistant => "assistant",
+                DecisionInputMessageRole.Developer => "developer",
+                DecisionInputMessageRole.System => "system",
                 DecisionInputMessageRole.User => "user",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -37,6 +52,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "assistant" => DecisionInputMessageRole.Assistant,
+                "developer" => DecisionInputMessageRole.Developer,
+                "system" => DecisionInputMessageRole.System,
                 "user" => DecisionInputMessageRole.User,
                 _ => null,
             };

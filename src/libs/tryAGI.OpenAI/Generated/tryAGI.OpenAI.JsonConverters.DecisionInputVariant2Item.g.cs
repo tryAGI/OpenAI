@@ -28,10 +28,46 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.DecisionInputMessage)}");
                 message = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.DecisionInputFunctionCall? functionCall = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.DecisionInputVariant2ItemDiscriminatorType.FunctionCall)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputFunctionCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputFunctionCall> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.DecisionInputFunctionCall)}");
+                functionCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.DecisionInputFunctionCallOutput? functionCallOutput = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.DecisionInputVariant2ItemDiscriminatorType.FunctionCallOutput)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputFunctionCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputFunctionCallOutput> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.DecisionInputFunctionCallOutput)}");
+                functionCallOutput = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.DecisionInputCustomToolCall? customToolCall = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.DecisionInputVariant2ItemDiscriminatorType.CustomToolCall)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputCustomToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputCustomToolCall> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.DecisionInputCustomToolCall)}");
+                customToolCall = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.DecisionInputCustomToolCallOutput? customToolCallOutput = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.DecisionInputVariant2ItemDiscriminatorType.CustomToolCallOutput)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputCustomToolCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputCustomToolCallOutput> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.DecisionInputCustomToolCallOutput)}");
+                customToolCallOutput = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::tryAGI.OpenAI.DecisionInputVariant2Item(
                 discriminator?.Type,
-                message
+                message,
+
+                functionCall,
+
+                functionCallOutput,
+
+                customToolCall,
+
+                customToolCallOutput
                 );
 
             return __value;
@@ -51,6 +87,30 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputMessage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputMessage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DecisionInputMessage).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMessage(), typeInfo);
+            }
+            else if (value.IsFunctionCall)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputFunctionCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputFunctionCall?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DecisionInputFunctionCall).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFunctionCall(), typeInfo);
+            }
+            else if (value.IsFunctionCallOutput)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputFunctionCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputFunctionCallOutput?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DecisionInputFunctionCallOutput).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickFunctionCallOutput(), typeInfo);
+            }
+            else if (value.IsCustomToolCall)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputCustomToolCall), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputCustomToolCall?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DecisionInputCustomToolCall).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCustomToolCall(), typeInfo);
+            }
+            else if (value.IsCustomToolCallOutput)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputCustomToolCallOutput), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputCustomToolCallOutput?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DecisionInputCustomToolCallOutput).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickCustomToolCallOutput(), typeInfo);
             }
         }
     }

@@ -43,6 +43,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        SessionOutputAudioFixturePlay,
+        /// <summary>
+        ///
+        /// </summary>
         SessionStart,
         /// <summary>
         ///
@@ -74,6 +78,7 @@ namespace tryAGI.OpenAI
                 LiveClientEventDiscriminatorType.SessionInputAudioMute => "session.input_audio.mute",
                 LiveClientEventDiscriminatorType.SessionInputAudioUnmute => "session.input_audio.unmute",
                 LiveClientEventDiscriminatorType.SessionInstructionsAppend => "session.instructions.append",
+                LiveClientEventDiscriminatorType.SessionOutputAudioFixturePlay => "session.output_audio.fixture.play",
                 LiveClientEventDiscriminatorType.SessionStart => "session.start",
                 LiveClientEventDiscriminatorType.SessionThinkingAppend => "session.thinking.append",
                 LiveClientEventDiscriminatorType.SessionUpdate => "session.update",
@@ -95,6 +100,7 @@ namespace tryAGI.OpenAI
                 "session.input_audio.mute" => LiveClientEventDiscriminatorType.SessionInputAudioMute,
                 "session.input_audio.unmute" => LiveClientEventDiscriminatorType.SessionInputAudioUnmute,
                 "session.instructions.append" => LiveClientEventDiscriminatorType.SessionInstructionsAppend,
+                "session.output_audio.fixture.play" => LiveClientEventDiscriminatorType.SessionOutputAudioFixturePlay,
                 "session.start" => LiveClientEventDiscriminatorType.SessionStart,
                 "session.thinking.append" => LiveClientEventDiscriminatorType.SessionThinkingAppend,
                 "session.update" => LiveClientEventDiscriminatorType.SessionUpdate,

@@ -281,6 +281,82 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioUnmuted' but the value was {ToString()}.");
 
         /// <summary>
+        /// The existing playback path has accepted the validated audio fixture. This acknowledgment does not identify when the listener receives the first sample. The optional client_event_id echoes the play command.<br/>
+        /// Example: {"type":"session.output_audio.fixture.playing","event_id":"evt_playing_001","client_event_id":"evt_play_001"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying? SessionOutputAudioFixturePlaying { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying? SessionOutputAudioFixturePlaying { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionOutputAudioFixturePlaying))]
+#endif
+        public bool IsSessionOutputAudioFixturePlaying => SessionOutputAudioFixturePlaying != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickSessionOutputAudioFixturePlaying(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying? value)
+        {
+            value = SessionOutputAudioFixturePlaying;
+            return IsSessionOutputAudioFixturePlaying;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying PickSessionOutputAudioFixturePlaying() => SessionOutputAudioFixturePlaying is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutputAudioFixturePlaying' but the value was {ToString()}.");
+
+        /// <summary>
+        /// The complete audio fixture has drained from the server mixer and normal inference has resumed. Transport buffers may still contain audio; this event does not prove listener-side completion. The optional client_event_id echoes the play command. This event is not emitted for canceled or failed playback.<br/>
+        /// Example: {"type":"session.output_audio.fixture.played","event_id":"evt_played_001","client_event_id":"evt_play_001"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed? SessionOutputAudioFixturePlayed { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed? SessionOutputAudioFixturePlayed { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionOutputAudioFixturePlayed))]
+#endif
+        public bool IsSessionOutputAudioFixturePlayed => SessionOutputAudioFixturePlayed != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickSessionOutputAudioFixturePlayed(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed? value)
+        {
+            value = SessionOutputAudioFixturePlayed;
+            return IsSessionOutputAudioFixturePlayed;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed PickSessionOutputAudioFixturePlayed() => SessionOutputAudioFixturePlayed is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutputAudioFixturePlayed' but the value was {ToString()}.");
+
+        /// <summary>
         /// Returned when a session.instructions.append command is accepted into the Live session timeline. Acknowledges the appended instructions without guaranteeing that the model has acted on them.<br/>
         /// Example: {"type":"session.instructions.appended","event_id":"evt_instructions_002","client_event_id":"evt_instructions_001","start_ms":1200,"end_ms":1400}
         /// </summary>
@@ -861,6 +937,52 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator LiveSidebandServerEvent(global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying value) => new LiveSidebandServerEvent((global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying?(LiveSidebandServerEvent @this) => @this.SessionOutputAudioFixturePlaying;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public LiveSidebandServerEvent(global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying? value)
+        {
+            SessionOutputAudioFixturePlaying = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static LiveSidebandServerEvent FromSessionOutputAudioFixturePlaying(global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying? value) => new LiveSidebandServerEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator LiveSidebandServerEvent(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed value) => new LiveSidebandServerEvent((global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed?(LiveSidebandServerEvent @this) => @this.SessionOutputAudioFixturePlayed;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public LiveSidebandServerEvent(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed? value)
+        {
+            SessionOutputAudioFixturePlayed = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static LiveSidebandServerEvent FromSessionOutputAudioFixturePlayed(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed? value) => new LiveSidebandServerEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator LiveSidebandServerEvent(global::tryAGI.OpenAI.LiveInstructionsAppended value) => new LiveSidebandServerEvent((global::tryAGI.OpenAI.LiveInstructionsAppended?)value);
 
         /// <summary>
@@ -1123,6 +1245,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.LiveSessionUpdated? sessionUpdated,
             global::tryAGI.OpenAI.LiveInputAudioMuted? sessionInputAudioMuted,
             global::tryAGI.OpenAI.LiveInputAudioUnmuted? sessionInputAudioUnmuted,
+            global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying? sessionOutputAudioFixturePlaying,
+            global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed? sessionOutputAudioFixturePlayed,
             global::tryAGI.OpenAI.LiveInstructionsAppended? sessionInstructionsAppended,
             global::tryAGI.OpenAI.LiveThinkingAppended? sessionThinkingAppended,
             global::tryAGI.OpenAI.LiveCommentaryAppended? sessionCommentaryAppended,
@@ -1145,6 +1269,8 @@ namespace tryAGI.OpenAI
             SessionUpdated = sessionUpdated;
             SessionInputAudioMuted = sessionInputAudioMuted;
             SessionInputAudioUnmuted = sessionInputAudioUnmuted;
+            SessionOutputAudioFixturePlaying = sessionOutputAudioFixturePlaying;
+            SessionOutputAudioFixturePlayed = sessionOutputAudioFixturePlayed;
             SessionInstructionsAppended = sessionInstructionsAppended;
             SessionThinkingAppended = sessionThinkingAppended;
             SessionCommentaryAppended = sessionCommentaryAppended;
@@ -1173,6 +1299,8 @@ namespace tryAGI.OpenAI
             SessionCommentaryAppended as object ??
             SessionThinkingAppended as object ??
             SessionInstructionsAppended as object ??
+            SessionOutputAudioFixturePlayed as object ??
+            SessionOutputAudioFixturePlaying as object ??
             SessionInputAudioUnmuted as object ??
             SessionInputAudioMuted as object ??
             SessionUpdated as object ??
@@ -1193,6 +1321,8 @@ namespace tryAGI.OpenAI
             SessionUpdated?.ToString() ??
             SessionInputAudioMuted?.ToString() ??
             SessionInputAudioUnmuted?.ToString() ??
+            SessionOutputAudioFixturePlaying?.ToString() ??
+            SessionOutputAudioFixturePlayed?.ToString() ??
             SessionInstructionsAppended?.ToString() ??
             SessionThinkingAppended?.ToString() ??
             SessionCommentaryAppended?.ToString() ??
@@ -1211,7 +1341,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && IsInfo;
+            return IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && IsSessionUsageUpdated && !IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && IsSessionClosed && !IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && IsError && !IsInfo || !IsTransportRinging && !IsTransportAnswered && !IsTransportFailed && !IsSessionStarted && !IsSessionUpdated && !IsSessionInputAudioMuted && !IsSessionInputAudioUnmuted && !IsSessionOutputAudioFixturePlaying && !IsSessionOutputAudioFixturePlayed && !IsSessionInstructionsAppended && !IsSessionThinkingAppended && !IsSessionCommentaryAppended && !IsSessionInputTranscriptDelta && !IsSessionOutputTranscriptDelta && !IsSessionDelegationCreated && !IsResponseEvent && !IsSessionUsageUpdated && !IsSessionClosed && !IsError && IsInfo;
         }
 
         /// <summary>
@@ -1225,6 +1355,8 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.LiveSessionUpdated, TResult>? sessionUpdated = null,
             global::System.Func<global::tryAGI.OpenAI.LiveInputAudioMuted, TResult>? sessionInputAudioMuted = null,
             global::System.Func<global::tryAGI.OpenAI.LiveInputAudioUnmuted, TResult>? sessionInputAudioUnmuted = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying, TResult>? sessionOutputAudioFixturePlaying = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed, TResult>? sessionOutputAudioFixturePlayed = null,
             global::System.Func<global::tryAGI.OpenAI.LiveInstructionsAppended, TResult>? sessionInstructionsAppended = null,
             global::System.Func<global::tryAGI.OpenAI.LiveThinkingAppended, TResult>? sessionThinkingAppended = null,
             global::System.Func<global::tryAGI.OpenAI.LiveCommentaryAppended, TResult>? sessionCommentaryAppended = null,
@@ -1271,49 +1403,57 @@ namespace tryAGI.OpenAI
             {
                 return sessionInputAudioUnmuted(__value6);
             }
-            else if (SessionInstructionsAppended is { } __value7 && sessionInstructionsAppended != null)
+            else if (SessionOutputAudioFixturePlaying is { } __value7 && sessionOutputAudioFixturePlaying != null)
             {
-                return sessionInstructionsAppended(__value7);
+                return sessionOutputAudioFixturePlaying(__value7);
             }
-            else if (SessionThinkingAppended is { } __value8 && sessionThinkingAppended != null)
+            else if (SessionOutputAudioFixturePlayed is { } __value8 && sessionOutputAudioFixturePlayed != null)
             {
-                return sessionThinkingAppended(__value8);
+                return sessionOutputAudioFixturePlayed(__value8);
             }
-            else if (SessionCommentaryAppended is { } __value9 && sessionCommentaryAppended != null)
+            else if (SessionInstructionsAppended is { } __value9 && sessionInstructionsAppended != null)
             {
-                return sessionCommentaryAppended(__value9);
+                return sessionInstructionsAppended(__value9);
             }
-            else if (SessionInputTranscriptDelta is { } __value10 && sessionInputTranscriptDelta != null)
+            else if (SessionThinkingAppended is { } __value10 && sessionThinkingAppended != null)
             {
-                return sessionInputTranscriptDelta(__value10);
+                return sessionThinkingAppended(__value10);
             }
-            else if (SessionOutputTranscriptDelta is { } __value11 && sessionOutputTranscriptDelta != null)
+            else if (SessionCommentaryAppended is { } __value11 && sessionCommentaryAppended != null)
             {
-                return sessionOutputTranscriptDelta(__value11);
+                return sessionCommentaryAppended(__value11);
             }
-            else if (SessionDelegationCreated is { } __value12 && sessionDelegationCreated != null)
+            else if (SessionInputTranscriptDelta is { } __value12 && sessionInputTranscriptDelta != null)
             {
-                return sessionDelegationCreated(__value12);
+                return sessionInputTranscriptDelta(__value12);
             }
-            else if (ResponseEvent is { } __value13 && responseEvent != null)
+            else if (SessionOutputTranscriptDelta is { } __value13 && sessionOutputTranscriptDelta != null)
             {
-                return responseEvent(__value13);
+                return sessionOutputTranscriptDelta(__value13);
             }
-            else if (SessionUsageUpdated is { } __value14 && sessionUsageUpdated != null)
+            else if (SessionDelegationCreated is { } __value14 && sessionDelegationCreated != null)
             {
-                return sessionUsageUpdated(__value14);
+                return sessionDelegationCreated(__value14);
             }
-            else if (SessionClosed is { } __value15 && sessionClosed != null)
+            else if (ResponseEvent is { } __value15 && responseEvent != null)
             {
-                return sessionClosed(__value15);
+                return responseEvent(__value15);
             }
-            else if (Error is { } __value16 && error != null)
+            else if (SessionUsageUpdated is { } __value16 && sessionUsageUpdated != null)
             {
-                return error(__value16);
+                return sessionUsageUpdated(__value16);
             }
-            else if (Info is { } __value17 && info != null)
+            else if (SessionClosed is { } __value17 && sessionClosed != null)
             {
-                return info(__value17);
+                return sessionClosed(__value17);
+            }
+            else if (Error is { } __value18 && error != null)
+            {
+                return error(__value18);
+            }
+            else if (Info is { } __value19 && info != null)
+            {
+                return info(__value19);
             }
 
             return default(TResult);
@@ -1337,6 +1477,10 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.LiveInputAudioUnmuted>? sessionInputAudioUnmuted = null,
 
+            global::System.Action<global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying>? sessionOutputAudioFixturePlaying = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed>? sessionOutputAudioFixturePlayed = null,
+
             global::System.Action<global::tryAGI.OpenAI.LiveInstructionsAppended>? sessionInstructionsAppended = null,
 
             global::System.Action<global::tryAGI.OpenAI.LiveThinkingAppended>? sessionThinkingAppended = null,
@@ -1393,49 +1537,57 @@ namespace tryAGI.OpenAI
             {
                 sessionInputAudioUnmuted?.Invoke(__value6);
             }
-            else if (SessionInstructionsAppended is { } __value7)
+            else if (SessionOutputAudioFixturePlaying is { } __value7)
             {
-                sessionInstructionsAppended?.Invoke(__value7);
+                sessionOutputAudioFixturePlaying?.Invoke(__value7);
             }
-            else if (SessionThinkingAppended is { } __value8)
+            else if (SessionOutputAudioFixturePlayed is { } __value8)
             {
-                sessionThinkingAppended?.Invoke(__value8);
+                sessionOutputAudioFixturePlayed?.Invoke(__value8);
             }
-            else if (SessionCommentaryAppended is { } __value9)
+            else if (SessionInstructionsAppended is { } __value9)
             {
-                sessionCommentaryAppended?.Invoke(__value9);
+                sessionInstructionsAppended?.Invoke(__value9);
             }
-            else if (SessionInputTranscriptDelta is { } __value10)
+            else if (SessionThinkingAppended is { } __value10)
             {
-                sessionInputTranscriptDelta?.Invoke(__value10);
+                sessionThinkingAppended?.Invoke(__value10);
             }
-            else if (SessionOutputTranscriptDelta is { } __value11)
+            else if (SessionCommentaryAppended is { } __value11)
             {
-                sessionOutputTranscriptDelta?.Invoke(__value11);
+                sessionCommentaryAppended?.Invoke(__value11);
             }
-            else if (SessionDelegationCreated is { } __value12)
+            else if (SessionInputTranscriptDelta is { } __value12)
             {
-                sessionDelegationCreated?.Invoke(__value12);
+                sessionInputTranscriptDelta?.Invoke(__value12);
             }
-            else if (ResponseEvent is { } __value13)
+            else if (SessionOutputTranscriptDelta is { } __value13)
             {
-                responseEvent?.Invoke(__value13);
+                sessionOutputTranscriptDelta?.Invoke(__value13);
             }
-            else if (SessionUsageUpdated is { } __value14)
+            else if (SessionDelegationCreated is { } __value14)
             {
-                sessionUsageUpdated?.Invoke(__value14);
+                sessionDelegationCreated?.Invoke(__value14);
             }
-            else if (SessionClosed is { } __value15)
+            else if (ResponseEvent is { } __value15)
             {
-                sessionClosed?.Invoke(__value15);
+                responseEvent?.Invoke(__value15);
             }
-            else if (Error is { } __value16)
+            else if (SessionUsageUpdated is { } __value16)
             {
-                error?.Invoke(__value16);
+                sessionUsageUpdated?.Invoke(__value16);
             }
-            else if (Info is { } __value17)
+            else if (SessionClosed is { } __value17)
             {
-                info?.Invoke(__value17);
+                sessionClosed?.Invoke(__value17);
+            }
+            else if (Error is { } __value18)
+            {
+                error?.Invoke(__value18);
+            }
+            else if (Info is { } __value19)
+            {
+                info?.Invoke(__value19);
             }
         }
 
@@ -1450,6 +1602,8 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.LiveSessionUpdated>? sessionUpdated = null,
             global::System.Action<global::tryAGI.OpenAI.LiveInputAudioMuted>? sessionInputAudioMuted = null,
             global::System.Action<global::tryAGI.OpenAI.LiveInputAudioUnmuted>? sessionInputAudioUnmuted = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying>? sessionOutputAudioFixturePlaying = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed>? sessionOutputAudioFixturePlayed = null,
             global::System.Action<global::tryAGI.OpenAI.LiveInstructionsAppended>? sessionInstructionsAppended = null,
             global::System.Action<global::tryAGI.OpenAI.LiveThinkingAppended>? sessionThinkingAppended = null,
             global::System.Action<global::tryAGI.OpenAI.LiveCommentaryAppended>? sessionCommentaryAppended = null,
@@ -1496,49 +1650,57 @@ namespace tryAGI.OpenAI
             {
                 sessionInputAudioUnmuted?.Invoke(__value6);
             }
-            else if (SessionInstructionsAppended is { } __value7)
+            else if (SessionOutputAudioFixturePlaying is { } __value7)
             {
-                sessionInstructionsAppended?.Invoke(__value7);
+                sessionOutputAudioFixturePlaying?.Invoke(__value7);
             }
-            else if (SessionThinkingAppended is { } __value8)
+            else if (SessionOutputAudioFixturePlayed is { } __value8)
             {
-                sessionThinkingAppended?.Invoke(__value8);
+                sessionOutputAudioFixturePlayed?.Invoke(__value8);
             }
-            else if (SessionCommentaryAppended is { } __value9)
+            else if (SessionInstructionsAppended is { } __value9)
             {
-                sessionCommentaryAppended?.Invoke(__value9);
+                sessionInstructionsAppended?.Invoke(__value9);
             }
-            else if (SessionInputTranscriptDelta is { } __value10)
+            else if (SessionThinkingAppended is { } __value10)
             {
-                sessionInputTranscriptDelta?.Invoke(__value10);
+                sessionThinkingAppended?.Invoke(__value10);
             }
-            else if (SessionOutputTranscriptDelta is { } __value11)
+            else if (SessionCommentaryAppended is { } __value11)
             {
-                sessionOutputTranscriptDelta?.Invoke(__value11);
+                sessionCommentaryAppended?.Invoke(__value11);
             }
-            else if (SessionDelegationCreated is { } __value12)
+            else if (SessionInputTranscriptDelta is { } __value12)
             {
-                sessionDelegationCreated?.Invoke(__value12);
+                sessionInputTranscriptDelta?.Invoke(__value12);
             }
-            else if (ResponseEvent is { } __value13)
+            else if (SessionOutputTranscriptDelta is { } __value13)
             {
-                responseEvent?.Invoke(__value13);
+                sessionOutputTranscriptDelta?.Invoke(__value13);
             }
-            else if (SessionUsageUpdated is { } __value14)
+            else if (SessionDelegationCreated is { } __value14)
             {
-                sessionUsageUpdated?.Invoke(__value14);
+                sessionDelegationCreated?.Invoke(__value14);
             }
-            else if (SessionClosed is { } __value15)
+            else if (ResponseEvent is { } __value15)
             {
-                sessionClosed?.Invoke(__value15);
+                responseEvent?.Invoke(__value15);
             }
-            else if (Error is { } __value16)
+            else if (SessionUsageUpdated is { } __value16)
             {
-                error?.Invoke(__value16);
+                sessionUsageUpdated?.Invoke(__value16);
             }
-            else if (Info is { } __value17)
+            else if (SessionClosed is { } __value17)
             {
-                info?.Invoke(__value17);
+                sessionClosed?.Invoke(__value17);
+            }
+            else if (Error is { } __value18)
+            {
+                error?.Invoke(__value18);
+            }
+            else if (Info is { } __value19)
+            {
+                info?.Invoke(__value19);
             }
         }
 
@@ -1563,6 +1725,10 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.LiveInputAudioMuted),
                 SessionInputAudioUnmuted,
                 typeof(global::tryAGI.OpenAI.LiveInputAudioUnmuted),
+                SessionOutputAudioFixturePlaying,
+                typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying),
+                SessionOutputAudioFixturePlayed,
+                typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed),
                 SessionInstructionsAppended,
                 typeof(global::tryAGI.OpenAI.LiveInstructionsAppended),
                 SessionThinkingAppended,
@@ -1608,6 +1774,8 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveSessionUpdated?>.Default.Equals(SessionUpdated, other.SessionUpdated) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInputAudioMuted?>.Default.Equals(SessionInputAudioMuted, other.SessionInputAudioMuted) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInputAudioUnmuted?>.Default.Equals(SessionInputAudioUnmuted, other.SessionInputAudioUnmuted) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying?>.Default.Equals(SessionOutputAudioFixturePlaying, other.SessionOutputAudioFixturePlaying) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed?>.Default.Equals(SessionOutputAudioFixturePlayed, other.SessionOutputAudioFixturePlayed) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInstructionsAppended?>.Default.Equals(SessionInstructionsAppended, other.SessionInstructionsAppended) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveThinkingAppended?>.Default.Equals(SessionThinkingAppended, other.SessionThinkingAppended) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveCommentaryAppended?>.Default.Equals(SessionCommentaryAppended, other.SessionCommentaryAppended) &&

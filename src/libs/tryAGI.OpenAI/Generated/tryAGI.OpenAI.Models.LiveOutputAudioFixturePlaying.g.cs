@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The existing playback path has accepted the validated audio fixture. This acknowledgment does not identify when the listener receives the first sample. The optional client_event_id echoes the play command.<br/>
-    /// Example: {"type":"session.output_audio.fixture.playing","event_id":"evt_play_started_001","client_event_id":"evt_play_001"}
+    /// Example: {"type":"session.output_audio.fixture.playing","event_id":"evt_playing_001","client_event_id":"evt_play_001"}
     /// </summary>
     public sealed partial class LiveOutputAudioFixturePlaying
     {

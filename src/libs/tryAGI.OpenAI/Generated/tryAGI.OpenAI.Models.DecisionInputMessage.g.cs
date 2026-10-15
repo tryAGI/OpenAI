@@ -4,17 +4,17 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A user message containing text or images.
+    /// A user message containing input text or images, a developer or system message containing input text, or an assistant message containing output text or refusals. System messages are rendered as developer messages.
     /// </summary>
     public sealed partial class DecisionInputMessage
     {
         /// <summary>
-        /// Default Value: user
+        ///
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.DecisionInputMessageRole.User</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DecisionInputMessageRoleJsonConverter))]
-        public global::tryAGI.OpenAI.DecisionInputMessageRole Role { get; set; } = global::tryAGI.OpenAI.DecisionInputMessageRole.User;
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.DecisionInputMessageRole Role { get; set; }
 
         /// <summary>
         /// Text evidence or an ordered list of text and image parts.
@@ -23,6 +23,12 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DecisionInputContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.DecisionInputContent Content { get; set; }
+
+        /// <summary>
+        /// The phase of an assistant message.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("phase")]
+        public global::tryAGI.OpenAI.MessagePhaseParam? Phase { get; set; }
 
         /// <summary>
         /// Default Value: message
@@ -40,25 +46,28 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="DecisionInputMessage" /> class.
         /// </summary>
+        /// <param name="role"></param>
         /// <param name="content">
         /// Text evidence or an ordered list of text and image parts.
         /// </param>
+        /// <param name="phase">
+        /// The phase of an assistant message.
+        /// </param>
         /// <param name="type">
         /// Default Value: message
-        /// </param>
-        /// <param name="role">
-        /// Default Value: user
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DecisionInputMessage(
+            global::tryAGI.OpenAI.DecisionInputMessageRole role,
             global::tryAGI.OpenAI.DecisionInputContent content,
-            global::tryAGI.OpenAI.DecisionInputMessageType? type,
-            global::tryAGI.OpenAI.DecisionInputMessageRole role = global::tryAGI.OpenAI.DecisionInputMessageRole.User)
+            global::tryAGI.OpenAI.MessagePhaseParam? phase,
+            global::tryAGI.OpenAI.DecisionInputMessageType? type)
         {
             this.Role = role;
             this.Content = content;
+            this.Phase = phase;
             this.Type = type;
         }
 

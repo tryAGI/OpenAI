@@ -70,6 +70,20 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveInputAudioUnmuted)}");
                 sessionInputAudioUnmuted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying? sessionOutputAudioFixturePlaying = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandServerEventDiscriminatorType.SessionOutputAudioFixturePlaying)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying)}");
+                sessionOutputAudioFixturePlaying = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed? sessionOutputAudioFixturePlayed = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandServerEventDiscriminatorType.SessionOutputAudioFixturePlayed)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed)}");
+                sessionOutputAudioFixturePlayed = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.LiveInstructionsAppended? sessionInstructionsAppended = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandServerEventDiscriminatorType.SessionInstructionsAppended)
             {
@@ -164,6 +178,10 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 sessionInputAudioUnmuted,
 
+                sessionOutputAudioFixturePlaying,
+
+                sessionOutputAudioFixturePlayed,
+
                 sessionInstructionsAppended,
 
                 sessionThinkingAppended,
@@ -240,6 +258,18 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveInputAudioUnmuted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveInputAudioUnmuted?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveInputAudioUnmuted).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionInputAudioUnmuted(), typeInfo);
+            }
+            else if (value.IsSessionOutputAudioFixturePlaying)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlaying).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionOutputAudioFixturePlaying(), typeInfo);
+            }
+            else if (value.IsSessionOutputAudioFixturePlayed)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayed).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionOutputAudioFixturePlayed(), typeInfo);
             }
             else if (value.IsSessionInstructionsAppended)
             {

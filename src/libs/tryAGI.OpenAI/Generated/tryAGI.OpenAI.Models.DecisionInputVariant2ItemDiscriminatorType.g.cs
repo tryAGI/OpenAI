@@ -11,6 +11,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        CustomToolCall,
+        /// <summary>
+        ///
+        /// </summary>
+        CustomToolCallOutput,
+        /// <summary>
+        ///
+        /// </summary>
+        FunctionCall,
+        /// <summary>
+        ///
+        /// </summary>
+        FunctionCallOutput,
+        /// <summary>
+        ///
+        /// </summary>
         Message,
     }
 
@@ -26,6 +42,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                DecisionInputVariant2ItemDiscriminatorType.CustomToolCall => "custom_tool_call",
+                DecisionInputVariant2ItemDiscriminatorType.CustomToolCallOutput => "custom_tool_call_output",
+                DecisionInputVariant2ItemDiscriminatorType.FunctionCall => "function_call",
+                DecisionInputVariant2ItemDiscriminatorType.FunctionCallOutput => "function_call_output",
                 DecisionInputVariant2ItemDiscriminatorType.Message => "message",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -37,6 +57,10 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "custom_tool_call" => DecisionInputVariant2ItemDiscriminatorType.CustomToolCall,
+                "custom_tool_call_output" => DecisionInputVariant2ItemDiscriminatorType.CustomToolCallOutput,
+                "function_call" => DecisionInputVariant2ItemDiscriminatorType.FunctionCall,
+                "function_call_output" => DecisionInputVariant2ItemDiscriminatorType.FunctionCallOutput,
                 "message" => DecisionInputVariant2ItemDiscriminatorType.Message,
                 _ => null,
             };

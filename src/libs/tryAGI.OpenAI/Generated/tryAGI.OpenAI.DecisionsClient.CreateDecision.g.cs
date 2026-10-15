@@ -441,13 +441,19 @@ namespace tryAGI.OpenAI
         /// The model to use. Only `gpt-6-luna` is supported.
         /// </param>
         /// <param name="input">
-        /// The text or images to evaluate for every question. Provide a text string or user messages containing text and images. Images can be base64 data URLs or publicly accessible HTTP(S) URLs; at most 128 images are allowed across all messages in one request. Files, audio, tools, and item references are not supported.
+        /// The input to evaluate for every question. Provide a text string or an ordered array of messages, function calls and outputs, or custom tool calls and outputs. Each tool output must identify a matching call by call ID. User messages and tool outputs can contain text and images; developer and system messages can contain only input text, and assistant messages can contain output text or refusals. Images can be base64 data URLs or publicly accessible HTTP(S) URLs; at most 128 images are allowed per request. Files, audio, and item references are not supported.
         /// </param>
         /// <param name="questions">
         /// Ask 1–200 questions about the input. Each question can be a predicate, choice, or score. Answers come back in the same order.
         /// </param>
         /// <param name="safetyIdentifier">
         /// Opaque caller-provided end-user identifier, scoped by the verified org. Match Responses' limit; this is never the authenticated user identity.
+        /// </param>
+        /// <param name="promptCacheKey">
+        /// Partition prompt cache reuse by caller-provided key.
+        /// </param>
+        /// <param name="promptCacheOptions">
+        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`, which is currently the only supported value. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -457,6 +463,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.DecisionInput input,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.QuestionParam> questions,
             string? safetyIdentifier = default,
+            string? promptCacheKey = default,
+            global::tryAGI.OpenAI.DecisionRequestPromptCacheOptions? promptCacheOptions = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -466,6 +474,8 @@ namespace tryAGI.OpenAI
                 Input = input,
                 Questions = questions,
                 SafetyIdentifier = safetyIdentifier,
+                PromptCacheKey = promptCacheKey,
+                PromptCacheOptions = promptCacheOptions,
             };
 
             return await CreateDecisionAsync(

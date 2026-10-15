@@ -51,6 +51,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        SessionOutputAudioFixturePlayed,
+        /// <summary>
+        ///
+        /// </summary>
+        SessionOutputAudioFixturePlaying,
+        /// <summary>
+        ///
+        /// </summary>
         SessionOutputTranscriptDelta,
         /// <summary>
         ///
@@ -104,6 +112,8 @@ namespace tryAGI.OpenAI
                 LiveSidebandServerEventDiscriminatorType.SessionInputAudioUnmuted => "session.input_audio.unmuted",
                 LiveSidebandServerEventDiscriminatorType.SessionInputTranscriptDelta => "session.input_transcript.delta",
                 LiveSidebandServerEventDiscriminatorType.SessionInstructionsAppended => "session.instructions.appended",
+                LiveSidebandServerEventDiscriminatorType.SessionOutputAudioFixturePlayed => "session.output_audio.fixture.played",
+                LiveSidebandServerEventDiscriminatorType.SessionOutputAudioFixturePlaying => "session.output_audio.fixture.playing",
                 LiveSidebandServerEventDiscriminatorType.SessionOutputTranscriptDelta => "session.output_transcript.delta",
                 LiveSidebandServerEventDiscriminatorType.SessionStarted => "session.started",
                 LiveSidebandServerEventDiscriminatorType.SessionThinkingAppended => "session.thinking.appended",
@@ -132,6 +142,8 @@ namespace tryAGI.OpenAI
                 "session.input_audio.unmuted" => LiveSidebandServerEventDiscriminatorType.SessionInputAudioUnmuted,
                 "session.input_transcript.delta" => LiveSidebandServerEventDiscriminatorType.SessionInputTranscriptDelta,
                 "session.instructions.appended" => LiveSidebandServerEventDiscriminatorType.SessionInstructionsAppended,
+                "session.output_audio.fixture.played" => LiveSidebandServerEventDiscriminatorType.SessionOutputAudioFixturePlayed,
+                "session.output_audio.fixture.playing" => LiveSidebandServerEventDiscriminatorType.SessionOutputAudioFixturePlaying,
                 "session.output_transcript.delta" => LiveSidebandServerEventDiscriminatorType.SessionOutputTranscriptDelta,
                 "session.started" => LiveSidebandServerEventDiscriminatorType.SessionStarted,
                 "session.thinking.appended" => LiveSidebandServerEventDiscriminatorType.SessionThinkingAppended,

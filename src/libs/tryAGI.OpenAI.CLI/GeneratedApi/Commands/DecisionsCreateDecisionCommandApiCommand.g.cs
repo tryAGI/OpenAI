@@ -17,7 +17,7 @@ internal static partial class DecisionsCreateDecisionCommandApiCommand
     private static Option<global::tryAGI.OpenAI.DecisionInput> InputOption { get; } = new(
         name: @"--input")
     {
-        Description = @"The text or images to evaluate for every question. Provide a text string or user messages containing text and images. Images can be base64 data URLs or publicly accessible HTTP(S) URLs; at most 128 images are allowed across all messages in one request. Files, audio, tools, and item references are not supported.",
+        Description = @"The input to evaluate for every question. Provide a text string or an ordered array of messages, function calls and outputs, or custom tool calls and outputs. Each tool output must identify a matching call by call ID. User messages and tool outputs can contain text and images; developer and system messages can contain only input text, and assistant messages can contain output text or refusals. Images can be base64 data URLs or publicly accessible HTTP(S) URLs; at most 128 images are allowed per request. Files, audio, and item references are not supported.",
         Required = true,
     };
 
@@ -32,6 +32,18 @@ internal static partial class DecisionsCreateDecisionCommandApiCommand
         name: @"--safety-identifier")
     {
         Description = @"Opaque caller-provided end-user identifier, scoped by the verified org. Match Responses' limit; this is never the authenticated user identity.",
+    };
+
+    private static Option<string?> PromptCacheKey { get; } = new(
+        name: @"--prompt-cache-key")
+    {
+        Description = @"Partition prompt cache reuse by caller-provided key.",
+    };
+
+    private static Option<global::tryAGI.OpenAI.DecisionRequestPromptCacheOptions?> PromptCacheOptions { get; } = new(
+        name: @"--prompt-cache-options")
+    {
+        Description = @"Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`, which is currently the only supported value. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.",
     };
       private static Option<string?> RequestInput { get; } = new(@"--request-input")
       {
@@ -80,6 +92,8 @@ Use this endpoint to quickly answer classification or scoring questions about so
                         command.Options.Add(InputOption);
                         command.Options.Add(Questions);
                         command.Options.Add(SafetyIdentifier);
+                        command.Options.Add(PromptCacheKey);
+                        command.Options.Add(PromptCacheOptions);
           command.Options.Add(RequestInput);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -109,6 +123,8 @@ Use this endpoint to quickly answer classification or scoring questions about so
                         var input = parseResult.GetRequiredValue(InputOption);
                         var questions = parseResult.GetRequiredValue(Questions);
                         var safetyIdentifier = CliRuntime.WasSpecified(parseResult, SafetyIdentifier) ? parseResult.GetValue(SafetyIdentifier) : (__requestBase is { } __SafetyIdentifierBaseValue ? __SafetyIdentifierBaseValue.SafetyIdentifier : default);
+                        var promptCacheKey = CliRuntime.WasSpecified(parseResult, PromptCacheKey) ? parseResult.GetValue(PromptCacheKey) : (__requestBase is { } __PromptCacheKeyBaseValue ? __PromptCacheKeyBaseValue.PromptCacheKey : default);
+                        var promptCacheOptions = CliRuntime.WasSpecified(parseResult, PromptCacheOptions) ? parseResult.GetValue(PromptCacheOptions) : (__requestBase is { } __PromptCacheOptionsBaseValue ? __PromptCacheOptionsBaseValue.PromptCacheOptions : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -117,6 +133,8 @@ Use this endpoint to quickly answer classification or scoring questions about so
                                     input: input,
                                     questions: questions,
                                     safetyIdentifier: safetyIdentifier,
+                                    promptCacheKey: promptCacheKey,
+                                    promptCacheOptions: promptCacheOptions,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

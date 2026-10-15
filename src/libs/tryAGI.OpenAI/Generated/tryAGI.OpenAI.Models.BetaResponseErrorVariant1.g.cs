@@ -9,6 +9,18 @@ namespace tryAGI.OpenAI
     public sealed partial class BetaResponseErrorVariant1
     {
         /// <summary>
+        /// The original error type, or null if it was not recorded.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
+        /// The request parameter associated with the error, or null if none was recorded.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("param")]
+        public string? Param { get; set; }
+
+        /// <summary>
         /// The error code for the response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
@@ -44,6 +56,12 @@ namespace tryAGI.OpenAI
         /// <param name="message">
         /// A human-readable description of the error.
         /// </param>
+        /// <param name="type">
+        /// The original error type, or null if it was not recorded.
+        /// </param>
+        /// <param name="param">
+        /// The request parameter associated with the error, or null if none was recorded.
+        /// </param>
         /// <param name="misalignment"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -51,8 +69,12 @@ namespace tryAGI.OpenAI
         public BetaResponseErrorVariant1(
             global::tryAGI.OpenAI.BetaResponseErrorCode code,
             string message,
+            string? type,
+            string? param,
             global::tryAGI.OpenAI.BetaMisalignmentErrorDetailsResource? misalignment)
         {
+            this.Type = type;
+            this.Param = param;
             this.Code = code;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Misalignment = misalignment;
