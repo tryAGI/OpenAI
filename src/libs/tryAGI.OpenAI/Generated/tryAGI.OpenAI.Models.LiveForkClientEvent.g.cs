@@ -205,6 +205,44 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionInputAudioUnmute' but the value was {ToString()}.");
 
         /// <summary>
+        /// Play one complete audio fixture through the session output. Send this event over the primary WebSocket or a server sideband. Audio must be raw mono PCM16 little-endian at 24 kHz, regardless of the session audio format, and at most 30 seconds. The entire payload is validated before model speech is interrupted and input is muted. Only one fixture can be active. fixture.playing acknowledges acceptance and fixture.played reports server mixer drain. These notifications are not exact transport-media boundaries. Input arriving during playback is dropped and not replayed.<br/>
+        /// Example: {"type":"session.output_audio.fixture.play","event_id":"evt_play_001","audio":"AAAAAA=="}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam? SessionOutputAudioFixturePlay { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam? SessionOutputAudioFixturePlay { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SessionOutputAudioFixturePlay))]
+#endif
+        public bool IsSessionOutputAudioFixturePlay => SessionOutputAudioFixturePlay != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickSessionOutputAudioFixturePlay(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam? value)
+        {
+            value = SessionOutputAudioFixturePlay;
+            return IsSessionOutputAudioFixturePlay;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam PickSessionOutputAudioFixturePlay() => SessionOutputAudioFixturePlay is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutputAudioFixturePlay' but the value was {ToString()}.");
+
+        /// <summary>
         /// Append developer instructions to the Live conversation while it is running, optionally associating them with an existing client delegation. Rejected while an audio fixture is active. These instructions remain in conversation history through compaction and are included in future backend delegations. For external audio, describe content already delivered so the assistant does not repeat it.<br/>
         /// Example: {"type":"session.instructions.append","event_id":"evt_instructions_001","delegation_id":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","content":"The caller prefers outdoor seating."}
         /// </summary>
@@ -549,6 +587,29 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator LiveForkClientEvent(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam value) => new LiveForkClientEvent((global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam?(LiveForkClientEvent @this) => @this.SessionOutputAudioFixturePlay;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public LiveForkClientEvent(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam? value)
+        {
+            SessionOutputAudioFixturePlay = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static LiveForkClientEvent FromSessionOutputAudioFixturePlay(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam? value) => new LiveForkClientEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator LiveForkClientEvent(global::tryAGI.OpenAI.LiveInstructionsAppendParam value) => new LiveForkClientEvent((global::tryAGI.OpenAI.LiveInstructionsAppendParam?)value);
 
         /// <summary>
@@ -694,6 +755,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.LiveInputAudioAppendEvent? sessionInputAudioAppend,
             global::tryAGI.OpenAI.LiveInputAudioMuteParam? sessionInputAudioMute,
             global::tryAGI.OpenAI.LiveInputAudioUnmuteParam? sessionInputAudioUnmute,
+            global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam? sessionOutputAudioFixturePlay,
             global::tryAGI.OpenAI.LiveInstructionsAppendParam? sessionInstructionsAppend,
             global::tryAGI.OpenAI.LiveThinkingAppendParam? sessionThinkingAppend,
             global::tryAGI.OpenAI.LiveCommentaryAppendParam? sessionCommentaryAppend,
@@ -709,6 +771,7 @@ namespace tryAGI.OpenAI
             SessionInputAudioAppend = sessionInputAudioAppend;
             SessionInputAudioMute = sessionInputAudioMute;
             SessionInputAudioUnmute = sessionInputAudioUnmute;
+            SessionOutputAudioFixturePlay = sessionOutputAudioFixturePlay;
             SessionInstructionsAppend = sessionInstructionsAppend;
             SessionThinkingAppend = sessionThinkingAppend;
             SessionCommentaryAppend = sessionCommentaryAppend;
@@ -727,6 +790,7 @@ namespace tryAGI.OpenAI
             SessionCommentaryAppend as object ??
             SessionThinkingAppend as object ??
             SessionInstructionsAppend as object ??
+            SessionOutputAudioFixturePlay as object ??
             SessionInputAudioUnmute as object ??
             SessionInputAudioMute as object ??
             SessionInputAudioAppend as object ??
@@ -743,6 +807,7 @@ namespace tryAGI.OpenAI
             SessionInputAudioAppend?.ToString() ??
             SessionInputAudioMute?.ToString() ??
             SessionInputAudioUnmute?.ToString() ??
+            SessionOutputAudioFixturePlay?.ToString() ??
             SessionInstructionsAppend?.ToString() ??
             SessionThinkingAppend?.ToString() ??
             SessionCommentaryAppend?.ToString() ??
@@ -756,7 +821,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && IsSessionInputAudioUnmute && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionInstructionsAppend && IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && IsSessionClose;
+            return IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && IsResponseCreate && !IsSessionClose || !IsSessionStart && !IsSessionUpdate && !IsSessionInputAudioAppend && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && IsSessionClose;
         }
 
         /// <summary>
@@ -768,6 +833,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.LiveInputAudioAppendEvent, TResult>? sessionInputAudioAppend = null,
             global::System.Func<global::tryAGI.OpenAI.LiveInputAudioMuteParam, TResult>? sessionInputAudioMute = null,
             global::System.Func<global::tryAGI.OpenAI.LiveInputAudioUnmuteParam, TResult>? sessionInputAudioUnmute = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam, TResult>? sessionOutputAudioFixturePlay = null,
             global::System.Func<global::tryAGI.OpenAI.LiveInstructionsAppendParam, TResult>? sessionInstructionsAppend = null,
             global::System.Func<global::tryAGI.OpenAI.LiveThinkingAppendParam, TResult>? sessionThinkingAppend = null,
             global::System.Func<global::tryAGI.OpenAI.LiveCommentaryAppendParam, TResult>? sessionCommentaryAppend = null,
@@ -801,29 +867,33 @@ namespace tryAGI.OpenAI
             {
                 return sessionInputAudioUnmute(__value4);
             }
-            else if (SessionInstructionsAppend is { } __value5 && sessionInstructionsAppend != null)
+            else if (SessionOutputAudioFixturePlay is { } __value5 && sessionOutputAudioFixturePlay != null)
             {
-                return sessionInstructionsAppend(__value5);
+                return sessionOutputAudioFixturePlay(__value5);
             }
-            else if (SessionThinkingAppend is { } __value6 && sessionThinkingAppend != null)
+            else if (SessionInstructionsAppend is { } __value6 && sessionInstructionsAppend != null)
             {
-                return sessionThinkingAppend(__value6);
+                return sessionInstructionsAppend(__value6);
             }
-            else if (SessionCommentaryAppend is { } __value7 && sessionCommentaryAppend != null)
+            else if (SessionThinkingAppend is { } __value7 && sessionThinkingAppend != null)
             {
-                return sessionCommentaryAppend(__value7);
+                return sessionThinkingAppend(__value7);
             }
-            else if (ResponseItemCreate is { } __value8 && responseItemCreate != null)
+            else if (SessionCommentaryAppend is { } __value8 && sessionCommentaryAppend != null)
             {
-                return responseItemCreate(__value8);
+                return sessionCommentaryAppend(__value8);
             }
-            else if (ResponseCreate is { } __value9 && responseCreate != null)
+            else if (ResponseItemCreate is { } __value9 && responseItemCreate != null)
             {
-                return responseCreate(__value9);
+                return responseItemCreate(__value9);
             }
-            else if (SessionClose is { } __value10 && sessionClose != null)
+            else if (ResponseCreate is { } __value10 && responseCreate != null)
             {
-                return sessionClose(__value10);
+                return responseCreate(__value10);
+            }
+            else if (SessionClose is { } __value11 && sessionClose != null)
+            {
+                return sessionClose(__value11);
             }
 
             return default(TResult);
@@ -843,6 +913,8 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.LiveInputAudioUnmuteParam>? sessionInputAudioUnmute = null,
 
+            global::System.Action<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam>? sessionOutputAudioFixturePlay = null,
+
             global::System.Action<global::tryAGI.OpenAI.LiveInstructionsAppendParam>? sessionInstructionsAppend = null,
 
             global::System.Action<global::tryAGI.OpenAI.LiveThinkingAppendParam>? sessionThinkingAppend = null,
@@ -881,29 +953,33 @@ namespace tryAGI.OpenAI
             {
                 sessionInputAudioUnmute?.Invoke(__value4);
             }
-            else if (SessionInstructionsAppend is { } __value5)
+            else if (SessionOutputAudioFixturePlay is { } __value5)
             {
-                sessionInstructionsAppend?.Invoke(__value5);
+                sessionOutputAudioFixturePlay?.Invoke(__value5);
             }
-            else if (SessionThinkingAppend is { } __value6)
+            else if (SessionInstructionsAppend is { } __value6)
             {
-                sessionThinkingAppend?.Invoke(__value6);
+                sessionInstructionsAppend?.Invoke(__value6);
             }
-            else if (SessionCommentaryAppend is { } __value7)
+            else if (SessionThinkingAppend is { } __value7)
             {
-                sessionCommentaryAppend?.Invoke(__value7);
+                sessionThinkingAppend?.Invoke(__value7);
             }
-            else if (ResponseItemCreate is { } __value8)
+            else if (SessionCommentaryAppend is { } __value8)
             {
-                responseItemCreate?.Invoke(__value8);
+                sessionCommentaryAppend?.Invoke(__value8);
             }
-            else if (ResponseCreate is { } __value9)
+            else if (ResponseItemCreate is { } __value9)
             {
-                responseCreate?.Invoke(__value9);
+                responseItemCreate?.Invoke(__value9);
             }
-            else if (SessionClose is { } __value10)
+            else if (ResponseCreate is { } __value10)
             {
-                sessionClose?.Invoke(__value10);
+                responseCreate?.Invoke(__value10);
+            }
+            else if (SessionClose is { } __value11)
+            {
+                sessionClose?.Invoke(__value11);
             }
         }
 
@@ -916,6 +992,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.LiveInputAudioAppendEvent>? sessionInputAudioAppend = null,
             global::System.Action<global::tryAGI.OpenAI.LiveInputAudioMuteParam>? sessionInputAudioMute = null,
             global::System.Action<global::tryAGI.OpenAI.LiveInputAudioUnmuteParam>? sessionInputAudioUnmute = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam>? sessionOutputAudioFixturePlay = null,
             global::System.Action<global::tryAGI.OpenAI.LiveInstructionsAppendParam>? sessionInstructionsAppend = null,
             global::System.Action<global::tryAGI.OpenAI.LiveThinkingAppendParam>? sessionThinkingAppend = null,
             global::System.Action<global::tryAGI.OpenAI.LiveCommentaryAppendParam>? sessionCommentaryAppend = null,
@@ -949,29 +1026,33 @@ namespace tryAGI.OpenAI
             {
                 sessionInputAudioUnmute?.Invoke(__value4);
             }
-            else if (SessionInstructionsAppend is { } __value5)
+            else if (SessionOutputAudioFixturePlay is { } __value5)
             {
-                sessionInstructionsAppend?.Invoke(__value5);
+                sessionOutputAudioFixturePlay?.Invoke(__value5);
             }
-            else if (SessionThinkingAppend is { } __value6)
+            else if (SessionInstructionsAppend is { } __value6)
             {
-                sessionThinkingAppend?.Invoke(__value6);
+                sessionInstructionsAppend?.Invoke(__value6);
             }
-            else if (SessionCommentaryAppend is { } __value7)
+            else if (SessionThinkingAppend is { } __value7)
             {
-                sessionCommentaryAppend?.Invoke(__value7);
+                sessionThinkingAppend?.Invoke(__value7);
             }
-            else if (ResponseItemCreate is { } __value8)
+            else if (SessionCommentaryAppend is { } __value8)
             {
-                responseItemCreate?.Invoke(__value8);
+                sessionCommentaryAppend?.Invoke(__value8);
             }
-            else if (ResponseCreate is { } __value9)
+            else if (ResponseItemCreate is { } __value9)
             {
-                responseCreate?.Invoke(__value9);
+                responseItemCreate?.Invoke(__value9);
             }
-            else if (SessionClose is { } __value10)
+            else if (ResponseCreate is { } __value10)
             {
-                sessionClose?.Invoke(__value10);
+                responseCreate?.Invoke(__value10);
+            }
+            else if (SessionClose is { } __value11)
+            {
+                sessionClose?.Invoke(__value11);
             }
         }
 
@@ -992,6 +1073,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.LiveInputAudioMuteParam),
                 SessionInputAudioUnmute,
                 typeof(global::tryAGI.OpenAI.LiveInputAudioUnmuteParam),
+                SessionOutputAudioFixturePlay,
+                typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam),
                 SessionInstructionsAppend,
                 typeof(global::tryAGI.OpenAI.LiveInstructionsAppendParam),
                 SessionThinkingAppend,
@@ -1025,6 +1108,7 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInputAudioAppendEvent?>.Default.Equals(SessionInputAudioAppend, other.SessionInputAudioAppend) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInputAudioMuteParam?>.Default.Equals(SessionInputAudioMute, other.SessionInputAudioMute) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInputAudioUnmuteParam?>.Default.Equals(SessionInputAudioUnmute, other.SessionInputAudioUnmute) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam?>.Default.Equals(SessionOutputAudioFixturePlay, other.SessionOutputAudioFixturePlay) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInstructionsAppendParam?>.Default.Equals(SessionInstructionsAppend, other.SessionInstructionsAppend) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveThinkingAppendParam?>.Default.Equals(SessionThinkingAppend, other.SessionThinkingAppend) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveCommentaryAppendParam?>.Default.Equals(SessionCommentaryAppend, other.SessionCommentaryAppend) &&

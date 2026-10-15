@@ -43,6 +43,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        SessionOutputAudioFixturePlay,
+        /// <summary>
+        ///
+        /// </summary>
         SessionStart,
         /// <summary>
         ///
@@ -74,6 +78,7 @@ namespace tryAGI.OpenAI
                 LiveForkClientEventDiscriminatorType.SessionInputAudioMute => "session.input_audio.mute",
                 LiveForkClientEventDiscriminatorType.SessionInputAudioUnmute => "session.input_audio.unmute",
                 LiveForkClientEventDiscriminatorType.SessionInstructionsAppend => "session.instructions.append",
+                LiveForkClientEventDiscriminatorType.SessionOutputAudioFixturePlay => "session.output_audio.fixture.play",
                 LiveForkClientEventDiscriminatorType.SessionStart => "session.start",
                 LiveForkClientEventDiscriminatorType.SessionThinkingAppend => "session.thinking.append",
                 LiveForkClientEventDiscriminatorType.SessionUpdate => "session.update",
@@ -95,6 +100,7 @@ namespace tryAGI.OpenAI
                 "session.input_audio.mute" => LiveForkClientEventDiscriminatorType.SessionInputAudioMute,
                 "session.input_audio.unmute" => LiveForkClientEventDiscriminatorType.SessionInputAudioUnmute,
                 "session.instructions.append" => LiveForkClientEventDiscriminatorType.SessionInstructionsAppend,
+                "session.output_audio.fixture.play" => LiveForkClientEventDiscriminatorType.SessionOutputAudioFixturePlay,
                 "session.start" => LiveForkClientEventDiscriminatorType.SessionStart,
                 "session.thinking.append" => LiveForkClientEventDiscriminatorType.SessionThinkingAppend,
                 "session.update" => LiveForkClientEventDiscriminatorType.SessionUpdate,

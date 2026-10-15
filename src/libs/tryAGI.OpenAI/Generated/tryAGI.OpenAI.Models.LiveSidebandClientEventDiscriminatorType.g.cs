@@ -39,6 +39,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        SessionOutputAudioFixturePlay,
+        /// <summary>
+        ///
+        /// </summary>
         SessionThinkingAppend,
         /// <summary>
         ///
@@ -65,6 +69,7 @@ namespace tryAGI.OpenAI
                 LiveSidebandClientEventDiscriminatorType.SessionInputAudioMute => "session.input_audio.mute",
                 LiveSidebandClientEventDiscriminatorType.SessionInputAudioUnmute => "session.input_audio.unmute",
                 LiveSidebandClientEventDiscriminatorType.SessionInstructionsAppend => "session.instructions.append",
+                LiveSidebandClientEventDiscriminatorType.SessionOutputAudioFixturePlay => "session.output_audio.fixture.play",
                 LiveSidebandClientEventDiscriminatorType.SessionThinkingAppend => "session.thinking.append",
                 LiveSidebandClientEventDiscriminatorType.SessionUpdate => "session.update",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -84,6 +89,7 @@ namespace tryAGI.OpenAI
                 "session.input_audio.mute" => LiveSidebandClientEventDiscriminatorType.SessionInputAudioMute,
                 "session.input_audio.unmute" => LiveSidebandClientEventDiscriminatorType.SessionInputAudioUnmute,
                 "session.instructions.append" => LiveSidebandClientEventDiscriminatorType.SessionInstructionsAppend,
+                "session.output_audio.fixture.play" => LiveSidebandClientEventDiscriminatorType.SessionOutputAudioFixturePlay,
                 "session.thinking.append" => LiveSidebandClientEventDiscriminatorType.SessionThinkingAppend,
                 "session.update" => LiveSidebandClientEventDiscriminatorType.SessionUpdate,
                 _ => null,

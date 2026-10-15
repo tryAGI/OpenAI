@@ -24,6 +24,12 @@ namespace tryAGI.OpenAI
         public required string Text { get; set; }
 
         /// <summary>
+        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
+        public global::tryAGI.OpenAI.DecisionInputTextPromptCacheBreakpoint? PromptCacheBreakpoint { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -33,6 +39,9 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="DecisionInputText" /> class.
         /// </summary>
         /// <param name="text"></param>
+        /// <param name="promptCacheBreakpoint">
+        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// </param>
         /// <param name="type">
         /// Default Value: input_text
         /// </param>
@@ -41,10 +50,12 @@ namespace tryAGI.OpenAI
 #endif
         public DecisionInputText(
             string text,
+            global::tryAGI.OpenAI.DecisionInputTextPromptCacheBreakpoint? promptCacheBreakpoint,
             global::tryAGI.OpenAI.DecisionInputTextType type = global::tryAGI.OpenAI.DecisionInputTextType.InputText)
         {
             this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.PromptCacheBreakpoint = promptCacheBreakpoint;
         }
 
         /// <summary>

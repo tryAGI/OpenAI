@@ -35,12 +35,30 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.DecisionInputImage)}");
                 inputImage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.DecisionInputOutputText? outputText = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.DecisionInputContentPartDiscriminatorType.OutputText)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputOutputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputOutputText> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.DecisionInputOutputText)}");
+                outputText = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.DecisionInputRefusal? refusal = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.DecisionInputContentPartDiscriminatorType.Refusal)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputRefusal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputRefusal> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.DecisionInputRefusal)}");
+                refusal = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::tryAGI.OpenAI.DecisionInputContentPartsItem(
                 discriminator?.Type,
                 inputText,
 
-                inputImage
+                inputImage,
+
+                outputText,
+
+                refusal
                 );
 
             return __value;
@@ -66,6 +84,18 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputImage), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputImage?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DecisionInputImage).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputImage(), typeInfo);
+            }
+            else if (value.IsOutputText)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputOutputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputOutputText?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DecisionInputOutputText).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputText(), typeInfo);
+            }
+            else if (value.IsRefusal)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputRefusal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputRefusal?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DecisionInputRefusal).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRefusal(), typeInfo);
             }
         }
     }

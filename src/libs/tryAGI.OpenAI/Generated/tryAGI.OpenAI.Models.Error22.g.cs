@@ -16,6 +16,18 @@ namespace tryAGI.OpenAI
         public required string Code { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("param")]
+        public string? Param { get; set; }
+
+        /// <summary>
         /// A human-readable description of the error that was returned.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
@@ -49,6 +61,8 @@ namespace tryAGI.OpenAI
         /// <param name="message">
         /// A human-readable description of the error that was returned.
         /// </param>
+        /// <param name="type"></param>
+        /// <param name="param"></param>
         /// <param name="headers">
         /// The Retry-After and Retry-After-Ms headers returned with the original error, if any.
         /// </param>
@@ -59,10 +73,14 @@ namespace tryAGI.OpenAI
         public Error22(
             string code,
             string message,
+            string? type,
+            string? param,
             global::System.Collections.Generic.Dictionary<string, string>? headers,
             global::tryAGI.OpenAI.MisalignmentErrorDetailsResource? misalignment)
         {
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+            this.Type = type;
+            this.Param = param;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
             this.Headers = headers;
             this.Misalignment = misalignment;

@@ -56,6 +56,13 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveInputAudioUnmuteParam)}");
                 sessionInputAudioUnmute = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam? sessionOutputAudioFixturePlay = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveForkClientEventDiscriminatorType.SessionOutputAudioFixturePlay)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam)}");
+                sessionOutputAudioFixturePlay = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.LiveInstructionsAppendParam? sessionInstructionsAppend = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.LiveForkClientEventDiscriminatorType.SessionInstructionsAppend)
             {
@@ -111,6 +118,8 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 sessionInputAudioUnmute,
 
+                sessionOutputAudioFixturePlay,
+
                 sessionInstructionsAppend,
 
                 sessionThinkingAppend,
@@ -165,6 +174,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveInputAudioUnmuteParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveInputAudioUnmuteParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveInputAudioUnmuteParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionInputAudioUnmute(), typeInfo);
+            }
+            else if (value.IsSessionOutputAudioFixturePlay)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionOutputAudioFixturePlay(), typeInfo);
             }
             else if (value.IsSessionInstructionsAppend)
             {

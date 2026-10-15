@@ -54740,6 +54740,7 @@ components:
         - $ref: "#/components/schemas/LiveInputAudioAppendEvent"
         - $ref: "#/components/schemas/LiveInputAudioMuteParam"
         - $ref: "#/components/schemas/LiveInputAudioUnmuteParam"
+        - $ref: "#/components/schemas/LiveOutputAudioFixturePlayParam"
         - $ref: "#/components/schemas/LiveInstructionsAppendParam"
         - $ref: "#/components/schemas/LiveThinkingAppendParam"
         - $ref: "#/components/schemas/LiveCommentaryAppendParam"
@@ -54808,6 +54809,7 @@ components:
         - $ref: "#/components/schemas/LiveInputAudioAppendEvent"
         - $ref: "#/components/schemas/LiveInputAudioMuteParam"
         - $ref: "#/components/schemas/LiveInputAudioUnmuteParam"
+        - $ref: "#/components/schemas/LiveOutputAudioFixturePlayParam"
         - $ref: "#/components/schemas/LiveInstructionsAppendParam"
         - $ref: "#/components/schemas/LiveThinkingAppendParam"
         - $ref: "#/components/schemas/LiveCommentaryAppendParam"
@@ -55041,13 +55043,15 @@ components:
         - transport
     LiveSidebandClientEvent:
       description: Client events accepted by an attached Live sideband WebSocket. The
-        session is already started; send audio over the primary connection.
+        session has already started. Send input audio over the primary
+        connection.
       discriminator:
         propertyName: type
       oneOf:
         - $ref: "#/components/schemas/LiveSessionUpdateParam"
         - $ref: "#/components/schemas/LiveInputAudioMuteParam"
         - $ref: "#/components/schemas/LiveInputAudioUnmuteParam"
+        - $ref: "#/components/schemas/LiveOutputAudioFixturePlayParam"
         - $ref: "#/components/schemas/LiveInstructionsAppendParam"
         - $ref: "#/components/schemas/LiveThinkingAppendParam"
         - $ref: "#/components/schemas/LiveCommentaryAppendParam"
@@ -55087,6 +55091,8 @@ components:
         - $ref: "#/components/schemas/LiveSessionUpdated"
         - $ref: "#/components/schemas/LiveInputAudioMuted"
         - $ref: "#/components/schemas/LiveInputAudioUnmuted"
+        - $ref: "#/components/schemas/LiveOutputAudioFixturePlaying"
+        - $ref: "#/components/schemas/LiveOutputAudioFixturePlayed"
         - $ref: "#/components/schemas/LiveInstructionsAppended"
         - $ref: "#/components/schemas/LiveThinkingAppended"
         - $ref: "#/components/schemas/LiveCommentaryAppended"
@@ -56616,6 +56622,34 @@ components:
             - gpt-3.5-turbo-0125
             - gpt-3.5-turbo-16k-0613
           x-openai-enum-deprecations:
+            gpt-5.4-nano:
+              message: "Announced shutdown date: 2027-04-01. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
+            gpt-5.1:
+              message: "Announced shutdown date: 2027-04-01. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
+            gpt-4.1-2025-04-14:
+              message: "Announced shutdown date: 2027-01-14. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
+            gpt-4.1-mini-2025-04-14:
+              message: "Announced shutdown date: 2027-01-14. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
+            gpt-4o-2024-08-06:
+              message: "Announced shutdown date: 2027-01-14. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
+            gpt-4o-2024-11-20:
+              message: "Announced shutdown date: 2027-01-14. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
+            gpt-4o-mini-2024-07-18:
+              message: "Announced shutdown date: 2027-01-14. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
             gpt-5.3-chat-latest:
               message: "Announced shutdown date: 2026-08-10. See
                 https://developers.openai.com/api/docs/deprecations for details
@@ -70656,6 +70690,17 @@ components:
           description: >
             An error object returned when the model fails to generate a Response.
           properties:
+            type:
+              anyOf:
+                - type: string
+                - type: "null"
+              description: The original error type, or null if it was not recorded.
+            param:
+              anyOf:
+                - type: string
+                - type: "null"
+              description: The request parameter associated with the error, or null if none
+                was recorded.
             code:
               $ref: "#/components/schemas/ResponseErrorCode"
             message:
@@ -88257,6 +88302,17 @@ components:
         code:
           type: string
           description: A machine-readable error code that was returned.
+        type:
+          anyOf:
+            - type: string
+              description: The original error type, or null if it was not recorded.
+            - type: "null"
+        param:
+          anyOf:
+            - type: string
+              description: The request parameter associated with the error, or null if none
+                was recorded.
+            - type: "null"
         message:
           type: string
           description: A human-readable description of the error that was returned.
@@ -90301,6 +90357,25 @@ components:
           type: string
           minLength: 0
           maxLength: 10485760
+        prompt_cache_breakpoint:
+          type:
+            - object
+            - "null"
+          properties:
+            mode:
+              type: string
+              enum:
+                - explicit
+              default: explicit
+              x-stainless-const: true
+              description: The breakpoint mode. Always `explicit`.
+          required:
+            - mode
+          additionalProperties: false
+          title: Prompt cache breakpoint
+          description: Marks the exact end of a reusable prompt prefix. The breakpoint
+            inherits its TTL from the request's `prompt_cache_options.ttl`; the
+            boundary is not rounded to a token block.
       required:
         - type
         - text
@@ -90329,6 +90404,25 @@ components:
           description: The image detail level, using the selected model's image profile.
             Defaults to auto.
           default: auto
+        prompt_cache_breakpoint:
+          type:
+            - object
+            - "null"
+          properties:
+            mode:
+              type: string
+              enum:
+                - explicit
+              default: explicit
+              x-stainless-const: true
+              description: The breakpoint mode. Always `explicit`.
+          required:
+            - mode
+          additionalProperties: false
+          title: Prompt cache breakpoint
+          description: Marks the exact end of a reusable prompt prefix. The breakpoint
+            inherits its TTL from the request's `prompt_cache_options.ttl`; the
+            boundary is not rounded to a token block.
         type:
           type: string
           enum:
@@ -90341,7 +90435,158 @@ components:
       additionalProperties: false
       description: An image provided as a base64 data URL or a publicly accessible
         HTTP(S) URL. File IDs are not supported.
+    DecisionInputOutputText:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - output_text
+          default: output_text
+          x-stainless-const: true
+        text:
+          type: string
+          minLength: 0
+          maxLength: 10485760
+      required:
+        - type
+        - text
+      additionalProperties: false
+    DecisionInputRefusal:
+      type: object
+      properties:
+        type:
+          type: string
+          enum:
+            - refusal
+          default: refusal
+          x-stainless-const: true
+        refusal:
+          type: string
+          minLength: 0
+          maxLength: 10485760
+      required:
+        - type
+        - refusal
+      additionalProperties: false
     DecisionInputContentParts:
+      type: array
+      items:
+        oneOf:
+          - $ref: "#/components/schemas/DecisionInputText"
+          - $ref: "#/components/schemas/DecisionInputImage"
+          - $ref: "#/components/schemas/DecisionInputOutputText"
+          - $ref: "#/components/schemas/DecisionInputRefusal"
+        discriminator:
+          propertyName: type
+          mapping:
+            input_text: "#/components/schemas/DecisionInputText"
+            input_image: "#/components/schemas/DecisionInputImage"
+            output_text: "#/components/schemas/DecisionInputOutputText"
+            refusal: "#/components/schemas/DecisionInputRefusal"
+        x-oai-discriminator-values:
+          - input_text
+          - input_image
+          - output_text
+          - refusal
+      minItems: 0
+      maxItems: 16384
+    DecisionInputContent:
+      oneOf:
+        - type: string
+          minLength: 0
+          maxLength: 10485760
+        - $ref: "#/components/schemas/DecisionInputContentParts"
+          title: Parts
+      description: Text evidence or an ordered list of text and image parts.
+    MessagePhaseParam:
+      type: string
+      enum:
+        - commentary
+        - final_answer
+    DecisionInputMessage:
+      type: object
+      properties:
+        role:
+          type: string
+          enum:
+            - user
+            - developer
+            - system
+            - assistant
+        content:
+          $ref: "#/components/schemas/DecisionInputContent"
+        phase:
+          anyOf:
+            - $ref: "#/components/schemas/MessagePhaseParam"
+            - type: "null"
+          description: The phase of an assistant message.
+        type:
+          type: string
+          enum:
+            - message
+          default: message
+          x-stainless-const: true
+      required:
+        - role
+        - content
+      additionalProperties: false
+      description: A user message containing input text or images, a developer or
+        system message containing input text, or an assistant message containing
+        output text or refusals. System messages are rendered as developer
+        messages.
+    FunctionCallStatusParam:
+      type: string
+      enum:
+        - in_progress
+        - completed
+        - incomplete
+    DecisionInputFunctionCall:
+      type: object
+      properties:
+        id:
+          type:
+            - string
+            - "null"
+          minLength: 0
+          maxLength: 1048576
+        call_id:
+          type: string
+          minLength: 1
+          maxLength: 64
+        namespace:
+          type:
+            - string
+            - "null"
+          minLength: 1
+          maxLength: 64
+          pattern: ^[a-zA-Z0-9_-]+$
+        name:
+          type: string
+          minLength: 1
+          maxLength: 128
+          pattern: ^[a-zA-Z0-9_.-]+$
+        arguments:
+          type: string
+          minLength: 0
+          maxLength: 1048576
+        status:
+          anyOf:
+            - $ref: "#/components/schemas/FunctionCallStatusParam"
+            - type: "null"
+        type:
+          type: string
+          enum:
+            - function_call
+          default: function_call
+          x-stainless-const: true
+      required:
+        - call_id
+        - name
+        - arguments
+        - type
+      additionalProperties: false
+    DecisionInputToolOutputContentParts:
       type: array
       items:
         oneOf:
@@ -90357,36 +90602,119 @@ components:
           - input_image
       minItems: 0
       maxItems: 16384
-    DecisionInputContent:
+    DecisionInputToolOutputContent:
       oneOf:
         - type: string
           minLength: 0
           maxLength: 10485760
-        - $ref: "#/components/schemas/DecisionInputContentParts"
+        - $ref: "#/components/schemas/DecisionInputToolOutputContentParts"
           title: Parts
       description: Text evidence or an ordered list of text and image parts.
-    DecisionInputMessage:
+    DecisionInputFunctionCallOutput:
       type: object
       properties:
-        role:
+        id:
+          type:
+            - string
+            - "null"
+          minLength: 0
+          maxLength: 1048576
+        call_id:
           type: string
-          enum:
-            - user
-          default: user
-          x-stainless-const: true
-        content:
-          $ref: "#/components/schemas/DecisionInputContent"
+          minLength: 1
+          maxLength: 64
+        output:
+          $ref: "#/components/schemas/DecisionInputToolOutputContent"
+        status:
+          anyOf:
+            - $ref: "#/components/schemas/FunctionCallStatusParam"
+            - type: "null"
         type:
           type: string
           enum:
-            - message
-          default: message
+            - function_call_output
+          default: function_call_output
           x-stainless-const: true
       required:
-        - role
-        - content
+        - call_id
+        - output
+        - type
       additionalProperties: false
-      description: A user message containing text or images.
+    DecisionInputCustomToolCall:
+      type: object
+      properties:
+        id:
+          type:
+            - string
+            - "null"
+          minLength: 0
+          maxLength: 1048576
+        call_id:
+          type: string
+          minLength: 1
+          maxLength: 64
+        namespace:
+          type:
+            - string
+            - "null"
+          minLength: 1
+          maxLength: 64
+          pattern: ^[a-zA-Z0-9_-]+$
+        name:
+          type: string
+          minLength: 1
+          maxLength: 64
+          pattern: ^[a-zA-Z0-9_-]+$
+        input:
+          type: string
+          minLength: 0
+          maxLength: 1048576
+        status:
+          anyOf:
+            - $ref: "#/components/schemas/FunctionCallStatusParam"
+            - type: "null"
+        type:
+          type: string
+          enum:
+            - custom_tool_call
+          default: custom_tool_call
+          x-stainless-const: true
+      required:
+        - call_id
+        - name
+        - input
+        - type
+      additionalProperties: false
+    DecisionInputCustomToolCallOutput:
+      type: object
+      properties:
+        id:
+          type:
+            - string
+            - "null"
+          minLength: 0
+          maxLength: 1048576
+        call_id:
+          type: string
+          minLength: 1
+          maxLength: 64
+        output:
+          $ref: "#/components/schemas/DecisionInputToolOutputContent"
+        status:
+          anyOf:
+            - $ref: "#/components/schemas/FunctionCallStatusParam"
+            - type: "null"
+        type:
+          type: string
+          enum:
+            - custom_tool_call_output
+          default: custom_tool_call_output
+          x-stainless-const: true
+      required:
+        - call_id
+        - output
+        - type
+      additionalProperties: false
     DecisionInput:
       oneOf:
         - type: string
@@ -90396,20 +90724,35 @@ components:
           items:
             oneOf:
               - $ref: "#/components/schemas/DecisionInputMessage"
+              - $ref: "#/components/schemas/DecisionInputFunctionCall"
+              - $ref: "#/components/schemas/DecisionInputFunctionCallOutput"
+              - $ref: "#/components/schemas/DecisionInputCustomToolCall"
+              - $ref: "#/components/schemas/DecisionInputCustomToolCallOutput"
             discriminator:
               propertyName: type
               mapping:
                 message: "#/components/schemas/DecisionInputMessage"
+                function_call: "#/components/schemas/DecisionInputFunctionCall"
+                function_call_output: "#/components/schemas/DecisionInputFunctionCallOutput"
+                custom_tool_call: "#/components/schemas/DecisionInputCustomToolCall"
+                custom_tool_call_output: "#/components/schemas/DecisionInputCustomToolCallOutput"
             x-oai-discriminator-values:
               - message
+              - function_call
+              - function_call_output
+              - custom_tool_call
+              - custom_tool_call_output
             x-oai-default-discriminator-value: message
           minItems: 0
           maxItems: 131072
-      description: The text or images to evaluate for every question. Provide a text
-        string or user messages containing text and images. Images can be base64
-        data URLs or publicly accessible HTTP(S) URLs; at most 128 images are
-        allowed across all messages in one request. Files, audio, tools, and
-        item references are not supported.
+      description: The input to evaluate for every question. Provide a text string or
+        an ordered array of messages, function calls and outputs, or custom tool
+        calls and outputs. Each tool output must identify a matching call by
+        call ID. User messages and tool outputs can contain text and images;
+        developer and system messages can contain only input text, and assistant
+        messages can contain output text or refusals. Images can be base64 data
+        URLs or publicly accessible HTTP(S) URLs; at most 128 images are allowed
+        per request. Files, audio, and item references are not supported.
     QuestionParamPredicate:
       type: object
       properties:
@@ -90571,6 +90914,56 @@ components:
           description: Opaque caller-provided end-user identifier, scoped by the verified
             org. Match Responses' limit; this is never the authenticated user
             identity.
+        prompt_cache_key:
+          type:
+            - string
+            - "null"
+          minLength: 0
+          maxLength: 64
+          description: Partition prompt cache reuse by caller-provided key.
+        prompt_cache_options:
+          type:
+            - object
+            - "null"
+          properties:
+            ttl:
+              type: string
+              enum:
+                - 30m
+              default: 30m
+              x-stainless-const: true
+              description: The minimum lifetime applied to every implicit and explicit cache
+                breakpoint written by the request. Defaults to `30m`, which is
+                currently the only supported value. The backend may retain cache
+                entries for longer.
+            mode:
+              type:
+                - string
+                - "null"
+              enum:
+                - implicit
+                - explicit
+                - null
+              description: Controls whether OpenAI automatically creates an implicit cache
+                breakpoint. Defaults to `implicit`. With `implicit`, OpenAI
+                creates one implicit breakpoint and writes up to the latest
+                three explicit breakpoints in the request. With `explicit`,
+                OpenAI does not create an implicit breakpoint and writes up to
+                the latest four explicit breakpoints. If there are no explicit
+                breakpoints, the request does not use prompt caching.
+          additionalProperties: false
+          title: Prompt cache options
+          description: Options for prompt caching. Supported for `gpt-5.6` and later
+            models. By default, OpenAI automatically chooses one implicit cache
+            breakpoint. You can add explicit breakpoints to content blocks with
+            `prompt_cache_breakpoint`. Each request can write up to four
+            breakpoints. For cache matching, OpenAI considers up to the latest
+            80 breakpoints in the conversation, without a content-block lookback
+            limit. Set `mode` to `explicit` to disable the implicit breakpoint.
+            The `ttl` defaults to `30m`, which is currently the only supported
+            value. See the [prompt caching
+            guide](https://developers.openai.com/api/docs/guides/prompt-caching)
+            for current details.
       required:
         - model
         - input
@@ -100937,6 +101330,49 @@ components:
         example:
           type: session.input_audio.unmute
           event_id: evt_unmute_001
+    LiveOutputAudioFixturePlayParam:
+      description: Play one complete audio fixture through the session output. Send
+        this event over the primary WebSocket or a server sideband. Audio must
+        be raw mono PCM16 little-endian at 24 kHz, regardless of the session
+        audio format, and at most 30 seconds. The entire payload is validated
+        before model speech is interrupted and input is muted. Only one fixture
+        can be active. fixture.playing acknowledges acceptance and
+        fixture.played reports server mixer drain. These notifications are not
+        exact transport-media boundaries. Input arriving during playback is
+        dropped and not replayed.
+      example:
+        type: session.output_audio.fixture.play
+        event_id: evt_play_001
+        audio: AAAAAA==
+      type: object
+      properties:
+        event_id:
+          anyOf:
+            - description: Optional client identifier for correlating this command with a
+                server event's client_event_id or error.client_event_id.
+              type: string
+              maxLength: 512
+            - type: "null"
+        type:
+          default: session.output_audio.fixture.play
+          x-stainless-const: true
+          type: string
+          enum:
+            - session.output_audio.fixture.play
+        audio:
+          description: Base64-encoded raw mono PCM16 audio, little-endian, at 24 kHz. Do
+            not include a WAV or other container header.
+          type: string
+          minLength: 1
+          maxLength: 1920000
+      required:
+        - type
+        - audio
+      x-oaiMeta:
+        example:
+          type: session.output_audio.fixture.play
+          event_id: evt_play_001
+          audio: AAAAAA==
     LiveInstructionsAppendParam:
       description: Append developer instructions to the Live conversation while it is
         running, optionally associating them with an existing client delegation.
@@ -101545,7 +101981,7 @@ components:
         command.
       example:
         type: session.output_audio.fixture.playing
-        event_id: evt_play_started_001
+        event_id: evt_playing_001
         client_event_id: evt_play_001
       type: object
       properties:
@@ -101568,7 +102004,7 @@ components:
       x-oaiMeta:
         example:
           type: session.output_audio.fixture.playing
-          event_id: evt_play_started_001
+          event_id: evt_playing_001
           client_event_id: evt_play_001
     LiveOutputAudioFixturePlayed:
       description: The complete audio fixture has drained from the server mixer and
@@ -108723,6 +109159,34 @@ components:
             - gpt-3.5-turbo-0125
             - gpt-3.5-turbo-16k-0613
           x-openai-enum-deprecations:
+            gpt-5.4-nano:
+              message: "Announced shutdown date: 2027-04-01. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
+            gpt-5.1:
+              message: "Announced shutdown date: 2027-04-01. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
+            gpt-4.1-2025-04-14:
+              message: "Announced shutdown date: 2027-01-14. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
+            gpt-4.1-mini-2025-04-14:
+              message: "Announced shutdown date: 2027-01-14. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
+            gpt-4o-2024-08-06:
+              message: "Announced shutdown date: 2027-01-14. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
+            gpt-4o-2024-11-20:
+              message: "Announced shutdown date: 2027-01-14. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
+            gpt-4o-mini-2024-07-18:
+              message: "Announced shutdown date: 2027-01-14. See
+                https://developers.openai.com/api/docs/deprecations for details
+                and recommended replacements."
             gpt-5.3-chat-latest:
               message: "Announced shutdown date: 2026-08-10. See
                 https://developers.openai.com/api/docs/deprecations for details
@@ -111140,6 +111604,17 @@ components:
           description: >
             An error object returned when the model fails to generate a Response.
           properties:
+            type:
+              anyOf:
+                - type: string
+                - type: "null"
+              description: The original error type, or null if it was not recorded.
+            param:
+              anyOf:
+                - type: string
+                - type: "null"
+              description: The request parameter associated with the error, or null if none
+                was recorded.
             code:
               $ref: "#/components/schemas/BetaResponseErrorCode"
             message:
@@ -117911,6 +118386,9 @@ x-oaiMeta:
           key: LiveInputAudioUnmuteParam
           path: <auto>
         - type: object
+          key: LiveOutputAudioFixturePlayParam
+          path: <auto>
+        - type: object
           key: LiveInstructionsAppendParam
           path: <auto>
         - type: object
@@ -117959,6 +118437,12 @@ x-oaiMeta:
           path: <auto>
         - type: object
           key: LiveInputAudioUnmuted
+          path: <auto>
+        - type: object
+          key: LiveOutputAudioFixturePlaying
+          path: <auto>
+        - type: object
+          key: LiveOutputAudioFixturePlayed
           path: <auto>
         - type: object
           key: LiveInstructionsAppended
