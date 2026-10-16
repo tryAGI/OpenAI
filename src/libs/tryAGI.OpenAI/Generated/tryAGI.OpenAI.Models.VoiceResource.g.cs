@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A custom voice that can be used for audio output.
+    /// A custom voice that can be used for audio output. Voices created from text prompts are supported only in Live.
     /// </summary>
     public sealed partial class VoiceResource
     {
@@ -27,7 +27,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceResourceTypeJsonConverter))]
-        public global::tryAGI.OpenAI.VoiceResourceType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.VoiceResourceType Type { get; set; }
+
+        /// <summary>
+        /// The original text prompt used to create the voice. Present for prompt-generated voices with a stored prompt; omitted for audio-sample voices and older voices without a stored prompt.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        public string? Prompt { get; set; }
 
         /// <summary>
         /// The name of the voice.
@@ -55,6 +62,9 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The voice identifier, which can be referenced in API endpoints.
         /// </param>
+        /// <param name="type">
+        /// How the voice was created.
+        /// </param>
         /// <param name="name">
         /// The name of the voice.
         /// </param>
@@ -64,22 +74,24 @@ namespace tryAGI.OpenAI
         /// <param name="object">
         /// The object type, which is always `audio.voice`.
         /// </param>
-        /// <param name="type">
-        /// How the voice was created.
+        /// <param name="prompt">
+        /// The original text prompt used to create the voice. Present for prompt-generated voices with a stored prompt; omitted for audio-sample voices and older voices without a stored prompt.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VoiceResource(
             string id,
+            global::tryAGI.OpenAI.VoiceResourceType type,
             string name,
             int createdAt,
             global::tryAGI.OpenAI.VoiceResourceObject @object,
-            global::tryAGI.OpenAI.VoiceResourceType type)
+            string? prompt)
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
+            this.Prompt = prompt;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.CreatedAt = createdAt;
         }

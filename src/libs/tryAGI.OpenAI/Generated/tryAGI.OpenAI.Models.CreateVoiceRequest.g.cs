@@ -50,6 +50,43 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateVoiceFromConsentRequest PickAudioSample() => AudioSample is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'AudioSample' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Creates a synthetic voice from a text description. Supports application/json or multipart/form-data.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.CreateVoicePromptRequest? Prompt { get; init; }
+#else
+        public global::tryAGI.OpenAI.CreateVoicePromptRequest? Prompt { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Prompt))]
+#endif
+        public bool IsPrompt => Prompt != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickPrompt(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.CreateVoicePromptRequest? value)
+        {
+            value = Prompt;
+            return IsPrompt;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.CreateVoicePromptRequest PickPrompt() => Prompt is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Prompt' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -76,20 +113,46 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator CreateVoiceRequest(global::tryAGI.OpenAI.CreateVoicePromptRequest value) => new CreateVoiceRequest((global::tryAGI.OpenAI.CreateVoicePromptRequest?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.CreateVoicePromptRequest?(CreateVoiceRequest @this) => @this.Prompt;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public CreateVoiceRequest(global::tryAGI.OpenAI.CreateVoicePromptRequest? value)
+        {
+            Prompt = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static CreateVoiceRequest FromPrompt(global::tryAGI.OpenAI.CreateVoicePromptRequest? value) => new CreateVoiceRequest(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public CreateVoiceRequest(
             global::tryAGI.OpenAI.CreateVoiceRequestDiscriminatorType? type,
-            global::tryAGI.OpenAI.CreateVoiceFromConsentRequest? audioSample
+            global::tryAGI.OpenAI.CreateVoiceFromConsentRequest? audioSample,
+            global::tryAGI.OpenAI.CreateVoicePromptRequest? prompt
             )
         {
             Type = type;
 
             AudioSample = audioSample;
+            Prompt = prompt;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Prompt as object ??
             AudioSample as object
             ;
 
@@ -97,7 +160,8 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public override string? ToString() =>
-            AudioSample?.ToString()
+            AudioSample?.ToString() ??
+            Prompt?.ToString()
             ;
 
         /// <summary>
@@ -105,7 +169,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsAudioSample;
+            return IsAudioSample && !IsPrompt || !IsAudioSample && IsPrompt;
         }
 
         /// <summary>
@@ -113,6 +177,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.CreateVoiceFromConsentRequest, TResult>? audioSample = null,
+            global::System.Func<global::tryAGI.OpenAI.CreateVoicePromptRequest, TResult>? prompt = null,
             bool validate = true)
         {
             if (validate)
@@ -124,6 +189,10 @@ namespace tryAGI.OpenAI
             {
                 return audioSample(__value0);
             }
+            else if (Prompt is { } __value1 && prompt != null)
+            {
+                return prompt(__value1);
+            }
 
             return default(TResult);
         }
@@ -133,6 +202,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Match(
             global::System.Action<global::tryAGI.OpenAI.CreateVoiceFromConsentRequest>? audioSample = null,
+
+            global::System.Action<global::tryAGI.OpenAI.CreateVoicePromptRequest>? prompt = null,
             bool validate = true)
         {
             if (validate)
@@ -143,6 +214,10 @@ namespace tryAGI.OpenAI
             if (AudioSample is { } __value0)
             {
                 audioSample?.Invoke(__value0);
+            }
+            else if (Prompt is { } __value1)
+            {
+                prompt?.Invoke(__value1);
             }
         }
 
@@ -151,6 +226,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.CreateVoiceFromConsentRequest>? audioSample = null,
+            global::System.Action<global::tryAGI.OpenAI.CreateVoicePromptRequest>? prompt = null,
             bool validate = true)
         {
             if (validate)
@@ -161,6 +237,10 @@ namespace tryAGI.OpenAI
             if (AudioSample is { } __value0)
             {
                 audioSample?.Invoke(__value0);
+            }
+            else if (Prompt is { } __value1)
+            {
+                prompt?.Invoke(__value1);
             }
         }
 
@@ -173,6 +253,8 @@ namespace tryAGI.OpenAI
             {
                 AudioSample,
                 typeof(global::tryAGI.OpenAI.CreateVoiceFromConsentRequest),
+                Prompt,
+                typeof(global::tryAGI.OpenAI.CreateVoicePromptRequest),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -189,7 +271,8 @@ namespace tryAGI.OpenAI
         public bool Equals(CreateVoiceRequest other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateVoiceFromConsentRequest?>.Default.Equals(AudioSample, other.AudioSample)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateVoiceFromConsentRequest?>.Default.Equals(AudioSample, other.AudioSample) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.CreateVoicePromptRequest?>.Default.Equals(Prompt, other.Prompt)
                 ;
         }
 

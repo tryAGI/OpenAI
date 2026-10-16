@@ -13,7 +13,7 @@ internal static partial class ModelsRetrieveModelCommandApiCommand
         Description = @"The ID of the model to use for this request",
     };
 
-                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.Model18 value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.Model19 value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
                     {
                         string? text = null;
                         CustomizeResponseText(parseResult, value, ref text);
@@ -29,7 +29,7 @@ internal static partial class ModelsRetrieveModelCommandApiCommand
                         return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
                     }
 
-                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.Model18 value, ref string? text);
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.Model19 value, ref string? text);
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
