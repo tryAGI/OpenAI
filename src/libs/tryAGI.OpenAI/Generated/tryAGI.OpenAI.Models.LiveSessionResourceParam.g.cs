@@ -43,6 +43,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.DelegationVariant14? Delegation { get; set; }
 
         /// <summary>
+        /// At most one Decisions trigger per transcript event type. Triggers run independently of delegation. On update, omit triggers to keep the current configuration, send a list to replace it, or send an empty list to disable triggers.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("triggers")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam2>? Triggers { get; set; }
+
+        /// <summary>
         /// Whether to store the session for later forking and recording download. Defaults to false for new sessions.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("store")]
@@ -105,6 +111,9 @@ namespace tryAGI.OpenAI
         /// Startup audio configuration. Only primary WebSockets accept audio.format; WebRTC and SIP negotiate their media format. Voice and format are immutable after startup.
         /// </param>
         /// <param name="delegation"></param>
+        /// <param name="triggers">
+        /// At most one Decisions trigger per transcript event type. Triggers run independently of delegation. On update, omit triggers to keep the current configuration, send a list to replace it, or send an empty list to disable triggers.
+        /// </param>
         /// <param name="store">
         /// Whether to store the session for later forking and recording download. Defaults to false for new sessions.
         /// </param>
@@ -126,6 +135,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveInitialItem>? input,
             global::tryAGI.OpenAI.LiveInitialSessionAudioParam? audio,
             global::tryAGI.OpenAI.DelegationVariant14? delegation,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam2>? triggers,
             bool? store,
             global::tryAGI.OpenAI.LiveClientConfigParam? client,
             global::tryAGI.OpenAI.LiveSessionResourceParamStatus status = global::tryAGI.OpenAI.LiveSessionResourceParamStatus.Active)
@@ -135,6 +145,7 @@ namespace tryAGI.OpenAI
             this.Input = input;
             this.Audio = audio;
             this.Delegation = delegation;
+            this.Triggers = triggers;
             this.Store = store;
             this.Client = client;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

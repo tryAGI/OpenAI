@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Degraded,
+        /// <summary>
+        ///
+        /// </summary>
         Pending,
         /// <summary>
         ///
@@ -34,6 +38,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                ExternalStorageStatus.Degraded => "degraded",
                 ExternalStorageStatus.Pending => "pending",
                 ExternalStorageStatus.Unhealthy => "unhealthy",
                 ExternalStorageStatus.Validated => "validated",
@@ -47,6 +52,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "degraded" => ExternalStorageStatus.Degraded,
                 "pending" => ExternalStorageStatus.Pending,
                 "unhealthy" => ExternalStorageStatus.Unhealthy,
                 "validated" => ExternalStorageStatus.Validated,

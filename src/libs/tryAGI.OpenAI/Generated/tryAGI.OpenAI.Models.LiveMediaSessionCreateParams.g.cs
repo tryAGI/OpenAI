@@ -37,6 +37,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.DelegationVariant1? Delegation { get; set; }
 
         /// <summary>
+        /// At most one Decisions trigger per transcript event type. Triggers run independently of delegation. On update, omit triggers to keep the current configuration, send a list to replace it, or send an empty list to disable triggers.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("triggers")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam>? Triggers { get; set; }
+
+        /// <summary>
         /// Whether to store the session for later forking and recording download. Defaults to false for new sessions.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("store")]
@@ -72,6 +78,9 @@ namespace tryAGI.OpenAI
         /// Startup audio configuration. WebRTC and SIP negotiate their audio format on the media transport.
         /// </param>
         /// <param name="delegation"></param>
+        /// <param name="triggers">
+        /// At most one Decisions trigger per transcript event type. Triggers run independently of delegation. On update, omit triggers to keep the current configuration, send a list to replace it, or send an empty list to disable triggers.
+        /// </param>
         /// <param name="store">
         /// Whether to store the session for later forking and recording download. Defaults to false for new sessions.
         /// </param>
@@ -89,6 +98,7 @@ namespace tryAGI.OpenAI
             string? instructions,
             global::tryAGI.OpenAI.LiveMediaSessionAudioParam? audio,
             global::tryAGI.OpenAI.DelegationVariant1? delegation,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam>? triggers,
             bool? store,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveInitialItem>? input,
             global::tryAGI.OpenAI.LiveClientConfigParam? client)
@@ -97,6 +107,7 @@ namespace tryAGI.OpenAI
             this.Instructions = instructions;
             this.Audio = audio;
             this.Delegation = delegation;
+            this.Triggers = triggers;
             this.Store = store;
             this.Input = input;
             this.Client = client;

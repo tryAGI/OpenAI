@@ -35,12 +35,21 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveResponsesDelegationParam)}");
                 responses = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.LiveDecisionsDelegationParam2? decisions = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveSessionResourceParamDelegationVariant1DiscriminatorType.Decisions)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionsDelegationParam2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionsDelegationParam2> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDecisionsDelegationParam2)}");
+                decisions = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::tryAGI.OpenAI.DelegationVariant14(
                 discriminator?.Type,
                 client,
 
-                responses
+                responses,
+
+                decisions
                 );
 
             return __value;
@@ -66,6 +75,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveResponsesDelegationParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveResponsesDelegationParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveResponsesDelegationParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickResponses(), typeInfo);
+            }
+            else if (value.IsDecisions)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionsDelegationParam2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionsDelegationParam2?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveDecisionsDelegationParam2).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDecisions(), typeInfo);
             }
         }
     }

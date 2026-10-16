@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Returned when the Live model delegates work to your application or a Responses backend. Contains delegation metadata and the position on the session timeline where the work was delegated.<br/>
+    /// Returned when the Live model delegates work to your application, Responses, or Decisions. Contains delegation metadata and the position on the session timeline where the work was delegated.<br/>
     /// Example: {"type":"session.delegation.created","event_id":"evt_delegation_001","offset_ms":3600,"delegation":{"id":"del_abc123","type":"delegation","target":"client"}}
     /// </summary>
     public sealed partial class LiveDelegationCreated

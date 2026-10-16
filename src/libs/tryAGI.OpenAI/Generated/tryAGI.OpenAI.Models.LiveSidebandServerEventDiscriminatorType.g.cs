@@ -11,6 +11,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        DecisionEvent,
+        /// <summary>
+        ///
+        /// </summary>
+        DecisionItemCreated,
+        /// <summary>
+        ///
+        /// </summary>
+        DecisionItemDeleted,
+        /// <summary>
+        ///
+        /// </summary>
         Error,
         /// <summary>
         ///
@@ -102,6 +114,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                LiveSidebandServerEventDiscriminatorType.DecisionEvent => "decision.event",
+                LiveSidebandServerEventDiscriminatorType.DecisionItemCreated => "decision.item.created",
+                LiveSidebandServerEventDiscriminatorType.DecisionItemDeleted => "decision.item.deleted",
                 LiveSidebandServerEventDiscriminatorType.Error => "error",
                 LiveSidebandServerEventDiscriminatorType.Info => "info",
                 LiveSidebandServerEventDiscriminatorType.ResponseEvent => "response.event",
@@ -132,6 +147,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "decision.event" => LiveSidebandServerEventDiscriminatorType.DecisionEvent,
+                "decision.item.created" => LiveSidebandServerEventDiscriminatorType.DecisionItemCreated,
+                "decision.item.deleted" => LiveSidebandServerEventDiscriminatorType.DecisionItemDeleted,
                 "error" => LiveSidebandServerEventDiscriminatorType.Error,
                 "info" => LiveSidebandServerEventDiscriminatorType.Info,
                 "response.event" => LiveSidebandServerEventDiscriminatorType.ResponseEvent,

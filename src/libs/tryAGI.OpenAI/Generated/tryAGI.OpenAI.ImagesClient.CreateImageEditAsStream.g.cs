@@ -66,7 +66,7 @@ namespace tryAGI.OpenAI
                 Size = request.Size,
                 OutputFormat = request.OutputFormat,
                 OutputCompression = request.OutputCompression,
-                User = request.User,
+                SafetyIdentifier = request.SafetyIdentifier,
                 InputFidelity = request.InputFidelity,
                 Stream = true,
                 PartialImages = request.PartialImages,
@@ -324,6 +324,14 @@ namespace tryAGI.OpenAI
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.OutputCompression, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"output_compression\"");
+
+                            }
+                            if (request.SafetyIdentifier != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.SafetyIdentifier ?? string.Empty),
+                                    name: "\"safety_identifier\"");
 
                             }
                             if (request.User != default)
@@ -690,8 +698,8 @@ namespace tryAGI.OpenAI
         /// Default Value: 100<br/>
         /// Example: 100
         /// </param>
-        /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
+        /// <param name="safetyIdentifier">
+        /// A stable identifier for an end user in your organization, used for safety monitoring and abuse detection. Hash a username or email address to avoid sending identifying information. A non-empty value takes precedence over the deprecated `user` parameter. If omitted, null, or empty, the API uses `user` when available. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
         /// Example: user-1234
         /// </param>
         /// <param name="inputFidelity"></param>
@@ -715,7 +723,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestSize?>? size = default,
             global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat? outputFormat = default,
             int? outputCompression = default,
-            string? user = default,
+            string? safetyIdentifier = default,
             global::tryAGI.OpenAI.InputFidelity? inputFidelity = default,
             int? partialImages = default,
             global::tryAGI.OpenAI.CreateImageEditRequestQuality? quality = default,
@@ -734,7 +742,7 @@ namespace tryAGI.OpenAI
                 Size = size,
                 OutputFormat = outputFormat,
                 OutputCompression = outputCompression,
-                User = user,
+                SafetyIdentifier = safetyIdentifier,
                 InputFidelity = inputFidelity,
                 Stream = true,
                 PartialImages = partialImages,

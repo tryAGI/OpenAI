@@ -119,6 +119,27 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDelegationCreated)}");
                 sessionDelegationCreated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.LiveDecisionEvent? decisionEvent = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveServerEvent2DiscriminatorType.DecisionEvent)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionEvent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDecisionEvent)}");
+                decisionEvent = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.LiveDecisionItemCreated? decisionItemCreated = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveServerEvent2DiscriminatorType.DecisionItemCreated)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionItemCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionItemCreated> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDecisionItemCreated)}");
+                decisionItemCreated = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.LiveDecisionItemDeleted? decisionItemDeleted = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveServerEvent2DiscriminatorType.DecisionItemDeleted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionItemDeleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionItemDeleted> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDecisionItemDeleted)}");
+                decisionItemDeleted = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.LiveResponseEvent? responseEvent = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.LiveServerEvent2DiscriminatorType.ResponseEvent)
             {
@@ -219,6 +240,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 sessionOutputTranscriptDelta,
 
                 sessionDelegationCreated,
+
+                decisionEvent,
+
+                decisionItemCreated,
+
+                decisionItemDeleted,
 
                 responseEvent,
 
@@ -336,6 +363,24 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDelegationCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDelegationCreated?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveDelegationCreated).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionDelegationCreated(), typeInfo);
+            }
+            else if (value.IsDecisionEvent)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionEvent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveDecisionEvent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDecisionEvent(), typeInfo);
+            }
+            else if (value.IsDecisionItemCreated)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionItemCreated), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionItemCreated?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveDecisionItemCreated).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDecisionItemCreated(), typeInfo);
+            }
+            else if (value.IsDecisionItemDeleted)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionItemDeleted), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionItemDeleted?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveDecisionItemDeleted).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDecisionItemDeleted(), typeInfo);
             }
             else if (value.IsResponseEvent)
             {

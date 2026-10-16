@@ -142,11 +142,20 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateImageRequestStyle? Style { get; set; }
 
         /// <summary>
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
+        /// A stable identifier for an end user in your organization, used for safety monitoring and abuse detection. Hash a username or email address to avoid sending identifying information. A non-empty value takes precedence over the deprecated `user` parameter. If omitted, null, or empty, the API uses `user` when available. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
+        /// Example: user-1234
+        /// </summary>
+        /// <example>user-1234</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_identifier")]
+        public string? SafetyIdentifier { get; set; }
+
+        /// <summary>
+        /// Deprecated: use `safety_identifier` instead. This parameter remains accepted for backward compatibility and is used when `safety_identifier` is omitted, null, or empty. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
         /// Example: user-1234
         /// </summary>
         /// <example>user-1234</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public string? User { get; set; }
 
         /// <summary>
@@ -222,8 +231,8 @@ namespace tryAGI.OpenAI
         /// Default Value: auto<br/>
         /// Example: transparent
         /// </param>
-        /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
+        /// <param name="safetyIdentifier">
+        /// A stable identifier for an end user in your organization, used for safety monitoring and abuse detection. Hash a username or email address to avoid sending identifying information. A non-empty value takes precedence over the deprecated `user` parameter. If omitted, null, or empty, the API uses `user` when available. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
         /// Example: user-1234
         /// </param>
 #if NET7_0_OR_GREATER
@@ -241,7 +250,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestSize?>? size,
             global::tryAGI.OpenAI.CreateImageRequestModeration? moderation,
             global::tryAGI.OpenAI.CreateImageRequestBackground? background,
-            string? user)
+            string? safetyIdentifier)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Model = model;
@@ -254,7 +263,7 @@ namespace tryAGI.OpenAI
             this.Size = size;
             this.Moderation = moderation;
             this.Background = background;
-            this.User = user;
+            this.SafetyIdentifier = safetyIdentifier;
         }
 
         /// <summary>

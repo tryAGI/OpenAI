@@ -15,6 +15,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Decisions,
+        /// <summary>
+        ///
+        /// </summary>
         Responses,
     }
 
@@ -31,6 +35,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 DelegationVariant1DiscriminatorType.Client => "client",
+                DelegationVariant1DiscriminatorType.Decisions => "decisions",
                 DelegationVariant1DiscriminatorType.Responses => "responses",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "client" => DelegationVariant1DiscriminatorType.Client,
+                "decisions" => DelegationVariant1DiscriminatorType.Decisions,
                 "responses" => DelegationVariant1DiscriminatorType.Responses,
                 _ => null,
             };

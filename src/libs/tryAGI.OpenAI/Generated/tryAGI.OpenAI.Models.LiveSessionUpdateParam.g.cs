@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Update the delegation settings of an active Live session. The server acknowledges accepted changes with `session.updated`.<br/>
+    /// Update the delegation settings or transcript triggers of an active Live session. The server acknowledges accepted changes with `session.updated`.<br/>
     /// Example: {"type":"session.update","event_id":"evt_update_001","session":{"delegation":{"type":"responses","responses":{"instructions":"Check restaurant availability. Ask before confirming a booking.","max_output_tokens":1024}}}}
     /// </summary>
     public sealed partial class LiveSessionUpdateParam
@@ -25,7 +25,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.LiveSessionUpdateParamType Type { get; set; } = global::tryAGI.OpenAI.LiveSessionUpdateParamType.SessionUpdate;
 
         /// <summary>
-        /// Sparse delegation updates. Omitted settings retain their values. The delegation type cannot change, including resetting Responses delegation to null or client. Model, frontend instructions, audio, and startup input are immutable.
+        /// Sparse delegation and trigger updates. Omitted settings retain their values. The delegation type cannot change. Model, frontend instructions, audio, and startup input are immutable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -41,7 +41,7 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="LiveSessionUpdateParam" /> class.
         /// </summary>
         /// <param name="session">
-        /// Sparse delegation updates. Omitted settings retain their values. The delegation type cannot change, including resetting Responses delegation to null or client. Model, frontend instructions, audio, and startup input are immutable.
+        /// Sparse delegation and trigger updates. Omitted settings retain their values. The delegation type cannot change. Model, frontend instructions, audio, and startup input are immutable.
         /// </param>
         /// <param name="eventId"></param>
         /// <param name="type">

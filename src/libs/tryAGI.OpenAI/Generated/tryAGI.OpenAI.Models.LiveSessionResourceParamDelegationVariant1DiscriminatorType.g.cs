@@ -15,6 +15,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Decisions,
+        /// <summary>
+        ///
+        /// </summary>
         Responses,
     }
 
@@ -31,6 +35,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 LiveSessionResourceParamDelegationVariant1DiscriminatorType.Client => "client",
+                LiveSessionResourceParamDelegationVariant1DiscriminatorType.Decisions => "decisions",
                 LiveSessionResourceParamDelegationVariant1DiscriminatorType.Responses => "responses",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,6 +48,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "client" => LiveSessionResourceParamDelegationVariant1DiscriminatorType.Client,
+                "decisions" => LiveSessionResourceParamDelegationVariant1DiscriminatorType.Decisions,
                 "responses" => LiveSessionResourceParamDelegationVariant1DiscriminatorType.Responses,
                 _ => null,
             };

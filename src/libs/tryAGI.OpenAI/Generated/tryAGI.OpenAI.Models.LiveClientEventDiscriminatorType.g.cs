@@ -11,6 +11,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        DecisionCreate,
+        /// <summary>
+        ///
+        /// </summary>
+        DecisionItemCreate,
+        /// <summary>
+        ///
+        /// </summary>
+        DecisionItemDelete,
+        /// <summary>
+        ///
+        /// </summary>
         ResponseCreate,
         /// <summary>
         ///
@@ -70,6 +82,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                LiveClientEventDiscriminatorType.DecisionCreate => "decision.create",
+                LiveClientEventDiscriminatorType.DecisionItemCreate => "decision.item.create",
+                LiveClientEventDiscriminatorType.DecisionItemDelete => "decision.item.delete",
                 LiveClientEventDiscriminatorType.ResponseCreate => "response.create",
                 LiveClientEventDiscriminatorType.ResponseItemCreate => "response.item.create",
                 LiveClientEventDiscriminatorType.SessionClose => "session.close",
@@ -92,6 +107,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "decision.create" => LiveClientEventDiscriminatorType.DecisionCreate,
+                "decision.item.create" => LiveClientEventDiscriminatorType.DecisionItemCreate,
+                "decision.item.delete" => LiveClientEventDiscriminatorType.DecisionItemDelete,
                 "response.create" => LiveClientEventDiscriminatorType.ResponseCreate,
                 "response.item.create" => LiveClientEventDiscriminatorType.ResponseItemCreate,
                 "session.close" => LiveClientEventDiscriminatorType.SessionClose,

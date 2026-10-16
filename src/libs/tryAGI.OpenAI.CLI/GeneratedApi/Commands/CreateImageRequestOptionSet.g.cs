@@ -12,6 +12,7 @@ internal sealed record CreateImageRequestOptionSet(
                      Option<bool?> Stream,
                      Option<int?> PartialImages,
                      Option<global::tryAGI.OpenAI.CreateImageRequestStyle?> Style,
+                     Option<string?> SafetyIdentifier,
                      Option<string?> User)
 {
     public static CreateImageRequestOptionSet Create(string? prefix = null)
@@ -49,10 +50,13 @@ This parameter is only supported for the GPT image models.
                 {
                     Description = @"Legacy style parameter for retired image models. Unsupported for GPT image models; describe the desired style in the prompt instead.",
                 },
+                SafetyIdentifier: new Option<string?>($"--{normalizedPrefix}safety-identifier")
+                {
+                    Description = @"A stable identifier for an end user in your organization, used for safety monitoring and abuse detection. Hash a username or email address to avoid sending identifying information. A non-empty value takes precedence over the deprecated `user` parameter. If omitted, null, or empty, the API uses `user` when available. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).",
+                },
                 User: new Option<string?>($"--{normalizedPrefix}user")
                 {
-                    Description = @"A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).
-",
+                    Description = @"Deprecated: use `safety_identifier` instead. This parameter remains accepted for backward compatibility and is used when `safety_identifier` is omitted, null, or empty. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).",
                 }
         );
     }

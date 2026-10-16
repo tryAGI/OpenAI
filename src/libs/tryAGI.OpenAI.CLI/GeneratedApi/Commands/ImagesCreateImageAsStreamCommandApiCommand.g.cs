@@ -94,7 +94,7 @@ Creates an image given a prompt using a GPT Image model. [Learn more](https://de
                         command.Options.Add(CreateImageRequestOptionSetOptions.N);
                         command.Options.Add(CreateImageRequestOptionSetOptions.OutputCompression);
                         command.Options.Add(CreateImageRequestOptionSetOptions.PartialImages);
-                        command.Options.Add(CreateImageRequestOptionSetOptions.User);
+                        command.Options.Add(CreateImageRequestOptionSetOptions.SafetyIdentifier);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -129,7 +129,7 @@ Creates an image given a prompt using a GPT Image model. [Learn more](https://de
                         var n = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.N) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.N) : (__requestBase is { } __NBaseValue ? __NBaseValue.N : default);
                         var outputCompression = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.OutputCompression) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.OutputCompression) : (__requestBase is { } __OutputCompressionBaseValue ? __OutputCompressionBaseValue.OutputCompression : default);
                         var partialImages = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.PartialImages) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.PartialImages) : (__requestBase is { } __PartialImagesBaseValue ? __PartialImagesBaseValue.PartialImages : default);
-                        var user = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.User) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
+                        var safetyIdentifier = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.SafetyIdentifier) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.SafetyIdentifier) : (__requestBase is { } __SafetyIdentifierBaseValue ? __SafetyIdentifierBaseValue.SafetyIdentifier : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -144,7 +144,7 @@ Creates an image given a prompt using a GPT Image model. [Learn more](https://de
                                     n: n,
                                     outputCompression: outputCompression,
                                     partialImages: partialImages,
-                                    user: user,
+                                    safetyIdentifier: safetyIdentifier,
                                     cancellationToken: cancellationToken);
 
                                 await foreach (var item in response.WithCancellation(cancellationToken).ConfigureAwait(false))

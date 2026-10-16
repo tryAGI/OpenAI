@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class ImageGenCompletedEvent
     {
         /// <summary>
+        /// The effective safety identifier used for safety monitoring and abuse detection. This is the non-empty `safety_identifier` from the request, or the deprecated `user` value when `safety_identifier` is omitted, null, or empty.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_identifier")]
+        public string? SafetyIdentifier { get; set; }
+
+        /// <summary>
         /// The type of the event. Always `image_generation.completed`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -98,6 +104,9 @@ namespace tryAGI.OpenAI
         /// <param name="usage">
         /// For the GPT image models only, the token usage information for the image generation.
         /// </param>
+        /// <param name="safetyIdentifier">
+        /// The effective safety identifier used for safety monitoring and abuse detection. This is the non-empty `safety_identifier` from the request, or the deprecated `user` value when `safety_identifier` is omitted, null, or empty.
+        /// </param>
         /// <param name="type">
         /// The type of the event. Always `image_generation.completed`.
         /// </param>
@@ -112,8 +121,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ImageGenCompletedEventBackground background,
             global::tryAGI.OpenAI.ImageGenCompletedEventOutputFormat outputFormat,
             global::tryAGI.OpenAI.ImagesUsage usage,
+            string? safetyIdentifier,
             global::tryAGI.OpenAI.ImageGenCompletedEventType type)
         {
+            this.SafetyIdentifier = safetyIdentifier;
             this.Type = type;
             this.B64Json = b64Json ?? throw new global::System.ArgumentNullException(nameof(b64Json));
             this.CreatedAt = createdAt;

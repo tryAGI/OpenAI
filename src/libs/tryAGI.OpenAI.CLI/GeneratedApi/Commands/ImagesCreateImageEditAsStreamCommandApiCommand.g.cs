@@ -113,7 +113,7 @@ Creates an edited or extended image given one or more source images and a prompt
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.Maskname);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.N);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.OutputCompression);
-                        command.Options.Add(CreateImageEditRequestOptionSetOptions.User);
+                        command.Options.Add(CreateImageEditRequestOptionSetOptions.SafetyIdentifier);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.PartialImages);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
@@ -151,7 +151,7 @@ Creates an edited or extended image given one or more source images and a prompt
                         var maskname = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.Maskname) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Maskname) : (__requestBase is { } __MasknameBaseValue ? __MasknameBaseValue.Maskname : default);
                         var n = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.N) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.N) : (__requestBase is { } __NBaseValue ? __NBaseValue.N : default);
                         var outputCompression = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.OutputCompression) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.OutputCompression) : (__requestBase is { } __OutputCompressionBaseValue ? __OutputCompressionBaseValue.OutputCompression : default);
-                        var user = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.User) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.User) : (__requestBase is { } __UserBaseValue ? __UserBaseValue.User : default);
+                        var safetyIdentifier = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.SafetyIdentifier) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.SafetyIdentifier) : (__requestBase is { } __SafetyIdentifierBaseValue ? __SafetyIdentifierBaseValue.SafetyIdentifier : default);
                         var partialImages = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.PartialImages) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.PartialImages) : (__requestBase is { } __PartialImagesBaseValue ? __PartialImagesBaseValue.PartialImages : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
@@ -169,7 +169,7 @@ Creates an edited or extended image given one or more source images and a prompt
                                     maskname: maskname,
                                     n: n,
                                     outputCompression: outputCompression,
-                                    user: user,
+                                    safetyIdentifier: safetyIdentifier,
                                     partialImages: partialImages,
                                     cancellationToken: cancellationToken);
 

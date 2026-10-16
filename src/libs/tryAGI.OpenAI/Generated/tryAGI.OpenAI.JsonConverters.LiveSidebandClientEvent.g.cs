@@ -70,6 +70,27 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveCommentaryAppendParam)}");
                 sessionCommentaryAppend = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.LiveDecisionCreateParam? decisionCreate = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandClientEventDiscriminatorType.DecisionCreate)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionCreateParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionCreateParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDecisionCreateParam)}");
+                decisionCreate = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.LiveDecisionItemCreateParam? decisionItemCreate = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandClientEventDiscriminatorType.DecisionItemCreate)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionItemCreateParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionItemCreateParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDecisionItemCreateParam)}");
+                decisionItemCreate = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.LiveDecisionItemDeleteParam? decisionItemDelete = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandClientEventDiscriminatorType.DecisionItemDelete)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionItemDeleteParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionItemDeleteParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDecisionItemDeleteParam)}");
+                decisionItemDelete = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.LiveResponseItemCreateParam? responseItemCreate = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandClientEventDiscriminatorType.ResponseItemCreate)
             {
@@ -107,6 +128,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 sessionThinkingAppend,
 
                 sessionCommentaryAppend,
+
+                decisionCreate,
+
+                decisionItemCreate,
+
+                decisionItemDelete,
 
                 responseItemCreate,
 
@@ -168,6 +195,24 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveCommentaryAppendParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveCommentaryAppendParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveCommentaryAppendParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionCommentaryAppend(), typeInfo);
+            }
+            else if (value.IsDecisionCreate)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionCreateParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionCreateParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveDecisionCreateParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDecisionCreate(), typeInfo);
+            }
+            else if (value.IsDecisionItemCreate)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionItemCreateParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionItemCreateParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveDecisionItemCreateParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDecisionItemCreate(), typeInfo);
+            }
+            else if (value.IsDecisionItemDelete)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionItemDeleteParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionItemDeleteParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveDecisionItemDeleteParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickDecisionItemDelete(), typeInfo);
             }
             else if (value.IsResponseItemCreate)
             {

@@ -11,6 +11,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        DecisionEvent,
+        /// <summary>
+        ///
+        /// </summary>
+        DecisionItemCreated,
+        /// <summary>
+        ///
+        /// </summary>
+        DecisionItemDeleted,
+        /// <summary>
+        ///
+        /// </summary>
         Error,
         /// <summary>
         ///
@@ -118,6 +130,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                LiveServerEvent2DiscriminatorType.DecisionEvent => "decision.event",
+                LiveServerEvent2DiscriminatorType.DecisionItemCreated => "decision.item.created",
+                LiveServerEvent2DiscriminatorType.DecisionItemDeleted => "decision.item.deleted",
                 LiveServerEvent2DiscriminatorType.Error => "error",
                 LiveServerEvent2DiscriminatorType.Info => "info",
                 LiveServerEvent2DiscriminatorType.ResponseEvent => "response.event",
@@ -152,6 +167,9 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "decision.event" => LiveServerEvent2DiscriminatorType.DecisionEvent,
+                "decision.item.created" => LiveServerEvent2DiscriminatorType.DecisionItemCreated,
+                "decision.item.deleted" => LiveServerEvent2DiscriminatorType.DecisionItemDeleted,
                 "error" => LiveServerEvent2DiscriminatorType.Error,
                 "info" => LiveServerEvent2DiscriminatorType.Info,
                 "response.event" => LiveServerEvent2DiscriminatorType.ResponseEvent,

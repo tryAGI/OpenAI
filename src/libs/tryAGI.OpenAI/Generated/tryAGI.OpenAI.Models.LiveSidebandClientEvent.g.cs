@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.LiveSidebandClientEventDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Update the delegation settings of an active Live session. The server acknowledges accepted changes with `session.updated`.<br/>
+        /// Update the delegation settings or transcript triggers of an active Live session. The server acknowledges accepted changes with `session.updated`.<br/>
         /// Example: {"type":"session.update","event_id":"evt_update_001","session":{"delegation":{"type":"responses","responses":{"instructions":"Check restaurant availability. Ask before confirming a booking.","max_output_tokens":1024}}}}
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -279,6 +279,120 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.LiveCommentaryAppendParam PickSessionCommentaryAppend() => SessionCommentaryAppend is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionCommentaryAppend' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Evaluate the configured questions using the current conversation and Decision inputs. Reusing an event_id is rejected for the lifetime of the session.<br/>
+        /// Example: {"type":"decision.create","event_id":"decision_1"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveDecisionCreateParam? DecisionCreate { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveDecisionCreateParam? DecisionCreate { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DecisionCreate))]
+#endif
+        public bool IsDecisionCreate => DecisionCreate != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickDecisionCreate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveDecisionCreateParam? value)
+        {
+            value = DecisionCreate;
+            return IsDecisionCreate;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveDecisionCreateParam PickDecisionCreate() => DecisionCreate is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DecisionCreate' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Append an input item for future decisions without starting an evaluation or changing Live voice context.<br/>
+        /// Example: {"type":"decision.item.create","event_id":"browser_1","item":{"type":"message","role":"user","content":[{"type":"input_text","text":"Wikipedia is open."}]}}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveDecisionItemCreateParam? DecisionItemCreate { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveDecisionItemCreateParam? DecisionItemCreate { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DecisionItemCreate))]
+#endif
+        public bool IsDecisionItemCreate => DecisionItemCreate != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickDecisionItemCreate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveDecisionItemCreateParam? value)
+        {
+            value = DecisionItemCreate;
+            return IsDecisionItemCreate;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveDecisionItemCreateParam PickDecisionItemCreate() => DecisionItemCreate is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DecisionItemCreate' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Delete an input item from future decisions without starting an evaluation or changing Live voice context.<br/>
+        /// Example: {"type":"decision.item.delete","event_id":"remove_browser_1","item_id":"msg_browser_1"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveDecisionItemDeleteParam? DecisionItemDelete { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveDecisionItemDeleteParam? DecisionItemDelete { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(DecisionItemDelete))]
+#endif
+        public bool IsDecisionItemDelete => DecisionItemDelete != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickDecisionItemDelete(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveDecisionItemDeleteParam? value)
+        {
+            value = DecisionItemDelete;
+            return IsDecisionItemDelete;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveDecisionItemDeleteParam PickDecisionItemDelete() => DecisionItemDelete is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'DecisionItemDelete' but the value was {ToString()}.");
 
         /// <summary>
         /// Add an input item to the Live session’s Responses backend. Requires Responses delegation; use `response.create` to request a response.<br/>
@@ -557,6 +671,75 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator LiveSidebandClientEvent(global::tryAGI.OpenAI.LiveDecisionCreateParam value) => new LiveSidebandClientEvent((global::tryAGI.OpenAI.LiveDecisionCreateParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveDecisionCreateParam?(LiveSidebandClientEvent @this) => @this.DecisionCreate;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public LiveSidebandClientEvent(global::tryAGI.OpenAI.LiveDecisionCreateParam? value)
+        {
+            DecisionCreate = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static LiveSidebandClientEvent FromDecisionCreate(global::tryAGI.OpenAI.LiveDecisionCreateParam? value) => new LiveSidebandClientEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator LiveSidebandClientEvent(global::tryAGI.OpenAI.LiveDecisionItemCreateParam value) => new LiveSidebandClientEvent((global::tryAGI.OpenAI.LiveDecisionItemCreateParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveDecisionItemCreateParam?(LiveSidebandClientEvent @this) => @this.DecisionItemCreate;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public LiveSidebandClientEvent(global::tryAGI.OpenAI.LiveDecisionItemCreateParam? value)
+        {
+            DecisionItemCreate = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static LiveSidebandClientEvent FromDecisionItemCreate(global::tryAGI.OpenAI.LiveDecisionItemCreateParam? value) => new LiveSidebandClientEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator LiveSidebandClientEvent(global::tryAGI.OpenAI.LiveDecisionItemDeleteParam value) => new LiveSidebandClientEvent((global::tryAGI.OpenAI.LiveDecisionItemDeleteParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveDecisionItemDeleteParam?(LiveSidebandClientEvent @this) => @this.DecisionItemDelete;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public LiveSidebandClientEvent(global::tryAGI.OpenAI.LiveDecisionItemDeleteParam? value)
+        {
+            DecisionItemDelete = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static LiveSidebandClientEvent FromDecisionItemDelete(global::tryAGI.OpenAI.LiveDecisionItemDeleteParam? value) => new LiveSidebandClientEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator LiveSidebandClientEvent(global::tryAGI.OpenAI.LiveResponseItemCreateParam value) => new LiveSidebandClientEvent((global::tryAGI.OpenAI.LiveResponseItemCreateParam?)value);
 
         /// <summary>
@@ -635,6 +818,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.LiveInstructionsAppendParam? sessionInstructionsAppend,
             global::tryAGI.OpenAI.LiveThinkingAppendParam? sessionThinkingAppend,
             global::tryAGI.OpenAI.LiveCommentaryAppendParam? sessionCommentaryAppend,
+            global::tryAGI.OpenAI.LiveDecisionCreateParam? decisionCreate,
+            global::tryAGI.OpenAI.LiveDecisionItemCreateParam? decisionItemCreate,
+            global::tryAGI.OpenAI.LiveDecisionItemDeleteParam? decisionItemDelete,
             global::tryAGI.OpenAI.LiveResponseItemCreateParam? responseItemCreate,
             global::tryAGI.OpenAI.LiveResponseCreateParam? responseCreate,
             global::tryAGI.OpenAI.LiveSessionCloseParam? sessionClose
@@ -649,6 +835,9 @@ namespace tryAGI.OpenAI
             SessionInstructionsAppend = sessionInstructionsAppend;
             SessionThinkingAppend = sessionThinkingAppend;
             SessionCommentaryAppend = sessionCommentaryAppend;
+            DecisionCreate = decisionCreate;
+            DecisionItemCreate = decisionItemCreate;
+            DecisionItemDelete = decisionItemDelete;
             ResponseItemCreate = responseItemCreate;
             ResponseCreate = responseCreate;
             SessionClose = sessionClose;
@@ -661,6 +850,9 @@ namespace tryAGI.OpenAI
             SessionClose as object ??
             ResponseCreate as object ??
             ResponseItemCreate as object ??
+            DecisionItemDelete as object ??
+            DecisionItemCreate as object ??
+            DecisionCreate as object ??
             SessionCommentaryAppend as object ??
             SessionThinkingAppend as object ??
             SessionInstructionsAppend as object ??
@@ -681,6 +873,9 @@ namespace tryAGI.OpenAI
             SessionInstructionsAppend?.ToString() ??
             SessionThinkingAppend?.ToString() ??
             SessionCommentaryAppend?.ToString() ??
+            DecisionCreate?.ToString() ??
+            DecisionItemCreate?.ToString() ??
+            DecisionItemDelete?.ToString() ??
             ResponseItemCreate?.ToString() ??
             ResponseCreate?.ToString() ??
             SessionClose?.ToString()
@@ -691,7 +886,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsResponseItemCreate && !IsResponseCreate && IsSessionClose;
+            return IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && IsSessionClose;
         }
 
         /// <summary>
@@ -705,6 +900,9 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.LiveInstructionsAppendParam, TResult>? sessionInstructionsAppend = null,
             global::System.Func<global::tryAGI.OpenAI.LiveThinkingAppendParam, TResult>? sessionThinkingAppend = null,
             global::System.Func<global::tryAGI.OpenAI.LiveCommentaryAppendParam, TResult>? sessionCommentaryAppend = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveDecisionCreateParam, TResult>? decisionCreate = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveDecisionItemCreateParam, TResult>? decisionItemCreate = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveDecisionItemDeleteParam, TResult>? decisionItemDelete = null,
             global::System.Func<global::tryAGI.OpenAI.LiveResponseItemCreateParam, TResult>? responseItemCreate = null,
             global::System.Func<global::tryAGI.OpenAI.LiveResponseCreateParam, TResult>? responseCreate = null,
             global::System.Func<global::tryAGI.OpenAI.LiveSessionCloseParam, TResult>? sessionClose = null,
@@ -743,17 +941,29 @@ namespace tryAGI.OpenAI
             {
                 return sessionCommentaryAppend(__value6);
             }
-            else if (ResponseItemCreate is { } __value7 && responseItemCreate != null)
+            else if (DecisionCreate is { } __value7 && decisionCreate != null)
             {
-                return responseItemCreate(__value7);
+                return decisionCreate(__value7);
             }
-            else if (ResponseCreate is { } __value8 && responseCreate != null)
+            else if (DecisionItemCreate is { } __value8 && decisionItemCreate != null)
             {
-                return responseCreate(__value8);
+                return decisionItemCreate(__value8);
             }
-            else if (SessionClose is { } __value9 && sessionClose != null)
+            else if (DecisionItemDelete is { } __value9 && decisionItemDelete != null)
             {
-                return sessionClose(__value9);
+                return decisionItemDelete(__value9);
+            }
+            else if (ResponseItemCreate is { } __value10 && responseItemCreate != null)
+            {
+                return responseItemCreate(__value10);
+            }
+            else if (ResponseCreate is { } __value11 && responseCreate != null)
+            {
+                return responseCreate(__value11);
+            }
+            else if (SessionClose is { } __value12 && sessionClose != null)
+            {
+                return sessionClose(__value12);
             }
 
             return default(TResult);
@@ -777,6 +987,12 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.LiveCommentaryAppendParam>? sessionCommentaryAppend = null,
 
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionCreateParam>? decisionCreate = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionItemCreateParam>? decisionItemCreate = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionItemDeleteParam>? decisionItemDelete = null,
+
             global::System.Action<global::tryAGI.OpenAI.LiveResponseItemCreateParam>? responseItemCreate = null,
 
             global::System.Action<global::tryAGI.OpenAI.LiveResponseCreateParam>? responseCreate = null,
@@ -817,17 +1033,29 @@ namespace tryAGI.OpenAI
             {
                 sessionCommentaryAppend?.Invoke(__value6);
             }
-            else if (ResponseItemCreate is { } __value7)
+            else if (DecisionCreate is { } __value7)
             {
-                responseItemCreate?.Invoke(__value7);
+                decisionCreate?.Invoke(__value7);
             }
-            else if (ResponseCreate is { } __value8)
+            else if (DecisionItemCreate is { } __value8)
             {
-                responseCreate?.Invoke(__value8);
+                decisionItemCreate?.Invoke(__value8);
             }
-            else if (SessionClose is { } __value9)
+            else if (DecisionItemDelete is { } __value9)
             {
-                sessionClose?.Invoke(__value9);
+                decisionItemDelete?.Invoke(__value9);
+            }
+            else if (ResponseItemCreate is { } __value10)
+            {
+                responseItemCreate?.Invoke(__value10);
+            }
+            else if (ResponseCreate is { } __value11)
+            {
+                responseCreate?.Invoke(__value11);
+            }
+            else if (SessionClose is { } __value12)
+            {
+                sessionClose?.Invoke(__value12);
             }
         }
 
@@ -842,6 +1070,9 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.LiveInstructionsAppendParam>? sessionInstructionsAppend = null,
             global::System.Action<global::tryAGI.OpenAI.LiveThinkingAppendParam>? sessionThinkingAppend = null,
             global::System.Action<global::tryAGI.OpenAI.LiveCommentaryAppendParam>? sessionCommentaryAppend = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionCreateParam>? decisionCreate = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionItemCreateParam>? decisionItemCreate = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionItemDeleteParam>? decisionItemDelete = null,
             global::System.Action<global::tryAGI.OpenAI.LiveResponseItemCreateParam>? responseItemCreate = null,
             global::System.Action<global::tryAGI.OpenAI.LiveResponseCreateParam>? responseCreate = null,
             global::System.Action<global::tryAGI.OpenAI.LiveSessionCloseParam>? sessionClose = null,
@@ -880,17 +1111,29 @@ namespace tryAGI.OpenAI
             {
                 sessionCommentaryAppend?.Invoke(__value6);
             }
-            else if (ResponseItemCreate is { } __value7)
+            else if (DecisionCreate is { } __value7)
             {
-                responseItemCreate?.Invoke(__value7);
+                decisionCreate?.Invoke(__value7);
             }
-            else if (ResponseCreate is { } __value8)
+            else if (DecisionItemCreate is { } __value8)
             {
-                responseCreate?.Invoke(__value8);
+                decisionItemCreate?.Invoke(__value8);
             }
-            else if (SessionClose is { } __value9)
+            else if (DecisionItemDelete is { } __value9)
             {
-                sessionClose?.Invoke(__value9);
+                decisionItemDelete?.Invoke(__value9);
+            }
+            else if (ResponseItemCreate is { } __value10)
+            {
+                responseItemCreate?.Invoke(__value10);
+            }
+            else if (ResponseCreate is { } __value11)
+            {
+                responseCreate?.Invoke(__value11);
+            }
+            else if (SessionClose is { } __value12)
+            {
+                sessionClose?.Invoke(__value12);
             }
         }
 
@@ -915,6 +1158,12 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.LiveThinkingAppendParam),
                 SessionCommentaryAppend,
                 typeof(global::tryAGI.OpenAI.LiveCommentaryAppendParam),
+                DecisionCreate,
+                typeof(global::tryAGI.OpenAI.LiveDecisionCreateParam),
+                DecisionItemCreate,
+                typeof(global::tryAGI.OpenAI.LiveDecisionItemCreateParam),
+                DecisionItemDelete,
+                typeof(global::tryAGI.OpenAI.LiveDecisionItemDeleteParam),
                 ResponseItemCreate,
                 typeof(global::tryAGI.OpenAI.LiveResponseItemCreateParam),
                 ResponseCreate,
@@ -944,6 +1193,9 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInstructionsAppendParam?>.Default.Equals(SessionInstructionsAppend, other.SessionInstructionsAppend) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveThinkingAppendParam?>.Default.Equals(SessionThinkingAppend, other.SessionThinkingAppend) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveCommentaryAppendParam?>.Default.Equals(SessionCommentaryAppend, other.SessionCommentaryAppend) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionCreateParam?>.Default.Equals(DecisionCreate, other.DecisionCreate) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionItemCreateParam?>.Default.Equals(DecisionItemCreate, other.DecisionItemCreate) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionItemDeleteParam?>.Default.Equals(DecisionItemDelete, other.DecisionItemDelete) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveResponseItemCreateParam?>.Default.Equals(ResponseItemCreate, other.ResponseItemCreate) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveResponseCreateParam?>.Default.Equals(ResponseCreate, other.ResponseCreate) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveSessionCloseParam?>.Default.Equals(SessionClose, other.SessionClose)

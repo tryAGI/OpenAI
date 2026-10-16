@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class ImagesResponse
     {
         /// <summary>
+        /// The effective safety identifier used for safety monitoring and abuse detection. This is the non-empty `safety_identifier` from the request, or the deprecated `user` value when `safety_identifier` is omitted, null, or empty.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_identifier")]
+        public string? SafetyIdentifier { get; set; }
+
+        /// <summary>
         /// The Unix timestamp (in seconds) of when the image was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
@@ -67,6 +73,9 @@ namespace tryAGI.OpenAI
         /// <param name="created">
         /// The Unix timestamp (in seconds) of when the image was created.
         /// </param>
+        /// <param name="safetyIdentifier">
+        /// The effective safety identifier used for safety monitoring and abuse detection. This is the non-empty `safety_identifier` from the request, or the deprecated `user` value when `safety_identifier` is omitted, null, or empty.
+        /// </param>
         /// <param name="data">
         /// The list of generated images.
         /// </param>
@@ -90,6 +99,7 @@ namespace tryAGI.OpenAI
 #endif
         public ImagesResponse(
             int created,
+            string? safetyIdentifier,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Image2>? data,
             global::tryAGI.OpenAI.ImagesResponseBackground? background,
             global::tryAGI.OpenAI.ImagesResponseOutputFormat? outputFormat,
@@ -97,6 +107,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ImagesResponseQuality? quality,
             global::tryAGI.OpenAI.ImageGenUsage? usage)
         {
+            this.SafetyIdentifier = safetyIdentifier;
             this.Created = created;
             this.Data = data;
             this.Background = background;

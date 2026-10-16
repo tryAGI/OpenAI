@@ -87,6 +87,43 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.LiveResponsesDelegationUpdateParam PickResponses() => Responses is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Responses' but the value was {ToString()}.");
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam? Decisions { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam? Decisions { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Decisions))]
+#endif
+        public bool IsDecisions => Decisions != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickDecisions(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam? value)
+        {
+            value = Decisions;
+            return IsDecisions;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam PickDecisions() => Decisions is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Decisions' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -136,22 +173,48 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator DelegationVariant13(global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam value) => new DelegationVariant13((global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam?(DelegationVariant13 @this) => @this.Decisions;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public DelegationVariant13(global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam? value)
+        {
+            Decisions = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static DelegationVariant13 FromDecisions(global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam? value) => new DelegationVariant13(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public DelegationVariant13(
             global::tryAGI.OpenAI.LiveSessionUpdateParamsDelegationVariant1DiscriminatorType? type,
             global::tryAGI.OpenAI.LiveClientDelegationParam? client,
-            global::tryAGI.OpenAI.LiveResponsesDelegationUpdateParam? responses
+            global::tryAGI.OpenAI.LiveResponsesDelegationUpdateParam? responses,
+            global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam? decisions
             )
         {
             Type = type;
 
             Client = client;
             Responses = responses;
+            Decisions = decisions;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Decisions as object ??
             Responses as object ??
             Client as object
             ;
@@ -161,7 +224,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             Client?.ToString() ??
-            Responses?.ToString()
+            Responses?.ToString() ??
+            Decisions?.ToString()
             ;
 
         /// <summary>
@@ -169,7 +233,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsClient && !IsResponses || !IsClient && IsResponses;
+            return IsClient && !IsResponses && !IsDecisions || !IsClient && IsResponses && !IsDecisions || !IsClient && !IsResponses && IsDecisions;
         }
 
         /// <summary>
@@ -178,6 +242,7 @@ namespace tryAGI.OpenAI
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.LiveClientDelegationParam, TResult>? client = null,
             global::System.Func<global::tryAGI.OpenAI.LiveResponsesDelegationUpdateParam, TResult>? responses = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam, TResult>? decisions = null,
             bool validate = true)
         {
             if (validate)
@@ -193,6 +258,10 @@ namespace tryAGI.OpenAI
             {
                 return responses(__value1);
             }
+            else if (Decisions is { } __value2 && decisions != null)
+            {
+                return decisions(__value2);
+            }
 
             return default(TResult);
         }
@@ -204,6 +273,8 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.LiveClientDelegationParam>? client = null,
 
             global::System.Action<global::tryAGI.OpenAI.LiveResponsesDelegationUpdateParam>? responses = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam>? decisions = null,
             bool validate = true)
         {
             if (validate)
@@ -218,6 +289,10 @@ namespace tryAGI.OpenAI
             else if (Responses is { } __value1)
             {
                 responses?.Invoke(__value1);
+            }
+            else if (Decisions is { } __value2)
+            {
+                decisions?.Invoke(__value2);
             }
         }
 
@@ -227,6 +302,7 @@ namespace tryAGI.OpenAI
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.LiveClientDelegationParam>? client = null,
             global::System.Action<global::tryAGI.OpenAI.LiveResponsesDelegationUpdateParam>? responses = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam>? decisions = null,
             bool validate = true)
         {
             if (validate)
@@ -241,6 +317,10 @@ namespace tryAGI.OpenAI
             else if (Responses is { } __value1)
             {
                 responses?.Invoke(__value1);
+            }
+            else if (Decisions is { } __value2)
+            {
+                decisions?.Invoke(__value2);
             }
         }
 
@@ -255,6 +335,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.LiveClientDelegationParam),
                 Responses,
                 typeof(global::tryAGI.OpenAI.LiveResponsesDelegationUpdateParam),
+                Decisions,
+                typeof(global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -272,7 +354,8 @@ namespace tryAGI.OpenAI
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveClientDelegationParam?>.Default.Equals(Client, other.Client) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveResponsesDelegationUpdateParam?>.Default.Equals(Responses, other.Responses)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveResponsesDelegationUpdateParam?>.Default.Equals(Responses, other.Responses) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionsDelegationUpdateParam?>.Default.Equals(Decisions, other.Decisions)
                 ;
         }
 
