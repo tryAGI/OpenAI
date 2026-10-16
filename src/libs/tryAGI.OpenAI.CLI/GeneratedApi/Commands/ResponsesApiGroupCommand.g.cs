@@ -17,6 +17,7 @@ internal static partial class ResponsesApiGroupCommand
                          command.Subcommands.Add(ResponsesBetaCreateResponseAsStreamCommandApiCommand.Create());
                          command.Subcommands.Add(ResponsesBetaDeleteResponseCommandApiCommand.Create());
                          command.Subcommands.Add(ResponsesBetaGetResponseCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesBetaGetResponseAsStreamCommandApiCommand.Create());
                          command.Subcommands.Add(ResponsesBetaGetinputtokencountsCommandApiCommand.Create());
                          command.Subcommands.Add(ResponsesBetaListInputItemsCommandApiCommand.Create());
                          command.Subcommands.Add(ResponsesCancelResponseCommandApiCommand.Create());
@@ -25,6 +26,7 @@ internal static partial class ResponsesApiGroupCommand
                          command.Subcommands.Add(ResponsesCreateResponseAsStreamCommandApiCommand.Create());
                          command.Subcommands.Add(ResponsesDeleteResponseCommandApiCommand.Create());
                          command.Subcommands.Add(ResponsesGetResponseCommandApiCommand.Create());
+                         command.Subcommands.Add(ResponsesGetResponseAsStreamCommandApiCommand.Create());
                          command.Subcommands.Add(ResponsesGetinputtokencountsCommandApiCommand.Create());
                          command.Subcommands.Add(ResponsesListInputItemsCommandApiCommand.Create());
         CustomizeCommand(ref command);

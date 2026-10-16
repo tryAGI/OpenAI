@@ -98,10 +98,6 @@ namespace tryAGI.OpenAI
         /// returned text will not contain the stop sequence.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="stream">
-        /// Whether to stream back partial progress. If set, tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="streamOptions"></param>
         /// <param name="suffix">
         /// The suffix that comes after a completion of inserted text.<br/>
@@ -141,7 +137,6 @@ namespace tryAGI.OpenAI
             double? presencePenalty = default,
             long? seed = default,
             global::tryAGI.OpenAI.StopConfiguration? stop = default,
-            bool? stream = default,
             global::tryAGI.OpenAI.ChatCompletionStreamOptionsVariant1? streamOptions = default,
             string? suffix = default,
             double? temperature = default,
