@@ -1,0 +1,551 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    public partial class CompletionsClient
+    {
+
+
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement s_CreateCompletionAsStreamSecurityRequirement0 =
+            new global::tryAGI.OpenAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::tryAGI.OpenAI.EndPointAuthorizationRequirement[]
+                {                    new global::tryAGI.OpenAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        SchemeId = "ApiKeyAuth",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::tryAGI.OpenAI.EndPointSecurityRequirement[] s_CreateCompletionAsStreamSecurityRequirements =
+            new global::tryAGI.OpenAI.EndPointSecurityRequirement[]
+            {                s_CreateCompletionAsStreamSecurityRequirement0,
+            };
+        partial void PrepareCreateCompletionAsStreamArguments(
+            global::System.Net.Http.HttpClient httpClient,
+            global::tryAGI.OpenAI.CreateCompletionRequest request);
+        partial void PrepareCreateCompletionAsStreamRequest(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            global::tryAGI.OpenAI.CreateCompletionRequest request);
+        partial void ProcessCreateCompletionAsStreamResponse(
+            global::System.Net.Http.HttpClient httpClient,
+            global::System.Net.Http.HttpResponseMessage httpResponseMessage);
+
+        /// <summary>
+        /// Create completion<br/>
+        /// Creates a completion for the provided prompt and parameters.<br/>
+        /// Returns a completion object, or a sequence of completion objects if the request is streamed.
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.CreateCompletionResponse> CreateCompletionAsStreamAsync(
+
+            global::tryAGI.OpenAI.CreateCompletionRequest request,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
+            request = new global::tryAGI.OpenAI.CreateCompletionRequest
+            {
+                Model = request.Model,
+                Prompt = request.Prompt,
+                BestOf = request.BestOf,
+                Echo = request.Echo,
+                FrequencyPenalty = request.FrequencyPenalty,
+                LogitBias = request.LogitBias,
+                Logprobs = request.Logprobs,
+                MaxTokens = request.MaxTokens,
+                N = request.N,
+                PresencePenalty = request.PresencePenalty,
+                Seed = request.Seed,
+                Stop = request.Stop,
+                Stream = true,
+                StreamOptions = request.StreamOptions,
+                Suffix = request.Suffix,
+                Temperature = request.Temperature,
+                TopP = request.TopP,
+                User = request.User,
+            };
+            PrepareArguments(
+                client: HttpClient);
+            PrepareCreateCompletionAsStreamArguments(
+                httpClient: HttpClient,
+                request: request);
+
+
+            var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_CreateCompletionAsStreamSecurityRequirements,
+                operationName: "CreateCompletionAsStreamAsync");
+
+            using var __timeoutCancellationTokenSource = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+            var __effectiveCancellationToken = __timeoutCancellationTokenSource?.Token ?? cancellationToken;
+            var __effectiveReadResponseAsString = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetReadResponseAsString(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                fallbackValue: ReadResponseAsString);
+            var __maxAttempts = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetMaxAttempts(
+                clientOptions: Options,
+                requestOptions: requestOptions,
+                supportsRetry: false);
+
+            global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
+            {
+
+                            var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
+                                path: "/completions",
+                                baseUri: HttpClient.BaseAddress);
+                            var __path = __pathBuilder.ToString();
+                __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
+                    path: __path,
+                    clientParameters: Options.QueryParameters,
+                    requestParameters: requestOptions?.QueryParameters);
+                var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
+                    method: global::System.Net.Http.HttpMethod.Post,
+                    requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+                __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+                __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
+
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "text/event-stream");
+
+            foreach (var __authorization in __authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2" ||
+                    __authorization.Type == "OpenIdConnect")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
+                            var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
+                            var __httpRequestContent = new global::System.Net.Http.StringContent(
+                                content: __httpRequestContentBody,
+                                encoding: global::System.Text.Encoding.UTF8,
+                                mediaType: "application/json");
+                            __httpRequest.Content = __httpRequestContent;
+                global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
+                    request: __httpRequest,
+                    clientHeaders: Options.Headers,
+                    requestHeaders: requestOptions?.Headers);
+
+                PrepareRequest(
+                    client: HttpClient,
+                    request: __httpRequest);
+                PrepareCreateCompletionAsStreamRequest(
+                    httpClient: HttpClient,
+                    httpRequestMessage: __httpRequest,
+                    request: request);
+
+                return __httpRequest;
+            }
+
+            global::System.Net.Http.HttpRequestMessage? __httpRequest = null;
+            global::System.Net.Http.HttpResponseMessage? __response = null;
+            var __attemptNumber = 0;
+            try
+            {
+                for (var __attempt = 1; __attempt <= __maxAttempts; __attempt++)
+                {
+                    __attemptNumber = __attempt;
+                    __httpRequest = __CreateHttpRequest();
+                    await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateCompletionAsStream",
+                                methodName: "CreateCompletionAsStreamAsync",
+                                pathTemplate: "\"/completions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: null,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                    try
+                    {
+                        __response = await HttpClient.SendAsync(
+                request: __httpRequest,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
+                cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                    }
+                    catch (global::System.Net.Http.HttpRequestException __exception)
+                    {
+                        var __retryDelay = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
+                        var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
+                        await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateCompletionAsStream",
+                                methodName: "CreateCompletionAsStreamAsync",
+                                pathTemplate: "\"/completions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: null,
+                                exception: __exception,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        if (!__willRetry)
+                        {
+                            throw;
+                        }
+
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    if (__response != null &&
+                        __attempt < __maxAttempts &&
+                        global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
+                    {
+                        var __retryDelay = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
+                        await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateCompletionAsStream",
+                                methodName: "CreateCompletionAsStreamAsync",
+                                pathTemplate: "\"/completions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attempt,
+                                maxAttempts: __maxAttempts,
+                                willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                        __response.Dispose();
+                        __response = null;
+                        __httpRequest.Dispose();
+                        __httpRequest = null;
+                        await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
+                            retryDelay: __retryDelay,
+                            cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
+                        continue;
+                    }
+
+                    break;
+                }
+
+                if (__response == null)
+                {
+                    throw new global::System.InvalidOperationException("No response received.");
+                }
+
+                using (__response)
+                {
+
+                ProcessResponse(
+                    client: HttpClient,
+                    response: __response);
+                ProcessCreateCompletionAsStreamResponse(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response);
+                if (__response.IsSuccessStatusCode)
+                {
+                    await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateCompletionAsStream",
+                                methodName: "CreateCompletionAsStreamAsync",
+                                pathTemplate: "\"/completions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+                else
+                {
+                    await global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
+                            clientOptions: Options,
+                            context: global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.CreateHookContext(
+                                operationId: "CreateCompletionAsStream",
+                                methodName: "CreateCompletionAsStreamAsync",
+                                pathTemplate: "\"/completions\"",
+                                httpMethod: "POST",
+                                baseUri: BaseUri,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
+                                response: __response,
+                                exception: null,
+                                clientOptions: Options,
+                                requestOptions: requestOptions,
+                                attempt: __attemptNumber,
+                                maxAttempts: __maxAttempts,
+                                willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
+                                cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
+                }
+
+                            try
+                            {
+                                __response.EnsureSuccessStatusCode();
+                            }
+                            catch (global::System.Net.Http.HttpRequestException __ex)
+                            {
+                                string? __content = null;
+                                try
+                                {
+                                    __content = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                        __effectiveCancellationToken
+                #endif
+                                    ).ConfigureAwait(false);
+                                }
+                                catch (global::System.Exception)
+                                {
+                                }
+
+                                throw global::tryAGI.OpenAI.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __ex,
+                                    responseBody: __content,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+
+                            using var __stream = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                __effectiveCancellationToken
+                #endif
+                            ).ConfigureAwait(false);
+
+                            await foreach (var __sseEvent in global::System.Net.ServerSentEvents.SseParser
+                                .Create(__stream).EnumerateAsync(__effectiveCancellationToken))
+                            {
+                                var __content = __sseEvent.Data;
+                                if (__content == "[DONE]")
+                                {
+                                    yield break;
+                                }
+
+                                var __streamedResponse = global::tryAGI.OpenAI.CreateCompletionResponse.FromJson(__content, JsonSerializerContext) ??
+                                                       throw global::tryAGI.OpenAI.ApiException.Create(
+                                                           statusCode: __response.StatusCode,
+                                                           message: $"Response deserialization failed for \"{__content}\" ",
+                                                           innerException: null,
+                                                           responseBody: __content,
+                                                           responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                                               __response.Headers,
+                                                               h => h.Key,
+                                                               h => h.Value));
+
+                                yield return __streamedResponse;
+                            }
+
+                }
+            }
+            finally
+            {
+                __httpRequest?.Dispose();
+            }
+        }
+        /// <summary>
+        /// Create completion<br/>
+        /// Creates a completion for the provided prompt and parameters.<br/>
+        /// Returns a completion object, or a sequence of completion objects if the request is streamed.
+        /// </summary>
+        /// <param name="model">
+        /// ID of the model to use. You can use the [List models](https://developers.openai.com/api/reference/resources/models/methods/list) API to see all of your available models, or see our [Model overview](https://developers.openai.com/api/docs/models) for descriptions of them.
+        /// </param>
+        /// <param name="prompt">
+        /// The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.<br/>
+        /// Note that &lt;|endoftext|&gt; is the document separator that the model sees during training, so if a prompt is not specified the model will generate as if from the beginning of a new document.<br/>
+        /// Default Value: &lt;|endoftext|&gt;
+        /// </param>
+        /// <param name="bestOf">
+        /// Generates `best_of` completions server-side and returns the "best" (the one with the highest log probability per token). Results cannot be streamed.<br/>
+        /// When used with `n`, `best_of` controls the number of candidate completions and `n` specifies how many to return – `best_of` must be greater than `n`.<br/>
+        /// **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="echo">
+        /// Echo back the prompt in addition to the completion<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="frequencyPenalty">
+        /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.<br/>
+        /// [See more information about frequency and presence penalties.](https://developers.openai.com/api/docs/guides/text)<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="logitBias">
+        /// Modify the likelihood of specified tokens appearing in the completion.<br/>
+        /// Accepts a JSON object that maps tokens (specified by their token ID in the GPT tokenizer) to an associated bias value from -100 to 100. You can use this [tokenizer tool](https://platform.openai.com/tokenizer?view=bpe) to convert text to token IDs. Mathematically, the bias is added to the logits generated by the model prior to sampling. The exact effect will vary per model, but values between -1 and 1 should decrease or increase likelihood of selection; values like -100 or 100 should result in a ban or exclusive selection of the relevant token.<br/>
+        /// As an example, you can pass `{"50256": -100}` to prevent the &lt;|endoftext|&gt; token from being generated.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="logprobs">
+        /// Include the log probabilities on the `logprobs` most likely output tokens, as well the chosen tokens. For example, if `logprobs` is 5, the API will return a list of the 5 most likely tokens. The API will always return the `logprob` of the sampled token, so there may be up to `logprobs+1` elements in the response.<br/>
+        /// The maximum value for `logprobs` is 5.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="maxTokens">
+        /// The maximum number of [tokens](https://platform.openai.com/tokenizer) that can be generated in the completion.<br/>
+        /// The token count of your prompt plus `max_tokens` cannot exceed the model's context length. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens.<br/>
+        /// Default Value: 16<br/>
+        /// Example: 16
+        /// </param>
+        /// <param name="n">
+        /// How many completions to generate for each prompt.<br/>
+        /// **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.<br/>
+        /// Default Value: 1<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="presencePenalty">
+        /// Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
+        /// [See more information about frequency and presence penalties.](https://developers.openai.com/api/docs/guides/text)<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="seed">
+        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.<br/>
+        /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
+        /// </param>
+        /// <param name="stop">
+        /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
+        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
+        /// returned text will not contain the stop sequence.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
+        /// </param>
+        /// <param name="streamOptions"></param>
+        /// <param name="suffix">
+        /// The suffix that comes after a completion of inserted text.<br/>
+        /// This parameter is only supported for `gpt-3.5-turbo-instruct`.<br/>
+        /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464<br/>
+        /// Example: test.
+        /// </param>
+        /// <param name="temperature">
+        /// What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.<br/>
+        /// We generally recommend altering this or `top_p` but not both.<br/>
+        /// Default Value: 1<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="topP">
+        /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.<br/>
+        /// We generally recommend altering this or `temperature` but not both.<br/>
+        /// Default Value: 1<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="user">
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](https://developers.openai.com/api/docs/guides/safety-best-practices#implement-safety-identifiers).<br/>
+        /// Example: user-1234
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        public async global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.CreateCompletionResponse> CreateCompletionAsStreamAsync(
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateCompletionRequestModel?> model,
+            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? prompt = default,
+            int? bestOf = default,
+            bool? echo = default,
+            double? frequencyPenalty = default,
+            global::System.Collections.Generic.Dictionary<string, int>? logitBias = default,
+            int? logprobs = default,
+            int? maxTokens = default,
+            int? n = default,
+            double? presencePenalty = default,
+            long? seed = default,
+            global::tryAGI.OpenAI.StopConfiguration? stop = default,
+            global::tryAGI.OpenAI.ChatCompletionStreamOptionsVariant1? streamOptions = default,
+            string? suffix = default,
+            double? temperature = default,
+            double? topP = default,
+            string? user = default,
+            global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
+            [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var __request = new global::tryAGI.OpenAI.CreateCompletionRequest
+            {
+                Model = model,
+                Prompt = prompt,
+                BestOf = bestOf,
+                Echo = echo,
+                FrequencyPenalty = frequencyPenalty,
+                LogitBias = logitBias,
+                Logprobs = logprobs,
+                MaxTokens = maxTokens,
+                N = n,
+                PresencePenalty = presencePenalty,
+                Seed = seed,
+                Stop = stop,
+                Stream = true,
+                StreamOptions = streamOptions,
+                Suffix = suffix,
+                Temperature = temperature,
+                TopP = topP,
+                User = user,
+            };
+
+            var __enumerable = CreateCompletionAsStreamAsync(
+                request: __request,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken);
+
+            await foreach (var __response in __enumerable)
+            {
+                yield return __response;
+            }
+        }
+    }
+}

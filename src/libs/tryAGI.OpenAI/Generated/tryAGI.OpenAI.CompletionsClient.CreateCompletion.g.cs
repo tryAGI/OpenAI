@@ -82,6 +82,27 @@ namespace tryAGI.OpenAI
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
+            request = new global::tryAGI.OpenAI.CreateCompletionRequest
+            {
+                Model = request.Model,
+                Prompt = request.Prompt,
+                BestOf = request.BestOf,
+                Echo = request.Echo,
+                FrequencyPenalty = request.FrequencyPenalty,
+                LogitBias = request.LogitBias,
+                Logprobs = request.Logprobs,
+                MaxTokens = request.MaxTokens,
+                N = request.N,
+                PresencePenalty = request.PresencePenalty,
+                Seed = request.Seed,
+                Stop = request.Stop,
+                Stream = false,
+                StreamOptions = request.StreamOptions,
+                Suffix = request.Suffix,
+                Temperature = request.Temperature,
+                TopP = request.TopP,
+                User = request.User,
+            };
             PrepareArguments(
                 client: HttpClient);
             PrepareCreateCompletionArguments(
@@ -126,6 +147,10 @@ namespace tryAGI.OpenAI
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
+
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "application/json");
 
             foreach (var __authorization in __authorizations)
             {
@@ -760,10 +785,6 @@ namespace tryAGI.OpenAI
         /// returned text will not contain the stop sequence.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
-        /// <param name="stream">
-        /// Whether to stream back partial progress. If set, tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).<br/>
-        /// Default Value: false
-        /// </param>
         /// <param name="streamOptions"></param>
         /// <param name="suffix">
         /// The suffix that comes after a completion of inserted text.<br/>
@@ -803,7 +824,6 @@ namespace tryAGI.OpenAI
             double? presencePenalty = default,
             long? seed = default,
             global::tryAGI.OpenAI.StopConfiguration? stop = default,
-            bool? stream = default,
             global::tryAGI.OpenAI.ChatCompletionStreamOptionsVariant1? streamOptions = default,
             string? suffix = default,
             double? temperature = default,
@@ -826,7 +846,7 @@ namespace tryAGI.OpenAI
                 PresencePenalty = presencePenalty,
                 Seed = seed,
                 Stop = stop,
-                Stream = stream,
+                Stream = false,
                 StreamOptions = streamOptions,
                 Suffix = suffix,
                 Temperature = temperature,

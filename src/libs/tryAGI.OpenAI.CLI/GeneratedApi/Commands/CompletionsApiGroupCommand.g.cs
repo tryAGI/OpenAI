@@ -12,6 +12,7 @@ internal static partial class CompletionsApiGroupCommand
     {
         var command = new Command(@"completions", @"Completions endpoint commands.");
                          command.Subcommands.Add(CompletionsCreateCompletionCommandApiCommand.Create());
+                         command.Subcommands.Add(CompletionsCreateCompletionAsStreamCommandApiCommand.Create());
         CustomizeCommand(ref command);
         return command;
     }
