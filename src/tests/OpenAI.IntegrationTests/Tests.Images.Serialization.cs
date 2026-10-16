@@ -60,7 +60,8 @@ public partial class Tests
             n: 1,
             quality: quality,
             size: CreateImageRequestSize.x1024x1024,
-            outputFormat: CreateImageRequestOutputFormat.Png);
+            outputFormat: CreateImageRequestOutputFormat.Png,
+            safetyIdentifier: "image-serialization-test");
 
         capturedBody.Should().NotBeNullOrWhiteSpace();
         var requestJson = JsonDocument.Parse(capturedBody!);
@@ -70,6 +71,8 @@ public partial class Tests
         root.GetProperty("quality").GetString().Should().Be(expectedWireValue);
         root.GetProperty("size").GetString().Should().Be("1024x1024");
         root.GetProperty("output_format").GetString().Should().Be("png");
+        root.GetProperty("safety_identifier").GetString().Should().Be("image-serialization-test");
+        root.TryGetProperty("user", out _).Should().BeFalse();
         capturedBody.Should().NotContain("\"standard\"");
         capturedBody.Should().NotContain("\"hd\"");
 
