@@ -4747,6 +4747,11 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateSessionInputParam), TypeInfoPropertyName = "CreateSessionInputParam2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputMessageParam>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateAgentSessionParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDelta))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDeltaType), TypeInfoPropertyName = "SessionEventAgentSessionTurnReasoningSummaryTextDeltaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDone))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType), TypeInfoPropertyName = "SessionEventAgentSessionTurnReasoningSummaryPartDoneType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus), TypeInfoPropertyName = "SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDone))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDoneType), TypeInfoPropertyName = "SessionEventAgentSessionTurnReasoningSummaryTextDoneType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionErrorResource))]
@@ -4820,11 +4825,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnOutputTextDoneType), TypeInfoPropertyName = "SessionEventAgentSessionTurnOutputTextDoneType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartAdded))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartAddedType), TypeInfoPropertyName = "SessionEventAgentSessionTurnReasoningSummaryPartAddedType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDone))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType), TypeInfoPropertyName = "SessionEventAgentSessionTurnReasoningSummaryPartDoneType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus), TypeInfoPropertyName = "SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDelta))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDeltaType), TypeInfoPropertyName = "SessionEventAgentSessionTurnReasoningSummaryTextDeltaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEvent), TypeInfoPropertyName = "SessionEvent2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventDiscriminatorType), TypeInfoPropertyName = "SessionEventDiscriminatorType2")]
@@ -8639,6 +8639,9 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.InputMessageParamType?), TypeInfoPropertyName = "NullableInputMessageParamType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.InputMessageParamRole?), TypeInfoPropertyName = "NullableInputMessageParamRole2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.CreateSessionInputParam?), TypeInfoPropertyName = "NullableCreateSessionInputParam2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDeltaType?), TypeInfoPropertyName = "NullableSessionEventAgentSessionTurnReasoningSummaryTextDeltaType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType?), TypeInfoPropertyName = "NullableSessionEventAgentSessionTurnReasoningSummaryPartDoneType2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus?), TypeInfoPropertyName = "NullableSessionEventAgentSessionTurnReasoningSummaryPartDoneStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDoneType?), TypeInfoPropertyName = "NullableSessionEventAgentSessionTurnReasoningSummaryTextDoneType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventErrorType?), TypeInfoPropertyName = "NullableSessionEventErrorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEnvironmentStatusResource?), TypeInfoPropertyName = "NullableSessionEnvironmentStatusResource2")]
@@ -8675,9 +8678,6 @@ namespace tryAGI.OpenAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnOutputTextDeltaType?), TypeInfoPropertyName = "NullableSessionEventAgentSessionTurnOutputTextDeltaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnOutputTextDoneType?), TypeInfoPropertyName = "NullableSessionEventAgentSessionTurnOutputTextDoneType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartAddedType?), TypeInfoPropertyName = "NullableSessionEventAgentSessionTurnReasoningSummaryPartAddedType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType?), TypeInfoPropertyName = "NullableSessionEventAgentSessionTurnReasoningSummaryPartDoneType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus?), TypeInfoPropertyName = "NullableSessionEventAgentSessionTurnReasoningSummaryPartDoneStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDeltaType?), TypeInfoPropertyName = "NullableSessionEventAgentSessionTurnReasoningSummaryTextDeltaType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEvent?), TypeInfoPropertyName = "NullableSessionEvent2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.SessionEventDiscriminatorType?), TypeInfoPropertyName = "NullableSessionEventDiscriminatorType2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::tryAGI.OpenAI.DeletedSessionResourceObject?), TypeInfoPropertyName = "NullableDeletedSessionResourceObject2")]
@@ -16970,6 +16970,18 @@ namespace tryAGI.OpenAI
 
                     || typeToConvert == typeof(global::tryAGI.OpenAI.InputMessageParamRole?)
 
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDeltaType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDeltaType?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType?)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus)
+
+                    || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus?)
+
                     || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDoneType)
 
                     || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDoneType?)
@@ -17109,18 +17121,6 @@ namespace tryAGI.OpenAI
                     || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartAddedType)
 
                     || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartAddedType?)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType?)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus?)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDeltaType)
-
-                    || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDeltaType?)
 
                     || typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventDiscriminatorType)
 
@@ -35261,6 +35261,36 @@ namespace tryAGI.OpenAI
                     return new global::tryAGI.OpenAI.JsonConverters.InputMessageParamRoleNullableJsonConverter();
                 }
 
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDeltaType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryTextDeltaTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDeltaType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryTextDeltaTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryPartDoneTypeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryPartDoneTypeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatusJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus?))
+                {
+                    return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatusNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDoneType))
                 {
                     return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryTextDoneTypeJsonConverter();
@@ -35609,36 +35639,6 @@ namespace tryAGI.OpenAI
                 if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartAddedType?))
                 {
                     return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryPartAddedTypeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryPartDoneTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType?))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryPartDoneTypeNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatusJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus?))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatusNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDeltaType))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryTextDeltaTypeJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDeltaType?))
-                {
-                    return new global::tryAGI.OpenAI.JsonConverters.SessionEventAgentSessionTurnReasoningSummaryTextDeltaTypeNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::tryAGI.OpenAI.SessionEventDiscriminatorType))
