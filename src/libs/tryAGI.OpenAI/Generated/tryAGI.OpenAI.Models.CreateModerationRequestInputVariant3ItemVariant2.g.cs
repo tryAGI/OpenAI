@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// A string of text to classify.<br/>
-        /// Example: I want to kill them
+        /// Example: ...text to classify goes here...
         /// </summary>
-        /// <example>I want to kill them</example>
+        /// <example>...text to classify goes here...</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Text { get; set; }
@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="text">
         /// A string of text to classify.<br/>
-        /// Example: I want to kill them
+        /// Example: ...text to classify goes here...
         /// </param>
         /// <param name="type">
         /// Always `text`.
