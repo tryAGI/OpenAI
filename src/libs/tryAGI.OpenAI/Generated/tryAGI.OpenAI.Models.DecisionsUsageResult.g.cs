@@ -44,6 +44,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("input_cache_write_30m_tokens")]
+        public int? InputCacheWrite30mTokens { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_cache_write_12h_tokens")]
         public int? InputCacheWrite12hTokens { get; set; }
 
@@ -178,6 +184,7 @@ namespace tryAGI.OpenAI
         /// <param name="apiSource"></param>
         /// <param name="inputCachedTokens"></param>
         /// <param name="inputCacheWriteTokens"></param>
+        /// <param name="inputCacheWrite30mTokens"></param>
         /// <param name="inputCacheWrite12hTokens"></param>
         /// <param name="inputUncachedTokens"></param>
         /// <param name="inputTextTokens"></param>
@@ -208,6 +215,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.DecisionsUsageApiSource? apiSource,
             int? inputCachedTokens,
             int? inputCacheWriteTokens,
+            int? inputCacheWrite30mTokens,
             int? inputCacheWrite12hTokens,
             int? inputUncachedTokens,
             int? inputTextTokens,
@@ -232,6 +240,7 @@ namespace tryAGI.OpenAI
             this.InputTokens = inputTokens;
             this.InputCachedTokens = inputCachedTokens;
             this.InputCacheWriteTokens = inputCacheWriteTokens;
+            this.InputCacheWrite30mTokens = inputCacheWrite30mTokens;
             this.InputCacheWrite12hTokens = inputCacheWrite12hTokens;
             this.InputUncachedTokens = inputUncachedTokens;
             this.OutputTokens = outputTokens;
