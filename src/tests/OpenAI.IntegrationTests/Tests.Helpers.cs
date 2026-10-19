@@ -159,6 +159,11 @@ public partial class Tests
                     ? togetherModel
                     : "meta-llama/Llama-3.3-70B-Instruct-Turbo"));
         }
+        if (customProvider == CustomProvider.Inception)
+        {
+            return (CustomProviders.Inception(GetRequiredEnvironmentVariable("INCEPTION_API_KEY")),
+                model ?? GetOptionalEnvironmentVariable("INCEPTION_CHAT_MODEL", "mercury-3"));
+        }
         if (customProvider == CustomProvider.GonkaGate)
         {
             return (CustomProviders.GonkaGate(GetRequiredEnvironmentVariable("GONKAGATE_API_KEY")),

@@ -299,6 +299,20 @@ public partial class Tests
     public Task ChatClient_Mistral_ToolCalling() =>
         ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Mistral);
 
+    // --- Inception ---
+
+    [TestMethod]
+    public Task ChatClient_Inception_GetResponse() =>
+        ChatClient_CustomProvider_GetResponseAsync(CustomProvider.Inception);
+
+    [TestMethod]
+    public Task ChatClient_Inception_Streaming() =>
+        ChatClient_CustomProvider_StreamingAsync(CustomProvider.Inception);
+
+    [TestMethod]
+    public Task ChatClient_Inception_ToolCalling() =>
+        ChatClient_CustomProvider_ToolCallingAsync(CustomProvider.Inception);
+
     // --- Cerebras ---
 
     [TestMethod]

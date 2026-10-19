@@ -47,6 +47,19 @@ public static class CustomProviders
     public const string TogetherBaseUrl = "https://api.together.xyz/v1";
 
     /// <summary>
+    /// https://docs.inceptionlabs.ai/get-started
+    /// </summary>
+    public const string InceptionBaseUrl = "https://api.inceptionlabs.ai/v1";
+
+    /// <summary>
+    /// Create an API for Inception Mercury models, including Mercury 3.
+    /// </summary>
+    public static OpenAiClient Inception(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(InceptionBaseUrl));
+    }
+
+    /// <summary>
     /// https://gonkagate.com/en/docs/api/reference/overview
     /// </summary>
     public const string GonkaGateBaseUrl = "https://api.gonkagate.com/v1";

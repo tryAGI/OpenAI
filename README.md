@@ -237,9 +237,40 @@ using var api = CustomProviders.KiloGateway("API_KEY");
 using var api = CustomProviders.OpenCodeZen("API_KEY");
 using var api = CustomProviders.OpenCodeGo("API_KEY");
 using var api = CustomProviders.Audra("API_KEY");
+using var api = CustomProviders.Inception("INCEPTION_API_KEY");
 using var api = CustomProviders.Ollama();
 using var api = CustomProviders.LmStudio();
 ```
+
+### Inception Mercury 3
+
+Use `CustomProviders.Inception(apiKey)` with model `mercury-3` for chat,
+streaming, and tool calling through the existing chat and `IChatClient` APIs.
+The provider uses `https://api.inceptionlabs.ai/v1`. Live provider tests read
+`INCEPTION_API_KEY` and optionally `INCEPTION_CHAT_MODEL` (default `mercury-3`).
+See [Inception's API guide](https://docs.inceptionlabs.ai/get-started).
+
+For voice latency, Mercury supports `reasoning_effort: "instant"` (its default
+is `low`). The OpenAI reasoning enum does not include `instant`; on a
+`CreateChatCompletionRequestVariant2`, leave `ReasoningEffort` unset and use
+`AdditionalProperties["reasoning_effort"] = "instant"`. Standard streaming
+emits finalized text blocks. Diffusion visualization sends replacement text
+and should not be concatenated as normal chat deltas.
+
+Measure time to the first non-empty answer block from your own connection:
+
+```sh
+python3 scripts/benchmark-inception.py --route direct --effort instant
+python3 scripts/benchmark-inception.py --route openrouter --effort low
+```
+
+The script reads the route's API key from the environment, sends five short
+requests sequentially, and reports response-header time, first SSE event,
+first answer text (TTFT), and total latency. It uses a fresh connection for
+each request, includes network/TLS time, and does not retry failed requests.
+OpenRouter results include routing overhead and are not direct Inception
+measurements. These are live API calls and may consume credits. No location
+is inferred by the script; record the actual test host/network separately.
 
 ### Microsoft.Extensions.AI
 
