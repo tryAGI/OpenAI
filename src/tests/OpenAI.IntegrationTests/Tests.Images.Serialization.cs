@@ -80,6 +80,36 @@ public partial class Tests
         response.Data![0].B64Json.Should().Be("iVBORw0KGgo=");
     }
 
+    [TestMethod]
+    public void ImagesResponse_ResolvesHandwrittenBytesAndNestedUsageWithoutAggregateFallback()
+    {
+        var response = ImagesResponse.FromJson("""
+            {
+              "created": 1740000000,
+              "background": "opaque",
+              "data": [{ "b64_json": "iVBORw0KGgo=" }],
+              "quality": "low",
+              "size": "1024x1024",
+              "output_format": "png",
+              "usage": {
+                "input_tokens": 7,
+                "output_tokens": 272,
+                "total_tokens": 279,
+                "input_tokens_details": { "text_tokens": 7, "image_tokens": 0 },
+                "output_tokens_details": { "image_tokens": 272, "text_tokens": 0 },
+                "future_usage": false
+              }
+            }
+            """)!;
+
+        response.Data.Should().HaveCount(1);
+        response.Data![0].Bytes.Should().Equal(Convert.FromBase64String("iVBORw0KGgo="));
+        response.Usage!.TotalTokens.Should().Be(279);
+        using var roundtrip = JsonDocument.Parse(response.ToJson());
+        roundtrip.RootElement.GetProperty("data")[0].GetProperty("Bytes").GetString().Should().Be("iVBORw0KGgo=");
+        roundtrip.RootElement.GetProperty("usage").GetProperty("future_usage").GetBoolean().Should().BeFalse();
+    }
+
     private sealed class ScriptedHttpMessageHandler(
         Func<HttpRequestMessage, CancellationToken, Task<HttpResponseMessage>> handler)
         : HttpMessageHandler
