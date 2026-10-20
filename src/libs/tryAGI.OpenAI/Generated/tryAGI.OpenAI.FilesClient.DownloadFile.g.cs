@@ -75,6 +75,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::tryAGI.OpenAI.SourceGenerationContextOperation_AFD6AA83DE828EC6.Default;
             PrepareArguments(
                 client: HttpClient);
             PrepareDownloadFileArguments(
@@ -538,6 +540,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::tryAGI.OpenAI.SourceGenerationContextOperation_AFD6AA83DE828EC6.Default;
             PrepareArguments(
                 client: HttpClient);
             PrepareDownloadFileArguments(

@@ -84,6 +84,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::tryAGI.OpenAI.SourceGenerationContextOperation_46953D34B2AD7E6E.Default;
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             request = new global::tryAGI.OpenAI.CreateTranscriptionRequest
@@ -1073,6 +1075,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::tryAGI.OpenAI.SourceGenerationContextOperation_46953D34B2AD7E6E.Default;
 
             file = file ?? throw new global::System.ArgumentNullException(nameof(file));
             var request = new global::tryAGI.OpenAI.CreateTranscriptionRequest
@@ -1950,6 +1954,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::tryAGI.OpenAI.SourceGenerationContextOperation_46953D34B2AD7E6E.Default;
 
             file = file ?? throw new global::System.ArgumentNullException(nameof(file));
             var request = new global::tryAGI.OpenAI.CreateTranscriptionRequest

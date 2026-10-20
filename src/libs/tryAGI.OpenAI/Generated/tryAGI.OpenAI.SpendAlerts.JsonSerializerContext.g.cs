@@ -46,7 +46,18 @@ namespace tryAGI.OpenAI
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
-            global::tryAGI.OpenAI.SourceGenerationContext.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_745EECA6A50F11AC.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_B89C4D1B55D3F1C0.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_44C20A7116AFF153.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_8786137D24D818E5.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_6DA88C34BA124C41.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_BFCA5217FEE0D76F.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_AFEEBDACBD9E7E1E.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_473287F8298DBA71.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_FED3252B3EF04C70.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_870C19B95F1F6A72.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_D0B637F16AD486F4.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_ADB8E4354186FD33.AddConverters(options);
         }
 
         private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
@@ -64,7 +75,7 @@ namespace tryAGI.OpenAI
         private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
         {
             private readonly object _gate = new();
-            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[1];
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[12];
 
             public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
                 global::System.Type type,
@@ -100,7 +111,29 @@ namespace tryAGI.OpenAI
             {
                 return index switch
                 {
-                    0 => global::tryAGI.OpenAI.SourceGenerationContext.TypeInfoResolver,
+                    0 => global::tryAGI.OpenAI.SourceGenerationContextGraph_745EECA6A50F11AC.TypeInfoResolver,
+
+                    1 => global::tryAGI.OpenAI.SourceGenerationContextGraph_B89C4D1B55D3F1C0.TypeInfoResolver,
+
+                    2 => global::tryAGI.OpenAI.SourceGenerationContextGraph_44C20A7116AFF153.TypeInfoResolver,
+
+                    3 => global::tryAGI.OpenAI.SourceGenerationContextGraph_8786137D24D818E5.TypeInfoResolver,
+
+                    4 => global::tryAGI.OpenAI.SourceGenerationContextGraph_6DA88C34BA124C41.TypeInfoResolver,
+
+                    5 => global::tryAGI.OpenAI.SourceGenerationContextGraph_BFCA5217FEE0D76F.TypeInfoResolver,
+
+                    6 => global::tryAGI.OpenAI.SourceGenerationContextGraph_AFEEBDACBD9E7E1E.TypeInfoResolver,
+
+                    7 => global::tryAGI.OpenAI.SourceGenerationContextGraph_473287F8298DBA71.TypeInfoResolver,
+
+                    8 => global::tryAGI.OpenAI.SourceGenerationContextGraph_FED3252B3EF04C70.TypeInfoResolver,
+
+                    9 => global::tryAGI.OpenAI.SourceGenerationContextGraph_870C19B95F1F6A72.TypeInfoResolver,
+
+                    10 => global::tryAGI.OpenAI.SourceGenerationContextGraph_D0B637F16AD486F4.TypeInfoResolver,
+
+                    11 => global::tryAGI.OpenAI.SourceGenerationContextGraph_ADB8E4354186FD33.TypeInfoResolver,
                     _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
                 };
             }

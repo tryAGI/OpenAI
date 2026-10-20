@@ -30,7 +30,10 @@ done
 if [[ "${TRYAGI_PINNED_SPEC:-0}" == "1" ]]; then
   use_pinned_spec=true
 fi
-install_autosdk_cli
+readonly autosdk_cli="${AUTOSDK_EXECUTABLE:-autosdk}"
+if [[ -z "${AUTOSDK_EXECUTABLE:-}" ]]; then
+  install_autosdk_cli
+fi
 if [[ "$use_pinned_spec" == false ]]; then
   fetch_spec --fail --silent --show-error -L -o openapi.yaml https://raw.githubusercontent.com/openai/openai-openapi/main/openapi.yaml
 elif [[ ! -f openapi.yaml ]]; then
@@ -44,7 +47,7 @@ python3 build-asyncapi.py
 
 # Bound repeated serializer graphs; keep CLR loading, JSON and trim checks for this profile.
 rm -rf Generated
-autosdk generate openapi.yaml \
+"$autosdk_cli" generate openapi.yaml \
   --namespace tryAGI.OpenAI \
   --clientClassName OpenAiClient \
   --targetFramework net10.0 \
@@ -56,10 +59,11 @@ autosdk generate openapi.yaml \
   --generate-multipart-upload-helpers \
   --ignore-openapi-errors \
   --direction-aware-json-generation-mode \
-  --json-serializer-context-chunk-size 2000
+  --json-serializer-context-chunk-size 2000 \
+  --shared-json-metadata
 
 rm -rf ../tryAGI.OpenAI.CLI/GeneratedApi
-autosdk cli-project openapi.yaml \
+"$autosdk_cli" cli-project openapi.yaml \
   --output ../tryAGI.OpenAI.CLI/GeneratedApi \
   --api-only \
   --sdk-project ../tryAGI.OpenAI/tryAGI.OpenAI.csproj \
@@ -77,7 +81,7 @@ autosdk cli-project openapi.yaml \
   --exclude-deprecated-operations \
   --ignore-openapi-errors
 
-autosdk generate asyncapi.json \
+"$autosdk_cli" generate asyncapi.json \
   --namespace tryAGI.OpenAI.Realtime \
   --websocket-class-name OpenAiRealtimeClient \
   --json-serializer-context RealtimeSourceGenerationContext \
@@ -85,12 +89,8 @@ autosdk generate asyncapi.json \
   --output Generated/Realtime \
   --base-url wss://api.openai.com
 
-# Metadata generation avoids compiling fast-path serializers for thousands of
-# models while retaining source-generated, trimming-safe JSON type metadata.
-python3 set_metadata_serializer_mode.py
-
 # Regenerate the Claude skill bundle (SKILL.md + commands.md + auth.md) from the spec.
-autosdk skill openapi.yaml \
+"$autosdk_cli" skill openapi.yaml \
   --package-id tryAGI.OpenAI.CLI \
   --output ../../../.claude/skills/tryagi-openai \
   --homepage https://github.com/tryAGI/OpenAI \

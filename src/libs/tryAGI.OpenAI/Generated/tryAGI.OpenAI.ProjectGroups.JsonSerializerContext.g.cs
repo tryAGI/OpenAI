@@ -46,7 +46,15 @@ namespace tryAGI.OpenAI
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
-            global::tryAGI.OpenAI.SourceGenerationContext.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_154077CCD8AE6501.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_75A6AA70FCE6206C.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_44C20A7116AFF153.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_8786137D24D818E5.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_473287F8298DBA71.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_EE0FECF6D365CAC3.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_6DA88C34BA124C41.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_B0D50C25F653A516.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_8F3CE4268F06187E.AddConverters(options);
         }
 
         private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
@@ -64,7 +72,7 @@ namespace tryAGI.OpenAI
         private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
         {
             private readonly object _gate = new();
-            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[1];
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[9];
 
             public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
                 global::System.Type type,
@@ -100,7 +108,23 @@ namespace tryAGI.OpenAI
             {
                 return index switch
                 {
-                    0 => global::tryAGI.OpenAI.SourceGenerationContext.TypeInfoResolver,
+                    0 => global::tryAGI.OpenAI.SourceGenerationContextGraph_154077CCD8AE6501.TypeInfoResolver,
+
+                    1 => global::tryAGI.OpenAI.SourceGenerationContextGraph_75A6AA70FCE6206C.TypeInfoResolver,
+
+                    2 => global::tryAGI.OpenAI.SourceGenerationContextGraph_44C20A7116AFF153.TypeInfoResolver,
+
+                    3 => global::tryAGI.OpenAI.SourceGenerationContextGraph_8786137D24D818E5.TypeInfoResolver,
+
+                    4 => global::tryAGI.OpenAI.SourceGenerationContextGraph_473287F8298DBA71.TypeInfoResolver,
+
+                    5 => global::tryAGI.OpenAI.SourceGenerationContextGraph_EE0FECF6D365CAC3.TypeInfoResolver,
+
+                    6 => global::tryAGI.OpenAI.SourceGenerationContextGraph_6DA88C34BA124C41.TypeInfoResolver,
+
+                    7 => global::tryAGI.OpenAI.SourceGenerationContextGraph_B0D50C25F653A516.TypeInfoResolver,
+
+                    8 => global::tryAGI.OpenAI.SourceGenerationContextGraph_8F3CE4268F06187E.TypeInfoResolver,
                     _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
                 };
             }

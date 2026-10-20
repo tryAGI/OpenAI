@@ -110,6 +110,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::tryAGI.OpenAI.SourceGenerationContextOperation_D8AEB821D4E256D5.Default;
             PrepareArguments(
                 client: HttpClient);
             PrepareListAgentEnvironmentsArguments(

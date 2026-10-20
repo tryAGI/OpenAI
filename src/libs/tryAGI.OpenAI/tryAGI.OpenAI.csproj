@@ -28,6 +28,7 @@
   </PropertyGroup>
   
   <ItemGroup>
+    <PackageReference Include="AutoSDK.JsonMetadata" Version="0.35.0-preview.2.98" PrivateAssets="all" />
     <PackageReference Include="CSharpToJsonSchema" Version="3.10.6" />
     <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="10.11.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.13" />

@@ -469,7 +469,13 @@ internal static class CliRuntime
 
     public static string SerializeStringArray(IEnumerable<string> values)
     {
-        return JsonSerializer.Serialize(values.ToArray());
+        var array = new JsonArray();
+        foreach (var value in values)
+        {
+            array.Add((JsonNode?)JsonValue.Create(value));
+        }
+
+        return array.ToJsonString();
     }
 
     public static async global::System.Threading.Tasks.Task WriteJsonAsync<T>(ParseResult parseResult, T value, JsonSerializerContext context, CancellationToken cancellationToken = default)

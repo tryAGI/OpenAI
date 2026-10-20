@@ -46,7 +46,21 @@ namespace tryAGI.OpenAI
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
-            global::tryAGI.OpenAI.SourceGenerationContext.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_7F833ED3D6929425.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_44C20A7116AFF153.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_473287F8298DBA71.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_D8A10A24EBAA37A5.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_62EE1E74EE1E6D89.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_FC0ACBA26C044EC8.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_F1E298CE50236FBA.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_5D4459630E5704AF.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_E5634028684360AF.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_E31E45C98A864BB4.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_CB76A12B0D007434.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_6DA88C34BA124C41.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_71E74A3864625B80.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_4FFF3684E5DF86B0.AddConverters(options);
+            global::tryAGI.OpenAI.SourceGenerationContextGraph_602907E78E3FE448.AddConverters(options);
         }
 
         private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
@@ -64,7 +78,7 @@ namespace tryAGI.OpenAI
         private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
         {
             private readonly object _gate = new();
-            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[1];
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[15];
 
             public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
                 global::System.Type type,
@@ -100,7 +114,35 @@ namespace tryAGI.OpenAI
             {
                 return index switch
                 {
-                    0 => global::tryAGI.OpenAI.SourceGenerationContext.TypeInfoResolver,
+                    0 => global::tryAGI.OpenAI.SourceGenerationContextGraph_7F833ED3D6929425.TypeInfoResolver,
+
+                    1 => global::tryAGI.OpenAI.SourceGenerationContextGraph_44C20A7116AFF153.TypeInfoResolver,
+
+                    2 => global::tryAGI.OpenAI.SourceGenerationContextGraph_473287F8298DBA71.TypeInfoResolver,
+
+                    3 => global::tryAGI.OpenAI.SourceGenerationContextGraph_D8A10A24EBAA37A5.TypeInfoResolver,
+
+                    4 => global::tryAGI.OpenAI.SourceGenerationContextGraph_62EE1E74EE1E6D89.TypeInfoResolver,
+
+                    5 => global::tryAGI.OpenAI.SourceGenerationContextGraph_FC0ACBA26C044EC8.TypeInfoResolver,
+
+                    6 => global::tryAGI.OpenAI.SourceGenerationContextGraph_F1E298CE50236FBA.TypeInfoResolver,
+
+                    7 => global::tryAGI.OpenAI.SourceGenerationContextGraph_5D4459630E5704AF.TypeInfoResolver,
+
+                    8 => global::tryAGI.OpenAI.SourceGenerationContextGraph_E5634028684360AF.TypeInfoResolver,
+
+                    9 => global::tryAGI.OpenAI.SourceGenerationContextGraph_E31E45C98A864BB4.TypeInfoResolver,
+
+                    10 => global::tryAGI.OpenAI.SourceGenerationContextGraph_CB76A12B0D007434.TypeInfoResolver,
+
+                    11 => global::tryAGI.OpenAI.SourceGenerationContextGraph_6DA88C34BA124C41.TypeInfoResolver,
+
+                    12 => global::tryAGI.OpenAI.SourceGenerationContextGraph_71E74A3864625B80.TypeInfoResolver,
+
+                    13 => global::tryAGI.OpenAI.SourceGenerationContextGraph_4FFF3684E5DF86B0.TypeInfoResolver,
+
+                    14 => global::tryAGI.OpenAI.SourceGenerationContextGraph_602907E78E3FE448.TypeInfoResolver,
                     _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
                 };
             }

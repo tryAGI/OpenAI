@@ -50,6 +50,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::tryAGI.OpenAI.SourceGenerationContextOperation_19910DF626405279.Default;
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             request = new global::tryAGI.OpenAI.CreateAgentSessionParams

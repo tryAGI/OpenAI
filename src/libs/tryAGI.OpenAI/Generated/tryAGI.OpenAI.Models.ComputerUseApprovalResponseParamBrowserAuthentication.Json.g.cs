@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::tryAGI.OpenAI.SourceGenerationContext.Default);
+            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_B748ED90498664C0.Default);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::tryAGI.OpenAI.SourceGenerationContext.Default);
+                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_B748ED90498664C0.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
         {
             return FromJson<T>(
                 json,
-                global::tryAGI.OpenAI.SourceGenerationContext.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextGraph_B748ED90498664C0.Default);
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJson<T>(
                     json,
-                    global::tryAGI.OpenAI.SourceGenerationContext.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextGraph_B748ED90498664C0.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Deserialize<ComputerUseApprovalResponseParamBrowserAuthentication>(
@@ -118,7 +118,7 @@ namespace tryAGI.OpenAI
         {
             return FromJsonStreamAsync<T>(
                 jsonStream,
-                global::tryAGI.OpenAI.SourceGenerationContext.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextGraph_B748ED90498664C0.Default);
         }
 
         /// <summary>
@@ -137,7 +137,7 @@ namespace tryAGI.OpenAI
             {
                 return await FromJsonStreamAsync<T>(
                     jsonStream,
-                    global::tryAGI.OpenAI.SourceGenerationContext.Default).ConfigureAwait(false);
+                    global::tryAGI.OpenAI.SourceGenerationContextGraph_B748ED90498664C0.Default).ConfigureAwait(false);
             }
 
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync<ComputerUseApprovalResponseParamBrowserAuthentication?>(

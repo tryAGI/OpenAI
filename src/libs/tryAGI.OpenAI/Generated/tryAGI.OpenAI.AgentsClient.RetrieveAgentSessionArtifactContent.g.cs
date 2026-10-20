@@ -82,6 +82,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::tryAGI.OpenAI.SourceGenerationContextOperation_3F5E662866BDDC91.Default;
             PrepareArguments(
                 client: HttpClient);
             PrepareRetrieveAgentSessionArtifactContentArguments(
@@ -660,6 +662,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var JsonSerializerContext = JsonSerializerContextProvider?.Value ??
+                global::tryAGI.OpenAI.SourceGenerationContextOperation_3F5E662866BDDC91.Default;
             PrepareArguments(
                 client: HttpClient);
             PrepareRetrieveAgentSessionArtifactContentArguments(
