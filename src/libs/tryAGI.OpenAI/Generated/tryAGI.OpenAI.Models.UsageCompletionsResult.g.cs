@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         public int? InputCachedTokens { get; set; }
 
         /// <summary>
-        /// The aggregated number of input tokens written to the cache with a 30-minute retention period.
+        /// The aggregated number of input tokens written to the cache across 30-minute and 12-hour retention periods.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_cache_write_tokens")]
         public int? InputCacheWriteTokens { get; set; }
@@ -188,7 +188,7 @@ namespace tryAGI.OpenAI
         /// The aggregated number of cached input tokens used across text, audio, and image inputs. For customers subscribed to Scale Tier, this includes Scale Tier tokens.
         /// </param>
         /// <param name="inputCacheWriteTokens">
-        /// The aggregated number of input tokens written to the cache with a 30-minute retention period.
+        /// The aggregated number of input tokens written to the cache across 30-minute and 12-hour retention periods.
         /// </param>
         /// <param name="inputCacheWrite30mTokens"></param>
         /// <param name="inputCacheWrite12hTokens">
