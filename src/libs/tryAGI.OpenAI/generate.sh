@@ -42,6 +42,7 @@ fi
 python3 -c "import yaml" 2>/dev/null || python3 -m pip install --quiet --user --break-system-packages pyyaml
 python3 build-asyncapi.py
 
+# Bound repeated serializer graphs; keep CLR loading, JSON and trim checks for this profile.
 rm -rf Generated
 autosdk generate openapi.yaml \
   --namespace tryAGI.OpenAI \
@@ -53,7 +54,9 @@ autosdk generate openapi.yaml \
   --generate-retry-handler \
   --generate-pageable-helpers \
   --generate-multipart-upload-helpers \
-  --ignore-openapi-errors
+  --ignore-openapi-errors \
+  --direction-aware-json-generation-mode \
+  --json-serializer-context-chunk-size 2000
 
 rm -rf ../tryAGI.OpenAI.CLI/GeneratedApi
 autosdk cli-project openapi.yaml \
