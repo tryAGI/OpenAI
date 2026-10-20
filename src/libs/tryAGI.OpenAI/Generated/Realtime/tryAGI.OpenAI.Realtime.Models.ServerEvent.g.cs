@@ -453,7 +453,7 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// Returned when an error occurs, which could be a client problem or a server<br/>
         /// problem. Most errors are recoverable and the session will stay open, we<br/>
-        /// recommend to implementors to monitor and log error messages by default.
+        /// recommend to implementers to monitor and log error messages by default.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventError? Error { get; init; }
