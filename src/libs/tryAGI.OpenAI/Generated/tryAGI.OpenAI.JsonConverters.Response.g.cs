@@ -31,6 +31,10 @@ namespace tryAGI.OpenAI.JsonConverters
             catch (global::System.InvalidOperationException)
             {
             }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
+            }
 
             global::tryAGI.OpenAI.ResponseProperties? properties = default;
             try
@@ -45,6 +49,10 @@ namespace tryAGI.OpenAI.JsonConverters
             catch (global::System.InvalidOperationException)
             {
             }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
+            }
 
             global::tryAGI.OpenAI.ResponseVariant3? responseVariant3 = default;
             try
@@ -58,6 +66,10 @@ namespace tryAGI.OpenAI.JsonConverters
             }
             catch (global::System.InvalidOperationException)
             {
+            }
+            catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+            {
+                // Legacy enum converters signal an incompatible JSON token with this exception.
             }
             var __value = new global::tryAGI.OpenAI.Response(
                 modelProperties,

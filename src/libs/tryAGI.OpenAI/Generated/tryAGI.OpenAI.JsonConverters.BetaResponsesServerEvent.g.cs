@@ -294,6 +294,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 1)
                 {
@@ -308,6 +312,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 2)
@@ -324,6 +332,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 3)
                 {
@@ -338,6 +350,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 4)
@@ -354,6 +370,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 5)
                 {
@@ -368,6 +388,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 6)
@@ -384,6 +408,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 7)
                 {
@@ -398,6 +426,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 8)
@@ -414,6 +446,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 9)
                 {
@@ -428,6 +464,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 10)
@@ -444,6 +484,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 11)
                 {
@@ -458,6 +502,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 12)
@@ -474,6 +522,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 13)
                 {
@@ -488,6 +540,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 14)
@@ -504,6 +560,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 15)
                 {
@@ -518,6 +578,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 16)
@@ -534,6 +598,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 17)
                 {
@@ -548,6 +616,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 18)
@@ -564,6 +636,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 19)
                 {
@@ -578,6 +654,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 20)
@@ -594,6 +674,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 21)
                 {
@@ -608,6 +692,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 22)
@@ -624,6 +712,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 23)
                 {
@@ -638,6 +730,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 24)
@@ -654,6 +750,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 25)
                 {
@@ -668,6 +768,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 26)
@@ -684,6 +788,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 27)
                 {
@@ -698,6 +806,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 28)
@@ -714,6 +826,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 29)
                 {
@@ -728,6 +844,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 30)
@@ -744,6 +864,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 31)
                 {
@@ -758,6 +882,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 32)
@@ -774,6 +902,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 33)
                 {
@@ -788,6 +920,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 34)
@@ -804,6 +940,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 35)
                 {
@@ -818,6 +958,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 36)
@@ -834,6 +978,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 37)
                 {
@@ -848,6 +996,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 38)
@@ -864,6 +1016,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 39)
                 {
@@ -878,6 +1034,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 40)
@@ -894,6 +1054,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 41)
                 {
@@ -908,6 +1072,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 42)
@@ -924,6 +1092,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 43)
                 {
@@ -938,6 +1110,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 44)
@@ -954,6 +1130,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 45)
                 {
@@ -968,6 +1148,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 46)
@@ -984,6 +1168,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 47)
                 {
@@ -998,6 +1186,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 48)
@@ -1014,6 +1206,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 49)
                 {
@@ -1028,6 +1224,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 50)
@@ -1044,6 +1244,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 51)
                 {
@@ -1058,6 +1262,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 52)
@@ -1074,6 +1282,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 53)
                 {
@@ -1088,6 +1300,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 54)
@@ -1104,6 +1320,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 55)
                 {
@@ -1118,6 +1338,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 56)
@@ -1134,6 +1358,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 57)
                 {
@@ -1148,6 +1376,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 58)
@@ -1164,6 +1396,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 59)
                 {
@@ -1178,6 +1414,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 60)
@@ -1194,6 +1434,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 61)
                 {
@@ -1208,6 +1452,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 62)
@@ -1224,6 +1472,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 63)
                 {
@@ -1238,6 +1490,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
             }
@@ -1257,6 +1513,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1273,6 +1533,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1291,6 +1555,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1307,6 +1575,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1325,6 +1597,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1341,6 +1617,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1359,6 +1639,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1375,6 +1659,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1393,6 +1681,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1409,6 +1701,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1427,6 +1723,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1443,6 +1743,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1461,6 +1765,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1477,6 +1785,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1495,6 +1807,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1511,6 +1827,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1529,6 +1849,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1545,6 +1869,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1563,6 +1891,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1579,6 +1911,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1597,6 +1933,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1613,6 +1953,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1631,6 +1975,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1647,6 +1995,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1665,6 +2017,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1681,6 +2037,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1699,6 +2059,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1715,6 +2079,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1733,6 +2101,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1749,6 +2121,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1767,6 +2143,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1783,6 +2163,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1801,6 +2185,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1817,6 +2205,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1835,6 +2227,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1851,6 +2247,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1869,6 +2269,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1885,6 +2289,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1903,6 +2311,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1919,6 +2331,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1937,6 +2353,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1953,6 +2373,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1971,6 +2395,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -1987,6 +2415,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2005,6 +2437,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -2021,6 +2457,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2039,6 +2479,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -2055,6 +2499,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2073,6 +2521,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -2089,6 +2541,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2107,6 +2563,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -2123,6 +2583,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2141,6 +2605,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -2157,6 +2625,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2175,6 +2647,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -2191,6 +2667,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2209,6 +2689,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -2225,6 +2709,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2243,6 +2731,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -2259,6 +2751,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2277,6 +2773,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -2293,6 +2793,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2311,6 +2815,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (betaResponseAudioWsDelta == null && betaResponseAudioWsDone == null && betaResponseAudioTranscriptWsDelta == null && betaResponseAudioTranscriptWsDone == null && betaResponseCodeInterpreterCallCodeWsDelta == null && betaResponseCodeInterpreterCallCodeWsDone == null && betaResponseCodeInterpreterCallWsCompleted == null && betaResponseCodeInterpreterCallInWsProgress == null && betaResponseCodeInterpreterCallWsInterpreting == null && betaResponseCompactionWsCompacting == null && betaResponseWsCompleted == null && betaResponseContentPartWsAdded == null && betaResponseContentPartWsDone == null && betaResponseWsCreated == null && betaResponseFileSearchCallWsCompleted == null && betaResponseFileSearchCallInWsProgress == null && betaResponseFileSearchCallWsSearching == null && betaResponseFunctionCallArgumentsWsDelta == null && betaResponseFunctionCallArgumentsWsDone == null && betaResponseShellCallCommandWsAdded == null && betaResponseShellCallCommandWsDelta == null && betaResponseShellCallCommandWsDone == null && betaResponseShellCallOutputContentWsDelta == null && betaResponseShellCallOutputContentWsDone == null && betaResponseInWsProgress == null && betaResponseWsFailed == null && betaResponseWsIncomplete == null && betaResponseOutputItemWsAdded == null && betaResponseOutputItemWsDone == null && betaResponseReasoningSummaryPartWsAdded == null && betaResponseReasoningSummaryPartWsDone == null && betaResponseReasoningSummaryTextWsDelta == null && betaResponseReasoningSummaryTextWsDone == null && betaResponseReasoningTextWsDelta == null && betaResponseReasoningTextWsDone == null && betaResponseRefusalWsDelta == null && betaResponseRefusalWsDone == null && betaResponseTextWsDelta == null && betaResponseTextWsDone == null && betaResponseWebSearchCallWsCompleted == null && betaResponseWebSearchCallInWsProgress == null && betaResponseWebSearchCallWsSearching == null && betaResponseImageGenCallWsCompleted == null && betaResponseImageGenCallWsGenerating == null && betaResponseImageGenCallInWsProgress == null && betaResponseImageGenCallPartialWsImage == null && betaResponseMcpCallArgumentsWsDelta == null && betaResponseMcpCallArgumentsWsDone == null && betaResponseMcpCallWsCompleted == null && betaResponseMcpCallWsFailed == null && betaResponseMcpCallInWsProgress == null && betaResponseMcpListToolsWsCompleted == null && betaResponseMcpListToolsWsFailed == null && betaResponseMcpListToolsInWsProgress == null && betaResponseOutputTextAnnotationWsAdded == null && betaResponseWsQueued == null && betaResponseCustomToolCallInputWsDelta == null && betaResponseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null && responseInjectCreated == null && responseInjectFailed == null)
@@ -2327,6 +2835,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
