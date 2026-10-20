@@ -24,7 +24,7 @@ internal static partial class DecisionsCreateDecisionCommandApiCommand
     private static Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.QuestionParam>> Questions { get; } = new(
         name: @"--questions")
     {
-        Description = @"Ask 1–200 questions about the input. Each question can be a predicate, choice, or score. Answers come back in the same order.",
+        Description = @"Ask 1–400 questions about the input. Each question can be a predicate, choice, or score. Answers come back in the same order.",
         Required = true,
     };
 
