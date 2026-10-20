@@ -800,6 +800,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 1)
@@ -816,6 +820,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -834,6 +842,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 3)
@@ -850,6 +862,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -868,6 +884,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 5)
@@ -884,6 +904,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -902,6 +926,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 7)
@@ -918,6 +946,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -936,6 +968,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 9)
@@ -952,6 +988,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -970,6 +1010,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 11)
@@ -986,6 +1030,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1004,6 +1052,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 13)
@@ -1020,6 +1072,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1038,6 +1094,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 15)
@@ -1054,6 +1114,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1072,6 +1136,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 17)
@@ -1088,6 +1156,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1106,6 +1178,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 19)
@@ -1122,6 +1198,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1140,6 +1220,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 21)
@@ -1156,6 +1240,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1174,6 +1262,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 23)
@@ -1190,6 +1282,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1208,6 +1304,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 25)
@@ -1224,6 +1324,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1242,6 +1346,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 27)
@@ -1258,6 +1366,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1276,6 +1388,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 29)
@@ -1292,6 +1408,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1310,6 +1430,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 31)
@@ -1326,6 +1450,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1344,6 +1472,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 33)
@@ -1360,6 +1492,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1378,6 +1514,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 35)
@@ -1394,6 +1534,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1412,6 +1556,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 37)
@@ -1428,6 +1576,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1446,6 +1598,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 39)
@@ -1462,6 +1618,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1480,6 +1640,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 41)
@@ -1496,6 +1660,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1514,6 +1682,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 43)
@@ -1530,6 +1702,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1548,6 +1724,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 45)
@@ -1564,6 +1744,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1582,6 +1766,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 47)
@@ -1598,6 +1786,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1616,6 +1808,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 49)
@@ -1632,6 +1828,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1650,6 +1850,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 51)
@@ -1666,6 +1870,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1684,6 +1892,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 53)
@@ -1700,6 +1912,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1718,6 +1934,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 55)
@@ -1734,6 +1954,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
 
@@ -1752,6 +1976,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
 
                 else if (__bestIndex == 57)
@@ -1768,6 +1996,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
             }
@@ -1787,6 +2019,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -1803,6 +2039,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1821,6 +2061,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -1837,6 +2081,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1855,6 +2103,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -1871,6 +2123,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1889,6 +2145,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -1905,6 +2165,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1923,6 +2187,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -1939,6 +2207,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1957,6 +2229,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -1973,6 +2249,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1991,6 +2271,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2007,6 +2291,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2025,6 +2313,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2041,6 +2333,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2059,6 +2355,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2075,6 +2375,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2093,6 +2397,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2109,6 +2417,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2127,6 +2439,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2143,6 +2459,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2161,6 +2481,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2177,6 +2501,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2195,6 +2523,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2211,6 +2543,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2229,6 +2565,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2245,6 +2585,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2263,6 +2607,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2279,6 +2627,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2297,6 +2649,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2313,6 +2669,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2331,6 +2691,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2347,6 +2711,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2365,6 +2733,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2381,6 +2753,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2399,6 +2775,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2415,6 +2795,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2433,6 +2817,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2449,6 +2837,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2467,6 +2859,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2483,6 +2879,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2501,6 +2901,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2517,6 +2921,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2535,6 +2943,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2551,6 +2963,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2569,6 +2985,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2585,6 +3005,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2603,6 +3027,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2619,6 +3047,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2637,6 +3069,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2653,6 +3089,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2671,6 +3111,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2687,6 +3131,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2705,6 +3153,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2721,6 +3173,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2739,6 +3195,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (value1 == null && value2 == null && value3 == null && value4 == null && value5 == null && value6 == null && value7 == null && value8 == null && value9 == null && value10 == null && value11 == null && value12 == null && value13 == null && value14 == null && value15 == null && value16 == null && value17 == null && value18 == null && value19 == null && value20 == null && value21 == null && value22 == null && value23 == null && value24 == null && value25 == null && value26 == null && value27 == null && value28 == null && value29 == null && value30 == null && value31 == null && value32 == null && value33 == null && value34 == null && value35 == null && value36 == null && value37 == null && value38 == null && value39 == null && value40 == null && value41 == null && value42 == null && value43 == null && value44 == null && value45 == null && value46 == null && value47 == null && value48 == null && value49 == null && value50 == null && value51 == null && value52 == null && value53 == null && value54 == null && value55 == null && value56 == null && value57 == null && value58 == null)
@@ -2755,6 +3215,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 

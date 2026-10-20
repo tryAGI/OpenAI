@@ -275,6 +275,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 1)
                 {
@@ -289,6 +293,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 2)
@@ -305,6 +313,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 3)
                 {
@@ -319,6 +331,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 4)
@@ -335,6 +351,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 5)
                 {
@@ -349,6 +369,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 6)
@@ -365,6 +389,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 7)
                 {
@@ -379,6 +407,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 8)
@@ -395,6 +427,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 9)
                 {
@@ -409,6 +445,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 10)
@@ -425,6 +465,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 11)
                 {
@@ -439,6 +483,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 12)
@@ -455,6 +503,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 13)
                 {
@@ -469,6 +521,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 14)
@@ -485,6 +541,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 15)
                 {
@@ -499,6 +559,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 16)
@@ -515,6 +579,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 17)
                 {
@@ -529,6 +597,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 18)
@@ -545,6 +617,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 19)
                 {
@@ -559,6 +635,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 20)
@@ -575,6 +655,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 21)
                 {
@@ -589,6 +673,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 22)
@@ -605,6 +693,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 23)
                 {
@@ -619,6 +711,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 24)
@@ -635,6 +731,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 25)
                 {
@@ -649,6 +749,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 26)
@@ -665,6 +769,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 27)
                 {
@@ -679,6 +787,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 28)
@@ -695,6 +807,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 29)
                 {
@@ -709,6 +825,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 30)
@@ -725,6 +845,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 31)
                 {
@@ -739,6 +863,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 32)
@@ -755,6 +883,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 33)
                 {
@@ -769,6 +901,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 34)
@@ -785,6 +921,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 35)
                 {
@@ -799,6 +939,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 36)
@@ -815,6 +959,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 37)
                 {
@@ -829,6 +977,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 38)
@@ -845,6 +997,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 39)
                 {
@@ -859,6 +1015,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 40)
@@ -875,6 +1035,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 41)
                 {
@@ -889,6 +1053,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 42)
@@ -905,6 +1073,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 43)
                 {
@@ -919,6 +1091,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 44)
@@ -935,6 +1111,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 45)
                 {
@@ -949,6 +1129,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 46)
@@ -965,6 +1149,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 47)
                 {
@@ -979,6 +1167,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 48)
@@ -995,6 +1187,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 49)
                 {
@@ -1009,6 +1205,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 50)
@@ -1025,6 +1225,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 51)
                 {
@@ -1039,6 +1243,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 52)
@@ -1055,6 +1263,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 53)
                 {
@@ -1069,6 +1281,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 54)
@@ -1085,6 +1301,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 55)
                 {
@@ -1099,6 +1319,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 56)
@@ -1115,6 +1339,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 57)
                 {
@@ -1129,6 +1357,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 58)
@@ -1145,6 +1377,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 59)
                 {
@@ -1159,6 +1395,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
                 else if (__bestIndex == 60)
@@ -1175,6 +1415,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     catch (global::System.InvalidOperationException)
                     {
                     }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
+                    }
                 }
                 else if (__bestIndex == 61)
                 {
@@ -1189,6 +1433,10 @@ namespace tryAGI.OpenAI.JsonConverters
                     }
                     catch (global::System.InvalidOperationException)
                     {
+                    }
+                    catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                    {
+                        // Legacy enum converters signal an incompatible JSON token with this exception.
                     }
                 }
             }
@@ -1208,6 +1456,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1224,6 +1476,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1242,6 +1498,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1258,6 +1518,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1276,6 +1540,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1292,6 +1560,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1310,6 +1582,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1326,6 +1602,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1344,6 +1624,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1360,6 +1644,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1378,6 +1666,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1394,6 +1686,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1412,6 +1708,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1428,6 +1728,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1446,6 +1750,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1462,6 +1770,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1480,6 +1792,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1496,6 +1812,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1514,6 +1834,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1530,6 +1854,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1548,6 +1876,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1564,6 +1896,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1582,6 +1918,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1598,6 +1938,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1616,6 +1960,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1632,6 +1980,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1650,6 +2002,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1666,6 +2022,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1684,6 +2044,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1700,6 +2064,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1718,6 +2086,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1734,6 +2106,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1752,6 +2128,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1768,6 +2148,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1786,6 +2170,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1802,6 +2190,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1820,6 +2212,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1836,6 +2232,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1854,6 +2254,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1870,6 +2274,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1888,6 +2296,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1904,6 +2316,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1922,6 +2338,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1938,6 +2358,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1956,6 +2380,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -1972,6 +2400,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -1990,6 +2422,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -2006,6 +2442,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2024,6 +2464,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -2040,6 +2484,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2058,6 +2506,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -2074,6 +2526,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2092,6 +2548,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -2108,6 +2568,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2126,6 +2590,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -2142,6 +2610,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2160,6 +2632,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -2176,6 +2652,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2194,6 +2674,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -2210,6 +2694,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
@@ -2228,6 +2716,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
+                }
             }
 
             if (responseAudioWsDelta == null && responseAudioWsDone == null && responseAudioTranscriptWsDelta == null && responseAudioTranscriptWsDone == null && responseCodeInterpreterCallCodeWsDelta == null && responseCodeInterpreterCallCodeWsDone == null && responseCodeInterpreterCallWsCompleted == null && responseCodeInterpreterCallInWsProgress == null && responseCodeInterpreterCallWsInterpreting == null && responseCompactionWsCompacting == null && responseWsCompleted == null && responseContentPartWsAdded == null && responseContentPartWsDone == null && responseWsCreated == null && responseFileSearchCallWsCompleted == null && responseFileSearchCallInWsProgress == null && responseFileSearchCallWsSearching == null && responseFunctionCallArgumentsWsDelta == null && responseFunctionCallArgumentsWsDone == null && responseShellCallCommandWsAdded == null && responseShellCallCommandWsDelta == null && responseShellCallCommandWsDone == null && responseShellCallOutputContentWsDelta == null && responseShellCallOutputContentWsDone == null && responseInWsProgress == null && responseWsFailed == null && responseWsIncomplete == null && responseOutputItemWsAdded == null && responseOutputItemWsDone == null && responseReasoningSummaryPartWsAdded == null && responseReasoningSummaryPartWsDone == null && responseReasoningSummaryTextWsDelta == null && responseReasoningSummaryTextWsDone == null && responseReasoningTextWsDelta == null && responseReasoningTextWsDone == null && responseRefusalWsDelta == null && responseRefusalWsDone == null && responseTextWsDelta == null && responseTextWsDone == null && responseWebSearchCallWsCompleted == null && responseWebSearchCallInWsProgress == null && responseWebSearchCallWsSearching == null && responseImageGenCallWsCompleted == null && responseImageGenCallWsGenerating == null && responseImageGenCallInWsProgress == null && responseImageGenCallPartialWsImage == null && responseMcpCallArgumentsWsDelta == null && responseMcpCallArgumentsWsDone == null && responseMcpCallWsCompleted == null && responseMcpCallWsFailed == null && responseMcpCallInWsProgress == null && responseMcpListToolsWsCompleted == null && responseMcpListToolsWsFailed == null && responseMcpListToolsInWsProgress == null && responseOutputTextAnnotationWsAdded == null && responseWsQueued == null && responseCustomToolCallInputWsDelta == null && responseCustomToolCallInputWsDone == null && error == null && responseSteerAccepted == null && responseSteerPending == null && responseSteerFailed == null)
@@ -2244,6 +2736,10 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
                 catch (global::System.InvalidOperationException)
                 {
+                }
+                catch (global::System.ArgumentOutOfRangeException __enumTokenException) when (__enumTokenException.ParamName == "reader")
+                {
+                    // Legacy enum converters signal an incompatible JSON token with this exception.
                 }
             }
 
