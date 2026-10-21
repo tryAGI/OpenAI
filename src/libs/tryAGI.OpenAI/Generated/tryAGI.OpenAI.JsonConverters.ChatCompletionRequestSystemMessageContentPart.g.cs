@@ -37,6 +37,7 @@ namespace tryAGI.OpenAI.JsonConverters
             var __score0 = 0;
             if (__jsonProps.Contains("prompt_cache_breakpoint")) __score0++;
             if (__jsonProps.Contains("prompt_cache_breakpoint.mode")) __score0++;
+            if (__jsonProps.Contains("prompt_cache_breakpoint.ttl")) __score0++;
             if (__jsonProps.Contains("text")) __score0++;
             if (__jsonProps.Contains("type")) __score0++;
             var __bestScore = 0;

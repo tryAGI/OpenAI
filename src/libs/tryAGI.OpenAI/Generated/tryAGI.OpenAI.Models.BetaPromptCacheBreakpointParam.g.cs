@@ -18,6 +18,13 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaPromptCacheBreakpointParamMode Mode { get; set; } = global::tryAGI.OpenAI.BetaPromptCacheBreakpointParamMode.Explicit;
 
         /// <summary>
+        /// The minimum lifetime of this cache breakpoint. Defaults to the request TTL.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ttl")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaPromptCacheBreakpointParamTtlJsonConverter))]
+        public global::tryAGI.OpenAI.BetaPromptCacheBreakpointParamTtl? Ttl { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -26,6 +33,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaPromptCacheBreakpointParam" /> class.
         /// </summary>
+        /// <param name="ttl">
+        /// The minimum lifetime of this cache breakpoint. Defaults to the request TTL.
+        /// </param>
         /// <param name="mode">
         /// The breakpoint mode. Always `explicit`.<br/>
         /// Default Value: explicit
@@ -34,9 +44,11 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaPromptCacheBreakpointParam(
+            global::tryAGI.OpenAI.BetaPromptCacheBreakpointParamTtl? ttl,
             global::tryAGI.OpenAI.BetaPromptCacheBreakpointParamMode mode = global::tryAGI.OpenAI.BetaPromptCacheBreakpointParamMode.Explicit)
         {
             this.Mode = mode;
+            this.Ttl = ttl;
         }
 
         /// <summary>
