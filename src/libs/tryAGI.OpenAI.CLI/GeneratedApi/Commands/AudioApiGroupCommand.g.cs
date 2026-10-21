@@ -20,6 +20,7 @@ internal static partial class AudioApiGroupCommand
                          command.Subcommands.Add(AudioCreateTranslationAsTextCommandApiCommand.Create());
                          command.Subcommands.Add(AudioCreateVoiceCommandApiCommand.Create());
                          command.Subcommands.Add(AudioCreateVoiceConsentCommandApiCommand.Create());
+                         command.Subcommands.Add(AudioDeleteVoiceCommandApiCommand.Create());
                          command.Subcommands.Add(AudioDeleteVoiceConsentCommandApiCommand.Create());
                          command.Subcommands.Add(AudioGetVoiceConsentCommandApiCommand.Create());
                          command.Subcommands.Add(AudioListVoiceConsentsCommandApiCommand.Create());
