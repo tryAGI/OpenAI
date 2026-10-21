@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_0E12328DBE84B29C.Default);
+            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_2BC3479A6D8FB57E.Default);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_0E12328DBE84B29C.Default);
+                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_2BC3479A6D8FB57E.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         {
             return FromJson(
                 json,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_0E12328DBE84B29C.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_2BC3479A6D8FB57E.Default);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJson(
                     json,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_0E12328DBE84B29C.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_2BC3479A6D8FB57E.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.AuditLogApiKeyCreatedData>(
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         {
             return FromJsonStreamAsync(
                 jsonStream,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_0E12328DBE84B29C.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_2BC3479A6D8FB57E.Default);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJsonStreamAsync(
                     jsonStream,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_0E12328DBE84B29C.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_2BC3479A6D8FB57E.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.AuditLogApiKeyCreatedData?>(

@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_C9FAE27C6074FB3A.Default);
+            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_101462B925B7D843.Default);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_C9FAE27C6074FB3A.Default);
+                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_101462B925B7D843.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         {
             return FromJson(
                 json,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_C9FAE27C6074FB3A.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_101462B925B7D843.Default);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJson(
                     json,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_C9FAE27C6074FB3A.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_101462B925B7D843.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ChatSessionFileUpload>(
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         {
             return FromJsonStreamAsync(
                 jsonStream,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_C9FAE27C6074FB3A.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_101462B925B7D843.Default);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJsonStreamAsync(
                     jsonStream,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_C9FAE27C6074FB3A.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_101462B925B7D843.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.ChatSessionFileUpload?>(

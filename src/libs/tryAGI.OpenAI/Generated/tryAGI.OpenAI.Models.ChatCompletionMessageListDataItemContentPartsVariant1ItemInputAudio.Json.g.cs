@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_32DE1DF25DF290CE.Default);
+            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_5BBF1B91799321FD.Default);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_32DE1DF25DF290CE.Default);
+                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_5BBF1B91799321FD.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         {
             return FromJson(
                 json,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_32DE1DF25DF290CE.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_5BBF1B91799321FD.Default);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJson(
                     json,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_32DE1DF25DF290CE.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_5BBF1B91799321FD.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.ChatCompletionMessageListDataItemContentPartsVariant1ItemInputAudio>(
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         {
             return FromJsonStreamAsync(
                 jsonStream,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_32DE1DF25DF290CE.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_5BBF1B91799321FD.Default);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJsonStreamAsync(
                     jsonStream,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_32DE1DF25DF290CE.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_5BBF1B91799321FD.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.ChatCompletionMessageListDataItemContentPartsVariant1ItemInputAudio?>(

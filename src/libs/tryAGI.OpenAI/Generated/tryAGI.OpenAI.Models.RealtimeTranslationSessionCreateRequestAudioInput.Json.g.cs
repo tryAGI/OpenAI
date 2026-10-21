@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_00A5C457E8E7B58B.Default);
+            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_6D900F9BB293B165.Default);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_00A5C457E8E7B58B.Default);
+                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_6D900F9BB293B165.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         {
             return FromJson(
                 json,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_00A5C457E8E7B58B.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_6D900F9BB293B165.Default);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJson(
                     json,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_00A5C457E8E7B58B.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_6D900F9BB293B165.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInput>(
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         {
             return FromJsonStreamAsync(
                 jsonStream,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_00A5C457E8E7B58B.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_6D900F9BB293B165.Default);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJsonStreamAsync(
                     jsonStream,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_00A5C457E8E7B58B.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_6D900F9BB293B165.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.RealtimeTranslationSessionCreateRequestAudioInput?>(

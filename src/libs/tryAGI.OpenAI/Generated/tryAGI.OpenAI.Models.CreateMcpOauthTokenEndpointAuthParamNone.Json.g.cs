@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_A1550767A5989B3E.Default);
+            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_C03383F5E7E6BB95.Default);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_A1550767A5989B3E.Default);
+                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_C03383F5E7E6BB95.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         {
             return FromJson(
                 json,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_A1550767A5989B3E.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_C03383F5E7E6BB95.Default);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJson(
                     json,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_A1550767A5989B3E.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_C03383F5E7E6BB95.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.CreateMcpOauthTokenEndpointAuthParamNone>(
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         {
             return FromJsonStreamAsync(
                 jsonStream,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_A1550767A5989B3E.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_C03383F5E7E6BB95.Default);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJsonStreamAsync(
                     jsonStream,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_A1550767A5989B3E.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_C03383F5E7E6BB95.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.CreateMcpOauthTokenEndpointAuthParamNone?>(

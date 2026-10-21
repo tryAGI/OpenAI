@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextOrphans_FE4FFBE81D21E8D1.Default);
+            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_CE5A5CA614B0F475.Default);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextOrphans_FE4FFBE81D21E8D1.Default);
+                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_CE5A5CA614B0F475.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         {
             return FromJson(
                 json,
-                global::tryAGI.OpenAI.SourceGenerationContextOrphans_FE4FFBE81D21E8D1.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_CE5A5CA614B0F475.Default);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJson(
                     json,
-                    global::tryAGI.OpenAI.SourceGenerationContextOrphans_FE4FFBE81D21E8D1.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_CE5A5CA614B0F475.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.WebhookSafetyOrgAlertCreatedData>(
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         {
             return FromJsonStreamAsync(
                 jsonStream,
-                global::tryAGI.OpenAI.SourceGenerationContextOrphans_FE4FFBE81D21E8D1.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_CE5A5CA614B0F475.Default);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJsonStreamAsync(
                     jsonStream,
-                    global::tryAGI.OpenAI.SourceGenerationContextOrphans_FE4FFBE81D21E8D1.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_CE5A5CA614B0F475.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.WebhookSafetyOrgAlertCreatedData?>(

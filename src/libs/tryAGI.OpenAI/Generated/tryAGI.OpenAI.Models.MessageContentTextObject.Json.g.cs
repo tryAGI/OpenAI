@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_B246EA8853D56A8C.Default);
+            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_14E2CCE4407DBE7A.Default);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_B246EA8853D56A8C.Default);
+                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_14E2CCE4407DBE7A.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         {
             return FromJson(
                 json,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_B246EA8853D56A8C.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_14E2CCE4407DBE7A.Default);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJson(
                     json,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_B246EA8853D56A8C.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_14E2CCE4407DBE7A.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.MessageContentTextObject>(
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         {
             return FromJsonStreamAsync(
                 jsonStream,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_B246EA8853D56A8C.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_14E2CCE4407DBE7A.Default);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJsonStreamAsync(
                     jsonStream,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_B246EA8853D56A8C.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_14E2CCE4407DBE7A.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.MessageContentTextObject?>(

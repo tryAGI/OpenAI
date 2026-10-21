@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_D0B637F16AD486F4.Default);
+            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_48A6FECF292081C3.Default);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextGraph_D0B637F16AD486F4.Default);
+                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_48A6FECF292081C3.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         {
             return FromJson(
                 json,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_D0B637F16AD486F4.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_48A6FECF292081C3.Default);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJson(
                     json,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_D0B637F16AD486F4.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_48A6FECF292081C3.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.OrganizationSpendAlertListResource>(
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         {
             return FromJsonStreamAsync(
                 jsonStream,
-                global::tryAGI.OpenAI.SourceGenerationContextGraph_D0B637F16AD486F4.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_48A6FECF292081C3.Default);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJsonStreamAsync(
                     jsonStream,
-                    global::tryAGI.OpenAI.SourceGenerationContextGraph_D0B637F16AD486F4.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_48A6FECF292081C3.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.OrganizationSpendAlertListResource?>(

@@ -1,0 +1,67 @@
+
+#nullable enable
+namespace tryAGI.OpenAI
+{
+    /// <summary>Source-generated JSON metadata for this scope.</summary>
+    internal sealed partial class SourceGenerationContextComponent_334BD266D81B82E8 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+        internal static global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope => ScopeHolder.Value;
+        internal static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver TypeInfoResolver => MetadataScope;
+        private static class ScopeHolder
+        {
+            internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope Value = new(
+                new SharedMetadataResolver(),
+                new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_3138594ECEA9E716.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_5E4FCA034E76E979.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_A6626E34A2126385.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_A6974308804A4ADC.MetadataScope,
+                }, ContributeConverters);
+        }
+        private static class DefaultHolder
+        {
+            internal static readonly global::System.Text.Json.JsonSerializerOptions Options = MetadataScope.CreateOptions();
+            internal static readonly SourceGenerationContextComponent_334BD266D81B82E8 Instance = new(Options);
+        }
+        /// <summary>The default context for this scope.</summary>
+        public static SourceGenerationContextComponent_334BD266D81B82E8 Default => DefaultHolder.Instance;
+        private SourceGenerationContextComponent_334BD266D81B82E8(global::System.Text.Json.JsonSerializerOptions options) : base(options) { }
+        /// <inheritdoc />
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => DefaultHolder.Options;
+        /// <inheritdoc />
+        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type) =>
+            MetadataScope.GetTypeInfo(type, Options);
+        /// <summary>Adds converters required by this scope.</summary>
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options) => MetadataScope.AddConverters(options);
+
+        #pragma warning disable CS0612, CS0618 // Generated converters may target deprecated API models.
+        private static void ContributeConverters(global::tryAGI.OpenAI.SourceGenerationContextMetadataScope.ConverterCollector collector)
+        {
+            collector.AddEager<global::tryAGI.OpenAI.JsonConverters.Operation2JsonConverter>(static () => new global::tryAGI.OpenAI.JsonConverters.Operation2JsonConverter());
+            collector.AddEager<global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter>(static () => new global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter());
+        }
+        #pragma warning restore CS0612, CS0618
+
+        private sealed partial class SharedMetadataResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        {
+            public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                global::System.Type type, global::System.Text.Json.JsonSerializerOptions options)
+            {
+                if (type == typeof(global::tryAGI.OpenAI.Operation2))
+                {
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_Operation22.Create_Operation22(options);
+                }
+                if (type == typeof(global::tryAGI.OpenAI.Operation2?))
+                {
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableOperation22.Create_NullableOperation22(options);
+                }
+                global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
+                ResolveAdditionalTypeInfo(type, options, ref additional);
+                return additional;
+            }
+
+            static partial void ResolveAdditionalTypeInfo(
+                global::System.Type type, global::System.Text.Json.JsonSerializerOptions options,
+                ref global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? result);
+        }
+
+    }
+}

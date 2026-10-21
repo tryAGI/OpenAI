@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextOrphans_2CC3A8A2D3C92DE3.Default);
+            return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_174392A7BFBF0507.Default);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextOrphans_2CC3A8A2D3C92DE3.Default);
+                return ToJson(global::tryAGI.OpenAI.SourceGenerationContextComponent_174392A7BFBF0507.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI
         {
             return FromJson(
                 json,
-                global::tryAGI.OpenAI.SourceGenerationContextOrphans_2CC3A8A2D3C92DE3.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_174392A7BFBF0507.Default);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJson(
                     json,
-                    global::tryAGI.OpenAI.SourceGenerationContextOrphans_2CC3A8A2D3C92DE3.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_174392A7BFBF0507.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.WebhookRealtimeCallIncomingDataSipHeader>(
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
         {
             return FromJsonStreamAsync(
                 jsonStream,
-                global::tryAGI.OpenAI.SourceGenerationContextOrphans_2CC3A8A2D3C92DE3.Default);
+                global::tryAGI.OpenAI.SourceGenerationContextComponent_174392A7BFBF0507.Default);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI
             {
                 return FromJsonStreamAsync(
                     jsonStream,
-                    global::tryAGI.OpenAI.SourceGenerationContextOrphans_2CC3A8A2D3C92DE3.Default);
+                    global::tryAGI.OpenAI.SourceGenerationContextComponent_174392A7BFBF0507.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.WebhookRealtimeCallIncomingDataSipHeader?>(

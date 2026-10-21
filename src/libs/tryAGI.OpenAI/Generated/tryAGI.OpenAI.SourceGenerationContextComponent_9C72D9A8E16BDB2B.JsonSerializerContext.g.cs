@@ -1,0 +1,67 @@
+
+#nullable enable
+namespace tryAGI.OpenAI
+{
+    /// <summary>Source-generated JSON metadata for this scope.</summary>
+    internal sealed partial class SourceGenerationContextComponent_9C72D9A8E16BDB2B : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+        internal static global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope => ScopeHolder.Value;
+        internal static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver TypeInfoResolver => MetadataScope;
+        private static class ScopeHolder
+        {
+            internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope Value = new(
+                new SharedMetadataResolver(),
+                new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_45196E373C2C883E.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_93415DD020E0735B.MetadataScope,
+                }, ContributeConverters);
+        }
+        private static class DefaultHolder
+        {
+            internal static readonly global::System.Text.Json.JsonSerializerOptions Options = MetadataScope.CreateOptions();
+            internal static readonly SourceGenerationContextComponent_9C72D9A8E16BDB2B Instance = new(Options);
+        }
+        /// <summary>The default context for this scope.</summary>
+        public static SourceGenerationContextComponent_9C72D9A8E16BDB2B Default => DefaultHolder.Instance;
+        private SourceGenerationContextComponent_9C72D9A8E16BDB2B(global::System.Text.Json.JsonSerializerOptions options) : base(options) { }
+        /// <inheritdoc />
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => DefaultHolder.Options;
+        /// <inheritdoc />
+        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type) =>
+            MetadataScope.GetTypeInfo(type, Options);
+        /// <summary>Adds converters required by this scope.</summary>
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options) => MetadataScope.AddConverters(options);
+
+        #pragma warning disable CS0612, CS0618 // Generated converters may target deprecated API models.
+        private static void ContributeConverters(global::tryAGI.OpenAI.SourceGenerationContextMetadataScope.ConverterCollector collector)
+        {
+            collector.AddEager<global::tryAGI.OpenAI.JsonConverters.AllOfJsonConverter<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseCodeInterpreterCallCodeWsDone2>>(static () => new global::tryAGI.OpenAI.JsonConverters.AllOfJsonConverter<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseCodeInterpreterCallCodeWsDone2>());
+            collector.AddEager<global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter>(static () => new global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter());
+        }
+        #pragma warning restore CS0612, CS0618
+
+        private sealed partial class SharedMetadataResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        {
+            public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                global::System.Type type, global::System.Text.Json.JsonSerializerOptions options)
+            {
+                if (type == typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseCodeInterpreterCallCodeWsDone2>))
+                {
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_SourceGenerationContextMetadataType_9C72D9A8E16BDB2B.Create_SourceGenerationContextMetadataType_9C72D9A8E16BDB2B(options);
+                }
+                if (type == typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.ResponseCodeInterpreterCallCodeDoneEvent, global::tryAGI.OpenAI.ResponsesServerEventResponseCodeInterpreterCallCodeWsDone2>?))
+                {
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_SourceGenerationContextMetadataType_4CCAF2679476B528.Create_SourceGenerationContextMetadataType_4CCAF2679476B528(options);
+                }
+                global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
+                ResolveAdditionalTypeInfo(type, options, ref additional);
+                return additional;
+            }
+
+            static partial void ResolveAdditionalTypeInfo(
+                global::System.Type type, global::System.Text.Json.JsonSerializerOptions options,
+                ref global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? result);
+        }
+
+    }
+}
