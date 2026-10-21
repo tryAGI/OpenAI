@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
             internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope Value = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C9070623AC60BAEE.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_1B5926C974405F8C.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C9070623AC60BAEE.MetadataScope,
                 }, ContributeConverters);
         }
         private static class DefaultHolder
