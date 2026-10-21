@@ -80,6 +80,7 @@ Turn audio into text or text into audio.
 | `create-translation` | `POST /audio/translations` | Create translation |
 | `create-voice` | `POST /audio/voices` | Create voice |
 | `create-voice-consent` | `POST /audio/voice_consents` | Create voice consent |
+| `delete-voice` | `DELETE /audio/voices/{voice_id}` | Delete voice |
 | `delete-voice-consent` | `DELETE /audio/voice_consents/{consent_id}` | Delete voice consent |
 | `get-voice-consent` | `GET /audio/voice_consents/{consent_id}` | Retrieve voice consent |
 | `list-voice-consents` | `GET /audio/voice_consents` | List voice consents |
