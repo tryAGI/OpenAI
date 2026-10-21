@@ -90,12 +90,25 @@ namespace tryAGI.OpenAI
         }
 
         private static readonly SharedMetadataResolver Intrinsic = new();
+        private readonly global::System.Lazy<ScopedContext> _default;
+        internal global::System.Text.Json.Serialization.JsonSerializerContext Default => _default.Value;
+        // One options-bound context implementation serves every internal component.
+        // Options are created lazily, after all component initializers have completed.
+        private sealed class ScopedContext : global::System.Text.Json.Serialization.JsonSerializerContext
+        {
+            private readonly SourceGenerationContextMetadataScope _scope;
+            internal ScopedContext(SourceGenerationContextMetadataScope scope) : base(scope.CreateOptions()) => _scope = scope;
+            protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => Options;
+            public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type) =>
+                _scope.GetTypeInfo(type, Options);
+        }
         private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver? _own;
         private readonly global::System.Func<SourceGenerationContextMetadataScope>[] _dependencies;
         private readonly global::System.Action<ConverterCollector>? _contribute;
         internal SourceGenerationContextMetadataScope(global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver? own,
             global::System.Func<SourceGenerationContextMetadataScope>[] dependencies, global::System.Action<ConverterCollector>? contribute)
         {
+            _default = new global::System.Lazy<ScopedContext>(() => new ScopedContext(this));
             _own = own;
             _dependencies = dependencies;
             _contribute = contribute;

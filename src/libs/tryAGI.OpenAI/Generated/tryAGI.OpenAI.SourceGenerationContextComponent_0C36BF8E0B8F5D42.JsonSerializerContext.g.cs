@@ -3,31 +3,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>Source-generated JSON metadata for this scope.</summary>
-    internal sealed partial class SourceGenerationContextComponent_0C36BF8E0B8F5D42 : global::System.Text.Json.Serialization.JsonSerializerContext
+    internal static partial class SourceGenerationContextComponent_0C36BF8E0B8F5D42
     {
-        internal static global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope => ScopeHolder.Value;
-        internal static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver TypeInfoResolver => MetadataScope;
-        private static class ScopeHolder
-        {
-            internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope Value = new(
+
+        internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
                     static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_02326BE24D50B25F.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_02F101A95F0D3993.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_03760ECD9C8BC0A6.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_0F10168CE55D9149.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_1193C031299D9F6D.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_1DF4A20E7EC28044.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_1E8987F08AE309CC.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_27569B653389618D.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_3016A110B0FED36A.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_37AF749BC94CFC6B.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_5A61CB7F845F9E55.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_6B3377EBBA9D5BE3.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_7238B81CD26742FF.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_857589D9E890436E.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_8C765F0C08872D7B.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_9997ECA2ED3C8A1B.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_ABD4893C98ADF93B.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_B571DBB6CCDEEC85.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_CE069641FA3C9A15.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_D77B360CC92A0FE5.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_DF0620032DEBB943.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_E467362A013A6CCC.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_E664D23304B02A20.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_FF0CA12EE4269296.MetadataScope,
                 }, ContributeConverters);
-        }
-        private static class DefaultHolder
-        {
-            internal static readonly global::System.Text.Json.JsonSerializerOptions Options = MetadataScope.CreateOptions();
-            internal static readonly SourceGenerationContextComponent_0C36BF8E0B8F5D42 Instance = new(Options);
-        }
-        /// <summary>The default context for this scope.</summary>
-        public static SourceGenerationContextComponent_0C36BF8E0B8F5D42 Default => DefaultHolder.Instance;
-        private SourceGenerationContextComponent_0C36BF8E0B8F5D42(global::System.Text.Json.JsonSerializerOptions options) : base(options) { }
-        /// <inheritdoc />
-        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => DefaultHolder.Options;
-        /// <inheritdoc />
-        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type) =>
-            MetadataScope.GetTypeInfo(type, Options);
+        internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
+
         /// <summary>Adds converters required by this scope.</summary>
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options) => MetadataScope.AddConverters(options);
