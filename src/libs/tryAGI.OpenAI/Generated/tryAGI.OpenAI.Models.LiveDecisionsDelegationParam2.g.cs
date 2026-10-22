@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class LiveDecisionsDelegationParam2
     {
         /// <summary>
+        /// Milliseconds to wait before requesting an automatic spoken acknowledgement for a delegation. The model may still speak before this delay. Any commentary or thinking appended to the session cancels all pending acknowledgements, including those for other delegations. Defaults to 400. Updates apply to subsequent delegations.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("acknowledgement_delay_ms")]
+        public int? AcknowledgementDelayMs { get; set; }
+
+        /// <summary>
         /// Default Value: decisions
         /// </summary>
         /// <default>global::tryAGI.OpenAI.LiveDecisionsDelegationParam2Type.Decisions</default>
@@ -33,6 +39,9 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="LiveDecisionsDelegationParam2" /> class.
         /// </summary>
         /// <param name="decisions"></param>
+        /// <param name="acknowledgementDelayMs">
+        /// Milliseconds to wait before requesting an automatic spoken acknowledgement for a delegation. The model may still speak before this delay. Any commentary or thinking appended to the session cancels all pending acknowledgements, including those for other delegations. Defaults to 400. Updates apply to subsequent delegations.
+        /// </param>
         /// <param name="type">
         /// Default Value: decisions
         /// </param>
@@ -41,8 +50,10 @@ namespace tryAGI.OpenAI
 #endif
         public LiveDecisionsDelegationParam2(
             global::tryAGI.OpenAI.LiveDecisionsSettingsInputParam2 decisions,
+            int? acknowledgementDelayMs,
             global::tryAGI.OpenAI.LiveDecisionsDelegationParam2Type type = global::tryAGI.OpenAI.LiveDecisionsDelegationParam2Type.Decisions)
         {
+            this.AcknowledgementDelayMs = acknowledgementDelayMs;
             this.Type = type;
             this.Decisions = decisions ?? throw new global::System.ArgumentNullException(nameof(decisions));
         }
