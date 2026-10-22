@@ -45,9 +45,10 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Delete project API key<br/>
-        /// Deletes an API key from the project.<br/>
-        /// Returns confirmation of the key deletion, or an error if the key belonged to<br/>
-        /// a service account.
+        /// Deletes an API key from the project, including keys owned by service accounts.<br/>
+        /// Requires permission to write project API keys. Deleting a service-account key<br/>
+        /// does not delete the service account or its other keys.<br/>
+        /// Returns confirmation of the key deletion.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="apiKeyId"></param>
@@ -71,9 +72,10 @@ namespace tryAGI.OpenAI
         }
         /// <summary>
         /// Delete project API key<br/>
-        /// Deletes an API key from the project.<br/>
-        /// Returns confirmation of the key deletion, or an error if the key belonged to<br/>
-        /// a service account.
+        /// Deletes an API key from the project, including keys owned by service accounts.<br/>
+        /// Requires permission to write project API keys. Deleting a service-account key<br/>
+        /// does not delete the service account or its other keys.<br/>
+        /// Returns confirmation of the key deletion.
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="apiKeyId"></param>

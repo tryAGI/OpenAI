@@ -44,10 +44,12 @@ internal static partial class ProjectsDeleteProjectApiKeyCommandApiCommand
     public static Command Create(string? commandName = null)
     {
         var command = new Command(commandName ?? @"delete-project-api-key", @"Delete project API key
-Deletes an API key from the project.
+Deletes an API key from the project, including keys owned by service accounts.
 
-Returns confirmation of the key deletion, or an error if the key belonged to
-a service account.
+Requires permission to write project API keys. Deleting a service-account key
+does not delete the service account or its other keys.
+
+Returns confirmation of the key deletion.
 ");
                         command.Arguments.Add(ProjectId);
                         command.Arguments.Add(ApiKeyId);
