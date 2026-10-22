@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class LiveResponsesDelegationParam
     {
         /// <summary>
+        /// Milliseconds to wait before requesting an automatic spoken acknowledgement for a delegation. The model may still speak before this delay. Any commentary or thinking appended to the session cancels all pending acknowledgements, including those for other delegations. Defaults to 400 for Decisions sessions and 0 (request immediately) for other sessions. Omission in a session update preserves the current value. Updates apply to subsequent delegations.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("acknowledgement_delay_ms")]
+        public int? AcknowledgementDelayMs { get; set; }
+
+        /// <summary>
         /// The delegation owner. Always `responses` for tasks handled by the Responses API.<br/>
         /// Default Value: responses
         /// </summary>
@@ -36,6 +42,9 @@ namespace tryAGI.OpenAI
         /// <param name="responses">
         /// Backend model, prompt, and tools used when the Live session delegates a task to Responses.
         /// </param>
+        /// <param name="acknowledgementDelayMs">
+        /// Milliseconds to wait before requesting an automatic spoken acknowledgement for a delegation. The model may still speak before this delay. Any commentary or thinking appended to the session cancels all pending acknowledgements, including those for other delegations. Defaults to 400 for Decisions sessions and 0 (request immediately) for other sessions. Omission in a session update preserves the current value. Updates apply to subsequent delegations.
+        /// </param>
         /// <param name="type">
         /// The delegation owner. Always `responses` for tasks handled by the Responses API.<br/>
         /// Default Value: responses
@@ -45,8 +54,10 @@ namespace tryAGI.OpenAI
 #endif
         public LiveResponsesDelegationParam(
             global::tryAGI.OpenAI.LiveResponsesDelegationSettingsInputParam responses,
+            int? acknowledgementDelayMs,
             global::tryAGI.OpenAI.LiveResponsesDelegationParamType type = global::tryAGI.OpenAI.LiveResponsesDelegationParamType.Responses)
         {
+            this.AcknowledgementDelayMs = acknowledgementDelayMs;
             this.Type = type;
             this.Responses = responses ?? throw new global::System.ArgumentNullException(nameof(responses));
         }
