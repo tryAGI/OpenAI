@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AddUploadPartRequest))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AddUploadPartRequest.Create_AddUploadPartRequest(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0000.Create_AddUploadPartRequest(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

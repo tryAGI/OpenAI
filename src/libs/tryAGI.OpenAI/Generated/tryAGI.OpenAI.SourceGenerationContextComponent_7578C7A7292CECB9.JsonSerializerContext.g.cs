@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LocalEnvironmentResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_LocalEnvironmentResource.Create_LocalEnvironmentResource(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0183.Create_LocalEnvironmentResource(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

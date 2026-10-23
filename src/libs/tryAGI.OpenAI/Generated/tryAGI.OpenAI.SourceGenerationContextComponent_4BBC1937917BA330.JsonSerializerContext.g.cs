@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaContainerNetworkPolicyAllowlistParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_BetaContainerNetworkPolicyAllowlistParam.Create_BetaContainerNetworkPolicyAllowlistParam(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0025.Create_BetaContainerNetworkPolicyAllowlistParam(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

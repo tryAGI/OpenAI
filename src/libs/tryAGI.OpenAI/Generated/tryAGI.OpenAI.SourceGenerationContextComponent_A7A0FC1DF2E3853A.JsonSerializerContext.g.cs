@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.FunctionShellCallEnvironmentVariant1Discriminator))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_FunctionShellCallEnvironmentVariant1Discriminator.Create_FunctionShellCallEnvironmentVariant1Discriminator(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0136.Create_FunctionShellCallEnvironmentVariant1Discriminator(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

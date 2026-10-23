@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ClickButtonType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_ClickButtonType2.Create_ClickButtonType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0084.Create_ClickButtonType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ClickButtonType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableClickButtonType2.Create_NullableClickButtonType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0235.Create_NullableClickButtonType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

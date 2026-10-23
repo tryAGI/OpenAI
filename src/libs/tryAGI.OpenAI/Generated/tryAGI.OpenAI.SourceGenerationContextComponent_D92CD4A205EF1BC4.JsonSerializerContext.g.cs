@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.McpOauthTokenEndpointAuthResourceClientSecretPost))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_McpOauthTokenEndpointAuthResourceClientSecretPost.Create_McpOauthTokenEndpointAuthResourceClientSecretPost(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0186.Create_McpOauthTokenEndpointAuthResourceClientSecretPost(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

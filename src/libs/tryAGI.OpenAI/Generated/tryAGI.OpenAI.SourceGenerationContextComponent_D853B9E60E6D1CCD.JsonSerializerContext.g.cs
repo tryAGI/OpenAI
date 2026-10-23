@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.McpCallItemResourceArguments))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_McpCallItemResourceArguments.Create_McpCallItemResourceArguments(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0186.Create_McpCallItemResourceArguments(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

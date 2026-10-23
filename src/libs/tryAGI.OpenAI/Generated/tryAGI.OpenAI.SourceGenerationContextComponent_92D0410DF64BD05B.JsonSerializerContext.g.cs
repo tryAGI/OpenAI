@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaAgentMessageItemParamContentItemDiscriminatorType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_BetaAgentMessageItemParamContentItemDiscriminatorType2.Create_BetaAgentMessageItemParamContentItemDiscriminatorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0018.Create_BetaAgentMessageItemParamContentItemDiscriminatorType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.BetaAgentMessageItemParamContentItemDiscriminatorType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableBetaAgentMessageItemParamContentItemDiscriminatorType2.Create_NullableBetaAgentMessageItemParamContentItemDiscriminatorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0203.Create_NullableBetaAgentMessageItemParamContentItemDiscriminatorType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

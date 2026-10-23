@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ProjectModelPermissionsUpdateRequest))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_ProjectModelPermissionsUpdateRequest.Create_ProjectModelPermissionsUpdateRequest(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0365.Create_ProjectModelPermissionsUpdateRequest(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

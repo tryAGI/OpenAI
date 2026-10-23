@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_LiveInlineSkillSourceParamType2.Create_LiveInlineSkillSourceParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0172.Create_LiveInlineSkillSourceParamType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveInlineSkillSourceParamType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableLiveInlineSkillSourceParamType2.Create_NullableLiveInlineSkillSourceParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0280.Create_NullableLiveInlineSkillSourceParamType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

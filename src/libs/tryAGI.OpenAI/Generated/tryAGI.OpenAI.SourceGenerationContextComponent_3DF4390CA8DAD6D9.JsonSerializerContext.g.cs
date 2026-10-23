@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ShellCallOutputDelta))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_ShellCallOutputDelta.Create_ShellCallOutputDelta(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0441.Create_ShellCallOutputDelta(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

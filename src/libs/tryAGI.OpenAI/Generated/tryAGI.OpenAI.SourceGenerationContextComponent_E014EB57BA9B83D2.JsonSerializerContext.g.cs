@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.MessageDeltaContentTextObjectText))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_MessageDeltaContentTextObjectText.Create_MessageDeltaContentTextObjectText(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0191.Create_MessageDeltaContentTextObjectText(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

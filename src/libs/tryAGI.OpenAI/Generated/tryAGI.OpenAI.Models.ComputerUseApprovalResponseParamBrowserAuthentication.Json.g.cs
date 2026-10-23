@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                typeof(ComputerUseApprovalResponseParamBrowserAuthentication),
-                jsonSerializerContext);
+                jsonSerializerContext.Options.GetTypeInfo(typeof(ComputerUseApprovalResponseParamBrowserAuthentication)));
         }
 
         /// <summary>
@@ -55,8 +54,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(ComputerUseApprovalResponseParamBrowserAuthentication),
-                jsonSerializerContext) as T;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(ComputerUseApprovalResponseParamBrowserAuthentication))) as T;
         }
 
         /// <summary>
@@ -105,8 +103,7 @@ namespace tryAGI.OpenAI
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(ComputerUseApprovalResponseParamBrowserAuthentication),
-                jsonSerializerContext).ConfigureAwait(false)) as T;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(ComputerUseApprovalResponseParamBrowserAuthentication))).ConfigureAwait(false)) as T;
         }
 
         /// <summary>

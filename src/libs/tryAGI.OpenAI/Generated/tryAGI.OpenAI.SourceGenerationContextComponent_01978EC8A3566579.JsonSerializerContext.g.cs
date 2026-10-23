@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AuditLogIpAllowlistConfigDeactivatedConfig))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AuditLogIpAllowlistConfigDeactivatedConfig.Create_AuditLogIpAllowlistConfigDeactivatedConfig(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0013.Create_AuditLogIpAllowlistConfigDeactivatedConfig(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

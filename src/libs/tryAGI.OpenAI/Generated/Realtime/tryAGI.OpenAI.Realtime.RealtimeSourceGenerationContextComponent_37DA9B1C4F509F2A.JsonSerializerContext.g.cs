@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI.Realtime
             {
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeResponseCreateParamsMaxOutputTokens))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0Factory_RealtimeResponseCreateParamsMaxOutputTokens2.Create_RealtimeResponseCreateParamsMaxOutputTokens2(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0018.Create_RealtimeResponseCreateParamsMaxOutputTokens2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeResponseCreateParamsMaxOutputTokens?))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0Factory_NullableRealtimeResponseCreateParamsMaxOutputTokens2.Create_NullableRealtimeResponseCreateParamsMaxOutputTokens2(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0006.Create_NullableRealtimeResponseCreateParamsMaxOutputTokens2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

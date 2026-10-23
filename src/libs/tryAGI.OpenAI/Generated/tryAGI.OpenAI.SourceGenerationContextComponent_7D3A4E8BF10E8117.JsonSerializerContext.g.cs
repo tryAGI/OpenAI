@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AuditLogRoleAssignmentCreated))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AuditLogRoleAssignmentCreated.Create_AuditLogRoleAssignmentCreated(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0014.Create_AuditLogRoleAssignmentCreated(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

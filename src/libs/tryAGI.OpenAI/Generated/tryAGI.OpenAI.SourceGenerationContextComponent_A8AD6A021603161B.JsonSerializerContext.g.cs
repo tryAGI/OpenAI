@@ -32,23 +32,23 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FiltersItem>))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_SourceGenerationContextMetadataType_33EE83DB0267626E.Create_SourceGenerationContextMetadataType_33EE83DB0267626E(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0459.Create_SourceGenerationContextMetadataType_33EE83DB0267626E(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.CompoundFilter))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_CompoundFilter.Create_CompoundFilter(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0086.Create_CompoundFilter(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.FiltersItem))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_FiltersItem2_3.Create_FiltersItem2_3(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0132.Create_FiltersItem2_3(options);
                 }
                 if (type == typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.FiltersItem>))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_SourceGenerationContextMetadataType_383909F143B415B3.Create_SourceGenerationContextMetadataType_383909F143B415B3(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0460.Create_SourceGenerationContextMetadataType_383909F143B415B3(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.FiltersItem?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableFiltersItem2_3.Create_NullableFiltersItem2_3(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0258.Create_NullableFiltersItem2_3(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

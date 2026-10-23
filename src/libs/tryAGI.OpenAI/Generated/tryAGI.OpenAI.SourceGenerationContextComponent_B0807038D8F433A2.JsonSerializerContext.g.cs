@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ExternalStorageOrder))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_ExternalStorageOrder2.Create_ExternalStorageOrder2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0130.Create_ExternalStorageOrder2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ExternalStorageOrder?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableExternalStorageOrder2.Create_NullableExternalStorageOrder2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0257.Create_NullableExternalStorageOrder2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

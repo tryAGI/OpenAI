@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AuditLogExternalStorageRegisteredData))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AuditLogExternalStorageRegisteredData.Create_AuditLogExternalStorageRegisteredData(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0012.Create_AuditLogExternalStorageRegisteredData(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

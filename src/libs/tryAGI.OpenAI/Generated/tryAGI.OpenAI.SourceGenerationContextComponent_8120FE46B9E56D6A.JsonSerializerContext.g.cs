@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceComputerUseType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_PersistedAgentToolResourceComputerUseType2.Create_PersistedAgentToolResourceComputerUseType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0360.Create_PersistedAgentToolResourceComputerUseType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.PersistedAgentToolResourceComputerUseType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullablePersistedAgentToolResourceComputerUseType2.Create_NullablePersistedAgentToolResourceComputerUseType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0296.Create_NullablePersistedAgentToolResourceComputerUseType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

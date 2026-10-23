@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.MCPApprovalResponseResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_MCPApprovalResponseResource.Create_MCPApprovalResponseResource(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0184.Create_MCPApprovalResponseResource(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

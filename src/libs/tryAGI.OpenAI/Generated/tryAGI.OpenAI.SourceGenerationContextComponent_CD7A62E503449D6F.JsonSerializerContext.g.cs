@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AuditLogApiKeyUpdated))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AuditLogApiKeyUpdated.Create_AuditLogApiKeyUpdated(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0011.Create_AuditLogApiKeyUpdated(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

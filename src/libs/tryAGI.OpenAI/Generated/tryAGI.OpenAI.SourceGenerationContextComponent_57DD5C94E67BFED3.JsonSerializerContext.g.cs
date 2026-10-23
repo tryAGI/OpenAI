@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.DeletedVaultCredentialResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_DeletedVaultCredentialResource.Create_DeletedVaultCredentialResource(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0120.Create_DeletedVaultCredentialResource(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

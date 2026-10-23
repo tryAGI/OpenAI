@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CompactionTriggerItemParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_CompactionTriggerItemParam.Create_CompactionTriggerItemParam(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0086.Create_CompactionTriggerItemParam(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

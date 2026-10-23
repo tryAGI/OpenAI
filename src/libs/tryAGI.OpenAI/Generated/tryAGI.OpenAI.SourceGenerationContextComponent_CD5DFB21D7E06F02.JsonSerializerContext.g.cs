@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ListProjectGroupsOrder))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_ListProjectGroupsOrder2.Create_ListProjectGroupsOrder2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0159.Create_ListProjectGroupsOrder2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ListProjectGroupsOrder?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableListProjectGroupsOrder2.Create_NullableListProjectGroupsOrder2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0274.Create_NullableListProjectGroupsOrder2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

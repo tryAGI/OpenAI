@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.WebhookFineTuningJobCancelledType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_WebhookFineTuningJobCancelledType2.Create_WebhookFineTuningJobCancelledType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0560.Create_WebhookFineTuningJobCancelledType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.WebhookFineTuningJobCancelledType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableWebhookFineTuningJobCancelledType2.Create_NullableWebhookFineTuningJobCancelledType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0352.Create_NullableWebhookFineTuningJobCancelledType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

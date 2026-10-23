@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.WebhookResponseCompletedData))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_WebhookResponseCompletedData.Create_WebhookResponseCompletedData(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0562.Create_WebhookResponseCompletedData(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

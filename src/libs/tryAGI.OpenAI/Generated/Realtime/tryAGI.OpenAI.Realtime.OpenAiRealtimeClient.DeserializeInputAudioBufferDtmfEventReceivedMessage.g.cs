@@ -8,8 +8,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <param name="json">The received JSON message.</param>
         /// <returns>The typed message.</returns>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived DeserializeInputAudioBufferDtmfEventReceivedMessage(string json) =>
-            (global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived)(global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived),
-                JsonSerializerContextProvider?.Value ?? global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_2F89EFBF7D32B94A.Default)
+            (global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived)(global::System.Text.Json.JsonSerializer.Deserialize(json,
+                (JsonSerializerContextProvider?.Value ?? global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_2F89EFBF7D32B94A.Default).Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventInputAudioBufferDtmfEventReceived)))
                 ?? throw new global::System.Text.Json.JsonException("The received message was null."));
     }
 }

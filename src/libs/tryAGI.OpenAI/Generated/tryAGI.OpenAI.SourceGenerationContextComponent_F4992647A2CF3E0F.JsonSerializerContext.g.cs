@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.UrlAnnotationSource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_UrlAnnotationSource.Create_UrlAnnotationSource(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0541.Create_UrlAnnotationSource(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

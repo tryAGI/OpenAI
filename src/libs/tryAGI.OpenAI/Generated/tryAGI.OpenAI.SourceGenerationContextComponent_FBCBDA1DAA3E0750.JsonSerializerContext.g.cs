@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AdditionalTools))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AdditionalTools.Create_AdditionalTools(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0000.Create_AdditionalTools(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

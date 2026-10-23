@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.OrganizationCertificateDeactivationResponse))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_OrganizationCertificateDeactivationResponse.Create_OrganizationCertificateDeactivationResponse(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0355.Create_OrganizationCertificateDeactivationResponse(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

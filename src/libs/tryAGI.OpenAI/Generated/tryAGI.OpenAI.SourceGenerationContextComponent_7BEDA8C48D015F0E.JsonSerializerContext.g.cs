@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RunStepDetailsToolCallsFunctionObjectFunction))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_RunStepDetailsToolCallsFunctionObjectFunction.Create_RunStepDetailsToolCallsFunctionObjectFunction(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0428.Create_RunStepDetailsToolCallsFunctionObjectFunction(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

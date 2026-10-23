@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.InputImageContentParamAutoParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_InputImageContentParamAutoParam.Create_InputImageContentParamAutoParam(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0153.Create_InputImageContentParamAutoParam(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

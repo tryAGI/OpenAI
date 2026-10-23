@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RankerVersionType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_RankerVersionType2.Create_RankerVersionType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0371.Create_RankerVersionType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RankerVersionType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableRankerVersionType2.Create_NullableRankerVersionType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0302.Create_NullableRankerVersionType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

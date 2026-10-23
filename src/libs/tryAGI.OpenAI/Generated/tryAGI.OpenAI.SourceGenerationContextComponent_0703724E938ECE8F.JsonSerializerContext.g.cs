@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.FineTuningCheckpointPermission))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_FineTuningCheckpointPermission.Create_FineTuningCheckpointPermission(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0133.Create_FineTuningCheckpointPermission(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

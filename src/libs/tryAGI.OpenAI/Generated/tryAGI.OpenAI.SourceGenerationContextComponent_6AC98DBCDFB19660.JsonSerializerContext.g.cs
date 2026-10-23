@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CustomToolCallResourceVariant2))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_CustomToolCallResourceVariant2.Create_CustomToolCallResourceVariant2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0113.Create_CustomToolCallResourceVariant2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.EvalLogsDataSourceConfigType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_EvalLogsDataSourceConfigType2.Create_EvalLogsDataSourceConfigType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0128.Create_EvalLogsDataSourceConfigType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.EvalLogsDataSourceConfigType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableEvalLogsDataSourceConfigType2.Create_NullableEvalLogsDataSourceConfigType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0256.Create_NullableEvalLogsDataSourceConfigType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

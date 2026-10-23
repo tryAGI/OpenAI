@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AuditLogActorServiceAccount))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AuditLogActorServiceAccount.Create_AuditLogActorServiceAccount(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0010.Create_AuditLogActorServiceAccount(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

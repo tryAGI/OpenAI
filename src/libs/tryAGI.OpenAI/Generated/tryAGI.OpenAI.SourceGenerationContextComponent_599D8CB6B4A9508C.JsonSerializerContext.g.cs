@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.SpecificApplyPatchParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_SpecificApplyPatchParam.Create_SpecificApplyPatchParam(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0527.Create_SpecificApplyPatchParam(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

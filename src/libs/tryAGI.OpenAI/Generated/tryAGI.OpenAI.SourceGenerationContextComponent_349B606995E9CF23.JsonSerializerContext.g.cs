@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ModifyAssistantRequestToolResourcesCodeInterpreter))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_ModifyAssistantRequestToolResourcesCodeInterpreter.Create_ModifyAssistantRequestToolResourcesCodeInterpreter(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0195.Create_ModifyAssistantRequestToolResourcesCodeInterpreter(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

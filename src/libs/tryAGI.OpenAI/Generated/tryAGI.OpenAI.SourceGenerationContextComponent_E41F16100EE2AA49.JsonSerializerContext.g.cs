@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CompletionUsagePromptTokensDetails))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_CompletionUsagePromptTokensDetails.Create_CompletionUsagePromptTokensDetails(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0086.Create_CompletionUsagePromptTokensDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

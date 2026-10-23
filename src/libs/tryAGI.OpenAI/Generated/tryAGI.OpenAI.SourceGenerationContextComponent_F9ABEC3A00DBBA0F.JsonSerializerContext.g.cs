@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.PromptCacheHitDiagnosticsBody))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_PromptCacheHitDiagnosticsBody.Create_PromptCacheHitDiagnosticsBody(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0368.Create_PromptCacheHitDiagnosticsBody(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

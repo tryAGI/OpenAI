@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.Invite))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_Invite.Create_Invite(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0155.Create_Invite(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

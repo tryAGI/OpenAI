@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ListProjectUserRoleAssignmentsOrder))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_ListProjectUserRoleAssignmentsOrder2.Create_ListProjectUserRoleAssignmentsOrder2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0160.Create_ListProjectUserRoleAssignmentsOrder2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ListProjectUserRoleAssignmentsOrder?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableListProjectUserRoleAssignmentsOrder2.Create_NullableListProjectUserRoleAssignmentsOrder2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0274.Create_NullableListProjectUserRoleAssignmentsOrder2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

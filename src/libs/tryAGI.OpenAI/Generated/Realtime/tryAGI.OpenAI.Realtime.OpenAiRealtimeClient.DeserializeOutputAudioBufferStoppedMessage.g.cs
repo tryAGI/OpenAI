@@ -8,8 +8,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <param name="json">The received JSON message.</param>
         /// <returns>The typed message.</returns>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped DeserializeOutputAudioBufferStoppedMessage(string json) =>
-            (global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped)(global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped),
-                JsonSerializerContextProvider?.Value ?? global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_4ED336FD18C4F16F.Default)
+            (global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped)(global::System.Text.Json.JsonSerializer.Deserialize(json,
+                (JsonSerializerContextProvider?.Value ?? global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_4ED336FD18C4F16F.Default).Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventOutputAudioBufferStopped)))
                 ?? throw new global::System.Text.Json.JsonException("The received message was null."));
     }
 }

@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BatchUsageOutputTokensDetails))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_BatchUsageOutputTokensDetails.Create_BatchUsageOutputTokensDetails(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0018.Create_BatchUsageOutputTokensDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

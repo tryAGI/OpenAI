@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AssignedRoleDetailsAssignmentSourcesVariant1Item))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AssignedRoleDetailsAssignmentSourcesVariant1Item.Create_AssignedRoleDetailsAssignmentSourcesVariant1Item(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0008.Create_AssignedRoleDetailsAssignmentSourcesVariant1Item(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

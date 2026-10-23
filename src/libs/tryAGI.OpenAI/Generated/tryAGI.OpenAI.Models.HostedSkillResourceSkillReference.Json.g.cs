@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                this.GetType(),
-                jsonSerializerContext);
+                jsonSerializerContext.Options.GetTypeInfo(this.GetType()));
         }
 
         /// <summary>
@@ -53,8 +52,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::tryAGI.OpenAI.HostedSkillResourceSkillReference),
-                jsonSerializerContext) as global::tryAGI.OpenAI.HostedSkillResourceSkillReference;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.HostedSkillResourceSkillReference))) as global::tryAGI.OpenAI.HostedSkillResourceSkillReference;
         }
 
         /// <summary>
@@ -100,8 +98,7 @@ namespace tryAGI.OpenAI
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::tryAGI.OpenAI.HostedSkillResourceSkillReference),
-                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.HostedSkillResourceSkillReference;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.HostedSkillResourceSkillReference))).ConfigureAwait(false)) as global::tryAGI.OpenAI.HostedSkillResourceSkillReference;
         }
 
         /// <summary>

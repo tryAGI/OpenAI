@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AuditLogLogoutSucceeded))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AuditLogLogoutSucceeded.Create_AuditLogLogoutSucceeded(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0013.Create_AuditLogLogoutSucceeded(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

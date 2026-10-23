@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.EditImageBodyJsonParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_EditImageBodyJsonParam.Create_EditImageBodyJsonParam(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0122.Create_EditImageBodyJsonParam(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

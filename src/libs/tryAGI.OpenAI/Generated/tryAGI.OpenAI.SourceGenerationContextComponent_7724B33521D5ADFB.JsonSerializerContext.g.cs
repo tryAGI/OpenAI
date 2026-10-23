@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.QuestionParamScore))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_QuestionParamScore.Create_QuestionParamScore(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0371.Create_QuestionParamScore(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

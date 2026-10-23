@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AuditLogExternalKeyRemoved))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AuditLogExternalKeyRemoved.Create_AuditLogExternalKeyRemoved(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0012.Create_AuditLogExternalKeyRemoved(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

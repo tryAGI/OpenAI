@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.VaultCredentialAuthResourceMcpOauth))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_VaultCredentialAuthResourceMcpOauth.Create_VaultCredentialAuthResourceMcpOauth(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0547.Create_VaultCredentialAuthResourceMcpOauth(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

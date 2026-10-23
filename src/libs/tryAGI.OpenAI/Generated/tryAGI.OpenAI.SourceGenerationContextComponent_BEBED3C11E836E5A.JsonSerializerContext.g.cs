@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
                 #pragma warning disable CS0618 // Metadata references a deprecated API model.
                 if (type == typeof(global::tryAGI.OpenAI.AssistantObjectToolResources))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AssistantObjectToolResources.Create_AssistantObjectToolResources(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0008.Create_AssistantObjectToolResources(options);
                 }
                 #pragma warning restore CS0618
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;

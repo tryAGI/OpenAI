@@ -589,13 +589,13 @@ namespace tryAGI.OpenAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(string), JsonSerializerContext);
+                                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, JsonSerializerContext.Options.GetTypeInfo(typeof(string)));
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(string), JsonSerializerContext);
+                                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, JsonSerializerContext.Options.GetTypeInfo(typeof(string)));
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1584,13 +1584,13 @@ namespace tryAGI.OpenAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(string), JsonSerializerContext);
+                                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, JsonSerializerContext.Options.GetTypeInfo(typeof(string)));
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(string), JsonSerializerContext);
+                                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, JsonSerializerContext.Options.GetTypeInfo(typeof(string)));
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -2467,13 +2467,13 @@ namespace tryAGI.OpenAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(string), JsonSerializerContext);
+                                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, JsonSerializerContext.Options.GetTypeInfo(typeof(string)));
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, typeof(string), JsonSerializerContext);
+                                        __value_403 = (string?)global::System.Text.Json.JsonSerializer.Deserialize(__content_403, JsonSerializerContext.Options.GetTypeInfo(typeof(string)));
                                     }
                                 }
                                 catch (global::System.Exception __ex)

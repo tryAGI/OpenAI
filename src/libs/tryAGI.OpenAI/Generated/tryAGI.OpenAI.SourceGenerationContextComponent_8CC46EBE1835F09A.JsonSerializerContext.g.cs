@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.UpdateSessionReasoningParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_UpdateSessionReasoningParam.Create_UpdateSessionReasoningParam(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0540.Create_UpdateSessionReasoningParam(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

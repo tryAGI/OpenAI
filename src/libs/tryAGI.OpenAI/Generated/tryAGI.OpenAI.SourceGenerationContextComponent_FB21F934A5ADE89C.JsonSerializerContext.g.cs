@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.GraderLabelModelType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_GraderLabelModelType2.Create_GraderLabelModelType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0140.Create_GraderLabelModelType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.GraderLabelModelType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableGraderLabelModelType2.Create_NullableGraderLabelModelType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0263.Create_NullableGraderLabelModelType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

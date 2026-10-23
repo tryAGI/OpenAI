@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RotateMcpOauthRefreshParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_RotateMcpOauthRefreshParam.Create_RotateMcpOauthRefreshParam(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0423.Create_RotateMcpOauthRefreshParam(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

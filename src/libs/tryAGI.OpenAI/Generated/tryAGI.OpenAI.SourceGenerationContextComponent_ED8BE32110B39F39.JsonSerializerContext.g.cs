@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.VectorStoreSearchRequestRankingOptions))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_VectorStoreSearchRequestRankingOptions.Create_VectorStoreSearchRequestRankingOptions(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0550.Create_VectorStoreSearchRequestRankingOptions(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

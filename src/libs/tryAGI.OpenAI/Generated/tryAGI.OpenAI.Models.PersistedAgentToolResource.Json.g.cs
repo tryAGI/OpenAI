@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                this.GetType(),
-                jsonSerializerContext);
+                jsonSerializerContext.Options.GetTypeInfo(this.GetType()));
         }
 
         /// <summary>
@@ -53,8 +52,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::tryAGI.OpenAI.PersistedAgentToolResource),
-                jsonSerializerContext) as global::tryAGI.OpenAI.PersistedAgentToolResource?;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.PersistedAgentToolResource))) as global::tryAGI.OpenAI.PersistedAgentToolResource?;
         }
 
         /// <summary>
@@ -100,8 +98,7 @@ namespace tryAGI.OpenAI
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::tryAGI.OpenAI.PersistedAgentToolResource),
-                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.PersistedAgentToolResource?;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.PersistedAgentToolResource))).ConfigureAwait(false)) as global::tryAGI.OpenAI.PersistedAgentToolResource?;
         }
 
         /// <summary>

@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.TranscriptionDiarizedSegment))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_TranscriptionDiarizedSegment.Create_TranscriptionDiarizedSegment(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0537.Create_TranscriptionDiarizedSegment(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

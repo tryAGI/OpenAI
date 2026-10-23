@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStartedType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_RealtimeServerEventOutputAudioBufferStartedType2.Create_RealtimeServerEventOutputAudioBufferStartedType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0391.Create_RealtimeServerEventOutputAudioBufferStartedType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStartedType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableRealtimeServerEventOutputAudioBufferStartedType2.Create_NullableRealtimeServerEventOutputAudioBufferStartedType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0312.Create_NullableRealtimeServerEventOutputAudioBufferStartedType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

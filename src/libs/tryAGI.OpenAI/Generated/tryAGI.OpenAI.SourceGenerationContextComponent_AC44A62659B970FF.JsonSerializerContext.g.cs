@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AuditLogScimDisabled))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AuditLogScimDisabled.Create_AuditLogScimDisabled(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0015.Create_AuditLogScimDisabled(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

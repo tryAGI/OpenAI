@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.MisalignmentSteer))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_MisalignmentSteer.Create_MisalignmentSteer(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0193.Create_MisalignmentSteer(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

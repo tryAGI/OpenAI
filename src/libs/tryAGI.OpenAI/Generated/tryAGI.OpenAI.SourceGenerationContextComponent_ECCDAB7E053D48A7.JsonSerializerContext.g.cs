@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ListFilesInVectorStoreBatchFilter))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_ListFilesInVectorStoreBatchFilter2.Create_ListFilesInVectorStoreBatchFilter2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0158.Create_ListFilesInVectorStoreBatchFilter2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ListFilesInVectorStoreBatchFilter?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableListFilesInVectorStoreBatchFilter2.Create_NullableListFilesInVectorStoreBatchFilter2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0273.Create_NullableListFilesInVectorStoreBatchFilter2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

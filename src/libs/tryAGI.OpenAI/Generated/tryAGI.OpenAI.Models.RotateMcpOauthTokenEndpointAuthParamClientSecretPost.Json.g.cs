@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                this.GetType(),
-                jsonSerializerContext);
+                jsonSerializerContext.Options.GetTypeInfo(this.GetType()));
         }
 
         /// <summary>
@@ -53,8 +52,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretPost),
-                jsonSerializerContext) as global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretPost;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretPost))) as global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretPost;
         }
 
         /// <summary>
@@ -100,8 +98,7 @@ namespace tryAGI.OpenAI
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretPost),
-                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretPost;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretPost))).ConfigureAwait(false)) as global::tryAGI.OpenAI.RotateMcpOauthTokenEndpointAuthParamClientSecretPost;
         }
 
         /// <summary>

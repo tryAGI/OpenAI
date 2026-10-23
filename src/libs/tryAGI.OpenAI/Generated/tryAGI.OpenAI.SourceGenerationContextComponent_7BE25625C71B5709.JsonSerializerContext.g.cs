@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.HostedSkillParamSkillReferenceType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_HostedSkillParamSkillReferenceType2.Create_HostedSkillParamSkillReferenceType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0145.Create_HostedSkillParamSkillReferenceType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.HostedSkillParamSkillReferenceType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableHostedSkillParamSkillReferenceType2.Create_NullableHostedSkillParamSkillReferenceType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0265.Create_NullableHostedSkillParamSkillReferenceType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

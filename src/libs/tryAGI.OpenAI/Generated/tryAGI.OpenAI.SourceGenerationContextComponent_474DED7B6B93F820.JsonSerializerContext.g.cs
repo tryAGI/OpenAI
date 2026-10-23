@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.VectorStoreFileBatchObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_VectorStoreFileBatchObject.Create_VectorStoreFileBatchObject(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0549.Create_VectorStoreFileBatchObject(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

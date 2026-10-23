@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RunObjectIncompleteDetailsReason))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_RunObjectIncompleteDetailsReason2.Create_RunObjectIncompleteDetailsReason2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0425.Create_RunObjectIncompleteDetailsReason2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RunObjectIncompleteDetailsReason?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableRunObjectIncompleteDetailsReason2.Create_NullableRunObjectIncompleteDetailsReason2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0326.Create_NullableRunObjectIncompleteDetailsReason2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

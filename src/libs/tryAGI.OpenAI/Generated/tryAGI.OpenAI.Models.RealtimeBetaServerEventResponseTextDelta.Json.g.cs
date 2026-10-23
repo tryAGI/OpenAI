@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                this.GetType(),
-                jsonSerializerContext);
+                jsonSerializerContext.Options.GetTypeInfo(this.GetType()));
         }
 
         /// <summary>
@@ -53,8 +52,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDelta),
-                jsonSerializerContext) as global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDelta;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDelta))) as global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDelta;
         }
 
         /// <summary>
@@ -100,8 +98,7 @@ namespace tryAGI.OpenAI
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDelta),
-                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDelta;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDelta))).ConfigureAwait(false)) as global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDelta;
         }
 
         /// <summary>

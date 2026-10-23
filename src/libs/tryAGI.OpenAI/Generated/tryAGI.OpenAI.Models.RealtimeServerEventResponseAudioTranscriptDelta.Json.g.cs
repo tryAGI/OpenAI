@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                this.GetType(),
-                jsonSerializerContext);
+                jsonSerializerContext.Options.GetTypeInfo(this.GetType()));
         }
 
         /// <summary>
@@ -53,8 +52,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta),
-                jsonSerializerContext) as global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta))) as global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta;
         }
 
         /// <summary>
@@ -100,8 +98,7 @@ namespace tryAGI.OpenAI
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta),
-                jsonSerializerContext).ConfigureAwait(false)) as global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta))).ConfigureAwait(false)) as global::tryAGI.OpenAI.RealtimeServerEventResponseAudioTranscriptDelta;
         }
 
         /// <summary>

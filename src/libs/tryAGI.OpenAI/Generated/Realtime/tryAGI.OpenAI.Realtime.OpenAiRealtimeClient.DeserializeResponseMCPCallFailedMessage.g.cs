@@ -8,8 +8,8 @@ namespace tryAGI.OpenAI.Realtime
         /// <param name="json">The received JSON message.</param>
         /// <returns>The typed message.</returns>
         public global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed DeserializeResponseMCPCallFailedMessage(string json) =>
-            (global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed)(global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed),
-                JsonSerializerContextProvider?.Value ?? global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_70697170439828A5.Default)
+            (global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed)(global::System.Text.Json.JsonSerializer.Deserialize(json,
+                (JsonSerializerContextProvider?.Value ?? global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_70697170439828A5.Default).Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseMCPCallFailed)))
                 ?? throw new global::System.Text.Json.JsonException("The received message was null."));
     }
 }

@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.SpecificProgrammaticToolCallingParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_SpecificProgrammaticToolCallingParam.Create_SpecificProgrammaticToolCallingParam(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0527.Create_SpecificProgrammaticToolCallingParam(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

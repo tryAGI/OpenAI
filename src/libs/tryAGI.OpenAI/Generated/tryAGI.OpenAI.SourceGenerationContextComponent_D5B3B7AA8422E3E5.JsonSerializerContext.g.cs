@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AutoChunkingStrategyRequestParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AutoChunkingStrategyRequestParam.Create_AutoChunkingStrategyRequestParam(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0016.Create_AutoChunkingStrategyRequestParam(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

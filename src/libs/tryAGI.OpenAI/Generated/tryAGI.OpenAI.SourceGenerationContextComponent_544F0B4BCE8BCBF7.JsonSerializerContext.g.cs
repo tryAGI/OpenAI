@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.PublicTestEndpointBody))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_PublicTestEndpointBody.Create_PublicTestEndpointBody(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0370.Create_PublicTestEndpointBody(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

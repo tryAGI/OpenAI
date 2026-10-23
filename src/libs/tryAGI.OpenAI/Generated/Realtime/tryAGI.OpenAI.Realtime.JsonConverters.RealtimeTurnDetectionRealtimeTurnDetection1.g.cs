@@ -14,6 +14,7 @@ namespace tryAGI.OpenAI.Realtime.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            typeInfoResolver = global::tryAGI.OpenAI.Realtime.AutoSDKJsonMetadataCachedResolver.Instance;
 
 
             var readerCopy = reader;
@@ -54,6 +55,7 @@ namespace tryAGI.OpenAI.Realtime.JsonConverters
         {
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+            typeInfoResolver = global::tryAGI.OpenAI.Realtime.AutoSDKJsonMetadataCachedResolver.Instance;
 
             if (value.IsServerVad)
             {

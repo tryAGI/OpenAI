@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AwsExternalStorageProviderParamsType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_AwsExternalStorageProviderParamsType2.Create_AwsExternalStorageProviderParamsType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0017.Create_AwsExternalStorageProviderParamsType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.AwsExternalStorageProviderParamsType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableAwsExternalStorageProviderParamsType2.Create_NullableAwsExternalStorageProviderParamsType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0203.Create_NullableAwsExternalStorageProviderParamsType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

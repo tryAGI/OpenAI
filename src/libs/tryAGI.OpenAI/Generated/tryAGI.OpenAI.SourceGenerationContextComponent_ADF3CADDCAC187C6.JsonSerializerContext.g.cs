@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimitName))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_RealtimeServerEventRateLimitsUpdatedRateLimitName2.Create_RealtimeServerEventRateLimitsUpdatedRateLimitName2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0391.Create_RealtimeServerEventRateLimitsUpdatedRateLimitName2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimitName?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_NullableRealtimeServerEventRateLimitsUpdatedRateLimitName2.Create_NullableRealtimeServerEventRateLimitsUpdatedRateLimitName2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0312.Create_NullableRealtimeServerEventRateLimitsUpdatedRateLimitName2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

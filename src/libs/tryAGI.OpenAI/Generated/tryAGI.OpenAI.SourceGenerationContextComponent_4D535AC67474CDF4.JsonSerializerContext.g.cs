@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.WorkflowParamStateVariables))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_WorkflowParamStateVariables.Create_WorkflowParamStateVariables(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0564.Create_WorkflowParamStateVariables(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

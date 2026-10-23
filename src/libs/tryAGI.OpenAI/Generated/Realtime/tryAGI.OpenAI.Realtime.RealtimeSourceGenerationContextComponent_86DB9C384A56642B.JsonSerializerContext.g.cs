@@ -23,11 +23,11 @@ namespace tryAGI.OpenAI.Realtime
             {
                 if (type == typeof(global::System.DateTimeOffset))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0Factory_DateTimeOffset.Create_DateTimeOffset(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0000.Create_DateTimeOffset(options);
                 }
                 if (type == typeof(global::System.DateTimeOffset?))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0Factory_NullableDateTimeOffset.Create_NullableDateTimeOffset(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0002.Create_NullableDateTimeOffset(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

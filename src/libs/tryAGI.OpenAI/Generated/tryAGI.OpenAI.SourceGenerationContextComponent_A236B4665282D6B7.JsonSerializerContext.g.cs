@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.GraderTextSimilarity))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0Factory_GraderTextSimilarity.Create_GraderTextSimilarity(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0141.Create_GraderTextSimilarity(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);
