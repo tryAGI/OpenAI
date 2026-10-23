@@ -30,6 +30,19 @@ Packed SDK source builds took 104.643 seconds baseline and 95.787 seconds candid
 
 Native executable bytes exclude the separate native debugging file. Full publication sizes include it and must not be mistaken for a runtime Docker image size.
 
+
+The remaining aggregate baseline helper comparisons also published and executed successfully:
+
+| Profile | Baseline trimmed SDK bytes | Candidate trimmed SDK bytes |
+| --- | ---: | ---: |
+| Tool helpers | 31,507,456 | 36,864 |
+| Schema helpers | 31,521,280 | 35,840 |
+| MEAI speech | 29,471,744 | 96,256 |
+
+All three unwanted model families are present in each baseline and absent in each candidate. Full portable numeric results, including process CPU times, are in [the measurement JSON](trimming-measurements-20261024.json).
+
+The baseline aggregate chat AOT attempt reached native code generation but did not complete within the 2,400-second **overall admission plus publication** limit (exit 124). No completed baseline native executable was produced. This is a bounded timeout observation; the queue contribution was not separately recovered, so an exact baseline AOT compilation time, size or speedup ratio is unavailable. The candidate AOT publications completed and passed runtime contracts.
+
 ## Reproduce and CI
 
 Run `scripts/check-meai-trimming.sh` with a packed SDK in the configured local NuGet feed. The tracked consumer and PE inspector live in `src/tests/OpenAI.MeaiTrimmingCheck` and `src/tests/OpenAI.RetentionInspector`.

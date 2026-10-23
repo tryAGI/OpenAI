@@ -1,0 +1,364 @@
+{
+  "baselineCommit": "8bad364b9784ea0590fdc1ba6fa581c458fe3936",
+  "candidateCoreCommit": "d8b907fc74228a8db18a67e7386f062f5f040fed",
+  "architecture": "linux-arm64",
+  "sdk": "10.0.402",
+  "runtime": "10.0.13",
+  "variants": {
+    "baseline": {
+      "packageVersion": "0.0.0-meai-baseline-c82728d8067c",
+      "sourceBuild": {
+        "exitCode": 0,
+        "processSeconds": 104.643,
+        "userSeconds": 148.64,
+        "systemSeconds": 6.647
+      },
+      "consumers": {
+        "baseline-Chat-trim": {
+          "aot": false,
+          "scenario": "Chat",
+          "publishedBytes": 57114740,
+          "sdkBytes": 31651840,
+          "nativeBytes": null,
+          "retention": {
+            "typeCount": 18665,
+            "methodCount": 82638,
+            "unusedModelsRetained": [
+              "CreateAssistantRequest",
+              "VectorStoreObject",
+              "CreateBatchRequest"
+            ]
+          },
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 20.884,
+            "userSeconds": 26.849,
+            "systemSeconds": 2.249
+          }
+        },
+        "baseline-Chat-aot": {
+          "aot": true,
+          "scenario": "Chat",
+          "publish": {
+            "exitCode": 124,
+            "overallTimeoutSeconds": 2400,
+            "includesAdmissionWait": true
+          },
+          "passed": false
+        },
+        "baseline-Tools-trim": {
+          "aot": false,
+          "scenario": "Tools",
+          "publishedBytes": 54625359,
+          "sdkBytes": 31507456,
+          "nativeBytes": null,
+          "retention": {
+            "typeCount": 18618,
+            "methodCount": 82527,
+            "unusedModelsRetained": [
+              "CreateAssistantRequest",
+              "VectorStoreObject",
+              "CreateBatchRequest"
+            ]
+          },
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 24.667,
+            "userSeconds": 31.641,
+            "systemSeconds": 2.522
+          }
+        },
+        "baseline-Schema-trim": {
+          "aot": false,
+          "scenario": "Schema",
+          "publishedBytes": 54644687,
+          "sdkBytes": 31521280,
+          "nativeBytes": null,
+          "retention": {
+            "typeCount": 18618,
+            "methodCount": 82526,
+            "unusedModelsRetained": [
+              "CreateAssistantRequest",
+              "VectorStoreObject",
+              "CreateBatchRequest"
+            ]
+          },
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 18.593,
+            "userSeconds": 24.221,
+            "systemSeconds": 2.028
+          }
+        },
+        "baseline-Speech-trim": {
+          "aot": false,
+          "scenario": "Speech",
+          "publishedBytes": 54213538,
+          "sdkBytes": 29471744,
+          "nativeBytes": null,
+          "retention": {
+            "typeCount": 18637,
+            "methodCount": 82531,
+            "unusedModelsRetained": [
+              "CreateAssistantRequest",
+              "VectorStoreObject",
+              "CreateBatchRequest"
+            ]
+          },
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 20.62,
+            "userSeconds": 27.065,
+            "systemSeconds": 1.867
+          }
+        }
+      }
+    },
+    "candidate": {
+      "packageVersion": "0.0.0-meai-candidate-3377dfe7718b",
+      "sourceBuild": {
+        "exitCode": 0,
+        "processSeconds": 95.787,
+        "userSeconds": 139.574,
+        "systemSeconds": 5.504
+      },
+      "consumers": {
+        "candidate-Chat-trim": {
+          "aot": false,
+          "scenario": "Chat",
+          "publishedBytes": 26598009,
+          "sdkBytes": 1135104,
+          "nativeBytes": null,
+          "retention": {
+            "typeCount": 813,
+            "methodCount": 3069,
+            "unusedModelsRetained": []
+          },
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 12.37,
+            "userSeconds": 15.637,
+            "systemSeconds": 1.321
+          }
+        },
+        "candidate-Chat-aot": {
+          "aot": true,
+          "scenario": "Chat",
+          "publishedBytes": 55607200,
+          "sdkBytes": null,
+          "nativeBytes": 16581896,
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 25.785,
+            "userSeconds": 32.69,
+            "systemSeconds": 1.33
+          }
+        },
+        "candidate-Tools-trim": {
+          "aot": false,
+          "scenario": "Tools",
+          "publishedBytes": 23108545,
+          "sdkBytes": 36864,
+          "nativeBytes": null,
+          "retention": {
+            "typeCount": 36,
+            "methodCount": 110,
+            "unusedModelsRetained": []
+          },
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 10.161,
+            "userSeconds": 12.145,
+            "systemSeconds": 1.105
+          }
+        },
+        "candidate-Tools-aot": {
+          "aot": true,
+          "scenario": "Tools",
+          "publishedBytes": 8677472,
+          "sdkBytes": null,
+          "nativeBytes": 3368056,
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 7.209,
+            "userSeconds": 8.712,
+            "systemSeconds": 0.736
+          }
+        },
+        "candidate-Schema-trim": {
+          "aot": false,
+          "scenario": "Schema",
+          "publishedBytes": 23114041,
+          "sdkBytes": 35840,
+          "nativeBytes": null,
+          "retention": {
+            "typeCount": 32,
+            "methodCount": 103,
+            "unusedModelsRetained": []
+          },
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 9.564,
+            "userSeconds": 12.769,
+            "systemSeconds": 1.046
+          }
+        },
+        "candidate-Schema-aot": {
+          "aot": true,
+          "scenario": "Schema",
+          "publishedBytes": 8810416,
+          "sdkBytes": null,
+          "nativeBytes": 3434096,
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 7.527,
+            "userSeconds": 8.461,
+            "systemSeconds": 0.697
+          }
+        },
+        "candidate-Speech-trim": {
+          "aot": false,
+          "scenario": "Speech",
+          "publishedBytes": 24832423,
+          "sdkBytes": 96256,
+          "nativeBytes": null,
+          "retention": {
+            "typeCount": 103,
+            "methodCount": 282,
+            "unusedModelsRetained": []
+          },
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 12.507,
+            "userSeconds": 14.989,
+            "systemSeconds": 1.436
+          }
+        },
+        "candidate-Speech-aot": {
+          "aot": true,
+          "scenario": "Speech",
+          "publishedBytes": 19351712,
+          "sdkBytes": null,
+          "nativeBytes": 7417816,
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 12.753,
+            "userSeconds": 14.467,
+            "systemSeconds": 1.229
+          }
+        },
+        "candidate-CustomSpeech-trim": {
+          "aot": false,
+          "scenario": "CustomSpeech",
+          "publishedBytes": 24836699,
+          "sdkBytes": 96256,
+          "nativeBytes": null,
+          "retention": {
+            "typeCount": 104,
+            "methodCount": 285,
+            "unusedModelsRetained": []
+          },
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 13.936,
+            "userSeconds": 16.234,
+            "systemSeconds": 1.782
+          }
+        },
+        "candidate-CustomSpeech-aot": {
+          "aot": true,
+          "scenario": "CustomSpeech",
+          "publishedBytes": 19423448,
+          "sdkBytes": null,
+          "nativeBytes": 7483368,
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 12.817,
+            "userSeconds": 16.345,
+            "systemSeconds": 1.037
+          }
+        },
+        "candidate-TypedChat-trim": {
+          "aot": false,
+          "scenario": "TypedChat",
+          "publishedBytes": 25968290,
+          "sdkBytes": 1036288,
+          "nativeBytes": null,
+          "retention": {
+            "typeCount": 764,
+            "methodCount": 2838,
+            "unusedModelsRetained": []
+          },
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 12.313,
+            "userSeconds": 15.117,
+            "systemSeconds": 1.383
+          }
+        },
+        "candidate-TypedChat-aot": {
+          "aot": true,
+          "scenario": "TypedChat",
+          "publishedBytes": 53103760,
+          "sdkBytes": null,
+          "nativeBytes": 15971984,
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 24.605,
+            "userSeconds": 31.891,
+            "systemSeconds": 1.23
+          }
+        },
+        "candidate-TypedSpeech-trim": {
+          "aot": false,
+          "scenario": "TypedSpeech",
+          "publishedBytes": 25057446,
+          "sdkBytes": 154624,
+          "nativeBytes": null,
+          "retention": {
+            "typeCount": 148,
+            "methodCount": 458,
+            "unusedModelsRetained": []
+          },
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 11.739,
+            "userSeconds": 14.463,
+            "systemSeconds": 1.77
+          }
+        },
+        "candidate-TypedSpeech-aot": {
+          "aot": true,
+          "scenario": "TypedSpeech",
+          "publishedBytes": 21013696,
+          "sdkBytes": null,
+          "nativeBytes": 8145472,
+          "passed": true,
+          "publish": {
+            "exitCode": 0,
+            "processSeconds": 12.193,
+            "userSeconds": 15.801,
+            "systemSeconds": 1.003
+          }
+        }
+      }
+    }
+  }
+}
