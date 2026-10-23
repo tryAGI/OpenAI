@@ -36,6 +36,7 @@ await foreach (var update in chat.GetStreamingResponseAsync([new Meai.ChatMessag
 Require(text.ToString() == "pong", "MEAI streaming content");
 #elif PROBE_TypedChat
 using var client = new ChatClient(httpClient: http);
+client.Authorizations.Add(new EndPointAuthorization { Type = "Http", SchemeId = "ApiKeyAuth", Location = "Header", Name = "Bearer", Value = "offline" });
 var response = await client.CreateChatCompletionAsync(new CreateChatCompletionRequest
 {
     ModelResponseProperties = new CreateModelResponseProperties(),
@@ -78,6 +79,7 @@ Require(request.RootElement.GetProperty("voice").GetString() == "coral", "Speech
 #endif
 #elif PROBE_TypedSpeech
 using var client = new AudioClient(httpClient: http);
+client.Authorizations.Add(new EndPointAuthorization { Type = "Http", SchemeId = "ApiKeyAuth", Location = "Header", Name = "Bearer", Value = "offline" });
 var response = await client.CreateSpeechAsync(CreateSpeechRequest.FromJson("""{"model":"gpt-4o-mini-tts","input":"fixture speech","voice":"coral","response_format":"wav"}""")!);
 Require(response.AsSpan().SequenceEqual(new byte[] { 1, 2, 3 }), "Typed speech bytes");
 #else
