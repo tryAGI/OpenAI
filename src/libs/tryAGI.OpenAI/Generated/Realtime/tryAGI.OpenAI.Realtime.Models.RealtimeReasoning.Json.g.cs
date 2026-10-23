@@ -21,7 +21,7 @@ namespace tryAGI.OpenAI.Realtime
         /// </summary>
         public string ToJson()
         {
-            return ToJson(global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContext.Default);
+            return ToJson(global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_BA2AEAFD29170135.Default);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI.Realtime
         {
             if (jsonSerializerOptions is null)
             {
-                return ToJson(global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContext.Default);
+                return ToJson(global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_BA2AEAFD29170135.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Serialize(
@@ -65,7 +65,7 @@ namespace tryAGI.OpenAI.Realtime
         {
             return FromJson(
                 json,
-                global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContext.Default);
+                global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_BA2AEAFD29170135.Default);
         }
 
         /// <summary>
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI.Realtime
             {
                 return FromJson(
                     json,
-                    global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContext.Default);
+                    global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_BA2AEAFD29170135.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.Deserialize<global::tryAGI.OpenAI.Realtime.RealtimeReasoning>(
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI.Realtime
         {
             return FromJsonStreamAsync(
                 jsonStream,
-                global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContext.Default);
+                global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_BA2AEAFD29170135.Default);
         }
 
         /// <summary>
@@ -130,7 +130,7 @@ namespace tryAGI.OpenAI.Realtime
             {
                 return FromJsonStreamAsync(
                     jsonStream,
-                    global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContext.Default);
+                    global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_BA2AEAFD29170135.Default);
             }
 
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::tryAGI.OpenAI.Realtime.RealtimeReasoning?>(

@@ -108,7 +108,7 @@ namespace tryAGI.OpenAI.Realtime
                     global::tryAGI.OpenAI.Realtime.ServerEvent @event;
                     try
                     {
-                        @event = (global::tryAGI.OpenAI.Realtime.ServerEvent)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::tryAGI.OpenAI.Realtime.ServerEvent), JsonSerializerContext)!;
+                        @event = (global::tryAGI.OpenAI.Realtime.ServerEvent)global::System.Text.Json.JsonSerializer.Deserialize(json, typeof(global::tryAGI.OpenAI.Realtime.ServerEvent), (JsonSerializerContextProvider?.Value ?? global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_D96E360463904F94.Default))!;
                     }
                     catch (global::System.Exception exception) when (
                         exception is global::System.Text.Json.JsonException ||

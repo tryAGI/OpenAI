@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI.Realtime
         {
             message = message ?? throw new global::System.ArgumentNullException(nameof(message));
 
-            var json = global::System.Text.Json.JsonSerializer.Serialize(message, typeof(global::tryAGI.OpenAI.Realtime.RealtimeClientEventInputAudioBufferAppend), JsonSerializerContext);
+            var json = global::System.Text.Json.JsonSerializer.Serialize(message, typeof(global::tryAGI.OpenAI.Realtime.RealtimeClientEventInputAudioBufferAppend), (JsonSerializerContextProvider?.Value ?? global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_1B16307708024606.Default));
 
             await SendAsync(json, cancellationToken).ConfigureAwait(false);
         }

@@ -87,7 +87,8 @@ rm -rf ../tryAGI.OpenAI.CLI/GeneratedApi
   --json-serializer-context RealtimeSourceGenerationContext \
   --targetFramework net10.0 \
   --output Generated/Realtime \
-  --base-url wss://api.openai.com
+  --base-url wss://api.openai.com \
+  --shared-json-metadata
 
 # Regenerate the Claude skill bundle (SKILL.md + commands.md + auth.md) from the spec.
 "$autosdk_cli" skill openapi.yaml \
