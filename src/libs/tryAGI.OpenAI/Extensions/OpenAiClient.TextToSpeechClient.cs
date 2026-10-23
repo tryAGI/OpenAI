@@ -174,7 +174,9 @@ public sealed partial class OpenAiClient : Meai.ITextToSpeechClient
         var httpRequest = new HttpRequestMessage(HttpMethod.Post, CreateEndpointUri("audio/speech"))
         {
             Content = new StringContent(
-                request.ToJson(JsonSerializerContext),
+                JsonSerializerContextProvider is { } contextProvider
+                    ? request.ToJson(contextProvider.Value)
+                    : request.ToJson(),
                 Encoding.UTF8,
                 "application/json"),
         };

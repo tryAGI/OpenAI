@@ -29,9 +29,8 @@ public static class TypeToSchemaHelpers2
             Description = string.Empty,
             Name = type.Name,
             Strict = strict,
-            Schema = System.Text.Json.JsonSerializer.Deserialize(
-                System.Text.Json.JsonSerializer.Serialize(openApiSchema, SourceGenerationContext.Default.OpenApiSchema),
-                SourceGenerationContext.Default.ResponseFormatJsonSchemaSchema),
+            Schema = ResponseFormatJsonSchemaSchema.FromJson(
+                System.Text.Json.JsonSerializer.Serialize(openApiSchema, AdditionalSourceGenerationContext.Default.OpenApiSchema)),
         };
     }
     
@@ -59,9 +58,8 @@ public static class TypeToSchemaHelpers2
             Description = string.Empty,
             Name = typeInfo.Type.Name,
             Strict = strict,
-            Schema = System.Text.Json.JsonSerializer.Deserialize(
-                System.Text.Json.JsonSerializer.Serialize(openApiSchema, SourceGenerationContext.Default.OpenApiSchema),
-                SourceGenerationContext.Default.ResponseFormatJsonSchemaSchema),
+            Schema = ResponseFormatJsonSchemaSchema.FromJson(
+                System.Text.Json.JsonSerializer.Serialize(openApiSchema, AdditionalSourceGenerationContext.Default.OpenApiSchema)),
         };
     }
 }
