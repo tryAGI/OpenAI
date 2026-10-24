@@ -92,9 +92,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.LiveDecisionsDelegationParam2? Decisions { get; init; }
+        public global::tryAGI.OpenAI.LiveDecisionsDelegationParam? Decisions { get; init; }
 #else
-        public global::tryAGI.OpenAI.LiveDecisionsDelegationParam2? Decisions { get; }
+        public global::tryAGI.OpenAI.LiveDecisionsDelegationParam? Decisions { get; }
 #endif
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.LiveDecisionsDelegationParam2? value)
+            out global::tryAGI.OpenAI.LiveDecisionsDelegationParam? value)
         {
             value = Decisions;
             return IsDecisions;
@@ -121,7 +121,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveDecisionsDelegationParam2 PickDecisions() => Decisions is { } value
+        public global::tryAGI.OpenAI.LiveDecisionsDelegationParam PickDecisions() => Decisions is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Decisions' but the value was {ToString()}.");
         /// <summary>
@@ -173,17 +173,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator DelegationVariant14(global::tryAGI.OpenAI.LiveDecisionsDelegationParam2 value) => new DelegationVariant14((global::tryAGI.OpenAI.LiveDecisionsDelegationParam2?)value);
+        public static implicit operator DelegationVariant14(global::tryAGI.OpenAI.LiveDecisionsDelegationParam value) => new DelegationVariant14((global::tryAGI.OpenAI.LiveDecisionsDelegationParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.LiveDecisionsDelegationParam2?(DelegationVariant14 @this) => @this.Decisions;
+        public static implicit operator global::tryAGI.OpenAI.LiveDecisionsDelegationParam?(DelegationVariant14 @this) => @this.Decisions;
 
         /// <summary>
         ///
         /// </summary>
-        public DelegationVariant14(global::tryAGI.OpenAI.LiveDecisionsDelegationParam2? value)
+        public DelegationVariant14(global::tryAGI.OpenAI.LiveDecisionsDelegationParam? value)
         {
             Decisions = value;
         }
@@ -191,7 +191,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static DelegationVariant14 FromDecisions(global::tryAGI.OpenAI.LiveDecisionsDelegationParam2? value) => new DelegationVariant14(value);
+        public static DelegationVariant14 FromDecisions(global::tryAGI.OpenAI.LiveDecisionsDelegationParam? value) => new DelegationVariant14(value);
 
         /// <summary>
         ///
@@ -200,7 +200,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.LiveSessionResourceParamDelegationVariant1DiscriminatorType? type,
             global::tryAGI.OpenAI.LiveClientDelegationParam? client,
             global::tryAGI.OpenAI.LiveResponsesDelegationParam? responses,
-            global::tryAGI.OpenAI.LiveDecisionsDelegationParam2? decisions
+            global::tryAGI.OpenAI.LiveDecisionsDelegationParam? decisions
             )
         {
             Type = type;
@@ -242,7 +242,7 @@ namespace tryAGI.OpenAI
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.LiveClientDelegationParam, TResult>? client = null,
             global::System.Func<global::tryAGI.OpenAI.LiveResponsesDelegationParam, TResult>? responses = null,
-            global::System.Func<global::tryAGI.OpenAI.LiveDecisionsDelegationParam2, TResult>? decisions = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveDecisionsDelegationParam, TResult>? decisions = null,
             bool validate = true)
         {
             if (validate)
@@ -274,7 +274,7 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.LiveResponsesDelegationParam>? responses = null,
 
-            global::System.Action<global::tryAGI.OpenAI.LiveDecisionsDelegationParam2>? decisions = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionsDelegationParam>? decisions = null,
             bool validate = true)
         {
             if (validate)
@@ -302,7 +302,7 @@ namespace tryAGI.OpenAI
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.LiveClientDelegationParam>? client = null,
             global::System.Action<global::tryAGI.OpenAI.LiveResponsesDelegationParam>? responses = null,
-            global::System.Action<global::tryAGI.OpenAI.LiveDecisionsDelegationParam2>? decisions = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionsDelegationParam>? decisions = null,
             bool validate = true)
         {
             if (validate)
@@ -336,7 +336,7 @@ namespace tryAGI.OpenAI
                 Responses,
                 typeof(global::tryAGI.OpenAI.LiveResponsesDelegationParam),
                 Decisions,
-                typeof(global::tryAGI.OpenAI.LiveDecisionsDelegationParam2),
+                typeof(global::tryAGI.OpenAI.LiveDecisionsDelegationParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -355,7 +355,7 @@ namespace tryAGI.OpenAI
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveClientDelegationParam?>.Default.Equals(Client, other.Client) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveResponsesDelegationParam?>.Default.Equals(Responses, other.Responses) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionsDelegationParam2?>.Default.Equals(Decisions, other.Decisions)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionsDelegationParam?>.Default.Equals(Decisions, other.Decisions)
                 ;
         }
 

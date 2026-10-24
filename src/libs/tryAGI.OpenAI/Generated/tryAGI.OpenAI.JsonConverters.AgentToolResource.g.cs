@@ -57,6 +57,13 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.AgentToolResourceComputerUse)}");
                 computerUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.AgentToolResourceAutomations? automations = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.AgentToolResourceDiscriminatorType.Automations)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AgentToolResourceAutomations), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AgentToolResourceAutomations> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.AgentToolResourceAutomations)}");
+                automations = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var __value = new global::tryAGI.OpenAI.AgentToolResource(
                 discriminator?.Type,
@@ -68,7 +75,9 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 webSearch,
 
-                computerUse
+                computerUse,
+
+                automations
                 );
 
             return __value;
@@ -113,6 +122,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AgentToolResourceComputerUse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AgentToolResourceComputerUse?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AgentToolResourceComputerUse).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickComputerUse(), typeInfo);
+            }
+            else if (value.IsAutomations)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.AgentToolResourceAutomations), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.AgentToolResourceAutomations?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.AgentToolResourceAutomations).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAutomations(), typeInfo);
             }
         }
     }

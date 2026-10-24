@@ -26,8 +26,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InstructionsVariant2Item3>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Instructions { get; set; }
+        public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InstructionsVariant2Item3>> Instructions { get; set; }
 
         /// <summary>
         ///
@@ -55,14 +56,14 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LiveDecisionScoreQuestionParam(
-            string instructions,
+            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InstructionsVariant2Item3>> instructions,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionScoreLevelParam> levels,
             string? name,
             global::tryAGI.OpenAI.LiveDecisionScoreQuestionParamType type = global::tryAGI.OpenAI.LiveDecisionScoreQuestionParamType.Score)
         {
             this.Type = type;
             this.Name = name;
-            this.Instructions = instructions ?? throw new global::System.ArgumentNullException(nameof(instructions));
+            this.Instructions = instructions;
             this.Levels = levels ?? throw new global::System.ArgumentNullException(nameof(levels));
         }
 

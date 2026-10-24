@@ -7,15 +7,22 @@ Full per-command reference derived from the OpenAPI spec. For the short overview
 | Command | Route | Description |
 |---------|-------|-------------|
 | `create-agent` | `POST /agents` | Create an agent |
+| `create-agent-automation` | `POST /agents/automations` | Create an automation |
+| `create-agent-automation-invocation` | `POST /agents/automations/{automation_id}/invocations` | Invoke an automation |
 | `create-agent-environment` | `POST /agents/environments` | Create an agent environment |
 | `create-agent-environment-file` | `POST /agents/environments/{environment_id}/files` | Write an agent environment file |
 | `create-agent-environment-template` | `POST /agents/environments/templates` | Create an agent environment template |
 | `create-agent-session` | `POST /agents/sessions` | Create an agent session |
 | `create-agent-session-events` | `POST /agents/sessions/{session_id}/events` | Create agent session input events |
 | `delete-agent` | `DELETE /agents/{agent_id}` | Delete an agent |
+| `delete-agent-automation` | `DELETE /agents/automations/{automation_id}` | Delete an automation |
 | `delete-agent-environment-template` | `DELETE /agents/environments/templates/{environment_template_id}` | Delete an agent environment template |
 | `delete-agent-session` | `DELETE /agents/sessions/{session_id}` | Delete an agent session |
 | `delete-agent-session-artifact` | `DELETE /agents/sessions/{session_id}/artifacts/{artifact_id}` | Delete an agent session artifact |
+| `get-agent-automation` | `GET /agents/automations/{automation_id}` | Get an automation |
+| `get-agent-automation-invocation` | `GET /agents/automations/{automation_id}/invocations/{invocation_id}` | Get an automation invocation |
+| `list-agent-automation-invocations` | `GET /agents/automations/{automation_id}/invocations` | List automation invocations |
+| `list-agent-automations` | `GET /agents/automations` | List automations |
 | `list-agent-environment-files` | `GET /agents/environments/{environment_id}/files` | List agent environment files |
 | `list-agent-environment-templates` | `GET /agents/environments/templates` | List agent environment templates |
 | `list-agent-environments` | `GET /agents/environments` | List agent environments |
@@ -31,6 +38,8 @@ Full per-command reference derived from the OpenAPI spec. For the short overview
 | `list-agent-session-turns` | `GET /agents/sessions/{session_id}/turns` | List agent session turns |
 | `list-agent-sessions` | `GET /agents/sessions` | List agent sessions |
 | `list-agents` | `GET /agents` | List agents |
+| `pause-agent-automation` | `POST /agents/automations/{automation_id}/pause` | Pause an automation |
+| `resume-agent-automation` | `POST /agents/automations/{automation_id}/resume` | Resume an automation |
 | `retrieve-agent` | `GET /agents/{agent_id}` | Retrieve an agent |
 | `retrieve-agent-environment` | `GET /agents/environments/{environment_id}` | Retrieve an agent environment |
 | `retrieve-agent-environment-template` | `GET /agents/environments/templates/{environment_template_id}` | Retrieve an agent environment template |
@@ -41,6 +50,7 @@ Full per-command reference derived from the OpenAPI spec. For the short overview
 | `retrieve-agent-session-subagent-turn` | `GET /agents/sessions/{session_id}/subagents/{subagent_id}/turns/{turn_id}` | Retrieve a subagent turn |
 | `retrieve-agent-session-turn` | `GET /agents/sessions/{session_id}/turns/{turn_id}` | Retrieve an agent session turn |
 | `update-agent` | `POST /agents/{agent_id}` | Update an agent |
+| `update-agent-automation` | `POST /agents/automations/{automation_id}` | Update an automation |
 | `update-agent-environment-template` | `POST /agents/environments/templates/{environment_template_id}` | Update an agent environment template |
 | `update-agent-session` | `POST /agents/sessions/{session_id}` | Update an agent session |
 

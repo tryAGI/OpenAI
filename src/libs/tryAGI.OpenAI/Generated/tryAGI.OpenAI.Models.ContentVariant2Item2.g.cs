@@ -12,156 +12,156 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveDecisionStoredInputItemParamContentVariant2ItemDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.LiveDecisionAssistantMessageParamContentVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.LiveDecisionInputTextParam? InputText { get; init; }
+        public global::tryAGI.OpenAI.LiveDecisionOutputTextParam? OutputText { get; init; }
 #else
-        public global::tryAGI.OpenAI.LiveDecisionInputTextParam? InputText { get; }
+        public global::tryAGI.OpenAI.LiveDecisionOutputTextParam? OutputText { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputText))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputText))]
 #endif
-        public bool IsInputText => InputText != null;
+        public bool IsOutputText => OutputText != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickInputText(
+        public bool TryPickOutputText(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.LiveDecisionInputTextParam? value)
+            out global::tryAGI.OpenAI.LiveDecisionOutputTextParam? value)
         {
-            value = InputText;
-            return IsInputText;
+            value = OutputText;
+            return IsOutputText;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveDecisionInputTextParam PickInputText() => InputText is { } value
+        public global::tryAGI.OpenAI.LiveDecisionOutputTextParam PickOutputText() => OutputText is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputText' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.LiveDecisionInputImageParam? InputImage { get; init; }
+        public global::tryAGI.OpenAI.LiveDecisionRefusalParam? Refusal { get; init; }
 #else
-        public global::tryAGI.OpenAI.LiveDecisionInputImageParam? InputImage { get; }
+        public global::tryAGI.OpenAI.LiveDecisionRefusalParam? Refusal { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputImage))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
 #endif
-        public bool IsInputImage => InputImage != null;
+        public bool IsRefusal => Refusal != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickInputImage(
+        public bool TryPickRefusal(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.LiveDecisionInputImageParam? value)
+            out global::tryAGI.OpenAI.LiveDecisionRefusalParam? value)
         {
-            value = InputImage;
-            return IsInputImage;
+            value = Refusal;
+            return IsRefusal;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveDecisionInputImageParam PickInputImage() => InputImage is { } value
+        public global::tryAGI.OpenAI.LiveDecisionRefusalParam PickRefusal() => Refusal is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ContentVariant2Item2(global::tryAGI.OpenAI.LiveDecisionInputTextParam value) => new ContentVariant2Item2((global::tryAGI.OpenAI.LiveDecisionInputTextParam?)value);
+        public static implicit operator ContentVariant2Item2(global::tryAGI.OpenAI.LiveDecisionOutputTextParam value) => new ContentVariant2Item2((global::tryAGI.OpenAI.LiveDecisionOutputTextParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.LiveDecisionInputTextParam?(ContentVariant2Item2 @this) => @this.InputText;
+        public static implicit operator global::tryAGI.OpenAI.LiveDecisionOutputTextParam?(ContentVariant2Item2 @this) => @this.OutputText;
 
         /// <summary>
         ///
         /// </summary>
-        public ContentVariant2Item2(global::tryAGI.OpenAI.LiveDecisionInputTextParam? value)
+        public ContentVariant2Item2(global::tryAGI.OpenAI.LiveDecisionOutputTextParam? value)
         {
-            InputText = value;
+            OutputText = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ContentVariant2Item2 FromInputText(global::tryAGI.OpenAI.LiveDecisionInputTextParam? value) => new ContentVariant2Item2(value);
+        public static ContentVariant2Item2 FromOutputText(global::tryAGI.OpenAI.LiveDecisionOutputTextParam? value) => new ContentVariant2Item2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ContentVariant2Item2(global::tryAGI.OpenAI.LiveDecisionInputImageParam value) => new ContentVariant2Item2((global::tryAGI.OpenAI.LiveDecisionInputImageParam?)value);
+        public static implicit operator ContentVariant2Item2(global::tryAGI.OpenAI.LiveDecisionRefusalParam value) => new ContentVariant2Item2((global::tryAGI.OpenAI.LiveDecisionRefusalParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.LiveDecisionInputImageParam?(ContentVariant2Item2 @this) => @this.InputImage;
+        public static implicit operator global::tryAGI.OpenAI.LiveDecisionRefusalParam?(ContentVariant2Item2 @this) => @this.Refusal;
 
         /// <summary>
         ///
         /// </summary>
-        public ContentVariant2Item2(global::tryAGI.OpenAI.LiveDecisionInputImageParam? value)
+        public ContentVariant2Item2(global::tryAGI.OpenAI.LiveDecisionRefusalParam? value)
         {
-            InputImage = value;
+            Refusal = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static ContentVariant2Item2 FromInputImage(global::tryAGI.OpenAI.LiveDecisionInputImageParam? value) => new ContentVariant2Item2(value);
+        public static ContentVariant2Item2 FromRefusal(global::tryAGI.OpenAI.LiveDecisionRefusalParam? value) => new ContentVariant2Item2(value);
 
         /// <summary>
         ///
         /// </summary>
         public ContentVariant2Item2(
-            global::tryAGI.OpenAI.LiveDecisionStoredInputItemParamContentVariant2ItemDiscriminatorType? type,
-            global::tryAGI.OpenAI.LiveDecisionInputTextParam? inputText,
-            global::tryAGI.OpenAI.LiveDecisionInputImageParam? inputImage
+            global::tryAGI.OpenAI.LiveDecisionAssistantMessageParamContentVariant2ItemDiscriminatorType? type,
+            global::tryAGI.OpenAI.LiveDecisionOutputTextParam? outputText,
+            global::tryAGI.OpenAI.LiveDecisionRefusalParam? refusal
             )
         {
             Type = type;
 
-            InputText = inputText;
-            InputImage = inputImage;
+            OutputText = outputText;
+            Refusal = refusal;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            InputImage as object ??
-            InputText as object
+            Refusal as object ??
+            OutputText as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            InputText?.ToString() ??
-            InputImage?.ToString()
+            OutputText?.ToString() ??
+            Refusal?.ToString()
             ;
 
         /// <summary>
@@ -169,15 +169,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsInputText && !IsInputImage || !IsInputText && IsInputImage;
+            return IsOutputText && !IsRefusal || !IsOutputText && IsRefusal;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.LiveDecisionInputTextParam, TResult>? inputText = null,
-            global::System.Func<global::tryAGI.OpenAI.LiveDecisionInputImageParam, TResult>? inputImage = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveDecisionOutputTextParam, TResult>? outputText = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveDecisionRefusalParam, TResult>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -185,13 +185,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (InputText is { } __value0 && inputText != null)
+            if (OutputText is { } __value0 && outputText != null)
             {
-                return inputText(__value0);
+                return outputText(__value0);
             }
-            else if (InputImage is { } __value1 && inputImage != null)
+            else if (Refusal is { } __value1 && refusal != null)
             {
-                return inputImage(__value1);
+                return refusal(__value1);
             }
 
             return default(TResult);
@@ -201,9 +201,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputTextParam>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionOutputTextParam>? outputText = null,
 
-            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputImageParam>? inputImage = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionRefusalParam>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -211,13 +211,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (InputText is { } __value0)
+            if (OutputText is { } __value0)
             {
-                inputText?.Invoke(__value0);
+                outputText?.Invoke(__value0);
             }
-            else if (InputImage is { } __value1)
+            else if (Refusal is { } __value1)
             {
-                inputImage?.Invoke(__value1);
+                refusal?.Invoke(__value1);
             }
         }
 
@@ -225,8 +225,8 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputTextParam>? inputText = null,
-            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputImageParam>? inputImage = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionOutputTextParam>? outputText = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionRefusalParam>? refusal = null,
             bool validate = true)
         {
             if (validate)
@@ -234,13 +234,13 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (InputText is { } __value0)
+            if (OutputText is { } __value0)
             {
-                inputText?.Invoke(__value0);
+                outputText?.Invoke(__value0);
             }
-            else if (InputImage is { } __value1)
+            else if (Refusal is { } __value1)
             {
-                inputImage?.Invoke(__value1);
+                refusal?.Invoke(__value1);
             }
         }
 
@@ -251,10 +251,10 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                InputText,
-                typeof(global::tryAGI.OpenAI.LiveDecisionInputTextParam),
-                InputImage,
-                typeof(global::tryAGI.OpenAI.LiveDecisionInputImageParam),
+                OutputText,
+                typeof(global::tryAGI.OpenAI.LiveDecisionOutputTextParam),
+                Refusal,
+                typeof(global::tryAGI.OpenAI.LiveDecisionRefusalParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +271,8 @@ namespace tryAGI.OpenAI
         public bool Equals(ContentVariant2Item2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionInputTextParam?>.Default.Equals(InputText, other.InputText) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionInputImageParam?>.Default.Equals(InputImage, other.InputImage)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionOutputTextParam?>.Default.Equals(OutputText, other.OutputText) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionRefusalParam?>.Default.Equals(Refusal, other.Refusal)
                 ;
         }
 

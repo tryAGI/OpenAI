@@ -687,7 +687,13 @@ namespace tryAGI.OpenAI
         /// Example: A cute baby sea otter
         /// </param>
         /// <param name="model">
-        /// The GPT image model to use for image generation. Specify a model explicitly. Supported models include `gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`, and `chatgpt-image-latest`.<br/>
+        /// The GPT image model to use for image generation. Specify a model explicitly.<br/>
+        /// Supported models include `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`,<br/>
+        /// `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,<br/>
+        /// `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`,<br/>
+        /// `gpt-image-2.5-flare-2026-09-08`, and `chatgpt-image-latest`.<br/>
+        /// `gpt-image-1` was shut down on October 23, 2026. Use<br/>
+        /// `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` instead.<br/>
         /// Example: gpt-image-2.5-flare
         /// </param>
         /// <param name="n">

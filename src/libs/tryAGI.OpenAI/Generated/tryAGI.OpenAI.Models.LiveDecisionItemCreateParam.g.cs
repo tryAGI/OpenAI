@@ -27,6 +27,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.LiveDecisionInputItemParamJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.LiveDecisionInputItemParam Item { get; set; }
 
@@ -54,7 +55,7 @@ namespace tryAGI.OpenAI
         {
             this.EventId = eventId;
             this.Type = type;
-            this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
+            this.Item = item;
         }
 
         /// <summary>
@@ -62,18 +63,6 @@ namespace tryAGI.OpenAI
         /// </summary>
         public LiveDecisionItemCreateParam()
         {
-        }
-
-        /// <summary>
-        /// Creates a new <see cref="LiveDecisionItemCreateParam"/> from its single non-const required field,
-        /// hardcoding any const discriminator fields.
-        /// </summary>
-        public static LiveDecisionItemCreateParam FromItem(global::tryAGI.OpenAI.LiveDecisionInputItemParam item)
-        {
-            return new LiveDecisionItemCreateParam
-            {
-                Item = item,
-            };
         }
 
     }

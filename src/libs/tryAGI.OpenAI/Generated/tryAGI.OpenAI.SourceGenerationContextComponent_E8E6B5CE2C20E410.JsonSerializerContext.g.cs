@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_0E92F923E4AFE4B2.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_1951F67DFF4D3371.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_6143795BF3C04598.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_B760F44FA5965C24.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C30F6B5C0FB10B3E.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_CB9636C251CA9B1F.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_EA9CE8F37AD0B289.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_0E92F923E4AFE4B2.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_6143795BF3C04598.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_B760F44FA5965C24.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C30F6B5C0FB10B3E.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_CB9636C251CA9B1F.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_E551E3738F58943E.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_EA9CE8F37AD0B289.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveSessionCreateParams))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0177.Create_LiveSessionCreateParams(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0189.Create_LiveSessionCreateParams(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

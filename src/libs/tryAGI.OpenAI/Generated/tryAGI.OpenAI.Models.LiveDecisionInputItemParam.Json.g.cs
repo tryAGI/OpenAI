@@ -2,7 +2,7 @@
 
 namespace tryAGI.OpenAI
 {
-    public sealed partial class LiveDecisionInputItemParam
+    public readonly partial struct LiveDecisionInputItemParam
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionInputItemParam))) as global::tryAGI.OpenAI.LiveDecisionInputItemParam;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionInputItemParam))) as global::tryAGI.OpenAI.LiveDecisionInputItemParam?;
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionInputItemParam))).ConfigureAwait(false)) as global::tryAGI.OpenAI.LiveDecisionInputItemParam;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionInputItemParam))).ConfigureAwait(false)) as global::tryAGI.OpenAI.LiveDecisionInputItemParam?;
         }
 
         /// <summary>
