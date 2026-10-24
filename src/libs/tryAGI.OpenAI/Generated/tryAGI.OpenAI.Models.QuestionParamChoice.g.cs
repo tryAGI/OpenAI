@@ -27,8 +27,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.DecisionQuestionInputPart>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Instructions { get; set; }
+        public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.DecisionQuestionInputPart>> Instructions { get; set; }
 
         /// <summary>
         /// Provide between 2 and 255 choices. Each choice must be unique.
@@ -59,14 +60,14 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public QuestionParamChoice(
-            string instructions,
+            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.DecisionQuestionInputPart>> instructions,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChoiceOptionParam> choices,
             string? name,
             global::tryAGI.OpenAI.QuestionParamChoiceType type = global::tryAGI.OpenAI.QuestionParamChoiceType.Choice)
         {
             this.Type = type;
             this.Name = name;
-            this.Instructions = instructions ?? throw new global::System.ArgumentNullException(nameof(instructions));
+            this.Instructions = instructions;
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
         }
 

@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         /// Native Decision API questions evaluated together, in order.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("questions")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.QuestionParam>? Questions { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionQuestion>? Questions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #endif
         public LiveDecisionsSettingsUpdateParam(
             string? model,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.QuestionParam>? questions)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionQuestion>? questions)
         {
             this.Model = model;
             this.Questions = questions;

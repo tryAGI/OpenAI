@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.SessionEventAgentSessionTurnItemDone))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0437.Create_SessionEventAgentSessionTurnItemDone(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0456.Create_SessionEventAgentSessionTurnItemDone(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

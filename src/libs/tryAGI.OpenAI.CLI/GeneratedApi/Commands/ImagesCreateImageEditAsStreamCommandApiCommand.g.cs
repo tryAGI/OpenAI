@@ -12,7 +12,7 @@ internal static partial class ImagesCreateImageEditAsStreamCommandApiCommand
     {
         Description = @"The image(s) to edit. Must be a supported image file or an array of images.
 
-For the GPT image models (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`,
+For the GPT image models (`gpt-image-1-mini`, `gpt-image-1.5`,
 `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,
 `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and
 `gpt-image-2.5-flare-2026-09-08`), each image should be a `png`, `webp`, or `jpg`
@@ -47,7 +47,15 @@ set the output format to `png` or `webp`.
     private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?>> Model { get; } = new(
         name: @"--model")
     {
-        Description = @"The GPT image model to use for image editing (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`, or `chatgpt-image-latest`).",
+        Description = @"The GPT image model to use for image editing
+(`gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`,
+`gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,
+`gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`,
+`gpt-image-2.5-flare-2026-09-08`, or `chatgpt-image-latest`).
+
+`gpt-image-1` was shut down on October 23, 2026. Use
+`gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` instead.
+",
         Required = true,
     };
 

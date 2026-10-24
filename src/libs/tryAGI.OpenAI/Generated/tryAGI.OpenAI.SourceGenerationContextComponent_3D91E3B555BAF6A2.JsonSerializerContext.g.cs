@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEventType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0407.Create_ResponseCustomToolCallInputDeltaEventType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0426.Create_ResponseCustomToolCallInputDeltaEventType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEventType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0319.Create_NullableResponseCustomToolCallInputDeltaEventType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0337.Create_NullableResponseCustomToolCallInputDeltaEventType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

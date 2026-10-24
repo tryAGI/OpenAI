@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.DecisionsUsageBucket))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0116.Create_DecisionsUsageBucket(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0123.Create_DecisionsUsageBucket(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CreateAssistantRequestToolResourcesFileSearchVectorStore))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0095.Create_CreateAssistantRequestToolResourcesFileSearchVectorStore(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0099.Create_CreateAssistantRequestToolResourcesFileSearchVectorStore(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

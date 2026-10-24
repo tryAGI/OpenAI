@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeResponseCreateParamsAudioOutput))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0386.Create_RealtimeResponseCreateParamsAudioOutput(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0405.Create_RealtimeResponseCreateParamsAudioOutput(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ProjectApiKeyOwnerProjectAccess))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0364.Create_ProjectApiKeyOwnerProjectAccess2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0382.Create_ProjectApiKeyOwnerProjectAccess2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ProjectApiKeyOwnerProjectAccess?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0298.Create_NullableProjectApiKeyOwnerProjectAccess2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0316.Create_NullableProjectApiKeyOwnerProjectAccess2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.HostedTemplateSkillResourceInline))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0146.Create_HostedTemplateSkillResourceInline(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0152.Create_HostedTemplateSkillResourceInline(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

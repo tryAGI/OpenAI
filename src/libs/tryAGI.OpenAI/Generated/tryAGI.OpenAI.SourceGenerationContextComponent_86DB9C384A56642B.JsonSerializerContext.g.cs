@@ -30,11 +30,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::System.DateTimeOffset))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0114.Create_DateTimeOffset(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0118.Create_DateTimeOffset(options);
                 }
                 if (type == typeof(global::System.DateTimeOffset?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0249.Create_NullableDateTimeOffset(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0263.Create_NullableDateTimeOffset(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

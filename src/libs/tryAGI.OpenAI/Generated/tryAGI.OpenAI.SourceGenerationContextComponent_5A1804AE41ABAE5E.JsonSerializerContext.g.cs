@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LocalShellExecActionEnv))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0183.Create_LocalShellExecActionEnv(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0194.Create_LocalShellExecActionEnv(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

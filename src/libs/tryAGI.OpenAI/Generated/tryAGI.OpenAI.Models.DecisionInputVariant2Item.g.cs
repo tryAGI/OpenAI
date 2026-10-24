@@ -15,7 +15,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.DecisionInputVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// A user message containing input text or images, a developer or system message containing input text, or an assistant message containing output text or refusals. System messages are rendered as developer messages.
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.DecisionInputMessage? Message { get; init; }
@@ -368,7 +368,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.DecisionInputMessage, TResult>? message = null,
+            global::System.Func<global::tryAGI.OpenAI.DecisionInputMessage?, TResult>? message = null,
             global::System.Func<global::tryAGI.OpenAI.DecisionInputFunctionCall, TResult>? functionCall = null,
             global::System.Func<global::tryAGI.OpenAI.DecisionInputFunctionCallOutput, TResult>? functionCallOutput = null,
             global::System.Func<global::tryAGI.OpenAI.DecisionInputCustomToolCall, TResult>? customToolCall = null,
@@ -408,7 +408,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.DecisionInputMessage>? message = null,
+            global::System.Action<global::tryAGI.OpenAI.DecisionInputMessage?>? message = null,
 
             global::System.Action<global::tryAGI.OpenAI.DecisionInputFunctionCall>? functionCall = null,
 
@@ -450,7 +450,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.DecisionInputMessage>? message = null,
+            global::System.Action<global::tryAGI.OpenAI.DecisionInputMessage?>? message = null,
             global::System.Action<global::tryAGI.OpenAI.DecisionInputFunctionCall>? functionCall = null,
             global::System.Action<global::tryAGI.OpenAI.DecisionInputFunctionCallOutput>? functionCallOutput = null,
             global::System.Action<global::tryAGI.OpenAI.DecisionInputCustomToolCall>? customToolCall = null,

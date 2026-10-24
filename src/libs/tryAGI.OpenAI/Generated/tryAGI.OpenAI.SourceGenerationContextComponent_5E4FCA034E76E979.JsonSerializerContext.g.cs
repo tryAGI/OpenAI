@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaApplyPatchCreateFileOperation))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0019.Create_BetaApplyPatchCreateFileOperation(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0023.Create_BetaApplyPatchCreateFileOperation(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

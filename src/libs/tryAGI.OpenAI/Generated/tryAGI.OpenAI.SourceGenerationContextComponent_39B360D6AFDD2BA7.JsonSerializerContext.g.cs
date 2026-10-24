@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BatchFileExpirationAfter))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0017.Create_BatchFileExpirationAfter(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0021.Create_BatchFileExpirationAfter(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

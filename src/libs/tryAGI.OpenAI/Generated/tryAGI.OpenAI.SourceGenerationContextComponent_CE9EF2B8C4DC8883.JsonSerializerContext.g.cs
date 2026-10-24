@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CodeInterpreterOutputLogs))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0085.Create_CodeInterpreterOutputLogs(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0088.Create_CodeInterpreterOutputLogs(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

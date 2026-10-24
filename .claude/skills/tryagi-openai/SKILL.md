@@ -25,7 +25,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 
 | Group | Operations | Summary |
 |-------|-----------:|---------|
-| `agent` | 37 |  |
+| `agent` | 47 |  |
 | `assistant` | 18 | Build Assistants that can call models and use tools. |
 | `audio` | 10 | Turn audio into text or text into audio. |
 | `audit-log` | 1 | List user actions and configuration changes within this organization. |

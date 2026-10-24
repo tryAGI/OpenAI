@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ChatCompletionStreamResponseDeltaAudio))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0082.Create_ChatCompletionStreamResponseDeltaAudio(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0086.Create_ChatCompletionStreamResponseDeltaAudio(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.EvalCustomDataSourceConfigSchema))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0126.Create_EvalCustomDataSourceConfigSchema(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0132.Create_EvalCustomDataSourceConfigSchema(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

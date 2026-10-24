@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AgentToolConfigParamFunctionParameters))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0002.Create_AgentToolConfigParamFunctionParameters(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0003.Create_AgentToolConfigParamFunctionParameters(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

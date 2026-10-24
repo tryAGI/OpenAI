@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ResponseSteerPendingEventSteer))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0415.Create_ResponseSteerPendingEventSteer(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0434.Create_ResponseSteerPendingEventSteer(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

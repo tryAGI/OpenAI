@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ProjectServiceAccountApiKey))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0366.Create_ProjectServiceAccountApiKey(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0384.Create_ProjectServiceAccountApiKey(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

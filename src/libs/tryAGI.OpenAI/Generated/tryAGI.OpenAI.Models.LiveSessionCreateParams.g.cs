@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
         /// At most one Decisions trigger per transcript event type. Triggers run independently of delegation. On update, omit triggers to keep the current configuration, send a list to replace it, or send an empty list to disable triggers.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triggers")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam2>? Triggers { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam>? Triggers { get; set; }
 
         /// <summary>
         /// Whether to store the session for later forking and recording download. Defaults to false for new sessions.
@@ -99,7 +99,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveInitialItem>? input,
             global::tryAGI.OpenAI.LiveInitialSessionAudioParam? audio,
             global::tryAGI.OpenAI.DelegationVariant12? delegation,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam2>? triggers,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam>? triggers,
             bool? store,
             global::tryAGI.OpenAI.LiveClientConfigParam? client)
         {

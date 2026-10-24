@@ -9,7 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class LiveDecisionInputImageParam
     {
         /// <summary>
-        /// The type of the input item. Always `input_image`.<br/>
         /// Default Value: input_image
         /// </summary>
         /// <default>global::tryAGI.OpenAI.LiveDecisionInputImageParamType.InputImage</default>
@@ -18,7 +17,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.LiveDecisionInputImageParamType Type { get; set; } = global::tryAGI.OpenAI.LiveDecisionInputImageParamType.InputImage;
 
         /// <summary>
-        /// An inline image encoded as a data URL.
+        /// A base64-encoded image data URL or a publicly accessible HTTP(S) image URL.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -40,11 +39,10 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="LiveDecisionInputImageParam" /> class.
         /// </summary>
         /// <param name="imageUrl">
-        /// An inline image encoded as a data URL.
+        /// A base64-encoded image data URL or a publicly accessible HTTP(S) image URL.
         /// </param>
         /// <param name="detail"></param>
         /// <param name="type">
-        /// The type of the input item. Always `input_image`.<br/>
         /// Default Value: input_image
         /// </param>
 #if NET7_0_OR_GREATER

@@ -9,7 +9,6 @@ namespace tryAGI.OpenAI
     public sealed partial class LiveDecisionInputTextParam
     {
         /// <summary>
-        /// The type of the input item. Always `input_text`.<br/>
         /// Default Value: input_text
         /// </summary>
         /// <default>global::tryAGI.OpenAI.LiveDecisionInputTextParamType.InputText</default>
@@ -37,7 +36,6 @@ namespace tryAGI.OpenAI
         /// The text input to the model.
         /// </param>
         /// <param name="type">
-        /// The type of the input item. Always `input_text`.<br/>
         /// Default Value: input_text
         /// </param>
 #if NET7_0_OR_GREATER

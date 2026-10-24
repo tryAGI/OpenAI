@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.UsageFileSearchCallsResult))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0543.Create_UsageFileSearchCallsResult(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0566.Create_UsageFileSearchCallsResult(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

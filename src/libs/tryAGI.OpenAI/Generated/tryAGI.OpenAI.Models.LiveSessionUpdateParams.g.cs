@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI
         /// At most one Decisions trigger per transcript event type. Triggers run independently of delegation. On update, omit triggers to keep the current configuration, send a list to replace it, or send an empty list to disable triggers.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("triggers")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam2>? Triggers { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam>? Triggers { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #endif
         public LiveSessionUpdateParams(
             global::tryAGI.OpenAI.DelegationVariant13? delegation,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam2>? triggers)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam>? triggers)
         {
             this.Delegation = delegation;
             this.Triggers = triggers;

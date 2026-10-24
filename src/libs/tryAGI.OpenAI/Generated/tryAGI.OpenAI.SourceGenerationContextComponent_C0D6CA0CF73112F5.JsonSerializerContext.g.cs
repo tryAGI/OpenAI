@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.TextFormatParamJsonSchema))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0530.Create_TextFormatParamJsonSchema(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0553.Create_TextFormatParamJsonSchema(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

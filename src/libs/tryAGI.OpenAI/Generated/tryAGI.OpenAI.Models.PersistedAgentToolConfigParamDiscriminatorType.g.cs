@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Automations,
+        /// <summary>
+        ///
+        /// </summary>
         ComputerUse,
         /// <summary>
         ///
@@ -46,6 +50,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                PersistedAgentToolConfigParamDiscriminatorType.Automations => "automations",
                 PersistedAgentToolConfigParamDiscriminatorType.ComputerUse => "computer_use",
                 PersistedAgentToolConfigParamDiscriminatorType.Function => "function",
                 PersistedAgentToolConfigParamDiscriminatorType.Mcp => "mcp",
@@ -62,6 +67,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "automations" => PersistedAgentToolConfigParamDiscriminatorType.Automations,
                 "computer_use" => PersistedAgentToolConfigParamDiscriminatorType.ComputerUse,
                 "function" => PersistedAgentToolConfigParamDiscriminatorType.Function,
                 "mcp" => PersistedAgentToolConfigParamDiscriminatorType.Mcp,
