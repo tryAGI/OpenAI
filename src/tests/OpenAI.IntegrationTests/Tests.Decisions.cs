@@ -149,12 +149,11 @@ public sealed class Tests_Decisions
             Model = "celeris-1-decision",
             Input = new DecisionInput(null,
             [
-                new DecisionInputMessage
+                DecisionInputMessage.FromUser(new DecisionInputUserMessage
                 {
-                    Role = DecisionInputMessageRole.User,
                     Content = new DecisionInputContent(null,
                     [new DecisionInputText { Text = "Inspect this receipt." }, new DecisionInputImage { ImageUrl = image }]),
-                },
+                }),
             ]),
             Questions = [new QuestionParamPredicate { Instructions = "The total is $13.50." }],
             AdditionalProperties = new Dictionary<string, object>
