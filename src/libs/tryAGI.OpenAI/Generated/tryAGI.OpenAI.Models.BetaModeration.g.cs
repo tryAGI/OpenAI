@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         /// Moderation for the response output.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Output9JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Output13JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Output9 Output { get; set; }
+        public required global::tryAGI.OpenAI.Output13 Output { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
 #endif
         public BetaModeration(
             global::tryAGI.OpenAI.Input5 input,
-            global::tryAGI.OpenAI.Output9 output)
+            global::tryAGI.OpenAI.Output13 output)
         {
             this.Input = input;
             this.Output = output;

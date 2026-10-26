@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI.Realtime
             {
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateResponseGATracingTracingConfigurationEnum))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0026.Create_RealtimeSessionCreateResponseGATracingTracingConfigurationEnum2_3(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0027.Create_RealtimeSessionCreateResponseGATracingTracingConfigurationEnum2_3(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateResponseGATracingTracingConfigurationEnum?))
                 {

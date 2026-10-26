@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ImageGenOutputTokensDetails))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0148.Create_ImageGenOutputTokensDetails(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0154.Create_ImageGenOutputTokensDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

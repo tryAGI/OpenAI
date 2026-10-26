@@ -4,7 +4,6 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the input item. Always `input_text`.<br/>
     /// Default Value: input_text
     /// </summary>
     public enum LiveDecisionInputTextParamType

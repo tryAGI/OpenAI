@@ -25,7 +25,7 @@ namespace tryAGI.OpenAI.Realtime
         public required string Text { get; set; }
 
         /// <summary>
-        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// Marks the exact end of a reusable prompt prefix. When `ttl` is omitted, the breakpoint inherits the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
         public global::tryAGI.OpenAI.Realtime.PromptCacheBreakpointConfig? PromptCacheBreakpoint { get; set; }
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI.Realtime
         /// The text input to the model.
         /// </param>
         /// <param name="promptCacheBreakpoint">
-        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// Marks the exact end of a reusable prompt prefix. When `ttl` is omitted, the breakpoint inherits the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
         /// </param>
         /// <param name="type">
         /// The type of the input item. Always `input_text`.<br/>

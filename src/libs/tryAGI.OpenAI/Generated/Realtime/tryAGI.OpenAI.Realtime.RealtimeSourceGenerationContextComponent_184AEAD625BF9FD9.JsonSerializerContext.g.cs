@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI.Realtime
                 }
                 if (type == typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.Realtime.RealtimeConversationItem>))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0027.Create_RealtimeSourceGenerationContextMetadataType_29D71DD7EC471D65(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0028.Create_RealtimeSourceGenerationContextMetadataType_29D71DD7EC471D65(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

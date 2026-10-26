@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_0BA5B7BF6E06034D.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_344F04FD133447A9.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_41D0A761706BEC6D.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C748E60867516ADF.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_441F7530E962CC9E.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_5ED2ED16B569BD85.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_96E14685F7E1213D.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_9FAAF846E788167B.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_B723B3DC7B135BDE.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -20,6 +20,7 @@ namespace tryAGI.OpenAI
         #pragma warning disable CS0612, CS0618 // Generated converters may target deprecated API models.
         private static void ContributeConverters(global::tryAGI.OpenAI.SourceGenerationContextMetadataScope.ConverterCollector collector)
         {
+            collector.AddEager<global::tryAGI.OpenAI.JsonConverters.DecisionInputMessageJsonConverter>(static () => new global::tryAGI.OpenAI.JsonConverters.DecisionInputMessageJsonConverter());
             collector.AddEager<global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter>(static () => new global::tryAGI.OpenAI.JsonConverters.UnixTimestampJsonConverter());
         }
         #pragma warning restore CS0612, CS0618
@@ -31,7 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.DecisionInputMessage))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0115.Create_DecisionInputMessage(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0120.Create_DecisionInputMessage2(options);
+                }
+                if (type == typeof(global::tryAGI.OpenAI.DecisionInputMessage?))
+                {
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0265.Create_NullableDecisionInputMessage2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

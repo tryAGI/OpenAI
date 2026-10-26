@@ -12,6 +12,8 @@ internal static partial class AgentsApiGroupCommand
     {
         var command = new Command(@"agents", @"Agents endpoint commands.");
                          command.Subcommands.Add(AgentsCreateAgentCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentsCreateAgentAutomationCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentsCreateAgentAutomationInvocationCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsCreateAgentEnvironmentCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsCreateAgentEnvironmentFileCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsCreateAgentEnvironmentTemplateCommandApiCommand.Create());
@@ -19,9 +21,14 @@ internal static partial class AgentsApiGroupCommand
                          command.Subcommands.Add(AgentsCreateAgentSessionAsStreamCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsCreateAgentSessionEventsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsDeleteAgentCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentsDeleteAgentAutomationCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsDeleteAgentEnvironmentTemplateCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsDeleteAgentSessionCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsDeleteAgentSessionArtifactCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentsGetAgentAutomationCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentsGetAgentAutomationInvocationCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentsListAgentAutomationInvocationsCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentsListAgentAutomationsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentEnvironmentFilesCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentEnvironmentTemplatesCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentEnvironmentsCommandApiCommand.Create());
@@ -37,6 +44,8 @@ internal static partial class AgentsApiGroupCommand
                          command.Subcommands.Add(AgentsListAgentSessionTurnsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentSessionsCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsListAgentsCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentsPauseAgentAutomationCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentsResumeAgentAutomationCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsRetrieveAgentCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsRetrieveAgentEnvironmentCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsRetrieveAgentEnvironmentTemplateCommandApiCommand.Create());
@@ -47,6 +56,7 @@ internal static partial class AgentsApiGroupCommand
                          command.Subcommands.Add(AgentsRetrieveAgentSessionSubagentTurnCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsRetrieveAgentSessionTurnCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsUpdateAgentCommandApiCommand.Create());
+                         command.Subcommands.Add(AgentsUpdateAgentAutomationCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsUpdateAgentEnvironmentTemplateCommandApiCommand.Create());
                          command.Subcommands.Add(AgentsUpdateAgentSessionCommandApiCommand.Create());
         CustomizeCommand(ref command);

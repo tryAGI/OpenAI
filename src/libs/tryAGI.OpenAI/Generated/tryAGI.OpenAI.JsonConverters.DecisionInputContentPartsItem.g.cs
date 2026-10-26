@@ -36,19 +36,12 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.DecisionInputImage)}");
                 inputImage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::tryAGI.OpenAI.DecisionInputOutputText? outputText = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.DecisionInputContentPartDiscriminatorType.OutputText)
+            global::tryAGI.OpenAI.DecisionInputJson? inputJson = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.DecisionInputContentPartDiscriminatorType.InputJson)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputOutputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputOutputText> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.DecisionInputOutputText)}");
-                outputText = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::tryAGI.OpenAI.DecisionInputRefusal? refusal = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.DecisionInputContentPartDiscriminatorType.Refusal)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputRefusal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputRefusal> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.DecisionInputRefusal)}");
-                refusal = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputJson), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputJson> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.DecisionInputJson)}");
+                inputJson = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::tryAGI.OpenAI.DecisionInputContentPartsItem(
@@ -57,9 +50,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 inputImage,
 
-                outputText,
-
-                refusal
+                inputJson
                 );
 
             return __value;
@@ -87,17 +78,11 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DecisionInputImage).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputImage(), typeInfo);
             }
-            else if (value.IsOutputText)
+            else if (value.IsInputJson)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputOutputText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputOutputText?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DecisionInputOutputText).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputText(), typeInfo);
-            }
-            else if (value.IsRefusal)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputRefusal), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputRefusal?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DecisionInputRefusal).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRefusal(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.DecisionInputJson), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.DecisionInputJson?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.DecisionInputJson).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputJson(), typeInfo);
             }
         }
     }

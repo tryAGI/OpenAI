@@ -4,7 +4,6 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The type of the input item. Always `input_image`.<br/>
     /// Default Value: input_image
     /// </summary>
     public enum LiveDecisionInputImageParamType

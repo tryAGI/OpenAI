@@ -89,78 +89,41 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
 
         /// <summary>
-        ///
+        /// A JSON object or an array of objects rendered as text. Nested values may be any JSON value. Limited to 32 container levels, 10,000 values, and 256 KiB of compact UTF-8 JSON.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.DecisionInputOutputText? OutputText { get; init; }
+        public global::tryAGI.OpenAI.DecisionInputJson? InputJson { get; init; }
 #else
-        public global::tryAGI.OpenAI.DecisionInputOutputText? OutputText { get; }
+        public global::tryAGI.OpenAI.DecisionInputJson? InputJson { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputText))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJson))]
 #endif
-        public bool IsOutputText => OutputText != null;
+        public bool IsInputJson => InputJson != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickOutputText(
+        public bool TryPickInputJson(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.DecisionInputOutputText? value)
+            out global::tryAGI.OpenAI.DecisionInputJson? value)
         {
-            value = OutputText;
-            return IsOutputText;
+            value = InputJson;
+            return IsInputJson;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.DecisionInputOutputText PickOutputText() => OutputText is { } value
+        public global::tryAGI.OpenAI.DecisionInputJson PickInputJson() => InputJson is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'OutputText' but the value was {ToString()}.");
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.DecisionInputRefusal? Refusal { get; init; }
-#else
-        public global::tryAGI.OpenAI.DecisionInputRefusal? Refusal { get; }
-#endif
-
-        /// <summary>
-        ///
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
-#endif
-        public bool IsRefusal => Refusal != null;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public bool TryPickRefusal(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::tryAGI.OpenAI.DecisionInputRefusal? value)
-        {
-            value = Refusal;
-            return IsRefusal;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::tryAGI.OpenAI.DecisionInputRefusal PickRefusal() => Refusal is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Refusal' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputJson' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -210,48 +173,25 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator DecisionInputContentPartsItem(global::tryAGI.OpenAI.DecisionInputOutputText value) => new DecisionInputContentPartsItem((global::tryAGI.OpenAI.DecisionInputOutputText?)value);
+        public static implicit operator DecisionInputContentPartsItem(global::tryAGI.OpenAI.DecisionInputJson value) => new DecisionInputContentPartsItem((global::tryAGI.OpenAI.DecisionInputJson?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.DecisionInputOutputText?(DecisionInputContentPartsItem @this) => @this.OutputText;
+        public static implicit operator global::tryAGI.OpenAI.DecisionInputJson?(DecisionInputContentPartsItem @this) => @this.InputJson;
 
         /// <summary>
         ///
         /// </summary>
-        public DecisionInputContentPartsItem(global::tryAGI.OpenAI.DecisionInputOutputText? value)
+        public DecisionInputContentPartsItem(global::tryAGI.OpenAI.DecisionInputJson? value)
         {
-            OutputText = value;
+            InputJson = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static DecisionInputContentPartsItem FromOutputText(global::tryAGI.OpenAI.DecisionInputOutputText? value) => new DecisionInputContentPartsItem(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator DecisionInputContentPartsItem(global::tryAGI.OpenAI.DecisionInputRefusal value) => new DecisionInputContentPartsItem((global::tryAGI.OpenAI.DecisionInputRefusal?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.DecisionInputRefusal?(DecisionInputContentPartsItem @this) => @this.Refusal;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public DecisionInputContentPartsItem(global::tryAGI.OpenAI.DecisionInputRefusal? value)
-        {
-            Refusal = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static DecisionInputContentPartsItem FromRefusal(global::tryAGI.OpenAI.DecisionInputRefusal? value) => new DecisionInputContentPartsItem(value);
+        public static DecisionInputContentPartsItem FromInputJson(global::tryAGI.OpenAI.DecisionInputJson? value) => new DecisionInputContentPartsItem(value);
 
         /// <summary>
         ///
@@ -260,24 +200,21 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.DecisionInputContentPartDiscriminatorType? type,
             global::tryAGI.OpenAI.DecisionInputText? inputText,
             global::tryAGI.OpenAI.DecisionInputImage? inputImage,
-            global::tryAGI.OpenAI.DecisionInputOutputText? outputText,
-            global::tryAGI.OpenAI.DecisionInputRefusal? refusal
+            global::tryAGI.OpenAI.DecisionInputJson? inputJson
             )
         {
             Type = type;
 
             InputText = inputText;
             InputImage = inputImage;
-            OutputText = outputText;
-            Refusal = refusal;
+            InputJson = inputJson;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            Refusal as object ??
-            OutputText as object ??
+            InputJson as object ??
             InputImage as object ??
             InputText as object
             ;
@@ -288,8 +225,7 @@ namespace tryAGI.OpenAI
         public override string? ToString() =>
             InputText?.ToString() ??
             InputImage?.ToString() ??
-            OutputText?.ToString() ??
-            Refusal?.ToString()
+            InputJson?.ToString()
             ;
 
         /// <summary>
@@ -297,7 +233,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsInputText && !IsInputImage && !IsOutputText && !IsRefusal || !IsInputText && IsInputImage && !IsOutputText && !IsRefusal || !IsInputText && !IsInputImage && IsOutputText && !IsRefusal || !IsInputText && !IsInputImage && !IsOutputText && IsRefusal;
+            return IsInputText && !IsInputImage && !IsInputJson || !IsInputText && IsInputImage && !IsInputJson || !IsInputText && !IsInputImage && IsInputJson;
         }
 
         /// <summary>
@@ -306,8 +242,7 @@ namespace tryAGI.OpenAI
         public TResult? Match<TResult>(
             global::System.Func<global::tryAGI.OpenAI.DecisionInputText, TResult>? inputText = null,
             global::System.Func<global::tryAGI.OpenAI.DecisionInputImage, TResult>? inputImage = null,
-            global::System.Func<global::tryAGI.OpenAI.DecisionInputOutputText, TResult>? outputText = null,
-            global::System.Func<global::tryAGI.OpenAI.DecisionInputRefusal, TResult>? refusal = null,
+            global::System.Func<global::tryAGI.OpenAI.DecisionInputJson, TResult>? inputJson = null,
             bool validate = true)
         {
             if (validate)
@@ -323,13 +258,9 @@ namespace tryAGI.OpenAI
             {
                 return inputImage(__value1);
             }
-            else if (OutputText is { } __value2 && outputText != null)
+            else if (InputJson is { } __value2 && inputJson != null)
             {
-                return outputText(__value2);
-            }
-            else if (Refusal is { } __value3 && refusal != null)
-            {
-                return refusal(__value3);
+                return inputJson(__value2);
             }
 
             return default(TResult);
@@ -343,9 +274,7 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.DecisionInputImage>? inputImage = null,
 
-            global::System.Action<global::tryAGI.OpenAI.DecisionInputOutputText>? outputText = null,
-
-            global::System.Action<global::tryAGI.OpenAI.DecisionInputRefusal>? refusal = null,
+            global::System.Action<global::tryAGI.OpenAI.DecisionInputJson>? inputJson = null,
             bool validate = true)
         {
             if (validate)
@@ -361,13 +290,9 @@ namespace tryAGI.OpenAI
             {
                 inputImage?.Invoke(__value1);
             }
-            else if (OutputText is { } __value2)
+            else if (InputJson is { } __value2)
             {
-                outputText?.Invoke(__value2);
-            }
-            else if (Refusal is { } __value3)
-            {
-                refusal?.Invoke(__value3);
+                inputJson?.Invoke(__value2);
             }
         }
 
@@ -377,8 +302,7 @@ namespace tryAGI.OpenAI
         public void Switch(
             global::System.Action<global::tryAGI.OpenAI.DecisionInputText>? inputText = null,
             global::System.Action<global::tryAGI.OpenAI.DecisionInputImage>? inputImage = null,
-            global::System.Action<global::tryAGI.OpenAI.DecisionInputOutputText>? outputText = null,
-            global::System.Action<global::tryAGI.OpenAI.DecisionInputRefusal>? refusal = null,
+            global::System.Action<global::tryAGI.OpenAI.DecisionInputJson>? inputJson = null,
             bool validate = true)
         {
             if (validate)
@@ -394,13 +318,9 @@ namespace tryAGI.OpenAI
             {
                 inputImage?.Invoke(__value1);
             }
-            else if (OutputText is { } __value2)
+            else if (InputJson is { } __value2)
             {
-                outputText?.Invoke(__value2);
-            }
-            else if (Refusal is { } __value3)
-            {
-                refusal?.Invoke(__value3);
+                inputJson?.Invoke(__value2);
             }
         }
 
@@ -415,10 +335,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.DecisionInputText),
                 InputImage,
                 typeof(global::tryAGI.OpenAI.DecisionInputImage),
-                OutputText,
-                typeof(global::tryAGI.OpenAI.DecisionInputOutputText),
-                Refusal,
-                typeof(global::tryAGI.OpenAI.DecisionInputRefusal),
+                InputJson,
+                typeof(global::tryAGI.OpenAI.DecisionInputJson),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -437,8 +355,7 @@ namespace tryAGI.OpenAI
             return
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.DecisionInputText?>.Default.Equals(InputText, other.InputText) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.DecisionInputImage?>.Default.Equals(InputImage, other.InputImage) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.DecisionInputOutputText?>.Default.Equals(OutputText, other.OutputText) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.DecisionInputRefusal?>.Default.Equals(Refusal, other.Refusal)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.DecisionInputJson?>.Default.Equals(InputJson, other.InputJson)
                 ;
         }
 

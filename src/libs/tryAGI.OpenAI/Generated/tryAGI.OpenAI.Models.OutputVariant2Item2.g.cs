@@ -5,22 +5,22 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A piece of message content, such as text, an image, or a file.
+    ///
     /// </summary>
     public readonly partial struct OutputVariant2Item2 : global::System.IEquatable<OutputVariant2Item2>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaFunctionCallOutputItemParamOutputVariant2ItemDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.LiveDecisionFunctionCallOutputParamOutputVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// A text input to the model.
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaInputTextContentParam? InputText { get; init; }
+        public global::tryAGI.OpenAI.LiveDecisionInputTextParam? InputText { get; init; }
 #else
-        public global::tryAGI.OpenAI.BetaInputTextContentParam? InputText { get; }
+        public global::tryAGI.OpenAI.LiveDecisionInputTextParam? InputText { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.BetaInputTextContentParam? value)
+            out global::tryAGI.OpenAI.LiveDecisionInputTextParam? value)
         {
             value = InputText;
             return IsInputText;
@@ -47,17 +47,17 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaInputTextContentParam PickInputText() => InputText is { } value
+        public global::tryAGI.OpenAI.LiveDecisionInputTextParam PickInputText() => InputText is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
         /// <summary>
-        /// An image input to the model. Learn about [image inputs](https://developers.openai.com/api/docs/guides/images-vision)
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? InputImage { get; init; }
+        public global::tryAGI.OpenAI.LiveDecisionInputImageParam? InputImage { get; init; }
 #else
-        public global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? InputImage { get; }
+        public global::tryAGI.OpenAI.LiveDecisionInputImageParam? InputImage { get; }
 #endif
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace tryAGI.OpenAI
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? value)
+            out global::tryAGI.OpenAI.LiveDecisionInputImageParam? value)
         {
             value = InputImage;
             return IsInputImage;
@@ -84,60 +84,23 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam PickInputImage() => InputImage is { } value
+        public global::tryAGI.OpenAI.LiveDecisionInputImageParam PickInputImage() => InputImage is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
-
         /// <summary>
-        /// A file input to the model.
+        ///
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaInputFileContentParam? InputFile { get; init; }
-#else
-        public global::tryAGI.OpenAI.BetaInputFileContentParam? InputFile { get; }
-#endif
+        public static implicit operator OutputVariant2Item2(global::tryAGI.OpenAI.LiveDecisionInputTextParam value) => new OutputVariant2Item2((global::tryAGI.OpenAI.LiveDecisionInputTextParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputFile))]
-#endif
-        public bool IsInputFile => InputFile != null;
+        public static implicit operator global::tryAGI.OpenAI.LiveDecisionInputTextParam?(OutputVariant2Item2 @this) => @this.InputText;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickInputFile(
-#if NET6_0_OR_GREATER
-            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
-#endif
-            out global::tryAGI.OpenAI.BetaInputFileContentParam? value)
-        {
-            value = InputFile;
-            return IsInputFile;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public global::tryAGI.OpenAI.BetaInputFileContentParam PickInputFile() => InputFile is { } value
-            ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'InputFile' but the value was {ToString()}.");
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator OutputVariant2Item2(global::tryAGI.OpenAI.BetaInputTextContentParam value) => new OutputVariant2Item2((global::tryAGI.OpenAI.BetaInputTextContentParam?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaInputTextContentParam?(OutputVariant2Item2 @this) => @this.InputText;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public OutputVariant2Item2(global::tryAGI.OpenAI.BetaInputTextContentParam? value)
+        public OutputVariant2Item2(global::tryAGI.OpenAI.LiveDecisionInputTextParam? value)
         {
             InputText = value;
         }
@@ -145,22 +108,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static OutputVariant2Item2 FromInputText(global::tryAGI.OpenAI.BetaInputTextContentParam? value) => new OutputVariant2Item2(value);
+        public static OutputVariant2Item2 FromInputText(global::tryAGI.OpenAI.LiveDecisionInputTextParam? value) => new OutputVariant2Item2(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator OutputVariant2Item2(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam value) => new OutputVariant2Item2((global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam?)value);
+        public static implicit operator OutputVariant2Item2(global::tryAGI.OpenAI.LiveDecisionInputImageParam value) => new OutputVariant2Item2((global::tryAGI.OpenAI.LiveDecisionInputImageParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam?(OutputVariant2Item2 @this) => @this.InputImage;
+        public static implicit operator global::tryAGI.OpenAI.LiveDecisionInputImageParam?(OutputVariant2Item2 @this) => @this.InputImage;
 
         /// <summary>
         ///
         /// </summary>
-        public OutputVariant2Item2(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? value)
+        public OutputVariant2Item2(global::tryAGI.OpenAI.LiveDecisionInputImageParam? value)
         {
             InputImage = value;
         }
@@ -168,53 +131,27 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static OutputVariant2Item2 FromInputImage(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? value) => new OutputVariant2Item2(value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator OutputVariant2Item2(global::tryAGI.OpenAI.BetaInputFileContentParam value) => new OutputVariant2Item2((global::tryAGI.OpenAI.BetaInputFileContentParam?)value);
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaInputFileContentParam?(OutputVariant2Item2 @this) => @this.InputFile;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public OutputVariant2Item2(global::tryAGI.OpenAI.BetaInputFileContentParam? value)
-        {
-            InputFile = value;
-        }
-
-        /// <summary>
-        ///
-        /// </summary>
-        public static OutputVariant2Item2 FromInputFile(global::tryAGI.OpenAI.BetaInputFileContentParam? value) => new OutputVariant2Item2(value);
+        public static OutputVariant2Item2 FromInputImage(global::tryAGI.OpenAI.LiveDecisionInputImageParam? value) => new OutputVariant2Item2(value);
 
         /// <summary>
         ///
         /// </summary>
         public OutputVariant2Item2(
-            global::tryAGI.OpenAI.BetaFunctionCallOutputItemParamOutputVariant2ItemDiscriminatorType? type,
-            global::tryAGI.OpenAI.BetaInputTextContentParam? inputText,
-            global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam? inputImage,
-            global::tryAGI.OpenAI.BetaInputFileContentParam? inputFile
+            global::tryAGI.OpenAI.LiveDecisionFunctionCallOutputParamOutputVariant2ItemDiscriminatorType? type,
+            global::tryAGI.OpenAI.LiveDecisionInputTextParam? inputText,
+            global::tryAGI.OpenAI.LiveDecisionInputImageParam? inputImage
             )
         {
             Type = type;
 
             InputText = inputText;
             InputImage = inputImage;
-            InputFile = inputFile;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            InputFile as object ??
             InputImage as object ??
             InputText as object
             ;
@@ -224,8 +161,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             InputText?.ToString() ??
-            InputImage?.ToString() ??
-            InputFile?.ToString()
+            InputImage?.ToString()
             ;
 
         /// <summary>
@@ -233,16 +169,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsInputText && !IsInputImage && !IsInputFile || !IsInputText && IsInputImage && !IsInputFile || !IsInputText && !IsInputImage && IsInputFile;
+            return IsInputText && !IsInputImage || !IsInputText && IsInputImage;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.BetaInputTextContentParam, TResult>? inputText = null,
-            global::System.Func<global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam, TResult>? inputImage = null,
-            global::System.Func<global::tryAGI.OpenAI.BetaInputFileContentParam, TResult>? inputFile = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveDecisionInputTextParam, TResult>? inputText = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveDecisionInputImageParam, TResult>? inputImage = null,
             bool validate = true)
         {
             if (validate)
@@ -258,10 +193,6 @@ namespace tryAGI.OpenAI
             {
                 return inputImage(__value1);
             }
-            else if (InputFile is { } __value2 && inputFile != null)
-            {
-                return inputFile(__value2);
-            }
 
             return default(TResult);
         }
@@ -270,11 +201,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.BetaInputTextContentParam>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputTextParam>? inputText = null,
 
-            global::System.Action<global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam>? inputImage = null,
-
-            global::System.Action<global::tryAGI.OpenAI.BetaInputFileContentParam>? inputFile = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputImageParam>? inputImage = null,
             bool validate = true)
         {
             if (validate)
@@ -289,10 +218,6 @@ namespace tryAGI.OpenAI
             else if (InputImage is { } __value1)
             {
                 inputImage?.Invoke(__value1);
-            }
-            else if (InputFile is { } __value2)
-            {
-                inputFile?.Invoke(__value2);
             }
         }
 
@@ -300,9 +225,8 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.BetaInputTextContentParam>? inputText = null,
-            global::System.Action<global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam>? inputImage = null,
-            global::System.Action<global::tryAGI.OpenAI.BetaInputFileContentParam>? inputFile = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputTextParam>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputImageParam>? inputImage = null,
             bool validate = true)
         {
             if (validate)
@@ -317,10 +241,6 @@ namespace tryAGI.OpenAI
             else if (InputImage is { } __value1)
             {
                 inputImage?.Invoke(__value1);
-            }
-            else if (InputFile is { } __value2)
-            {
-                inputFile?.Invoke(__value2);
             }
         }
 
@@ -332,11 +252,9 @@ namespace tryAGI.OpenAI
             var fields = new object?[]
             {
                 InputText,
-                typeof(global::tryAGI.OpenAI.BetaInputTextContentParam),
+                typeof(global::tryAGI.OpenAI.LiveDecisionInputTextParam),
                 InputImage,
-                typeof(global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam),
-                InputFile,
-                typeof(global::tryAGI.OpenAI.BetaInputFileContentParam),
+                typeof(global::tryAGI.OpenAI.LiveDecisionInputImageParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -353,9 +271,8 @@ namespace tryAGI.OpenAI
         public bool Equals(OutputVariant2Item2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputTextContentParam?>.Default.Equals(InputText, other.InputText) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputImageContentParamAutoParam?>.Default.Equals(InputImage, other.InputImage) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaInputFileContentParam?>.Default.Equals(InputFile, other.InputFile)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionInputTextParam?>.Default.Equals(InputText, other.InputText) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionInputImageParam?>.Default.Equals(InputImage, other.InputImage)
                 ;
         }
 

@@ -1316,7 +1316,12 @@
                   "gpt-4o-transcribe",
                   "gpt-4o-transcribe-diarize",
                   "gpt-realtime-whisper"
-                ]
+                ],
+                "x-openai-enum-deprecations": {
+                  "gpt-4o-mini-transcribe-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-02-26. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  }
+                }
               }
             ]
           },
@@ -1376,7 +1381,12 @@
                   "gpt-4o-transcribe",
                   "gpt-4o-transcribe-diarize",
                   "gpt-realtime-whisper"
-                ]
+                ],
+                "x-openai-enum-deprecations": {
+                  "gpt-4o-mini-transcribe-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-02-26. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  }
+                }
               }
             ]
           },
@@ -1855,6 +1865,14 @@
             "description": "The breakpoint mode. Always `explicit`.",
             "default": "explicit",
             "x-stainless-const": true
+          },
+          "ttl": {
+            "type": "string",
+            "enum": [
+              "30m",
+              "12h"
+            ],
+            "description": "The minimum lifetime of this cache breakpoint. Defaults to the request TTL."
           }
         },
         "type": "object",
@@ -1862,7 +1880,7 @@
           "mode"
         ],
         "title": "Prompt cache breakpoint",
-        "description": "Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block."
+        "description": "Marks the exact end of a reusable prompt prefix. When `ttl` is omitted, the breakpoint inherits the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block."
       },
       "RealtimeAudioFormats": {
         "anyOf": [
@@ -5482,7 +5500,18 @@
                   "gpt-audio-mini",
                   "gpt-audio-mini-2025-10-06",
                   "gpt-audio-mini-2025-12-15"
-                ]
+                ],
+                "x-openai-enum-deprecations": {
+                  "gpt-realtime-2025-08-28": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  },
+                  "gpt-realtime-mini-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  },
+                  "gpt-audio-mini-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  }
+                }
               }
             ],
             "description": "The Realtime model used for this session.\n"
@@ -5733,7 +5762,18 @@
                   "gpt-audio-mini",
                   "gpt-audio-mini-2025-10-06",
                   "gpt-audio-mini-2025-12-15"
-                ]
+                ],
+                "x-openai-enum-deprecations": {
+                  "gpt-realtime-2025-08-28": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  },
+                  "gpt-realtime-mini-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  },
+                  "gpt-audio-mini-2025-12-15": {
+                    "message": "Announced shutdown date: 2027-01-20. See https://developers.openai.com/api/docs/deprecations for details and recommended replacements."
+                  }
+                }
               }
             ],
             "description": "The Realtime model used for this session.\n"

@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI.Realtime
             {
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeTruncation))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0033.Create_RealtimeTruncation2(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0034.Create_RealtimeTruncation2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeTruncation?))
                 {

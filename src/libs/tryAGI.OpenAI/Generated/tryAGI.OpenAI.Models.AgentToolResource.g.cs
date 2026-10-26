@@ -198,6 +198,43 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.AgentToolResourceComputerUse PickComputerUse() => ComputerUse is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ComputerUse' but the value was {ToString()}.");
+
+        /// <summary>
+        /// Lets the agent manage its own scheduled wakeups.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.AgentToolResourceAutomations? Automations { get; init; }
+#else
+        public global::tryAGI.OpenAI.AgentToolResourceAutomations? Automations { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Automations))]
+#endif
+        public bool IsAutomations => Automations != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickAutomations(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.AgentToolResourceAutomations? value)
+        {
+            value = Automations;
+            return IsAutomations;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.AgentToolResourceAutomations PickAutomations() => Automations is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Automations' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
@@ -316,13 +353,37 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator AgentToolResource(global::tryAGI.OpenAI.AgentToolResourceAutomations value) => new AgentToolResource((global::tryAGI.OpenAI.AgentToolResourceAutomations?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.AgentToolResourceAutomations?(AgentToolResource @this) => @this.Automations;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public AgentToolResource(global::tryAGI.OpenAI.AgentToolResourceAutomations? value)
+        {
+            Automations = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static AgentToolResource FromAutomations(global::tryAGI.OpenAI.AgentToolResourceAutomations? value) => new AgentToolResource(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public AgentToolResource(
             global::tryAGI.OpenAI.AgentToolResourceDiscriminatorType? type,
             global::tryAGI.OpenAI.AgentToolResourceFunction? function,
             global::tryAGI.OpenAI.AgentToolResourceProgrammaticToolCalling? programmaticToolCalling,
             global::tryAGI.OpenAI.AgentToolResourceMcp? mcp,
             global::tryAGI.OpenAI.AgentToolResourceWebSearch? webSearch,
-            global::tryAGI.OpenAI.AgentToolResourceComputerUse? computerUse
+            global::tryAGI.OpenAI.AgentToolResourceComputerUse? computerUse,
+            global::tryAGI.OpenAI.AgentToolResourceAutomations? automations
             )
         {
             Type = type;
@@ -332,12 +393,14 @@ namespace tryAGI.OpenAI
             Mcp = mcp;
             WebSearch = webSearch;
             ComputerUse = computerUse;
+            Automations = automations;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Automations as object ??
             ComputerUse as object ??
             WebSearch as object ??
             Mcp as object ??
@@ -353,7 +416,8 @@ namespace tryAGI.OpenAI
             ProgrammaticToolCalling?.ToString() ??
             Mcp?.ToString() ??
             WebSearch?.ToString() ??
-            ComputerUse?.ToString()
+            ComputerUse?.ToString() ??
+            Automations?.ToString()
             ;
 
         /// <summary>
@@ -361,7 +425,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsFunction && !IsProgrammaticToolCalling && !IsMcp && !IsWebSearch && !IsComputerUse || !IsFunction && IsProgrammaticToolCalling && !IsMcp && !IsWebSearch && !IsComputerUse || !IsFunction && !IsProgrammaticToolCalling && IsMcp && !IsWebSearch && !IsComputerUse || !IsFunction && !IsProgrammaticToolCalling && !IsMcp && IsWebSearch && !IsComputerUse || !IsFunction && !IsProgrammaticToolCalling && !IsMcp && !IsWebSearch && IsComputerUse;
+            return IsFunction && !IsProgrammaticToolCalling && !IsMcp && !IsWebSearch && !IsComputerUse && !IsAutomations || !IsFunction && IsProgrammaticToolCalling && !IsMcp && !IsWebSearch && !IsComputerUse && !IsAutomations || !IsFunction && !IsProgrammaticToolCalling && IsMcp && !IsWebSearch && !IsComputerUse && !IsAutomations || !IsFunction && !IsProgrammaticToolCalling && !IsMcp && IsWebSearch && !IsComputerUse && !IsAutomations || !IsFunction && !IsProgrammaticToolCalling && !IsMcp && !IsWebSearch && IsComputerUse && !IsAutomations || !IsFunction && !IsProgrammaticToolCalling && !IsMcp && !IsWebSearch && !IsComputerUse && IsAutomations;
         }
 
         /// <summary>
@@ -373,6 +437,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.AgentToolResourceMcp, TResult>? mcp = null,
             global::System.Func<global::tryAGI.OpenAI.AgentToolResourceWebSearch, TResult>? webSearch = null,
             global::System.Func<global::tryAGI.OpenAI.AgentToolResourceComputerUse, TResult>? computerUse = null,
+            global::System.Func<global::tryAGI.OpenAI.AgentToolResourceAutomations, TResult>? automations = null,
             bool validate = true)
         {
             if (validate)
@@ -400,6 +465,10 @@ namespace tryAGI.OpenAI
             {
                 return computerUse(__value4);
             }
+            else if (Automations is { } __value5 && automations != null)
+            {
+                return automations(__value5);
+            }
 
             return default(TResult);
         }
@@ -417,6 +486,8 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.AgentToolResourceWebSearch>? webSearch = null,
 
             global::System.Action<global::tryAGI.OpenAI.AgentToolResourceComputerUse>? computerUse = null,
+
+            global::System.Action<global::tryAGI.OpenAI.AgentToolResourceAutomations>? automations = null,
             bool validate = true)
         {
             if (validate)
@@ -443,6 +514,10 @@ namespace tryAGI.OpenAI
             else if (ComputerUse is { } __value4)
             {
                 computerUse?.Invoke(__value4);
+            }
+            else if (Automations is { } __value5)
+            {
+                automations?.Invoke(__value5);
             }
         }
 
@@ -455,6 +530,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.AgentToolResourceMcp>? mcp = null,
             global::System.Action<global::tryAGI.OpenAI.AgentToolResourceWebSearch>? webSearch = null,
             global::System.Action<global::tryAGI.OpenAI.AgentToolResourceComputerUse>? computerUse = null,
+            global::System.Action<global::tryAGI.OpenAI.AgentToolResourceAutomations>? automations = null,
             bool validate = true)
         {
             if (validate)
@@ -481,6 +557,10 @@ namespace tryAGI.OpenAI
             else if (ComputerUse is { } __value4)
             {
                 computerUse?.Invoke(__value4);
+            }
+            else if (Automations is { } __value5)
+            {
+                automations?.Invoke(__value5);
             }
         }
 
@@ -501,6 +581,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.AgentToolResourceWebSearch),
                 ComputerUse,
                 typeof(global::tryAGI.OpenAI.AgentToolResourceComputerUse),
+                Automations,
+                typeof(global::tryAGI.OpenAI.AgentToolResourceAutomations),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -521,7 +603,8 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AgentToolResourceProgrammaticToolCalling?>.Default.Equals(ProgrammaticToolCalling, other.ProgrammaticToolCalling) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AgentToolResourceMcp?>.Default.Equals(Mcp, other.Mcp) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AgentToolResourceWebSearch?>.Default.Equals(WebSearch, other.WebSearch) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AgentToolResourceComputerUse?>.Default.Equals(ComputerUse, other.ComputerUse)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AgentToolResourceComputerUse?>.Default.Equals(ComputerUse, other.ComputerUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AgentToolResourceAutomations?>.Default.Equals(Automations, other.Automations)
                 ;
         }
 

@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.MCPToolRequireApprovalVariant1Enum))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0186.Create_MCPToolRequireApprovalVariant1Enum(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0197.Create_MCPToolRequireApprovalVariant1Enum(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

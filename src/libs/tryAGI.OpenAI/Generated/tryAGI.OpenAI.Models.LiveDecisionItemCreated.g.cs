@@ -34,6 +34,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.LiveDecisionStoredInputItemParamJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.LiveDecisionStoredInputItemParam Item { get; set; }
 
@@ -68,7 +69,7 @@ namespace tryAGI.OpenAI
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.ClientEventId = clientEventId;
             this.Type = type;
-            this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
+            this.Item = item;
         }
 
         /// <summary>

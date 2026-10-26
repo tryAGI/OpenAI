@@ -26,8 +26,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InstructionsVariant2Item>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Instructions { get; set; }
+        public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InstructionsVariant2Item>> Instructions { get; set; }
 
         /// <summary>
         ///
@@ -55,14 +56,14 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LiveDecisionChoiceQuestionParam(
-            string instructions,
+            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InstructionsVariant2Item>> instructions,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionChoiceParam> choices,
             string? name,
             global::tryAGI.OpenAI.LiveDecisionChoiceQuestionParamType type = global::tryAGI.OpenAI.LiveDecisionChoiceQuestionParamType.Choice)
         {
             this.Type = type;
             this.Name = name;
-            this.Instructions = instructions ?? throw new global::System.ArgumentNullException(nameof(instructions));
+            this.Instructions = instructions;
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
         }
 

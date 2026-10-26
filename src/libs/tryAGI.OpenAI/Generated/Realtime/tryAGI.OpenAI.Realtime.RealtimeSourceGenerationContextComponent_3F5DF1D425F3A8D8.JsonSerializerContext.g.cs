@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI.Realtime
         internal static readonly global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_15551C0E56E63D09.MetadataScope,
+                    static () => global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_15551C0E56E63D09.MetadataScope,                    static () => global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_798462283E2808EC.MetadataScope,
                 }, null);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 

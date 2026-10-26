@@ -14,7 +14,12 @@ namespace tryAGI.OpenAI
     public sealed partial class EditImageBodyJsonParam
     {
         /// <summary>
-        /// The GPT image model to use for image editing, including `gpt-image-2`, its dated snapshot `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`. Defaults to `gpt-image-2.5-sunburst`.<br/>
+        /// The GPT image model to use for image editing, including `gpt-image-2`, its dated<br/>
+        /// snapshot `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,<br/>
+        /// `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and<br/>
+        /// `gpt-image-2.5-flare-2026-09-08`. Defaults to `gpt-image-2.5-sunburst`.<br/>
+        /// `gpt-image-1` was shut down on October 23, 2026. Use<br/>
+        /// `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` instead.<br/>
         /// Default Value: gpt-image-2.5-sunburst<br/>
         /// Example: gpt-image-2.5-sunburst
         /// </summary>
@@ -68,7 +73,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.EditImageBodyJsonParamQuality? Quality { get; set; }
 
         /// <summary>
-        /// Control how much effort the model will exert to match the style and features, especially facial features, of input images. Supports `high` and `low` on `gpt-image-1` and `gpt-image-1.5`; `gpt-image-1-mini` supports only `low`. For `gpt-image-2`, omit this parameter. Defaults to `low` on supported models.
+        /// Control how much effort the model will exert to match the style and features, especially facial features, of input images. Supports `high` and `low` on `gpt-image-1.5`; `gpt-image-1-mini` supports only `low`. For `gpt-image-2`, omit this parameter. Defaults to `low` on supported models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_fidelity")]
         public global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity? InputFidelity { get; set; }
@@ -168,7 +173,12 @@ namespace tryAGI.OpenAI
         /// Example: Add a watercolor effect and keep the subject centered
         /// </param>
         /// <param name="model">
-        /// The GPT image model to use for image editing, including `gpt-image-2`, its dated snapshot `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`. Defaults to `gpt-image-2.5-sunburst`.<br/>
+        /// The GPT image model to use for image editing, including `gpt-image-2`, its dated<br/>
+        /// snapshot `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,<br/>
+        /// `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and<br/>
+        /// `gpt-image-2.5-flare-2026-09-08`. Defaults to `gpt-image-2.5-sunburst`.<br/>
+        /// `gpt-image-1` was shut down on October 23, 2026. Use<br/>
+        /// `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` instead.<br/>
         /// Default Value: gpt-image-2.5-sunburst<br/>
         /// Example: gpt-image-2.5-sunburst
         /// </param>
@@ -189,7 +199,7 @@ namespace tryAGI.OpenAI
         /// Example: high
         /// </param>
         /// <param name="inputFidelity">
-        /// Control how much effort the model will exert to match the style and features, especially facial features, of input images. Supports `high` and `low` on `gpt-image-1` and `gpt-image-1.5`; `gpt-image-1-mini` supports only `low`. For `gpt-image-2`, omit this parameter. Defaults to `low` on supported models.
+        /// Control how much effort the model will exert to match the style and features, especially facial features, of input images. Supports `high` and `low` on `gpt-image-1.5`; `gpt-image-1-mini` supports only `low`. For `gpt-image-2`, omit this parameter. Defaults to `low` on supported models.
         /// </param>
         /// <param name="size">
         /// The size of the generated images. For `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and `gpt-image-2.5-flare-2026-09-08`, arbitrary resolutions are supported as `WIDTHxHEIGHT` strings, for example `1536x864`. Width and height must both be divisible by 16 and the requested aspect ratio must be between 1:3 and 3:1. Resolutions above `2560x1440` are experimental, and the maximum supported resolution is `3840x2160`. The requested size must also satisfy the model's current pixel and edge limits. The standard sizes `1024x1024`, `1536x1024`, and `1024x1536` are supported by the GPT image models; `auto` is supported for models that allow automatic sizing.<br/>

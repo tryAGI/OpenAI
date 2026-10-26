@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI.Realtime
             {
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGAOutputModalitie))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0025.Create_RealtimeSessionCreateRequestGAOutputModalitie2(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0026.Create_RealtimeSessionCreateRequestGAOutputModalitie2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGAOutputModalitie?))
                 {

@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         public string? FileData { get; set; }
 
         /// <summary>
-        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// Marks the exact end of a reusable prompt prefix. When `ttl` is omitted, the breakpoint inherits the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_breakpoint")]
         public global::tryAGI.OpenAI.BetaPromptCacheBreakpointConfig? PromptCacheBreakpoint { get; set; }
@@ -71,7 +71,7 @@ namespace tryAGI.OpenAI
         /// The content of the file to be sent to the model.
         /// </param>
         /// <param name="promptCacheBreakpoint">
-        /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+        /// Marks the exact end of a reusable prompt prefix. When `ttl` is omitted, the breakpoint inherits the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
         /// </param>
         /// <param name="fileUrl">
         /// The URL of the file to be sent to the model.

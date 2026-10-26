@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.VaultCredentialAuthResourceStaticBearerType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0547.Create_VaultCredentialAuthResourceStaticBearerType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0571.Create_VaultCredentialAuthResourceStaticBearerType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.VaultCredentialAuthResourceStaticBearerType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0345.Create_NullableVaultCredentialAuthResourceStaticBearerType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0363.Create_NullableVaultCredentialAuthResourceStaticBearerType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

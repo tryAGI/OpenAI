@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObjectFilePath))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0189.Create_MessageContentTextAnnotationsFilePathObjectFilePath(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0201.Create_MessageContentTextAnnotationsFilePathObjectFilePath(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

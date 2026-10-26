@@ -15,15 +15,11 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        InputJson,
+        /// <summary>
+        ///
+        /// </summary>
         InputText,
-        /// <summary>
-        ///
-        /// </summary>
-        OutputText,
-        /// <summary>
-        ///
-        /// </summary>
-        Refusal,
     }
 
     /// <summary>
@@ -39,9 +35,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 DecisionInputContentPartDiscriminatorType.InputImage => "input_image",
+                DecisionInputContentPartDiscriminatorType.InputJson => "input_json",
                 DecisionInputContentPartDiscriminatorType.InputText => "input_text",
-                DecisionInputContentPartDiscriminatorType.OutputText => "output_text",
-                DecisionInputContentPartDiscriminatorType.Refusal => "refusal",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -53,9 +48,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "input_image" => DecisionInputContentPartDiscriminatorType.InputImage,
+                "input_json" => DecisionInputContentPartDiscriminatorType.InputJson,
                 "input_text" => DecisionInputContentPartDiscriminatorType.InputText,
-                "output_text" => DecisionInputContentPartDiscriminatorType.OutputText,
-                "refusal" => DecisionInputContentPartDiscriminatorType.Refusal,
                 _ => null,
             };
         }

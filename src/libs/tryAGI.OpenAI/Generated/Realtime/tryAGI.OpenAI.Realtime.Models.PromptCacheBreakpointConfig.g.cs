@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI.Realtime
 {
     /// <summary>
-    /// Marks the exact end of a reusable prompt prefix. The breakpoint inherits its TTL from the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
+    /// Marks the exact end of a reusable prompt prefix. When `ttl` is omitted, the breakpoint inherits the request's `prompt_cache_options.ttl`; the boundary is not rounded to a token block.
     /// </summary>
     public sealed partial class PromptCacheBreakpointConfig
     {
@@ -18,6 +18,13 @@ namespace tryAGI.OpenAI.Realtime
         public global::tryAGI.OpenAI.Realtime.PromptCacheBreakpointConfigMode Mode { get; set; } = global::tryAGI.OpenAI.Realtime.PromptCacheBreakpointConfigMode.Explicit;
 
         /// <summary>
+        /// The minimum lifetime of this cache breakpoint. Defaults to the request TTL.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("ttl")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.Realtime.JsonConverters.PromptCacheBreakpointConfigTtlJsonConverter))]
+        public global::tryAGI.OpenAI.Realtime.PromptCacheBreakpointConfigTtl? Ttl { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -26,6 +33,9 @@ namespace tryAGI.OpenAI.Realtime
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptCacheBreakpointConfig" /> class.
         /// </summary>
+        /// <param name="ttl">
+        /// The minimum lifetime of this cache breakpoint. Defaults to the request TTL.
+        /// </param>
         /// <param name="mode">
         /// The breakpoint mode. Always `explicit`.<br/>
         /// Default Value: explicit
@@ -34,9 +44,11 @@ namespace tryAGI.OpenAI.Realtime
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PromptCacheBreakpointConfig(
+            global::tryAGI.OpenAI.Realtime.PromptCacheBreakpointConfigTtl? ttl,
             global::tryAGI.OpenAI.Realtime.PromptCacheBreakpointConfigMode mode = global::tryAGI.OpenAI.Realtime.PromptCacheBreakpointConfigMode.Explicit)
         {
             this.Mode = mode;
+            this.Ttl = ttl;
         }
 
         /// <summary>

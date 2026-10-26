@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="image">
         /// The image(s) to edit. Must be a supported image file or an array of images.<br/>
-        /// For the GPT image models (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`,<br/>
+        /// For the GPT image models (`gpt-image-1-mini`, `gpt-image-1.5`,<br/>
         /// `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,<br/>
         /// `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, and<br/>
         /// `gpt-image-2.5-flare-2026-09-08`), each image should be a `png`, `webp`, or `jpg`<br/>
@@ -69,7 +69,13 @@ namespace tryAGI.OpenAI
         /// Example: transparent
         /// </param>
         /// <param name="model">
-        /// The GPT image model to use for image editing (`gpt-image-1`, `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`, `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`, `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`, `gpt-image-2.5-flare-2026-09-08`, or `chatgpt-image-latest`).<br/>
+        /// The GPT image model to use for image editing<br/>
+        /// (`gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`,<br/>
+        /// `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,<br/>
+        /// `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`,<br/>
+        /// `gpt-image-2.5-flare-2026-09-08`, or `chatgpt-image-latest`).<br/>
+        /// `gpt-image-1` was shut down on October 23, 2026. Use<br/>
+        /// `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` instead.<br/>
         /// Example: gpt-image-1.5
         /// </param>
         /// <param name="n">

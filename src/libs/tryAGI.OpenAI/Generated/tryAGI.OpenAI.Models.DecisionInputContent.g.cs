@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Text evidence or an ordered list of text and image parts.
+    /// A text string or an ordered list of text, image, and JSON parts.
     /// </summary>
     public readonly partial struct DecisionInputContent : global::System.IEquatable<DecisionInputContent>
     {

@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI.Realtime
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateRequestGAIncludeItem?))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0009.Create_NullableRealtimeSessionCreateRequestGAIncludeItem2(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0010.Create_NullableRealtimeSessionCreateRequestGAIncludeItem2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -18,30 +18,30 @@ namespace tryAGI.OpenAI.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionStoredInputItemParamContentVariant2ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionStoredInputItemParamContentVariant2ItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDecisionStoredInputItemParamContentVariant2ItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionAssistantMessageParamContentVariant2ItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionAssistantMessageParamContentVariant2ItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDecisionAssistantMessageParamContentVariant2ItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::tryAGI.OpenAI.LiveDecisionInputTextParam? inputText = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveDecisionStoredInputItemParamContentVariant2ItemDiscriminatorType.InputText)
+            global::tryAGI.OpenAI.LiveDecisionOutputTextParam? outputText = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveDecisionAssistantMessageParamContentVariant2ItemDiscriminatorType.OutputText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionInputTextParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionInputTextParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDecisionInputTextParam)}");
-                inputText = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionOutputTextParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionOutputTextParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDecisionOutputTextParam)}");
+                outputText = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::tryAGI.OpenAI.LiveDecisionInputImageParam? inputImage = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveDecisionStoredInputItemParamContentVariant2ItemDiscriminatorType.InputImage)
+            global::tryAGI.OpenAI.LiveDecisionRefusalParam? refusal = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveDecisionAssistantMessageParamContentVariant2ItemDiscriminatorType.Refusal)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionInputImageParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionInputImageParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDecisionInputImageParam)}");
-                inputImage = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionRefusalParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionRefusalParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveDecisionRefusalParam)}");
+                refusal = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::tryAGI.OpenAI.ContentVariant2Item2(
                 discriminator?.Type,
-                inputText,
+                outputText,
 
-                inputImage
+                refusal
                 );
 
             return __value;
@@ -57,17 +57,17 @@ namespace tryAGI.OpenAI.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
             typeInfoResolver = global::tryAGI.OpenAI.AutoSDKJsonMetadataCachedResolver.Instance;
 
-            if (value.IsInputText)
+            if (value.IsOutputText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionInputTextParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionInputTextParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveDecisionInputTextParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputText(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionOutputTextParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionOutputTextParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveDecisionOutputTextParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickOutputText(), typeInfo);
             }
-            else if (value.IsInputImage)
+            else if (value.IsRefusal)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionInputImageParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionInputImageParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveDecisionInputImageParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickInputImage(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveDecisionRefusalParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveDecisionRefusalParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveDecisionRefusalParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickRefusal(), typeInfo);
             }
         }
     }

@@ -12,15 +12,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveDecisionInputItemParamContentVariant2ItemDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.LiveDecisionUserMessageParamContentVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.LiveDecisionInputTextParam? InputText { get; init; }
+        public global::tryAGI.OpenAI.LiveDecisionUserInputTextParam? InputText { get; init; }
 #else
-        public global::tryAGI.OpenAI.LiveDecisionInputTextParam? InputText { get; }
+        public global::tryAGI.OpenAI.LiveDecisionUserInputTextParam? InputText { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.LiveDecisionInputTextParam? value)
+            out global::tryAGI.OpenAI.LiveDecisionUserInputTextParam? value)
         {
             value = InputText;
             return IsInputText;
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveDecisionInputTextParam PickInputText() => InputText is { } value
+        public global::tryAGI.OpenAI.LiveDecisionUserInputTextParam PickInputText() => InputText is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputText' but the value was {ToString()}.");
 
@@ -55,9 +55,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.LiveDecisionInputImageParam? InputImage { get; init; }
+        public global::tryAGI.OpenAI.LiveDecisionUserInputImageParam? InputImage { get; init; }
 #else
-        public global::tryAGI.OpenAI.LiveDecisionInputImageParam? InputImage { get; }
+        public global::tryAGI.OpenAI.LiveDecisionUserInputImageParam? InputImage { get; }
 #endif
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace tryAGI.OpenAI
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.LiveDecisionInputImageParam? value)
+            out global::tryAGI.OpenAI.LiveDecisionUserInputImageParam? value)
         {
             value = InputImage;
             return IsInputImage;
@@ -84,23 +84,60 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveDecisionInputImageParam PickInputImage() => InputImage is { } value
+        public global::tryAGI.OpenAI.LiveDecisionUserInputImageParam PickInputImage() => InputImage is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'InputImage' but the value was {ToString()}.");
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator ContentVariant2Item(global::tryAGI.OpenAI.LiveDecisionInputTextParam value) => new ContentVariant2Item((global::tryAGI.OpenAI.LiveDecisionInputTextParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.LiveDecisionInputTextParam?(ContentVariant2Item @this) => @this.InputText;
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveDecisionInputJsonParam? InputJson { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveDecisionInputJsonParam? InputJson { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public ContentVariant2Item(global::tryAGI.OpenAI.LiveDecisionInputTextParam? value)
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJson))]
+#endif
+        public bool IsInputJson => InputJson != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickInputJson(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveDecisionInputJsonParam? value)
+        {
+            value = InputJson;
+            return IsInputJson;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveDecisionInputJsonParam PickInputJson() => InputJson is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'InputJson' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ContentVariant2Item(global::tryAGI.OpenAI.LiveDecisionUserInputTextParam value) => new ContentVariant2Item((global::tryAGI.OpenAI.LiveDecisionUserInputTextParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveDecisionUserInputTextParam?(ContentVariant2Item @this) => @this.InputText;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ContentVariant2Item(global::tryAGI.OpenAI.LiveDecisionUserInputTextParam? value)
         {
             InputText = value;
         }
@@ -108,22 +145,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static ContentVariant2Item FromInputText(global::tryAGI.OpenAI.LiveDecisionInputTextParam? value) => new ContentVariant2Item(value);
+        public static ContentVariant2Item FromInputText(global::tryAGI.OpenAI.LiveDecisionUserInputTextParam? value) => new ContentVariant2Item(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator ContentVariant2Item(global::tryAGI.OpenAI.LiveDecisionInputImageParam value) => new ContentVariant2Item((global::tryAGI.OpenAI.LiveDecisionInputImageParam?)value);
+        public static implicit operator ContentVariant2Item(global::tryAGI.OpenAI.LiveDecisionUserInputImageParam value) => new ContentVariant2Item((global::tryAGI.OpenAI.LiveDecisionUserInputImageParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.LiveDecisionInputImageParam?(ContentVariant2Item @this) => @this.InputImage;
+        public static implicit operator global::tryAGI.OpenAI.LiveDecisionUserInputImageParam?(ContentVariant2Item @this) => @this.InputImage;
 
         /// <summary>
         ///
         /// </summary>
-        public ContentVariant2Item(global::tryAGI.OpenAI.LiveDecisionInputImageParam? value)
+        public ContentVariant2Item(global::tryAGI.OpenAI.LiveDecisionUserInputImageParam? value)
         {
             InputImage = value;
         }
@@ -131,27 +168,53 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static ContentVariant2Item FromInputImage(global::tryAGI.OpenAI.LiveDecisionInputImageParam? value) => new ContentVariant2Item(value);
+        public static ContentVariant2Item FromInputImage(global::tryAGI.OpenAI.LiveDecisionUserInputImageParam? value) => new ContentVariant2Item(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator ContentVariant2Item(global::tryAGI.OpenAI.LiveDecisionInputJsonParam value) => new ContentVariant2Item((global::tryAGI.OpenAI.LiveDecisionInputJsonParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveDecisionInputJsonParam?(ContentVariant2Item @this) => @this.InputJson;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public ContentVariant2Item(global::tryAGI.OpenAI.LiveDecisionInputJsonParam? value)
+        {
+            InputJson = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static ContentVariant2Item FromInputJson(global::tryAGI.OpenAI.LiveDecisionInputJsonParam? value) => new ContentVariant2Item(value);
 
         /// <summary>
         ///
         /// </summary>
         public ContentVariant2Item(
-            global::tryAGI.OpenAI.LiveDecisionInputItemParamContentVariant2ItemDiscriminatorType? type,
-            global::tryAGI.OpenAI.LiveDecisionInputTextParam? inputText,
-            global::tryAGI.OpenAI.LiveDecisionInputImageParam? inputImage
+            global::tryAGI.OpenAI.LiveDecisionUserMessageParamContentVariant2ItemDiscriminatorType? type,
+            global::tryAGI.OpenAI.LiveDecisionUserInputTextParam? inputText,
+            global::tryAGI.OpenAI.LiveDecisionUserInputImageParam? inputImage,
+            global::tryAGI.OpenAI.LiveDecisionInputJsonParam? inputJson
             )
         {
             Type = type;
 
             InputText = inputText;
             InputImage = inputImage;
+            InputJson = inputJson;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            InputJson as object ??
             InputImage as object ??
             InputText as object
             ;
@@ -161,7 +224,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             InputText?.ToString() ??
-            InputImage?.ToString()
+            InputImage?.ToString() ??
+            InputJson?.ToString()
             ;
 
         /// <summary>
@@ -169,15 +233,16 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsInputText && !IsInputImage || !IsInputText && IsInputImage;
+            return IsInputText && !IsInputImage && !IsInputJson || !IsInputText && IsInputImage && !IsInputJson || !IsInputText && !IsInputImage && IsInputJson;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.LiveDecisionInputTextParam, TResult>? inputText = null,
-            global::System.Func<global::tryAGI.OpenAI.LiveDecisionInputImageParam, TResult>? inputImage = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveDecisionUserInputTextParam, TResult>? inputText = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveDecisionUserInputImageParam, TResult>? inputImage = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveDecisionInputJsonParam, TResult>? inputJson = null,
             bool validate = true)
         {
             if (validate)
@@ -193,6 +258,10 @@ namespace tryAGI.OpenAI
             {
                 return inputImage(__value1);
             }
+            else if (InputJson is { } __value2 && inputJson != null)
+            {
+                return inputJson(__value2);
+            }
 
             return default(TResult);
         }
@@ -201,9 +270,11 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputTextParam>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionUserInputTextParam>? inputText = null,
 
-            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputImageParam>? inputImage = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionUserInputImageParam>? inputImage = null,
+
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputJsonParam>? inputJson = null,
             bool validate = true)
         {
             if (validate)
@@ -218,6 +289,10 @@ namespace tryAGI.OpenAI
             else if (InputImage is { } __value1)
             {
                 inputImage?.Invoke(__value1);
+            }
+            else if (InputJson is { } __value2)
+            {
+                inputJson?.Invoke(__value2);
             }
         }
 
@@ -225,8 +300,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputTextParam>? inputText = null,
-            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputImageParam>? inputImage = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionUserInputTextParam>? inputText = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionUserInputImageParam>? inputImage = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveDecisionInputJsonParam>? inputJson = null,
             bool validate = true)
         {
             if (validate)
@@ -241,6 +317,10 @@ namespace tryAGI.OpenAI
             else if (InputImage is { } __value1)
             {
                 inputImage?.Invoke(__value1);
+            }
+            else if (InputJson is { } __value2)
+            {
+                inputJson?.Invoke(__value2);
             }
         }
 
@@ -252,9 +332,11 @@ namespace tryAGI.OpenAI
             var fields = new object?[]
             {
                 InputText,
-                typeof(global::tryAGI.OpenAI.LiveDecisionInputTextParam),
+                typeof(global::tryAGI.OpenAI.LiveDecisionUserInputTextParam),
                 InputImage,
-                typeof(global::tryAGI.OpenAI.LiveDecisionInputImageParam),
+                typeof(global::tryAGI.OpenAI.LiveDecisionUserInputImageParam),
+                InputJson,
+                typeof(global::tryAGI.OpenAI.LiveDecisionInputJsonParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +353,9 @@ namespace tryAGI.OpenAI
         public bool Equals(ContentVariant2Item other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionInputTextParam?>.Default.Equals(InputText, other.InputText) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionInputImageParam?>.Default.Equals(InputImage, other.InputImage)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionUserInputTextParam?>.Default.Equals(InputText, other.InputText) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionUserInputImageParam?>.Default.Equals(InputImage, other.InputImage) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveDecisionInputJsonParam?>.Default.Equals(InputJson, other.InputJson)
                 ;
         }
 

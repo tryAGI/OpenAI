@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ModerationResultBodyCategoryScores))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0195.Create_ModerationResultBodyCategoryScores(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0206.Create_ModerationResultBodyCategoryScores(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

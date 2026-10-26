@@ -1,0 +1,45 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    ///
+    /// </summary>
+    public enum LiveDecisionInputItemParamVariant1Type
+    {
+        /// <summary>
+        ///
+        /// </summary>
+        Message,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class LiveDecisionInputItemParamVariant1TypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this LiveDecisionInputItemParamVariant1Type value)
+        {
+            return value switch
+            {
+                LiveDecisionInputItemParamVariant1Type.Message => "message",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static LiveDecisionInputItemParamVariant1Type? ToEnum(string value)
+        {
+            return value switch
+            {
+                "message" => LiveDecisionInputItemParamVariant1Type.Message,
+                _ => null,
+            };
+        }
+    }
+}

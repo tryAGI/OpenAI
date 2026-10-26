@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_5294E74E81E72B57.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_845877B4C2552C40.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_AF2BD1DA1DDABD38.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_F448B763AEC52A61.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_F907ED495FF35541.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_2B4AFB873FFFF94D.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_845877B4C2552C40.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_AF2BD1DA1DDABD38.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_F448B763AEC52A61.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.DecisionInputContentPartsItem))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0114.Create_DecisionInputContentPartsItem2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0119.Create_DecisionInputContentPartsItem2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.DecisionInputContentPartsItem?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0250.Create_NullableDecisionInputContentPartsItem2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0264.Create_NullableDecisionInputContentPartsItem2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

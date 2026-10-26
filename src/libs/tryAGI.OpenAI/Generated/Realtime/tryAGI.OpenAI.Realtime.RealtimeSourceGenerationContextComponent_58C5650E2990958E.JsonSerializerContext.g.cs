@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI.Realtime
             {
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDoneType))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0024.Create_RealtimeServerEventResponseTextDoneType2(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0025.Create_RealtimeServerEventResponseTextDoneType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseTextDoneType?))
                 {
