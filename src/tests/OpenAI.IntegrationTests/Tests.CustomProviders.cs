@@ -19,7 +19,10 @@ public partial class Tests
     }
 
     [TestMethod]
-    public void TogetherProvider_AllowsModelOverrideFromEnvironment()
+    [DataRow(null, "meta-models/Muse-Glimmer-30B")]
+    [DataRow("", "meta-models/Muse-Glimmer-30B")]
+    [DataRow("test-chat-model", "test-chat-model")]
+    public void TogetherProvider_AllowsModelOverrideFromEnvironment(string? configuredModel, string expectedModel)
     {
         const string apiKeyVariable = "TOGETHER_API_KEY";
         const string modelVariable = "TOGETHER_CHAT_MODEL";
@@ -30,12 +33,12 @@ public partial class Tests
         try
         {
             Environment.SetEnvironmentVariable(apiKeyVariable, "test-api-key");
-            Environment.SetEnvironmentVariable(modelVariable, "test-chat-model");
+            Environment.SetEnvironmentVariable(modelVariable, configuredModel);
 
             var pair = GetAuthorizedChatApi(CustomProvider.Together);
             using var api = pair.Api;
 
-            pair.Model.Should().Be("test-chat-model");
+            pair.Model.Should().Be(expectedModel);
             api.BaseUri.Should().Be(new Uri(CustomProviders.TogetherBaseUrl));
         }
         finally

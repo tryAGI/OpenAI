@@ -157,7 +157,7 @@ public partial class Tests
                 model ??
                 (Environment.GetEnvironmentVariable("TOGETHER_CHAT_MODEL") is { Length: > 0 } togetherModel
                     ? togetherModel
-                    : "meta-llama/Llama-3.3-70B-Instruct-Turbo"));
+                    : "meta-models/Muse-Glimmer-30B"));
         }
         if (customProvider == CustomProvider.Inception)
         {
