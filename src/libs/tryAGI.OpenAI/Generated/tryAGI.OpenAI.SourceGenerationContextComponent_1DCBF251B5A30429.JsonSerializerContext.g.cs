@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveSpecificCodeInterpreterParamType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0191.Create_LiveSpecificCodeInterpreterParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0192.Create_LiveSpecificCodeInterpreterParamType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveSpecificCodeInterpreterParamType?))
                 {

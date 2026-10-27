@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveCallAcceptSessionType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0168.Create_LiveCallAcceptSessionType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0169.Create_LiveCallAcceptSessionType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveCallAcceptSessionType?))
                 {

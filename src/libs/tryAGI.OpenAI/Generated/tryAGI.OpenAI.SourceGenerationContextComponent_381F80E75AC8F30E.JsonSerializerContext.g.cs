@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreateType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0399.Create_RealtimeClientEventConversationItemCreateType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0400.Create_RealtimeClientEventConversationItemCreateType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreateType?))
                 {

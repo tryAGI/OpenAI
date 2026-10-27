@@ -30,14 +30,16 @@ namespace tryAGI.OpenAI
             ref long? limit,
             ref global::tryAGI.OpenAI.ListOrderParam? order,
             ref string? after,
-            ref string? agentId);
+            ref string? agentId,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata);
         partial void PrepareListAgentSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             long? limit,
             global::tryAGI.OpenAI.ListOrderParam? order,
             string? after,
-            string? agentId);
+            string? agentId,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata);
         partial void ProcessListAgentSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -60,6 +62,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="after"></param>
         /// <param name="agentId"></param>
+        /// <param name="metadata"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
@@ -68,6 +71,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ListOrderParam? order = default,
             string? after = default,
             string? agentId = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -76,6 +80,7 @@ namespace tryAGI.OpenAI
                 order: order,
                 after: after,
                 agentId: agentId,
+                metadata: metadata,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -95,6 +100,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="after"></param>
         /// <param name="agentId"></param>
+        /// <param name="metadata"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
@@ -103,6 +109,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ListOrderParam? order = default,
             string? after = default,
             string? agentId = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -115,7 +122,8 @@ namespace tryAGI.OpenAI
                 limit: ref limit,
                 order: ref order,
                 after: ref after,
-                agentId: ref agentId);
+                agentId: ref agentId,
+                metadata: metadata);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
@@ -148,6 +156,7 @@ namespace tryAGI.OpenAI
                                 .AddOptionalParameter("order", order?.ToValueString())
                                 .AddOptionalParameter("after", after)
                                 .AddOptionalParameter("agent_id", agentId)
+                                .AddOptionalParameter("metadata", metadata?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -192,7 +201,8 @@ namespace tryAGI.OpenAI
                     limit: limit,
                     order: order,
                     after: after,
-                    agentId: agentId);
+                    agentId: agentId,
+                    metadata: metadata);
 
                 return __httpRequest;
             }
@@ -738,12 +748,14 @@ namespace tryAGI.OpenAI
         /// Default Value: desc
         /// </param>
         /// <param name="agentId"></param>
+        /// <param name="metadata"></param>
         /// <param name="after">Initial cursor to start enumerating from. Defaults to null (first page).</param>
         /// <param name="cancellationToken"></param>
         public global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.SessionResource> ListAgentSessionsAutoPagingAsync(
               long? limit = default,
             global::tryAGI.OpenAI.ListOrderParam? order = default,
             string? agentId = default,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             string? after = null,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -753,6 +765,7 @@ namespace tryAGI.OpenAI
                     order: order,
                     after: __cursor,
                     agentId: agentId,
+                    metadata: metadata,
                     cancellationToken: __ct),
                 extractItems: static __response => __response is null
                     ? null
