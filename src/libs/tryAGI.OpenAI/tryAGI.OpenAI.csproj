@@ -36,7 +36,7 @@
     <PackageReference Include="AutoSDK.JsonMetadata" Version="$(AutoSDKJsonMetadataVersion)" PrivateAssets="all" />
     <PackageReference Include="CSharpToJsonSchema" Version="3.10.6" />
     <PackageReference Include="Microsoft.Extensions.AI.Abstractions" Version="10.11.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.13" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.14" />
     <PackageReference Include="Tiktoken" Version="3.1.5" />
   </ItemGroup>
 
