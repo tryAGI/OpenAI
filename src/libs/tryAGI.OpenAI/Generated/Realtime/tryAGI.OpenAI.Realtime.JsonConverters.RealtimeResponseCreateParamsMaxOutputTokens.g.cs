@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI.Realtime.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::tryAGI.OpenAI.Realtime.RealtimeResponseCreateParamsMaxOutputTokensExtensions.ToEnum(stringValue) ?? default;
+                        return global::tryAGI.OpenAI.Realtime.RealtimeResponseCreateParamsMaxOutputTokensExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown discriminator value '{stringValue}' for global::tryAGI.OpenAI.Realtime.RealtimeResponseCreateParamsMaxOutputTokens.");
                     }
 
                     break;
