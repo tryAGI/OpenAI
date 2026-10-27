@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.SessionTurnTraceResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0459.Create_SessionTurnTraceResource(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0460.Create_SessionTurnTraceResource(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

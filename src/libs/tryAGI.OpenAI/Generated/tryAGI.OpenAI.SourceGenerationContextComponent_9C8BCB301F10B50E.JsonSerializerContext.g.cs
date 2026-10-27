@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
                 }
                 if (type == typeof(global::tryAGI.OpenAI.AllOf<global::tryAGI.OpenAI.BetaResponseContentPartAddedEvent, global::tryAGI.OpenAI.BetaResponsesServerEventBetaResponseContentPartWsAdded2>?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0487.Create_SourceGenerationContextMetadataType_4F2E3A9C50830981(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0488.Create_SourceGenerationContextMetadataType_4F2E3A9C50830981(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

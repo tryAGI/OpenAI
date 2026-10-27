@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
                 }
                 if (type == typeof(global::tryAGI.OpenAI.TranscriptTextDeltaEventType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0357.Create_NullableTranscriptTextDeltaEventType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0358.Create_NullableTranscriptTextDeltaEventType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

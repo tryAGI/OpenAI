@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ResponseMCPCallFailedEventType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0429.Create_ResponseMCPCallFailedEventType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0430.Create_ResponseMCPCallFailedEventType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ResponseMCPCallFailedEventType?))
                 {

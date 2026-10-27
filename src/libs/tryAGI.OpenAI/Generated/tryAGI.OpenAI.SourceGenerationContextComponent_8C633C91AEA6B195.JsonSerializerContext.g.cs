@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionJsonObject>))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0508.Create_SourceGenerationContextMetadataType_8C633C91AEA6B195(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0509.Create_SourceGenerationContextMetadataType_8C633C91AEA6B195(options);
                 }
                 if (type == typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.LiveDecisionJsonObject>))
                 {

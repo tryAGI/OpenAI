@@ -31,6 +31,12 @@ internal static partial class AgentsListAgentSessionsCommandApiCommand
         Description = @"Only return sessions whose root agent has this ID. Omit to return sessions for all agents.",
     };
 
+    private static Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
+        name: @"--metadata")
+    {
+        Description = @"Exact string matches supplied as `metadata[key]=value`. All supplied pairs must match. Up to 16 pairs, with keys from 1 to 64 characters and values up to 512 characters. New sessions and metadata updates may take time to appear in filtered results.",
+    };
+
                     private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.SessionListResource value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
                     {
                         string? text = null;
@@ -61,6 +67,7 @@ Lists managed agent sessions using ID-based pagination and the requested sort or
                         command.Options.Add(Order);
                         command.Options.Add(After);
                         command.Options.Add(AgentId);
+                        command.Options.Add(Metadata);
 
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
@@ -70,6 +77,7 @@ Lists managed agent sessions using ID-based pagination and the requested sort or
                         var order = parseResult.GetValue(Order);
                         var after = parseResult.GetValue(After);
                         var agentId = parseResult.GetValue(AgentId);
+                        var metadata = parseResult.GetValue(Metadata);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -78,6 +86,7 @@ Lists managed agent sessions using ID-based pagination and the requested sort or
                                     order: order,
                                     after: after,
                                     agentId: agentId,
+                                    metadata: metadata,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

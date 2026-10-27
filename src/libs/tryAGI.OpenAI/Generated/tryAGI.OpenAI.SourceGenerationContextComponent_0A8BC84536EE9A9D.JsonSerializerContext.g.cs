@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.SpendLimitIntervalEnum))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0551.Create_SpendLimitIntervalEnum2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0552.Create_SpendLimitIntervalEnum2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.SpendLimitIntervalEnum?))
                 {

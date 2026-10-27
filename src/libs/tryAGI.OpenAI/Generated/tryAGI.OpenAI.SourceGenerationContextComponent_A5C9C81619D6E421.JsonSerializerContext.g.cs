@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveSessionClosedReasonVariant1))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0188.Create_LiveSessionClosedReasonVariant12(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0189.Create_LiveSessionClosedReasonVariant12(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveSessionClosedReasonVariant1?))
                 {

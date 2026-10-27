@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0543.Create_SourceGenerationContextMetadataType_EA4691BF903C2BDB(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0544.Create_SourceGenerationContextMetadataType_EA4691BF903C2BDB(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ResponseFormatText, global::tryAGI.OpenAI.ResponseFormatJsonSchema, global::tryAGI.OpenAI.ResponseFormatJsonObject>?))
                 {

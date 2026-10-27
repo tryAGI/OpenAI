@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?>))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0519.Create_SourceGenerationContextMetadataType_A92602AB6BF67CC3(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0520.Create_SourceGenerationContextMetadataType_A92602AB6BF67CC3(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranscriptionRequestModel?>?))
                 {

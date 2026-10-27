@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
                 }
                 if (type == typeof(global::tryAGI.OpenAI.WebhookEndpointWithSecretResourceObject?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0369.Create_NullableWebhookEndpointWithSecretResourceObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0370.Create_NullableWebhookEndpointWithSecretResourceObject2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDeltaType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0398.Create_RealtimeBetaServerEventResponseTextDeltaType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0399.Create_RealtimeBetaServerEventResponseTextDeltaType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeBetaServerEventResponseTextDeltaType?))
                 {

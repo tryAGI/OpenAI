@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.MessageDeltaObjectDeltaRole))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0202.Create_MessageDeltaObjectDeltaRole2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0203.Create_MessageDeltaObjectDeltaRole2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.MessageDeltaObjectDeltaRole?))
                 {

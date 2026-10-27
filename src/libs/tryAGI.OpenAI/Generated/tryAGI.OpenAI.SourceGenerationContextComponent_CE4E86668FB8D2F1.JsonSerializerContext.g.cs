@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ProjectRateLimitObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0384.Create_ProjectRateLimitObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0385.Create_ProjectRateLimitObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ProjectRateLimitObject?))
                 {

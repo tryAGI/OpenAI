@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormatType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0390.Create_RealtimeAudioFormatsPcmAudioFormatType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0391.Create_RealtimeAudioFormatsPcmAudioFormatType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeAudioFormatsPcmAudioFormatType?))
                 {

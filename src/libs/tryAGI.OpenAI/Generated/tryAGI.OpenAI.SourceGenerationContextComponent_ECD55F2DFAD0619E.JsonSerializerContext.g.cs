@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
                 }
                 if (type == typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersComputeMultiplier?, double?>?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0522.Create_SourceGenerationContextMetadataType_B19F8764845EE826(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0523.Create_SourceGenerationContextMetadataType_B19F8764845EE826(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

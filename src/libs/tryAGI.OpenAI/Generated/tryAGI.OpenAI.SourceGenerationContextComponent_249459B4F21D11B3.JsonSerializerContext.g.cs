@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsCompletedType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0395.Create_RealtimeBetaServerEventMCPListToolsCompletedType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0396.Create_RealtimeBetaServerEventMCPListToolsCompletedType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsCompletedType?))
                 {

@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ReasoningTextContentType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0423.Create_ReasoningTextContentType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0424.Create_ReasoningTextContentType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ReasoningTextContentType?))
                 {

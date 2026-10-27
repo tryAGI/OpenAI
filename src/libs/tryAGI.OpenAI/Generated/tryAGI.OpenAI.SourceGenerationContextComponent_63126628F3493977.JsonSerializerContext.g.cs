@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLogCertificatesDeactivatedCertificate>))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0493.Create_SourceGenerationContextMetadataType_63126628F3493977(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0494.Create_SourceGenerationContextMetadataType_63126628F3493977(options);
                 }
                 if (type == typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.AuditLogCertificatesDeactivatedCertificate>))
                 {

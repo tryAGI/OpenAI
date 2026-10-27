@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommittedType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0408.Create_RealtimeServerEventInputAudioBufferCommittedType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0409.Create_RealtimeServerEventInputAudioBufferCommittedType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferCommittedType?))
                 {

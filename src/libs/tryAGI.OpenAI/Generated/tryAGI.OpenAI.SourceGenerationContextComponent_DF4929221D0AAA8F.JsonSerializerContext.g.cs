@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersLearningRateMultiplier?, double?>))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0538.Create_SourceGenerationContextMetadataType_DF4929221D0AAA8F(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0539.Create_SourceGenerationContextMetadataType_DF4929221D0AAA8F(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneDPOHyperparametersLearningRateMultiplier?, double?>?))
                 {

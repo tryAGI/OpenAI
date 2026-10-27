@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsMaxOutputTokens))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0392.Create_RealtimeBetaResponseCreateParamsMaxOutputTokens2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0393.Create_RealtimeBetaResponseCreateParamsMaxOutputTokens2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsMaxOutputTokens?))
                 {

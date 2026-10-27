@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.TranscriptTextUsageDurationType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0560.Create_TranscriptTextUsageDurationType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0561.Create_TranscriptTextUsageDurationType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.TranscriptTextUsageDurationType?))
                 {

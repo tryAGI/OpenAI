@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ResponseShellCallCommandDeltaStreamingEvent))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0432.Create_ResponseShellCallCommandDeltaStreamingEvent(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0433.Create_ResponseShellCallCommandDeltaStreamingEvent(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.Provider))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0388.Create_Provider2_3(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0389.Create_Provider2_3(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Provider?))
                 {

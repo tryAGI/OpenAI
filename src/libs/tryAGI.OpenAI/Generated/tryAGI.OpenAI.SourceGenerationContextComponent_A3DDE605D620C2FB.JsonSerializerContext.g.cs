@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.UrlAnnotationSourceType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0564.Create_UrlAnnotationSourceType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0565.Create_UrlAnnotationSourceType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.UrlAnnotationSourceType?))
                 {

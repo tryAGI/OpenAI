@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionModalitie>))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0510.Create_SourceGenerationContextMetadataType_91AAABB28F0F8210(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0511.Create_SourceGenerationContextMetadataType_91AAABB28F0F8210(options);
                 }
                 if (type == typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.RealtimeSessionModalitie>))
                 {

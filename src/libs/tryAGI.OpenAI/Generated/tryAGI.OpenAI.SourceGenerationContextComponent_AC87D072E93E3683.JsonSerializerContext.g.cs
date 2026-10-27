@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.TruncationObjectType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0561.Create_TruncationObjectType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0562.Create_TruncationObjectType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.TruncationObjectType?))
                 {

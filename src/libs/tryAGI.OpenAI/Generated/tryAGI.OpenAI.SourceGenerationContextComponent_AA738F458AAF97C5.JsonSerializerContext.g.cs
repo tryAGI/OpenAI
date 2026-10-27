@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminatorObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0567.Create_UsageTimeBucketResultDiscriminatorObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0568.Create_UsageTimeBucketResultDiscriminatorObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.UsageTimeBucketResultDiscriminatorObject?))
                 {

@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
                 }
                 if (type == typeof(global::tryAGI.OpenAI.OutputVariant2Item6?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0313.Create_NullableOutputVariant2Item62(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0314.Create_NullableOutputVariant2Item62(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

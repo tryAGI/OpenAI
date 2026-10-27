@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ListVectorStoreFilesOrder))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0167.Create_ListVectorStoreFilesOrder2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0168.Create_ListVectorStoreFilesOrder2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ListVectorStoreFilesOrder?))
                 {

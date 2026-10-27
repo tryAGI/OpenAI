@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0446.Create_RunStepDetailsToolCallsCodeObjectType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0447.Create_RunStepDetailsToolCallsCodeObjectType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectType?))
                 {
