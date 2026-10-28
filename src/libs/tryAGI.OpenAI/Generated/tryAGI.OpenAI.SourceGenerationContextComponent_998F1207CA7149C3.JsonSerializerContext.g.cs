@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaReasoningEffortEnum))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0053.Create_BetaReasoningEffortEnum2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0054.Create_BetaReasoningEffortEnum2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.BetaReasoningEffortEnum?))
                 {

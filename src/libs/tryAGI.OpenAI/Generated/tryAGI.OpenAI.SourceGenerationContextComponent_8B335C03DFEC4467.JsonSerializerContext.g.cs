@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ResponseSteerPendingReasonEnum))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0434.Create_ResponseSteerPendingReasonEnum2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0435.Create_ResponseSteerPendingReasonEnum2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ResponseSteerPendingReasonEnum?))
                 {

@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaOutputTextContentParamAnnotationDiscriminatorType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0050.Create_BetaOutputTextContentParamAnnotationDiscriminatorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0051.Create_BetaOutputTextContentParamAnnotationDiscriminatorType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.BetaOutputTextContentParamAnnotationDiscriminatorType?))
                 {

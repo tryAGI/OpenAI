@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveSpecificProgrammaticToolCallingParamType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0192.Create_LiveSpecificProgrammaticToolCallingParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0193.Create_LiveSpecificProgrammaticToolCallingParamType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveSpecificProgrammaticToolCallingParamType?))
                 {

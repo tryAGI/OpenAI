@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveApplyPatchToolInputParamType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0168.Create_LiveApplyPatchToolInputParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0169.Create_LiveApplyPatchToolInputParamType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveApplyPatchToolInputParamType?))
                 {

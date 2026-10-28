@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.PromptCacheHitDiagnosticsBodyType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0387.Create_PromptCacheHitDiagnosticsBodyType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0388.Create_PromptCacheHitDiagnosticsBodyType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.PromptCacheHitDiagnosticsBodyType?))
                 {

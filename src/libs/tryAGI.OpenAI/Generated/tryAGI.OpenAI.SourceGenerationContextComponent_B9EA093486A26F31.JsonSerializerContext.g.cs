@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.VoiceConsentListResourceObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0575.Create_VoiceConsentListResourceObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0576.Create_VoiceConsentListResourceObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.VoiceConsentListResourceObject?))
                 {

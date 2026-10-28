@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveDecisionFunctionCallOutputParamType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0172.Create_LiveDecisionFunctionCallOutputParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0173.Create_LiveDecisionFunctionCallOutputParamType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveDecisionFunctionCallOutputParamType?))
                 {

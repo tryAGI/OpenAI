@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ProgramItemParamType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0381.Create_ProgramItemParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0382.Create_ProgramItemParamType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ProgramItemParamType?))
                 {

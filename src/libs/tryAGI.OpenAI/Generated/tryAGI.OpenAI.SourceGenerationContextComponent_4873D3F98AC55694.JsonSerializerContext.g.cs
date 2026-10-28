@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaMisalignmentErrorTypeEnum))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0046.Create_BetaMisalignmentErrorTypeEnum2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0047.Create_BetaMisalignmentErrorTypeEnum2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.BetaMisalignmentErrorTypeEnum?))
                 {

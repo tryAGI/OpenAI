@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.PeriodicAutomationStatusResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0377.Create_PeriodicAutomationStatusResource2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0378.Create_PeriodicAutomationStatusResource2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.PeriodicAutomationStatusResource?))
                 {

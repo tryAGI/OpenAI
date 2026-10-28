@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemTruncateType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0391.Create_RealtimeBetaClientEventConversationItemTruncateType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0392.Create_RealtimeBetaClientEventConversationItemTruncateType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemTruncateType?))
                 {

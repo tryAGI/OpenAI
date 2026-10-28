@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.HostedEnvironmentFileParamDiscriminatorType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0149.Create_HostedEnvironmentFileParamDiscriminatorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0150.Create_HostedEnvironmentFileParamDiscriminatorType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.HostedEnvironmentFileParamDiscriminatorType?))
                 {

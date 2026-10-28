@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CodeInterpreterToolType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0089.Create_CodeInterpreterToolType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0090.Create_CodeInterpreterToolType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.CodeInterpreterToolType?))
                 {

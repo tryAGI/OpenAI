@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectImageFileDetail))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0201.Create_MessageDeltaContentImageFileObjectImageFileDetail2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0202.Create_MessageDeltaContentImageFileObjectImageFileDetail2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectImageFileDetail?))
                 {

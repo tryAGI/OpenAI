@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObjectType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0445.Create_RunStepDeltaStepDetailsMessageCreationObjectType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0446.Create_RunStepDeltaStepDetailsMessageCreationObjectType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObjectType?))
                 {

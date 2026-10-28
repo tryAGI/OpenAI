@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.VaultCredentialNetworkingResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0571.Create_VaultCredentialNetworkingResource2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0572.Create_VaultCredentialNetworkingResource2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.VaultCredentialNetworkingResource?))
                 {

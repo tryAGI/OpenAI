@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.UpdateProjectServiceAccountBodyRole))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0563.Create_UpdateProjectServiceAccountBodyRole2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0564.Create_UpdateProjectServiceAccountBodyRole2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.UpdateProjectServiceAccountBodyRole?))
                 {

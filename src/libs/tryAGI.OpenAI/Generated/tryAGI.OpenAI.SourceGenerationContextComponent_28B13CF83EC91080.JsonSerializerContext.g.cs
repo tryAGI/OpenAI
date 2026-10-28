@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.MessageStreamEventVariant5Event))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0204.Create_MessageStreamEventVariant5Event2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0205.Create_MessageStreamEventVariant5Event2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.MessageStreamEventVariant5Event?))
                 {

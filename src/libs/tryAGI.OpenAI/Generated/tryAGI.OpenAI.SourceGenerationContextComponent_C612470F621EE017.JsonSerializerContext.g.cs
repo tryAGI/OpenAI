@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.WebhookEndpointWithSecretResourceObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0582.Create_WebhookEndpointWithSecretResourceObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0583.Create_WebhookEndpointWithSecretResourceObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.WebhookEndpointWithSecretResourceObject?))
                 {

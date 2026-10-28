@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.MessageContentResourceInputImageType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0200.Create_MessageContentResourceInputImageType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0201.Create_MessageContentResourceInputImageType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.MessageContentResourceInputImageType?))
                 {

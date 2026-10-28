@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.EvalItemContentOutputTextType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0133.Create_EvalItemContentOutputTextType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0134.Create_EvalItemContentOutputTextType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.EvalItemContentOutputTextType?))
                 {

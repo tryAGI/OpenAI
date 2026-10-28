@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LocalEnvironmentParamType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0194.Create_LocalEnvironmentParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0195.Create_LocalEnvironmentParamType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LocalEnvironmentParamType?))
                 {

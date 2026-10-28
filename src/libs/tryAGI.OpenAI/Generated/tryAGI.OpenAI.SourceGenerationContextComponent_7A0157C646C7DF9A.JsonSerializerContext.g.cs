@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEventType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0424.Create_ResponseAudioTranscriptDoneEventType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0425.Create_ResponseAudioTranscriptDoneEventType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ResponseAudioTranscriptDoneEventType?))
                 {

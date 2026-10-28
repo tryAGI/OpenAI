@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ChunkingStrategyRequestParamDiscriminatorType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0087.Create_ChunkingStrategyRequestParamDiscriminatorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0088.Create_ChunkingStrategyRequestParamDiscriminatorType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ChunkingStrategyRequestParamDiscriminatorType?))
                 {

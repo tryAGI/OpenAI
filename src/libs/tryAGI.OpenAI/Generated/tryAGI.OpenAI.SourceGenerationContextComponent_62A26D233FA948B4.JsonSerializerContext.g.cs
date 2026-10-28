@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.OrganizationSpendAlertDeletedResourceObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0374.Create_OrganizationSpendAlertDeletedResourceObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0375.Create_OrganizationSpendAlertDeletedResourceObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.OrganizationSpendAlertDeletedResourceObject?))
                 {

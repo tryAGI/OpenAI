@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ListProjectCertificatesOrder))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0166.Create_ListProjectCertificatesOrder2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0167.Create_ListProjectCertificatesOrder2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ListProjectCertificatesOrder?))
                 {

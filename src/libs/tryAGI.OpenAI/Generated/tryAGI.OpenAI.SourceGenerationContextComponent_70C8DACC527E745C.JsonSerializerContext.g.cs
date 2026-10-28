@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ChatCompletionMessageToolCallChunkType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0081.Create_ChatCompletionMessageToolCallChunkType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0082.Create_ChatCompletionMessageToolCallChunkType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ChatCompletionMessageToolCallChunkType?))
                 {

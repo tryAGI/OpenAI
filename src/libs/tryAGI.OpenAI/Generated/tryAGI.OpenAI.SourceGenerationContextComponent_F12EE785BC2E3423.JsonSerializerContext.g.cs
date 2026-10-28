@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ImageGenToolCallSizeVariant1))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0155.Create_ImageGenToolCallSizeVariant12(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0156.Create_ImageGenToolCallSizeVariant12(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ImageGenToolCallSizeVariant1?))
                 {

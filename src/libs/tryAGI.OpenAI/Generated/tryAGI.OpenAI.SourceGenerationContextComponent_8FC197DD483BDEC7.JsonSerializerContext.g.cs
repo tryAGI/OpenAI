@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.UsageAudioTranscriptionsBucketWidth))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0565.Create_UsageAudioTranscriptionsBucketWidth2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0566.Create_UsageAudioTranscriptionsBucketWidth2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.UsageAudioTranscriptionsBucketWidth?))
                 {

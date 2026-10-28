@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.McpTransportResourceStdioType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0199.Create_McpTransportResourceStdioType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0200.Create_McpTransportResourceStdioType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.McpTransportResourceStdioType?))
                 {

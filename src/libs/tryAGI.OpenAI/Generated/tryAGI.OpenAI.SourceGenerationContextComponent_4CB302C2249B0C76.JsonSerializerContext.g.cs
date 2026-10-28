@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.WebhookRealtimeCallIncomingType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0585.Create_WebhookRealtimeCallIncomingType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0586.Create_WebhookRealtimeCallIncomingType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.WebhookRealtimeCallIncomingType?))
                 {

@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.PublicDecisionsUsageResponseResourceObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0389.Create_PublicDecisionsUsageResponseResourceObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0390.Create_PublicDecisionsUsageResponseResourceObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.PublicDecisionsUsageResponseResourceObject?))
                 {

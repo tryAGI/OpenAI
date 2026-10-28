@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaSummaryTextContentType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0072.Create_BetaSummaryTextContentType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0073.Create_BetaSummaryTextContentType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.BetaSummaryTextContentType?))
                 {

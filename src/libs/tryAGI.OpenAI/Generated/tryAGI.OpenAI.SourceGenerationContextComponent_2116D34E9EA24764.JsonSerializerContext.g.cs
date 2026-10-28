@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.EnvironmentResourceOpenaiHostedType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0130.Create_EnvironmentResourceOpenaiHostedType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0131.Create_EnvironmentResourceOpenaiHostedType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.EnvironmentResourceOpenaiHostedType?))
                 {

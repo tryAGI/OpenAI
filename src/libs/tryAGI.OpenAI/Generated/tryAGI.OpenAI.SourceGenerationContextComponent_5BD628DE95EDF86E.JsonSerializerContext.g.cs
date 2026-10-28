@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CreateMcpOauthTokenEndpointAuthParamClientSecretPostType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0108.Create_CreateMcpOauthTokenEndpointAuthParamClientSecretPostType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0109.Create_CreateMcpOauthTokenEndpointAuthParamClientSecretPostType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.CreateMcpOauthTokenEndpointAuthParamClientSecretPostType?))
                 {

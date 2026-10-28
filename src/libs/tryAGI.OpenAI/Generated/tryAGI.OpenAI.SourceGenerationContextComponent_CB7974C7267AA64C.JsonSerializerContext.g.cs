@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.InlineCapabilitySourceParamDiscriminatorType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0157.Create_InlineCapabilitySourceParamDiscriminatorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0158.Create_InlineCapabilitySourceParamDiscriminatorType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.InlineCapabilitySourceParamDiscriminatorType?))
                 {

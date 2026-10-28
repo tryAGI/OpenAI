@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.HostedSkillParamSkillReferenceType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0151.Create_HostedSkillParamSkillReferenceType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0152.Create_HostedSkillParamSkillReferenceType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.HostedSkillParamSkillReferenceType?))
                 {

@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaWebSearchToolSearchContextSize))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0078.Create_BetaWebSearchToolSearchContextSize2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0079.Create_BetaWebSearchToolSearchContextSize2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.BetaWebSearchToolSearchContextSize?))
                 {

@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.McpTransportConfigParamDiscriminatorType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0198.Create_McpTransportConfigParamDiscriminatorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0199.Create_McpTransportConfigParamDiscriminatorType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.McpTransportConfigParamDiscriminatorType?))
                 {

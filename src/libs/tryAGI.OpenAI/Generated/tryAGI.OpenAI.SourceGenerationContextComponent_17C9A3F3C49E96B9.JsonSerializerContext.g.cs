@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessage))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0138.Create_FineTuneChatCompletionRequestAssistantMessage2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0139.Create_FineTuneChatCompletionRequestAssistantMessage2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.FineTuneChatCompletionRequestAssistantMessage?))
                 {
