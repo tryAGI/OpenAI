@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemRole))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0402.Create_RealtimeConversationItemMessageSystemRole2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0403.Create_RealtimeConversationItemMessageSystemRole2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemRole?))
                 {

@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeFunctionToolType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0404.Create_RealtimeFunctionToolType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0405.Create_RealtimeFunctionToolType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeFunctionToolType?))
                 {

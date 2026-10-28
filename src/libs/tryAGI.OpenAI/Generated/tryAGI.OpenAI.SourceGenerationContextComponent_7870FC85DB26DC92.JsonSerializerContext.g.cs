@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersBatchSize))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0139.Create_FineTuneSupervisedHyperparametersBatchSize2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0140.Create_FineTuneSupervisedHyperparametersBatchSize2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.FineTuneSupervisedHyperparametersBatchSize?))
                 {

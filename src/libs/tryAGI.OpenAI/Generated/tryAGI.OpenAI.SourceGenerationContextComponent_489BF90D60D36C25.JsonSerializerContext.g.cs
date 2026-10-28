@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.UsageCodeInterpreterSessionsBucketWidth))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0565.Create_UsageCodeInterpreterSessionsBucketWidth2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0566.Create_UsageCodeInterpreterSessionsBucketWidth2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.UsageCodeInterpreterSessionsBucketWidth?))
                 {

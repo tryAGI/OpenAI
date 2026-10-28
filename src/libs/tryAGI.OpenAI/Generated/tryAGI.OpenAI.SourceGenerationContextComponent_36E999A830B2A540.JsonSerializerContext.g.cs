@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.MCPToolCallErrorDiscriminatorType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0196.Create_MCPToolCallErrorDiscriminatorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0197.Create_MCPToolCallErrorDiscriminatorType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.MCPToolCallErrorDiscriminatorType?))
                 {

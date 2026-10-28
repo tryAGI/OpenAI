@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.TextFormatResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0554.Create_TextFormatResource2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0555.Create_TextFormatResource2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.TextFormatResource?))
                 {

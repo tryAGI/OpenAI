@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveTransportAnswered))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0193.Create_LiveTransportAnswered(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0194.Create_LiveTransportAnswered(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

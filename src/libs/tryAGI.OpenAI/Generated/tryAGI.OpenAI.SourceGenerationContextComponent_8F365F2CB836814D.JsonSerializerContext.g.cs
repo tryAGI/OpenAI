@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.DeletedAgentResourceObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0125.Create_DeletedAgentResourceObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0126.Create_DeletedAgentResourceObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.DeletedAgentResourceObject?))
                 {

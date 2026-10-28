@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.FunctionShellCallItemStatus))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0143.Create_FunctionShellCallItemStatus2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0144.Create_FunctionShellCallItemStatus2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.FunctionShellCallItemStatus?))
                 {

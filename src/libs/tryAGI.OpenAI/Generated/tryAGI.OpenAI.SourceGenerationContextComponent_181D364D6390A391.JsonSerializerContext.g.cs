@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ProjectServiceAccountDeleteResponseObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0385.Create_ProjectServiceAccountDeleteResponseObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0386.Create_ProjectServiceAccountDeleteResponseObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ProjectServiceAccountDeleteResponseObject?))
                 {

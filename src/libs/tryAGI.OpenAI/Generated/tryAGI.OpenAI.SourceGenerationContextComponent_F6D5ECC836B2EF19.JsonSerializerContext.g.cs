@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.InviteRequestRole))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0162.Create_InviteRequestRole2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0163.Create_InviteRequestRole2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.InviteRequestRole?))
                 {

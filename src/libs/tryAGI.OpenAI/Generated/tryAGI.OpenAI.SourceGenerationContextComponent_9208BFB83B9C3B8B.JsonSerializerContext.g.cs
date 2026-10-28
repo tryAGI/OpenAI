@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0420.Create_RealtimeTranslationServerEventSessionOutputAudioDeltaType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0421.Create_RealtimeTranslationServerEventSessionOutputAudioDeltaType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaType?))
                 {

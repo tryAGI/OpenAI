@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaItemReferenceParamType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0042.Create_BetaItemReferenceParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0043.Create_BetaItemReferenceParamType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.BetaItemReferenceParamType?))
                 {

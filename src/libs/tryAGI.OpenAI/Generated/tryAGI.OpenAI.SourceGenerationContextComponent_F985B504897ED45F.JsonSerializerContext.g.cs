@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ExternalStorageListResourceObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0136.Create_ExternalStorageListResourceObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0137.Create_ExternalStorageListResourceObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ExternalStorageListResourceObject?))
                 {

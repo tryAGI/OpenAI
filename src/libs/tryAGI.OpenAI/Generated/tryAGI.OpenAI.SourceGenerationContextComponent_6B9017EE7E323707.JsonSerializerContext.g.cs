@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.PersistedAgentToolConfigParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0377.Create_PersistedAgentToolConfigParam2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0378.Create_PersistedAgentToolConfigParam2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.PersistedAgentToolConfigParam?))
                 {

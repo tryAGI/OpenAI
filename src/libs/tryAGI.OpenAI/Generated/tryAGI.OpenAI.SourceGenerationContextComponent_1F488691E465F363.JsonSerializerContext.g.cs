@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.DeletedThreadResourceObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0126.Create_DeletedThreadResourceObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0127.Create_DeletedThreadResourceObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.DeletedThreadResourceObject?))
                 {

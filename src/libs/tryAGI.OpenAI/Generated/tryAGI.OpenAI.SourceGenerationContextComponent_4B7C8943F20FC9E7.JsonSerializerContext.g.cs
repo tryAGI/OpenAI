@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.SessionTurnErrorCodeResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0459.Create_SessionTurnErrorCodeResource2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0460.Create_SessionTurnErrorCodeResource2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.SessionTurnErrorCodeResource?))
                 {

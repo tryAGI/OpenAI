@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParamType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0182.Create_LiveInitialOutputTextContentPartParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0183.Create_LiveInitialOutputTextContentPartParamType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveInitialOutputTextContentPartParamType?))
                 {

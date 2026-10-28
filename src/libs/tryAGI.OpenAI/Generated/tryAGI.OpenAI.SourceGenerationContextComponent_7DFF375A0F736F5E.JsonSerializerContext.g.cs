@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveDecisionStoredAssistantMessageParamRole))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0175.Create_LiveDecisionStoredAssistantMessageParamRole2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0176.Create_LiveDecisionStoredAssistantMessageParamRole2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveDecisionStoredAssistantMessageParamRole?))
                 {

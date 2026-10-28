@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeResponseStatusDetailsType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0406.Create_RealtimeResponseStatusDetailsType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0407.Create_RealtimeResponseStatusDetailsType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeResponseStatusDetailsType?))
                 {

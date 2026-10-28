@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0101.Create_CreateChatCompletionStreamResponseObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0102.Create_CreateChatCompletionStreamResponseObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject?))
                 {

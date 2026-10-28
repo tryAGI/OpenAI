@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveInitialSessionAudioOutputParamVoiceVariant1))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0182.Create_LiveInitialSessionAudioOutputParamVoiceVariant12(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0183.Create_LiveInitialSessionAudioOutputParamVoiceVariant12(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveInitialSessionAudioOutputParamVoiceVariant1?))
                 {

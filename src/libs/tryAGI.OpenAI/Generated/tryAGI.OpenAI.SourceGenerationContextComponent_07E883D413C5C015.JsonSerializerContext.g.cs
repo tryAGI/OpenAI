@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.WebSearchActionSearchSourceType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0577.Create_WebSearchActionSearchSourceType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0578.Create_WebSearchActionSearchSourceType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.WebSearchActionSearchSourceType?))
                 {

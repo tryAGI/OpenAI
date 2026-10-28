@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CustomToolCallType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0117.Create_CustomToolCallType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0118.Create_CustomToolCallType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.CustomToolCallType?))
                 {

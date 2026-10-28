@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveDecisionQuestion))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0174.Create_LiveDecisionQuestion2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0175.Create_LiveDecisionQuestion2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveDecisionQuestion?))
                 {

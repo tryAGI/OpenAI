@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEvent))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0419.Create_RealtimeTranslationServerEvent2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0420.Create_RealtimeTranslationServerEvent2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeTranslationServerEvent?))
                 {

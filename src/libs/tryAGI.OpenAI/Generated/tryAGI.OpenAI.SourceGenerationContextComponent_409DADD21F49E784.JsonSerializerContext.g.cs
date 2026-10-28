@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.HostedPluginParamInlineType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0150.Create_HostedPluginParamInlineType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0151.Create_HostedPluginParamInlineType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.HostedPluginParamInlineType?))
                 {

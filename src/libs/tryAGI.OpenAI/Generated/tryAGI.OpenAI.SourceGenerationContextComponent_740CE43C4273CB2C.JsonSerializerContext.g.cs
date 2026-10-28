@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferSpeechStartedType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0395.Create_RealtimeBetaServerEventInputAudioBufferSpeechStartedType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0396.Create_RealtimeBetaServerEventInputAudioBufferSpeechStartedType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferSpeechStartedType?))
                 {

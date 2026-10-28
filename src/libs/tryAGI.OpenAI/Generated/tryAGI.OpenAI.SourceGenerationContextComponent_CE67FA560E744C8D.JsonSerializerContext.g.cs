@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.VectorStoreSearchResultContentObjectType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0574.Create_VectorStoreSearchResultContentObjectType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0575.Create_VectorStoreSearchResultContentObjectType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.VectorStoreSearchResultContentObjectType?))
                 {

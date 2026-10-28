@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0128.Create_EditImageBodyJsonParamInputFidelity2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0129.Create_EditImageBodyJsonParamInputFidelity2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity?))
                 {

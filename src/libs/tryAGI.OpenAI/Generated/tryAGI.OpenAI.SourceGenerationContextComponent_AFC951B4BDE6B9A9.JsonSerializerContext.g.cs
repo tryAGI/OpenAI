@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.WebhookAgentEnvironmentExpired))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0579.Create_WebhookAgentEnvironmentExpired2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0580.Create_WebhookAgentEnvironmentExpired2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.WebhookAgentEnvironmentExpired?))
                 {

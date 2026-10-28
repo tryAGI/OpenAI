@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.WebhookEvalRunSucceededObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0583.Create_WebhookEvalRunSucceededObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0584.Create_WebhookEvalRunSucceededObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.WebhookEvalRunSucceededObject?))
                 {

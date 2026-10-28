@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveSpecificWebSearchParamType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0192.Create_LiveSpecificWebSearchParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0193.Create_LiveSpecificWebSearchParamType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveSpecificWebSearchParamType?))
                 {

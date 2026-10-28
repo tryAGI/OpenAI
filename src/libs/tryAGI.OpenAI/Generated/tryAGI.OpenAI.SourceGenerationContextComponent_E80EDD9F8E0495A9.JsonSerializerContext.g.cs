@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.VoiceResourceObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0576.Create_VoiceResourceObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0577.Create_VoiceResourceObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.VoiceResourceObject?))
                 {

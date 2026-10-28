@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.FineTuneSupervisedHyperparameters))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0139.Create_FineTuneSupervisedHyperparameters(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0140.Create_FineTuneSupervisedHyperparameters(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

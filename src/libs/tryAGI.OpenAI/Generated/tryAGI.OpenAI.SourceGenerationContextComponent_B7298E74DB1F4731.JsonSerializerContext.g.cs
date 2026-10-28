@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.HTTPErrorType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0149.Create_HTTPErrorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0150.Create_HTTPErrorType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.HTTPErrorType?))
                 {

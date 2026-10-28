@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ProjectGroupGroupType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0383.Create_ProjectGroupGroupType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0384.Create_ProjectGroupGroupType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ProjectGroupGroupType?))
                 {

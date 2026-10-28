@@ -32,19 +32,19 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FiltersItem>))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0478.Create_SourceGenerationContextMetadataType_33EE83DB0267626E(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0479.Create_SourceGenerationContextMetadataType_33EE83DB0267626E(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.CompoundFilter))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0090.Create_CompoundFilter(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0091.Create_CompoundFilter(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.FiltersItem))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0138.Create_FiltersItem2_3(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0139.Create_FiltersItem2_3(options);
                 }
                 if (type == typeof(global::System.Collections.Generic.List<global::tryAGI.OpenAI.FiltersItem>))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0480.Create_SourceGenerationContextMetadataType_383909F143B415B3(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0481.Create_SourceGenerationContextMetadataType_383909F143B415B3(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.FiltersItem?))
                 {

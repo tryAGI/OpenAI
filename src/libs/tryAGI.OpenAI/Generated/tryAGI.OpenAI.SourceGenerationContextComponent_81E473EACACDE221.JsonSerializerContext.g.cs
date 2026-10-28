@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.SubagentObjectResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0552.Create_SubagentObjectResource2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0553.Create_SubagentObjectResource2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.SubagentObjectResource?))
                 {

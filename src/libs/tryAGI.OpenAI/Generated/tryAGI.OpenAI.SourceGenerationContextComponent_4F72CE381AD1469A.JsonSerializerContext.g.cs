@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0111.Create_CreateSpeechRequestStreamFormat2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0112.Create_CreateSpeechRequestStreamFormat2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.CreateSpeechRequestStreamFormat?))
                 {

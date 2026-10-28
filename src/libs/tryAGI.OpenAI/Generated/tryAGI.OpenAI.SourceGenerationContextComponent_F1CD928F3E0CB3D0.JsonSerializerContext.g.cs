@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.InputMessageResource2Role))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0160.Create_InputMessageResource2Role2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0161.Create_InputMessageResource2Role2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.InputMessageResource2Role?))
                 {

@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ToolSearchOutputNamespaceToolParamToolDiscriminatorType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0559.Create_ToolSearchOutputNamespaceToolParamToolDiscriminatorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0560.Create_ToolSearchOutputNamespaceToolParamToolDiscriminatorType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ToolSearchOutputNamespaceToolParamToolDiscriminatorType?))
                 {

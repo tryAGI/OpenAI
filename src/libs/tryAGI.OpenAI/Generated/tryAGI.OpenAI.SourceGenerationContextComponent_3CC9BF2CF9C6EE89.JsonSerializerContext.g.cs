@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.DecisionInputTextPromptCacheBreakpoint))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0121.Create_DecisionInputTextPromptCacheBreakpoint(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0122.Create_DecisionInputTextPromptCacheBreakpoint(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

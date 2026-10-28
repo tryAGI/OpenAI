@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.DecisionQuestionInputPartDiscriminatorType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0122.Create_DecisionQuestionInputPartDiscriminatorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0123.Create_DecisionQuestionInputPartDiscriminatorType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.DecisionQuestionInputPartDiscriminatorType?))
                 {

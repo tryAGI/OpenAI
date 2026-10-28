@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponseObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0165.Create_ListFineTuningCheckpointPermissionResponseObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0166.Create_ListFineTuningCheckpointPermissionResponseObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ListFineTuningCheckpointPermissionResponseObject?))
                 {

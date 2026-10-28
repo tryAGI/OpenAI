@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.MCPProtocolErrorType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0196.Create_MCPProtocolErrorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0197.Create_MCPProtocolErrorType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.MCPProtocolErrorType?))
                 {

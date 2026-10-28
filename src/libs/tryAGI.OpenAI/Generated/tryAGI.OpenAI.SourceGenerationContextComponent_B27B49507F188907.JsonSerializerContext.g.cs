@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ListFineTuningJobEventsResponseObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0165.Create_ListFineTuningJobEventsResponseObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0166.Create_ListFineTuningJobEventsResponseObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ListFineTuningJobEventsResponseObject?))
                 {

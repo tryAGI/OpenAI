@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.DecisionInputTextPromptCacheBreakpointMode))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0121.Create_DecisionInputTextPromptCacheBreakpointMode2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0122.Create_DecisionInputTextPromptCacheBreakpointMode2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.DecisionInputTextPromptCacheBreakpointMode?))
                 {

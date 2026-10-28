@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.WebhookSafetyWarningIssuedType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0587.Create_WebhookSafetyWarningIssuedType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0588.Create_WebhookSafetyWarningIssuedType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.WebhookSafetyWarningIssuedType?))
                 {

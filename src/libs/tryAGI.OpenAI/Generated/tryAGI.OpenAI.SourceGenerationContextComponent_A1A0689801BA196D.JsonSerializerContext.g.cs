@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CreateAutomationParamsDiscriminatorType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0099.Create_CreateAutomationParamsDiscriminatorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0100.Create_CreateAutomationParamsDiscriminatorType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.CreateAutomationParamsDiscriminatorType?))
                 {

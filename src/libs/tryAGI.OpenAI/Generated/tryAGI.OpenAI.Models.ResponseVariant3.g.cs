@@ -111,6 +111,21 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ResponseUsage? Usage { get; set; }
 
         /// <summary>
+        /// Usage reported by hosted tools, separate from base model `usage`. The field<br/>
+        /// can be omitted when tool usage is unavailable. When present, tool families<br/>
+        /// with no recorded usage have zero counts.<br/>
+        /// `image_gen` sums available token counts across image generation calls.<br/>
+        /// Calls with missing or incomplete usage records may be skipped. Output<br/>
+        /// token details and cached input counts can be omitted. An omitted cache<br/>
+        /// count means cache usage is unknown.<br/>
+        /// `web_search.num_requests` counts billable searches. Discounted searches<br/>
+        /// and actions such as opening a page are excluded. Use billing records to<br/>
+        /// reconcile final charges.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_usage")]
+        public global::tryAGI.OpenAI.ResponseToolUsage? ToolUsage { get; set; }
+
+        /// <summary>
         /// The prompt-caching options that were applied to the response. Supported for `gpt-5.6` and later models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
@@ -194,6 +209,18 @@ namespace tryAGI.OpenAI
         /// <param name="instructions"></param>
         /// <param name="outputText"></param>
         /// <param name="usage"></param>
+        /// <param name="toolUsage">
+        /// Usage reported by hosted tools, separate from base model `usage`. The field<br/>
+        /// can be omitted when tool usage is unavailable. When present, tool families<br/>
+        /// with no recorded usage have zero counts.<br/>
+        /// `image_gen` sums available token counts across image generation calls.<br/>
+        /// Calls with missing or incomplete usage records may be skipped. Output<br/>
+        /// token details and cached input counts can be omitted. An omitted cache<br/>
+        /// count means cache usage is unknown.<br/>
+        /// `web_search.num_requests` counts billable searches. Discounted searches<br/>
+        /// and actions such as opening a page are excluded. Use billing records to<br/>
+        /// reconcile final charges.
+        /// </param>
         /// <param name="promptCacheOptions">
         /// The prompt-caching options that were applied to the response. Supported for `gpt-5.6` and later models.
         /// </param>
@@ -223,6 +250,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? instructions,
             string? outputText,
             global::tryAGI.OpenAI.ResponseUsage? usage,
+            global::tryAGI.OpenAI.ResponseToolUsage? toolUsage,
             global::tryAGI.OpenAI.PromptCacheOptions? promptCacheOptions,
             global::tryAGI.OpenAI.PromptCacheDiagnostics? promptCacheDiagnostics,
             global::tryAGI.OpenAI.Moderation? moderation,
@@ -244,6 +272,7 @@ namespace tryAGI.OpenAI
             this.Instructions = instructions;
             this.OutputText = outputText;
             this.Usage = usage;
+            this.ToolUsage = toolUsage;
             this.PromptCacheOptions = promptCacheOptions;
             this.PromptCacheDiagnostics = promptCacheDiagnostics;
             this.Moderation = moderation;

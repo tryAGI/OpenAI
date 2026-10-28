@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(bool))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0078.Create_Boolean(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0079.Create_Boolean(options);
                 }
                 if (type == typeof(bool?))
                 {

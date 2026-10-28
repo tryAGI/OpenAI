@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.TokenCountsResourceObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0556.Create_TokenCountsResourceObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0557.Create_TokenCountsResourceObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.TokenCountsResourceObject?))
                 {

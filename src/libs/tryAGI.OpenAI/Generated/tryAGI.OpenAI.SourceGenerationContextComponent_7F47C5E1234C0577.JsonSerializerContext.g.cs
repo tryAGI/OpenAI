@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveMCPToolChoiceParamType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0184.Create_LiveMCPToolChoiceParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0185.Create_LiveMCPToolChoiceParamType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveMCPToolChoiceParamType?))
                 {

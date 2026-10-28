@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredToolSearchOutputType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0065.Create_BetaResponseSteerRequiredInputRequiredToolSearchOutputType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0066.Create_BetaResponseSteerRequiredInputRequiredToolSearchOutputType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredToolSearchOutputType?))
                 {

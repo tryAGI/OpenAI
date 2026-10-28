@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.UsageFileSearchCallsBucketWidth))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0566.Create_UsageFileSearchCallsBucketWidth2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0567.Create_UsageFileSearchCallsBucketWidth2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.UsageFileSearchCallsBucketWidth?))
                 {

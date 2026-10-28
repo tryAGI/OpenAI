@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.OciExternalStorageProviderResponseType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0372.Create_OciExternalStorageProviderResponseType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0373.Create_OciExternalStorageProviderResponseType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.OciExternalStorageProviderResponseType?))
                 {

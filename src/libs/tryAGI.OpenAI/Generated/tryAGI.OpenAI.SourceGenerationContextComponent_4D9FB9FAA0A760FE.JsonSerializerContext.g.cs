@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CreateContainerBodyMemoryLimit))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0102.Create_CreateContainerBodyMemoryLimit2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0103.Create_CreateContainerBodyMemoryLimit2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.CreateContainerBodyMemoryLimit?))
                 {

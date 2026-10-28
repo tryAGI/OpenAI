@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveDataChannelConfigParamAllowedClientEvents))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0170.Create_LiveDataChannelConfigParamAllowedClientEvents2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0171.Create_LiveDataChannelConfigParamAllowedClientEvents2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveDataChannelConfigParamAllowedClientEvents?))
                 {

@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.DecisionInputJsonType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0120.Create_DecisionInputJsonType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0121.Create_DecisionInputJsonType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.DecisionInputJsonType?))
                 {

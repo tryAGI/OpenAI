@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ComputerToolCallOutputResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0091.Create_ComputerToolCallOutputResource2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0092.Create_ComputerToolCallOutputResource2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ComputerToolCallOutputResource?))
                 {

@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CreateVaultCredentialAuthParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0114.Create_CreateVaultCredentialAuthParam2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0115.Create_CreateVaultCredentialAuthParam2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.CreateVaultCredentialAuthParam?))
                 {

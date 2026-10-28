@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ListAuditLogsResponseObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0164.Create_ListAuditLogsResponseObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0165.Create_ListAuditLogsResponseObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ListAuditLogsResponseObject?))
                 {

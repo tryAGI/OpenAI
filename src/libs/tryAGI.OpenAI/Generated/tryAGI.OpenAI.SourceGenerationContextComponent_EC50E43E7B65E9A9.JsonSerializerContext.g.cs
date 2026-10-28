@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ComputerUseApprovalResponseParamBrowserAuthentication))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0093.Create_ComputerUseApprovalResponseParamBrowserAuthentication(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0094.Create_ComputerUseApprovalResponseParamBrowserAuthentication(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

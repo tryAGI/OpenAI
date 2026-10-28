@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.FilePathType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0137.Create_FilePathType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0138.Create_FilePathType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.FilePathType?))
                 {

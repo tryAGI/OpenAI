@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.HostedTemplateSkillResourceDiscriminatorType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0152.Create_HostedTemplateSkillResourceDiscriminatorType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0153.Create_HostedTemplateSkillResourceDiscriminatorType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.HostedTemplateSkillResourceDiscriminatorType?))
                 {

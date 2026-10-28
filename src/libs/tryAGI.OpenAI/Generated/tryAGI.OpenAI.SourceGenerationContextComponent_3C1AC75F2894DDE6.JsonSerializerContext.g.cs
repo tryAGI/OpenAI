@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeMCPApprovalRequestType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0404.Create_RealtimeMCPApprovalRequestType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0405.Create_RealtimeMCPApprovalRequestType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeMCPApprovalRequestType?))
                 {

@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.WebhookAgentSessionFailedVariant2Type))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0580.Create_WebhookAgentSessionFailedVariant2Type2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0581.Create_WebhookAgentSessionFailedVariant2Type2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.WebhookAgentSessionFailedVariant2Type?))
                 {

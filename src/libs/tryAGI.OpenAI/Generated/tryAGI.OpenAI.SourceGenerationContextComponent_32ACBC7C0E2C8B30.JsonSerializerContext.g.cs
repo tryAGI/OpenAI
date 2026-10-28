@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CostsResultQuantityUnit))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0098.Create_CostsResultQuantityUnit2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0099.Create_CostsResultQuantityUnit2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.CostsResultQuantityUnit?))
                 {

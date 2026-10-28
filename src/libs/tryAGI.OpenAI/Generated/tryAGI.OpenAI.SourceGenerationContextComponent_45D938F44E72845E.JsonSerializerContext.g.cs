@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.OrganizationSpendAlertCurrency))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0374.Create_OrganizationSpendAlertCurrency2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0375.Create_OrganizationSpendAlertCurrency2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.OrganizationSpendAlertCurrency?))
                 {

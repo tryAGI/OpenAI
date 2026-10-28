@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ImageGenToolCallModerationDetailsModerationStage))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0155.Create_ImageGenToolCallModerationDetailsModerationStage2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0156.Create_ImageGenToolCallModerationDetailsModerationStage2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ImageGenToolCallModerationDetailsModerationStage?))
                 {

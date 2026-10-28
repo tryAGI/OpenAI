@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEventType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0055.Create_BetaResponseCompactionCompactingStreamingEventType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0056.Create_BetaResponseCompactionCompactingStreamingEventType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.BetaResponseCompactionCompactingStreamingEventType?))
                 {

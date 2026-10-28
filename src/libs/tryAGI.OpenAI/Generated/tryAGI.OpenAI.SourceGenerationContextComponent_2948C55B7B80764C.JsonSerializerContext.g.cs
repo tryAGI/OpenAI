@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ListGroupRoleAssignmentsOrder))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0165.Create_ListGroupRoleAssignmentsOrder2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0166.Create_ListGroupRoleAssignmentsOrder2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ListGroupRoleAssignmentsOrder?))
                 {
