@@ -31,11 +31,11 @@ namespace tryAGI.OpenAI.Realtime
             {
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDeltaType))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0022.Create_RealtimeServerEventResponseAudioTranscriptDeltaType2(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0027.Create_RealtimeServerEventResponseAudioTranscriptDeltaType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseAudioTranscriptDeltaType?))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0008.Create_NullableRealtimeServerEventResponseAudioTranscriptDeltaType2(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0010.Create_NullableRealtimeServerEventResponseAudioTranscriptDeltaType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

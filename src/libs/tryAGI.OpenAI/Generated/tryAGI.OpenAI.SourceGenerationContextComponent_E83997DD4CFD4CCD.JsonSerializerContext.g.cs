@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CachedUsageDetails))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0080.Create_CachedUsageDetails(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0081.Create_CachedUsageDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessages))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0104.Create_CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessages(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0105.Create_CreateEvalCompletionsRunDataSourceInputMessagesItemReferenceInputMessages(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -4,10 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Model settings that can change after session creation.
+    /// Agent settings that can change after session creation.
     /// </summary>
     public sealed partial class UpdateSessionAgentParam
     {
+        /// <summary>
+        /// Replaces the session tools. Functions and MCP servers change on the next model call. Built-in tools change by the next turn. Omit to keep the current tools, or pass null or an empty array to clear them.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AgentToolConfigParam>? Tools { get; set; }
+
         /// <summary>
         /// The model for subsequent turns. Omit to keep the current model.
         /// </summary>
@@ -35,6 +41,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateSessionAgentParam" /> class.
         /// </summary>
+        /// <param name="tools">
+        /// Replaces the session tools. Functions and MCP servers change on the next model call. Built-in tools change by the next turn. Omit to keep the current tools, or pass null or an empty array to clear them.
+        /// </param>
         /// <param name="model">
         /// The model for subsequent turns. Omit to keep the current model.
         /// </param>
@@ -48,10 +57,12 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateSessionAgentParam(
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AgentToolConfigParam>? tools,
             string? model,
             global::tryAGI.OpenAI.UpdateSessionReasoningParam? reasoning,
             global::tryAGI.OpenAI.ServiceTierParam? serviceTier)
         {
+            this.Tools = tools;
             this.Model = model;
             this.Reasoning = reasoning;
             this.ServiceTier = serviceTier;

@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveProgrammaticToolInputParamType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0186.Create_LiveProgrammaticToolInputParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0188.Create_LiveProgrammaticToolInputParamType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.LiveProgrammaticToolInputParamType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0300.Create_NullableLiveProgrammaticToolInputParamType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0303.Create_NullableLiveProgrammaticToolInputParamType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

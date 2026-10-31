@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.SessionTraceListResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0460.Create_SessionTraceListResource(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0468.Create_SessionTraceListResource(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

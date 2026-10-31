@@ -13,6 +13,12 @@ internal static partial class AgentsUpdateAgentCommandApiCommand
         Description = @"The ID of the reusable agent.",
     };
 
+    private static Option<global::tryAGI.OpenAI.ExperimentalConfigOverridesParam?> Experimental { get; } = new(
+        name: @"--experimental")
+    {
+        Description = @"Experimental settings to merge by key. Omitted settings keep their current values.",
+    };
+
     private static Option<string?> Model { get; } = new(
         name: @"--model")
     {
@@ -61,6 +67,8 @@ internal static partial class AgentsUpdateAgentCommandApiCommand
         Description = @"Replaces the tool list. Omit to leave it unchanged, or pass null to clear it. The replacement must fit within 3 MiB (3,145,728 bytes) of compact UTF-8 JSON.",
     };
     private static readonly MultiAgentConfigCurrentParamOptionSet MultiAgentOptions = MultiAgentConfigCurrentParamOptionSet.Create(@"multi-agent");
+
+    private static readonly CompactionParamOptionSet CompactionOptions = CompactionParamOptionSet.Create(@"compaction");
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -105,6 +113,7 @@ internal static partial class AgentsUpdateAgentCommandApiCommand
         var command = new Command(commandName ?? @"update-agent", @"Update an agent
 Updates a reusable agent. See [agent configuration](https://developers.openai.com/api/docs/guides/agents-api/configuration).");
                         command.Arguments.Add(AgentId);
+                        command.Options.Add(Experimental);
                         command.Options.Add(Model);
                         command.Options.Add(Reasoning);
                         command.Options.Add(Text);
@@ -113,7 +122,7 @@ Updates a reusable agent. See [agent configuration](https://developers.openai.co
                         command.Options.Add(Metadata);
                         command.Options.Add(NameOption);
                         command.Options.Add(Tools);                        command.Options.Add(MultiAgentOptions.Enabled);
-                        command.Options.Add(MultiAgentOptions.MaxConcurrentSubagents);
+                        command.Options.Add(MultiAgentOptions.MaxConcurrentSubagents);                        command.Options.Add(CompactionOptions.Async);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -140,6 +149,7 @@ Updates a reusable agent. See [agent configuration](https://developers.openai.co
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var agentId = parseResult.GetRequiredValue(AgentId);
+                        var experimental = CliRuntime.WasSpecified(parseResult, Experimental) ? parseResult.GetValue(Experimental) : (__requestBase is { } __ExperimentalBaseValue ? __ExperimentalBaseValue.Experimental : default);
                         var model = CliRuntime.WasSpecified(parseResult, Model) ? parseResult.GetValue(Model) : (__requestBase is { } __ModelBaseValue ? __ModelBaseValue.Model : default);
                         var reasoning = CliRuntime.WasSpecified(parseResult, Reasoning) ? parseResult.GetValue(Reasoning) : (__requestBase is { } __ReasoningBaseValue ? __ReasoningBaseValue.Reasoning : default);
                         var text = CliRuntime.WasSpecified(parseResult, Text) ? parseResult.GetValue(Text) : (__requestBase is { } __TextBaseValue ? __TextBaseValue.Text : default);
@@ -161,11 +171,23 @@ Updates a reusable agent. See [agent configuration](https://developers.openai.co
 
                                 }
                                 : __MultiAgentBase;
+
+                        var __CompactionBase = __requestBase is { } __CompactionBaseValue ? __CompactionBaseValue.Compaction : default;                        var compactionAsync = CliRuntime.WasSpecified(parseResult, CompactionOptions.Async) ? parseResult.GetValue(CompactionOptions.Async) : (__CompactionBase is { } __CompactionasyncBaseValue ? __CompactionasyncBaseValue.Async : default);
+                        var __CompactionSpecified = CliRuntime.WasSpecified(parseResult, CompactionOptions.Async);
+                        var compaction =
+                            __CompactionSpecified || __CompactionBase is not null
+                                ? new global::tryAGI.OpenAI.CompactionParam
+                                {
+	                                Async = compactionAsync,
+
+                                }
+                                : __CompactionBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 var response = await client.Agents.UpdateAgentAsync(
                                     agentId: agentId,
+                                    experimental: experimental,
                                     model: model,
                                     reasoning: reasoning,
                                     text: text,
@@ -175,6 +197,7 @@ Updates a reusable agent. See [agent configuration](https://developers.openai.co
                                     name: name,
                                     tools: tools,
                                     multiAgent: multiAgent,
+                                    compaction: compaction,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

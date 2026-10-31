@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CustomToolChatCompletions))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0118.Create_CustomToolChatCompletions(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0119.Create_CustomToolChatCompletions(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

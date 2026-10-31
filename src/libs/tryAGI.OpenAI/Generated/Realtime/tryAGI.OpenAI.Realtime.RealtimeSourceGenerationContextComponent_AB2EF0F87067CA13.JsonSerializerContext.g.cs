@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI.Realtime
             {
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeClientEventConversationItemRetrieve))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0013.Create_RealtimeClientEventConversationItemRetrieve(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0015.Create_RealtimeClientEventConversationItemRetrieve(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

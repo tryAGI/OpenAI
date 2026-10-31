@@ -56,6 +56,7 @@ namespace tryAGI.OpenAI
 
             request = new global::tryAGI.OpenAI.CreateAgentSessionParams
             {
+                Review = request.Review,
                 Metadata = request.Metadata,
                 Agent = request.Agent,
                 AgentId = request.AgentId,
@@ -396,6 +397,9 @@ namespace tryAGI.OpenAI
         /// Create an agent session<br/>
         /// Creates a managed agent session, optionally submits initial input, and returns the session or streams its events when stream is true. See [running sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions).
         /// </summary>
+        /// <param name="review">
+        /// Action review mode. Omit to use none.
+        /// </param>
         /// <param name="metadata">
         /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Omission or null defaults to an empty map.
         /// </param>
@@ -419,6 +423,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.SessionEvent> CreateAgentSessionAsStreamAsync(
             global::tryAGI.OpenAI.EnvironmentParam environment,
+            global::tryAGI.OpenAI.SessionReviewParam? review = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.SessionAgentConfigParam? agent = default,
             string? agentId = default,
@@ -429,6 +434,7 @@ namespace tryAGI.OpenAI
         {
             var __request = new global::tryAGI.OpenAI.CreateAgentSessionParams
             {
+                Review = review,
                 Metadata = metadata,
                 Agent = agent,
                 AgentId = agentId,

@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ProjectSpendLimitDeletedResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0386.Create_ProjectSpendLimitDeletedResource(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0391.Create_ProjectSpendLimitDeletedResource(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

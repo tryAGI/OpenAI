@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeResponseUsageInputTokenDetailsCachedTokensDetails))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0407.Create_RealtimeResponseUsageInputTokenDetailsCachedTokensDetails(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0414.Create_RealtimeResponseUsageInputTokenDetailsCachedTokensDetails(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

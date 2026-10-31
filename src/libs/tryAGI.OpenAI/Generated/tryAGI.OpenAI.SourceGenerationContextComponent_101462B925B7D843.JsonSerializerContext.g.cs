@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ChatSessionFileUpload))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0087.Create_ChatSessionFileUpload(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0088.Create_ChatSessionFileUpload(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

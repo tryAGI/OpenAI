@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RunStepDeltaObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0445.Create_RunStepDeltaObject(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0453.Create_RunStepDeltaObject(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

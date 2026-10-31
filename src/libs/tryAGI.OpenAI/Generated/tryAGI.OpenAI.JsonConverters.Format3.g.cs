@@ -18,30 +18,30 @@ namespace tryAGI.OpenAI.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaCustomToolParamFormatDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaCustomToolParamFormatDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaCustomToolParamFormatDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParamTextFormatDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParamTextFormatDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParamTextFormatDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::tryAGI.OpenAI.BetaCustomTextFormatParam? text = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaCustomToolParamFormatDiscriminatorType.Text)
+            global::tryAGI.OpenAI.ResponseFormatText? text = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParamTextFormatDiscriminatorType.Text)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaCustomTextFormatParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaCustomTextFormatParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaCustomTextFormatParam)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseFormatText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseFormatText> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ResponseFormatText)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::tryAGI.OpenAI.BetaCustomGrammarFormatParam? grammar = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaCustomToolParamFormatDiscriminatorType.Grammar)
+            global::tryAGI.OpenAI.TextResponseFormatJsonSchema? jsonSchema = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParamTextFormatDiscriminatorType.JsonSchema)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaCustomGrammarFormatParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaCustomGrammarFormatParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaCustomGrammarFormatParam)}");
-                grammar = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TextResponseFormatJsonSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TextResponseFormatJsonSchema> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.TextResponseFormatJsonSchema)}");
+                jsonSchema = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::tryAGI.OpenAI.Format3(
                 discriminator?.Type,
                 text,
 
-                grammar
+                jsonSchema
                 );
 
             return __value;
@@ -59,15 +59,15 @@ namespace tryAGI.OpenAI.JsonConverters
 
             if (value.IsText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaCustomTextFormatParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaCustomTextFormatParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaCustomTextFormatParam).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ResponseFormatText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ResponseFormatText?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ResponseFormatText).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickText(), typeInfo);
             }
-            else if (value.IsGrammar)
+            else if (value.IsJsonSchema)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaCustomGrammarFormatParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaCustomGrammarFormatParam?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaCustomGrammarFormatParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickGrammar(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TextResponseFormatJsonSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TextResponseFormatJsonSchema?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TextResponseFormatJsonSchema).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickJsonSchema(), typeInfo);
             }
         }
     }

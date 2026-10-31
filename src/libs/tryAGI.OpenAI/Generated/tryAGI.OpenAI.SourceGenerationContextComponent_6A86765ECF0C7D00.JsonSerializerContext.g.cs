@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.SpendAlertNotificationChannel))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0552.Create_SpendAlertNotificationChannel(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0560.Create_SpendAlertNotificationChannel(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

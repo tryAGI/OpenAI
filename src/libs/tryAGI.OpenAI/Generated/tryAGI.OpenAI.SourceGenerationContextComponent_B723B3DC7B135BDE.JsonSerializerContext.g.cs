@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.DecisionInputAssistantMessage))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0119.Create_DecisionInputAssistantMessage(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0120.Create_DecisionInputAssistantMessage(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -33,13 +33,13 @@ namespace tryAGI.OpenAI
                 #pragma warning disable CS0618 // Metadata references a deprecated API model.
                 if (type == typeof(global::tryAGI.OpenAI.WebhookLiveCallIncomingObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0585.Create_WebhookLiveCallIncomingObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0594.Create_WebhookLiveCallIncomingObject2(options);
                 }
                 #pragma warning restore CS0618
                 #pragma warning disable CS0618 // Metadata references a deprecated API model.
                 if (type == typeof(global::tryAGI.OpenAI.WebhookLiveCallIncomingObject?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0371.Create_NullableWebhookLiveCallIncomingObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0376.Create_NullableWebhookLiveCallIncomingObject2(options);
                 }
                 #pragma warning restore CS0618
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;

@@ -7,7 +7,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Create speech<br/>
         /// Generates audio from the input text.<br/>
-        /// Returns the audio file content, or a stream of audio events.
+        /// Returns the audio file content, or a stream of audio events.<br/>
+        /// The `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, `gpt-4o-mini-tts-2025-03-20`, and<br/>
+        /// `gpt-4o-mini-tts-2025-12-15` models are deprecated and scheduled to shut down<br/>
+        /// on January 6, 2027. These examples use the existing Speech API; for new<br/>
+        /// integrations, migrate to `gpt-realtime-2.1-mini` through the<br/>
+        /// [Realtime API](https://developers.openai.com/api/docs/guides/realtime). See the<br/>
+        /// [deprecation schedule](https://developers.openai.com/api/docs/deprecations) for migration details.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -21,7 +27,13 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Create speech<br/>
         /// Generates audio from the input text.<br/>
-        /// Returns the audio file content, or a stream of audio events.
+        /// Returns the audio file content, or a stream of audio events.<br/>
+        /// The `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, `gpt-4o-mini-tts-2025-03-20`, and<br/>
+        /// `gpt-4o-mini-tts-2025-12-15` models are deprecated and scheduled to shut down<br/>
+        /// on January 6, 2027. These examples use the existing Speech API; for new<br/>
+        /// integrations, migrate to `gpt-realtime-2.1-mini` through the<br/>
+        /// [Realtime API](https://developers.openai.com/api/docs/guides/realtime). See the<br/>
+        /// [deprecation schedule](https://developers.openai.com/api/docs/deprecations) for migration details.
         /// </summary>
         /// <param name="model">
         /// One of the available [TTS models](https://developers.openai.com/api/docs/guides/text-to-speech): `tts-1`, `tts-1-hd`, `gpt-4o-mini-tts`, or `gpt-4o-mini-tts-2025-12-15`.

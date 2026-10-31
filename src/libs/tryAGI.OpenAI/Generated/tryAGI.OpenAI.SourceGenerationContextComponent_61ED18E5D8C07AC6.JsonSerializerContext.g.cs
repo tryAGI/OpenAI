@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.WebSearchActionFind))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0577.Create_WebSearchActionFind(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0586.Create_WebSearchActionFind(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

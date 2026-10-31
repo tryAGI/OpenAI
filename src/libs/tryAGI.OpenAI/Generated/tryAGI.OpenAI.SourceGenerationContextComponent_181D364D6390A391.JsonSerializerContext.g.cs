@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ProjectServiceAccountDeleteResponseObject))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0386.Create_ProjectServiceAccountDeleteResponseObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0390.Create_ProjectServiceAccountDeleteResponseObject2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ProjectServiceAccountDeleteResponseObject?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0318.Create_NullableProjectServiceAccountDeleteResponseObject2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0321.Create_NullableProjectServiceAccountDeleteResponseObject2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

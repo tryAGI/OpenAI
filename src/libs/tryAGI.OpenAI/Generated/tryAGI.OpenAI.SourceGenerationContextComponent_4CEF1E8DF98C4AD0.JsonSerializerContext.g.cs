@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_41C10282E4B2CAB2.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_9F5F6ADC5DBF61BF.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_D99FF02649FE2EF8.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_EAA777A71351682B.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_41C10282E4B2CAB2.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_5C8CF7D3150AB03A.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_D99FF02649FE2EF8.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_EAA777A71351682B.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveInitialAssistantMessageItemParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0182.Create_LiveInitialAssistantMessageItemParam(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0183.Create_LiveInitialAssistantMessageItemParam(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

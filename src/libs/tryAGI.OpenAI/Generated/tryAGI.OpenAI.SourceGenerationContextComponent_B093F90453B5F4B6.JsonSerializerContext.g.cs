@@ -32,15 +32,15 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InstructionsVariant2Item2>>))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0523.Create_SourceGenerationContextMetadataType_B093F90453B5F4B6(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0531.Create_SourceGenerationContextMetadataType_B093F90453B5F4B6(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.List<global::tryAGI.OpenAI.InstructionsVariant2Item2>>))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0470.Create_SourceGenerationContextMetadataType_19578066E683F22D(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0479.Create_SourceGenerationContextMetadataType_19578066E683F22D(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InstructionsVariant2Item2>>?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0484.Create_SourceGenerationContextMetadataType_41A720B851ED04DA(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0493.Create_SourceGenerationContextMetadataType_41A720B851ED04DA(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

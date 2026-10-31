@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI.Realtime
             {
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.InputImageContentType))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0000.Create_InputImageContentType2(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0001.Create_InputImageContentType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.InputImageContentType?))
                 {

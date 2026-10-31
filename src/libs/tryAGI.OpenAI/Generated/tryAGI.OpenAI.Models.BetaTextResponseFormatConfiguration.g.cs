@@ -18,6 +18,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct BetaTextResponseFormatConfiguration : global::System.IEquatable<BetaTextResponseFormatConfiguration>
     {
         /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.BetaTextResponseFormatConfigurationDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Default response format. Used to generate text responses.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -204,11 +209,14 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public BetaTextResponseFormatConfiguration(
+            global::tryAGI.OpenAI.BetaTextResponseFormatConfigurationDiscriminatorType? type,
             global::tryAGI.OpenAI.BetaResponseFormatText? text,
             global::tryAGI.OpenAI.BetaTextResponseFormatJsonSchema? jsonSchema,
             global::tryAGI.OpenAI.BetaResponseFormatJsonObject? jsonObject
             )
         {
+            Type = type;
+
             Text = text;
             JsonSchema = jsonSchema;
             JsonObject = jsonObject;

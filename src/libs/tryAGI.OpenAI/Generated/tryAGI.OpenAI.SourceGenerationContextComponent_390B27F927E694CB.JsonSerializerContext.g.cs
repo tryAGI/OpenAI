@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeClientEventOutputAudioBufferClear))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0401.Create_RealtimeClientEventOutputAudioBufferClear(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0406.Create_RealtimeClientEventOutputAudioBufferClear(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

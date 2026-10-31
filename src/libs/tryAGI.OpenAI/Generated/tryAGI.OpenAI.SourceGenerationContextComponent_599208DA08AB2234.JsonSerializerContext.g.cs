@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.PersistedAgentToolConfigParamProgrammaticToolCalling))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0379.Create_PersistedAgentToolConfigParamProgrammaticToolCalling(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0383.Create_PersistedAgentToolConfigParamProgrammaticToolCalling(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

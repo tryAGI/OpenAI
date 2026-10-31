@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminator))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0103.Create_CreateContainerBodySkillDiscriminator(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0104.Create_CreateContainerBodySkillDiscriminator(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

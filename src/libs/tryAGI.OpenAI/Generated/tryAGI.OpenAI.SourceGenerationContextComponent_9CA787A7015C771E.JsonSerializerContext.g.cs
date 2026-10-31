@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.PersistedMcpTransportConfigParamHttpType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0381.Create_PersistedMcpTransportConfigParamHttpType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0385.Create_PersistedMcpTransportConfigParamHttpType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.PersistedMcpTransportConfigParamHttpType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0316.Create_NullablePersistedMcpTransportConfigParamHttpType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0318.Create_NullablePersistedMcpTransportConfigParamHttpType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

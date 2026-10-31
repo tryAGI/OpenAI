@@ -62,6 +62,8 @@ namespace tryAGI.OpenAI
                 Prompt = request.Prompt,
                 Mask = request.Mask,
                 Maskname = request.Maskname,
+                Markup = request.Markup,
+                Markupname = request.Markupname,
                 Background = request.Background,
                 Model = request.Model,
                 N = request.N,
@@ -273,6 +275,48 @@ namespace tryAGI.OpenAI
                                 if (__contentMask.Headers.ContentDisposition != null)
                                 {
                                     __contentMask.Headers.ContentDisposition.FileNameStar = null;
+                                }
+
+                            }
+                            if (request.Markup != default)
+                            {
+
+                                var __contentMarkup = new global::System.Net.Http.ByteArrayContent(request.Markup ?? global::System.Array.Empty<byte>());
+                                __contentMarkup.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.Markupname is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.Markupname) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentMarkup,
+                                    name: "\"markup\"",
+                                    fileName: request.Markupname != null ? $"\"{request.Markupname}\"" : string.Empty);
+                                if (__contentMarkup.Headers.ContentDisposition != null)
+                                {
+                                    __contentMarkup.Headers.ContentDisposition.FileNameStar = null;
                                 }
 
                             }
@@ -659,6 +703,12 @@ namespace tryAGI.OpenAI
         /// <param name="maskname">
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </param>
+        /// <param name="markup">
+        /// A transparent PNG overlaid on the first image to guide the edit. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5 and 2.6. Cannot be combined with mask.
+        /// </param>
+        /// <param name="markupname">
+        /// A transparent PNG overlaid on the first image to guide the edit. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5 and 2.6. Cannot be combined with mask.
+        /// </param>
         /// <param name="background">
         /// Set the background of the generated image(s). This parameter is only supported for<br/>
         /// the GPT image models. Must be one of `transparent`, `opaque`, or `auto` (default<br/>
@@ -726,6 +776,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?> model,
             byte[]? mask = default,
             string? maskname = default,
+            byte[]? markup = default,
+            string? markupname = default,
             global::tryAGI.OpenAI.CreateImageEditRequestBackground? background = default,
             int? n = default,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestSize?>? size = default,
@@ -744,6 +796,8 @@ namespace tryAGI.OpenAI
                 Prompt = prompt,
                 Mask = mask,
                 Maskname = maskname,
+                Markup = markup,
+                Markupname = markupname,
                 Background = background,
                 Model = model,
                 N = n,

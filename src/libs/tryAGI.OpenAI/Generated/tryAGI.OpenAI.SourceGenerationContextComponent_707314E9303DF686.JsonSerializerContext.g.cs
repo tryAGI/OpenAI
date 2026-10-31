@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CreateEvalLabelModelGrader))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0105.Create_CreateEvalLabelModelGrader(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0106.Create_CreateEvalLabelModelGrader(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

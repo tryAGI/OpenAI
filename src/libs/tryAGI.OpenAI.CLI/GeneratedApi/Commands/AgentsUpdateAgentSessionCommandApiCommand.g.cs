@@ -13,10 +13,16 @@ internal static partial class AgentsUpdateAgentSessionCommandApiCommand
         Description = @"The ID of the session.",
     };
 
+    private static Option<global::tryAGI.OpenAI.SessionReviewParam?> Review { get; } = new(
+        name: @"--review")
+    {
+        Description = @"Default action review for new root turns. Existing turns and their subagents keep their review mode.",
+    };
+
     private static Option<global::tryAGI.OpenAI.UpdateSessionAgentParam?> Agent { get; } = new(
         name: @"--agent")
     {
-        Description = @"Model settings for subsequent turns. Omitted fields stay unchanged.",
+        Description = @"Agent settings to update on this session. Omitted fields stay unchanged.",
     };
 
     private static Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
@@ -66,8 +72,9 @@ internal static partial class AgentsUpdateAgentSessionCommandApiCommand
     public static Command Create(string? commandName = null)
     {
         var command = new Command(commandName ?? @"update-agent-session", @"Update an agent session
-Updates session metadata, model, reasoning effort, or service tier. Model settings apply to subsequent turns. Omitted fields are unchanged. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).");
+Updates session tools, metadata, model, reasoning effort, or service tier. Model settings apply to subsequent turns. Omitted fields are unchanged. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).");
                         command.Arguments.Add(SessionId);
+                        command.Options.Add(Review);
                         command.Options.Add(Agent);
                         command.Options.Add(Metadata);
           command.Options.Add(Input);
@@ -96,6 +103,7 @@ Updates session metadata, model, reasoning effort, or service tier. Model settin
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var sessionId = parseResult.GetRequiredValue(SessionId);
+                        var review = CliRuntime.WasSpecified(parseResult, Review) ? parseResult.GetValue(Review) : (__requestBase is { } __ReviewBaseValue ? __ReviewBaseValue.Review : default);
                         var agent = CliRuntime.WasSpecified(parseResult, Agent) ? parseResult.GetValue(Agent) : (__requestBase is { } __AgentBaseValue ? __AgentBaseValue.Agent : default);
                         var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
@@ -103,6 +111,7 @@ Updates session metadata, model, reasoning effort, or service tier. Model settin
 
                                 var response = await client.Agents.UpdateAgentSessionAsync(
                                     sessionId: sessionId,
+                                    review: review,
                                     agent: agent,
                                     metadata: metadata,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);

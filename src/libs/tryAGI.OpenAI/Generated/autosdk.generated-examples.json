@@ -37,7 +37,7 @@
       "Order": 4,
       "Title": "Create speech",
       "Slug": "createspeech",
-      "Description": "Generates audio from the input text.\n\nReturns the audio file content, or a stream of audio events.",
+      "Description": "Generates audio from the input text.\n\nReturns the audio file content, or a stream of audio events.\n\nThe \u0060tts-1\u0060, \u0060tts-1-hd\u0060, \u0060gpt-4o-mini-tts\u0060, \u0060gpt-4o-mini-tts-2025-03-20\u0060, and\n\u0060gpt-4o-mini-tts-2025-12-15\u0060 models are deprecated and scheduled to shut down\non January 6, 2027. These examples use the existing Speech API; for new\nintegrations, migrate to \u0060gpt-realtime-2.1-mini\u0060 through the\n[Realtime API](https://developers.openai.com/api/docs/guides/realtime). See the\n[deprecation schedule](https://developers.openai.com/api/docs/deprecations) for migration details.",
       "Language": "http",
       "Code": "### Create speech\n# @name createSpeech\nPOST {{host}}/audio/speech\nAuthorization: Bearer {{token}}\nContent-Type: application/json\nAccept: application/json, application/octet-stream, audio/aac, audio/flac, audio/mpeg, audio/opus, audio/pcm, audio/wav, text/event-stream, text/plain\n\n{\n  \u0022model\u0022: \u0022string\u0022,\n  \u0022input\u0022: \u0022string\u0022,\n  \u0022instructions\u0022: \u0022string\u0022,\n  \u0022voice\u0022: \u0022ash\u0022,\n  \u0022response_format\u0022: \u0022mp3\u0022,\n  \u0022speed\u0022: 1,\n  \u0022stream_format\u0022: \u0022audio\u0022\n}\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/octet-stream, audio/aac, audio/flac, audio/mpeg, audio/opus, audio/pcm, audio/wav, text/event-stream\n# 400\n# Description: Invalid speech request, input, output format, or voice.\n# Content-Type: application/json\n# 401\n# Description: Authentication failed because the API key is missing or revoked, or the client IP is not authorized.\n# Content-Type: application/json, text/plain\n# 403\n# Description: Access to a personal API organization is blocked by the organization policy.\n# Content-Type: text/plain\n# 429\n# Description: The request was rejected because a rate limit was exceeded. A slow_down error means traffic increased too quickly; reduce your request rate, then increase it gradually.\n# Content-Type: application/json\n# 500\n# Description: The voice or speech audio could not be processed.\n# Content-Type: application/json\n# 503\n# Description: The service is temporarily unavailable. A server_is_overloaded error means the requested model is temporarily overloaded; retry after a brief delay.\n# Content-Type: application/json",
       "Format": "http",
@@ -57,17 +57,6 @@
     },
     {
       "Order": 6,
-      "Title": "Create translation",
-      "Slug": "createtranslation",
-      "Description": "Translates audio into English.",
-      "Language": "http",
-      "Code": "### Create translation\n# @name createTranslation\nPOST {{host}}/audio/translations\nAuthorization: Bearer {{token}}\nContent-Type: multipart/form-data; boundary=AutoSDKBoundary\nAccept: application/json, text/plain\n\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022file\u0022; filename=\u0022file.bin\u0022\nContent-Type: application/octet-stream\n\n\u003C ./file.bin\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022model\u0022\n\nwhisper-1\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022prompt\u0022\n\nstring\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022response_format\u0022\n\njson\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022temperature\u0022\n\n0\n--AutoSDKBoundary--\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json, text/plain\n# 400\n# Description: Invalid audio input or request parameters.\n# Content-Type: application/json\n# 401\n# Description: Authentication failed because the API key is missing or revoked, or the client IP is not authorized.\n# Content-Type: application/json, text/plain\n# 403\n# Description: Access to a personal API organization is blocked by the organization policy.\n# Content-Type: text/plain\n# 413\n# Description: The audio request exceeds the supported size limit.\n# Content-Type: application/json\n# 429\n# Description: The request was rejected because a rate limit was exceeded. A slow_down error means traffic increased too quickly; reduce your request rate, then increase it gradually.\n# Content-Type: application/json\n# 500\n# Description: The audio could not be processed.\n# Content-Type: application/json\n# 502\n# Description: The upstream audio service connection failed.\n# Content-Type: application/json\n# 503\n# Description: The service is temporarily unavailable. A server_is_overloaded error means the requested model is temporarily overloaded; retry after a brief delay.\n# Content-Type: application/json",
-      "Format": "http",
-      "OperationId": "createTranslation",
-      "Setup": null
-    },
-    {
-      "Order": 7,
       "Title": "Create chat completion",
       "Slug": "createchatcompletion",
       "Description": "**Starting a new project?** We recommend trying [Responses](https://developers.openai.com/api/reference/resources/responses)\nto take advantage of the latest OpenAI platform features. Compare\n[Chat Completions with Responses](https://developers.openai.com/api/docs/guides/migrate-to-responses?api-mode=responses).\n\n---\n\nCreates a model response for the given chat conversation. Learn more in the\n[text generation](https://developers.openai.com/api/docs/guides/text), [vision](https://developers.openai.com/api/docs/guides/images-vision),\nand [audio](https://developers.openai.com/api/docs/guides/audio) guides.\n\nParameter support can differ depending on the model used to generate the\nresponse, particularly for newer reasoning models. Parameters that are only\nsupported for reasoning models are noted below. For the current state of\nunsupported parameters in reasoning models,\n[refer to the reasoning guide](https://developers.openai.com/api/docs/guides/reasoning).\n\nReturns a chat completion object, or a streamed sequence of chat completion\nchunk objects if the request is streamed.",
@@ -78,7 +67,7 @@
       "Setup": null
     },
     {
-      "Order": 8,
+      "Order": 7,
       "Title": "Create completion",
       "Slug": "createcompletion",
       "Description": "Creates a completion for the provided prompt and parameters.\n\nReturns a completion object, or a sequence of completion objects if the request is streamed.",
@@ -89,7 +78,7 @@
       "Setup": null
     },
     {
-      "Order": 9,
+      "Order": 8,
       "Title": "Create embeddings",
       "Slug": "createembedding",
       "Description": "Creates an embedding vector representing the input text.",
@@ -100,7 +89,7 @@
       "Setup": null
     },
     {
-      "Order": 10,
+      "Order": 9,
       "Title": "Create image",
       "Slug": "createimage",
       "Description": "Creates an image given a prompt using a GPT Image model. [Learn more](https://developers.openai.com/api/docs/guides/images-vision).",
@@ -111,18 +100,18 @@
       "Setup": null
     },
     {
-      "Order": 11,
+      "Order": 10,
       "Title": "Create image edit",
       "Slug": "createimageedit",
       "Description": "Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models.",
       "Language": "http",
-      "Code": "### Create image edit\n# @name createImageEdit\nPOST {{host}}/images/edits\nAuthorization: Bearer {{token}}\nContent-Type: multipart/form-data; boundary=AutoSDKBoundary\nAccept: application/json, text/event-stream\n\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022image\u0022; filename=\u0022image.bin\u0022\nContent-Type: application/octet-stream\n\n\u003C ./image.bin\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022prompt\u0022\n\nA cute baby sea otter wearing a beret\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022mask\u0022; filename=\u0022mask.bin\u0022\nContent-Type: application/octet-stream\n\n\u003C ./mask.bin\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022background\u0022\n\ntransparent\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022model\u0022\n\ngpt-image-1.5\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022n\u0022\n\n1\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022size\u0022\n\n1024x1024\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022response_format\u0022\n\nurl\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022output_format\u0022\n\npng\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022output_compression\u0022\n\n100\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022safety_identifier\u0022\n\nuser-1234\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022user\u0022\n\nuser-1234\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022input_fidelity\u0022\n\nstring\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022stream\u0022\n\nfalse\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022partial_images\u0022\n\nstring\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022quality\u0022\n\nhigh\n--AutoSDKBoundary--\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json, text/event-stream\n# 400\n# Description: Invalid image request, including invalid parameters or input.\n# Content-Type: application/json\n# 403\n# Description: The project does not have access to the requested model.\n# Content-Type: application/json\n# 410\n# Description: The requested DALL-E image endpoint is unavailable because it has been retired.\n# Content-Type: application/json\n# 429\n# Description: The request was rejected because a rate limit was exceeded. A slow_down error means traffic increased too quickly; reduce your request rate, then increase it gradually.\n# Content-Type: application/json\n# 500\n# Description: The image could not be generated or processed.\n# Content-Type: application/json\n# 503\n# Description: The service is temporarily unavailable. A server_is_overloaded error means the requested model is temporarily overloaded; retry after a brief delay.\n# Content-Type: application/json",
+      "Code": "### Create image edit\n# @name createImageEdit\nPOST {{host}}/images/edits\nAuthorization: Bearer {{token}}\nContent-Type: multipart/form-data; boundary=AutoSDKBoundary\nAccept: application/json, text/event-stream\n\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022image\u0022; filename=\u0022image.bin\u0022\nContent-Type: application/octet-stream\n\n\u003C ./image.bin\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022prompt\u0022\n\nA cute baby sea otter wearing a beret\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022mask\u0022; filename=\u0022mask.bin\u0022\nContent-Type: application/octet-stream\n\n\u003C ./mask.bin\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022markup\u0022; filename=\u0022markup.bin\u0022\nContent-Type: application/octet-stream\n\n\u003C ./markup.bin\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022background\u0022\n\ntransparent\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022model\u0022\n\ngpt-image-1.5\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022n\u0022\n\n1\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022size\u0022\n\n1024x1024\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022response_format\u0022\n\nurl\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022output_format\u0022\n\npng\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022output_compression\u0022\n\n100\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022safety_identifier\u0022\n\nuser-1234\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022user\u0022\n\nuser-1234\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022input_fidelity\u0022\n\nstring\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022stream\u0022\n\nfalse\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022partial_images\u0022\n\nstring\n--AutoSDKBoundary\nContent-Disposition: form-data; name=\u0022quality\u0022\n\nhigh\n--AutoSDKBoundary--\n\n## Responses\n# 200\n# Description: OK\n# Content-Type: application/json, text/event-stream\n# 400\n# Description: Invalid image request, including invalid parameters or input.\n# Content-Type: application/json\n# 403\n# Description: The project does not have access to the requested model.\n# Content-Type: application/json\n# 410\n# Description: The requested DALL-E image endpoint is unavailable because it has been retired.\n# Content-Type: application/json\n# 429\n# Description: The request was rejected because a rate limit was exceeded. A slow_down error means traffic increased too quickly; reduce your request rate, then increase it gradually.\n# Content-Type: application/json\n# 500\n# Description: The image could not be generated or processed.\n# Content-Type: application/json\n# 503\n# Description: The service is temporarily unavailable. A server_is_overloaded error means the requested model is temporarily overloaded; retry after a brief delay.\n# Content-Type: application/json",
       "Format": "http",
       "OperationId": "createImageEdit",
       "Setup": null
     },
     {
-      "Order": 12,
+      "Order": 11,
       "Title": "Create session",
       "Slug": "create-live",
       "Description": "Create a Live WebRTC session or place an outbound SIP call. Start with the\n[Live prompting guide](https://developers.openai.com/api/docs/guides/live-prompting) for session configuration\nand [Telephony and SIP](https://developers.openai.com/api/docs/guides/voice-sip?api=live#place-an-outbound-call)\nfor trunk setup and call monitoring.\n\nSet transport.type to \u0060webrtc\u0060 and supply an SDP offer, or set it to \u0060sip\u0060\nand supply an E.164 destination and trunk credentials. Outbound SIP calling\nmust be enabled for your organization.\nRinging is limited to 3 minutes and connected calls to 2 hours; these limits\nare not configurable in the request.\n\nReturns \u0060201 Created\u0060 after session initialization. WebRTC responses include an\nSDP answer. SIP responses do not wait for the callee to answer. Attach a\nsideband connection using session.id to monitor SIP call progress.\n\nEach SIP request creates a new call. If a request times out or the connection\nfails, retry with caution: the original request may have succeeded, and a\nretry can place another call.",
@@ -133,7 +122,7 @@
       "Setup": null
     },
     {
-      "Order": 13,
+      "Order": 12,
       "Title": "Create moderation",
       "Slug": "createmoderation",
       "Description": "Classifies if text and/or image inputs are potentially harmful. Learn\nmore in the [moderation guide](https://developers.openai.com/api/docs/guides/moderation).",
@@ -144,7 +133,7 @@
       "Setup": null
     },
     {
-      "Order": 14,
+      "Order": 13,
       "Title": "List project rate limits",
       "Slug": "list-project-rate-limits",
       "Description": "Returns the rate limits per model for a project.",
@@ -155,7 +144,7 @@
       "Setup": null
     },
     {
-      "Order": 15,
+      "Order": 14,
       "Title": "Update project API key",
       "Slug": "update-project-api-key",
       "Description": "Updates the scopes and/or expiration of an existing API key in the project, including a\nservice-account-owned key. Requires permission to write project API keys.\n\nProvide at least one of \u0060scopes\u0060 or \u0060expires_in_seconds\u0060. Omitted fields stay\nunchanged; neither field accepts \u0060null\u0060. Both changes are saved together.\n\n\u0060scopes\u0060 replaces the key\u0027s scope restrictions using the same scope identifiers\nas the dashboard. An empty array means All permissions, subject to the owner\u0027s\neffective access; it does not mean no access. Use \u0060[\u0022api.all.read\u0022]\u0060 for read-only\naccess or specific scopes such as \u0060[\u0022api.files.read\u0022]\u0060 for restricted access.\nThis does not change user or service-account roles or grant admin permissions.\nScope changes follow the same authentication-cache propagation as dashboard edits.\n\nProvide \u0060expires_in_seconds\u0060 to set the expiration relative to this request.\nThe value must satisfy the organization\u0027s and project\u0027s expiry policies.\nExpired keys cannot be updated. Retrying resets the expiration relative to\nthe new request. The response contains only the redacted key, not its secret.",
@@ -166,7 +155,7 @@
       "Setup": null
     },
     {
-      "Order": 16,
+      "Order": 15,
       "Title": "Modify project rate limit",
       "Slug": "update-project-rate-limits",
       "Description": "Updates a project rate limit.",
@@ -177,7 +166,7 @@
       "Setup": null
     },
     {
-      "Order": 17,
+      "Order": 16,
       "Title": "Cancel a response",
       "Slug": "beta-cancelresponse",
       "Description": "Cancels a model response with the given ID. Only responses created with\nthe \u0060background\u0060 parameter set to \u0060true\u0060 can be cancelled.\n[Learn more](https://developers.openai.com/api/docs/guides/background).",
@@ -188,7 +177,7 @@
       "Setup": null
     },
     {
-      "Order": 18,
+      "Order": 17,
       "Title": "Compact conversation",
       "Slug": "beta-compactconversation",
       "Description": "Compact a conversation. Returns a compacted response object.\n\nLearn when and how to compact long-running conversations in the [conversation state guide](https://developers.openai.com/api/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](https://developers.openai.com/api/docs/guides/conversation-state#compaction-advanced).",
@@ -199,7 +188,7 @@
       "Setup": null
     },
     {
-      "Order": 19,
+      "Order": 18,
       "Title": "Create a model response",
       "Slug": "beta-createresponse",
       "Description": "Creates a model response. Provide [text](https://developers.openai.com/api/docs/guides/text) or\n[image](https://developers.openai.com/api/docs/guides/images-vision) inputs to generate [text](https://developers.openai.com/api/docs/guides/text)\nor [JSON](https://developers.openai.com/api/docs/guides/structured-outputs) outputs. Have the model call\nyour own [custom code](https://developers.openai.com/api/docs/guides/function-calling) or use built-in\n[tools](https://developers.openai.com/api/docs/guides/tools) like [web search](https://developers.openai.com/api/docs/guides/tools-web-search)\nor [file search](https://developers.openai.com/api/docs/guides/tools-file-search) to use your own data\nas input for the model\u0027s response.",
@@ -210,7 +199,7 @@
       "Setup": null
     },
     {
-      "Order": 20,
+      "Order": 19,
       "Title": "Get a model response",
       "Slug": "beta-getresponse",
       "Description": "Retrieves a model response with the given ID.",
@@ -221,7 +210,7 @@
       "Setup": null
     },
     {
-      "Order": 21,
+      "Order": 20,
       "Title": "Get input token counts",
       "Slug": "beta-getinputtokencounts",
       "Description": "Returns input token counts of the request.\n\nReturns an object with \u0060object\u0060 set to \u0060response.input_tokens\u0060 and an \u0060input_tokens\u0060 count.",
@@ -232,7 +221,7 @@
       "Setup": null
     },
     {
-      "Order": 22,
+      "Order": 21,
       "Title": "Cancel a response",
       "Slug": "cancelresponse",
       "Description": "Cancels a model response with the given ID. Only responses created with\nthe \u0060background\u0060 parameter set to \u0060true\u0060 can be cancelled.\n[Learn more](https://developers.openai.com/api/docs/guides/background).",
@@ -243,7 +232,7 @@
       "Setup": null
     },
     {
-      "Order": 23,
+      "Order": 22,
       "Title": "Compact conversation",
       "Slug": "compactconversation",
       "Description": "Compact a conversation. Returns a compacted response object.\n\nLearn when and how to compact long-running conversations in the [conversation state guide](https://developers.openai.com/api/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](https://developers.openai.com/api/docs/guides/conversation-state#compaction-advanced).",
@@ -254,7 +243,7 @@
       "Setup": null
     },
     {
-      "Order": 24,
+      "Order": 23,
       "Title": "Create a model response",
       "Slug": "createresponse",
       "Description": "Creates a model response. Provide [text](https://developers.openai.com/api/docs/guides/text) or\n[image](https://developers.openai.com/api/docs/guides/images-vision) inputs to generate [text](https://developers.openai.com/api/docs/guides/text)\nor [JSON](https://developers.openai.com/api/docs/guides/structured-outputs) outputs. Have the model call\nyour own [custom code](https://developers.openai.com/api/docs/guides/function-calling) or use built-in\n[tools](https://developers.openai.com/api/docs/guides/tools) like [web search](https://developers.openai.com/api/docs/guides/tools-web-search)\nor [file search](https://developers.openai.com/api/docs/guides/tools-file-search) to use your own data\nas input for the model\u0027s response.",
@@ -265,7 +254,7 @@
       "Setup": null
     },
     {
-      "Order": 25,
+      "Order": 24,
       "Title": "Get a model response",
       "Slug": "getresponse",
       "Description": "Retrieves a model response with the given ID.",
@@ -276,7 +265,7 @@
       "Setup": null
     },
     {
-      "Order": 26,
+      "Order": 25,
       "Title": "Get input token counts",
       "Slug": "getinputtokencounts",
       "Description": "Returns input token counts of the request.\n\nReturns an object with \u0060object\u0060 set to \u0060response.input_tokens\u0060 and an \u0060input_tokens\u0060 count.",

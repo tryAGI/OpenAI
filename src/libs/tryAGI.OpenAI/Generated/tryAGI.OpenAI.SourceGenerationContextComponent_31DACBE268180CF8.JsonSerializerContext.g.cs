@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.DeleteContainerResponse))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0124.Create_DeleteContainerResponse(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0125.Create_DeleteContainerResponse(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RealtimeSessionCreateResponseOutputModalities))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0417.Create_RealtimeSessionCreateResponseOutputModalities(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0424.Create_RealtimeSessionCreateResponseOutputModalities(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

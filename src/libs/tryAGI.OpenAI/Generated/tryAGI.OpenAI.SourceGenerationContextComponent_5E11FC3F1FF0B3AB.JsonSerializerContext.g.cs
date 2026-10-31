@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.FunctionCallItemResourceArguments))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0142.Create_FunctionCallItemResourceArguments(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0143.Create_FunctionCallItemResourceArguments(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

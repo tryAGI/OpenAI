@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.UserRoleUpdateRequest))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0570.Create_UserRoleUpdateRequest(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0579.Create_UserRoleUpdateRequest(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

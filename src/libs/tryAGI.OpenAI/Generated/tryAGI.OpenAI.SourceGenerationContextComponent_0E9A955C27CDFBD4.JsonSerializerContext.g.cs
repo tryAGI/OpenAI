@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.MCPListToolsToolAnnotations))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0196.Create_MCPListToolsToolAnnotations(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0198.Create_MCPListToolsToolAnnotations(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

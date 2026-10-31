@@ -87,7 +87,6 @@ Turn audio into text or text into audio.
 |---------|-------|-------------|
 | `create-speech` | `POST /audio/speech` | Create speech |
 | `create-transcription` | `POST /audio/transcriptions` | Create transcription |
-| `create-translation` | `POST /audio/translations` | Create translation |
 | `create-voice` | `POST /audio/voices` | Create voice |
 | `create-voice-consent` | `POST /audio/voice_consents` | Create voice consent |
 | `delete-voice` | `DELETE /audio/voices/{voice_id}` | Delete voice |
@@ -545,6 +544,7 @@ Use Uploads to upload large files in multiple parts.
 
 | Command | Route | Description |
 |---------|-------|-------------|
+| `addanexternalkeyconfigforanorganization` | `POST /organization/external_keys` | Add an external key config for an organization |
 | `admin-api-keys-create` | `POST /organization/admin_api_keys` | Create admin API key |
 | `admin-api-keys-delete` | `DELETE /organization/admin_api_keys/{key_id}` | Delete admin API key |
 | `admin-api-keys-get` | `GET /organization/admin_api_keys/{key_id}` | Retrieve admin API key |
@@ -561,6 +561,7 @@ Use Uploads to upload large files in multiple parts.
 | `delete-container-file` | `DELETE /containers/{container_id}/files/{file_id}` | Delete a container file |
 | `delete-thread-method` | `DELETE /chatkit/threads/{thread_id}` | Delete a ChatKit thread |
 | `delete-webhook-endpoint` | `DELETE /webhook_endpoints/{webhook_endpoint_id}` | Delete Webhook Endpoint |
+| `deleteanexternalkeyconfigfortheuser'sorganization` | `DELETE /organization/external_keys/{external_key_id}` | Delete an external key config for the user's organization |
 | `deleteanexternalstorageconfiguration` | `DELETE /organization/external_storage/{external_storage_id}` | Delete an external storage configuration |
 | `deleteorganizationspendlimit` | `DELETE /organization/spend_limit` | Delete organization spend limit |
 | `deleteprojectspendlimit` | `DELETE /organization/projects/{project_id}/spend_limit` | Delete project spend limit |
@@ -577,16 +578,19 @@ Use Uploads to upload large files in multiple parts.
 | `list-webhook-endpoints` | `GET /webhook_endpoints` | List Webhook Endpoints |
 | `list-webhook-event-types` | `GET /webhook_event_types` | List Webhook Event Types |
 | `listexternalstorageconfigurations` | `GET /organization/external_storage` | List external storage configurations |
+| `listtheexternalkeyconfigsregisteredontheuser'sorganization` | `GET /organization/external_keys` | List the external key configs registered on the user's organization |
 | `organization-decisionsusage` | `GET /organization/usage/decisions` | Decisions |
 | `retrieve-container` | `GET /containers/{container_id}` | Retrieve container |
 | `retrieve-container-file` | `GET /containers/{container_id}/files/{file_id}` | Retrieve container file |
 | `retrieve-container-file-content` | `GET /containers/{container_id}/files/{file_id}/content` | Retrieve container file content |
 | `retrieve-webhook-endpoint` | `GET /webhook_endpoints/{webhook_endpoint_id}` | Retrieve Webhook Endpoint |
+| `retrieveanexternalkeyregistration` | `GET /organization/external_keys/{external_key_id}` | Retrieve an external key registration |
 | `rotate-webhook-endpoint-signing-secret` | `POST /webhook_endpoints/{webhook_endpoint_id}/rotate_secret` | Rotate Webhook Endpoint Signing Secret |
 | `test-webhook-endpoint` | `POST /webhook_endpoints/{webhook_endpoint_id}/test` | Test Webhook Endpoint |
 | `update-webhook-endpoint` | `POST /webhook_endpoints/{webhook_endpoint_id}` | Update Webhook Endpoint |
 | `updateorganizationspendlimit` | `POST /organization/spend_limit` | Update organization spend limit |
 | `updateprojectspendlimit` | `POST /organization/projects/{project_id}/spend_limit` | Update project spend limit |
+| `validateanexternalkeyconfigfortheuser'sorganization` | `POST /organization/external_keys/{external_key_id}/validate` | Validate an external key config for the user's organization |
 | `validateanexternalstorageconfiguration` | `POST /organization/external_storage/{external_storage_id}/validate` | Validate an external storage configuration |
 
 ## Usage tips

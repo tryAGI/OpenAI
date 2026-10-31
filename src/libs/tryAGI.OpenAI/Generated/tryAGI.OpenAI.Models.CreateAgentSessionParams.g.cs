@@ -9,6 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateAgentSessionParams
     {
         /// <summary>
+        /// Action review mode. Omit to use none.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("review")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.SessionReviewParamJsonConverter))]
+        public global::tryAGI.OpenAI.SessionReviewParam? Review { get; set; }
+
+        /// <summary>
         /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Omission or null defaults to an empty map.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
@@ -65,6 +72,9 @@ namespace tryAGI.OpenAI
         /// <param name="environment">
         /// An inline execution environment or a reference to an environment template.
         /// </param>
+        /// <param name="review">
+        /// Action review mode. Omit to use none.
+        /// </param>
         /// <param name="metadata">
         /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Omission or null defaults to an empty map.
         /// </param>
@@ -89,6 +99,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateAgentSessionParams(
             global::tryAGI.OpenAI.EnvironmentParam environment,
+            global::tryAGI.OpenAI.SessionReviewParam? review,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.SessionAgentConfigParam? agent,
             string? agentId,
@@ -96,6 +107,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateSessionInputParam? input,
             bool? stream)
         {
+            this.Review = review;
             this.Metadata = metadata;
             this.Agent = agent;
             this.AgentId = agentId;

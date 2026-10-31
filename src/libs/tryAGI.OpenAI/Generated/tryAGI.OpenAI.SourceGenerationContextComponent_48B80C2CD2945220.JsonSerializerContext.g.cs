@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveCallRejectRequest))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0169.Create_LiveCallRejectRequest(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0171.Create_LiveCallRejectRequest(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

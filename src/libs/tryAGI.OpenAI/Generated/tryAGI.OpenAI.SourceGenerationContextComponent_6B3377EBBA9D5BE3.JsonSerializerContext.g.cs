@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveDelegationCreated))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0179.Create_LiveDelegationCreated(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0181.Create_LiveDelegationCreated(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

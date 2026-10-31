@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ListAgentAutomationInvocationsResponse))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0164.Create_ListAgentAutomationInvocationsResponse(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0166.Create_ListAgentAutomationInvocationsResponse(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

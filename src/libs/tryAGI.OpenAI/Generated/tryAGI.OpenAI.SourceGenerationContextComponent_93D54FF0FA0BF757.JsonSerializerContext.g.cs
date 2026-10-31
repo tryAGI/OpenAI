@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamEnvironmentVariableType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0443.Create_RotateVaultCredentialAuthParamEnvironmentVariableType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0451.Create_RotateVaultCredentialAuthParamEnvironmentVariableType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.RotateVaultCredentialAuthParamEnvironmentVariableType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0345.Create_NullableRotateVaultCredentialAuthParamEnvironmentVariableType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0349.Create_NullableRotateVaultCredentialAuthParamEnvironmentVariableType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.WebSearchActionResourceFindInPage))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0577.Create_WebSearchActionResourceFindInPage(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0586.Create_WebSearchActionResourceFindInPage(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

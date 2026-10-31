@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.McpTransportConfigParamStdioEnv))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0199.Create_McpTransportConfigParamStdioEnv(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0201.Create_McpTransportConfigParamStdioEnv(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

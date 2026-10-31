@@ -27,7 +27,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 |-------|-----------:|---------|
 | `agent` | 47 |  |
 | `assistant` | 18 | Build Assistants that can call models and use tools. |
-| `audio` | 10 | Turn audio into text or text into audio. |
+| `audio` | 9 | Turn audio into text or text into audio. |
 | `audit-log` | 1 | List user actions and configuration changes within this organization. |
 | `batch` | 4 | Create large batches of API requests to run asynchronously. |
 | `certificate` | 10 |  |
@@ -64,7 +64,7 @@ dnx tryAGI.OpenAI.CLI <group> --help
 | `user-organization-role-assignment` | 4 |  |
 | `vault` | 10 |  |
 | `vector-store` | 16 |  |
-| `default` | 43 |  |
+| `default` | 48 |  |
 
 ## References
 

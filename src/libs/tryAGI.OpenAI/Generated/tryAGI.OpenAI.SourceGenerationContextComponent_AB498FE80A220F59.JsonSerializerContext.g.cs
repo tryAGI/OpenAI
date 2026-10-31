@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatGrammar))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0118.Create_CustomToolChatCompletionsCustomFormatGrammarFormatGrammar(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0119.Create_CustomToolChatCompletionsCustomFormatGrammarFormatGrammar(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

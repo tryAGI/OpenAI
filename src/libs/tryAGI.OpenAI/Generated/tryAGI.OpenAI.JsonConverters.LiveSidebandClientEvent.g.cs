@@ -50,6 +50,13 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam)}");
                 sessionOutputAudioFixturePlay = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.LiveTransportDTMFSendParam? transportDtmfSend = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandClientEventDiscriminatorType.TransportDtmfSend)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportDTMFSendParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportDTMFSendParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveTransportDTMFSendParam)}");
+                transportDtmfSend = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.LiveInstructionsAppendParam? sessionInstructionsAppend = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandClientEventDiscriminatorType.SessionInstructionsAppend)
             {
@@ -124,6 +131,8 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 sessionOutputAudioFixturePlay,
 
+                transportDtmfSend,
+
                 sessionInstructionsAppend,
 
                 sessionThinkingAppend,
@@ -179,6 +188,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSessionOutputAudioFixturePlay(), typeInfo);
+            }
+            else if (value.IsTransportDtmfSend)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportDTMFSendParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportDTMFSendParam?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveTransportDTMFSendParam).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTransportDtmfSend(), typeInfo);
             }
             else if (value.IsSessionInstructionsAppend)
             {

@@ -420,8 +420,8 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'AdditionalTools' but the value was {ToString()}.");
 
         /// <summary>
-        /// A configuration update that applies to subsequent responses until it is<br/>
-        /// replaced by another configuration update.
+        /// A configuration update for subsequent responses. Each setting stays in effect<br/>
+        /// until a later update replaces that setting.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ResponseConfigurationUpdate? ConfigurationUpdate { get; init; }

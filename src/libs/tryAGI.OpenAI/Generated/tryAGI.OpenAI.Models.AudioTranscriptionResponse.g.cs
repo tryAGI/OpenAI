@@ -28,6 +28,12 @@ namespace tryAGI.OpenAI
         public global::System.Collections.Generic.IList<string>? Languages { get; set; }
 
         /// <summary>
+        /// Words or phrases configured to guide transcription of the input audio.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("keywords")]
+        public global::System.Collections.Generic.IList<string>? Keywords { get; set; }
+
+        /// <summary>
         /// The prompt configured for input audio transcription, when present.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
@@ -51,6 +57,9 @@ namespace tryAGI.OpenAI
         /// <param name="languages">
         /// The possible input audio languages configured for transcription, in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format.
         /// </param>
+        /// <param name="keywords">
+        /// Words or phrases configured to guide transcription of the input audio.
+        /// </param>
         /// <param name="prompt">
         /// The prompt configured for input audio transcription, when present.
         /// </param>
@@ -61,11 +70,13 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.AudioTranscriptionResponseModel?>? model,
             string? language,
             global::System.Collections.Generic.IList<string>? languages,
+            global::System.Collections.Generic.IList<string>? keywords,
             string? prompt)
         {
             this.Model = model;
             this.Language = language;
             this.Languages = languages;
+            this.Keywords = keywords;
             this.Prompt = prompt;
         }
 

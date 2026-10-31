@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
                 }
                 if (type == typeof(global::tryAGI.OpenAI.BetaMessagePhase2?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0230.Create_NullableBetaMessagePhase22(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0232.Create_NullableBetaMessagePhase22(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

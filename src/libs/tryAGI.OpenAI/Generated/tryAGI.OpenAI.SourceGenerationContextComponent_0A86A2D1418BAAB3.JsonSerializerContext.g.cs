@@ -33,13 +33,13 @@ namespace tryAGI.OpenAI
                 #pragma warning disable CS0618 // Metadata references a deprecated API model.
                 if (type == typeof(global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfigType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0136.Create_EvalStoredCompletionsDataSourceConfigType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0137.Create_EvalStoredCompletionsDataSourceConfigType2(options);
                 }
                 #pragma warning restore CS0618
                 #pragma warning disable CS0618 // Metadata references a deprecated API model.
                 if (type == typeof(global::tryAGI.OpenAI.EvalStoredCompletionsDataSourceConfigType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0272.Create_NullableEvalStoredCompletionsDataSourceConfigType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0274.Create_NullableEvalStoredCompletionsDataSourceConfigType2(options);
                 }
                 #pragma warning restore CS0618
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;

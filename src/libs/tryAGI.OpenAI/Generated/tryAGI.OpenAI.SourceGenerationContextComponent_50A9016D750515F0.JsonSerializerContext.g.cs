@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.VaultCredentialNetworkingParamUnrestricted))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0572.Create_VaultCredentialNetworkingParamUnrestricted(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0581.Create_VaultCredentialNetworkingParamUnrestricted(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

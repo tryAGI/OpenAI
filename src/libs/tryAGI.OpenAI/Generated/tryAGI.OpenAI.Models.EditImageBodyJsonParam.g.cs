@@ -44,6 +44,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ImageRefParam? Mask { get; set; }
 
         /// <summary>
+        /// A transparent PNG overlaid on the first image, referenced by file ID, HTTPS URL, or base64 data URL. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5 and 2.6. Cannot be combined with mask.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("markup")]
+        public global::tryAGI.OpenAI.ImageRefParam? Markup { get; set; }
+
+        /// <summary>
         /// A text description of the desired image edit.<br/>
         /// Example: Add a watercolor effect and keep the subject centered
         /// </summary>
@@ -186,6 +192,9 @@ namespace tryAGI.OpenAI
         /// Reference an input image by either URL or uploaded file ID.<br/>
         /// Provide exactly one of `image_url` or `file_id`.
         /// </param>
+        /// <param name="markup">
+        /// A transparent PNG overlaid on the first image, referenced by file ID, HTTPS URL, or base64 data URL. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5 and 2.6. Cannot be combined with mask.
+        /// </param>
         /// <param name="n">
         /// The number of edited images to generate.<br/>
         /// Default Value: 1<br/>
@@ -243,6 +252,7 @@ namespace tryAGI.OpenAI
             string prompt,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.EditImageBodyJsonParamModel?>? model,
             global::tryAGI.OpenAI.ImageRefParam? mask,
+            global::tryAGI.OpenAI.ImageRefParam? markup,
             int? n,
             global::tryAGI.OpenAI.EditImageBodyJsonParamQuality? quality,
             global::tryAGI.OpenAI.EditImageBodyJsonParamInputFidelity? inputFidelity,
@@ -258,6 +268,7 @@ namespace tryAGI.OpenAI
             this.Model = model;
             this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
             this.Mask = mask;
+            this.Markup = markup;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.N = n;
             this.Quality = quality;

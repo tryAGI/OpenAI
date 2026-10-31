@@ -55,6 +55,12 @@ namespace tryAGI.OpenAI
         /// <param name="maskname">
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </param>
+        /// <param name="markup">
+        /// A transparent PNG overlaid on the first image to guide the edit. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5 and 2.6. Cannot be combined with mask.
+        /// </param>
+        /// <param name="markupname">
+        /// A transparent PNG overlaid on the first image to guide the edit. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5 and 2.6. Cannot be combined with mask.
+        /// </param>
         /// <param name="background">
         /// Set the background of the generated image(s). This parameter is only supported for<br/>
         /// the GPT image models. Must be one of `transparent`, `opaque`, or `auto` (default<br/>
@@ -122,6 +128,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?> model,
             byte[]? mask = default,
             string? maskname = default,
+            byte[]? markup = default,
+            string? markupname = default,
             global::tryAGI.OpenAI.CreateImageEditRequestBackground? background = default,
             int? n = default,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestSize?>? size = default,

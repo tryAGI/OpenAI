@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.UpdateProjectDataRetentionBodyRetentionType))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0564.Create_UpdateProjectDataRetentionBodyRetentionType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0573.Create_UpdateProjectDataRetentionBodyRetentionType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.UpdateProjectDataRetentionBodyRetentionType?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0359.Create_NullableUpdateProjectDataRetentionBodyRetentionType2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0364.Create_NullableUpdateProjectDataRetentionBodyRetentionType2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);
