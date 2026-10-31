@@ -5,7 +5,8 @@ using System.CommandLine;
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
 internal sealed record CreateAgentSessionParamsOptionSet(
-    Option<string?> AgentId,
+    Option<global::tryAGI.OpenAI.SessionReviewParam?> Review,
+                     Option<string?> AgentId,
                      Option<global::System.Collections.Generic.IList<string>?> VaultIds,
                      Option<bool?> Stream)
 {
@@ -15,7 +16,11 @@ internal sealed record CreateAgentSessionParamsOptionSet(
             ? string.Empty
             : prefix.Trim().Trim('-') + "-";
         return new CreateAgentSessionParamsOptionSet(
-                        AgentId: new Option<string?>($"--{normalizedPrefix}agent-id")
+                        Review: new Option<global::tryAGI.OpenAI.SessionReviewParam?>($"--{normalizedPrefix}review")
+                {
+                    Description = @"Action review mode. Omit to use none.",
+                },
+                AgentId: new Option<string?>($"--{normalizedPrefix}agent-id")
                 {
                     Description = @"The ID of a saved reusable agent. Omit `agent` to use its configuration unchanged.",
                 },

@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_13C4A435640F800E.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_923AD7D9D7123C07.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_E0B5F2FB7C9D68A0.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_13C4A435640F800E.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_3C6263CA33E93F1D.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_923AD7D9D7123C07.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_E0B5F2FB7C9D68A0.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaTextResponseFormatConfiguration))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0073.Create_BetaTextResponseFormatConfiguration2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0074.Create_BetaTextResponseFormatConfiguration2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.BetaTextResponseFormatConfiguration?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0242.Create_NullableBetaTextResponseFormatConfiguration2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0244.Create_NullableBetaTextResponseFormatConfiguration2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

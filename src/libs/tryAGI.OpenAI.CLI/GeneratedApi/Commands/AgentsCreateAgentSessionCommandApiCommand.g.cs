@@ -89,7 +89,8 @@ internal static partial class AgentsCreateAgentSessionCommandApiCommand
 Creates a managed agent session, optionally submits initial input, and returns the session or streams its events when stream is true. See [running sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions).");
                         command.Options.Add(Metadata);
                         command.Options.Add(Environment);
-                        command.Options.Add(InputOption);                        command.Options.Add(CreateAgentSessionParamsOptionSetOptions.AgentId);
+                        command.Options.Add(InputOption);                        command.Options.Add(CreateAgentSessionParamsOptionSetOptions.Review);
+                        command.Options.Add(CreateAgentSessionParamsOptionSetOptions.AgentId);
                         command.Options.Add(CreateAgentSessionParamsOptionSetOptions.VaultIds);                        command.Options.Add(AgentOptions.Model);
                         command.Options.Add(AgentOptions.Instructions);
           command.Options.Add(RequestInput);
@@ -121,7 +122,8 @@ Creates a managed agent session, optionally submits initial input, and returns t
                             cancellationToken).ConfigureAwait(false);
                         var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
                         var environment = parseResult.GetRequiredValue(Environment);
-                        var input = CliRuntime.WasSpecified(parseResult, InputOption) ? parseResult.GetValue(InputOption) : (__requestBase is { } __InputBaseValue ? __InputBaseValue.Input : default);                        var agentId = CliRuntime.WasSpecified(parseResult, CreateAgentSessionParamsOptionSetOptions.AgentId) ? parseResult.GetValue(CreateAgentSessionParamsOptionSetOptions.AgentId) : (__requestBase is { } __AgentIdBaseValue ? __AgentIdBaseValue.AgentId : default);
+                        var input = CliRuntime.WasSpecified(parseResult, InputOption) ? parseResult.GetValue(InputOption) : (__requestBase is { } __InputBaseValue ? __InputBaseValue.Input : default);                        var review = CliRuntime.WasSpecified(parseResult, CreateAgentSessionParamsOptionSetOptions.Review) ? parseResult.GetValue(CreateAgentSessionParamsOptionSetOptions.Review) : (__requestBase is { } __ReviewBaseValue ? __ReviewBaseValue.Review : default);
+                        var agentId = CliRuntime.WasSpecified(parseResult, CreateAgentSessionParamsOptionSetOptions.AgentId) ? parseResult.GetValue(CreateAgentSessionParamsOptionSetOptions.AgentId) : (__requestBase is { } __AgentIdBaseValue ? __AgentIdBaseValue.AgentId : default);
                         var vaultIds = CliRuntime.WasSpecified(parseResult, CreateAgentSessionParamsOptionSetOptions.VaultIds) ? parseResult.GetValue(CreateAgentSessionParamsOptionSetOptions.VaultIds) : (__requestBase is { } __VaultIdsBaseValue ? __VaultIdsBaseValue.VaultIds : default);
 
                         var __AgentBase = __requestBase is { } __AgentBaseValue ? __AgentBaseValue.Agent : default;                        var agentModel = CliRuntime.WasSpecified(parseResult, AgentOptions.Model) ? parseResult.GetValue(AgentOptions.Model) : (__AgentBase is { } __AgentmodelBaseValue ? __AgentmodelBaseValue.Model : default);
@@ -146,6 +148,7 @@ Creates a managed agent session, optionally submits initial input, and returns t
                                     metadata: metadata,
                                     environment: environment,
                                     input: input,
+                                    review: review,
                                     agentId: agentId,
                                     vaultIds: vaultIds,
                                     agent: agent,
@@ -178,6 +181,7 @@ Creates a managed agent session, optionally submits initial input, and returns t
                                     metadata: metadata,
                                     environment: environment,
                                     input: input,
+                                    review: review,
                                     agentId: agentId,
                                     vaultIds: vaultIds,
                                     agent: agent,

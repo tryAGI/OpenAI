@@ -11,6 +11,7 @@ internal static partial class DefaultApiGroupCommand
     public static Command Create()
     {
         var command = new Command(@"default", @"default endpoint commands.");
+                         command.Subcommands.Add(AddanexternalkeyconfigforanorganizationCommandApiCommand.Create());
                          command.Subcommands.Add(AdminApiKeysCreateCommandApiCommand.Create());
                          command.Subcommands.Add(AdminApiKeysDeleteCommandApiCommand.Create());
                          command.Subcommands.Add(AdminApiKeysGetCommandApiCommand.Create());
@@ -27,6 +28,7 @@ internal static partial class DefaultApiGroupCommand
                          command.Subcommands.Add(DeleteContainerFileCommandApiCommand.Create());
                          command.Subcommands.Add(DeleteThreadMethodCommandApiCommand.Create());
                          command.Subcommands.Add(DeleteWebhookEndpointCommandApiCommand.Create());
+                         command.Subcommands.Add(DeleteanexternalkeyconfigfortheuserSorganizationCommandApiCommand.Create());
                          command.Subcommands.Add(DeleteanexternalstorageconfigurationCommandApiCommand.Create());
                          command.Subcommands.Add(DeleteorganizationspendlimitCommandApiCommand.Create());
                          command.Subcommands.Add(DeleteprojectspendlimitCommandApiCommand.Create());
@@ -43,16 +45,19 @@ internal static partial class DefaultApiGroupCommand
                          command.Subcommands.Add(ListWebhookEndpointsCommandApiCommand.Create());
                          command.Subcommands.Add(ListWebhookEventTypesCommandApiCommand.Create());
                          command.Subcommands.Add(ListexternalstorageconfigurationsCommandApiCommand.Create());
+                         command.Subcommands.Add(ListtheexternalkeyconfigsregisteredontheuserSorganizationCommandApiCommand.Create());
                          command.Subcommands.Add(OrganizationDecisionsusageCommandApiCommand.Create());
                          command.Subcommands.Add(RetrieveContainerCommandApiCommand.Create());
                          command.Subcommands.Add(RetrieveContainerFileCommandApiCommand.Create());
                          command.Subcommands.Add(RetrieveContainerFileContentCommandApiCommand.Create());
                          command.Subcommands.Add(RetrieveWebhookEndpointCommandApiCommand.Create());
+                         command.Subcommands.Add(RetrieveanexternalkeyregistrationCommandApiCommand.Create());
                          command.Subcommands.Add(RotateWebhookEndpointSigningSecretCommandApiCommand.Create());
                          command.Subcommands.Add(TestWebhookEndpointCommandApiCommand.Create());
                          command.Subcommands.Add(UpdateWebhookEndpointCommandApiCommand.Create());
                          command.Subcommands.Add(UpdateorganizationspendlimitCommandApiCommand.Create());
                          command.Subcommands.Add(UpdateprojectspendlimitCommandApiCommand.Create());
+                         command.Subcommands.Add(ValidateanexternalkeyconfigfortheuserSorganizationCommandApiCommand.Create());
                          command.Subcommands.Add(ValidateanexternalstorageconfigurationCommandApiCommand.Create());
         CustomizeCommand(ref command);
         return command;

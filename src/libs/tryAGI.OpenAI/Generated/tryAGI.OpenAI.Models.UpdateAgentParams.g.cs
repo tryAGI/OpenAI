@@ -9,6 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class UpdateAgentParams
     {
         /// <summary>
+        /// Experimental settings to merge by key. Omitted settings keep their current values.<br/>
+        /// Default Value: {}
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("experimental")]
+        public global::tryAGI.OpenAI.ExperimentalConfigOverridesParam? Experimental { get; set; }
+
+        /// <summary>
         /// The model to use for the agent. The requested model name is preserved.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
@@ -45,6 +52,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.MultiAgentConfigCurrentParam? MultiAgent { get; set; }
 
         /// <summary>
+        /// Context compaction settings. Omit to keep the current settings. A supplied object replaces the settings; null or an empty object enables background compaction.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("compaction")]
+        public global::tryAGI.OpenAI.CompactionParam? Compaction { get; set; }
+
+        /// <summary>
         /// Replaces all metadata. Omit to leave unchanged, or pass null or {} to clear it. Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
@@ -71,6 +84,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateAgentParams" /> class.
         /// </summary>
+        /// <param name="experimental">
+        /// Experimental settings to merge by key. Omitted settings keep their current values.<br/>
+        /// Default Value: {}
+        /// </param>
         /// <param name="model">
         /// The model to use for the agent. The requested model name is preserved.
         /// </param>
@@ -89,6 +106,9 @@ namespace tryAGI.OpenAI
         /// <param name="multiAgent">
         /// Configuration for creating and coordinating subagents.
         /// </param>
+        /// <param name="compaction">
+        /// Context compaction settings. Omit to keep the current settings. A supplied object replaces the settings; null or an empty object enables background compaction.
+        /// </param>
         /// <param name="metadata">
         /// Replaces all metadata. Omit to leave unchanged, or pass null or {} to clear it. Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters.
         /// </param>
@@ -102,22 +122,26 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateAgentParams(
+            global::tryAGI.OpenAI.ExperimentalConfigOverridesParam? experimental,
             string? model,
             global::tryAGI.OpenAI.ReasoningParam? reasoning,
             global::tryAGI.OpenAI.TextParam? text,
             global::tryAGI.OpenAI.ServiceTierParam? serviceTier,
             string? instructions,
             global::tryAGI.OpenAI.MultiAgentConfigCurrentParam? multiAgent,
+            global::tryAGI.OpenAI.CompactionParam? compaction,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             string? name,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.PersistedAgentToolConfigParam>? tools)
         {
+            this.Experimental = experimental;
             this.Model = model;
             this.Reasoning = reasoning;
             this.Text = text;
             this.ServiceTier = serviceTier;
             this.Instructions = instructions;
             this.MultiAgent = multiAgent;
+            this.Compaction = compaction;
             this.Metadata = metadata;
             this.Name = name;
             this.Tools = tools;

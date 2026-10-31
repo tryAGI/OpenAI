@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI.Realtime
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.MCPToolRequireApprovalVariant1Enum2?))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0002.Create_NullableMCPToolRequireApprovalVariant1Enum22(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0003.Create_NullableMCPToolRequireApprovalVariant1Enum22(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

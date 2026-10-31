@@ -95,6 +95,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        TransportDtmfReceived,
+        /// <summary>
+        ///
+        /// </summary>
+        TransportDtmfSent,
+        /// <summary>
+        ///
+        /// </summary>
         TransportFailed,
         /// <summary>
         ///
@@ -135,6 +143,8 @@ namespace tryAGI.OpenAI
                 LiveSidebandServerEventDiscriminatorType.SessionUpdated => "session.updated",
                 LiveSidebandServerEventDiscriminatorType.SessionUsageUpdated => "session.usage.updated",
                 LiveSidebandServerEventDiscriminatorType.TransportAnswered => "transport.answered",
+                LiveSidebandServerEventDiscriminatorType.TransportDtmfReceived => "transport.dtmf.received",
+                LiveSidebandServerEventDiscriminatorType.TransportDtmfSent => "transport.dtmf.sent",
                 LiveSidebandServerEventDiscriminatorType.TransportFailed => "transport.failed",
                 LiveSidebandServerEventDiscriminatorType.TransportRinging => "transport.ringing",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -168,6 +178,8 @@ namespace tryAGI.OpenAI
                 "session.updated" => LiveSidebandServerEventDiscriminatorType.SessionUpdated,
                 "session.usage.updated" => LiveSidebandServerEventDiscriminatorType.SessionUsageUpdated,
                 "transport.answered" => LiveSidebandServerEventDiscriminatorType.TransportAnswered,
+                "transport.dtmf.received" => LiveSidebandServerEventDiscriminatorType.TransportDtmfReceived,
+                "transport.dtmf.sent" => LiveSidebandServerEventDiscriminatorType.TransportDtmfSent,
                 "transport.failed" => LiveSidebandServerEventDiscriminatorType.TransportFailed,
                 "transport.ringing" => LiveSidebandServerEventDiscriminatorType.TransportRinging,
                 _ => null,

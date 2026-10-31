@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI.Realtime
             {
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeResponseCreateParamsOutputModalitie))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0018.Create_RealtimeResponseCreateParamsOutputModalitie2(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0020.Create_RealtimeResponseCreateParamsOutputModalitie2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeResponseCreateParamsOutputModalitie?))
                 {

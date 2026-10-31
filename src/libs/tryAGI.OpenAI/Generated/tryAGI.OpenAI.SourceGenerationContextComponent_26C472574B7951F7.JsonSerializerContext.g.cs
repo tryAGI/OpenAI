@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_2E4D40CFE4BCB945.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_55FF0D25736F0ED7.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_F00CCCB679F759FC.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_82F8D24250D61558.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_D3041D10D6866F9C.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_DA5DC7AC375ACFCD.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ContentItem5))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0097.Create_ContentItem52(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0098.Create_ContentItem52(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.ContentItem5?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0254.Create_NullableContentItem52(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0256.Create_NullableContentItem52(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

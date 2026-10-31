@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI.Realtime
             {
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmaAudioFormatType))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0012.Create_RealtimeAudioFormatsPcmaAudioFormatType2(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0014.Create_RealtimeAudioFormatsPcmaAudioFormatType2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeAudioFormatsPcmaAudioFormatType?))
                 {

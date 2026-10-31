@@ -28,6 +28,12 @@ follows the same input constraints as GPT image models.
         Description = @"An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.",
     };
 
+    private static Option<byte[]?> Markup { get; } = new(
+        name: @"--markup")
+    {
+        Description = @"A transparent PNG overlaid on the first image to guide the edit. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5 and 2.6. Cannot be combined with mask.",
+    };
+
     private static Option<global::tryAGI.OpenAI.CreateImageEditRequestBackground?> Background { get; } = new(
         name: @"--background")
     {
@@ -132,6 +138,7 @@ The default value is `png`.
 Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models.");
                         command.Options.Add(Image);
                         command.Options.Add(Mask);
+                        command.Options.Add(Markup);
                         command.Options.Add(Background);
                         command.Options.Add(Model);
                         command.Options.Add(Size);
@@ -139,6 +146,7 @@ Creates an edited or extended image given one or more source images and a prompt
                         command.Options.Add(InputFidelity);
                         command.Options.Add(Quality);                        command.Options.Add(CreateImageEditRequestOptionSetOptions.Prompt);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.Maskname);
+                        command.Options.Add(CreateImageEditRequestOptionSetOptions.Markupname);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.N);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.OutputCompression);
                         command.Options.Add(CreateImageEditRequestOptionSetOptions.SafetyIdentifier);
@@ -170,6 +178,7 @@ Creates an edited or extended image given one or more source images and a prompt
                             cancellationToken).ConfigureAwait(false);
                         var image = parseResult.GetRequiredValue(Image);
                         var mask = CliRuntime.WasSpecified(parseResult, Mask) ? parseResult.GetValue(Mask) : (__requestBase is { } __MaskBaseValue ? __MaskBaseValue.Mask : default);
+                        var markup = CliRuntime.WasSpecified(parseResult, Markup) ? parseResult.GetValue(Markup) : (__requestBase is { } __MarkupBaseValue ? __MarkupBaseValue.Markup : default);
                         var background = CliRuntime.WasSpecified(parseResult, Background) ? parseResult.GetValue(Background) : (__requestBase is { } __BackgroundBaseValue ? __BackgroundBaseValue.Background : default);
                         var model = parseResult.GetRequiredValue(Model);
                         var size = CliRuntime.WasSpecified(parseResult, Size) ? parseResult.GetValue(Size) : (__requestBase is { } __SizeBaseValue ? __SizeBaseValue.Size : default);
@@ -177,6 +186,7 @@ Creates an edited or extended image given one or more source images and a prompt
                         var inputFidelity = CliRuntime.WasSpecified(parseResult, InputFidelity) ? parseResult.GetValue(InputFidelity) : (__requestBase is { } __InputFidelityBaseValue ? __InputFidelityBaseValue.InputFidelity : default);
                         var quality = CliRuntime.WasSpecified(parseResult, Quality) ? parseResult.GetValue(Quality) : (__requestBase is { } __QualityBaseValue ? __QualityBaseValue.Quality : default);                        var prompt = parseResult.GetRequiredValue(CreateImageEditRequestOptionSetOptions.Prompt);
                         var maskname = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.Maskname) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Maskname) : (__requestBase is { } __MasknameBaseValue ? __MasknameBaseValue.Maskname : default);
+                        var markupname = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.Markupname) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.Markupname) : (__requestBase is { } __MarkupnameBaseValue ? __MarkupnameBaseValue.Markupname : default);
                         var n = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.N) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.N) : (__requestBase is { } __NBaseValue ? __NBaseValue.N : default);
                         var outputCompression = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.OutputCompression) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.OutputCompression) : (__requestBase is { } __OutputCompressionBaseValue ? __OutputCompressionBaseValue.OutputCompression : default);
                         var safetyIdentifier = CliRuntime.WasSpecified(parseResult, CreateImageEditRequestOptionSetOptions.SafetyIdentifier) ? parseResult.GetValue(CreateImageEditRequestOptionSetOptions.SafetyIdentifier) : (__requestBase is { } __SafetyIdentifierBaseValue ? __SafetyIdentifierBaseValue.SafetyIdentifier : default);
@@ -187,6 +197,7 @@ Creates an edited or extended image given one or more source images and a prompt
                                 var response = await client.Images.CreateImageEditAsync(
                                     image: image,
                                     mask: mask,
+                                    markup: markup,
                                     background: background,
                                     model: model,
                                     size: size,
@@ -195,6 +206,7 @@ Creates an edited or extended image given one or more source images and a prompt
                                     quality: quality,
                                     prompt: prompt,
                                     maskname: maskname,
+                                    markupname: markupname,
                                     n: n,
                                     outputCompression: outputCompression,
                                     safetyIdentifier: safetyIdentifier,

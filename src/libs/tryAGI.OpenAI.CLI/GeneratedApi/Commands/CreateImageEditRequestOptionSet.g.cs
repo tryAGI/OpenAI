@@ -7,6 +7,7 @@ namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 internal sealed record CreateImageEditRequestOptionSet(
     Option<string> Prompt,
                      Option<string?> Maskname,
+                     Option<string?> Markupname,
                      Option<int?> N,
                      Option<global::tryAGI.OpenAI.CreateImageEditRequestResponseFormat?> ResponseFormat,
                      Option<int?> OutputCompression,
@@ -29,6 +30,10 @@ internal sealed record CreateImageEditRequestOptionSet(
                 Maskname: new Option<string?>($"--{normalizedPrefix}maskname")
                 {
                     Description = @"An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.",
+                },
+                Markupname: new Option<string?>($"--{normalizedPrefix}markupname")
+                {
+                    Description = @"A transparent PNG overlaid on the first image to guide the edit. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5 and 2.6. Cannot be combined with mask.",
                 },
                 N: new Option<int?>($"--{normalizedPrefix}n")
                 {

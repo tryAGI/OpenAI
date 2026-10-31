@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
         /// using their id.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItem>? Input { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeResponseInputItem>? Input { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -173,7 +173,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeResponseCreateParamsConversation?>? conversation,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.PromptVariant1? prompt,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItem>? input)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeResponseInputItem>? input)
         {
             this.OutputModalities = outputModalities;
             this.Instructions = instructions;

@@ -126,6 +126,8 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("id")) __score14++;
             if (__jsonProps.Contains("reasoning")) __score14++;
             if (__jsonProps.Contains("reasoning.effort")) __score14++;
+            if (__jsonProps.Contains("text")) __score14++;
+            if (__jsonProps.Contains("text.format")) __score14++;
             if (__jsonProps.Contains("type")) __score14++;
             var __score15 = 0;
             if (__jsonProps.Contains("agent")) __score15++;
