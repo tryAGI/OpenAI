@@ -15,6 +15,9 @@ jobs:
     name: Publish
     needs: trim-check
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -61,10 +64,16 @@ jobs:
           PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
           SAMBANOVA_API_KEY: ${{ secrets.SAMBANOVA_API_KEY }}
           
+      - name: NuGet login (trusted publishing)
+        id: nuget_login
+        uses: NuGet/login@v1
+        with:
+          user: havendv
+
       - name: Publish to NuGet
         shell: bash
         env:
-          NUGET_KEY: ${{ secrets.NUGET_KEY }}
+          NUGET_KEY: ${{ steps.nuget_login.outputs.NUGET_API_KEY }}
         run: |
           set -euo pipefail
           mapfile -t packages < <(find . -type f -name '*.nupkg' | sort)
@@ -111,8 +120,6 @@ jobs:
     uses: tryAGI/workflows/.github/workflows/auto-stable-release.yml@main
     with:
       project-path: OpenAI.slnx
-    secrets:
-      nuget-key: ${{ secrets.NUGET_KEY }}
 
   release:
     name: Release
