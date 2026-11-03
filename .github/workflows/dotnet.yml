@@ -73,7 +73,7 @@ jobs:
       - name: Publish to NuGet
         shell: bash
         env:
-          NUGET_KEY: ${{ steps.nuget_login.outputs.NUGET_API_KEY }}
+          NUGET_API_KEY: ${{ steps.nuget_login.outputs.NUGET_API_KEY }}
         run: |
           set -euo pipefail
           mapfile -t packages < <(find . -type f -name '*.nupkg' | sort)
@@ -81,7 +81,7 @@ jobs:
             dotnet nuget push "$package" \
               --skip-duplicate \
               --source https://api.nuget.org/v3/index.json \
-              --api-key "$NUGET_KEY"
+              --api-key "$NUGET_API_KEY"
           done
 
       - name: Upload tested NuGet packages
