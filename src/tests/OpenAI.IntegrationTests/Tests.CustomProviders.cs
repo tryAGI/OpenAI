@@ -105,6 +105,7 @@ public partial class Tests
         AssertBaseUri(CustomProviders.OpenCodeGo("test-api-key"), CustomProviders.OpenCodeGoBaseUrl);
         AssertBaseUri(CustomProviders.GonkaGate("test-api-key"), CustomProviders.GonkaGateBaseUrl);
         AssertBaseUri(CustomProviders.Audra("test-api-key"), CustomProviders.AudraBaseUrl);
+        AssertBaseUri(CustomProviders.CheaperInference("test-api-key"), CustomProviders.CheaperInferenceBaseUrl);
     }
 
     private static void AssertBaseUri(OpenAiClient api, string baseUrl)
