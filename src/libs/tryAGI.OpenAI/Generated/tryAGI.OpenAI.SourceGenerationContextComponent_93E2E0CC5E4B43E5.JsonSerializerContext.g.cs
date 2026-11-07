@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_3585E03DF5078010.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_635A9AD4B4EE8F6F.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_7029715AA03DE6F3.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_76E4552DD42618E2.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C5EA1633AB6D1432.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_3585E03DF5078010.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_635A9AD4B4EE8F6F.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_7029715AA03DE6F3.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_76E4552DD42618E2.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_A869BE33373B2811.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C5EA1633AB6D1432.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaCompactResponseMethodPublicBody))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0026.Create_BetaCompactResponseMethodPublicBody(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0027.Create_BetaCompactResponseMethodPublicBody(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

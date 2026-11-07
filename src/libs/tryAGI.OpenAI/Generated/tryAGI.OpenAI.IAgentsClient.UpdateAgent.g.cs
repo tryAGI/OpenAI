@@ -39,6 +39,10 @@ namespace tryAGI.OpenAI
         /// Updates a reusable agent. See [agent configuration](https://developers.openai.com/api/docs/guides/agents-api/configuration).
         /// </summary>
         /// <param name="agentId"></param>
+        /// <param name="experimental">
+        /// Experimental settings to merge by key. Omitted settings keep their current values.<br/>
+        /// Default Value: {}
+        /// </param>
         /// <param name="model">
         /// The model to use for the agent. The requested model name is preserved.
         /// </param>
@@ -57,6 +61,9 @@ namespace tryAGI.OpenAI
         /// <param name="multiAgent">
         /// Configuration for creating and coordinating subagents.
         /// </param>
+        /// <param name="compaction">
+        /// Context compaction settings. Omit to keep the current settings. A supplied object replaces the settings; null or an empty object enables background compaction.
+        /// </param>
         /// <param name="metadata">
         /// Replaces all metadata. Omit to leave unchanged, or pass null or {} to clear it. Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters.
         /// </param>
@@ -71,12 +78,14 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AgentResource> UpdateAgentAsync(
             string agentId,
+            global::tryAGI.OpenAI.ExperimentalConfigOverridesParam? experimental = default,
             string? model = default,
             global::tryAGI.OpenAI.ReasoningParam? reasoning = default,
             global::tryAGI.OpenAI.TextParam? text = default,
             global::tryAGI.OpenAI.ServiceTierParam? serviceTier = default,
             string? instructions = default,
             global::tryAGI.OpenAI.MultiAgentConfigCurrentParam? multiAgent = default,
+            global::tryAGI.OpenAI.CompactionParam? compaction = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             string? name = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.PersistedAgentToolConfigParam>? tools = default,

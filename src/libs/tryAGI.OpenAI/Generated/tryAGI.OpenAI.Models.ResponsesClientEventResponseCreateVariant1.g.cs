@@ -16,6 +16,14 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1Type Type { get; set; }
 
         /// <summary>
+        /// Whether to generate output for this response. Defaults to true when omitted.<br/>
+        /// Set to false to prepare request state without model output; the response<br/>
+        /// ID can be used as previous_response_id on a later turn.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("generate")]
+        public bool? Generate { get; set; }
+
+        /// <summary>
         /// The WebSocket lane for this response. Requests with the same<br/>
         /// `stream_id` are processed FIFO, and events for the response echo the<br/>
         /// same `stream_id`.<br/>
@@ -38,6 +46,11 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// The type of the client event. Always `response.create`.
         /// </param>
+        /// <param name="generate">
+        /// Whether to generate output for this response. Defaults to true when omitted.<br/>
+        /// Set to false to prepare request state without model output; the response<br/>
+        /// ID can be used as previous_response_id on a later turn.
+        /// </param>
         /// <param name="streamId">
         /// The WebSocket lane for this response. Requests with the same<br/>
         /// `stream_id` are processed FIFO, and events for the response echo the<br/>
@@ -51,9 +64,11 @@ namespace tryAGI.OpenAI
 #endif
         public ResponsesClientEventResponseCreateVariant1(
             global::tryAGI.OpenAI.ResponsesClientEventResponseCreateVariant1Type type,
+            bool? generate,
             string? streamId)
         {
             this.Type = type;
+            this.Generate = generate;
             this.StreamId = streamId;
         }
 

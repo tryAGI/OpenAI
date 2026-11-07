@@ -35,11 +35,11 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ImagesResponseBackground? Background { get; set; }
 
         /// <summary>
-        /// The output format of the image generation. Either `png`, `webp`, or `jpeg`.
+        /// The output format of the generated or edited image.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImagesResponseOutputFormatJsonConverter))]
-        public global::tryAGI.OpenAI.ImagesResponseOutputFormat? OutputFormat { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImagesApiOutputFormatJsonConverter))]
+        public global::tryAGI.OpenAI.ImagesApiOutputFormat? OutputFormat { get; set; }
 
         /// <summary>
         /// The image dimensions as a `WIDTHxHEIGHT` string, for example `1536x864`.
@@ -56,10 +56,16 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ImagesResponseQuality? Quality { get; set; }
 
         /// <summary>
-        /// For `gpt-image-1` only, the token usage information for the image generation.
+        /// Token usage information for image generation with GPT Image models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         public global::tryAGI.OpenAI.ImageGenUsage? Usage { get; set; }
+
+        /// <summary>
+        /// Token usage for SVG authoring, separate from image rendering usage.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("svg_usage")]
+        public global::tryAGI.OpenAI.SvgUsage? SvgUsage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -83,7 +89,7 @@ namespace tryAGI.OpenAI
         /// The background parameter used for the image generation. Either `transparent` or `opaque`.
         /// </param>
         /// <param name="outputFormat">
-        /// The output format of the image generation. Either `png`, `webp`, or `jpeg`.
+        /// The output format of the generated or edited image.
         /// </param>
         /// <param name="size">
         /// The image dimensions as a `WIDTHxHEIGHT` string, for example `1536x864`.
@@ -92,7 +98,10 @@ namespace tryAGI.OpenAI
         /// The quality of the image generated. One of `low`, `medium`, `high`, `xhigh`, or `max`.
         /// </param>
         /// <param name="usage">
-        /// For `gpt-image-1` only, the token usage information for the image generation.
+        /// Token usage information for image generation with GPT Image models.
+        /// </param>
+        /// <param name="svgUsage">
+        /// Token usage for SVG authoring, separate from image rendering usage.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -102,10 +111,11 @@ namespace tryAGI.OpenAI
             string? safetyIdentifier,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Image2>? data,
             global::tryAGI.OpenAI.ImagesResponseBackground? background,
-            global::tryAGI.OpenAI.ImagesResponseOutputFormat? outputFormat,
+            global::tryAGI.OpenAI.ImagesApiOutputFormat? outputFormat,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImagesResponseSize?>? size,
             global::tryAGI.OpenAI.ImagesResponseQuality? quality,
-            global::tryAGI.OpenAI.ImageGenUsage? usage)
+            global::tryAGI.OpenAI.ImageGenUsage? usage,
+            global::tryAGI.OpenAI.SvgUsage? svgUsage)
         {
             this.SafetyIdentifier = safetyIdentifier;
             this.Created = created;
@@ -115,6 +125,7 @@ namespace tryAGI.OpenAI
             this.Size = size;
             this.Quality = quality;
             this.Usage = usage;
+            this.SvgUsage = svgUsage;
         }
 
         /// <summary>

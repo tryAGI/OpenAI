@@ -4,8 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A configuration update that applies to subsequent responses until it is<br/>
-    /// replaced by another configuration update.
+    /// A configuration update for subsequent responses. Each setting stays in effect<br/>
+    /// until a later update replaces that setting.
     /// </summary>
     public sealed partial class ResponseConfigurationUpdate
     {
@@ -34,6 +34,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ResponseConfigurationUpdateReasoning? Reasoning { get; set; }
 
         /// <summary>
+        /// The text output configuration for subsequent responses.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public global::tryAGI.OpenAI.ResponseConfigurationUpdateText? Text { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -49,6 +55,9 @@ namespace tryAGI.OpenAI
         /// <param name="reasoning">
         /// The reasoning configuration applied by this update.
         /// </param>
+        /// <param name="text">
+        /// The text output configuration for subsequent responses.
+        /// </param>
         /// <param name="type">
         /// The item type. Always `configuration_update`.<br/>
         /// Default Value: configuration_update
@@ -59,11 +68,13 @@ namespace tryAGI.OpenAI
         public ResponseConfigurationUpdate(
             string id,
             global::tryAGI.OpenAI.ResponseConfigurationUpdateReasoning? reasoning,
+            global::tryAGI.OpenAI.ResponseConfigurationUpdateText? text,
             global::tryAGI.OpenAI.ResponseConfigurationUpdateType type = global::tryAGI.OpenAI.ResponseConfigurationUpdateType.ConfigurationUpdate)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
             this.Reasoning = reasoning;
+            this.Text = text;
         }
 
         /// <summary>

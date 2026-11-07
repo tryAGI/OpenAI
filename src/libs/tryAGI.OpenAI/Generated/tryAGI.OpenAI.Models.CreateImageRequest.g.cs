@@ -11,6 +11,31 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateImageRequest
     {
         /// <summary>
+        /// Number of frames for GIF output. Accepts integers from 2 through 16. Defaults to 9 when omitted. Only supported with output_format=gif. The requested size must satisfy the selected model's GIF size limits. GIF output does not support streaming, partial images, masks, or custom output compression. Requires access to the GIF preview for the selected model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frame_count")]
+        public int? FrameCount { get; set; }
+
+        /// <summary>
+        /// Requested delay per GIF frame, in milliseconds. Defaults to 200 when omitted. GIF output rounds to the nearest 10 ms and caps the encoded delay at 655,350 ms per frame. Only supported with output_format=gif.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frame_duration_ms")]
+        public int? FrameDurationMs { get; set; }
+
+        /// <summary>
+        /// Computation spent planning the image, independently of rendering quality. Uses the image model's configured default when omitted. For SVG output, controls the reference image, independently of the SVG author's reasoning.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("complexity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ComplexityJsonConverter))]
+        public global::tryAGI.OpenAI.Complexity? Complexity { get; set; }
+
+        /// <summary>
+        /// Selects the model and reasoning effort used to author SVG output. Requires output_format=svg and access to SVG model selection. When model selection is enabled, supply svg.model. When model selection is disabled, omit this object. The top-level model selects the image model that creates the reference image. SVG generation requires n=1 and does not support streaming, partial images, prompt_rewriter, or output_compression.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("svg")]
+        public global::tryAGI.OpenAI.Svg? Svg { get; set; }
+
+        /// <summary>
         /// A text description of the desired image(s). The maximum length is 32000 characters.<br/>
         /// Example: A cute baby sea otter
         /// </summary>
@@ -24,7 +49,8 @@ namespace tryAGI.OpenAI
         /// Supported models include `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`,<br/>
         /// `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,<br/>
         /// `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`,<br/>
-        /// `gpt-image-2.5-flare-2026-09-08`, and `chatgpt-image-latest`.<br/>
+        /// `gpt-image-2.5-flare-2026-09-08`, `gpt-image-2.6-sunburst`, `gpt-image-2.6-flare`,<br/>
+        /// and `chatgpt-image-latest`.<br/>
         /// `gpt-image-1` was shut down on October 23, 2026. Use<br/>
         /// `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` instead.<br/>
         /// Example: gpt-image-2.5-flare
@@ -67,13 +93,13 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateImageRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
-        /// The format in which the generated images are returned. This parameter is only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.<br/>
+        /// The format in which the generated images are returned. This parameter is only supported for the GPT image models.<br/>
         /// Default Value: png<br/>
         /// Example: png
         /// </summary>
         /// <example>png</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
-        public global::tryAGI.OpenAI.CreateImageRequestOutputFormat? OutputFormat { get; set; }
+        public global::tryAGI.OpenAI.ImagesApiOutputFormat? OutputFormat { get; set; }
 
         /// <summary>
         /// The compression level (0-100%) for the generated images. This parameter is only supported for the GPT image models with the `webp` or `jpeg` output formats, and defaults to 100.<br/>
@@ -182,10 +208,23 @@ namespace tryAGI.OpenAI
         /// Supported models include `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`,<br/>
         /// `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,<br/>
         /// `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`,<br/>
-        /// `gpt-image-2.5-flare-2026-09-08`, and `chatgpt-image-latest`.<br/>
+        /// `gpt-image-2.5-flare-2026-09-08`, `gpt-image-2.6-sunburst`, `gpt-image-2.6-flare`,<br/>
+        /// and `chatgpt-image-latest`.<br/>
         /// `gpt-image-1` was shut down on October 23, 2026. Use<br/>
         /// `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` instead.<br/>
         /// Example: gpt-image-2.5-flare
+        /// </param>
+        /// <param name="frameCount">
+        /// Number of frames for GIF output. Accepts integers from 2 through 16. Defaults to 9 when omitted. Only supported with output_format=gif. The requested size must satisfy the selected model's GIF size limits. GIF output does not support streaming, partial images, masks, or custom output compression. Requires access to the GIF preview for the selected model.
+        /// </param>
+        /// <param name="frameDurationMs">
+        /// Requested delay per GIF frame, in milliseconds. Defaults to 200 when omitted. GIF output rounds to the nearest 10 ms and caps the encoded delay at 655,350 ms per frame. Only supported with output_format=gif.
+        /// </param>
+        /// <param name="complexity">
+        /// Computation spent planning the image, independently of rendering quality. Uses the image model's configured default when omitted. For SVG output, controls the reference image, independently of the SVG author's reasoning.
+        /// </param>
+        /// <param name="svg">
+        /// Selects the model and reasoning effort used to author SVG output. Requires output_format=svg and access to SVG model selection. When model selection is enabled, supply svg.model. When model selection is disabled, omit this object. The top-level model selects the image model that creates the reference image. SVG generation requires n=1 and does not support streaming, partial images, prompt_rewriter, or output_compression.
         /// </param>
         /// <param name="n">
         /// The number of images to generate. Must be between 1 and 10.<br/>
@@ -203,7 +242,7 @@ namespace tryAGI.OpenAI
         /// Example: medium
         /// </param>
         /// <param name="outputFormat">
-        /// The format in which the generated images are returned. This parameter is only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.<br/>
+        /// The format in which the generated images are returned. This parameter is only supported for the GPT image models.<br/>
         /// Default Value: png<br/>
         /// Example: png
         /// </param>
@@ -253,9 +292,13 @@ namespace tryAGI.OpenAI
         public CreateImageRequest(
             string prompt,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestModel?> model,
+            int? frameCount,
+            int? frameDurationMs,
+            global::tryAGI.OpenAI.Complexity? complexity,
+            global::tryAGI.OpenAI.Svg? svg,
             int? n,
             global::tryAGI.OpenAI.CreateImageRequestQuality? quality,
-            global::tryAGI.OpenAI.CreateImageRequestOutputFormat? outputFormat,
+            global::tryAGI.OpenAI.ImagesApiOutputFormat? outputFormat,
             int? outputCompression,
             bool? stream,
             int? partialImages,
@@ -264,6 +307,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.CreateImageRequestBackground? background,
             string? safetyIdentifier)
         {
+            this.FrameCount = frameCount;
+            this.FrameDurationMs = frameDurationMs;
+            this.Complexity = complexity;
+            this.Svg = svg;
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Model = model;
             this.N = n;

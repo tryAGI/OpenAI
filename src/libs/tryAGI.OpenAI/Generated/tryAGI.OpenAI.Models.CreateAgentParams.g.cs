@@ -9,6 +9,13 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateAgentParams
     {
         /// <summary>
+        /// Experimental agent settings. All experimental features default to disabled.<br/>
+        /// Default Value: {"time_awareness":false}
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("experimental")]
+        public global::tryAGI.OpenAI.ExperimentalConfigParam? Experimental { get; set; }
+
+        /// <summary>
         /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Omission or null defaults to an empty map.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
@@ -64,6 +71,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.MultiAgentConfigCurrentParam? MultiAgent { get; set; }
 
         /// <summary>
+        /// Context compaction settings. Omission or null enables background compaction.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("compaction")]
+        public global::tryAGI.OpenAI.CompactionParam? Compaction { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -74,6 +87,10 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="model">
         /// The model to use for the agent. The requested model name is preserved.
+        /// </param>
+        /// <param name="experimental">
+        /// Experimental agent settings. All experimental features default to disabled.<br/>
+        /// Default Value: {"time_awareness":false}
         /// </param>
         /// <param name="metadata">
         /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Omission or null defaults to an empty map.
@@ -99,11 +116,15 @@ namespace tryAGI.OpenAI
         /// <param name="multiAgent">
         /// Configuration for creating and coordinating subagents. Subagent tools are disabled by default.
         /// </param>
+        /// <param name="compaction">
+        /// Context compaction settings. Omission or null enables background compaction.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateAgentParams(
             string model,
+            global::tryAGI.OpenAI.ExperimentalConfigParam? experimental,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             string? name,
             global::tryAGI.OpenAI.ReasoningParam? reasoning,
@@ -111,8 +132,10 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ServiceTierParam? serviceTier,
             string? instructions,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.PersistedAgentToolConfigParam>? tools,
-            global::tryAGI.OpenAI.MultiAgentConfigCurrentParam? multiAgent)
+            global::tryAGI.OpenAI.MultiAgentConfigCurrentParam? multiAgent,
+            global::tryAGI.OpenAI.CompactionParam? compaction)
         {
+            this.Experimental = experimental;
             this.Metadata = metadata;
             this.Name = name;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
@@ -122,6 +145,7 @@ namespace tryAGI.OpenAI
             this.Instructions = instructions;
             this.Tools = tools;
             this.MultiAgent = multiAgent;
+            this.Compaction = compaction;
         }
 
         /// <summary>

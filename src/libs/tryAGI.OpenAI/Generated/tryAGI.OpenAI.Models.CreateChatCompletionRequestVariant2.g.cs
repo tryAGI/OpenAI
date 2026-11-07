@@ -11,6 +11,12 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateChatCompletionRequestVariant2
     {
         /// <summary>
+        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`. Supported lifetimes depend on the API. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
+        public global::tryAGI.OpenAI.PromptCacheOptionsParam? PromptCacheOptions { get; set; }
+
+        /// <summary>
         /// A list of messages comprising the conversation so far. Depending on the<br/>
         /// [model](https://developers.openai.com/api/docs/models) you use, different message types (modalities) are<br/>
         /// supported, like [text](https://developers.openai.com/api/docs/guides/text),<br/>
@@ -295,6 +301,9 @@ namespace tryAGI.OpenAI
         /// to browse and compare available models.<br/>
         /// Example: gpt-6-astra
         /// </param>
+        /// <param name="promptCacheOptions">
+        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`. Supported lifetimes depend on the API. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
+        /// </param>
         /// <param name="serviceTier"></param>
         /// <param name="modalities"></param>
         /// <param name="verbosity"></param>
@@ -412,6 +421,7 @@ namespace tryAGI.OpenAI
         public CreateChatCompletionRequestVariant2(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage> messages,
             global::tryAGI.OpenAI.ModelIdsShared model,
+            global::tryAGI.OpenAI.PromptCacheOptionsParam? promptCacheOptions,
             global::tryAGI.OpenAI.ServiceTierEnum? serviceTier,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseModalitiesVariant1Item>? modalities,
             global::tryAGI.OpenAI.VerbosityEnum? verbosity,
@@ -436,6 +446,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ChatCompletionToolChoiceOption? toolChoice,
             bool? parallelToolCalls)
         {
+            this.PromptCacheOptions = promptCacheOptions;
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Model = model;
             this.ServiceTier = serviceTier;

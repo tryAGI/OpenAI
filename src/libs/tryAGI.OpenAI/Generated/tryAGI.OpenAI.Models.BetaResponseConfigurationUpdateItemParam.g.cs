@@ -4,9 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// An update to the conversation's response configuration. The configuration<br/>
-    /// remains in effect for subsequent responses until it is replaced by another<br/>
-    /// configuration update.
+    /// An update to the conversation's response configuration. Supply reasoning,<br/>
+    /// text, or both. Each setting stays in effect until a later update replaces it.
     /// </summary>
     public sealed partial class BetaResponseConfigurationUpdateItemParam
     {
@@ -38,6 +37,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaResponseConfigurationUpdateItemParamReasoning? Reasoning { get; set; }
 
         /// <summary>
+        /// The text output configuration for subsequent responses.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public global::tryAGI.OpenAI.BetaResponseConfigurationUpdateItemParamText? Text { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -51,6 +56,9 @@ namespace tryAGI.OpenAI
         /// <param name="reasoning">
         /// Updates to reasoning configuration. Only effort is supported.
         /// </param>
+        /// <param name="text">
+        /// The text output configuration for subsequent responses.
+        /// </param>
         /// <param name="type">
         /// The item type. Always `configuration_update`.<br/>
         /// Default Value: configuration_update
@@ -62,12 +70,14 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaAgentTagParam? agent,
             string? id,
             global::tryAGI.OpenAI.BetaResponseConfigurationUpdateItemParamReasoning? reasoning,
+            global::tryAGI.OpenAI.BetaResponseConfigurationUpdateItemParamText? text,
             global::tryAGI.OpenAI.BetaResponseConfigurationUpdateItemParamType type = global::tryAGI.OpenAI.BetaResponseConfigurationUpdateItemParamType.ConfigurationUpdate)
         {
             this.Agent = agent;
             this.Id = id;
             this.Type = type;
             this.Reasoning = reasoning;
+            this.Text = text;
         }
 
         /// <summary>

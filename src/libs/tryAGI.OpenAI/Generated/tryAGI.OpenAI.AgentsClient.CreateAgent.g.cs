@@ -698,6 +698,10 @@ namespace tryAGI.OpenAI
         /// Create an agent<br/>
         /// Creates a reusable agent without storing credentials. See [agent configuration](https://developers.openai.com/api/docs/guides/agents-api/configuration).
         /// </summary>
+        /// <param name="experimental">
+        /// Experimental agent settings. All experimental features default to disabled.<br/>
+        /// Default Value: {"time_awareness":false}
+        /// </param>
         /// <param name="metadata">
         /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Omission or null defaults to an empty map.
         /// </param>
@@ -725,11 +729,15 @@ namespace tryAGI.OpenAI
         /// <param name="multiAgent">
         /// Configuration for creating and coordinating subagents. Subagent tools are disabled by default.
         /// </param>
+        /// <param name="compaction">
+        /// Context compaction settings. Omission or null enables background compaction.
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AgentResource> CreateAgentAsync(
             string model,
+            global::tryAGI.OpenAI.ExperimentalConfigParam? experimental = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             string? name = default,
             global::tryAGI.OpenAI.ReasoningParam? reasoning = default,
@@ -738,11 +746,13 @@ namespace tryAGI.OpenAI
             string? instructions = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.PersistedAgentToolConfigParam>? tools = default,
             global::tryAGI.OpenAI.MultiAgentConfigCurrentParam? multiAgent = default,
+            global::tryAGI.OpenAI.CompactionParam? compaction = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::tryAGI.OpenAI.CreateAgentParams
             {
+                Experimental = experimental,
                 Metadata = metadata,
                 Name = name,
                 Model = model,
@@ -752,6 +762,7 @@ namespace tryAGI.OpenAI
                 Instructions = instructions,
                 Tools = tools,
                 MultiAgent = multiAgent,
+                Compaction = compaction,
             };
 
             return await CreateAgentAsync(
