@@ -36,6 +36,15 @@ namespace tryAGI.OpenAI
         /// Create image edit<br/>
         /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models.
         /// </summary>
+        /// <param name="frameCount">
+        /// Number of frames for GIF output. Accepts integers from 2 through 16. Defaults to 9 when omitted. Only supported with output_format=gif. The requested size must satisfy the selected model's GIF size limits. GIF output does not support streaming, partial images, masks, or custom output compression. Requires access to the GIF preview for the selected model.
+        /// </param>
+        /// <param name="frameDurationMs">
+        /// Requested delay per GIF frame, in milliseconds. Defaults to 200 when omitted. GIF output rounds to the nearest 10 ms and caps the encoded delay at 655,350 ms per frame. Only supported with output_format=gif.
+        /// </param>
+        /// <param name="complexity">
+        /// Computation spent planning the image, independently of rendering quality. Uses the image model's configured default when omitted. For SVG output, controls the reference image, independently of the SVG author's reasoning.
+        /// </param>
         /// <param name="image">
         /// The image(s) to edit. Must be a supported image file or an array of images.<br/>
         /// For the GPT image models (`gpt-image-1-mini`, `gpt-image-1.5`,<br/>
@@ -55,6 +64,12 @@ namespace tryAGI.OpenAI
         /// <param name="maskname">
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </param>
+        /// <param name="markup">
+        /// A transparent PNG overlaid on the first image to guide the edit. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5. Cannot be combined with mask.
+        /// </param>
+        /// <param name="markupname">
+        /// A transparent PNG overlaid on the first image to guide the edit. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5. Cannot be combined with mask.
+        /// </param>
         /// <param name="background">
         /// Set the background of the generated image(s). This parameter is only supported for<br/>
         /// the GPT image models. Must be one of `transparent`, `opaque`, or `auto` (default<br/>
@@ -73,7 +88,8 @@ namespace tryAGI.OpenAI
         /// (`gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`,<br/>
         /// `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,<br/>
         /// `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`,<br/>
-        /// `gpt-image-2.5-flare-2026-09-08`, or `chatgpt-image-latest`).<br/>
+        /// `gpt-image-2.5-flare-2026-09-08`, `gpt-image-2.6-sunburst`, `gpt-image-2.6-flare`,<br/>
+        /// or `chatgpt-image-latest`).<br/>
         /// `gpt-image-1` was shut down on October 23, 2026. Use<br/>
         /// `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` instead.<br/>
         /// Example: gpt-image-1.5
@@ -90,10 +106,14 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="outputFormat">
         /// The format in which the generated images are returned. This parameter is<br/>
-        /// only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.<br/>
+        /// only supported for the GPT image models.<br/>
         /// The default value is `png`.<br/>
+        /// SVG output requires a supported image model and project access.<br/>
         /// Default Value: png<br/>
         /// Example: png
+        /// </param>
+        /// <param name="svg">
+        /// Selects the author model and reasoning effort for `output_format=svg`. Supply `svg.model` when SVG model selection is enabled. Otherwise, omit this object. SVG output requires `n=1` and cannot use streaming, partial images, or output compression. Use multipart fields such as `svg[model]`.
         /// </param>
         /// <param name="outputCompression">
         /// The compression level (0-100%) for the generated images. This parameter<br/>
@@ -120,12 +140,18 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AnyOf<byte[], global::System.Collections.Generic.IList<byte[]>> image,
             string prompt,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?> model,
+            int? frameCount = default,
+            int? frameDurationMs = default,
+            global::tryAGI.OpenAI.Complexity? complexity = default,
             byte[]? mask = default,
             string? maskname = default,
+            byte[]? markup = default,
+            string? markupname = default,
             global::tryAGI.OpenAI.CreateImageEditRequestBackground? background = default,
             int? n = default,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestSize?>? size = default,
-            global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat? outputFormat = default,
+            global::tryAGI.OpenAI.ImagesApiOutputFormat? outputFormat = default,
+            global::tryAGI.OpenAI.SvgParam? svg = default,
             int? outputCompression = default,
             string? safetyIdentifier = default,
             global::tryAGI.OpenAI.InputFidelity? inputFidelity = default,

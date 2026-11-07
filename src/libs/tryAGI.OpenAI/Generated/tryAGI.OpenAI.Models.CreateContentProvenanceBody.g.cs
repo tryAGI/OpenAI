@@ -9,14 +9,14 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateContentProvenanceBody
     {
         /// <summary>
-        /// The image or audio file to check for supported OpenAI provenance signals.
+        /// The image or audio file to check for supported OpenAI provenance signals. Supported image formats are PNG, JPEG, WebP, and GIF (including animated GIFs).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required byte[] File { get; set; }
 
         /// <summary>
-        /// The image or audio file to check for supported OpenAI provenance signals.
+        /// The image or audio file to check for supported OpenAI provenance signals. Supported image formats are PNG, JPEG, WebP, and GIF (including animated GIFs).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -32,10 +32,10 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateContentProvenanceBody" /> class.
         /// </summary>
         /// <param name="file">
-        /// The image or audio file to check for supported OpenAI provenance signals.
+        /// The image or audio file to check for supported OpenAI provenance signals. Supported image formats are PNG, JPEG, WebP, and GIF (including animated GIFs).
         /// </param>
         /// <param name="filename">
-        /// The image or audio file to check for supported OpenAI provenance signals.
+        /// The image or audio file to check for supported OpenAI provenance signals. Supported image formats are PNG, JPEG, WebP, and GIF (including animated GIFs).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

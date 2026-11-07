@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// A text input to the model.
@@ -617,7 +617,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public ContentItem8(
-            global::tryAGI.OpenAI.BetaMessageContentItemDiscriminatorType? type,
+            global::tryAGI.OpenAI.BetaAgentMessageContentItemDiscriminatorType? type,
             global::tryAGI.OpenAI.BetaInputTextContent? inputText,
             global::tryAGI.OpenAI.BetaOutputTextContent? outputText,
             global::tryAGI.OpenAI.BetaTextContent? text,

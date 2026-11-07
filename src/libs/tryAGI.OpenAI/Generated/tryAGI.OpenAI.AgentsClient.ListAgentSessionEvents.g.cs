@@ -27,11 +27,13 @@ namespace tryAGI.OpenAI
             };
         partial void PrepareListAgentSessionEventsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string sessionId);
+            ref string sessionId,
+            ref bool? includeObfuscation);
         partial void PrepareListAgentSessionEventsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string sessionId);
+            string sessionId,
+            bool? includeObfuscation);
         partial void ProcessListAgentSessionEventsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -41,11 +43,15 @@ namespace tryAGI.OpenAI
         /// Streams live events for an agent session. See [session events](https://developers.openai.com/api/docs/guides/agents-api/sessions/events).
         /// </summary>
         /// <param name="sessionId"></param>
+        /// <param name="includeObfuscation">
+        /// Default Value: true
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
         public async global::System.Collections.Generic.IAsyncEnumerable<global::tryAGI.OpenAI.SessionEvent> ListAgentSessionEventsAsync(
             string sessionId,
+            bool? includeObfuscation = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -55,7 +61,8 @@ namespace tryAGI.OpenAI
                 client: HttpClient);
             PrepareListAgentSessionEventsArguments(
                 httpClient: HttpClient,
-                sessionId: ref sessionId);
+                sessionId: ref sessionId,
+                includeObfuscation: ref includeObfuscation);
 
 
             var __authorizations = global::tryAGI.OpenAI.EndPointSecurityResolver.ResolveAuthorizations(
@@ -83,6 +90,9 @@ namespace tryAGI.OpenAI
                             var __pathBuilder = new global::tryAGI.OpenAI.PathBuilder(
                                 path: $"/agents/sessions/{sessionId}/events",
                                 baseUri: HttpClient.BaseAddress);
+                            __pathBuilder
+                                .AddOptionalParameter("include_obfuscation", includeObfuscation?.ToString().ToLowerInvariant())
+                                ;
                             var __path = __pathBuilder.ToString();
                 __path = global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.AppendQueryParameters(
                     path: __path,
@@ -123,7 +133,8 @@ namespace tryAGI.OpenAI
                 PrepareListAgentSessionEventsRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    sessionId: sessionId);
+                    sessionId: sessionId,
+                    includeObfuscation: includeObfuscation);
 
                 return __httpRequest;
             }

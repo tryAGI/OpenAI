@@ -4,10 +4,17 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Agent configuration for a session. Omitted fields inherit from `agent_id` when supplied. Supplied objects and arrays replace the whole field; null resets nullable fields.
+    /// Agent configuration for a session. Omitted fields inherit from `agent_id` when supplied. Supplied objects and arrays replace the whole field, except experimental settings, which merge by key. Null resets nullable fields.
     /// </summary>
     public sealed partial class SessionAgentConfigParam
     {
+        /// <summary>
+        /// Experimental settings to merge by key. Omitted settings keep their current values.<br/>
+        /// Default Value: {}
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("experimental")]
+        public global::tryAGI.OpenAI.ExperimentalConfigOverridesParam? Experimental { get; set; }
+
         /// <summary>
         /// The model to use for the agent. The requested model name is preserved.
         /// </summary>
@@ -45,6 +52,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.MultiAgentConfigCurrentParam? MultiAgent { get; set; }
 
         /// <summary>
+        /// Context compaction settings. Omit to keep the current settings. A supplied object replaces the settings; null or an empty object enables background compaction.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("compaction")]
+        public global::tryAGI.OpenAI.CompactionParam? Compaction { get; set; }
+
+        /// <summary>
         /// Tools available to the agent. Omit to inherit, or pass null to clear them. The resolved tool list must fit within 3 MiB (3,145,728 bytes) of compact UTF-8 JSON.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
@@ -59,6 +72,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="SessionAgentConfigParam" /> class.
         /// </summary>
+        /// <param name="experimental">
+        /// Experimental settings to merge by key. Omitted settings keep their current values.<br/>
+        /// Default Value: {}
+        /// </param>
         /// <param name="model">
         /// The model to use for the agent. The requested model name is preserved.
         /// </param>
@@ -77,6 +94,9 @@ namespace tryAGI.OpenAI
         /// <param name="multiAgent">
         /// Configuration for creating and coordinating subagents.
         /// </param>
+        /// <param name="compaction">
+        /// Context compaction settings. Omit to keep the current settings. A supplied object replaces the settings; null or an empty object enables background compaction.
+        /// </param>
         /// <param name="tools">
         /// Tools available to the agent. Omit to inherit, or pass null to clear them. The resolved tool list must fit within 3 MiB (3,145,728 bytes) of compact UTF-8 JSON.
         /// </param>
@@ -84,20 +104,24 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SessionAgentConfigParam(
+            global::tryAGI.OpenAI.ExperimentalConfigOverridesParam? experimental,
             string? model,
             global::tryAGI.OpenAI.ReasoningParam? reasoning,
             global::tryAGI.OpenAI.TextParam? text,
             global::tryAGI.OpenAI.ServiceTierParam? serviceTier,
             string? instructions,
             global::tryAGI.OpenAI.MultiAgentConfigCurrentParam? multiAgent,
+            global::tryAGI.OpenAI.CompactionParam? compaction,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AgentToolConfigParam>? tools)
         {
+            this.Experimental = experimental;
             this.Model = model;
             this.Reasoning = reasoning;
             this.Text = text;
             this.ServiceTier = serviceTier;
             this.Instructions = instructions;
             this.MultiAgent = multiAgent;
+            this.Compaction = compaction;
             this.Tools = tools;
         }
 

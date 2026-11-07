@@ -17,7 +17,13 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.BetaAccessProgramsParam? AccessPrograms { get; set; }
 
         /// <summary>
-        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`, which is currently the only supported value. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
+        /// Request level image options.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
+        public global::tryAGI.OpenAI.BetaImageOptionsParam? Image { get; set; }
+
+        /// <summary>
+        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`. Supported lifetimes depend on the API. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
         public global::tryAGI.OpenAI.BetaResponsePromptCacheOptionsParam? PromptCacheOptions { get; set; }
@@ -132,8 +138,11 @@ namespace tryAGI.OpenAI
         /// <param name="accessPrograms">
         /// Domain-specific access programs to use for this request.
         /// </param>
+        /// <param name="image">
+        /// Request level image options.
+        /// </param>
         /// <param name="promptCacheOptions">
-        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`, which is currently the only supported value. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
+        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`. Supported lifetimes depend on the API. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
         /// </param>
         /// <param name="serviceTier"></param>
         /// <param name="reasoning"></param>
@@ -162,6 +171,7 @@ namespace tryAGI.OpenAI
 #endif
         public BetaCreateResponseVariant3(
             global::tryAGI.OpenAI.BetaAccessProgramsParam? accessPrograms,
+            global::tryAGI.OpenAI.BetaImageOptionsParam? image,
             global::tryAGI.OpenAI.BetaResponsePromptCacheOptionsParam? promptCacheOptions,
             global::tryAGI.OpenAI.BetaServiceTierResponsesEnum? serviceTier,
             global::tryAGI.OpenAI.BetaReasoning? reasoning,
@@ -179,6 +189,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaMultiAgentParam? multiAgent)
         {
             this.AccessPrograms = accessPrograms;
+            this.Image = image;
             this.PromptCacheOptions = promptCacheOptions;
             this.ServiceTier = serviceTier;
             this.Reasoning = reasoning;

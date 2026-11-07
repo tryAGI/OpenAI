@@ -11,6 +11,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
+        public global::tryAGI.OpenAI.BetaResolvedImageOptions? Image { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
         public global::tryAGI.OpenAI.BetaServiceTierResponsesEnum? ServiceTier { get; set; }
 
@@ -192,6 +198,7 @@ namespace tryAGI.OpenAI
         /// Whether to allow the model to run tool calls in parallel.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="image"></param>
         /// <param name="serviceTier"></param>
         /// <param name="truncation"></param>
         /// <param name="object">
@@ -238,6 +245,7 @@ namespace tryAGI.OpenAI
             double createdAt,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaOutputItem> output,
             bool parallelToolCalls,
+            global::tryAGI.OpenAI.BetaResolvedImageOptions? image,
             global::tryAGI.OpenAI.BetaServiceTierResponsesEnum? serviceTier,
             global::tryAGI.OpenAI.BetaResponseVariant3Truncation? truncation,
             global::tryAGI.OpenAI.BetaResponseVariant3Object @object,
@@ -257,6 +265,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaResponseConversation? conversation,
             int? maxOutputTokens)
         {
+            this.Image = image;
             this.ServiceTier = serviceTier;
             this.Truncation = truncation;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

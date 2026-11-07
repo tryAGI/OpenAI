@@ -40,8 +40,8 @@ namespace tryAGI.OpenAI
         /// The input format for the custom tool. Default is unconstrained text.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Format2JsonConverter))]
-        public global::tryAGI.OpenAI.Format2? Format { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Format4JsonConverter))]
+        public global::tryAGI.OpenAI.Format4? Format { get; set; }
 
         /// <summary>
         /// Whether this tool should be deferred and discovered via tool search.
@@ -91,7 +91,7 @@ namespace tryAGI.OpenAI
             string name,
             bool? async,
             string? description,
-            global::tryAGI.OpenAI.Format2? format,
+            global::tryAGI.OpenAI.Format4? format,
             bool? deferLoading,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CallableToolAllowedCaller>? allowedCallers,
             global::tryAGI.OpenAI.CustomToolParamType type = global::tryAGI.OpenAI.CustomToolParamType.Custom)

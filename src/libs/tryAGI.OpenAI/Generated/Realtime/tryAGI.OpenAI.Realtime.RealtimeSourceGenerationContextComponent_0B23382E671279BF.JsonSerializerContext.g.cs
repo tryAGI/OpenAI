@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI.Realtime
             {
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallStatus))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0015.Create_RealtimeConversationItemFunctionCallStatus2(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0016.Create_RealtimeConversationItemFunctionCallStatus2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeConversationItemFunctionCallStatus?))
                 {

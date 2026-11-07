@@ -8,7 +8,8 @@ namespace tryAGI.OpenAI
     /// `gpt-image-1.5`, `gpt-image-2`,<br/>
     /// `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,<br/>
     /// `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`,<br/>
-    /// `gpt-image-2.5-flare-2026-09-08`, or `chatgpt-image-latest`. Default:<br/>
+    /// `gpt-image-2.5-flare-2026-09-08`, `gpt-image-2.6-sunburst`,<br/>
+    /// `gpt-image-2.6-flare`, or `chatgpt-image-latest`. Default:<br/>
     /// `gpt-image-2`.<br/>
     /// `gpt-image-1` was shut down on October 23, 2026. Use<br/>
     /// `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` instead.<br/>
@@ -16,6 +17,10 @@ namespace tryAGI.OpenAI
     /// </summary>
     public enum BetaImageGenToolModel
     {
+        /// <summary>
+        ///
+        /// </summary>
+        ChatgptImageLatest,
         /// <summary>
         ///
         /// </summary>
@@ -52,6 +57,14 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         GptImage25Sunburst20260908,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage26Flare,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage26Sunburst,
     }
 
     /// <summary>
@@ -66,6 +79,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                BetaImageGenToolModel.ChatgptImageLatest => "chatgpt-image-latest",
                 BetaImageGenToolModel.GptImage1 => "gpt-image-1",
                 BetaImageGenToolModel.GptImage1Mini => "gpt-image-1-mini",
                 BetaImageGenToolModel.GptImage15 => "gpt-image-1.5",
@@ -75,6 +89,8 @@ namespace tryAGI.OpenAI
                 BetaImageGenToolModel.GptImage25Flare20260908 => "gpt-image-2.5-flare-2026-09-08",
                 BetaImageGenToolModel.GptImage25Sunburst => "gpt-image-2.5-sunburst",
                 BetaImageGenToolModel.GptImage25Sunburst20260908 => "gpt-image-2.5-sunburst-2026-09-08",
+                BetaImageGenToolModel.GptImage26Flare => "gpt-image-2.6-flare",
+                BetaImageGenToolModel.GptImage26Sunburst => "gpt-image-2.6-sunburst",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -85,6 +101,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "chatgpt-image-latest" => BetaImageGenToolModel.ChatgptImageLatest,
                 "gpt-image-1" => BetaImageGenToolModel.GptImage1,
                 "gpt-image-1-mini" => BetaImageGenToolModel.GptImage1Mini,
                 "gpt-image-1.5" => BetaImageGenToolModel.GptImage15,
@@ -94,6 +111,8 @@ namespace tryAGI.OpenAI
                 "gpt-image-2.5-flare-2026-09-08" => BetaImageGenToolModel.GptImage25Flare20260908,
                 "gpt-image-2.5-sunburst" => BetaImageGenToolModel.GptImage25Sunburst,
                 "gpt-image-2.5-sunburst-2026-09-08" => BetaImageGenToolModel.GptImage25Sunburst20260908,
+                "gpt-image-2.6-flare" => BetaImageGenToolModel.GptImage26Flare,
+                "gpt-image-2.6-sunburst" => BetaImageGenToolModel.GptImage26Sunburst,
                 _ => null,
             };
         }

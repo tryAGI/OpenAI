@@ -14,7 +14,8 @@ internal static partial class ImagesCreateImageAsStreamCommandApiCommand
 Supported models include `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`,
 `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,
 `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`,
-`gpt-image-2.5-flare-2026-09-08`, and `chatgpt-image-latest`.
+`gpt-image-2.5-flare-2026-09-08`, `gpt-image-2.6-sunburst`, `gpt-image-2.6-flare`,
+and `chatgpt-image-latest`.
 
 `gpt-image-1` was shut down on October 23, 2026. Use
 `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` instead.
@@ -35,10 +36,10 @@ Supported models include `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`,
 ",
     };
 
-    private static Option<global::tryAGI.OpenAI.CreateImageRequestOutputFormat?> OutputFormat { get; } = new(
+    private static Option<global::tryAGI.OpenAI.ImagesApiOutputFormat?> OutputFormat { get; } = new(
         name: @"--output-format")
     {
-        Description = @"The format in which the generated images are returned. This parameter is only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.",
+        Description = @"The format in which the generated images are returned. This parameter is only supported for the GPT image models.",
     };
 
     private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestSize?>?> Size { get; } = new(
@@ -69,6 +70,8 @@ set the output format to `png` or `webp`.
 ",
     };
     private static readonly CreateImageRequestOptionSet CreateImageRequestOptionSetOptions = CreateImageRequestOptionSet.Create();
+
+    private static readonly SvgOptionSet SvgOptions = SvgOptionSet.Create(@"svg");
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -98,11 +101,14 @@ Creates an image given a prompt using a GPT Image model. [Learn more](https://de
                         command.Options.Add(OutputFormat);
                         command.Options.Add(Size);
                         command.Options.Add(Moderation);
-                        command.Options.Add(Background);                        command.Options.Add(CreateImageRequestOptionSetOptions.Prompt);
+                        command.Options.Add(Background);                        command.Options.Add(CreateImageRequestOptionSetOptions.FrameCount);
+                        command.Options.Add(CreateImageRequestOptionSetOptions.FrameDurationMs);
+                        command.Options.Add(CreateImageRequestOptionSetOptions.Complexity);
+                        command.Options.Add(CreateImageRequestOptionSetOptions.Prompt);
                         command.Options.Add(CreateImageRequestOptionSetOptions.N);
                         command.Options.Add(CreateImageRequestOptionSetOptions.OutputCompression);
                         command.Options.Add(CreateImageRequestOptionSetOptions.PartialImages);
-                        command.Options.Add(CreateImageRequestOptionSetOptions.SafetyIdentifier);
+                        command.Options.Add(CreateImageRequestOptionSetOptions.SafetyIdentifier);                        command.Options.Add(SvgOptions.Model);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -133,11 +139,25 @@ Creates an image given a prompt using a GPT Image model. [Learn more](https://de
                         var outputFormat = CliRuntime.WasSpecified(parseResult, OutputFormat) ? parseResult.GetValue(OutputFormat) : (__requestBase is { } __OutputFormatBaseValue ? __OutputFormatBaseValue.OutputFormat : default);
                         var size = CliRuntime.WasSpecified(parseResult, Size) ? parseResult.GetValue(Size) : (__requestBase is { } __SizeBaseValue ? __SizeBaseValue.Size : default);
                         var moderation = CliRuntime.WasSpecified(parseResult, Moderation) ? parseResult.GetValue(Moderation) : (__requestBase is { } __ModerationBaseValue ? __ModerationBaseValue.Moderation : default);
-                        var background = CliRuntime.WasSpecified(parseResult, Background) ? parseResult.GetValue(Background) : (__requestBase is { } __BackgroundBaseValue ? __BackgroundBaseValue.Background : default);                        var prompt = parseResult.GetRequiredValue(CreateImageRequestOptionSetOptions.Prompt);
+                        var background = CliRuntime.WasSpecified(parseResult, Background) ? parseResult.GetValue(Background) : (__requestBase is { } __BackgroundBaseValue ? __BackgroundBaseValue.Background : default);                        var frameCount = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.FrameCount) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.FrameCount) : (__requestBase is { } __FrameCountBaseValue ? __FrameCountBaseValue.FrameCount : default);
+                        var frameDurationMs = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.FrameDurationMs) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.FrameDurationMs) : (__requestBase is { } __FrameDurationMsBaseValue ? __FrameDurationMsBaseValue.FrameDurationMs : default);
+                        var complexity = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.Complexity) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.Complexity) : (__requestBase is { } __ComplexityBaseValue ? __ComplexityBaseValue.Complexity : default);
+                        var prompt = parseResult.GetRequiredValue(CreateImageRequestOptionSetOptions.Prompt);
                         var n = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.N) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.N) : (__requestBase is { } __NBaseValue ? __NBaseValue.N : default);
                         var outputCompression = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.OutputCompression) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.OutputCompression) : (__requestBase is { } __OutputCompressionBaseValue ? __OutputCompressionBaseValue.OutputCompression : default);
                         var partialImages = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.PartialImages) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.PartialImages) : (__requestBase is { } __PartialImagesBaseValue ? __PartialImagesBaseValue.PartialImages : default);
                         var safetyIdentifier = CliRuntime.WasSpecified(parseResult, CreateImageRequestOptionSetOptions.SafetyIdentifier) ? parseResult.GetValue(CreateImageRequestOptionSetOptions.SafetyIdentifier) : (__requestBase is { } __SafetyIdentifierBaseValue ? __SafetyIdentifierBaseValue.SafetyIdentifier : default);
+
+                        var __SvgBase = __requestBase is { } __SvgBaseValue ? __SvgBaseValue.Svg : default;                        var svgModel = parseResult.GetValue(SvgOptions.Model);
+                        var __SvgSpecified = CliRuntime.WasSpecified(parseResult, SvgOptions.Model);
+                        var svg =
+                            __SvgSpecified || __SvgBase is not null
+                                ? new global::tryAGI.OpenAI.Svg
+                                {
+	                                Model = svgModel!,
+
+                                }
+                                : __SvgBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -148,11 +168,15 @@ Creates an image given a prompt using a GPT Image model. [Learn more](https://de
                                     size: size,
                                     moderation: moderation,
                                     background: background,
+                                    frameCount: frameCount,
+                                    frameDurationMs: frameDurationMs,
+                                    complexity: complexity,
                                     prompt: prompt,
                                     n: n,
                                     outputCompression: outputCompression,
                                     partialImages: partialImages,
                                     safetyIdentifier: safetyIdentifier,
+                                    svg: svg,
                                     cancellationToken: cancellationToken);
 
                                 await foreach (var item in response.WithCancellation(cancellationToken).ConfigureAwait(false))

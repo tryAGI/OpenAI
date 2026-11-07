@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI.Realtime
         internal static readonly global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_04098A71CB372B0E.MetadataScope,
+                    static () => global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_04098A71CB372B0E.MetadataScope,                    static () => global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextComponent_2CE06A9E7F8C3E6B.MetadataScope,
                 }, null);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -24,7 +24,7 @@ namespace tryAGI.OpenAI.Realtime
             {
                 if (type == typeof(global::tryAGI.OpenAI.Realtime.RealtimeSessionCreateResponseGAAudioInputNoiseReduction))
                 {
-                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0026.Create_RealtimeSessionCreateResponseGAAudioInputNoiseReduction(options);
+                    return global::tryAGI.OpenAI.Realtime.RealtimeSourceGenerationContextMetadata0FactoryBatch0030.Create_RealtimeSessionCreateResponseGAAudioInputNoiseReduction(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

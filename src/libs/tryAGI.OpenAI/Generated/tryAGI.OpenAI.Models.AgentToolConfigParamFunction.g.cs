@@ -46,6 +46,13 @@ namespace tryAGI.OpenAI
         public bool? DeferLoading { get; set; }
 
         /// <summary>
+        /// Whether the agent continues without waiting for the function result. Defaults to `false`.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("async")]
+        public bool? Async { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -67,6 +74,10 @@ namespace tryAGI.OpenAI
         /// Whether this function is deferred and discovered through tool search. Defaults to `false`.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="async">
+        /// Whether the agent continues without waiting for the function result. Defaults to `false`.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `function`.<br/>
         /// Default Value: function
@@ -79,6 +90,7 @@ namespace tryAGI.OpenAI
             string description,
             object parameters,
             bool? deferLoading,
+            bool? async,
             global::tryAGI.OpenAI.AgentToolConfigParamFunctionType type = global::tryAGI.OpenAI.AgentToolConfigParamFunctionType.Function)
         {
             this.Type = type;
@@ -86,6 +98,7 @@ namespace tryAGI.OpenAI
             this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
             this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
             this.DeferLoading = deferLoading;
+            this.Async = async;
         }
 
         /// <summary>

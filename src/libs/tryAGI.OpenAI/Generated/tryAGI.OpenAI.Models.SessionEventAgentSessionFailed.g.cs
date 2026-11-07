@@ -32,6 +32,12 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.SessionResource Session { get; set; }
 
         /// <summary>
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("obfuscation")]
+        public string? Obfuscation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,6 +52,9 @@ namespace tryAGI.OpenAI
         /// <param name="session">
         /// The failed session.
         /// </param>
+        /// <param name="obfuscation">
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `agent.session.failed`.<br/>
         /// Default Value: agent.session.failed
@@ -56,11 +65,13 @@ namespace tryAGI.OpenAI
         public SessionEventAgentSessionFailed(
             string eventId,
             global::tryAGI.OpenAI.SessionResource session,
+            string? obfuscation,
             global::tryAGI.OpenAI.SessionEventAgentSessionFailedType type = global::tryAGI.OpenAI.SessionEventAgentSessionFailedType.AgentSessionFailed)
         {
             this.Type = type;
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));
+            this.Obfuscation = obfuscation;
         }
 
         /// <summary>

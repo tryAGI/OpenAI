@@ -11,8 +11,7 @@ namespace tryAGI.OpenAI
         /// and [Telephony and SIP](https://developers.openai.com/api/docs/guides/voice-sip?api=live#place-an-outbound-call)<br/>
         /// for trunk setup and call monitoring.<br/>
         /// Set transport.type to `webrtc` and supply an SDP offer, or set it to `sip`<br/>
-        /// and supply an E.164 destination and trunk credentials. Outbound SIP calling<br/>
-        /// must be enabled for your organization.<br/>
+        /// and supply an E.164 destination and trunk credentials.<br/>
         /// Ringing is limited to 3 minutes and connected calls to 2 hours; these limits<br/>
         /// are not configurable in the request.<br/>
         /// Returns `201 Created` after session initialization. WebRTC responses include an<br/>
@@ -38,8 +37,7 @@ namespace tryAGI.OpenAI
         /// and [Telephony and SIP](https://developers.openai.com/api/docs/guides/voice-sip?api=live#place-an-outbound-call)<br/>
         /// for trunk setup and call monitoring.<br/>
         /// Set transport.type to `webrtc` and supply an SDP offer, or set it to `sip`<br/>
-        /// and supply an E.164 destination and trunk credentials. Outbound SIP calling<br/>
-        /// must be enabled for your organization.<br/>
+        /// and supply an E.164 destination and trunk credentials.<br/>
         /// Ringing is limited to 3 minutes and connected calls to 2 hours; these limits<br/>
         /// are not configurable in the request.<br/>
         /// Returns `201 Created` after session initialization. WebRTC responses include an<br/>
@@ -65,8 +63,7 @@ namespace tryAGI.OpenAI
         /// and [Telephony and SIP](https://developers.openai.com/api/docs/guides/voice-sip?api=live#place-an-outbound-call)<br/>
         /// for trunk setup and call monitoring.<br/>
         /// Set transport.type to `webrtc` and supply an SDP offer, or set it to `sip`<br/>
-        /// and supply an E.164 destination and trunk credentials. Outbound SIP calling<br/>
-        /// must be enabled for your organization.<br/>
+        /// and supply an E.164 destination and trunk credentials.<br/>
         /// Ringing is limited to 3 minutes and connected calls to 2 hours; these limits<br/>
         /// are not configurable in the request.<br/>
         /// Returns `201 Created` after session initialization. WebRTC responses include an<br/>

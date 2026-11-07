@@ -43,6 +43,20 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveTransportFailed)}");
                 transportFailed = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.LiveTransportDTMFReceived? transportDtmfReceived = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandServerEventDiscriminatorType.TransportDtmfReceived)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportDTMFReceived), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportDTMFReceived> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveTransportDTMFReceived)}");
+                transportDtmfReceived = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::tryAGI.OpenAI.LiveTransportDTMFSent? transportDtmfSent = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandServerEventDiscriminatorType.TransportDtmfSent)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportDTMFSent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportDTMFSent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveTransportDTMFSent)}");
+                transportDtmfSent = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.LiveSessionStarted? sessionStarted = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.LiveSidebandServerEventDiscriminatorType.SessionStarted)
             {
@@ -192,6 +206,10 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 transportFailed,
 
+                transportDtmfReceived,
+
+                transportDtmfSent,
+
                 sessionStarted,
 
                 sessionUpdated,
@@ -263,6 +281,18 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportFailed), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportFailed?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveTransportFailed).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTransportFailed(), typeInfo);
+            }
+            else if (value.IsTransportDtmfReceived)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportDTMFReceived), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportDTMFReceived?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveTransportDTMFReceived).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTransportDtmfReceived(), typeInfo);
+            }
+            else if (value.IsTransportDtmfSent)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportDTMFSent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportDTMFSent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveTransportDTMFSent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTransportDtmfSent(), typeInfo);
             }
             else if (value.IsSessionStarted)
             {

@@ -34,6 +34,12 @@ namespace tryAGI.OpenAI
         public string? Instructions { get; set; }
 
         /// <summary>
+        /// Request level image options.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
+        public global::tryAGI.OpenAI.ImageOptionsParam? Image { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_key")]
@@ -72,6 +78,9 @@ namespace tryAGI.OpenAI
         /// <param name="input"></param>
         /// <param name="previousResponseId"></param>
         /// <param name="instructions"></param>
+        /// <param name="image">
+        /// Request level image options.
+        /// </param>
         /// <param name="promptCacheKey"></param>
         /// <param name="promptCacheRetention"></param>
         /// <param name="promptCacheOptions"></param>
@@ -84,6 +93,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? input,
             string? previousResponseId,
             string? instructions,
+            global::tryAGI.OpenAI.ImageOptionsParam? image,
             string? promptCacheKey,
             global::tryAGI.OpenAI.PromptCacheRetentionEnum? promptCacheRetention,
             global::tryAGI.OpenAI.PromptCacheOptionsParam? promptCacheOptions,
@@ -93,6 +103,7 @@ namespace tryAGI.OpenAI
             this.Input = input;
             this.PreviousResponseId = previousResponseId;
             this.Instructions = instructions;
+            this.Image = image;
             this.PromptCacheKey = promptCacheKey;
             this.PromptCacheRetention = promptCacheRetention;
             this.PromptCacheOptions = promptCacheOptions;
