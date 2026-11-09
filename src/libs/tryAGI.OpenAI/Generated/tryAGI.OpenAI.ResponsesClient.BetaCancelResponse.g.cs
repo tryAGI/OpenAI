@@ -157,7 +157,7 @@ namespace tryAGI.OpenAI
 
             if (openaiBeta != default)
             {
-                __httpRequest.Headers.TryAddWithoutValidation("openai-beta", openaiBeta.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("openai-beta", string.Join(",", global::System.Linq.Enumerable.Select(openaiBeta, static __headerItem => __headerItem.ToValueString())));
             }
 
                 global::tryAGI.OpenAI.AutoSDKRequestOptionsSupport.ApplyHeaders(

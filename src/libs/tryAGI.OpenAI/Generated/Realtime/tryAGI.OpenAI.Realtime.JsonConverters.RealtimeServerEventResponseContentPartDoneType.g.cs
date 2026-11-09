@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI.Realtime.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDoneTypeExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown discriminator value '{stringValue}' for global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDoneType.");
+                        return global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDoneTypeExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown value '{stringValue}' for global::tryAGI.OpenAI.Realtime.RealtimeServerEventResponseContentPartDoneType.");
                     }
 
                     break;
