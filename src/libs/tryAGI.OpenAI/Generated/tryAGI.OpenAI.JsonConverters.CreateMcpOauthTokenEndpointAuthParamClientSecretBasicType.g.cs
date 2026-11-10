@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::tryAGI.OpenAI.CreateMcpOauthTokenEndpointAuthParamClientSecretBasicTypeExtensions.ToEnum(stringValue) ?? default;
+                        return global::tryAGI.OpenAI.CreateMcpOauthTokenEndpointAuthParamClientSecretBasicTypeExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown value '{stringValue}' for global::tryAGI.OpenAI.CreateMcpOauthTokenEndpointAuthParamClientSecretBasicType.");
                     }
 
                     break;

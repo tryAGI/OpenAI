@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::tryAGI.OpenAI.BetaModerationModeExtensions.ToEnum(stringValue) ?? default;
+                        return global::tryAGI.OpenAI.BetaModerationModeExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown value '{stringValue}' for global::tryAGI.OpenAI.BetaModerationMode.");
                     }
 
                     break;

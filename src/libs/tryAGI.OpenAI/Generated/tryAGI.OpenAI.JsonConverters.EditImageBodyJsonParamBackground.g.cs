@@ -18,7 +18,7 @@ namespace tryAGI.OpenAI.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::tryAGI.OpenAI.EditImageBodyJsonParamBackgroundExtensions.ToEnum(stringValue) ?? default;
+                        return global::tryAGI.OpenAI.EditImageBodyJsonParamBackgroundExtensions.ToEnum(stringValue) ?? throw new global::System.Text.Json.JsonException($"Unknown value '{stringValue}' for global::tryAGI.OpenAI.EditImageBodyJsonParamBackground.");
                     }
 
                     break;

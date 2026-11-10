@@ -6,6 +6,19 @@ install_autosdk_cli() {
     dotnet tool install --global autosdk.cli --prerelease
 }
 
+# --reject-unknown-enum-values is only safe on a build that narrows it to enums which cannot appear in
+# a response; an older one accepts the flag and hardens every enum, so ordinary replies start throwing.
+# `autosdk capabilities --require` asks the build itself, which replaces both a version floor (had to be
+# looked up after each publish, and moved once already) and a grep over help-text prose. A CLI without
+# the subcommand fails the call, so this is fail-closed.
+require_autosdk_capability() {
+  if ! autosdk capabilities --require "$1" >/dev/null 2>&1; then
+    echo "error: this autosdk.cli does not support '$1'." >&2
+    echo "       Run: dotnet tool update --global autosdk.cli --prerelease" >&2
+    exit 1
+  fi
+}
+
 fetch_spec() {
   curl "$@" \
     --fail --silent --show-error --location \
@@ -33,6 +46,7 @@ fi
 readonly autosdk_cli="${AUTOSDK_EXECUTABLE:-autosdk}"
 if [[ -z "${AUTOSDK_EXECUTABLE:-}" ]]; then
   install_autosdk_cli
+  require_autosdk_capability behavior:request-scoped-enum-rejection
 fi
 if [[ "$use_pinned_spec" == false ]]; then
   fetch_spec --fail --silent --show-error -L -o openapi.yaml https://raw.githubusercontent.com/openai/openai-openapi/main/openapi.yaml
@@ -52,6 +66,7 @@ rm -rf Generated
   --clientClassName OpenAiClient \
   --targetFramework net10.0 \
   --output Generated \
+  --reject-unknown-enum-values \
   --exclude-deprecated-operations \
   --generate-http-exception-hierarchy \
   --generate-retry-handler \
