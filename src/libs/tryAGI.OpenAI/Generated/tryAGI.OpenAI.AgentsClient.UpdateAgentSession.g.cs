@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Update an agent session<br/>
-        /// Updates session metadata, model, reasoning effort, or service tier. Model settings apply to subsequent turns. Omitted fields are unchanged. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).
+        /// Updates session tools, metadata, model, reasoning effort, service tier, or the default prompt cache lifetime. Model settings apply to subsequent turns. Omitted fields are unchanged. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="request"></param>
@@ -71,7 +71,7 @@ namespace tryAGI.OpenAI
         }
         /// <summary>
         /// Update an agent session<br/>
-        /// Updates session metadata, model, reasoning effort, or service tier. Model settings apply to subsequent turns. Omitted fields are unchanged. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).
+        /// Updates session tools, metadata, model, reasoning effort, service tier, or the default prompt cache lifetime. Model settings apply to subsequent turns. Omitted fields are unchanged. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="request"></param>
@@ -705,11 +705,17 @@ namespace tryAGI.OpenAI
         }
         /// <summary>
         /// Update an agent session<br/>
-        /// Updates session metadata, model, reasoning effort, or service tier. Model settings apply to subsequent turns. Omitted fields are unchanged. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).
+        /// Updates session tools, metadata, model, reasoning effort, service tier, or the default prompt cache lifetime. Model settings apply to subsequent turns. Omitted fields are unchanged. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).
         /// </summary>
         /// <param name="sessionId"></param>
+        /// <param name="promptCacheOptions">
+        /// Default prompt cache lifetime for future turns. Send null to clear the session default.
+        /// </param>
+        /// <param name="review">
+        /// Default action review for new root turns. Existing turns and their subagents keep their review mode.
+        /// </param>
         /// <param name="agent">
-        /// Model settings for subsequent turns. Omitted fields stay unchanged.
+        /// Agent settings to update on this session. Omitted fields stay unchanged.
         /// </param>
         /// <param name="metadata">
         /// Replaces all metadata. Omit to leave unchanged, or pass null or {} to clear it. Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters.
@@ -719,6 +725,8 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.SessionResource> UpdateAgentSessionAsync(
             string sessionId,
+            global::tryAGI.OpenAI.PromptCacheOptionsParam2? promptCacheOptions = default,
+            global::tryAGI.OpenAI.SessionReviewParam? review = default,
             global::tryAGI.OpenAI.UpdateSessionAgentParam? agent = default,
             global::System.Collections.Generic.Dictionary<string, string>? metadata = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
@@ -726,6 +734,8 @@ namespace tryAGI.OpenAI
         {
             var __request = new global::tryAGI.OpenAI.UpdateAgentSessionParams
             {
+                PromptCacheOptions = promptCacheOptions,
+                Review = review,
                 Agent = agent,
                 Metadata = metadata,
             };

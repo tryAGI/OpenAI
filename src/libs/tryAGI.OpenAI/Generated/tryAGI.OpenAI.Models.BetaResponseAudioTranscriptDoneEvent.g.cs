@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.audio.transcript.done`.
         /// </summary>
+        /// <default>"response.audio.transcript.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseAudioTranscriptDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseAudioTranscriptDoneEventType Type { get; set; }
+        public string Type { get; set; } = "response.audio.transcript.done";
 
         /// <summary>
         /// The sequence number of this event.
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         public BetaResponseAudioTranscriptDoneEvent(
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseAudioTranscriptDoneEventType type)
+            string type = "response.audio.transcript.done")
         {
             this.Agent = agent;
             this.Type = type;
@@ -64,6 +64,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public BetaResponseAudioTranscriptDoneEvent()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaResponseAudioTranscriptDoneEvent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaResponseAudioTranscriptDoneEvent FromSequenceNumber(int sequenceNumber)
+        {
+            return new BetaResponseAudioTranscriptDoneEvent
+            {
+                SequenceNumber = sequenceNumber,
+            };
         }
 
     }

@@ -60,6 +60,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         SessionUpdate,
+        /// <summary>
+        ///
+        /// </summary>
+        TransportDtmfSend,
     }
 
     /// <summary>
@@ -87,6 +91,7 @@ namespace tryAGI.OpenAI
                 LiveSidebandClientEventDiscriminatorType.SessionOutputAudioFixturePlay => "session.output_audio.fixture.play",
                 LiveSidebandClientEventDiscriminatorType.SessionThinkingAppend => "session.thinking.append",
                 LiveSidebandClientEventDiscriminatorType.SessionUpdate => "session.update",
+                LiveSidebandClientEventDiscriminatorType.TransportDtmfSend => "transport.dtmf.send",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -110,6 +115,7 @@ namespace tryAGI.OpenAI
                 "session.output_audio.fixture.play" => LiveSidebandClientEventDiscriminatorType.SessionOutputAudioFixturePlay,
                 "session.thinking.append" => LiveSidebandClientEventDiscriminatorType.SessionThinkingAppend,
                 "session.update" => LiveSidebandClientEventDiscriminatorType.SessionUpdate,
+                "transport.dtmf.send" => LiveSidebandClientEventDiscriminatorType.TransportDtmfSend,
                 _ => null,
             };
         }

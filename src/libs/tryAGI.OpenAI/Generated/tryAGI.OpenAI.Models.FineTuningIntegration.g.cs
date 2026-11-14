@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the integration being enabled for the fine-tuning job
         /// </summary>
+        /// <default>"wandb"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FineTuningIntegrationTypeJsonConverter))]
-        public global::tryAGI.OpenAI.FineTuningIntegrationType Type { get; set; }
+        public string Type { get; set; } = "wandb";
 
         /// <summary>
         /// The settings for your integration with Weights and Biases. This payload specifies the project that<br/>
@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
 #endif
         public FineTuningIntegration(
             global::tryAGI.OpenAI.FineTuningIntegrationWandb wandb,
-            global::tryAGI.OpenAI.FineTuningIntegrationType type)
+            string type = "wandb")
         {
             this.Type = type;
             this.Wandb = wandb ?? throw new global::System.ArgumentNullException(nameof(wandb));
@@ -57,6 +57,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public FineTuningIntegration()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="FineTuningIntegration"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static FineTuningIntegration FromWandb(global::tryAGI.OpenAI.FineTuningIntegrationWandb wandb)
+        {
+            return new FineTuningIntegration
+            {
+                Wandb = wandb,
+            };
         }
 
     }

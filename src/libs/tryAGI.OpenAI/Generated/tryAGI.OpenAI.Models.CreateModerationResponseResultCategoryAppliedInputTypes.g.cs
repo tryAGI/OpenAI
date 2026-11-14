@@ -13,42 +13,42 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hate")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateItem> Hate { get; set; }
+        public required global::System.Collections.Generic.IList<string> Hate { get; set; }
 
         /// <summary>
         /// The applied input type(s) for the category 'hate/threatening'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hate/threatening")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateThreateningItem> HateThreatening { get; set; }
+        public required global::System.Collections.Generic.IList<string> HateThreatening { get; set; }
 
         /// <summary>
         /// The applied input type(s) for the category 'harassment'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("harassment")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentItem> Harassment { get; set; }
+        public required global::System.Collections.Generic.IList<string> Harassment { get; set; }
 
         /// <summary>
         /// The applied input type(s) for the category 'harassment/threatening'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("harassment/threatening")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentThreateningItem> HarassmentThreatening { get; set; }
+        public required global::System.Collections.Generic.IList<string> HarassmentThreatening { get; set; }
 
         /// <summary>
         /// The applied input type(s) for the category 'illicit'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("illicit")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitItem> Illicit { get; set; }
+        public required global::System.Collections.Generic.IList<string> Illicit { get; set; }
 
         /// <summary>
         /// The applied input type(s) for the category 'illicit/violent'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("illicit/violent")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitViolentItem> IllicitViolent { get; set; }
+        public required global::System.Collections.Generic.IList<string> IllicitViolent { get; set; }
 
         /// <summary>
         /// The applied input type(s) for the category 'self-harm'.
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sexual/minors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSexualMinor> SexualMinors { get; set; }
+        public required global::System.Collections.Generic.IList<string> SexualMinors { get; set; }
 
         /// <summary>
         /// The applied input type(s) for the category 'violence'.
@@ -151,17 +151,17 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateModerationResponseResultCategoryAppliedInputTypes(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateItem> hate,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHateThreateningItem> hateThreatening,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentItem> harassment,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentThreateningItem> harassmentThreatening,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitItem> illicit,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesIllicitViolentItem> illicitViolent,
+            global::System.Collections.Generic.IList<string> hate,
+            global::System.Collections.Generic.IList<string> hateThreatening,
+            global::System.Collections.Generic.IList<string> harassment,
+            global::System.Collections.Generic.IList<string> harassmentThreatening,
+            global::System.Collections.Generic.IList<string> illicit,
+            global::System.Collections.Generic.IList<string> illicitViolent,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmItem> selfHarm,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmIntentItem> selfHarmIntent,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmInstruction> selfHarmInstructions,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSexualItem> sexual,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesSexualMinor> sexualMinors,
+            global::System.Collections.Generic.IList<string> sexualMinors,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesViolenceItem> violence,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateModerationResponseResultCategoryAppliedInputTypesViolenceGraphicItem> violenceGraphic)
         {

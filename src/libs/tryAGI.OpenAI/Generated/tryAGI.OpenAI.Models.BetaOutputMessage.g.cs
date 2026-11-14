@@ -24,16 +24,16 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the output message. Always `message`.
         /// </summary>
+        /// <default>"message"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaOutputMessageTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaOutputMessageType Type { get; set; }
+        public string Type { get; set; } = "message";
 
         /// <summary>
         /// The role of the output message. Always `assistant`.
         /// </summary>
+        /// <default>"assistant"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaOutputMessageRoleJsonConverter))]
-        public global::tryAGI.OpenAI.BetaOutputMessageRole Role { get; set; }
+        public string Role { get; set; } = "assistant";
 
         /// <summary>
         /// The content of the output message.
@@ -79,13 +79,13 @@ namespace tryAGI.OpenAI
         /// <param name="agent">
         /// The agent that produced this item.
         /// </param>
+        /// <param name="phase"></param>
         /// <param name="type">
         /// The type of the output message. Always `message`.
         /// </param>
         /// <param name="role">
         /// The role of the output message. Always `assistant`.
         /// </param>
-        /// <param name="phase"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -94,9 +94,9 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaOutputMessageContent> content,
             global::tryAGI.OpenAI.BetaOutputMessageStatus status,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaOutputMessageType type,
-            global::tryAGI.OpenAI.BetaOutputMessageRole role,
-            global::tryAGI.OpenAI.BetaMessagePhase? phase)
+            global::tryAGI.OpenAI.BetaMessagePhase? phase,
+            string type = "message",
+            string role = "assistant")
         {
             this.Agent = agent;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.failed`.
         /// </summary>
+        /// <default>"response.failed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFailedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseFailedEventType Type { get; set; }
+        public string Type { get; set; } = "response.failed";
 
         /// <summary>
         /// The sequence number of this event.
@@ -57,7 +57,7 @@ namespace tryAGI.OpenAI
         public ResponseFailedEvent(
             int sequenceNumber,
             global::tryAGI.OpenAI.Response response,
-            global::tryAGI.OpenAI.ResponseFailedEventType type)
+            string type = "response.failed")
         {
             this.Type = type;
             this.SequenceNumber = sequenceNumber;

@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_71BAA7C8453093AD.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C4D2D3C93B3FACD9.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_D1E9BA06CCA9E76B.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_569B880384C23575.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_6FF7A9019F407735.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
                 #pragma warning disable CS0618 // Metadata references a deprecated API model.
                 if (type == typeof(global::tryAGI.OpenAI.CreateFineTuningJobRequestHyperparameters))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0106.Create_CreateFineTuningJobRequestHyperparameters(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0100.Create_CreateFineTuningJobRequestHyperparameters(options);
                 }
                 #pragma warning restore CS0618
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;

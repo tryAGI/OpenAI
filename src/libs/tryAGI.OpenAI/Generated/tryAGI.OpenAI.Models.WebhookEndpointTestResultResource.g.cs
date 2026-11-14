@@ -12,10 +12,9 @@ namespace tryAGI.OpenAI
         /// The object type, which is always webhook_endpoint.test.<br/>
         /// Default Value: webhook_endpoint.test
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.WebhookEndpointTestResultResourceObject.WebhookEndpointTest</default>
+        /// <default>"webhook_endpoint.test"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookEndpointTestResultResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookEndpointTestResultResourceObject Object { get; set; } = global::tryAGI.OpenAI.WebhookEndpointTestResultResourceObject.WebhookEndpointTest;
+        public string Object { get; set; } = "webhook_endpoint.test";
 
         /// <summary>
         /// The ID of the webhook endpoint that received the test.
@@ -42,9 +41,8 @@ namespace tryAGI.OpenAI
         /// Whether the test request completed. Always true for returned results; use status_code to determine the endpoint response.<br/>
         /// Default Value: true
         /// </summary>
-        /// <default>true</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("success")]
-        public bool Success { get; set; } = true;
+        public bool Success { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,13 +62,13 @@ namespace tryAGI.OpenAI
         /// <param name="statusCode">
         /// The HTTP status code returned by the endpoint.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always webhook_endpoint.test.<br/>
-        /// Default Value: webhook_endpoint.test
-        /// </param>
         /// <param name="success">
         /// Whether the test request completed. Always true for returned results; use status_code to determine the endpoint response.<br/>
         /// Default Value: true
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always webhook_endpoint.test.<br/>
+        /// Default Value: webhook_endpoint.test
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -79,8 +77,8 @@ namespace tryAGI.OpenAI
             string webhookEndpointId,
             string eventType,
             int statusCode,
-            global::tryAGI.OpenAI.WebhookEndpointTestResultResourceObject @object = global::tryAGI.OpenAI.WebhookEndpointTestResultResourceObject.WebhookEndpointTest,
-            bool success = true)
+            bool success,
+            string @object = "webhook_endpoint.test")
         {
             this.Object = @object;
             this.WebhookEndpointId = webhookEndpointId ?? throw new global::System.ArgumentNullException(nameof(webhookEndpointId));

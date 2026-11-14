@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ListModelsResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ListModelsResponseObject Object { get; set; }
+        public string Object { get; set; } = "list";
 
         /// <summary>
         ///
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #endif
         public ListModelsResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Model19> data,
-            global::tryAGI.OpenAI.ListModelsResponseObject @object)
+            string @object = "list")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

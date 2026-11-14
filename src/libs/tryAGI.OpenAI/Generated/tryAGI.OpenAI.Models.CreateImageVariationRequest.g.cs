@@ -32,9 +32,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>dall-e-2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateImageVariationRequestModel?>))]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageVariationRequestModel?>? Model { get; set; }
+        public string? Model { get; set; }
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10.<br/>
@@ -122,7 +121,7 @@ namespace tryAGI.OpenAI
         public CreateImageVariationRequest(
             byte[] image,
             string imagename,
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageVariationRequestModel?>? model,
+            string? model,
             int? n,
             global::tryAGI.OpenAI.CreateImageVariationRequestResponseFormat? responseFormat,
             global::tryAGI.OpenAI.CreateImageVariationRequestSize? size,

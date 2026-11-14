@@ -21,9 +21,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `session.input_transcript.delta`.
         /// </summary>
+        /// <default>"session.input_transcript.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionInputTranscriptDeltaTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDeltaType Type { get; set; }
+        public string Type { get; set; } = "session.input_transcript.delta";
 
         /// <summary>
         /// Append-only source-language transcript text.
@@ -53,18 +53,18 @@ namespace tryAGI.OpenAI
         /// <param name="delta">
         /// Append-only source-language transcript text.
         /// </param>
+        /// <param name="elapsedMs"></param>
         /// <param name="type">
         /// The event type, must be `session.input_transcript.delta`.
         /// </param>
-        /// <param name="elapsedMs"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeTranslationServerEventSessionInputTranscriptDelta(
             string eventId,
             string delta,
-            global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionInputTranscriptDeltaType type,
-            int? elapsedMs)
+            int? elapsedMs,
+            string type = "session.input_transcript.delta")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_23ACC0855664BCF3.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_4E37F1E4747A567F.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_A323BAF9835FF427.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_A634E82CDDF9BB5B.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_AA98A64AC76AB693.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_CD678F91961EA7BB.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_ECD55F2DFAD0619E.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_569B880384C23575.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_6FF7A9019F407735.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_AA98A64AC76AB693.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.FineTuneReinforcementHyperparameters))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0139.Create_FineTuneReinforcementHyperparameters(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0132.Create_FineTuneReinforcementHyperparameters(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

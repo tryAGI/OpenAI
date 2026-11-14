@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_357D55584786AEF2.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_B2BFC0EF87AA58B9.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_D7CBC0040487AB58.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_D9297901AB686EF9.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_13D0C14C2848C18B.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_357D55584786AEF2.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_B2BFC0EF87AA58B9.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_D7CBC0040487AB58.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_D9297901AB686EF9.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.SessionRequiredActionResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0459.Create_SessionRequiredActionResource2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0415.Create_SessionRequiredActionResource2(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.SessionRequiredActionResource?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0352.Create_NullableSessionRequiredActionResource2(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0322.Create_NullableSessionRequiredActionResource2(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

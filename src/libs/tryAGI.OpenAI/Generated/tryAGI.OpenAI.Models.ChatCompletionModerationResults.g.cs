@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `moderation_results`.
         /// </summary>
+        /// <default>"moderation_results"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionModerationResultsTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionModerationResultsType Type { get; set; }
+        public string Type { get; set; } = "moderation_results";
 
         /// <summary>
         /// The moderation model used to generate the results.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public ChatCompletionModerationResults(
             string model,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ModerationResultBody> results,
-            global::tryAGI.OpenAI.ChatCompletionModerationResultsType type)
+            string type = "moderation_results")
         {
             this.Type = type;
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));

@@ -21,9 +21,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `rate_limits.updated`.
         /// </summary>
+        /// <default>"rate_limits.updated"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventRateLimitsUpdatedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedType Type { get; set; }
+        public string Type { get; set; } = "rate_limits.updated";
 
         /// <summary>
         /// List of rate limit information.
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventRateLimitsUpdated(
             string eventId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedRateLimit> rateLimits,
-            global::tryAGI.OpenAI.RealtimeServerEventRateLimitsUpdatedType type)
+            string type = "rate_limits.updated")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

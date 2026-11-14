@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of session to create. Always `realtime` for the Realtime API.
         /// </summary>
+        /// <default>"realtime"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeSessionCreateRequestGATypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAType Type { get; set; }
+        public string Type { get; set; } = "realtime";
 
         /// <summary>
         /// The set of modalities the model can respond with. It defaults to `["audio"]`, indicating<br/>
@@ -59,8 +59,8 @@ namespace tryAGI.OpenAI
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tracing")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum2>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum2>? Tracing { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracing>))]
+        public global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracing>? Tracing { get; set; }
 
         /// <summary>
         /// Tools available to the model.
@@ -97,8 +97,8 @@ namespace tryAGI.OpenAI
         /// given model. Defaults to `inf`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAMaxOutputTokens?>))]
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAMaxOutputTokens?>? MaxOutputTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<int?, string>))]
+        public global::tryAGI.OpenAI.OneOf<int?, string>? MaxOutputTokens { get; set; }
 
         /// <summary>
         /// When the number of tokens in a conversation exceeds the model's input token limit, the conversation be truncated, meaning messages (starting from the oldest) will not be included in the model's context. A 32k context model with 4,096 max output tokens can only include 28,224 tokens in the context before truncation occurs.<br/>
@@ -125,9 +125,6 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeSessionCreateRequestGA" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of session to create. Always `realtime` for the Realtime API.
-        /// </param>
         /// <param name="outputModalities">
         /// The set of modalities the model can respond with. It defaults to `["audio"]`, indicating<br/>
         /// that the model will respond with audio plus a transcript. `["text"]` can be used to make<br/>
@@ -183,24 +180,27 @@ namespace tryAGI.OpenAI
         /// Truncation can be disabled entirely, which means the server will never truncate but would instead return an error if the conversation exceeds the model's input token limit.
         /// </param>
         /// <param name="prompt"></param>
+        /// <param name="type">
+        /// The type of session to create. Always `realtime` for the Realtime API.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateRequestGA(
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAType type,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAOutputModalitie>? outputModalities,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAModel?>? model,
             string? instructions,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAAudio? audio,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAIncludeItem>? include,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum2>? tracing,
+            global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracing>? tracing,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeFunctionTool, global::tryAGI.OpenAI.MCPTool>>? tools,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? toolChoice,
             bool? parallelToolCalls,
             global::tryAGI.OpenAI.RealtimeReasoning? reasoning,
-            global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAMaxOutputTokens?>? maxOutputTokens,
+            global::tryAGI.OpenAI.OneOf<int?, string>? maxOutputTokens,
             global::tryAGI.OpenAI.RealtimeTruncation? truncation,
-            global::tryAGI.OpenAI.PromptVariant1? prompt)
+            global::tryAGI.OpenAI.PromptVariant1? prompt,
+            string type = "realtime")
         {
             this.Type = type;
             this.OutputModalities = outputModalities;

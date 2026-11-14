@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `input_audio_buffer.speech_stopped`.
         /// </summary>
+        /// <default>"input_audio_buffer.speech_stopped"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventInputAudioBufferSpeechStoppedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferSpeechStoppedType Type { get; set; }
+        public string Type { get; set; } = "input_audio_buffer.speech_stopped";
 
         /// <summary>
         /// Milliseconds since the session started when speech stopped. This will <br/>
@@ -70,7 +70,7 @@ namespace tryAGI.OpenAI
             string eventId,
             int audioEndMs,
             string itemId,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferSpeechStoppedType type)
+            string type = "input_audio_buffer.speech_stopped")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

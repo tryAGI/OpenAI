@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always 'response.mcp_list_tools.completed'.
         /// </summary>
+        /// <default>"response.mcp_list_tools.completed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseMCPListToolsCompletedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseMCPListToolsCompletedEventType Type { get; set; }
+        public string Type { get; set; } = "response.mcp_list_tools.completed";
 
         /// <summary>
         /// The ID of the MCP tool call item that produced this output.
@@ -74,7 +74,7 @@ namespace tryAGI.OpenAI
             int outputIndex,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseMCPListToolsCompletedEventType type)
+            string type = "response.mcp_list_tools.completed")
         {
             this.Agent = agent;
             this.Type = type;

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of location approximation. Always `approximate`.
         /// </summary>
+        /// <default>"approximate"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocationTypeJsonConverter))]
-        public global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocationType Type { get; set; }
+        public string Type { get; set; } = "approximate";
 
         /// <summary>
         /// Approximate location parameters for the search.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation(
             global::tryAGI.OpenAI.WebSearchLocation approximate,
-            global::tryAGI.OpenAI.CreateChatCompletionRequestVariant2WebSearchOptionsUserLocationType type)
+            string type = "approximate")
         {
             this.Type = type;
             this.Approximate = approximate ?? throw new global::System.ArgumentNullException(nameof(approximate));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation FromApproximate(global::tryAGI.OpenAI.WebSearchLocation approximate)
+        {
+            return new CreateChatCompletionRequestVariant2WebSearchOptionsUserLocation
+            {
+                Approximate = approximate,
+            };
         }
 
     }

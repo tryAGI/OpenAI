@@ -7,6 +7,12 @@ namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
 internal static partial class AgentsCreateAgentCommandApiCommand
 {
+    private static Option<global::tryAGI.OpenAI.ExperimentalConfigParam?> Experimental { get; } = new(
+        name: @"--experimental")
+    {
+        Description = @"Experimental agent settings. All experimental features default to disabled.",
+    };
+
     private static Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
         name: @"--metadata")
     {
@@ -56,6 +62,8 @@ internal static partial class AgentsCreateAgentCommandApiCommand
         Description = @"Tools available to the agent. Defaults to an empty list. The tool list must fit within 3 MiB (3,145,728 bytes) of compact UTF-8 JSON.",
     };
     private static readonly MultiAgentConfigCurrentParamOptionSet MultiAgentOptions = MultiAgentConfigCurrentParamOptionSet.Create(@"multi-agent");
+
+    private static readonly CompactionParamOptionSet CompactionOptions = CompactionParamOptionSet.Create(@"compaction");
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -99,6 +107,7 @@ internal static partial class AgentsCreateAgentCommandApiCommand
     {
         var command = new Command(commandName ?? @"create-agent", @"Create an agent
 Creates a reusable agent without storing credentials. See [agent configuration](https://developers.openai.com/api/docs/guides/agents-api/configuration).");
+                        command.Options.Add(Experimental);
                         command.Options.Add(Metadata);
                         command.Options.Add(NameOption);
                         command.Options.Add(Model);
@@ -107,7 +116,7 @@ Creates a reusable agent without storing credentials. See [agent configuration](
                         command.Options.Add(ServiceTier);
                         command.Options.Add(Instructions);
                         command.Options.Add(Tools);                        command.Options.Add(MultiAgentOptions.Enabled);
-                        command.Options.Add(MultiAgentOptions.MaxConcurrentSubagents);
+                        command.Options.Add(MultiAgentOptions.MaxConcurrentSubagents);                        command.Options.Add(CompactionOptions.Async);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -133,6 +142,7 @@ Creates a reusable agent without storing credentials. See [agent configuration](
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
+                        var experimental = CliRuntime.WasSpecified(parseResult, Experimental) ? parseResult.GetValue(Experimental) : (__requestBase is { } __ExperimentalBaseValue ? __ExperimentalBaseValue.Experimental : default);
                         var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
                         var name = CliRuntime.WasSpecified(parseResult, NameOption) ? parseResult.GetValue(NameOption) : (__requestBase is { } __NameBaseValue ? __NameBaseValue.Name : default);
                         var model = parseResult.GetRequiredValue(Model);
@@ -154,10 +164,22 @@ Creates a reusable agent without storing credentials. See [agent configuration](
 
                                 }
                                 : __MultiAgentBase;
+
+                        var __CompactionBase = __requestBase is { } __CompactionBaseValue ? __CompactionBaseValue.Compaction : default;                        var compactionAsync = CliRuntime.WasSpecified(parseResult, CompactionOptions.Async) ? parseResult.GetValue(CompactionOptions.Async) : (__CompactionBase is { } __CompactionasyncBaseValue ? __CompactionasyncBaseValue.Async : default);
+                        var __CompactionSpecified = CliRuntime.WasSpecified(parseResult, CompactionOptions.Async);
+                        var compaction =
+                            __CompactionSpecified || __CompactionBase is not null
+                                ? new global::tryAGI.OpenAI.CompactionParam
+                                {
+	                                Async = compactionAsync,
+
+                                }
+                                : __CompactionBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 var response = await client.Agents.CreateAgentAsync(
+                                    experimental: experimental,
                                     metadata: metadata,
                                     name: name,
                                     model: model,
@@ -167,6 +189,7 @@ Creates a reusable agent without storing credentials. See [agent configuration](
                                     instructions: instructions,
                                     tools: tools,
                                     multiAgent: multiAgent,
+                                    compaction: compaction,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

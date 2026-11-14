@@ -33,15 +33,14 @@ namespace tryAGI.OpenAI
         /// The object of the event. Always `event`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookResponseIncompleteObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookResponseIncompleteObject? Object { get; set; }
+        public string? Object { get; set; }
 
         /// <summary>
         /// The type of the event. Always `response.incomplete`.
         /// </summary>
+        /// <default>"response.incomplete"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookResponseIncompleteTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookResponseIncompleteType Type { get; set; }
+        public string Type { get; set; } = "response.incomplete";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,8 +73,8 @@ namespace tryAGI.OpenAI
             int createdAt,
             string id,
             global::tryAGI.OpenAI.WebhookResponseIncompleteData data,
-            global::tryAGI.OpenAI.WebhookResponseIncompleteObject? @object,
-            global::tryAGI.OpenAI.WebhookResponseIncompleteType type)
+            string? @object,
+            string type = "response.incomplete")
         {
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

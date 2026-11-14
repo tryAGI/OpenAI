@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.audio.delta`.
         /// </summary>
+        /// <default>"response.audio.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseAudioDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseAudioDeltaEventType Type { get; set; }
+        public string Type { get; set; } = "response.audio.delta";
 
         /// <summary>
         /// A sequence number for this chunk of the stream response.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public ResponseAudioDeltaEvent(
             int sequenceNumber,
             string delta,
-            global::tryAGI.OpenAI.ResponseAudioDeltaEventType type)
+            string type = "response.audio.delta")
         {
             this.Type = type;
             this.SequenceNumber = sequenceNumber;

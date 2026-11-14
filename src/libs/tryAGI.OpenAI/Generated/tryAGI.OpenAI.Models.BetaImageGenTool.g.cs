@@ -23,6 +23,18 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.BetaImageGenToolModel?>? Model { get; set; }
 
         /// <summary>
+        /// Computation spent planning the image, independently of rendering quality.<br/>
+        /// Overrides the outer response's `reasoning.effort` for image generation.<br/>
+        /// When omitted, inherits a supported outer reasoning effort or uses the<br/>
+        /// image model's configured default.<br/>
+        /// For SVG output, controls the reference image, not the SVG author's<br/>
+        /// reasoning.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("complexity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaImageGenToolComplexityJsonConverter))]
+        public global::tryAGI.OpenAI.BetaImageGenToolComplexity? Complexity { get; set; }
+
+        /// <summary>
         /// The quality of the generated image. The GPT image models support `low`,<br/>
         /// `medium`, and `high`. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`,<br/>
         /// including their `2026-09-08` snapshots, also support `xhigh` and `max`.<br/>
@@ -42,13 +54,41 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.BetaImageGenToolSize?>? Size { get; set; }
 
         /// <summary>
-        /// The output format of the generated image. One of `png`, `webp`, or<br/>
-        /// `jpeg`. Default: `png`.<br/>
+        /// The output format of the generated image. One of `png`, `webp`, `jpeg`,<br/>
+        /// `gif`, or `svg`. Default: `png`. GIF and SVG output require a model<br/>
+        /// that supports the selected format. GIF output does not support<br/>
+        /// partial image streaming (`partial_images` greater than `0`),<br/>
+        /// `input_image_mask`, or custom `output_compression`.<br/>
+        /// Responses lifecycle events can still be streamed for GIF output.<br/>
         /// Default Value: png
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaImageGenToolOutputFormatJsonConverter))]
         public global::tryAGI.OpenAI.BetaImageGenToolOutputFormat? OutputFormat { get; set; }
+
+        /// <summary>
+        /// Number of GIF frames. Requires `output_format` to be `gif`. Default: 9.<br/>
+        /// Default Value: 9
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frame_count")]
+        public int? FrameCount { get; set; }
+
+        /// <summary>
+        /// Duration of each GIF frame in milliseconds, rounded to 10 ms.<br/>
+        /// Requires `output_format` to be `gif`. Default: 200.<br/>
+        /// Default Value: 200
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frame_duration_ms")]
+        public int? FrameDurationMs { get; set; }
+
+        /// <summary>
+        /// SVG author model settings. Requires `output_format` to be `svg`.<br/>
+        /// When SVG model selection is enabled, omitting this object uses the<br/>
+        /// outer response model. Otherwise, the default SVG author is used and<br/>
+        /// explicit model overrides are unavailable.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("svg")]
+        public global::tryAGI.OpenAI.BetaSvgParam? Svg { get; set; }
 
         /// <summary>
         /// Compression level for the output image. Default: 100.<br/>
@@ -119,6 +159,14 @@ namespace tryAGI.OpenAI
         /// The type of the image generation tool. Always `image_generation`.
         /// </param>
         /// <param name="model"></param>
+        /// <param name="complexity">
+        /// Computation spent planning the image, independently of rendering quality.<br/>
+        /// Overrides the outer response's `reasoning.effort` for image generation.<br/>
+        /// When omitted, inherits a supported outer reasoning effort or uses the<br/>
+        /// image model's configured default.<br/>
+        /// For SVG output, controls the reference image, not the SVG author's<br/>
+        /// reasoning.
+        /// </param>
         /// <param name="quality">
         /// The quality of the generated image. The GPT image models support `low`,<br/>
         /// `medium`, and `high`. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`,<br/>
@@ -131,9 +179,28 @@ namespace tryAGI.OpenAI
         /// Default Value: auto
         /// </param>
         /// <param name="outputFormat">
-        /// The output format of the generated image. One of `png`, `webp`, or<br/>
-        /// `jpeg`. Default: `png`.<br/>
+        /// The output format of the generated image. One of `png`, `webp`, `jpeg`,<br/>
+        /// `gif`, or `svg`. Default: `png`. GIF and SVG output require a model<br/>
+        /// that supports the selected format. GIF output does not support<br/>
+        /// partial image streaming (`partial_images` greater than `0`),<br/>
+        /// `input_image_mask`, or custom `output_compression`.<br/>
+        /// Responses lifecycle events can still be streamed for GIF output.<br/>
         /// Default Value: png
+        /// </param>
+        /// <param name="frameCount">
+        /// Number of GIF frames. Requires `output_format` to be `gif`. Default: 9.<br/>
+        /// Default Value: 9
+        /// </param>
+        /// <param name="frameDurationMs">
+        /// Duration of each GIF frame in milliseconds, rounded to 10 ms.<br/>
+        /// Requires `output_format` to be `gif`. Default: 200.<br/>
+        /// Default Value: 200
+        /// </param>
+        /// <param name="svg">
+        /// SVG author model settings. Requires `output_format` to be `svg`.<br/>
+        /// When SVG model selection is enabled, omitting this object uses the<br/>
+        /// outer response model. Otherwise, the default SVG author is used and<br/>
+        /// explicit model overrides are unavailable.
         /// </param>
         /// <param name="outputCompression">
         /// Compression level for the output image. Default: 100.<br/>
@@ -171,9 +238,13 @@ namespace tryAGI.OpenAI
         public BetaImageGenTool(
             global::tryAGI.OpenAI.BetaImageGenToolType type,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.BetaImageGenToolModel?>? model,
+            global::tryAGI.OpenAI.BetaImageGenToolComplexity? complexity,
             global::tryAGI.OpenAI.BetaImageGenToolQuality? quality,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.BetaImageGenToolSize?>? size,
             global::tryAGI.OpenAI.BetaImageGenToolOutputFormat? outputFormat,
+            int? frameCount,
+            int? frameDurationMs,
+            global::tryAGI.OpenAI.BetaSvgParam? svg,
             int? outputCompression,
             global::tryAGI.OpenAI.BetaImageGenToolModeration? moderation,
             global::tryAGI.OpenAI.BetaImageGenToolBackground? background,
@@ -184,9 +255,13 @@ namespace tryAGI.OpenAI
         {
             this.Type = type;
             this.Model = model;
+            this.Complexity = complexity;
             this.Quality = quality;
             this.Size = size;
             this.OutputFormat = outputFormat;
+            this.FrameCount = frameCount;
+            this.FrameDurationMs = frameDurationMs;
+            this.Svg = svg;
             this.OutputCompression = outputCompression;
             this.Moderation = moderation;
             this.Background = background;

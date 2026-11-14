@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.reasoning_summary_text.delta`.
         /// </summary>
+        /// <default>"response.reasoning_summary_text.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseReasoningSummaryTextDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseReasoningSummaryTextDeltaEventType Type { get; set; }
+        public string Type { get; set; } = "response.reasoning_summary_text.delta";
 
         /// <summary>
         /// The ID of the item this summary text delta is associated with.
@@ -96,7 +96,7 @@ namespace tryAGI.OpenAI
             string delta,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseReasoningSummaryTextDeltaEventType type)
+            string type = "response.reasoning_summary_text.delta")
         {
             this.Agent = agent;
             this.Type = type;

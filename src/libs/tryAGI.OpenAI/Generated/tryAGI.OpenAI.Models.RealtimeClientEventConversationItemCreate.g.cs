@@ -23,9 +23,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `conversation.item.create`.
         /// </summary>
+        /// <default>"conversation.item.create"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeClientEventConversationItemCreateTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreateType Type { get; set; }
+        public string Type { get; set; } = "conversation.item.create";
 
         /// <summary>
         /// The ID of the preceding item after which the new item will be inserted. If not set, the new item will be appended to the end of the conversation.<br/>
@@ -58,13 +58,13 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.create`.
-        /// </param>
         /// <param name="previousItemId">
         /// The ID of the preceding item after which the new item will be inserted. If not set, the new item will be appended to the end of the conversation.<br/>
         /// If set to `root`, the new item will be added to the beginning of the conversation.<br/>
         /// If set to an existing ID, it allows an item to be inserted mid-conversation. If the ID cannot be found, an error will be returned and the item will not be added.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.create`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -72,8 +72,8 @@ namespace tryAGI.OpenAI
         public RealtimeClientEventConversationItemCreate(
             global::tryAGI.OpenAI.RealtimeConversationItem item,
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeClientEventConversationItemCreateType type,
-            string? previousItemId)
+            string? previousItemId,
+            string type = "conversation.item.create")
         {
             this.EventId = eventId;
             this.Type = type;

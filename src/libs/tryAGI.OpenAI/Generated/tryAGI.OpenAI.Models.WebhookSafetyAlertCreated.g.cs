@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `event`.
         /// </summary>
+        /// <default>"event"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookSafetyAlertCreatedObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookSafetyAlertCreatedObject Object { get; set; }
+        public string Object { get; set; } = "event";
 
         /// <summary>
         /// The Unix timestamp in seconds when the event was created.
@@ -32,9 +32,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `safety.alert.created`.
         /// </summary>
+        /// <default>"safety.alert.created"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookSafetyAlertCreatedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookSafetyAlertCreatedType Type { get; set; }
+        public string Type { get; set; } = "safety.alert.created";
 
         /// <summary>
         ///
@@ -72,8 +72,8 @@ namespace tryAGI.OpenAI
             string id,
             int createdAt,
             global::tryAGI.OpenAI.WebhookSafetyAlertCreatedData data,
-            global::tryAGI.OpenAI.WebhookSafetyAlertCreatedObject @object,
-            global::tryAGI.OpenAI.WebhookSafetyAlertCreatedType type)
+            string @object = "event",
+            string type = "safety.alert.created")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

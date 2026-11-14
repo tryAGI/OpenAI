@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `response.mcp_call.in_progress`.
         /// </summary>
+        /// <default>"response.mcp_call.in_progress"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventResponseMCPCallInProgressTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallInProgressType Type { get; set; }
+        public string Type { get; set; } = "response.mcp_call.in_progress";
 
         /// <summary>
         /// The index of the output item in the response.
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
             string eventId,
             int outputIndex,
             string itemId,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallInProgressType type)
+            string type = "response.mcp_call.in_progress")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

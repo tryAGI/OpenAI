@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `vector_store`.
         /// </summary>
+        /// <default>"vector_store"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VectorStoreObjectObjectJsonConverter))]
-        public global::tryAGI.OpenAI.VectorStoreObjectObject Object { get; set; }
+        public string Object { get; set; } = "vector_store";
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store was created.
@@ -107,15 +107,15 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `vector_store`.
-        /// </param>
         /// <param name="expiresAfter">
         /// The expiration policy for a vector store.
         /// </param>
         /// <param name="expiresAt"></param>
         /// <param name="lastActiveAt"></param>
         /// <param name="metadata"></param>
+        /// <param name="object">
+        /// The object type, which is always `vector_store`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -126,11 +126,11 @@ namespace tryAGI.OpenAI
             long usageBytes,
             global::tryAGI.OpenAI.VectorStoreObjectFileCounts fileCounts,
             global::tryAGI.OpenAI.VectorStoreObjectStatus status,
-            global::tryAGI.OpenAI.VectorStoreObjectObject @object,
             global::tryAGI.OpenAI.VectorStoreExpirationAfter? expiresAfter,
             int? expiresAt,
             int? lastActiveAt,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            string @object = "vector_store")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

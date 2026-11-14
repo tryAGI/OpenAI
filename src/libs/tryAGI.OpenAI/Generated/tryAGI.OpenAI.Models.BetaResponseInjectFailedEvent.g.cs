@@ -13,9 +13,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event discriminator. Always `response.inject.failed`.
         /// </summary>
+        /// <default>"response.inject.failed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseInjectFailedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseInjectFailedEventType Type { get; set; }
+        public string Type { get; set; } = "response.inject.failed";
 
         /// <summary>
         /// The ID of the response that rejected the input.
@@ -73,12 +73,12 @@ namespace tryAGI.OpenAI
         /// <param name="sequenceNumber">
         /// The sequence number for this event.
         /// </param>
-        /// <param name="type">
-        /// The event discriminator. Always `response.inject.failed`.
-        /// </param>
         /// <param name="streamId">
         /// The multiplexed WebSocket stream that emitted the event. This field is<br/>
         /// present only when WebSocket multiplexing is enabled separately.
+        /// </param>
+        /// <param name="type">
+        /// The event discriminator. Always `response.inject.failed`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -88,8 +88,8 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputItem> input,
             global::tryAGI.OpenAI.BetaResponseInjectFailedEventError error,
             int sequenceNumber,
-            global::tryAGI.OpenAI.BetaResponseInjectFailedEventType type,
-            string? streamId)
+            string? streamId,
+            string type = "response.inject.failed")
         {
             this.Type = type;
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));

@@ -58,15 +58,21 @@ namespace tryAGI.OpenAI
 
             request = new global::tryAGI.OpenAI.CreateImageEditRequest
             {
+                FrameCount = request.FrameCount,
+                FrameDurationMs = request.FrameDurationMs,
+                Complexity = request.Complexity,
                 Image = request.Image,
                 Prompt = request.Prompt,
                 Mask = request.Mask,
                 Maskname = request.Maskname,
+                Markup = request.Markup,
+                Markupname = request.Markupname,
                 Background = request.Background,
                 Model = request.Model,
                 N = request.N,
                 Size = request.Size,
                 OutputFormat = request.OutputFormat,
+                Svg = request.Svg,
                 OutputCompression = request.OutputCompression,
                 SafetyIdentifier = request.SafetyIdentifier,
                 InputFidelity = request.InputFidelity,
@@ -141,7 +147,30 @@ namespace tryAGI.OpenAI
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (request.Image.TryPickValue1(out var __valueImage1))
+                            if (request.FrameCount != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.FrameCount, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"frame_count\"");
+
+                            }
+                            if (request.FrameDurationMs != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.FrameDurationMs, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"frame_duration_ms\"");
+
+                            }
+                            if (request.Complexity != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((request.Complexity).HasValue ? (request.Complexity).GetValueOrDefault().ToValueString() : string.Empty),
+                                    name: "\"complexity\"");
+
+                            }            if (request.Image.TryPickValue1(out var __valueImage1))
                             {
 
                                 var __fileNameImage1 = "file.bin";
@@ -276,6 +305,48 @@ namespace tryAGI.OpenAI
                                 }
 
                             }
+                            if (request.Markup != default)
+                            {
+
+                                var __contentMarkup = new global::System.Net.Http.ByteArrayContent(request.Markup ?? global::System.Array.Empty<byte>());
+                                __contentMarkup.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.Markupname is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.Markupname) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentMarkup,
+                                    name: "\"markup\"",
+                                    fileName: request.Markupname != null ? $"\"{request.Markupname}\"" : string.Empty);
+                                if (__contentMarkup.Headers.ContentDisposition != null)
+                                {
+                                    __contentMarkup.Headers.ContentDisposition.FileNameStar = null;
+                                }
+
+                            }
                             if (request.Background != default)
                             {
 
@@ -318,6 +389,14 @@ namespace tryAGI.OpenAI
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.OutputFormat.ToString() ?? string.Empty),
                                     name: "\"output_format\"");
+
+                            }
+                            if (request.Svg != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Svg.ToString() ?? string.Empty),
+                                    name: "\"svg\"");
 
                             }
                             if (request.OutputCompression != default)
@@ -569,6 +648,228 @@ namespace tryAGI.OpenAI
                                 retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
+                            // Invalid image request, including invalid parameters or input.
+                            if ((int)__response.StatusCode == 400)
+                            {
+                                string? __content_400 = null;
+                                global::System.Exception? __exception_400 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_400 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_400 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_400 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_400 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_400,
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The project does not have access to the requested model.
+                            if ((int)__response.StatusCode == 403)
+                            {
+                                string? __content_403 = null;
+                                global::System.Exception? __exception_403 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_403 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_403 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_403 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_403 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_403,
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The requested DALL-E image endpoint is unavailable because it has been retired.
+                            if ((int)__response.StatusCode == 410)
+                            {
+                                string? __content_410 = null;
+                                global::System.Exception? __exception_410 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_410 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_410 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_410, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_410 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_410 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_410, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_410 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_410 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_410,
+                                    responseBody: __content_410,
+                                    responseObject: __value_410,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The request was rejected because a rate limit was exceeded. A slow_down error means traffic increased too quickly; reduce your request rate, then increase it gradually.
+                            if ((int)__response.StatusCode == 429)
+                            {
+                                string? __content_429 = null;
+                                global::System.Exception? __exception_429 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_429 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_429 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_429,
+                                    responseBody: __content_429,
+                                    responseObject: __value_429,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The image could not be generated or processed.
+                            if ((int)__response.StatusCode == 500)
+                            {
+                                string? __content_500 = null;
+                                global::System.Exception? __exception_500 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_500 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_500 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_500 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_500, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_500 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_500,
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
+                            // The service is temporarily unavailable. A server_is_overloaded error means the requested model is temporarily overloaded; retry after a brief delay.
+                            if ((int)__response.StatusCode == 503)
+                            {
+                                string? __content_503 = null;
+                                global::System.Exception? __exception_503 = null;
+                                global::tryAGI.OpenAI.ErrorResponse? __value_503 = null;
+                                try
+                                {
+                                    if (__effectiveReadResponseAsString)
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+                                        __value_503 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                    }
+                                    else
+                                    {
+                                        __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
+
+                                        __value_503 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                    }
+                                }
+                                catch (global::System.Exception __ex)
+                                {
+                                    __exception_503 = __ex;
+                                }
+
+
+                                throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    innerException: __exception_503,
+                                    responseBody: __content_503,
+                                    responseObject: __value_503,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
+                                        __response.Headers,
+                                        h => h.Key,
+                                        h => h.Value));
+                            }
 
                             try
                             {
@@ -640,6 +941,15 @@ namespace tryAGI.OpenAI
         /// Create image edit<br/>
         /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models.
         /// </summary>
+        /// <param name="frameCount">
+        /// Number of frames for GIF output. Accepts integers from 2 through 16. Defaults to 9 when omitted. Only supported with output_format=gif. The requested size must satisfy the selected model's GIF size limits. GIF output does not support streaming, partial images, masks, or custom output compression. Requires access to the GIF preview for the selected model.
+        /// </param>
+        /// <param name="frameDurationMs">
+        /// Requested delay per GIF frame, in milliseconds. Defaults to 200 when omitted. GIF output rounds to the nearest 10 ms and caps the encoded delay at 655,350 ms per frame. Only supported with output_format=gif.
+        /// </param>
+        /// <param name="complexity">
+        /// Computation spent planning the image, independently of rendering quality. Uses the image model's configured default when omitted. For SVG output, controls the reference image, independently of the SVG author's reasoning.
+        /// </param>
         /// <param name="image">
         /// The image(s) to edit. Must be a supported image file or an array of images.<br/>
         /// For the GPT image models (`gpt-image-1-mini`, `gpt-image-1.5`,<br/>
@@ -659,6 +969,12 @@ namespace tryAGI.OpenAI
         /// <param name="maskname">
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </param>
+        /// <param name="markup">
+        /// A transparent PNG overlaid on the first image to guide the edit. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5. Cannot be combined with mask.
+        /// </param>
+        /// <param name="markupname">
+        /// A transparent PNG overlaid on the first image to guide the edit. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5. Cannot be combined with mask.
+        /// </param>
         /// <param name="background">
         /// Set the background of the generated image(s). This parameter is only supported for<br/>
         /// the GPT image models. Must be one of `transparent`, `opaque`, or `auto` (default<br/>
@@ -677,7 +993,8 @@ namespace tryAGI.OpenAI
         /// (`gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`,<br/>
         /// `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,<br/>
         /// `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`,<br/>
-        /// `gpt-image-2.5-flare-2026-09-08`, or `chatgpt-image-latest`).<br/>
+        /// `gpt-image-2.5-flare-2026-09-08`, `gpt-image-2.6-sunburst`, `gpt-image-2.6-flare`,<br/>
+        /// or `chatgpt-image-latest`).<br/>
         /// `gpt-image-1` was shut down on October 23, 2026. Use<br/>
         /// `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` instead.<br/>
         /// Example: gpt-image-1.5
@@ -694,10 +1011,14 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="outputFormat">
         /// The format in which the generated images are returned. This parameter is<br/>
-        /// only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.<br/>
+        /// only supported for the GPT image models.<br/>
         /// The default value is `png`.<br/>
+        /// SVG output requires a supported image model and project access.<br/>
         /// Default Value: png<br/>
         /// Example: png
+        /// </param>
+        /// <param name="svg">
+        /// Selects the author model and reasoning effort for `output_format=svg`. Supply `svg.model` when SVG model selection is enabled. Otherwise, omit this object. SVG output requires `n=1` and cannot use streaming, partial images, or output compression. Use multipart fields such as `svg[model]`.
         /// </param>
         /// <param name="outputCompression">
         /// The compression level (0-100%) for the generated images. This parameter<br/>
@@ -724,12 +1045,18 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AnyOf<byte[], global::System.Collections.Generic.IList<byte[]>> image,
             string prompt,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?> model,
+            int? frameCount = default,
+            int? frameDurationMs = default,
+            global::tryAGI.OpenAI.Complexity? complexity = default,
             byte[]? mask = default,
             string? maskname = default,
+            byte[]? markup = default,
+            string? markupname = default,
             global::tryAGI.OpenAI.CreateImageEditRequestBackground? background = default,
             int? n = default,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestSize?>? size = default,
-            global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat? outputFormat = default,
+            global::tryAGI.OpenAI.ImagesApiOutputFormat? outputFormat = default,
+            global::tryAGI.OpenAI.SvgParam? svg = default,
             int? outputCompression = default,
             string? safetyIdentifier = default,
             global::tryAGI.OpenAI.InputFidelity? inputFidelity = default,
@@ -740,15 +1067,21 @@ namespace tryAGI.OpenAI
         {
             var __request = new global::tryAGI.OpenAI.CreateImageEditRequest
             {
+                FrameCount = frameCount,
+                FrameDurationMs = frameDurationMs,
+                Complexity = complexity,
                 Image = image,
                 Prompt = prompt,
                 Mask = mask,
                 Maskname = maskname,
+                Markup = markup,
+                Markupname = markupname,
                 Background = background,
                 Model = model,
                 N = n,
                 Size = size,
                 OutputFormat = outputFormat,
+                Svg = svg,
                 OutputCompression = outputCompression,
                 SafetyIdentifier = safetyIdentifier,
                 InputFidelity = inputFidelity,

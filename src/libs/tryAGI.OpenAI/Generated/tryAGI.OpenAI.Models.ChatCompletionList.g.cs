@@ -12,10 +12,9 @@ namespace tryAGI.OpenAI
         /// The type of this object. It is always set to "list".<br/>
         /// Default Value: list
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.ChatCompletionListObject.List</default>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionListObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionListObject Object { get; set; } = global::tryAGI.OpenAI.ChatCompletionListObject.List;
+        public string Object { get; set; } = "list";
 
         /// <summary>
         /// An array of chat completion objects.
@@ -76,7 +75,7 @@ namespace tryAGI.OpenAI
             bool hasMore,
             string? firstId,
             string? lastId,
-            global::tryAGI.OpenAI.ChatCompletionListObject @object = global::tryAGI.OpenAI.ChatCompletionListObject.List)
+            string @object = "list")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

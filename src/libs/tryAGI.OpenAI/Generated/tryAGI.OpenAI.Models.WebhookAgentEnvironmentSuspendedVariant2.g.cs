@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type. Always `agent.environment.suspended`.
         /// </summary>
+        /// <default>"agent.environment.suspended"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookAgentEnvironmentSuspendedVariant2TypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookAgentEnvironmentSuspendedVariant2Type Type { get; set; }
+        public string Type { get; set; } = "agent.environment.suspended";
 
         /// <summary>
         /// Identifies the environment whose lifecycle changed.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public WebhookAgentEnvironmentSuspendedVariant2(
             global::tryAGI.OpenAI.AgentEnvironmentEvent data,
-            global::tryAGI.OpenAI.WebhookAgentEnvironmentSuspendedVariant2Type type)
+            string type = "agent.environment.suspended")
         {
             this.Type = type;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public WebhookAgentEnvironmentSuspendedVariant2()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="WebhookAgentEnvironmentSuspendedVariant2"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WebhookAgentEnvironmentSuspendedVariant2 FromData(global::tryAGI.OpenAI.AgentEnvironmentEvent data)
+        {
+            return new WebhookAgentEnvironmentSuspendedVariant2
+            {
+                Data = data,
+            };
         }
 
     }

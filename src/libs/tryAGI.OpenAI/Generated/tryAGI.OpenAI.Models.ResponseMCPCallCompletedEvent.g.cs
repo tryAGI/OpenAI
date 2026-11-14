@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always 'response.mcp_call.completed'.
         /// </summary>
+        /// <default>"response.mcp_call.completed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseMCPCallCompletedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseMCPCallCompletedEventType Type { get; set; }
+        public string Type { get; set; } = "response.mcp_call.completed";
 
         /// <summary>
         /// The ID of the MCP tool call item that completed.
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
             string itemId,
             int outputIndex,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseMCPCallCompletedEventType type)
+            string type = "response.mcp_call.completed")
         {
             this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));

@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `conversation.item.retrieved`.
         /// </summary>
+        /// <default>"conversation.item.retrieved"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventConversationItemRetrievedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemRetrievedType Type { get; set; }
+        public string Type { get; set; } = "conversation.item.retrieved";
 
         /// <summary>
         /// A single item within a Realtime conversation.
@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
         public RealtimeBetaServerEventConversationItemRetrieved(
             string eventId,
             global::tryAGI.OpenAI.RealtimeConversationItem item,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemRetrievedType type)
+            string type = "conversation.item.retrieved")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

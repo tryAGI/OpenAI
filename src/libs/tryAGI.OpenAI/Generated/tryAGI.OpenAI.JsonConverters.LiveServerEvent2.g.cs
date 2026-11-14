@@ -183,12 +183,12 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveTransportDTMFReceived)}");
                 transportDtmfReceived = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::tryAGI.OpenAI.LiveTransportDTMFSend? transportDtmfSend = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.LiveServerEvent2DiscriminatorType.TransportDtmfSend)
+            global::tryAGI.OpenAI.LiveTransportDTMFSent? transportDtmfSent = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.LiveServerEvent2DiscriminatorType.TransportDtmfSent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportDTMFSend), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportDTMFSend> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveTransportDTMFSend)}");
-                transportDtmfSend = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportDTMFSent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportDTMFSent> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.LiveTransportDTMFSent)}");
+                transportDtmfSent = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.LiveTransportRinging? transportRinging = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.LiveServerEvent2DiscriminatorType.TransportRinging)
@@ -260,7 +260,7 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 transportDtmfReceived,
 
-                transportDtmfSend,
+                transportDtmfSent,
 
                 transportRinging,
 
@@ -420,11 +420,11 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveTransportDTMFReceived).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTransportDtmfReceived(), typeInfo);
             }
-            else if (value.IsTransportDtmfSend)
+            else if (value.IsTransportDtmfSent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportDTMFSend), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportDTMFSend?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveTransportDTMFSend).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTransportDtmfSend(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.LiveTransportDTMFSent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.LiveTransportDTMFSent?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.LiveTransportDTMFSent).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTransportDtmfSent(), typeInfo);
             }
             else if (value.IsTransportRinging)
             {

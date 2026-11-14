@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.code_interpreter_call.interpreting`.
         /// </summary>
+        /// <default>"response.code_interpreter_call.interpreting"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseCodeInterpreterCallInterpretingEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEventType Type { get; set; }
+        public string Type { get; set; } = "response.code_interpreter_call.interpreting";
 
         /// <summary>
         /// The index of the output item in the response for which the code interpreter is interpreting code.
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
             int outputIndex,
             string itemId,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseCodeInterpreterCallInterpretingEventType type)
+            string type = "response.code_interpreter_call.interpreting")
         {
             this.Type = type;
             this.OutputIndex = outputIndex;

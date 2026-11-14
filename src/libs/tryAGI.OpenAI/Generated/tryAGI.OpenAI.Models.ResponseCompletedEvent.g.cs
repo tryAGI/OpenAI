@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.completed`.
         /// </summary>
+        /// <default>"response.completed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseCompletedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseCompletedEventType Type { get; set; }
+        public string Type { get; set; } = "response.completed";
 
         /// <summary>
         /// Properties of the completed response.<br/>
@@ -57,7 +57,7 @@ namespace tryAGI.OpenAI
         public ResponseCompletedEvent(
             global::tryAGI.OpenAI.Response response,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseCompletedEventType type)
+            string type = "response.completed")
         {
             this.Type = type;
             this.Response = response;

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the item. Always `mcp_call`.
         /// </summary>
+        /// <default>"mcp_call"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeMCPToolCallTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeMCPToolCallType Type { get; set; }
+        public string Type { get; set; } = "mcp_call";
 
         /// <summary>
         /// The unique ID of the tool call.
@@ -82,12 +82,12 @@ namespace tryAGI.OpenAI
         /// <param name="arguments">
         /// A JSON string of the arguments passed to the tool.
         /// </param>
-        /// <param name="type">
-        /// The type of the item. Always `mcp_call`.
-        /// </param>
         /// <param name="approvalRequestId"></param>
         /// <param name="output"></param>
         /// <param name="error"></param>
+        /// <param name="type">
+        /// The type of the item. Always `mcp_call`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -96,10 +96,10 @@ namespace tryAGI.OpenAI
             string serverLabel,
             string name,
             string arguments,
-            global::tryAGI.OpenAI.RealtimeMCPToolCallType type,
             string? approvalRequestId,
             string? output,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeMCPProtocolError, global::tryAGI.OpenAI.RealtimeMCPToolExecutionError, global::tryAGI.OpenAI.RealtimeMCPHTTPError>? error)
+            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeMCPProtocolError, global::tryAGI.OpenAI.RealtimeMCPToolExecutionError, global::tryAGI.OpenAI.RealtimeMCPHTTPError>? error,
+            string type = "mcp_call")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

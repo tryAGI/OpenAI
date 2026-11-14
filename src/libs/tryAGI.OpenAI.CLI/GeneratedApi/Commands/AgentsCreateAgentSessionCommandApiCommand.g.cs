@@ -7,17 +7,17 @@ namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
 internal static partial class AgentsCreateAgentSessionCommandApiCommand
 {
-    private static Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
-        name: @"--metadata")
-    {
-        Description = @"Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Omission or null defaults to an empty map.",
-    };
-
     private static Option<global::tryAGI.OpenAI.EnvironmentParam> Environment { get; } = new(
         name: @"--environment")
     {
         Description = @"An inline execution environment or a reference to an environment template.",
         Required = true,
+    };
+
+    private static Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
+        name: @"--metadata")
+    {
+        Description = @"Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Omission or null defaults to an empty map.",
     };
 
     private static Option<global::tryAGI.OpenAI.CreateSessionInputParam?> InputOption { get; } = new(
@@ -28,6 +28,10 @@ internal static partial class AgentsCreateAgentSessionCommandApiCommand
     private static readonly CreateAgentSessionParamsOptionSet CreateAgentSessionParamsOptionSetOptions = CreateAgentSessionParamsOptionSet.Create();
 
     private static readonly SessionAgentConfigParamOptionSet AgentOptions = SessionAgentConfigParamOptionSet.Create(@"agent");
+
+    private static readonly PromptCacheOptionsParam2OptionSet PromptCacheOptionsOptions = PromptCacheOptionsParam2OptionSet.Create(@"prompt-cache");
+
+    private static readonly SessionStreamOptionsParamOptionSet StreamOptionsOptions = SessionStreamOptionsParamOptionSet.Create(@"stream");
       private static Option<string?> RequestInput { get; } = new(@"--request-input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -87,11 +91,12 @@ internal static partial class AgentsCreateAgentSessionCommandApiCommand
     {
         var command = new Command(commandName ?? @"create-agent-session", @"Create an agent session
 Creates a managed agent session, optionally submits initial input, and returns the session or streams its events when stream is true. See [running sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions).");
-                        command.Options.Add(Metadata);
                         command.Options.Add(Environment);
-                        command.Options.Add(InputOption);                        command.Options.Add(CreateAgentSessionParamsOptionSetOptions.AgentId);
+                        command.Options.Add(Metadata);
+                        command.Options.Add(InputOption);                        command.Options.Add(CreateAgentSessionParamsOptionSetOptions.Review);
+                        command.Options.Add(CreateAgentSessionParamsOptionSetOptions.AgentId);
                         command.Options.Add(CreateAgentSessionParamsOptionSetOptions.VaultIds);                        command.Options.Add(AgentOptions.Model);
-                        command.Options.Add(AgentOptions.Instructions);
+                        command.Options.Add(AgentOptions.Instructions);                        command.Options.Add(PromptCacheOptionsOptions.Ttl);                        command.Options.Add(StreamOptionsOptions.IncludeObfuscation);
           command.Options.Add(RequestInput);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -119,9 +124,10 @@ Creates a managed agent session, optionally submits initial input, and returns t
                             RequestFile,
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
-                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
                         var environment = parseResult.GetRequiredValue(Environment);
-                        var input = CliRuntime.WasSpecified(parseResult, InputOption) ? parseResult.GetValue(InputOption) : (__requestBase is { } __InputBaseValue ? __InputBaseValue.Input : default);                        var agentId = CliRuntime.WasSpecified(parseResult, CreateAgentSessionParamsOptionSetOptions.AgentId) ? parseResult.GetValue(CreateAgentSessionParamsOptionSetOptions.AgentId) : (__requestBase is { } __AgentIdBaseValue ? __AgentIdBaseValue.AgentId : default);
+                        var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
+                        var input = CliRuntime.WasSpecified(parseResult, InputOption) ? parseResult.GetValue(InputOption) : (__requestBase is { } __InputBaseValue ? __InputBaseValue.Input : default);                        var review = CliRuntime.WasSpecified(parseResult, CreateAgentSessionParamsOptionSetOptions.Review) ? parseResult.GetValue(CreateAgentSessionParamsOptionSetOptions.Review) : (__requestBase is { } __ReviewBaseValue ? __ReviewBaseValue.Review : default);
+                        var agentId = CliRuntime.WasSpecified(parseResult, CreateAgentSessionParamsOptionSetOptions.AgentId) ? parseResult.GetValue(CreateAgentSessionParamsOptionSetOptions.AgentId) : (__requestBase is { } __AgentIdBaseValue ? __AgentIdBaseValue.AgentId : default);
                         var vaultIds = CliRuntime.WasSpecified(parseResult, CreateAgentSessionParamsOptionSetOptions.VaultIds) ? parseResult.GetValue(CreateAgentSessionParamsOptionSetOptions.VaultIds) : (__requestBase is { } __VaultIdsBaseValue ? __VaultIdsBaseValue.VaultIds : default);
 
                         var __AgentBase = __requestBase is { } __AgentBaseValue ? __AgentBaseValue.Agent : default;                        var agentModel = CliRuntime.WasSpecified(parseResult, AgentOptions.Model) ? parseResult.GetValue(AgentOptions.Model) : (__AgentBase is { } __AgentmodelBaseValue ? __AgentmodelBaseValue.Model : default);
@@ -135,7 +141,29 @@ Creates a managed agent session, optionally submits initial input, and returns t
                                 Instructions = agentInstructions,
 
                                 }
-                                : __AgentBase;          var wait = parseResult.GetValue(Wait);
+                                : __AgentBase;
+
+                        var __PromptCacheOptionsBase = __requestBase is { } __PromptCacheOptionsBaseValue ? __PromptCacheOptionsBaseValue.PromptCacheOptions : default;                        var promptCacheOptionsTtl = CliRuntime.WasSpecified(parseResult, PromptCacheOptionsOptions.Ttl) ? parseResult.GetValue(PromptCacheOptionsOptions.Ttl) : (__PromptCacheOptionsBase is { } __PromptCacheOptionsttlBaseValue ? __PromptCacheOptionsttlBaseValue.Ttl : default);
+                        var __PromptCacheOptionsSpecified = CliRuntime.WasSpecified(parseResult, PromptCacheOptionsOptions.Ttl);
+                        var promptCacheOptions =
+                            __PromptCacheOptionsSpecified || __PromptCacheOptionsBase is not null
+                                ? new global::tryAGI.OpenAI.PromptCacheOptionsParam2
+                                {
+	                                Ttl = promptCacheOptionsTtl,
+
+                                }
+                                : __PromptCacheOptionsBase;
+
+                        var __StreamOptionsBase = __requestBase is { } __StreamOptionsBaseValue ? __StreamOptionsBaseValue.StreamOptions : default;                        var streamOptionsIncludeObfuscation = CliRuntime.WasSpecified(parseResult, StreamOptionsOptions.IncludeObfuscation) ? parseResult.GetValue(StreamOptionsOptions.IncludeObfuscation) : (__StreamOptionsBase is { } __StreamOptionsincludeObfuscationBaseValue ? __StreamOptionsincludeObfuscationBaseValue.IncludeObfuscation : default);
+                        var __StreamOptionsSpecified = CliRuntime.WasSpecified(parseResult, StreamOptionsOptions.IncludeObfuscation);
+                        var streamOptions =
+                            __StreamOptionsSpecified || __StreamOptionsBase is not null
+                                ? new global::tryAGI.OpenAI.SessionStreamOptionsParam
+                                {
+	                                IncludeObfuscation = streamOptionsIncludeObfuscation,
+
+                                }
+                                : __StreamOptionsBase;          var wait = parseResult.GetValue(Wait);
           var pollInterval = wait ? CliRuntime.ParseDuration(parseResult.GetRequiredValue(PollInterval), PollInterval.Name) : default;
           var waitTimeout = wait ? CliRuntime.ParseDuration(parseResult.GetRequiredValue(WaitTimeout), WaitTimeout.Name) : default;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
@@ -143,12 +171,15 @@ Creates a managed agent session, optionally submits initial input, and returns t
                                 if (wait)
                                 {
                                 var createResponse = await client.Agents.CreateAgentSessionAsync(
-                                    metadata: metadata,
                                     environment: environment,
+                                    metadata: metadata,
                                     input: input,
+                                    review: review,
                                     agentId: agentId,
                                     vaultIds: vaultIds,
                                     agent: agent,
+                                    promptCacheOptions: promptCacheOptions,
+                                    streamOptions: streamOptions,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
                                     var resourceId = global::System.Convert.ToString(
                                         createResponse.Id,
@@ -175,12 +206,15 @@ Creates a managed agent session, optionally submits initial input, and returns t
                                 }
 
                                 var response = await client.Agents.CreateAgentSessionAsync(
-                                    metadata: metadata,
                                     environment: environment,
+                                    metadata: metadata,
                                     input: input,
+                                    review: review,
                                     agentId: agentId,
                                     vaultIds: vaultIds,
                                     agent: agent,
+                                    promptCacheOptions: promptCacheOptions,
+                                    streamOptions: streamOptions,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

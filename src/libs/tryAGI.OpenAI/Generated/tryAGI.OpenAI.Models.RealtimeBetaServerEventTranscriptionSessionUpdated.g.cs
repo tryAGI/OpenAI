@@ -19,9 +19,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `transcription_session.updated`.
         /// </summary>
+        /// <default>"transcription_session.updated"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventTranscriptionSessionUpdatedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventTranscriptionSessionUpdatedType Type { get; set; }
+        public string Type { get; set; } = "transcription_session.updated";
 
         /// <summary>
         /// A new Realtime transcription session configuration.<br/>
@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
         public RealtimeBetaServerEventTranscriptionSessionUpdated(
             string eventId,
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponse session,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventTranscriptionSessionUpdatedType type)
+            string type = "transcription_session.updated")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

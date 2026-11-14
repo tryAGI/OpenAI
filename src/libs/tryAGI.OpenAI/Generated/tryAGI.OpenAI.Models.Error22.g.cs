@@ -35,7 +35,7 @@ namespace tryAGI.OpenAI
         public required string Message { get; set; }
 
         /// <summary>
-        /// The Retry-After and Retry-After-Ms headers returned with the original error, if any.
+        /// Headers returned with the original error. These can include Retry-After, Retry-After-Ms, and, on opted-in deployments, x-openai-inference-capacity-reason.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
         public global::System.Collections.Generic.Dictionary<string, string>? Headers { get; set; }
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
         /// <param name="type"></param>
         /// <param name="param"></param>
         /// <param name="headers">
-        /// The Retry-After and Retry-After-Ms headers returned with the original error, if any.
+        /// Headers returned with the original error. These can include Retry-After, Retry-After-Ms, and, on opted-in deployments, x-openai-inference-capacity-reason.
         /// </param>
         /// <param name="misalignment"></param>
 #if NET7_0_OR_GREATER

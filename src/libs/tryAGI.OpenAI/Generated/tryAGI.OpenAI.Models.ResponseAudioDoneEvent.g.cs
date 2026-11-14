@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.audio.done`.
         /// </summary>
+        /// <default>"response.audio.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseAudioDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseAudioDoneEventType Type { get; set; }
+        public string Type { get; set; } = "response.audio.done";
 
         /// <summary>
         /// The sequence number of the delta.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public ResponseAudioDoneEvent(
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseAudioDoneEventType type)
+            string type = "response.audio.done")
         {
             this.Type = type;
             this.SequenceNumber = sequenceNumber;
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ResponseAudioDoneEvent()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ResponseAudioDoneEvent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ResponseAudioDoneEvent FromSequenceNumber(int sequenceNumber)
+        {
+            return new ResponseAudioDoneEvent
+            {
+                SequenceNumber = sequenceNumber,
+            };
         }
 
     }

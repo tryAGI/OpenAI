@@ -86,15 +86,21 @@ namespace tryAGI.OpenAI
 
             request = new global::tryAGI.OpenAI.CreateImageEditRequest
             {
+                FrameCount = request.FrameCount,
+                FrameDurationMs = request.FrameDurationMs,
+                Complexity = request.Complexity,
                 Image = request.Image,
                 Prompt = request.Prompt,
                 Mask = request.Mask,
                 Maskname = request.Maskname,
+                Markup = request.Markup,
+                Markupname = request.Markupname,
                 Background = request.Background,
                 Model = request.Model,
                 N = request.N,
                 Size = request.Size,
                 OutputFormat = request.OutputFormat,
+                Svg = request.Svg,
                 OutputCompression = request.OutputCompression,
                 SafetyIdentifier = request.SafetyIdentifier,
                 InputFidelity = request.InputFidelity,
@@ -169,7 +175,30 @@ namespace tryAGI.OpenAI
             }
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            if (request.Image.TryPickValue1(out var __valueImage1))
+                            if (request.FrameCount != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.FrameCount, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"frame_count\"");
+
+                            }
+                            if (request.FrameDurationMs != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.FrameDurationMs, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
+                                    name: "\"frame_duration_ms\"");
+
+                            }
+                            if (request.Complexity != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent((request.Complexity).HasValue ? (request.Complexity).GetValueOrDefault().ToValueString() : string.Empty),
+                                    name: "\"complexity\"");
+
+                            }            if (request.Image.TryPickValue1(out var __valueImage1))
                             {
 
                                 var __fileNameImage1 = "file.bin";
@@ -304,6 +333,48 @@ namespace tryAGI.OpenAI
                                 }
 
                             }
+                            if (request.Markup != default)
+                            {
+
+                                var __contentMarkup = new global::System.Net.Http.ByteArrayContent(request.Markup ?? global::System.Array.Empty<byte>());
+                                __contentMarkup.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.Markupname is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.Markupname) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
+                                __httpRequestContent.Add(
+                                    content: __contentMarkup,
+                                    name: "\"markup\"",
+                                    fileName: request.Markupname != null ? $"\"{request.Markupname}\"" : string.Empty);
+                                if (__contentMarkup.Headers.ContentDisposition != null)
+                                {
+                                    __contentMarkup.Headers.ContentDisposition.FileNameStar = null;
+                                }
+
+                            }
                             if (request.Background != default)
                             {
 
@@ -346,6 +417,14 @@ namespace tryAGI.OpenAI
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.OutputFormat.ToString() ?? string.Empty),
                                     name: "\"output_format\"");
+
+                            }
+                            if (request.Svg != default)
+                            {
+
+                                __httpRequestContent.Add(
+                                    content: new global::System.Net.Http.StringContent(request.Svg.ToString() ?? string.Empty),
+                                    name: "\"svg\"");
 
                             }
                             if (request.OutputCompression != default)
@@ -919,6 +998,15 @@ namespace tryAGI.OpenAI
         /// Create image edit<br/>
         /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models.
         /// </summary>
+        /// <param name="frameCount">
+        /// Number of frames for GIF output. Accepts integers from 2 through 16. Defaults to 9 when omitted. Only supported with output_format=gif. The requested size must satisfy the selected model's GIF size limits. GIF output does not support streaming, partial images, masks, or custom output compression. Requires access to the GIF preview for the selected model.
+        /// </param>
+        /// <param name="frameDurationMs">
+        /// Requested delay per GIF frame, in milliseconds. Defaults to 200 when omitted. GIF output rounds to the nearest 10 ms and caps the encoded delay at 655,350 ms per frame. Only supported with output_format=gif.
+        /// </param>
+        /// <param name="complexity">
+        /// Computation spent planning the image, independently of rendering quality. Uses the image model's configured default when omitted. For SVG output, controls the reference image, independently of the SVG author's reasoning.
+        /// </param>
         /// <param name="image">
         /// The image(s) to edit. Must be a supported image file or an array of images.<br/>
         /// For the GPT image models (`gpt-image-1-mini`, `gpt-image-1.5`,<br/>
@@ -938,6 +1026,12 @@ namespace tryAGI.OpenAI
         /// <param name="maskname">
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </param>
+        /// <param name="markup">
+        /// A transparent PNG overlaid on the first image to guide the edit. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5. Cannot be combined with mask.
+        /// </param>
+        /// <param name="markupname">
+        /// A transparent PNG overlaid on the first image to guide the edit. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5. Cannot be combined with mask.
+        /// </param>
         /// <param name="background">
         /// Set the background of the generated image(s). This parameter is only supported for<br/>
         /// the GPT image models. Must be one of `transparent`, `opaque`, or `auto` (default<br/>
@@ -956,7 +1050,8 @@ namespace tryAGI.OpenAI
         /// (`gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`,<br/>
         /// `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,<br/>
         /// `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`,<br/>
-        /// `gpt-image-2.5-flare-2026-09-08`, or `chatgpt-image-latest`).<br/>
+        /// `gpt-image-2.5-flare-2026-09-08`, `gpt-image-2.6-sunburst`, `gpt-image-2.6-flare`,<br/>
+        /// or `chatgpt-image-latest`).<br/>
         /// `gpt-image-1` was shut down on October 23, 2026. Use<br/>
         /// `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` instead.<br/>
         /// Example: gpt-image-1.5
@@ -973,10 +1068,14 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="outputFormat">
         /// The format in which the generated images are returned. This parameter is<br/>
-        /// only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.<br/>
+        /// only supported for the GPT image models.<br/>
         /// The default value is `png`.<br/>
+        /// SVG output requires a supported image model and project access.<br/>
         /// Default Value: png<br/>
         /// Example: png
+        /// </param>
+        /// <param name="svg">
+        /// Selects the author model and reasoning effort for `output_format=svg`. Supply `svg.model` when SVG model selection is enabled. Otherwise, omit this object. SVG output requires `n=1` and cannot use streaming, partial images, or output compression. Use multipart fields such as `svg[model]`.
         /// </param>
         /// <param name="outputCompression">
         /// The compression level (0-100%) for the generated images. This parameter<br/>
@@ -1003,12 +1102,18 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AnyOf<byte[], global::System.Collections.Generic.IList<byte[]>> image,
             string prompt,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestModel?> model,
+            int? frameCount = default,
+            int? frameDurationMs = default,
+            global::tryAGI.OpenAI.Complexity? complexity = default,
             byte[]? mask = default,
             string? maskname = default,
+            byte[]? markup = default,
+            string? markupname = default,
             global::tryAGI.OpenAI.CreateImageEditRequestBackground? background = default,
             int? n = default,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageEditRequestSize?>? size = default,
-            global::tryAGI.OpenAI.CreateImageEditRequestOutputFormat? outputFormat = default,
+            global::tryAGI.OpenAI.ImagesApiOutputFormat? outputFormat = default,
+            global::tryAGI.OpenAI.SvgParam? svg = default,
             int? outputCompression = default,
             string? safetyIdentifier = default,
             global::tryAGI.OpenAI.InputFidelity? inputFidelity = default,
@@ -1019,15 +1124,21 @@ namespace tryAGI.OpenAI
         {
             var __request = new global::tryAGI.OpenAI.CreateImageEditRequest
             {
+                FrameCount = frameCount,
+                FrameDurationMs = frameDurationMs,
+                Complexity = complexity,
                 Image = image,
                 Prompt = prompt,
                 Mask = mask,
                 Maskname = maskname,
+                Markup = markup,
+                Markupname = markupname,
                 Background = background,
                 Model = model,
                 N = n,
                 Size = size,
                 OutputFormat = outputFormat,
+                Svg = svg,
                 OutputCompression = outputCompression,
                 SafetyIdentifier = safetyIdentifier,
                 InputFidelity = inputFidelity,

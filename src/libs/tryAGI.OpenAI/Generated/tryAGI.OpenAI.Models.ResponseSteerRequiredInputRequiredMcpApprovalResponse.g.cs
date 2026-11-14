@@ -13,9 +13,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"mcp_approval_response"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseSteerRequiredInputRequiredMcpApprovalResponseTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredMcpApprovalResponseType Type { get; set; }
+        public string Type { get; set; } = "mcp_approval_response";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public ResponseSteerRequiredInputRequiredMcpApprovalResponse(
             string approvalRequestId,
-            global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredMcpApprovalResponseType type)
+            string type = "mcp_approval_response")
         {
             this.Type = type;
             this.ApprovalRequestId = approvalRequestId ?? throw new global::System.ArgumentNullException(nameof(approvalRequestId));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ResponseSteerRequiredInputRequiredMcpApprovalResponse()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ResponseSteerRequiredInputRequiredMcpApprovalResponse"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ResponseSteerRequiredInputRequiredMcpApprovalResponse FromApprovalRequestId(string approvalRequestId)
+        {
+            return new ResponseSteerRequiredInputRequiredMcpApprovalResponse
+            {
+                ApprovalRequestId = approvalRequestId,
+            };
         }
 
     }

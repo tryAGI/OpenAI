@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `mcp_list_tools.in_progress`.
         /// </summary>
+        /// <default>"mcp_list_tools.in_progress"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventMCPListToolsInProgressTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgressType Type { get; set; }
+        public string Type { get; set; } = "mcp_list_tools.in_progress";
 
         /// <summary>
         /// The ID of the MCP list tools item.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventMCPListToolsInProgress(
             string eventId,
             string itemId,
-            global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsInProgressType type)
+            string type = "mcp_list_tools.in_progress")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

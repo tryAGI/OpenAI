@@ -21,6 +21,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_identifier")]
+        public string? SafetyIdentifier { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         public string? Instructions { get; set; }
 
@@ -73,6 +79,7 @@ namespace tryAGI.OpenAI
         /// The Live model. Required in the session configuration for every transport; do not pass it as a URL query parameter.<br/>
         /// Example: gpt-live-1
         /// </param>
+        /// <param name="safetyIdentifier"></param>
         /// <param name="instructions"></param>
         /// <param name="audio">
         /// Startup audio configuration. WebRTC and SIP negotiate their audio format on the media transport.
@@ -95,6 +102,7 @@ namespace tryAGI.OpenAI
 #endif
         public LiveMediaSessionCreateParams(
             global::tryAGI.OpenAI.ModelIdsLive model,
+            string? safetyIdentifier,
             string? instructions,
             global::tryAGI.OpenAI.LiveMediaSessionAudioParam? audio,
             global::tryAGI.OpenAI.DelegationVariant1? delegation,
@@ -104,6 +112,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.LiveClientConfigParam? client)
         {
             this.Model = model;
+            this.SafetyIdentifier = safetyIdentifier;
             this.Instructions = instructions;
             this.Audio = audio;
             this.Delegation = delegation;

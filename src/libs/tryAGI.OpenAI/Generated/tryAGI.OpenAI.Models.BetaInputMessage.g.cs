@@ -20,8 +20,7 @@ namespace tryAGI.OpenAI
         /// The type of the message input. Always set to `message`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaInputMessageTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaInputMessageType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// The role of the message input. One of `user`, `system`, or `developer`.
@@ -80,7 +79,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaInputMessageRole role,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputContent> content,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaInputMessageType? type,
+            string? type,
             global::tryAGI.OpenAI.BetaInputMessageStatus? status)
         {
             this.Agent = agent;

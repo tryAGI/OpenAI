@@ -13,9 +13,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event discriminator. Always `response.inject`.
         /// </summary>
+        /// <default>"response.inject"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseInjectEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseInjectEventType Type { get; set; }
+        public string Type { get; set; } = "response.inject";
 
         /// <summary>
         /// The ID of the active response that should receive the input.
@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
         public BetaResponseInjectEvent(
             string responseId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputItem> input,
-            global::tryAGI.OpenAI.BetaResponseInjectEventType type)
+            string type = "response.inject")
         {
             this.Type = type;
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));

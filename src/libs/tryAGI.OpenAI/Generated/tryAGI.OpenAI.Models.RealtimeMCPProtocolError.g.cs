@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"protocol_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeMCPProtocolErrorTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeMCPProtocolErrorType Type { get; set; }
+        public string Type { get; set; } = "protocol_error";
 
         /// <summary>
         ///
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         public RealtimeMCPProtocolError(
             int code,
             string message,
-            global::tryAGI.OpenAI.RealtimeMCPProtocolErrorType type)
+            string type = "protocol_error")
         {
             this.Type = type;
             this.Code = code;

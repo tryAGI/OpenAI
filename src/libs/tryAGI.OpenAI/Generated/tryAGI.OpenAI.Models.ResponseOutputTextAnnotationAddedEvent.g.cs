@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always 'response.output_text.annotation.added'.
         /// </summary>
+        /// <default>"response.output_text.annotation.added"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseOutputTextAnnotationAddedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEventType Type { get; set; }
+        public string Type { get; set; } = "response.output_text.annotation.added";
 
         /// <summary>
         /// The unique identifier of the item to which the annotation is being added.
@@ -80,11 +80,11 @@ namespace tryAGI.OpenAI
         /// <param name="sequenceNumber">
         /// The sequence number of this event.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always 'response.output_text.annotation.added'.
-        /// </param>
         /// <param name="annotation">
         /// The annotation object being added. (See annotation schema for details.)
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.output_text.annotation.added'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -95,8 +95,8 @@ namespace tryAGI.OpenAI
             int contentIndex,
             int annotationIndex,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseOutputTextAnnotationAddedEventType type,
-            global::tryAGI.OpenAI.Annotation? annotation)
+            global::tryAGI.OpenAI.Annotation? annotation,
+            string type = "response.output_text.annotation.added")
         {
             this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));

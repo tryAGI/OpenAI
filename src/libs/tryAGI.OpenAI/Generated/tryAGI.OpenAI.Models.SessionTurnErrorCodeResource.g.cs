@@ -55,6 +55,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        MaxOutputTokens,
+        /// <summary>
+        ///
+        /// </summary>
         MisalignmentPolicyViolation,
         /// <summary>
         ///
@@ -125,6 +129,7 @@ namespace tryAGI.OpenAI
                 SessionTurnErrorCodeResource.FlexUnavailable => "flex_unavailable",
                 SessionTurnErrorCodeResource.InternalError => "internal_error",
                 SessionTurnErrorCodeResource.InvalidRequest => "invalid_request",
+                SessionTurnErrorCodeResource.MaxOutputTokens => "max_output_tokens",
                 SessionTurnErrorCodeResource.MisalignmentPolicyViolation => "misalignment_policy_violation",
                 SessionTurnErrorCodeResource.OrganizationSpendLimitExceeded => "organization_spend_limit_exceeded",
                 SessionTurnErrorCodeResource.OrganizationUsageLimitExceeded => "organization_usage_limit_exceeded",
@@ -158,6 +163,7 @@ namespace tryAGI.OpenAI
                 "flex_unavailable" => SessionTurnErrorCodeResource.FlexUnavailable,
                 "internal_error" => SessionTurnErrorCodeResource.InternalError,
                 "invalid_request" => SessionTurnErrorCodeResource.InvalidRequest,
+                "max_output_tokens" => SessionTurnErrorCodeResource.MaxOutputTokens,
                 "misalignment_policy_violation" => SessionTurnErrorCodeResource.MisalignmentPolicyViolation,
                 "organization_spend_limit_exceeded" => SessionTurnErrorCodeResource.OrganizationSpendLimitExceeded,
                 "organization_usage_limit_exceeded" => SessionTurnErrorCodeResource.OrganizationUsageLimitExceeded,

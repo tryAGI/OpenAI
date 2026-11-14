@@ -14,9 +14,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.incomplete`.
         /// </summary>
+        /// <default>"response.incomplete"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseIncompleteEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseIncompleteEventType Type { get; set; }
+        public string Type { get; set; } = "response.incomplete";
 
         /// <summary>
         /// The response that was incomplete.<br/>
@@ -60,7 +60,7 @@ namespace tryAGI.OpenAI
         public ResponseIncompleteEvent(
             global::tryAGI.OpenAI.Response response,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseIncompleteEventType type)
+            string type = "response.incomplete")
         {
             this.Type = type;
             this.Response = response;

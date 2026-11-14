@@ -25,9 +25,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `session.update`.
         /// </summary>
+        /// <default>"session.update"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaClientEventSessionUpdateTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventSessionUpdateType Type { get; set; }
+        public string Type { get; set; } = "session.update";
 
         /// <summary>
         /// A new Realtime session configuration, with an ephemeral key. Default TTL<br/>
@@ -62,7 +62,7 @@ namespace tryAGI.OpenAI
         public RealtimeBetaClientEventSessionUpdate(
             global::tryAGI.OpenAI.RealtimeSessionCreateRequest session,
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeBetaClientEventSessionUpdateType type)
+            string type = "session.update")
         {
             this.EventId = eventId;
             this.Type = type;
@@ -74,6 +74,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RealtimeBetaClientEventSessionUpdate()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RealtimeBetaClientEventSessionUpdate"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RealtimeBetaClientEventSessionUpdate FromSession(global::tryAGI.OpenAI.RealtimeSessionCreateRequest session)
+        {
+            return new RealtimeBetaClientEventSessionUpdate
+            {
+                Session = session,
+            };
         }
 
     }

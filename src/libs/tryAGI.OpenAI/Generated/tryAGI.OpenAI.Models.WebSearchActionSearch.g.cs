@@ -13,9 +13,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The action type.
         /// </summary>
+        /// <default>"search"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchActionSearchTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebSearchActionSearchType Type { get; set; }
+        public string Type { get; set; } = "search";
 
         /// <summary>
         /// The search query.
@@ -45,22 +45,22 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchActionSearch" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The action type.
-        /// </param>
         /// <param name="queries">
         /// The search queries.
         /// </param>
         /// <param name="sources">
         /// The sources used in the search.
         /// </param>
+        /// <param name="type">
+        /// The action type.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchActionSearch(
-            global::tryAGI.OpenAI.WebSearchActionSearchType type,
             global::System.Collections.Generic.IList<string>? queries,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebSearchActionSearchSource>? sources)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebSearchActionSearchSource>? sources,
+            string type = "search")
         {
             this.Type = type;
             this.Queries = queries;

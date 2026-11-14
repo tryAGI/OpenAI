@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.output_text.delta`.
         /// </summary>
+        /// <default>"response.output_text.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseTextDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseTextDeltaEventType Type { get; set; }
+        public string Type { get; set; } = "response.output_text.delta";
 
         /// <summary>
         /// The ID of the output item that the text delta was added to.
@@ -97,7 +97,7 @@ namespace tryAGI.OpenAI
             string delta,
             int sequenceNumber,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProb> logprobs,
-            global::tryAGI.OpenAI.ResponseTextDeltaEventType type)
+            string type = "response.output_text.delta")
         {
             this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));

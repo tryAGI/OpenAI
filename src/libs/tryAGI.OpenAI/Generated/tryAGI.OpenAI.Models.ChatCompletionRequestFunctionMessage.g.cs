@@ -12,10 +12,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The role of the messages author, in this case `function`.
         /// </summary>
+        /// <default>"function"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionRequestFunctionMessageRoleJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessageRole Role { get; set; }
+        public string Role { get; set; } = "function";
 
         /// <summary>
         ///
@@ -44,17 +44,17 @@ namespace tryAGI.OpenAI
         /// <param name="name">
         /// The name of the function to call.
         /// </param>
+        /// <param name="content"></param>
         /// <param name="role">
         /// The role of the messages author, in this case `function`.
         /// </param>
-        /// <param name="content"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionRequestFunctionMessage(
             string name,
-            global::tryAGI.OpenAI.ChatCompletionRequestFunctionMessageRole role,
-            string? content)
+            string? content,
+            string role = "function")
         {
             this.Role = role;
             this.Content = content;

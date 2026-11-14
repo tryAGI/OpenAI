@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `transcription_session.update`.
         /// </summary>
+        /// <default>"transcription_session.update"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeClientEventTranscriptionSessionUpdateTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdateType Type { get; set; }
+        public string Type { get; set; } = "transcription_session.update";
 
         /// <summary>
         /// Realtime transcription session object configuration.
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         public RealtimeClientEventTranscriptionSessionUpdate(
             global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest session,
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeClientEventTranscriptionSessionUpdateType type)
+            string type = "transcription_session.update")
         {
             this.EventId = eventId;
             this.Type = type;
@@ -64,6 +64,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RealtimeClientEventTranscriptionSessionUpdate()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RealtimeClientEventTranscriptionSessionUpdate"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RealtimeClientEventTranscriptionSessionUpdate FromSession(global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequest session)
+        {
+            return new RealtimeClientEventTranscriptionSessionUpdate
+            {
+                Session = session,
+            };
         }
 
     }

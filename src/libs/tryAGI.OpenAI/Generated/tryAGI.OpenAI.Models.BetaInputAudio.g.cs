@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the input item. Always `input_audio`.
         /// </summary>
+        /// <default>"input_audio"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaInputAudioTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaInputAudioType Type { get; set; }
+        public string Type { get; set; } = "input_audio";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public BetaInputAudio(
             global::tryAGI.OpenAI.BetaInputAudioInputAudio inputAudio,
-            global::tryAGI.OpenAI.BetaInputAudioType type)
+            string type = "input_audio")
         {
             this.Type = type;
             this.InputAudio = inputAudio ?? throw new global::System.ArgumentNullException(nameof(inputAudio));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public BetaInputAudio()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaInputAudio"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaInputAudio FromInputAudio(global::tryAGI.OpenAI.BetaInputAudioInputAudio inputAudio)
+        {
+            return new BetaInputAudio
+            {
+                InputAudio = inputAudio,
+            };
         }
 
     }

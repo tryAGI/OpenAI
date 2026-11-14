@@ -5,7 +5,7 @@ using System.CommandLine;
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
 internal sealed record RealtimeSessionCreateRequestGAOptionSet(
-    Option<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAType> Type,
+    Option<string> Type,
                      Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAOutputModalitie>?> OutputModalities,
                      Option<string?> Instructions,
                      Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAIncludeItem>?> Include,
@@ -17,10 +17,11 @@ internal sealed record RealtimeSessionCreateRequestGAOptionSet(
             ? string.Empty
             : prefix.Trim().Trim('-') + "-";
         return new RealtimeSessionCreateRequestGAOptionSet(
-                        Type: new Option<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAType>($"--{normalizedPrefix}type")
+                        Type: new Option<string>($"--{normalizedPrefix}type")
                 {
                     Description = @"The type of session to create. Always `realtime` for the Realtime API.
 ",
+                    DefaultValueFactory = _ => "realtime",
                 },
                 OutputModalities: new Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAOutputModalitie>?>($"--{normalizedPrefix}output-modalities")
                 {

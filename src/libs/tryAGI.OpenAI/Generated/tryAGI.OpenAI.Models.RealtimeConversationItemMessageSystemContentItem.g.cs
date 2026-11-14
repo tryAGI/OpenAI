@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI
         /// The content type. Always `input_text` for system messages.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeConversationItemMessageSystemContentItemTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemContentItemType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// The text content.
@@ -40,7 +39,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeConversationItemMessageSystemContentItem(
-            global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemContentItemType? type,
+            string? type,
             string? text)
         {
             this.Type = type;

@@ -21,6 +21,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_identifier")]
+        public string? SafetyIdentifier { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         public string? Instructions { get; set; }
 
@@ -103,6 +109,7 @@ namespace tryAGI.OpenAI
         /// <param name="expiresAt">
         /// The Unix timestamp, in seconds, at which the Live session expires.
         /// </param>
+        /// <param name="safetyIdentifier"></param>
         /// <param name="instructions"></param>
         /// <param name="input">
         /// Ordered text-only history supplied before startup. Supports developer, user, and assistant messages with one text part each; at most 128 messages and a configured rendered-token limit (8,192 by default).
@@ -131,6 +138,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ModelIdsLive model,
             string id,
             global::System.DateTimeOffset expiresAt,
+            string? safetyIdentifier,
             string? instructions,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveInitialItem>? input,
             global::tryAGI.OpenAI.LiveInitialSessionAudioParam? audio,
@@ -141,6 +149,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.LiveSessionResourceParamStatus status = global::tryAGI.OpenAI.LiveSessionResourceParamStatus.Active)
         {
             this.Model = model;
+            this.SafetyIdentifier = safetyIdentifier;
             this.Instructions = instructions;
             this.Input = input;
             this.Audio = audio;

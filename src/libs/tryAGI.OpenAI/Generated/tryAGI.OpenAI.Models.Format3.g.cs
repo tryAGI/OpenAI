@@ -5,22 +5,22 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The input format for the custom tool. Default is unconstrained text.
+    /// Use a JSON schema for structured output or text to return to plain text.
     /// </summary>
     public readonly partial struct Format3 : global::System.IEquatable<Format3>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaCustomToolParamFormatDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParamTextFormatDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Unconstrained free-form text.
+        /// Default response format. Used to generate text responses.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaCustomTextFormatParam? Text { get; init; }
+        public global::tryAGI.OpenAI.ResponseFormatText? Text { get; init; }
 #else
-        public global::tryAGI.OpenAI.BetaCustomTextFormatParam? Text { get; }
+        public global::tryAGI.OpenAI.ResponseFormatText? Text { get; }
 #endif
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.BetaCustomTextFormatParam? value)
+            out global::tryAGI.OpenAI.ResponseFormatText? value)
         {
             value = Text;
             return IsText;
@@ -47,60 +47,61 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaCustomTextFormatParam PickText() => Text is { } value
+        public global::tryAGI.OpenAI.ResponseFormatText PickText() => Text is { } value
             ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Text' but the value was {ToString()}.");
 
         /// <summary>
-        /// A grammar defined by the user.
+        /// JSON Schema response format. Used to generate structured JSON responses.<br/>
+        /// Learn more about [Structured Outputs](https://developers.openai.com/api/docs/guides/structured-outputs).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.BetaCustomGrammarFormatParam? Grammar { get; init; }
+        public global::tryAGI.OpenAI.TextResponseFormatJsonSchema? JsonSchema { get; init; }
 #else
-        public global::tryAGI.OpenAI.BetaCustomGrammarFormatParam? Grammar { get; }
+        public global::tryAGI.OpenAI.TextResponseFormatJsonSchema? JsonSchema { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Grammar))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(JsonSchema))]
 #endif
-        public bool IsGrammar => Grammar != null;
+        public bool IsJsonSchema => JsonSchema != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickGrammar(
+        public bool TryPickJsonSchema(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.BetaCustomGrammarFormatParam? value)
+            out global::tryAGI.OpenAI.TextResponseFormatJsonSchema? value)
         {
-            value = Grammar;
-            return IsGrammar;
+            value = JsonSchema;
+            return IsJsonSchema;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.BetaCustomGrammarFormatParam PickGrammar() => Grammar is { } value
+        public global::tryAGI.OpenAI.TextResponseFormatJsonSchema PickJsonSchema() => JsonSchema is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Grammar' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'JsonSchema' but the value was {ToString()}.");
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Format3(global::tryAGI.OpenAI.BetaCustomTextFormatParam value) => new Format3((global::tryAGI.OpenAI.BetaCustomTextFormatParam?)value);
+        public static implicit operator Format3(global::tryAGI.OpenAI.ResponseFormatText value) => new Format3((global::tryAGI.OpenAI.ResponseFormatText?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaCustomTextFormatParam?(Format3 @this) => @this.Text;
+        public static implicit operator global::tryAGI.OpenAI.ResponseFormatText?(Format3 @this) => @this.Text;
 
         /// <summary>
         ///
         /// </summary>
-        public Format3(global::tryAGI.OpenAI.BetaCustomTextFormatParam? value)
+        public Format3(global::tryAGI.OpenAI.ResponseFormatText? value)
         {
             Text = value;
         }
@@ -108,51 +109,51 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static Format3 FromText(global::tryAGI.OpenAI.BetaCustomTextFormatParam? value) => new Format3(value);
+        public static Format3 FromText(global::tryAGI.OpenAI.ResponseFormatText? value) => new Format3(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator Format3(global::tryAGI.OpenAI.BetaCustomGrammarFormatParam value) => new Format3((global::tryAGI.OpenAI.BetaCustomGrammarFormatParam?)value);
+        public static implicit operator Format3(global::tryAGI.OpenAI.TextResponseFormatJsonSchema value) => new Format3((global::tryAGI.OpenAI.TextResponseFormatJsonSchema?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.BetaCustomGrammarFormatParam?(Format3 @this) => @this.Grammar;
+        public static implicit operator global::tryAGI.OpenAI.TextResponseFormatJsonSchema?(Format3 @this) => @this.JsonSchema;
 
         /// <summary>
         ///
         /// </summary>
-        public Format3(global::tryAGI.OpenAI.BetaCustomGrammarFormatParam? value)
+        public Format3(global::tryAGI.OpenAI.TextResponseFormatJsonSchema? value)
         {
-            Grammar = value;
+            JsonSchema = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static Format3 FromGrammar(global::tryAGI.OpenAI.BetaCustomGrammarFormatParam? value) => new Format3(value);
+        public static Format3 FromJsonSchema(global::tryAGI.OpenAI.TextResponseFormatJsonSchema? value) => new Format3(value);
 
         /// <summary>
         ///
         /// </summary>
         public Format3(
-            global::tryAGI.OpenAI.BetaCustomToolParamFormatDiscriminatorType? type,
-            global::tryAGI.OpenAI.BetaCustomTextFormatParam? text,
-            global::tryAGI.OpenAI.BetaCustomGrammarFormatParam? grammar
+            global::tryAGI.OpenAI.ResponseConfigurationUpdateItemParamTextFormatDiscriminatorType? type,
+            global::tryAGI.OpenAI.ResponseFormatText? text,
+            global::tryAGI.OpenAI.TextResponseFormatJsonSchema? jsonSchema
             )
         {
             Type = type;
 
             Text = text;
-            Grammar = grammar;
+            JsonSchema = jsonSchema;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            Grammar as object ??
+            JsonSchema as object ??
             Text as object
             ;
 
@@ -161,7 +162,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public override string? ToString() =>
             Text?.ToString() ??
-            Grammar?.ToString()
+            JsonSchema?.ToString()
             ;
 
         /// <summary>
@@ -169,15 +170,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsGrammar || !IsText && IsGrammar;
+            return IsText && !IsJsonSchema || !IsText && IsJsonSchema;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.BetaCustomTextFormatParam, TResult>? text = null,
-            global::System.Func<global::tryAGI.OpenAI.BetaCustomGrammarFormatParam, TResult>? grammar = null,
+            global::System.Func<global::tryAGI.OpenAI.ResponseFormatText, TResult>? text = null,
+            global::System.Func<global::tryAGI.OpenAI.TextResponseFormatJsonSchema, TResult>? jsonSchema = null,
             bool validate = true)
         {
             if (validate)
@@ -189,9 +190,9 @@ namespace tryAGI.OpenAI
             {
                 return text(__value0);
             }
-            else if (Grammar is { } __value1 && grammar != null)
+            else if (JsonSchema is { } __value1 && jsonSchema != null)
             {
-                return grammar(__value1);
+                return jsonSchema(__value1);
             }
 
             return default(TResult);
@@ -201,9 +202,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.BetaCustomTextFormatParam>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatText>? text = null,
 
-            global::System.Action<global::tryAGI.OpenAI.BetaCustomGrammarFormatParam>? grammar = null,
+            global::System.Action<global::tryAGI.OpenAI.TextResponseFormatJsonSchema>? jsonSchema = null,
             bool validate = true)
         {
             if (validate)
@@ -215,9 +216,9 @@ namespace tryAGI.OpenAI
             {
                 text?.Invoke(__value0);
             }
-            else if (Grammar is { } __value1)
+            else if (JsonSchema is { } __value1)
             {
-                grammar?.Invoke(__value1);
+                jsonSchema?.Invoke(__value1);
             }
         }
 
@@ -225,8 +226,8 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.BetaCustomTextFormatParam>? text = null,
-            global::System.Action<global::tryAGI.OpenAI.BetaCustomGrammarFormatParam>? grammar = null,
+            global::System.Action<global::tryAGI.OpenAI.ResponseFormatText>? text = null,
+            global::System.Action<global::tryAGI.OpenAI.TextResponseFormatJsonSchema>? jsonSchema = null,
             bool validate = true)
         {
             if (validate)
@@ -238,9 +239,9 @@ namespace tryAGI.OpenAI
             {
                 text?.Invoke(__value0);
             }
-            else if (Grammar is { } __value1)
+            else if (JsonSchema is { } __value1)
             {
-                grammar?.Invoke(__value1);
+                jsonSchema?.Invoke(__value1);
             }
         }
 
@@ -252,9 +253,9 @@ namespace tryAGI.OpenAI
             var fields = new object?[]
             {
                 Text,
-                typeof(global::tryAGI.OpenAI.BetaCustomTextFormatParam),
-                Grammar,
-                typeof(global::tryAGI.OpenAI.BetaCustomGrammarFormatParam),
+                typeof(global::tryAGI.OpenAI.ResponseFormatText),
+                JsonSchema,
+                typeof(global::tryAGI.OpenAI.TextResponseFormatJsonSchema),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +272,8 @@ namespace tryAGI.OpenAI
         public bool Equals(Format3 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCustomTextFormatParam?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaCustomGrammarFormatParam?>.Default.Equals(Grammar, other.Grammar)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseFormatText?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TextResponseFormatJsonSchema?>.Default.Equals(JsonSchema, other.JsonSchema)
                 ;
         }
 

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type. Always `agent.environment.ready`.
         /// </summary>
+        /// <default>"agent.environment.ready"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookAgentEnvironmentReadyVariant2TypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookAgentEnvironmentReadyVariant2Type Type { get; set; }
+        public string Type { get; set; } = "agent.environment.ready";
 
         /// <summary>
         /// Identifies the environment whose lifecycle changed.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public WebhookAgentEnvironmentReadyVariant2(
             global::tryAGI.OpenAI.AgentEnvironmentEvent data,
-            global::tryAGI.OpenAI.WebhookAgentEnvironmentReadyVariant2Type type)
+            string type = "agent.environment.ready")
         {
             this.Type = type;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public WebhookAgentEnvironmentReadyVariant2()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="WebhookAgentEnvironmentReadyVariant2"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WebhookAgentEnvironmentReadyVariant2 FromData(global::tryAGI.OpenAI.AgentEnvironmentEvent data)
+        {
+            return new WebhookAgentEnvironmentReadyVariant2
+            {
+                Data = data,
+            };
         }
 
     }

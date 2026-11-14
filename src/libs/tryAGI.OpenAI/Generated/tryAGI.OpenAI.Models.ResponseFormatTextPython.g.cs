@@ -12,9 +12,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of response format being defined. Always `python`.
         /// </summary>
+        /// <default>"python"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFormatTextPythonTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseFormatTextPythonType Type { get; set; }
+        public string Type { get; set; } = "python";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseFormatTextPython(
-            global::tryAGI.OpenAI.ResponseFormatTextPythonType type)
+            string type = "python")
         {
             this.Type = type;
         }

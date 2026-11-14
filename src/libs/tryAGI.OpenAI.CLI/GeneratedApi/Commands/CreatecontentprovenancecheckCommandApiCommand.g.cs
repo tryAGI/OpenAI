@@ -10,14 +10,14 @@ internal static partial class CreatecontentprovenancecheckCommandApiCommand
     private static Option<byte[]> File { get; } = new(
         name: @"--file")
     {
-        Description = @"The image or audio file to check for supported OpenAI provenance signals.",
+        Description = @"The image or audio file to check for supported OpenAI provenance signals. Supported image formats are PNG, JPEG, WebP, and GIF (including animated GIFs).",
         Required = true,
     };
 
     private static Option<string> Filename { get; } = new(
         name: @"--filename")
     {
-        Description = @"The image or audio file to check for supported OpenAI provenance signals.",
+        Description = @"The image or audio file to check for supported OpenAI provenance signals. Supported image formats are PNG, JPEG, WebP, and GIF (including animated GIFs).",
         Required = true,
     };
 

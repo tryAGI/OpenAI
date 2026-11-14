@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always 'response.queued'.
         /// </summary>
+        /// <default>"response.queued"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseQueuedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseQueuedEventType Type { get; set; }
+        public string Type { get; set; } = "response.queued";
 
         /// <summary>
         /// The full response object that is queued.<br/>
@@ -67,7 +67,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaResponse response,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseQueuedEventType type)
+            string type = "response.queued")
         {
             this.Agent = agent;
             this.Type = type;
