@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type. Always `agent.session.failed`.
         /// </summary>
+        /// <default>"agent.session.failed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookAgentSessionFailedVariant2TypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookAgentSessionFailedVariant2Type Type { get; set; }
+        public string Type { get; set; } = "agent.session.failed";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public WebhookAgentSessionFailedVariant2(
             global::tryAGI.OpenAI.AgentSessionEnvironmentPayloadResource data,
-            global::tryAGI.OpenAI.WebhookAgentSessionFailedVariant2Type type)
+            string type = "agent.session.failed")
         {
             this.Type = type;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public WebhookAgentSessionFailedVariant2()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="WebhookAgentSessionFailedVariant2"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WebhookAgentSessionFailedVariant2 FromData(global::tryAGI.OpenAI.AgentSessionEnvironmentPayloadResource data)
+        {
+            return new WebhookAgentSessionFailedVariant2
+            {
+                Data = data,
+            };
         }
 
     }

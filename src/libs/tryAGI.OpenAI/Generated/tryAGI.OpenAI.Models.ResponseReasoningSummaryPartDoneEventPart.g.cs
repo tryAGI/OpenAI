@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the summary part. Always `summary_text`.
         /// </summary>
+        /// <default>"summary_text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseReasoningSummaryPartDoneEventPartTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventPartType Type { get; set; }
+        public string Type { get; set; } = "summary_text";
 
         /// <summary>
         /// The text of the summary part.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public ResponseReasoningSummaryPartDoneEventPart(
             string text,
-            global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventPartType type)
+            string type = "summary_text")
         {
             this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ResponseReasoningSummaryPartDoneEventPart()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ResponseReasoningSummaryPartDoneEventPart"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ResponseReasoningSummaryPartDoneEventPart FromText(string text)
+        {
+            return new ResponseReasoningSummaryPartDoneEventPart
+            {
+                Text = text,
+            };
         }
 
     }

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type. Always `agent.environment.failed`.
         /// </summary>
+        /// <default>"agent.environment.failed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookAgentEnvironmentFailedVariant2TypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookAgentEnvironmentFailedVariant2Type Type { get; set; }
+        public string Type { get; set; } = "agent.environment.failed";
 
         /// <summary>
         /// Identifies the environment whose lifecycle changed.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public WebhookAgentEnvironmentFailedVariant2(
             global::tryAGI.OpenAI.AgentEnvironmentEvent data,
-            global::tryAGI.OpenAI.WebhookAgentEnvironmentFailedVariant2Type type)
+            string type = "agent.environment.failed")
         {
             this.Type = type;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public WebhookAgentEnvironmentFailedVariant2()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="WebhookAgentEnvironmentFailedVariant2"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WebhookAgentEnvironmentFailedVariant2 FromData(global::tryAGI.OpenAI.AgentEnvironmentEvent data)
+        {
+            return new WebhookAgentEnvironmentFailedVariant2
+            {
+                Data = data,
+            };
         }
 
     }

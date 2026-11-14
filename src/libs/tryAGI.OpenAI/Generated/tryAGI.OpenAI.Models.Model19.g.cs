@@ -25,9 +25,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always "model".
         /// </summary>
+        /// <default>"model"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ModelObject Object { get; set; }
+        public string Object { get; set; } = "model";
 
         /// <summary>
         /// The organization that owns the model.
@@ -60,11 +60,11 @@ namespace tryAGI.OpenAI
         /// <param name="ownedBy">
         /// The organization that owns the model.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always "model".
-        /// </param>
         /// <param name="shutdownDate">
         /// The date when the model will shut down, or null if not announced.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "model".
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -73,8 +73,8 @@ namespace tryAGI.OpenAI
             string id,
             int created,
             string ownedBy,
-            global::tryAGI.OpenAI.ModelObject @object,
-            global::System.DateTime? shutdownDate)
+            global::System.DateTime? shutdownDate,
+            string @object = "model")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Created = created;

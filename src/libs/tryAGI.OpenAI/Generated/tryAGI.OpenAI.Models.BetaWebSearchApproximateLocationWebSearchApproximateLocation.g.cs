@@ -13,8 +13,7 @@ namespace tryAGI.OpenAI
         /// Default Value: approximate
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaWebSearchApproximateLocationWebSearchApproximateLocationTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaWebSearchApproximateLocationWebSearchApproximateLocationType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         ///
@@ -61,7 +60,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaWebSearchApproximateLocationWebSearchApproximateLocation(
-            global::tryAGI.OpenAI.BetaWebSearchApproximateLocationWebSearchApproximateLocationType? type,
+            string? type,
             string? country,
             string? region,
             string? city,

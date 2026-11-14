@@ -48,6 +48,9 @@ namespace tryAGI.OpenAI
         /// <param name="input"></param>
         /// <param name="previousResponseId"></param>
         /// <param name="instructions"></param>
+        /// <param name="image">
+        /// Request level image options.
+        /// </param>
         /// <param name="promptCacheKey"></param>
         /// <param name="promptCacheRetention"></param>
         /// <param name="promptCacheOptions"></param>
@@ -61,6 +64,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputItem>>? input = default,
             string? previousResponseId = default,
             string? instructions = default,
+            global::tryAGI.OpenAI.BetaImageOptionsParam? image = default,
             string? promptCacheKey = default,
             global::tryAGI.OpenAI.BetaPromptCacheRetentionEnum? promptCacheRetention = default,
             global::tryAGI.OpenAI.BetaPromptCacheOptionsParam? promptCacheOptions = default,

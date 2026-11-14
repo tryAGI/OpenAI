@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type. Always `agent.session.idle`.
         /// </summary>
+        /// <default>"agent.session.idle"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookAgentSessionIdleVariant2TypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookAgentSessionIdleVariant2Type Type { get; set; }
+        public string Type { get; set; } = "agent.session.idle";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public WebhookAgentSessionIdleVariant2(
             global::tryAGI.OpenAI.AgentSessionEnvironmentPayloadResource data,
-            global::tryAGI.OpenAI.WebhookAgentSessionIdleVariant2Type type)
+            string type = "agent.session.idle")
         {
             this.Type = type;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public WebhookAgentSessionIdleVariant2()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="WebhookAgentSessionIdleVariant2"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WebhookAgentSessionIdleVariant2 FromData(global::tryAGI.OpenAI.AgentSessionEnvironmentPayloadResource data)
+        {
+            return new WebhookAgentSessionIdleVariant2
+            {
+                Data = data,
+            };
         }
 
     }

@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `conversation.item.retrieve`.
         /// </summary>
+        /// <default>"conversation.item.retrieve"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaClientEventConversationItemRetrieveTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemRetrieveType Type { get; set; }
+        public string Type { get; set; } = "conversation.item.retrieve";
 
         /// <summary>
         /// The ID of the item to retrieve.
@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
         public RealtimeBetaClientEventConversationItemRetrieve(
             string itemId,
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemRetrieveType type)
+            string type = "conversation.item.retrieve")
         {
             this.EventId = eventId;
             this.Type = type;
@@ -67,6 +67,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RealtimeBetaClientEventConversationItemRetrieve()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RealtimeBetaClientEventConversationItemRetrieve"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RealtimeBetaClientEventConversationItemRetrieve FromItemId(string itemId)
+        {
+            return new RealtimeBetaClientEventConversationItemRetrieve
+            {
+                ItemId = itemId,
+            };
         }
 
     }

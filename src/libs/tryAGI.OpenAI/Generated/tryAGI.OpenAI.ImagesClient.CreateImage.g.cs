@@ -86,6 +86,10 @@ namespace tryAGI.OpenAI
 
             request = new global::tryAGI.OpenAI.CreateImageRequest
             {
+                FrameCount = request.FrameCount,
+                FrameDurationMs = request.FrameDurationMs,
+                Complexity = request.Complexity,
+                Svg = request.Svg,
                 Prompt = request.Prompt,
                 Model = request.Model,
                 N = request.N,
@@ -682,6 +686,18 @@ namespace tryAGI.OpenAI
         /// Create image<br/>
         /// Creates an image given a prompt using a GPT Image model. [Learn more](https://developers.openai.com/api/docs/guides/images-vision).
         /// </summary>
+        /// <param name="frameCount">
+        /// Number of frames for GIF output. Accepts integers from 2 through 16. Defaults to 9 when omitted. Only supported with output_format=gif. The requested size must satisfy the selected model's GIF size limits. GIF output does not support streaming, partial images, masks, or custom output compression. Requires access to the GIF preview for the selected model.
+        /// </param>
+        /// <param name="frameDurationMs">
+        /// Requested delay per GIF frame, in milliseconds. Defaults to 200 when omitted. GIF output rounds to the nearest 10 ms and caps the encoded delay at 655,350 ms per frame. Only supported with output_format=gif.
+        /// </param>
+        /// <param name="complexity">
+        /// Computation spent planning the image, independently of rendering quality. Uses the image model's configured default when omitted. For SVG output, controls the reference image, independently of the SVG author's reasoning.
+        /// </param>
+        /// <param name="svg">
+        /// Selects the model and reasoning effort used to author SVG output. Requires output_format=svg and access to SVG model selection. When model selection is enabled, supply svg.model. When model selection is disabled, omit this object. The top-level model selects the image model that creates the reference image. SVG generation requires n=1 and does not support streaming, partial images, prompt_rewriter, or output_compression.
+        /// </param>
         /// <param name="prompt">
         /// A text description of the desired image(s). The maximum length is 32000 characters.<br/>
         /// Example: A cute baby sea otter
@@ -691,7 +707,8 @@ namespace tryAGI.OpenAI
         /// Supported models include `gpt-image-1-mini`, `gpt-image-1.5`, `gpt-image-2`,<br/>
         /// `gpt-image-2-2026-04-21`, `gpt-image-2.5-sunburst`,<br/>
         /// `gpt-image-2.5-sunburst-2026-09-08`, `gpt-image-2.5-flare`,<br/>
-        /// `gpt-image-2.5-flare-2026-09-08`, and `chatgpt-image-latest`.<br/>
+        /// `gpt-image-2.5-flare-2026-09-08`, `gpt-image-2.6-sunburst`, `gpt-image-2.6-flare`,<br/>
+        /// and `chatgpt-image-latest`.<br/>
         /// `gpt-image-1` was shut down on October 23, 2026. Use<br/>
         /// `gpt-image-2.5-sunburst` or `gpt-image-2.5-flare` instead.<br/>
         /// Example: gpt-image-2.5-flare
@@ -712,7 +729,7 @@ namespace tryAGI.OpenAI
         /// Example: medium
         /// </param>
         /// <param name="outputFormat">
-        /// The format in which the generated images are returned. This parameter is only supported for the GPT image models. Must be one of `png`, `jpeg`, or `webp`.<br/>
+        /// The format in which the generated images are returned. This parameter is only supported for the GPT image models.<br/>
         /// Default Value: png<br/>
         /// Example: png
         /// </param>
@@ -755,9 +772,13 @@ namespace tryAGI.OpenAI
         public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ImagesResponse> CreateImageAsync(
             string prompt,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestModel?> model,
+            int? frameCount = default,
+            int? frameDurationMs = default,
+            global::tryAGI.OpenAI.Complexity? complexity = default,
+            global::tryAGI.OpenAI.Svg? svg = default,
             int? n = default,
             global::tryAGI.OpenAI.CreateImageRequestQuality? quality = default,
-            global::tryAGI.OpenAI.CreateImageRequestOutputFormat? outputFormat = default,
+            global::tryAGI.OpenAI.ImagesApiOutputFormat? outputFormat = default,
             int? outputCompression = default,
             int? partialImages = default,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateImageRequestSize?>? size = default,
@@ -769,6 +790,10 @@ namespace tryAGI.OpenAI
         {
             var __request = new global::tryAGI.OpenAI.CreateImageRequest
             {
+                FrameCount = frameCount,
+                FrameDurationMs = frameDurationMs,
+                Complexity = complexity,
+                Svg = svg,
                 Prompt = prompt,
                 Model = model,
                 N = n,

@@ -19,9 +19,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `response.created`.
         /// </summary>
+        /// <default>"response.created"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventResponseCreatedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseCreatedType Type { get; set; }
+        public string Type { get; set; } = "response.created";
 
         /// <summary>
         /// The response resource.
@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventResponseCreated(
             string eventId,
             global::tryAGI.OpenAI.RealtimeResponse response,
-            global::tryAGI.OpenAI.RealtimeServerEventResponseCreatedType type)
+            string type = "response.created")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

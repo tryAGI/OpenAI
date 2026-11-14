@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"file"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DeleteFileResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.DeleteFileResponseObject Object { get; set; }
+        public string Object { get; set; } = "file";
 
         /// <summary>
         ///
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         public DeleteFileResponse(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.DeleteFileResponseObject @object)
+            string @object = "file")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

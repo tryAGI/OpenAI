@@ -14,9 +14,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `input_audio_buffer.dtmf_event_received`.
         /// </summary>
+        /// <default>"input_audio_buffer.dtmf_event_received"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventInputAudioBufferDtmfEventReceivedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceivedType Type { get; set; }
+        public string Type { get; set; } = "input_audio_buffer.dtmf_event_received";
 
         /// <summary>
         /// The telephone keypad that was pressed by the user.
@@ -57,7 +57,7 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventInputAudioBufferDtmfEventReceived(
             string @event,
             global::System.DateTimeOffset receivedAt,
-            global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferDtmfEventReceivedType type)
+            string type = "input_audio_buffer.dtmf_event_received")
         {
             this.Type = type;
             this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));

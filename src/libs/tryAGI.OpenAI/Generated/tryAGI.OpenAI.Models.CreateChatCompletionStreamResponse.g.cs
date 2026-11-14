@@ -66,9 +66,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `chat.completion.chunk`.
         /// </summary>
+        /// <default>"chat.completion.chunk"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateChatCompletionStreamResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject Object { get; set; }
+        public string Object { get; set; } = "chat.completion.chunk";
 
         /// <summary>
         /// An optional field that will only be present when you set<br/>
@@ -116,9 +116,6 @@ namespace tryAGI.OpenAI
         /// default and omitted when `stream_options.include_obfuscation` is `false`.
         /// </param>
         /// <param name="serviceTier"></param>
-        /// <param name="object">
-        /// The object type, which is always `chat.completion.chunk`.
-        /// </param>
         /// <param name="usage">
         /// An optional field that will only be present when you set<br/>
         /// `stream_options: {"include_usage": true}` in your request. When present, it<br/>
@@ -129,6 +126,9 @@ namespace tryAGI.OpenAI
         /// the request.
         /// </param>
         /// <param name="moderation"></param>
+        /// <param name="object">
+        /// The object type, which is always `chat.completion.chunk`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -139,9 +139,9 @@ namespace tryAGI.OpenAI
             string model,
             string? obfuscation,
             global::tryAGI.OpenAI.ServiceTierEnum? serviceTier,
-            global::tryAGI.OpenAI.CreateChatCompletionStreamResponseObject @object,
             global::tryAGI.OpenAI.CompletionUsage? usage,
-            global::tryAGI.OpenAI.ChatCompletionModeration? moderation)
+            global::tryAGI.OpenAI.ChatCompletionModeration? moderation,
+            string @object = "chat.completion.chunk")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));

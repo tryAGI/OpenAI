@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always 'response.image_generation_call.generating'.
         /// </summary>
+        /// <default>"response.image_generation_call.generating"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseImageGenCallGeneratingEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEventType Type { get; set; }
+        public string Type { get; set; } = "response.image_generation_call.generating";
 
         /// <summary>
         /// The index of the output item in the response's output array.
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
             int outputIndex,
             string itemId,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseImageGenCallGeneratingEventType type)
+            string type = "response.image_generation_call.generating")
         {
             this.Type = type;
             this.OutputIndex = outputIndex;

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The action type.
         /// </summary>
+        /// <default>"open_page"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchActionOpenPageTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebSearchActionOpenPageType Type { get; set; }
+        public string Type { get; set; } = "open_page";
 
         /// <summary>
         /// The URL opened by the model.
@@ -30,18 +30,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="WebSearchActionOpenPage" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The action type.
-        /// </param>
         /// <param name="url">
         /// The URL opened by the model.
+        /// </param>
+        /// <param name="type">
+        /// The action type.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchActionOpenPage(
-            global::tryAGI.OpenAI.WebSearchActionOpenPageType type,
-            string? url)
+            string? url,
+            string type = "open_page")
         {
             this.Type = type;
             this.Url = url;

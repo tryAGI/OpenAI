@@ -28,9 +28,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `input_audio_buffer.timeout_triggered`.
         /// </summary>
+        /// <default>"input_audio_buffer.timeout_triggered"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventInputAudioBufferTimeoutTriggeredTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggeredType Type { get; set; }
+        public string Type { get; set; } = "input_audio_buffer.timeout_triggered";
 
         /// <summary>
         /// Millisecond offset of audio written to the input audio buffer that was after the playback time of the last model response.
@@ -85,7 +85,7 @@ namespace tryAGI.OpenAI
             int audioStartMs,
             int audioEndMs,
             string itemId,
-            global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferTimeoutTriggeredType type)
+            string type = "input_audio_buffer.timeout_triggered")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

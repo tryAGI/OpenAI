@@ -28,9 +28,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `session.input_audio_buffer.append`.
         /// </summary>
+        /// <default>"session.input_audio_buffer.append"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationClientEventInputAudioBufferAppendTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppendType Type { get; set; }
+        public string Type { get; set; } = "session.input_audio_buffer.append";
 
         /// <summary>
         /// Base64-encoded 24 kHz PCM16 mono audio bytes.
@@ -63,7 +63,7 @@ namespace tryAGI.OpenAI
         public RealtimeTranslationClientEventInputAudioBufferAppend(
             string audio,
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeTranslationClientEventInputAudioBufferAppendType type)
+            string type = "session.input_audio_buffer.append")
         {
             this.EventId = eventId;
             this.Type = type;
@@ -75,6 +75,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RealtimeTranslationClientEventInputAudioBufferAppend()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RealtimeTranslationClientEventInputAudioBufferAppend"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RealtimeTranslationClientEventInputAudioBufferAppend FromAudio(string audio)
+        {
+            return new RealtimeTranslationClientEventInputAudioBufferAppend
+            {
+                Audio = audio,
+            };
         }
 
     }

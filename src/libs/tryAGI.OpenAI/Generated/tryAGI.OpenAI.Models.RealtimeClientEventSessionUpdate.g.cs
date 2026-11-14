@@ -30,9 +30,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `session.update`.
         /// </summary>
+        /// <default>"session.update"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeClientEventSessionUpdateTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeClientEventSessionUpdateType Type { get; set; }
+        public string Type { get; set; } = "session.update";
 
         /// <summary>
         /// Update the Realtime session. Choose either a realtime<br/>
@@ -68,7 +68,7 @@ namespace tryAGI.OpenAI
         public RealtimeClientEventSessionUpdate(
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateRequestGA> session,
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeClientEventSessionUpdateType type)
+            string type = "session.update")
         {
             this.EventId = eventId;
             this.Type = type;

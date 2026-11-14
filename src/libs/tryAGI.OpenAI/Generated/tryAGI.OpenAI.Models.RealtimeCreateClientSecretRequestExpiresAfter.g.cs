@@ -16,8 +16,7 @@ namespace tryAGI.OpenAI
         /// Default Value: created_at
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("anchor")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeCreateClientSecretRequestExpiresAfterAnchorJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeCreateClientSecretRequestExpiresAfterAnchor? Anchor { get; set; }
+        public string? Anchor { get; set; }
 
         /// <summary>
         /// The number of seconds from the anchor point to the expiration. Select a value between `10` and `7200` (2 hours). This default to 600 seconds (10 minutes) if not specified.<br/>
@@ -47,7 +46,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeCreateClientSecretRequestExpiresAfter(
-            global::tryAGI.OpenAI.RealtimeCreateClientSecretRequestExpiresAfterAnchor? anchor,
+            string? anchor,
             long? seconds)
         {
             this.Anchor = anchor;

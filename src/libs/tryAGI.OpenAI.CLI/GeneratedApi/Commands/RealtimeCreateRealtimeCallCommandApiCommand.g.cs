@@ -70,7 +70,7 @@ to complete the peer connection.");
                             cancellationToken).ConfigureAwait(false);
                         var sdp = parseResult.GetRequiredValue(Sdp);
 
-                        var __SessionBase = __requestBase is { } __SessionBaseValue ? __SessionBaseValue.Session : default;                        var sessionType = CliRuntime.WasSpecified(parseResult, SessionOptions.Type) ? parseResult.GetValue(SessionOptions.Type) : (__SessionBase is { } __SessiontypeBaseValue ? __SessiontypeBaseValue.Type : default);
+                        var __SessionBase = __requestBase is { } __SessionBaseValue ? __SessionBaseValue.Session : default;                        var sessionType = parseResult.GetRequiredValue(SessionOptions.Type);
                         var sessionOutputModalities = CliRuntime.WasSpecified(parseResult, SessionOptions.OutputModalities) ? parseResult.GetValue(SessionOptions.OutputModalities) : (__SessionBase is { } __SessionoutputModalitiesBaseValue ? __SessionoutputModalitiesBaseValue.OutputModalities : default);
                         var sessionInstructions = CliRuntime.WasSpecified(parseResult, SessionOptions.Instructions) ? parseResult.GetValue(SessionOptions.Instructions) : (__SessionBase is { } __SessioninstructionsBaseValue ? __SessioninstructionsBaseValue.Instructions : default);
                         var sessionInclude = CliRuntime.WasSpecified(parseResult, SessionOptions.Include) ? parseResult.GetValue(SessionOptions.Include) : (__SessionBase is { } __SessionincludeBaseValue ? __SessionincludeBaseValue.Include : default);

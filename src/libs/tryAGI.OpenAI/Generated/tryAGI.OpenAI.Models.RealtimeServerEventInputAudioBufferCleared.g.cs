@@ -19,9 +19,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `input_audio_buffer.cleared`.
         /// </summary>
+        /// <default>"input_audio_buffer.cleared"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventInputAudioBufferClearedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferClearedType Type { get; set; }
+        public string Type { get; set; } = "input_audio_buffer.cleared";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeServerEventInputAudioBufferCleared(
             string eventId,
-            global::tryAGI.OpenAI.RealtimeServerEventInputAudioBufferClearedType type)
+            string type = "input_audio_buffer.cleared")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;
@@ -54,6 +54,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RealtimeServerEventInputAudioBufferCleared()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RealtimeServerEventInputAudioBufferCleared"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RealtimeServerEventInputAudioBufferCleared FromEventId(string eventId)
+        {
+            return new RealtimeServerEventInputAudioBufferCleared
+            {
+                EventId = eventId,
+            };
         }
 
     }

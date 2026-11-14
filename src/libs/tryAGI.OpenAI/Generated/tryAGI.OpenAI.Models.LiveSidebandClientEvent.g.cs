@@ -167,6 +167,44 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'SessionOutputAudioFixturePlay' but the value was {ToString()}.");
 
         /// <summary>
+        /// Send one DTMF keypress to the SIP trunk through a Live sideband connection. This command is supported only for SIP calls. A successful send emits `transport.dtmf.sent` on sideband. If you provide `event_id`, the success notification includes it as `client_event_id`; a failure includes it as `error.client_event_id`. Send separate events for multiple keypresses.<br/>
+        /// Example: {"type":"transport.dtmf.send","event_id":"evt_dtmf_001","event":"#"}
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.LiveTransportDTMFSendParam? TransportDtmfSend { get; init; }
+#else
+        public global::tryAGI.OpenAI.LiveTransportDTMFSendParam? TransportDtmfSend { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TransportDtmfSend))]
+#endif
+        public bool IsTransportDtmfSend => TransportDtmfSend != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickTransportDtmfSend(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.LiveTransportDTMFSendParam? value)
+        {
+            value = TransportDtmfSend;
+            return IsTransportDtmfSend;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.LiveTransportDTMFSendParam PickTransportDtmfSend() => TransportDtmfSend is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TransportDtmfSend' but the value was {ToString()}.");
+
+        /// <summary>
         /// Append developer instructions to the Live conversation while it is running, optionally associating them with an existing client delegation. Rejected while an audio fixture is active. These instructions remain in conversation history through compaction and are included in future backend delegations. For external audio, describe content already delivered so the assistant does not repeat it.<br/>
         /// Example: {"type":"session.instructions.append","event_id":"evt_instructions_001","delegation_id":"openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464","content":"The caller prefers outdoor seating."}
         /// </summary>
@@ -602,6 +640,29 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        public static implicit operator LiveSidebandClientEvent(global::tryAGI.OpenAI.LiveTransportDTMFSendParam value) => new LiveSidebandClientEvent((global::tryAGI.OpenAI.LiveTransportDTMFSendParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.LiveTransportDTMFSendParam?(LiveSidebandClientEvent @this) => @this.TransportDtmfSend;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public LiveSidebandClientEvent(global::tryAGI.OpenAI.LiveTransportDTMFSendParam? value)
+        {
+            TransportDtmfSend = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static LiveSidebandClientEvent FromTransportDtmfSend(global::tryAGI.OpenAI.LiveTransportDTMFSendParam? value) => new LiveSidebandClientEvent(value);
+
+        /// <summary>
+        ///
+        /// </summary>
         public static implicit operator LiveSidebandClientEvent(global::tryAGI.OpenAI.LiveInstructionsAppendParam value) => new LiveSidebandClientEvent((global::tryAGI.OpenAI.LiveInstructionsAppendParam?)value);
 
         /// <summary>
@@ -815,6 +876,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.LiveInputAudioMuteParam? sessionInputAudioMute,
             global::tryAGI.OpenAI.LiveInputAudioUnmuteParam? sessionInputAudioUnmute,
             global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam? sessionOutputAudioFixturePlay,
+            global::tryAGI.OpenAI.LiveTransportDTMFSendParam? transportDtmfSend,
             global::tryAGI.OpenAI.LiveInstructionsAppendParam? sessionInstructionsAppend,
             global::tryAGI.OpenAI.LiveThinkingAppendParam? sessionThinkingAppend,
             global::tryAGI.OpenAI.LiveCommentaryAppendParam? sessionCommentaryAppend,
@@ -832,6 +894,7 @@ namespace tryAGI.OpenAI
             SessionInputAudioMute = sessionInputAudioMute;
             SessionInputAudioUnmute = sessionInputAudioUnmute;
             SessionOutputAudioFixturePlay = sessionOutputAudioFixturePlay;
+            TransportDtmfSend = transportDtmfSend;
             SessionInstructionsAppend = sessionInstructionsAppend;
             SessionThinkingAppend = sessionThinkingAppend;
             SessionCommentaryAppend = sessionCommentaryAppend;
@@ -856,6 +919,7 @@ namespace tryAGI.OpenAI
             SessionCommentaryAppend as object ??
             SessionThinkingAppend as object ??
             SessionInstructionsAppend as object ??
+            TransportDtmfSend as object ??
             SessionOutputAudioFixturePlay as object ??
             SessionInputAudioUnmute as object ??
             SessionInputAudioMute as object ??
@@ -870,6 +934,7 @@ namespace tryAGI.OpenAI
             SessionInputAudioMute?.ToString() ??
             SessionInputAudioUnmute?.ToString() ??
             SessionOutputAudioFixturePlay?.ToString() ??
+            TransportDtmfSend?.ToString() ??
             SessionInstructionsAppend?.ToString() ??
             SessionThinkingAppend?.ToString() ??
             SessionCommentaryAppend?.ToString() ??
@@ -886,7 +951,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && IsSessionClose;
+            return IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsTransportDtmfSend && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsTransportDtmfSend && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsTransportDtmfSend && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && IsSessionOutputAudioFixturePlay && !IsTransportDtmfSend && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && IsTransportDtmfSend && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsTransportDtmfSend && IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsTransportDtmfSend && !IsSessionInstructionsAppend && IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsTransportDtmfSend && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsTransportDtmfSend && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsTransportDtmfSend && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsTransportDtmfSend && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsTransportDtmfSend && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && IsResponseItemCreate && !IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsTransportDtmfSend && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && IsResponseCreate && !IsSessionClose || !IsSessionUpdate && !IsSessionInputAudioMute && !IsSessionInputAudioUnmute && !IsSessionOutputAudioFixturePlay && !IsTransportDtmfSend && !IsSessionInstructionsAppend && !IsSessionThinkingAppend && !IsSessionCommentaryAppend && !IsDecisionCreate && !IsDecisionItemCreate && !IsDecisionItemDelete && !IsResponseItemCreate && !IsResponseCreate && IsSessionClose;
         }
 
         /// <summary>
@@ -897,6 +962,7 @@ namespace tryAGI.OpenAI
             global::System.Func<global::tryAGI.OpenAI.LiveInputAudioMuteParam, TResult>? sessionInputAudioMute = null,
             global::System.Func<global::tryAGI.OpenAI.LiveInputAudioUnmuteParam, TResult>? sessionInputAudioUnmute = null,
             global::System.Func<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam, TResult>? sessionOutputAudioFixturePlay = null,
+            global::System.Func<global::tryAGI.OpenAI.LiveTransportDTMFSendParam, TResult>? transportDtmfSend = null,
             global::System.Func<global::tryAGI.OpenAI.LiveInstructionsAppendParam, TResult>? sessionInstructionsAppend = null,
             global::System.Func<global::tryAGI.OpenAI.LiveThinkingAppendParam, TResult>? sessionThinkingAppend = null,
             global::System.Func<global::tryAGI.OpenAI.LiveCommentaryAppendParam, TResult>? sessionCommentaryAppend = null,
@@ -929,41 +995,45 @@ namespace tryAGI.OpenAI
             {
                 return sessionOutputAudioFixturePlay(__value3);
             }
-            else if (SessionInstructionsAppend is { } __value4 && sessionInstructionsAppend != null)
+            else if (TransportDtmfSend is { } __value4 && transportDtmfSend != null)
             {
-                return sessionInstructionsAppend(__value4);
+                return transportDtmfSend(__value4);
             }
-            else if (SessionThinkingAppend is { } __value5 && sessionThinkingAppend != null)
+            else if (SessionInstructionsAppend is { } __value5 && sessionInstructionsAppend != null)
             {
-                return sessionThinkingAppend(__value5);
+                return sessionInstructionsAppend(__value5);
             }
-            else if (SessionCommentaryAppend is { } __value6 && sessionCommentaryAppend != null)
+            else if (SessionThinkingAppend is { } __value6 && sessionThinkingAppend != null)
             {
-                return sessionCommentaryAppend(__value6);
+                return sessionThinkingAppend(__value6);
             }
-            else if (DecisionCreate is { } __value7 && decisionCreate != null)
+            else if (SessionCommentaryAppend is { } __value7 && sessionCommentaryAppend != null)
             {
-                return decisionCreate(__value7);
+                return sessionCommentaryAppend(__value7);
             }
-            else if (DecisionItemCreate is { } __value8 && decisionItemCreate != null)
+            else if (DecisionCreate is { } __value8 && decisionCreate != null)
             {
-                return decisionItemCreate(__value8);
+                return decisionCreate(__value8);
             }
-            else if (DecisionItemDelete is { } __value9 && decisionItemDelete != null)
+            else if (DecisionItemCreate is { } __value9 && decisionItemCreate != null)
             {
-                return decisionItemDelete(__value9);
+                return decisionItemCreate(__value9);
             }
-            else if (ResponseItemCreate is { } __value10 && responseItemCreate != null)
+            else if (DecisionItemDelete is { } __value10 && decisionItemDelete != null)
             {
-                return responseItemCreate(__value10);
+                return decisionItemDelete(__value10);
             }
-            else if (ResponseCreate is { } __value11 && responseCreate != null)
+            else if (ResponseItemCreate is { } __value11 && responseItemCreate != null)
             {
-                return responseCreate(__value11);
+                return responseItemCreate(__value11);
             }
-            else if (SessionClose is { } __value12 && sessionClose != null)
+            else if (ResponseCreate is { } __value12 && responseCreate != null)
             {
-                return sessionClose(__value12);
+                return responseCreate(__value12);
+            }
+            else if (SessionClose is { } __value13 && sessionClose != null)
+            {
+                return sessionClose(__value13);
             }
 
             return default(TResult);
@@ -981,6 +1051,8 @@ namespace tryAGI.OpenAI
 
             global::System.Action<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam>? sessionOutputAudioFixturePlay = null,
 
+            global::System.Action<global::tryAGI.OpenAI.LiveTransportDTMFSendParam>? transportDtmfSend = null,
+
             global::System.Action<global::tryAGI.OpenAI.LiveInstructionsAppendParam>? sessionInstructionsAppend = null,
 
             global::System.Action<global::tryAGI.OpenAI.LiveThinkingAppendParam>? sessionThinkingAppend = null,
@@ -1021,41 +1093,45 @@ namespace tryAGI.OpenAI
             {
                 sessionOutputAudioFixturePlay?.Invoke(__value3);
             }
-            else if (SessionInstructionsAppend is { } __value4)
+            else if (TransportDtmfSend is { } __value4)
             {
-                sessionInstructionsAppend?.Invoke(__value4);
+                transportDtmfSend?.Invoke(__value4);
             }
-            else if (SessionThinkingAppend is { } __value5)
+            else if (SessionInstructionsAppend is { } __value5)
             {
-                sessionThinkingAppend?.Invoke(__value5);
+                sessionInstructionsAppend?.Invoke(__value5);
             }
-            else if (SessionCommentaryAppend is { } __value6)
+            else if (SessionThinkingAppend is { } __value6)
             {
-                sessionCommentaryAppend?.Invoke(__value6);
+                sessionThinkingAppend?.Invoke(__value6);
             }
-            else if (DecisionCreate is { } __value7)
+            else if (SessionCommentaryAppend is { } __value7)
             {
-                decisionCreate?.Invoke(__value7);
+                sessionCommentaryAppend?.Invoke(__value7);
             }
-            else if (DecisionItemCreate is { } __value8)
+            else if (DecisionCreate is { } __value8)
             {
-                decisionItemCreate?.Invoke(__value8);
+                decisionCreate?.Invoke(__value8);
             }
-            else if (DecisionItemDelete is { } __value9)
+            else if (DecisionItemCreate is { } __value9)
             {
-                decisionItemDelete?.Invoke(__value9);
+                decisionItemCreate?.Invoke(__value9);
             }
-            else if (ResponseItemCreate is { } __value10)
+            else if (DecisionItemDelete is { } __value10)
             {
-                responseItemCreate?.Invoke(__value10);
+                decisionItemDelete?.Invoke(__value10);
             }
-            else if (ResponseCreate is { } __value11)
+            else if (ResponseItemCreate is { } __value11)
             {
-                responseCreate?.Invoke(__value11);
+                responseItemCreate?.Invoke(__value11);
             }
-            else if (SessionClose is { } __value12)
+            else if (ResponseCreate is { } __value12)
             {
-                sessionClose?.Invoke(__value12);
+                responseCreate?.Invoke(__value12);
+            }
+            else if (SessionClose is { } __value13)
+            {
+                sessionClose?.Invoke(__value13);
             }
         }
 
@@ -1067,6 +1143,7 @@ namespace tryAGI.OpenAI
             global::System.Action<global::tryAGI.OpenAI.LiveInputAudioMuteParam>? sessionInputAudioMute = null,
             global::System.Action<global::tryAGI.OpenAI.LiveInputAudioUnmuteParam>? sessionInputAudioUnmute = null,
             global::System.Action<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam>? sessionOutputAudioFixturePlay = null,
+            global::System.Action<global::tryAGI.OpenAI.LiveTransportDTMFSendParam>? transportDtmfSend = null,
             global::System.Action<global::tryAGI.OpenAI.LiveInstructionsAppendParam>? sessionInstructionsAppend = null,
             global::System.Action<global::tryAGI.OpenAI.LiveThinkingAppendParam>? sessionThinkingAppend = null,
             global::System.Action<global::tryAGI.OpenAI.LiveCommentaryAppendParam>? sessionCommentaryAppend = null,
@@ -1099,41 +1176,45 @@ namespace tryAGI.OpenAI
             {
                 sessionOutputAudioFixturePlay?.Invoke(__value3);
             }
-            else if (SessionInstructionsAppend is { } __value4)
+            else if (TransportDtmfSend is { } __value4)
             {
-                sessionInstructionsAppend?.Invoke(__value4);
+                transportDtmfSend?.Invoke(__value4);
             }
-            else if (SessionThinkingAppend is { } __value5)
+            else if (SessionInstructionsAppend is { } __value5)
             {
-                sessionThinkingAppend?.Invoke(__value5);
+                sessionInstructionsAppend?.Invoke(__value5);
             }
-            else if (SessionCommentaryAppend is { } __value6)
+            else if (SessionThinkingAppend is { } __value6)
             {
-                sessionCommentaryAppend?.Invoke(__value6);
+                sessionThinkingAppend?.Invoke(__value6);
             }
-            else if (DecisionCreate is { } __value7)
+            else if (SessionCommentaryAppend is { } __value7)
             {
-                decisionCreate?.Invoke(__value7);
+                sessionCommentaryAppend?.Invoke(__value7);
             }
-            else if (DecisionItemCreate is { } __value8)
+            else if (DecisionCreate is { } __value8)
             {
-                decisionItemCreate?.Invoke(__value8);
+                decisionCreate?.Invoke(__value8);
             }
-            else if (DecisionItemDelete is { } __value9)
+            else if (DecisionItemCreate is { } __value9)
             {
-                decisionItemDelete?.Invoke(__value9);
+                decisionItemCreate?.Invoke(__value9);
             }
-            else if (ResponseItemCreate is { } __value10)
+            else if (DecisionItemDelete is { } __value10)
             {
-                responseItemCreate?.Invoke(__value10);
+                decisionItemDelete?.Invoke(__value10);
             }
-            else if (ResponseCreate is { } __value11)
+            else if (ResponseItemCreate is { } __value11)
             {
-                responseCreate?.Invoke(__value11);
+                responseItemCreate?.Invoke(__value11);
             }
-            else if (SessionClose is { } __value12)
+            else if (ResponseCreate is { } __value12)
             {
-                sessionClose?.Invoke(__value12);
+                responseCreate?.Invoke(__value12);
+            }
+            else if (SessionClose is { } __value13)
+            {
+                sessionClose?.Invoke(__value13);
             }
         }
 
@@ -1152,6 +1233,8 @@ namespace tryAGI.OpenAI
                 typeof(global::tryAGI.OpenAI.LiveInputAudioUnmuteParam),
                 SessionOutputAudioFixturePlay,
                 typeof(global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam),
+                TransportDtmfSend,
+                typeof(global::tryAGI.OpenAI.LiveTransportDTMFSendParam),
                 SessionInstructionsAppend,
                 typeof(global::tryAGI.OpenAI.LiveInstructionsAppendParam),
                 SessionThinkingAppend,
@@ -1190,6 +1273,7 @@ namespace tryAGI.OpenAI
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInputAudioMuteParam?>.Default.Equals(SessionInputAudioMute, other.SessionInputAudioMute) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInputAudioUnmuteParam?>.Default.Equals(SessionInputAudioUnmute, other.SessionInputAudioUnmute) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveOutputAudioFixturePlayParam?>.Default.Equals(SessionOutputAudioFixturePlay, other.SessionOutputAudioFixturePlay) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveTransportDTMFSendParam?>.Default.Equals(TransportDtmfSend, other.TransportDtmfSend) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveInstructionsAppendParam?>.Default.Equals(SessionInstructionsAppend, other.SessionInstructionsAppend) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveThinkingAppendParam?>.Default.Equals(SessionThinkingAppend, other.SessionThinkingAppend) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.LiveCommentaryAppendParam?>.Default.Equals(SessionCommentaryAppend, other.SessionCommentaryAppend) &&

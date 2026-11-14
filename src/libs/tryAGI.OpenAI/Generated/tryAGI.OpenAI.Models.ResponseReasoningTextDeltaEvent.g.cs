@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.reasoning_text.delta`.
         /// </summary>
+        /// <default>"response.reasoning_text.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseReasoningTextDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseReasoningTextDeltaEventType Type { get; set; }
+        public string Type { get; set; } = "response.reasoning_text.delta";
 
         /// <summary>
         /// The ID of the item this reasoning text delta is associated with.
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
             int contentIndex,
             string delta,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseReasoningTextDeltaEventType type)
+            string type = "response.reasoning_text.delta")
         {
             this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));

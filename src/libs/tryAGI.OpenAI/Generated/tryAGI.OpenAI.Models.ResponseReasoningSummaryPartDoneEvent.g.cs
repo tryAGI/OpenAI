@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.reasoning_summary_part.done`.
         /// </summary>
+        /// <default>"response.reasoning_summary_part.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseReasoningSummaryPartDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventType Type { get; set; }
+        public string Type { get; set; } = "response.reasoning_summary_part.done";
 
         /// <summary>
         /// The ID of the item this summary part is associated with.
@@ -82,12 +82,12 @@ namespace tryAGI.OpenAI
         /// <param name="part">
         /// The completed summary part.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `response.reasoning_summary_part.done`.
-        /// </param>
         /// <param name="status">
         /// The completion status of the summary part. Omitted when the part completed<br/>
         /// normally and set to `incomplete` when generation was interrupted.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.reasoning_summary_part.done`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -98,8 +98,8 @@ namespace tryAGI.OpenAI
             int summaryIndex,
             int sequenceNumber,
             global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventPart part,
-            global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventType type,
-            global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventStatus? status)
+            global::tryAGI.OpenAI.ResponseReasoningSummaryPartDoneEventStatus? status,
+            string type = "response.reasoning_summary_part.done")
         {
             this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));

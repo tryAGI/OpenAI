@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `error`.
         /// </summary>
+        /// <default>"error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventErrorTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventErrorType Type { get; set; }
+        public string Type { get; set; } = "error";
 
         /// <summary>
         /// Details of the error.
@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventError(
             string eventId,
             global::tryAGI.OpenAI.RealtimeServerEventErrorError error,
-            global::tryAGI.OpenAI.RealtimeServerEventErrorType type)
+            string type = "error")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

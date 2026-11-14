@@ -33,15 +33,14 @@ namespace tryAGI.OpenAI
         /// The object of the event. Always `event`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookBatchCancelledObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookBatchCancelledObject? Object { get; set; }
+        public string? Object { get; set; }
 
         /// <summary>
         /// The type of the event. Always `batch.cancelled`.
         /// </summary>
+        /// <default>"batch.cancelled"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookBatchCancelledTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookBatchCancelledType Type { get; set; }
+        public string Type { get; set; } = "batch.cancelled";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,8 +73,8 @@ namespace tryAGI.OpenAI
             int createdAt,
             string id,
             global::tryAGI.OpenAI.WebhookBatchCancelledData data,
-            global::tryAGI.OpenAI.WebhookBatchCancelledObject? @object,
-            global::tryAGI.OpenAI.WebhookBatchCancelledType type)
+            string? @object,
+            string type = "batch.cancelled")
         {
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

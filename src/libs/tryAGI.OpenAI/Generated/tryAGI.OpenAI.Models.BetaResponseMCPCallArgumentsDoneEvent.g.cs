@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always 'response.mcp_call_arguments.done'.
         /// </summary>
+        /// <default>"response.mcp_call_arguments.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseMCPCallArgumentsDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseMCPCallArgumentsDoneEventType Type { get; set; }
+        public string Type { get; set; } = "response.mcp_call_arguments.done";
 
         /// <summary>
         /// The index of the output item in the response's output array.
@@ -85,7 +85,7 @@ namespace tryAGI.OpenAI
             string arguments,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseMCPCallArgumentsDoneEventType type)
+            string type = "response.mcp_call_arguments.done")
         {
             this.Agent = agent;
             this.Type = type;

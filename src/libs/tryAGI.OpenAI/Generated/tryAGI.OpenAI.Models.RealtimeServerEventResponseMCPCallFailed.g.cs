@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `response.mcp_call.failed`.
         /// </summary>
+        /// <default>"response.mcp_call.failed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventResponseMCPCallFailedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailedType Type { get; set; }
+        public string Type { get; set; } = "response.mcp_call.failed";
 
         /// <summary>
         /// The index of the output item in the response.
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
             string eventId,
             int outputIndex,
             string itemId,
-            global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallFailedType type)
+            string type = "response.mcp_call.failed")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of object being deleted.
         /// </summary>
+        /// <default>"chat.completion.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionDeletedObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionDeletedObject Object { get; set; }
+        public string Object { get; set; } = "chat.completion.deleted";
 
         /// <summary>
         /// The ID of the chat completion that was deleted.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public ChatCompletionDeleted(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.ChatCompletionDeletedObject @object)
+            string @object = "chat.completion.deleted")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

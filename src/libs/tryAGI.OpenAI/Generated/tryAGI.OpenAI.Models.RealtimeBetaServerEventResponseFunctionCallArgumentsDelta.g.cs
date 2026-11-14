@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `response.function_call_arguments.delta`.
         /// </summary>
+        /// <default>"response.function_call_arguments.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType Type { get; set; }
+        public string Type { get; set; } = "response.function_call_arguments.delta";
 
         /// <summary>
         /// The ID of the response.
@@ -97,7 +97,7 @@ namespace tryAGI.OpenAI
             int outputIndex,
             string callId,
             string delta,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventResponseFunctionCallArgumentsDeltaType type)
+            string type = "response.function_call_arguments.delta")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

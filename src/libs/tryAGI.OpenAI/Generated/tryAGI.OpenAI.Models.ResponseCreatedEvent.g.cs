@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.created`.
         /// </summary>
+        /// <default>"response.created"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseCreatedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseCreatedEventType Type { get; set; }
+        public string Type { get; set; } = "response.created";
 
         /// <summary>
         /// The response that was created.<br/>
@@ -57,7 +57,7 @@ namespace tryAGI.OpenAI
         public ResponseCreatedEvent(
             global::tryAGI.OpenAI.Response response,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseCreatedEventType type)
+            string type = "response.created")
         {
             this.Type = type;
             this.Response = response;

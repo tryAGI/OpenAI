@@ -25,8 +25,7 @@ namespace tryAGI.OpenAI
         /// The type of the tool. Currently, only `function` is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionMessageToolCallChunkTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionMessageToolCallChunkType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         ///
@@ -57,7 +56,7 @@ namespace tryAGI.OpenAI
         public ChatCompletionMessageToolCallChunk(
             int index,
             string? id,
-            global::tryAGI.OpenAI.ChatCompletionMessageToolCallChunkType? type,
+            string? type,
             global::tryAGI.OpenAI.ChatCompletionMessageToolCallChunkFunction? function)
         {
             this.Index = index;

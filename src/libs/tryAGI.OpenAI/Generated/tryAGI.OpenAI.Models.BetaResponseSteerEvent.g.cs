@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event discriminator. Always `response.steer`.
         /// </summary>
+        /// <default>"response.steer"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseSteerEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseSteerEventType Type { get; set; }
+        public string Type { get; set; } = "response.steer";
 
         /// <summary>
         /// The ID of the response to steer on this WebSocket connection.
@@ -91,7 +91,7 @@ namespace tryAGI.OpenAI
         public BetaResponseSteerEvent(
             string previousResponseId,
             global::tryAGI.OpenAI.BetaResponseSteerInput input,
-            global::tryAGI.OpenAI.BetaResponseSteerEventType type)
+            string type = "response.steer")
         {
             this.Type = type;
             this.PreviousResponseId = previousResponseId ?? throw new global::System.ArgumentNullException(nameof(previousResponseId));

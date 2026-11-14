@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `conversation.item.input_audio_transcription.delta`.
         /// </summary>
+        /// <default>"conversation.item.input_audio_transcription.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType Type { get; set; }
+        public string Type { get; set; } = "conversation.item.input_audio_transcription.delta";
 
         /// <summary>
         /// The ID of the item.
@@ -62,9 +62,6 @@ namespace tryAGI.OpenAI
         /// <param name="itemId">
         /// The ID of the item.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.input_audio_transcription.delta`.
-        /// </param>
         /// <param name="contentIndex">
         /// The index of the content part in the item's content array.
         /// </param>
@@ -72,16 +69,19 @@ namespace tryAGI.OpenAI
         /// The text delta.
         /// </param>
         /// <param name="logprobs"></param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.input_audio_transcription.delta`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeBetaServerEventConversationItemInputAudioTranscriptionDelta(
             string eventId,
             string itemId,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionDeltaType type,
             int? contentIndex,
             string? delta,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs,
+            string type = "conversation.item.input_audio_transcription.delta")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

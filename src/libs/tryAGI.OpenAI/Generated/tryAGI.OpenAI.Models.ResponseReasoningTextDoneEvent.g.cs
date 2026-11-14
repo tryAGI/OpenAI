@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.reasoning_text.done`.
         /// </summary>
+        /// <default>"response.reasoning_text.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseReasoningTextDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseReasoningTextDoneEventType Type { get; set; }
+        public string Type { get; set; } = "response.reasoning_text.done";
 
         /// <summary>
         /// The ID of the item this reasoning text is associated with.
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
             int contentIndex,
             string text,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseReasoningTextDoneEventType type)
+            string type = "response.reasoning_text.done")
         {
             this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));

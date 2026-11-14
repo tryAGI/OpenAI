@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `vector_store.file_batch`.
         /// </summary>
+        /// <default>"vector_store.file_batch"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VectorStoreFileBatchObjectObjectJsonConverter))]
-        public global::tryAGI.OpenAI.VectorStoreFileBatchObjectObject Object { get; set; }
+        public string Object { get; set; } = "vector_store.file_batch";
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the vector store files batch was created.
@@ -85,7 +85,7 @@ namespace tryAGI.OpenAI
             string vectorStoreId,
             global::tryAGI.OpenAI.VectorStoreFileBatchObjectStatus status,
             global::tryAGI.OpenAI.VectorStoreFileBatchObjectFileCounts fileCounts,
-            global::tryAGI.OpenAI.VectorStoreFileBatchObjectObject @object)
+            string @object = "vector_store.file_batch")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

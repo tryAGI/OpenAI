@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `error`.
         /// </summary>
+        /// <default>"error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionModerationErrorTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionModerationErrorType Type { get; set; }
+        public string Type { get; set; } = "error";
 
         /// <summary>
         /// The error code.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public ChatCompletionModerationError(
             string code,
             string message,
-            global::tryAGI.OpenAI.ChatCompletionModerationErrorType type)
+            string type = "error")
         {
             this.Type = type;
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));

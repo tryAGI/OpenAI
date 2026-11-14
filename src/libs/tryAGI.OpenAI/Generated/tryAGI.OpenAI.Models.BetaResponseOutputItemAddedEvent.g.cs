@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.output_item.added`.
         /// </summary>
+        /// <default>"response.output_item.added"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseOutputItemAddedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseOutputItemAddedEventType Type { get; set; }
+        public string Type { get; set; } = "response.output_item.added";
 
         /// <summary>
         /// The index of the output item that was added.
@@ -81,7 +81,7 @@ namespace tryAGI.OpenAI
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaOutputItem item,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseOutputItemAddedEventType type)
+            string type = "response.output_item.added")
         {
             this.Agent = agent;
             this.Type = type;

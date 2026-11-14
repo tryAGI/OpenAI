@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `response.output_audio_transcript.done`.
         /// </summary>
+        /// <default>"response.output_audio_transcript.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventResponseAudioTranscriptDoneTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioTranscriptDoneType Type { get; set; }
+        public string Type { get; set; } = "response.output_audio_transcript.done";
 
         /// <summary>
         /// The ID of the response.
@@ -99,7 +99,7 @@ namespace tryAGI.OpenAI
             int outputIndex,
             int contentIndex,
             string transcript,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventResponseAudioTranscriptDoneType type)
+            string type = "response.output_audio_transcript.done")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

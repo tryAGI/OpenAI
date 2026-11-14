@@ -12,10 +12,9 @@ namespace tryAGI.OpenAI
         /// The type of the computer tool call output. Always `computer_call_output`.<br/>
         /// Default Value: computer_call_output
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.ComputerToolCallOutputType.ComputerCallOutput</default>
+        /// <default>"computer_call_output"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ComputerToolCallOutputTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ComputerToolCallOutputType Type { get; set; } = global::tryAGI.OpenAI.ComputerToolCallOutputType.ComputerCallOutput;
+        public string Type { get; set; } = "computer_call_output";
 
         /// <summary>
         /// The ID of the computer tool call output.
@@ -91,7 +90,7 @@ namespace tryAGI.OpenAI
             string? id,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ComputerCallSafetyCheckParam>? acknowledgedSafetyChecks,
             global::tryAGI.OpenAI.ComputerToolCallOutputStatus? status,
-            global::tryAGI.OpenAI.ComputerToolCallOutputType type = global::tryAGI.OpenAI.ComputerToolCallOutputType.ComputerCallOutput)
+            string type = "computer_call_output")
         {
             this.Type = type;
             this.Id = id;

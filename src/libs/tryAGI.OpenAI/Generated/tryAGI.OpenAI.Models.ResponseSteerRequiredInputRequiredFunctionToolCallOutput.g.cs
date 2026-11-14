@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"function_call_output"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseSteerRequiredInputRequiredFunctionToolCallOutputTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredFunctionToolCallOutputType Type { get; set; }
+        public string Type { get; set; } = "function_call_output";
 
         /// <summary>
         ///
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         public ResponseSteerRequiredInputRequiredFunctionToolCallOutput(
             string callId,
             string name,
-            global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredFunctionToolCallOutputType type)
+            string type = "function_call_output")
         {
             this.Type = type;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));

@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_76DED36913040C6C.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_8434BAC4CEFD6C22.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_85D20CCCC0ED3404.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_ADC375474415018E.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_EBA8ECA0B14ECB74.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_76DED36913040C6C.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_8434BAC4CEFD6C22.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_85D20CCCC0ED3404.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_ADC375474415018E.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ChatCompletionRequestAssistantMessage))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0083.Create_ChatCompletionRequestAssistantMessage(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0078.Create_ChatCompletionRequestAssistantMessage(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

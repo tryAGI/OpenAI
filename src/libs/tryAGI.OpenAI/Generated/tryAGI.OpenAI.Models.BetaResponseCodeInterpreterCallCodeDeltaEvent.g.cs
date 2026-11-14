@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.code_interpreter_call_code.delta`.
         /// </summary>
+        /// <default>"response.code_interpreter_call_code.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseCodeInterpreterCallCodeDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCodeDeltaEventType Type { get; set; }
+        public string Type { get; set; } = "response.code_interpreter_call_code.delta";
 
         /// <summary>
         /// The index of the output item in the response for which the code is being streamed.
@@ -85,7 +85,7 @@ namespace tryAGI.OpenAI
             string delta,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCodeDeltaEventType type)
+            string type = "response.code_interpreter_call_code.delta")
         {
             this.Agent = agent;
             this.Type = type;

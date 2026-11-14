@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `batch`.
         /// </summary>
+        /// <default>"batch"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BatchObjectJsonConverter))]
-        public global::tryAGI.OpenAI.BatchObject Object { get; set; }
+        public string Object { get; set; } = "batch";
 
         /// <summary>
         /// The OpenAI API endpoint used by the batch.
@@ -178,9 +178,6 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the batch was created.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `batch`.
-        /// </param>
         /// <param name="model">
         /// Model ID used to process the batch, like `gpt-6-astra`. OpenAI<br/>
         /// offers a wide range of models with different capabilities, performance<br/>
@@ -227,6 +224,9 @@ namespace tryAGI.OpenAI
         /// batches created after September 7, 2025.
         /// </param>
         /// <param name="metadata"></param>
+        /// <param name="object">
+        /// The object type, which is always `batch`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -237,7 +237,6 @@ namespace tryAGI.OpenAI
             string completionWindow,
             global::tryAGI.OpenAI.BatchStatus status,
             int createdAt,
-            global::tryAGI.OpenAI.BatchObject @object,
             string? model,
             global::tryAGI.OpenAI.BatchErrors? errors,
             string? outputFileId,
@@ -252,7 +251,8 @@ namespace tryAGI.OpenAI
             int? cancelledAt,
             global::tryAGI.OpenAI.BatchRequestCounts? requestCounts,
             global::tryAGI.OpenAI.BatchUsage? usage,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            string @object = "batch")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

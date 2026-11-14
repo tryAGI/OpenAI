@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type. Always `agent.session.in_progress`.
         /// </summary>
+        /// <default>"agent.session.in_progress"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookAgentSessionInProgressVariant2TypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookAgentSessionInProgressVariant2Type Type { get; set; }
+        public string Type { get; set; } = "agent.session.in_progress";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public WebhookAgentSessionInProgressVariant2(
             global::tryAGI.OpenAI.AgentSessionEnvironmentPayloadResource data,
-            global::tryAGI.OpenAI.WebhookAgentSessionInProgressVariant2Type type)
+            string type = "agent.session.in_progress")
         {
             this.Type = type;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public WebhookAgentSessionInProgressVariant2()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="WebhookAgentSessionInProgressVariant2"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WebhookAgentSessionInProgressVariant2 FromData(global::tryAGI.OpenAI.AgentSessionEnvironmentPayloadResource data)
+        {
+            return new WebhookAgentSessionInProgressVariant2
+            {
+                Data = data,
+            };
         }
 
     }

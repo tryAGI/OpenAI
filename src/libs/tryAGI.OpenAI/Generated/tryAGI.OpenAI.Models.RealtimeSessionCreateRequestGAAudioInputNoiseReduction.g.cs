@@ -19,6 +19,15 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.NoiseReductionType? Type { get; set; }
 
         /// <summary>
+        /// Input noise suppression strength. Higher values apply more suppression.<br/>
+        /// Defaults to 1 when noise reduction is first enabled. Omitting strength<br/>
+        /// from a session update preserves the current strength.<br/>
+        /// Default Value: 1
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("strength")]
+        public double? Strength { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -30,13 +39,21 @@ namespace tryAGI.OpenAI
         /// <param name="type">
         /// Type of noise reduction. `near_field` is for close-talking microphones such as headphones, `far_field` is for far-field microphones such as laptop or conference room microphones.
         /// </param>
+        /// <param name="strength">
+        /// Input noise suppression strength. Higher values apply more suppression.<br/>
+        /// Defaults to 1 when noise reduction is first enabled. Omitting strength<br/>
+        /// from a session update preserves the current strength.<br/>
+        /// Default Value: 1
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateRequestGAAudioInputNoiseReduction(
-            global::tryAGI.OpenAI.NoiseReductionType? type)
+            global::tryAGI.OpenAI.NoiseReductionType? type,
+            double? strength)
         {
             this.Type = type;
+            this.Strength = strength;
         }
 
         /// <summary>

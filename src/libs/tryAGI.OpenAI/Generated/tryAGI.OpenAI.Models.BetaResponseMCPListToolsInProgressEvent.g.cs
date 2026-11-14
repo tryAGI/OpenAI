@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always 'response.mcp_list_tools.in_progress'.
         /// </summary>
+        /// <default>"response.mcp_list_tools.in_progress"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseMCPListToolsInProgressEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseMCPListToolsInProgressEventType Type { get; set; }
+        public string Type { get; set; } = "response.mcp_list_tools.in_progress";
 
         /// <summary>
         /// The ID of the MCP tool call item that is being processed.
@@ -74,7 +74,7 @@ namespace tryAGI.OpenAI
             int outputIndex,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseMCPListToolsInProgressEventType type)
+            string type = "response.mcp_list_tools.in_progress")
         {
             this.Agent = agent;
             this.Type = type;

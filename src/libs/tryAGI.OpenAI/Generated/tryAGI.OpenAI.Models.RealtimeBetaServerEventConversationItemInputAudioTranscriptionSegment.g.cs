@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `conversation.item.input_audio_transcription.segment`.
         /// </summary>
+        /// <default>"conversation.item.input_audio_transcription.segment"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType Type { get; set; }
+        public string Type { get; set; } = "conversation.item.input_audio_transcription.segment";
 
         /// <summary>
         /// The ID of the item containing the input audio content.
@@ -119,7 +119,7 @@ namespace tryAGI.OpenAI
             string speaker,
             double start,
             double end,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionSegmentType type)
+            string type = "conversation.item.input_audio_transcription.segment")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

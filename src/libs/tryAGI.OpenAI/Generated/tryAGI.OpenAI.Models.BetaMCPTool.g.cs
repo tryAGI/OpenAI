@@ -14,9 +14,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the MCP tool. Always `mcp`.
         /// </summary>
+        /// <default>"mcp"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaMCPToolTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaMCPToolType Type { get; set; }
+        public string Type { get; set; } = "mcp";
 
         /// <summary>
         /// A label for this MCP server, used to identify it in tool calls.
@@ -117,9 +117,6 @@ namespace tryAGI.OpenAI
         /// <param name="serverLabel">
         /// A label for this MCP server, used to identify it in tool calls.
         /// </param>
-        /// <param name="type">
-        /// The type of the MCP tool. Always `mcp`.
-        /// </param>
         /// <param name="serverUrl">
         /// The URL for the MCP server. One of `server_url`, `connector_id`, or<br/>
         /// `tunnel_id` must be provided.
@@ -143,12 +140,14 @@ namespace tryAGI.OpenAI
         /// <param name="deferLoading">
         /// Whether this MCP tool is deferred and discovered via tool search.
         /// </param>
+        /// <param name="type">
+        /// The type of the MCP tool. Always `mcp`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaMCPTool(
             string serverLabel,
-            global::tryAGI.OpenAI.BetaMCPToolType type,
             string? serverUrl,
             string? tunnelId,
             string? authorization,
@@ -157,7 +156,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<global::System.Collections.Generic.IList<string>, global::tryAGI.OpenAI.BetaMCPToolFilter>? allowedTools,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaCallableToolAllowedCaller>? allowedCallers,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.BetaMCPToolRequireApprovalVariant1Enum, global::tryAGI.OpenAI.BetaMCPToolRequireApprovalVariant1Enum2?>? requireApproval,
-            bool? deferLoading)
+            bool? deferLoading,
+            string type = "mcp")
         {
             this.Type = type;
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
@@ -177,6 +177,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public BetaMCPTool()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaMCPTool"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaMCPTool FromServerLabel(string serverLabel)
+        {
+            return new BetaMCPTool
+            {
+                ServerLabel = serverLabel,
+            };
         }
 
     }

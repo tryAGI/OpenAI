@@ -19,9 +19,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `session.close`.
         /// </summary>
+        /// <default>"session.close"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationClientEventSessionCloseTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionCloseType Type { get; set; }
+        public string Type { get; set; } = "session.close";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeTranslationClientEventSessionClose(
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeTranslationClientEventSessionCloseType type)
+            string type = "session.close")
         {
             this.EventId = eventId;
             this.Type = type;

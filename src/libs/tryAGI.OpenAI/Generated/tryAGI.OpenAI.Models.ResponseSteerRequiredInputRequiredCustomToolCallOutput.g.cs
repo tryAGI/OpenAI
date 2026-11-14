@@ -12,9 +12,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"custom_tool_call_output"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseSteerRequiredInputRequiredCustomToolCallOutputTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredCustomToolCallOutputType Type { get; set; }
+        public string Type { get; set; } = "custom_tool_call_output";
 
         /// <summary>
         ///
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
 #endif
         public ResponseSteerRequiredInputRequiredCustomToolCallOutput(
             string callId,
-            global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredCustomToolCallOutputType type)
+            string type = "custom_tool_call_output")
         {
             this.Type = type;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
@@ -50,6 +50,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ResponseSteerRequiredInputRequiredCustomToolCallOutput()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ResponseSteerRequiredInputRequiredCustomToolCallOutput"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ResponseSteerRequiredInputRequiredCustomToolCallOutput FromCallId(string callId)
+        {
+            return new ResponseSteerRequiredInputRequiredCustomToolCallOutput
+            {
+                CallId = callId,
+            };
         }
 
     }

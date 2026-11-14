@@ -33,15 +33,14 @@ namespace tryAGI.OpenAI
         /// The object of the event. Always `event`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookEvalRunSucceededObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookEvalRunSucceededObject? Object { get; set; }
+        public string? Object { get; set; }
 
         /// <summary>
         /// The type of the event. Always `eval.run.succeeded`.
         /// </summary>
+        /// <default>"eval.run.succeeded"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookEvalRunSucceededTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookEvalRunSucceededType Type { get; set; }
+        public string Type { get; set; } = "eval.run.succeeded";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,8 +73,8 @@ namespace tryAGI.OpenAI
             int createdAt,
             string id,
             global::tryAGI.OpenAI.WebhookEvalRunSucceededData data,
-            global::tryAGI.OpenAI.WebhookEvalRunSucceededObject? @object,
-            global::tryAGI.OpenAI.WebhookEvalRunSucceededType type)
+            string? @object,
+            string type = "eval.run.succeeded")
         {
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

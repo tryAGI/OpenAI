@@ -66,6 +66,12 @@ namespace tryAGI.OpenAI
         public required string Text { get; set; }
 
         /// <summary>
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("obfuscation")]
+        public string? Obfuscation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -95,6 +101,9 @@ namespace tryAGI.OpenAI
         /// <param name="turnId">
         /// The ID of the turn associated with the event, when applicable.
         /// </param>
+        /// <param name="obfuscation">
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `agent.session.turn.reasoning_summary_text.done`.<br/>
         /// Default Value: agent.session.turn.reasoning_summary_text.done
@@ -110,6 +119,7 @@ namespace tryAGI.OpenAI
             long summaryIndex,
             string text,
             string? turnId,
+            string? obfuscation,
             global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDoneType type = global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryTextDoneType.AgentSessionTurnReasoningSummaryTextDone)
         {
             this.Type = type;
@@ -120,6 +130,7 @@ namespace tryAGI.OpenAI
             this.OutputIndex = outputIndex;
             this.SummaryIndex = summaryIndex;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Obfuscation = obfuscation;
         }
 
         /// <summary>

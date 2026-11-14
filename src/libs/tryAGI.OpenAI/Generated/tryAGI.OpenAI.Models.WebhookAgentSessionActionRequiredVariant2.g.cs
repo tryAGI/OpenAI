@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type. Always `agent.session.action_required`.
         /// </summary>
+        /// <default>"agent.session.action_required"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookAgentSessionActionRequiredVariant2TypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookAgentSessionActionRequiredVariant2Type Type { get; set; }
+        public string Type { get; set; } = "agent.session.action_required";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public WebhookAgentSessionActionRequiredVariant2(
             global::tryAGI.OpenAI.AgentSessionActionRequiredPayloadResource data,
-            global::tryAGI.OpenAI.WebhookAgentSessionActionRequiredVariant2Type type)
+            string type = "agent.session.action_required")
         {
             this.Type = type;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public WebhookAgentSessionActionRequiredVariant2()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="WebhookAgentSessionActionRequiredVariant2"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WebhookAgentSessionActionRequiredVariant2 FromData(global::tryAGI.OpenAI.AgentSessionActionRequiredPayloadResource data)
+        {
+            return new WebhookAgentSessionActionRequiredVariant2
+            {
+                Data = data,
+            };
         }
 
     }

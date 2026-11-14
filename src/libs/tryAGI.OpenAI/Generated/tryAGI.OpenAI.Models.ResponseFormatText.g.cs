@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of response format being defined. Always `text`.
         /// </summary>
+        /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFormatTextTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseFormatTextType Type { get; set; }
+        public string Type { get; set; } = "text";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseFormatText(
-            global::tryAGI.OpenAI.ResponseFormatTextType type)
+            string type = "text")
         {
             this.Type = type;
         }

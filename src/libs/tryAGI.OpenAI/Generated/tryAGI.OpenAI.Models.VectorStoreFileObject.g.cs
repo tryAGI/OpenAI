@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `vector_store.file`.
         /// </summary>
+        /// <default>"vector_store.file"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VectorStoreFileObjectObjectJsonConverter))]
-        public global::tryAGI.OpenAI.VectorStoreFileObjectObject Object { get; set; }
+        public string Object { get; set; } = "vector_store.file";
 
         /// <summary>
         /// The total vector store usage in bytes. Note that this may be different from the original file size.
@@ -94,14 +94,14 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `vector_store.file`.
-        /// </param>
         /// <param name="lastError"></param>
         /// <param name="chunkingStrategy">
         /// The strategy used to chunk the file.
         /// </param>
         /// <param name="attributes"></param>
+        /// <param name="object">
+        /// The object type, which is always `vector_store.file`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -111,10 +111,10 @@ namespace tryAGI.OpenAI
             int createdAt,
             string vectorStoreId,
             global::tryAGI.OpenAI.VectorStoreFileObjectStatus status,
-            global::tryAGI.OpenAI.VectorStoreFileObjectObject @object,
             global::tryAGI.OpenAI.VectorStoreFileObjectLastError? lastError,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.StaticChunkingStrategyResponseParam, global::tryAGI.OpenAI.OtherChunkingStrategyResponseParam>? chunkingStrategy,
-            object? attributes)
+            object? attributes,
+            string @object = "vector_store.file")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

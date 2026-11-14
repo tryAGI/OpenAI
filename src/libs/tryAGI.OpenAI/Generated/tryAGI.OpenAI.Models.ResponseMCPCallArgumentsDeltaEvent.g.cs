@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always 'response.mcp_call_arguments.delta'.
         /// </summary>
+        /// <default>"response.mcp_call_arguments.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseMCPCallArgumentsDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEventType Type { get; set; }
+        public string Type { get; set; } = "response.mcp_call_arguments.delta";
 
         /// <summary>
         /// The index of the output item in the response's output array.
@@ -75,7 +75,7 @@ namespace tryAGI.OpenAI
             string itemId,
             string delta,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseMCPCallArgumentsDeltaEventType type)
+            string type = "response.mcp_call_arguments.delta")
         {
             this.Type = type;
             this.OutputIndex = outputIndex;

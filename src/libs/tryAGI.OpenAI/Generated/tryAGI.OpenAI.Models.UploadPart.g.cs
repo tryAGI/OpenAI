@@ -32,9 +32,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `upload.part`.
         /// </summary>
+        /// <default>"upload.part"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UploadPartObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UploadPartObject Object { get; set; }
+        public string Object { get; set; } = "upload.part";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
             string id,
             int createdAt,
             string uploadId,
-            global::tryAGI.OpenAI.UploadPartObject @object)
+            string @object = "upload.part")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;

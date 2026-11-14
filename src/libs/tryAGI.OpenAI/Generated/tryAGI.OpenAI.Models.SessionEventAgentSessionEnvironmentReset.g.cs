@@ -52,6 +52,12 @@ namespace tryAGI.OpenAI
         public required long ResetCount { get; set; }
 
         /// <summary>
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("obfuscation")]
+        public string? Obfuscation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -75,6 +81,9 @@ namespace tryAGI.OpenAI
         /// <param name="turnId">
         /// The associated turn, when applicable.
         /// </param>
+        /// <param name="obfuscation">
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `agent.session.environment.reset`.<br/>
         /// Default Value: agent.session.environment.reset
@@ -88,6 +97,7 @@ namespace tryAGI.OpenAI
             string environmentId,
             long resetCount,
             string? turnId,
+            string? obfuscation,
             global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentResetType type = global::tryAGI.OpenAI.SessionEventAgentSessionEnvironmentResetType.AgentSessionEnvironmentReset)
         {
             this.Type = type;
@@ -96,6 +106,7 @@ namespace tryAGI.OpenAI
             this.TurnId = turnId;
             this.EnvironmentId = environmentId ?? throw new global::System.ArgumentNullException(nameof(environmentId));
             this.ResetCount = resetCount;
+            this.Obfuscation = obfuscation;
         }
 
         /// <summary>

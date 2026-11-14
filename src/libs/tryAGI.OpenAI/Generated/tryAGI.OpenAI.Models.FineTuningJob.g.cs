@@ -57,9 +57,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always "fine_tuning.job".
         /// </summary>
+        /// <default>"fine_tuning.job"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FineTuningJobObjectJsonConverter))]
-        public global::tryAGI.OpenAI.FineTuningJobObject Object { get; set; }
+        public string Object { get; set; } = "fine_tuning.job";
 
         /// <summary>
         /// The organization that owns the fine-tuning job.
@@ -168,9 +168,6 @@ namespace tryAGI.OpenAI
         /// <param name="hyperparameters">
         /// The hyperparameters used for the fine-tuning job. This value will only be returned when running `supervised` jobs.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always "fine_tuning.job".
-        /// </param>
         /// <param name="trainedTokens"></param>
         /// <param name="validationFile"></param>
         /// <param name="integrations"></param>
@@ -180,6 +177,9 @@ namespace tryAGI.OpenAI
         /// <param name="estimatedFinish"></param>
         /// <param name="method"></param>
         /// <param name="metadata"></param>
+        /// <param name="object">
+        /// The object type, which is always "fine_tuning.job".
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -195,14 +195,14 @@ namespace tryAGI.OpenAI
             string? fineTunedModel,
             int? finishedAt,
             global::tryAGI.OpenAI.FineTuningJobHyperparameters? hyperparameters,
-            global::tryAGI.OpenAI.FineTuningJobObject @object,
             int? trainedTokens,
             string? validationFile,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningIntegration>? integrations,
             int? seed,
             int? estimatedFinish,
             global::tryAGI.OpenAI.FineTuneMethod? method,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            string @object = "fine_tuning.job")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;

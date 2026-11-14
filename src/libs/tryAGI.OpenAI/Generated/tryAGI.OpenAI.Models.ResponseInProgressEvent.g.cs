@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.in_progress`.
         /// </summary>
+        /// <default>"response.in_progress"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseInProgressEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseInProgressEventType Type { get; set; }
+        public string Type { get; set; } = "response.in_progress";
 
         /// <summary>
         /// The response that is in progress.<br/>
@@ -57,7 +57,7 @@ namespace tryAGI.OpenAI
         public ResponseInProgressEvent(
             global::tryAGI.OpenAI.Response response,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseInProgressEventType type)
+            string type = "response.in_progress")
         {
             this.Type = type;
             this.Response = response;

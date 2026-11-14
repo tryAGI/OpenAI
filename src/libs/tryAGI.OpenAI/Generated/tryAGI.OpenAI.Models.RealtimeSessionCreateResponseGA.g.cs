@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of session to create. Always `realtime` for the Realtime API.
         /// </summary>
+        /// <default>"realtime"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeSessionCreateResponseGATypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAType Type { get; set; }
+        public string Type { get; set; } = "realtime";
 
         /// <summary>
         /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
@@ -25,9 +25,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type. Always `realtime.session`.
         /// </summary>
+        /// <default>"realtime.session"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeSessionCreateResponseGAObjectJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAObject Object { get; set; }
+        public string Object { get; set; } = "realtime.session";
 
         /// <summary>
         /// Expiration timestamp for the session, in seconds since epoch.
@@ -75,7 +75,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tracing")]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingTracingConfigurationEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingTracingConfigurationEnum2>? Tracing { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingTracingConfiguration>? Tracing { get; set; }
 
         /// <summary>
         /// Tools available to the model.
@@ -105,8 +105,8 @@ namespace tryAGI.OpenAI
         /// given model. Defaults to `inf`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAMaxOutputTokens?>))]
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAMaxOutputTokens?>? MaxOutputTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<int?, string>))]
+        public global::tryAGI.OpenAI.OneOf<int?, string>? MaxOutputTokens { get; set; }
 
         /// <summary>
         /// When the number of tokens in a conversation exceeds the model's input token limit, the conversation be truncated, meaning messages (starting from the oldest) will not be included in the model's context. A 32k context model with 4,096 max output tokens can only include 28,224 tokens in the context before truncation occurs.<br/>
@@ -135,12 +135,6 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="id">
         /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
-        /// </param>
-        /// <param name="type">
-        /// The type of session to create. Always `realtime` for the Realtime API.
-        /// </param>
-        /// <param name="object">
-        /// The object type. Always `realtime.session`.
         /// </param>
         /// <param name="expiresAt">
         /// Expiration timestamp for the session, in seconds since epoch.
@@ -190,26 +184,32 @@ namespace tryAGI.OpenAI
         /// Truncation can be disabled entirely, which means the server will never truncate but would instead return an error if the conversation exceeds the model's input token limit.
         /// </param>
         /// <param name="prompt"></param>
+        /// <param name="type">
+        /// The type of session to create. Always `realtime` for the Realtime API.
+        /// </param>
+        /// <param name="object">
+        /// The object type. Always `realtime.session`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateResponseGA(
             string id,
-            global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAType type,
-            global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAObject @object,
             int? expiresAt,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAOutputModalitie>? outputModalities,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAModel?>? model,
             string? instructions,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAAudio? audio,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAIncludeItem>? include,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingTracingConfigurationEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingTracingConfigurationEnum2>? tracing,
+            global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGATracingTracingConfiguration>? tracing,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeFunctionTool, global::tryAGI.OpenAI.MCPTool>>? tools,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? toolChoice,
             global::tryAGI.OpenAI.RealtimeReasoning? reasoning,
-            global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseGAMaxOutputTokens?>? maxOutputTokens,
+            global::tryAGI.OpenAI.OneOf<int?, string>? maxOutputTokens,
             global::tryAGI.OpenAI.RealtimeTruncation? truncation,
-            global::tryAGI.OpenAI.PromptVariant1? prompt)
+            global::tryAGI.OpenAI.PromptVariant1? prompt,
+            string type = "realtime",
+            string @object = "realtime.session")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -234,6 +234,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RealtimeSessionCreateResponseGA()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RealtimeSessionCreateResponseGA"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RealtimeSessionCreateResponseGA FromId(string id)
+        {
+            return new RealtimeSessionCreateResponseGA
+            {
+                Id = id,
+            };
         }
 
     }

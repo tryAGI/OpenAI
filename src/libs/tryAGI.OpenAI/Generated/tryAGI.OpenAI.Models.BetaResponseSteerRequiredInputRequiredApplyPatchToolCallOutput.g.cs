@@ -12,9 +12,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"apply_patch_call_output"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutputTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutputType Type { get; set; }
+        public string Type { get; set; } = "apply_patch_call_output";
 
         /// <summary>
         ///
@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI
 #endif
         public BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutput(
             string callId,
-            global::tryAGI.OpenAI.BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutputType type)
+            string type = "apply_patch_call_output")
         {
             this.Type = type;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
@@ -50,6 +50,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutput()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutput"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutput FromCallId(string callId)
+        {
+            return new BetaResponseSteerRequiredInputRequiredApplyPatchToolCallOutput
+            {
+                CallId = callId,
+            };
         }
 
     }

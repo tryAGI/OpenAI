@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.refusal.delta`.
         /// </summary>
+        /// <default>"response.refusal.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseRefusalDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseRefusalDeltaEventType Type { get; set; }
+        public string Type { get; set; } = "response.refusal.delta";
 
         /// <summary>
         /// The ID of the output item that the refusal text is added to.
@@ -96,7 +96,7 @@ namespace tryAGI.OpenAI
             string delta,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseRefusalDeltaEventType type)
+            string type = "response.refusal.delta")
         {
             this.Agent = agent;
             this.Type = type;

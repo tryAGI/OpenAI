@@ -22,9 +22,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `conversation.item.truncated`.
         /// </summary>
+        /// <default>"conversation.item.truncated"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventConversationItemTruncatedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncatedType Type { get; set; }
+        public string Type { get; set; } = "conversation.item.truncated";
 
         /// <summary>
         /// The ID of the assistant message item that was truncated.
@@ -79,7 +79,7 @@ namespace tryAGI.OpenAI
             string itemId,
             int contentIndex,
             int audioEndMs,
-            global::tryAGI.OpenAI.RealtimeServerEventConversationItemTruncatedType type)
+            string type = "conversation.item.truncated")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

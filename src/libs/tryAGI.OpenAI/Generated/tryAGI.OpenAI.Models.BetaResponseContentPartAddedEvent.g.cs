@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.content_part.added`.
         /// </summary>
+        /// <default>"response.content_part.added"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseContentPartAddedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseContentPartAddedEventType Type { get; set; }
+        public string Type { get; set; } = "response.content_part.added";
 
         /// <summary>
         /// The ID of the output item that the content part was added to.
@@ -97,7 +97,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaOutputContent part,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseContentPartAddedEventType type)
+            string type = "response.content_part.added")
         {
             this.Agent = agent;
             this.Type = type;

@@ -26,9 +26,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always "embedding".
         /// </summary>
+        /// <default>"embedding"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EmbeddingObjectJsonConverter))]
-        public global::tryAGI.OpenAI.EmbeddingObject Object { get; set; }
+        public string Object { get; set; } = "embedding";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
         public Embedding(
             int index,
             global::tryAGI.OpenAI.AnyOf<global::System.Collections.Generic.IList<float>, string> embedding1,
-            global::tryAGI.OpenAI.EmbeddingObject @object)
+            string @object = "embedding")
         {
             this.Index = index;
             this.Embedding1 = embedding1;

@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always 'response.mcp_call.failed'.
         /// </summary>
+        /// <default>"response.mcp_call.failed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseMCPCallFailedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseMCPCallFailedEventType Type { get; set; }
+        public string Type { get; set; } = "response.mcp_call.failed";
 
         /// <summary>
         /// The ID of the MCP tool call item that failed.
@@ -74,7 +74,7 @@ namespace tryAGI.OpenAI
             int outputIndex,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseMCPCallFailedEventType type)
+            string type = "response.mcp_call.failed")
         {
             this.Agent = agent;
             this.Type = type;

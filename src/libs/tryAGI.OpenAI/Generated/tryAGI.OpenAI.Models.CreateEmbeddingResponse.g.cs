@@ -25,9 +25,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always "list".
         /// </summary>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateEmbeddingResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.CreateEmbeddingResponseObject Object { get; set; }
+        public string Object { get; set; } = "list";
 
         /// <summary>
         /// The usage information for the request.
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Embedding> data,
             string model,
             global::tryAGI.OpenAI.CreateEmbeddingResponseUsage usage,
-            global::tryAGI.OpenAI.CreateEmbeddingResponseObject @object)
+            string @object = "list")
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));

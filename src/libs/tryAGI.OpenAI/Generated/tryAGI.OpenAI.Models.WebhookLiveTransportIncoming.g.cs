@@ -35,15 +35,14 @@ namespace tryAGI.OpenAI
         /// The object of the event. Always `event`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookLiveTransportIncomingObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookLiveTransportIncomingObject? Object { get; set; }
+        public string? Object { get; set; }
 
         /// <summary>
         /// The type of the event. Always `live.transport.incoming`.
         /// </summary>
+        /// <default>"live.transport.incoming"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookLiveTransportIncomingTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookLiveTransportIncomingType Type { get; set; }
+        public string Type { get; set; } = "live.transport.incoming";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,8 +75,8 @@ namespace tryAGI.OpenAI
             int createdAt,
             string id,
             global::tryAGI.OpenAI.WebhookLiveTransportIncomingData data,
-            global::tryAGI.OpenAI.WebhookLiveTransportIncomingObject? @object,
-            global::tryAGI.OpenAI.WebhookLiveTransportIncomingType type)
+            string? @object,
+            string type = "live.transport.incoming")
         {
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

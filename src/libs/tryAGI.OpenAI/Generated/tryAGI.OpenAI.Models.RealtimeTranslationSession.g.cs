@@ -19,9 +19,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The session type. Always `translation` for Realtime translation sessions.
         /// </summary>
+        /// <default>"translation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationSessionTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTranslationSessionType Type { get; set; }
+        public string Type { get; set; } = "translation";
 
         /// <summary>
         /// Expiration timestamp for the session, in seconds since epoch.
@@ -78,7 +78,7 @@ namespace tryAGI.OpenAI
             int expiresAt,
             string model,
             global::tryAGI.OpenAI.RealtimeTranslationSessionAudio audio,
-            global::tryAGI.OpenAI.RealtimeTranslationSessionType type)
+            string type = "translation")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;

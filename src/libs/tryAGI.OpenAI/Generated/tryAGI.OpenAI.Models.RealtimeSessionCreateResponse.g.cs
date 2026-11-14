@@ -75,8 +75,8 @@ namespace tryAGI.OpenAI
         /// workflow name, group id, and metadata.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tracing")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum2>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum2>? Tracing { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracing>))]
+        public global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracing>? Tracing { get; set; }
 
         /// <summary>
         /// Configuration for turn detection. Can be set to `null` to turn off. Server<br/>
@@ -106,8 +106,8 @@ namespace tryAGI.OpenAI
         /// given model. Defaults to `inf`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxOutputTokens?>))]
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxOutputTokens?>? MaxOutputTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<int?, string>))]
+        public global::tryAGI.OpenAI.OneOf<int?, string>? MaxOutputTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -190,11 +190,11 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateResponseOutputModalitie>? outputModalities,
             string? instructions,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseAudio? audio,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracingEnum2>? tracing,
+            global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateResponseTracing>? tracing,
             global::tryAGI.OpenAI.RealtimeSessionCreateResponseTurnDetection? turnDetection,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeFunctionTool>? tools,
             string? toolChoice,
-            global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateResponseMaxOutputTokens?>? maxOutputTokens)
+            global::tryAGI.OpenAI.OneOf<int?, string>? maxOutputTokens)
         {
             this.Id = id;
             this.Object = @object;

@@ -19,9 +19,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event discriminator. Always `response.steer.accepted`.
         /// </summary>
+        /// <default>"response.steer.accepted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseSteerAcceptedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseSteerAcceptedEventType Type { get; set; }
+        public string Type { get; set; } = "response.steer.accepted";
 
         /// <summary>
         /// The sequence number for this event.
@@ -59,12 +59,12 @@ namespace tryAGI.OpenAI
         /// <param name="steer">
         /// The accepted steering submission.
         /// </param>
-        /// <param name="type">
-        /// The event discriminator. Always `response.steer.accepted`.
-        /// </param>
         /// <param name="streamId">
         /// The WebSocket lane that emitted this event. This field is present when<br/>
         /// the target response's `response.create` event supplied a `stream_id`.
+        /// </param>
+        /// <param name="type">
+        /// The event discriminator. Always `response.steer.accepted`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -72,8 +72,8 @@ namespace tryAGI.OpenAI
         public ResponseSteerAcceptedEvent(
             int sequenceNumber,
             global::tryAGI.OpenAI.ResponseSteerAcceptedEventSteer steer,
-            global::tryAGI.OpenAI.ResponseSteerAcceptedEventType type,
-            string? streamId)
+            string? streamId,
+            string type = "response.steer.accepted")
         {
             this.Type = type;
             this.SequenceNumber = sequenceNumber;

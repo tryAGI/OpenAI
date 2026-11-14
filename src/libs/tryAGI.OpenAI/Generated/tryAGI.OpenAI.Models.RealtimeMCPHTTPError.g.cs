@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"http_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeMCPHTTPErrorTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeMCPHTTPErrorType Type { get; set; }
+        public string Type { get; set; } = "http_error";
 
         /// <summary>
         ///
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         public RealtimeMCPHTTPError(
             int code,
             string message,
-            global::tryAGI.OpenAI.RealtimeMCPHTTPErrorType type)
+            string type = "http_error")
         {
             this.Type = type;
             this.Code = code;

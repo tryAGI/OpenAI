@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always 'response.mcp_call.failed'.
         /// </summary>
+        /// <default>"response.mcp_call.failed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseMCPCallFailedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseMCPCallFailedEventType Type { get; set; }
+        public string Type { get; set; } = "response.mcp_call.failed";
 
         /// <summary>
         /// The ID of the MCP tool call item that failed.
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
             string itemId,
             int outputIndex,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseMCPCallFailedEventType type)
+            string type = "response.mcp_call.failed")
         {
             this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));

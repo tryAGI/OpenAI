@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The error type. Always `invalid_request_error`.
         /// </summary>
+        /// <default>"invalid_request_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseSteerFailedEventErrorTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseSteerFailedEventErrorType Type { get; set; }
+        public string Type { get; set; } = "invalid_request_error";
 
         /// <summary>
         /// A machine-readable steering error code. Clients should handle unknown<br/>
@@ -70,7 +70,7 @@ namespace tryAGI.OpenAI
         public BetaResponseSteerFailedEventError(
             global::tryAGI.OpenAI.BetaResponseSteerErrorCode code,
             string message,
-            global::tryAGI.OpenAI.BetaResponseSteerFailedEventErrorType type)
+            string type = "invalid_request_error")
         {
             this.Type = type;
             this.Code = code;

@@ -18,16 +18,16 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the output message. Always `message`.
         /// </summary>
+        /// <default>"message"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OutputMessageTypeJsonConverter))]
-        public global::tryAGI.OpenAI.OutputMessageType Type { get; set; }
+        public string Type { get; set; } = "message";
 
         /// <summary>
         /// The role of the output message. Always `assistant`.
         /// </summary>
+        /// <default>"assistant"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OutputMessageRoleJsonConverter))]
-        public global::tryAGI.OpenAI.OutputMessageRole Role { get; set; }
+        public string Role { get; set; } = "assistant";
 
         /// <summary>
         /// The content of the output message.
@@ -70,13 +70,13 @@ namespace tryAGI.OpenAI
         /// The status of the message input. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when input items are returned via API.
         /// </param>
+        /// <param name="phase"></param>
         /// <param name="type">
         /// The type of the output message. Always `message`.
         /// </param>
         /// <param name="role">
         /// The role of the output message. Always `assistant`.
         /// </param>
-        /// <param name="phase"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -84,9 +84,9 @@ namespace tryAGI.OpenAI
             string id,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputMessageContent> content,
             global::tryAGI.OpenAI.OutputMessageStatus status,
-            global::tryAGI.OpenAI.OutputMessageType type,
-            global::tryAGI.OpenAI.OutputMessageRole role,
-            global::tryAGI.OpenAI.MessagePhase? phase)
+            global::tryAGI.OpenAI.MessagePhase? phase,
+            string type = "message",
+            string role = "assistant")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;

@@ -19,6 +19,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        AgentSessionInputMcpApprovalRequestResult,
+        /// <summary>
+        ///
+        /// </summary>
         AgentSessionInputMessage,
         /// <summary>
         ///
@@ -40,6 +44,7 @@ namespace tryAGI.OpenAI
             {
                 SessionInputParamDiscriminatorType.AgentSessionInputCancel => "agent.session.input.cancel",
                 SessionInputParamDiscriminatorType.AgentSessionInputComputerUseApprovalRequestResult => "agent.session.input.computer_use_approval_request_result",
+                SessionInputParamDiscriminatorType.AgentSessionInputMcpApprovalRequestResult => "agent.session.input.mcp_approval_request_result",
                 SessionInputParamDiscriminatorType.AgentSessionInputMessage => "agent.session.input.message",
                 SessionInputParamDiscriminatorType.AgentSessionInputToolResult => "agent.session.input.tool_result",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -54,6 +59,7 @@ namespace tryAGI.OpenAI
             {
                 "agent.session.input.cancel" => SessionInputParamDiscriminatorType.AgentSessionInputCancel,
                 "agent.session.input.computer_use_approval_request_result" => SessionInputParamDiscriminatorType.AgentSessionInputComputerUseApprovalRequestResult,
+                "agent.session.input.mcp_approval_request_result" => SessionInputParamDiscriminatorType.AgentSessionInputMcpApprovalRequestResult,
                 "agent.session.input.message" => SessionInputParamDiscriminatorType.AgentSessionInputMessage,
                 "agent.session.input.tool_result" => SessionInputParamDiscriminatorType.AgentSessionInputToolResult,
                 _ => null,

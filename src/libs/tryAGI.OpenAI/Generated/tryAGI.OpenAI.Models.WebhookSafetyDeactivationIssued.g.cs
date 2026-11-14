@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `event`.
         /// </summary>
+        /// <default>"event"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookSafetyDeactivationIssuedObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookSafetyDeactivationIssuedObject Object { get; set; }
+        public string Object { get; set; } = "event";
 
         /// <summary>
         /// The Unix timestamp in seconds when the event was created.
@@ -32,9 +32,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `safety.deactivation_issued`.
         /// </summary>
+        /// <default>"safety.deactivation_issued"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookSafetyDeactivationIssuedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookSafetyDeactivationIssuedType Type { get; set; }
+        public string Type { get; set; } = "safety.deactivation_issued";
 
         /// <summary>
         ///
@@ -72,8 +72,8 @@ namespace tryAGI.OpenAI
             string id,
             int createdAt,
             global::tryAGI.OpenAI.WebhookSafetyDeactivationIssuedData data,
-            global::tryAGI.OpenAI.WebhookSafetyDeactivationIssuedObject @object,
-            global::tryAGI.OpenAI.WebhookSafetyDeactivationIssuedType type)
+            string @object = "event",
+            string type = "safety.deactivation_issued")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

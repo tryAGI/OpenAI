@@ -21,9 +21,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `output_audio_buffer.stopped`.
         /// </summary>
+        /// <default>"output_audio_buffer.stopped"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventOutputAudioBufferStoppedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStoppedType Type { get; set; }
+        public string Type { get; set; } = "output_audio_buffer.stopped";
 
         /// <summary>
         /// The unique ID of the response that produced the audio.
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventOutputAudioBufferStopped(
             string eventId,
             string responseId,
-            global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferStoppedType type)
+            string type = "output_audio_buffer.stopped")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

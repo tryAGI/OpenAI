@@ -9,6 +9,19 @@ namespace tryAGI.OpenAI
     public sealed partial class SessionResource
     {
         /// <summary>
+        /// Default prompt cache lifetime for turns in this session, when configured.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
+        public global::tryAGI.OpenAI.PromptCacheOptionsResource? PromptCacheOptions { get; set; }
+
+        /// <summary>
+        /// Review applied to eligible actions in this session. Omitted when review is none and automatic review is not enabled. Omission means none.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("review")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.SessionReviewResourceJsonConverter))]
+        public global::tryAGI.OpenAI.SessionReviewResource? Review { get; set; }
+
+        /// <summary>
         /// Custom string key-value pairs attached to the session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
@@ -132,6 +145,12 @@ namespace tryAGI.OpenAI
         /// <param name="vaultIds">
         /// The IDs of vaults made available to the session.
         /// </param>
+        /// <param name="promptCacheOptions">
+        /// Default prompt cache lifetime for turns in this session, when configured.
+        /// </param>
+        /// <param name="review">
+        /// Review applied to eligible actions in this session. Omitted when review is none and automatic review is not enabled. Omission means none.
+        /// </param>
         /// <param name="error">
         /// The error that caused the session to fail, if any.
         /// </param>
@@ -155,10 +174,14 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.SessionAgentResource agent,
             global::tryAGI.OpenAI.EnvironmentResource environment,
             global::System.Collections.Generic.IList<string> vaultIds,
+            global::tryAGI.OpenAI.PromptCacheOptionsResource? promptCacheOptions,
+            global::tryAGI.OpenAI.SessionReviewResource? review,
             string? error,
             global::tryAGI.OpenAI.TokenUsageResource? usage,
             global::tryAGI.OpenAI.SessionResourceObject @object = global::tryAGI.OpenAI.SessionResourceObject.AgentSession)
         {
+            this.PromptCacheOptions = promptCacheOptions;
+            this.Review = review;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

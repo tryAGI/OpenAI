@@ -61,9 +61,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `chat.completion`.
         /// </summary>
+        /// <default>"chat.completion"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateChatCompletionResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.CreateChatCompletionResponseObject Object { get; set; }
+        public string Object { get; set; } = "chat.completion";
 
         /// <summary>
         /// Usage statistics for the completion request.
@@ -100,13 +100,13 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="metadata"></param>
         /// <param name="serviceTier"></param>
-        /// <param name="object">
-        /// The object type, which is always `chat.completion`.
-        /// </param>
         /// <param name="usage">
         /// Usage statistics for the completion request.
         /// </param>
         /// <param name="moderation"></param>
+        /// <param name="object">
+        /// The object type, which is always `chat.completion`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -117,9 +117,9 @@ namespace tryAGI.OpenAI
             string model,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.ServiceTierEnum? serviceTier,
-            global::tryAGI.OpenAI.CreateChatCompletionResponseObject @object,
             global::tryAGI.OpenAI.CompletionUsage? usage,
-            global::tryAGI.OpenAI.ChatCompletionModeration? moderation)
+            global::tryAGI.OpenAI.ChatCompletionModeration? moderation,
+            string @object = "chat.completion")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));

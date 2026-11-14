@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The role of the messages author, in this case `tool`.
         /// </summary>
+        /// <default>"tool"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionRequestToolMessageRoleJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionRequestToolMessageRole Role { get; set; }
+        public string Role { get; set; } = "tool";
 
         /// <summary>
         /// The contents of the tool message.
@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
         public ChatCompletionRequestToolMessage(
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestToolMessageContentPart>> content,
             string toolCallId,
-            global::tryAGI.OpenAI.ChatCompletionRequestToolMessageRole role)
+            string role = "tool")
         {
             this.Role = role;
             this.Content = content;

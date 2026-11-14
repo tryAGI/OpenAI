@@ -21,9 +21,9 @@ namespace tryAGI.OpenAI
         /// The event type, must be<br/>
         /// `conversation.item.input_audio_transcription.failed`.
         /// </summary>
+        /// <default>"conversation.item.input_audio_transcription.failed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType Type { get; set; }
+        public string Type { get; set; } = "conversation.item.input_audio_transcription.failed";
 
         /// <summary>
         /// The ID of the user message item.
@@ -79,7 +79,7 @@ namespace tryAGI.OpenAI
             string itemId,
             int contentIndex,
             global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedError error,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventConversationItemInputAudioTranscriptionFailedType type)
+            string type = "conversation.item.input_audio_transcription.failed")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

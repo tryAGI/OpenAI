@@ -76,7 +76,7 @@ in between model turns, not while a response is in progress.
 ",
     };
 
-    private static Option<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracingEnum2>?> Tracing { get; } = new(
+    private static Option<global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateRequestTracing>?> Tracing { get; } = new(
         name: @"--tracing")
     {
         Description = @"Configuration options for tracing. Set to null to disable tracing. Once
@@ -117,7 +117,7 @@ specify a function.
 ",
     };
 
-    private static Option<global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestMaxResponseOutputTokens?>?> MaxResponseOutputTokens { get; } = new(
+    private static Option<global::tryAGI.OpenAI.OneOf<int?, string>?> MaxResponseOutputTokens { get; } = new(
         name: @"--max-response-output-tokens")
     {
         Description = @"Maximum number of output tokens for a single assistant response,

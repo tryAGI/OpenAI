@@ -9,6 +9,21 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateAgentSessionParams
     {
         /// <summary>
+        /// An inline execution environment or a reference to an environment template.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EnvironmentParamJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.EnvironmentParam Environment { get; set; }
+
+        /// <summary>
+        /// Action review mode. Omit to use none.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("review")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.SessionReviewParamJsonConverter))]
+        public global::tryAGI.OpenAI.SessionReviewParam? Review { get; set; }
+
+        /// <summary>
         /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Omission or null defaults to an empty map.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
@@ -27,14 +42,6 @@ namespace tryAGI.OpenAI
         public string? AgentId { get; set; }
 
         /// <summary>
-        /// An inline execution environment or a reference to an environment template.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EnvironmentParamJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.EnvironmentParam Environment { get; set; }
-
-        /// <summary>
         /// The IDs of vaults made available to the session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vault_ids")]
@@ -47,11 +54,23 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateSessionInputParam? Input { get; set; }
 
         /// <summary>
+        /// Default prompt cache lifetime for turns in this session. Omit to use the model default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
+        public global::tryAGI.OpenAI.PromptCacheOptionsParam2? PromptCacheOptions { get; set; }
+
+        /// <summary>
         /// Whether to stream session events as server-sent events. Defaults to `false`.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
         public bool? Stream { get; set; }
+
+        /// <summary>
+        /// Options for the event stream. Only allowed when `stream` is `true`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stream_options")]
+        public global::tryAGI.OpenAI.SessionStreamOptionsParam? StreamOptions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,6 +83,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="environment">
         /// An inline execution environment or a reference to an environment template.
+        /// </param>
+        /// <param name="review">
+        /// Action review mode. Omit to use none.
         /// </param>
         /// <param name="metadata">
         /// Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters. Omission or null defaults to an empty map.
@@ -80,29 +102,41 @@ namespace tryAGI.OpenAI
         /// <param name="input">
         /// Initial input to submit when the session is created. A string is shorthand for a single user message. Required when `environment.type` is `none`, or when `stream` is `true` for an environment that is not `self_hosted`; optional for self-hosted and non-streaming execution environments.
         /// </param>
+        /// <param name="promptCacheOptions">
+        /// Default prompt cache lifetime for turns in this session. Omit to use the model default.
+        /// </param>
         /// <param name="stream">
         /// Whether to stream session events as server-sent events. Defaults to `false`.<br/>
         /// Default Value: false
+        /// </param>
+        /// <param name="streamOptions">
+        /// Options for the event stream. Only allowed when `stream` is `true`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateAgentSessionParams(
             global::tryAGI.OpenAI.EnvironmentParam environment,
+            global::tryAGI.OpenAI.SessionReviewParam? review,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::tryAGI.OpenAI.SessionAgentConfigParam? agent,
             string? agentId,
             global::System.Collections.Generic.IList<string>? vaultIds,
             global::tryAGI.OpenAI.CreateSessionInputParam? input,
-            bool? stream)
+            global::tryAGI.OpenAI.PromptCacheOptionsParam2? promptCacheOptions,
+            bool? stream,
+            global::tryAGI.OpenAI.SessionStreamOptionsParam? streamOptions)
         {
+            this.Environment = environment;
+            this.Review = review;
             this.Metadata = metadata;
             this.Agent = agent;
             this.AgentId = agentId;
-            this.Environment = environment;
             this.VaultIds = vaultIds;
             this.Input = input;
+            this.PromptCacheOptions = promptCacheOptions;
             this.Stream = stream;
+            this.StreamOptions = streamOptions;
         }
 
         /// <summary>

@@ -26,9 +26,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `conversation.item.created`.
         /// </summary>
+        /// <default>"conversation.item.created"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventConversationItemCreatedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreatedType Type { get; set; }
+        public string Type { get; set; } = "conversation.item.created";
 
         /// <summary>
         ///
@@ -59,18 +59,18 @@ namespace tryAGI.OpenAI
         /// <param name="item">
         /// A single item within a Realtime conversation.
         /// </param>
+        /// <param name="previousItemId"></param>
         /// <param name="type">
         /// The event type, must be `conversation.item.created`.
         /// </param>
-        /// <param name="previousItemId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventConversationItemCreated(
             string eventId,
             global::tryAGI.OpenAI.RealtimeConversationItem item,
-            global::tryAGI.OpenAI.RealtimeServerEventConversationItemCreatedType type,
-            string? previousItemId)
+            string? previousItemId,
+            string type = "conversation.item.created")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

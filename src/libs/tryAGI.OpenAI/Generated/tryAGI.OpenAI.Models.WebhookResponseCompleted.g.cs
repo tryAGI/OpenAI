@@ -33,15 +33,14 @@ namespace tryAGI.OpenAI
         /// The object of the event. Always `event`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookResponseCompletedObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookResponseCompletedObject? Object { get; set; }
+        public string? Object { get; set; }
 
         /// <summary>
         /// The type of the event. Always `response.completed`.
         /// </summary>
+        /// <default>"response.completed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookResponseCompletedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookResponseCompletedType Type { get; set; }
+        public string Type { get; set; } = "response.completed";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,8 +73,8 @@ namespace tryAGI.OpenAI
             int createdAt,
             string id,
             global::tryAGI.OpenAI.WebhookResponseCompletedData data,
-            global::tryAGI.OpenAI.WebhookResponseCompletedObject? @object,
-            global::tryAGI.OpenAI.WebhookResponseCompletedType type)
+            string? @object,
+            string type = "response.completed")
         {
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

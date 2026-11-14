@@ -62,8 +62,7 @@ namespace tryAGI.OpenAI
         /// The object type, which is always "upload".
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UploadObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UploadObject? Object { get; set; }
+        public string? Object { get; set; }
 
         /// <summary>
         /// The ready File object after the Upload is completed.
@@ -118,7 +117,7 @@ namespace tryAGI.OpenAI
             string purpose,
             global::tryAGI.OpenAI.UploadStatus status,
             int expiresAt,
-            global::tryAGI.OpenAI.UploadObject? @object,
+            string? @object,
             global::tryAGI.OpenAI.OpenAIFile? file)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

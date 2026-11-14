@@ -21,9 +21,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `response.cancel`.
         /// </summary>
+        /// <default>"response.cancel"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeClientEventResponseCancelTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeClientEventResponseCancelType Type { get; set; }
+        public string Type { get; set; } = "response.cancel";
 
         /// <summary>
         /// A specific response ID to cancel - if not provided, will cancel an <br/>
@@ -44,20 +44,20 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.cancel`.
-        /// </param>
         /// <param name="responseId">
         /// A specific response ID to cancel - if not provided, will cancel an <br/>
         /// in-progress response in the default conversation.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.cancel`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeClientEventResponseCancel(
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeClientEventResponseCancelType type,
-            string? responseId)
+            string? responseId,
+            string type = "response.cancel")
         {
             this.EventId = eventId;
             this.Type = type;

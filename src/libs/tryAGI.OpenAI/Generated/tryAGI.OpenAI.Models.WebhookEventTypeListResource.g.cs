@@ -12,10 +12,9 @@ namespace tryAGI.OpenAI
         /// The object type, which is always list.<br/>
         /// Default Value: list
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.WebhookEventTypeListResourceObject.List</default>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookEventTypeListResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookEventTypeListResourceObject Object { get; set; } = global::tryAGI.OpenAI.WebhookEventTypeListResourceObject.List;
+        public string Object { get; set; } = "list";
 
         /// <summary>
         /// The webhook event types available to the authenticated project.
@@ -45,7 +44,7 @@ namespace tryAGI.OpenAI
 #endif
         public WebhookEventTypeListResource(
             global::System.Collections.Generic.IList<string> data,
-            global::tryAGI.OpenAI.WebhookEventTypeListResourceObject @object = global::tryAGI.OpenAI.WebhookEventTypeListResourceObject.List)
+            string @object = "list")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

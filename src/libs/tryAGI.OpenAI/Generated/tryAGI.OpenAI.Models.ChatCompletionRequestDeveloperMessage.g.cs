@@ -21,9 +21,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The role of the messages author, in this case `developer`.
         /// </summary>
+        /// <default>"developer"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionRequestDeveloperMessageRoleJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessageRole Role { get; set; }
+        public string Role { get; set; } = "developer";
 
         /// <summary>
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
@@ -43,19 +43,19 @@ namespace tryAGI.OpenAI
         /// <param name="content">
         /// The contents of the developer message.
         /// </param>
-        /// <param name="role">
-        /// The role of the messages author, in this case `developer`.
-        /// </param>
         /// <param name="name">
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
+        /// </param>
+        /// <param name="role">
+        /// The role of the messages author, in this case `developer`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionRequestDeveloperMessage(
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText>> content,
-            global::tryAGI.OpenAI.ChatCompletionRequestDeveloperMessageRole role,
-            string? name)
+            string? name,
+            string role = "developer")
         {
             this.Content = content;
             this.Role = role;
