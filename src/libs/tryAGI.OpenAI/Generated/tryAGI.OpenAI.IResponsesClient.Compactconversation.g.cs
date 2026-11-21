@@ -38,11 +38,14 @@ namespace tryAGI.OpenAI
         /// Learn when and how to compact long-running conversations in the [conversation state guide](https://developers.openai.com/api/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](https://developers.openai.com/api/docs/guides/conversation-state#compaction-advanced).
         /// </summary>
         /// <param name="model">
-        /// Model ID used to generate the response, like `gpt-6-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
+        /// Model ID used to generate the response, like `gpt-6.2-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
         /// </param>
         /// <param name="input"></param>
         /// <param name="previousResponseId"></param>
         /// <param name="instructions"></param>
+        /// <param name="image">
+        /// Request level image options.
+        /// </param>
         /// <param name="promptCacheKey"></param>
         /// <param name="promptCacheRetention"></param>
         /// <param name="promptCacheOptions"></param>
@@ -55,10 +58,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? input = default,
             string? previousResponseId = default,
             string? instructions = default,
+            global::tryAGI.OpenAI.ImageOptionsParam? image = default,
             string? promptCacheKey = default,
             global::tryAGI.OpenAI.PromptCacheRetentionEnum? promptCacheRetention = default,
             global::tryAGI.OpenAI.PromptCacheOptionsParam? promptCacheOptions = default,
-            global::tryAGI.OpenAI.ServiceTierEnum2? serviceTier = default,
+            global::tryAGI.OpenAI.ServiceTierEnum? serviceTier = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -5,7 +5,10 @@ using System.CommandLine;
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
 internal sealed record CreateImageRequestOptionSet(
-    Option<string> Prompt,
+    Option<int?> FrameCount,
+                     Option<int?> FrameDurationMs,
+                     Option<global::tryAGI.OpenAI.Complexity?> Complexity,
+                     Option<string> Prompt,
                      Option<int?> N,
                      Option<global::tryAGI.OpenAI.CreateImageRequestResponseFormat?> ResponseFormat,
                      Option<int?> OutputCompression,
@@ -21,7 +24,19 @@ internal sealed record CreateImageRequestOptionSet(
             ? string.Empty
             : prefix.Trim().Trim('-') + "-";
         return new CreateImageRequestOptionSet(
-                        Prompt: new Option<string>($"--{normalizedPrefix}prompt")
+                        FrameCount: new Option<int?>($"--{normalizedPrefix}frame-count")
+                {
+                    Description = @"Number of frames for GIF output. Accepts integers from 2 through 16. Defaults to 9 when omitted. Only supported with output_format=gif. The requested size must satisfy the selected model's GIF size limits. GIF output does not support streaming, partial images, masks, or custom output compression. Requires access to the GIF preview for the selected model.",
+                },
+                FrameDurationMs: new Option<int?>($"--{normalizedPrefix}frame-duration-ms")
+                {
+                    Description = @"Requested delay per GIF frame, in milliseconds. Defaults to 200 when omitted. GIF output rounds to the nearest 10 ms and caps the encoded delay at 655,350 ms per frame. Only supported with output_format=gif.",
+                },
+                Complexity: new Option<global::tryAGI.OpenAI.Complexity?>($"--{normalizedPrefix}complexity")
+                {
+                    Description = @"Computation spent planning the image, independently of rendering quality. Uses the image model's configured default when omitted. For SVG output, controls the reference image, independently of the SVG author's reasoning.",
+                },
+                Prompt: new Option<string>($"--{normalizedPrefix}prompt")
                 {
                     Description = @"A text description of the desired image(s). The maximum length is 32000 characters.",
                     Required = true,

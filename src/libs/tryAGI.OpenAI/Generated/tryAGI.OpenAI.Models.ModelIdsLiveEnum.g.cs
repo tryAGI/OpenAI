@@ -12,6 +12,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         GptLive1,
+        /// <summary>
+        ///
+        /// </summary>
+        GptLive11,
     }
 
     /// <summary>
@@ -27,6 +31,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 ModelIdsLiveEnum.GptLive1 => "gpt-live-1",
+                ModelIdsLiveEnum.GptLive11 => "gpt-live-1.1",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,6 +43,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "gpt-live-1" => ModelIdsLiveEnum.GptLive1,
+                "gpt-live-1.1" => ModelIdsLiveEnum.GptLive11,
                 _ => null,
             };
         }

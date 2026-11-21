@@ -4,16 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Place an outbound SIP call using your provider's trunk. Outbound SIP calling must be enabled for your organization. The trunk must support TLS signaling, Opus audio, and SDES-SRTP media. See [Telephony and SIP](https://developers.openai.com/api/docs/guides/voice-sip?api=live#place-an-outbound-call).
+    /// Place an outbound SIP call using your provider's trunk. The trunk must support TLS signaling, Opus audio, and SDES-SRTP media. See [Telephony and SIP](https://developers.openai.com/api/docs/guides/voice-sip?api=live#place-an-outbound-call).
     /// </summary>
     public sealed partial class LiveSIPTransport
     {
         /// <summary>
         /// The transport used for the Live session. Always `sip`.
         /// </summary>
+        /// <default>"sip"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.LiveSIPTransportTypeJsonConverter))]
-        public global::tryAGI.OpenAI.LiveSIPTransportType Type { get; set; }
+        public string Type { get; set; } = "sip";
 
         /// <summary>
         /// Phone number to call in E.164 format. SIP URI destinations are not supported.<br/>
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
         public LiveSIPTransport(
             string destination,
             global::tryAGI.OpenAI.LiveSIPTrunk trunk,
-            global::tryAGI.OpenAI.LiveSIPTransportType type)
+            string type = "sip")
         {
             this.Type = type;
             this.Destination = destination ?? throw new global::System.ArgumentNullException(nameof(destination));

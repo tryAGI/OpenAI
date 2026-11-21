@@ -52,6 +52,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.TokenUsageResource? Usage { get; set; }
 
         /// <summary>
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("obfuscation")]
+        public string? Obfuscation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -75,6 +81,9 @@ namespace tryAGI.OpenAI
         /// <param name="usage">
         /// Token usage by the root agent during the turn, when available.
         /// </param>
+        /// <param name="obfuscation">
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `agent.session.turn.completed`.<br/>
         /// Default Value: agent.session.turn.completed
@@ -88,6 +97,7 @@ namespace tryAGI.OpenAI
             string turnId,
             global::tryAGI.OpenAI.TurnResource turn,
             global::tryAGI.OpenAI.TokenUsageResource? usage,
+            string? obfuscation,
             global::tryAGI.OpenAI.SessionEventAgentSessionTurnCompletedType type = global::tryAGI.OpenAI.SessionEventAgentSessionTurnCompletedType.AgentSessionTurnCompleted)
         {
             this.Type = type;
@@ -96,6 +106,7 @@ namespace tryAGI.OpenAI
             this.TurnId = turnId ?? throw new global::System.ArgumentNullException(nameof(turnId));
             this.Turn = turn ?? throw new global::System.ArgumentNullException(nameof(turn));
             this.Usage = usage;
+            this.Obfuscation = obfuscation;
         }
 
         /// <summary>

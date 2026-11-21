@@ -12,9 +12,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of response format being defined. Always `json_schema`.
         /// </summary>
+        /// <default>"json_schema"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFormatJsonSchemaTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseFormatJsonSchemaType Type { get; set; }
+        public string Type { get; set; } = "json_schema";
 
         /// <summary>
         /// Structured Outputs configuration options, including a JSON Schema.
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
 #endif
         public ResponseFormatJsonSchema(
             global::tryAGI.OpenAI.ResponseFormatJsonSchemaJsonSchema jsonSchema,
-            global::tryAGI.OpenAI.ResponseFormatJsonSchemaType type)
+            string type = "json_schema")
         {
             this.Type = type;
             this.JsonSchema = jsonSchema ?? throw new global::System.ArgumentNullException(nameof(jsonSchema));
@@ -54,6 +54,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ResponseFormatJsonSchema()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ResponseFormatJsonSchema"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ResponseFormatJsonSchema FromJsonSchema(global::tryAGI.OpenAI.ResponseFormatJsonSchemaJsonSchema jsonSchema)
+        {
+            return new ResponseFormatJsonSchema
+            {
+                JsonSchema = jsonSchema,
+            };
         }
 
     }

@@ -14,9 +14,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of response format being defined. Always `json_object`.
         /// </summary>
+        /// <default>"json_object"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseFormatJsonObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseFormatJsonObjectType Type { get; set; }
+        public string Type { get; set; } = "json_object";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,7 +34,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaResponseFormatJsonObject(
-            global::tryAGI.OpenAI.BetaResponseFormatJsonObjectType type)
+            string type = "json_object")
         {
             this.Type = type;
         }

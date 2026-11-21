@@ -18,19 +18,19 @@ namespace tryAGI.OpenAI.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ContainerAutoParamSkillDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ContainerAutoParamSkillDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ContainerAutoParamSkillDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::tryAGI.OpenAI.SkillReferenceParam? skillReference = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.ContainerAutoParamSkillDiscriminatorType.SkillReference)
+            if (discriminator?.Type == global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminatorType.SkillReference)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SkillReferenceParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SkillReferenceParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.SkillReferenceParam)}");
                 skillReference = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::tryAGI.OpenAI.InlineSkillParam? inline = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.ContainerAutoParamSkillDiscriminatorType.Inline)
+            if (discriminator?.Type == global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminatorType.Inline)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.InlineSkillParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.InlineSkillParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.InlineSkillParam)}");

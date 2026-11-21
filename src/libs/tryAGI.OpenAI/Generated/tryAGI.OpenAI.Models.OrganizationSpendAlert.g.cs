@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `organization.spend_alert`.
         /// </summary>
+        /// <default>"organization.spend_alert"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OrganizationSpendAlertObjectJsonConverter))]
-        public global::tryAGI.OpenAI.OrganizationSpendAlertObject Object { get; set; }
+        public string Object { get; set; } = "organization.spend_alert";
 
         /// <summary>
         /// The alert threshold amount, in cents.
@@ -68,14 +68,14 @@ namespace tryAGI.OpenAI
         /// <param name="notificationChannel">
         /// Email notification settings for a spend alert.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `organization.spend_alert`.
-        /// </param>
         /// <param name="currency">
         /// The currency for the threshold amount.
         /// </param>
         /// <param name="interval">
         /// The time interval for evaluating spend against the threshold.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.spend_alert`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -84,9 +84,9 @@ namespace tryAGI.OpenAI
             string id,
             int thresholdAmount,
             global::tryAGI.OpenAI.SpendAlertNotificationChannel notificationChannel,
-            global::tryAGI.OpenAI.OrganizationSpendAlertObject @object,
             global::tryAGI.OpenAI.OrganizationSpendAlertCurrency currency,
-            global::tryAGI.OpenAI.OrganizationSpendAlertInterval interval)
+            global::tryAGI.OpenAI.OrganizationSpendAlertInterval interval,
+            string @object = "organization.spend_alert")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

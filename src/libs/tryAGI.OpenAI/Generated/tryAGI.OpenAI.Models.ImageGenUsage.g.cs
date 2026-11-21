@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// For `gpt-image-1` only, the token usage information for the image generation.
+    /// Token usage information for image generation with GPT Image models.
     /// </summary>
     public sealed partial class ImageGenUsage
     {

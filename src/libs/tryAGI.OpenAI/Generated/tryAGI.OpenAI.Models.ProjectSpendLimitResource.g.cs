@@ -48,6 +48,13 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.SpendLimitEnforcement Enforcement { get; set; }
 
         /// <summary>
+        /// Email notifications sent when the hard spend limit is reached.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("notification_channel")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.EmailNotificationChannel NotificationChannel { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -68,6 +75,9 @@ namespace tryAGI.OpenAI
         /// <param name="enforcement">
         /// The current enforcement state of the hard spend limit.
         /// </param>
+        /// <param name="notificationChannel">
+        /// Email notifications sent when the hard spend limit is reached.
+        /// </param>
         /// <param name="object">
         /// The object type, which is always `project.spend_limit`.<br/>
         /// Default Value: project.spend_limit
@@ -80,6 +90,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.SpendLimitCurrency currency,
             global::tryAGI.OpenAI.SpendLimitInterval interval,
             global::tryAGI.OpenAI.SpendLimitEnforcement enforcement,
+            global::tryAGI.OpenAI.EmailNotificationChannel notificationChannel,
             global::tryAGI.OpenAI.ProjectSpendLimitResourceObject @object = global::tryAGI.OpenAI.ProjectSpendLimitResourceObject.ProjectSpendLimit)
         {
             this.Object = @object;
@@ -87,6 +98,7 @@ namespace tryAGI.OpenAI
             this.Currency = currency;
             this.Interval = interval;
             this.Enforcement = enforcement ?? throw new global::System.ArgumentNullException(nameof(enforcement));
+            this.NotificationChannel = notificationChannel ?? throw new global::System.ArgumentNullException(nameof(notificationChannel));
         }
 
         /// <summary>

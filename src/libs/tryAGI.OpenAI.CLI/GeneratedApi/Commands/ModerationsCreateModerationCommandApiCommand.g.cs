@@ -22,6 +22,7 @@ an array of multi-modal input objects similar to other models.
         Description = @"The content moderation model you would like to use. Learn more in
 [the moderation guide](https://developers.openai.com/api/docs/guides/moderation), and learn about
 available models [here](https://developers.openai.com/api/docs/guides/moderation).
+Approved organizations can use `omni-moderation-csam-latest` with a single `image_url` input.
 ",
     };
       private static Option<string?> RequestInput { get; } = new(@"--request-input")
@@ -41,7 +42,7 @@ available models [here](https://developers.openai.com/api/docs/guides/moderation
           Hidden = true,
       };
 
-                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.CreateModerationResponse value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
+                    private static string FormatResponse(ParseResult parseResult, global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationResponse, global::tryAGI.OpenAI.CreateCSAMModerationResponse> value, global::System.Text.Json.Serialization.JsonSerializerContext context, bool truncateLongStrings)
                     {
                         string? text = null;
                         CustomizeResponseText(parseResult, value, ref text);
@@ -57,7 +58,7 @@ available models [here](https://developers.openai.com/api/docs/guides/moderation
                         return CliRuntime.FormatHumanReadable(value, context, truncateLongStrings, hints);
                     }
 
-                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.CreateModerationResponse value, ref string? text);
+                    static partial void CustomizeResponseText(ParseResult parseResult, global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationResponse, global::tryAGI.OpenAI.CreateCSAMModerationResponse> value, ref string? text);
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
@@ -107,20 +108,12 @@ more in the [moderation guide](https://developers.openai.com/api/docs/guides/mod
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 
-                                if (!await CliRuntime.TryWriteOutputDirectoryAsync(
-                                        parseResult,
-                                        response,
-                                        global::tryAGI.OpenAI.SourceGenerationContext.Default,
-                                        @"Results",
-                                        cancellationToken).ConfigureAwait(false))
-                                {
                                 await CliRuntime.WriteResponseAsync(
                                     parseResult,
                                     response,
                                     global::tryAGI.OpenAI.SourceGenerationContext.Default,
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
-                                }
             }, cancellationToken).ConfigureAwait(false));
         CustomizeCommand(ref command);
         return command;

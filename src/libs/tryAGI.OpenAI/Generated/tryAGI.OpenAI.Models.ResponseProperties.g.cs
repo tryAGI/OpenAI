@@ -15,13 +15,13 @@ namespace tryAGI.OpenAI
         public string? PreviousResponseId { get; set; }
 
         /// <summary>
-        /// Model ID used to generate the response, like `gpt-6-astra`. OpenAI<br/>
+        /// Model ID used to generate the response, like `gpt-6.2-astra`. OpenAI<br/>
         /// offers a wide range of models with different capabilities, performance<br/>
         /// characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models)<br/>
         /// to browse and compare available models.<br/>
-        /// Example: gpt-6-astra
+        /// Example: gpt-6.2-astra
         /// </summary>
-        /// <example>gpt-6-astra</example>
+        /// <example>gpt-6.2-astra</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsResponsesJsonConverter))]
         public global::tryAGI.OpenAI.ModelIdsResponses? Model { get; set; }
@@ -93,11 +93,11 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="previousResponseId"></param>
         /// <param name="model">
-        /// Model ID used to generate the response, like `gpt-6-astra`. OpenAI<br/>
+        /// Model ID used to generate the response, like `gpt-6.2-astra`. OpenAI<br/>
         /// offers a wide range of models with different capabilities, performance<br/>
         /// characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models)<br/>
         /// to browse and compare available models.<br/>
-        /// Example: gpt-6-astra
+        /// Example: gpt-6.2-astra
         /// </param>
         /// <param name="background"></param>
         /// <param name="maxToolCalls"></param>

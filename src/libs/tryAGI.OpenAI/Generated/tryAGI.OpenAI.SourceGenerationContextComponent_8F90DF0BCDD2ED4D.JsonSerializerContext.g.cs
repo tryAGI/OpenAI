@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_05BF36C073875770.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_47F7021679FC8889.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_7415DE3B80F82A11.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_9F19358F600EE6E2.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_B1868880A9648975.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_05BF36C073875770.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_55A1B6E90BD83E29.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_9F19358F600EE6E2.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_B1868880A9648975.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_B2115BF674A839B6.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ContainerAutoParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0095.Create_ContainerAutoParam(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0089.Create_ContainerAutoParam(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

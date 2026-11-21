@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the item. Always `mcp_approval_response`.
         /// </summary>
+        /// <default>"mcp_approval_response"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MCPApprovalResponseResourceTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MCPApprovalResponseResourceType Type { get; set; }
+        public string Type { get; set; } = "mcp_approval_response";
 
         /// <summary>
         /// The unique ID of the approval response
@@ -60,10 +60,10 @@ namespace tryAGI.OpenAI
         /// <param name="approve">
         /// Whether the request was approved.
         /// </param>
+        /// <param name="reason"></param>
         /// <param name="type">
         /// The type of the item. Always `mcp_approval_response`.
         /// </param>
-        /// <param name="reason"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -71,8 +71,8 @@ namespace tryAGI.OpenAI
             string id,
             string approvalRequestId,
             bool approve,
-            global::tryAGI.OpenAI.MCPApprovalResponseResourceType type,
-            string? reason)
+            string? reason,
+            string type = "mcp_approval_response")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

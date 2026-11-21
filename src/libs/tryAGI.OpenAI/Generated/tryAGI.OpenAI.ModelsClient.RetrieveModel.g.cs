@@ -46,12 +46,12 @@ namespace tryAGI.OpenAI
         /// Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
         /// </summary>
         /// <param name="model">
-        /// Example: gpt-6-astra
+        /// Example: gpt-6.2-astra
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Model19> RetrieveModelAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.Model> RetrieveModelAsync(
             string model,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -69,12 +69,12 @@ namespace tryAGI.OpenAI
         /// Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
         /// </summary>
         /// <param name="model">
-        /// Example: gpt-6-astra
+        /// Example: gpt-6.2-astra
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.Model19>> RetrieveModelAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.Model>> RetrieveModelAsResponseAsync(
             string model,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -343,13 +343,13 @@ namespace tryAGI.OpenAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_403 = global::tryAGI.OpenAI.PermissionErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.PermissionErrorResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_403 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_403 = global::tryAGI.OpenAI.PermissionErrorResponse.FromJson(__content_403, JsonSerializerContext);
+                                        __value_403 = __content_403 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.PermissionErrorResponse.FromJson(__content_403, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -360,7 +360,7 @@ namespace tryAGI.OpenAI
 
                                 throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.PermissionErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_403 is { Length: > 0 } ? __content_403 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
                                     responseBody: __content_403,
                                     responseObject: __value_403,
@@ -380,13 +380,13 @@ namespace tryAGI.OpenAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = __content_404 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -397,7 +397,7 @@ namespace tryAGI.OpenAI
 
                                 throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_404 is { Length: > 0 } ? __content_404 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
                                     responseBody: __content_404,
                                     responseObject: __value_404,
@@ -428,9 +428,9 @@ namespace tryAGI.OpenAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::tryAGI.OpenAI.Model19.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::tryAGI.OpenAI.Model.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.Model19>(
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.Model>(
                                         statusCode: __response.StatusCode,
                                         headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -440,7 +440,7 @@ namespace tryAGI.OpenAI
                                 {
                                     throw global::tryAGI.OpenAI.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -460,9 +460,9 @@ namespace tryAGI.OpenAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::tryAGI.OpenAI.Model19.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::tryAGI.OpenAI.Model.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.Model19>(
+                                    return new global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.Model>(
                                         statusCode: __response.StatusCode,
                                         headers: global::tryAGI.OpenAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -485,7 +485,7 @@ namespace tryAGI.OpenAI
 
                                     throw global::tryAGI.OpenAI.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(

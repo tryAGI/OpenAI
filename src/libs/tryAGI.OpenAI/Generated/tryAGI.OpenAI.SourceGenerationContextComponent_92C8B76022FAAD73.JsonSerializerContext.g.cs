@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_0E50A44A14B1E2FE.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_6067A7A75006FEC0.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_9E50765DBF3F7E8A.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_CBC772FAC971C629.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_0861A7D85963C099.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_120A0D6B12D5BFF2.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_D504CE79A974895C.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_D885B1E944186E21.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,7 +32,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.EnvironmentVariant14))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0132.Create_EnvironmentVariant14(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0125.Create_EnvironmentVariant14(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.reasoning_text.done`.
         /// </summary>
+        /// <default>"response.reasoning_text.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseReasoningTextDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseReasoningTextDoneEventType Type { get; set; }
+        public string Type { get; set; } = "response.reasoning_text.done";
 
         /// <summary>
         /// The ID of the item this reasoning text is associated with.
@@ -96,7 +96,7 @@ namespace tryAGI.OpenAI
             string text,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseReasoningTextDoneEventType type)
+            string type = "response.reasoning_text.done")
         {
             this.Agent = agent;
             this.Type = type;

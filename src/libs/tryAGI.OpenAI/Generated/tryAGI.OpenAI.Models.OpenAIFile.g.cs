@@ -48,9 +48,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `file`.
         /// </summary>
+        /// <default>"file"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OpenAIFileObjectJsonConverter))]
-        public global::tryAGI.OpenAI.OpenAIFileObject Object { get; set; }
+        public string Object { get; set; } = "file";
 
         /// <summary>
         /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results`, `vision`, and `user_data`.
@@ -121,7 +121,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OpenAIFileStatus status,
             long? bytes,
             int? expiresAt,
-            global::tryAGI.OpenAI.OpenAIFileObject @object)
+            string @object = "file")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Bytes = bytes;

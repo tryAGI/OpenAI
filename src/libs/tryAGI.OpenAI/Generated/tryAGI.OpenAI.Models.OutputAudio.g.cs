@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the output audio. Always `output_audio`.
         /// </summary>
+        /// <default>"output_audio"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OutputAudioTypeJsonConverter))]
-        public global::tryAGI.OpenAI.OutputAudioType Type { get; set; }
+        public string Type { get; set; } = "output_audio";
 
         /// <summary>
         /// Base64-encoded audio data from the model.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public OutputAudio(
             string data,
             string transcript,
-            global::tryAGI.OpenAI.OutputAudioType type)
+            string type = "output_audio")
         {
             this.Type = type;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

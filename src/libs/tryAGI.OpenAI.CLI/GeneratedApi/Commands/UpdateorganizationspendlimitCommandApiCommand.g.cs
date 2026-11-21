@@ -25,6 +25,7 @@ internal static partial class UpdateorganizationspendlimitCommandApiCommand
     {
         Description = @"The time interval for evaluating spend against the threshold. Currently, only `month` is supported.",
     };
+    private static readonly SpendLimitEmailNotificationChannelParamsOptionSet NotificationChannelOptions = SpendLimitEmailNotificationChannelParamsOptionSet.Create(@"notification-channel");
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -70,7 +71,9 @@ internal static partial class UpdateorganizationspendlimitCommandApiCommand
 Create or replace the organization's hard spend limit.");
                         command.Options.Add(ThresholdAmount);
                         command.Options.Add(Currency);
-                        command.Options.Add(Interval);
+                        command.Options.Add(Interval);                        command.Options.Add(NotificationChannelOptions.Type);
+                        command.Options.Add(NotificationChannelOptions.Recipients);
+                        command.Options.Add(NotificationChannelOptions.SubjectPrefix);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -99,6 +102,21 @@ Create or replace the organization's hard spend limit.");
                         var thresholdAmount = parseResult.GetRequiredValue(ThresholdAmount);
                         var currency = CliRuntime.WasSpecified(parseResult, Currency) ? parseResult.GetValue(Currency) : (__requestBase is { } __CurrencyBaseValue ? __CurrencyBaseValue.Currency : default);
                         var interval = CliRuntime.WasSpecified(parseResult, Interval) ? parseResult.GetValue(Interval) : (__requestBase is { } __IntervalBaseValue ? __IntervalBaseValue.Interval : default);
+
+                        var __NotificationChannelBase = __requestBase is { } __NotificationChannelBaseValue ? __NotificationChannelBaseValue.NotificationChannel : default;                        var notificationChannelType = parseResult.GetRequiredValue(NotificationChannelOptions.Type);
+                        var notificationChannelRecipients = CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.Recipients) ? parseResult.GetValue(NotificationChannelOptions.Recipients) : (__NotificationChannelBase is { } __NotificationChannelrecipientsBaseValue ? __NotificationChannelrecipientsBaseValue.Recipients : default);
+                        var notificationChannelSubjectPrefix = CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.SubjectPrefix) ? parseResult.GetValue(NotificationChannelOptions.SubjectPrefix) : (__NotificationChannelBase is { } __NotificationChannelsubjectPrefixBaseValue ? __NotificationChannelsubjectPrefixBaseValue.SubjectPrefix : default);
+                        var __NotificationChannelSpecified = CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.Type) || CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.Recipients) || CliRuntime.WasSpecified(parseResult, NotificationChannelOptions.SubjectPrefix);
+                        var notificationChannel =
+                            __NotificationChannelSpecified || __NotificationChannelBase is not null
+                                ? new global::tryAGI.OpenAI.SpendLimitEmailNotificationChannelParams
+                                {
+	                                Type = notificationChannelType,
+                                Recipients = notificationChannelRecipients,
+                                SubjectPrefix = notificationChannelSubjectPrefix,
+
+                                }
+                                : __NotificationChannelBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
@@ -106,6 +124,7 @@ Create or replace the organization's hard spend limit.");
                                     thresholdAmount: thresholdAmount,
                                     currency: currency,
                                     interval: interval,
+                                    notificationChannel: notificationChannel,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

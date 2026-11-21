@@ -46,9 +46,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always "text_completion"
         /// </summary>
+        /// <default>"text_completion"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateCompletionResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.CreateCompletionResponseObject Object { get; set; }
+        public string Object { get; set; } = "text_completion";
 
         /// <summary>
         /// Usage statistics for the completion request.
@@ -81,11 +81,11 @@ namespace tryAGI.OpenAI
         /// This fingerprint represents the backend configuration that the model runs with.<br/>
         /// Can be used in conjunction with the `seed` request parameter to understand when backend changes have been made that might impact determinism.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always "text_completion"
-        /// </param>
         /// <param name="usage">
         /// Usage statistics for the completion request.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "text_completion"
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -96,8 +96,8 @@ namespace tryAGI.OpenAI
             int created,
             string model,
             string? systemFingerprint,
-            global::tryAGI.OpenAI.CreateCompletionResponseObject @object,
-            global::tryAGI.OpenAI.CompletionUsage? usage)
+            global::tryAGI.OpenAI.CompletionUsage? usage,
+            string @object = "text_completion")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));

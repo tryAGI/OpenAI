@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always 'response.output_text.annotation.added'.
         /// </summary>
+        /// <default>"response.output_text.annotation.added"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseOutputTextAnnotationAddedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseOutputTextAnnotationAddedEventType Type { get; set; }
+        public string Type { get; set; } = "response.output_text.annotation.added";
 
         /// <summary>
         /// The unique identifier of the item to which the annotation is being added.
@@ -89,11 +89,11 @@ namespace tryAGI.OpenAI
         /// <param name="agent">
         /// The agent that owns this multi-agent streaming event.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always 'response.output_text.annotation.added'.
-        /// </param>
         /// <param name="annotation">
         /// The annotation object being added. (See annotation schema for details.)
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.output_text.annotation.added'.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -105,8 +105,8 @@ namespace tryAGI.OpenAI
             int annotationIndex,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseOutputTextAnnotationAddedEventType type,
-            global::tryAGI.OpenAI.BetaAnnotation? annotation)
+            global::tryAGI.OpenAI.BetaAnnotation? annotation,
+            string type = "response.output_text.annotation.added")
         {
             this.Agent = agent;
             this.Type = type;

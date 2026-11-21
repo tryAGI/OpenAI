@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `vector_store.search_results.page`
         /// </summary>
+        /// <default>"vector_store.search_results.page"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VectorStoreSearchResultsPageObjectJsonConverter))]
-        public global::tryAGI.OpenAI.VectorStoreSearchResultsPageObject Object { get; set; }
+        public string Object { get; set; } = "vector_store.search_results.page";
 
         /// <summary>
         ///
@@ -58,10 +58,10 @@ namespace tryAGI.OpenAI
         /// <param name="hasMore">
         /// Indicates if there are more results to fetch.
         /// </param>
+        /// <param name="nextPage"></param>
         /// <param name="object">
         /// The object type, which is always `vector_store.search_results.page`
         /// </param>
-        /// <param name="nextPage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -69,8 +69,8 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string> searchQuery,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreSearchResultItem> data,
             bool hasMore,
-            global::tryAGI.OpenAI.VectorStoreSearchResultsPageObject @object,
-            string? nextPage)
+            string? nextPage,
+            string @object = "vector_store.search_results.page")
         {
             this.Object = @object;
             this.SearchQuery = searchQuery ?? throw new global::System.ArgumentNullException(nameof(searchQuery));

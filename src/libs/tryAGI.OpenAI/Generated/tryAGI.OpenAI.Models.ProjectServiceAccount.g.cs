@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `organization.project.service_account`
         /// </summary>
+        /// <default>"organization.project.service_account"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectServiceAccountObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectServiceAccountObject Object { get; set; }
+        public string Object { get; set; } = "organization.project.service_account";
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints
@@ -76,7 +76,7 @@ namespace tryAGI.OpenAI
             string name,
             global::tryAGI.OpenAI.ProjectServiceAccountRole role,
             int createdAt,
-            global::tryAGI.OpenAI.ProjectServiceAccountObject @object)
+            string @object = "organization.project.service_account")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

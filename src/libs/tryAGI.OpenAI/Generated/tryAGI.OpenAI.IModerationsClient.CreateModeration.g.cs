@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.CreateModerationResponse> CreateModerationAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationResponse, global::tryAGI.OpenAI.CreateCSAMModerationResponse>> CreateModerationAsync(
 
             global::tryAGI.OpenAI.CreateModerationRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
@@ -27,7 +27,7 @@ namespace tryAGI.OpenAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::tryAGI.OpenAI.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.CreateModerationResponse>> CreateModerationAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.AutoSDKHttpResponse<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationResponse, global::tryAGI.OpenAI.CreateCSAMModerationResponse>>> CreateModerationAsResponseAsync(
 
             global::tryAGI.OpenAI.CreateModerationRequest request,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
@@ -45,13 +45,14 @@ namespace tryAGI.OpenAI
         /// The content moderation model you would like to use. Learn more in<br/>
         /// [the moderation guide](https://developers.openai.com/api/docs/guides/moderation), and learn about<br/>
         /// available models [here](https://developers.openai.com/api/docs/guides/moderation).<br/>
+        /// Approved organizations can use `omni-moderation-csam-latest` with a single `image_url` input.<br/>
         /// Default Value: omni-moderation-latest<br/>
         /// Example: omni-moderation-2024-09-26
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.CreateModerationResponse> CreateModerationAsync(
+        global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationResponse, global::tryAGI.OpenAI.CreateCSAMModerationResponse>> CreateModerationAsync(
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1, global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2>>> input,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateModerationRequestModel?>? model = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,

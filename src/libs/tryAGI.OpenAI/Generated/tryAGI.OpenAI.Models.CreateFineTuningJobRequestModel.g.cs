@@ -23,6 +23,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Gpt41Mini20250414,
+        /// <summary>
+        ///
+        /// </summary>
         Gpt4oMini,
     }
 
@@ -41,6 +45,7 @@ namespace tryAGI.OpenAI
                 CreateFineTuningJobRequestModel.Babbage002 => "babbage-002",
                 CreateFineTuningJobRequestModel.Davinci002 => "davinci-002",
                 CreateFineTuningJobRequestModel.Gpt35Turbo => "gpt-3.5-turbo",
+                CreateFineTuningJobRequestModel.Gpt41Mini20250414 => "gpt-4.1-mini-2025-04-14",
                 CreateFineTuningJobRequestModel.Gpt4oMini => "gpt-4o-mini",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -55,6 +60,7 @@ namespace tryAGI.OpenAI
                 "babbage-002" => CreateFineTuningJobRequestModel.Babbage002,
                 "davinci-002" => CreateFineTuningJobRequestModel.Davinci002,
                 "gpt-3.5-turbo" => CreateFineTuningJobRequestModel.Gpt35Turbo,
+                "gpt-4.1-mini-2025-04-14" => CreateFineTuningJobRequestModel.Gpt41Mini20250414,
                 "gpt-4o-mini" => CreateFineTuningJobRequestModel.Gpt4oMini,
                 _ => null,
             };

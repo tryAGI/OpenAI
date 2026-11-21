@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ListAuditLogsResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ListAuditLogsResponseObject Object { get; set; }
+        public string Object { get; set; } = "list";
 
         /// <summary>
         ///
@@ -54,22 +54,22 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="data"></param>
         /// <param name="hasMore"></param>
-        /// <param name="object"></param>
         /// <param name="firstId">
         /// Example: audit_log-defb456h8dks
         /// </param>
         /// <param name="lastId">
         /// Example: audit_log-hnbkd8s93s
         /// </param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListAuditLogsResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AuditLog> data,
             bool hasMore,
-            global::tryAGI.OpenAI.ListAuditLogsResponseObject @object,
             string? firstId,
-            string? lastId)
+            string? lastId,
+            string @object = "list")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

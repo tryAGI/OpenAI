@@ -12,8 +12,9 @@ namespace tryAGI.OpenAI
         /// The minimum lifetime applied to each cache breakpoint.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ttl")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.PromptCacheTTLEnumJsonConverter))]
-        public global::tryAGI.OpenAI.PromptCacheTTLEnum Ttl { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.PromptCacheOptionsTtlJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.PromptCacheOptionsTtl Ttl { get; set; }
 
         /// <summary>
         /// Whether implicit prompt-cache breakpoints were enabled.
@@ -38,19 +39,19 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="PromptCacheOptions" /> class.
         /// </summary>
-        /// <param name="mode">
-        /// Whether implicit prompt-cache breakpoints were enabled.
-        /// </param>
         /// <param name="ttl">
         /// The minimum lifetime applied to each cache breakpoint.
+        /// </param>
+        /// <param name="mode">
+        /// Whether implicit prompt-cache breakpoints were enabled.
         /// </param>
         /// <param name="comparisonResponseId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public PromptCacheOptions(
+            global::tryAGI.OpenAI.PromptCacheOptionsTtl ttl,
             global::tryAGI.OpenAI.PromptCacheModeEnum mode,
-            global::tryAGI.OpenAI.PromptCacheTTLEnum ttl,
             string? comparisonResponseId)
         {
             this.Ttl = ttl;

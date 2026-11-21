@@ -21,6 +21,7 @@ namespace tryAGI.OpenAI
         /// The content moderation model you would like to use. Learn more in<br/>
         /// [the moderation guide](https://developers.openai.com/api/docs/guides/moderation), and learn about<br/>
         /// available models [here](https://developers.openai.com/api/docs/guides/moderation).<br/>
+        /// Approved organizations can use `omni-moderation-csam-latest` with a single `image_url` input.<br/>
         /// Default Value: omni-moderation-latest<br/>
         /// Example: omni-moderation-2024-09-26
         /// </summary>
@@ -46,6 +47,7 @@ namespace tryAGI.OpenAI
         /// The content moderation model you would like to use. Learn more in<br/>
         /// [the moderation guide](https://developers.openai.com/api/docs/guides/moderation), and learn about<br/>
         /// available models [here](https://developers.openai.com/api/docs/guides/moderation).<br/>
+        /// Approved organizations can use `omni-moderation-csam-latest` with a single `image_url` input.<br/>
         /// Default Value: omni-moderation-latest<br/>
         /// Example: omni-moderation-2024-09-26
         /// </param>

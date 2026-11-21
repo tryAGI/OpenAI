@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `image_generation.completed`.
         /// </summary>
+        /// <default>"image_generation.completed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageGenCompletedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ImageGenCompletedEventType Type { get; set; }
+        public string Type { get; set; } = "image_generation.completed";
 
         /// <summary>
         /// Base64-encoded image data, suitable for rendering as an image.
@@ -122,7 +122,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ImageGenCompletedEventOutputFormat outputFormat,
             global::tryAGI.OpenAI.ImagesUsage usage,
             string? safetyIdentifier,
-            global::tryAGI.OpenAI.ImageGenCompletedEventType type)
+            string type = "image_generation.completed")
         {
             this.SafetyIdentifier = safetyIdentifier;
             this.Type = type;

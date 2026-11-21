@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI
         /// The type of the tool, i.e. `function`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeSessionCreateRequestToolTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeSessionCreateRequestToolType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// The name of the function.
@@ -62,7 +61,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeSessionCreateRequestTool(
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestToolType? type,
+            string? type,
             string? name,
             string? description,
             object? parameters)

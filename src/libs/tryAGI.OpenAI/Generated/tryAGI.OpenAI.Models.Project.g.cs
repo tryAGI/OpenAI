@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `organization.project`
         /// </summary>
+        /// <default>"organization.project"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectObject Object { get; set; }
+        public string Object { get; set; } = "organization.project";
 
         /// <summary>
         /// The name of the project. This appears in reporting.
@@ -75,9 +75,6 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the project was created.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `organization.project`
-        /// </param>
         /// <param name="name">
         /// The name of the project. This appears in reporting.
         /// </param>
@@ -91,18 +88,21 @@ namespace tryAGI.OpenAI
         /// <param name="residency">
         /// The residency configuration for the project.
         /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.project`
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Project(
             string id,
             int createdAt,
-            global::tryAGI.OpenAI.ProjectObject @object,
             string? name,
             int? archivedAt,
             string? status,
             string? externalKeyId,
-            global::tryAGI.OpenAI.PublicProjectResidency? residency)
+            global::tryAGI.OpenAI.PublicProjectResidency? residency,
+            string @object = "organization.project")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

@@ -12,17 +12,17 @@ namespace tryAGI.OpenAI
         /// Moderation for the response input.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Input5JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Input2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Input5 Input { get; set; }
+        public required global::tryAGI.OpenAI.Input2 Input { get; set; }
 
         /// <summary>
         /// Moderation for the response output.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Output13JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Output2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Output13 Output { get; set; }
+        public required global::tryAGI.OpenAI.Output2 Output { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,8 +43,8 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaModeration(
-            global::tryAGI.OpenAI.Input5 input,
-            global::tryAGI.OpenAI.Output13 output)
+            global::tryAGI.OpenAI.Input2 input,
+            global::tryAGI.OpenAI.Output2 output)
         {
             this.Input = input;
             this.Output = output;

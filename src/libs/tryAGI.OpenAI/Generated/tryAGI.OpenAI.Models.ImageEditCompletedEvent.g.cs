@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `image_edit.completed`.
         /// </summary>
+        /// <default>"image_edit.completed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditCompletedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ImageEditCompletedEventType Type { get; set; }
+        public string Type { get; set; } = "image_edit.completed";
 
         /// <summary>
         /// Base64-encoded final edited image data, suitable for rendering as an image.
@@ -122,7 +122,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ImageEditCompletedEventOutputFormat outputFormat,
             global::tryAGI.OpenAI.ImagesUsage usage,
             string? safetyIdentifier,
-            global::tryAGI.OpenAI.ImageEditCompletedEventType type)
+            string type = "image_edit.completed")
         {
             this.SafetyIdentifier = safetyIdentifier;
             this.Type = type;

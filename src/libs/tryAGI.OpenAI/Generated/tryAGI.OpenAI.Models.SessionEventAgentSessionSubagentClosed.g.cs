@@ -32,6 +32,12 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.SubagentResource Subagent { get; set; }
 
         /// <summary>
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("obfuscation")]
+        public string? Obfuscation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -46,6 +52,9 @@ namespace tryAGI.OpenAI
         /// <param name="subagent">
         /// The subagent that was closed.
         /// </param>
+        /// <param name="obfuscation">
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `agent.session.subagent.closed`.<br/>
         /// Default Value: agent.session.subagent.closed
@@ -56,11 +65,13 @@ namespace tryAGI.OpenAI
         public SessionEventAgentSessionSubagentClosed(
             string eventId,
             global::tryAGI.OpenAI.SubagentResource subagent,
+            string? obfuscation,
             global::tryAGI.OpenAI.SessionEventAgentSessionSubagentClosedType type = global::tryAGI.OpenAI.SessionEventAgentSessionSubagentClosedType.AgentSessionSubagentClosed)
         {
             this.Type = type;
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Subagent = subagent ?? throw new global::System.ArgumentNullException(nameof(subagent));
+            this.Obfuscation = obfuscation;
         }
 
         /// <summary>

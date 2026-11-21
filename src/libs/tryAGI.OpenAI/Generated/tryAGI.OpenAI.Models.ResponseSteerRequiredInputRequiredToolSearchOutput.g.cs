@@ -12,9 +12,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"tool_search_output"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseSteerRequiredInputRequiredToolSearchOutputTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredToolSearchOutputType Type { get; set; }
+        public string Type { get; set; } = "tool_search_output";
 
         /// <summary>
         ///
@@ -26,9 +26,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"client"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("execution")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseSteerRequiredInputRequiredToolSearchOutputExecutionJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredToolSearchOutputExecution Execution { get; set; }
+        public string Execution { get; set; } = "client";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,8 +47,8 @@ namespace tryAGI.OpenAI
 #endif
         public ResponseSteerRequiredInputRequiredToolSearchOutput(
             string callId,
-            global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredToolSearchOutputType type,
-            global::tryAGI.OpenAI.ResponseSteerRequiredInputRequiredToolSearchOutputExecution execution)
+            string type = "tool_search_output",
+            string execution = "client")
         {
             this.Type = type;
             this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
@@ -60,6 +60,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ResponseSteerRequiredInputRequiredToolSearchOutput()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ResponseSteerRequiredInputRequiredToolSearchOutput"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ResponseSteerRequiredInputRequiredToolSearchOutput FromCallId(string callId)
+        {
+            return new ResponseSteerRequiredInputRequiredToolSearchOutput
+            {
+                CallId = callId,
+            };
         }
 
     }

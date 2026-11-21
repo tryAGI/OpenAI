@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the custom tool. Always `custom`.
         /// </summary>
+        /// <default>"custom"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CustomToolChatCompletionsTypeJsonConverter))]
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsType Type { get; set; }
+        public string Type { get; set; } = "custom";
 
         /// <summary>
         /// Properties of the custom tool.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public CustomToolChatCompletions(
             global::tryAGI.OpenAI.CustomToolChatCompletionsCustom custom,
-            global::tryAGI.OpenAI.CustomToolChatCompletionsType type)
+            string type = "custom")
         {
             this.Type = type;
             this.Custom = custom ?? throw new global::System.ArgumentNullException(nameof(custom));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public CustomToolChatCompletions()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="CustomToolChatCompletions"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CustomToolChatCompletions FromCustom(global::tryAGI.OpenAI.CustomToolChatCompletionsCustom custom)
+        {
+            return new CustomToolChatCompletions
+            {
+                Custom = custom,
+            };
         }
 
     }

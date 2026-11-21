@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
     public readonly partial struct ModelIds : global::System.IEquatable<ModelIds>
     {
         /// <summary>
-        /// Example: gpt-6-astra
+        /// Example: gpt-6.2-astra
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ModelIdsShared? Shared { get; init; }
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
             : throw new global::System.InvalidOperationException($"Expected union variant 'Shared' but the value was {ToString()}.");
 
         /// <summary>
-        /// Example: gpt-6-astra
+        /// Example: gpt-6.2-astra
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ModelIdsResponses? Responses { get; init; }

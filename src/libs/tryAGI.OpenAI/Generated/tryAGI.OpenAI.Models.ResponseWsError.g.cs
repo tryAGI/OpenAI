@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `error`.
         /// </summary>
+        /// <default>"error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseWsErrorTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseWsErrorType Type { get; set; }
+        public string Type { get; set; } = "error";
 
         /// <summary>
         /// The HTTP status code associated with a WebSocket protocol error.
@@ -53,9 +53,6 @@ namespace tryAGI.OpenAI
         /// <param name="error">
         /// Details about the error.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `error`.
-        /// </param>
         /// <param name="status">
         /// The HTTP status code associated with a WebSocket protocol error.
         /// </param>
@@ -66,15 +63,18 @@ namespace tryAGI.OpenAI
         /// The WebSocket lane that emitted this event. This field is present when the<br/>
         /// originating `response.create` event supplied a `stream_id`.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `error`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseWsError(
             global::tryAGI.OpenAI.ErrorPayload error,
-            global::tryAGI.OpenAI.ResponseWsErrorType type,
             int? status,
             int? sequenceNumber,
-            string? streamId)
+            string? streamId,
+            string type = "error")
         {
             this.Type = type;
             this.Status = status;
@@ -88,6 +88,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ResponseWsError()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ResponseWsError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ResponseWsError FromError(global::tryAGI.OpenAI.ErrorPayload error)
+        {
+            return new ResponseWsError
+            {
+                Error = error,
+            };
         }
 
     }

@@ -53,9 +53,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always "fine_tuning.job.checkpoint".
         /// </summary>
+        /// <default>"fine_tuning.job.checkpoint"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FineTuningJobCheckpointObjectJsonConverter))]
-        public global::tryAGI.OpenAI.FineTuningJobCheckpointObject Object { get; set; }
+        public string Object { get; set; } = "fine_tuning.job.checkpoint";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -97,7 +97,7 @@ namespace tryAGI.OpenAI
             int stepNumber,
             global::tryAGI.OpenAI.FineTuningJobCheckpointMetrics metrics,
             string fineTuningJobId,
-            global::tryAGI.OpenAI.FineTuningJobCheckpointObject @object)
+            string @object = "fine_tuning.job.checkpoint")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;

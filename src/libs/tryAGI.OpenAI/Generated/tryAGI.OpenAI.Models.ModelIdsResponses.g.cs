@@ -5,12 +5,12 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Example: gpt-6-astra
+    /// Example: gpt-6.2-astra
     /// </summary>
     public readonly partial struct ModelIdsResponses : global::System.IEquatable<ModelIdsResponses>
     {
         /// <summary>
-        /// Example: gpt-6-astra
+        /// Example: gpt-6.2-astra
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.ModelIdsShared? Shared { get; init; }

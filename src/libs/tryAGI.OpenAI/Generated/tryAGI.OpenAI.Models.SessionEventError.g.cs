@@ -39,6 +39,12 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.SessionErrorResource Error { get; set; }
 
         /// <summary>
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("obfuscation")]
+        public string? Obfuscation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -56,6 +62,9 @@ namespace tryAGI.OpenAI
         /// <param name="error">
         /// The error that occurred.
         /// </param>
+        /// <param name="obfuscation">
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `error`.<br/>
         /// Default Value: error
@@ -67,12 +76,14 @@ namespace tryAGI.OpenAI
             string eventId,
             string sessionId,
             global::tryAGI.OpenAI.SessionErrorResource error,
+            string? obfuscation,
             global::tryAGI.OpenAI.SessionEventErrorType type = global::tryAGI.OpenAI.SessionEventErrorType.Error)
         {
             this.Type = type;
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.Obfuscation = obfuscation;
         }
 
         /// <summary>

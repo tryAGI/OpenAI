@@ -90,6 +90,8 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("id")) __score11++;
             if (__jsonProps.Contains("reasoning")) __score11++;
             if (__jsonProps.Contains("reasoning.effort")) __score11++;
+            if (__jsonProps.Contains("text")) __score11++;
+            if (__jsonProps.Contains("text.format")) __score11++;
             if (__jsonProps.Contains("type")) __score11++;
             var __score12 = 0;
             if (__jsonProps.Contains("content")) __score12++;
@@ -131,6 +133,12 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("revised_prompt")) __score16++;
             if (__jsonProps.Contains("size")) __score16++;
             if (__jsonProps.Contains("status")) __score16++;
+            if (__jsonProps.Contains("svg_usage")) __score16++;
+            if (__jsonProps.Contains("svg_usage.input_tokens")) __score16++;
+            if (__jsonProps.Contains("svg_usage.model")) __score16++;
+            if (__jsonProps.Contains("svg_usage.output_tokens")) __score16++;
+            if (__jsonProps.Contains("svg_usage.reasoning_tokens")) __score16++;
+            if (__jsonProps.Contains("svg_usage.total_tokens")) __score16++;
             if (__jsonProps.Contains("type")) __score16++;
             var __score17 = 0;
             if (__jsonProps.Contains("code")) __score17++;

@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `response.done`.
         /// </summary>
+        /// <default>"response.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventResponseDoneTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseDoneType Type { get; set; }
+        public string Type { get; set; } = "response.done";
 
         /// <summary>
         /// The response resource.
@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
         public RealtimeBetaServerEventResponseDone(
             string eventId,
             global::tryAGI.OpenAI.RealtimeBetaResponse response,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventResponseDoneType type)
+            string type = "response.done")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

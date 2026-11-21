@@ -1,0 +1,94 @@
+
+#nullable enable
+
+namespace tryAGI.OpenAI
+{
+    /// <summary>
+    /// Describes an OpenAI model offering that can be used with the API.
+    /// </summary>
+    public sealed partial class Model
+    {
+        /// <summary>
+        /// The model identifier, which can be referenced in the API endpoints.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) when the model was created.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Created { get; set; }
+
+        /// <summary>
+        /// The object type, which is always "model".
+        /// </summary>
+        /// <default>"model"</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        public string Object { get; set; } = "model";
+
+        /// <summary>
+        /// The organization that owns the model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("owned_by")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string OwnedBy { get; set; }
+
+        /// <summary>
+        /// The date when the model will shut down, or null if not announced.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("shutdown_date")]
+        public global::System.DateTime? ShutdownDate { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Model" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The model identifier, which can be referenced in the API endpoints.
+        /// </param>
+        /// <param name="created">
+        /// The Unix timestamp (in seconds) when the model was created.
+        /// </param>
+        /// <param name="ownedBy">
+        /// The organization that owns the model.
+        /// </param>
+        /// <param name="shutdownDate">
+        /// The date when the model will shut down, or null if not announced.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "model".
+        /// </param>
+#if NET7_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
+        public Model(
+            string id,
+            int created,
+            string ownedBy,
+            global::System.DateTime? shutdownDate,
+            string @object = "model")
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Created = created;
+            this.Object = @object;
+            this.OwnedBy = ownedBy ?? throw new global::System.ArgumentNullException(nameof(ownedBy));
+            this.ShutdownDate = shutdownDate;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Model" /> class.
+        /// </summary>
+        public Model()
+        {
+        }
+
+    }
+}

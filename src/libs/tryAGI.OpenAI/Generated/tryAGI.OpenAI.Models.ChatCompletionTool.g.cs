@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the tool. Currently, only `function` is supported.
         /// </summary>
+        /// <default>"function"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionToolTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionToolType Type { get; set; }
+        public string Type { get; set; } = "function";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public ChatCompletionTool(
             global::tryAGI.OpenAI.FunctionObject function,
-            global::tryAGI.OpenAI.ChatCompletionToolType type)
+            string type = "function")
         {
             this.Type = type;
             this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ChatCompletionTool()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ChatCompletionTool"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ChatCompletionTool FromFunction(global::tryAGI.OpenAI.FunctionObject function)
+        {
+            return new ChatCompletionTool
+            {
+                Function = function,
+            };
         }
 
     }

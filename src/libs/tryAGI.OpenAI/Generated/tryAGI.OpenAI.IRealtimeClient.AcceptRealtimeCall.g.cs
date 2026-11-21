@@ -52,7 +52,8 @@ namespace tryAGI.OpenAI
         /// Default Value: [audio]
         /// </param>
         /// <param name="model">
-        /// The Realtime model used for this session.
+        /// The Realtime model used for this session.<br/>
+        /// Example: gpt-realtime-2.1
         /// </param>
         /// <param name="instructions">
         /// The default system instructions (i.e. system message) prepended to model calls. This field allows the client to guide the model on desired responses. The model can be instructed on response content and format, (e.g. "be extremely succinct", "act friendly", "here are examples of good responses") and on audio behavior (e.g. "talk quickly", "inject emotion into your voice", "laugh frequently"). The instructions are not guaranteed to be followed by the model, but they provide guidance to the model on the desired behavior.<br/>
@@ -105,18 +106,18 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task AcceptRealtimeCallAsync(
             string callId,
-            global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAType type = default,
+            string type = "realtime",
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAOutputModalitie>? outputModalities = default,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAModel?>? model = default,
             string? instructions = default,
             global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAAudio? audio = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAIncludeItem>? include = default,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum2>? tracing = default,
+            global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracing>? tracing = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeFunctionTool, global::tryAGI.OpenAI.MCPTool>>? tools = default,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.ToolChoiceOptions?, global::tryAGI.OpenAI.ToolChoiceFunction, global::tryAGI.OpenAI.ToolChoiceMCP>? toolChoice = default,
             bool? parallelToolCalls = default,
             global::tryAGI.OpenAI.RealtimeReasoning? reasoning = default,
-            global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAMaxOutputTokens?>? maxOutputTokens = default,
+            global::tryAGI.OpenAI.OneOf<int?, string>? maxOutputTokens = default,
             global::tryAGI.OpenAI.RealtimeTruncation? truncation = default,
             global::tryAGI.OpenAI.PromptVariant1? prompt = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,

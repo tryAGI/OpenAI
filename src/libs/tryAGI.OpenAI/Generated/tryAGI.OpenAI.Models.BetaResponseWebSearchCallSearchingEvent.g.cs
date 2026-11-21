@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.web_search_call.searching`.
         /// </summary>
+        /// <default>"response.web_search_call.searching"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseWebSearchCallSearchingEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseWebSearchCallSearchingEventType Type { get; set; }
+        public string Type { get; set; } = "response.web_search_call.searching";
 
         /// <summary>
         /// The index of the output item that the web search call is associated with.
@@ -74,7 +74,7 @@ namespace tryAGI.OpenAI
             string itemId,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseWebSearchCallSearchingEventType type)
+            string type = "response.web_search_call.searching")
         {
             this.Agent = agent;
             this.Type = type;

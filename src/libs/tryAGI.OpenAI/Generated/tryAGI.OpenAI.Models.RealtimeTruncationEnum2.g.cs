@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Use retention ratio truncation.
         /// </summary>
+        /// <default>"retention_ratio"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTruncationEnumTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTruncationEnumType Type { get; set; }
+        public string Type { get; set; } = "retention_ratio";
 
         /// <summary>
         /// Fraction of post-instruction conversation tokens to retain (`0.0` - `1.0`) when the conversation exceeds the input token limit. Setting this to `0.8` means that messages will be dropped until 80% of the maximum allowed tokens are used. This helps reduce the frequency of truncations and improve cache rates.
@@ -40,19 +40,19 @@ namespace tryAGI.OpenAI
         /// <param name="retentionRatio">
         /// Fraction of post-instruction conversation tokens to retain (`0.0` - `1.0`) when the conversation exceeds the input token limit. Setting this to `0.8` means that messages will be dropped until 80% of the maximum allowed tokens are used. This helps reduce the frequency of truncations and improve cache rates.
         /// </param>
-        /// <param name="type">
-        /// Use retention ratio truncation.
-        /// </param>
         /// <param name="tokenLimits">
         /// Optional custom token limits for this truncation strategy. If not provided, the model's default token limits will be used.
+        /// </param>
+        /// <param name="type">
+        /// Use retention ratio truncation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeTruncationEnum2(
             double retentionRatio,
-            global::tryAGI.OpenAI.RealtimeTruncationEnumType type,
-            global::tryAGI.OpenAI.RealtimeTruncationEnumTokenLimits? tokenLimits)
+            global::tryAGI.OpenAI.RealtimeTruncationEnumTokenLimits? tokenLimits,
+            string type = "retention_ratio")
         {
             this.Type = type;
             this.RetentionRatio = retentionRatio;
@@ -64,6 +64,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RealtimeTruncationEnum2()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RealtimeTruncationEnum2"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RealtimeTruncationEnum2 FromRetentionRatio(double retentionRatio)
+        {
+            return new RealtimeTruncationEnum2
+            {
+                RetentionRatio = retentionRatio,
+            };
         }
 
     }

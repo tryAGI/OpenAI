@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.function_call_arguments.delta`.
         /// </summary>
+        /// <default>"response.function_call_arguments.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseFunctionCallArgumentsDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDeltaEventType Type { get; set; }
+        public string Type { get; set; } = "response.function_call_arguments.delta";
 
         /// <summary>
         /// The ID of the output item that the function-call arguments delta is added to.
@@ -85,7 +85,7 @@ namespace tryAGI.OpenAI
             int sequenceNumber,
             string delta,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDeltaEventType type)
+            string type = "response.function_call_arguments.delta")
         {
             this.Agent = agent;
             this.Type = type;

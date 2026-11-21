@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_31376C7CED2462FD.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_69D91B982224F928.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_BE0024934037302F.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_4BBC1937917BA330.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_A90C744ADA15BB45.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_F6B3210604B05186.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.NetworkPolicy3))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0209.Create_NetworkPolicy32(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0201.Create_NetworkPolicy32(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.NetworkPolicy3?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0311.Create_NullableNetworkPolicy32(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0293.Create_NullableNetworkPolicy32(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

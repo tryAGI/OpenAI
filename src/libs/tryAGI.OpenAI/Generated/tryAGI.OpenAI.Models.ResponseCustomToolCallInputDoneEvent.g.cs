@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type identifier.
         /// </summary>
+        /// <default>"response.custom_tool_call_input.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseCustomToolCallInputDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEventType Type { get; set; }
+        public string Type { get; set; } = "response.custom_tool_call_input.done";
 
         /// <summary>
         /// The sequence number of this event.
@@ -75,7 +75,7 @@ namespace tryAGI.OpenAI
             int outputIndex,
             string itemId,
             string input,
-            global::tryAGI.OpenAI.ResponseCustomToolCallInputDoneEventType type)
+            string type = "response.custom_tool_call_input.done")
         {
             this.Type = type;
             this.SequenceNumber = sequenceNumber;

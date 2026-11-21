@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the tool. Currently, only `function` is supported.
         /// </summary>
+        /// <default>"function"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionMessageToolCallTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionMessageToolCallType Type { get; set; }
+        public string Type { get; set; } = "function";
 
         /// <summary>
         /// The function that the model called.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public ChatCompletionMessageToolCall(
             string id,
             global::tryAGI.OpenAI.ChatCompletionMessageToolCallFunction function,
-            global::tryAGI.OpenAI.ChatCompletionMessageToolCallType type)
+            string type = "function")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;

@@ -116,7 +116,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tracing")]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum?, global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum2>? Tracing { get; set; }
+        public global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfiguration>? Tracing { get; set; }
 
         /// <summary>
         /// Tools (functions) available to the model.
@@ -146,8 +146,8 @@ namespace tryAGI.OpenAI
         /// given model. Defaults to `inf`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_response_output_tokens")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<int?, global::tryAGI.OpenAI.RealtimeSessionMaxResponseOutputTokens?>))]
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionMaxResponseOutputTokens?>? MaxResponseOutputTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<int?, string>))]
+        public global::tryAGI.OpenAI.OneOf<int?, string>? MaxResponseOutputTokens { get; set; }
 
         /// <summary>
         /// Expiration timestamp for the session, in seconds since epoch.
@@ -274,11 +274,11 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RealtimeTurnDetectionRealtimeTurnDetection1? turnDetection,
             global::tryAGI.OpenAI.RealtimeSessionInputAudioNoiseReduction? inputAudioNoiseReduction,
             double? speed,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum?, global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfigurationEnum2>? tracing,
+            global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeSessionTracingTracingConfiguration>? tracing,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeFunctionTool>? tools,
             string? toolChoice,
             double? temperature,
-            global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionMaxResponseOutputTokens?>? maxResponseOutputTokens,
+            global::tryAGI.OpenAI.OneOf<int?, string>? maxResponseOutputTokens,
             int? expiresAt,
             global::tryAGI.OpenAI.PromptVariant1? prompt,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeSessionIncludeVariant1Item>? include)

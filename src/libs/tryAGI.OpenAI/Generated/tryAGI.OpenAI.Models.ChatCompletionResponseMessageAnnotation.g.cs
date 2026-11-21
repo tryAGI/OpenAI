@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the URL citation. Always `url_citation`.
         /// </summary>
+        /// <default>"url_citation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionResponseMessageAnnotationTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotationType Type { get; set; }
+        public string Type { get; set; } = "url_citation";
 
         /// <summary>
         /// A URL citation when using web search.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public ChatCompletionResponseMessageAnnotation(
             global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotationUrlCitation urlCitation,
-            global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotationType type)
+            string type = "url_citation")
         {
             this.Type = type;
             this.UrlCitation = urlCitation ?? throw new global::System.ArgumentNullException(nameof(urlCitation));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ChatCompletionResponseMessageAnnotation()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ChatCompletionResponseMessageAnnotation"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ChatCompletionResponseMessageAnnotation FromUrlCitation(global::tryAGI.OpenAI.ChatCompletionResponseMessageAnnotationUrlCitation urlCitation)
+        {
+            return new ChatCompletionResponseMessageAnnotation
+            {
+                UrlCitation = urlCitation,
+            };
         }
 
     }

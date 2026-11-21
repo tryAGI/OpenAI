@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Session5 Session { get; set; }
+        public required global::tryAGI.OpenAI.Session Session { get; set; }
 
         /// <summary>
         /// WebRTC transport with an SDP answer, or SIP transport without SDP or trunk credentials. For SIP, attach a sideband using session.id to receive transport.ringing, transport.answered, and transport.failed notifications.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LiveSessionCreateResponse(
-            global::tryAGI.OpenAI.Session5 session,
+            global::tryAGI.OpenAI.Session session,
             global::tryAGI.OpenAI.Transport2 transport)
         {
             this.Session = session ?? throw new global::System.ArgumentNullException(nameof(session));

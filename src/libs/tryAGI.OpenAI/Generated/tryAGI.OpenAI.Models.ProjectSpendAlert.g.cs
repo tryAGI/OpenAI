@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `project.spend_alert`.
         /// </summary>
+        /// <default>"project.spend_alert"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectSpendAlertObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectSpendAlertObject Object { get; set; }
+        public string Object { get; set; } = "project.spend_alert";
 
         /// <summary>
         /// The alert threshold amount, in cents.
@@ -68,14 +68,14 @@ namespace tryAGI.OpenAI
         /// <param name="notificationChannel">
         /// Email notification settings for a spend alert.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `project.spend_alert`.
-        /// </param>
         /// <param name="currency">
         /// The currency for the threshold amount.
         /// </param>
         /// <param name="interval">
         /// The time interval for evaluating spend against the threshold.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `project.spend_alert`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -84,9 +84,9 @@ namespace tryAGI.OpenAI
             string id,
             int thresholdAmount,
             global::tryAGI.OpenAI.SpendAlertNotificationChannel notificationChannel,
-            global::tryAGI.OpenAI.ProjectSpendAlertObject @object,
             global::tryAGI.OpenAI.ProjectSpendAlertCurrency currency,
-            global::tryAGI.OpenAI.ProjectSpendAlertInterval interval)
+            global::tryAGI.OpenAI.ProjectSpendAlertInterval interval,
+            string @object = "project.spend_alert")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

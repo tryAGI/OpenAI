@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `response.mcp_call_arguments.done`.
         /// </summary>
+        /// <default>"response.mcp_call_arguments.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventResponseMCPCallArgumentsDoneTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDoneType Type { get; set; }
+        public string Type { get; set; } = "response.mcp_call_arguments.done";
 
         /// <summary>
         /// The ID of the response.
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
             string itemId,
             int outputIndex,
             string arguments,
-            global::tryAGI.OpenAI.RealtimeServerEventResponseMCPCallArgumentsDoneType type)
+            string type = "response.mcp_call_arguments.done")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

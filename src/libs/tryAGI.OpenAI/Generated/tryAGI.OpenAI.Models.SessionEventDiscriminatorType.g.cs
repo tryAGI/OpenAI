@@ -15,6 +15,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        AgentSessionBudgetReached,
+        /// <summary>
+        ///
+        /// </summary>
         AgentSessionCreated,
         /// <summary>
         ///
@@ -155,6 +159,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 SessionEventDiscriminatorType.AgentOutputCommandExecutionOutputDelta => "agent.output.command_execution_output.delta",
+                SessionEventDiscriminatorType.AgentSessionBudgetReached => "agent.session.budget_reached",
                 SessionEventDiscriminatorType.AgentSessionCreated => "agent.session.created",
                 SessionEventDiscriminatorType.AgentSessionEnvironmentConnected => "agent.session.environment.connected",
                 SessionEventDiscriminatorType.AgentSessionEnvironmentDisconnected => "agent.session.environment.disconnected",
@@ -198,6 +203,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "agent.output.command_execution_output.delta" => SessionEventDiscriminatorType.AgentOutputCommandExecutionOutputDelta,
+                "agent.session.budget_reached" => SessionEventDiscriminatorType.AgentSessionBudgetReached,
                 "agent.session.created" => SessionEventDiscriminatorType.AgentSessionCreated,
                 "agent.session.environment.connected" => SessionEventDiscriminatorType.AgentSessionEnvironmentConnected,
                 "agent.session.environment.disconnected" => SessionEventDiscriminatorType.AgentSessionEnvironmentDisconnected,

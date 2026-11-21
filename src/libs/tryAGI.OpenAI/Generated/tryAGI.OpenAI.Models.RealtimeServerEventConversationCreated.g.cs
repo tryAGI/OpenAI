@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `conversation.created`.
         /// </summary>
+        /// <default>"conversation.created"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventConversationCreatedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationCreatedType Type { get; set; }
+        public string Type { get; set; } = "conversation.created";
 
         /// <summary>
         /// The conversation resource.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventConversationCreated(
             string eventId,
             global::tryAGI.OpenAI.RealtimeServerEventConversationCreatedConversation conversation,
-            global::tryAGI.OpenAI.RealtimeServerEventConversationCreatedType type)
+            string type = "conversation.created")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

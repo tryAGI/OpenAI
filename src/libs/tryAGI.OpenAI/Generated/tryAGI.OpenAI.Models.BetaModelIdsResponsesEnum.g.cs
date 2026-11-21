@@ -47,6 +47,18 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Gpt6Cyber,
+        /// <summary>
+        ///
+        /// </summary>
+        Gpt6Rosalind,
+        /// <summary>
+        ///
+        /// </summary>
+        Gpt62AstraLaw,
+        /// <summary>
+        ///
+        /// </summary>
         GptDaybreakBlueLatest,
         /// <summary>
         ///
@@ -111,6 +123,9 @@ namespace tryAGI.OpenAI
                 BetaModelIdsResponsesEnum.Gpt55Pro => "gpt-5.5-pro",
                 BetaModelIdsResponsesEnum.Gpt55Pro20260423 => "gpt-5.5-pro-2026-04-23",
                 BetaModelIdsResponsesEnum.Gpt56Cyber => "gpt-5.6-cyber",
+                BetaModelIdsResponsesEnum.Gpt6Cyber => "gpt-6-cyber",
+                BetaModelIdsResponsesEnum.Gpt6Rosalind => "gpt-6-rosalind",
+                BetaModelIdsResponsesEnum.Gpt62AstraLaw => "gpt-6.2-astra-law",
                 BetaModelIdsResponsesEnum.GptDaybreakBlueLatest => "gpt-daybreak-blue-latest",
                 BetaModelIdsResponsesEnum.GptDaybreakRedLatest => "gpt-daybreak-red-latest",
                 BetaModelIdsResponsesEnum.GptRosalindResearch => "gpt-rosalind-research",
@@ -141,6 +156,9 @@ namespace tryAGI.OpenAI
                 "gpt-5.5-pro" => BetaModelIdsResponsesEnum.Gpt55Pro,
                 "gpt-5.5-pro-2026-04-23" => BetaModelIdsResponsesEnum.Gpt55Pro20260423,
                 "gpt-5.6-cyber" => BetaModelIdsResponsesEnum.Gpt56Cyber,
+                "gpt-6-cyber" => BetaModelIdsResponsesEnum.Gpt6Cyber,
+                "gpt-6-rosalind" => BetaModelIdsResponsesEnum.Gpt6Rosalind,
+                "gpt-6.2-astra-law" => BetaModelIdsResponsesEnum.Gpt62AstraLaw,
                 "gpt-daybreak-blue-latest" => BetaModelIdsResponsesEnum.GptDaybreakBlueLatest,
                 "gpt-daybreak-red-latest" => BetaModelIdsResponsesEnum.GptDaybreakRedLatest,
                 "gpt-rosalind-research" => BetaModelIdsResponsesEnum.GptRosalindResearch,

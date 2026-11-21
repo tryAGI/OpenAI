@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.reasoning_summary_part.added`.
         /// </summary>
+        /// <default>"response.reasoning_summary_part.added"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseReasoningSummaryPartAddedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEventType Type { get; set; }
+        public string Type { get; set; } = "response.reasoning_summary_part.added";
 
         /// <summary>
         /// The ID of the item this summary part is associated with.
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
             int summaryIndex,
             int sequenceNumber,
             global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEventPart part,
-            global::tryAGI.OpenAI.ResponseReasoningSummaryPartAddedEventType type)
+            string type = "response.reasoning_summary_part.added")
         {
             this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));

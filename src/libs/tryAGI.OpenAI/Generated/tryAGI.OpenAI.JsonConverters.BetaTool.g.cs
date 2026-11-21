@@ -89,6 +89,9 @@ namespace tryAGI.OpenAI.JsonConverters
             var __score8 = 0;
             if (__jsonProps.Contains("action")) __score8++;
             if (__jsonProps.Contains("background")) __score8++;
+            if (__jsonProps.Contains("complexity")) __score8++;
+            if (__jsonProps.Contains("frame_count")) __score8++;
+            if (__jsonProps.Contains("frame_duration_ms")) __score8++;
             if (__jsonProps.Contains("input_fidelity")) __score8++;
             if (__jsonProps.Contains("input_image_mask")) __score8++;
             if (__jsonProps.Contains("input_image_mask.file_id")) __score8++;
@@ -100,6 +103,9 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("partial_images")) __score8++;
             if (__jsonProps.Contains("quality")) __score8++;
             if (__jsonProps.Contains("size")) __score8++;
+            if (__jsonProps.Contains("svg")) __score8++;
+            if (__jsonProps.Contains("svg.model")) __score8++;
+            if (__jsonProps.Contains("svg.reasoning")) __score8++;
             if (__jsonProps.Contains("type")) __score8++;
             var __score9 = 0;
             if (__jsonProps.Contains("type")) __score9++;

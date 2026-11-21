@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Reports cumulative Live audio usage and, when available, the most recent context-window usage. Delegated Responses token usage is reported separately in response.event events.<br/>
-    /// Example: {"type":"session.usage.updated","event_id":"evt_usage_001","usage":{"seconds":32.5},"context_window":{"usage_ratio":0.12}}
+    /// Example: {"type":"session.usage.updated","event_id":"evt_usage_001","usage":{"seconds":32},"context_window":{"usage_ratio":0.12}}
     /// </summary>
     public sealed partial class LiveSessionUsageUpdated
     {

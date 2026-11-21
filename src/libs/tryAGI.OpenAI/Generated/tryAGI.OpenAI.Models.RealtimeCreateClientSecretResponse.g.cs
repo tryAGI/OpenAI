@@ -26,9 +26,9 @@ namespace tryAGI.OpenAI
         /// The session configuration for either a realtime or transcription session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Session2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Session5JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Session2 Session { get; set; }
+        public required global::tryAGI.OpenAI.Session5 Session { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
         public RealtimeCreateClientSecretResponse(
             string value,
             int expiresAt,
-            global::tryAGI.OpenAI.Session2 session)
+            global::tryAGI.OpenAI.Session5 session)
         {
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
             this.ExpiresAt = expiresAt;

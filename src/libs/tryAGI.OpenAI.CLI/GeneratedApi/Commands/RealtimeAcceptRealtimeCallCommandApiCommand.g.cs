@@ -29,7 +29,7 @@ webhook.",
 ",
     };
 
-    private static Option<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracingEnum2>?> Tracing { get; } = new(
+    private static Option<global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGATracing>?> Tracing { get; } = new(
         name: @"--tracing")
     {
         Description = @"Realtime API can write session traces to the [Traces Dashboard](https://platform.openai.com/logs?api=traces). Set to null to disable tracing. Once
@@ -61,7 +61,7 @@ function/MCP tool.
 ",
     };
 
-    private static Option<global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeSessionCreateRequestGAMaxOutputTokens?>?> MaxOutputTokens { get; } = new(
+    private static Option<global::tryAGI.OpenAI.OneOf<int?, string>?> MaxOutputTokens { get; } = new(
         name: @"--max-output-tokens")
     {
         Description = @"Maximum number of output tokens for a single assistant response,
@@ -157,7 +157,7 @@ handle it.");
                         var toolChoice = CliRuntime.WasSpecified(parseResult, ToolChoice) ? parseResult.GetValue(ToolChoice) : (__requestBase is { } __ToolChoiceBaseValue ? __ToolChoiceBaseValue.ToolChoice : default);
                         var reasoning = CliRuntime.WasSpecified(parseResult, Reasoning) ? parseResult.GetValue(Reasoning) : (__requestBase is { } __ReasoningBaseValue ? __ReasoningBaseValue.Reasoning : default);
                         var maxOutputTokens = CliRuntime.WasSpecified(parseResult, MaxOutputTokens) ? parseResult.GetValue(MaxOutputTokens) : (__requestBase is { } __MaxOutputTokensBaseValue ? __MaxOutputTokensBaseValue.MaxOutputTokens : default);
-                        var truncation = CliRuntime.WasSpecified(parseResult, Truncation) ? parseResult.GetValue(Truncation) : (__requestBase is { } __TruncationBaseValue ? __TruncationBaseValue.Truncation : default);                        var type = CliRuntime.WasSpecified(parseResult, RealtimeSessionCreateRequestGAOptionSetOptions.Type) ? parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.Type) : (__requestBase is { } __TypeBaseValue ? __TypeBaseValue.Type : default);
+                        var truncation = CliRuntime.WasSpecified(parseResult, Truncation) ? parseResult.GetValue(Truncation) : (__requestBase is { } __TruncationBaseValue ? __TruncationBaseValue.Truncation : default);                        var type = parseResult.GetRequiredValue(RealtimeSessionCreateRequestGAOptionSetOptions.Type);
                         var outputModalities = CliRuntime.WasSpecified(parseResult, RealtimeSessionCreateRequestGAOptionSetOptions.OutputModalities) ? parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.OutputModalities) : (__requestBase is { } __OutputModalitiesBaseValue ? __OutputModalitiesBaseValue.OutputModalities : default);
                         var instructions = CliRuntime.WasSpecified(parseResult, RealtimeSessionCreateRequestGAOptionSetOptions.Instructions) ? parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.Instructions) : (__requestBase is { } __InstructionsBaseValue ? __InstructionsBaseValue.Instructions : default);
                         var include = CliRuntime.WasSpecified(parseResult, RealtimeSessionCreateRequestGAOptionSetOptions.Include) ? parseResult.GetValue(RealtimeSessionCreateRequestGAOptionSetOptions.Include) : (__requestBase is { } __IncludeBaseValue ? __IncludeBaseValue.Include : default);
