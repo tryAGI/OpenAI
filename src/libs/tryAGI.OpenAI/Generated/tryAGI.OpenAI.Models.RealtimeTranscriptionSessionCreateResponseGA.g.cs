@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of session. Always `transcription` for transcription sessions.
         /// </summary>
+        /// <default>"transcription"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranscriptionSessionCreateResponseGATypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAType Type { get; set; }
+        public string Type { get; set; } = "transcription";
 
         /// <summary>
         /// Unique identifier for the session that looks like `sess_1234567890abcdef`.
@@ -63,9 +63,6 @@ namespace tryAGI.OpenAI
         /// <param name="object">
         /// The object type. Always `realtime.transcription_session`.
         /// </param>
-        /// <param name="type">
-        /// The type of session. Always `transcription` for transcription sessions.
-        /// </param>
         /// <param name="expiresAt">
         /// Expiration timestamp for the session, in seconds since epoch.
         /// </param>
@@ -76,16 +73,19 @@ namespace tryAGI.OpenAI
         /// <param name="audio">
         /// Configuration for input audio for the session.
         /// </param>
+        /// <param name="type">
+        /// The type of session. Always `transcription` for transcription sessions.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeTranscriptionSessionCreateResponseGA(
             string id,
             string @object,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAType type,
             int? expiresAt,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAIncludeItem>? include,
-            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudio? audio)
+            global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGAAudio? audio,
+            string type = "transcription")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

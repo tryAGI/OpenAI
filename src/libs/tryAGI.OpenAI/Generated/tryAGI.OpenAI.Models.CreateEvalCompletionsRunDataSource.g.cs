@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.CreateEvalCompletionsRunDataSourceSamplingParams? SamplingParams { get; set; }
 
         /// <summary>
-        /// The name of the model to use for generating completions (e.g. "o3-mini").
+        /// The model to use to sample outputs with the Chat Completions API.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
@@ -61,7 +61,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="samplingParams"></param>
         /// <param name="model">
-        /// The name of the model to use for generating completions (e.g. "o3-mini").
+        /// The model to use to sample outputs with the Chat Completions API.
         /// </param>
         /// <param name="type">
         /// The type of run data source. Always `completions`.<br/>

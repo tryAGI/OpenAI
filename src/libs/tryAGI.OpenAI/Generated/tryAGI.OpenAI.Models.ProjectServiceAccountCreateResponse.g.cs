@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"organization.project.service_account"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectServiceAccountCreateResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseObject Object { get; set; }
+        public string Object { get; set; } = "organization.project.service_account";
 
         /// <summary>
         ///
@@ -65,8 +65,8 @@ namespace tryAGI.OpenAI
         /// Service accounts created with default project membership have role `member`. Accounts created with `create_service_account_only` have role `none`.
         /// </param>
         /// <param name="createdAt"></param>
-        /// <param name="object"></param>
         /// <param name="apiKey"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -75,8 +75,8 @@ namespace tryAGI.OpenAI
             string name,
             global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseRole role,
             int createdAt,
-            global::tryAGI.OpenAI.ProjectServiceAccountCreateResponseObject @object,
-            global::tryAGI.OpenAI.ProjectServiceAccountApiKey? apiKey)
+            global::tryAGI.OpenAI.ProjectServiceAccountApiKey? apiKey,
+            string @object = "organization.project.service_account")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

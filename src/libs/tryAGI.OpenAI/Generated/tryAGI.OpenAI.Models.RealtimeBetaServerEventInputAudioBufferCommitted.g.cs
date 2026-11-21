@@ -21,9 +21,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `input_audio_buffer.committed`.
         /// </summary>
+        /// <default>"input_audio_buffer.committed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventInputAudioBufferCommittedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferCommittedType Type { get; set; }
+        public string Type { get; set; } = "input_audio_buffer.committed";
 
         /// <summary>
         ///
@@ -53,18 +53,18 @@ namespace tryAGI.OpenAI
         /// <param name="itemId">
         /// The ID of the user message item that will be created.
         /// </param>
+        /// <param name="previousItemId"></param>
         /// <param name="type">
         /// The event type, must be `input_audio_buffer.committed`.
         /// </param>
-        /// <param name="previousItemId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeBetaServerEventInputAudioBufferCommitted(
             string eventId,
             string itemId,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventInputAudioBufferCommittedType type,
-            string? previousItemId)
+            string? previousItemId,
+            string type = "input_audio_buffer.committed")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

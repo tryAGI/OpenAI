@@ -77,7 +77,7 @@ namespace tryAGI.OpenAI
         public int? MaxTokens { get; set; }
 
         /// <summary>
-        /// How many completions to generate for each prompt.<br/>
+        /// How many completions to generate for each prompt. Omit `n` to generate one completion per prompt.<br/>
         /// **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
@@ -102,7 +102,7 @@ namespace tryAGI.OpenAI
         public long? Seed { get; set; }
 
         /// <summary>
-        /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
+        /// Not supported with reasoning models `o3` and `o4-mini`.<br/>
         /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
         /// returned text will not contain the stop sequence.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -212,7 +212,7 @@ namespace tryAGI.OpenAI
         /// Example: 16
         /// </param>
         /// <param name="n">
-        /// How many completions to generate for each prompt.<br/>
+        /// How many completions to generate for each prompt. Omit `n` to generate one completion per prompt.<br/>
         /// **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
@@ -227,7 +227,7 @@ namespace tryAGI.OpenAI
         /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
         /// </param>
         /// <param name="stop">
-        /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
+        /// Not supported with reasoning models `o3` and `o4-mini`.<br/>
         /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
         /// returned text will not contain the stop sequence.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

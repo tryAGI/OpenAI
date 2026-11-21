@@ -25,9 +25,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the web search tool call. Always `web_search_call`.
         /// </summary>
+        /// <default>"web_search_call"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaWebSearchToolCallTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaWebSearchToolCallType Type { get; set; }
+        public string Type { get; set; } = "web_search_call";
 
         /// <summary>
         /// The status of the web search tool call.
@@ -63,12 +63,12 @@ namespace tryAGI.OpenAI
         /// <param name="agent">
         /// The agent that produced this item.
         /// </param>
-        /// <param name="type">
-        /// The type of the web search tool call. Always `web_search_call`.
-        /// </param>
         /// <param name="action">
         /// An object describing the specific action taken in this web search call.<br/>
         /// Includes details on how the model used the web (search, open_page, find_in_page).
+        /// </param>
+        /// <param name="type">
+        /// The type of the web search tool call. Always `web_search_call`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -77,8 +77,8 @@ namespace tryAGI.OpenAI
             string id,
             global::tryAGI.OpenAI.BetaWebSearchCallStatus status,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaWebSearchToolCallType type,
-            global::tryAGI.OpenAI.BetaWebSearchToolCallAction? action)
+            global::tryAGI.OpenAI.BetaWebSearchToolCallAction? action,
+            string type = "web_search_call")
         {
             this.Agent = agent;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

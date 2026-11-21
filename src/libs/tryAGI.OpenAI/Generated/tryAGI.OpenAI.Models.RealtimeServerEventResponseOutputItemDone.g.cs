@@ -19,9 +19,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `response.output_item.done`.
         /// </summary>
+        /// <default>"response.output_item.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventResponseOutputItemDoneTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDoneType Type { get; set; }
+        public string Type { get; set; } = "response.output_item.done";
 
         /// <summary>
         /// The ID of the Response to which the item belongs.
@@ -77,7 +77,7 @@ namespace tryAGI.OpenAI
             string responseId,
             int outputIndex,
             global::tryAGI.OpenAI.RealtimeConversationItem item,
-            global::tryAGI.OpenAI.RealtimeServerEventResponseOutputItemDoneType type)
+            string type = "response.output_item.done")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

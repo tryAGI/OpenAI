@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_182FC4E0CA9C3DD9.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_38D85D5351A8CCC3.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_6DA88C34BA124C41.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_A39CBE4E2E677F3C.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C0F4A6BC2D3B305F.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_182FC4E0CA9C3DD9.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_38D85D5351A8CCC3.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_6DA88C34BA124C41.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_A39CBE4E2E677F3C.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C0F4A6BC2D3B305F.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_F2630CC8850F2CAC.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.ProjectSpendLimitResource))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0387.Create_ProjectSpendLimitResource(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0349.Create_ProjectSpendLimitResource(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

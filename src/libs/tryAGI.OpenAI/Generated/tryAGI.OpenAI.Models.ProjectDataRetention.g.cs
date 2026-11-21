@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `project.data_retention`.
         /// </summary>
+        /// <default>"project.data_retention"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectDataRetentionObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectDataRetentionObject Object { get; set; }
+        public string Object { get; set; } = "project.data_retention";
 
         /// <summary>
         /// The configured project data retention type.
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
 #endif
         public ProjectDataRetention(
             global::tryAGI.OpenAI.ProjectDataRetentionType type,
-            global::tryAGI.OpenAI.ProjectDataRetentionObject @object)
+            string @object = "project.data_retention")
         {
             this.Object = @object;
             this.Type = type;
@@ -54,6 +54,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ProjectDataRetention()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ProjectDataRetention"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ProjectDataRetention FromType(global::tryAGI.OpenAI.ProjectDataRetentionType type)
+        {
+            return new ProjectDataRetention
+            {
+                Type = type,
+            };
         }
 
     }

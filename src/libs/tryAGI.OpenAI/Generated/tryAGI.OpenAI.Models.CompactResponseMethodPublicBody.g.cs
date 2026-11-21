@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class CompactResponseMethodPublicBody
     {
         /// <summary>
-        /// Model ID used to generate the response, like `gpt-6-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
+        /// Model ID used to generate the response, like `gpt-6.2-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsCompactionJsonConverter))]
@@ -34,6 +34,12 @@ namespace tryAGI.OpenAI
         public string? Instructions { get; set; }
 
         /// <summary>
+        /// Request level image options.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
+        public global::tryAGI.OpenAI.ImageOptionsParam? Image { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_key")]
@@ -55,7 +61,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        public global::tryAGI.OpenAI.ServiceTierEnum2? ServiceTier { get; set; }
+        public global::tryAGI.OpenAI.ServiceTierEnum? ServiceTier { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -67,11 +73,14 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CompactResponseMethodPublicBody" /> class.
         /// </summary>
         /// <param name="model">
-        /// Model ID used to generate the response, like `gpt-6-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
+        /// Model ID used to generate the response, like `gpt-6.2-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
         /// </param>
         /// <param name="input"></param>
         /// <param name="previousResponseId"></param>
         /// <param name="instructions"></param>
+        /// <param name="image">
+        /// Request level image options.
+        /// </param>
         /// <param name="promptCacheKey"></param>
         /// <param name="promptCacheRetention"></param>
         /// <param name="promptCacheOptions"></param>
@@ -84,15 +93,17 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>? input,
             string? previousResponseId,
             string? instructions,
+            global::tryAGI.OpenAI.ImageOptionsParam? image,
             string? promptCacheKey,
             global::tryAGI.OpenAI.PromptCacheRetentionEnum? promptCacheRetention,
             global::tryAGI.OpenAI.PromptCacheOptionsParam? promptCacheOptions,
-            global::tryAGI.OpenAI.ServiceTierEnum2? serviceTier)
+            global::tryAGI.OpenAI.ServiceTierEnum? serviceTier)
         {
             this.Model = model;
             this.Input = input;
             this.PreviousResponseId = previousResponseId;
             this.Instructions = instructions;
+            this.Image = image;
             this.PromptCacheKey = promptCacheKey;
             this.PromptCacheRetention = promptCacheRetention;
             this.PromptCacheOptions = promptCacheOptions;

@@ -6,7 +6,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// The Live model. Required in the session configuration for every transport; do not pass it as a URL query parameter.<br/>
-    /// Example: gpt-live-1
+    /// Example: gpt-live-1.1
     /// </summary>
     public readonly partial struct ModelIdsLive : global::System.IEquatable<ModelIdsLive>
     {

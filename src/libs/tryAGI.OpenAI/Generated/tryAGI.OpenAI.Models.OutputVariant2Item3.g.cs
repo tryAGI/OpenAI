@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.LiveDecisionCustomToolCallOutputParamOutputVariant2ItemDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.LiveDecisionFunctionCallOutputParamOutputVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -137,7 +137,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public OutputVariant2Item3(
-            global::tryAGI.OpenAI.LiveDecisionCustomToolCallOutputParamOutputVariant2ItemDiscriminatorType? type,
+            global::tryAGI.OpenAI.LiveDecisionFunctionCallOutputParamOutputVariant2ItemDiscriminatorType? type,
             global::tryAGI.OpenAI.LiveDecisionInputTextParam? inputText,
             global::tryAGI.OpenAI.LiveDecisionInputImageParam? inputImage
             )

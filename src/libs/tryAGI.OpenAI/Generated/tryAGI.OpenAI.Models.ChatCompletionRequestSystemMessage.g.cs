@@ -21,9 +21,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The role of the messages author, in this case `system`.
         /// </summary>
+        /// <default>"system"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionRequestSystemMessageRoleJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageRole Role { get; set; }
+        public string Role { get; set; } = "system";
 
         /// <summary>
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
@@ -43,19 +43,19 @@ namespace tryAGI.OpenAI
         /// <param name="content">
         /// The contents of the system message.
         /// </param>
-        /// <param name="role">
-        /// The role of the messages author, in this case `system`.
-        /// </param>
         /// <param name="name">
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
+        /// </param>
+        /// <param name="role">
+        /// The role of the messages author, in this case `system`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionRequestSystemMessage(
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageContentPart>> content,
-            global::tryAGI.OpenAI.ChatCompletionRequestSystemMessageRole role,
-            string? name)
+            string? name,
+            string role = "system")
         {
             this.Content = content;
             this.Role = role;

@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::tryAGI.OpenAI.ExternalStorageResponse> CreateanexternalstorageconfigurationAsync(
             string projectId,
-            global::tryAGI.OpenAI.Provider3 provider,
+            global::tryAGI.OpenAI.Provider2 provider,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

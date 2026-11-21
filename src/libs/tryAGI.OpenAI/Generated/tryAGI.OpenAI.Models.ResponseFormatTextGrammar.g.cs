@@ -12,9 +12,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of response format being defined. Always `grammar`.
         /// </summary>
+        /// <default>"grammar"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseFormatTextGrammarTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseFormatTextGrammarType Type { get; set; }
+        public string Type { get; set; } = "grammar";
 
         /// <summary>
         /// The custom grammar for the model to follow.
@@ -43,7 +43,7 @@ namespace tryAGI.OpenAI
 #endif
         public ResponseFormatTextGrammar(
             string grammar,
-            global::tryAGI.OpenAI.ResponseFormatTextGrammarType type)
+            string type = "grammar")
         {
             this.Type = type;
             this.Grammar = grammar ?? throw new global::System.ArgumentNullException(nameof(grammar));
@@ -54,6 +54,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ResponseFormatTextGrammar()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ResponseFormatTextGrammar"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ResponseFormatTextGrammar FromGrammar(string grammar)
+        {
+            return new ResponseFormatTextGrammar
+            {
+                Grammar = grammar,
+            };
         }
 
     }

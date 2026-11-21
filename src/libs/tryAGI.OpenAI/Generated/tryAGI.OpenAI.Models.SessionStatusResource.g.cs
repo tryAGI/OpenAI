@@ -11,6 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        BudgetReached,
+        /// <summary>
+        ///
+        /// </summary>
         Failed,
         /// <summary>
         ///
@@ -38,6 +42,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                SessionStatusResource.BudgetReached => "budget_reached",
                 SessionStatusResource.Failed => "failed",
                 SessionStatusResource.Idle => "idle",
                 SessionStatusResource.InProgress => "in_progress",
@@ -52,6 +57,7 @@ namespace tryAGI.OpenAI
         {
             return value switch
             {
+                "budget_reached" => SessionStatusResource.BudgetReached,
                 "failed" => SessionStatusResource.Failed,
                 "idle" => SessionStatusResource.Idle,
                 "in_progress" => SessionStatusResource.InProgress,

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `organization.admin_api_key`
         /// </summary>
+        /// <default>"organization.admin_api_key"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AdminApiKeyObjectJsonConverter))]
-        public global::tryAGI.OpenAI.AdminApiKeyObject Object { get; set; }
+        public string Object { get; set; } = "organization.admin_api_key";
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints<br/>
@@ -91,15 +91,15 @@ namespace tryAGI.OpenAI
         /// Example: 1711471533
         /// </param>
         /// <param name="owner"></param>
-        /// <param name="object">
-        /// The object type, which is always `organization.admin_api_key`
-        /// </param>
         /// <param name="name">
         /// The name of the API key<br/>
         /// Example: Administration Key
         /// </param>
         /// <param name="expiresAt"></param>
         /// <param name="lastUsedAt"></param>
+        /// <param name="object">
+        /// The object type, which is always `organization.admin_api_key`
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -108,10 +108,10 @@ namespace tryAGI.OpenAI
             string redactedValue,
             int createdAt,
             global::tryAGI.OpenAI.AdminApiKeyOwner owner,
-            global::tryAGI.OpenAI.AdminApiKeyObject @object,
             string? name,
             int? expiresAt,
-            int? lastUsedAt)
+            int? lastUsedAt,
+            string @object = "organization.admin_api_key")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

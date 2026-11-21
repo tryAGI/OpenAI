@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"response.function_call_arguments.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseFunctionCallArgumentsDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEventType Type { get; set; }
+        public string Type { get; set; } = "response.function_call_arguments.done";
 
         /// <summary>
         /// The ID of the item.
@@ -83,7 +83,7 @@ namespace tryAGI.OpenAI
             int sequenceNumber,
             string arguments,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseFunctionCallArgumentsDoneEventType type)
+            string type = "response.function_call_arguments.done")
         {
             this.Agent = agent;
             this.Type = type;

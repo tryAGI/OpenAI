@@ -16,7 +16,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// Start a Live session on a primary WebSocket. Send this event before other commands and wait for `session.started`.<br/>
-        /// Example: {"type":"session.start","event_id":"evt_start_001","session":{"model":"gpt-live-1","instructions":"Help the caller plan a restaurant reservation. Confirm details before booking.","audio":{"format":{"type":"audio/pcm","rate":24000},"output":{"voice":"marin"}},"delegation":{"type":"client"}}}
+        /// Example: {"type":"session.start","event_id":"evt_start_001","session":{"model":"gpt-live-1.1","instructions":"Help the caller plan a restaurant reservation. Confirm details before booking.","audio":{"format":{"type":"audio/pcm","rate":24000},"output":{"voice":"marin"}},"delegation":{"type":"client"}}}
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::tryAGI.OpenAI.LiveSessionStartEvent? SessionStart { get; init; }

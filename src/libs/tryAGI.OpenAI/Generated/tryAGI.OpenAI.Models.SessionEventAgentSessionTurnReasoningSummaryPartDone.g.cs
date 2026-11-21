@@ -73,6 +73,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus? Status { get; set; }
 
         /// <summary>
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("obfuscation")]
+        public string? Obfuscation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -105,6 +111,9 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// Present as `incomplete` when summary generation was interrupted.
         /// </param>
+        /// <param name="obfuscation">
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `agent.session.turn.reasoning_summary_part.done`.<br/>
         /// Default Value: agent.session.turn.reasoning_summary_part.done
@@ -121,6 +130,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.SummaryTextResource part,
             string? turnId,
             global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneStatus? status,
+            string? obfuscation,
             global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType type = global::tryAGI.OpenAI.SessionEventAgentSessionTurnReasoningSummaryPartDoneType.AgentSessionTurnReasoningSummaryPartDone)
         {
             this.Type = type;
@@ -132,6 +142,7 @@ namespace tryAGI.OpenAI
             this.SummaryIndex = summaryIndex;
             this.Part = part ?? throw new global::System.ArgumentNullException(nameof(part));
             this.Status = status;
+            this.Obfuscation = obfuscation;
         }
 
         /// <summary>

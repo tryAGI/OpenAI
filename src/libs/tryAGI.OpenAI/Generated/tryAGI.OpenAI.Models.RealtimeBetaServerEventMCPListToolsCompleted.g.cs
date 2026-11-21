@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `mcp_list_tools.completed`.
         /// </summary>
+        /// <default>"mcp_list_tools.completed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventMCPListToolsCompletedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsCompletedType Type { get; set; }
+        public string Type { get; set; } = "mcp_list_tools.completed";
 
         /// <summary>
         /// The ID of the MCP list tools item.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public RealtimeBetaServerEventMCPListToolsCompleted(
             string eventId,
             string itemId,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventMCPListToolsCompletedType type)
+            string type = "mcp_list_tools.completed")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

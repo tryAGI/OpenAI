@@ -4,7 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// The Retry-After and Retry-After-Ms headers returned with the original error, if any.
+    /// Headers returned with the original error. These can include Retry-After, Retry-After-Ms, and, on opted-in deployments, x-openai-inference-capacity-reason.
     /// </summary>
     public sealed partial class Error2Headers
     {

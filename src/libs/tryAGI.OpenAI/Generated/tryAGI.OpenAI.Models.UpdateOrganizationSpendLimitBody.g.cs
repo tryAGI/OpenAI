@@ -30,6 +30,12 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.UpdateOrganizationSpendLimitBodyInterval Interval { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("notification_channel")]
+        public global::tryAGI.OpenAI.SpendLimitEmailNotificationChannelParams? NotificationChannel { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -47,17 +53,20 @@ namespace tryAGI.OpenAI
         /// <param name="interval">
         /// The time interval for evaluating spend against the threshold. Currently, only `month` is supported.
         /// </param>
+        /// <param name="notificationChannel"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UpdateOrganizationSpendLimitBody(
             int thresholdAmount,
             global::tryAGI.OpenAI.UpdateOrganizationSpendLimitBodyCurrency currency,
-            global::tryAGI.OpenAI.UpdateOrganizationSpendLimitBodyInterval interval)
+            global::tryAGI.OpenAI.UpdateOrganizationSpendLimitBodyInterval interval,
+            global::tryAGI.OpenAI.SpendLimitEmailNotificationChannelParams? notificationChannel)
         {
             this.ThresholdAmount = thresholdAmount;
             this.Currency = currency;
             this.Interval = interval;
+            this.NotificationChannel = notificationChannel;
         }
 
         /// <summary>

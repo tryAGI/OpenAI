@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `text`.
         /// </summary>
+        /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateModerationRequestInputVariant3ItemVariant2TypeJsonConverter))]
-        public global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2Type Type { get; set; }
+        public string Type { get; set; } = "text";
 
         /// <summary>
         /// A string of text to classify.<br/>
@@ -45,7 +45,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateModerationRequestInputVariant3ItemVariant2(
             string text,
-            global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant2Type type)
+            string type = "text")
         {
             this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
@@ -56,6 +56,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public CreateModerationRequestInputVariant3ItemVariant2()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="CreateModerationRequestInputVariant3ItemVariant2"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CreateModerationRequestInputVariant3ItemVariant2 FromText(string text)
+        {
+            return new CreateModerationRequestInputVariant3ItemVariant2
+            {
+                Text = text,
+            };
         }
 
     }

@@ -72,6 +72,14 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.AutomationCreatedByResource CreatedBy { get; set; }
 
         /// <summary>
+        /// Why the service paused this schedule, or null for other schedules.<br/>
+        /// Default Value: target_session_failed
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pause_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AutomationResourceOncePauseReasonJsonConverter))]
+        public global::tryAGI.OpenAI.AutomationResourceOncePauseReason? PauseReason { get; set; }
+
+        /// <summary>
         /// The Unix timestamp, in seconds, of the scheduled occurrence.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_at")]
@@ -120,6 +128,10 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// Completion means the schedule has finished, not the agent's work.
         /// </param>
+        /// <param name="pauseReason">
+        /// Why the service paused this schedule, or null for other schedules.<br/>
+        /// Default Value: target_session_failed
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `once`.<br/>
         /// Default Value: once
@@ -140,6 +152,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.AutomationCreatedByResource createdBy,
             global::System.DateTimeOffset runAt,
             global::tryAGI.OpenAI.OnceAutomationStatusResource status,
+            global::tryAGI.OpenAI.AutomationResourceOncePauseReason? pauseReason,
             global::tryAGI.OpenAI.AutomationResourceOnceType type = global::tryAGI.OpenAI.AutomationResourceOnceType.Once,
             global::tryAGI.OpenAI.AutomationResourceOnceObject @object = global::tryAGI.OpenAI.AutomationResourceOnceObject.AgentAutomation)
         {
@@ -151,6 +164,7 @@ namespace tryAGI.OpenAI
             this.Target = target;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.CreatedBy = createdBy;
+            this.PauseReason = pauseReason;
             this.RunAt = runAt;
             this.Status = status;
         }

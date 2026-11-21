@@ -87,7 +87,6 @@ Turn audio into text or text into audio.
 |---------|-------|-------------|
 | `create-speech` | `POST /audio/speech` | Create speech |
 | `create-transcription` | `POST /audio/transcriptions` | Create transcription |
-| `create-translation` | `POST /audio/translations` | Create translation |
 | `create-voice` | `POST /audio/voices` | Create voice |
 | `create-voice-consent` | `POST /audio/voice_consents` | Create voice consent |
 | `delete-voice` | `DELETE /audio/voices/{voice_id}` | Delete voice |
@@ -545,6 +544,7 @@ Use Uploads to upload large files in multiple parts.
 
 | Command | Route | Description |
 |---------|-------|-------------|
+| `addanexternalkeyconfigforanorganization` | `POST /organization/external_keys` | Add an external key config for an organization |
 | `admin-api-keys-create` | `POST /organization/admin_api_keys` | Create admin API key |
 | `admin-api-keys-delete` | `DELETE /organization/admin_api_keys/{key_id}` | Delete admin API key |
 | `admin-api-keys-get` | `GET /organization/admin_api_keys/{key_id}` | Retrieve admin API key |
@@ -553,14 +553,19 @@ Use Uploads to upload large files in multiple parts.
 | `create-chat-session-method` | `POST /chatkit/sessions` | Create a ChatKit session |
 | `create-container` | `POST /containers` | Create container |
 | `create-container-file` | `POST /containers/{container_id}/files` | Create container file |
+| `create-platformworkloadidentityfederationrule` | `POST /organization/workload_identity_providers/{workload_identity_provider_id}/federation_rules` | Create Platform workload identity federation rule |
+| `create-platformworkloadidentityprovider` | `POST /organization/workload_identity_providers` | Create Platform workload identity provider |
 | `create-webhook-endpoint` | `POST /webhook_endpoints` | Create Webhook Endpoint |
 | `createan-apikeyforaserviceaccount` | `POST /organization/projects/{project_id}/service_accounts/{service_account_id}/api_keys` | Create an API key for a service account |
 | `createanexternalstorageconfiguration` | `POST /organization/external_storage` | Create an external storage configuration |
 | `createcontentprovenancecheck` | `POST /content_provenance_checks` | Create content provenance check |
 | `delete-container` | `DELETE /containers/{container_id}` | Delete a container |
 | `delete-container-file` | `DELETE /containers/{container_id}/files/{file_id}` | Delete a container file |
+| `delete-platformworkloadidentityfederationrule` | `DELETE /organization/workload_identity_providers/{workload_identity_provider_id}/federation_rules/{workload_identity_federation_rule_id}` | Delete Platform workload identity federation rule |
+| `delete-platformworkloadidentityprovider` | `DELETE /organization/workload_identity_providers/{workload_identity_provider_id}` | Delete Platform workload identity provider |
 | `delete-thread-method` | `DELETE /chatkit/threads/{thread_id}` | Delete a ChatKit thread |
 | `delete-webhook-endpoint` | `DELETE /webhook_endpoints/{webhook_endpoint_id}` | Delete Webhook Endpoint |
+| `deleteanexternalkeyconfigfortheuser'sorganization` | `DELETE /organization/external_keys/{external_key_id}` | Delete an external key config for the user's organization |
 | `deleteanexternalstorageconfiguration` | `DELETE /organization/external_storage/{external_storage_id}` | Delete an external storage configuration |
 | `deleteorganizationspendlimit` | `DELETE /organization/spend_limit` | Delete organization spend limit |
 | `deleteprojectspendlimit` | `DELETE /organization/projects/{project_id}/spend_limit` | Delete project spend limit |
@@ -572,21 +577,32 @@ Use Uploads to upload large files in multiple parts.
 | `getsafetycase` | `GET /safety/cases/{id}` | Get safety case |
 | `list-container-files` | `GET /containers/{container_id}/files` | List container files |
 | `list-containers` | `GET /containers` | List containers |
+| `list-platformworkloadidentityfederationrules` | `GET /organization/workload_identity_providers/{workload_identity_provider_id}/federation_rules` | List Platform workload identity federation rules |
+| `list-platformworkloadidentityproviders` | `GET /organization/workload_identity_providers` | List Platform workload identity providers |
 | `list-thread-items-method` | `GET /chatkit/threads/{thread_id}/items` | List ChatKit thread items |
 | `list-threads-method` | `GET /chatkit/threads` | List ChatKit threads |
 | `list-webhook-endpoints` | `GET /webhook_endpoints` | List Webhook Endpoints |
 | `list-webhook-event-types` | `GET /webhook_event_types` | List Webhook Event Types |
 | `listexternalstorageconfigurations` | `GET /organization/external_storage` | List external storage configurations |
+| `listtheexternalkeyconfigsregisteredontheuser'sorganization` | `GET /organization/external_keys` | List the external key configs registered on the user's organization |
 | `organization-decisionsusage` | `GET /organization/usage/decisions` | Decisions |
 | `retrieve-container` | `GET /containers/{container_id}` | Retrieve container |
 | `retrieve-container-file` | `GET /containers/{container_id}/files/{file_id}` | Retrieve container file |
 | `retrieve-container-file-content` | `GET /containers/{container_id}/files/{file_id}/content` | Retrieve container file content |
+| `retrieve-platformworkloadidentityfederationrule` | `GET /organization/workload_identity_providers/{workload_identity_provider_id}/federation_rules/{workload_identity_federation_rule_id}` | Retrieve Platform workload identity federation rule |
+| `retrieve-platformworkloadidentityprovider` | `GET /organization/workload_identity_providers/{workload_identity_provider_id}` | Retrieve Platform workload identity provider |
 | `retrieve-webhook-endpoint` | `GET /webhook_endpoints/{webhook_endpoint_id}` | Retrieve Webhook Endpoint |
+| `retrieveanexternalkeyregistration` | `GET /organization/external_keys/{external_key_id}` | Retrieve an external key registration |
+| `retrieveprojectservicetiersettings` | `GET /organization/projects/{project_id}/service_tier_settings` | Retrieve project service tier settings |
 | `rotate-webhook-endpoint-signing-secret` | `POST /webhook_endpoints/{webhook_endpoint_id}/rotate_secret` | Rotate Webhook Endpoint Signing Secret |
 | `test-webhook-endpoint` | `POST /webhook_endpoints/{webhook_endpoint_id}/test` | Test Webhook Endpoint |
+| `update-platformworkloadidentityfederationrule` | `POST /organization/workload_identity_providers/{workload_identity_provider_id}/federation_rules/{workload_identity_federation_rule_id}` | Update Platform workload identity federation rule |
+| `update-platformworkloadidentityprovider` | `POST /organization/workload_identity_providers/{workload_identity_provider_id}` | Update Platform workload identity provider |
 | `update-webhook-endpoint` | `POST /webhook_endpoints/{webhook_endpoint_id}` | Update Webhook Endpoint |
 | `updateorganizationspendlimit` | `POST /organization/spend_limit` | Update organization spend limit |
+| `updateprojectservicetiersettings` | `POST /organization/projects/{project_id}/service_tier_settings` | Update project service tier settings |
 | `updateprojectspendlimit` | `POST /organization/projects/{project_id}/spend_limit` | Update project spend limit |
+| `validateanexternalkeyconfigfortheuser'sorganization` | `POST /organization/external_keys/{external_key_id}/validate` | Validate an external key config for the user's organization |
 | `validateanexternalstorageconfiguration` | `POST /organization/external_storage/{external_storage_id}/validate` | Validate an external storage configuration |
 
 ## Usage tips

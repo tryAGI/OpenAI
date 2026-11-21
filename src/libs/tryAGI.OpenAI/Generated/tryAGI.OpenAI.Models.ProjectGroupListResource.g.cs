@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `list`.
         /// </summary>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectGroupListResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectGroupListResourceObject Object { get; set; }
+        public string Object { get; set; } = "list";
 
         /// <summary>
         /// Project group memberships returned in the current page.
@@ -50,11 +50,11 @@ namespace tryAGI.OpenAI
         /// <param name="hasMore">
         /// Whether additional project group memberships are available.
         /// </param>
-        /// <param name="object">
-        /// Always `list`.
-        /// </param>
         /// <param name="next">
         /// Cursor to fetch the next page of results, or `null` when there are no more results.
+        /// </param>
+        /// <param name="object">
+        /// Always `list`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -62,8 +62,8 @@ namespace tryAGI.OpenAI
         public ProjectGroupListResource(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectGroup> data,
             bool hasMore,
-            global::tryAGI.OpenAI.ProjectGroupListResourceObject @object,
-            string? next)
+            string? next,
+            string @object = "list")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

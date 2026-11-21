@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the item. Always `mcp_list_tools`.
         /// </summary>
+        /// <default>"mcp_list_tools"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MCPListToolsTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MCPListToolsType Type { get; set; }
+        public string Type { get; set; } = "mcp_list_tools";
 
         /// <summary>
         /// The unique ID of the list.
@@ -60,10 +60,10 @@ namespace tryAGI.OpenAI
         /// <param name="tools">
         /// The tools available on the server.
         /// </param>
+        /// <param name="error"></param>
         /// <param name="type">
         /// The type of the item. Always `mcp_list_tools`.
         /// </param>
-        /// <param name="error"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -71,8 +71,8 @@ namespace tryAGI.OpenAI
             string id,
             string serverLabel,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MCPListToolsTool> tools,
-            global::tryAGI.OpenAI.MCPListToolsType type,
-            string? error)
+            string? error,
+            string type = "mcp_list_tools")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

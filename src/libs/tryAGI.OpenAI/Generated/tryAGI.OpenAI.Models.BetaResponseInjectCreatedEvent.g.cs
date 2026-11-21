@@ -12,9 +12,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event discriminator. Always `response.inject.created`.
         /// </summary>
+        /// <default>"response.inject.created"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseInjectCreatedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseInjectCreatedEventType Type { get; set; }
+        public string Type { get; set; } = "response.inject.created";
 
         /// <summary>
         /// The ID of the response that accepted the input.
@@ -52,12 +52,12 @@ namespace tryAGI.OpenAI
         /// <param name="sequenceNumber">
         /// The sequence number for this event.
         /// </param>
-        /// <param name="type">
-        /// The event discriminator. Always `response.inject.created`.
-        /// </param>
         /// <param name="streamId">
         /// The multiplexed WebSocket stream that emitted the event. This field is<br/>
         /// present only when WebSocket multiplexing is enabled separately.
+        /// </param>
+        /// <param name="type">
+        /// The event discriminator. Always `response.inject.created`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -65,8 +65,8 @@ namespace tryAGI.OpenAI
         public BetaResponseInjectCreatedEvent(
             string responseId,
             int sequenceNumber,
-            global::tryAGI.OpenAI.BetaResponseInjectCreatedEventType type,
-            string? streamId)
+            string? streamId,
+            string type = "response.inject.created")
         {
             this.Type = type;
             this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));

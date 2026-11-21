@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `session.output_audio.delta`.
         /// </summary>
+        /// <default>"session.output_audio.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionOutputAudioDeltaTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaType Type { get; set; }
+        public string Type { get; set; } = "session.output_audio.delta";
 
         /// <summary>
         /// Base64-encoded translated audio data.
@@ -49,8 +49,7 @@ namespace tryAGI.OpenAI
         /// Audio encoding for `delta`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("format")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionOutputAudioDeltaFormatJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaFormat? Format { get; set; }
+        public string? Format { get; set; }
 
         /// <summary>
         ///
@@ -73,9 +72,6 @@ namespace tryAGI.OpenAI
         /// <param name="delta">
         /// Base64-encoded translated audio data.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `session.output_audio.delta`.
-        /// </param>
         /// <param name="sampleRate">
         /// Sample rate of the audio delta.<br/>
         /// Default Value: 24000
@@ -88,17 +84,20 @@ namespace tryAGI.OpenAI
         /// Audio encoding for `delta`.
         /// </param>
         /// <param name="elapsedMs"></param>
+        /// <param name="type">
+        /// The event type, must be `session.output_audio.delta`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeTranslationServerEventSessionOutputAudioDelta(
             string eventId,
             string delta,
-            global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaType type,
             int? sampleRate,
             int? channels,
-            global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionOutputAudioDeltaFormat? format,
-            int? elapsedMs)
+            string? format,
+            int? elapsedMs,
+            string type = "session.output_audio.delta")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

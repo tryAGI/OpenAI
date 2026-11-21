@@ -4,10 +4,16 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Example: {"id":"resp_001","object":"response.compaction","output":[{"id":"msg_001","status":"completed","type":"message","role":"user","content":[{"type":"input_text","text":"Summarize our launch checklist from last week."}]},{"id":"msg_002","status":"completed","type":"message","role":"user","content":[{"type":"input_text","text":"You are performing a CONTEXT CHECKPOINT COMPACTION..."}]},{"type":"compaction","id":"cmp_001","encrypted_content":"encrypted-summary"}],"created_at":1731459200,"usage":{"input_tokens":42897,"input_tokens_details":{"cached_tokens":0,"cache_write_tokens":0},"output_tokens":12000,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":54897}}
+    /// Example: {"id":"resp_001","object":"response.compaction","image":{"context_compression":"disabled"},"output":[{"id":"msg_001","status":"completed","type":"message","role":"user","content":[{"type":"input_text","text":"Summarize our launch checklist from last week."}]},{"id":"msg_002","status":"completed","type":"message","role":"user","content":[{"type":"input_text","text":"You are performing a CONTEXT CHECKPOINT COMPACTION..."}]},{"type":"compaction","id":"cmp_001","encrypted_content":"encrypted-summary"}],"created_at":1731459200,"usage":{"input_tokens":42897,"input_tokens_details":{"cached_tokens":0,"cache_write_tokens":0},"output_tokens":12000,"output_tokens_details":{"reasoning_tokens":0},"total_tokens":54897}}
     /// </summary>
     public sealed partial class BetaCompactResource
     {
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
+        public global::tryAGI.OpenAI.BetaResolvedImageOptions? Image { get; set; }
+
         /// <summary>
         /// The unique identifier for the compacted response.
         /// </summary>
@@ -66,6 +72,7 @@ namespace tryAGI.OpenAI
         /// <param name="usage">
         /// Token accounting for the compaction pass, including cached, reasoning, and total tokens.
         /// </param>
+        /// <param name="image"></param>
         /// <param name="object">
         /// The object type. Always `response.compaction`.<br/>
         /// Default Value: response.compaction
@@ -78,8 +85,10 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaItemField> output,
             int createdAt,
             global::tryAGI.OpenAI.BetaResponseUsage usage,
+            global::tryAGI.OpenAI.BetaResolvedImageOptions? image,
             global::tryAGI.OpenAI.BetaCompactResourceObject @object = global::tryAGI.OpenAI.BetaCompactResourceObject.ResponseCompaction)
         {
+            this.Image = image;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
             this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));

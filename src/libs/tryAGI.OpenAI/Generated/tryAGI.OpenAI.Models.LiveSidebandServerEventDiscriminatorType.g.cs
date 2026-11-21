@@ -75,6 +75,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        SessionPaused,
+        /// <summary>
+        ///
+        /// </summary>
+        SessionResumed,
+        /// <summary>
+        ///
+        /// </summary>
         SessionStarted,
         /// <summary>
         ///
@@ -92,6 +100,14 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         TransportAnswered,
+        /// <summary>
+        ///
+        /// </summary>
+        TransportDtmfReceived,
+        /// <summary>
+        ///
+        /// </summary>
+        TransportDtmfSent,
         /// <summary>
         ///
         /// </summary>
@@ -130,11 +146,15 @@ namespace tryAGI.OpenAI
                 LiveSidebandServerEventDiscriminatorType.SessionOutputAudioFixturePlayed => "session.output_audio.fixture.played",
                 LiveSidebandServerEventDiscriminatorType.SessionOutputAudioFixturePlaying => "session.output_audio.fixture.playing",
                 LiveSidebandServerEventDiscriminatorType.SessionOutputTranscriptDelta => "session.output_transcript.delta",
+                LiveSidebandServerEventDiscriminatorType.SessionPaused => "session.paused",
+                LiveSidebandServerEventDiscriminatorType.SessionResumed => "session.resumed",
                 LiveSidebandServerEventDiscriminatorType.SessionStarted => "session.started",
                 LiveSidebandServerEventDiscriminatorType.SessionThinkingAppended => "session.thinking.appended",
                 LiveSidebandServerEventDiscriminatorType.SessionUpdated => "session.updated",
                 LiveSidebandServerEventDiscriminatorType.SessionUsageUpdated => "session.usage.updated",
                 LiveSidebandServerEventDiscriminatorType.TransportAnswered => "transport.answered",
+                LiveSidebandServerEventDiscriminatorType.TransportDtmfReceived => "transport.dtmf.received",
+                LiveSidebandServerEventDiscriminatorType.TransportDtmfSent => "transport.dtmf.sent",
                 LiveSidebandServerEventDiscriminatorType.TransportFailed => "transport.failed",
                 LiveSidebandServerEventDiscriminatorType.TransportRinging => "transport.ringing",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -163,11 +183,15 @@ namespace tryAGI.OpenAI
                 "session.output_audio.fixture.played" => LiveSidebandServerEventDiscriminatorType.SessionOutputAudioFixturePlayed,
                 "session.output_audio.fixture.playing" => LiveSidebandServerEventDiscriminatorType.SessionOutputAudioFixturePlaying,
                 "session.output_transcript.delta" => LiveSidebandServerEventDiscriminatorType.SessionOutputTranscriptDelta,
+                "session.paused" => LiveSidebandServerEventDiscriminatorType.SessionPaused,
+                "session.resumed" => LiveSidebandServerEventDiscriminatorType.SessionResumed,
                 "session.started" => LiveSidebandServerEventDiscriminatorType.SessionStarted,
                 "session.thinking.appended" => LiveSidebandServerEventDiscriminatorType.SessionThinkingAppended,
                 "session.updated" => LiveSidebandServerEventDiscriminatorType.SessionUpdated,
                 "session.usage.updated" => LiveSidebandServerEventDiscriminatorType.SessionUsageUpdated,
                 "transport.answered" => LiveSidebandServerEventDiscriminatorType.TransportAnswered,
+                "transport.dtmf.received" => LiveSidebandServerEventDiscriminatorType.TransportDtmfReceived,
+                "transport.dtmf.sent" => LiveSidebandServerEventDiscriminatorType.TransportDtmfSent,
                 "transport.failed" => LiveSidebandServerEventDiscriminatorType.TransportFailed,
                 "transport.ringing" => LiveSidebandServerEventDiscriminatorType.TransportRinging,
                 _ => null,

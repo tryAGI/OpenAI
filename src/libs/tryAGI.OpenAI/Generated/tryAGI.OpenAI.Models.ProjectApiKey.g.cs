@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `organization.project.api_key`
         /// </summary>
+        /// <default>"organization.project.api_key"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectApiKeyObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectApiKeyObject Object { get; set; }
+        public string Object { get; set; } = "organization.project.api_key";
 
         /// <summary>
         /// The redacted value of the API key
@@ -95,14 +95,14 @@ namespace tryAGI.OpenAI
         /// Whether the API key's owner currently has effective access to the project.
         /// </param>
         /// <param name="owner"></param>
-        /// <param name="object">
-        /// The object type, which is always `organization.project.api_key`
-        /// </param>
         /// <param name="expiresAt">
         /// The Unix timestamp (in seconds) when the API key expires, or null if it does not expire.
         /// </param>
         /// <param name="lastUsedAt">
         /// The Unix timestamp (in seconds) of when the API key was last used.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.project.api_key`
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -114,9 +114,9 @@ namespace tryAGI.OpenAI
             string id,
             global::tryAGI.OpenAI.ProjectApiKeyOwnerProjectAccess ownerProjectAccess,
             global::tryAGI.OpenAI.ProjectApiKeyOwner owner,
-            global::tryAGI.OpenAI.ProjectApiKeyObject @object,
             int? expiresAt,
-            int? lastUsedAt)
+            int? lastUsedAt,
+            string @object = "organization.project.api_key")
         {
             this.Object = @object;
             this.RedactedValue = redactedValue ?? throw new global::System.ArgumentNullException(nameof(redactedValue));

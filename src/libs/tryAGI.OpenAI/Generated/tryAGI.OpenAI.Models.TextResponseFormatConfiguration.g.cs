@@ -18,6 +18,11 @@ namespace tryAGI.OpenAI
     public readonly partial struct TextResponseFormatConfiguration : global::System.IEquatable<TextResponseFormatConfiguration>
     {
         /// <summary>
+        ///
+        /// </summary>
+        public global::tryAGI.OpenAI.TextResponseFormatConfigurationDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Default response format. Used to generate text responses.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -204,11 +209,14 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public TextResponseFormatConfiguration(
+            global::tryAGI.OpenAI.TextResponseFormatConfigurationDiscriminatorType? type,
             global::tryAGI.OpenAI.ResponseFormatText? text,
             global::tryAGI.OpenAI.TextResponseFormatJsonSchema? jsonSchema,
             global::tryAGI.OpenAI.ResponseFormatJsonObject? jsonObject
             )
         {
+            Type = type;
+
             Text = text;
             JsonSchema = jsonSchema;
             JsonObject = jsonObject;

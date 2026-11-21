@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `project.spend_alert.deleted`.
         /// </summary>
+        /// <default>"project.spend_alert.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectSpendAlertDeletedResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectSpendAlertDeletedResourceObject Object { get; set; }
+        public string Object { get; set; } = "project.spend_alert.deleted";
 
         /// <summary>
         /// Whether the spend alert was deleted.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public ProjectSpendAlertDeletedResource(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.ProjectSpendAlertDeletedResourceObject @object)
+            string @object = "project.spend_alert.deleted")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

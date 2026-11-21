@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_09CEB760E8D95705.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_13B53ACABE210EB9.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_3D2D1FC406683A2D.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_DF4929221D0AAA8F.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_569B880384C23575.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_6FF7A9019F407735.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.FineTuneDPOHyperparameters))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0139.Create_FineTuneDPOHyperparameters(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0132.Create_FineTuneDPOHyperparameters(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

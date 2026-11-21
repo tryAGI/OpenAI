@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="model">
         /// ID of the model to use. The options are `gpt-transcribe`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.<br/>
-        /// Example: gpt-4o-transcribe
+        /// Example: gpt-transcribe
         /// </param>
         /// <param name="language">
         /// The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `en`) format will improve accuracy and latency.
@@ -109,7 +109,7 @@ namespace tryAGI.OpenAI
             double? temperature = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionInclude>? include = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategyVariant1?, global::tryAGI.OpenAI.VadConfig>? chunkingStrategy = default,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.VadConfig>? chunkingStrategy = default,
             global::System.Collections.Generic.IList<string>? knownSpeakerNames = default,
             global::System.Collections.Generic.IList<string>? knownSpeakerReferences = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
@@ -132,7 +132,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="model">
         /// ID of the model to use. The options are `gpt-transcribe`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.<br/>
-        /// Example: gpt-4o-transcribe
+        /// Example: gpt-transcribe
         /// </param>
         /// <param name="language">
         /// The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `en`) format will improve accuracy and latency.
@@ -188,7 +188,7 @@ namespace tryAGI.OpenAI
             double? temperature = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionInclude>? include = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategyVariant1?, global::tryAGI.OpenAI.VadConfig>? chunkingStrategy = default,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.VadConfig>? chunkingStrategy = default,
             global::System.Collections.Generic.IList<string>? knownSpeakerNames = default,
             global::System.Collections.Generic.IList<string>? knownSpeakerReferences = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
@@ -210,7 +210,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="model">
         /// ID of the model to use. The options are `gpt-transcribe`, `gpt-4o-transcribe`, `gpt-4o-mini-transcribe`, `gpt-4o-mini-transcribe-2025-12-15`, `whisper-1` (which is powered by our open source Whisper V2 model), and `gpt-4o-transcribe-diarize`.<br/>
-        /// Example: gpt-4o-transcribe
+        /// Example: gpt-transcribe
         /// </param>
         /// <param name="language">
         /// The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) (e.g. `en`) format will improve accuracy and latency.
@@ -266,7 +266,7 @@ namespace tryAGI.OpenAI
             double? temperature = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionInclude>? include = default,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities = default,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategyVariant1?, global::tryAGI.OpenAI.VadConfig>? chunkingStrategy = default,
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.VadConfig>? chunkingStrategy = default,
             global::System.Collections.Generic.IList<string>? knownSpeakerNames = default,
             global::System.Collections.Generic.IList<string>? knownSpeakerReferences = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,

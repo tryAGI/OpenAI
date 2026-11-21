@@ -19,10 +19,9 @@ namespace tryAGI.OpenAI
         /// The object type, which is always webhook_endpoint.deleted.<br/>
         /// Default Value: webhook_endpoint.deleted
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.DeletedWebhookEndpointResourceObject.WebhookEndpointDeleted</default>
+        /// <default>"webhook_endpoint.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DeletedWebhookEndpointResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.DeletedWebhookEndpointResourceObject Object { get; set; } = global::tryAGI.OpenAI.DeletedWebhookEndpointResourceObject.WebhookEndpointDeleted;
+        public string Object { get; set; } = "webhook_endpoint.deleted";
 
         /// <summary>
         /// Whether the endpoint was deleted.
@@ -56,7 +55,7 @@ namespace tryAGI.OpenAI
         public DeletedWebhookEndpointResource(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.DeletedWebhookEndpointResourceObject @object = global::tryAGI.OpenAI.DeletedWebhookEndpointResourceObject.WebhookEndpointDeleted)
+            string @object = "webhook_endpoint.deleted")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

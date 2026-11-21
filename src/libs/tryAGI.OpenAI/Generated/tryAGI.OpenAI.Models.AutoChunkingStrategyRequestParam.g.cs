@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `auto`.
         /// </summary>
+        /// <default>"auto"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AutoChunkingStrategyRequestParamTypeJsonConverter))]
-        public global::tryAGI.OpenAI.AutoChunkingStrategyRequestParamType Type { get; set; }
+        public string Type { get; set; } = "auto";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AutoChunkingStrategyRequestParam(
-            global::tryAGI.OpenAI.AutoChunkingStrategyRequestParamType type)
+            string type = "auto")
         {
             this.Type = type;
         }

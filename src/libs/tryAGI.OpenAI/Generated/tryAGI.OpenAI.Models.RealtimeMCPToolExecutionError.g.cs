@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"tool_execution_error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeMCPToolExecutionErrorTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeMCPToolExecutionErrorType Type { get; set; }
+        public string Type { get; set; } = "tool_execution_error";
 
         /// <summary>
         ///
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeMCPToolExecutionError(
             string message,
-            global::tryAGI.OpenAI.RealtimeMCPToolExecutionErrorType type)
+            string type = "tool_execution_error")
         {
             this.Type = type;
             this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
@@ -49,6 +49,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RealtimeMCPToolExecutionError()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RealtimeMCPToolExecutionError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RealtimeMCPToolExecutionError FromMessage(string message)
+        {
+            return new RealtimeMCPToolExecutionError
+            {
+                Message = message,
+            };
         }
 
     }

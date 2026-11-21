@@ -17,7 +17,13 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.AccessProgramsParam? AccessPrograms { get; set; }
 
         /// <summary>
-        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`, which is currently the only supported value. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
+        /// Request level image options.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
+        public global::tryAGI.OpenAI.ImageOptionsParam? Image { get; set; }
+
+        /// <summary>
+        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`. Supported lifetimes depend on the API. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
         public global::tryAGI.OpenAI.ResponsePromptCacheOptionsParam? PromptCacheOptions { get; set; }
@@ -85,6 +91,14 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.ModerationParam? Moderation { get; set; }
 
         /// <summary>
+        /// Options for background execution on HTTP requests. The `2h` and `8h`<br/>
+        /// completion windows require `background: true`, Standard processing,<br/>
+        /// and `stream: false` or omitted.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("background_options")]
+        public global::tryAGI.OpenAI.BackgroundOptionsParam? BackgroundOptions { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
@@ -126,8 +140,11 @@ namespace tryAGI.OpenAI
         /// <param name="accessPrograms">
         /// Domain-specific access programs to use for this request.
         /// </param>
+        /// <param name="image">
+        /// Request level image options.
+        /// </param>
         /// <param name="promptCacheOptions">
-        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`, which is currently the only supported value. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
+        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`. Supported lifetimes depend on the API. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
         /// </param>
         /// <param name="serviceTier"></param>
         /// <param name="reasoning"></param>
@@ -145,6 +162,11 @@ namespace tryAGI.OpenAI
         /// <param name="store"></param>
         /// <param name="instructions"></param>
         /// <param name="moderation"></param>
+        /// <param name="backgroundOptions">
+        /// Options for background execution on HTTP requests. The `2h` and `8h`<br/>
+        /// completion windows require `background: true`, Standard processing,<br/>
+        /// and `stream: false` or omitted.
+        /// </param>
         /// <param name="stream"></param>
         /// <param name="streamOptions"></param>
         /// <param name="conversation"></param>
@@ -155,6 +177,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateResponseVariant3(
             global::tryAGI.OpenAI.AccessProgramsParam? accessPrograms,
+            global::tryAGI.OpenAI.ImageOptionsParam? image,
             global::tryAGI.OpenAI.ResponsePromptCacheOptionsParam? promptCacheOptions,
             global::tryAGI.OpenAI.ServiceTierResponsesEnum? serviceTier,
             global::tryAGI.OpenAI.Reasoning? reasoning,
@@ -164,6 +187,7 @@ namespace tryAGI.OpenAI
             bool? store,
             string? instructions,
             global::tryAGI.OpenAI.ModerationParam? moderation,
+            global::tryAGI.OpenAI.BackgroundOptionsParam? backgroundOptions,
             bool? stream,
             global::tryAGI.OpenAI.ResponseStreamOptionsVariant1? streamOptions,
             global::tryAGI.OpenAI.ConversationParam? conversation,
@@ -171,6 +195,7 @@ namespace tryAGI.OpenAI
             int? maxOutputTokens)
         {
             this.AccessPrograms = accessPrograms;
+            this.Image = image;
             this.PromptCacheOptions = promptCacheOptions;
             this.ServiceTier = serviceTier;
             this.Reasoning = reasoning;
@@ -180,6 +205,7 @@ namespace tryAGI.OpenAI
             this.Store = store;
             this.Instructions = instructions;
             this.Moderation = moderation;
+            this.BackgroundOptions = backgroundOptions;
             this.Stream = stream;
             this.StreamOptions = streamOptions;
             this.Conversation = conversation;

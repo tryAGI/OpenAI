@@ -20,6 +20,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         FunctionCall,
+        /// <summary>
+        ///
+        /// </summary>
+        McpApprovalRequest,
     }
 
     /// <summary>
@@ -37,6 +41,7 @@ namespace tryAGI.OpenAI
                 SessionRequiredActionResourceDiscriminatorType.ComputerUseApprovalRequest => "computer_use_approval_request",
                 SessionRequiredActionResourceDiscriminatorType.EnvironmentConnection => "environment_connection",
                 SessionRequiredActionResourceDiscriminatorType.FunctionCall => "function_call",
+                SessionRequiredActionResourceDiscriminatorType.McpApprovalRequest => "mcp_approval_request",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,6 +55,7 @@ namespace tryAGI.OpenAI
                 "computer_use_approval_request" => SessionRequiredActionResourceDiscriminatorType.ComputerUseApprovalRequest,
                 "environment_connection" => SessionRequiredActionResourceDiscriminatorType.EnvironmentConnection,
                 "function_call" => SessionRequiredActionResourceDiscriminatorType.FunctionCall,
+                "mcp_approval_request" => SessionRequiredActionResourceDiscriminatorType.McpApprovalRequest,
                 _ => null,
             };
         }

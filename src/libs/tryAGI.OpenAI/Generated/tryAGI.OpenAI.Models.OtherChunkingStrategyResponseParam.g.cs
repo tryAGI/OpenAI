@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `other`.
         /// </summary>
+        /// <default>"other"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OtherChunkingStrategyResponseParamTypeJsonConverter))]
-        public global::tryAGI.OpenAI.OtherChunkingStrategyResponseParamType Type { get; set; }
+        public string Type { get; set; } = "other";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public OtherChunkingStrategyResponseParam(
-            global::tryAGI.OpenAI.OtherChunkingStrategyResponseParamType type)
+            string type = "other")
         {
             this.Type = type;
         }

@@ -75,6 +75,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("svg_usage")]
+        public global::tryAGI.OpenAI.SvgUsage? SvgUsage { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("revised_prompt")]
         public string? RevisedPrompt { get; set; }
 
@@ -105,6 +111,7 @@ namespace tryAGI.OpenAI
         /// <param name="action"></param>
         /// <param name="background"></param>
         /// <param name="outputFormat"></param>
+        /// <param name="svgUsage"></param>
         /// <param name="revisedPrompt"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -120,6 +127,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ImageGenActionEnum? action,
             global::tryAGI.OpenAI.ImageBackground? background,
             global::tryAGI.OpenAI.ImageOutputFormat? outputFormat,
+            global::tryAGI.OpenAI.SvgUsage? svgUsage,
             string? revisedPrompt)
         {
             this.Type = type;
@@ -132,6 +140,7 @@ namespace tryAGI.OpenAI
             this.Action = action;
             this.Background = background;
             this.OutputFormat = outputFormat;
+            this.SvgUsage = svgUsage;
             this.RevisedPrompt = revisedPrompt;
         }
 

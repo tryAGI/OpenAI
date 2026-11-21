@@ -4,8 +4,8 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// A configuration update that applies to subsequent responses until it is<br/>
-    /// replaced by another configuration update.
+    /// A configuration update for subsequent responses. Each setting stays in effect<br/>
+    /// until a later update replaces that setting.
     /// </summary>
     public sealed partial class ResponseConfigurationUpdate
     {
@@ -22,16 +22,21 @@ namespace tryAGI.OpenAI
         /// The item type. Always `configuration_update`.<br/>
         /// Default Value: configuration_update
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.ResponseConfigurationUpdateType.ConfigurationUpdate</default>
+        /// <default>"configuration_update"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseConfigurationUpdateTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseConfigurationUpdateType Type { get; set; } = global::tryAGI.OpenAI.ResponseConfigurationUpdateType.ConfigurationUpdate;
+        public string Type { get; set; } = "configuration_update";
 
         /// <summary>
         /// The reasoning configuration applied by this update.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reasoning")]
         public global::tryAGI.OpenAI.ResponseConfigurationUpdateReasoning? Reasoning { get; set; }
+
+        /// <summary>
+        /// The text output configuration for subsequent responses.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        public global::tryAGI.OpenAI.ResponseConfigurationUpdateText? Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,6 +54,9 @@ namespace tryAGI.OpenAI
         /// <param name="reasoning">
         /// The reasoning configuration applied by this update.
         /// </param>
+        /// <param name="text">
+        /// The text output configuration for subsequent responses.
+        /// </param>
         /// <param name="type">
         /// The item type. Always `configuration_update`.<br/>
         /// Default Value: configuration_update
@@ -59,11 +67,13 @@ namespace tryAGI.OpenAI
         public ResponseConfigurationUpdate(
             string id,
             global::tryAGI.OpenAI.ResponseConfigurationUpdateReasoning? reasoning,
-            global::tryAGI.OpenAI.ResponseConfigurationUpdateType type = global::tryAGI.OpenAI.ResponseConfigurationUpdateType.ConfigurationUpdate)
+            global::tryAGI.OpenAI.ResponseConfigurationUpdateText? text,
+            string type = "configuration_update")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;
             this.Reasoning = reasoning;
+            this.Text = text;
         }
 
         /// <summary>

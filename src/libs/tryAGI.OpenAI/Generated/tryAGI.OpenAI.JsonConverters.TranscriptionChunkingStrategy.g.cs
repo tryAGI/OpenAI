@@ -39,7 +39,7 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? @enum = default;
+            string? transcriptionChunkingStrategyVariant1 = default;
             global::tryAGI.OpenAI.VadConfig? vadConfig = default;
             if (__bestIndex >= 0)
             {
@@ -47,9 +47,9 @@ namespace tryAGI.OpenAI.JsonConverters
                 {
                     try
                     {
-                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum> ??
-                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum).Name}");
-                        @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                       throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                        transcriptionChunkingStrategyVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -83,14 +83,14 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (@enum == null && vadConfig == null)
+            if (transcriptionChunkingStrategyVariant1 == null && vadConfig == null)
             {
                 try
                 {
 
-                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum> ??
-                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum).Name}");
-                    @enum = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string> ??
+                                   throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                    transcriptionChunkingStrategyVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -104,7 +104,7 @@ namespace tryAGI.OpenAI.JsonConverters
                 }
             }
 
-            if (@enum == null && vadConfig == null)
+            if (transcriptionChunkingStrategyVariant1 == null && vadConfig == null)
             {
                 try
                 {
@@ -126,7 +126,7 @@ namespace tryAGI.OpenAI.JsonConverters
             }
 
             var __value = new global::tryAGI.OpenAI.TranscriptionChunkingStrategy(
-                @enum,
+                transcriptionChunkingStrategyVariant1,
 
                 vadConfig
                 );
@@ -144,11 +144,11 @@ namespace tryAGI.OpenAI.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
             typeInfoResolver = global::tryAGI.OpenAI.AutoSDKJsonMetadataCachedResolver.Instance;
 
-            if (value.IsEnum)
+            if (value.IsTranscriptionChunkingStrategyVariant1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickEnum(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(string), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<string?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(string).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickTranscriptionChunkingStrategyVariant1(), typeInfo);
             }
             else if (value.IsVadConfig)
             {

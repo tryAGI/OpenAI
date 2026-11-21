@@ -36,7 +36,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem13> Tools { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem4> Tools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -66,7 +66,7 @@ namespace tryAGI.OpenAI
         public NamespaceToolParam(
             string name,
             string description,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem13> tools,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem4> tools,
             global::tryAGI.OpenAI.NamespaceToolParamType type = global::tryAGI.OpenAI.NamespaceToolParamType.Namespace)
         {
             this.Type = type;

@@ -13,10 +13,9 @@ namespace tryAGI.OpenAI
         /// always set to `computer_screenshot`.<br/>
         /// Default Value: computer_screenshot
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.BetaComputerScreenshotImageType.ComputerScreenshot</default>
+        /// <default>"computer_screenshot"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaComputerScreenshotImageTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaComputerScreenshotImageType Type { get; set; } = global::tryAGI.OpenAI.BetaComputerScreenshotImageType.ComputerScreenshot;
+        public string Type { get; set; } = "computer_screenshot";
 
         /// <summary>
         /// The URL of the screenshot image.
@@ -56,7 +55,7 @@ namespace tryAGI.OpenAI
         public BetaComputerScreenshotImage(
             string? imageUrl,
             string? fileId,
-            global::tryAGI.OpenAI.BetaComputerScreenshotImageType type = global::tryAGI.OpenAI.BetaComputerScreenshotImageType.ComputerScreenshot)
+            string type = "computer_screenshot")
         {
             this.Type = type;
             this.ImageUrl = imageUrl;

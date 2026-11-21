@@ -22,7 +22,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem15> Tools { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem11> Tools { get; set; }
 
         /// <summary>
         ///
@@ -51,7 +51,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LiveAllowedToolsChoiceParam(
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem15> tools,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem11> tools,
             global::tryAGI.OpenAI.LiveToolChoiceValueEnum? mode,
             global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamType type = global::tryAGI.OpenAI.LiveAllowedToolsChoiceParamType.AllowedTools)
         {

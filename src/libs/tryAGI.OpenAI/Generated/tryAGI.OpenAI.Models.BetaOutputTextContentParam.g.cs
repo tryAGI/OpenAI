@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         /// Citations associated with the text content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem4>? Annotations { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem3>? Annotations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
 #endif
         public BetaOutputTextContentParam(
             string text,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem4>? annotations,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem3>? annotations,
             global::tryAGI.OpenAI.BetaOutputTextContentParamType type = global::tryAGI.OpenAI.BetaOutputTextContentParamType.OutputText)
         {
             this.Type = type;

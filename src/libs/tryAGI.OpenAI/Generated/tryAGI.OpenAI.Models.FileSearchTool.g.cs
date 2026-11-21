@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filters")]
-        public global::tryAGI.OpenAI.Filters2? Filters { get; set; }
+        public global::tryAGI.OpenAI.Filters? Filters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -72,7 +72,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string> vectorStoreIds,
             int? maxNumResults,
             global::tryAGI.OpenAI.RankingOptions? rankingOptions,
-            global::tryAGI.OpenAI.Filters2? filters,
+            global::tryAGI.OpenAI.Filters? filters,
             global::tryAGI.OpenAI.FileSearchToolType type = global::tryAGI.OpenAI.FileSearchToolType.FileSearch)
         {
             this.Type = type;

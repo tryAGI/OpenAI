@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the item. Always `mcp_call`.
         /// </summary>
+        /// <default>"mcp_call"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MCPToolCallTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MCPToolCallType Type { get; set; }
+        public string Type { get; set; } = "mcp_call";
 
         /// <summary>
         /// The unique ID of the tool call.
@@ -89,9 +89,6 @@ namespace tryAGI.OpenAI
         /// <param name="arguments">
         /// A JSON string of the arguments passed to the tool.
         /// </param>
-        /// <param name="type">
-        /// The type of the item. Always `mcp_call`.
-        /// </param>
         /// <param name="output"></param>
         /// <param name="error">
         /// The error from the tool call, if any.
@@ -100,6 +97,9 @@ namespace tryAGI.OpenAI
         /// The status of the tool call. One of `in_progress`, `completed`, `incomplete`, `calling`, or `failed`.
         /// </param>
         /// <param name="approvalRequestId"></param>
+        /// <param name="type">
+        /// The type of the item. Always `mcp_call`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -108,11 +108,11 @@ namespace tryAGI.OpenAI
             string serverLabel,
             string name,
             string arguments,
-            global::tryAGI.OpenAI.MCPToolCallType type,
             string? output,
             global::tryAGI.OpenAI.MCPToolCallError? error,
             global::tryAGI.OpenAI.MCPToolCallStatus? status,
-            string? approvalRequestId)
+            string? approvalRequestId,
+            string type = "mcp_call")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

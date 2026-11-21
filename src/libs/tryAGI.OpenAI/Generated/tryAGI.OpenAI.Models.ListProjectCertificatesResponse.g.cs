@@ -39,9 +39,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ListProjectCertificatesResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ListProjectCertificatesResponseObject Object { get; set; }
+        public string Object { get; set; } = "list";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
             bool hasMore,
             string? firstId,
             string? lastId,
-            global::tryAGI.OpenAI.ListProjectCertificatesResponseObject @object)
+            string @object = "list")
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId;

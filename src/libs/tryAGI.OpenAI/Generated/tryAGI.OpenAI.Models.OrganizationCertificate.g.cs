@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `organization.certificate`.
         /// </summary>
+        /// <default>"organization.certificate"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OrganizationCertificateObjectJsonConverter))]
-        public global::tryAGI.OpenAI.OrganizationCertificateObject Object { get; set; }
+        public string Object { get; set; } = "organization.certificate";
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints
@@ -68,11 +68,11 @@ namespace tryAGI.OpenAI
         /// <param name="active">
         /// Whether the certificate is currently active at the organization level.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `organization.certificate`.
-        /// </param>
         /// <param name="name">
         /// The name of the certificate.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.certificate`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -82,8 +82,8 @@ namespace tryAGI.OpenAI
             int createdAt,
             global::tryAGI.OpenAI.OrganizationCertificateCertificateDetails certificateDetails,
             bool active,
-            global::tryAGI.OpenAI.OrganizationCertificateObject @object,
-            string? name)
+            string? name,
+            string @object = "organization.certificate")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

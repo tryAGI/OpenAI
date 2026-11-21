@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `conversation.item.delete`.
         /// </summary>
+        /// <default>"conversation.item.delete"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeClientEventConversationItemDeleteTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeClientEventConversationItemDeleteType Type { get; set; }
+        public string Type { get; set; } = "conversation.item.delete";
 
         /// <summary>
         /// The ID of the item to delete.
@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
         public RealtimeClientEventConversationItemDelete(
             string itemId,
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeClientEventConversationItemDeleteType type)
+            string type = "conversation.item.delete")
         {
             this.EventId = eventId;
             this.Type = type;
@@ -67,6 +67,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RealtimeClientEventConversationItemDelete()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RealtimeClientEventConversationItemDelete"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RealtimeClientEventConversationItemDelete FromItemId(string itemId)
+        {
+            return new RealtimeClientEventConversationItemDelete
+            {
+                ItemId = itemId,
+            };
         }
 
     }

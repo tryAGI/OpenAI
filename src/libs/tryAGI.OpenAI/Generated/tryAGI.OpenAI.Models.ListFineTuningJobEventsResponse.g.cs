@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ListFineTuningJobEventsResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ListFineTuningJobEventsResponseObject Object { get; set; }
+        public string Object { get; set; } = "list";
 
         /// <summary>
         ///
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         public ListFineTuningJobEventsResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningJobEvent> data,
             bool hasMore,
-            global::tryAGI.OpenAI.ListFineTuningJobEventsResponseObject @object)
+            string @object = "list")
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Object = @object;

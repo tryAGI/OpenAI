@@ -24,9 +24,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event discriminator. Always `response.steer.pending`.
         /// </summary>
+        /// <default>"response.steer.pending"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseSteerPendingEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseSteerPendingEventType Type { get; set; }
+        public string Type { get; set; } = "response.steer.pending";
 
         /// <summary>
         /// The sequence number for this event.
@@ -95,12 +95,12 @@ namespace tryAGI.OpenAI
         /// approval decisions. Each stub contains identifying fields only; the<br/>
         /// client supplies the result before including it in `response.create`.
         /// </param>
-        /// <param name="type">
-        /// The event discriminator. Always `response.steer.pending`.
-        /// </param>
         /// <param name="streamId">
         /// The WebSocket lane that emitted this event. This field is present when<br/>
         /// the target response's `response.create` event supplied a `stream_id`.
+        /// </param>
+        /// <param name="type">
+        /// The event discriminator. Always `response.steer.pending`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -110,8 +110,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ResponseSteerPendingEventSteer steer,
             global::tryAGI.OpenAI.ResponseSteerPendingReason reason,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseSteerRequiredInput> requiredInput,
-            global::tryAGI.OpenAI.ResponseSteerPendingEventType type,
-            string? streamId)
+            string? streamId,
+            string type = "response.steer.pending")
         {
             this.Type = type;
             this.SequenceNumber = sequenceNumber;

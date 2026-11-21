@@ -10,7 +10,7 @@ internal static partial class ResponsesCompactconversationCommandApiCommand
     private static Option<global::tryAGI.OpenAI.ModelIdsCompaction?> Model { get; } = new(
         name: @"--model")
     {
-        Description = @"Model ID used to generate the response, like `gpt-6-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.",
+        Description = @"Model ID used to generate the response, like `gpt-6.2-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.",
     };
 
     private static Option<global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>>?> InputOption { get; } = new(
@@ -31,6 +31,12 @@ internal static partial class ResponsesCompactconversationCommandApiCommand
         Description = @"",
     };
 
+    private static Option<global::tryAGI.OpenAI.ImageOptionsParam?> Image { get; } = new(
+        name: @"--image")
+    {
+        Description = @"Request level image options.",
+    };
+
     private static Option<string?> PromptCacheKey { get; } = new(
         name: @"--prompt-cache-key")
     {
@@ -49,7 +55,7 @@ internal static partial class ResponsesCompactconversationCommandApiCommand
         Description = @"",
     };
 
-    private static Option<global::tryAGI.OpenAI.ServiceTierEnum2?> ServiceTier { get; } = new(
+    private static Option<global::tryAGI.OpenAI.ServiceTierEnum?> ServiceTier { get; } = new(
         name: @"--service-tier")
     {
         Description = @"",
@@ -103,6 +109,7 @@ Learn when and how to compact long-running conversations in the [conversation st
                         command.Options.Add(InputOption);
                         command.Options.Add(PreviousResponseId);
                         command.Options.Add(Instructions);
+                        command.Options.Add(Image);
                         command.Options.Add(PromptCacheKey);
                         command.Options.Add(PromptCacheRetention);
                         command.Options.Add(PromptCacheOptions);
@@ -136,6 +143,7 @@ Learn when and how to compact long-running conversations in the [conversation st
                         var input = CliRuntime.WasSpecified(parseResult, InputOption) ? parseResult.GetValue(InputOption) : (__requestBase is { } __InputBaseValue ? __InputBaseValue.Input : default);
                         var previousResponseId = CliRuntime.WasSpecified(parseResult, PreviousResponseId) ? parseResult.GetValue(PreviousResponseId) : (__requestBase is { } __PreviousResponseIdBaseValue ? __PreviousResponseIdBaseValue.PreviousResponseId : default);
                         var instructions = CliRuntime.WasSpecified(parseResult, Instructions) ? parseResult.GetValue(Instructions) : (__requestBase is { } __InstructionsBaseValue ? __InstructionsBaseValue.Instructions : default);
+                        var image = CliRuntime.WasSpecified(parseResult, Image) ? parseResult.GetValue(Image) : (__requestBase is { } __ImageBaseValue ? __ImageBaseValue.Image : default);
                         var promptCacheKey = CliRuntime.WasSpecified(parseResult, PromptCacheKey) ? parseResult.GetValue(PromptCacheKey) : (__requestBase is { } __PromptCacheKeyBaseValue ? __PromptCacheKeyBaseValue.PromptCacheKey : default);
                         var promptCacheRetention = CliRuntime.WasSpecified(parseResult, PromptCacheRetention) ? parseResult.GetValue(PromptCacheRetention) : (__requestBase is { } __PromptCacheRetentionBaseValue ? __PromptCacheRetentionBaseValue.PromptCacheRetention : default);
                         var promptCacheOptions = CliRuntime.WasSpecified(parseResult, PromptCacheOptions) ? parseResult.GetValue(PromptCacheOptions) : (__requestBase is { } __PromptCacheOptionsBaseValue ? __PromptCacheOptionsBaseValue.PromptCacheOptions : default);
@@ -148,6 +156,7 @@ Learn when and how to compact long-running conversations in the [conversation st
                                     input: input,
                                     previousResponseId: previousResponseId,
                                     instructions: instructions,
+                                    image: image,
                                     promptCacheKey: promptCacheKey,
                                     promptCacheRetention: promptCacheRetention,
                                     promptCacheOptions: promptCacheOptions,

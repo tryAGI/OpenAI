@@ -35,15 +35,14 @@ namespace tryAGI.OpenAI
         /// The object of the event. Always `event`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookRealtimeCallIncomingObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookRealtimeCallIncomingObject? Object { get; set; }
+        public string? Object { get; set; }
 
         /// <summary>
         /// The type of the event. Always `realtime.call.incoming`.
         /// </summary>
+        /// <default>"realtime.call.incoming"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookRealtimeCallIncomingTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookRealtimeCallIncomingType Type { get; set; }
+        public string Type { get; set; } = "realtime.call.incoming";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -76,8 +75,8 @@ namespace tryAGI.OpenAI
             int createdAt,
             string id,
             global::tryAGI.OpenAI.WebhookRealtimeCallIncomingData data,
-            global::tryAGI.OpenAI.WebhookRealtimeCallIncomingObject? @object,
-            global::tryAGI.OpenAI.WebhookRealtimeCallIncomingType type)
+            string? @object,
+            string type = "realtime.call.incoming")
         {
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

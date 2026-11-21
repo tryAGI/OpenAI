@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `project.group`.
         /// </summary>
+        /// <default>"project.group"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectGroupObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectGroupObject Object { get; set; }
+        public string Object { get; set; } = "project.group";
 
         /// <summary>
         /// Identifier of the project.
@@ -87,7 +87,7 @@ namespace tryAGI.OpenAI
             string groupName,
             global::tryAGI.OpenAI.ProjectGroupGroupType groupType,
             int createdAt,
-            global::tryAGI.OpenAI.ProjectGroupObject @object)
+            string @object = "project.group")
         {
             this.Object = @object;
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));

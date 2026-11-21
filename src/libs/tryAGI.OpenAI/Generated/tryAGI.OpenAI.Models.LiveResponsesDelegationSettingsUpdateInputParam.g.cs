@@ -48,7 +48,7 @@ namespace tryAGI.OpenAI
         /// Tools available to the Responses backend while it handles tasks delegated by the Live model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem17>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem18>? Tools { get; set; }
 
         /// <summary>
         /// Controls which tool the Responses backend uses when handling a task delegated by the Live model.
@@ -97,7 +97,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.LiveResponsesServiceTier? serviceTier,
             global::tryAGI.OpenAI.LiveDelegationReasoningInputParam? reasoning,
             global::tryAGI.OpenAI.LiveDelegationTextInputParam? text,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem17>? tools,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ToolsItem18>? tools,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.LiveToolChoiceEnum?, global::tryAGI.OpenAI.ToolChoiceVariant22?, global::tryAGI.OpenAI.LiveAllowedToolsChoiceParam>? toolChoice,
             bool? parallelToolCalls)
         {

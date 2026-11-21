@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, must be `certificate.deleted`.
         /// </summary>
+        /// <default>"certificate.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DeleteCertificateResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.DeleteCertificateResponseObject Object { get; set; }
+        public string Object { get; set; } = "certificate.deleted";
 
         /// <summary>
         /// The ID of the certificate that was deleted.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public DeleteCertificateResponse(
             string id,
-            global::tryAGI.OpenAI.DeleteCertificateResponseObject @object)
+            string @object = "certificate.deleted")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public DeleteCertificateResponse()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="DeleteCertificateResponse"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static DeleteCertificateResponse FromId(string id)
+        {
+            return new DeleteCertificateResponse
+            {
+                Id = id,
+            };
         }
 
     }
