@@ -297,6 +297,11 @@ public static class CustomProviders
     public const string AudraBaseUrl = "https://audratalks.com/v1";
 
     /// <summary>
+    /// https://cheaperinference.com/docs
+    /// </summary>
+    public const string CheaperInferenceBaseUrl = "https://api.cheaperinference.com/v1";
+
+    /// <summary>
     /// Creates an API to use for GitHub Models: https://github.com/marketplace/models
     /// </summary>
     /// <returns></returns>
@@ -826,6 +831,15 @@ public static class CustomProviders
     public static OpenAiClient Audra(string apiKey)
     {
         return new OpenAiClient(apiKey, baseUri: new Uri(AudraBaseUrl));
+    }
+
+    /// <summary>
+    /// Create an API to use for Cheaper Inference.
+    /// </summary>
+    /// <returns></returns>
+    public static OpenAiClient CheaperInference(string apiKey)
+    {
+        return new OpenAiClient(apiKey, baseUri: new Uri(CheaperInferenceBaseUrl));
     }
 }
 
