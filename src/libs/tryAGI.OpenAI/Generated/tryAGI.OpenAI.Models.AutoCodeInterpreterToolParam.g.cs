@@ -33,8 +33,8 @@ namespace tryAGI.OpenAI
         /// Network access policy for the container.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("network_policy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.NetworkPolicy2JsonConverter))]
-        public global::tryAGI.OpenAI.NetworkPolicy2? NetworkPolicy { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.NetworkPolicy4JsonConverter))]
+        public global::tryAGI.OpenAI.NetworkPolicy4? NetworkPolicy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -62,7 +62,7 @@ namespace tryAGI.OpenAI
         public AutoCodeInterpreterToolParam(
             global::System.Collections.Generic.IList<string>? fileIds,
             global::tryAGI.OpenAI.ContainerMemoryLimit? memoryLimit,
-            global::tryAGI.OpenAI.NetworkPolicy2? networkPolicy,
+            global::tryAGI.OpenAI.NetworkPolicy4? networkPolicy,
             global::tryAGI.OpenAI.AutoCodeInterpreterToolParamType type = global::tryAGI.OpenAI.AutoCodeInterpreterToolParamType.Auto)
         {
             this.Type = type;

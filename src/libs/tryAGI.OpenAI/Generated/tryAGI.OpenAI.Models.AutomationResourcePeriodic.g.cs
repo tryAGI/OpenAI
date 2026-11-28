@@ -72,6 +72,14 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.AutomationCreatedByResource CreatedBy { get; set; }
 
         /// <summary>
+        /// Why the service paused this schedule, or null for other schedules.<br/>
+        /// Default Value: target_session_failed
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("pause_reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AutomationResourcePeriodicPauseReasonJsonConverter))]
+        public global::tryAGI.OpenAI.AutomationResourcePeriodicPauseReason? PauseReason { get; set; }
+
+        /// <summary>
         /// The cron expression determining scheduled occurrences.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expression")]
@@ -129,6 +137,10 @@ namespace tryAGI.OpenAI
         /// <param name="status">
         /// Whether scheduled delivery is active or paused.
         /// </param>
+        /// <param name="pauseReason">
+        /// Why the service paused this schedule, or null for other schedules.<br/>
+        /// Default Value: target_session_failed
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `periodic`.<br/>
         /// Default Value: periodic
@@ -150,6 +162,7 @@ namespace tryAGI.OpenAI
             string expression,
             string timezone,
             global::tryAGI.OpenAI.PeriodicAutomationStatusResource status,
+            global::tryAGI.OpenAI.AutomationResourcePeriodicPauseReason? pauseReason,
             global::tryAGI.OpenAI.AutomationResourcePeriodicType type = global::tryAGI.OpenAI.AutomationResourcePeriodicType.Periodic,
             global::tryAGI.OpenAI.AutomationResourcePeriodicObject @object = global::tryAGI.OpenAI.AutomationResourcePeriodicObject.AgentAutomation)
         {
@@ -161,6 +174,7 @@ namespace tryAGI.OpenAI
             this.Target = target;
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.CreatedBy = createdBy;
+            this.PauseReason = pauseReason;
             this.Expression = expression ?? throw new global::System.ArgumentNullException(nameof(expression));
             this.Timezone = timezone ?? throw new global::System.ArgumentNullException(nameof(timezone));
             this.Status = status;

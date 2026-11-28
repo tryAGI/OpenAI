@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"audio.voice_consent"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceConsentDeletedResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.VoiceConsentDeletedResourceObject Object { get; set; }
+        public string Object { get; set; } = "audio.voice_consent";
 
         /// <summary>
         ///
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         public VoiceConsentDeletedResource(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.VoiceConsentDeletedResourceObject @object)
+            string @object = "audio.voice_consent")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

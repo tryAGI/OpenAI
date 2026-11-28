@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `message_creation`.
         /// </summary>
+        /// <default>"message_creation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDetailsMessageCreationObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDetailsMessageCreationObjectType Type { get; set; }
+        public string Type { get; set; } = "message_creation";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public RunStepDetailsMessageCreationObject(
             global::tryAGI.OpenAI.RunStepDetailsMessageCreationObjectMessageCreation messageCreation,
-            global::tryAGI.OpenAI.RunStepDetailsMessageCreationObjectType type)
+            string type = "message_creation")
         {
             this.Type = type;
             this.MessageCreation = messageCreation ?? throw new global::System.ArgumentNullException(nameof(messageCreation));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RunStepDetailsMessageCreationObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RunStepDetailsMessageCreationObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RunStepDetailsMessageCreationObject FromMessageCreation(global::tryAGI.OpenAI.RunStepDetailsMessageCreationObjectMessageCreation messageCreation)
+        {
+            return new RunStepDetailsMessageCreationObject
+            {
+                MessageCreation = messageCreation,
+            };
         }
 
     }

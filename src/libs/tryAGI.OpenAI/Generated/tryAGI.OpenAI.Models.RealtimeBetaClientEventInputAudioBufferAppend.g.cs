@@ -25,9 +25,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `input_audio_buffer.append`.
         /// </summary>
+        /// <default>"input_audio_buffer.append"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaClientEventInputAudioBufferAppendTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferAppendType Type { get; set; }
+        public string Type { get; set; } = "input_audio_buffer.append";
 
         /// <summary>
         /// Base64-encoded audio bytes. This must be in the format specified by the <br/>
@@ -62,7 +62,7 @@ namespace tryAGI.OpenAI
         public RealtimeBetaClientEventInputAudioBufferAppend(
             string audio,
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferAppendType type)
+            string type = "input_audio_buffer.append")
         {
             this.EventId = eventId;
             this.Type = type;
@@ -74,6 +74,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RealtimeBetaClientEventInputAudioBufferAppend()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RealtimeBetaClientEventInputAudioBufferAppend"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RealtimeBetaClientEventInputAudioBufferAppend FromAudio(string audio)
+        {
+            return new RealtimeBetaClientEventInputAudioBufferAppend
+            {
+                Audio = audio,
+            };
         }
 
     }

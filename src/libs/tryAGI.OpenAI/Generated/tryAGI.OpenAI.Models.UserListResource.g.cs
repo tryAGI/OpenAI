@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `list`.
         /// </summary>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UserListResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UserListResourceObject Object { get; set; }
+        public string Object { get; set; } = "list";
 
         /// <summary>
         /// Users in the current page.
@@ -50,11 +50,11 @@ namespace tryAGI.OpenAI
         /// <param name="hasMore">
         /// Whether more users are available when paginating.
         /// </param>
-        /// <param name="object">
-        /// Always `list`.
-        /// </param>
         /// <param name="next">
         /// Cursor to fetch the next page of results, or `null` when no further users are available.
+        /// </param>
+        /// <param name="object">
+        /// Always `list`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -62,8 +62,8 @@ namespace tryAGI.OpenAI
         public UserListResource(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.GroupUser> data,
             bool hasMore,
-            global::tryAGI.OpenAI.UserListResourceObject @object,
-            string? next)
+            string? next,
+            string @object = "list")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

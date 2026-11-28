@@ -37,7 +37,7 @@ See the [fine-tuning guide](https://developers.openai.com/api/docs/guides/model-
     {
         Description = @"A string of up to 64 characters that will be added to your fine-tuned model name.
 
-For example, a `suffix` of ""custom-model-name"" would produce a model name like `ft:gpt-4o-mini:openai:custom-model-name:7p4lURel`.
+For example, a `suffix` of ""custom-model-name"" would produce a model name like `ft:gpt-4.1-mini-2025-04-14:openai:custom-model-name:7p4lURel`.
 ",
     };
 

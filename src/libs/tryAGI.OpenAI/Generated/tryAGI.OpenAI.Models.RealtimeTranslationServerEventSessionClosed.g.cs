@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `session.closed`.
         /// </summary>
+        /// <default>"session.closed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionClosedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosedType Type { get; set; }
+        public string Type { get; set; } = "session.closed";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeTranslationServerEventSessionClosed(
             string eventId,
-            global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionClosedType type)
+            string type = "session.closed")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RealtimeTranslationServerEventSessionClosed()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RealtimeTranslationServerEventSessionClosed"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RealtimeTranslationServerEventSessionClosed FromEventId(string eventId)
+        {
+            return new RealtimeTranslationServerEventSessionClosed
+            {
+                EventId = eventId,
+            };
         }
 
     }

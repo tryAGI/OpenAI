@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"organization.usage.file_searches.result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UsageFileSearchCallsResultObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UsageFileSearchCallsResultObject Object { get; set; }
+        public string Object { get; set; } = "organization.usage.file_searches.result";
 
         /// <summary>
         /// The count of file search calls.
@@ -58,21 +58,21 @@ namespace tryAGI.OpenAI
         /// <param name="numRequests">
         /// The count of file search calls.
         /// </param>
-        /// <param name="object"></param>
         /// <param name="projectId"></param>
         /// <param name="userId"></param>
         /// <param name="apiKeyId"></param>
         /// <param name="vectorStoreId"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageFileSearchCallsResult(
             int numRequests,
-            global::tryAGI.OpenAI.UsageFileSearchCallsResultObject @object,
             string? projectId,
             string? userId,
             string? apiKeyId,
-            string? vectorStoreId)
+            string? vectorStoreId,
+            string @object = "organization.usage.file_searches.result")
         {
             this.Object = @object;
             this.NumRequests = numRequests;
@@ -87,6 +87,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public UsageFileSearchCallsResult()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="UsageFileSearchCallsResult"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static UsageFileSearchCallsResult FromNumRequests(int numRequests)
+        {
+            return new UsageFileSearchCallsResult
+            {
+                NumRequests = numRequests,
+            };
         }
 
     }

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `image_url`.
         /// </summary>
+        /// <default>"image_url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateModerationRequestInputVariant3ItemVariant1TypeJsonConverter))]
-        public global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1Type Type { get; set; }
+        public string Type { get; set; } = "image_url";
 
         /// <summary>
         /// Contains either an image URL or a data URL for a base64 encoded image.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateModerationRequestInputVariant3ItemVariant1(
             global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1ImageUrl imageUrl,
-            global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1Type type)
+            string type = "image_url")
         {
             this.Type = type;
             this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public CreateModerationRequestInputVariant3ItemVariant1()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="CreateModerationRequestInputVariant3ItemVariant1"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CreateModerationRequestInputVariant3ItemVariant1 FromImageUrl(global::tryAGI.OpenAI.CreateModerationRequestInputVariant3ItemVariant1ImageUrl imageUrl)
+        {
+            return new CreateModerationRequestInputVariant3ItemVariant1
+            {
+                ImageUrl = imageUrl,
+            };
         }
 
     }

@@ -120,6 +120,13 @@ namespace tryAGI.OpenAI.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.SessionEventAgentSessionIdle)}");
                 agentSessionIdle = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::tryAGI.OpenAI.SessionEventAgentSessionBudgetReached? agentSessionBudgetReached = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.SessionEventDiscriminatorType.AgentSessionBudgetReached)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionBudgetReached), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionEventAgentSessionBudgetReached> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.SessionEventAgentSessionBudgetReached)}");
+                agentSessionBudgetReached = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.SessionEventAgentSessionInProgress? agentSessionInProgress = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.SessionEventDiscriminatorType.AgentSessionInProgress)
             {
@@ -284,6 +291,8 @@ namespace tryAGI.OpenAI.JsonConverters
 
                 agentSessionIdle,
 
+                agentSessionBudgetReached,
+
                 agentSessionInProgress,
 
                 agentSessionRequiresAction,
@@ -419,6 +428,12 @@ namespace tryAGI.OpenAI.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionIdle), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionEventAgentSessionIdle?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SessionEventAgentSessionIdle).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentSessionIdle(), typeInfo);
+            }
+            else if (value.IsAgentSessionBudgetReached)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionEventAgentSessionBudgetReached), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionEventAgentSessionBudgetReached?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SessionEventAgentSessionBudgetReached).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickAgentSessionBudgetReached(), typeInfo);
             }
             else if (value.IsAgentSessionInProgress)
             {

@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always "checkpoint.permission".
         /// </summary>
+        /// <default>"checkpoint.permission"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DeleteFineTuningCheckpointPermissionResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.DeleteFineTuningCheckpointPermissionResponseObject Object { get; set; }
+        public string Object { get; set; } = "checkpoint.permission";
 
         /// <summary>
         /// Whether the fine-tuned model checkpoint permission was successfully deleted.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public DeleteFineTuningCheckpointPermissionResponse(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.DeleteFineTuningCheckpointPermissionResponseObject @object)
+            string @object = "checkpoint.permission")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

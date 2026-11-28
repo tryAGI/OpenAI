@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `thread.message`.
         /// </summary>
+        /// <default>"thread.message"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageObjectObjectJsonConverter))]
-        public global::tryAGI.OpenAI.MessageObjectObject Object { get; set; }
+        public string Object { get; set; } = "thread.message";
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the message was created.
@@ -128,9 +128,6 @@ namespace tryAGI.OpenAI
         /// <param name="content">
         /// The content of the message in array of text and/or images.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `thread.message`.
-        /// </param>
         /// <param name="incompleteDetails"></param>
         /// <param name="completedAt"></param>
         /// <param name="incompleteAt"></param>
@@ -138,6 +135,9 @@ namespace tryAGI.OpenAI
         /// <param name="runId"></param>
         /// <param name="attachments"></param>
         /// <param name="metadata"></param>
+        /// <param name="object">
+        /// The object type, which is always `thread.message`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -148,14 +148,14 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.MessageObjectStatus status,
             global::tryAGI.OpenAI.MessageObjectRole role,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.MessageContentImageFileObject, global::tryAGI.OpenAI.MessageContentImageUrlObject, global::tryAGI.OpenAI.MessageContentTextObject, global::tryAGI.OpenAI.MessageContentRefusalObject>> content,
-            global::tryAGI.OpenAI.MessageObjectObject @object,
             global::tryAGI.OpenAI.MessageObjectIncompleteDetails? incompleteDetails,
             int? completedAt,
             int? incompleteAt,
             string? assistantId,
             string? runId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.MessageObjectAttachmentsVariant1Item>? attachments,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            string @object = "thread.message")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

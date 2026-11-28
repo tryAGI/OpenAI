@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `thread.run.step.delta`.
         /// </summary>
+        /// <default>"thread.run.step.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDeltaObjectObjectJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDeltaObjectObject Object { get; set; }
+        public string Object { get; set; } = "thread.run.step.delta";
 
         /// <summary>
         /// The delta containing the fields that have changed on the run step.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public RunStepDeltaObject(
             string id,
             global::tryAGI.OpenAI.RunStepDeltaObjectDelta delta,
-            global::tryAGI.OpenAI.RunStepDeltaObjectObject @object)
+            string @object = "thread.run.step.delta")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

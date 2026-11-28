@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"thread.run.step.created"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepStreamEventVariant1EventJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant1Event Event { get; set; }
+        public string Event { get; set; } = "thread.run.step.created";
 
         /// <summary>
         /// Represents a step in execution of a run.
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public RunStepStreamEventVariant1(
             global::tryAGI.OpenAI.RunStepObject data,
-            global::tryAGI.OpenAI.RunStepStreamEventVariant1Event @event)
+            string @event = "thread.run.step.created")
         {
             this.Event = @event;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RunStepStreamEventVariant1()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RunStepStreamEventVariant1"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RunStepStreamEventVariant1 FromData(global::tryAGI.OpenAI.RunStepObject data)
+        {
+            return new RunStepStreamEventVariant1
+            {
+                Data = data,
+            };
         }
 
     }

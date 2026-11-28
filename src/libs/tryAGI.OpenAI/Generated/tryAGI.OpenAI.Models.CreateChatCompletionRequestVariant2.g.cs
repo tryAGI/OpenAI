@@ -11,6 +11,12 @@ namespace tryAGI.OpenAI
     public sealed partial class CreateChatCompletionRequestVariant2
     {
         /// <summary>
+        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`. Supported lifetimes depend on the API. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
+        public global::tryAGI.OpenAI.PromptCacheOptionsParam? PromptCacheOptions { get; set; }
+
+        /// <summary>
         /// A list of messages comprising the conversation so far. Depending on the<br/>
         /// [model](https://developers.openai.com/api/docs/models) you use, different message types (modalities) are<br/>
         /// supported, like [text](https://developers.openai.com/api/docs/guides/text),<br/>
@@ -21,13 +27,13 @@ namespace tryAGI.OpenAI
         public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage> Messages { get; set; }
 
         /// <summary>
-        /// Model ID used to generate the response, like `gpt-6-astra` or `o3`. OpenAI<br/>
+        /// Model ID used to generate the response, like `gpt-6.2-astra`. OpenAI<br/>
         /// offers a wide range of models with different capabilities, performance<br/>
         /// characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models)<br/>
         /// to browse and compare available models.<br/>
-        /// Example: gpt-6-astra
+        /// Example: gpt-6.2-astra
         /// </summary>
-        /// <example>gpt-6-astra</example>
+        /// <example>gpt-6.2-astra</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsSharedJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -37,7 +43,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
-        public global::tryAGI.OpenAI.ServiceTierEnum? ServiceTier { get; set; }
+        public global::tryAGI.OpenAI.ServiceTierEnum2? ServiceTier { get; set; }
 
         /// <summary>
         ///
@@ -147,7 +153,7 @@ namespace tryAGI.OpenAI
         public bool? Stream { get; set; }
 
         /// <summary>
-        /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
+        /// Not supported with reasoning models `o3` and `o4-mini`.<br/>
         /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
         /// returned text will not contain the stop sequence.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -190,7 +196,7 @@ namespace tryAGI.OpenAI
         public int? MaxTokens { get; set; }
 
         /// <summary>
-        /// How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.<br/>
+        /// How many chat completion choices to generate for each input message. Omit `n` to generate one choice. Newer models reject an explicit `n`, even `n=1`. When requesting multiple choices, you are billed for generated tokens across all choices.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
@@ -289,11 +295,14 @@ namespace tryAGI.OpenAI
         /// [images](https://developers.openai.com/api/docs/guides/images-vision), and [audio](https://developers.openai.com/api/docs/guides/audio).
         /// </param>
         /// <param name="model">
-        /// Model ID used to generate the response, like `gpt-6-astra` or `o3`. OpenAI<br/>
+        /// Model ID used to generate the response, like `gpt-6.2-astra`. OpenAI<br/>
         /// offers a wide range of models with different capabilities, performance<br/>
         /// characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models)<br/>
         /// to browse and compare available models.<br/>
-        /// Example: gpt-6-astra
+        /// Example: gpt-6.2-astra
+        /// </param>
+        /// <param name="promptCacheOptions">
+        /// Options for prompt caching. Supported for `gpt-5.6` and later models. By default, OpenAI automatically chooses one implicit cache breakpoint. You can add explicit breakpoints to content blocks with `prompt_cache_breakpoint`. Each request can write up to four breakpoints. For cache matching, OpenAI considers up to the latest 80 breakpoints in the conversation, without a content-block lookback limit. Set `mode` to `explicit` to disable the implicit breakpoint. The `ttl` defaults to `30m`. Supported lifetimes depend on the API. See the [prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching) for current details.
         /// </param>
         /// <param name="serviceTier"></param>
         /// <param name="modalities"></param>
@@ -356,7 +365,7 @@ namespace tryAGI.OpenAI
         /// Default Value: false
         /// </param>
         /// <param name="stop">
-        /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
+        /// Not supported with reasoning models `o3` and `o4-mini`.<br/>
         /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
         /// returned text will not contain the stop sequence.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
@@ -378,7 +387,7 @@ namespace tryAGI.OpenAI
         /// Default Value: false
         /// </param>
         /// <param name="n">
-        /// How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.<br/>
+        /// How many chat completion choices to generate for each input message. Omit `n` to generate one choice. Newer models reject an explicit `n`, even `n=1`. When requesting multiple choices, you are billed for generated tokens across all choices.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
@@ -412,7 +421,8 @@ namespace tryAGI.OpenAI
         public CreateChatCompletionRequestVariant2(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessage> messages,
             global::tryAGI.OpenAI.ModelIdsShared model,
-            global::tryAGI.OpenAI.ServiceTierEnum? serviceTier,
+            global::tryAGI.OpenAI.PromptCacheOptionsParam? promptCacheOptions,
+            global::tryAGI.OpenAI.ServiceTierEnum2? serviceTier,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseModalitiesVariant1Item>? modalities,
             global::tryAGI.OpenAI.VerbosityEnum? verbosity,
             global::tryAGI.OpenAI.ReasoningEffortEnum? reasoningEffort,
@@ -436,6 +446,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ChatCompletionToolChoiceOption? toolChoice,
             bool? parallelToolCalls)
         {
+            this.PromptCacheOptions = promptCacheOptions;
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Model = model;
             this.ServiceTier = serviceTier;

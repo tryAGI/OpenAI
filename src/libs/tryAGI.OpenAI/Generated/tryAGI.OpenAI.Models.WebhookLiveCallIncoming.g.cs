@@ -41,17 +41,16 @@ namespace tryAGI.OpenAI
         /// The object of the event. Always `event`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookLiveCallIncomingObjectJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::tryAGI.OpenAI.WebhookLiveCallIncomingObject? Object { get; set; }
+        public string? Object { get; set; }
 
         /// <summary>
         /// The type of the event. Always `live.call.incoming`.
         /// </summary>
+        /// <default>"live.call.incoming"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookLiveCallIncomingTypeJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::tryAGI.OpenAI.WebhookLiveCallIncomingType Type { get; set; }
+        public string Type { get; set; } = "live.call.incoming";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -84,8 +83,8 @@ namespace tryAGI.OpenAI
             int createdAt,
             string id,
             global::tryAGI.OpenAI.WebhookLiveCallIncomingData data,
-            global::tryAGI.OpenAI.WebhookLiveCallIncomingObject? @object,
-            global::tryAGI.OpenAI.WebhookLiveCallIncomingType type)
+            string? @object,
+            string type = "live.call.incoming")
         {
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

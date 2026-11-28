@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `organization.invite.deleted`
         /// </summary>
+        /// <default>"organization.invite.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InviteDeleteResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.InviteDeleteResponseObject Object { get; set; }
+        public string Object { get; set; } = "organization.invite.deleted";
 
         /// <summary>
         ///
@@ -49,7 +49,7 @@ namespace tryAGI.OpenAI
         public InviteDeleteResponse(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.InviteDeleteResponseObject @object)
+            string @object = "organization.invite.deleted")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

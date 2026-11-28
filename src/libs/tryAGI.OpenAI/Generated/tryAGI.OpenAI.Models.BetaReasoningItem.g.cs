@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the object. Always `reasoning`.
         /// </summary>
+        /// <default>"reasoning"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaReasoningItemTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaReasoningItemType Type { get; set; }
+        public string Type { get; set; } = "reasoning";
 
         /// <summary>
         /// The unique identifier of the reasoning content.
@@ -76,9 +76,6 @@ namespace tryAGI.OpenAI
         /// <param name="agent">
         /// The agent that produced this item.
         /// </param>
-        /// <param name="type">
-        /// The type of the object. Always `reasoning`.
-        /// </param>
         /// <param name="encryptedContent"></param>
         /// <param name="content">
         /// Reasoning text content.
@@ -87,6 +84,9 @@ namespace tryAGI.OpenAI
         /// The status of the item. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when items are returned via API.
         /// </param>
+        /// <param name="type">
+        /// The type of the object. Always `reasoning`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -94,10 +94,10 @@ namespace tryAGI.OpenAI
             string id,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaSummaryTextContent> summary,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaReasoningItemType type,
             string? encryptedContent,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaReasoningTextContent>? content,
-            global::tryAGI.OpenAI.BetaReasoningItemStatus? status)
+            global::tryAGI.OpenAI.BetaReasoningItemStatus? status,
+            string type = "reasoning")
         {
             this.Agent = agent;
             this.Type = type;

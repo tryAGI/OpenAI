@@ -11,7 +11,7 @@ namespace tryAGI.OpenAI
     /// Like:<br/>
     ///  - Improve the quality of my chatbot<br/>
     ///  - See how well my chatbot handles customer support<br/>
-    ///  - Check if o4-mini is better at my usecase than gpt-6-astra
+    ///  - Compare how different models perform on the same task
     /// </summary>
     public sealed partial class Eval
     {
@@ -19,10 +19,9 @@ namespace tryAGI.OpenAI
         /// The object type.<br/>
         /// Default Value: eval
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.EvalObject.Eval</default>
+        /// <default>"eval"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalObjectJsonConverter))]
-        public global::tryAGI.OpenAI.EvalObject Object { get; set; } = global::tryAGI.OpenAI.EvalObject.Eval;
+        public string Object { get; set; } = "eval";
 
         /// <summary>
         /// Unique identifier for the evaluation.
@@ -108,7 +107,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.EvalGraderLabelModel?, global::tryAGI.OpenAI.EvalGraderStringCheck?, global::tryAGI.OpenAI.EvalGraderTextSimilarity?, global::tryAGI.OpenAI.EvalGraderPython?, global::tryAGI.OpenAI.EvalGraderScoreModel?>> testingCriteria,
             int createdAt,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            global::tryAGI.OpenAI.EvalObject @object = global::tryAGI.OpenAI.EvalObject.Eval)
+            string @object = "eval")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

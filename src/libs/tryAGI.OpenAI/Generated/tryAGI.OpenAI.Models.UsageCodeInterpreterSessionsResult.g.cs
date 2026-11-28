@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"organization.usage.code_interpreter_sessions.result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UsageCodeInterpreterSessionsResultObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResultObject Object { get; set; }
+        public string Object { get; set; } = "organization.usage.code_interpreter_sessions.result";
 
         /// <summary>
         /// The number of code interpreter sessions.
@@ -40,15 +40,15 @@ namespace tryAGI.OpenAI
         /// <param name="numSessions">
         /// The number of code interpreter sessions.
         /// </param>
-        /// <param name="object"></param>
         /// <param name="projectId"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageCodeInterpreterSessionsResult(
             int numSessions,
-            global::tryAGI.OpenAI.UsageCodeInterpreterSessionsResultObject @object,
-            string? projectId)
+            string? projectId,
+            string @object = "organization.usage.code_interpreter_sessions.result")
         {
             this.Object = @object;
             this.NumSessions = numSessions;
@@ -60,6 +60,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public UsageCodeInterpreterSessionsResult()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="UsageCodeInterpreterSessionsResult"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static UsageCodeInterpreterSessionsResult FromNumSessions(int numSessions)
+        {
+            return new UsageCodeInterpreterSessionsResult
+            {
+                NumSessions = numSessions,
+            };
         }
 
     }

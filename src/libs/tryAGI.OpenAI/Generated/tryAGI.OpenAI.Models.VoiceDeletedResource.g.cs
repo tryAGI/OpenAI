@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `audio.voice.deleted`.
         /// </summary>
+        /// <default>"audio.voice.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceDeletedResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.VoiceDeletedResourceObject Object { get; set; }
+        public string Object { get; set; } = "audio.voice.deleted";
 
         /// <summary>
         /// Whether the voice was deleted.
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
         public VoiceDeletedResource(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.VoiceDeletedResourceObject @object)
+            string @object = "audio.voice.deleted")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

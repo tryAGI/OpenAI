@@ -5,7 +5,7 @@ using System.CommandLine;
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
 internal sealed record FileExpirationAfterOptionSet(
-    Option<global::tryAGI.OpenAI.FileExpirationAfterAnchor> Anchor,
+    Option<string> Anchor,
                      Option<long> Seconds)
 {
     public static FileExpirationAfterOptionSet Create(string? prefix = null)
@@ -14,9 +14,10 @@ internal sealed record FileExpirationAfterOptionSet(
             ? string.Empty
             : prefix.Trim().Trim('-') + "-";
         return new FileExpirationAfterOptionSet(
-                        Anchor: new Option<global::tryAGI.OpenAI.FileExpirationAfterAnchor>($"--{normalizedPrefix}anchor")
+                        Anchor: new Option<string>($"--{normalizedPrefix}anchor")
                 {
                     Description = @"Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`.",
+                    DefaultValueFactory = _ => "created_at",
                 },
                 Seconds: new Option<long>($"--{normalizedPrefix}seconds")
                 {

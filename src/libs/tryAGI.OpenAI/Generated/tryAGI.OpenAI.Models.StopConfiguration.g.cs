@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Not supported with latest reasoning models `o3` and `o4-mini`.<br/>
+    /// Not supported with reasoning models `o3` and `o4-mini`.<br/>
     /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
     /// returned text will not contain the stop sequence.<br/>
     /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464

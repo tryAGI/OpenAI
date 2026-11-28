@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// For function calling, the type is always `function`.
         /// </summary>
+        /// <default>"function"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionNamedToolChoiceTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceType Type { get; set; }
+        public string Type { get; set; } = "function";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public ChatCompletionNamedToolChoice(
             global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceFunction function,
-            global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceType type)
+            string type = "function")
         {
             this.Type = type;
             this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ChatCompletionNamedToolChoice()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ChatCompletionNamedToolChoice"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ChatCompletionNamedToolChoice FromFunction(global::tryAGI.OpenAI.ChatCompletionNamedToolChoiceFunction function)
+        {
+            return new ChatCompletionNamedToolChoice
+            {
+                Function = function,
+            };
         }
 
     }

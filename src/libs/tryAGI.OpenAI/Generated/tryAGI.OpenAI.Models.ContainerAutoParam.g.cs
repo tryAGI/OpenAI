@@ -33,14 +33,14 @@ namespace tryAGI.OpenAI
         /// Network access policy for the container.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("network_policy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.NetworkPolicy3JsonConverter))]
-        public global::tryAGI.OpenAI.NetworkPolicy3? NetworkPolicy { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.NetworkPolicyJsonConverter))]
+        public global::tryAGI.OpenAI.NetworkPolicy? NetworkPolicy { get; set; }
 
         /// <summary>
-        /// An optional list of skills referenced by id or inline data.
+        /// An optional list of skills referenced by id or inline data. Across all inline skills in this list, decoded ZIP data must total at most 50 MiB and Base64 text must total at most 70,254,592 characters, including line breaks. Skill references do not count toward these limits.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skills")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem2>? Skills { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem>? Skills { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,7 +59,7 @@ namespace tryAGI.OpenAI
         /// Network access policy for the container.
         /// </param>
         /// <param name="skills">
-        /// An optional list of skills referenced by id or inline data.
+        /// An optional list of skills referenced by id or inline data. Across all inline skills in this list, decoded ZIP data must total at most 50 MiB and Base64 text must total at most 70,254,592 characters, including line breaks. Skill references do not count toward these limits.
         /// </param>
         /// <param name="type">
         /// Automatically creates a container for this request<br/>
@@ -71,8 +71,8 @@ namespace tryAGI.OpenAI
         public ContainerAutoParam(
             global::System.Collections.Generic.IList<string>? fileIds,
             global::tryAGI.OpenAI.ContainerMemoryLimit? memoryLimit,
-            global::tryAGI.OpenAI.NetworkPolicy3? networkPolicy,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem2>? skills,
+            global::tryAGI.OpenAI.NetworkPolicy? networkPolicy,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem>? skills,
             global::tryAGI.OpenAI.ContainerAutoParamType type = global::tryAGI.OpenAI.ContainerAutoParamType.ContainerAuto)
         {
             this.Type = type;

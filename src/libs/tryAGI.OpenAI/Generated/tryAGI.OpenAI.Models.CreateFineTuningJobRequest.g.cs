@@ -13,9 +13,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The name of the model to fine-tune. You can select one of the<br/>
         /// [supported models](https://developers.openai.com/api/docs/guides/model-optimization#fine-tuning-methods).<br/>
-        /// Example: gpt-4o-mini
+        /// Example: gpt-4.1-mini-2025-04-14
         /// </summary>
-        /// <example>gpt-4o-mini</example>
+        /// <example>gpt-4.1-mini-2025-04-14</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateFineTuningJobRequestModel?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -44,7 +44,7 @@ namespace tryAGI.OpenAI
 
         /// <summary>
         /// A string of up to 64 characters that will be added to your fine-tuned model name.<br/>
-        /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-4o-mini:openai:custom-model-name:7p4lURel`.<br/>
+        /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-4.1-mini-2025-04-14:openai:custom-model-name:7p4lURel`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("suffix")]
@@ -103,7 +103,7 @@ namespace tryAGI.OpenAI
         /// <param name="model">
         /// The name of the model to fine-tune. You can select one of the<br/>
         /// [supported models](https://developers.openai.com/api/docs/guides/model-optimization#fine-tuning-methods).<br/>
-        /// Example: gpt-4o-mini
+        /// Example: gpt-4.1-mini-2025-04-14
         /// </param>
         /// <param name="trainingFile">
         /// The ID of an uploaded file that contains training data.<br/>
@@ -115,7 +115,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="suffix">
         /// A string of up to 64 characters that will be added to your fine-tuned model name.<br/>
-        /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-4o-mini:openai:custom-model-name:7p4lURel`.<br/>
+        /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-4.1-mini-2025-04-14:openai:custom-model-name:7p4lURel`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="validationFile">

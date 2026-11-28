@@ -18,10 +18,9 @@ namespace tryAGI.OpenAI
         /// The type of the code interpreter tool call. Always `code_interpreter_call`.<br/>
         /// Default Value: code_interpreter_call
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.BetaCodeInterpreterToolCallType.CodeInterpreterCall</default>
+        /// <default>"code_interpreter_call"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaCodeInterpreterToolCallTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaCodeInterpreterToolCallType Type { get; set; } = global::tryAGI.OpenAI.BetaCodeInterpreterToolCallType.CodeInterpreterCall;
+        public string Type { get; set; } = "code_interpreter_call";
 
         /// <summary>
         /// The unique ID of the code interpreter tool call.
@@ -94,7 +93,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaAgentTag? agent,
             string? code,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputsVariant1Item2>? outputs,
-            global::tryAGI.OpenAI.BetaCodeInterpreterToolCallType type = global::tryAGI.OpenAI.BetaCodeInterpreterToolCallType.CodeInterpreterCall)
+            string type = "code_interpreter_call")
         {
             this.Agent = agent;
             this.Type = type;

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `project.group.deleted`.
         /// </summary>
+        /// <default>"project.group.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectGroupDeletedResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectGroupDeletedResourceObject Object { get; set; }
+        public string Object { get; set; } = "project.group.deleted";
 
         /// <summary>
         /// Whether the group membership in the project was removed.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public ProjectGroupDeletedResource(
             bool deleted,
-            global::tryAGI.OpenAI.ProjectGroupDeletedResourceObject @object)
+            string @object = "project.group.deleted")
         {
             this.Object = @object;
             this.Deleted = deleted;
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ProjectGroupDeletedResource()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ProjectGroupDeletedResource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ProjectGroupDeletedResource FromDeleted(bool deleted)
+        {
+            return new ProjectGroupDeletedResource
+            {
+                Deleted = deleted,
+            };
         }
 
     }

@@ -34,9 +34,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Provider2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProviderJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Provider2 Provider { get; set; }
+        public required global::tryAGI.OpenAI.Provider Provider { get; set; }
 
         /// <summary>
         ///
@@ -84,7 +84,7 @@ namespace tryAGI.OpenAI
         public ExternalStorageResponse(
             string id,
             string projectId,
-            global::tryAGI.OpenAI.Provider2 provider,
+            global::tryAGI.OpenAI.Provider provider,
             string geography,
             global::tryAGI.OpenAI.ExternalStorageStatus status,
             int createdAt,

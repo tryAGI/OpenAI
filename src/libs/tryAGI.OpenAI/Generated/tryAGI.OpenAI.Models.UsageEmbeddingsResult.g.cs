@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"organization.usage.embeddings.result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UsageEmbeddingsResultObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UsageEmbeddingsResultObject Object { get; set; }
+        public string Object { get; set; } = "organization.usage.embeddings.result";
 
         /// <summary>
         /// The aggregated number of input tokens used.
@@ -68,22 +68,22 @@ namespace tryAGI.OpenAI
         /// <param name="numModelRequests">
         /// The count of requests made to the model.
         /// </param>
-        /// <param name="object"></param>
         /// <param name="projectId"></param>
         /// <param name="userId"></param>
         /// <param name="apiKeyId"></param>
         /// <param name="model"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageEmbeddingsResult(
             int inputTokens,
             int numModelRequests,
-            global::tryAGI.OpenAI.UsageEmbeddingsResultObject @object,
             string? projectId,
             string? userId,
             string? apiKeyId,
-            string? model)
+            string? model,
+            string @object = "organization.usage.embeddings.result")
         {
             this.Object = @object;
             this.InputTokens = inputTokens;

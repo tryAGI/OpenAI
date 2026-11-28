@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"organization.costs.result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CostsResultObjectJsonConverter))]
-        public global::tryAGI.OpenAI.CostsResultObject Object { get; set; }
+        public string Object { get; set; } = "organization.costs.result";
 
         /// <summary>
         /// The monetary value in its associated currency.
@@ -76,7 +76,6 @@ namespace tryAGI.OpenAI
         /// <param name="apiSource">
         /// When grouped by `api_source`, `agents_api` identifies attributed Agents API activity and `unlabeled` includes all records without published source attribution, including historical and unknown origins. Unlabeled does not imply direct API usage. Without source grouping, this field is null.
         /// </param>
-        /// <param name="object"></param>
         /// <param name="amount">
         /// The monetary value in its associated currency.
         /// </param>
@@ -88,19 +87,20 @@ namespace tryAGI.OpenAI
         /// <param name="quantityUnit">
         /// The unit of the `quantity` value. If no single supported unit applies to the result, this field is `null`.
         /// </param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CostsResult(
             global::tryAGI.OpenAI.CostsResultApiSource? apiSource,
-            global::tryAGI.OpenAI.CostsResultObject @object,
             global::tryAGI.OpenAI.CostsResultAmount? amount,
             string? lineItem,
             string? projectId,
             string? userId,
             string? apiKeyId,
             double? quantity,
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CostsResultQuantityUnit?>? quantityUnit)
+            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CostsResultQuantityUnit?>? quantityUnit,
+            string @object = "organization.costs.result")
         {
             this.ApiSource = apiSource;
             this.Object = @object;

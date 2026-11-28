@@ -24,9 +24,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of tool call. This is always going to be `function` for this type of tool call.
         /// </summary>
+        /// <default>"function"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDeltaStepDetailsToolCallsFunctionObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectType Type { get; set; }
+        public string Type { get; set; } = "function";
 
         /// <summary>
         /// The definition of the function that was called.
@@ -49,11 +49,11 @@ namespace tryAGI.OpenAI
         /// <param name="id">
         /// The ID of the tool call object.
         /// </param>
-        /// <param name="type">
-        /// The type of tool call. This is always going to be `function` for this type of tool call.
-        /// </param>
         /// <param name="function">
         /// The definition of the function that was called.
+        /// </param>
+        /// <param name="type">
+        /// The type of tool call. This is always going to be `function` for this type of tool call.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -61,8 +61,8 @@ namespace tryAGI.OpenAI
         public RunStepDeltaStepDetailsToolCallsFunctionObject(
             int index,
             string? id,
-            global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectType type,
-            global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? function)
+            global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? function,
+            string type = "function")
         {
             this.Index = index;
             this.Id = id;
@@ -75,6 +75,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RunStepDeltaStepDetailsToolCallsFunctionObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RunStepDeltaStepDetailsToolCallsFunctionObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RunStepDeltaStepDetailsToolCallsFunctionObject FromIndex(int index)
+        {
+            return new RunStepDeltaStepDetailsToolCallsFunctionObject
+            {
+                Index = index,
+            };
         }
 
     }

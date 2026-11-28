@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `speech.audio.delta`.
         /// </summary>
+        /// <default>"speech.audio.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.SpeechAudioDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.SpeechAudioDeltaEventType Type { get; set; }
+        public string Type { get; set; } = "speech.audio.delta";
 
         /// <summary>
         /// A chunk of Base64-encoded audio data.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public SpeechAudioDeltaEvent(
             string audio,
-            global::tryAGI.OpenAI.SpeechAudioDeltaEventType type)
+            string type = "speech.audio.delta")
         {
             this.Type = type;
             this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public SpeechAudioDeltaEvent()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="SpeechAudioDeltaEvent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static SpeechAudioDeltaEvent FromAudio(string audio)
+        {
+            return new SpeechAudioDeltaEvent
+            {
+                Audio = audio,
+            };
         }
 
     }

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `string_check`.
         /// </summary>
+        /// <default>"string_check"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GraderStringCheckTypeJsonConverter))]
-        public global::tryAGI.OpenAI.GraderStringCheckType Type { get; set; }
+        public string Type { get; set; } = "string_check";
 
         /// <summary>
         /// The name of the grader.
@@ -76,7 +76,7 @@ namespace tryAGI.OpenAI
             string input,
             string reference,
             global::tryAGI.OpenAI.GraderStringCheckOperation operation,
-            global::tryAGI.OpenAI.GraderStringCheckType type)
+            string type = "string_check")
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

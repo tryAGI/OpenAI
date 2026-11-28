@@ -54,6 +54,7 @@ namespace tryAGI.OpenAI
         /// <param name="interval">
         /// The time interval for evaluating spend against the threshold. Currently, only `month` is supported.
         /// </param>
+        /// <param name="notificationChannel"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -62,6 +63,7 @@ namespace tryAGI.OpenAI
             int thresholdAmount,
             global::tryAGI.OpenAI.UpdateProjectSpendLimitBodyCurrency currency = default,
             global::tryAGI.OpenAI.UpdateProjectSpendLimitBodyInterval interval = default,
+            global::tryAGI.OpenAI.SpendLimitEmailNotificationChannelParams? notificationChannel = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -4,14 +4,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Constrains effort on reasoning for reasoning models. Currently supported<br/>
-    /// values are `none`, `minimal`, `low`, `medium`, `high`, `xhigh`, and `max`.<br/>
-    /// Reducing reasoning effort can result in faster responses and fewer tokens<br/>
-    /// used on reasoning in a response. Not all reasoning models support every<br/>
-    /// value. See the<br/>
-    /// [reasoning guide](https://developers.openai.com/api/docs/guides/reasoning)<br/>
-    /// for model-specific support.<br/>
-    /// Default Value: medium
+    ///
     /// </summary>
     public enum BetaReasoningEffortEnum
     {

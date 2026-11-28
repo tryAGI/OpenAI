@@ -15,10 +15,9 @@ namespace tryAGI.OpenAI
         /// The type of data source. Always `custom`.<br/>
         /// Default Value: custom
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.EvalCustomDataSourceConfigType.Custom</default>
+        /// <default>"custom"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalCustomDataSourceConfigTypeJsonConverter))]
-        public global::tryAGI.OpenAI.EvalCustomDataSourceConfigType Type { get; set; } = global::tryAGI.OpenAI.EvalCustomDataSourceConfigType.Custom;
+        public string Type { get; set; } = "custom";
 
         /// <summary>
         /// The json schema for the run data source items.<br/>
@@ -53,7 +52,7 @@ namespace tryAGI.OpenAI
 #endif
         public EvalCustomDataSourceConfig(
             object schema,
-            global::tryAGI.OpenAI.EvalCustomDataSourceConfigType type = global::tryAGI.OpenAI.EvalCustomDataSourceConfigType.Custom)
+            string type = "custom")
         {
             this.Type = type;
             this.Schema = schema ?? throw new global::System.ArgumentNullException(nameof(schema));

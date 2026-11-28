@@ -52,8 +52,7 @@ and [Telephony and SIP](https://developers.openai.com/api/docs/guides/voice-sip?
 for trunk setup and call monitoring.
 
 Set transport.type to `webrtc` and supply an SDP offer, or set it to `sip`
-and supply an E.164 destination and trunk credentials. Outbound SIP calling
-must be enabled for your organization.
+and supply an E.164 destination and trunk credentials.
 Ringing is limited to 3 minutes and connected calls to 2 hours; these limits
 are not configurable in the request.
 

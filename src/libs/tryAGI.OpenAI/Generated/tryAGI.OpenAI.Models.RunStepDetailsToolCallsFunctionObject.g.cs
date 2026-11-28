@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of tool call. This is always going to be `function` for this type of tool call.
         /// </summary>
+        /// <default>"function"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDetailsToolCallsFunctionObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFunctionObjectType Type { get; set; }
+        public string Type { get; set; } = "function";
 
         /// <summary>
         /// The definition of the function that was called.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public RunStepDetailsToolCallsFunctionObject(
             string id,
             global::tryAGI.OpenAI.RunStepDetailsToolCallsFunctionObjectFunction function,
-            global::tryAGI.OpenAI.RunStepDetailsToolCallsFunctionObjectType type)
+            string type = "function")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;

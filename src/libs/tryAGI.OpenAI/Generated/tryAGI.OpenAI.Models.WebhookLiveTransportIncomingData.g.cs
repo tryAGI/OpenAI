@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The incoming transport type. Always `sip`.
         /// </summary>
+        /// <default>"sip"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookLiveTransportIncomingDataTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookLiveTransportIncomingDataType Type { get; set; }
+        public string Type { get; set; } = "sip";
 
         /// <summary>
         /// The `live_...` ID of the pending SIP session. Forward this value<br/>
@@ -60,14 +60,14 @@ namespace tryAGI.OpenAI
         /// Retained names, values, repeated entries, and order are preserved.<br/>
         /// Treat these values as untrusted call metadata.
         /// </param>
-        /// <param name="type">
-        /// The incoming transport type. Always `sip`.
-        /// </param>
         /// <param name="sipMediaSecurity">
         /// Media protection selected on the SIP leg during SDP negotiation. `srtp`<br/>
         /// indicates SRTP; `rtp` indicates unencrypted RTP. Omitted when unknown.<br/>
         /// This does not describe SIP signaling security or confirm that media has<br/>
         /// flowed. Clients should handle unrecognized values as unknown.
+        /// </param>
+        /// <param name="type">
+        /// The incoming transport type. Always `sip`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -75,8 +75,8 @@ namespace tryAGI.OpenAI
         public WebhookLiveTransportIncomingData(
             string sessionId,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.WebhookLiveTransportIncomingDataSipHeader> sipHeaders,
-            global::tryAGI.OpenAI.WebhookLiveTransportIncomingDataType type,
-            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.WebhookLiveTransportIncomingDataSipMediaSecurity?, string>? sipMediaSecurity)
+            global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.WebhookLiveTransportIncomingDataSipMediaSecurity?, string>? sipMediaSecurity,
+            string type = "sip")
         {
             this.Type = type;
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));

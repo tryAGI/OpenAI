@@ -12,10 +12,9 @@ namespace tryAGI.OpenAI
         /// The type of the code interpreter tool call. Always `code_interpreter_call`.<br/>
         /// Default Value: code_interpreter_call
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.CodeInterpreterToolCallType.CodeInterpreterCall</default>
+        /// <default>"code_interpreter_call"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CodeInterpreterToolCallTypeJsonConverter))]
-        public global::tryAGI.OpenAI.CodeInterpreterToolCallType Type { get; set; } = global::tryAGI.OpenAI.CodeInterpreterToolCallType.CodeInterpreterCall;
+        public string Type { get; set; } = "code_interpreter_call";
 
         /// <summary>
         /// The unique ID of the code interpreter tool call.
@@ -84,7 +83,7 @@ namespace tryAGI.OpenAI
             string containerId,
             string? code,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputsVariant1Item>? outputs,
-            global::tryAGI.OpenAI.CodeInterpreterToolCallType type = global::tryAGI.OpenAI.CodeInterpreterToolCallType.CodeInterpreterCall)
+            string type = "code_interpreter_call")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

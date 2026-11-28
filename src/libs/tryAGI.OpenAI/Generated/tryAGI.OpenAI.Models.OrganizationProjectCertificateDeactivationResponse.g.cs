@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The project certificate deactivation result type.
         /// </summary>
+        /// <default>"organization.project.certificate.deactivation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OrganizationProjectCertificateDeactivationResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.OrganizationProjectCertificateDeactivationResponseObject Object { get; set; }
+        public string Object { get; set; } = "organization.project.certificate.deactivation";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public OrganizationProjectCertificateDeactivationResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OrganizationProjectCertificate> data,
-            global::tryAGI.OpenAI.OrganizationProjectCertificateDeactivationResponseObject @object)
+            string @object = "organization.project.certificate.deactivation")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

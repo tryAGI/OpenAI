@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `image_file`.
         /// </summary>
+        /// <default>"image_file"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageContentImageFileObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageContentImageFileObjectType Type { get; set; }
+        public string Type { get; set; } = "image_file";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public MessageContentImageFileObject(
             global::tryAGI.OpenAI.MessageContentImageFileObjectImageFile imageFile,
-            global::tryAGI.OpenAI.MessageContentImageFileObjectType type)
+            string type = "image_file")
         {
             this.Type = type;
             this.ImageFile = imageFile ?? throw new global::System.ArgumentNullException(nameof(imageFile));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public MessageContentImageFileObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageContentImageFileObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageContentImageFileObject FromImageFile(global::tryAGI.OpenAI.MessageContentImageFileObjectImageFile imageFile)
+        {
+            return new MessageContentImageFileObject
+            {
+                ImageFile = imageFile,
+            };
         }
 
     }

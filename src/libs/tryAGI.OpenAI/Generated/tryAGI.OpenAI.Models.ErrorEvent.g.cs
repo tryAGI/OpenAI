@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ErrorEventEventJsonConverter))]
-        public global::tryAGI.OpenAI.ErrorEventEvent Event { get; set; }
+        public string Event { get; set; } = "error";
 
         /// <summary>
         ///
@@ -38,7 +38,7 @@ namespace tryAGI.OpenAI
 #endif
         public ErrorEvent(
             global::tryAGI.OpenAI.Error data,
-            global::tryAGI.OpenAI.ErrorEventEvent @event)
+            string @event = "error")
         {
             this.Event = @event;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -49,6 +49,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ErrorEvent()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ErrorEvent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ErrorEvent FromData(global::tryAGI.OpenAI.Error data)
+        {
+            return new ErrorEvent
+            {
+                Data = data,
+            };
         }
 
     }

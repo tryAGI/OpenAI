@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the code interpreter file output. Always `files`.
         /// </summary>
+        /// <default>"files"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CodeInterpreterFileOutputTypeJsonConverter))]
-        public global::tryAGI.OpenAI.CodeInterpreterFileOutputType Type { get; set; }
+        public string Type { get; set; } = "files";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public CodeInterpreterFileOutput(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CodeInterpreterFileOutputFile> files,
-            global::tryAGI.OpenAI.CodeInterpreterFileOutputType type)
+            string type = "files")
         {
             this.Type = type;
             this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));

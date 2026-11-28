@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `user.role`.
         /// </summary>
+        /// <default>"user.role"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UserRoleAssignmentObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UserRoleAssignmentObject Object { get; set; }
+        public string Object { get; set; } = "user.role";
 
         /// <summary>
         /// Represents an individual `user` within an organization.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public UserRoleAssignment(
             global::tryAGI.OpenAI.User user,
             global::tryAGI.OpenAI.Role role,
-            global::tryAGI.OpenAI.UserRoleAssignmentObject @object)
+            string @object = "user.role")
         {
             this.Object = @object;
             this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));

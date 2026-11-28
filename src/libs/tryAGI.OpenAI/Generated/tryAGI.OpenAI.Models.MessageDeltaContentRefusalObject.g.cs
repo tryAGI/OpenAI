@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `refusal`.
         /// </summary>
+        /// <default>"refusal"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaContentRefusalObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageDeltaContentRefusalObjectType Type { get; set; }
+        public string Type { get; set; } = "refusal";
 
         /// <summary>
         ///
@@ -40,17 +40,17 @@ namespace tryAGI.OpenAI
         /// <param name="index">
         /// The index of the refusal part in the message.
         /// </param>
+        /// <param name="refusal"></param>
         /// <param name="type">
         /// Always `refusal`.
         /// </param>
-        /// <param name="refusal"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentRefusalObject(
             int index,
-            global::tryAGI.OpenAI.MessageDeltaContentRefusalObjectType type,
-            string? refusal)
+            string? refusal,
+            string type = "refusal")
         {
             this.Index = index;
             this.Type = type;
@@ -62,6 +62,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public MessageDeltaContentRefusalObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageDeltaContentRefusalObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageDeltaContentRefusalObject FromIndex(int index)
+        {
+            return new MessageDeltaContentRefusalObject
+            {
+                Index = index,
+            };
         }
 
     }

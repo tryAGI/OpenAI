@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the custom tool call. Always `custom_tool_call`.
         /// </summary>
+        /// <default>"custom_tool_call"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaCustomToolCallTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaCustomToolCallType Type { get; set; }
+        public string Type { get; set; } = "custom_tool_call";
 
         /// <summary>
         /// The unique ID of the custom tool call in the OpenAI platform.
@@ -87,9 +87,6 @@ namespace tryAGI.OpenAI
         /// <param name="agent">
         /// The agent that produced this item.
         /// </param>
-        /// <param name="type">
-        /// The type of the custom tool call. Always `custom_tool_call`.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the custom tool call in the OpenAI platform.
         /// </param>
@@ -100,6 +97,9 @@ namespace tryAGI.OpenAI
         /// <param name="async">
         /// Whether the custom tool call runs asynchronously.
         /// </param>
+        /// <param name="type">
+        /// The type of the custom tool call. Always `custom_tool_call`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -108,11 +108,11 @@ namespace tryAGI.OpenAI
             string name,
             string input,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaCustomToolCallType type,
             string? id,
             global::tryAGI.OpenAI.BetaToolCallCaller? caller,
             string? @namespace,
-            bool? async)
+            bool? async,
+            string type = "custom_tool_call")
         {
             this.Agent = agent;
             this.Type = type;

@@ -59,6 +59,12 @@ namespace tryAGI.OpenAI
         public required string Delta { get; set; }
 
         /// <summary>
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("obfuscation")]
+        public string? Obfuscation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -85,6 +91,9 @@ namespace tryAGI.OpenAI
         /// <param name="turnId">
         /// The ID of the turn associated with the event, when applicable.
         /// </param>
+        /// <param name="obfuscation">
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `agent.output.command_execution_output.delta`.<br/>
         /// Default Value: agent.output.command_execution_output.delta
@@ -99,6 +108,7 @@ namespace tryAGI.OpenAI
             long outputIndex,
             string delta,
             string? turnId,
+            string? obfuscation,
             global::tryAGI.OpenAI.SessionEventAgentOutputCommandExecutionOutputDeltaType type = global::tryAGI.OpenAI.SessionEventAgentOutputCommandExecutionOutputDeltaType.AgentOutputCommandExecutionOutputDelta)
         {
             this.Type = type;
@@ -108,6 +118,7 @@ namespace tryAGI.OpenAI
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
+            this.Obfuscation = obfuscation;
         }
 
         /// <summary>

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// For custom tool calling, the type is always `custom`.
         /// </summary>
+        /// <default>"custom"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaToolChoiceCustomTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaToolChoiceCustomType Type { get; set; }
+        public string Type { get; set; } = "custom";
 
         /// <summary>
         /// The name of the custom tool to call.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public BetaToolChoiceCustom(
             string name,
-            global::tryAGI.OpenAI.BetaToolChoiceCustomType type)
+            string type = "custom")
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public BetaToolChoiceCustom()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaToolChoiceCustom"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaToolChoiceCustom FromName(string name)
+        {
+            return new BetaToolChoiceCustom
+            {
+                Name = name,
+            };
         }
 
     }

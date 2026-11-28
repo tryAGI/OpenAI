@@ -38,7 +38,7 @@ As an example, you can pass `{""50256"": -100}` to prevent the <|endoftext|> tok
     private static Option<global::tryAGI.OpenAI.StopConfiguration?> Stop { get; } = new(
         name: @"--stop")
     {
-        Description = @"Not supported with latest reasoning models `o3` and `o4-mini`.
+        Description = @"Not supported with reasoning models `o3` and `o4-mini`.
 
 Up to 4 sequences where the API will stop generating further tokens. The
 returned text will not contain the stop sequence.

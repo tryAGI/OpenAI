@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `list`
         /// </summary>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InviteListResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.InviteListResponseObject Object { get; set; }
+        public string Object { get; set; } = "list";
 
         /// <summary>
         ///
@@ -54,14 +54,14 @@ namespace tryAGI.OpenAI
         /// <param name="hasMore">
         /// The `has_more` property is used for pagination to indicate there are additional results.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `list`
-        /// </param>
         /// <param name="firstId">
         /// The first `invite_id` in the retrieved `list`
         /// </param>
         /// <param name="lastId">
         /// The last `invite_id` in the retrieved `list`
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `list`
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -69,9 +69,9 @@ namespace tryAGI.OpenAI
         public InviteListResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.Invite> data,
             bool hasMore,
-            global::tryAGI.OpenAI.InviteListResponseObject @object,
             string? firstId,
-            string? lastId)
+            string? lastId,
+            string @object = "list")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

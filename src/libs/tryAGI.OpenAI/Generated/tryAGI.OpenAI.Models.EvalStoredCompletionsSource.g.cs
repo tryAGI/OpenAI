@@ -12,10 +12,9 @@ namespace tryAGI.OpenAI
         /// The type of source. Always `stored_completions`.<br/>
         /// Default Value: stored_completions
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.EvalStoredCompletionsSourceType.StoredCompletions</default>
+        /// <default>"stored_completions"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalStoredCompletionsSourceTypeJsonConverter))]
-        public global::tryAGI.OpenAI.EvalStoredCompletionsSourceType Type { get; set; } = global::tryAGI.OpenAI.EvalStoredCompletionsSourceType.StoredCompletions;
+        public string Type { get; set; } = "stored_completions";
 
         /// <summary>
         ///
@@ -74,7 +73,7 @@ namespace tryAGI.OpenAI
             global::System.DateTimeOffset? createdAfter,
             global::System.DateTimeOffset? createdBefore,
             int? limit,
-            global::tryAGI.OpenAI.EvalStoredCompletionsSourceType type = global::tryAGI.OpenAI.EvalStoredCompletionsSourceType.StoredCompletions)
+            string type = "stored_completions")
         {
             this.Type = type;
             this.Metadata = metadata;

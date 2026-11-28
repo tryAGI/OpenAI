@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `image`.
         /// </summary>
+        /// <default>"image"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; }
+        public string Type { get; set; } = "image";
 
         /// <summary>
         ///
@@ -40,17 +40,17 @@ namespace tryAGI.OpenAI
         /// <param name="index">
         /// The index of the output in the outputs array.
         /// </param>
+        /// <param name="image"></param>
         /// <param name="type">
         /// Always `image`.
         /// </param>
-        /// <param name="image"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDeltaStepDetailsToolCallsCodeOutputImageObject(
             int index,
-            global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType type,
-            global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? image)
+            global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? image,
+            string type = "image")
         {
             this.Index = index;
             this.Type = type;
@@ -62,6 +62,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RunStepDeltaStepDetailsToolCallsCodeOutputImageObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RunStepDeltaStepDetailsToolCallsCodeOutputImageObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RunStepDeltaStepDetailsToolCallsCodeOutputImageObject FromIndex(int index)
+        {
+            return new RunStepDeltaStepDetailsToolCallsCodeOutputImageObject
+            {
+                Index = index,
+            };
         }
 
     }

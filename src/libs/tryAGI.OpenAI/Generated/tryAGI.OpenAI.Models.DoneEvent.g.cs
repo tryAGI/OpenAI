@@ -11,16 +11,16 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DoneEventEventJsonConverter))]
-        public global::tryAGI.OpenAI.DoneEventEvent Event { get; set; }
+        public string Event { get; set; } = "done";
 
         /// <summary>
         ///
         /// </summary>
+        /// <default>"[DONE]"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DoneEventDataJsonConverter))]
-        public global::tryAGI.OpenAI.DoneEventData Data { get; set; }
+        public string Data { get; set; } = "[DONE]";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,8 +37,8 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DoneEvent(
-            global::tryAGI.OpenAI.DoneEventEvent @event,
-            global::tryAGI.OpenAI.DoneEventData data)
+            string @event = "done",
+            string data = "[DONE]")
         {
             this.Event = @event;
             this.Data = data;

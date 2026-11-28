@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"thread.message.incomplete"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageStreamEventVariant5EventJsonConverter))]
-        public global::tryAGI.OpenAI.MessageStreamEventVariant5Event Event { get; set; }
+        public string Event { get; set; } = "thread.message.incomplete";
 
         /// <summary>
         /// Represents a message within a [thread](https://developers.openai.com/api/docs/assistants/migration).
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public MessageStreamEventVariant5(
             global::tryAGI.OpenAI.MessageObject data,
-            global::tryAGI.OpenAI.MessageStreamEventVariant5Event @event)
+            string @event = "thread.message.incomplete")
         {
             this.Event = @event;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public MessageStreamEventVariant5()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageStreamEventVariant5"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageStreamEventVariant5 FromData(global::tryAGI.OpenAI.MessageObject data)
+        {
+            return new MessageStreamEventVariant5
+            {
+                Data = data,
+            };
         }
 
     }

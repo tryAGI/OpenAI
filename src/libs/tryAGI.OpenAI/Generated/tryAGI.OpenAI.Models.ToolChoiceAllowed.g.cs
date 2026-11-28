@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Allowed tool configuration type. Always `allowed_tools`.
         /// </summary>
+        /// <default>"allowed_tools"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoiceAllowedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ToolChoiceAllowedType Type { get; set; }
+        public string Type { get; set; } = "allowed_tools";
 
         /// <summary>
         /// Constrains the tools available to the model to a pre-defined set.<br/>
@@ -76,7 +76,7 @@ namespace tryAGI.OpenAI
         public ToolChoiceAllowed(
             global::tryAGI.OpenAI.ToolChoiceAllowedMode mode,
             global::System.Collections.Generic.IList<object> tools,
-            global::tryAGI.OpenAI.ToolChoiceAllowedType type)
+            string type = "allowed_tools")
         {
             this.Type = type;
             this.Mode = mode;

@@ -24,7 +24,7 @@ The request must include enough format metadata for the file to be identified. W
         Required = true,
     };
 
-    private static Option<global::tryAGI.OpenAI.AnyOf<global::tryAGI.OpenAI.CreateTranscriptionRequestChunkingStrategyVariant1?, global::tryAGI.OpenAI.VadConfig>?> ChunkingStrategy { get; } = new(
+    private static Option<global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.VadConfig>?> ChunkingStrategy { get; } = new(
         name: @"--chunking-strategy")
     {
         Description = @"",

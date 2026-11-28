@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always 'response.image_generation_call.in_progress'.
         /// </summary>
+        /// <default>"response.image_generation_call.in_progress"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseImageGenCallInProgressEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseImageGenCallInProgressEventType Type { get; set; }
+        public string Type { get; set; } = "response.image_generation_call.in_progress";
 
         /// <summary>
         /// The index of the output item in the response's output array.
@@ -74,7 +74,7 @@ namespace tryAGI.OpenAI
             string itemId,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseImageGenCallInProgressEventType type)
+            string type = "response.image_generation_call.in_progress")
         {
             this.Agent = agent;
             this.Type = type;

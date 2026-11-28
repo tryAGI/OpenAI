@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the code interpreter text output. Always `logs`.
         /// </summary>
+        /// <default>"logs"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CodeInterpreterTextOutputTypeJsonConverter))]
-        public global::tryAGI.OpenAI.CodeInterpreterTextOutputType Type { get; set; }
+        public string Type { get; set; } = "logs";
 
         /// <summary>
         /// The logs of the code interpreter tool call.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public CodeInterpreterTextOutput(
             string logs,
-            global::tryAGI.OpenAI.CodeInterpreterTextOutputType type)
+            string type = "logs")
         {
             this.Type = type;
             this.Logs = logs ?? throw new global::System.ArgumentNullException(nameof(logs));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public CodeInterpreterTextOutput()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="CodeInterpreterTextOutput"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CodeInterpreterTextOutput FromLogs(string logs)
+        {
+            return new CodeInterpreterTextOutput
+            {
+                Logs = logs,
+            };
         }
 
     }

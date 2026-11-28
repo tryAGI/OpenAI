@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
-        public global::tryAGI.OpenAI.EnvironmentVariant13? Environment { get; set; }
+        public global::tryAGI.OpenAI.EnvironmentVariant15? Environment { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -87,7 +87,7 @@ namespace tryAGI.OpenAI
             string? id,
             global::tryAGI.OpenAI.ToolCallCallerParam? caller,
             global::tryAGI.OpenAI.FunctionShellCallItemStatus? status,
-            global::tryAGI.OpenAI.EnvironmentVariant13? environment,
+            global::tryAGI.OpenAI.EnvironmentVariant15? environment,
             global::tryAGI.OpenAI.FunctionShellCallItemParamType type = global::tryAGI.OpenAI.FunctionShellCallItemParamType.ShellCall)
         {
             this.Id = id;

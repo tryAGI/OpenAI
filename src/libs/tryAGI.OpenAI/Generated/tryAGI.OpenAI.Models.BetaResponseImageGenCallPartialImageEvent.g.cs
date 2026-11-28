@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always 'response.image_generation_call.partial_image'.
         /// </summary>
+        /// <default>"response.image_generation_call.partial_image"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseImageGenCallPartialImageEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseImageGenCallPartialImageEventType Type { get; set; }
+        public string Type { get; set; } = "response.image_generation_call.partial_image";
 
         /// <summary>
         /// The index of the output item in the response's output array.
@@ -107,9 +107,6 @@ namespace tryAGI.OpenAI
         /// <param name="agent">
         /// The agent that owns this multi-agent streaming event.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always 'response.image_generation_call.partial_image'.
-        /// </param>
         /// <param name="size">
         /// The image size that was used.
         /// </param>
@@ -122,6 +119,9 @@ namespace tryAGI.OpenAI
         /// <param name="outputFormat">
         /// The output format that was used.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always 'response.image_generation_call.partial_image'.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -132,11 +132,11 @@ namespace tryAGI.OpenAI
             int partialImageIndex,
             string partialImageB64,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseImageGenCallPartialImageEventType type,
             string? size,
             string? quality,
             string? background,
-            string? outputFormat)
+            string? outputFormat,
+            string type = "response.image_generation_call.partial_image")
         {
             this.Agent = agent;
             this.Type = type;

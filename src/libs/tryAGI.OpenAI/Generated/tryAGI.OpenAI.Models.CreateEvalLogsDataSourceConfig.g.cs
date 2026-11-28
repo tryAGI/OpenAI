@@ -13,10 +13,9 @@ namespace tryAGI.OpenAI
         /// The type of data source. Always `logs`.<br/>
         /// Default Value: logs
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfigType.Logs</default>
+        /// <default>"logs"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateEvalLogsDataSourceConfigTypeJsonConverter))]
-        public global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfigType Type { get; set; } = global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfigType.Logs;
+        public string Type { get; set; } = "logs";
 
         /// <summary>
         /// Metadata filters for the logs data source.<br/>
@@ -56,7 +55,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateEvalLogsDataSourceConfig(
             object? metadata,
-            global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfigType type = global::tryAGI.OpenAI.CreateEvalLogsDataSourceConfigType.Logs)
+            string type = "logs")
         {
             this.Type = type;
             this.Metadata = metadata;

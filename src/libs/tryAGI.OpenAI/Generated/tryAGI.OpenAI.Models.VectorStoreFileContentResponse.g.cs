@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `vector_store.file_content.page`
         /// </summary>
+        /// <default>"vector_store.file_content.page"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VectorStoreFileContentResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.VectorStoreFileContentResponseObject Object { get; set; }
+        public string Object { get; set; } = "vector_store.file_content.page";
 
         /// <summary>
         /// Parsed content of the file.
@@ -50,18 +50,18 @@ namespace tryAGI.OpenAI
         /// <param name="hasMore">
         /// Indicates if there are more content pages to fetch.
         /// </param>
+        /// <param name="nextPage"></param>
         /// <param name="object">
         /// The object type, which is always `vector_store.file_content.page`
         /// </param>
-        /// <param name="nextPage"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public VectorStoreFileContentResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.VectorStoreFileContentResponseDataItem> data,
             bool hasMore,
-            global::tryAGI.OpenAI.VectorStoreFileContentResponseObject @object,
-            string? nextPage)
+            string? nextPage,
+            string @object = "vector_store.file_content.page")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

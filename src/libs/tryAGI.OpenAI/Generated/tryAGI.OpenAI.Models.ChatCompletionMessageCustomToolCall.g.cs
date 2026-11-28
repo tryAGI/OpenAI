@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the tool. Always `custom`.
         /// </summary>
+        /// <default>"custom"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionMessageCustomToolCallTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCallType Type { get; set; }
+        public string Type { get; set; } = "custom";
 
         /// <summary>
         /// The custom tool that the model called.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public ChatCompletionMessageCustomToolCall(
             string id,
             global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCallCustom custom,
-            global::tryAGI.OpenAI.ChatCompletionMessageCustomToolCallType type)
+            string type = "custom")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;

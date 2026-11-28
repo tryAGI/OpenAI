@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of source. Always `url`.
         /// </summary>
+        /// <default>"url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaWebSearchActionSearchSourceTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaWebSearchActionSearchSourceType Type { get; set; }
+        public string Type { get; set; } = "url";
 
         /// <summary>
         /// The URL of the source.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public BetaWebSearchActionSearchSource(
             string url,
-            global::tryAGI.OpenAI.BetaWebSearchActionSearchSourceType type)
+            string type = "url")
         {
             this.Type = type;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public BetaWebSearchActionSearchSource()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaWebSearchActionSearchSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaWebSearchActionSearchSource FromUrl(string url)
+        {
+            return new BetaWebSearchActionSearchSource
+            {
+                Url = url,
+            };
         }
 
     }

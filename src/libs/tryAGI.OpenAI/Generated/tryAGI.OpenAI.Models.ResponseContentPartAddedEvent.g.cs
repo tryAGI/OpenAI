@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.content_part.added`.
         /// </summary>
+        /// <default>"response.content_part.added"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseContentPartAddedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseContentPartAddedEventType Type { get; set; }
+        public string Type { get; set; } = "response.content_part.added";
 
         /// <summary>
         /// The ID of the output item that the content part was added to.
@@ -87,7 +87,7 @@ namespace tryAGI.OpenAI
             int contentIndex,
             global::tryAGI.OpenAI.OutputContent part,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseContentPartAddedEventType type)
+            string type = "response.content_part.added")
         {
             this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));

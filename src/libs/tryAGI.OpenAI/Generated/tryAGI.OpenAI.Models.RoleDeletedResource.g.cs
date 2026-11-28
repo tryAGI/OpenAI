@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `role.deleted`.
         /// </summary>
+        /// <default>"role.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RoleDeletedResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.RoleDeletedResourceObject Object { get; set; }
+        public string Object { get; set; } = "role.deleted";
 
         /// <summary>
         /// Identifier of the deleted role.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public RoleDeletedResource(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.RoleDeletedResourceObject @object)
+            string @object = "role.deleted")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

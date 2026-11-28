@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `text`.
         /// </summary>
+        /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageContentTextObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageContentTextObjectType Type { get; set; }
+        public string Type { get; set; } = "text";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public MessageContentTextObject(
             global::tryAGI.OpenAI.MessageContentTextObjectText text,
-            global::tryAGI.OpenAI.MessageContentTextObjectType type)
+            string type = "text")
         {
             this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public MessageContentTextObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageContentTextObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageContentTextObject FromText(global::tryAGI.OpenAI.MessageContentTextObjectText text)
+        {
+            return new MessageContentTextObject
+            {
+                Text = text,
+            };
         }
 
     }

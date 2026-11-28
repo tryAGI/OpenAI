@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the local shell call. Always `local_shell_call`.
         /// </summary>
+        /// <default>"local_shell_call"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaLocalShellToolCallTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaLocalShellToolCallType Type { get; set; }
+        public string Type { get; set; } = "local_shell_call";
 
         /// <summary>
         /// The unique ID of the local shell call.
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaLocalShellExecAction action,
             global::tryAGI.OpenAI.BetaLocalShellToolCallStatus status,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaLocalShellToolCallType type)
+            string type = "local_shell_call")
         {
             this.Agent = agent;
             this.Type = type;

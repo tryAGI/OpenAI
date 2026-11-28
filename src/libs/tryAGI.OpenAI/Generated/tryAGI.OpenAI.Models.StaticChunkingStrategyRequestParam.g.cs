@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `static`.
         /// </summary>
+        /// <default>"static"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.StaticChunkingStrategyRequestParamTypeJsonConverter))]
-        public global::tryAGI.OpenAI.StaticChunkingStrategyRequestParamType Type { get; set; }
+        public string Type { get; set; } = "static";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public StaticChunkingStrategyRequestParam(
             global::tryAGI.OpenAI.StaticChunkingStrategy @static,
-            global::tryAGI.OpenAI.StaticChunkingStrategyRequestParamType type)
+            string type = "static")
         {
             this.Type = type;
             this.Static = @static ?? throw new global::System.ArgumentNullException(nameof(@static));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public StaticChunkingStrategyRequestParam()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="StaticChunkingStrategyRequestParam"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static StaticChunkingStrategyRequestParam FromStatic(global::tryAGI.OpenAI.StaticChunkingStrategy @static)
+        {
+            return new StaticChunkingStrategyRequestParam
+            {
+                Static = @static,
+            };
         }
 
     }

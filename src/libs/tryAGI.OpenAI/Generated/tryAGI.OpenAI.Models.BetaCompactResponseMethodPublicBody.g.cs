@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
     public sealed partial class BetaCompactResponseMethodPublicBody
     {
         /// <summary>
-        /// Model ID used to generate the response, like `gpt-6-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
+        /// Model ID used to generate the response, like `gpt-6.2-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaModelIdsCompactionJsonConverter))]
@@ -32,6 +32,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("instructions")]
         public string? Instructions { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_identifier")]
+        public string? SafetyIdentifier { get; set; }
+
+        /// <summary>
+        /// Request level image options.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
+        public global::tryAGI.OpenAI.BetaImageOptionsParam? Image { get; set; }
 
         /// <summary>
         ///
@@ -67,11 +79,15 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="BetaCompactResponseMethodPublicBody" /> class.
         /// </summary>
         /// <param name="model">
-        /// Model ID used to generate the response, like `gpt-6-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
+        /// Model ID used to generate the response, like `gpt-6.2-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
         /// </param>
         /// <param name="input"></param>
         /// <param name="previousResponseId"></param>
         /// <param name="instructions"></param>
+        /// <param name="safetyIdentifier"></param>
+        /// <param name="image">
+        /// Request level image options.
+        /// </param>
         /// <param name="promptCacheKey"></param>
         /// <param name="promptCacheRetention"></param>
         /// <param name="promptCacheOptions"></param>
@@ -84,6 +100,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputItem>>? input,
             string? previousResponseId,
             string? instructions,
+            string? safetyIdentifier,
+            global::tryAGI.OpenAI.BetaImageOptionsParam? image,
             string? promptCacheKey,
             global::tryAGI.OpenAI.BetaPromptCacheRetentionEnum? promptCacheRetention,
             global::tryAGI.OpenAI.BetaPromptCacheOptionsParam? promptCacheOptions,
@@ -93,6 +111,8 @@ namespace tryAGI.OpenAI
             this.Input = input;
             this.PreviousResponseId = previousResponseId;
             this.Instructions = instructions;
+            this.SafetyIdentifier = safetyIdentifier;
+            this.Image = image;
             this.PromptCacheKey = promptCacheKey;
             this.PromptCacheRetention = promptCacheRetention;
             this.PromptCacheOptions = promptCacheOptions;

@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
         /// This enables organization owners to share fine-tuned models with other projects in their organization.
         /// </summary>
         /// <param name="fineTunedModelCheckpoint">
-        /// Example: ft:gpt-4o-mini-2024-07-18:org:weather:B7R9VjQd
+        /// Example: ft:gpt-4.1-mini-2025-04-14:org:weather:B7R9VjQd
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -28,7 +28,7 @@ namespace tryAGI.OpenAI
         /// This enables organization owners to share fine-tuned models with other projects in their organization.
         /// </summary>
         /// <param name="fineTunedModelCheckpoint">
-        /// Example: ft:gpt-4o-mini-2024-07-18:org:weather:B7R9VjQd
+        /// Example: ft:gpt-4.1-mini-2025-04-14:org:weather:B7R9VjQd
         /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
@@ -46,7 +46,7 @@ namespace tryAGI.OpenAI
         /// This enables organization owners to share fine-tuned models with other projects in their organization.
         /// </summary>
         /// <param name="fineTunedModelCheckpoint">
-        /// Example: ft:gpt-4o-mini-2024-07-18:org:weather:B7R9VjQd
+        /// Example: ft:gpt-4.1-mini-2025-04-14:org:weather:B7R9VjQd
         /// </param>
         /// <param name="projectIds">
         /// The project identifiers to grant access to.

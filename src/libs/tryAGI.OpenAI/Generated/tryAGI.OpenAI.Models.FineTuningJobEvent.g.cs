@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always "fine_tuning.job.event".
         /// </summary>
+        /// <default>"fine_tuning.job.event"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FineTuningJobEventObjectJsonConverter))]
-        public global::tryAGI.OpenAI.FineTuningJobEventObject Object { get; set; }
+        public string Object { get; set; } = "fine_tuning.job.event";
 
         /// <summary>
         /// The object identifier.
@@ -78,14 +78,14 @@ namespace tryAGI.OpenAI
         /// <param name="message">
         /// The message of the event.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always "fine_tuning.job.event".
-        /// </param>
         /// <param name="type">
         /// The type of event.
         /// </param>
         /// <param name="data">
         /// The data associated with the event.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "fine_tuning.job.event".
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -95,9 +95,9 @@ namespace tryAGI.OpenAI
             int createdAt,
             global::tryAGI.OpenAI.FineTuningJobEventLevel level,
             string message,
-            global::tryAGI.OpenAI.FineTuningJobEventObject @object,
             global::tryAGI.OpenAI.FineTuningJobEventType? type,
-            object? data)
+            object? data,
+            string @object = "fine_tuning.job.event")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

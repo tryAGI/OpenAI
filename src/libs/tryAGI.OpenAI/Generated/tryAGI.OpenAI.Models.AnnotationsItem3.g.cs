@@ -5,163 +5,227 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Annotation object describing a cited source.
+    ///
     /// </summary>
     public readonly partial struct AnnotationsItem3 : global::System.IEquatable<AnnotationsItem3>
     {
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ResponseOutputTextAnnotationDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.BetaOutputTextContentParamAnnotationDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// Annotation that references an uploaded file.
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.FileAnnotation? File { get; init; }
+        public global::tryAGI.OpenAI.BetaFileCitationParam? FileCitation { get; init; }
 #else
-        public global::tryAGI.OpenAI.FileAnnotation? File { get; }
+        public global::tryAGI.OpenAI.BetaFileCitationParam? FileCitation { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileCitation))]
 #endif
-        public bool IsFile => File != null;
+        public bool IsFileCitation => FileCitation != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickFile(
+        public bool TryPickFileCitation(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.FileAnnotation? value)
+            out global::tryAGI.OpenAI.BetaFileCitationParam? value)
         {
-            value = File;
-            return IsFile;
+            value = FileCitation;
+            return IsFileCitation;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.FileAnnotation PickFile() => File is { } value
+        public global::tryAGI.OpenAI.BetaFileCitationParam PickFileCitation() => FileCitation is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'File' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'FileCitation' but the value was {ToString()}.");
 
         /// <summary>
-        /// Annotation that references a URL.
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.UrlAnnotation? Url { get; init; }
+        public global::tryAGI.OpenAI.BetaUrlCitationParam? UrlCitation { get; init; }
 #else
-        public global::tryAGI.OpenAI.UrlAnnotation? Url { get; }
+        public global::tryAGI.OpenAI.BetaUrlCitationParam? UrlCitation { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UrlCitation))]
 #endif
-        public bool IsUrl => Url != null;
+        public bool IsUrlCitation => UrlCitation != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickUrl(
+        public bool TryPickUrlCitation(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.UrlAnnotation? value)
+            out global::tryAGI.OpenAI.BetaUrlCitationParam? value)
         {
-            value = Url;
-            return IsUrl;
+            value = UrlCitation;
+            return IsUrlCitation;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.UrlAnnotation PickUrl() => Url is { } value
+        public global::tryAGI.OpenAI.BetaUrlCitationParam PickUrlCitation() => UrlCitation is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Url' but the value was {ToString()}.");
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator AnnotationsItem3(global::tryAGI.OpenAI.FileAnnotation value) => new AnnotationsItem3((global::tryAGI.OpenAI.FileAnnotation?)value);
+            : throw new global::System.InvalidOperationException($"Expected union variant 'UrlCitation' but the value was {ToString()}.");
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.FileAnnotation?(AnnotationsItem3 @this) => @this.File;
+#if NET6_0_OR_GREATER
+        public global::tryAGI.OpenAI.BetaContainerFileCitationParam? ContainerFileCitation { get; init; }
+#else
+        public global::tryAGI.OpenAI.BetaContainerFileCitationParam? ContainerFileCitation { get; }
+#endif
 
         /// <summary>
         ///
         /// </summary>
-        public AnnotationsItem3(global::tryAGI.OpenAI.FileAnnotation? value)
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContainerFileCitation))]
+#endif
+        public bool IsContainerFileCitation => ContainerFileCitation != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickContainerFileCitation(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::tryAGI.OpenAI.BetaContainerFileCitationParam? value)
         {
-            File = value;
+            value = ContainerFileCitation;
+            return IsContainerFileCitation;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static AnnotationsItem3 FromFile(global::tryAGI.OpenAI.FileAnnotation? value) => new AnnotationsItem3(value);
+        public global::tryAGI.OpenAI.BetaContainerFileCitationParam PickContainerFileCitation() => ContainerFileCitation is { } value
+            ? value
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ContainerFileCitation' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator AnnotationsItem3(global::tryAGI.OpenAI.BetaFileCitationParam value) => new AnnotationsItem3((global::tryAGI.OpenAI.BetaFileCitationParam?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AnnotationsItem3(global::tryAGI.OpenAI.UrlAnnotation value) => new AnnotationsItem3((global::tryAGI.OpenAI.UrlAnnotation?)value);
+        public static implicit operator global::tryAGI.OpenAI.BetaFileCitationParam?(AnnotationsItem3 @this) => @this.FileCitation;
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.UrlAnnotation?(AnnotationsItem3 @this) => @this.Url;
-
-        /// <summary>
-        ///
-        /// </summary>
-        public AnnotationsItem3(global::tryAGI.OpenAI.UrlAnnotation? value)
+        public AnnotationsItem3(global::tryAGI.OpenAI.BetaFileCitationParam? value)
         {
-            Url = value;
+            FileCitation = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static AnnotationsItem3 FromUrl(global::tryAGI.OpenAI.UrlAnnotation? value) => new AnnotationsItem3(value);
+        public static AnnotationsItem3 FromFileCitation(global::tryAGI.OpenAI.BetaFileCitationParam? value) => new AnnotationsItem3(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator AnnotationsItem3(global::tryAGI.OpenAI.BetaUrlCitationParam value) => new AnnotationsItem3((global::tryAGI.OpenAI.BetaUrlCitationParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.BetaUrlCitationParam?(AnnotationsItem3 @this) => @this.UrlCitation;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public AnnotationsItem3(global::tryAGI.OpenAI.BetaUrlCitationParam? value)
+        {
+            UrlCitation = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static AnnotationsItem3 FromUrlCitation(global::tryAGI.OpenAI.BetaUrlCitationParam? value) => new AnnotationsItem3(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator AnnotationsItem3(global::tryAGI.OpenAI.BetaContainerFileCitationParam value) => new AnnotationsItem3((global::tryAGI.OpenAI.BetaContainerFileCitationParam?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator global::tryAGI.OpenAI.BetaContainerFileCitationParam?(AnnotationsItem3 @this) => @this.ContainerFileCitation;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public AnnotationsItem3(global::tryAGI.OpenAI.BetaContainerFileCitationParam? value)
+        {
+            ContainerFileCitation = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static AnnotationsItem3 FromContainerFileCitation(global::tryAGI.OpenAI.BetaContainerFileCitationParam? value) => new AnnotationsItem3(value);
 
         /// <summary>
         ///
         /// </summary>
         public AnnotationsItem3(
-            global::tryAGI.OpenAI.ResponseOutputTextAnnotationDiscriminatorType? type,
-            global::tryAGI.OpenAI.FileAnnotation? file,
-            global::tryAGI.OpenAI.UrlAnnotation? url
+            global::tryAGI.OpenAI.BetaOutputTextContentParamAnnotationDiscriminatorType? type,
+            global::tryAGI.OpenAI.BetaFileCitationParam? fileCitation,
+            global::tryAGI.OpenAI.BetaUrlCitationParam? urlCitation,
+            global::tryAGI.OpenAI.BetaContainerFileCitationParam? containerFileCitation
             )
         {
             Type = type;
 
-            File = file;
-            Url = url;
+            FileCitation = fileCitation;
+            UrlCitation = urlCitation;
+            ContainerFileCitation = containerFileCitation;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
-            Url as object ??
-            File as object
+            ContainerFileCitation as object ??
+            UrlCitation as object ??
+            FileCitation as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            File?.ToString() ??
-            Url?.ToString()
+            FileCitation?.ToString() ??
+            UrlCitation?.ToString() ??
+            ContainerFileCitation?.ToString()
             ;
 
         /// <summary>
@@ -169,15 +233,16 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsFile && !IsUrl || !IsFile && IsUrl;
+            return IsFileCitation && !IsUrlCitation && !IsContainerFileCitation || !IsFileCitation && IsUrlCitation && !IsContainerFileCitation || !IsFileCitation && !IsUrlCitation && IsContainerFileCitation;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.FileAnnotation, TResult>? file = null,
-            global::System.Func<global::tryAGI.OpenAI.UrlAnnotation, TResult>? url = null,
+            global::System.Func<global::tryAGI.OpenAI.BetaFileCitationParam, TResult>? fileCitation = null,
+            global::System.Func<global::tryAGI.OpenAI.BetaUrlCitationParam, TResult>? urlCitation = null,
+            global::System.Func<global::tryAGI.OpenAI.BetaContainerFileCitationParam, TResult>? containerFileCitation = null,
             bool validate = true)
         {
             if (validate)
@@ -185,13 +250,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (File is { } __value0 && file != null)
+            if (FileCitation is { } __value0 && fileCitation != null)
             {
-                return file(__value0);
+                return fileCitation(__value0);
             }
-            else if (Url is { } __value1 && url != null)
+            else if (UrlCitation is { } __value1 && urlCitation != null)
             {
-                return url(__value1);
+                return urlCitation(__value1);
+            }
+            else if (ContainerFileCitation is { } __value2 && containerFileCitation != null)
+            {
+                return containerFileCitation(__value2);
             }
 
             return default(TResult);
@@ -201,9 +270,11 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.FileAnnotation>? file = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaFileCitationParam>? fileCitation = null,
 
-            global::System.Action<global::tryAGI.OpenAI.UrlAnnotation>? url = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaUrlCitationParam>? urlCitation = null,
+
+            global::System.Action<global::tryAGI.OpenAI.BetaContainerFileCitationParam>? containerFileCitation = null,
             bool validate = true)
         {
             if (validate)
@@ -211,13 +282,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (File is { } __value0)
+            if (FileCitation is { } __value0)
             {
-                file?.Invoke(__value0);
+                fileCitation?.Invoke(__value0);
             }
-            else if (Url is { } __value1)
+            else if (UrlCitation is { } __value1)
             {
-                url?.Invoke(__value1);
+                urlCitation?.Invoke(__value1);
+            }
+            else if (ContainerFileCitation is { } __value2)
+            {
+                containerFileCitation?.Invoke(__value2);
             }
         }
 
@@ -225,8 +300,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.FileAnnotation>? file = null,
-            global::System.Action<global::tryAGI.OpenAI.UrlAnnotation>? url = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaFileCitationParam>? fileCitation = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaUrlCitationParam>? urlCitation = null,
+            global::System.Action<global::tryAGI.OpenAI.BetaContainerFileCitationParam>? containerFileCitation = null,
             bool validate = true)
         {
             if (validate)
@@ -234,13 +310,17 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (File is { } __value0)
+            if (FileCitation is { } __value0)
             {
-                file?.Invoke(__value0);
+                fileCitation?.Invoke(__value0);
             }
-            else if (Url is { } __value1)
+            else if (UrlCitation is { } __value1)
             {
-                url?.Invoke(__value1);
+                urlCitation?.Invoke(__value1);
+            }
+            else if (ContainerFileCitation is { } __value2)
+            {
+                containerFileCitation?.Invoke(__value2);
             }
         }
 
@@ -251,10 +331,12 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                File,
-                typeof(global::tryAGI.OpenAI.FileAnnotation),
-                Url,
-                typeof(global::tryAGI.OpenAI.UrlAnnotation),
+                FileCitation,
+                typeof(global::tryAGI.OpenAI.BetaFileCitationParam),
+                UrlCitation,
+                typeof(global::tryAGI.OpenAI.BetaUrlCitationParam),
+                ContainerFileCitation,
+                typeof(global::tryAGI.OpenAI.BetaContainerFileCitationParam),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -271,8 +353,9 @@ namespace tryAGI.OpenAI
         public bool Equals(AnnotationsItem3 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.FileAnnotation?>.Default.Equals(File, other.File) &&
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.UrlAnnotation?>.Default.Equals(Url, other.Url)
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaFileCitationParam?>.Default.Equals(FileCitation, other.FileCitation) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaUrlCitationParam?>.Default.Equals(UrlCitation, other.UrlCitation) &&
+                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.BetaContainerFileCitationParam?>.Default.Equals(ContainerFileCitation, other.ContainerFileCitation)
                 ;
         }
 

@@ -24,9 +24,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of tool call. This is always going to be `file_search` for this type of tool call.
         /// </summary>
+        /// <default>"file_search"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDeltaStepDetailsToolCallsFileSearchObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObjectType Type { get; set; }
+        public string Type { get; set; } = "file_search";
 
         /// <summary>
         /// For now, this is always going to be an empty object.
@@ -63,7 +63,7 @@ namespace tryAGI.OpenAI
             int index,
             object fileSearch,
             string? id,
-            global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsFileSearchObjectType type)
+            string type = "file_search")
         {
             this.Index = index;
             this.Id = id;

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Anchor timestamp after which the expiration policy applies. Supported anchors: `created_at`.
         /// </summary>
+        /// <default>"created_at"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("anchor")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FileExpirationAfterAnchorJsonConverter))]
-        public global::tryAGI.OpenAI.FileExpirationAfterAnchor Anchor { get; set; }
+        public string Anchor { get; set; } = "created_at";
 
         /// <summary>
         /// The number of seconds after the anchor time that the file will expire. Must be between 3600 (1 hour) and 2592000 (30 days).
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public FileExpirationAfter(
             long seconds,
-            global::tryAGI.OpenAI.FileExpirationAfterAnchor anchor)
+            string anchor = "created_at")
         {
             this.Anchor = anchor;
             this.Seconds = seconds;
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public FileExpirationAfter()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="FileExpirationAfter"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static FileExpirationAfter FromSeconds(long seconds)
+        {
+            return new FileExpirationAfter
+            {
+                Seconds = seconds,
+            };
         }
 
     }

@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI
         /// The type of the content.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDetailsToolCallsFileSearchResultObjectContentItemTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchResultObjectContentItemType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// The text content of the file.
@@ -40,7 +39,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDetailsToolCallsFileSearchResultObjectContentItem(
-            global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchResultObjectContentItemType? type,
+            string? type,
             string? text)
         {
             this.Type = type;

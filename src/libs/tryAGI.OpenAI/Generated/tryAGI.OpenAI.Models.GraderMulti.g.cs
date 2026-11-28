@@ -12,10 +12,9 @@ namespace tryAGI.OpenAI
         /// The object type, which is always `multi`.<br/>
         /// Default Value: multi
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.GraderMultiType.Multi</default>
+        /// <default>"multi"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GraderMultiTypeJsonConverter))]
-        public global::tryAGI.OpenAI.GraderMultiType Type { get; set; } = global::tryAGI.OpenAI.GraderMultiType.Multi;
+        public string Type { get; set; } = "multi";
 
         /// <summary>
         /// The name of the grader.
@@ -65,7 +64,7 @@ namespace tryAGI.OpenAI
             string name,
             object graders,
             string calculateOutput,
-            global::tryAGI.OpenAI.GraderMultiType type = global::tryAGI.OpenAI.GraderMultiType.Multi)
+            string type = "multi")
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

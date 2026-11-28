@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.ContainerAutoParamSkillDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -137,7 +137,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public SkillsItem2(
-            global::tryAGI.OpenAI.ContainerAutoParamSkillDiscriminatorType? type,
+            global::tryAGI.OpenAI.CreateContainerBodySkillDiscriminatorType? type,
             global::tryAGI.OpenAI.SkillReferenceParam? skillReference,
             global::tryAGI.OpenAI.InlineSkillParam? inline
             )

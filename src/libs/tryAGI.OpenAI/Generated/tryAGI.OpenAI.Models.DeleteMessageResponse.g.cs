@@ -25,9 +25,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"thread.message.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DeleteMessageResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.DeleteMessageResponseObject Object { get; set; }
+        public string Object { get; set; } = "thread.message.deleted";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         public DeleteMessageResponse(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.DeleteMessageResponseObject @object)
+            string @object = "thread.message.deleted")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Deleted = deleted;

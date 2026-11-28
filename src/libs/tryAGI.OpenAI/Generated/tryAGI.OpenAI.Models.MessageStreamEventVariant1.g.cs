@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"thread.message.created"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageStreamEventVariant1EventJsonConverter))]
-        public global::tryAGI.OpenAI.MessageStreamEventVariant1Event Event { get; set; }
+        public string Event { get; set; } = "thread.message.created";
 
         /// <summary>
         /// Represents a message within a [thread](https://developers.openai.com/api/docs/assistants/migration).
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public MessageStreamEventVariant1(
             global::tryAGI.OpenAI.MessageObject data,
-            global::tryAGI.OpenAI.MessageStreamEventVariant1Event @event)
+            string @event = "thread.message.created")
         {
             this.Event = @event;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public MessageStreamEventVariant1()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageStreamEventVariant1"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageStreamEventVariant1 FromData(global::tryAGI.OpenAI.MessageObject data)
+        {
+            return new MessageStreamEventVariant1
+            {
+                Data = data,
+            };
         }
 
     }

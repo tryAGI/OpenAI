@@ -12,8 +12,7 @@ namespace tryAGI.OpenAI
         /// The type of the tool, i.e. `function`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaResponseCreateParamsToolTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsToolType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// The name of the function.
@@ -62,7 +61,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeBetaResponseCreateParamsTool(
-            global::tryAGI.OpenAI.RealtimeBetaResponseCreateParamsToolType? type,
+            string? type,
             string? name,
             string? description,
             object? parameters)

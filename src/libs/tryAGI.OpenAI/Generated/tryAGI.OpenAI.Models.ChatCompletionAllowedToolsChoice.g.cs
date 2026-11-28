@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Allowed tool configuration type. Always `allowed_tools`.
         /// </summary>
+        /// <default>"allowed_tools"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ChatCompletionAllowedToolsChoiceTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoiceType Type { get; set; }
+        public string Type { get; set; } = "allowed_tools";
 
         /// <summary>
         /// Constrains the tools available to the model to a pre-defined set.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public ChatCompletionAllowedToolsChoice(
             global::tryAGI.OpenAI.ChatCompletionAllowedTools allowedTools,
-            global::tryAGI.OpenAI.ChatCompletionAllowedToolsChoiceType type)
+            string type = "allowed_tools")
         {
             this.Type = type;
             this.AllowedTools = allowedTools ?? throw new global::System.ArgumentNullException(nameof(allowedTools));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ChatCompletionAllowedToolsChoice()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ChatCompletionAllowedToolsChoice"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ChatCompletionAllowedToolsChoice FromAllowedTools(global::tryAGI.OpenAI.ChatCompletionAllowedTools allowedTools)
+        {
+            return new ChatCompletionAllowedToolsChoice
+            {
+                AllowedTools = allowedTools,
+            };
         }
 
     }

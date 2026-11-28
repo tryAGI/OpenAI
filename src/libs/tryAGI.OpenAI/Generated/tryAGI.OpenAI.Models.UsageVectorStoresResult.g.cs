@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"organization.usage.vector_stores.result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UsageVectorStoresResultObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UsageVectorStoresResultObject Object { get; set; }
+        public string Object { get; set; } = "organization.usage.vector_stores.result";
 
         /// <summary>
         /// The vector stores usage in bytes.
@@ -40,15 +40,15 @@ namespace tryAGI.OpenAI
         /// <param name="usageBytes">
         /// The vector stores usage in bytes.
         /// </param>
-        /// <param name="object"></param>
         /// <param name="projectId"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageVectorStoresResult(
             long usageBytes,
-            global::tryAGI.OpenAI.UsageVectorStoresResultObject @object,
-            string? projectId)
+            string? projectId,
+            string @object = "organization.usage.vector_stores.result")
         {
             this.Object = @object;
             this.UsageBytes = usageBytes;
@@ -60,6 +60,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public UsageVectorStoresResult()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="UsageVectorStoresResult"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static UsageVectorStoresResult FromUsageBytes(long usageBytes)
+        {
+            return new UsageVectorStoresResult
+            {
+                UsageBytes = usageBytes,
+            };
         }
 
     }

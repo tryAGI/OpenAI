@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type. Always `event`.
         /// </summary>
+        /// <default>"event"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookAgentSessionEnvelopeObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookAgentSessionEnvelopeObject Object { get; set; }
+        public string Object { get; set; } = "event";
 
         /// <summary>
         /// The Unix timestamp, in seconds, when the event was created.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public WebhookAgentSessionEnvelope(
             string id,
             int createdAt,
-            global::tryAGI.OpenAI.WebhookAgentSessionEnvelopeObject @object)
+            string @object = "event")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

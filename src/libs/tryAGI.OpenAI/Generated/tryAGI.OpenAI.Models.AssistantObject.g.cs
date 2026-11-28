@@ -20,10 +20,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `assistant`.
         /// </summary>
+        /// <default>"assistant"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AssistantObjectObjectJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::tryAGI.OpenAI.AssistantObjectObject Object { get; set; }
+        public string Object { get; set; } = "assistant";
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the assistant was created.
@@ -128,9 +128,6 @@ namespace tryAGI.OpenAI
         /// A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.<br/>
         /// Default Value: []
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `assistant`.
-        /// </param>
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="instructions"></param>
@@ -139,6 +136,9 @@ namespace tryAGI.OpenAI
         /// <param name="temperature"></param>
         /// <param name="topP"></param>
         /// <param name="responseFormat"></param>
+        /// <param name="object">
+        /// The object type, which is always `assistant`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -147,7 +147,6 @@ namespace tryAGI.OpenAI
             int createdAt,
             string model,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>> tools,
-            global::tryAGI.OpenAI.AssistantObjectObject @object,
             string? name,
             string? description,
             string? instructions,
@@ -155,7 +154,8 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
             double? temperature,
             double? topP,
-            global::tryAGI.OpenAI.AssistantsApiResponseFormatOption? responseFormat)
+            global::tryAGI.OpenAI.AssistantsApiResponseFormatOption? responseFormat,
+            string @object = "assistant")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

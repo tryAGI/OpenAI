@@ -12,9 +12,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of response format being defined. Always `json_schema`.
         /// </summary>
+        /// <default>"json_schema"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaTextResponseFormatJsonSchemaTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaTextResponseFormatJsonSchemaType Type { get; set; }
+        public string Type { get; set; } = "json_schema";
 
         /// <summary>
         /// A description of what the response format is for, used by the model to<br/>
@@ -62,23 +62,23 @@ namespace tryAGI.OpenAI
         /// The schema for the response format, described as a JSON Schema object.<br/>
         /// Learn how to build JSON schemas [here](https://json-schema.org/).
         /// </param>
-        /// <param name="type">
-        /// The type of response format being defined. Always `json_schema`.
-        /// </param>
         /// <param name="description">
         /// A description of what the response format is for, used by the model to<br/>
         /// determine how to respond in the format.
         /// </param>
         /// <param name="strict"></param>
+        /// <param name="type">
+        /// The type of response format being defined. Always `json_schema`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaTextResponseFormatJsonSchema(
             string name,
             global::tryAGI.OpenAI.BetaResponseFormatJsonSchemaSchema schema,
-            global::tryAGI.OpenAI.BetaTextResponseFormatJsonSchemaType type,
             string? description,
-            bool? strict)
+            bool? strict,
+            string type = "json_schema")
         {
             this.Type = type;
             this.Description = description;

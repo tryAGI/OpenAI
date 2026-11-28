@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the image input. Always `input_image`.
         /// </summary>
+        /// <default>"input_image"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalItemInputImageTypeJsonConverter))]
-        public global::tryAGI.OpenAI.EvalItemInputImageType Type { get; set; }
+        public string Type { get; set; } = "input_image";
 
         /// <summary>
         /// The URL of the image input.
@@ -40,19 +40,19 @@ namespace tryAGI.OpenAI
         /// <param name="imageUrl">
         /// The URL of the image input.
         /// </param>
-        /// <param name="type">
-        /// The type of the image input. Always `input_image`.
-        /// </param>
         /// <param name="detail">
         /// The detail level of the image to be sent to the model. One of `high`, `low`, or `auto`. Defaults to `auto`.
+        /// </param>
+        /// <param name="type">
+        /// The type of the image input. Always `input_image`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public EvalItemInputImage(
             string imageUrl,
-            global::tryAGI.OpenAI.EvalItemInputImageType type,
-            string? detail)
+            string? detail,
+            string type = "input_image")
         {
             this.Type = type;
             this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
@@ -64,6 +64,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public EvalItemInputImage()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="EvalItemInputImage"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static EvalItemInputImage FromImageUrl(string imageUrl)
+        {
+            return new EvalItemInputImage
+            {
+                ImageUrl = imageUrl,
+            };
         }
 
     }

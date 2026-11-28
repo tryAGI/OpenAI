@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `transcript.text.done`.
         /// </summary>
+        /// <default>"transcript.text.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.TranscriptTextDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.TranscriptTextDoneEventType Type { get; set; }
+        public string Type { get; set; } = "transcript.text.done";
 
         /// <summary>
         /// The text that was transcribed.
@@ -52,9 +52,6 @@ namespace tryAGI.OpenAI
         /// <param name="text">
         /// The text that was transcribed.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `transcript.text.done`.
-        /// </param>
         /// <param name="languages">
         /// The languages detected in the audio. Returned by `gpt-transcribe`. An empty array indicates that no language could be reliably detected.
         /// </param>
@@ -64,15 +61,18 @@ namespace tryAGI.OpenAI
         /// <param name="usage">
         /// Usage statistics for models billed by token usage.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `transcript.text.done`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TranscriptTextDoneEvent(
             string text,
-            global::tryAGI.OpenAI.TranscriptTextDoneEventType type,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionLanguage>? languages,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDoneEventLogprob>? logprobs,
-            global::tryAGI.OpenAI.TranscriptTextUsageTokens? usage)
+            global::tryAGI.OpenAI.TranscriptTextUsageTokens? usage,
+            string type = "transcript.text.done")
         {
             this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
@@ -86,6 +86,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TranscriptTextDoneEvent()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="TranscriptTextDoneEvent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static TranscriptTextDoneEvent FromText(string text)
+        {
+            return new TranscriptTextDoneEvent
+            {
+                Text = text,
+            };
         }
 
     }

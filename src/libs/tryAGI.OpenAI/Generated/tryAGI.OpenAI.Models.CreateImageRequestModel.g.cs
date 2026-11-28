@@ -56,6 +56,14 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         GptImage25Sunburst20260908,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage26Flare,
+        /// <summary>
+        ///
+        /// </summary>
+        GptImage26Sunburst,
     }
 
     /// <summary>
@@ -82,6 +90,8 @@ namespace tryAGI.OpenAI
                 CreateImageRequestModel.GptImage25Flare20260908 => "gpt-image-2.5-flare-2026-09-08",
                 CreateImageRequestModel.GptImage25Sunburst => "gpt-image-2.5-sunburst",
                 CreateImageRequestModel.GptImage25Sunburst20260908 => "gpt-image-2.5-sunburst-2026-09-08",
+                CreateImageRequestModel.GptImage26Flare => "gpt-image-2.6-flare",
+                CreateImageRequestModel.GptImage26Sunburst => "gpt-image-2.6-sunburst",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -104,6 +114,8 @@ namespace tryAGI.OpenAI
                 "gpt-image-2.5-flare-2026-09-08" => CreateImageRequestModel.GptImage25Flare20260908,
                 "gpt-image-2.5-sunburst" => CreateImageRequestModel.GptImage25Sunburst,
                 "gpt-image-2.5-sunburst-2026-09-08" => CreateImageRequestModel.GptImage25Sunburst20260908,
+                "gpt-image-2.6-flare" => CreateImageRequestModel.GptImage26Flare,
+                "gpt-image-2.6-sunburst" => CreateImageRequestModel.GptImage26Sunburst,
                 _ => null,
             };
         }

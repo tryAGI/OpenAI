@@ -15,6 +15,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        OmniModerationCsamLatest,
+        /// <summary>
+        ///
+        /// </summary>
         OmniModerationLatest,
         /// <summary>
         ///
@@ -39,6 +43,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 CreateModerationRequestModel.OmniModeration20240926 => "omni-moderation-2024-09-26",
+                CreateModerationRequestModel.OmniModerationCsamLatest => "omni-moderation-csam-latest",
                 CreateModerationRequestModel.OmniModerationLatest => "omni-moderation-latest",
                 CreateModerationRequestModel.TextModerationLatest => "text-moderation-latest",
                 CreateModerationRequestModel.TextModerationStable => "text-moderation-stable",
@@ -53,6 +58,7 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "omni-moderation-2024-09-26" => CreateModerationRequestModel.OmniModeration20240926,
+                "omni-moderation-csam-latest" => CreateModerationRequestModel.OmniModerationCsamLatest,
                 "omni-moderation-latest" => CreateModerationRequestModel.OmniModerationLatest,
                 "text-moderation-latest" => CreateModerationRequestModel.TextModerationLatest,
                 "text-moderation-stable" => CreateModerationRequestModel.TextModerationStable,

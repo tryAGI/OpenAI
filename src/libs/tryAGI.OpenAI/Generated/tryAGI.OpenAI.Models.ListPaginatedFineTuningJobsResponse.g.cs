@@ -25,9 +25,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ListPaginatedFineTuningJobsResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ListPaginatedFineTuningJobsResponseObject Object { get; set; }
+        public string Object { get; set; } = "list";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         public ListPaginatedFineTuningJobsResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningJob> data,
             bool hasMore,
-            global::tryAGI.OpenAI.ListPaginatedFineTuningJobsResponseObject @object)
+            string @object = "list")
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.HasMore = hasMore;

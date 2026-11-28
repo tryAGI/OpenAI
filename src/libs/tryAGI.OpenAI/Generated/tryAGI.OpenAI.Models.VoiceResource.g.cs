@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `audio.voice`.
         /// </summary>
+        /// <default>"audio.voice"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.VoiceResourceObject Object { get; set; }
+        public string Object { get; set; } = "audio.voice";
 
         /// <summary>
         /// The voice identifier, which can be referenced in API endpoints.
@@ -71,11 +71,11 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the voice was created.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `audio.voice`.
-        /// </param>
         /// <param name="prompt">
         /// The original text prompt used to create the voice. Present for prompt-generated voices with a stored prompt; omitted for audio-sample voices and older voices without a stored prompt.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `audio.voice`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -85,8 +85,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.VoiceResourceType type,
             string name,
             int createdAt,
-            global::tryAGI.OpenAI.VoiceResourceObject @object,
-            string? prompt)
+            string? prompt,
+            string @object = "audio.voice")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

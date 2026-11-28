@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"user"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UserUser1ObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UserUser1Object Object { get; set; }
+        public string Object { get; set; } = "user";
 
         /// <summary>
         ///
@@ -68,25 +68,25 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="UserUser1" /> class.
         /// </summary>
         /// <param name="id"></param>
-        /// <param name="object"></param>
         /// <param name="email"></param>
         /// <param name="name"></param>
         /// <param name="picture"></param>
         /// <param name="enabled"></param>
         /// <param name="banned"></param>
         /// <param name="bannedAt"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UserUser1(
             string id,
-            global::tryAGI.OpenAI.UserUser1Object @object,
             string? email,
             string? name,
             string? picture,
             bool? enabled,
             bool? banned,
-            int? bannedAt)
+            int? bannedAt,
+            string @object = "user")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -103,6 +103,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public UserUser1()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="UserUser1"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static UserUser1 FromId(string id)
+        {
+            return new UserUser1
+            {
+                Id = id,
+            };
         }
 
     }

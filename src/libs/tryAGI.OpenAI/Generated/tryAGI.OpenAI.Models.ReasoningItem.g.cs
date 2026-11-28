@@ -14,9 +14,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the object. Always `reasoning`.
         /// </summary>
+        /// <default>"reasoning"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ReasoningItemTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ReasoningItemType Type { get; set; }
+        public string Type { get; set; } = "reasoning";
 
         /// <summary>
         /// The unique identifier of the reasoning content.
@@ -67,9 +67,6 @@ namespace tryAGI.OpenAI
         /// <param name="summary">
         /// Reasoning summary content.
         /// </param>
-        /// <param name="type">
-        /// The type of the object. Always `reasoning`.
-        /// </param>
         /// <param name="encryptedContent"></param>
         /// <param name="content">
         /// Reasoning text content.
@@ -78,16 +75,19 @@ namespace tryAGI.OpenAI
         /// The status of the item. One of `in_progress`, `completed`, or<br/>
         /// `incomplete`. Populated when items are returned via API.
         /// </param>
+        /// <param name="type">
+        /// The type of the object. Always `reasoning`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ReasoningItem(
             string id,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SummaryTextContent> summary,
-            global::tryAGI.OpenAI.ReasoningItemType type,
             string? encryptedContent,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ReasoningTextContent>? content,
-            global::tryAGI.OpenAI.ReasoningItemStatus? status)
+            global::tryAGI.OpenAI.ReasoningItemStatus? status,
+            string type = "reasoning")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

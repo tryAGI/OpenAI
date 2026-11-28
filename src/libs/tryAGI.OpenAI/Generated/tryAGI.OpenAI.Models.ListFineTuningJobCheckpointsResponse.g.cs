@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ListFineTuningJobCheckpointsResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ListFineTuningJobCheckpointsResponseObject Object { get; set; }
+        public string Object { get; set; } = "list";
 
         /// <summary>
         ///
@@ -52,18 +52,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="data"></param>
         /// <param name="hasMore"></param>
-        /// <param name="object"></param>
         /// <param name="firstId"></param>
         /// <param name="lastId"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ListFineTuningJobCheckpointsResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.FineTuningJobCheckpoint> data,
             bool hasMore,
-            global::tryAGI.OpenAI.ListFineTuningJobCheckpointsResponseObject @object,
             string? firstId,
-            string? lastId)
+            string? lastId,
+            string @object = "list")
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.Object = @object;

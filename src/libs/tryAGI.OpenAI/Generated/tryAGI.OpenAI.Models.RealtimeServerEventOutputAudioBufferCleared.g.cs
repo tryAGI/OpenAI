@@ -22,9 +22,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `output_audio_buffer.cleared`.
         /// </summary>
+        /// <default>"output_audio_buffer.cleared"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventOutputAudioBufferClearedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferClearedType Type { get; set; }
+        public string Type { get; set; } = "output_audio_buffer.cleared";
 
         /// <summary>
         /// The unique ID of the response that produced the audio.
@@ -57,7 +57,7 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventOutputAudioBufferCleared(
             string eventId,
             string responseId,
-            global::tryAGI.OpenAI.RealtimeServerEventOutputAudioBufferClearedType type)
+            string type = "output_audio_buffer.cleared")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

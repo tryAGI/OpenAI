@@ -18,15 +18,14 @@ namespace tryAGI.OpenAI
         /// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeConversationItemMessageSystemObjectJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemObject? Object { get; set; }
+        public string? Object { get; set; }
 
         /// <summary>
         /// The type of the item. Always `message`.
         /// </summary>
+        /// <default>"message"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeConversationItemMessageSystemTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemType Type { get; set; }
+        public string Type { get; set; } = "message";
 
         /// <summary>
         /// The status of the item. Has no effect on the conversation.
@@ -38,9 +37,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The role of the message sender. Always `system`.
         /// </summary>
+        /// <default>"system"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeConversationItemMessageSystemRoleJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemRole Role { get; set; }
+        public string Role { get; set; } = "system";
 
         /// <summary>
         /// The content of the message.
@@ -67,11 +66,11 @@ namespace tryAGI.OpenAI
         /// <param name="object">
         /// Identifier for the API object being returned - always `realtime.item`. Optional when creating a new item.
         /// </param>
-        /// <param name="type">
-        /// The type of the item. Always `message`.
-        /// </param>
         /// <param name="status">
         /// The status of the item. Has no effect on the conversation.
+        /// </param>
+        /// <param name="type">
+        /// The type of the item. Always `message`.
         /// </param>
         /// <param name="role">
         /// The role of the message sender. Always `system`.
@@ -82,10 +81,10 @@ namespace tryAGI.OpenAI
         public RealtimeConversationItemMessageSystem(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemContentItem> content,
             string? id,
-            global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemObject? @object,
-            global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemType type,
+            string? @object,
             global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemStatus? status,
-            global::tryAGI.OpenAI.RealtimeConversationItemMessageSystemRole role)
+            string type = "message",
+            string role = "system")
         {
             this.Id = id;
             this.Object = @object;

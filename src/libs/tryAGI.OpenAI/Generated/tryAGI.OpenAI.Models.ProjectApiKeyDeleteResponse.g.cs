@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"organization.project.api_key.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectApiKeyDeleteResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectApiKeyDeleteResponseObject Object { get; set; }
+        public string Object { get; set; } = "organization.project.api_key.deleted";
 
         /// <summary>
         ///
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         public ProjectApiKeyDeleteResponse(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.ProjectApiKeyDeleteResponseObject @object)
+            string @object = "organization.project.api_key.deleted")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

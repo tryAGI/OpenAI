@@ -36,9 +36,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `response.create`.
         /// </summary>
+        /// <default>"response.create"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeClientEventResponseCreateTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeClientEventResponseCreateType Type { get; set; }
+        public string Type { get; set; } = "response.create";
 
         /// <summary>
         /// Create a new Realtime response with these parameters
@@ -58,19 +58,19 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.create`.
-        /// </param>
         /// <param name="response">
         /// Create a new Realtime response with these parameters
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.create`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeClientEventResponseCreate(
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeClientEventResponseCreateType type,
-            global::tryAGI.OpenAI.RealtimeResponseCreateParams? response)
+            global::tryAGI.OpenAI.RealtimeResponseCreateParams? response,
+            string type = "response.create")
         {
             this.EventId = eventId;
             this.Type = type;

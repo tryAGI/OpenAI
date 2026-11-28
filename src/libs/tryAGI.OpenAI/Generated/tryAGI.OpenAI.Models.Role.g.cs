@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `role`.
         /// </summary>
+        /// <default>"role"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RoleObjectJsonConverter))]
-        public global::tryAGI.OpenAI.RoleObject Object { get; set; }
+        public string Object { get; set; } = "role";
 
         /// <summary>
         /// Identifier for the role.
@@ -80,11 +80,11 @@ namespace tryAGI.OpenAI
         /// <param name="predefinedRole">
         /// Whether the role is predefined and managed by OpenAI.
         /// </param>
-        /// <param name="object">
-        /// Always `role`.
-        /// </param>
         /// <param name="description">
         /// Optional description of the role.
+        /// </param>
+        /// <param name="object">
+        /// Always `role`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -95,8 +95,8 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<string> permissions,
             string resourceType,
             bool predefinedRole,
-            global::tryAGI.OpenAI.RoleObject @object,
-            string? description)
+            string? description,
+            string @object = "role")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

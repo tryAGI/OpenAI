@@ -46,6 +46,12 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.TurnResource Turn { get; set; }
 
         /// <summary>
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("obfuscation")]
+        public string? Obfuscation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -66,6 +72,9 @@ namespace tryAGI.OpenAI
         /// <param name="turn">
         /// The turn at the time it was created.
         /// </param>
+        /// <param name="obfuscation">
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `agent.session.turn.created`.<br/>
         /// Default Value: agent.session.turn.created
@@ -78,6 +87,7 @@ namespace tryAGI.OpenAI
             string sessionId,
             string turnId,
             global::tryAGI.OpenAI.TurnResource turn,
+            string? obfuscation,
             global::tryAGI.OpenAI.SessionEventAgentSessionTurnCreatedType type = global::tryAGI.OpenAI.SessionEventAgentSessionTurnCreatedType.AgentSessionTurnCreated)
         {
             this.Type = type;
@@ -85,6 +95,7 @@ namespace tryAGI.OpenAI
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
             this.TurnId = turnId ?? throw new global::System.ArgumentNullException(nameof(turnId));
             this.Turn = turn ?? throw new global::System.ArgumentNullException(nameof(turn));
+            this.Obfuscation = obfuscation;
         }
 
         /// <summary>

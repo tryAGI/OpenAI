@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the output text. Always `output_text`.
         /// </summary>
+        /// <default>"output_text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalItemContentOutputTextTypeJsonConverter))]
-        public global::tryAGI.OpenAI.EvalItemContentOutputTextType Type { get; set; }
+        public string Type { get; set; } = "output_text";
 
         /// <summary>
         /// The text output from the model.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public EvalItemContentOutputText(
             string text,
-            global::tryAGI.OpenAI.EvalItemContentOutputTextType type)
+            string type = "output_text")
         {
             this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public EvalItemContentOutputText()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="EvalItemContentOutputText"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static EvalItemContentOutputText FromText(string text)
+        {
+            return new EvalItemContentOutputText
+            {
+                Text = text,
+            };
         }
 
     }

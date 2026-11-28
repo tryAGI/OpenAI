@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `error`.
         /// </summary>
+        /// <default>"error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseWsErrorTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseWsErrorType Type { get; set; }
+        public string Type { get; set; } = "error";
 
         /// <summary>
         /// The HTTP status code associated with a WebSocket protocol error.
@@ -62,9 +62,6 @@ namespace tryAGI.OpenAI
         /// <param name="agent">
         /// The agent that owns this multi-agent streaming event.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `error`.
-        /// </param>
         /// <param name="status">
         /// The HTTP status code associated with a WebSocket protocol error.
         /// </param>
@@ -75,16 +72,19 @@ namespace tryAGI.OpenAI
         /// The WebSocket lane that emitted this event. This field is present when the<br/>
         /// originating `response.create` event supplied a `stream_id`.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `error`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaResponseWsError(
             global::tryAGI.OpenAI.BetaErrorPayload error,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseWsErrorType type,
             int? status,
             int? sequenceNumber,
-            string? streamId)
+            string? streamId,
+            string type = "error")
         {
             this.Agent = agent;
             this.Type = type;
@@ -99,6 +99,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public BetaResponseWsError()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="BetaResponseWsError"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static BetaResponseWsError FromError(global::tryAGI.OpenAI.BetaErrorPayload error)
+        {
+            return new BetaResponseWsError
+            {
+                Error = error,
+            };
         }
 
     }

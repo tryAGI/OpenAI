@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_4B0D5D5EA94A21CF.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_57E757F56A8E895E.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_805B9365663D54AA.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_F9C8D9DC1C7E1268.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_4B0D5D5EA94A21CF.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_57E757F56A8E895E.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_805B9365663D54AA.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 

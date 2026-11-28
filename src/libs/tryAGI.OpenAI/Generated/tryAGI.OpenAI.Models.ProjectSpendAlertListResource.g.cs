@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `list`.
         /// </summary>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectSpendAlertListResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectSpendAlertListResourceObject Object { get; set; }
+        public string Object { get; set; } = "list";
 
         /// <summary>
         /// Spend alerts returned in the current page.
@@ -56,14 +56,14 @@ namespace tryAGI.OpenAI
         /// <param name="hasMore">
         /// Whether more spend alerts are available when paginating.
         /// </param>
-        /// <param name="object">
-        /// Always `list`.
-        /// </param>
         /// <param name="firstId">
         /// The ID of the first spend alert in this page.
         /// </param>
         /// <param name="lastId">
         /// The ID of the last spend alert in this page.
+        /// </param>
+        /// <param name="object">
+        /// Always `list`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -71,9 +71,9 @@ namespace tryAGI.OpenAI
         public ProjectSpendAlertListResource(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ProjectSpendAlert> data,
             bool hasMore,
-            global::tryAGI.OpenAI.ProjectSpendAlertListResourceObject @object,
             string? firstId,
-            string? lastId)
+            string? lastId,
+            string @object = "list")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

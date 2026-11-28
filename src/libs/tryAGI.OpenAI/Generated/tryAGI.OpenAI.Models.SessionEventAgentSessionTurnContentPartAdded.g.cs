@@ -66,6 +66,12 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.OutputTextResource Part { get; set; }
 
         /// <summary>
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("obfuscation")]
+        public string? Obfuscation { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -95,6 +101,9 @@ namespace tryAGI.OpenAI
         /// <param name="turnId">
         /// The ID of the turn associated with the event, when applicable.
         /// </param>
+        /// <param name="obfuscation">
+        /// Random alphanumeric padding. Present when stream obfuscation is enabled.
+        /// </param>
         /// <param name="type">
         /// The type of the object. Always `agent.session.turn.content_part.added`.<br/>
         /// Default Value: agent.session.turn.content_part.added
@@ -110,6 +119,7 @@ namespace tryAGI.OpenAI
             long contentIndex,
             global::tryAGI.OpenAI.OutputTextResource part,
             string? turnId,
+            string? obfuscation,
             global::tryAGI.OpenAI.SessionEventAgentSessionTurnContentPartAddedType type = global::tryAGI.OpenAI.SessionEventAgentSessionTurnContentPartAddedType.AgentSessionTurnContentPartAdded)
         {
             this.Type = type;
@@ -120,6 +130,7 @@ namespace tryAGI.OpenAI
             this.OutputIndex = outputIndex;
             this.ContentIndex = contentIndex;
             this.Part = part ?? throw new global::System.ArgumentNullException(nameof(part));
+            this.Obfuscation = obfuscation;
         }
 
         /// <summary>

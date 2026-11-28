@@ -5,7 +5,7 @@
 namespace tryAGI.OpenAI
 {
     /// <summary>
-    /// Example: gpt-6-astra
+    /// Example: gpt-6.2-astra
     /// </summary>
     public readonly partial struct BetaModelIdsShared : global::System.IEquatable<BetaModelIdsShared>
     {

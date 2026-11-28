@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `file_path`.
         /// </summary>
+        /// <default>"file_path"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageContentTextAnnotationsFilePathObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObjectType Type { get; set; }
+        public string Type { get; set; } = "file_path";
 
         /// <summary>
         /// The text in the message content that needs to be replaced.
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObjectFilePath filePath,
             int startIndex,
             int endIndex,
-            global::tryAGI.OpenAI.MessageContentTextAnnotationsFilePathObjectType type)
+            string type = "file_path")
         {
             this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));

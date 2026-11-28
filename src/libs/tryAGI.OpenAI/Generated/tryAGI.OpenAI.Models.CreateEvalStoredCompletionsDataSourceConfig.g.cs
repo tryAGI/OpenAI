@@ -13,11 +13,10 @@ namespace tryAGI.OpenAI
         /// The type of data source. Always `stored_completions`.<br/>
         /// Default Value: stored_completions
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfigType.StoredCompletions</default>
+        /// <default>"stored_completions"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateEvalStoredCompletionsDataSourceConfigTypeJsonConverter))]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfigType Type { get; set; } = global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfigType.StoredCompletions;
+        public string Type { get; set; } = "stored_completions";
 
         /// <summary>
         /// Metadata filters for the stored completions data source.<br/>
@@ -58,7 +57,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateEvalStoredCompletionsDataSourceConfig(
             object? metadata,
-            global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfigType type = global::tryAGI.OpenAI.CreateEvalStoredCompletionsDataSourceConfigType.StoredCompletions)
+            string type = "stored_completions")
         {
             this.Type = type;
             this.Metadata = metadata;

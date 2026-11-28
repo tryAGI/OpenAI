@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// For MCP tools, the type is always `mcp`.
         /// </summary>
+        /// <default>"mcp"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoiceMCPTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ToolChoiceMCPType Type { get; set; }
+        public string Type { get; set; } = "mcp";
 
         /// <summary>
         /// The label of the MCP server to use.
@@ -40,17 +40,17 @@ namespace tryAGI.OpenAI
         /// <param name="serverLabel">
         /// The label of the MCP server to use.
         /// </param>
+        /// <param name="name"></param>
         /// <param name="type">
         /// For MCP tools, the type is always `mcp`.
         /// </param>
-        /// <param name="name"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ToolChoiceMCP(
             string serverLabel,
-            global::tryAGI.OpenAI.ToolChoiceMCPType type,
-            string? name)
+            string? name,
+            string type = "mcp")
         {
             this.Type = type;
             this.ServerLabel = serverLabel ?? throw new global::System.ArgumentNullException(nameof(serverLabel));
@@ -62,6 +62,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ToolChoiceMCP()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ToolChoiceMCP"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ToolChoiceMCP FromServerLabel(string serverLabel)
+        {
+            return new ToolChoiceMCP
+            {
+                ServerLabel = serverLabel,
+            };
         }
 
     }

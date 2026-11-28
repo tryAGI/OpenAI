@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"thread.message.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageStreamEventVariant3EventJsonConverter))]
-        public global::tryAGI.OpenAI.MessageStreamEventVariant3Event Event { get; set; }
+        public string Event { get; set; } = "thread.message.delta";
 
         /// <summary>
         /// Represents a message delta i.e. any changed fields on a message during streaming.
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public MessageStreamEventVariant3(
             global::tryAGI.OpenAI.MessageDeltaObject data,
-            global::tryAGI.OpenAI.MessageStreamEventVariant3Event @event)
+            string @event = "thread.message.delta")
         {
             this.Event = @event;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public MessageStreamEventVariant3()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageStreamEventVariant3"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageStreamEventVariant3 FromData(global::tryAGI.OpenAI.MessageDeltaObject data)
+        {
+            return new MessageStreamEventVariant3
+            {
+                Data = data,
+            };
         }
 
     }

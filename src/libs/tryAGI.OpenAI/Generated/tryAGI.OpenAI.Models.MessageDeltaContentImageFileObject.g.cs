@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `image_file`.
         /// </summary>
+        /// <default>"image_file"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaContentImageFileObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectType Type { get; set; }
+        public string Type { get; set; } = "image_file";
 
         /// <summary>
         ///
@@ -40,17 +40,17 @@ namespace tryAGI.OpenAI
         /// <param name="index">
         /// The index of the content part in the message.
         /// </param>
+        /// <param name="imageFile"></param>
         /// <param name="type">
         /// Always `image_file`.
         /// </param>
-        /// <param name="imageFile"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentImageFileObject(
             int index,
-            global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectType type,
-            global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectImageFile? imageFile)
+            global::tryAGI.OpenAI.MessageDeltaContentImageFileObjectImageFile? imageFile,
+            string type = "image_file")
         {
             this.Index = index;
             this.Type = type;
@@ -62,6 +62,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public MessageDeltaContentImageFileObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageDeltaContentImageFileObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageDeltaContentImageFileObject FromIndex(int index)
+        {
+            return new MessageDeltaContentImageFileObject
+            {
+                Index = index,
+            };
         }
 
     }

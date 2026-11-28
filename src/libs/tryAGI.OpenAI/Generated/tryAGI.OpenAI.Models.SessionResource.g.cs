@@ -9,6 +9,32 @@ namespace tryAGI.OpenAI
     public sealed partial class SessionResource
     {
         /// <summary>
+        /// Access programs explicitly selected for this session. Omitted when the session uses the model default.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("access_programs")]
+        public global::tryAGI.OpenAI.AccessProgramsResource? AccessPrograms { get; set; }
+
+        /// <summary>
+        /// Default prompt cache lifetime for turns in this session, when configured.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
+        public global::tryAGI.OpenAI.PromptCacheOptionsResource? PromptCacheOptions { get; set; }
+
+        /// <summary>
+        /// Review applied to eligible actions in this session. Omitted when review is none and automatic review is not enabled. Omission means none.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("review")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.SessionReviewResourceJsonConverter))]
+        public global::tryAGI.OpenAI.SessionReviewResource? Review { get; set; }
+
+        /// <summary>
+        /// Spending limit and best-effort consumption, in USD cents. The limit is null for an unlimited session. Consumption is null when unavailable.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("spend_control")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::tryAGI.OpenAI.SessionBudgetControlResource SpendControl { get; set; }
+
+        /// <summary>
         /// Custom string key-value pairs attached to the session.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
@@ -105,6 +131,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="SessionResource" /> class.
         /// </summary>
+        /// <param name="spendControl">
+        /// Spending limit and best-effort consumption, in USD cents. The limit is null for an unlimited session. Consumption is null when unavailable.
+        /// </param>
         /// <param name="metadata">
         /// Custom string key-value pairs attached to the session.
         /// </param>
@@ -132,6 +161,15 @@ namespace tryAGI.OpenAI
         /// <param name="vaultIds">
         /// The IDs of vaults made available to the session.
         /// </param>
+        /// <param name="accessPrograms">
+        /// Access programs explicitly selected for this session. Omitted when the session uses the model default.
+        /// </param>
+        /// <param name="promptCacheOptions">
+        /// Default prompt cache lifetime for turns in this session, when configured.
+        /// </param>
+        /// <param name="review">
+        /// Review applied to eligible actions in this session. Omitted when review is none and automatic review is not enabled. Omission means none.
+        /// </param>
         /// <param name="error">
         /// The error that caused the session to fail, if any.
         /// </param>
@@ -146,6 +184,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SessionResource(
+            global::tryAGI.OpenAI.SessionBudgetControlResource spendControl,
             global::System.Collections.Generic.Dictionary<string, string> metadata,
             string id,
             global::System.DateTimeOffset createdAt,
@@ -155,10 +194,17 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.SessionAgentResource agent,
             global::tryAGI.OpenAI.EnvironmentResource environment,
             global::System.Collections.Generic.IList<string> vaultIds,
+            global::tryAGI.OpenAI.AccessProgramsResource? accessPrograms,
+            global::tryAGI.OpenAI.PromptCacheOptionsResource? promptCacheOptions,
+            global::tryAGI.OpenAI.SessionReviewResource? review,
             string? error,
             global::tryAGI.OpenAI.TokenUsageResource? usage,
             global::tryAGI.OpenAI.SessionResourceObject @object = global::tryAGI.OpenAI.SessionResourceObject.AgentSession)
         {
+            this.AccessPrograms = accessPrograms;
+            this.PromptCacheOptions = promptCacheOptions;
+            this.Review = review;
+            this.SpendControl = spendControl ?? throw new global::System.ArgumentNullException(nameof(spendControl));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

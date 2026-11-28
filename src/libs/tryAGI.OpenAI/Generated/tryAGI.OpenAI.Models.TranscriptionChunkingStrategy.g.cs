@@ -16,38 +16,38 @@ namespace tryAGI.OpenAI
         /// Automatically set chunking parameters based on the audio. Must be set to `"auto"`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? Enum { get; init; }
+        public string? TranscriptionChunkingStrategyVariant1 { get; init; }
 #else
-        public global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? Enum { get; }
+        public string? TranscriptionChunkingStrategyVariant1 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TranscriptionChunkingStrategyVariant1))]
 #endif
-        public bool IsEnum => Enum != null;
+        public bool IsTranscriptionChunkingStrategyVariant1 => TranscriptionChunkingStrategyVariant1 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickEnum(
+        public bool TryPickTranscriptionChunkingStrategyVariant1(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? value)
+            out string? value)
         {
-            value = Enum;
-            return IsEnum;
+            value = TranscriptionChunkingStrategyVariant1;
+            return IsTranscriptionChunkingStrategyVariant1;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum PickEnum() => Enum is { } value
+        public string PickTranscriptionChunkingStrategyVariant1() => TranscriptionChunkingStrategyVariant1 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'TranscriptionChunkingStrategyVariant1' but the value was {ToString()}.");
 
         /// <summary>
         ///
@@ -88,25 +88,25 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator TranscriptionChunkingStrategy(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum value) => new TranscriptionChunkingStrategy((global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum?)value);
+        public static implicit operator TranscriptionChunkingStrategy(string value) => new TranscriptionChunkingStrategy((string?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum?(TranscriptionChunkingStrategy @this) => @this.Enum;
+        public static implicit operator string?(TranscriptionChunkingStrategy @this) => @this.TranscriptionChunkingStrategyVariant1;
 
         /// <summary>
         ///
         /// </summary>
-        public TranscriptionChunkingStrategy(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? value)
+        public TranscriptionChunkingStrategy(string? value)
         {
-            Enum = value;
+            TranscriptionChunkingStrategyVariant1 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static TranscriptionChunkingStrategy FromEnum(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? value) => new TranscriptionChunkingStrategy(value);
+        public static TranscriptionChunkingStrategy FromTranscriptionChunkingStrategyVariant1(string? value) => new TranscriptionChunkingStrategy(value);
 
         /// <summary>
         ///
@@ -135,11 +135,11 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public TranscriptionChunkingStrategy(
-            global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum? @enum,
+            string? transcriptionChunkingStrategyVariant1,
             global::tryAGI.OpenAI.VadConfig? vadConfig
             )
         {
-            Enum = @enum;
+            TranscriptionChunkingStrategyVariant1 = transcriptionChunkingStrategyVariant1;
             VadConfig = vadConfig;
         }
 
@@ -148,14 +148,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public object? Object =>
             VadConfig as object ??
-            Enum as object
+            TranscriptionChunkingStrategyVariant1 as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            Enum?.ToValueString() ??
+            TranscriptionChunkingStrategyVariant1?.ToString() ??
             VadConfig?.ToString()
             ;
 
@@ -164,14 +164,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsEnum && !IsVadConfig || !IsEnum && IsVadConfig;
+            return IsTranscriptionChunkingStrategyVariant1 && !IsVadConfig || !IsTranscriptionChunkingStrategyVariant1 && IsVadConfig;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum?, TResult>? @enum = null,
+            global::System.Func<string, TResult>? transcriptionChunkingStrategyVariant1 = null,
             global::System.Func<global::tryAGI.OpenAI.VadConfig, TResult>? vadConfig = null,
             bool validate = true)
         {
@@ -180,9 +180,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (Enum is { } __value0 && @enum != null)
+            if (TranscriptionChunkingStrategyVariant1 is { } __value0 && transcriptionChunkingStrategyVariant1 != null)
             {
-                return @enum(__value0);
+                return transcriptionChunkingStrategyVariant1(__value0);
             }
             else if (VadConfig is { } __value1 && vadConfig != null)
             {
@@ -196,7 +196,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum?>? @enum = null,
+            global::System.Action<string>? transcriptionChunkingStrategyVariant1 = null,
 
             global::System.Action<global::tryAGI.OpenAI.VadConfig>? vadConfig = null,
             bool validate = true)
@@ -206,9 +206,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (Enum is { } __value0)
+            if (TranscriptionChunkingStrategyVariant1 is { } __value0)
             {
-                @enum?.Invoke(__value0);
+                transcriptionChunkingStrategyVariant1?.Invoke(__value0);
             }
             else if (VadConfig is { } __value1)
             {
@@ -220,7 +220,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum?>? @enum = null,
+            global::System.Action<string>? transcriptionChunkingStrategyVariant1 = null,
             global::System.Action<global::tryAGI.OpenAI.VadConfig>? vadConfig = null,
             bool validate = true)
         {
@@ -229,9 +229,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (Enum is { } __value0)
+            if (TranscriptionChunkingStrategyVariant1 is { } __value0)
             {
-                @enum?.Invoke(__value0);
+                transcriptionChunkingStrategyVariant1?.Invoke(__value0);
             }
             else if (VadConfig is { } __value1)
             {
@@ -246,8 +246,8 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Enum,
-                typeof(global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum),
+                TranscriptionChunkingStrategyVariant1,
+                typeof(string),
                 VadConfig,
                 typeof(global::tryAGI.OpenAI.VadConfig),
             };
@@ -266,7 +266,7 @@ namespace tryAGI.OpenAI
         public bool Equals(TranscriptionChunkingStrategy other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.TranscriptionChunkingStrategyEnum?>.Default.Equals(Enum, other.Enum) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(TranscriptionChunkingStrategyVariant1, other.TranscriptionChunkingStrategyVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.VadConfig?>.Default.Equals(VadConfig, other.VadConfig)
                 ;
         }

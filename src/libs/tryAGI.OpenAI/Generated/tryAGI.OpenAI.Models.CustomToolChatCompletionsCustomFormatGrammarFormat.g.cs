@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Grammar format. Always `grammar`.
         /// </summary>
+        /// <default>"grammar"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CustomToolChatCompletionsCustomFormatGrammarFormatTypeJsonConverter))]
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatType Type { get; set; }
+        public string Type { get; set; } = "grammar";
 
         /// <summary>
         /// Your chosen grammar.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public CustomToolChatCompletionsCustomFormatGrammarFormat(
             global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatGrammar grammar,
-            global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatType type)
+            string type = "grammar")
         {
             this.Type = type;
             this.Grammar = grammar ?? throw new global::System.ArgumentNullException(nameof(grammar));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public CustomToolChatCompletionsCustomFormatGrammarFormat()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="CustomToolChatCompletionsCustomFormatGrammarFormat"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static CustomToolChatCompletionsCustomFormatGrammarFormat FromGrammar(global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatGrammarFormatGrammar grammar)
+        {
+            return new CustomToolChatCompletionsCustomFormatGrammarFormat
+            {
+                Grammar = grammar,
+            };
         }
 
     }

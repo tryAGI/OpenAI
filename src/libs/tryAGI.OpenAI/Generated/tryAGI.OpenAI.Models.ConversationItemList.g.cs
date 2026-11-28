@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of object returned, must be `list`.
         /// </summary>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ConversationItemListObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ConversationItemListObject Object { get; set; }
+        public string Object { get; set; } = "list";
 
         /// <summary>
         /// A list of conversation items.
@@ -75,7 +75,7 @@ namespace tryAGI.OpenAI
             bool hasMore,
             string firstId,
             string lastId,
-            global::tryAGI.OpenAI.ConversationItemListObject @object)
+            string @object = "list")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
