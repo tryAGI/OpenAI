@@ -12,10 +12,9 @@ namespace tryAGI.OpenAI
         /// The type of jsonl source. Always `file_id`.<br/>
         /// Default Value: file_id
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.EvalJsonlFileIdSourceType.FileId</default>
+        /// <default>"file_id"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalJsonlFileIdSourceTypeJsonConverter))]
-        public global::tryAGI.OpenAI.EvalJsonlFileIdSourceType Type { get; set; } = global::tryAGI.OpenAI.EvalJsonlFileIdSourceType.FileId;
+        public string Type { get; set; } = "file_id";
 
         /// <summary>
         /// The identifier of the file.
@@ -45,7 +44,7 @@ namespace tryAGI.OpenAI
 #endif
         public EvalJsonlFileIdSource(
             string id,
-            global::tryAGI.OpenAI.EvalJsonlFileIdSourceType type = global::tryAGI.OpenAI.EvalJsonlFileIdSourceType.FileId)
+            string type = "file_id")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// For now, this is always `submit_tool_outputs`.
         /// </summary>
+        /// <default>"submit_tool_outputs"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunObjectRequiredActionTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunObjectRequiredActionType Type { get; set; }
+        public string Type { get; set; } = "submit_tool_outputs";
 
         /// <summary>
         /// Details on the tool outputs needed for this run to continue.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public RunObjectRequiredAction(
             global::tryAGI.OpenAI.RunObjectRequiredActionSubmitToolOutputs submitToolOutputs,
-            global::tryAGI.OpenAI.RunObjectRequiredActionType type)
+            string type = "submit_tool_outputs")
         {
             this.Type = type;
             this.SubmitToolOutputs = submitToolOutputs ?? throw new global::System.ArgumentNullException(nameof(submitToolOutputs));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RunObjectRequiredAction()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RunObjectRequiredAction"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RunObjectRequiredAction FromSubmitToolOutputs(global::tryAGI.OpenAI.RunObjectRequiredActionSubmitToolOutputs submitToolOutputs)
+        {
+            return new RunObjectRequiredAction
+            {
+                SubmitToolOutputs = submitToolOutputs,
+            };
         }
 
     }

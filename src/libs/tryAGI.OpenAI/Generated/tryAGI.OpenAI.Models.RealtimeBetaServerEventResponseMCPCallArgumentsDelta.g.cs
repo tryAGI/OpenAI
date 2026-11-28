@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `response.mcp_call_arguments.delta`.
         /// </summary>
+        /// <default>"response.mcp_call_arguments.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaServerEventResponseMCPCallArgumentsDeltaTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallArgumentsDeltaType Type { get; set; }
+        public string Type { get; set; } = "response.mcp_call_arguments.delta";
 
         /// <summary>
         /// The ID of the response.
@@ -80,10 +80,10 @@ namespace tryAGI.OpenAI
         /// <param name="delta">
         /// The JSON-encoded arguments delta.
         /// </param>
+        /// <param name="obfuscation"></param>
         /// <param name="type">
         /// The event type, must be `response.mcp_call_arguments.delta`.
         /// </param>
-        /// <param name="obfuscation"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -93,8 +93,8 @@ namespace tryAGI.OpenAI
             string itemId,
             int outputIndex,
             string delta,
-            global::tryAGI.OpenAI.RealtimeBetaServerEventResponseMCPCallArgumentsDeltaType type,
-            string? obfuscation)
+            string? obfuscation,
+            string type = "response.mcp_call_arguments.delta")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

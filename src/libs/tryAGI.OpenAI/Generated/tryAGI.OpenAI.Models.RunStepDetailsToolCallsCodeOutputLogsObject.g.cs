@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `logs`.
         /// </summary>
+        /// <default>"logs"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
+        public string Type { get; set; } = "logs";
 
         /// <summary>
         /// The text output from the Code Interpreter tool call.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public RunStepDetailsToolCallsCodeOutputLogsObject(
             string logs,
-            global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputLogsObjectType type)
+            string type = "logs")
         {
             this.Type = type;
             this.Logs = logs ?? throw new global::System.ArgumentNullException(nameof(logs));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RunStepDetailsToolCallsCodeOutputLogsObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RunStepDetailsToolCallsCodeOutputLogsObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RunStepDetailsToolCallsCodeOutputLogsObject FromLogs(string logs)
+        {
+            return new RunStepDetailsToolCallsCodeOutputLogsObject
+            {
+                Logs = logs,
+            };
         }
 
     }

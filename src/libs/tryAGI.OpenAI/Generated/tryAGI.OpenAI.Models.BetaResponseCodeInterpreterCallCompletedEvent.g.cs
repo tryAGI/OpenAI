@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.code_interpreter_call.completed`.
         /// </summary>
+        /// <default>"response.code_interpreter_call.completed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseCodeInterpreterCallCompletedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCompletedEventType Type { get; set; }
+        public string Type { get; set; } = "response.code_interpreter_call.completed";
 
         /// <summary>
         /// The index of the output item in the response for which the code interpreter call is completed.
@@ -74,7 +74,7 @@ namespace tryAGI.OpenAI
             string itemId,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseCodeInterpreterCallCompletedEventType type)
+            string type = "response.code_interpreter_call.completed")
         {
             this.Agent = agent;
             this.Type = type;

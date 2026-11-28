@@ -59,7 +59,7 @@ The token count of your prompt plus `max_tokens` cannot exceed the model's conte
                 },
                 N: new Option<int?>($"--{normalizedPrefix}n")
                 {
-                    Description = @"How many completions to generate for each prompt.
+                    Description = @"How many completions to generate for each prompt. Omit `n` to generate one completion per prompt.
 
 **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.
 ",

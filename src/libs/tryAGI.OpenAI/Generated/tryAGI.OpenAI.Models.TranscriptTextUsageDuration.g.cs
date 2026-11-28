@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the usage object. Always `duration` for this variant.
         /// </summary>
+        /// <default>"duration"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.TranscriptTextUsageDurationTypeJsonConverter))]
-        public global::tryAGI.OpenAI.TranscriptTextUsageDurationType Type { get; set; }
+        public string Type { get; set; } = "duration";
 
         /// <summary>
         /// Duration of the input audio in seconds.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public TranscriptTextUsageDuration(
             double seconds,
-            global::tryAGI.OpenAI.TranscriptTextUsageDurationType type)
+            string type = "duration")
         {
             this.Type = type;
             this.Seconds = seconds;
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TranscriptTextUsageDuration()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="TranscriptTextUsageDuration"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static TranscriptTextUsageDuration FromSeconds(double seconds)
+        {
+            return new TranscriptTextUsageDuration
+            {
+                Seconds = seconds,
+            };
         }
 
     }

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Unconstrained text format. Always `text`.
         /// </summary>
+        /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CustomToolChatCompletionsCustomFormatTextFormatTypeJsonConverter))]
-        public global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatTextFormatType Type { get; set; }
+        public string Type { get; set; } = "text";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CustomToolChatCompletionsCustomFormatTextFormat(
-            global::tryAGI.OpenAI.CustomToolChatCompletionsCustomFormatTextFormatType type)
+            string type = "text")
         {
             this.Type = type;
         }

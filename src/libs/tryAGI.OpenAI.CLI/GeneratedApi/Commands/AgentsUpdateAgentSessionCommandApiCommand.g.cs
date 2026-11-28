@@ -13,10 +13,28 @@ internal static partial class AgentsUpdateAgentSessionCommandApiCommand
         Description = @"The ID of the session.",
     };
 
+    private static Option<global::tryAGI.OpenAI.AccessProgramsUpdateParam?> AccessPrograms { get; } = new(
+        name: @"--access-programs")
+    {
+        Description = @"Cyber program for subsequent turns. Send null to restore the model default.",
+    };
+
+    private static Option<global::System.Collections.Generic.IList<string>?> VaultIds { get; } = new(
+        name: @"--vault-ids")
+    {
+        Description = @"Replaces the session's referenced vaults. Omit to retain them; null or [] clears them.",
+    };
+
+    private static Option<global::tryAGI.OpenAI.SessionReviewParam?> Review { get; } = new(
+        name: @"--review")
+    {
+        Description = @"Default action review for new root turns. Existing turns and their subagents keep their review mode.",
+    };
+
     private static Option<global::tryAGI.OpenAI.UpdateSessionAgentParam?> Agent { get; } = new(
         name: @"--agent")
     {
-        Description = @"Model settings for subsequent turns. Omitted fields stay unchanged.",
+        Description = @"Agent settings to update on this session. Omitted fields stay unchanged.",
     };
 
     private static Option<global::System.Collections.Generic.Dictionary<string, string>?> Metadata { get; } = new(
@@ -24,6 +42,9 @@ internal static partial class AgentsUpdateAgentSessionCommandApiCommand
     {
         Description = @"Replaces all metadata. Omit to leave unchanged, or pass null or {} to clear it. Up to 16 string key-value pairs, with keys up to 64 and values up to 512 characters.",
     };
+    private static readonly PromptCacheOptionsParam2OptionSet PromptCacheOptionsOptions = PromptCacheOptionsParam2OptionSet.Create(@"prompt-cache");
+
+    private static readonly SessionBudgetControlParamsOptionSet SpendControlOptions = SessionBudgetControlParamsOptionSet.Create(@"spend-control");
       private static Option<string?> Input { get; } = new(@"--input")
       {
           Description = "Load request JSON from a file path, '-' for stdin, or an inline JSON object/array string.",
@@ -66,10 +87,13 @@ internal static partial class AgentsUpdateAgentSessionCommandApiCommand
     public static Command Create(string? commandName = null)
     {
         var command = new Command(commandName ?? @"update-agent-session", @"Update an agent session
-Updates session metadata, model, reasoning effort, or service tier. Model settings apply to subsequent turns. Omitted fields are unchanged. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).");
+Updates session tools, vaults, metadata, model, reasoning effort, service tier, or the default prompt cache lifetime. Model settings apply to subsequent turns. Omitted fields are unchanged. See [managing sessions](https://developers.openai.com/api/docs/guides/agents-api/sessions/manage).");
                         command.Arguments.Add(SessionId);
+                        command.Options.Add(AccessPrograms);
+                        command.Options.Add(VaultIds);
+                        command.Options.Add(Review);
                         command.Options.Add(Agent);
-                        command.Options.Add(Metadata);
+                        command.Options.Add(Metadata);                        command.Options.Add(PromptCacheOptionsOptions.Ttl);                        command.Options.Add(SpendControlOptions.Limit);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
           command.Options.Add(RequestFile);
@@ -96,15 +120,45 @@ Updates session metadata, model, reasoning effort, or service tier. Model settin
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var sessionId = parseResult.GetRequiredValue(SessionId);
+                        var accessPrograms = CliRuntime.WasSpecified(parseResult, AccessPrograms) ? parseResult.GetValue(AccessPrograms) : (__requestBase is { } __AccessProgramsBaseValue ? __AccessProgramsBaseValue.AccessPrograms : default);
+                        var vaultIds = CliRuntime.WasSpecified(parseResult, VaultIds) ? parseResult.GetValue(VaultIds) : (__requestBase is { } __VaultIdsBaseValue ? __VaultIdsBaseValue.VaultIds : default);
+                        var review = CliRuntime.WasSpecified(parseResult, Review) ? parseResult.GetValue(Review) : (__requestBase is { } __ReviewBaseValue ? __ReviewBaseValue.Review : default);
                         var agent = CliRuntime.WasSpecified(parseResult, Agent) ? parseResult.GetValue(Agent) : (__requestBase is { } __AgentBaseValue ? __AgentBaseValue.Agent : default);
                         var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
+
+                        var __PromptCacheOptionsBase = __requestBase is { } __PromptCacheOptionsBaseValue ? __PromptCacheOptionsBaseValue.PromptCacheOptions : default;                        var promptCacheOptionsTtl = CliRuntime.WasSpecified(parseResult, PromptCacheOptionsOptions.Ttl) ? parseResult.GetValue(PromptCacheOptionsOptions.Ttl) : (__PromptCacheOptionsBase is { } __PromptCacheOptionsttlBaseValue ? __PromptCacheOptionsttlBaseValue.Ttl : default);
+                        var __PromptCacheOptionsSpecified = CliRuntime.WasSpecified(parseResult, PromptCacheOptionsOptions.Ttl);
+                        var promptCacheOptions =
+                            __PromptCacheOptionsSpecified || __PromptCacheOptionsBase is not null
+                                ? new global::tryAGI.OpenAI.PromptCacheOptionsParam2
+                                {
+	                                Ttl = promptCacheOptionsTtl,
+
+                                }
+                                : __PromptCacheOptionsBase;
+
+                        var __SpendControlBase = __requestBase is { } __SpendControlBaseValue ? __SpendControlBaseValue.SpendControl : default;                        var spendControlLimit = CliRuntime.WasSpecified(parseResult, SpendControlOptions.Limit) ? parseResult.GetValue(SpendControlOptions.Limit) : (__SpendControlBase is { } __SpendControllimitBaseValue ? __SpendControllimitBaseValue.Limit : default);
+                        var __SpendControlSpecified = CliRuntime.WasSpecified(parseResult, SpendControlOptions.Limit);
+                        var spendControl =
+                            __SpendControlSpecified || __SpendControlBase is not null
+                                ? new global::tryAGI.OpenAI.SessionBudgetControlParams
+                                {
+	                                Limit = spendControlLimit,
+
+                                }
+                                : __SpendControlBase;
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 var response = await client.Agents.UpdateAgentSessionAsync(
                                     sessionId: sessionId,
+                                    accessPrograms: accessPrograms,
+                                    vaultIds: vaultIds,
+                                    review: review,
                                     agent: agent,
                                     metadata: metadata,
+                                    promptCacheOptions: promptCacheOptions,
+                                    spendControl: spendControl,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
 

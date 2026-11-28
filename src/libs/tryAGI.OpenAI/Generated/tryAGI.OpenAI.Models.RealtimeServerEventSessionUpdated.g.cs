@@ -19,9 +19,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `session.updated`.
         /// </summary>
+        /// <default>"session.updated"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventSessionUpdatedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventSessionUpdatedType Type { get; set; }
+        public string Type { get; set; } = "session.updated";
 
         /// <summary>
         /// The session configuration.
@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventSessionUpdated(
             string eventId,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RealtimeSessionCreateResponseGA, global::tryAGI.OpenAI.RealtimeTranscriptionSessionCreateResponseGA> session,
-            global::tryAGI.OpenAI.RealtimeServerEventSessionUpdatedType type)
+            string type = "session.updated")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

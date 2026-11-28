@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the usage object. Always `tokens` for this variant.
         /// </summary>
+        /// <default>"tokens"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.TranscriptTextUsageTokensTypeJsonConverter))]
-        public global::tryAGI.OpenAI.TranscriptTextUsageTokensType Type { get; set; }
+        public string Type { get; set; } = "tokens";
 
         /// <summary>
         /// Number of input tokens billed for this request.
@@ -60,11 +60,11 @@ namespace tryAGI.OpenAI
         /// <param name="totalTokens">
         /// Total number of tokens used (input + output).
         /// </param>
-        /// <param name="type">
-        /// The type of the usage object. Always `tokens` for this variant.
-        /// </param>
         /// <param name="inputTokenDetails">
         /// Details about the input tokens billed for this request.
+        /// </param>
+        /// <param name="type">
+        /// The type of the usage object. Always `tokens` for this variant.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -73,8 +73,8 @@ namespace tryAGI.OpenAI
             int inputTokens,
             int outputTokens,
             int totalTokens,
-            global::tryAGI.OpenAI.TranscriptTextUsageTokensType type,
-            global::tryAGI.OpenAI.TranscriptTextUsageTokensInputTokenDetails? inputTokenDetails)
+            global::tryAGI.OpenAI.TranscriptTextUsageTokensInputTokenDetails? inputTokenDetails,
+            string type = "tokens")
         {
             this.Type = type;
             this.InputTokens = inputTokens;

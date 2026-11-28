@@ -45,7 +45,9 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.Reasoning? Reasoning { get; set; }
 
         /// <summary>
-        /// The truncation strategy to use for the model response. - `auto`: If the input to this Response exceeds the model's context window size, the model will truncate the response to fit the context window by dropping items from the beginning of the conversation. - `disabled` (default): If the input size will exceed the context window size for a model, the request will fail with a 400 error.
+        /// The truncation strategy to use for the model response.<br/>
+        /// - `auto`: If the input to this Response exceeds the model's context window size, the model will truncate the response to fit the context window by dropping items from the beginning of the conversation. On some models, trimming can begin earlier because the API subtracts the model's maximum output allowance from its input limit before counting tokens.<br/>
+        /// - `disabled` (default): If the input size will exceed the context window size for a model, the request will fail with a 400 error.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncation")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.TruncationEnumJsonConverter))]

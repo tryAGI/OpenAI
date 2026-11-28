@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_3C7D8BEF5867F4EF.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_52AA944A57E79633.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_AD593D03AC6A1615.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_3C7D8BEF5867F4EF.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_52AA944A57E79633.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.BetaToolChoiceAllowed))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0074.Create_BetaToolChoiceAllowed(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0069.Create_BetaToolChoiceAllowed(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

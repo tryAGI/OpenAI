@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `organization.project.service_account.api_key`
         /// </summary>
+        /// <default>"organization.project.service_account.api_key"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectServiceAccountApiKeyObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectServiceAccountApiKeyObject Object { get; set; }
+        public string Object { get; set; } = "organization.project.service_account.api_key";
 
         /// <summary>
         ///
@@ -62,11 +62,11 @@ namespace tryAGI.OpenAI
         /// <param name="name"></param>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
-        /// <param name="object">
-        /// The object type, which is always `organization.project.service_account.api_key`
-        /// </param>
         /// <param name="expiresAt">
         /// The Unix timestamp (in seconds) when the API key expires, or null if it does not expire.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.project.service_account.api_key`
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -76,8 +76,8 @@ namespace tryAGI.OpenAI
             string name,
             int createdAt,
             string id,
-            global::tryAGI.OpenAI.ProjectServiceAccountApiKeyObject @object,
-            int? expiresAt)
+            int? expiresAt,
+            string @object = "organization.project.service_account.api_key")
         {
             this.Object = @object;
             this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `refusal`.
         /// </summary>
+        /// <default>"refusal"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageContentRefusalObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageContentRefusalObjectType Type { get; set; }
+        public string Type { get; set; } = "refusal";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public MessageContentRefusalObject(
             string refusal,
-            global::tryAGI.OpenAI.MessageContentRefusalObjectType type)
+            string type = "refusal")
         {
             this.Type = type;
             this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public MessageContentRefusalObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageContentRefusalObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageContentRefusalObject FromRefusal(string refusal)
+        {
+            return new MessageContentRefusalObject
+            {
+                Refusal = refusal,
+            };
         }
 
     }

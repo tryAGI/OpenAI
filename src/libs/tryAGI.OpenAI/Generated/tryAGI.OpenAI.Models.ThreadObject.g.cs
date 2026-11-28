@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `thread`.
         /// </summary>
+        /// <default>"thread"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ThreadObjectObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ThreadObjectObject Object { get; set; }
+        public string Object { get; set; } = "thread";
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the thread was created.
@@ -56,20 +56,20 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) for when the thread was created.
         /// </param>
+        /// <param name="toolResources"></param>
+        /// <param name="metadata"></param>
         /// <param name="object">
         /// The object type, which is always `thread`.
         /// </param>
-        /// <param name="toolResources"></param>
-        /// <param name="metadata"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ThreadObject(
             string id,
             int createdAt,
-            global::tryAGI.OpenAI.ThreadObjectObject @object,
             global::tryAGI.OpenAI.ThreadObjectToolResources? toolResources,
-            global::System.Collections.Generic.Dictionary<string, string>? metadata)
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            string @object = "thread")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

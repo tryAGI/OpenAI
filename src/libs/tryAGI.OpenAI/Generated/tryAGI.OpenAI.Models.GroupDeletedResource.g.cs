@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `group.deleted`.
         /// </summary>
+        /// <default>"group.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GroupDeletedResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.GroupDeletedResourceObject Object { get; set; }
+        public string Object { get; set; } = "group.deleted";
 
         /// <summary>
         /// Identifier of the deleted group.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public GroupDeletedResource(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.GroupDeletedResourceObject @object)
+            string @object = "group.deleted")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

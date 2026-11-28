@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `image_url`.
         /// </summary>
+        /// <default>"image_url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaContentImageUrlObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectType Type { get; set; }
+        public string Type { get; set; } = "image_url";
 
         /// <summary>
         ///
@@ -40,17 +40,17 @@ namespace tryAGI.OpenAI
         /// <param name="index">
         /// The index of the content part in the message.
         /// </param>
+        /// <param name="imageUrl"></param>
         /// <param name="type">
         /// Always `image_url`.
         /// </param>
-        /// <param name="imageUrl"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentImageUrlObject(
             int index,
-            global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectType type,
-            global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectImageUrl? imageUrl)
+            global::tryAGI.OpenAI.MessageDeltaContentImageUrlObjectImageUrl? imageUrl,
+            string type = "image_url")
         {
             this.Index = index;
             this.Type = type;
@@ -62,6 +62,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public MessageDeltaContentImageUrlObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageDeltaContentImageUrlObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageDeltaContentImageUrlObject FromIndex(int index)
+        {
+            return new MessageDeltaContentImageUrlObject
+            {
+                Index = index,
+            };
         }
 
     }

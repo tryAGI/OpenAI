@@ -41,9 +41,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item4>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item5>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item4>> Output { get; set; }
+        public required global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item5>> Output { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -70,7 +70,7 @@ namespace tryAGI.OpenAI
         public LiveDecisionStoredFunctionCallOutputParam(
             string id,
             string callId,
-            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item4>> output,
+            global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OutputVariant2Item5>> output,
             global::tryAGI.OpenAI.LiveFunctionCallItemStatus? status,
             global::tryAGI.OpenAI.LiveDecisionStoredFunctionCallOutputParamType type = global::tryAGI.OpenAI.LiveDecisionStoredFunctionCallOutputParamType.FunctionCallOutput)
         {

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `group.user`.
         /// </summary>
+        /// <default>"group.user"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GroupUserAssignmentObjectJsonConverter))]
-        public global::tryAGI.OpenAI.GroupUserAssignmentObject Object { get; set; }
+        public string Object { get; set; } = "group.user";
 
         /// <summary>
         /// Identifier of the user that was added.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public GroupUserAssignment(
             string userId,
             string groupId,
-            global::tryAGI.OpenAI.GroupUserAssignmentObject @object)
+            string @object = "group.user")
         {
             this.Object = @object;
             this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));

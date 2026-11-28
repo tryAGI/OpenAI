@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `session.created`.
         /// </summary>
+        /// <default>"session.created"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeTranslationServerEventSessionCreatedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreatedType Type { get; set; }
+        public string Type { get; set; } = "session.created";
 
         /// <summary>
         /// The translation session configuration.
@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
         public RealtimeTranslationServerEventSessionCreated(
             string eventId,
             global::tryAGI.OpenAI.RealtimeTranslationSession session,
-            global::tryAGI.OpenAI.RealtimeTranslationServerEventSessionCreatedType type)
+            string type = "session.created")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

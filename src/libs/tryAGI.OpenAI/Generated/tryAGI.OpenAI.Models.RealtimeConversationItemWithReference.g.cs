@@ -29,8 +29,7 @@ namespace tryAGI.OpenAI
         /// Identifier for the API object being returned - always `realtime.item`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeConversationItemWithReferenceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceObject? Object { get; set; }
+        public string? Object { get; set; }
 
         /// <summary>
         /// The status of the item (`completed`, `incomplete`, `in_progress`). These have no effect <br/>
@@ -145,7 +144,7 @@ namespace tryAGI.OpenAI
         public RealtimeConversationItemWithReference(
             string? id,
             global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceType? type,
-            global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceObject? @object,
+            string? @object,
             global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceStatus? status,
             global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceRole? role,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItemWithReferenceContentItem>? content,

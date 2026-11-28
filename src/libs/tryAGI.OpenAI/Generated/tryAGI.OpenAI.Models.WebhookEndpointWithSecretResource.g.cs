@@ -19,10 +19,9 @@ namespace tryAGI.OpenAI
         /// The object type, which is always webhook_endpoint.<br/>
         /// Default Value: webhook_endpoint
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.WebhookEndpointWithSecretResourceObject.WebhookEndpoint</default>
+        /// <default>"webhook_endpoint"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookEndpointWithSecretResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookEndpointWithSecretResourceObject Object { get; set; } = global::tryAGI.OpenAI.WebhookEndpointWithSecretResourceObject.WebhookEndpoint;
+        public string Object { get; set; } = "webhook_endpoint";
 
         /// <summary>
         /// The Unix timestamp when the endpoint was created.
@@ -118,7 +117,7 @@ namespace tryAGI.OpenAI
             string signingSecret,
             int? updatedAt,
             string? signingSecretHint,
-            global::tryAGI.OpenAI.WebhookEndpointWithSecretResourceObject @object = global::tryAGI.OpenAI.WebhookEndpointWithSecretResourceObject.WebhookEndpoint)
+            string @object = "webhook_endpoint")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

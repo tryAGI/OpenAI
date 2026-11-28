@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.refusal.done`.
         /// </summary>
+        /// <default>"response.refusal.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseRefusalDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseRefusalDoneEventType Type { get; set; }
+        public string Type { get; set; } = "response.refusal.done";
 
         /// <summary>
         /// The ID of the output item that the refusal text is finalized.
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
             int contentIndex,
             string refusal,
             int sequenceNumber,
-            global::tryAGI.OpenAI.ResponseRefusalDoneEventType type)
+            string type = "response.refusal.done")
         {
             this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));

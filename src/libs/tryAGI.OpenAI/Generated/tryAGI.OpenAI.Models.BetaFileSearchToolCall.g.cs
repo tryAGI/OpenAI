@@ -25,9 +25,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the file search tool call. Always `file_search_call`.
         /// </summary>
+        /// <default>"file_search_call"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaFileSearchToolCallTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaFileSearchToolCallType Type { get; set; }
+        public string Type { get; set; } = "file_search_call";
 
         /// <summary>
         /// The status of the file search tool call. One of `in_progress`,<br/>
@@ -73,10 +73,10 @@ namespace tryAGI.OpenAI
         /// <param name="agent">
         /// The agent that produced this item.
         /// </param>
+        /// <param name="results"></param>
         /// <param name="type">
         /// The type of the file search tool call. Always `file_search_call`.
         /// </param>
-        /// <param name="results"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -85,8 +85,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.BetaFileSearchToolCallStatus status,
             global::System.Collections.Generic.IList<string> queries,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaFileSearchToolCallType type,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaFileSearchToolCallResultsVariant1Item>? results)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaFileSearchToolCallResultsVariant1Item>? results,
+            string type = "file_search_call")
         {
             this.Agent = agent;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

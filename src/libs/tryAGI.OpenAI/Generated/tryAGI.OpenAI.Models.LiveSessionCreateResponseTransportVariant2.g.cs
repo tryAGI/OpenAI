@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The transport used for the Live session. Always `sip`.
         /// </summary>
+        /// <default>"sip"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.LiveSessionCreateResponseTransportVariant2TypeJsonConverter))]
-        public global::tryAGI.OpenAI.LiveSessionCreateResponseTransportVariant2Type Type { get; set; }
+        public string Type { get; set; } = "sip";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LiveSessionCreateResponseTransportVariant2(
-            global::tryAGI.OpenAI.LiveSessionCreateResponseTransportVariant2Type type)
+            string type = "sip")
         {
             this.Type = type;
         }

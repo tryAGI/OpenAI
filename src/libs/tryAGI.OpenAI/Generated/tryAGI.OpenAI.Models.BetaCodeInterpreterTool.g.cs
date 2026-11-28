@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the code interpreter tool. Always `code_interpreter`.
         /// </summary>
+        /// <default>"code_interpreter"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaCodeInterpreterToolTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaCodeInterpreterToolType Type { get; set; }
+        public string Type { get; set; } = "code_interpreter";
 
         /// <summary>
         /// The code interpreter container. Can be a container ID or an object that<br/>
@@ -45,17 +45,17 @@ namespace tryAGI.OpenAI
         /// specifies uploaded file IDs to make available to your code, along with an<br/>
         /// optional `memory_limit` setting.
         /// </param>
+        /// <param name="allowedCallers"></param>
         /// <param name="type">
         /// The type of the code interpreter tool. Always `code_interpreter`.
         /// </param>
-        /// <param name="allowedCallers"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaCodeInterpreterTool(
             global::tryAGI.OpenAI.OneOf<string, global::tryAGI.OpenAI.BetaAutoCodeInterpreterToolParam> container,
-            global::tryAGI.OpenAI.BetaCodeInterpreterToolType type,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaCallableToolAllowedCaller>? allowedCallers)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaCallableToolAllowedCaller>? allowedCallers,
+            string type = "code_interpreter")
         {
             this.Type = type;
             this.Container = container;

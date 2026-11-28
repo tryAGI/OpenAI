@@ -12,10 +12,9 @@ namespace tryAGI.OpenAI
         /// The type of jsonl source. Always `file_content`.<br/>
         /// Default Value: file_content
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.EvalJsonlFileContentSourceType.FileContent</default>
+        /// <default>"file_content"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalJsonlFileContentSourceTypeJsonConverter))]
-        public global::tryAGI.OpenAI.EvalJsonlFileContentSourceType Type { get; set; } = global::tryAGI.OpenAI.EvalJsonlFileContentSourceType.FileContent;
+        public string Type { get; set; } = "file_content";
 
         /// <summary>
         /// The content of the jsonl file.
@@ -45,7 +44,7 @@ namespace tryAGI.OpenAI
 #endif
         public EvalJsonlFileContentSource(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalJsonlFileContentSourceContentItem> content,
-            global::tryAGI.OpenAI.EvalJsonlFileContentSourceType type = global::tryAGI.OpenAI.EvalJsonlFileContentSourceType.FileContent)
+            string type = "file_content")
         {
             this.Type = type;
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));

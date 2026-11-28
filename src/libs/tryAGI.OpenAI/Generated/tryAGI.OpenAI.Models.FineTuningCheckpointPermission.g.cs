@@ -32,9 +32,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always "checkpoint.permission".
         /// </summary>
+        /// <default>"checkpoint.permission"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FineTuningCheckpointPermissionObjectJsonConverter))]
-        public global::tryAGI.OpenAI.FineTuningCheckpointPermissionObject Object { get; set; }
+        public string Object { get; set; } = "checkpoint.permission";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -64,7 +64,7 @@ namespace tryAGI.OpenAI
             string id,
             int createdAt,
             string projectId,
-            global::tryAGI.OpenAI.FineTuningCheckpointPermissionObject @object)
+            string @object = "checkpoint.permission")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;

@@ -10,13 +10,19 @@ namespace tryAGI.OpenAI
     {
         /// <summary>
         /// The Live model to use for the accepted call.<br/>
-        /// Example: gpt-live-1
+        /// Example: gpt-live-1.1
         /// </summary>
-        /// <example>gpt-live-1</example>
+        /// <example>gpt-live-1.1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsLiveJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.ModelIdsLive Model { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_identifier")]
+        public string? SafetyIdentifier { get; set; }
 
         /// <summary>
         ///
@@ -58,10 +64,9 @@ namespace tryAGI.OpenAI
         /// The session type. Always `live`.<br/>
         /// Default Value: live
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.LiveCallAcceptSessionType.Live</default>
+        /// <default>"live"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.LiveCallAcceptSessionTypeJsonConverter))]
-        public global::tryAGI.OpenAI.LiveCallAcceptSessionType Type { get; set; } = global::tryAGI.OpenAI.LiveCallAcceptSessionType.Live;
+        public string Type { get; set; } = "live";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,8 +79,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="model">
         /// The Live model to use for the accepted call.<br/>
-        /// Example: gpt-live-1
+        /// Example: gpt-live-1.1
         /// </param>
+        /// <param name="safetyIdentifier"></param>
         /// <param name="instructions"></param>
         /// <param name="audio">
         /// Startup audio output configuration. SIP negotiates the media format; audio.format is only accepted for primary WebSockets. Voice cannot change after startup.
@@ -99,15 +105,17 @@ namespace tryAGI.OpenAI
 #endif
         public LiveCallAcceptSession(
             global::tryAGI.OpenAI.ModelIdsLive model,
+            string? safetyIdentifier,
             string? instructions,
             global::tryAGI.OpenAI.LiveMediaSessionAudioParam? audio,
             global::tryAGI.OpenAI.DelegationVariant1? delegation,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam>? triggers,
             bool? store,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveInitialItem>? input,
-            global::tryAGI.OpenAI.LiveCallAcceptSessionType type = global::tryAGI.OpenAI.LiveCallAcceptSessionType.Live)
+            string type = "live")
         {
             this.Model = model;
+            this.SafetyIdentifier = safetyIdentifier;
             this.Instructions = instructions;
             this.Audio = audio;
             this.Delegation = delegation;

@@ -30,7 +30,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.AutomationTargetParamNewSessionMetadata))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0020.Create_AutomationTargetParamNewSessionMetadata(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0019.Create_AutomationTargetParamNewSessionMetadata(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

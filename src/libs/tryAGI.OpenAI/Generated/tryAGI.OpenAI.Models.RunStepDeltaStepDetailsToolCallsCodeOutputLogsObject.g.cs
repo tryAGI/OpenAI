@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `logs`.
         /// </summary>
+        /// <default>"logs"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
+        public string Type { get; set; } = "logs";
 
         /// <summary>
         /// The text output from the Code Interpreter tool call.
@@ -40,19 +40,19 @@ namespace tryAGI.OpenAI
         /// <param name="index">
         /// The index of the output in the outputs array.
         /// </param>
-        /// <param name="type">
-        /// Always `logs`.
-        /// </param>
         /// <param name="logs">
         /// The text output from the Code Interpreter tool call.
+        /// </param>
+        /// <param name="type">
+        /// Always `logs`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject(
             int index,
-            global::tryAGI.OpenAI.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType type,
-            string? logs)
+            string? logs,
+            string type = "logs")
         {
             this.Index = index;
             this.Type = type;
@@ -64,6 +64,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject FromIndex(int index)
+        {
+            return new RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject
+            {
+                Index = index,
+            };
         }
 
     }

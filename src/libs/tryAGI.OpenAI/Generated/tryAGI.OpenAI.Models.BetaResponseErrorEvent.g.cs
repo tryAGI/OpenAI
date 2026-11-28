@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `error`.
         /// </summary>
+        /// <default>"error"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseErrorEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseErrorEventType Type { get; set; }
+        public string Type { get; set; } = "error";
 
         /// <summary>
         ///
@@ -65,11 +65,11 @@ namespace tryAGI.OpenAI
         /// <param name="agent">
         /// The agent that owns this multi-agent streaming event.
         /// </param>
+        /// <param name="code"></param>
+        /// <param name="param"></param>
         /// <param name="type">
         /// The type of the event. Always `error`.
         /// </param>
-        /// <param name="code"></param>
-        /// <param name="param"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -77,9 +77,9 @@ namespace tryAGI.OpenAI
             string message,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseErrorEventType type,
             string? code,
-            string? param)
+            string? param,
+            string type = "error")
         {
             this.Agent = agent;
             this.Type = type;

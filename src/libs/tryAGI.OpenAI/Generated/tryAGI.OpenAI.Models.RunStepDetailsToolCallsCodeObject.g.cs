@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of tool call. This is always going to be `code_interpreter` for this type of tool call.
         /// </summary>
+        /// <default>"code_interpreter"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDetailsToolCallsCodeObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectType Type { get; set; }
+        public string Type { get; set; } = "code_interpreter";
 
         /// <summary>
         /// The Code Interpreter tool call definition.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public RunStepDetailsToolCallsCodeObject(
             string id,
             global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectCodeInterpreter codeInterpreter,
-            global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObjectType type)
+            string type = "code_interpreter")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;

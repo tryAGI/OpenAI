@@ -12,10 +12,9 @@ namespace tryAGI.OpenAI
         /// The type of this object. It is always set to "list".<br/>
         /// Default Value: list
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.EvalRunListObject.List</default>
+        /// <default>"list"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalRunListObjectJsonConverter))]
-        public global::tryAGI.OpenAI.EvalRunListObject Object { get; set; } = global::tryAGI.OpenAI.EvalRunListObject.List;
+        public string Object { get; set; } = "list";
 
         /// <summary>
         /// An array of eval run objects.
@@ -78,7 +77,7 @@ namespace tryAGI.OpenAI
             string firstId,
             string lastId,
             bool hasMore,
-            global::tryAGI.OpenAI.EvalRunListObject @object = global::tryAGI.OpenAI.EvalRunListObject.List)
+            string @object = "list")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.output_text.done`.
         /// </summary>
+        /// <default>"response.output_text.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseTextDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseTextDoneEventType Type { get; set; }
+        public string Type { get; set; } = "response.output_text.done";
 
         /// <summary>
         /// The ID of the output item that the text content is finalized.
@@ -97,7 +97,7 @@ namespace tryAGI.OpenAI
             string text,
             int sequenceNumber,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResponseLogProb> logprobs,
-            global::tryAGI.OpenAI.ResponseTextDoneEventType type)
+            string type = "response.output_text.done")
         {
             this.Type = type;
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));

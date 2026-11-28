@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type identifier.
         /// </summary>
+        /// <default>"response.custom_tool_call_input.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseCustomToolCallInputDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEventType Type { get; set; }
+        public string Type { get; set; } = "response.custom_tool_call_input.delta";
 
         /// <summary>
         /// The sequence number of this event.
@@ -75,7 +75,7 @@ namespace tryAGI.OpenAI
             int outputIndex,
             string itemId,
             string delta,
-            global::tryAGI.OpenAI.ResponseCustomToolCallInputDeltaEventType type)
+            string type = "response.custom_tool_call_input.delta")
         {
             this.Type = type;
             this.SequenceNumber = sequenceNumber;

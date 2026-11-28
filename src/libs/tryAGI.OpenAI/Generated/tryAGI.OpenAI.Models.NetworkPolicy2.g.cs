@@ -12,7 +12,7 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AutoCodeInterpreterToolParamNetworkPolicyDiscriminatorType? Type { get; }
+        public global::tryAGI.OpenAI.CreateContainerBodyNetworkPolicyDiscriminatorType? Type { get; }
 
         /// <summary>
         ///
@@ -137,7 +137,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public NetworkPolicy2(
-            global::tryAGI.OpenAI.AutoCodeInterpreterToolParamNetworkPolicyDiscriminatorType? type,
+            global::tryAGI.OpenAI.CreateContainerBodyNetworkPolicyDiscriminatorType? type,
             global::tryAGI.OpenAI.ContainerNetworkPolicyDisabledParam? disabled,
             global::tryAGI.OpenAI.ContainerNetworkPolicyAllowlistParam? allowlist
             )

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.
         /// </summary>
+        /// <default>"last_active_at"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("anchor")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VectorStoreExpirationAfterAnchorJsonConverter))]
-        public global::tryAGI.OpenAI.VectorStoreExpirationAfterAnchor Anchor { get; set; }
+        public string Anchor { get; set; } = "last_active_at";
 
         /// <summary>
         /// The number of days after the anchor time that the vector store will expire.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public VectorStoreExpirationAfter(
             int days,
-            global::tryAGI.OpenAI.VectorStoreExpirationAfterAnchor anchor)
+            string anchor = "last_active_at")
         {
             this.Anchor = anchor;
             this.Days = days;
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public VectorStoreExpirationAfter()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="VectorStoreExpirationAfter"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static VectorStoreExpirationAfter FromDays(int days)
+        {
+            return new VectorStoreExpirationAfter
+            {
+                Days = days,
+            };
         }
 
     }

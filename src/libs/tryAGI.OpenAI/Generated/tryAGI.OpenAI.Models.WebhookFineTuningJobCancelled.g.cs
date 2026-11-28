@@ -33,15 +33,14 @@ namespace tryAGI.OpenAI
         /// The object of the event. Always `event`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookFineTuningJobCancelledObjectJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookFineTuningJobCancelledObject? Object { get; set; }
+        public string? Object { get; set; }
 
         /// <summary>
         /// The type of the event. Always `fine_tuning.job.cancelled`.
         /// </summary>
+        /// <default>"fine_tuning.job.cancelled"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookFineTuningJobCancelledTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookFineTuningJobCancelledType Type { get; set; }
+        public string Type { get; set; } = "fine_tuning.job.cancelled";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -74,8 +73,8 @@ namespace tryAGI.OpenAI
             int createdAt,
             string id,
             global::tryAGI.OpenAI.WebhookFineTuningJobCancelledData data,
-            global::tryAGI.OpenAI.WebhookFineTuningJobCancelledObject? @object,
-            global::tryAGI.OpenAI.WebhookFineTuningJobCancelledType type)
+            string? @object,
+            string type = "fine_tuning.job.cancelled")
         {
             this.CreatedAt = createdAt;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

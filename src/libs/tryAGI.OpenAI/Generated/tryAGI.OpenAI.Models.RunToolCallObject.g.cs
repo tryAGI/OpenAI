@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of tool call the output is required for. For now, this is always `function`.
         /// </summary>
+        /// <default>"function"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunToolCallObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunToolCallObjectType Type { get; set; }
+        public string Type { get; set; } = "function";
 
         /// <summary>
         /// The function definition.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public RunToolCallObject(
             string id,
             global::tryAGI.OpenAI.RunToolCallObjectFunction function,
-            global::tryAGI.OpenAI.RunToolCallObjectType type)
+            string type = "function")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Type = type;

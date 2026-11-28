@@ -22,9 +22,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `conversation.item.create`.
         /// </summary>
+        /// <default>"conversation.item.create"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaClientEventConversationItemCreateTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemCreateType Type { get; set; }
+        public string Type { get; set; } = "conversation.item.create";
 
         /// <summary>
         /// The ID of the preceding item after which the new item will be inserted. <br/>
@@ -59,9 +59,6 @@ namespace tryAGI.OpenAI
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.create`.
-        /// </param>
         /// <param name="previousItemId">
         /// The ID of the preceding item after which the new item will be inserted. <br/>
         /// If not set, the new item will be appended to the end of the conversation.<br/>
@@ -69,14 +66,17 @@ namespace tryAGI.OpenAI
         /// If set to an existing ID, it allows an item to be inserted mid-conversation. If the<br/>
         /// ID cannot be found, an error will be returned and the item will not be added.
         /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.create`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeBetaClientEventConversationItemCreate(
             global::tryAGI.OpenAI.RealtimeConversationItem item,
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeBetaClientEventConversationItemCreateType type,
-            string? previousItemId)
+            string? previousItemId,
+            string type = "conversation.item.create")
         {
             this.EventId = eventId;
             this.Type = type;

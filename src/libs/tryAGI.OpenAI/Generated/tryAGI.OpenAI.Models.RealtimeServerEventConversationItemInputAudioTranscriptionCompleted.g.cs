@@ -27,9 +27,9 @@ namespace tryAGI.OpenAI
         /// The event type, must be<br/>
         /// `conversation.item.input_audio_transcription.completed`.
         /// </summary>
+        /// <default>"conversation.item.input_audio_transcription.completed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType Type { get; set; }
+        public string Type { get; set; } = "conversation.item.input_audio_transcription.completed";
 
         /// <summary>
         /// The ID of the item containing the audio that is being transcribed.
@@ -96,14 +96,14 @@ namespace tryAGI.OpenAI
         /// <param name="usage">
         /// Usage statistics for the transcription, this is billed according to the ASR model's pricing rather than the realtime model's pricing.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be<br/>
-        /// `conversation.item.input_audio_transcription.completed`.
-        /// </param>
         /// <param name="languages">
         /// The languages detected in the audio. Returned by `gpt-transcribe`. An empty array indicates that no language could be reliably detected.
         /// </param>
         /// <param name="logprobs"></param>
+        /// <param name="type">
+        /// The event type, must be<br/>
+        /// `conversation.item.input_audio_transcription.completed`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -113,9 +113,9 @@ namespace tryAGI.OpenAI
             int contentIndex,
             string transcript,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.TranscriptTextUsageTokens, global::tryAGI.OpenAI.TranscriptTextUsageDuration> usage,
-            global::tryAGI.OpenAI.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType type,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionLanguage>? languages,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs)
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LogProbProperties>? logprobs,
+            string type = "conversation.item.input_audio_transcription.completed")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

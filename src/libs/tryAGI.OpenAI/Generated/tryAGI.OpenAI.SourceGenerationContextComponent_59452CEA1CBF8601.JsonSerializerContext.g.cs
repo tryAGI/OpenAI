@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_0DB89D78320B24D6.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_26FB25F4E63D399E.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_3E80D28F2277D5CD.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_0DB89D78320B24D6.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_3E80D28F2277D5CD.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_EF1CB25CCE29CFC2.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.LiveDecisionStoredFunctionCallOutputParam))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0176.Create_LiveDecisionStoredFunctionCallOutputParam(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0164.Create_LiveDecisionStoredFunctionCallOutputParam(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

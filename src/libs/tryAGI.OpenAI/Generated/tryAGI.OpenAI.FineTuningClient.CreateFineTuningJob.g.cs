@@ -356,13 +356,13 @@ namespace tryAGI.OpenAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -373,7 +373,7 @@ namespace tryAGI.OpenAI
 
                                 throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_400 is { Length: > 0 } ? __content_400 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
                                     responseBody: __content_400,
                                     responseObject: __value_400,
@@ -393,13 +393,13 @@ namespace tryAGI.OpenAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = __content_429 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = __content_429 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -410,7 +410,7 @@ namespace tryAGI.OpenAI
 
                                 throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_429 is { Length: > 0 } ? __content_429 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
                                     responseBody: __content_429,
                                     responseObject: __value_429,
@@ -453,7 +453,7 @@ namespace tryAGI.OpenAI
                                 {
                                     throw global::tryAGI.OpenAI.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -498,7 +498,7 @@ namespace tryAGI.OpenAI
 
                                     throw global::tryAGI.OpenAI.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -524,7 +524,7 @@ namespace tryAGI.OpenAI
         /// <param name="model">
         /// The name of the model to fine-tune. You can select one of the<br/>
         /// [supported models](https://developers.openai.com/api/docs/guides/model-optimization#fine-tuning-methods).<br/>
-        /// Example: gpt-4o-mini
+        /// Example: gpt-4.1-mini-2025-04-14
         /// </param>
         /// <param name="trainingFile">
         /// The ID of an uploaded file that contains training data.<br/>
@@ -536,7 +536,7 @@ namespace tryAGI.OpenAI
         /// </param>
         /// <param name="suffix">
         /// A string of up to 64 characters that will be added to your fine-tuned model name.<br/>
-        /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-4o-mini:openai:custom-model-name:7p4lURel`.<br/>
+        /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-4.1-mini-2025-04-14:openai:custom-model-name:7p4lURel`.<br/>
         /// Default Value: openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464
         /// </param>
         /// <param name="validationFile">

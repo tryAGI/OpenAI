@@ -367,13 +367,13 @@ namespace tryAGI.OpenAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::tryAGI.OpenAI.BetaErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.BetaErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::tryAGI.OpenAI.BetaErrorResponse.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = __content_400 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.BetaErrorResponse.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -384,7 +384,7 @@ namespace tryAGI.OpenAI
 
                                 throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.BetaErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_400 is { Length: > 0 } ? __content_400 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
                                     responseBody: __content_400,
                                     responseObject: __value_400,
@@ -404,13 +404,13 @@ namespace tryAGI.OpenAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = __content_429 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = __content_429 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -421,7 +421,7 @@ namespace tryAGI.OpenAI
 
                                 throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_429 is { Length: > 0 } ? __content_429 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
                                     responseBody: __content_429,
                                     responseObject: __value_429,
@@ -441,13 +441,13 @@ namespace tryAGI.OpenAI
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_503 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_503, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_503 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_503 = global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_503, JsonSerializerContext);
+                                        __value_503 = __content_503 is not { Length: > 0 } ? null : global::tryAGI.OpenAI.ErrorResponse.FromJson(__content_503, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -458,7 +458,7 @@ namespace tryAGI.OpenAI
 
                                 throw global::tryAGI.OpenAI.ApiException<global::tryAGI.OpenAI.ErrorResponse>.Create(
                                     statusCode: __response.StatusCode,
-                                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
+                                    message: __content_503 is { Length: > 0 } ? __content_503 : __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_503,
                                     responseBody: __content_503,
                                     responseObject: __value_503,
@@ -501,7 +501,7 @@ namespace tryAGI.OpenAI
                                 {
                                     throw global::tryAGI.OpenAI.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -546,7 +546,7 @@ namespace tryAGI.OpenAI
 
                                     throw global::tryAGI.OpenAI.ApiException.Create(
                                         statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                                        message: __content is { Length: > 0 } ? __content : __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
                                         responseBody: __content,
                                         responseHeaders: global::System.Linq.Enumerable.ToDictionary(
@@ -570,11 +570,15 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="openaiBeta"></param>
         /// <param name="model">
-        /// Model ID used to generate the response, like `gpt-6-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
+        /// Model ID used to generate the response, like `gpt-6.2-astra`. OpenAI offers a wide range of models with different capabilities, performance characteristics, and price points. Refer to the [model guide](https://developers.openai.com/api/docs/models) to browse and compare available models.
         /// </param>
         /// <param name="input"></param>
         /// <param name="previousResponseId"></param>
         /// <param name="instructions"></param>
+        /// <param name="safetyIdentifier"></param>
+        /// <param name="image">
+        /// Request level image options.
+        /// </param>
         /// <param name="promptCacheKey"></param>
         /// <param name="promptCacheRetention"></param>
         /// <param name="promptCacheOptions"></param>
@@ -588,6 +592,8 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaInputItem>>? input = default,
             string? previousResponseId = default,
             string? instructions = default,
+            string? safetyIdentifier = default,
+            global::tryAGI.OpenAI.BetaImageOptionsParam? image = default,
             string? promptCacheKey = default,
             global::tryAGI.OpenAI.BetaPromptCacheRetentionEnum? promptCacheRetention = default,
             global::tryAGI.OpenAI.BetaPromptCacheOptionsParam? promptCacheOptions = default,
@@ -601,6 +607,8 @@ namespace tryAGI.OpenAI
                 Input = input,
                 PreviousResponseId = previousResponseId,
                 Instructions = instructions,
+                SafetyIdentifier = safetyIdentifier,
+                Image = image,
                 PromptCacheKey = promptCacheKey,
                 PromptCacheRetention = promptCacheRetention,
                 PromptCacheOptions = promptCacheOptions,

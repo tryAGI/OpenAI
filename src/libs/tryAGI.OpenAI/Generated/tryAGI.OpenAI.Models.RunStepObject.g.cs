@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `thread.run.step`.
         /// </summary>
+        /// <default>"thread.run.step"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepObjectObjectJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepObjectObject Object { get; set; }
+        public string Object { get; set; } = "thread.run.step";
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run step was created.
@@ -149,9 +149,6 @@ namespace tryAGI.OpenAI
         /// <param name="stepDetails">
         /// The details of the run step.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `thread.run.step`.
-        /// </param>
         /// <param name="lastError"></param>
         /// <param name="expiredAt"></param>
         /// <param name="cancelledAt"></param>
@@ -159,6 +156,9 @@ namespace tryAGI.OpenAI
         /// <param name="completedAt"></param>
         /// <param name="metadata"></param>
         /// <param name="usage"></param>
+        /// <param name="object">
+        /// The object type, which is always `thread.run.step`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -171,14 +171,14 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.RunStepObjectType type,
             global::tryAGI.OpenAI.RunStepObjectStatus status,
             global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsMessageCreationObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsObject> stepDetails,
-            global::tryAGI.OpenAI.RunStepObjectObject @object,
             global::tryAGI.OpenAI.RunStepObjectLastError? lastError,
             int? expiredAt,
             int? cancelledAt,
             int? failedAt,
             int? completedAt,
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
-            global::tryAGI.OpenAI.RunStepCompletionUsageVariant1? usage)
+            global::tryAGI.OpenAI.RunStepCompletionUsageVariant1? usage,
+            string @object = "thread.run.step")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

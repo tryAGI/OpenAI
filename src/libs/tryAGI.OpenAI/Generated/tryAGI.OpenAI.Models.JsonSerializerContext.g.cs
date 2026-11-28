@@ -13,7 +13,7 @@ namespace tryAGI.OpenAI
             internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope Value = new(
                 null,
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_005CA71DE82FECFF.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C7994DCB63850A27.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_EFEB8EAF6F33EABD.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_4DDBCCC5F00A0513.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_541F906B0ECC255A.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_005CA71DE82FECFF.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C7994DCB63850A27.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_EFEB8EAF6F33EABD.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_4DDBCCC5F00A0513.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_ADC69AEE9CB3D9A4.MetadataScope,
                 }, null);
         }
         private static class DefaultHolder

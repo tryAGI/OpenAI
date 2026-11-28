@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `project.rate_limit`
         /// </summary>
+        /// <default>"project.rate_limit"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectRateLimitObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectRateLimitObject Object { get; set; }
+        public string Object { get; set; } = "project.rate_limit";
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints.
@@ -88,9 +88,6 @@ namespace tryAGI.OpenAI
         /// <param name="maxTokensPer1Minute">
         /// The maximum tokens per minute.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `project.rate_limit`
-        /// </param>
         /// <param name="maxImagesPer1Minute">
         /// The maximum images per minute. Only present for relevant models.
         /// </param>
@@ -103,6 +100,9 @@ namespace tryAGI.OpenAI
         /// <param name="batch1DayMaxInputTokens">
         /// The maximum batch input tokens per day. Only present for relevant models.
         /// </param>
+        /// <param name="object">
+        /// The object type, which is always `project.rate_limit`
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -111,11 +111,11 @@ namespace tryAGI.OpenAI
             string model,
             int maxRequestsPer1Minute,
             int maxTokensPer1Minute,
-            global::tryAGI.OpenAI.ProjectRateLimitObject @object,
             int? maxImagesPer1Minute,
             long? maxAudioMegabytesPer1Minute,
             int? maxRequestsPer1Day,
-            int? batch1DayMaxInputTokens)
+            int? batch1DayMaxInputTokens,
+            string @object = "project.rate_limit")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

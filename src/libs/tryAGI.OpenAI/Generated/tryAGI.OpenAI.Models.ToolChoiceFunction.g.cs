@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// For function calling, the type is always `function`.
         /// </summary>
+        /// <default>"function"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ToolChoiceFunctionTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ToolChoiceFunctionType Type { get; set; }
+        public string Type { get; set; } = "function";
 
         /// <summary>
         /// The name of the function to call.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public ToolChoiceFunction(
             string name,
-            global::tryAGI.OpenAI.ToolChoiceFunctionType type)
+            string type = "function")
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ToolChoiceFunction()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ToolChoiceFunction"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ToolChoiceFunction FromName(string name)
+        {
+            return new ToolChoiceFunction
+            {
+                Name = name,
+            };
         }
 
     }

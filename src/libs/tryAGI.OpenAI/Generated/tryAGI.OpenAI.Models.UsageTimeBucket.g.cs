@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"bucket"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UsageTimeBucketObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UsageTimeBucketObject Object { get; set; }
+        public string Object { get; set; } = "bucket";
 
         /// <summary>
         ///
@@ -56,7 +56,7 @@ namespace tryAGI.OpenAI
             int startTime,
             int endTime,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ResultsItem> results,
-            global::tryAGI.OpenAI.UsageTimeBucketObject @object)
+            string @object = "bucket")
         {
             this.Object = @object;
             this.StartTime = startTime;

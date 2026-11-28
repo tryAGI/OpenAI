@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the image generation tool. Always `image_generation`.
         /// </summary>
+        /// <default>"image_generation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageGenToolTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ImageGenToolType Type { get; set; }
+        public string Type { get; set; } = "image_generation";
 
         /// <summary>
         ///
@@ -21,6 +21,18 @@ namespace tryAGI.OpenAI
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.ImageGenToolModel?>))]
         public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolModel?>? Model { get; set; }
+
+        /// <summary>
+        /// Computation spent planning the image, independently of rendering quality.<br/>
+        /// Overrides the outer response's `reasoning.effort` for image generation.<br/>
+        /// When omitted, inherits a supported outer reasoning effort or uses the<br/>
+        /// image model's configured default.<br/>
+        /// For SVG output, controls the reference image, not the SVG author's<br/>
+        /// reasoning.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("complexity")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageGenToolComplexityJsonConverter))]
+        public global::tryAGI.OpenAI.ImageGenToolComplexity? Complexity { get; set; }
 
         /// <summary>
         /// The quality of the generated image. The GPT image models support `low`,<br/>
@@ -42,13 +54,41 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolSize?>? Size { get; set; }
 
         /// <summary>
-        /// The output format of the generated image. One of `png`, `webp`, or<br/>
-        /// `jpeg`. Default: `png`.<br/>
+        /// The output format of the generated image. One of `png`, `webp`, `jpeg`,<br/>
+        /// `gif`, or `svg`. Default: `png`. GIF and SVG output require a model<br/>
+        /// that supports the selected format. GIF output does not support<br/>
+        /// partial image streaming (`partial_images` greater than `0`),<br/>
+        /// `input_image_mask`, or custom `output_compression`.<br/>
+        /// Responses lifecycle events can still be streamed for GIF output.<br/>
         /// Default Value: png
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageGenToolOutputFormatJsonConverter))]
         public global::tryAGI.OpenAI.ImageGenToolOutputFormat? OutputFormat { get; set; }
+
+        /// <summary>
+        /// Number of GIF frames. Requires `output_format` to be `gif`. Default: 9.<br/>
+        /// Default Value: 9
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frame_count")]
+        public int? FrameCount { get; set; }
+
+        /// <summary>
+        /// Duration of each GIF frame in milliseconds, rounded to 10 ms.<br/>
+        /// Requires `output_format` to be `gif`. Default: 200.<br/>
+        /// Default Value: 200
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frame_duration_ms")]
+        public int? FrameDurationMs { get; set; }
+
+        /// <summary>
+        /// SVG author model settings. Requires `output_format` to be `svg`.<br/>
+        /// When SVG model selection is enabled, omitting this object uses the<br/>
+        /// outer response model. Otherwise, the default SVG author is used and<br/>
+        /// explicit model overrides are unavailable.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("svg")]
+        public global::tryAGI.OpenAI.SvgParam? Svg { get; set; }
 
         /// <summary>
         /// Compression level for the output image. Default: 100.<br/>
@@ -115,10 +155,15 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="ImageGenTool" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of the image generation tool. Always `image_generation`.
-        /// </param>
         /// <param name="model"></param>
+        /// <param name="complexity">
+        /// Computation spent planning the image, independently of rendering quality.<br/>
+        /// Overrides the outer response's `reasoning.effort` for image generation.<br/>
+        /// When omitted, inherits a supported outer reasoning effort or uses the<br/>
+        /// image model's configured default.<br/>
+        /// For SVG output, controls the reference image, not the SVG author's<br/>
+        /// reasoning.
+        /// </param>
         /// <param name="quality">
         /// The quality of the generated image. The GPT image models support `low`,<br/>
         /// `medium`, and `high`. `gpt-image-2.5-sunburst` and `gpt-image-2.5-flare`,<br/>
@@ -131,9 +176,28 @@ namespace tryAGI.OpenAI
         /// Default Value: auto
         /// </param>
         /// <param name="outputFormat">
-        /// The output format of the generated image. One of `png`, `webp`, or<br/>
-        /// `jpeg`. Default: `png`.<br/>
+        /// The output format of the generated image. One of `png`, `webp`, `jpeg`,<br/>
+        /// `gif`, or `svg`. Default: `png`. GIF and SVG output require a model<br/>
+        /// that supports the selected format. GIF output does not support<br/>
+        /// partial image streaming (`partial_images` greater than `0`),<br/>
+        /// `input_image_mask`, or custom `output_compression`.<br/>
+        /// Responses lifecycle events can still be streamed for GIF output.<br/>
         /// Default Value: png
+        /// </param>
+        /// <param name="frameCount">
+        /// Number of GIF frames. Requires `output_format` to be `gif`. Default: 9.<br/>
+        /// Default Value: 9
+        /// </param>
+        /// <param name="frameDurationMs">
+        /// Duration of each GIF frame in milliseconds, rounded to 10 ms.<br/>
+        /// Requires `output_format` to be `gif`. Default: 200.<br/>
+        /// Default Value: 200
+        /// </param>
+        /// <param name="svg">
+        /// SVG author model settings. Requires `output_format` to be `svg`.<br/>
+        /// When SVG model selection is enabled, omitting this object uses the<br/>
+        /// outer response model. Otherwise, the default SVG author is used and<br/>
+        /// explicit model overrides are unavailable.
         /// </param>
         /// <param name="outputCompression">
         /// Compression level for the output image. Default: 100.<br/>
@@ -165,28 +229,39 @@ namespace tryAGI.OpenAI
         /// <param name="action">
         /// Whether to generate a new image or edit an existing image. Default: `auto`.
         /// </param>
+        /// <param name="type">
+        /// The type of the image generation tool. Always `image_generation`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ImageGenTool(
-            global::tryAGI.OpenAI.ImageGenToolType type,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolModel?>? model,
+            global::tryAGI.OpenAI.ImageGenToolComplexity? complexity,
             global::tryAGI.OpenAI.ImageGenToolQuality? quality,
             global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.ImageGenToolSize?>? size,
             global::tryAGI.OpenAI.ImageGenToolOutputFormat? outputFormat,
+            int? frameCount,
+            int? frameDurationMs,
+            global::tryAGI.OpenAI.SvgParam? svg,
             int? outputCompression,
             global::tryAGI.OpenAI.ImageGenToolModeration? moderation,
             global::tryAGI.OpenAI.ImageGenToolBackground? background,
             global::tryAGI.OpenAI.InputFidelity? inputFidelity,
             global::tryAGI.OpenAI.ImageGenToolInputImageMask? inputImageMask,
             int? partialImages,
-            global::tryAGI.OpenAI.ImageGenActionEnum? action)
+            global::tryAGI.OpenAI.ImageGenActionEnum? action,
+            string type = "image_generation")
         {
             this.Type = type;
             this.Model = model;
+            this.Complexity = complexity;
             this.Quality = quality;
             this.Size = size;
             this.OutputFormat = outputFormat;
+            this.FrameCount = frameCount;
+            this.FrameDurationMs = frameDurationMs;
+            this.Svg = svg;
             this.OutputCompression = outputCompression;
             this.Moderation = moderation;
             this.Background = background;

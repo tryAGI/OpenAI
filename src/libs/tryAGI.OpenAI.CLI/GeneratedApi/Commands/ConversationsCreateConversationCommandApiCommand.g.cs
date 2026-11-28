@@ -13,6 +13,12 @@ internal static partial class ConversationsCreateConversationCommandApiCommand
         Description = @"",
     };
 
+    private static Option<string?> SafetyIdentifier { get; } = new(
+        name: @"--safety-identifier")
+    {
+        Description = @"",
+    };
+
     private static Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>?> Items { get; } = new(
         name: @"--items")
     {
@@ -62,6 +68,7 @@ internal static partial class ConversationsCreateConversationCommandApiCommand
         var command = new Command(commandName ?? @"create-conversation", @"Create a conversation
 Create a conversation.");
                         command.Options.Add(Metadata);
+                        command.Options.Add(SafetyIdentifier);
                         command.Options.Add(Items);
           command.Options.Add(Input);
           command.Options.Add(RequestJson);
@@ -89,12 +96,14 @@ Create a conversation.");
                             global::tryAGI.OpenAI.SourceGenerationContext.Default,
                             cancellationToken).ConfigureAwait(false);
                         var metadata = CliRuntime.WasSpecified(parseResult, Metadata) ? parseResult.GetValue(Metadata) : (__requestBase is { } __MetadataBaseValue ? __MetadataBaseValue.Metadata : default);
+                        var safetyIdentifier = CliRuntime.WasSpecified(parseResult, SafetyIdentifier) ? parseResult.GetValue(SafetyIdentifier) : (__requestBase is { } __SafetyIdentifierBaseValue ? __SafetyIdentifierBaseValue.SafetyIdentifier : default);
                         var items = CliRuntime.WasSpecified(parseResult, Items) ? parseResult.GetValue(Items) : (__requestBase is { } __ItemsBaseValue ? __ItemsBaseValue.Items : default);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 var response = await client.Conversations.CreateConversationAsync(
                                     metadata: metadata,
+                                    safetyIdentifier: safetyIdentifier,
                                     items: items,
                                     cancellationToken: cancellationToken).ConfigureAwait(false);
 

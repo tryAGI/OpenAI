@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `group.role`.
         /// </summary>
+        /// <default>"group.role"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GroupRoleAssignmentObjectJsonConverter))]
-        public global::tryAGI.OpenAI.GroupRoleAssignmentObject Object { get; set; }
+        public string Object { get; set; } = "group.role";
 
         /// <summary>
         /// Summary information about a group returned in role assignment responses.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public GroupRoleAssignment(
             global::tryAGI.OpenAI.Group group,
             global::tryAGI.OpenAI.Role role,
-            global::tryAGI.OpenAI.GroupRoleAssignmentObject @object)
+            string @object = "group.role")
         {
             this.Object = @object;
             this.Group = group ?? throw new global::System.ArgumentNullException(nameof(group));

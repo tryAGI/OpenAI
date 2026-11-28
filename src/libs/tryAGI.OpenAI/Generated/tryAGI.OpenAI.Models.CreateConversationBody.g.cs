@@ -17,6 +17,12 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_identifier")]
+        public string? SafetyIdentifier { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("items")]
         public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>? Items { get; set; }
 
@@ -30,15 +36,18 @@ namespace tryAGI.OpenAI
         /// Initializes a new instance of the <see cref="CreateConversationBody" /> class.
         /// </summary>
         /// <param name="metadata"></param>
+        /// <param name="safetyIdentifier"></param>
         /// <param name="items"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateConversationBody(
             global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            string? safetyIdentifier,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InputItem>? items)
         {
             this.Metadata = metadata;
+            this.SafetyIdentifier = safetyIdentifier;
             this.Items = items;
         }
 

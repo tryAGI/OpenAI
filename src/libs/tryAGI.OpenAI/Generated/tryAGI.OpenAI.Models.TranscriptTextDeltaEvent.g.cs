@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `transcript.text.delta`.
         /// </summary>
+        /// <default>"transcript.text.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.TranscriptTextDeltaEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.TranscriptTextDeltaEventType Type { get; set; }
+        public string Type { get; set; } = "transcript.text.delta";
 
         /// <summary>
         /// The text delta that was additionally transcribed.
@@ -46,23 +46,23 @@ namespace tryAGI.OpenAI
         /// <param name="delta">
         /// The text delta that was additionally transcribed.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `transcript.text.delta`.
-        /// </param>
         /// <param name="logprobs">
         /// The log probabilities of the delta. Only included if you [create a transcription](https://developers.openai.com/api/reference/resources/audio/subresources/transcriptions/methods/create) with the `include[]` parameter set to `logprobs`.
         /// </param>
         /// <param name="segmentId">
         /// Identifier of the diarized segment that this delta belongs to. Only present when using `gpt-4o-transcribe-diarize`.
         /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `transcript.text.delta`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public TranscriptTextDeltaEvent(
             string delta,
-            global::tryAGI.OpenAI.TranscriptTextDeltaEventType type,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptTextDeltaEventLogprob>? logprobs,
-            string? segmentId)
+            string? segmentId,
+            string type = "transcript.text.delta")
         {
             this.Type = type;
             this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
@@ -75,6 +75,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public TranscriptTextDeltaEvent()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="TranscriptTextDeltaEvent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static TranscriptTextDeltaEvent FromDelta(string delta)
+        {
+            return new TranscriptTextDeltaEvent
+            {
+                Delta = delta,
+            };
         }
 
     }

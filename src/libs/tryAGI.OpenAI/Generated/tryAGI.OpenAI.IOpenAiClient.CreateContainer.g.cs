@@ -59,9 +59,9 @@ namespace tryAGI.OpenAI
             string name,
             global::System.Collections.Generic.IList<string>? fileIds = default,
             global::tryAGI.OpenAI.CreateContainerBodyExpiresAfter? expiresAfter = default,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem>? skills = default,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem2>? skills = default,
             global::tryAGI.OpenAI.CreateContainerBodyMemoryLimit? memoryLimit = default,
-            global::tryAGI.OpenAI.NetworkPolicy? networkPolicy = default,
+            global::tryAGI.OpenAI.NetworkPolicy2? networkPolicy = default,
             global::tryAGI.OpenAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

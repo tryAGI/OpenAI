@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"thread.run.step.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepStreamEventVariant3EventJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepStreamEventVariant3Event Event { get; set; }
+        public string Event { get; set; } = "thread.run.step.delta";
 
         /// <summary>
         /// Represents a run step delta i.e. any changed fields on a run step during streaming.
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public RunStepStreamEventVariant3(
             global::tryAGI.OpenAI.RunStepDeltaObject data,
-            global::tryAGI.OpenAI.RunStepStreamEventVariant3Event @event)
+            string @event = "thread.run.step.delta")
         {
             this.Event = @event;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RunStepStreamEventVariant3()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RunStepStreamEventVariant3"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RunStepStreamEventVariant3 FromData(global::tryAGI.OpenAI.RunStepDeltaObject data)
+        {
+            return new RunStepStreamEventVariant3
+            {
+                Data = data,
+            };
         }
 
     }

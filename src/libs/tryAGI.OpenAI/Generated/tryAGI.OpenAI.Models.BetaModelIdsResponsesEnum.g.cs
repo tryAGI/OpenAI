@@ -47,6 +47,34 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        Gpt6AstraHealthcare,
+        /// <summary>
+        ///
+        /// </summary>
+        Gpt6Cyber,
+        /// <summary>
+        ///
+        /// </summary>
+        Gpt6Rosalind,
+        /// <summary>
+        ///
+        /// </summary>
+        Gpt61SolHealthcare,
+        /// <summary>
+        ///
+        /// </summary>
+        Gpt62AstraHealthcare,
+        /// <summary>
+        ///
+        /// </summary>
+        Gpt62AstraLaw,
+        /// <summary>
+        ///
+        /// </summary>
+        Gpt62SolHealthcare,
+        /// <summary>
+        ///
+        /// </summary>
         GptDaybreakBlueLatest,
         /// <summary>
         ///
@@ -111,6 +139,13 @@ namespace tryAGI.OpenAI
                 BetaModelIdsResponsesEnum.Gpt55Pro => "gpt-5.5-pro",
                 BetaModelIdsResponsesEnum.Gpt55Pro20260423 => "gpt-5.5-pro-2026-04-23",
                 BetaModelIdsResponsesEnum.Gpt56Cyber => "gpt-5.6-cyber",
+                BetaModelIdsResponsesEnum.Gpt6AstraHealthcare => "gpt-6-astra-healthcare",
+                BetaModelIdsResponsesEnum.Gpt6Cyber => "gpt-6-cyber",
+                BetaModelIdsResponsesEnum.Gpt6Rosalind => "gpt-6-rosalind",
+                BetaModelIdsResponsesEnum.Gpt61SolHealthcare => "gpt-6.1-sol-healthcare",
+                BetaModelIdsResponsesEnum.Gpt62AstraHealthcare => "gpt-6.2-astra-healthcare",
+                BetaModelIdsResponsesEnum.Gpt62AstraLaw => "gpt-6.2-astra-law",
+                BetaModelIdsResponsesEnum.Gpt62SolHealthcare => "gpt-6.2-sol-healthcare",
                 BetaModelIdsResponsesEnum.GptDaybreakBlueLatest => "gpt-daybreak-blue-latest",
                 BetaModelIdsResponsesEnum.GptDaybreakRedLatest => "gpt-daybreak-red-latest",
                 BetaModelIdsResponsesEnum.GptRosalindResearch => "gpt-rosalind-research",
@@ -141,6 +176,13 @@ namespace tryAGI.OpenAI
                 "gpt-5.5-pro" => BetaModelIdsResponsesEnum.Gpt55Pro,
                 "gpt-5.5-pro-2026-04-23" => BetaModelIdsResponsesEnum.Gpt55Pro20260423,
                 "gpt-5.6-cyber" => BetaModelIdsResponsesEnum.Gpt56Cyber,
+                "gpt-6-astra-healthcare" => BetaModelIdsResponsesEnum.Gpt6AstraHealthcare,
+                "gpt-6-cyber" => BetaModelIdsResponsesEnum.Gpt6Cyber,
+                "gpt-6-rosalind" => BetaModelIdsResponsesEnum.Gpt6Rosalind,
+                "gpt-6.1-sol-healthcare" => BetaModelIdsResponsesEnum.Gpt61SolHealthcare,
+                "gpt-6.2-astra-healthcare" => BetaModelIdsResponsesEnum.Gpt62AstraHealthcare,
+                "gpt-6.2-astra-law" => BetaModelIdsResponsesEnum.Gpt62AstraLaw,
+                "gpt-6.2-sol-healthcare" => BetaModelIdsResponsesEnum.Gpt62SolHealthcare,
                 "gpt-daybreak-blue-latest" => BetaModelIdsResponsesEnum.GptDaybreakBlueLatest,
                 "gpt-daybreak-red-latest" => BetaModelIdsResponsesEnum.GptDaybreakRedLatest,
                 "gpt-rosalind-research" => BetaModelIdsResponsesEnum.GptRosalindResearch,

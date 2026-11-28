@@ -28,9 +28,8 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <example>whisper-1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AnyOfJsonConverter<string, global::tryAGI.OpenAI.CreateTranslationRequestModel?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranslationRequestModel?> Model { get; set; }
+        public required string Model { get; set; }
 
         /// <summary>
         /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](https://developers.openai.com/api/docs/guides/speech-to-text#prompting) should be in English.
@@ -89,7 +88,7 @@ namespace tryAGI.OpenAI
         public CreateTranslationRequest(
             byte[] file,
             string filename,
-            global::tryAGI.OpenAI.AnyOf<string, global::tryAGI.OpenAI.CreateTranslationRequestModel?> model,
+            string model,
             string? prompt,
             global::tryAGI.OpenAI.CreateTranslationRequestResponseFormat? responseFormat,
             double? temperature)

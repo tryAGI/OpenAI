@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `mcp_list_tools.failed`.
         /// </summary>
+        /// <default>"mcp_list_tools.failed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventMCPListToolsFailedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailedType Type { get; set; }
+        public string Type { get; set; } = "mcp_list_tools.failed";
 
         /// <summary>
         /// The ID of the MCP list tools item.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventMCPListToolsFailed(
             string eventId,
             string itemId,
-            global::tryAGI.OpenAI.RealtimeServerEventMCPListToolsFailedType type)
+            string type = "mcp_list_tools.failed")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

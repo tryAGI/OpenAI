@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event discriminator. Always `response.steer.failed`.
         /// </summary>
+        /// <default>"response.steer.failed"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ResponseSteerFailedEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ResponseSteerFailedEventType Type { get; set; }
+        public string Type { get; set; } = "response.steer.failed";
 
         /// <summary>
         /// The sequence number for this event.
@@ -67,12 +67,12 @@ namespace tryAGI.OpenAI
         /// <param name="error">
         /// Information about why the input could not be committed.
         /// </param>
-        /// <param name="type">
-        /// The event discriminator. Always `response.steer.failed`.
-        /// </param>
         /// <param name="streamId">
         /// The WebSocket lane that emitted this event, when the target response is<br/>
         /// available and its `response.create` event supplied a `stream_id`.
+        /// </param>
+        /// <param name="type">
+        /// The event discriminator. Always `response.steer.failed`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -81,8 +81,8 @@ namespace tryAGI.OpenAI
             int sequenceNumber,
             global::tryAGI.OpenAI.ResponseSteerFailedEventSteer steer,
             global::tryAGI.OpenAI.ResponseSteerFailedEventError error,
-            global::tryAGI.OpenAI.ResponseSteerFailedEventType type,
-            string? streamId)
+            string? streamId,
+            string type = "response.steer.failed")
         {
             this.Type = type;
             this.SequenceNumber = sequenceNumber;

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `audio.voice_consent`.
         /// </summary>
+        /// <default>"audio.voice_consent"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.VoiceConsentResourceObjectJsonConverter))]
-        public global::tryAGI.OpenAI.VoiceConsentResourceObject Object { get; set; }
+        public string Object { get; set; } = "audio.voice_consent";
 
         /// <summary>
         /// The consent recording identifier.<br/>
@@ -78,7 +78,7 @@ namespace tryAGI.OpenAI
             string name,
             string language,
             int createdAt,
-            global::tryAGI.OpenAI.VoiceConsentResourceObject @object)
+            string @object = "audio.voice_consent")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

@@ -5,8 +5,12 @@ using System.CommandLine;
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
 internal sealed record CreateImageEditRequestOptionSet(
-    Option<string> Prompt,
+    Option<int?> FrameCount,
+                     Option<int?> FrameDurationMs,
+                     Option<global::tryAGI.OpenAI.Complexity?> Complexity,
+                     Option<string> Prompt,
                      Option<string?> Maskname,
+                     Option<string?> Markupname,
                      Option<int?> N,
                      Option<global::tryAGI.OpenAI.CreateImageEditRequestResponseFormat?> ResponseFormat,
                      Option<int?> OutputCompression,
@@ -21,7 +25,19 @@ internal sealed record CreateImageEditRequestOptionSet(
             ? string.Empty
             : prefix.Trim().Trim('-') + "-";
         return new CreateImageEditRequestOptionSet(
-                        Prompt: new Option<string>($"--{normalizedPrefix}prompt")
+                        FrameCount: new Option<int?>($"--{normalizedPrefix}frame-count")
+                {
+                    Description = @"Number of frames for GIF output. Accepts integers from 2 through 16. Defaults to 9 when omitted. Only supported with output_format=gif. The requested size must satisfy the selected model's GIF size limits. GIF output does not support streaming, partial images, masks, or custom output compression. Requires access to the GIF preview for the selected model.",
+                },
+                FrameDurationMs: new Option<int?>($"--{normalizedPrefix}frame-duration-ms")
+                {
+                    Description = @"Requested delay per GIF frame, in milliseconds. Defaults to 200 when omitted. GIF output rounds to the nearest 10 ms and caps the encoded delay at 655,350 ms per frame. Only supported with output_format=gif.",
+                },
+                Complexity: new Option<global::tryAGI.OpenAI.Complexity?>($"--{normalizedPrefix}complexity")
+                {
+                    Description = @"Computation spent planning the image, independently of rendering quality. Uses the image model's configured default when omitted. For SVG output, controls the reference image, independently of the SVG author's reasoning.",
+                },
+                Prompt: new Option<string>($"--{normalizedPrefix}prompt")
                 {
                     Description = @"A text description of the desired image(s). The maximum length is 32000 characters for the GPT image models.",
                     Required = true,
@@ -29,6 +45,10 @@ internal sealed record CreateImageEditRequestOptionSet(
                 Maskname: new Option<string?>($"--{normalizedPrefix}maskname")
                 {
                     Description = @"An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. If there are multiple images provided, the mask will be applied on the first image. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.",
+                },
+                Markupname: new Option<string?>($"--{normalizedPrefix}markupname")
+                {
+                    Description = @"A transparent PNG overlaid on the first image to guide the edit. Must match that image's dimensions after orientation and contain transparent pixels. Supports GPT Image 2.5. Cannot be combined with mask.",
                 },
                 N: new Option<int?>($"--{normalizedPrefix}n")
                 {

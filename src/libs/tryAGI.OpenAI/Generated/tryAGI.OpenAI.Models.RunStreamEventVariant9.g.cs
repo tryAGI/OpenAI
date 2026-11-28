@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"thread.run.cancelled"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStreamEventVariant9EventJsonConverter))]
-        public global::tryAGI.OpenAI.RunStreamEventVariant9Event Event { get; set; }
+        public string Event { get; set; } = "thread.run.cancelled";
 
         /// <summary>
         /// Represents an execution run on a [thread](https://developers.openai.com/api/docs/assistants/migration).
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public RunStreamEventVariant9(
             global::tryAGI.OpenAI.RunObject data,
-            global::tryAGI.OpenAI.RunStreamEventVariant9Event @event)
+            string @event = "thread.run.cancelled")
         {
             this.Event = @event;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RunStreamEventVariant9()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RunStreamEventVariant9"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RunStreamEventVariant9 FromData(global::tryAGI.OpenAI.RunObject data)
+        {
+            return new RunStreamEventVariant9
+            {
+                Data = data,
+            };
         }
 
     }

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `message_creation`.
         /// </summary>
+        /// <default>"message_creation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDeltaStepDetailsMessageCreationObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObjectType Type { get; set; }
+        public string Type { get; set; } = "message_creation";
 
         /// <summary>
         ///
@@ -30,16 +30,16 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsMessageCreationObject" /> class.
         /// </summary>
+        /// <param name="messageCreation"></param>
         /// <param name="type">
         /// Always `message_creation`.
         /// </param>
-        /// <param name="messageCreation"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDeltaStepDetailsMessageCreationObject(
-            global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObjectType type,
-            global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? messageCreation)
+            global::tryAGI.OpenAI.RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? messageCreation,
+            string type = "message_creation")
         {
             this.Type = type;
             this.MessageCreation = messageCreation;

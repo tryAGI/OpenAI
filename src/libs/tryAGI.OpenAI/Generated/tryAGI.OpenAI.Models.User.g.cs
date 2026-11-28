@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `organization.user`
         /// </summary>
+        /// <default>"organization.user"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UserObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UserObject Object { get; set; }
+        public string Object { get; set; } = "organization.user";
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints
@@ -122,9 +122,6 @@ namespace tryAGI.OpenAI
         /// <param name="addedAt">
         /// The Unix timestamp (in seconds) of when the user was added.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `organization.user`
-        /// </param>
         /// <param name="name">
         /// The name of the user
         /// </param>
@@ -164,13 +161,15 @@ namespace tryAGI.OpenAI
         /// <param name="projects">
         /// Projects associated with the user, if included.
         /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.user`
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public User(
             string id,
             int addedAt,
-            global::tryAGI.OpenAI.UserObject @object,
             string? name,
             string? email,
             string? role,
@@ -183,7 +182,8 @@ namespace tryAGI.OpenAI
             int? apiKeyLastUsedAt,
             string? technicalLevel,
             string? developerPersona,
-            global::tryAGI.OpenAI.UserProjects? projects)
+            global::tryAGI.OpenAI.UserProjects? projects,
+            string @object = "organization.user")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

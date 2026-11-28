@@ -2,7 +2,7 @@
 
 namespace tryAGI.OpenAI
 {
-    public sealed partial class Session5
+    public readonly partial struct Session5
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -52,7 +52,7 @@ namespace tryAGI.OpenAI
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.Session5))) as global::tryAGI.OpenAI.Session5;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.Session5))) as global::tryAGI.OpenAI.Session5?;
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace tryAGI.OpenAI
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.Session5))).ConfigureAwait(false)) as global::tryAGI.OpenAI.Session5;
+                jsonSerializerContext.Options.GetTypeInfo(typeof(global::tryAGI.OpenAI.Session5))).ConfigureAwait(false)) as global::tryAGI.OpenAI.Session5?;
         }
 
         /// <summary>

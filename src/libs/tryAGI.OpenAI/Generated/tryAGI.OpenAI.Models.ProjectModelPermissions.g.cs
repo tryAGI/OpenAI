@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `project.model_permissions`.
         /// </summary>
+        /// <default>"project.model_permissions"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectModelPermissionsObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectModelPermissionsObject Object { get; set; }
+        public string Object { get; set; } = "project.model_permissions";
 
         /// <summary>
         /// Whether the project uses an allowlist or a denylist.
@@ -54,7 +54,7 @@ namespace tryAGI.OpenAI
         public ProjectModelPermissions(
             global::tryAGI.OpenAI.ProjectModelPermissionsMode mode,
             global::System.Collections.Generic.IList<string> modelIds,
-            global::tryAGI.OpenAI.ProjectModelPermissionsObject @object)
+            string @object = "project.model_permissions")
         {
             this.Object = @object;
             this.Mode = mode;

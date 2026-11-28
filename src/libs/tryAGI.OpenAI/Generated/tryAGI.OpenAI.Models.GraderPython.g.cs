@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `python`.
         /// </summary>
+        /// <default>"python"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GraderPythonTypeJsonConverter))]
-        public global::tryAGI.OpenAI.GraderPythonType Type { get; set; }
+        public string Type { get; set; } = "python";
 
         /// <summary>
         /// The name of the grader.
@@ -50,11 +50,11 @@ namespace tryAGI.OpenAI
         /// <param name="source">
         /// The source code of the python script.
         /// </param>
-        /// <param name="type">
-        /// The object type, which is always `python`.
-        /// </param>
         /// <param name="imageTag">
         /// The image tag to use for the python script.
+        /// </param>
+        /// <param name="type">
+        /// The object type, which is always `python`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -62,8 +62,8 @@ namespace tryAGI.OpenAI
         public GraderPython(
             string name,
             string source,
-            global::tryAGI.OpenAI.GraderPythonType type,
-            string? imageTag)
+            string? imageTag,
+            string type = "python")
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         /// An optional list of skills referenced by id or inline data.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("skills")]
-        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem>? Skills { get; set; }
+        public global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem2>? Skills { get; set; }
 
         /// <summary>
         /// Optional memory limit for the container. Defaults to "1g".
@@ -44,8 +44,8 @@ namespace tryAGI.OpenAI
         /// Network access policy for the container.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("network_policy")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.NetworkPolicyJsonConverter))]
-        public global::tryAGI.OpenAI.NetworkPolicy? NetworkPolicy { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.NetworkPolicy2JsonConverter))]
+        public global::tryAGI.OpenAI.NetworkPolicy2? NetworkPolicy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -81,9 +81,9 @@ namespace tryAGI.OpenAI
             string name,
             global::System.Collections.Generic.IList<string>? fileIds,
             global::tryAGI.OpenAI.CreateContainerBodyExpiresAfter? expiresAfter,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem>? skills,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem2>? skills,
             global::tryAGI.OpenAI.CreateContainerBodyMemoryLimit? memoryLimit,
-            global::tryAGI.OpenAI.NetworkPolicy? networkPolicy)
+            global::tryAGI.OpenAI.NetworkPolicy2? networkPolicy)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.FileIds = fileIds;

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type. Always `agent.session.created`.
         /// </summary>
+        /// <default>"agent.session.created"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebhookAgentSessionCreatedVariant2TypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebhookAgentSessionCreatedVariant2Type Type { get; set; }
+        public string Type { get; set; } = "agent.session.created";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public WebhookAgentSessionCreatedVariant2(
             global::tryAGI.OpenAI.AgentSessionCreatedPayloadResource data,
-            global::tryAGI.OpenAI.WebhookAgentSessionCreatedVariant2Type type)
+            string type = "agent.session.created")
         {
             this.Type = type;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public WebhookAgentSessionCreatedVariant2()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="WebhookAgentSessionCreatedVariant2"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WebhookAgentSessionCreatedVariant2 FromData(global::tryAGI.OpenAI.AgentSessionCreatedPayloadResource data)
+        {
+            return new WebhookAgentSessionCreatedVariant2
+            {
+                Data = data,
+            };
         }
 
     }

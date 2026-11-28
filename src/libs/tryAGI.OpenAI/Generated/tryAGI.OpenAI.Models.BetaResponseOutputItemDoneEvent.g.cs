@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.output_item.done`.
         /// </summary>
+        /// <default>"response.output_item.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseOutputItemDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseOutputItemDoneEventType Type { get; set; }
+        public string Type { get; set; } = "response.output_item.done";
 
         /// <summary>
         /// The index of the output item that was marked done.
@@ -75,7 +75,7 @@ namespace tryAGI.OpenAI
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaOutputItem item,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseOutputItemDoneEventType type)
+            string type = "response.output_item.done")
         {
             this.Agent = agent;
             this.Type = type;

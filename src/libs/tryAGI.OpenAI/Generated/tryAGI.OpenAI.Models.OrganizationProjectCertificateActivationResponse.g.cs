@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The project certificate activation result type.
         /// </summary>
+        /// <default>"organization.project.certificate.activation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OrganizationProjectCertificateActivationResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.OrganizationProjectCertificateActivationResponseObject Object { get; set; }
+        public string Object { get; set; } = "organization.project.certificate.activation";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public OrganizationProjectCertificateActivationResponse(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OrganizationProjectCertificate> data,
-            global::tryAGI.OpenAI.OrganizationProjectCertificateActivationResponseObject @object)
+            string @object = "organization.project.certificate.activation")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

@@ -41,7 +41,7 @@ internal static partial class UsageUsageCostsCommandApiCommand
     private static Option<global::System.Collections.Generic.IList<string>?> LineItems { get; } = new(
         name: @"--line-items")
     {
-        Description = @"Return only costs for these exact line item names. Each value must match the complete `line_item` value, for example `gpt-6-astra, input_tokens`.",
+        Description = @"Return only costs for these exact line item names. Each value must match the complete `line_item` value, for example `gpt-6.2-astra, input_tokens`.",
     };
 
     private static Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.UsageCostsGroupByItem>?> GroupBy { get; } = new(

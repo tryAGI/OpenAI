@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.reasoning_summary_part.done`.
         /// </summary>
+        /// <default>"response.reasoning_summary_part.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseReasoningSummaryPartDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseReasoningSummaryPartDoneEventType Type { get; set; }
+        public string Type { get; set; } = "response.reasoning_summary_part.done";
 
         /// <summary>
         /// The ID of the item this summary part is associated with.
@@ -91,12 +91,12 @@ namespace tryAGI.OpenAI
         /// <param name="agent">
         /// The agent that owns this multi-agent streaming event.
         /// </param>
-        /// <param name="type">
-        /// The type of the event. Always `response.reasoning_summary_part.done`.
-        /// </param>
         /// <param name="status">
         /// The completion status of the summary part. Omitted when the part completed<br/>
         /// normally and set to `incomplete` when generation was interrupted.
+        /// </param>
+        /// <param name="type">
+        /// The type of the event. Always `response.reasoning_summary_part.done`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -108,8 +108,8 @@ namespace tryAGI.OpenAI
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaResponseReasoningSummaryPartDoneEventPart part,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseReasoningSummaryPartDoneEventType type,
-            global::tryAGI.OpenAI.BetaResponseReasoningSummaryPartDoneEventStatus? status)
+            global::tryAGI.OpenAI.BetaResponseReasoningSummaryPartDoneEventStatus? status,
+            string type = "response.reasoning_summary_part.done")
         {
             this.Agent = agent;
             this.Type = type;

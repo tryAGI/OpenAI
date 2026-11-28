@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `conversation.item.deleted`.
         /// </summary>
+        /// <default>"conversation.item.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeServerEventConversationItemDeletedTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeletedType Type { get; set; }
+        public string Type { get; set; } = "conversation.item.deleted";
 
         /// <summary>
         /// The ID of the item that was deleted.
@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
         public RealtimeServerEventConversationItemDeleted(
             string eventId,
             string itemId,
-            global::tryAGI.OpenAI.RealtimeServerEventConversationItemDeletedType type)
+            string type = "conversation.item.deleted")
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.Type = type;

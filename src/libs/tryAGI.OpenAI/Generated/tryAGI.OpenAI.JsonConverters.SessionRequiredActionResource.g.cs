@@ -22,6 +22,13 @@ namespace tryAGI.OpenAI.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.SessionRequiredActionResourceDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
+            global::tryAGI.OpenAI.SessionRequiredActionResourceMcpApprovalRequest? mcpApprovalRequest = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.SessionRequiredActionResourceDiscriminatorType.McpApprovalRequest)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionRequiredActionResourceMcpApprovalRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionRequiredActionResourceMcpApprovalRequest> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.SessionRequiredActionResourceMcpApprovalRequest)}");
+                mcpApprovalRequest = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
             global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest? computerUseApprovalRequest = default;
             if (discriminator?.Type == global::tryAGI.OpenAI.SessionRequiredActionResourceDiscriminatorType.ComputerUseApprovalRequest)
             {
@@ -46,6 +53,8 @@ namespace tryAGI.OpenAI.JsonConverters
 
             var __value = new global::tryAGI.OpenAI.SessionRequiredActionResource(
                 discriminator?.Type,
+                mcpApprovalRequest,
+
                 computerUseApprovalRequest,
 
                 functionCall,
@@ -66,7 +75,13 @@ namespace tryAGI.OpenAI.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
             typeInfoResolver = global::tryAGI.OpenAI.AutoSDKJsonMetadataCachedResolver.Instance;
 
-            if (value.IsComputerUseApprovalRequest)
+            if (value.IsMcpApprovalRequest)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionRequiredActionResourceMcpApprovalRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionRequiredActionResourceMcpApprovalRequest?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SessionRequiredActionResourceMcpApprovalRequest).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMcpApprovalRequest(), typeInfo);
+            }
+            else if (value.IsComputerUseApprovalRequest)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.SessionRequiredActionResourceComputerUseApprovalRequest).Name}");

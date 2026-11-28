@@ -143,7 +143,7 @@ Returns the Upload object with status `pending`.
                         var bytes = parseResult.GetRequiredValue(Bytes);
                         var mimeType = parseResult.GetRequiredValue(MimeType);
 
-                        var __ExpiresAfterBase = __requestBase is { } __ExpiresAfterBaseValue ? __ExpiresAfterBaseValue.ExpiresAfter : default;                        var expiresAfterAnchor = CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Anchor) ? parseResult.GetValue(ExpiresAfterOptions.Anchor) : (__ExpiresAfterBase is { } __ExpiresAfteranchorBaseValue ? __ExpiresAfteranchorBaseValue.Anchor : default);
+                        var __ExpiresAfterBase = __requestBase is { } __ExpiresAfterBaseValue ? __ExpiresAfterBaseValue.ExpiresAfter : default;                        var expiresAfterAnchor = parseResult.GetRequiredValue(ExpiresAfterOptions.Anchor);
                         var expiresAfterSeconds = parseResult.GetValue(ExpiresAfterOptions.Seconds);
                         var __ExpiresAfterSpecified = CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Anchor) || CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Seconds);
                         var expiresAfter =

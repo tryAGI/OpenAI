@@ -12,10 +12,9 @@ namespace tryAGI.OpenAI
         /// The type of the object. Always "eval.run.output_item".<br/>
         /// Default Value: eval.run.output_item
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.EvalRunOutputItemObject.EvalRunOutputItem</default>
+        /// <default>"eval.run.output_item"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalRunOutputItemObjectJsonConverter))]
-        public global::tryAGI.OpenAI.EvalRunOutputItemObject Object { get; set; } = global::tryAGI.OpenAI.EvalRunOutputItemObject.EvalRunOutputItem;
+        public string Object { get; set; } = "eval.run.output_item";
 
         /// <summary>
         /// Unique identifier for the evaluation run output item.
@@ -133,7 +132,7 @@ namespace tryAGI.OpenAI
             object datasourceItem,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalRunOutputItemResult> results,
             global::tryAGI.OpenAI.EvalRunOutputItemSample sample,
-            global::tryAGI.OpenAI.EvalRunOutputItemObject @object = global::tryAGI.OpenAI.EvalRunOutputItemObject.EvalRunOutputItem)
+            string @object = "eval.run.output_item")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

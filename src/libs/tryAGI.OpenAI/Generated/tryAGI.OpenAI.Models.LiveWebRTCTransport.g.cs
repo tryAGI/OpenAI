@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The transport used for the Live session. Always `webrtc`.
         /// </summary>
+        /// <default>"webrtc"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.LiveWebRTCTransportTypeJsonConverter))]
-        public global::tryAGI.OpenAI.LiveWebRTCTransportType Type { get; set; }
+        public string Type { get; set; } = "webrtc";
 
         /// <summary>
         /// Session Description Protocol message for the WebRTC connection.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public LiveWebRTCTransport(
             string sdp,
-            global::tryAGI.OpenAI.LiveWebRTCTransportType type)
+            string type = "webrtc")
         {
             this.Type = type;
             this.Sdp = sdp ?? throw new global::System.ArgumentNullException(nameof(sdp));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public LiveWebRTCTransport()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="LiveWebRTCTransport"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static LiveWebRTCTransport FromSdp(string sdp)
+        {
+            return new LiveWebRTCTransport
+            {
+                Sdp = sdp,
+            };
         }
 
     }

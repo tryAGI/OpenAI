@@ -25,9 +25,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `input_audio_buffer.commit`.
         /// </summary>
+        /// <default>"input_audio_buffer.commit"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaClientEventInputAudioBufferCommitTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferCommitType Type { get; set; }
+        public string Type { get; set; } = "input_audio_buffer.commit";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -49,7 +49,7 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeBetaClientEventInputAudioBufferCommit(
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferCommitType type)
+            string type = "input_audio_buffer.commit")
         {
             this.EventId = eventId;
             this.Type = type;

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `file_citation`.
         /// </summary>
+        /// <default>"file_citation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageContentTextAnnotationsFileCitationObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObjectType Type { get; set; }
+        public string Type { get; set; } = "file_citation";
 
         /// <summary>
         /// The text in the message content that needs to be replaced.
@@ -69,7 +69,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObjectFileCitation fileCitation,
             int startIndex,
             int endIndex,
-            global::tryAGI.OpenAI.MessageContentTextAnnotationsFileCitationObjectType type)
+            string type = "file_citation")
         {
             this.Type = type;
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));

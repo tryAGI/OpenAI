@@ -9,6 +9,12 @@ namespace tryAGI.OpenAI
     public sealed partial class TurnResource
     {
         /// <summary>
+        /// Prompt cache lifetime selected when this turn started, including an inherited session TTL. Null when the turn used the model default or no TTL was recorded.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cache_options")]
+        public global::tryAGI.OpenAI.PromptCacheOptionsResource? PromptCacheOptions { get; set; }
+
+        /// <summary>
         /// The ID of the turn.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -110,6 +116,9 @@ namespace tryAGI.OpenAI
         /// <param name="createdAt">
         /// The Unix timestamp, in seconds, used to order the turn by creation time. Subagent turns use their start time, falling back to completion time or the subagent opening time when the preceding timestamps are unavailable.
         /// </param>
+        /// <param name="promptCacheOptions">
+        /// Prompt cache lifetime selected when this turn started, including an inherited session TTL. Null when the turn used the model default or no TTL was recorded.
+        /// </param>
         /// <param name="subagentId">
         /// The ID of the subagent that ran the turn, if applicable.
         /// </param>
@@ -138,6 +147,7 @@ namespace tryAGI.OpenAI
             string agentId,
             global::tryAGI.OpenAI.TurnStatusResource status,
             global::System.DateTimeOffset createdAt,
+            global::tryAGI.OpenAI.PromptCacheOptionsResource? promptCacheOptions,
             string? subagentId,
             global::System.DateTimeOffset? startedAt,
             global::System.DateTimeOffset? completedAt,
@@ -145,6 +155,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.TokenUsageResource? usage,
             global::tryAGI.OpenAI.TurnObjectResource @object = global::tryAGI.OpenAI.TurnObjectResource.AgentSessionTurn)
         {
+            this.PromptCacheOptions = promptCacheOptions;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));

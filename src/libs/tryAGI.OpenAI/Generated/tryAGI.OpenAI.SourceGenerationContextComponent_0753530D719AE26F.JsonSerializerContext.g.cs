@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C6180418ADADFCE6.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_D84EB75BFC9EF46A.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_D965BFE2A3C14AE2.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_1FC345D2333BEB3D.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_666F31410D36CC50.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_C8E06AAA695D60F8.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -32,11 +32,11 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.Input5))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0158.Create_Input52(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0146.Create_Input52(options);
                 }
                 if (type == typeof(global::tryAGI.OpenAI.Input5?))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0285.Create_NullableInput52(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0257.Create_NullableInput52(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

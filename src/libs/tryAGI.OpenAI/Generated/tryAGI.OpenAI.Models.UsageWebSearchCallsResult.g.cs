@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"organization.usage.web_searches.result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UsageWebSearchCallsResultObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UsageWebSearchCallsResultObject Object { get; set; }
+        public string Object { get; set; } = "organization.usage.web_searches.result";
 
         /// <summary>
         /// The count of model requests.
@@ -83,12 +83,12 @@ namespace tryAGI.OpenAI
         /// <param name="apiSource">
         /// When grouped by `api_source`, `agents_api` identifies attributed Agents API activity and `unlabeled` includes all records without published source attribution, including historical and unknown origins. Unlabeled does not imply direct API usage. Without source grouping, this field is null.
         /// </param>
-        /// <param name="object"></param>
         /// <param name="projectId"></param>
         /// <param name="userId"></param>
         /// <param name="apiKeyId"></param>
         /// <param name="model"></param>
         /// <param name="contextLevel"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -96,12 +96,12 @@ namespace tryAGI.OpenAI
             int numModelRequests,
             int numRequests,
             global::tryAGI.OpenAI.UsageWebSearchCallsResultApiSource? apiSource,
-            global::tryAGI.OpenAI.UsageWebSearchCallsResultObject @object,
             string? projectId,
             string? userId,
             string? apiKeyId,
             string? model,
-            string? contextLevel)
+            string? contextLevel,
+            string @object = "organization.usage.web_searches.result")
         {
             this.ApiSource = apiSource;
             this.Object = @object;

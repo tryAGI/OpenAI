@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"organization.usage.completions.result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UsageCompletionsResultObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UsageCompletionsResultObject Object { get; set; }
+        public string Object { get; set; } = "organization.usage.completions.result";
 
         /// <summary>
         /// The aggregated number of input tokens used, including cached and cache-write tokens. This includes text, audio, and image tokens. For customers subscribed to Scale Tier, this includes Scale Tier tokens.
@@ -183,7 +183,6 @@ namespace tryAGI.OpenAI
         /// <param name="apiSource">
         /// When grouped by `api_source`, `agents_api` identifies attributed Agents API activity and `unlabeled` includes all records without published source attribution, including historical and unknown origins. Unlabeled does not imply direct API usage. Without source grouping, this field is null.
         /// </param>
-        /// <param name="object"></param>
         /// <param name="inputCachedTokens">
         /// The aggregated number of cached input tokens used across text, audio, and image inputs. For customers subscribed to Scale Tier, this includes Scale Tier tokens.
         /// </param>
@@ -230,6 +229,7 @@ namespace tryAGI.OpenAI
         /// <param name="model"></param>
         /// <param name="batch"></param>
         /// <param name="serviceTier"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -238,7 +238,6 @@ namespace tryAGI.OpenAI
             int outputTokens,
             int numModelRequests,
             global::tryAGI.OpenAI.UsageCompletionsResultApiSource? apiSource,
-            global::tryAGI.OpenAI.UsageCompletionsResultObject @object,
             int? inputCachedTokens,
             int? inputCacheWriteTokens,
             int? inputCacheWrite30mTokens,
@@ -258,7 +257,8 @@ namespace tryAGI.OpenAI
             string? apiKeyId,
             string? model,
             bool? batch,
-            string? serviceTier)
+            string? serviceTier,
+            string @object = "organization.usage.completions.result")
         {
             this.ApiSource = apiSource;
             this.Object = @object;

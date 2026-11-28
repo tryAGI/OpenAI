@@ -16,38 +16,38 @@ namespace tryAGI.OpenAI
         /// `auto` is the default value
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum? Enum { get; init; }
+        public string? AssistantsApiResponseFormatOptionVariant1 { get; init; }
 #else
-        public global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum? Enum { get; }
+        public string? AssistantsApiResponseFormatOptionVariant1 { get; }
 #endif
 
         /// <summary>
         ///
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Enum))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantsApiResponseFormatOptionVariant1))]
 #endif
-        public bool IsEnum => Enum != null;
+        public bool IsAssistantsApiResponseFormatOptionVariant1 => AssistantsApiResponseFormatOptionVariant1 != null;
 
         /// <summary>
         ///
         /// </summary>
-        public bool TryPickEnum(
+        public bool TryPickAssistantsApiResponseFormatOptionVariant1(
 #if NET6_0_OR_GREATER
             [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
 #endif
-            out global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum? value)
+            out string? value)
         {
-            value = Enum;
-            return IsEnum;
+            value = AssistantsApiResponseFormatOptionVariant1;
+            return IsAssistantsApiResponseFormatOptionVariant1;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum PickEnum() => Enum is { } value
+        public string PickAssistantsApiResponseFormatOptionVariant1() => AssistantsApiResponseFormatOptionVariant1 is { } value
             ? value
-            : throw new global::System.InvalidOperationException($"Expected union variant 'Enum' but the value was {ToString()}.");
+            : throw new global::System.InvalidOperationException($"Expected union variant 'AssistantsApiResponseFormatOptionVariant1' but the value was {ToString()}.");
 
         /// <summary>
         /// Default response format. Used to generate text responses.
@@ -166,25 +166,25 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum value) => new AssistantsApiResponseFormatOption((global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?)value);
+        public static implicit operator AssistantsApiResponseFormatOption(string value) => new AssistantsApiResponseFormatOption((string?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?(AssistantsApiResponseFormatOption @this) => @this.Enum;
+        public static implicit operator string?(AssistantsApiResponseFormatOption @this) => @this.AssistantsApiResponseFormatOptionVariant1;
 
         /// <summary>
         ///
         /// </summary>
-        public AssistantsApiResponseFormatOption(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum? value)
+        public AssistantsApiResponseFormatOption(string? value)
         {
-            Enum = value;
+            AssistantsApiResponseFormatOptionVariant1 = value;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static AssistantsApiResponseFormatOption FromEnum(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum? value) => new AssistantsApiResponseFormatOption(value);
+        public static AssistantsApiResponseFormatOption FromAssistantsApiResponseFormatOptionVariant1(string? value) => new AssistantsApiResponseFormatOption(value);
 
         /// <summary>
         ///
@@ -259,13 +259,13 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public AssistantsApiResponseFormatOption(
-            global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum? @enum,
+            string? assistantsApiResponseFormatOptionVariant1,
             global::tryAGI.OpenAI.ResponseFormatText? text,
             global::tryAGI.OpenAI.ResponseFormatJsonObject? jsonObject,
             global::tryAGI.OpenAI.ResponseFormatJsonSchema? jsonSchema
             )
         {
-            Enum = @enum;
+            AssistantsApiResponseFormatOptionVariant1 = assistantsApiResponseFormatOptionVariant1;
             Text = text;
             JsonObject = jsonObject;
             JsonSchema = jsonSchema;
@@ -278,14 +278,14 @@ namespace tryAGI.OpenAI
             JsonSchema as object ??
             JsonObject as object ??
             Text as object ??
-            Enum as object
+            AssistantsApiResponseFormatOptionVariant1 as object
             ;
 
         /// <summary>
         ///
         /// </summary>
         public override string? ToString() =>
-            Enum?.ToValueString() ??
+            AssistantsApiResponseFormatOptionVariant1?.ToString() ??
             Text?.ToString() ??
             JsonObject?.ToString() ??
             JsonSchema?.ToString()
@@ -296,14 +296,14 @@ namespace tryAGI.OpenAI
         /// </summary>
         public bool Validate()
         {
-            return IsEnum && !IsText && !IsJsonObject && !IsJsonSchema || !IsEnum && IsText && !IsJsonObject && !IsJsonSchema || !IsEnum && !IsText && IsJsonObject && !IsJsonSchema || !IsEnum && !IsText && !IsJsonObject && IsJsonSchema;
+            return IsAssistantsApiResponseFormatOptionVariant1 && !IsText && !IsJsonObject && !IsJsonSchema || !IsAssistantsApiResponseFormatOptionVariant1 && IsText && !IsJsonObject && !IsJsonSchema || !IsAssistantsApiResponseFormatOptionVariant1 && !IsText && IsJsonObject && !IsJsonSchema || !IsAssistantsApiResponseFormatOptionVariant1 && !IsText && !IsJsonObject && IsJsonSchema;
         }
 
         /// <summary>
         ///
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?, TResult>? @enum = null,
+            global::System.Func<string, TResult>? assistantsApiResponseFormatOptionVariant1 = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseFormatText, TResult>? text = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseFormatJsonObject, TResult>? jsonObject = null,
             global::System.Func<global::tryAGI.OpenAI.ResponseFormatJsonSchema, TResult>? jsonSchema = null,
@@ -314,9 +314,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (Enum is { } __value0 && @enum != null)
+            if (AssistantsApiResponseFormatOptionVariant1 is { } __value0 && assistantsApiResponseFormatOptionVariant1 != null)
             {
-                return @enum(__value0);
+                return assistantsApiResponseFormatOptionVariant1(__value0);
             }
             else if (Text is { } __value1 && text != null)
             {
@@ -338,7 +338,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Match(
-            global::System.Action<global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?>? @enum = null,
+            global::System.Action<string>? assistantsApiResponseFormatOptionVariant1 = null,
 
             global::System.Action<global::tryAGI.OpenAI.ResponseFormatText>? text = null,
 
@@ -352,9 +352,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (Enum is { } __value0)
+            if (AssistantsApiResponseFormatOptionVariant1 is { } __value0)
             {
-                @enum?.Invoke(__value0);
+                assistantsApiResponseFormatOptionVariant1?.Invoke(__value0);
             }
             else if (Text is { } __value1)
             {
@@ -374,7 +374,7 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         public void Switch(
-            global::System.Action<global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?>? @enum = null,
+            global::System.Action<string>? assistantsApiResponseFormatOptionVariant1 = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseFormatText>? text = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonObject>? jsonObject = null,
             global::System.Action<global::tryAGI.OpenAI.ResponseFormatJsonSchema>? jsonSchema = null,
@@ -385,9 +385,9 @@ namespace tryAGI.OpenAI
                 Validate();
             }
 
-            if (Enum is { } __value0)
+            if (AssistantsApiResponseFormatOptionVariant1 is { } __value0)
             {
-                @enum?.Invoke(__value0);
+                assistantsApiResponseFormatOptionVariant1?.Invoke(__value0);
             }
             else if (Text is { } __value1)
             {
@@ -410,8 +410,8 @@ namespace tryAGI.OpenAI
         {
             var fields = new object?[]
             {
-                Enum,
-                typeof(global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum),
+                AssistantsApiResponseFormatOptionVariant1,
+                typeof(string),
                 Text,
                 typeof(global::tryAGI.OpenAI.ResponseFormatText),
                 JsonObject,
@@ -434,7 +434,7 @@ namespace tryAGI.OpenAI
         public bool Equals(AssistantsApiResponseFormatOption other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.AssistantsApiResponseFormatOptionEnum?>.Default.Equals(Enum, other.Enum) &&
+                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(AssistantsApiResponseFormatOptionVariant1, other.AssistantsApiResponseFormatOptionVariant1) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseFormatText?>.Default.Equals(Text, other.Text) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseFormatJsonObject?>.Default.Equals(JsonObject, other.JsonObject) &&
                 global::System.Collections.Generic.EqualityComparer<global::tryAGI.OpenAI.ResponseFormatJsonSchema?>.Default.Equals(JsonSchema, other.JsonSchema)

@@ -12,10 +12,9 @@ namespace tryAGI.OpenAI
         /// The type of grader.<br/>
         /// Default Value: text_similarity
         /// </summary>
-        /// <default>global::tryAGI.OpenAI.GraderTextSimilarityType.TextSimilarity</default>
+        /// <default>"text_similarity"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GraderTextSimilarityTypeJsonConverter))]
-        public global::tryAGI.OpenAI.GraderTextSimilarityType Type { get; set; } = global::tryAGI.OpenAI.GraderTextSimilarityType.TextSimilarity;
+        public string Type { get; set; } = "text_similarity";
 
         /// <summary>
         /// The name of the grader.
@@ -83,7 +82,7 @@ namespace tryAGI.OpenAI
             string input,
             string reference,
             global::tryAGI.OpenAI.GraderTextSimilarityEvaluationMetric evaluationMetric,
-            global::tryAGI.OpenAI.GraderTextSimilarityType type = global::tryAGI.OpenAI.GraderTextSimilarityType.TextSimilarity)
+            string type = "text_similarity")
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

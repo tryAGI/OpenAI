@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of tool being defined: `code_interpreter`
         /// </summary>
+        /// <default>"code_interpreter"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AssistantToolsCodeTypeJsonConverter))]
-        public global::tryAGI.OpenAI.AssistantToolsCodeType Type { get; set; }
+        public string Type { get; set; } = "code_interpreter";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AssistantToolsCode(
-            global::tryAGI.OpenAI.AssistantToolsCodeType type)
+            string type = "code_interpreter")
         {
             this.Type = type;
         }

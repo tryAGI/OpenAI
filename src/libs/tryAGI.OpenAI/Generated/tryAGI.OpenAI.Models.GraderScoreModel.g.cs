@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `score_model`.
         /// </summary>
+        /// <default>"score_model"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.GraderScoreModelTypeJsonConverter))]
-        public global::tryAGI.OpenAI.GraderScoreModelType Type { get; set; }
+        public string Type { get; set; } = "score_model";
 
         /// <summary>
         /// The name of the grader.
@@ -66,14 +66,14 @@ namespace tryAGI.OpenAI
         /// <param name="input">
         /// The input messages evaluated by the grader. Supports text, output text, input image, and input audio content blocks, and may include template strings.
         /// </param>
-        /// <param name="type">
-        /// The object type, which is always `score_model`.
-        /// </param>
         /// <param name="samplingParams">
         /// The sampling parameters for the model.
         /// </param>
         /// <param name="range">
         /// The service requires two numbers for the score range. Defaults to `[0, 1]`.
+        /// </param>
+        /// <param name="type">
+        /// The object type, which is always `score_model`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -82,9 +82,9 @@ namespace tryAGI.OpenAI
             string name,
             string model,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.EvalItem> input,
-            global::tryAGI.OpenAI.GraderScoreModelType type,
             global::tryAGI.OpenAI.GraderScoreModelSamplingParams? samplingParams,
-            global::System.Collections.Generic.IList<double>? range)
+            global::System.Collections.Generic.IList<double>? range,
+            string type = "score_model")
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

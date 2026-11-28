@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the item. Always `mcp_approval_request`.
         /// </summary>
+        /// <default>"mcp_approval_request"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaMCPApprovalRequestTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaMCPApprovalRequestType Type { get; set; }
+        public string Type { get; set; } = "mcp_approval_request";
 
         /// <summary>
         /// The unique ID of the approval request.
@@ -85,7 +85,7 @@ namespace tryAGI.OpenAI
             string name,
             string arguments,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaMCPApprovalRequestType type)
+            string type = "mcp_approval_request")
         {
             this.Agent = agent;
             this.Type = type;

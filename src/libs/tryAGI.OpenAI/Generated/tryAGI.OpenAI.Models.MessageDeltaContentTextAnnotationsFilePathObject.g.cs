@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `file_path`.
         /// </summary>
+        /// <default>"file_path"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaContentTextAnnotationsFilePathObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectType Type { get; set; }
+        public string Type { get; set; } = "file_path";
 
         /// <summary>
         /// The text in the message content that needs to be replaced.
@@ -58,25 +58,25 @@ namespace tryAGI.OpenAI
         /// <param name="index">
         /// The index of the annotation in the text content part.
         /// </param>
-        /// <param name="type">
-        /// Always `file_path`.
-        /// </param>
         /// <param name="text">
         /// The text in the message content that needs to be replaced.
         /// </param>
         /// <param name="filePath"></param>
         /// <param name="startIndex"></param>
         /// <param name="endIndex"></param>
+        /// <param name="type">
+        /// Always `file_path`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentTextAnnotationsFilePathObject(
             int index,
-            global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectType type,
             string? text,
             global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFilePathObjectFilePath? filePath,
             int? startIndex,
-            int? endIndex)
+            int? endIndex,
+            string type = "file_path")
         {
             this.Index = index;
             this.Type = type;
@@ -91,6 +91,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public MessageDeltaContentTextAnnotationsFilePathObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageDeltaContentTextAnnotationsFilePathObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageDeltaContentTextAnnotationsFilePathObject FromIndex(int index)
+        {
+            return new MessageDeltaContentTextAnnotationsFilePathObject
+            {
+                Index = index,
+            };
         }
 
     }

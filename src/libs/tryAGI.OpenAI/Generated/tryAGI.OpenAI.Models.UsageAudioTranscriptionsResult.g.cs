@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"organization.usage.audio_transcriptions.result"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UsageAudioTranscriptionsResultObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UsageAudioTranscriptionsResultObject Object { get; set; }
+        public string Object { get; set; } = "organization.usage.audio_transcriptions.result";
 
         /// <summary>
         /// The number of seconds processed.
@@ -68,22 +68,22 @@ namespace tryAGI.OpenAI
         /// <param name="numModelRequests">
         /// The count of requests made to the model.
         /// </param>
-        /// <param name="object"></param>
         /// <param name="projectId"></param>
         /// <param name="userId"></param>
         /// <param name="apiKeyId"></param>
         /// <param name="model"></param>
+        /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageAudioTranscriptionsResult(
             long seconds,
             int numModelRequests,
-            global::tryAGI.OpenAI.UsageAudioTranscriptionsResultObject @object,
             string? projectId,
             string? userId,
             string? apiKeyId,
-            string? model)
+            string? model,
+            string @object = "organization.usage.audio_transcriptions.result")
         {
             this.Object = @object;
             this.Seconds = seconds;

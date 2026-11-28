@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `organization.invite`
         /// </summary>
+        /// <default>"organization.invite"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.InviteObjectJsonConverter))]
-        public global::tryAGI.OpenAI.InviteObject Object { get; set; }
+        public string Object { get; set; } = "organization.invite";
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints
@@ -98,14 +98,14 @@ namespace tryAGI.OpenAI
         /// <param name="projects">
         /// The projects that were granted membership upon acceptance of the invite.
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `organization.invite`
-        /// </param>
         /// <param name="expiresAt">
         /// The Unix timestamp (in seconds) of when the invite expires.
         /// </param>
         /// <param name="acceptedAt">
         /// The Unix timestamp (in seconds) of when the invite was accepted.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.invite`
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -117,9 +117,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.InviteStatus status,
             int createdAt,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.InviteProject> projects,
-            global::tryAGI.OpenAI.InviteObject @object,
             int? expiresAt,
-            int? acceptedAt)
+            int? acceptedAt,
+            string @object = "organization.invite")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

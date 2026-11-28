@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `transcript.text.segment`.
         /// </summary>
+        /// <default>"transcript.text.segment"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.TranscriptTextSegmentEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.TranscriptTextSegmentEventType Type { get; set; }
+        public string Type { get; set; } = "transcript.text.segment";
 
         /// <summary>
         /// Unique identifier for the segment.
@@ -86,7 +86,7 @@ namespace tryAGI.OpenAI
             double end,
             string text,
             string speaker,
-            global::tryAGI.OpenAI.TranscriptTextSegmentEventType type)
+            string type = "transcript.text.segment")
         {
             this.Type = type;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

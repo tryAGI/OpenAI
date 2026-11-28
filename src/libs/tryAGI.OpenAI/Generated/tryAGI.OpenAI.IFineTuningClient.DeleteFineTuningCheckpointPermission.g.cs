@@ -10,7 +10,7 @@ namespace tryAGI.OpenAI
         /// Organization owners can use this endpoint to delete a permission for a fine-tuned model checkpoint.
         /// </summary>
         /// <param name="fineTunedModelCheckpoint">
-        /// Example: ft:gpt-4o-mini-2024-07-18:org:weather:B7R9VjQd
+        /// Example: ft:gpt-4.1-mini-2025-04-14:org:weather:B7R9VjQd
         /// </param>
         /// <param name="permissionId">
         /// Example: cp_zc4Q7MP6XxulcVzj4MZdwsAB
@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// Organization owners can use this endpoint to delete a permission for a fine-tuned model checkpoint.
         /// </summary>
         /// <param name="fineTunedModelCheckpoint">
-        /// Example: ft:gpt-4o-mini-2024-07-18:org:weather:B7R9VjQd
+        /// Example: ft:gpt-4.1-mini-2025-04-14:org:weather:B7R9VjQd
         /// </param>
         /// <param name="permissionId">
         /// Example: cp_zc4Q7MP6XxulcVzj4MZdwsAB

@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `text`.
         /// </summary>
+        /// <default>"text"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaContentTextObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageDeltaContentTextObjectType Type { get; set; }
+        public string Type { get; set; } = "text";
 
         /// <summary>
         ///
@@ -40,17 +40,17 @@ namespace tryAGI.OpenAI
         /// <param name="index">
         /// The index of the content part in the message.
         /// </param>
+        /// <param name="text"></param>
         /// <param name="type">
         /// Always `text`.
         /// </param>
-        /// <param name="text"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentTextObject(
             int index,
-            global::tryAGI.OpenAI.MessageDeltaContentTextObjectType type,
-            global::tryAGI.OpenAI.MessageDeltaContentTextObjectText? text)
+            global::tryAGI.OpenAI.MessageDeltaContentTextObjectText? text,
+            string type = "text")
         {
             this.Index = index;
             this.Type = type;
@@ -62,6 +62,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public MessageDeltaContentTextObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageDeltaContentTextObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageDeltaContentTextObject FromIndex(int index)
+        {
+            return new MessageDeltaContentTextObject
+            {
+                Index = index,
+            };
         }
 
     }

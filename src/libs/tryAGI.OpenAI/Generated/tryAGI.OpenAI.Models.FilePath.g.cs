@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the file path. Always `file_path`.
         /// </summary>
+        /// <default>"file_path"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.FilePathTypeJsonConverter))]
-        public global::tryAGI.OpenAI.FilePathType Type { get; set; }
+        public string Type { get; set; } = "file_path";
 
         /// <summary>
         /// The ID of the file.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public FilePath(
             string fileId,
             int index,
-            global::tryAGI.OpenAI.FilePathType type)
+            string type = "file_path")
         {
             this.Type = type;
             this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));

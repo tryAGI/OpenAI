@@ -18,8 +18,7 @@ namespace tryAGI.OpenAI
         /// The object type, must be `realtime.response`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaResponseObject? Object { get; set; }
+        public string? Object { get; set; }
 
         /// <summary>
         /// The final status of the response (`completed`, `cancelled`, `failed`, or <br/>
@@ -105,8 +104,8 @@ namespace tryAGI.OpenAI
         /// inclusive of tool calls, that was used in this response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_output_tokens")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<int?, global::tryAGI.OpenAI.RealtimeBetaResponseMaxOutputTokens?>))]
-        public global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeBetaResponseMaxOutputTokens?>? MaxOutputTokens { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<int?, string>))]
+        public global::tryAGI.OpenAI.OneOf<int?, string>? MaxOutputTokens { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -175,7 +174,7 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeBetaResponse(
             string? id,
-            global::tryAGI.OpenAI.RealtimeBetaResponseObject? @object,
+            string? @object,
             global::tryAGI.OpenAI.RealtimeBetaResponseStatus? status,
             global::tryAGI.OpenAI.RealtimeBetaResponseStatusDetails? statusDetails,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeConversationItem>? output,
@@ -186,7 +185,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.RealtimeBetaResponseModalitie>? modalities,
             global::tryAGI.OpenAI.RealtimeBetaResponseOutputAudioFormat? outputAudioFormat,
             double? temperature,
-            global::tryAGI.OpenAI.OneOf<int?, global::tryAGI.OpenAI.RealtimeBetaResponseMaxOutputTokens?>? maxOutputTokens)
+            global::tryAGI.OpenAI.OneOf<int?, string>? maxOutputTokens)
         {
             this.Id = id;
             this.Object = @object;

@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_025D1AC604BB466C.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_18D68B0F9C5486B6.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_887498FFA805A692.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_952828133D79EAE4.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_025D1AC604BB466C.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_887498FFA805A692.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_952828133D79EAE4.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.GraderScoreModel))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0148.Create_GraderScoreModel(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0136.Create_GraderScoreModel(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

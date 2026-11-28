@@ -13,9 +13,9 @@ namespace tryAGI.OpenAI
         /// The type of the predicted content you want to provide. This type is<br/>
         /// currently always `content`.
         /// </summary>
+        /// <default>"content"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.PredictionContentTypeJsonConverter))]
-        public global::tryAGI.OpenAI.PredictionContentType Type { get; set; }
+        public string Type { get; set; } = "content";
 
         /// <summary>
         /// The content that should be matched when generating a model response.<br/>
@@ -50,7 +50,7 @@ namespace tryAGI.OpenAI
 #endif
         public PredictionContent(
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.ChatCompletionRequestMessageContentPartText>> content,
-            global::tryAGI.OpenAI.PredictionContentType type)
+            string type = "content")
         {
             this.Type = type;
             this.Content = content;

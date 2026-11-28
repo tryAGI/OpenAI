@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The notification channel type. Currently only `email` is supported.
         /// </summary>
+        /// <default>"email"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.SpendAlertNotificationChannelTypeJsonConverter))]
-        public global::tryAGI.OpenAI.SpendAlertNotificationChannelType Type { get; set; }
+        public string Type { get; set; } = "email";
 
         /// <summary>
         /// Email addresses that receive the spend alert notification.
@@ -40,19 +40,19 @@ namespace tryAGI.OpenAI
         /// <param name="recipients">
         /// Email addresses that receive the spend alert notification.
         /// </param>
-        /// <param name="type">
-        /// The notification channel type. Currently only `email` is supported.
-        /// </param>
         /// <param name="subjectPrefix">
         /// Optional subject prefix for alert emails.
+        /// </param>
+        /// <param name="type">
+        /// The notification channel type. Currently only `email` is supported.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public SpendAlertNotificationChannel(
             global::System.Collections.Generic.IList<string> recipients,
-            global::tryAGI.OpenAI.SpendAlertNotificationChannelType type,
-            string? subjectPrefix)
+            string? subjectPrefix,
+            string type = "email")
         {
             this.Type = type;
             this.Recipients = recipients ?? throw new global::System.ArgumentNullException(nameof(recipients));

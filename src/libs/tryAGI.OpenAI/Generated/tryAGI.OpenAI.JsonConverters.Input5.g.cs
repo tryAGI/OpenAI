@@ -18,28 +18,28 @@ namespace tryAGI.OpenAI.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaModerationInputDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaModerationInputDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaModerationInputDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionModerationInputDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionModerationInputDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ChatCompletionModerationInputDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::tryAGI.OpenAI.BetaModerationResultBody? moderationResult = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaModerationInputDiscriminatorType.ModerationResult)
+            global::tryAGI.OpenAI.ChatCompletionModerationResults? moderationResults = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.ChatCompletionModerationInputDiscriminatorType.ModerationResults)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaModerationResultBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaModerationResultBody> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaModerationResultBody)}");
-                moderationResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionModerationResults), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionModerationResults> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ChatCompletionModerationResults)}");
+                moderationResults = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::tryAGI.OpenAI.BetaModerationErrorBody? error = default;
-            if (discriminator?.Type == global::tryAGI.OpenAI.BetaModerationInputDiscriminatorType.Error)
+            global::tryAGI.OpenAI.ChatCompletionModerationError? error = default;
+            if (discriminator?.Type == global::tryAGI.OpenAI.ChatCompletionModerationInputDiscriminatorType.Error)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaModerationErrorBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaModerationErrorBody> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.BetaModerationErrorBody)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionModerationError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionModerationError> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::tryAGI.OpenAI.ChatCompletionModerationError)}");
                 error = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var __value = new global::tryAGI.OpenAI.Input5(
                 discriminator?.Type,
-                moderationResult,
+                moderationResults,
 
                 error
                 );
@@ -57,16 +57,16 @@ namespace tryAGI.OpenAI.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
             typeInfoResolver = global::tryAGI.OpenAI.AutoSDKJsonMetadataCachedResolver.Instance;
 
-            if (value.IsModerationResult)
+            if (value.IsModerationResults)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaModerationResultBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaModerationResultBody?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaModerationResultBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickModerationResult(), typeInfo);
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionModerationResults), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionModerationResults?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionModerationResults).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickModerationResults(), typeInfo);
             }
             else if (value.IsError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.BetaModerationErrorBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.BetaModerationErrorBody?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.BetaModerationErrorBody).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::tryAGI.OpenAI.ChatCompletionModerationError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::tryAGI.OpenAI.ChatCompletionModerationError?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::tryAGI.OpenAI.ChatCompletionModerationError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickError(), typeInfo);
             }
         }

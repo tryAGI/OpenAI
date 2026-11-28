@@ -20,9 +20,9 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Provider3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.Provider2JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::tryAGI.OpenAI.Provider3 Provider { get; set; }
+        public required global::tryAGI.OpenAI.Provider2 Provider { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public CreateExternalStorageBody(
             string projectId,
-            global::tryAGI.OpenAI.Provider3 provider)
+            global::tryAGI.OpenAI.Provider2 provider)
         {
             this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
             this.Provider = provider;

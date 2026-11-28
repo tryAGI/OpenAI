@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `image`.
         /// </summary>
+        /// <default>"image"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDetailsToolCallsCodeOutputImageObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectType Type { get; set; }
+        public string Type { get; set; } = "image";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public RunStepDetailsToolCallsCodeOutputImageObject(
             global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectImage image,
-            global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectType type)
+            string type = "image")
         {
             this.Type = type;
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RunStepDetailsToolCallsCodeOutputImageObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RunStepDetailsToolCallsCodeOutputImageObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RunStepDetailsToolCallsCodeOutputImageObject FromImage(global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeOutputImageObjectImage image)
+        {
+            return new RunStepDetailsToolCallsCodeOutputImageObject
+            {
+                Image = image,
+            };
         }
 
     }

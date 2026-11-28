@@ -13,6 +13,10 @@ internal static partial class AgentsListAgentSessionEventsCommandApiCommand
         Description = @"The ID of the session.",
     };
 
+    private static Option<bool?> IncludeObfuscation { get; } = CliRuntime.CreateNullableBoolOption(
+        name: @"--include-obfuscation",
+        description: @"Whether to include obfuscation padding in events on this connection. Defaults to `true`.");
+
     static partial void CustomizeCommand(ref Command command);
 
     public static Command Create(string? commandName = null)
@@ -20,17 +24,20 @@ internal static partial class AgentsListAgentSessionEventsCommandApiCommand
         var command = new Command(commandName ?? @"list-agent-session-events", @"Stream agent session events
 Streams live events for an agent session. See [session events](https://developers.openai.com/api/docs/guides/agents-api/sessions/events).");
                         command.Arguments.Add(SessionId);
+                        command.Options.Add(IncludeObfuscation);
 
 
         command.SetAction(async (ParseResult parseResult, CancellationToken cancellationToken) =>
             await CliRuntime.RunAsync(async () =>
             {
                         var sessionId = parseResult.GetRequiredValue(SessionId);
+                        var includeObfuscation = parseResult.GetValue(IncludeObfuscation);
                 using var client = await CliRuntime.CreateClientAsync(parseResult, cancellationToken).ConfigureAwait(false);
 
 
                                 var response = client.Agents.ListAgentSessionEventsAsync(
                                     sessionId: sessionId,
+                                    includeObfuscation: includeObfuscation,
                                     cancellationToken: cancellationToken);
 
                                 await foreach (var item in response.WithCancellation(cancellationToken).ConfigureAwait(false))

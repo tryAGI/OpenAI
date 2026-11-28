@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the content part.
         /// </summary>
+        /// <default>"image_url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageContentImageUrlObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageContentImageUrlObjectType Type { get; set; }
+        public string Type { get; set; } = "image_url";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public MessageContentImageUrlObject(
             global::tryAGI.OpenAI.MessageContentImageUrlObjectImageUrl imageUrl,
-            global::tryAGI.OpenAI.MessageContentImageUrlObjectType type)
+            string type = "image_url")
         {
             this.Type = type;
             this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public MessageContentImageUrlObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageContentImageUrlObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageContentImageUrlObject FromImageUrl(global::tryAGI.OpenAI.MessageContentImageUrlObjectImageUrl imageUrl)
+        {
+            return new MessageContentImageUrlObject
+            {
+                ImageUrl = imageUrl,
+            };
         }
 
     }

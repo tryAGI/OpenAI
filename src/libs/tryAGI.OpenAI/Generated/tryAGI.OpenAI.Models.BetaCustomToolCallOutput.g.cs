@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the custom tool call output. Always `custom_tool_call_output`.
         /// </summary>
+        /// <default>"custom_tool_call_output"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaCustomToolCallOutputTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaCustomToolCallOutputType Type { get; set; }
+        public string Type { get; set; } = "custom_tool_call_output";
 
         /// <summary>
         /// The unique ID of the custom tool call output in the OpenAI platform.
@@ -68,13 +68,13 @@ namespace tryAGI.OpenAI
         /// <param name="agent">
         /// The agent that produced this item.
         /// </param>
-        /// <param name="type">
-        /// The type of the custom tool call output. Always `custom_tool_call_output`.
-        /// </param>
         /// <param name="id">
         /// The unique ID of the custom tool call output in the OpenAI platform.
         /// </param>
         /// <param name="caller"></param>
+        /// <param name="type">
+        /// The type of the custom tool call output. Always `custom_tool_call_output`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -82,9 +82,9 @@ namespace tryAGI.OpenAI
             string callId,
             global::tryAGI.OpenAI.OneOf<string, global::System.Collections.Generic.IList<global::tryAGI.OpenAI.BetaFunctionAndCustomToolCallOutput>> output,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaCustomToolCallOutputType type,
             string? id,
-            global::tryAGI.OpenAI.BetaToolCallCallerParam? caller)
+            global::tryAGI.OpenAI.BetaToolCallCallerParam? caller,
+            string type = "custom_tool_call_output")
         {
             this.Agent = agent;
             this.Type = type;

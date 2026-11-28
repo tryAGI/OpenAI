@@ -29,7 +29,7 @@ namespace tryAGI.OpenAI
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotations")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem3> Annotations { get; set; }
+        public required global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem> Annotations { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -55,7 +55,7 @@ namespace tryAGI.OpenAI
 #endif
         public ResponseOutputText(
             string text,
-            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem3> annotations,
+            global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AnnotationsItem> annotations,
             global::tryAGI.OpenAI.ResponseOutputTextType type = global::tryAGI.OpenAI.ResponseOutputTextType.OutputText)
         {
             this.Type = type;

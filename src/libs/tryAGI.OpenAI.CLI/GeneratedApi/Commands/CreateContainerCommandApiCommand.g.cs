@@ -25,7 +25,7 @@ internal static partial class CreateContainerCommandApiCommand
         Description = @"Container expiration time in seconds relative to the 'anchor' time.",
     };
 
-    private static Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem>?> Skills { get; } = new(
+    private static Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SkillsItem2>?> Skills { get; } = new(
         name: @"--skills")
     {
         Description = @"An optional list of skills referenced by id or inline data.",
@@ -37,7 +37,7 @@ internal static partial class CreateContainerCommandApiCommand
         Description = @"Optional memory limit for the container. Defaults to ""1g"".",
     };
 
-    private static Option<global::tryAGI.OpenAI.NetworkPolicy?> NetworkPolicy { get; } = new(
+    private static Option<global::tryAGI.OpenAI.NetworkPolicy2?> NetworkPolicy { get; } = new(
         name: @"--network-policy")
     {
         Description = @"Network access policy for the container.",

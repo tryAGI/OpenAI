@@ -15,6 +15,14 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        ApiKeySpendLimitExceeded,
+        /// <summary>
+        ///
+        /// </summary>
+        AudioInputUnavailable,
+        /// <summary>
+        ///
+        /// </summary>
         AuthenticationError,
         /// <summary>
         ///
@@ -52,6 +60,10 @@ namespace tryAGI.OpenAI
         ///
         /// </summary>
         InvalidRequest,
+        /// <summary>
+        ///
+        /// </summary>
+        MaxOutputTokens,
         /// <summary>
         ///
         /// </summary>
@@ -115,6 +127,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 SessionTurnErrorCodeResource.ActiveTurnNotSteerable => "active_turn_not_steerable",
+                SessionTurnErrorCodeResource.ApiKeySpendLimitExceeded => "api_key_spend_limit_exceeded",
+                SessionTurnErrorCodeResource.AudioInputUnavailable => "audio_input_unavailable",
                 SessionTurnErrorCodeResource.AuthenticationError => "authentication_error",
                 SessionTurnErrorCodeResource.BillingNotActive => "billing_not_active",
                 SessionTurnErrorCodeResource.ConnectionFailed => "connection_failed",
@@ -125,6 +139,7 @@ namespace tryAGI.OpenAI
                 SessionTurnErrorCodeResource.FlexUnavailable => "flex_unavailable",
                 SessionTurnErrorCodeResource.InternalError => "internal_error",
                 SessionTurnErrorCodeResource.InvalidRequest => "invalid_request",
+                SessionTurnErrorCodeResource.MaxOutputTokens => "max_output_tokens",
                 SessionTurnErrorCodeResource.MisalignmentPolicyViolation => "misalignment_policy_violation",
                 SessionTurnErrorCodeResource.OrganizationSpendLimitExceeded => "organization_spend_limit_exceeded",
                 SessionTurnErrorCodeResource.OrganizationUsageLimitExceeded => "organization_usage_limit_exceeded",
@@ -148,6 +163,8 @@ namespace tryAGI.OpenAI
             return value switch
             {
                 "active_turn_not_steerable" => SessionTurnErrorCodeResource.ActiveTurnNotSteerable,
+                "api_key_spend_limit_exceeded" => SessionTurnErrorCodeResource.ApiKeySpendLimitExceeded,
+                "audio_input_unavailable" => SessionTurnErrorCodeResource.AudioInputUnavailable,
                 "authentication_error" => SessionTurnErrorCodeResource.AuthenticationError,
                 "billing_not_active" => SessionTurnErrorCodeResource.BillingNotActive,
                 "connection_failed" => SessionTurnErrorCodeResource.ConnectionFailed,
@@ -158,6 +175,7 @@ namespace tryAGI.OpenAI
                 "flex_unavailable" => SessionTurnErrorCodeResource.FlexUnavailable,
                 "internal_error" => SessionTurnErrorCodeResource.InternalError,
                 "invalid_request" => SessionTurnErrorCodeResource.InvalidRequest,
+                "max_output_tokens" => SessionTurnErrorCodeResource.MaxOutputTokens,
                 "misalignment_policy_violation" => SessionTurnErrorCodeResource.MisalignmentPolicyViolation,
                 "organization_spend_limit_exceeded" => SessionTurnErrorCodeResource.OrganizationSpendLimitExceeded,
                 "organization_usage_limit_exceeded" => SessionTurnErrorCodeResource.OrganizationUsageLimitExceeded,

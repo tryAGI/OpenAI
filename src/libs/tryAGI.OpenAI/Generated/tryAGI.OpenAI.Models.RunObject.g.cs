@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `thread.run`.
         /// </summary>
+        /// <default>"thread.run"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunObjectObjectJsonConverter))]
-        public global::tryAGI.OpenAI.RunObjectObject Object { get; set; }
+        public string Object { get; set; } = "thread.run";
 
         /// <summary>
         /// The Unix timestamp (in seconds) for when the run was created.
@@ -221,9 +221,6 @@ namespace tryAGI.OpenAI
         /// Whether to enable [parallel function calling](https://developers.openai.com/api/docs/guides/function-calling#parallel-function-calling) during tool use.<br/>
         /// Default Value: true
         /// </param>
-        /// <param name="object">
-        /// The object type, which is always `thread.run`.
-        /// </param>
         /// <param name="requiredAction">
         /// Details on the action required to continue the run. Will be `null` if no action is required.
         /// </param>
@@ -265,6 +262,9 @@ namespace tryAGI.OpenAI
         /// <param name="truncationStrategy"></param>
         /// <param name="toolChoice"></param>
         /// <param name="responseFormat"></param>
+        /// <param name="object">
+        /// The object type, which is always `thread.run`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -278,7 +278,6 @@ namespace tryAGI.OpenAI
             string instructions,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.AssistantToolsCode, global::tryAGI.OpenAI.AssistantToolsFileSearch, global::tryAGI.OpenAI.AssistantToolsFunction>> tools,
             bool parallelToolCalls,
-            global::tryAGI.OpenAI.RunObjectObject @object,
             global::tryAGI.OpenAI.RunObjectRequiredAction? requiredAction,
             global::tryAGI.OpenAI.RunObjectLastError? lastError,
             int? expiresAt,
@@ -295,7 +294,8 @@ namespace tryAGI.OpenAI
             int? maxCompletionTokens,
             global::tryAGI.OpenAI.TruncationObject? truncationStrategy,
             global::tryAGI.OpenAI.AssistantsApiToolChoiceOption? toolChoice,
-            global::tryAGI.OpenAI.AssistantsApiResponseFormatOption? responseFormat)
+            global::tryAGI.OpenAI.AssistantsApiResponseFormatOption? responseFormat,
+            string @object = "thread.run")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

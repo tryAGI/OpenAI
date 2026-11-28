@@ -9,7 +9,7 @@ namespace tryAGI.OpenAI
         internal static readonly global::tryAGI.OpenAI.SourceGenerationContextMetadataScope MetadataScope = new(
                 new SharedMetadataResolver(),
                 new global::System.Func<global::tryAGI.OpenAI.SourceGenerationContextMetadataScope>[] {
-                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_05BF36C073875770.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_0DFE7790B75CC46D.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_4D9FB9FAA0A760FE.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_55A1B6E90BD83E29.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_B2115BF674A839B6.MetadataScope,
+                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_05BF36C073875770.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_0DFE7790B75CC46D.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_19D423A953F95E61.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_473287F8298DBA71.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_47F7021679FC8889.MetadataScope,                    static () => global::tryAGI.OpenAI.SourceGenerationContextComponent_4D9FB9FAA0A760FE.MetadataScope,
                 }, ContributeConverters);
         internal static global::System.Text.Json.Serialization.JsonSerializerContext Default => MetadataScope.Default;
 
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
             {
                 if (type == typeof(global::tryAGI.OpenAI.CreateContainerBody))
                 {
-                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0102.Create_CreateContainerBody(options);
+                    return global::tryAGI.OpenAI.SourceGenerationContextMetadata0FactoryBatch0095.Create_CreateContainerBody(options);
                 }
                 global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? additional = null;
                 ResolveAdditionalTypeInfo(type, options, ref additional);

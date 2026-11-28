@@ -156,7 +156,7 @@ storage limits.
                         var filename = parseResult.GetRequiredValue(Filename);
                         var purpose = parseResult.GetRequiredValue(Purpose);
 
-                        var __ExpiresAfterBase = __requestBase is { } __ExpiresAfterBaseValue ? __ExpiresAfterBaseValue.ExpiresAfter : default;                        var expiresAfterAnchor = CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Anchor) ? parseResult.GetValue(ExpiresAfterOptions.Anchor) : (__ExpiresAfterBase is { } __ExpiresAfteranchorBaseValue ? __ExpiresAfteranchorBaseValue.Anchor : default);
+                        var __ExpiresAfterBase = __requestBase is { } __ExpiresAfterBaseValue ? __ExpiresAfterBaseValue.ExpiresAfter : default;                        var expiresAfterAnchor = parseResult.GetRequiredValue(ExpiresAfterOptions.Anchor);
                         var expiresAfterSeconds = parseResult.GetValue(ExpiresAfterOptions.Seconds);
                         var __ExpiresAfterSpecified = CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Anchor) || CliRuntime.WasSpecified(parseResult, ExpiresAfterOptions.Seconds);
                         var expiresAfter =

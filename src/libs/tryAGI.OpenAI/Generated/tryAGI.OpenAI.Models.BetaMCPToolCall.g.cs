@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the item. Always `mcp_call`.
         /// </summary>
+        /// <default>"mcp_call"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaMCPToolCallTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaMCPToolCallType Type { get; set; }
+        public string Type { get; set; } = "mcp_call";
 
         /// <summary>
         /// The unique ID of the tool call.
@@ -98,9 +98,6 @@ namespace tryAGI.OpenAI
         /// <param name="agent">
         /// The agent that produced this item.
         /// </param>
-        /// <param name="type">
-        /// The type of the item. Always `mcp_call`.
-        /// </param>
         /// <param name="output"></param>
         /// <param name="error">
         /// The error from the tool call, if any.
@@ -109,6 +106,9 @@ namespace tryAGI.OpenAI
         /// The status of the tool call. One of `in_progress`, `completed`, `incomplete`, `calling`, or `failed`.
         /// </param>
         /// <param name="approvalRequestId"></param>
+        /// <param name="type">
+        /// The type of the item. Always `mcp_call`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -118,11 +118,11 @@ namespace tryAGI.OpenAI
             string name,
             string arguments,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaMCPToolCallType type,
             string? output,
             global::tryAGI.OpenAI.BetaMCPToolCallError? error,
             global::tryAGI.OpenAI.BetaMCPToolCallStatus? status,
-            string? approvalRequestId)
+            string? approvalRequestId,
+            string type = "mcp_call")
         {
             this.Agent = agent;
             this.Type = type;

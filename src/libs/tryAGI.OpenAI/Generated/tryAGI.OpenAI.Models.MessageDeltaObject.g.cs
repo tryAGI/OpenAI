@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `thread.message.delta`.
         /// </summary>
+        /// <default>"thread.message.delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaObjectObjectJsonConverter))]
-        public global::tryAGI.OpenAI.MessageDeltaObjectObject Object { get; set; }
+        public string Object { get; set; } = "thread.message.delta";
 
         /// <summary>
         /// The delta containing the fields that have changed on the Message.
@@ -53,7 +53,7 @@ namespace tryAGI.OpenAI
         public MessageDeltaObject(
             string id,
             global::tryAGI.OpenAI.MessageDeltaObjectDelta delta,
-            global::tryAGI.OpenAI.MessageDeltaObjectObject @object)
+            string @object = "thread.message.delta")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;

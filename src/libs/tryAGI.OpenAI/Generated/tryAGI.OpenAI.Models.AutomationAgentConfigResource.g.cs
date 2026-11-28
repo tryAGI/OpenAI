@@ -58,6 +58,18 @@ namespace tryAGI.OpenAI
         public required global::tryAGI.OpenAI.MultiAgentConfigResource MultiAgent { get; set; }
 
         /// <summary>
+        /// The effective context compaction settings.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("compaction")]
+        public global::tryAGI.OpenAI.CompactionResource? Compaction { get; set; }
+
+        /// <summary>
+        /// The effective experimental settings for the agent.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("experimental")]
+        public global::tryAGI.OpenAI.ExperimentalConfigResource? Experimental { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -87,6 +99,12 @@ namespace tryAGI.OpenAI
         /// <param name="instructions">
         /// Custom instructions, or null when absent.
         /// </param>
+        /// <param name="compaction">
+        /// The effective context compaction settings.
+        /// </param>
+        /// <param name="experimental">
+        /// The effective experimental settings for the agent.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -97,7 +115,9 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ServiceTierResource serviceTier,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AgentToolResource> tools,
             global::tryAGI.OpenAI.MultiAgentConfigResource multiAgent,
-            string? instructions)
+            string? instructions,
+            global::tryAGI.OpenAI.CompactionResource? compaction,
+            global::tryAGI.OpenAI.ExperimentalConfigResource? experimental)
         {
             this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
             this.Reasoning = reasoning ?? throw new global::System.ArgumentNullException(nameof(reasoning));
@@ -106,6 +126,8 @@ namespace tryAGI.OpenAI
             this.Instructions = instructions;
             this.Tools = tools ?? throw new global::System.ArgumentNullException(nameof(tools));
             this.MultiAgent = multiAgent ?? throw new global::System.ArgumentNullException(nameof(multiAgent));
+            this.Compaction = compaction;
+            this.Experimental = experimental;
         }
 
         /// <summary>

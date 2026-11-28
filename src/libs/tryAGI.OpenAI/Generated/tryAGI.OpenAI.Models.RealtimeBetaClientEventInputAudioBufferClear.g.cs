@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The event type, must be `input_audio_buffer.clear`.
         /// </summary>
+        /// <default>"input_audio_buffer.clear"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RealtimeBetaClientEventInputAudioBufferClearTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferClearType Type { get; set; }
+        public string Type { get; set; } = "input_audio_buffer.clear";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public RealtimeBetaClientEventInputAudioBufferClear(
             string? eventId,
-            global::tryAGI.OpenAI.RealtimeBetaClientEventInputAudioBufferClearType type)
+            string type = "input_audio_buffer.clear")
         {
             this.EventId = eventId;
             this.Type = type;

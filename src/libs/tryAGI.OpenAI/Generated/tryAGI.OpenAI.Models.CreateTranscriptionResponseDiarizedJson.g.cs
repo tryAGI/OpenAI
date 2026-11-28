@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of task that was run. Always `transcribe`.
         /// </summary>
+        /// <default>"transcribe"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("task")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateTranscriptionResponseDiarizedJsonTaskJsonConverter))]
-        public global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonTask Task { get; set; }
+        public string Task { get; set; } = "transcribe";
 
         /// <summary>
         /// Duration of the input audio in seconds.
@@ -61,11 +61,11 @@ namespace tryAGI.OpenAI
         /// <param name="segments">
         /// Segments of the transcript annotated with timestamps and speaker labels.
         /// </param>
-        /// <param name="task">
-        /// The type of task that was run. Always `transcribe`.
-        /// </param>
         /// <param name="usage">
         /// Token or duration usage statistics for the request.
+        /// </param>
+        /// <param name="task">
+        /// The type of task that was run. Always `transcribe`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -74,8 +74,8 @@ namespace tryAGI.OpenAI
             double duration,
             string text,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.TranscriptionDiarizedSegment> segments,
-            global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonTask task,
-            global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsage? usage)
+            global::tryAGI.OpenAI.CreateTranscriptionResponseDiarizedJsonUsage? usage,
+            string task = "transcribe")
         {
             this.Task = task;
             this.Duration = duration;

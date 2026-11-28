@@ -16,7 +16,7 @@ internal static partial class AgentsCreateAgentSessionEventsCommandApiCommand
     private static Option<string?> IdempotencyKey { get; } = new(
         name: @"--idempotency-key")
     {
-        Description = @"An optional client-generated key that makes retries of submitted messages idempotent.",
+        Description = @"An optional client-generated key for message submissions. Retry the same message with the same key and identical input within the 24-hour replay window; a retry replays the original outcome if it is available. After the window expires, a key whose outcome is unavailable may return 409. After a timeout or server error, inspect the session history and items before resubmitting. Use a new key for a new message, or only after confirming the earlier message did not execute.",
     };
 
     private static Option<global::System.Collections.Generic.IList<global::tryAGI.OpenAI.SessionInputParam>> Events { get; } = new(

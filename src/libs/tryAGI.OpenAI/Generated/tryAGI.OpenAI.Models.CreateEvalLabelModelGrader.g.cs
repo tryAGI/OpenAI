@@ -12,9 +12,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `label_model`.
         /// </summary>
+        /// <default>"label_model"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.CreateEvalLabelModelGraderTypeJsonConverter))]
-        public global::tryAGI.OpenAI.CreateEvalLabelModelGraderType Type { get; set; }
+        public string Type { get; set; } = "label_model";
 
         /// <summary>
         /// The name of the grader.
@@ -87,7 +87,7 @@ namespace tryAGI.OpenAI
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.CreateEvalItem> input,
             global::System.Collections.Generic.IList<string> labels,
             global::System.Collections.Generic.IList<string> passingLabels,
-            global::tryAGI.OpenAI.CreateEvalLabelModelGraderType type)
+            string type = "label_model")
         {
             this.Type = type;
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));

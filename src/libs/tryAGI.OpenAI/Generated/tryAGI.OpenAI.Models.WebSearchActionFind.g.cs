@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The action type.
         /// </summary>
+        /// <default>"find_in_page"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchActionFindTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebSearchActionFindType Type { get; set; }
+        public string Type { get; set; } = "find_in_page";
 
         /// <summary>
         /// The URL of the page searched for the pattern, when available.
@@ -40,19 +40,19 @@ namespace tryAGI.OpenAI
         /// <param name="pattern">
         /// The pattern or text to search for within the page.
         /// </param>
-        /// <param name="type">
-        /// The action type.
-        /// </param>
         /// <param name="url">
         /// The URL of the page searched for the pattern, when available.
+        /// </param>
+        /// <param name="type">
+        /// The action type.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public WebSearchActionFind(
             string pattern,
-            global::tryAGI.OpenAI.WebSearchActionFindType type,
-            string? url)
+            string? url,
+            string type = "find_in_page")
         {
             this.Type = type;
             this.Url = url;
@@ -64,6 +64,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public WebSearchActionFind()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="WebSearchActionFind"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WebSearchActionFind FromPattern(string pattern)
+        {
+            return new WebSearchActionFind
+            {
+                Pattern = pattern,
+            };
         }
 
     }

@@ -25,9 +25,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"vector_store.file.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.DeleteVectorStoreFileResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.DeleteVectorStoreFileResponseObject Object { get; set; }
+        public string Object { get; set; } = "vector_store.file.deleted";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         public DeleteVectorStoreFileResponse(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.DeleteVectorStoreFileResponseObject @object)
+            string @object = "vector_store.file.deleted")
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Deleted = deleted;

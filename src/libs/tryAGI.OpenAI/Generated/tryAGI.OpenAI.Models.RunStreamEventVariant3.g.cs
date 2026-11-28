@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"thread.run.in_progress"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStreamEventVariant3EventJsonConverter))]
-        public global::tryAGI.OpenAI.RunStreamEventVariant3Event Event { get; set; }
+        public string Event { get; set; } = "thread.run.in_progress";
 
         /// <summary>
         /// Represents an execution run on a [thread](https://developers.openai.com/api/docs/assistants/migration).
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public RunStreamEventVariant3(
             global::tryAGI.OpenAI.RunObject data,
-            global::tryAGI.OpenAI.RunStreamEventVariant3Event @event)
+            string @event = "thread.run.in_progress")
         {
             this.Event = @event;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public RunStreamEventVariant3()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="RunStreamEventVariant3"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static RunStreamEventVariant3 FromData(global::tryAGI.OpenAI.RunObject data)
+        {
+            return new RunStreamEventVariant3
+            {
+                Data = data,
+            };
         }
 
     }

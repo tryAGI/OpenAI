@@ -24,6 +24,12 @@ namespace tryAGI.OpenAI
         public required int CacheWriteTokens { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_write_tokens_details")]
+        public global::tryAGI.OpenAI.BetaCacheWriteTokensDetails? CacheWriteTokensDetails { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -39,15 +45,18 @@ namespace tryAGI.OpenAI
         /// <param name="cacheWriteTokens">
         /// The number of input tokens that were written to the cache.
         /// </param>
+        /// <param name="cacheWriteTokensDetails"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public BetaResponseUsageInputTokensDetails(
             int cachedTokens,
-            int cacheWriteTokens)
+            int cacheWriteTokens,
+            global::tryAGI.OpenAI.BetaCacheWriteTokensDetails? cacheWriteTokensDetails)
         {
             this.CachedTokens = cachedTokens;
             this.CacheWriteTokens = cacheWriteTokens;
+            this.CacheWriteTokensDetails = cacheWriteTokensDetails;
         }
 
         /// <summary>

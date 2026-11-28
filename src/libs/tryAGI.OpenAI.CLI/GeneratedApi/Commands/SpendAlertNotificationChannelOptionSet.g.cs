@@ -5,7 +5,7 @@ using System.CommandLine;
 namespace tryAGI.OpenAI.Cli.GeneratedApi.Commands;
 
 internal sealed record SpendAlertNotificationChannelOptionSet(
-    Option<global::tryAGI.OpenAI.SpendAlertNotificationChannelType> Type,
+    Option<string> Type,
                      Option<global::System.Collections.Generic.IList<string>> Recipients,
                      Option<string?> SubjectPrefix)
 {
@@ -15,9 +15,10 @@ internal sealed record SpendAlertNotificationChannelOptionSet(
             ? string.Empty
             : prefix.Trim().Trim('-') + "-";
         return new SpendAlertNotificationChannelOptionSet(
-                        Type: new Option<global::tryAGI.OpenAI.SpendAlertNotificationChannelType>($"--{normalizedPrefix}type")
+                        Type: new Option<string>($"--{normalizedPrefix}type")
                 {
                     Description = @"The notification channel type. Currently only `email` is supported.",
+                    DefaultValueFactory = _ => "email",
                 },
                 Recipients: new Option<global::System.Collections.Generic.IList<string>>($"--{normalizedPrefix}recipients")
                 {

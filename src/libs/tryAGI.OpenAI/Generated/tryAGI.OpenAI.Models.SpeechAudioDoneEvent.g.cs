@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `speech.audio.done`.
         /// </summary>
+        /// <default>"speech.audio.done"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.SpeechAudioDoneEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.SpeechAudioDoneEventType Type { get; set; }
+        public string Type { get; set; } = "speech.audio.done";
 
         /// <summary>
         /// Token usage statistics for the request.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public SpeechAudioDoneEvent(
             global::tryAGI.OpenAI.SpeechAudioDoneEventUsage usage,
-            global::tryAGI.OpenAI.SpeechAudioDoneEventType type)
+            string type = "speech.audio.done")
         {
             this.Type = type;
             this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public SpeechAudioDoneEvent()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="SpeechAudioDoneEvent"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static SpeechAudioDoneEvent FromUsage(global::tryAGI.OpenAI.SpeechAudioDoneEventUsage usage)
+        {
+            return new SpeechAudioDoneEvent
+            {
+                Usage = usage,
+            };
         }
 
     }

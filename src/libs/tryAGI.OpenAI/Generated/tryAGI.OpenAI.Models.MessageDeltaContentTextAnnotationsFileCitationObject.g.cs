@@ -18,9 +18,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `file_citation`.
         /// </summary>
+        /// <default>"file_citation"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.MessageDeltaContentTextAnnotationsFileCitationObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectType Type { get; set; }
+        public string Type { get; set; } = "file_citation";
 
         /// <summary>
         /// The text in the message content that needs to be replaced.
@@ -58,25 +58,25 @@ namespace tryAGI.OpenAI
         /// <param name="index">
         /// The index of the annotation in the text content part.
         /// </param>
-        /// <param name="type">
-        /// Always `file_citation`.
-        /// </param>
         /// <param name="text">
         /// The text in the message content that needs to be replaced.
         /// </param>
         /// <param name="fileCitation"></param>
         /// <param name="startIndex"></param>
         /// <param name="endIndex"></param>
+        /// <param name="type">
+        /// Always `file_citation`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageDeltaContentTextAnnotationsFileCitationObject(
             int index,
-            global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectType type,
             string? text,
             global::tryAGI.OpenAI.MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? fileCitation,
             int? startIndex,
-            int? endIndex)
+            int? endIndex,
+            string type = "file_citation")
         {
             this.Index = index;
             this.Type = type;
@@ -91,6 +91,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public MessageDeltaContentTextAnnotationsFileCitationObject()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="MessageDeltaContentTextAnnotationsFileCitationObject"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static MessageDeltaContentTextAnnotationsFileCitationObject FromIndex(int index)
+        {
+            return new MessageDeltaContentTextAnnotationsFileCitationObject
+            {
+                Index = index,
+            };
         }
 
     }

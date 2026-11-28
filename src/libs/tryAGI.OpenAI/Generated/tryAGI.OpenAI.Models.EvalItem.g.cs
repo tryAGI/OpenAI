@@ -33,8 +33,7 @@ namespace tryAGI.OpenAI
         /// The type of the message input. Always `message`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.EvalItemTypeJsonConverter))]
-        public global::tryAGI.OpenAI.EvalItemType? Type { get; set; }
+        public string? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,7 +60,7 @@ namespace tryAGI.OpenAI
         public EvalItem(
             global::tryAGI.OpenAI.EvalItemRole role,
             global::tryAGI.OpenAI.EvalItemContent content,
-            global::tryAGI.OpenAI.EvalItemType? type)
+            string? type)
         {
             this.Role = role;
             this.Content = content;

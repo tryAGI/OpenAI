@@ -13,24 +13,24 @@ namespace tryAGI.OpenAI
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersBatchSize?, int?>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersBatchSize?, int?>? BatchSize { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, int?>))]
+        public global::tryAGI.OpenAI.OneOf<string, int?>? BatchSize { get; set; }
 
         /// <summary>
         /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid overfitting.<br/>
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate_multiplier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersLearningRateMultiplier?, double?>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersLearningRateMultiplier?, double?>? LearningRateMultiplier { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, double?>))]
+        public global::tryAGI.OpenAI.OneOf<string, double?>? LearningRateMultiplier { get; set; }
 
         /// <summary>
         /// The number of epochs to train the model for. An epoch refers to one full cycle through the training dataset.<br/>
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersNEpochs?, int?>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersNEpochs?, int?>? NEpochs { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, int?>))]
+        public global::tryAGI.OpenAI.OneOf<string, int?>? NEpochs { get; set; }
 
         /// <summary>
         /// Level of reasoning effort.<br/>
@@ -45,24 +45,24 @@ namespace tryAGI.OpenAI
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("compute_multiplier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersComputeMultiplier?, double?>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersComputeMultiplier?, double?>? ComputeMultiplier { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, double?>))]
+        public global::tryAGI.OpenAI.OneOf<string, double?>? ComputeMultiplier { get; set; }
 
         /// <summary>
         /// The number of training steps between evaluation runs.<br/>
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("eval_interval")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalInterval?, int?>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalInterval?, int?>? EvalInterval { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, int?>))]
+        public global::tryAGI.OpenAI.OneOf<string, int?>? EvalInterval { get; set; }
 
         /// <summary>
         /// Number of evaluation samples to generate per training step.<br/>
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("eval_samples")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalSamples?, int?>))]
-        public global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalSamples?, int?>? EvalSamples { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.OneOfJsonConverter<string, int?>))]
+        public global::tryAGI.OpenAI.OneOf<string, int?>? EvalSamples { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -105,13 +105,13 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FineTuneReinforcementHyperparameters(
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersBatchSize?, int?>? batchSize,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersLearningRateMultiplier?, double?>? learningRateMultiplier,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersNEpochs?, int?>? nEpochs,
+            global::tryAGI.OpenAI.OneOf<string, int?>? batchSize,
+            global::tryAGI.OpenAI.OneOf<string, double?>? learningRateMultiplier,
+            global::tryAGI.OpenAI.OneOf<string, int?>? nEpochs,
             global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersReasoningEffort? reasoningEffort,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersComputeMultiplier?, double?>? computeMultiplier,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalInterval?, int?>? evalInterval,
-            global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.FineTuneReinforcementHyperparametersEvalSamples?, int?>? evalSamples)
+            global::tryAGI.OpenAI.OneOf<string, double?>? computeMultiplier,
+            global::tryAGI.OpenAI.OneOf<string, int?>? evalInterval,
+            global::tryAGI.OpenAI.OneOf<string, int?>? evalSamples)
         {
             this.BatchSize = batchSize;
             this.LearningRateMultiplier = learningRateMultiplier;

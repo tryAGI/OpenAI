@@ -5,7 +5,7 @@ namespace tryAGI.OpenAI
 {
     /// <summary>
     /// Returned after the Live session finishes finalizing, with the close reason, final session snapshot, and cumulative audio usage. A connection closing without this event does not confirm successful finalization.<br/>
-    /// Example: {"type":"session.closed","event_id":"evt_closed_001","client_event_id":"evt_close_001","reason":"close_requested","session":{"id":"live_abc123","model":"gpt-live-1","status":"active","expires_at":1788555600,"instructions":"Help the caller plan a restaurant reservation. Confirm details before booking.","input":[],"audio":{"format":{"type":"audio/pcm","rate":24000},"output":{"voice":"marin"}},"delegation":{"type":"client"}},"usage":{"seconds":45.8}}
+    /// Example: {"type":"session.closed","event_id":"evt_closed_001","client_event_id":"evt_close_001","reason":"close_requested","session":{"id":"live_abc123","model":"gpt-live-1.1","status":"active","expires_at":1788555600,"instructions":"Help the caller plan a restaurant reservation. Confirm details before booking.","input":[],"audio":{"format":{"type":"audio/pcm","rate":24000},"output":{"voice":"marin"}},"delegation":{"type":"client"}},"usage":{"seconds":45}}
     /// </summary>
     public sealed partial class LiveSessionClosed
     {

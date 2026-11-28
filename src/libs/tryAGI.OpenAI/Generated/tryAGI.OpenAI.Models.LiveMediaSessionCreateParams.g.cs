@@ -10,13 +10,19 @@ namespace tryAGI.OpenAI
     {
         /// <summary>
         /// The Live model. Required in the session configuration for every transport; do not pass it as a URL query parameter.<br/>
-        /// Example: gpt-live-1
+        /// Example: gpt-live-1.1
         /// </summary>
-        /// <example>gpt-live-1</example>
+        /// <example>gpt-live-1.1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ModelIdsLiveJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::tryAGI.OpenAI.ModelIdsLive Model { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("safety_identifier")]
+        public string? SafetyIdentifier { get; set; }
 
         /// <summary>
         ///
@@ -61,6 +67,18 @@ namespace tryAGI.OpenAI
         public global::tryAGI.OpenAI.LiveClientConfigParam? Client { get; set; }
 
         /// <summary>
+        /// Starts inference when microphone speech is detected.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("wake_policy")]
+        public global::tryAGI.OpenAI.LiveSpeechWakePolicyParam? WakePolicy { get; set; }
+
+        /// <summary>
+        /// Whole seconds of inactivity after which a Live WebRTC or SIP session with a speech wake policy pauses inference. The connection and conversation history are retained. Omit to keep inference active after the first wake until the session ends.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("idle_timeout_s")]
+        public int? IdleTimeoutS { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -71,8 +89,9 @@ namespace tryAGI.OpenAI
         /// </summary>
         /// <param name="model">
         /// The Live model. Required in the session configuration for every transport; do not pass it as a URL query parameter.<br/>
-        /// Example: gpt-live-1
+        /// Example: gpt-live-1.1
         /// </param>
+        /// <param name="safetyIdentifier"></param>
         /// <param name="instructions"></param>
         /// <param name="audio">
         /// Startup audio configuration. WebRTC and SIP negotiate their audio format on the media transport.
@@ -90,20 +109,30 @@ namespace tryAGI.OpenAI
         /// <param name="client">
         /// Startup-only capabilities for an untrusted frontend attached to a unified WebRTC session. Trusted sideband connections are unaffected.
         /// </param>
+        /// <param name="wakePolicy">
+        /// Starts inference when microphone speech is detected.
+        /// </param>
+        /// <param name="idleTimeoutS">
+        /// Whole seconds of inactivity after which a Live WebRTC or SIP session with a speech wake policy pauses inference. The connection and conversation history are retained. Omit to keep inference active after the first wake until the session ends.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public LiveMediaSessionCreateParams(
             global::tryAGI.OpenAI.ModelIdsLive model,
+            string? safetyIdentifier,
             string? instructions,
             global::tryAGI.OpenAI.LiveMediaSessionAudioParam? audio,
             global::tryAGI.OpenAI.DelegationVariant1? delegation,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveDecisionTriggerInputParam>? triggers,
             bool? store,
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.LiveInitialItem>? input,
-            global::tryAGI.OpenAI.LiveClientConfigParam? client)
+            global::tryAGI.OpenAI.LiveClientConfigParam? client,
+            global::tryAGI.OpenAI.LiveSpeechWakePolicyParam? wakePolicy,
+            int? idleTimeoutS)
         {
             this.Model = model;
+            this.SafetyIdentifier = safetyIdentifier;
             this.Instructions = instructions;
             this.Audio = audio;
             this.Delegation = delegation;
@@ -111,6 +140,8 @@ namespace tryAGI.OpenAI
             this.Store = store;
             this.Input = input;
             this.Client = client;
+            this.WakePolicy = wakePolicy;
+            this.IdleTimeoutS = idleTimeoutS;
         }
 
         /// <summary>

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         ///
         /// </summary>
+        /// <default>"organization.user.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.UserDeleteResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.UserDeleteResponseObject Object { get; set; }
+        public string Object { get; set; } = "organization.user.deleted";
 
         /// <summary>
         ///
@@ -47,7 +47,7 @@ namespace tryAGI.OpenAI
         public UserDeleteResponse(
             string id,
             bool deleted,
-            global::tryAGI.OpenAI.UserDeleteResponseObject @object)
+            string @object = "organization.user.deleted")
         {
             this.Object = @object;
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of source. Always `url`.
         /// </summary>
+        /// <default>"url"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.WebSearchActionSearchSourceTypeJsonConverter))]
-        public global::tryAGI.OpenAI.WebSearchActionSearchSourceType Type { get; set; }
+        public string Type { get; set; } = "url";
 
         /// <summary>
         /// The URL of the source.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public WebSearchActionSearchSource(
             string url,
-            global::tryAGI.OpenAI.WebSearchActionSearchSourceType type)
+            string type = "url")
         {
             this.Type = type;
             this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public WebSearchActionSearchSource()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="WebSearchActionSearchSource"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static WebSearchActionSearchSource FromUrl(string url)
+        {
+            return new WebSearchActionSearchSource
+            {
+                Url = url,
+            };
         }
 
     }

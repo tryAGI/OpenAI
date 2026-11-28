@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of tool being defined: `function`
         /// </summary>
+        /// <default>"function"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AssistantToolsFunctionTypeJsonConverter))]
-        public global::tryAGI.OpenAI.AssistantToolsFunctionType Type { get; set; }
+        public string Type { get; set; } = "function";
 
         /// <summary>
         ///
@@ -40,7 +40,7 @@ namespace tryAGI.OpenAI
 #endif
         public AssistantToolsFunction(
             global::tryAGI.OpenAI.FunctionObject function,
-            global::tryAGI.OpenAI.AssistantToolsFunctionType type)
+            string type = "function")
         {
             this.Type = type;
             this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
@@ -51,6 +51,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public AssistantToolsFunction()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="AssistantToolsFunction"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static AssistantToolsFunction FromFunction(global::tryAGI.OpenAI.FunctionObject function)
+        {
+            return new AssistantToolsFunction
+            {
+                Function = function,
+            };
         }
 
     }

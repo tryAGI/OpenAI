@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of tool being defined: `file_search`
         /// </summary>
+        /// <default>"file_search"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.AssistantToolsFileSearchTypeOnlyTypeJsonConverter))]
-        public global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnlyType Type { get; set; }
+        public string Type { get; set; } = "file_search";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -31,7 +31,7 @@ namespace tryAGI.OpenAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AssistantToolsFileSearchTypeOnly(
-            global::tryAGI.OpenAI.AssistantToolsFileSearchTypeOnlyType type)
+            string type = "file_search")
         {
             this.Type = type;
         }

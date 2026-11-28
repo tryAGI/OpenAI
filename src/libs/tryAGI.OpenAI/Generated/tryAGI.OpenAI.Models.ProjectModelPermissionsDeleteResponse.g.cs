@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The object type, which is always `project.model_permissions.deleted`.
         /// </summary>
+        /// <default>"project.model_permissions.deleted"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ProjectModelPermissionsDeleteResponseObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ProjectModelPermissionsDeleteResponseObject Object { get; set; }
+        public string Object { get; set; } = "project.model_permissions.deleted";
 
         /// <summary>
         /// Whether the project model permissions were deleted.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public ProjectModelPermissionsDeleteResponse(
             bool deleted,
-            global::tryAGI.OpenAI.ProjectModelPermissionsDeleteResponseObject @object)
+            string @object = "project.model_permissions.deleted")
         {
             this.Object = @object;
             this.Deleted = deleted;
@@ -53,6 +53,18 @@ namespace tryAGI.OpenAI
         /// </summary>
         public ProjectModelPermissionsDeleteResponse()
         {
+        }
+
+        /// <summary>
+        /// Creates a new <see cref="ProjectModelPermissionsDeleteResponse"/> from its single non-const required field,
+        /// hardcoding any const discriminator fields.
+        /// </summary>
+        public static ProjectModelPermissionsDeleteResponse FromDeleted(bool deleted)
+        {
+            return new ProjectModelPermissionsDeleteResponse
+            {
+                Deleted = deleted,
+            };
         }
 
     }

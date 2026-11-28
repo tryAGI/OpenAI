@@ -14,7 +14,7 @@ internal static partial class CreateanexternalstorageconfigurationCommandApiComm
         Required = true,
     };
 
-    private static Option<global::tryAGI.OpenAI.Provider3> Provider { get; } = new(
+    private static Option<global::tryAGI.OpenAI.Provider2> Provider { get; } = new(
         name: @"--provider")
     {
         Description = @"",

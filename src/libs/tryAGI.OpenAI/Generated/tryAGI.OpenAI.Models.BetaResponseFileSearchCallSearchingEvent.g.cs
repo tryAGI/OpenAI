@@ -17,9 +17,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `response.file_search_call.searching`.
         /// </summary>
+        /// <default>"response.file_search_call.searching"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.BetaResponseFileSearchCallSearchingEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.BetaResponseFileSearchCallSearchingEventType Type { get; set; }
+        public string Type { get; set; } = "response.file_search_call.searching";
 
         /// <summary>
         /// The index of the output item that the file search call is searching.
@@ -74,7 +74,7 @@ namespace tryAGI.OpenAI
             string itemId,
             int sequenceNumber,
             global::tryAGI.OpenAI.BetaAgentTag? agent,
-            global::tryAGI.OpenAI.BetaResponseFileSearchCallSearchingEventType type)
+            string type = "response.file_search_call.searching")
         {
             this.Agent = agent;
             this.Type = type;

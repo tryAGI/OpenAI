@@ -11,10 +11,10 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Example: list
         /// </summary>
+        /// <default>"list"</default>
         /// <example>list</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ApiKeyListObjectJsonConverter))]
-        public global::tryAGI.OpenAI.ApiKeyListObject Object { get; set; }
+        public string Object { get; set; } = "list";
 
         /// <summary>
         ///
@@ -58,14 +58,14 @@ namespace tryAGI.OpenAI
         /// <param name="hasMore">
         /// Example: false
         /// </param>
-        /// <param name="object">
-        /// Example: list
-        /// </param>
         /// <param name="firstId">
         /// Example: key_abc
         /// </param>
         /// <param name="lastId">
         /// Example: key_xyz
+        /// </param>
+        /// <param name="object">
+        /// Example: list
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -73,9 +73,9 @@ namespace tryAGI.OpenAI
         public ApiKeyList(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.AdminApiKey> data,
             bool hasMore,
-            global::tryAGI.OpenAI.ApiKeyListObject @object,
             string? firstId,
-            string? lastId)
+            string? lastId,
+            string @object = "list")
         {
             this.Object = @object;
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

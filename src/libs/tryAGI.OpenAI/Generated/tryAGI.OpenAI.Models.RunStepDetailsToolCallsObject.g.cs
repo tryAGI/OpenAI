@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// Always `tool_calls`.
         /// </summary>
+        /// <default>"tool_calls"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.RunStepDetailsToolCallsObjectTypeJsonConverter))]
-        public global::tryAGI.OpenAI.RunStepDetailsToolCallsObjectType Type { get; set; }
+        public string Type { get; set; } = "tool_calls";
 
         /// <summary>
         /// An array of tool calls the run step was involved in. These can be associated with one of three types of tools: `code_interpreter`, `file_search`, or `function`.
@@ -42,7 +42,7 @@ namespace tryAGI.OpenAI
 #endif
         public RunStepDetailsToolCallsObject(
             global::System.Collections.Generic.IList<global::tryAGI.OpenAI.OneOf<global::tryAGI.OpenAI.RunStepDetailsToolCallsCodeObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsFileSearchObject, global::tryAGI.OpenAI.RunStepDetailsToolCallsFunctionObject>> toolCalls,
-            global::tryAGI.OpenAI.RunStepDetailsToolCallsObjectType type)
+            string type = "tool_calls")
         {
             this.Type = type;
             this.ToolCalls = toolCalls ?? throw new global::System.ArgumentNullException(nameof(toolCalls));

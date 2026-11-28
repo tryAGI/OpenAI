@@ -11,9 +11,9 @@ namespace tryAGI.OpenAI
         /// <summary>
         /// The type of the event. Always `image_edit.partial_image`.
         /// </summary>
+        /// <default>"image_edit.partial_image"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::tryAGI.OpenAI.JsonConverters.ImageEditPartialImageEventTypeJsonConverter))]
-        public global::tryAGI.OpenAI.ImageEditPartialImageEventType Type { get; set; }
+        public string Type { get; set; } = "image_edit.partial_image";
 
         /// <summary>
         /// Base64-encoded partial image data, suitable for rendering as an image.
@@ -112,7 +112,7 @@ namespace tryAGI.OpenAI
             global::tryAGI.OpenAI.ImageEditPartialImageEventBackground background,
             global::tryAGI.OpenAI.ImageEditPartialImageEventOutputFormat outputFormat,
             int partialImageIndex,
-            global::tryAGI.OpenAI.ImageEditPartialImageEventType type)
+            string type = "image_edit.partial_image")
         {
             this.Type = type;
             this.B64Json = b64Json ?? throw new global::System.ArgumentNullException(nameof(b64Json));

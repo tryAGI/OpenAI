@@ -134,6 +134,12 @@ namespace tryAGI.OpenAI.JsonConverters
             if (__jsonProps.Contains("revised_prompt")) __score14++;
             if (__jsonProps.Contains("size")) __score14++;
             if (__jsonProps.Contains("status")) __score14++;
+            if (__jsonProps.Contains("svg_usage")) __score14++;
+            if (__jsonProps.Contains("svg_usage.input_tokens")) __score14++;
+            if (__jsonProps.Contains("svg_usage.model")) __score14++;
+            if (__jsonProps.Contains("svg_usage.output_tokens")) __score14++;
+            if (__jsonProps.Contains("svg_usage.reasoning_tokens")) __score14++;
+            if (__jsonProps.Contains("svg_usage.total_tokens")) __score14++;
             if (__jsonProps.Contains("type")) __score14++;
             var __score15 = 0;
             if (__jsonProps.Contains("code")) __score15++;
